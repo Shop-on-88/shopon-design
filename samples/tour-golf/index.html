@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>솔바람 골프트래블 · 필리핀 골프투어</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700;800&family=Noto+Sans+KR:wght@300;400;500;700;900&family=Playfair+Display:ital,wght@0,500;0,700;1,500&display=swap" rel="stylesheet">
+<style>
+:root{--g9:#0e2a1f;--g8:#143a2b;--g7:#1d4d39;--g5:#3f7a5c;--g2:#d9e6d6;--cr:#f5f0e4;--cr2:#ebe3d0;--br:#b8925a;--br2:#d6b57f;--ink:#1b241f;--mu:#5f6b63}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Noto Sans KR',system-ui,sans-serif;color:var(--ink);background:var(--cr);word-break:keep-all;-webkit-font-smoothing:antialiased;line-height:1.6;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+button,input,select,textarea{font:inherit}
+.w{max-width:1200px;margin:0 auto;padding:0 28px}
+.serif{font-family:'Nanum Myeongjo',serif}
+.pf{font-family:'Playfair Display',serif}
+.eb{display:inline-flex;align-items:center;gap:10px;font-size:12px;letter-spacing:.24em;text-transform:uppercase;color:var(--br);font-weight:700}
+.eb:before{content:"";width:28px;height:1px;background:currentColor}
+h2.t{font-family:'Nanum Myeongjo',serif;font-weight:800;font-size:clamp(28px,3.6vw,44px);line-height:1.32;letter-spacing:-.02em;margin-top:14px}
+.lead{color:var(--mu);font-size:16px;margin-top:14px;max-width:560px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;height:52px;padding:0 26px;border-radius:2px;font-weight:700;font-size:15px;border:0;cursor:pointer;transition:.25s}
+.btn.gd{background:var(--br);color:#fff}.btn.gd:hover{background:#a37d46}
+.btn.ol{border:1px solid rgba(255,255,255,.5);color:#fff;background:transparent}.btn.ol:hover{background:rgba(255,255,255,.1)}
+.ico{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+
+/* header */
+.hd{position:fixed;top:0;left:0;right:0;z-index:50;transition:.3s}
+.hd .w{display:flex;align-items:center;justify-content:space-between;height:78px}
+.hd.sc{background:rgba(14,42,31,.94);backdrop-filter:blur(8px);box-shadow:0 6px 24px rgba(0,0,0,.18)}
+.hd.sc .w{height:64px}
+.logo{display:flex;align-items:center;gap:11px;color:#fff}
+.logo svg{width:36px;height:36px}
+.logo b{font-family:'Nanum Myeongjo',serif;font-weight:800;font-size:19px;letter-spacing:-.01em;display:block;line-height:1.1}
+.logo small{display:block;font-size:11px;letter-spacing:.2em;color:var(--br2);font-family:'Playfair Display',serif}
+.nav{display:flex;gap:34px;color:rgba(255,255,255,.86);font-size:14.5px;font-weight:500}
+.nav a:hover{color:var(--br2)}
+.hd .cta{height:42px;padding:0 20px;font-size:14px}
+.mb{display:none;background:none;border:0;color:#fff;width:42px;height:42px;cursor:pointer}
+.mb svg{width:26px;height:26px}
+.drawer{position:fixed;inset:0;background:var(--g9);z-index:60;display:flex;flex-direction:column;padding:90px 32px;gap:22px;transform:translateX(100%);transition:.35s}
+.drawer.on{transform:none}
+.drawer a{color:#fff;font-family:'Nanum Myeongjo',serif;font-size:24px;font-weight:700;border-bottom:1px solid rgba(255,255,255,.1);padding-bottom:16px}
+.drawer .x{position:absolute;top:20px;right:22px;background:none;border:0;color:#fff;font-size:30px;cursor:pointer}
+
+/* hero */
+.hero{position:relative;min-height:max(760px,100vh);color:#fff;overflow:hidden;display:flex;align-items:center}
+.hero>svg{position:absolute;inset:0;width:100%;height:100%}
+.hero:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(9,28,20,.78) 0%,rgba(9,28,20,.42) 45%,rgba(9,28,20,0) 70%),linear-gradient(0deg,rgba(9,28,20,.55),rgba(9,28,20,0) 35%)}
+.hero .w{position:relative;z-index:2;width:100%;padding-top:110px;padding-bottom:150px}
+.hero .eb{color:var(--br2)}
+.hero h1{font-family:'Nanum Myeongjo',serif;font-weight:800;font-size:clamp(38px,5.6vw,72px);line-height:1.22;letter-spacing:-.03em;margin:22px 0 22px}
+.hero h1 em{font-style:normal;color:var(--br2)}
+.hero p{font-size:17px;color:rgba(255,255,255,.86);max-width:470px;font-weight:300}
+.hero .bt{display:flex;gap:12px;margin-top:36px;flex-wrap:wrap}
+.qs{position:absolute;left:0;right:0;bottom:0;z-index:3}
+.qs .w{display:grid;grid-template-columns:repeat(3,1fr) auto;background:var(--cr);color:var(--ink);box-shadow:0 -10px 40px rgba(0,0,0,.2);padding:0}
+.qs label{display:block;padding:20px 26px;border-right:1px solid var(--cr2)}
+.qs label span{display:block;font-size:12px;color:var(--mu);letter-spacing:.06em;font-weight:500}
+.qs select{width:100%;border:0;background:transparent;font-size:16px;font-weight:700;color:var(--ink);padding:4px 0;outline:none;cursor:pointer;appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23b8925a' stroke-width='2'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right center;background-size:18px}
+.qs .go{height:auto;border-radius:0;padding:0 40px;background:var(--g8);color:#fff}
+.qs .go:hover{background:var(--g7)}
+
+/* intro stats */
+.intro{padding:150px 0 110px}
+.intro .w{display:grid;grid-template-columns:1.05fr 1fr;gap:80px;align-items:center}
+.feat{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--cr2);border:1px solid var(--cr2)}
+.feat div{background:var(--cr);padding:30px 26px}
+.feat svg{width:34px;height:34px;stroke:var(--br);fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
+.feat b{display:block;font-size:17px;margin:14px 0 6px;font-weight:700}
+.feat p{font-size:14px;color:var(--mu);line-height:1.65}
+
+/* regions */
+.regions{background:var(--g9);color:#fff;padding:110px 0}
+.regions .lead{color:rgba(255,255,255,.7)}
+.rg{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:54px}
+.rc{position:relative;background:var(--g8);overflow:hidden;transition:.35s}
+.rc:hover{transform:translateY(-6px)}
+.rc svg{display:block;width:100%;height:auto}
+.rc .tx{padding:26px 26px 30px}
+.rc .tg{font-family:'Playfair Display',serif;font-style:italic;color:var(--br2);font-size:15px}
+.rc h3{font-family:'Nanum Myeongjo',serif;font-size:26px;font-weight:800;margin:4px 0 10px}
+.rc p{font-size:14.5px;color:rgba(255,255,255,.72)}
+.rc ul{list-style:none;display:flex;flex-wrap:wrap;gap:6px;margin-top:18px}
+.rc li{font-size:12px;border:1px solid rgba(214,181,127,.4);color:var(--br2);padding:4px 10px}
+
+/* packages */
+.pk{padding:120px 0}
+.pk .hd2{display:flex;justify-content:space-between;align-items:flex-end;gap:30px;flex-wrap:wrap}
+.pg{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:54px}
+.pc{background:#fff;border:1px solid var(--cr2);padding:36px 32px 34px;display:flex;flex-direction:column;position:relative}
+.pc.dark{background:var(--g8);color:#fff;border-color:var(--g8)}
+.pc .no{font-family:'Playfair Display',serif;font-size:14px;color:var(--br);letter-spacing:.1em}
+.pc h3{font-family:'Nanum Myeongjo',serif;font-size:24px;font-weight:800;margin:10px 0 6px;line-height:1.35}
+.pc .sub{font-size:14px;color:var(--mu)}
+.pc.dark .sub{color:rgba(255,255,255,.65)}
+.pc .pr{margin:26px 0 22px;padding:20px 0;border-top:1px solid var(--cr2);border-bottom:1px solid var(--cr2)}
+.pc.dark .pr{border-color:rgba(255,255,255,.14)}
+.pc .pr small{font-size:12px;color:var(--mu);display:block}
+.pc.dark .pr small{color:rgba(255,255,255,.6)}
+.pc .pr b{font-family:'Playfair Display',serif;font-size:36px;font-weight:700;letter-spacing:-.01em}
+.pc .pr b span{font-family:'Noto Sans KR';font-size:15px;font-weight:500;margin-left:4px}
+.pc ul{list-style:none;display:grid;gap:11px;font-size:14.5px;flex:1}
+.pc li{display:flex;gap:10px;align-items:flex-start}
+.pc li svg{flex:none;width:18px;height:18px;margin-top:3px;stroke:var(--br);fill:none;stroke-width:2}
+.pc .btn{margin-top:30px;width:100%;background:var(--cr);color:var(--g8);border:1px solid var(--g8)}
+.pc .btn:hover{background:var(--g8);color:#fff}
+.pc.dark .btn{background:var(--br);border-color:var(--br);color:#fff}
+.pc .flag{position:absolute;top:0;right:30px;background:var(--br);color:#fff;font-size:12px;font-weight:700;padding:8px 12px 10px;letter-spacing:.05em}
+
+/* schedule */
+.sch{background:var(--cr2);padding:120px 0}
+.sch .w{display:grid;grid-template-columns:.9fr 1.1fr;gap:70px;align-items:center}
+.sch .w>div:first-child{display:flex;flex-direction:column}
+.sch .ill{margin-top:40px;background:var(--g8);overflow:hidden;position:relative;aspect-ratio:520/300}
+.sch .ill svg{position:absolute;inset:0;display:block;width:100%;height:100%}
+.tl{position:relative;display:grid;gap:4px}
+.tl{gap:12px}
+.day{display:grid;grid-template-columns:64px 1fr;gap:22px;background:var(--cr);padding:24px 26px 24px 0;position:relative}
+.day .d{display:flex;flex-direction:column;align-items:center;justify-content:flex-start;position:relative;z-index:1}
+.day .d b{width:64px;height:64px;border-radius:50%;background:var(--g8);color:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-size:22px;line-height:1;margin-left:0}
+.day .d b small{font-size:11px;letter-spacing:.12em;margin-bottom:3px;color:var(--br2);font-family:'Noto Sans KR'}
+.day h4{font-size:18px;font-weight:700;margin-top:4px}
+.day p{font-size:14.5px;color:var(--mu);margin-top:4px}
+.day .tm{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px}
+.day .tm span{font-size:12px;background:#fff;border:1px solid var(--cr2);padding:3px 10px}
+
+/* stay gallery */
+.stay{padding:120px 0}
+.sg{display:grid;grid-template-columns:1.4fr 1fr 1fr;grid-template-rows:260px 260px;gap:16px;margin-top:50px}
+.sg figure{position:relative;overflow:hidden;background:var(--g8)}
+.sg figure:first-child{grid-row:span 2}
+.sg svg{position:absolute;inset:0;width:100%;height:100%}
+.sg figcaption{position:absolute;left:0;bottom:0;right:0;padding:44px 22px 16px;color:#fff;background:linear-gradient(0deg,rgba(9,28,20,.94) 0%,rgba(9,28,20,.82) 50%,rgba(9,28,20,0) 100%);font-size:15px;font-weight:700}
+.sg figcaption small{display:block;font-weight:400;font-size:12.5px;color:rgba(255,255,255,.75)}
+
+/* process */
+.proc{background:var(--g9);color:#fff;padding:110px 0}
+.ps{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:56px;border-top:1px solid rgba(255,255,255,.14)}
+.ps div{padding:34px 28px 10px 0;position:relative}
+.ps div:before{content:"";position:absolute;top:-5px;left:0;width:9px;height:9px;border-radius:50%;background:var(--br)}
+.ps .n{font-family:'Playfair Display',serif;font-style:italic;font-size:40px;color:var(--br2);line-height:1}
+.ps b{display:block;font-size:18px;margin:16px 0 8px}
+.ps p{font-size:14px;color:rgba(255,255,255,.66)}
+
+/* faq + form */
+.ask{padding:120px 0}
+.ask .w{display:grid;grid-template-columns:1fr 1fr;gap:70px}
+.faq{margin-top:36px;border-top:1px solid var(--cr2)}
+.faq details{border-bottom:1px solid var(--cr2)}
+.faq summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:20px;padding:22px 0;font-weight:700;font-size:16px}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary i{flex:none;width:28px;height:28px;border:1px solid var(--br);border-radius:50%;position:relative}
+.faq summary i:before,.faq summary i:after{content:"";position:absolute;left:50%;top:50%;width:11px;height:1.5px;background:var(--br);transform:translate(-50%,-50%);transition:.25s}
+.faq summary i:after{transform:translate(-50%,-50%) rotate(90deg)}
+.faq details[open] summary i:after{transform:translate(-50%,-50%) rotate(0)}
+.faq details p{padding:0 40px 22px 0;color:var(--mu);font-size:15px}
+.form{background:#fff;border:1px solid var(--cr2);padding:44px 40px;box-shadow:0 30px 60px -30px rgba(14,42,31,.25)}
+.form h3{font-family:'Nanum Myeongjo',serif;font-size:26px;font-weight:800}
+.form .body>p{font-size:14px;color:var(--mu);margin:6px 0 26px}
+.fr{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.fl{display:block;margin-bottom:14px}
+.fl span{display:block;font-size:13px;font-weight:700;margin-bottom:6px}
+.fl input,.fl select,.fl textarea{width:100%;border:1px solid #d8d1bf;background:var(--cr);padding:13px 14px;font-size:15px;border-radius:2px;outline:none;color:var(--ink)}
+.fl input:focus,.fl select:focus,.fl textarea:focus{border-color:var(--br);background:#fff}
+.fl textarea{height:96px;resize:vertical}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chips label{cursor:pointer}
+.chips input{display:none}
+.chips span{display:inline-block;border:1px solid #d8d1bf;padding:8px 14px;font-size:14px;font-weight:500;margin:0}
+.chips input:checked+span{background:var(--g8);border-color:var(--g8);color:#fff}
+.form .btn{width:100%;margin-top:8px}
+.done{display:none;text-align:center;padding:40px 0}
+.done svg{width:60px;height:60px;stroke:var(--br);fill:none;stroke-width:1.5}
+.done b{display:block;font-family:'Nanum Myeongjo',serif;font-size:24px;margin:16px 0 8px}
+.done p{color:var(--mu);font-size:15px}
+.form.ok .body{display:none}.form.ok .done{display:block}
+
+/* footer */
+.ft{background:#0a1f17;color:rgba(255,255,255,.62);padding:70px 0 40px;font-size:13.5px}
+.ft .top{display:flex;justify-content:space-between;gap:40px;flex-wrap:wrap;padding-bottom:40px;border-bottom:1px solid rgba(255,255,255,.1)}
+.ft .cols{display:flex;gap:60px;flex-wrap:wrap}
+.ft h5{color:#fff;font-size:14px;margin-bottom:12px}
+.ft .cols p{line-height:1.9}
+.ft .bt2{padding-top:26px;font-size:12px;color:rgba(255,255,255,.4)}
+
+.rv{opacity:0;transform:translateY(30px);transition:opacity .8s,transform .8s}
+.rv.in{opacity:1;transform:none}
+
+@media(max-width:1000px){
+ .nav,.hd .cta{display:none}.mb{display:block}
+ .intro .w,.sch .w,.ask .w{grid-template-columns:1fr;gap:50px}
+ .rg,.pg{grid-template-columns:1fr 1fr}
+ .ps{grid-template-columns:1fr 1fr}
+ .sg{grid-template-columns:1fr 1fr;grid-template-rows:300px 220px 220px}
+ .sg figure:first-child{grid-row:auto;grid-column:span 2}
+}
+@media(max-width:680px){
+ .w{padding:0 20px}
+ .hero{min-height:0}
+ .hero .w{padding-top:120px;padding-bottom:60px}
+ .hero:after{background:linear-gradient(0deg,rgba(9,28,20,.15) 0%,rgba(9,28,20,.55) 40%,rgba(9,28,20,.62) 70%,rgba(9,28,20,.5) 100%)}
+ .sunc{display:none}
+ .hero>svg{left:auto;right:-60px;width:auto;height:100%;aspect-ratio:1.6}
+ .hero .w{padding-bottom:230px}
+ .hero h1{font-size:38px}
+ .hero p{font-size:15.5px}
+ .hero .btn{flex:1}
+ .hero{flex-direction:column;align-items:stretch}
+ .qs{position:relative}
+ .qs .w{grid-template-columns:1fr 1fr;padding:0;margin:0}
+ .qs label{border-bottom:1px solid var(--cr2);padding:16px 20px}
+ .qs label:nth-child(3){grid-column:span 2;border-right:0}
+ .qs .go{grid-column:span 2;height:56px}
+ .intro{padding:80px 0}
+ .feat div{padding:24px 18px}
+ .rg,.pg{grid-template-columns:1fr}
+ .regions,.pk,.sch,.stay,.proc,.ask{padding:80px 0}
+ .sg{grid-template-columns:1fr;grid-template-rows:260px 200px 200px 200px 200px}
+ .sg figure:first-child{grid-column:auto}
+ .ps{grid-template-columns:1fr;border-top:0}
+ .ps div{border-top:1px solid rgba(255,255,255,.14);padding:30px 0 24px}
+ .day{grid-template-columns:52px 1fr;gap:16px;padding-right:18px}
+ .day .d b{width:52px;height:52px;font-size:19px}
+ .form{padding:32px 22px}
+ .fr{grid-template-columns:1fr;gap:0}
+}
+</style>
+</head>
+<body>
+
+<header class="hd" id="hd">
+ <div class="w">
+  <a href="#top" class="logo" aria-label="솔바람 골프트래블">
+   <svg viewBox="0 0 40 40"><circle cx="20" cy="20" r="19" fill="none" stroke="#d6b57f" stroke-width="1.2"/><path d="M8 27c5-4 9-5 12-5s8 1 12 5" fill="none" stroke="#d6b57f" stroke-width="1.4"/><path d="M19 22V9l8 3.5-8 3.2" fill="#d6b57f"/><circle cx="14" cy="26.5" r="1.6" fill="#fff"/></svg>
+   <span><b>솔바람 골프트래블</b><small>SOLBARAM GOLF</small></span>
+  </a>
+  <nav class="nav"><a href="#regions">지역</a><a href="#packages">패키지</a><a href="#schedule">일정 예시</a><a href="#stay">숙소·코스</a><a href="#ask">자주 묻는 질문</a></nav>
+  <a href="#ask" class="btn gd cta">일정 상담</a>
+  <button class="mb" id="mb" aria-label="메뉴 열기"><svg class="ico" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+ </div>
+</header>
+<div class="drawer" id="drawer">
+ <button class="x" id="dx" aria-label="닫기">×</button>
+ <a href="#regions">지역</a><a href="#packages">패키지</a><a href="#schedule">일정 예시</a><a href="#stay">숙소·코스</a><a href="#ask">상담 신청</a>
+</div>
+
+<section class="hero" id="top">
+ <svg viewBox="0 0 1600 1000" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+  <defs>
+   <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2c4a52"/><stop offset=".45" stop-color="#c79a63"/><stop offset=".62" stop-color="#f2c98a"/><stop offset="1" stop-color="#e9b877"/></linearGradient>
+   <radialGradient id="sun" cx="1180" cy="440" r="320" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#fff4d6"/><stop offset=".18" stop-color="#ffe2a6" stop-opacity=".9"/><stop offset="1" stop-color="#f2c98a" stop-opacity="0"/></radialGradient>
+   <linearGradient id="mt1" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#7d7a6a"/><stop offset="1" stop-color="#a8957a"/></linearGradient>
+   <linearGradient id="mt2" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#4d6152"/><stop offset="1" stop-color="#5f735d"/></linearGradient>
+   <linearGradient id="fw1" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#5d8a4e"/><stop offset="1" stop-color="#2f5a35"/></linearGradient>
+   <linearGradient id="fw2" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#3f7038"/><stop offset="1" stop-color="#173a23"/></linearGradient>
+   <linearGradient id="fw3" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2a5530"/><stop offset="1" stop-color="#0c2419"/></linearGradient>
+   <linearGradient id="grn" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#8cbf5f"/><stop offset=".5" stop-color="#a6d06e"/><stop offset="1" stop-color="#79ab55"/></linearGradient>
+   <linearGradient id="bk" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f5e2b8"/><stop offset="1" stop-color="#d9bd86"/></linearGradient>
+   <linearGradient id="lake" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f3d19a"/><stop offset="1" stop-color="#7f9b8f"/></linearGradient>
+   <pattern id="mow" width="80" height="80" patternUnits="userSpaceOnUse" patternTransform="rotate(-18)"><rect width="40" height="80" fill="#fff" opacity=".05"/></pattern>
+   <filter id="hz"><feGaussianBlur stdDeviation="3"/></filter>
+   <filter id="cl" x="-20%" y="-50%" width="140%" height="200%"><feGaussianBlur stdDeviation="9"/></filter>
+   <filter id="sd" x="-20%" y="-20%" width="140%" height="160%"><feDropShadow dx="0" dy="6" stdDeviation="6" flood-color="#0b1f15" flood-opacity=".35"/></filter>
+  </defs>
+  <rect width="1600" height="1000" fill="url(#sky)"/>
+  <circle cx="1180" cy="440" r="320" fill="url(#sun)"/>
+  <g class="sunc"><circle cx="1180" cy="440" r="70" fill="#fff1c9" opacity=".55" filter="url(#cl)"/>
+  <circle cx="1180" cy="440" r="40" fill="#fff8e6"/></g>
+  <g opacity=".55" fill="#fff6e6" filter="url(#cl)"><ellipse cx="900" cy="250" rx="150" ry="22"/><ellipse cx="980" cy="232" rx="80" ry="24"/><ellipse cx="1360" cy="320" rx="180" ry="20"/><ellipse cx="1290" cy="304" rx="90" ry="22"/><ellipse cx="1430" cy="310" rx="70" ry="18"/></g>
+  <path d="M0 560 L180 520 L330 470 L470 420 L560 395 L640 410 L760 470 L900 520 L1060 540 L1240 520 L1420 545 L1600 530 V700 H0Z" fill="url(#mt1)" opacity=".75" filter="url(#hz)"/>
+  <path d="M0 600 C200 570 300 560 460 575 C620 590 720 560 880 575 C1040 590 1200 600 1360 585 C1480 575 1560 580 1600 585 V720 H0Z" fill="url(#mt2)" opacity=".9"/>
+  <path d="M760 640 C900 625 1150 628 1320 640 C1260 660 900 664 760 640Z" fill="url(#lake)" opacity=".85"/>
+  <path d="M0 640 C260 610 520 650 760 640 C1000 630 1240 612 1600 650 V1000 H0Z" fill="url(#fw1)"/>
+  <path d="M0 640 C260 610 520 650 760 640 C1000 630 1240 612 1600 650 V1000 H0Z" fill="url(#mow)"/>
+  <ellipse cx="1180" cy="676" rx="150" ry="22" fill="url(#grn)"/>
+  <ellipse cx="1180" cy="680" rx="150" ry="22" fill="none" stroke="#2f5a35" stroke-opacity=".3" stroke-width="2"/>
+  <path d="M1030 700 C1060 690 1120 694 1130 704 C1100 714 1050 712 1030 700Z" fill="url(#bk)"/>
+  <path d="M1300 694 C1330 686 1370 690 1372 698 C1350 706 1316 704 1300 694Z" fill="url(#bk)"/>
+  <g filter="url(#sd)"><line x1="1206" y1="676" x2="1206" y2="590" stroke="#f4efe4" stroke-width="3"/><path d="M1207 591 L1250 604 L1207 617Z" fill="#b8925a"/></g>
+  <ellipse cx="1206" cy="677" rx="7" ry="2.5" fill="#173a23"/>
+  <path d="M0 760 C300 700 560 740 880 735 C1180 730 1400 700 1600 730 V1000 H0Z" fill="url(#fw2)"/>
+  <path d="M0 760 C300 700 560 740 880 735 C1180 730 1400 700 1600 730 V1000 H0Z" fill="url(#mow)" opacity=".7"/>
+  <path d="M0 880 C320 820 700 870 1000 860 C1260 852 1450 830 1600 850 V1000 H0Z" fill="url(#fw3)"/>
+  <!-- palms -->
+  <g id="palm" filter="url(#sd)">
+   <path d="M1440 1000 C1446 880 1462 780 1500 680" stroke="#2a1d14" stroke-width="14" fill="none" stroke-linecap="round"/>
+   <path d="M1440 1000 C1446 880 1462 780 1500 680" stroke="#4a3626" stroke-width="5" fill="none" stroke-dasharray="3 12"/>
+   <g fill="#163b26">
+    <path d="M1500 680 C1440 640 1380 650 1330 690 C1390 668 1440 672 1500 690Z"/>
+    <path d="M1500 680 C1460 610 1410 590 1350 600 C1410 620 1450 640 1498 688Z"/>
+    <path d="M1500 680 C1520 610 1560 580 1610 580 C1570 610 1540 640 1504 688Z"/>
+    <path d="M1500 680 C1560 650 1620 660 1660 700 C1610 680 1560 680 1504 692Z"/>
+    <path d="M1500 680 C1500 620 1480 580 1450 560 C1470 610 1480 640 1496 686Z"/>
+    <path d="M1500 680 C1540 700 1570 740 1580 790 C1550 740 1530 720 1500 692Z"/>
+    <path d="M1500 680 C1460 700 1430 740 1420 790 C1450 740 1470 720 1500 692Z"/>
+   </g>
+  </g>
+  <g transform="translate(-1180 120) scale(.75)" opacity=".9"><use href="#palm"/></g>
+  <g transform="translate(-260 60) scale(.9)"><use href="#palm"/></g>
+  <!-- foreground ball -->
+  <g filter="url(#sd)"><ellipse cx="300" cy="958" rx="34" ry="8" fill="#000" opacity=".25"/><circle cx="300" cy="930" r="26" fill="#f7f4ea"/><g fill="#d9d2bf"><circle cx="292" cy="922" r="2.4"/><circle cx="302" cy="918" r="2.4"/><circle cx="311" cy="924" r="2.4"/><circle cx="296" cy="932" r="2.4"/><circle cx="306" cy="934" r="2.4"/><circle cx="288" cy="938" r="2"/><circle cx="314" cy="936" r="2"/></g><rect x="294" y="954" width="12" height="20" fill="#c9a36a"/></g>
+ </svg>
+ <div class="w">
+  <span class="eb">Philippines Golf Journey</span>
+  <h1 class="rv">필리핀 그린 위에서<br>온전히 <em>나흘</em>을<br>쉬어 가는 골프 여행</h1>
+  <p class="rv">클락·세부·바기오의 코스와 숙소, 공항 이동과 식사까지. 라운딩만 생각하시도록 일정 전체를 맞춰 드립니다.</p>
+  <div class="bt rv"><a href="#packages" class="btn gd">패키지 보기</a><a href="#ask" class="btn ol">일정 상담하기</a></div>
+ </div>
+ <form class="qs" id="qs" onsubmit="return false">
+  <div class="w">
+   <label><span>지역</span><select id="qR"><option>클락</option><option>세부</option><option>바기오</option></select></label>
+   <label><span>일정</span><select id="qD"><option>3박 4일</option><option>4박 5일</option><option>5박 6일</option></select></label>
+   <label><span>인원</span><select id="qP"><option>2인</option><option selected>4인 (1팀)</option><option>8인 (2팀)</option><option>12인 이상</option></select></label>
+   <button class="btn go" type="button" id="qGo">맞춤 견적 받기 <svg class="ico" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+  </div>
+ </form>
+</section>
+
+<section class="intro">
+ <div class="w">
+  <div class="rv">
+   <span class="eb">Why Solbaram</span>
+   <h2 class="t">공항에 내린 순간부터<br>마지막 홀까지, 한 팀처럼</h2>
+   <p class="lead">현지에서 오래 지낸 한국인 매니저가 일정 전체를 맡습니다. 티타임 조정, 캐디 배정, 식당 예약처럼 낯선 곳에서 번거로운 일은 저희가 챙깁니다.</p>
+  </div>
+  <div class="feat rv">
+   <div><svg viewBox="0 0 32 32"><path d="M4 22h24M7 22l3-9h12l3 9M11 13l2-5h6l2 5"/><circle cx="10" cy="25" r="2"/><circle cx="22" cy="25" r="2"/></svg><b>공항 전용 차량</b><p>도착 게이트부터 숙소, 골프장까지 같은 기사님이 이동을 맡습니다.</p></div>
+   <div><svg viewBox="0 0 32 32"><circle cx="16" cy="16" r="11"/><path d="M16 9v7l5 3"/></svg><b>티타임 확정</b><p>출발 전 날짜별 티타임을 확정해 일정표로 보내 드립니다.</p></div>
+   <div><svg viewBox="0 0 32 32"><path d="M6 27V12l10-7 10 7v15"/><path d="M12 27v-8h8v8"/></svg><b>코스 가까운 숙소</b><p>골프장까지 차로 20분 안쪽의 리조트·빌라만 고릅니다.</p></div>
+   <div><svg viewBox="0 0 32 32"><path d="M6 8h20v13H14l-6 5v-5H6z"/><path d="M11 13h10M11 17h6"/></svg><b>한국어 현지 매니저</b><p>여행 중 언제든 카카오톡으로 한국어 응대를 받으실 수 있습니다.</p></div>
+  </div>
+ </div>
+</section>
+
+<section class="regions" id="regions">
+ <div class="w">
+  <span class="eb">Destinations</span>
+  <h2 class="t rv">세 지역, 세 가지 라운딩</h2>
+  <p class="lead rv">같은 필리핀이어도 지형과 날씨가 다릅니다. 실력과 취향에 맞는 곳을 함께 고르세요.</p>
+  <div class="rg">
+   <article class="rc rv">
+    <svg viewBox="0 0 400 240" aria-hidden="true"><defs><linearGradient id="r1s" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f0c17d"/><stop offset="1" stop-color="#f6dcae"/></linearGradient><linearGradient id="r1g" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#6c9a4f"/><stop offset="1" stop-color="#2d5532"/></linearGradient></defs><rect width="400" height="240" fill="url(#r1s)"/><circle cx="300" cy="70" r="26" fill="#fff3d4"/><path d="M60 160 L150 70 L190 98 L230 80 L330 160Z" fill="#8a7d66" opacity=".7"/><path d="M150 70 L170 90 L160 92 L176 104 L150 96Z" fill="#fff" opacity=".35"/><path d="M0 170 C120 140 260 150 400 160 V240 H0Z" fill="url(#r1g)"/><path d="M0 205 C140 180 280 200 400 190 V240 H0Z" fill="#1f4429"/><ellipse cx="270" cy="178" rx="50" ry="8" fill="#9fca68"/><line x1="282" y1="178" x2="282" y2="146" stroke="#fff" stroke-width="2"/><path d="M283 146 L300 152 L283 158Z" fill="#b8925a"/></svg>
+    <div class="tx"><span class="tg">Clark · Pampanga</span><h3>클락</h3><p>화산 지대 위에 놓인 넓은 페어웨이. 공항에서 가까워 짧은 일정에도 라운딩을 많이 넣을 수 있습니다.</p><ul><li>공항 30분</li><li>평지형 코스</li><li>하루 36홀 가능</li></ul></div>
+   </article>
+   <article class="rc rv">
+    <svg viewBox="0 0 400 240" aria-hidden="true"><defs><linearGradient id="r2s" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#8fc8d2"/><stop offset="1" stop-color="#e5efe2"/></linearGradient><linearGradient id="r2w" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#3b9aa6"/><stop offset="1" stop-color="#1c6a79"/></linearGradient></defs><rect width="400" height="240" fill="url(#r2s)"/><path d="M0 128 H400 V240 H0Z" fill="url(#r2w)"/><g stroke="#fff" stroke-opacity=".45" stroke-width="2" stroke-linecap="round"><path d="M30 150h40M120 170h60M250 146h50M300 190h70M60 200h40"/></g><path d="M150 240 C180 180 260 150 400 140 V240Z" fill="#5c9850"/><path d="M210 240 C240 200 300 180 400 176 V240Z" fill="#2f6136"/><ellipse cx="330" cy="168" rx="40" ry="7" fill="#a3cf6c"/><line x1="340" y1="168" x2="340" y2="138" stroke="#fff" stroke-width="2"/><path d="M341 138 L357 144 L341 150Z" fill="#b8925a"/><path d="M90 240 C92 200 100 170 118 140" stroke="#3b2a1d" stroke-width="5" fill="none"/><g fill="#1f4a2c"><path d="M118 140 C96 124 72 128 58 144 C80 136 100 138 118 146Z"/><path d="M118 140 C130 118 150 112 172 116 C150 124 134 134 120 146Z"/><path d="M118 140 C110 118 96 106 80 104 C96 120 106 132 116 146Z"/><path d="M118 140 C140 140 156 152 162 170 C146 154 132 150 118 146Z"/></g></svg>
+    <div class="tx"><span class="tg">Cebu · Mactan</span><h3>세부</h3><p>바다를 끼고 도는 홀과 리조트 휴식을 함께. 동반 가족이 있다면 라운딩과 호핑을 나눠 즐기기 좋습니다.</p><ul><li>오션뷰 홀</li><li>리조트 연계</li><li>가족 동반</li></ul></div>
+   </article>
+   <article class="rc rv">
+    <svg viewBox="0 0 400 240" aria-hidden="true"><defs><linearGradient id="r3s" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#b9c7c4"/><stop offset="1" stop-color="#e7ece4"/></linearGradient></defs><rect width="400" height="240" fill="url(#r3s)"/><path d="M0 120 L70 80 L130 110 L200 60 L270 100 L330 70 L400 100 V240 H0Z" fill="#7d958b" opacity=".6"/><path d="M0 150 L90 110 L170 140 L240 100 L320 136 L400 120 V240 H0Z" fill="#4f6f5d"/><g fill="#1d3d2b"><path d="M40 190 l14 -44 l14 44z"/><path d="M62 196 l12 -36 l12 36z"/><path d="M330 182 l16 -50 l16 50z"/><path d="M356 190 l12 -36 l12 36z"/></g><path d="M0 200 C120 176 260 186 400 196 V240 H0Z" fill="#3c6b3d"/><path d="M0 222 C140 210 280 218 400 214 V240 H0Z" fill="#1d4027"/><ellipse cx="190" cy="196" rx="44" ry="7" fill="#97c46a"/><line x1="200" y1="196" x2="200" y2="166" stroke="#fff" stroke-width="2"/><path d="M201 166 L217 172 L201 178Z" fill="#b8925a"/><g fill="#fff" opacity=".6"><ellipse cx="100" cy="98" rx="60" ry="8"/><ellipse cx="290" cy="84" rx="50" ry="6"/></g></svg>
+    <div class="tx"><span class="tg">Baguio · Highland</span><h3>바기오</h3><p>해발이 높아 한낮에도 선선한 산악 코스. 소나무 사이 고저차가 있는 홀을 좋아하는 분께 맞습니다.</p><ul><li>선선한 기후</li><li>산악형 코스</li><li>장기 체류</li></ul></div>
+   </article>
+  </div>
+ </div>
+</section>
+
+<section class="pk" id="packages">
+ <div class="w">
+  <div class="hd2"><div><span class="eb">Packages</span><h2 class="t rv">일정별 기본 패키지</h2></div><p class="lead rv" style="margin-top:0">1인 기준, 항공권 별도. 인원·날짜·숙소 등급에 따라 견적이 달라집니다.</p></div>
+  <div class="pg">
+   <article class="pc rv">
+    <span class="no">PACKAGE 01</span><h3>클락 3박 4일<br>54홀 라운딩</h3><p class="sub">짧게 다녀오는 주말 골프</p>
+    <div class="pr"><small>1인 기준</small><b>₩1,190,000<span>부터</span></b></div>
+    <ul><li><svg viewBox="0 0 24 24"><path d="m5 12 5 5 9-10"/></svg>그린피·캐디피·카트비 포함</li><li><svg viewBox="0 0 24 24"><path d="m5 12 5 5 9-10"/></svg>코스 인근 리조트 3박 (2인 1실)</li><li><svg viewBox="0 0 24 24"><path d="m5 12 5 5 9-10"/></svg>공항·골프장 전용 차량</li><li><svg viewBox="0 0 24 24"><path d="m5 12 5 5 9-10"/></svg>조식 3회, 한식 석식 2회</li></ul>
+    <a href="#ask" class="btn" data-pkg="클락 3박 4일">이 일정으로 상담</a>
+   </article>
+   <article class="pc dark rv">
+    <span class="flag">맞춤 구성</span>
+    <span class="no">PACKAGE 02</span><h3>세부 4박 5일<br>라운딩 + 리조트</h3><p class="sub">동반 가족과 함께하는 여행</p>
+    <div class="pr"><small>1인 기준</small><b>₩1,590,000<span>부터</span></b></div>
+    <ul><li><svg viewBox="0 0 24 24"><path d="m5 12 5 5 9-10"/></svg>오션뷰 코스 3회 라운딩</li><li><svg viewBox="0 0 24 24"><path d="m5 12 5 5 9-10"/></svg>해변 리조트 4박, 조식 포함</li><li><svg viewBox="0 0 24 24"><path d="m5 12 5 5 9-10"/></svg>비라운딩 동반자 호핑 1회</li><li><svg viewBox="0 0 24 24"><path d="m5 12 5 5 9-10"/></svg>전 일정 한국어 매니저</li></ul>
+    <a href="#ask" class="btn" data-pkg="세부 4박 5일">이 일정으로 상담</a>
+   </article>
+   <article class="pc rv">
+    <span class="no">PACKAGE 03</span><h3>바기오 6박 7일<br>여유 라운딩</h3><p class="sub">선선한 고원에서 길게 머물기</p>
+    <div class="pr"><small>1인 기준</small><b>₩1,890,000<span>부터</span></b></div>
+    <ul><li><svg viewBox="0 0 24 24"><path d="m5 12 5 5 9-10"/></svg>라운딩 5회, 날짜 자유 조정</li><li><svg viewBox="0 0 24 24"><path d="m5 12 5 5 9-10"/></svg>취사 가능한 빌라 6박</li><li><svg viewBox="0 0 24 24"><path d="m5 12 5 5 9-10"/></svg>마닐라 공항 왕복 차량</li><li><svg viewBox="0 0 24 24"><path d="m5 12 5 5 9-10"/></svg>현지 시장·식당 안내</li></ul>
+    <a href="#ask" class="btn" data-pkg="바기오 6박 7일">이 일정으로 상담</a>
+   </article>
+  </div>
+ </div>
+</section>
+
+<section class="sch" id="schedule">
+ <div class="w">
+  <div>
+   <span class="eb">Sample Itinerary</span>
+   <h2 class="t rv">클락 3박 4일,<br>이렇게 흘러갑니다</h2>
+   <p class="lead rv">이른 아침 라운딩 후 오후는 쉬는 일정입니다. 체력과 취향에 맞춰 하루 36홀로 늘리거나 쉬는 날을 넣을 수 있습니다.</p>
+   <div class="ill rv">
+    <svg viewBox="0 0 520 300" preserveAspectRatio="xMidYMax slice" aria-hidden="true"><defs><linearGradient id="cs" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#244c3a"/><stop offset="1" stop-color="#3c6e4f"/></linearGradient><linearGradient id="cb" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f6f1e4"/><stop offset="1" stop-color="#ddd2b8"/></linearGradient><linearGradient id="cg" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#cfa766"/><stop offset="1" stop-color="#a4803f"/></linearGradient></defs><rect width="520" height="300" fill="url(#cs)"/><circle cx="420" cy="70" r="30" fill="#f5d9a0" opacity=".85"/><path d="M0 230 C140 200 320 210 520 220 V300 H0Z" fill="#1a3a29"/><g transform="translate(150 120)"><ellipse cx="110" cy="132" rx="150" ry="14" fill="#000" opacity=".25"/><path d="M20 40 H210 L228 30 H210 V36 H20Z" fill="url(#cg)"/><rect x="16" y="30" width="212" height="12" rx="4" fill="#e9e1cc"/><path d="M40 42 V100 M190 42 V100" stroke="#cdbf9f" stroke-width="5"/><path d="M20 100 H220 Q236 100 236 116 V120 H8 V112 Q8 100 20 100Z" fill="url(#cb)"/><rect x="40" y="70" width="50" height="34" rx="6" fill="#2b5240"/><rect x="100" y="66" width="60" height="38" rx="6" fill="#33604a"/><rect x="160" y="58" width="26" height="64" rx="5" fill="#8e6a3d"/><path d="M166 58 V30 M174 58 V24 M180 58 V34" stroke="#cdbf9f" stroke-width="3"/><circle cx="166" cy="28" r="4" fill="#e7dfcb"/><circle cx="174" cy="22" r="4" fill="#e7dfcb"/><circle cx="180" cy="32" r="4" fill="#e7dfcb"/><circle cx="52" cy="124" r="18" fill="#1c1c1c"/><circle cx="52" cy="124" r="8" fill="#9a9a9a"/><circle cx="190" cy="124" r="18" fill="#1c1c1c"/><circle cx="190" cy="124" r="8" fill="#9a9a9a"/></g><g fill="#163323"><path d="M40 230 l18 -70 l18 70z"/><path d="M64 236 l14 -50 l14 50z"/><path d="M450 226 l16 -60 l16 60z"/></g></svg>
+   </div>
+  </div>
+  <div class="tl">
+   <div class="day rv"><div class="d"><b><small>DAY</small>1</b></div><div><h4>도착 · 숙소 체크인</h4><p>공항 도착 게이트에서 매니저와 만나 리조트로 이동합니다. 저녁은 한식당에서 일정 안내와 함께.</p><div class="tm"><span>공항 픽업</span><span>한식 석식</span></div></div></div>
+   <div class="day rv"><div class="d"><b><small>DAY</small>2</b></div><div><h4>오전 18홀 · 오후 18홀</h4><p>선선한 아침 6시 티오프. 점심 후 같은 코스 후반 라운딩, 저녁은 자유 일정입니다.</p><div class="tm"><span>36홀</span><span>클럽하우스 중식</span></div></div></div>
+   <div class="day rv"><div class="d"><b><small>DAY</small>3</b></div><div><h4>다른 코스 18홀 · 휴식</h4><p>지형이 다른 두 번째 코스에서 라운딩. 오후에는 리조트 수영장이나 마사지로 쉬어 갑니다.</p><div class="tm"><span>18홀</span><span>오후 자유</span></div></div></div>
+   <div class="day rv"><div class="d"><b><small>DAY</small>4</b></div><div><h4>조식 후 공항 이동</h4><p>체크아웃 후 출국 시간에 맞춰 공항까지 모셔다 드립니다. 늦은 비행기라면 오전 9홀 추가도 가능합니다.</p><div class="tm"><span>공항 샌딩</span><span>9홀 선택</span></div></div></div>
+  </div>
+ </div>
+</section>
+
+<section class="stay" id="stay">
+ <div class="w">
+  <span class="eb">Stay &amp; Course</span>
+  <h2 class="t rv">머무는 곳까지 여행의 일부로</h2>
+  <div class="sg">
+   <figure class="rv">
+    <svg viewBox="0 0 500 540" preserveAspectRatio="xMidYMax slice" aria-hidden="true"><defs><linearGradient id="v1" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#e9b97a"/><stop offset=".6" stop-color="#f4dcb0"/><stop offset="1" stop-color="#cbd8c2"/></linearGradient><linearGradient id="pool" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#6fc3c9"/><stop offset="1" stop-color="#2e8c98"/></linearGradient><linearGradient id="wall" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#f7f1e2"/><stop offset="1" stop-color="#e2d6bb"/></linearGradient></defs><rect width="500" height="540" fill="url(#v1)"/><circle cx="380" cy="120" r="34" fill="#fff3d6"/><path d="M60 250 L250 160 L440 250Z" fill="#6b4a2f"/><path d="M60 250 L250 160 L440 250 L430 256 L250 172 L70 256Z" fill="#8a6440"/><rect x="90" y="252" width="320" height="140" fill="url(#wall)"/><rect x="120" y="282" width="70" height="110" fill="#2a4a3e"/><rect x="214" y="282" width="70" height="110" fill="#2a4a3e"/><rect x="308" y="282" width="70" height="110" fill="#2a4a3e"/><g fill="#f3d79e" opacity=".5"><rect x="126" y="288" width="58" height="98"/><rect x="220" y="288" width="58" height="98"/><rect x="314" y="288" width="58" height="98"/></g><path d="M0 392 H500 V540 H0Z" fill="#d8ccb0"/><path d="M40 410 H460 L480 500 H20Z" fill="url(#pool)"/><g stroke="#fff" stroke-opacity=".5" stroke-width="2.5" stroke-linecap="round" fill="none"><path d="M80 440 q20 -6 40 0 t40 0"/><path d="M260 460 q20 -6 40 0 t40 0"/><path d="M150 480 q20 -6 40 0 t40 0"/></g><g transform="translate(320 360)"><rect x="0" y="20" width="90" height="8" rx="3" fill="#fff"/><path d="M10 28 l-6 14 M80 28 l6 14" stroke="#8a6440" stroke-width="4"/><path d="M0 20 L-14 0" stroke="#fff" stroke-width="8" stroke-linecap="round"/></g><path d="M30 540 C34 460 40 400 58 330" stroke="#3b2a1d" stroke-width="8" fill="none"/><g fill="#1f4a2c"><path d="M58 330 C30 300 0 304 -20 330 C10 318 34 320 58 338Z"/><path d="M58 330 C70 296 100 286 130 290 C100 302 80 316 60 338Z"/><path d="M58 330 C52 300 34 280 12 276 C34 296 46 314 56 338Z"/><path d="M58 330 C90 334 110 350 118 376 C96 356 78 350 58 340Z"/></g></svg>
+    <figcaption>풀빌라 · 클락<small>4인 1팀 단독 사용, 코스까지 차로 10분</small></figcaption>
+   </figure>
+   <figure class="rv">
+    <svg viewBox="0 0 400 260" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><defs><linearGradient id="v2" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#5a8fa8"/><stop offset="1" stop-color="#bcd6d4"/></linearGradient></defs><rect width="400" height="260" fill="#1a3a26"/><g transform="translate(0 -62)"><rect width="400" height="260" fill="url(#v2)"/><path d="M0 150 H400 V260 H0Z" fill="#2f7f8c"/><path d="M0 150 H400" stroke="#d9efe9" stroke-width="2"/><path d="M180 260 C200 200 280 170 400 164 V260Z" fill="#5d9a52"/><path d="M240 260 C270 220 330 206 400 204 V260Z" fill="#2c5d33"/><ellipse cx="330" cy="196" rx="34" ry="6" fill="#a8d272"/><line x1="338" y1="196" x2="338" y2="170" stroke="#fff" stroke-width="2"/><path d="M339 170 L353 175 L339 180Z" fill="#b8925a"/><path d="M0 260 C40 230 120 220 170 236 L180 260Z" fill="#e8d6a8"/><g fill="#fff" opacity=".7"><ellipse cx="90" cy="70" rx="60" ry="9"/><ellipse cx="270" cy="56" rx="44" ry="7"/></g></g></svg>
+    <figcaption>오션뷰 코스 · 세부<small>바다를 건너 치는 시그니처 홀</small></figcaption>
+   </figure>
+   <figure class="rv">
+    <svg viewBox="0 0 400 260" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><defs><linearGradient id="v3" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#3b2a20"/><stop offset="1" stop-color="#6e4a30"/></linearGradient><radialGradient id="lamp" cx=".5" cy=".3" r=".6"><stop offset="0" stop-color="#ffd890" stop-opacity=".6"/><stop offset="1" stop-color="#ffd890" stop-opacity="0"/></radialGradient></defs><rect width="400" height="260" fill="url(#v3)"/><rect width="400" height="260" fill="url(#lamp)"/><path d="M180 0 V40" stroke="#c9a06a" stroke-width="2"/><path d="M160 40 h40 l-8 18 h-24z" fill="#d6b57f"/><g transform="translate(0 -46)"><rect x="0" y="180" width="400" height="126" fill="#2a1d14"/><ellipse cx="200" cy="186" rx="170" ry="16" fill="#8a6440"/><g transform="translate(110 150)"><ellipse cx="0" cy="34" rx="34" ry="8" fill="#f3ead8"/><path d="M-26 30 q26 -22 52 0" fill="#d9572f"/><path d="M-20 28 q20 -14 40 0" fill="#f0a24a"/><circle cx="-6" cy="22" r="4" fill="#3e7a3c"/><circle cx="8" cy="24" r="3" fill="#3e7a3c"/></g><g transform="translate(200 150)"><ellipse cx="0" cy="34" rx="40" ry="9" fill="#f3ead8"/><ellipse cx="0" cy="28" rx="30" ry="7" fill="#8e3b23"/><path d="M-22 26 q10 -8 22 -2 q12 -6 22 2" stroke="#d98e4a" stroke-width="3" fill="none"/></g><g transform="translate(290 150)"><ellipse cx="0" cy="34" rx="30" ry="8" fill="#f3ead8"/><path d="M-18 30 a18 14 0 0 1 36 0z" fill="#f7f3ea"/><path d="M-12 30 a12 8 0 0 1 24 0z" fill="#ece3cf"/></g><g transform="translate(60 120)"><path d="M0 0 h16 v40 a8 4 0 0 1 -16 0z" fill="#d6e4e0" opacity=".5"/><path d="M2 14 h12 v24 a6 3 0 0 1 -12 0z" fill="#e3b04b" opacity=".8"/></g></g></svg>
+    <figcaption>한식 석식<small>라운딩 후 따뜻한 한 상</small></figcaption>
+   </figure>
+   <figure class="rv">
+    <svg viewBox="0 0 400 260" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><defs><linearGradient id="v4" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#a9bfb7"/><stop offset="1" stop-color="#e5e9dd"/></linearGradient></defs><rect width="400" height="260" fill="#1a3a26"/><g transform="translate(0 -62)"><rect width="400" height="260" fill="url(#v4)"/><path d="M0 140 L80 90 L150 130 L230 70 L310 120 L400 90 V260 H0Z" fill="#5c7a68"/><g fill="#1f3c2b"><path d="M30 230 l20 -80 l20 80z"/><path d="M70 240 l16 -60 l16 60z"/><path d="M300 236 l22 -90 l22 90z"/><path d="M340 240 l16 -60 l16 60z"/><path d="M110 240 l12 -40 l12 40z"/></g><path d="M0 200 C120 180 260 190 400 206 V260 H0Z" fill="#3b6a3c"/><path d="M60 260 C140 220 240 214 330 260Z" fill="#7fae58"/><ellipse cx="200" cy="240" rx="50" ry="8" fill="#a6d070"/><line x1="210" y1="240" x2="210" y2="206" stroke="#fff" stroke-width="2"/><path d="M211 206 L227 212 L211 218Z" fill="#b8925a"/><g fill="#fff" opacity=".55"><ellipse cx="120" cy="110" rx="80" ry="10"/><ellipse cx="300" cy="96" rx="60" ry="8"/></g></g></svg>
+    <figcaption>고원 코스 · 바기오<small>소나무 숲 사이 고저차 있는 홀</small></figcaption>
+   </figure>
+   <figure class="rv">
+    <svg viewBox="0 0 400 260" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><defs><linearGradient id="v5" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f1e7d2"/><stop offset="1" stop-color="#dccdaa"/></linearGradient><linearGradient id="bag" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#1d4d39"/><stop offset=".5" stop-color="#2f6a50"/><stop offset="1" stop-color="#173f2e"/></linearGradient></defs><rect width="400" height="260" fill="url(#v5)"/><rect x="0" y="200" width="400" height="60" fill="#b99c6c"/><g transform="translate(170 40)"><path d="M10 0 V40 M24 -6 V40 M36 4 V40" stroke="#8b8b8b" stroke-width="4"/><path d="M4 -4 h14 v8 h-14z M18 -12 h14 v8 h-14z M30 -2 h14 v8 h-14z" fill="#3a3a3a"/><rect x="0" y="36" width="50" height="140" rx="16" fill="url(#bag)"/><rect x="0" y="70" width="50" height="10" fill="#b8925a"/><rect x="8" y="100" width="34" height="40" rx="6" fill="#143a2b"/><path d="M50 60 q24 40 0 90" stroke="#b8925a" stroke-width="5" fill="none"/></g><g transform="translate(270 150)"><circle cx="0" cy="40" r="10" fill="#fff"/><circle cx="26" cy="44" r="10" fill="#fff"/><circle cx="12" cy="30" r="10" fill="#f7f4ea"/></g><g transform="translate(80 170)"><path d="M0 30 h70 l-8 12 h-54z" fill="#6b4a2f"/><path d="M6 30 c4-24 54-24 58 0" fill="#f6f1e4"/></g></svg>
+    <figcaption>장비 보관 · 이동<small>공항부터 골프백까지 한 번에</small></figcaption>
+   </figure>
+  </div>
+ </div>
+</section>
+
+<section class="proc">
+ <div class="w">
+  <span class="eb">How it works</span>
+  <h2 class="t rv">상담부터 출발까지 네 단계</h2>
+  <div class="ps">
+   <div class="rv"><span class="n">01</span><b>일정 상담</b><p>원하시는 지역, 날짜, 인원, 실력대를 알려 주세요.</p></div>
+   <div class="rv"><span class="n">02</span><b>견적·일정표</b><p>코스와 숙소를 고른 맞춤 일정표와 견적을 보내 드립니다.</p></div>
+   <div class="rv"><span class="n">03</span><b>예약 확정</b><p>티타임과 숙소를 확정하고 출발 안내문을 드립니다.</p></div>
+   <div class="rv"><span class="n">04</span><b>현지 라운딩</b><p>도착부터 출국까지 현지 매니저가 함께합니다.</p></div>
+  </div>
+ </div>
+</section>
+
+<section class="ask" id="ask">
+ <div class="w">
+  <div>
+   <span class="eb">FAQ</span>
+   <h2 class="t rv">출발 전에<br>많이 물어보시는 것</h2>
+   <div class="faq">
+    <details open><summary>항공권도 함께 예약해 주시나요?<i></i></summary><p>기본 패키지는 항공권이 빠져 있습니다. 원하시면 출발 도시와 날짜에 맞는 항공편을 함께 찾아 견적에 넣어 드립니다.</p></details>
+    <details><summary>골프백은 어떻게 가져가나요?<i></i></summary><p>항공사 수하물 규정에 맞춰 위탁하시면 됩니다. 현지에서는 차량에 골프백 전용 공간을 마련해 이동합니다.</p></details>
+    <details><summary>우기에 비가 오면 라운딩은 어떻게 되나요?<i></i></summary><p>골프장 운영 기준에 따라 진행 여부가 정해집니다. 취소되는 경우 가능한 다른 날짜로 티타임을 옮겨 드립니다.</p></details>
+    <details><summary>동반자 중 골프를 치지 않는 분이 있어요.<i></i></summary><p>라운딩 시간 동안 쇼핑, 마사지, 시내 관광처럼 별도 일정을 짜 드립니다. 상담 때 알려 주세요.</p></details>
+    <details><summary>인원이 많으면 팀을 나눠 진행되나요?<i></i></summary><p>4인 1팀 기준으로 티타임을 연달아 잡아 같은 시간대에 출발하도록 맞춥니다. 차량도 인원에 맞게 배정합니다.</p></details>
+   </div>
+  </div>
+  <form class="form rv" id="fm" onsubmit="return false">
+   <div class="body">
+    <h3>일정 상담 신청</h3>
+    <p>남겨 주신 연락처로 담당 매니저가 일정표와 견적을 보내 드립니다.</p>
+    <div class="fr"><label class="fl"><span>이름</span><input id="fN" placeholder="홍길동"></label><label class="fl"><span>연락처</span><input id="fT" placeholder="000-0000-0000"></label></div>
+    <div class="fr"><label class="fl"><span>희망 지역</span><select id="fR"><option>클락</option><option>세부</option><option>바기오</option><option>아직 모르겠어요</option></select></label><label class="fl"><span>출발 희망 월</span><select><option>12월</option><option>1월</option><option>2월</option><option>3월 이후</option></select></label></div>
+    <div class="fl"><span>인원</span><div class="chips"><label><input type="radio" name="pp"><span>2인</span></label><label><input type="radio" name="pp" checked><span>4인</span></label><label><input type="radio" name="pp"><span>8인</span></label><label><input type="radio" name="pp"><span>12인 이상</span></label></div></div>
+    <label class="fl"><span>요청 사항</span><textarea id="fM" placeholder="예) 하루 36홀 희망, 비라운딩 동반자 1명"></textarea></label>
+    <button class="btn gd" type="button" id="fGo">상담 신청하기</button>
+   </div>
+   <div class="done"><svg viewBox="0 0 64 64"><circle cx="32" cy="32" r="28"/><path d="m20 33 8 8 16-18"/></svg><b>신청이 접수되었습니다</b><p>확인 후 남겨 주신 연락처로 안내드리겠습니다.</p></div>
+  </form>
+ </div>
+</section>
+
+<footer class="ft">
+ <div class="w">
+  <div class="top">
+   <a class="logo" href="#top"><svg viewBox="0 0 40 40"><circle cx="20" cy="20" r="19" fill="none" stroke="#d6b57f" stroke-width="1.2"/><path d="M8 27c5-4 9-5 12-5s8 1 12 5" fill="none" stroke="#d6b57f" stroke-width="1.4"/><path d="M19 22V9l8 3.5-8 3.2" fill="#d6b57f"/><circle cx="14" cy="26.5" r="1.6" fill="#fff"/></svg><span><b>솔바람 골프트래블</b><small>SOLBARAM GOLF</small></span></a>
+   <div class="cols">
+    <div><h5>상담</h5><p>전화 000-0000-0000<br>카카오톡 ID: example<br>평일 09:00 – 18:00</p></div>
+    <div><h5>사무소</h5><p>주소 입력 자리<br>사업자 정보 입력 자리</p></div>
+   </div>
+  </div>
+  <p class="bt2">© SOLBARAM GOLF TRAVEL</p>
+ </div>
+</footer>
+
+<script>
+(function(){
+ var hd=document.getElementById('hd');
+ function sc(){hd.classList.toggle('sc',window.scrollY>40)}
+ window.addEventListener('scroll',sc);sc();
+ var dr=document.getElementById('drawer');
+ document.getElementById('mb').onclick=function(){dr.classList.add('on')};
+ document.getElementById('dx').onclick=function(){dr.classList.remove('on')};
+ dr.querySelectorAll('a').forEach(function(a){a.onclick=function(){dr.classList.remove('on')}});
+ var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12});
+ document.querySelectorAll('.rv').forEach(function(el){io.observe(el)});
+ var fR=document.getElementById('fR'),fM=document.getElementById('fM');
+ document.getElementById('qGo').onclick=function(){
+  fR.value=document.getElementById('qR').value;
+  fM.value=document.getElementById('qD').value+' · '+document.getElementById('qP').value+' 일정으로 견적 요청합니다.';
+  document.getElementById('ask').scrollIntoView({behavior:'smooth'});
+ };
+ document.querySelectorAll('[data-pkg]').forEach(function(b){b.addEventListener('click',function(){
+  var p=b.dataset.pkg;fR.value=p.slice(0,2)==='클락'?'클락':p.slice(0,2)==='세부'?'세부':'바기오';fM.value=p+' 패키지로 상담 원합니다.';
+ })});
+ document.getElementById('fGo').onclick=function(){
+  var n=document.getElementById('fN'),t=document.getElementById('fT');
+  if(!n.value.trim()){n.focus();n.style.borderColor='#c0583a';return}
+  if(!t.value.trim()){t.focus();t.style.borderColor='#c0583a';return}
+  document.getElementById('fm').classList.add('ok');
+ };
+})();
+</script>
+</body>
+</html>
