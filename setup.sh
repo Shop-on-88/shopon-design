@@ -6,7 +6,7 @@ WEB=/var/www/shopon-design
 DOMAIN=design.shoponph.online
 
 mkdir -p "$WEB"
-rsync -a --delete --exclude '.git' --exclude 'setup.sh' --exclude 'update.sh' "$SRC/" "$WEB/"
+rsync -a --delete --exclude '.git' --exclude 'setup.sh' --exclude 'update.sh' --exclude 'server' --exclude 'setup-inquiry.sh' "$SRC/" "$WEB/"
 
 cat > /etc/nginx/sites-available/$DOMAIN <<EOF
 server {
@@ -25,7 +25,7 @@ certbot --nginx -d $DOMAIN --non-interactive --redirect --keep-until-expiring ||
 # 5분마다 저장소 변경을 받아 자동 반영
 cat > $SRC/update.sh <<'EOF'
 #!/usr/bin/env bash
-cd /root/shopon/design && git pull -q && rsync -a --delete --exclude '.git' --exclude 'setup.sh' --exclude 'update.sh' /root/shopon/design/ /var/www/shopon-design/
+cd /root/shopon/design && git pull -q && rsync -a --delete --exclude '.git' --exclude 'setup.sh' --exclude 'update.sh' --exclude 'server' --exclude 'setup-inquiry.sh' /root/shopon/design/ /var/www/shopon-design/
 EOF
 chmod +x $SRC/update.sh
 ( crontab -l 2>/dev/null | grep -v 'shopon/design/update.sh'; echo "*/5 * * * * /root/shopon/design/update.sh >/dev/null 2>&1" ) | crontab -
