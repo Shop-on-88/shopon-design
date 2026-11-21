@@ -1,0 +1,752 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>온기죽집</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;800&family=Noto+Serif+KR:wght@600;700;900&display=swap" rel="stylesheet">
+<style>
+:root{--red:#8b1d12;--red2:#a3261a;--beige:#f6f1ea;--ink:#1c1b1a;--gray:#8d8780;--line:#dedad4;--olive:#5c7a2b;--ochre:#c8892a}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Noto Sans KR',system-ui,sans-serif;color:var(--ink);background:#fff;line-height:1.5;overflow-x:hidden;-webkit-font-smoothing:antialiased;word-break:keep-all}
+button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
+a{color:inherit;text-decoration:none}
+ul{list-style:none}
+svg{display:block}
+.inner{width:100%;max-width:1200px;margin:0 auto;padding:0 20px}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+
+/* s1 header */
+#s1-header{position:absolute;left:0;top:0;width:100%;z-index:20;color:#fff;transition:color .5s}
+#s1-header.dark{color:var(--ink)}
+.hd{display:flex;align-items:center;height:64px;gap:16px}
+.logo{display:flex;align-items:center;gap:8px;font-weight:800;font-size:19px;letter-spacing:-.02em}
+.logo svg{width:34px;height:34px}
+.gnb{display:none}
+.hd-r{margin-left:auto;display:flex;align-items:center;gap:18px}
+.hd-r .util{display:none;font-size:15px}
+.ham{width:30px;height:24px;position:relative}
+.ham i{position:absolute;left:0;width:100%;height:2.5px;background:currentColor;border-radius:2px}
+.ham i:nth-child(1){top:1px}.ham i:nth-child(2){top:11px}.ham i:nth-child(3){top:21px}
+
+/* s2 hero */
+#s2-hero{position:relative;height:480px;overflow:hidden;background:#3b2a1e}
+.slide{position:absolute;inset:0;opacity:0;visibility:hidden;transition:opacity .9s ease,visibility .9s}
+.slide.on{opacity:1;visibility:visible}
+.slide .bg{position:absolute;inset:0}
+.slide .bg svg{width:100%;height:100%}
+.slide .art{position:absolute;right:-130px;bottom:-22px;width:350px;transform:translateX(30px);opacity:0;transition:transform 1.1s ease .15s,opacity 1.1s ease .15s}
+.slide.on .art{transform:none;opacity:1}
+.slide .txt{position:absolute;left:0;top:92px;width:100%;color:#fff}
+.slide.light .txt{color:var(--ink)}
+.tags{display:flex;gap:6px;margin-bottom:12px}
+.tag{background:#fff;color:var(--ink);font-size:12px;font-weight:700;padding:3px 11px;border-radius:20px;box-shadow:0 1px 3px rgba(0,0,0,.12)}
+.slide .lead{font-size:15px;font-weight:500;margin-bottom:8px;opacity:.95}
+.slide h2{font-size:38px;line-height:1.22;font-weight:800;letter-spacing:-.03em;text-shadow:0 2px 10px rgba(0,0,0,.25)}
+.slide.light h2{text-shadow:none}
+.slide h2 em{font-style:normal;color:#ffd27a}
+#s2-hero::after{content:"";position:absolute;left:0;bottom:0;width:100%;height:96px;z-index:4;pointer-events:none;background:linear-gradient(0deg,rgba(20,10,0,.62),rgba(20,10,0,0))}
+#s2-hero.dark::after{background:linear-gradient(0deg,rgba(246,241,234,.96) 30%,rgba(246,241,234,0))}
+.slide.light h2 em{color:var(--red)}
+.pager{position:absolute;left:0;bottom:22px;width:100%;z-index:5}
+.pager .inner{display:flex;align-items:center;gap:12px}
+.pg{font-size:14px;font-weight:400;text-shadow:0 1px 6px rgba(0,0,0,.5);color:rgba(255,255,255,.8);display:flex;align-items:center;gap:10px;letter-spacing:.02em;transition:color .4s}
+#s2-hero.dark .pg{color:rgba(0,0,0,.4);text-shadow:none}
+.pg.on{color:#fff;font-weight:500}
+#s2-hero.dark .pg.on{color:var(--ink)}
+.pg b{display:block;width:0;height:2px;background:rgba(255,255,255,.35);position:relative;overflow:hidden;transition:width .4s;font-weight:400}
+#s2-hero.dark .pg b{background:rgba(0,0,0,.18)}
+.pg.on b{width:56px}
+.pg b::after{content:"";position:absolute;left:0;top:0;height:100%;width:0;background:currentColor}
+.pg.on b::after{animation:prog 4.6s linear forwards}
+.noauto .pg.on b::after{animation:none;width:30%}
+@keyframes prog{to{width:100%}}
+
+/* s3 menu */
+#s3-menu{padding:64px 0 60px;overflow:hidden;position:relative}
+.sec-h{text-align:center}
+.sec-h h2{font-size:30px;font-weight:500;letter-spacing:-.03em}
+.sec-h p{margin-top:10px;font-size:15px;color:#55504b;font-weight:300}
+.mwrap{position:relative;margin-top:34px;padding-top:30px}
+.mwrap .panel{position:absolute;left:0;top:0;width:74%;height:430px;background:var(--beige);overflow:hidden}
+.mwrap .panel svg{position:absolute;left:0;bottom:0;width:130%;height:auto}
+.mgrid{position:relative}
+.tabs{display:flex;gap:22px;overflow-x:auto;scrollbar-width:none;padding:0 20px 18px;margin:0 -20px}
+.tabs::-webkit-scrollbar{display:none}
+.tabs::after{content:"";flex:none;width:1px}
+.tab{flex:none;font-size:17px;font-weight:500;color:#aaa39b;position:relative;white-space:nowrap;transition:color .3s;padding:2px 0}
+.tab.on{color:var(--red);font-weight:700;padding-left:24px}
+.tab.on::before{content:"";position:absolute;left:0;top:50%;width:16px;height:2px;background:var(--red)}
+.poster{position:relative;margin-left:0;aspect-ratio:4/4.7;box-shadow:0 24px 50px rgba(60,40,10,.22);overflow:hidden;background:#d9a11a}
+.poster svg{width:100%;height:100%}
+.poster .pinfo{position:absolute;left:18px;bottom:16px;background:rgba(255,255,255,.94);padding:8px 14px;border-radius:30px;font-size:14px;font-weight:700;display:flex;gap:10px;align-items:center}
+.poster .pinfo span{color:var(--red);font-weight:800}
+.minfo{margin-top:34px}
+.mname{font-family:'Noto Serif KR',serif;font-weight:900;font-size:38px;letter-spacing:-.04em;color:var(--red);line-height:1.2}
+.mname i{font-style:normal;color:var(--olive)}
+.mdesc{margin-top:12px;font-size:16px;color:#3a3633;font-weight:400;line-height:1.7;min-height:54px}
+.arrows{display:flex;gap:10px;margin-top:22px}
+.arw{width:40px;height:40px;border:1px solid #9a948d;border-radius:50%;display:grid;place-items:center;transition:.25s}
+.arw svg{width:14px;height:14px}
+.arw:disabled{opacity:.35;cursor:default}
+.arw:not(:disabled):hover{background:var(--ink);border-color:var(--ink);color:#fff}
+.cards{display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;margin:22px -20px 0;padding:0 20px 6px}
+.cards::-webkit-scrollbar{display:none}
+.card{flex:none;width:186px;scroll-snap-align:start;scroll-margin-left:20px}
+.card .pic{aspect-ratio:31/40;overflow:hidden}
+.card .pic svg{width:100%;height:100%;transition:transform .6s}
+.card:hover .pic svg{transform:scale(1.04)}
+.card .nm{margin-top:12px;font-size:16px;font-weight:700;letter-spacing:-.02em}
+.card .pr{font-size:14px;color:#55504b;margin-top:2px}
+.fade{animation:fd .55s ease both}
+@keyframes fd{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+.mcta{display:flex;gap:10px;margin-top:30px}
+.btn{height:48px;padding:0 24px;border-radius:30px;font-size:15px;font-weight:700;display:inline-flex;align-items:center;gap:8px;border:1px solid var(--ink)}
+.btn svg{width:8px;height:12px}
+.btn.fill{background:var(--red);border-color:var(--red);color:#fff}
+
+/* s4 banners */
+#s4-banners{display:grid;grid-template-columns:1fr}
+.ban{position:relative;height:112px;overflow:hidden;display:block;text-align:left;width:100%}
+.ban.b1{background:#f8ecea}.ban.b2{background:#fbe59a}
+.ban .bi{position:relative;height:100%;display:flex;flex-direction:column;justify-content:center;padding:0 20px;z-index:2}
+.ban p{font-size:15px;font-weight:500;letter-spacing:-.02em}
+.ban p+p{font-weight:800;color:#b3271a;font-size:16px}
+.ban .tags{margin-bottom:5px}.ban .tag{font-size:10px;padding:2px 8px;box-shadow:none;font-weight:500}
+.ban .bart{position:absolute;right:6px;bottom:0;height:100%;width:130px}
+.ban .bart svg{width:100%;height:100%}
+
+/* s5 guide */
+#s5-guide{background:var(--beige);padding:70px 0 70px}
+#s5-guide .sec-h h2{font-weight:700;line-height:1.3}
+.gcards{margin-top:36px;display:grid;gap:14px}
+.gcard{position:relative;aspect-ratio:16/12;overflow:hidden;display:block;width:100%;text-align:left;color:#fff}
+.gcard>svg{position:absolute;inset:0;width:100%;height:100%;transition:transform .8s}
+.gcard:hover>svg{transform:scale(1.05)}
+.gcard::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(20,10,0,0) 28%,rgba(20,10,0,.74) 62%,rgba(20,10,0,.84))}
+.gcard .gt{text-shadow:0 1px 8px rgba(0,0,0,.45)}
+.gcard .gt{position:absolute;left:24px;right:24px;bottom:22px;z-index:2}
+.gcard h3{font-size:24px;font-weight:500;letter-spacing:-.03em}
+.gcard p{font-size:14px;font-weight:300;margin-top:6px;opacity:.92}
+.gcard .more{display:inline-flex;align-items:center;gap:8px;margin-top:12px;font-size:13px;border-bottom:1px solid rgba(255,255,255,.7);padding-bottom:2px}
+.gcard .more svg{width:14px;height:8px}
+
+/* s6 news */
+#s6-news{padding:70px 0 80px}
+.ngrid{display:grid;gap:28px}
+.ngrid h2{font-size:27px;font-weight:500;line-height:1.5;letter-spacing:-.03em;color:#2c2927}
+.nlist{border-top:2px solid var(--ink);border-bottom:2px solid var(--ink)}
+.nlist li+li{border-top:1px solid var(--line)}
+.nrow{display:flex;align-items:center;gap:16px;padding:24px 4px 26px;width:100%;text-align:left}
+.nrow .nb{flex:1;min-width:0}
+.nrow .cat{font-size:13px;color:var(--red)}
+.nrow .tt{font-size:18px;font-weight:500;letter-spacing:-.03em;margin-top:6px;line-height:1.45}
+.nrow .dt{font-size:14px;color:#55504b;margin-top:8px;font-weight:300}
+.nrow>svg{flex:none;width:22px;height:14px;transition:transform .3s}
+.nrow:hover>svg{transform:translateX(6px)}
+
+/* s7 footer */
+#s7-footer{border-top:1px solid var(--line);padding:36px 0 120px;font-size:12px;color:#55504b}
+.f1{display:flex;flex-wrap:wrap;gap:16px 0;align-items:center;justify-content:space-between}
+.tel{display:flex;align-items:center}
+.tel div{display:flex;align-items:baseline;gap:8px}
+.tel div+div{margin-left:14px;padding-left:14px;border-left:1px solid #bbb}
+.tel small{font-size:12px}
+.tel strong{font-size:17px;font-weight:500;color:var(--ink)}
+.fam{position:relative}
+.fam>button{width:190px;height:46px;border-radius:30px;background:#efefef;display:flex;align-items:center;justify-content:space-between;padding:0 20px;font-size:14px;color:#8a8a8a;letter-spacing:.02em}
+.fam>button svg{width:16px;height:16px;color:var(--ink);transition:transform .3s}
+.fam.open>button svg{transform:rotate(45deg)}
+.fam ul{position:absolute;left:0;bottom:54px;width:100%;background:#fff;border:1px solid var(--line);border-radius:14px;padding:8px 0;display:none;box-shadow:0 10px 30px rgba(0,0,0,.1)}
+.fam.open ul{display:block}
+.fam li a{display:block;padding:8px 20px;font-size:13px}
+.flinks{display:flex;flex-wrap:wrap;gap:8px 18px;margin-top:26px}
+.flinks b{font-weight:700;color:var(--ink)}
+.finfo{margin-top:20px;line-height:1.9;font-size:11.5px;color:#77716b}
+.finfo{display:flex;flex-wrap:wrap;gap:8px 0}
+.finfo span{white-space:nowrap;line-height:1;padding-right:9px;margin-right:9px;border-right:1px solid #c4c0ba}
+.finfo div{flex:0 0 100%;display:flex}
+.finfo div span:last-child{border-right:0;margin-right:0;padding-right:0}
+.finfo p{flex:0 0 100%;line-height:1.4}
+.sns{display:flex;gap:12px;margin-top:20px}
+.sns button{width:40px;height:40px;border-radius:50%;background:#111;color:#fff;display:grid;place-items:center}
+.sns svg{width:20px;height:20px}
+
+/* s8 quickbar */
+#s8-quickbar{position:fixed;left:50%;bottom:14px;transform:translateX(-50%);z-index:50;width:calc(100% - 20px);max-width:1030px;height:58px;border-radius:40px;background:rgba(255,255,255,.93);backdrop-filter:blur(8px);box-shadow:0 8px 34px rgba(40,30,20,.2);display:flex;align-items:center;padding:0 8px 0 4px;gap:8px}
+.qlinks{flex:1;min-width:0;display:flex;overflow-x:auto;scrollbar-width:none;-webkit-mask-image:linear-gradient(90deg,#000 82%,transparent);mask-image:linear-gradient(90deg,#000 82%,transparent);border-radius:40px 0 0 40px}
+.qlinks::-webkit-scrollbar{display:none}
+.qlinks a{flex:none;padding:10px 12px;font-size:14px;font-weight:500;white-space:nowrap;letter-spacing:-.02em}
+.qlinks a:first-child{padding-left:20px}
+.qlinks a:last-child{padding-right:30px}
+.qlinks a.on{color:var(--red);font-weight:700}
+.qsearch{flex:none;width:42px;height:42px;border-radius:50%;background:#000;color:#fff;display:grid;place-items:center}
+.qsearch svg{width:18px;height:18px}
+.qorder{flex:none;height:42px;border-radius:30px;background:var(--red);color:#fff;font-size:14px;font-weight:500;padding:0 16px 0 18px;display:flex;align-items:center;gap:8px;transition:background .25s}
+.qorder:hover{background:var(--red2)}
+.qorder svg{width:7px;height:11px}
+
+/* overlays */
+.dim{position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:80;opacity:0;visibility:hidden;transition:.3s}
+.dim.on{opacity:1;visibility:visible}
+.sheet{position:fixed;left:50%;bottom:0;transform:translate(-50%,105%);width:100%;max-width:520px;background:#fff;z-index:90;border-radius:24px 24px 0 0;padding:26px 22px 30px;transition:transform .38s cubic-bezier(.2,.8,.2,1),visibility .38s;visibility:hidden}
+.sheet.on{transform:translate(-50%,0);visibility:visible}
+.sheet h3{font-size:21px;font-weight:700;letter-spacing:-.03em}
+.sheet .sd{font-size:14px;color:#66605a;margin-top:6px}
+.sheet .x{position:absolute;right:16px;top:16px;width:36px;height:36px;display:grid;place-items:center}
+.sheet .x svg{width:16px;height:16px}
+.opts{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:20px}
+.opt{border:1.5px solid var(--line);border-radius:16px;padding:16px 6px 14px;display:flex;flex-direction:column;align-items:center;gap:8px;font-size:14px;font-weight:700;transition:.2s}
+.opt svg{width:34px;height:34px;color:#55504b}
+.opt.on{border-color:var(--red);background:#fbf1ef;color:var(--red)}
+.opt.on svg{color:var(--red)}
+.sheet .go{margin-top:18px;width:100%;height:52px;border-radius:30px;background:var(--red);color:#fff;font-weight:700;font-size:16px}
+.sform{display:flex;gap:8px;margin-top:18px}
+.sform input{flex:1;min-width:0;height:50px;border:1.5px solid var(--ink);border-radius:30px;padding:0 20px;font:inherit;font-size:16px;outline:0}
+.sform button{flex:none;width:50px;height:50px;border-radius:50%;background:#000;color:#fff;display:grid;place-items:center}
+.sform svg{width:18px;height:18px}
+.sres{margin-top:14px;min-height:96px}
+.sres li button{display:flex;justify-content:space-between;width:100%;padding:11px 4px;border-bottom:1px solid var(--line);font-size:15px}
+.sres li span{color:var(--red);font-weight:700}
+.sres p{font-size:14px;color:#8d8780;padding:12px 4px}
+.regions{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
+.regions button{padding:8px 16px;border-radius:20px;border:1px solid var(--line);font-size:14px}
+.regions button.on{background:var(--ink);color:#fff;border-color:var(--ink)}
+.rmsg{margin-top:16px;background:var(--beige);border-radius:14px;padding:18px;font-size:14px;color:#55504b}
+.allmenu{position:fixed;inset:0;background:#fff;z-index:95;transform:translateX(100%);transition:transform .4s cubic-bezier(.2,.8,.2,1);overflow-y:auto;visibility:hidden}
+.allmenu.on{transform:none;visibility:visible}
+.allmenu .hd{color:var(--ink)}
+.amx{width:30px;height:30px;display:grid;place-items:center}
+.amx svg{width:22px;height:22px}
+.amlist{padding:10px 0 60px;display:grid;gap:0}
+.amlist>li{border-top:1px solid var(--line);padding:22px 0}
+.amlist h4{font-size:22px;font-weight:700;letter-spacing:-.03em}
+.amlist ul{display:flex;flex-wrap:wrap;gap:10px 22px;margin-top:12px}
+.amlist ul a{font-size:15px;color:#55504b}
+.rv{opacity:0;transform:translateY(34px);transition:opacity .8s ease,transform .8s ease}
+.rv.in{opacity:1;transform:none}
+.noanim .rv{opacity:1;transform:none;transition:none}
+
+@media(min-width:1024px){
+ .inner{padding:0 40px}
+ .hd{height:92px}
+ .logo{font-size:24px}.logo svg{width:44px;height:44px}
+ .gnb{display:flex;gap:56px;margin-left:150px;font-size:18px;font-weight:500}
+ .hd-r .util{display:block}
+ .hd-r{gap:30px}
+ #s2-hero{height:600px}
+ #s2-hero::after{display:none}
+ .tabs::after{display:none}
+ .slide .txt{top:190px}
+ .slide .txt .inner{padding-left:160px}
+ .tag{font-size:15px;padding:4px 14px}
+ .slide .lead{font-size:20px;margin-bottom:14px}
+ .slide h2{font-size:64px}
+ .slide .art{width:700px;right:calc(50% - 640px);bottom:-40px}
+ .pager{bottom:48px}
+ .pg{font-size:16px}.pg.on b{width:70px}
+ #s3-menu{padding:120px 0 120px}
+ .sec-h h2{font-size:48px}.sec-h p{font-size:20px;margin-top:22px}
+ .mwrap{margin-top:60px;padding-top:110px;padding-bottom:110px}
+ .mwrap .panel{width:45%;height:100%}
+ .mwrap .panel svg{width:100%}
+ .mgrid{display:grid;grid-template-columns:150px 480px minmax(0,1fr);column-gap:50px;align-items:start}
+ .tabs{flex-direction:column;gap:17px;overflow:visible;padding:8px 0 0;margin:0;align-items:flex-start}
+ .tab{font-size:19px;padding-left:30px}
+ .tab.on{padding-left:30px}
+ .tab.on::before{width:20px}
+ .poster{margin:0;aspect-ratio:auto;height:600px}
+ .minfo{margin-top:26px;min-width:0}
+ .mname{font-size:52px}
+ .mdesc{font-size:19px;margin-top:22px;min-height:66px}
+ .arrows{margin-top:44px}
+ .cards{gap:30px;margin:26px calc((100vw - 1200px)/-2 - 40px) 0 0;padding:0 40px 6px 0;scroll-snap-type:none}
+ .card{width:270px}
+ .card .nm{font-size:18px}
+ .mcta{position:absolute;left:230px;bottom:-78px;margin:0}
+ #s4-banners{grid-template-columns:1fr 1fr}
+ .ban{height:145px}
+ .ban .bi{padding:0 0 0 calc((100vw - 1200px)/2 + 40px)}
+ .ban.b2 .bi{padding-left:70px}
+ .ban p{font-size:21px}.ban p+p{font-size:21px}
+ .ban .tag{font-size:12px;padding:3px 10px}
+ .ban .bart{width:230px;right:40px}
+ .ban.b2 .bart{right:calc((100vw - 1200px)/2 + 40px)}
+ #s5-guide{padding:150px 0 110px}
+ #s5-guide .sec-h h2{font-size:44px}
+ #s5-guide .gcards{max-width:1380px}
+ .gcards{grid-template-columns:repeat(3,1fr);gap:2px;margin-top:70px;padding-bottom:68px}
+ .gcard{aspect-ratio:auto;height:560px}
+ .gcard:nth-child(2){top:68px}
+ .gcard .gt{left:54px;bottom:60px}
+ .gcard h3{font-size:30px}.gcard p{font-size:16px}
+ #s6-news{padding:130px 0 170px}
+ .ngrid{grid-template-columns:1fr 1.25fr;gap:80px}
+ .ngrid h2{font-size:38px;line-height:1.65}
+ .nrow{padding:36px 20px 40px 0}
+ .nrow .cat{font-size:16px}.nrow .tt{font-size:25px;margin-top:10px}.nrow .dt{font-size:18px;margin-top:14px}
+ #s7-footer{padding:50px 0 130px}
+ .tel strong{font-size:21px}
+ .fam>button{width:214px;height:54px;font-size:17px}
+ .flinks{font-size:13px;margin-top:34px}
+ .finfo div{flex:none}
+ .finfo div:first-child span:last-child{border-right:1px solid #c4c0ba;margin-right:9px;padding-right:9px}
+ #s8-quickbar{height:74px;padding:0 10px 0 14px;bottom:28px}
+ .qlinks{justify-content:space-between;-webkit-mask-image:none;mask-image:none;padding-right:16px}
+ .qlinks a{font-size:16px;padding:10px 15px}
+ .qlinks a:last-child{padding-right:15px}
+ .qsearch{width:46px;height:46px}
+ .qorder{height:46px;font-size:16px;padding:0 22px 0 24px;gap:12px}
+ .amlist{grid-template-columns:repeat(3,1fr);column-gap:40px}
+}
+@media(min-width:1024px) and (max-width:1280px){
+ .cards{margin-right:-40px}
+ .ban .bi{padding-left:40px}
+ .ban.b2 .bart{right:40px}
+ .slide .art{right:-20px}
+ .slide .txt .inner{padding-left:40px}
+}
+</style>
+</head>
+<body>
+
+<header id="s1-header">
+  <div class="inner hd">
+    <a href="#s2-hero" class="logo" aria-label="온기죽집">
+      <svg viewBox="0 0 48 48" aria-hidden="true"><path d="M17 6c-3 4 3 6 0 11M25 4c-3 4 3 7 0 13M33 6c-3 4 3 6 0 11" fill="none" stroke="#c8892a" stroke-width="2.6" stroke-linecap="round"/><path d="M5 23h38c0 10-7 18-19 18S5 33 5 23z" fill="currentColor"/><path d="M12 27c2 6 6 9 12 10" fill="none" stroke="#c8892a" stroke-width="2.4" stroke-linecap="round"/><rect x="16" y="41" width="16" height="3.5" rx="1.7" fill="currentColor"/></svg>
+      <span>온기죽집</span>
+    </a>
+    <nav class="gnb" aria-label="주 메뉴">
+      <a href="#s3-menu">메뉴</a><a href="#s5-guide" data-sheet="store">매장</a><a href="#s4-banners">이벤트</a><a href="#s5-guide">선물하기</a><a href="#s6-news">이용안내</a>
+    </nav>
+    <div class="hd-r">
+      <a class="util" href="#s6-news">고객센터</a>
+      <a class="util" href="#s7-footer">소식</a>
+      <button class="ham" id="hamBtn" aria-label="전체 메뉴 열기"><i></i><i></i><i></i></button>
+    </div>
+  </div>
+</header>
+
+<main>
+<section id="s2-hero" aria-label="주요 소식">
+  <div class="slide on" data-tone="light-text">
+    <div class="bg" id="bg1"></div>
+    <div class="art" id="art1"></div>
+    <div class="txt"><div class="inner">
+      <div class="tags"><span class="tag">전통죽</span><span class="tag">영양죽</span></div>
+      <p class="lead">천천히 오래 끓여 속까지 편안하게</p>
+      <h2>오늘 한 끼,<br><em>따뜻하게</em> 드세요</h2>
+    </div></div>
+  </div>
+  <div class="slide light" data-tone="dark-text">
+    <div class="bg" id="bg2"></div>
+    <div class="art" id="art2"></div>
+    <div class="txt"><div class="inner">
+      <div class="tags"><span class="tag">덮밥</span><span class="tag">비빔밥</span></div>
+      <p class="lead">갓 지은 밥 위에 넉넉하게 올린</p>
+      <h2>점심엔 <em>덮밥</em>,<br>한 끼가 가볍게</h2>
+    </div></div>
+  </div>
+  <div class="slide" data-tone="light-text">
+    <div class="bg" id="bg3"></div>
+    <div class="art" id="art3"></div>
+    <div class="txt"><div class="inner">
+      <div class="tags"><span class="tag">포장</span><span class="tag">선물</span></div>
+      <p class="lead">아픈 날에도, 고마운 날에도</p>
+      <h2><em>마음</em>을 전하는<br>죽 선물 꾸러미</h2>
+    </div></div>
+  </div>
+  <div class="pager"><div class="inner" id="pager"></div></div>
+</section>
+
+<section id="s3-menu">
+  <div class="inner sec-h rv">
+    <h2>메뉴 소개</h2>
+    <p>분류를 고르면 대표 메뉴와 가격을 볼 수 있어요.</p>
+  </div>
+  <div class="mwrap rv">
+    <div class="panel"><svg viewBox="0 0 700 420" aria-hidden="true"><path d="M-40 250C200 170 420 330 760 150M-40 300C160 250 380 420 720 250M-20 120C120 220 300 260 520 430" fill="none" stroke="#e4dbcb" stroke-width="1.4"/></svg></div>
+    <div class="inner mgrid">
+      <div class="tabs" id="tabs" role="tablist"></div>
+      <div class="poster" id="poster"></div>
+      <div class="minfo">
+        <div id="minfo">
+          <h3 class="mname" id="mname"></h3>
+          <p class="mdesc" id="mdesc"></p>
+        </div>
+        <div class="arrows">
+          <button class="arw" id="prev" aria-label="이전 메뉴" disabled><svg viewBox="0 0 14 14"><path d="M9.5 1.5L4 7l5.5 5.5" fill="none" stroke="currentColor" stroke-width="1.3"/></svg></button>
+          <button class="arw" id="next" aria-label="다음 메뉴"><svg viewBox="0 0 14 14"><path d="M4.5 1.5L10 7l-5.5 5.5" fill="none" stroke="currentColor" stroke-width="1.3"/></svg></button>
+        </div>
+        <div class="cards" id="cards"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="s4-banners" aria-label="혜택 안내">
+  <button class="ban b1" data-sheet="order">
+    <div class="bi"><p>포장 주문은 미리,</p><p>전화 한 통이면 바로 준비</p></div>
+    <div class="bart" id="bart1"></div>
+  </button>
+  <button class="ban b2" data-go="덮밥">
+    <div class="bi"><div class="tags"><span class="tag">덮밥</span><span class="tag">새 메뉴</span></div><p>반은 죽, 반은 덮밥으로</p><p>둘 다 즐기는 반반 한 그릇</p></div>
+    <div class="bart" id="bart2"></div>
+  </button>
+</section>
+
+<section id="s5-guide">
+  <div class="inner sec-h rv">
+    <h2>드시는 방법도<br>편한 대로 고르세요</h2>
+    <p>매장 · 단체 · 선물, 필요한 안내를 한곳에 모았어요</p>
+  </div>
+  <div class="inner gcards">
+    <button class="gcard rv" data-sheet="store"><span id="g1"></span><div class="gt"><h3>매장 찾기</h3><p>가까운 온기죽집을<br>지역별로 찾아보세요.</p><span class="more">자세히보기<svg viewBox="0 0 14 8"><path d="M0 4h13M9.5 .8L13 4 9.5 7.2" fill="none" stroke="currentColor"/></svg></span></div></button>
+    <button class="gcard rv" data-sheet="group"><span id="g2"></span><div class="gt"><h3>단체 주문</h3><p>모임과 행사에 맞춰<br>넉넉하게 준비해 드립니다.</p><span class="more">자세히보기<svg viewBox="0 0 14 8"><path d="M0 4h13M9.5 .8L13 4 9.5 7.2" fill="none" stroke="currentColor"/></svg></span></div></button>
+    <button class="gcard rv" data-sheet="gift"><span id="g3"></span><div class="gt"><h3>선물하기</h3><p>보자기에 곱게 싸서<br>마음까지 함께 전합니다.</p><span class="more">자세히보기<svg viewBox="0 0 14 8"><path d="M0 4h13M9.5 .8L13 4 9.5 7.2" fill="none" stroke="currentColor"/></svg></span></div></button>
+  </div>
+</section>
+
+<section id="s6-news">
+  <div class="inner ngrid">
+    <h2 class="rv">온기죽집에서<br>알려 드립니다</h2>
+    <ul class="nlist rv">
+      <li><button class="nrow" data-sheet="news"><div class="nb"><div class="cat">공지사항</div><div class="tt">겨울철 영업시간 및 포장 주문 마감 시간 안내</div><div class="dt">2026.11.18</div></div><svg viewBox="0 0 22 14"><path d="M0 7h20M14 1l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></button></li>
+      <li><button class="nrow" data-sheet="news"><div class="nb"><div class="cat">새 메뉴</div><div class="tt">제철 단호박으로 끓인 단호박죽이 돌아왔습니다</div><div class="dt">2026.11.10</div></div><svg viewBox="0 0 22 14"><path d="M0 7h20M14 1l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></button></li>
+      <li><button class="nrow" data-sheet="news"><div class="nb"><div class="cat">이용안내</div><div class="tt">단체 주문 예약 방법이 더 간편하게 바뀝니다</div><div class="dt">2026.10.30</div></div><svg viewBox="0 0 22 14"><path d="M0 7h20M14 1l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></button></li>
+    </ul>
+  </div>
+</section>
+</main>
+
+<footer id="s7-footer">
+  <div class="inner">
+    <div class="f1">
+      <div class="tel"><div><small>대표전화</small><strong>준비 중</strong></div><div><small>단체주문</small><strong>준비 중</strong></div></div>
+      <div class="fam" id="fam"><button aria-expanded="false">QUICK LINK<svg viewBox="0 0 16 16"><path d="M8 1v14M1 8h14" stroke="currentColor" stroke-width="1.6"/></svg></button>
+        <ul><li><a href="#s3-menu">메뉴 소개</a></li><li><a href="#s5-guide">매장 찾기</a></li><li><a href="#s6-news">소식</a></li></ul></div>
+    </div>
+    <div class="flinks"><a href="#s2-hero">가게 소개</a><a href="#s7-footer">이용약관</a><a href="#s7-footer"><b>개인정보처리방침</b></a><a href="#s3-menu">메뉴 소개</a><a href="#s5-guide">매장 찾기</a><a href="#s5-guide">단체 주문</a><a href="#s6-news">고객센터</a></div>
+    <div class="finfo"><div><span>온기죽집</span><span>주소 : 준비 중</span><span>대표자명 : 준비 중</span></div><div><span>사업자등록번호 : 준비 중</span><span>문의 : 준비 중</span></div><p>copyright 온기죽집. all rights reserved.</p></div>
+    <div class="sns">
+      <button aria-label="사진 소식"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"><path d="M2.5 6.5h3.2l1.5-2.2h5.6l1.5 2.2h3.2v9.5h-15z"/><circle cx="10" cy="11" r="3"/></svg></button>
+      <button aria-label="영상 소식"><svg viewBox="0 0 20 20"><path d="M7 4.2v11.6l9.4-5.8z" fill="currentColor"/></svg></button>
+    </div>
+  </div>
+</footer>
+
+<nav id="s8-quickbar" aria-label="바로가기">
+  <div class="qlinks" id="qlinks">
+    <a href="#s3-menu" class="on">메뉴 보기</a><a href="#s5-guide" data-sheet="store">매장 찾기</a><a href="#s3-menu" data-go="전통죽">전통죽</a><a href="#s3-menu" data-go="덮밥">덮밥</a><a href="#s3-menu" data-go="비빔밥">비빔밥</a><a href="#s5-guide" data-sheet="group">단체 주문</a><a href="#s5-guide" data-sheet="gift">선물하기</a><a href="#s6-news">소식</a>
+  </div>
+  <button class="qsearch" data-sheet="search" aria-label="메뉴 검색"><svg viewBox="0 0 18 18"><circle cx="7.6" cy="7.6" r="5.8" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M12 12l4.6 4.6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></button>
+  <button class="qorder" data-sheet="order">주문하기<svg viewBox="0 0 7 11"><path d="M1 1l4.5 4.5L1 10" fill="none" stroke="currentColor" stroke-width="1.5"/></svg></button>
+</nav>
+
+<div class="dim" id="dim"></div>
+
+<div class="sheet" id="sh-order" role="dialog" aria-label="주문하기">
+  <button class="x" data-close aria-label="닫기"><svg viewBox="0 0 16 16"><path d="M1 1l14 14M15 1L1 15" stroke="currentColor" stroke-width="1.6"/></svg></button>
+  <h3>주문하기</h3><p class="sd">어떻게 받으실지 골라 주세요.</p>
+  <div class="opts" id="opts">
+    <button class="opt on"><svg viewBox="0 0 34 34" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="25" r="4"/><circle cx="27" cy="25" r="4"/><path d="M12 25h11M23 25l-3-12h-5M20 13h5l3 8M6 14h7l2 7"/></svg>배달</button>
+    <button class="opt"><svg viewBox="0 0 34 34" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M7 12h20l-2 18H9z"/><path d="M12 12c0-4 2-7 5-7s5 3 5 7"/></svg>포장</button>
+    <button class="opt"><svg viewBox="0 0 34 34" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M5 15h24c0 7-5 12-12 12S5 22 5 15zM12 30h10M13 10c-1-2 1-3 0-5M19 10c-1-2 1-3 0-5"/></svg>매장 이용</button>
+  </div>
+  <button class="go" id="goMenu">메뉴 고르러 가기</button>
+</div>
+
+<div class="sheet" id="sh-search" role="dialog" aria-label="메뉴 검색">
+  <button class="x" data-close aria-label="닫기"><svg viewBox="0 0 16 16"><path d="M1 1l14 14M15 1L1 15" stroke="currentColor" stroke-width="1.6"/></svg></button>
+  <h3>메뉴 검색</h3>
+  <form class="sform" id="sform"><input id="sq" type="text" placeholder="예) 전복죽, 덮밥" autocomplete="off" aria-label="메뉴 이름"><button aria-label="검색"><svg viewBox="0 0 18 18"><circle cx="7.6" cy="7.6" r="5.8" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M12 12l4.6 4.6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></button></form>
+  <ul class="sres" id="sres"></ul>
+</div>
+
+<div class="sheet" id="sh-store" role="dialog" aria-label="매장 찾기">
+  <button class="x" data-close aria-label="닫기"><svg viewBox="0 0 16 16"><path d="M1 1l14 14M15 1L1 15" stroke="currentColor" stroke-width="1.6"/></svg></button>
+  <h3>매장 찾기</h3><p class="sd">지역을 고르면 가까운 매장을 안내해 드립니다.</p>
+  <div class="regions" id="regions"><button class="on">전체</button><button>서울</button><button>경기</button><button>인천</button><button>강원</button><button>충청</button><button>전라</button><button>경상</button><button>제주</button></div>
+  <div class="rmsg" id="rmsg">전체 지역 매장 정보는 준비 중입니다.</div>
+</div>
+
+<div class="sheet" id="sh-info" role="dialog" aria-label="안내">
+  <button class="x" data-close aria-label="닫기"><svg viewBox="0 0 16 16"><path d="M1 1l14 14M15 1L1 15" stroke="currentColor" stroke-width="1.6"/></svg></button>
+  <h3 id="infoT"></h3><p class="sd" id="infoD"></p>
+  <button class="go" data-close>확인</button>
+</div>
+
+<div class="allmenu" id="allmenu" role="dialog" aria-label="전체 메뉴">
+  <div class="inner">
+    <div class="hd"><span class="logo"><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M17 6c-3 4 3 6 0 11M25 4c-3 4 3 7 0 13M33 6c-3 4 3 6 0 11" fill="none" stroke="#c8892a" stroke-width="2.6" stroke-linecap="round"/><path d="M5 23h38c0 10-7 18-19 18S5 33 5 23z" fill="currentColor"/><path d="M12 27c2 6 6 9 12 10" fill="none" stroke="#c8892a" stroke-width="2.4" stroke-linecap="round"/><rect x="16" y="41" width="16" height="3.5" rx="1.7" fill="currentColor"/></svg><span>온기죽집</span></span>
+      <div class="hd-r"><button class="amx" id="amClose" aria-label="전체 메뉴 닫기"><svg viewBox="0 0 22 22"><path d="M2 2l18 18M20 2L2 20" stroke="currentColor" stroke-width="2"/></svg></button></div></div>
+    <ul class="amlist">
+      <li><h4>메뉴</h4><ul><li><a href="#s3-menu" data-go="전통죽">전통죽</a></li><li><a href="#s3-menu" data-go="영양죽">영양죽</a></li><li><a href="#s3-menu" data-go="덮밥">덮밥</a></li><li><a href="#s3-menu" data-go="비빔밥">비빔밥</a></li><li><a href="#s3-menu" data-go="국·탕">국·탕</a></li><li><a href="#s3-menu" data-go="곁들임">곁들임</a></li></ul></li>
+      <li><h4>주문하기</h4><ul><li><a href="#" data-sheet="order">배달</a></li><li><a href="#" data-sheet="order">포장</a></li><li><a href="#" data-sheet="order">매장 이용</a></li><li><a href="#" data-sheet="group">단체 주문</a></li></ul></li>
+      <li><h4>매장</h4><ul><li><a href="#" data-sheet="store">매장 찾기</a></li></ul></li>
+      <li><h4>선물하기</h4><ul><li><a href="#" data-sheet="gift">죽 선물 꾸러미</a></li></ul></li>
+      <li><h4>이벤트</h4><ul><li><a href="#s4-banners">진행 중인 혜택</a></li></ul></li>
+      <li><h4>고객센터</h4><ul><li><a href="#s6-news">공지사항</a></li><li><a href="#s7-footer">이용안내</a></li></ul></li>
+    </ul>
+  </div>
+</div>
+
+<script>
+(function(){
+var SHOT=!!window.__SHOT;
+if(SHOT)document.documentElement.classList.add('noanim','noauto');
+var $=function(s,r){return (r||document).querySelector(s)},$$=function(s,r){return [].slice.call((r||document).querySelectorAll(s))};
+
+/* ---------- 그릇 그림 생성기 ---------- */
+var uid=0;
+function rng(seed){var s=seed>>>0;return function(){s=(s*1664525+1013904223)>>>0;return s/4294967296}}
+function pick(v,r){return Array.isArray(v)?v[Math.floor(r()*v.length)]:v}
+var RIM={white:['#ffffff','#ddd6ca','#f4efe6','#cfc7b9'],dark:['#4a433d','#1c1917','#2b2622','#0f0d0c'],brass:['#f3d88f','#b08430','#d9b25c','#8f6a22'],celadon:['#dfe9de','#9fb3a2','#c7d6c7','#8aa08d']};
+function bowl(spec){
+  var r=rng(spec.seed||7),id='b'+(uid++),R=RIM[spec.rim||'white'],o='';
+  o+='<defs><radialGradient id="'+id+'f" cx="40%" cy="34%" r="78%"><stop offset="0" stop-color="'+spec.base[0]+'"/><stop offset="1" stop-color="'+spec.base[1]+'"/></radialGradient>'
+   +'<radialGradient id="'+id+'r" cx="32%" cy="26%" r="90%"><stop offset="0" stop-color="'+R[0]+'"/><stop offset="1" stop-color="'+R[1]+'"/></radialGradient>'
+   +'<linearGradient id="'+id+'w" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="'+R[3]+'"/><stop offset="1" stop-color="'+R[2]+'"/></linearGradient>'
+   +'<radialGradient id="'+id+'s"><stop offset=".72" stop-color="rgba(30,18,5,.34)"/><stop offset="1" stop-color="rgba(30,18,5,0)"/></radialGradient>'
+   +'<radialGradient id="'+id+'v"><stop offset=".7" stop-color="rgba(0,0,0,0)"/><stop offset="1" stop-color="rgba(40,20,0,.28)"/></radialGradient>'
+   +'<clipPath id="'+id+'c"><circle r="80"/></clipPath></defs>';
+  o+='<ellipse cx="9" cy="14" rx="124" ry="120" fill="url(#'+id+'s)"/>';
+  o+='<circle r="100" fill="url(#'+id+'r)"/><circle r="100" fill="none" stroke="rgba(0,0,0,.08)"/>';
+  o+='<circle r="87" fill="url(#'+id+'w)"/><circle r="80" fill="url(#'+id+'f)"/>';
+  o+='<g clip-path="url(#'+id+'c)">';
+  (spec.L||[]).forEach(function(L){o+=layer(L,r)});
+  o+='<circle r="80" fill="url(#'+id+'v)"/></g>';
+  o+='<path d="M-92 -22A95 95 0 0 1 -30 -90" fill="none" stroke="rgba(255,255,255,'+(spec.rim==='dark'?'.22':'.9')+')" stroke-width="3" stroke-linecap="round"/>';
+  return o;
+}
+function pos(L,r){var a0=(L.a0||0),a1=(L.a1==null?360:L.a1),r0=L.r0||0,r1=L.r1==null?72:L.r1;
+  var a=(a0+r()*(a1-a0))*Math.PI/180,rad=Math.sqrt(r0*r0+r()*(r1*r1-r0*r0));return [Math.cos(a)*rad,Math.sin(a)*rad]}
+function f1(n){return Math.round(n*10)/10}
+function layer(L,r){
+  var o='',i,p,rot,s,fill,st;
+  if(L.t==='wedge'){var a0=L.a0*Math.PI/180,a1=L.a1*Math.PI/180,R=L.r1||82;
+    return '<path d="M0 0L'+f1(Math.cos(a0)*R)+' '+f1(Math.sin(a0)*R)+'A'+R+' '+R+' 0 '+((L.a1-L.a0)>180?1:0)+' 1 '+f1(Math.cos(a1)*R)+' '+f1(Math.sin(a1)*R)+'Z" fill="'+L.fill+'"/>'}
+  if(L.t==='disc')return '<circle cx="'+(L.x||0)+'" cy="'+(L.y||0)+'" r="'+L.r+'" fill="'+L.fill+'"'+(L.op?' opacity="'+L.op+'"':'')+'/>';
+  if(L.t==='hl')return '<path d="M-58 -30C-40 -58 -8 -66 22 -60" fill="none" stroke="rgba(255,255,255,'+(L.op||.3)+')" stroke-width="5" stroke-linecap="round"/><path d="M36 44C48 36 56 24 58 12" fill="none" stroke="rgba(255,255,255,'+((L.op||.3)*.6)+')" stroke-width="3" stroke-linecap="round"/>';
+  if(L.t==='swirl')return '<path d="M-34 6C-30 -30 20 -38 34 -8C44 16 16 36 -6 26C-22 18 -14 -6 4 -6" fill="none" stroke="'+L.stroke+'" stroke-width="'+(L.sw||4)+'" stroke-linecap="round" opacity="'+(L.op||.85)+'"/>';
+  if(L.t==='kimchi'){for(i=0;i<6;i++){var kx=-46+i*18.5,ky=(i%2?4:-4),kr=-14+Math.round(r()*10),j;
+    o+='<g transform="translate('+kx+' '+ky+') rotate('+kr+')"><rect x="-15" y="-34" width="30" height="68" rx="10" fill="rgba(60,10,0,.25)" transform="translate(-3 2)"/><rect x="-15" y="-34" width="30" height="68" rx="10" fill="#cf3f1e" stroke="#8f230c" stroke-width="1.2"/>';
+    for(j=0;j<7;j++){var yy=-24+j*8.5;o+='<path d="M-12 '+yy+'Q0 '+(yy-8)+' 12 '+yy+'" fill="none" stroke="'+(j%2?'#f08a5a':'#f8ead0')+'" stroke-width="'+(j%2?1.6:4.2)+'" stroke-linecap="round"/>'}
+    o+='<path d="M-12 -26Q0 -40 12 -26" fill="none" stroke="#6fa040" stroke-width="3.5" stroke-linecap="round"/><path d="M-9 30Q0 22 9 30" fill="none" stroke="#fff6e6" stroke-width="5" stroke-linecap="round"/></g>'}return o}
+  if(L.t==='zig'){var d='M-46 -30';for(i=0;i<9;i++)d+='L'+(i%2?-46:46)+' '+(-22+i*7);return '<path d="'+d+'" transform="rotate('+(L.rot||-18)+')" fill="none" stroke="'+L.stroke+'" stroke-width="'+(L.sw||3)+'" stroke-linecap="round" stroke-linejoin="round" opacity=".92"/>'}
+  if(L.t==='egg'){var x=L.x||0,y=L.y||0,k=L.s||1;
+    return '<g transform="translate('+x+' '+y+') scale('+k+')"><path d="M-24 -6C-28 -22 -8 -30 6 -25C22 -30 32 -12 26 2C32 18 14 30 0 24C-16 30 -30 14 -24 -6Z" fill="#fffdf6" stroke="#eadfc6" stroke-width="1"/><path d="M-20 4C-22 14 -12 22 -2 20" fill="none" stroke="#f1e2bd" stroke-width="2" opacity=".8"/><circle cx="1" cy="-2" r="11.5" fill="#f6a81c"/><circle cx="1" cy="-2" r="11.5" fill="none" stroke="#e58c0c" stroke-width="1"/><ellipse cx="-3" cy="-6.5" rx="4" ry="2.4" fill="#ffe08a" opacity=".9"/></g>'}
+  if(L.t==='yolk'){return '<g transform="translate('+(L.x||0)+' '+(L.y||0)+')"><circle r="'+(L.r||11)+'" fill="#f6a81c" stroke="#e58c0c"/><ellipse cx="-3.5" cy="-4" rx="4" ry="2.4" fill="#ffe08a" opacity=".9"/></g>'}
+  for(i=0;i<L.n;i++){
+    p=pos(L,r);rot=L.rot==null?Math.round(r()*360):L.rot+Math.round((r()-.5)*(L.rj||30));s=1+(r()-.5)*(L.sv==null?.5:L.sv);
+    fill=pick(L.fill,r);st=L.stroke?' stroke="'+pick(L.stroke,r)+'" stroke-width="'+(L.sw||.7)+'"':'';
+    var tr=' transform="translate('+f1(p[0])+' '+f1(p[1])+') rotate('+rot+') scale('+f1(s)+')"';
+    switch(L.t){
+      case 'ell':o+='<ellipse rx="'+L.rx+'" ry="'+L.ry+'" fill="'+fill+'"'+st+tr+'/>';
+        if(L.hi)o+='<ellipse cx="'+(-L.rx*.25)+'" cy="'+(-L.ry*.3)+'" rx="'+L.rx*.45+'" ry="'+L.ry*.35+'" fill="'+L.hi+'" opacity=".7"'+tr+'/>';break;
+      case 'rect':o+='<rect x="'+(-L.w/2)+'" y="'+(-L.h/2)+'" width="'+L.w+'" height="'+L.h+'" rx="'+(L.rx==null?Math.min(L.w,L.h)/3:L.rx)+'" fill="'+fill+'"'+st+tr+'/>';break;
+      case 'arc':o+='<path d="M'+(-L.w)+' 0Q0 '+(-L.h)+' '+L.w+' 0" fill="none" stroke="'+pick(L.stroke,r)+'" stroke-width="'+(L.sw||1.6)+'" stroke-linecap="round"'+tr+'/>';break;
+      case 'half':o+='<g'+tr+'><path d="M'+(-L.w)+' 0A'+L.w+' '+L.w*.8+' 0 0 1 '+L.w+' 0Z" fill="'+fill+'"'+st+'/><rect x="'+(-L.w*.22)+'" y="0" width="'+L.w*.44+'" height="'+L.w*.7+'" rx="1.5" fill="'+(L.fill2||'#f1e6cf')+'"'+st+'/></g>';break;
+      case 'leaf':o+='<path d="M'+(-L.w)+' 0Q0 '+(-L.h)+' '+L.w+' 0Q0 '+L.h+' '+(-L.w)+' 0Z" fill="'+fill+'"'+st+tr+'/>';break;
+      case 'ring':o+='<circle r="'+L.r+'" fill="'+(L.in||'none')+'" stroke="'+pick(L.stroke,r)+'" stroke-width="'+(L.sw||1.6)+'"'+tr+'/>';break;
+      case 'abal':o+='<g'+tr+'><ellipse rx="12" ry="7.5" fill="#ecd9ad" stroke="#7d6238" stroke-width="1.6"/><path d="M-7 -1.5Q0 -5 7 -1.5M-6 2Q0 -1 6 2" fill="none" stroke="#c9ad74" stroke-width="1"/></g>';break;
+      case 'shrimp':o+='<g'+tr+'><path d="M-9 3C-9 -8 6 -11 10 -2" fill="none" stroke="#f08a66" stroke-width="6" stroke-linecap="round"/><path d="M-9 3C-9 -8 6 -11 10 -2" fill="none" stroke="#ffd2bd" stroke-width="2.2" stroke-linecap="round" stroke-dasharray="2 3.4"/></g>';break;
+    }
+  }
+  return o;
+}
+/* 재료 */
+var T={
+ scal:function(n,o){return X({t:'rect',n:n,w:5.5,h:2.6,fill:['#3f8f3a','#6fb24a','#2f7a33','#8cc35a']},o)},
+ ses:function(n,o){return X({t:'ell',n:n,rx:1.7,ry:1,fill:['#f8ebc0','#efdca0'],r1:62,sv:.2},o)},
+ car:function(n,o){return X({t:'rect',n:n,w:4.6,h:3.4,fill:['#f08a24','#f6a13a','#e87a16']},o)},
+ zuc:function(n,o){return X({t:'rect',n:n,w:4.6,h:3.6,fill:['#9ccb6c','#7fb654','#c5e09a']},o)},
+ beef:function(n,o){return X({t:'ell',n:n,rx:6.5,ry:4.2,fill:['#6b3a1f','#7d4727','#5a2f18','#8a5230'],stroke:'#3d1f0f',hi:'#a56a3f'},o)},
+ gim:function(o){return X({t:'rect',n:30,w:11,h:1.4,rx:.4,fill:['#1d2a1c','#27361f','#141c12','#33442a'],r1:14},o)},
+ grain:function(n,c,o){return X({t:'ell',n:n,rx:2.6,ry:1.5,fill:c||['#ffffff','#f3ecdc','#fbf7ec'],stroke:'rgba(160,140,100,.35)',sw:.4,r1:78,sv:.2},o)},
+ mush:function(n,o){return X({t:'half',n:n,w:7,fill:['#8a6844','#a07a52','#74553a'],stroke:'#4d3722'},o)},
+ strand:function(n,c,o){return X({t:'arc',n:n,w:9,h:4,stroke:c,sw:1.7},o)},
+ pine:function(n,o){return X({t:'leaf',n:n,w:3.6,h:2.6,fill:['#f4e2b0','#ead29a'],stroke:'#c9aa62',sw:.4,r1:22},o)},
+ juj:function(n,o){return X({t:'ring',n:n,r:3.4,stroke:'#9c2418',sw:2.4,in:'#e8c9a0',r1:30},o)},
+ chili:function(n,o){return X({t:'rect',n:n,w:6,h:1.8,fill:['#d3301c','#b8230f']},o)}
+};
+function X(a,b){if(b)for(var k in b)a[k]=b[k];return a}
+var CREAM=['#f6ecce','#dbc88f'];
+var RICE=['#fdfbf5','#e9e2d2'];
+/* 메뉴 */
+var MENU=[
+ {k:'전통죽',en:'오래 끓인',nm:'전통<i>죽</i>',d:'쌀알이 퍼질 때까지 천천히 저어 끓인,<br>속 편한 온기죽집의 기본 죽',
+  items:[
+   {n:'전복죽',p:'12,500',bg:['#e2a61c','#d18f10'],ink:'#8a5a08',s:{seed:11,base:['#f3ecc9','#cfc27f'],L:[T.grain(70,['#fbf6dc','#efe6bd']),T.car(16),T.zuc(14),{t:'abal',n:9,r1:52,sv:.3},T.scal(20),T.ses(26),{t:'hl',op:.28}]}},
+   {n:'소고기야채죽',p:'10,500',bg:['#d7d3a1','#c9c58c'],ink:'#fbf7c9',s:{seed:23,base:['#ecdcb2','#c9ad73'],L:[T.grain(60,['#f6ebc9','#e8d7a8']),T.beef(26,{rx:4,ry:2.8}),T.car(24),T.zuc(22),T.gim(),T.ses(18,{r0:14})]}},
+   {n:'새우죽',p:'11,000',bg:['#f1c9b4','#e8b59c'],ink:'#fde6da',s:{seed:31,base:CREAM,L:[T.grain(60,['#fbf4dc','#efe3bb']),T.car(14),{t:'shrimp',n:7,r1:50,sv:.2},T.scal(26),T.ses(14)]}},
+   {n:'닭죽',p:'10,000',bg:['#cfd8c2','#bccab0'],ink:'#eef3e4',s:{seed:44,base:['#f1e5c0','#d6c28c'],L:[T.grain(50,['#faf2d6','#eee0b4']),T.strand(46,['#fffaf0','#f3e6cc','#e8d5ae'],{r1:36,sw:2.6}),T.juj(3,{r0:20,r1:50}),T.scal(22),T.ses(12,{r0:30,r1:66})]}},
+   {n:'야채죽',p:'9,000',bg:['#c8dcc0','#b2cba8'],ink:'#e6f2df',s:{seed:57,base:CREAM,L:[T.grain(60,['#fbf4dc','#efe3bb']),T.car(34),T.zuc(34),T.mush(6,{w:4}),{t:'rect',n:18,w:4,h:3,fill:['#f4e36a','#eed24a']},T.ses(16)]}}
+  ]},
+ {k:'영양죽',en:'달큰하고 진한',nm:'영양<i>죽</i>',d:'제철 재료의 맛과 빛깔을 살려<br>달큰하고 진하게 끓였습니다',
+  items:[
+   {n:'단호박죽',p:'9,500',bg:['#5f7a3a','#4c6830'],ink:'#93ab63',s:{seed:61,base:['#f8bf3c','#e3951a'],L:[{t:'swirl',stroke:'#fff3cf',sw:3.5},{t:'leaf',n:7,w:5.5,h:2.6,fill:['#5a8a3a','#74a04c'],stroke:'#3d6a26',sw:.5,r1:18},T.pine(5,{r0:16,r1:30}),{t:'hl',op:.35}]}},
+   {n:'팥죽',p:'9,500',bg:['#e9d3cb','#dfc2b8'],ink:'#f7e9e3',s:{seed:72,base:['#8c3d35','#5c201e'],L:[{t:'ell',n:26,rx:3,ry:2.2,fill:['#6a2622','#7d302a'],r1:74},{t:'ell',n:8,rx:8,ry:7.4,fill:['#fffaf2','#f6ecdd'],stroke:'#d9c9b4',hi:'#ffffff',r1:44,sv:.15},T.pine(5),{t:'hl',op:.22}]}},
+   {n:'흑임자죽',p:'10,000',bg:['#d9d6cf','#c8c4bb'],ink:'#efede8',s:{seed:83,base:['#676360','#353230'],L:[{t:'swirl',stroke:'#8d8884',sw:5,op:.6},{t:'ell',n:60,rx:1.1,ry:.8,fill:'#1f1d1c',r1:76,sv:.3},T.pine(7,{r1:16}),T.juj(2,{r0:6,r1:20}),{t:'hl',op:.2}]}},
+   {n:'버섯들깨죽',p:'11,000',bg:['#d8c9ad','#cbb994'],ink:'#efe4cd',s:{seed:94,base:['#ddd5c2','#b4a88d'],L:[{t:'ell',n:90,rx:1,ry:.8,fill:['#6e6352','#8a7d68'],r1:78,sv:.3},T.mush(16,{r1:50}),T.scal(16),{t:'ell',n:6,rx:3,ry:3,fill:'#e7dcc0',stroke:'#b9a983',r1:20}]}},
+   {n:'녹두죽',p:'10,000',bg:['#e6e2a8','#dbd690'],ink:'#f5f2cf',s:{seed:105,base:['#dcd88a','#b5ae58'],L:[T.grain(70,['#ece8a8','#d3cd7a']),{t:'ell',n:30,rx:2.2,ry:1.8,fill:['#8f9a3c','#a6ae4e'],r1:72},T.pine(6),{t:'hl',op:.25}]}}
+  ]},
+ {k:'덮밥',en:'넉넉하게 올린',nm:'든든 <i>덮밥</i>',d:'갓 지은 밥 위에 넉넉하게 올려<br>한 그릇으로 든든합니다',
+  items:[
+   {n:'불고기덮밥',p:'11,500',bg:['#c9a27e','#bb8f68'],ink:'#e3c7ab',s:{seed:111,base:RICE,L:[T.grain(150),{t:'wedge',a0:-30,a1:160,fill:'#6e3d20'},T.beef(46,{a0:-28,a1:158,r1:78}),T.strand(18,['#fff6e0','#f2e3c0'],{a0:-25,a1:155,sw:2.2}),T.scal(26,{a0:-30,a1:160}),T.ses(22,{a0:-30,a1:160,r1:70}),{t:'yolk',x:-4,y:6,r:12}]}},
+   {n:'제육덮밥',p:'10,500',bg:['#e7b5a3','#dd9f8a'],ink:'#f6d9cd',s:{seed:122,base:RICE,L:[T.grain(150),{t:'leaf',n:5,w:26,h:13,fill:['#6faa3e','#86bb52'],stroke:'#4d8a2a',a0:150,a1:230,r0:50,r1:70},{t:'wedge',a0:-50,a1:140,fill:'#a22f1c'},{t:'ell',n:44,rx:7,ry:4.4,fill:['#b6482a','#9c3219','#c85a36','#8a2a14'],stroke:'#6a1c0c',hi:'#de7b54',a0:-48,a1:138,r1:78},T.strand(14,['#fbe9d2'],{a0:-45,a1:135,sw:2}),T.scal(22,{a0:-50,a1:140}),T.ses(24,{a0:-50,a1:140,r1:70})]}},
+   {n:'치킨마요덮밥',p:'9,500',bg:['#efdc9c','#e6cf80'],ink:'#faf0c6',s:{seed:133,base:RICE,L:[T.grain(140),T.strand(60,['#f6cf3a','#f0bf22','#f9dc62'],{r1:70,sw:2.4}),{t:'ell',n:16,rx:8,ry:6,fill:['#d99a3c','#c98628','#e3ac52'],stroke:'#9c6418',hi:'#f0c478',r1:50},{t:'zig',stroke:'#fffdf2',sw:3},T.gim({n:34,r1:20,w:12}),T.scal(10)]}},
+   {n:'간장계란덮밥',p:'8,500',bg:['#d9d0c2','#cabfae'],ink:'#eee8dd',s:{seed:144,base:RICE,L:[T.grain(170),{t:'ell',n:24,rx:3.4,ry:2.6,fill:'#7a4a22',r1:60,sv:.6},{t:'egg',x:-2,y:0,s:1.9},T.gim({n:22,r0:44,r1:66,a0:200,a1:300,w:10}),T.scal(16,{r0:36}),T.ses(20,{r0:30,r1:70})]}},
+   {n:'낙지덮밥',p:'12,000',bg:['#e3a48f','#d88e77'],ink:'#f4cfc2',s:{seed:155,base:RICE,L:[T.grain(150),{t:'wedge',a0:10,a1:200,fill:'#b4301a'},{t:'arc',n:40,w:8,h:9,stroke:['#e98d78','#f3b09c','#d76a56'],sw:4,a0:12,a1:198,r1:76},T.car(10,{a0:10,a1:200}),T.scal(24,{a0:10,a1:200}),T.chili(8,{a0:10,a1:200}),T.ses(22,{a0:10,a1:200,r1:70})]}}
+  ]},
+ {k:'비빔밥',en:'색색이 고운',nm:'나물 <i>비빔밥</i>',d:'색색이 고운 나물을 가지런히 올려<br>쓱쓱 비벼 먹는 한 그릇',
+  items:[
+   {n:'나물비빔밥',p:'10,500',bg:['#b9c79a','#a5b584'],ink:'#d6e0bd',s:{seed:161,base:RICE,L:[T.grain(60),{t:'wedge',a0:-90,a1:-30,fill:'#f39a2e'},T.strand(34,['#f7b24e','#e9861c'],{a0:-88,a1:-32,r0:14,r1:78,sw:2}),{t:'wedge',a0:-30,a1:30,fill:'#2f6a2e'},T.strand(34,['#4f9440','#2a5a26','#6fae54'],{a0:-28,a1:28,r0:14,r1:78,sw:2.2}),{t:'wedge',a0:30,a1:90,fill:'#efe3c2'},T.strand(34,['#fff8e2','#e2d2a2'],{a0:32,a1:88,r0:14,r1:78,sw:2}),{t:'wedge',a0:90,a1:150,fill:'#6b4a2e'},T.mush(12,{a0:92,a1:148,r0:20,r1:74,w:6}),{t:'wedge',a0:150,a1:210,fill:'#f6efe6'},T.strand(30,['#ffffff','#f1c9d2'],{a0:152,a1:208,r0:14,r1:78,sw:2.4}),{t:'wedge',a0:210,a1:270,fill:'#5c3a22'},T.strand(34,['#7a5232','#4a2e1a','#93683f'],{a0:212,a1:268,r0:14,r1:78,sw:2}),{t:'egg',s:1.15},T.ses(16,{r0:26,r1:70})]}},
+   {n:'불고기비빔밥',p:'11,500',bg:['#d8b59a','#cba384'],ink:'#ecd7c5',s:{seed:172,base:RICE,L:[T.grain(80),{t:'wedge',a0:-100,a1:20,fill:'#6e3d20'},T.beef(40,{a0:-98,a1:18,r0:14,r1:78}),{t:'wedge',a0:20,a1:100,fill:'#2f6a2e'},T.strand(40,['#4f9440','#2a5a26','#6fae54'],{a0:22,a1:98,r0:14,r1:78,sw:2.2}),{t:'wedge',a0:100,a1:180,fill:'#f39a2e'},T.strand(40,['#f7b24e','#e9861c'],{a0:102,a1:178,r0:14,r1:78,sw:2}),{t:'wedge',a0:180,a1:260,fill:'#efe3c2'},T.strand(40,['#fff8e2','#e2d2a2'],{a0:182,a1:258,r0:14,r1:78,sw:2}),{t:'egg',s:1.1},T.ses(18,{r0:26,r1:70})]}},
+   {n:'돌솥비빔밥',p:'12,000',bg:['#bdb5a8','#aca394'],ink:'#d9d3c8',s:{seed:183,rim:'dark',base:['#f6efdc','#d9c9a0'],L:[T.grain(60,['#f9f2de','#e6d6ac','#d8b46a']),{t:'wedge',a0:-80,a1:-8,fill:'#2f6a2e'},T.strand(36,['#4f9440','#2a5a26'],{a0:-78,a1:-10,r0:16,r1:78,sw:2.2}),{t:'wedge',a0:-8,a1:64,fill:'#f39a2e'},T.strand(36,['#f7b24e','#e9861c'],{a0:-6,a1:62,r0:16,r1:78,sw:2}),{t:'wedge',a0:64,a1:136,fill:'#6b4a2e'},T.mush(14,{a0:66,a1:134,r0:22,r1:74,w:6}),{t:'wedge',a0:136,a1:208,fill:'#efe3c2'},T.strand(36,['#fff8e2','#e2d2a2'],{a0:138,a1:206,r0:16,r1:78,sw:2}),{t:'wedge',a0:208,a1:280,fill:'#a22f1c'},{t:'ell',n:22,rx:5,ry:3.4,fill:['#c85a36','#b6482a'],a0:210,a1:278,r0:18,r1:76},{t:'yolk',r:13},T.ses(16,{r0:22,r1:70})]}},
+   {n:'참치비빔밥',p:'9,500',bg:['#c9d6dc','#b5c6cd'],ink:'#e2ecef',s:{seed:194,base:RICE,L:[T.grain(110),{t:'leaf',n:12,w:22,h:10,fill:['#6faa3e','#86bb52','#9ccb6c'],stroke:'#4d8a2a',r0:36,r1:70},{t:'ell',n:44,rx:5,ry:3.4,fill:['#d9b99a','#c9a482','#e6cdb2'],stroke:'#a8835e',sw:.4,r1:34},T.car(14,{r0:30,r1:70}),{t:'zig',stroke:'#fffdf2',sw:2.4,rot:24},T.gim({n:26,w:10,r1:12}),T.ses(14)]}}
+  ]},
+ {k:'국·탕',en:'뜨끈하게',nm:'뜨끈한 <i>국·탕</i>',d:'뚝배기째 보글보글 끓여 내는<br>속까지 뜨끈한 국물 한 상',
+  items:[
+   {n:'소고기미역국',p:'10,000',bg:['#32524a','#26433c'],ink:'#5c8076',s:{seed:201,rim:'dark',base:['#6f7a44','#343e22'],L:[{t:'arc',n:60,w:12,h:8,stroke:['#1e3320','#2a4a2c','#16281a','#3a5c36'],sw:4.5,r1:74},T.beef(16,{r1:56}),{t:'ell',n:20,rx:2.4,ry:2.4,fill:'rgba(255,240,170,.35)',r1:70},T.ses(10),{t:'hl',op:.3}]}},
+   {n:'된장찌개',p:'9,500',bg:['#dcc39a','#cfb282'],ink:'#efe0c4',s:{seed:212,rim:'dark',base:['#bd8840','#845420'],L:[{t:'rect',n:12,w:13,h:11,rx:1.5,fill:['#fffaf0','#f4ead6'],stroke:'#d2c2a2',r1:56,sv:.2},{t:'half',n:10,w:8,fill:['#9ccb6c','#b7da8c'],fill2:'#e6f1c9',stroke:'#5f8f38',r1:62},T.mush(8,{w:6}),T.chili(10),T.scal(18),{t:'hl',op:.22}]}},
+   {n:'순두부찌개',p:'9,500',bg:['#e8b9a4','#dea58c'],ink:'#f6dccf',s:{seed:223,rim:'dark',base:['#d6501f','#98260e'],L:[{t:'ell',n:16,rx:10,ry:8,fill:['#fff8ec','#f9eeda'],stroke:'#e7c9a6',hi:'#ffffff',r1:58,sv:.5},{t:'ell',n:26,rx:2.6,ry:2.6,fill:'rgba(255,190,90,.5)',r1:72},{t:'yolk',x:4,y:-2,r:12},T.scal(22),T.chili(8),{t:'hl',op:.25}]}},
+   {n:'떡만둣국',p:'10,500',bg:['#d5d9c6','#c4cab2'],ink:'#ebeede',s:{seed:234,rim:'celadon',base:['#f1e9d2','#d6c79c'],L:[{t:'ell',n:22,rx:10,ry:5.4,fill:['#fffdf8','#f7f1e4'],stroke:'#d8ccb2',hi:'#ffffff',r1:60,sv:.2},{t:'leaf',n:4,w:15,h:9,fill:['#f8f0dc','#f1e6c8'],stroke:'#cdbb92',sw:1,r0:20,r1:48},T.strand(22,['#f6cf3a','#f9dc62'],{r1:40,sw:2.6}),T.gim({r1:16,n:22}),T.scal(16),{t:'hl',op:.3}]}},
+   {n:'갈비탕',p:'13,500',bg:['#cdb9a6','#bfa890'],ink:'#e6d9cc',s:{seed:245,rim:'dark',base:['#e9dfc0','#c2b084'],L:[T.strand(40,['rgba(255,255,255,.75)','rgba(240,235,220,.8)'],{w:16,h:9,sw:1.6}),{t:'rect',n:6,w:22,h:13,rx:4,fill:['#7d4727','#6b3a1f','#8a5230'],stroke:'#3d1f0f',r1:44,sv:.2},{t:'rect',n:6,w:6,h:13,rx:2,fill:'#f4ecd8',stroke:'#cdbf9c',r1:44},T.juj(3,{r0:30,r1:56}),T.scal(24),{t:'hl',op:.32}]}}
+  ]},
+ {k:'곁들임',en:'함께하면 좋은',nm:'맛깔 <i>곁들임</i>',d:'죽과 밥에 함께 올리면 더 맛있는<br>온기죽집의 반찬과 음료',
+  items:[
+   {n:'소고기장조림',p:'5,000',bg:['#8f3b2a','#7b2f20'],ink:'#b5604c',s:{seed:251,base:['#5a3418','#2e180a'],L:[T.strand(70,['#7d4727','#5a2f18','#93603a','#3d1f0f'],{w:12,h:3,sw:3.4,r1:70}),{t:'ell',n:7,rx:9,ry:7.4,fill:['#b98a5a','#a67848','#c79a6a'],stroke:'#6e4a26',hi:'#e0b98c',r1:52,sv:.15},{t:'rect',n:5,w:12,h:3.4,fill:['#3f8f3a','#2f7a33'],r1:50},T.ses(20),{t:'hl',op:.25}]}},
+      {n:'배추김치',p:'3,000',bg:['#efc6b6','#e6b19e'],ink:'#f9e1d7',s:{seed:262,base:['#f5f1ea','#ddd6c8'],L:[{t:'disc',r:60,fill:'#eab7a0',op:.55},{t:'kimchi'},T.chili(14,{r1:50}),T.scal(6,{r1:44}),T.ses(22,{r1:48})]}},
+   {n:'동치미',p:'3,000',bg:['#cbdde0','#b6ced2'],ink:'#e3eef0',s:{seed:273,rim:'celadon',base:['#eef3ea','#c8d6c6'],L:[{t:'rect',n:12,w:22,h:8,rx:2,fill:['#ffffff','#f6f6ee'],stroke:'#cfd8c8',r1:54,sv:.2},{t:'rect',n:8,w:16,h:3.4,fill:['#5a9a3e','#7fb654'],r1:56},T.chili(6,{w:9,h:2.6}),{t:'ell',n:6,rx:6,ry:5,fill:'#f3e9b6',stroke:'#d6c57a',r1:50},{t:'hl',op:.5}]}},
+   {n:'계란찜',p:'5,500',bg:['#f0dd9e','#e7cf80'],ink:'#faf1c8',s:{seed:284,rim:'dark',base:['#fbe184','#eab93a'],L:[{t:'ell',n:36,rx:9,ry:7,fill:['#fde99a','#f9d766','#fff2b8'],r1:72,sv:.6},{t:'ell',n:16,rx:2,ry:1.6,fill:'#e2a82a',r1:70},T.car(14,{w:3.4,h:2.6}),T.scal(24),T.ses(10)]}},
+   {n:'식혜',p:'3,500',bg:['#d9cdb6','#cdbfa3'],ink:'#eee6d6',s:{seed:295,rim:'brass',base:['#f1e7c6','#d2c08c'],L:[T.grain(46,['#ffffff','#f8f2e0'],{r1:66}),T.pine(6,{r1:26}),T.juj(1,{r1:10}),{t:'hl',op:.5}]}}
+  ]}
+];
+
+function posterSVG(it,word){
+  return '<svg viewBox="0 0 400 470" preserveAspectRatio="xMidYMid slice" role="img" aria-label="'+it.n+'"><defs><linearGradient id="pg'+(uid)+'" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="'+it.bg[0]+'"/><stop offset="1" stop-color="'+it.bg[1]+'"/></linearGradient></defs>'
+   +'<rect width="400" height="470" fill="url(#pg'+uid+')"/>'
+   +'<text x="14" y="84" font-family="Noto Sans KR,sans-serif" font-weight="300" font-size="80" letter-spacing="8" fill="#fff" opacity=".3">'+word+'</text>'
+   +'<g transform="translate(206 318) scale(2.32)">'+bowl(it.s)+'</g></svg>';
+}
+function cardSVG(it){
+  var g='pc'+(uid);
+  var chars=it.n.length>4?it.n.slice(0,4):it.n,fs=chars.length<=2?96:chars.length===3?84:66;
+  return '<svg viewBox="0 0 310 400" preserveAspectRatio="xMidYMid slice" role="img" aria-label="'+it.n+'"><defs><linearGradient id="'+g+'" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="'+it.bg[0]+'"/><stop offset="1" stop-color="'+it.bg[1]+'"/></linearGradient></defs>'
+   +'<rect width="310" height="400" fill="url(#'+g+')"/>'
+   +'<text x="155" y="'+(fs*.86)+'" text-anchor="middle" font-family="Noto Sans KR,sans-serif" font-weight="300" font-size="'+fs+'" letter-spacing="'+(chars.length<=2?70:10)+'" fill="'+it.ink+'">'+chars+'</text>'
+   +'<g transform="translate(155 236) scale(1.18)">'+bowl(it.s)+'</g></svg>';
+}
+
+/* ---------- s3 탭 ---------- */
+var tabsEl=$('#tabs'),poster=$('#poster'),cards=$('#cards'),cur=0;
+MENU.forEach(function(m,i){var b=document.createElement('button');b.className='tab';b.textContent=m.k;b.setAttribute('role','tab');b.onclick=function(){setTab(i,true)};tabsEl.appendChild(b)});
+function setTab(i,user){
+  cur=i;var m=MENU[i];
+  $$('.tab',tabsEl).forEach(function(t,j){t.classList.toggle('on',j===i);t.setAttribute('aria-selected',j===i)});
+  if(window.innerWidth<1024){var t=$$('.tab',tabsEl)[i];var l=t.getBoundingClientRect().left-tabsEl.getBoundingClientRect().left+tabsEl.scrollLeft-20;tabsEl.scrollTo({left:l,behavior:(user&&!SHOT)?'smooth':'auto'})}
+  poster.innerHTML=posterSVG(m.items[0],m.en)+'<div class="pinfo">'+m.items[0].n+'<span>'+m.items[0].p+'원</span></div>';
+  $('#mname').innerHTML=m.nm;$('#mdesc').innerHTML=m.d;
+  cards.innerHTML=m.items.slice(1).map(function(it){return '<div class="card"><div class="pic">'+cardSVG(it)+'</div><div class="nm">'+it.n+'</div><div class="pr">'+it.p+'원</div></div>'}).join('');
+  cards.scrollLeft=0;upd();
+  [poster,$('#minfo'),cards].forEach(function(e){e.classList.remove('fade');void e.offsetWidth;if(!SHOT)e.classList.add('fade')});
+}
+function step(){var c=$('.card',cards);return c?c.offsetWidth+parseFloat(getComputedStyle(cards).columnGap||16):200}
+function upd(){$('#prev').disabled=cards.scrollLeft<4;$('#next').disabled=cards.scrollLeft+cards.clientWidth>=cards.scrollWidth-4}
+$('#prev').onclick=function(){cards.scrollBy({left:-step(),behavior:'smooth'})};
+$('#next').onclick=function(){cards.scrollBy({left:step(),behavior:'smooth'})};
+cards.addEventListener('scroll',upd);window.addEventListener('resize',upd);
+setTab(0);
+function goCat(k){var i=MENU.findIndex(function(m){return m.k===k});if(i>=0)setTab(i,true);$('#s3-menu').scrollIntoView({behavior:SHOT?'auto':'smooth'})}
+
+/* ---------- 히어로 그림 ---------- */
+function B(k,i){return MENU.filter(function(m){return m.k===k})[0].items[i].s}
+$('#bg1').innerHTML='<svg viewBox="0 0 1600 700" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><defs><linearGradient id="h1a" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2f3a22"/><stop offset=".42" stop-color="#4a4a2a"/><stop offset=".43" stop-color="#6b4526"/><stop offset="1" stop-color="#4a2c16"/></linearGradient><radialGradient id="h1b" cx="70%" cy="20%" r="60%"><stop offset="0" stop-color="rgba(255,226,150,.38)"/><stop offset="1" stop-color="rgba(255,226,150,0)"/></radialGradient></defs><rect width="1600" height="700" fill="url(#h1a)"/>'
+ +'<g opacity=".5"><ellipse cx="180" cy="120" rx="240" ry="150" fill="#3f5a2a"/><ellipse cx="620" cy="60" rx="300" ry="160" fill="#55702f"/><ellipse cx="1150" cy="100" rx="320" ry="170" fill="#48652c"/><ellipse cx="1500" cy="170" rx="200" ry="140" fill="#34491f"/><rect x="330" y="0" width="34" height="300" fill="#2a2416"/><rect x="900" y="0" width="46" height="300" fill="#2f2818"/><rect x="1340" y="0" width="30" height="300" fill="#2a2416"/></g>'
+ +'<g stroke="#3a2010" stroke-width="2" opacity=".55"><path d="M0 300h1600M0 392h1600M0 500h1600M0 620h1600"/></g><g stroke="#8a5c36" stroke-width="1.2" opacity=".5" fill="none"><path d="M0 340C300 330 500 352 800 340S1300 330 1600 346M0 440C260 452 540 430 820 444S1340 452 1600 438M0 560C340 548 600 572 900 558S1380 566 1600 554M0 660C300 668 700 650 1000 664S1400 656 1600 668"/></g><rect width="1600" height="700" fill="url(#h1b)"/></svg>';
+$('#art1').innerHTML='<svg viewBox="0 0 700 520" aria-hidden="true"><path d="M150 300C260 250 520 250 690 320L700 520H90C70 430 90 340 150 300Z" fill="#e9dcc2"/><path d="M150 300C260 250 520 250 690 320" fill="none" stroke="#cdbb98" stroke-width="3"/><g stroke="#d8c8a6" stroke-width="1.5" fill="none" opacity=".8"><path d="M170 340C300 300 500 300 680 360M140 400C300 360 520 366 700 420M120 470C300 430 540 440 700 480"/></g>'
+ +'<g fill="#5a8a3a" stroke="#3d6a26" transform="translate(62 4)"><path d="M70 250Q110 220 150 250Q110 270 70 250Z"/><path d="M40 300Q70 262 112 280Q84 312 40 300Z"/></g>'
+ +'<g transform="translate(520 170) scale(1.28)">'+bowl(B('영양죽',3))+'</g><g transform="translate(300 330) scale(1.66)">'+bowl(B('전통죽',0))+'</g>'
+ +'<g transform="translate(600 430)"><ellipse cx="4" cy="8" rx="52" ry="48" fill="rgba(0,0,0,.2)"/><g transform="scale(.46)">'+bowl(B('곁들임',0))+'</g></g>'
+ +'</svg>';
+$('#bg2').innerHTML='<svg viewBox="0 0 1600 700" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><defs><radialGradient id="h2a" cx="30%" cy="30%" r="90%"><stop offset="0" stop-color="#fbf8f1"/><stop offset="1" stop-color="#e9e2d3"/></radialGradient></defs><rect width="1600" height="700" fill="url(#h2a)"/><g fill="none" stroke="#ded5c2" stroke-width="1.4" opacity=".9"><path d="M-20 120C200 60 380 220 640 140S1100 40 1620 180M-20 420C240 340 460 520 760 420S1240 320 1620 470M-20 640C260 580 520 690 820 620S1320 560 1620 650"/><path d="M200 -20C260 160 140 320 260 720M900 -20C980 200 840 420 960 720M1380 -20C1440 220 1320 460 1420 720" opacity=".5"/></g><g fill="#e3d9c4" opacity=".55"><circle cx="240" cy="560" r="3"/><circle cx="420" cy="90" r="2.4"/><circle cx="760" cy="300" r="3"/><circle cx="1180" cy="80" r="2.6"/><circle cx="1460" cy="380" r="3.2"/><circle cx="1020" cy="600" r="2.4"/></g></svg>';
+$('#art2').innerHTML='<svg viewBox="0 0 700 520" aria-hidden="true"><rect x="60" y="150" width="620" height="390" rx="26" fill="#c79a62"/><rect x="60" y="150" width="620" height="390" rx="26" fill="none" stroke="#a87a42" stroke-width="4"/><g stroke="#b88a52" stroke-width="2" fill="none" opacity=".7"><path d="M80 220h580M80 300h580M80 380h580M80 460h580"/></g>'
+ +'<g transform="translate(300 330) scale(1.6)">'+bowl(B('덮밥',0))+'</g><g transform="translate(560 220) scale(1.06)">'+bowl(B('비빔밥',0))+'</g>'
+ +'<g transform="translate(586 432) scale(.5)">'+bowl(B('곁들임',1))+'</g>'
+ +'<g transform="rotate(20 170 300)"><rect x="150" y="130" width="9" height="330" rx="4" fill="#5a3418"/><rect x="170" y="130" width="9" height="330" rx="4" fill="#6b4020"/></g></svg>';
+$('#bg3').innerHTML='<svg viewBox="0 0 1600 700" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><defs><linearGradient id="h3a" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#7a2a1c"/><stop offset="1" stop-color="#4f1710"/></linearGradient><radialGradient id="h3b" cx="72%" cy="40%" r="55%"><stop offset="0" stop-color="rgba(255,190,120,.3)"/><stop offset="1" stop-color="rgba(255,190,120,0)"/></radialGradient></defs><rect width="1600" height="700" fill="url(#h3a)"/><g fill="none" stroke="#93392a" stroke-width="2" opacity=".7"><circle cx="220" cy="600" r="180"/><circle cx="220" cy="600" r="260"/><circle cx="1400" cy="60" r="200"/><circle cx="1400" cy="60" r="290"/><circle cx="860" cy="760" r="240"/></g><rect width="1600" height="700" fill="url(#h3b)"/></svg>';
+$('#art3').innerHTML='<svg viewBox="0 0 700 520" aria-hidden="true"><defs><linearGradient id="bj1" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f0c35a"/><stop offset="1" stop-color="#c98a22"/></linearGradient><linearGradient id="bj2" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fbf6ea"/><stop offset="1" stop-color="#e2d6bd"/></linearGradient></defs>'
+ +'<ellipse cx="380" cy="470" rx="330" ry="46" fill="rgba(0,0,0,.28)"/>'
+ +'<path d="M150 250L400 190L640 250L640 440L400 500L150 440Z" fill="url(#bj1)"/><path d="M150 250L400 310L640 250" fill="none" stroke="#a8721a" stroke-width="3"/><path d="M400 310V500" stroke="#a8721a" stroke-width="3"/><path d="M150 250L400 310V500L150 440Z" fill="rgba(120,70,0,.16)"/>'
+ +'<g fill="none" stroke="#fff3cf" stroke-width="2" opacity=".5"><path d="M200 290l140 34M200 330l140 34M200 370l140 34M460 324l140-34M460 364l140-34M460 404l140-34"/></g>'
+ +'<path d="M400 250C330 150 250 150 262 208C270 246 350 252 400 250Z" fill="#f6d27a" stroke="#b88122" stroke-width="3"/><path d="M400 250C470 150 550 150 538 208C530 246 450 252 400 250Z" fill="#f2c860" stroke="#b88122" stroke-width="3"/><path d="M400 250C380 290 340 330 300 344M400 250C420 292 458 328 500 338" fill="none" stroke="#e9b84a" stroke-width="16" stroke-linecap="round"/><circle cx="400" cy="250" r="22" fill="#e2aa3a" stroke="#b88122" stroke-width="3"/>'
+ +'<g transform="translate(236 436) scale(.74)">'+bowl(B('전통죽',1))+'</g>'
+ +'<g transform="translate(610 120) rotate(8)"><rect x="-58" y="-38" width="116" height="76" rx="6" fill="url(#bj2)" stroke="#cbbd9e"/><path d="M-36 -10h72M-36 8h50" stroke="#b9a988" stroke-width="4" stroke-linecap="round"/><path d="M-8 -26c-6-8-16 0-8 8l8 7 8-7c8-8-2-16-8-8z" fill="#b3271a" transform="translate(40 30) scale(.7)"/></g></svg>';
+
+/* 배너 그림 */
+$('#bart1').innerHTML='<svg viewBox="0 0 230 145" preserveAspectRatio="xMidYMax meet" aria-hidden="true"><path d="M26 66l4 8 8 4-8 4-4 8-4-8-8-4 8-4z" fill="#fff" opacity=".9"/><rect x="92" y="22" width="94" height="150" rx="14" fill="#fff" stroke="#8b1d12" stroke-width="3"/><circle cx="139" cy="34" r="2.6" fill="#8b1d12"/><rect x="40" y="56" width="78" height="72" rx="14" fill="#a3261a"/><path d="M62 88h34c0 12-7 20-17 20s-17-8-17-20z" fill="#fff"/><path d="M72 82c-2-3 2-4 0-8M82 82c-2-3 2-4 0-8" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round"/><path d="M132 80h38l-3 34h-32z" fill="#e6c38a" stroke="#8a5a22" stroke-width="2" stroke-linejoin="round"/><path d="M143 80c0-11 16-11 16 0" fill="none" stroke="#8a5a22" stroke-width="2"/><path d="M140 96h22" stroke="#8a5a22" stroke-width="2" stroke-linecap="round" opacity=".6"/><circle cx="198" cy="120" r="16" fill="#fff" stroke="#8b1d12" stroke-width="2.6"/><path d="M198 110v10l7 5" fill="none" stroke="#8b1d12" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+$('#bart2').innerHTML='<svg viewBox="0 0 230 145" preserveAspectRatio="xMidYMax meet" aria-hidden="true"><g transform="translate(122 84) scale(.6)">'+bowl({seed:301,base:RICE,L:[T.grain(70,null,{a0:-90,a1:90}),{t:'wedge',a0:90,a1:270,fill:'#f0d9a0'},T.grain(50,['#fbf6dc','#efe6bd'],{a0:92,a1:268}),T.car(12,{a0:92,a1:268}),T.scal(14,{a0:92,a1:268}),{t:'wedge',a0:-90,a1:90,fill:'#fbf8f0'},T.grain(70,null,{a0:-88,a1:88}),T.beef(22,{a0:-70,a1:70,r1:60}),T.scal(10,{a0:-70,a1:70}),{t:'rect',n:1,w:6,h:170,rx:2,fill:'#ffffff',stroke:'#d8d0c0',r1:0,rot:0,rj:0,sv:0}]})+'</g><g transform="translate(196 34)"><rect x="-22" y="-11" width="44" height="22" rx="11" fill="#d3301c" transform="rotate(-10)"/><text y="5" text-anchor="middle" font-family="Noto Sans KR" font-weight="800" font-size="12" fill="#fff" transform="rotate(-10)">NEW</text></g></svg>';
+
+/* 안내 카드 그림 */
+$('#g1').outerHTML='<svg viewBox="0 0 440 560" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><defs><linearGradient id="st1" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#27343f"/><stop offset="1" stop-color="#45505a"/></linearGradient><linearGradient id="st2" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffe7a8"/><stop offset="1" stop-color="#f4b955"/></linearGradient></defs><rect width="440" height="560" fill="url(#st1)"/><rect x="0" y="110" width="440" height="450" fill="#d9cdb8"/><g stroke="#c5b79e" stroke-width="2"><path d="M0 170h440M0 230h440M0 470h440"/></g><rect x="0" y="80" width="440" height="40" fill="#3a2a1c"/><path d="M20 120h400l24 78H-4z" fill="#d89a2c"/><g fill="#f1c35e"><path d="M20 120h50l-8 78H-4zM120 120h50l-2 78h-58zM220 120h50l6 78h-58zM320 120h50l16 78h-58z"/></g><path d="M-4 198q22 22 44 0t44 0 44 0 44 0 44 0 44 0 44 0 44 0 44 0 44 0v10H-4z" fill="#c2831c"/><rect x="40" y="250" width="210" height="210" fill="url(#st2)" stroke="#3a2a1c" stroke-width="8"/><path d="M145 250v210M40 350h210" stroke="#3a2a1c" stroke-width="5"/><g fill="#8a5a22" opacity=".55"><path d="M70 420h50c0 14-10 24-25 24s-25-10-25-24zM170 420h50c0 14-10 24-25 24s-25-10-25-24z"/><rect x="80" y="290" width="30" height="46" rx="6"/><circle cx="196" cy="300" r="16"/></g><rect x="290" y="240" width="110" height="250" fill="#5a3a22" stroke="#3a2a1c" stroke-width="8"/><rect x="306" y="258" width="78" height="110" fill="url(#st2)"/><circle cx="312" cy="400" r="6" fill="#e9c877"/><g transform="translate(270 300)"><path d="M0 -70v20" stroke="#3a2a1c" stroke-width="3"/><rect x="-16" y="-50" width="32" height="46" rx="12" fill="#f4b955" stroke="#a36a18" stroke-width="2"/><path d="M-16 -36h32M-16 -20h32" stroke="#a36a18" stroke-width="1.6"/></g><rect x="0" y="490" width="440" height="70" fill="#6f6a62"/><path d="M0 490h440" stroke="#4a4640" stroke-width="4"/><g transform="translate(40 470)"><rect x="-14" y="-10" width="48" height="32" rx="4" fill="#7a4a26"/><path d="M-4 -10C-18 -50 10 -66 10 -30C18 -70 44 -52 26 -10Z" fill="#4f8a3a"/></g></svg>';
+$('#g2').outerHTML='<svg viewBox="0 0 440 560" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><defs><linearGradient id="gp1" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#e8c58e"/><stop offset="1" stop-color="#c99a5a"/></linearGradient></defs><rect width="440" height="560" fill="url(#gp1)"/><g stroke="#b88a4c" stroke-width="2" opacity=".6"><path d="M0 140h440M0 290h440M0 440h440"/></g>'
+ +[[110,120,'전통죽',0],[330,120,'영양죽',0],[110,300,'덮밥',0],[330,300,'비빔밥',0],[110,480,'전통죽',2],[330,480,'영양죽',1]].map(function(a){return '<g transform="translate('+a[0]+' '+a[1]+')"><rect x="-96" y="-82" width="192" height="164" rx="26" fill="rgba(60,30,0,.22)" transform="translate(6 8)"/><rect x="-96" y="-82" width="192" height="164" rx="26" fill="#fbf7ee" stroke="#d9cfba" stroke-width="2"/><g transform="scale(.7)">'+bowl(B(a[2],a[3]))+'</g></g>'}).join('')
+ +'<g transform="rotate(-14 220 280)"><rect x="212" y="40" width="7" height="480" rx="3" fill="#5a3418"/><rect x="226" y="40" width="7" height="480" rx="3" fill="#6b4020"/></g></svg>';
+$('#g3').outerHTML='<svg viewBox="0 0 440 560" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><defs><linearGradient id="gf1" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#b9c4a4"/><stop offset="1" stop-color="#8f9d78"/></linearGradient><linearGradient id="gf2" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#c84a3a"/><stop offset="1" stop-color="#8f2418"/></linearGradient></defs><rect width="440" height="560" fill="url(#gf1)"/><rect y="380" width="440" height="180" fill="#e9dfc8"/><path d="M0 380h440" stroke="#cfc3a6" stroke-width="3"/><ellipse cx="220" cy="470" rx="170" ry="26" fill="rgba(0,0,0,.2)"/><path d="M80 250L220 210L360 250L360 440L220 480L80 440Z" fill="url(#gf2)"/><path d="M80 250L220 290L360 250M220 290V480" fill="none" stroke="#6e1a10" stroke-width="3"/><path d="M80 250L220 290V480L80 440Z" fill="rgba(0,0,0,.14)"/><g fill="none" stroke="#e9a79a" stroke-width="1.6" opacity=".6"><circle cx="150" cy="370" r="20"/><circle cx="150" cy="370" r="10"/><circle cx="292" cy="368" r="20"/><circle cx="292" cy="368" r="10"/></g><path d="M220 246C170 150 104 160 120 208C130 240 190 248 220 246Z" fill="#d55a48" stroke="#6e1a10" stroke-width="3"/><path d="M220 246C270 150 336 160 320 208C310 240 250 248 220 246Z" fill="#c84a3a" stroke="#6e1a10" stroke-width="3"/><path d="M220 246C206 280 180 306 150 316M220 246C236 280 262 304 292 312" fill="none" stroke="#d55a48" stroke-width="14" stroke-linecap="round"/><circle cx="220" cy="246" r="18" fill="#b83a2a" stroke="#6e1a10" stroke-width="3"/><g transform="translate(350 120)"><path d="M0 0C-30 -50 20 -80 30 -30C60 -70 100 -20 50 10Z" fill="#6f8a4a"/><path d="M-10 30C-50 10 -60 60 -20 70" fill="#5c7a3a"/></g><g transform="translate(70 500) rotate(-8)"><rect x="-44" y="-28" width="88" height="56" rx="5" fill="#fbf6ea" stroke="#cbbd9e"/><path d="M-28 -8h56M-28 8h36" stroke="#b9a988" stroke-width="3" stroke-linecap="round"/></g></svg>';
+
+/* ---------- 히어로 슬라이드 ---------- */
+var slides=$$('.slide'),hero=$('#s2-hero'),header=$('#s1-header'),pager=$('#pager'),si=0,timer;
+slides.forEach(function(s,i){var b=document.createElement('button');b.className='pg';b.setAttribute('aria-label',(i+1)+'번 슬라이드');b.innerHTML='<span>0'+(i+1)+'</span><b></b>';b.onclick=function(){show(i);auto()};pager.appendChild(b)});
+function show(i){si=(i+slides.length)%slides.length;
+  slides.forEach(function(s,j){s.classList.toggle('on',j===si)});
+  $$('.pg',pager).forEach(function(p,j){p.classList.remove('on');if(j===si){void p.offsetWidth;p.classList.add('on')}});
+  var dark=slides[si].dataset.tone==='dark-text';hero.classList.toggle('dark',dark);header.classList.toggle('dark',dark)}
+function auto(){clearInterval(timer);if(!SHOT)timer=setInterval(function(){show(si+1)},4600)}
+show(0);auto();
+var tx=null;hero.addEventListener('touchstart',function(e){tx=e.touches[0].clientX},{passive:true});
+hero.addEventListener('touchend',function(e){if(tx==null)return;var d=e.changedTouches[0].clientX-tx;if(Math.abs(d)>40){show(si+(d<0?1:-1));auto()}tx=null});
+window.__show=show;window.__tab=setTab;
+
+/* ---------- 시트 / 전체 메뉴 ---------- */
+var dim=$('#dim'),INFO={group:['단체 주문','인원과 날짜를 알려 주시면 모임에 맞춰 준비해 드립니다. 단체 주문 접수는 준비 중입니다.'],gift:['선물하기','죽 선물 꾸러미는 준비 중입니다. 곧 만나 보실 수 있습니다.'],news:['온기죽집 이야기','자세한 내용은 준비 중입니다.']};
+function closeAll(){$$('.sheet.on').forEach(function(s){s.classList.remove('on')});dim.classList.remove('on');$('#allmenu').classList.remove('on')}
+function openSheet(k){closeAll();var id=k;
+  if(INFO[k]){$('#infoT').textContent=INFO[k][0];$('#infoD').textContent=INFO[k][1];id='info'}
+  var el=$('#sh-'+id);if(!el)return;el.classList.add('on');dim.classList.add('on');
+  if(k==='search'){renderRes('');setTimeout(function(){$('#sq').focus()},300)}}
+window.__sheet=openSheet;
+document.addEventListener('click',function(e){
+  var t=e.target.closest('[data-sheet],[data-go],[data-close]');
+  if(!t)return;
+  if(t.hasAttribute('data-close')){closeAll();return}
+  if(t.dataset.sheet){e.preventDefault();openSheet(t.dataset.sheet);return}
+  if(t.dataset.go){e.preventDefault();closeAll();goCat(t.dataset.go)}
+});
+dim.onclick=closeAll;
+document.addEventListener('keydown',function(e){if(e.key==='Escape')closeAll()});
+$('#hamBtn').onclick=function(){$('#allmenu').classList.add('on')};
+$('#amClose').onclick=closeAll;
+$$('#allmenu a[href^="#s"]').forEach(function(a){a.addEventListener('click',function(){$('#allmenu').classList.remove('on')})});
+$$('#opts .opt').forEach(function(o){o.onclick=function(){$$('#opts .opt').forEach(function(x){x.classList.toggle('on',x===o)})}});
+$('#goMenu').onclick=function(){closeAll();$('#s3-menu').scrollIntoView({behavior:'smooth'})};
+$$('#regions button').forEach(function(b){b.onclick=function(){$$('#regions button').forEach(function(x){x.classList.toggle('on',x===b)});$('#rmsg').textContent=b.textContent+' 지역 매장 정보는 준비 중입니다.'}});
+function renderRes(q){var all=[];MENU.forEach(function(m){m.items.forEach(function(it){all.push({n:it.n,p:it.p,k:m.k})})});
+  var r=q?all.filter(function(x){return x.n.indexOf(q)>=0||x.k.indexOf(q)>=0}):all.slice(0,4);
+  $('#sres').innerHTML=r.length?r.slice(0,5).map(function(x){return '<li><button data-go="'+x.k+'">'+x.n+'<span>'+x.p+'원</span></button></li>'}).join(''):'<p>찾는 메뉴가 없습니다. 다른 이름으로 찾아보세요.</p>'}
+$('#sform').addEventListener('submit',function(e){e.preventDefault();renderRes($('#sq').value.trim())});
+$('#sq').addEventListener('input',function(){renderRes(this.value.trim())});
+$('#fam').querySelector('button').onclick=function(){var o=$('#fam').classList.toggle('open');this.setAttribute('aria-expanded',o)};
+
+/* ---------- 스크롤 등장 / 바로가기 표시 ---------- */
+if(!SHOT&&'IntersectionObserver' in window){var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12});$$('.rv').forEach(function(e,i){e.style.transitionDelay=(e.classList.contains('gcard')?(i%3)*.12:0)+'s';io.observe(e)})}
+else $$('.rv').forEach(function(e){e.classList.add('in')});
+var ql=$$('#qlinks a'),map=[['s3-menu',0],['s5-guide',1],['s6-news',7]];
+window.addEventListener('scroll',function(){var y=window.scrollY+window.innerHeight*.5,on=0;map.forEach(function(m){var el=document.getElementById(m[0]);if(el.offsetTop<=y)on=m[1]});ql.forEach(function(a,i){a.classList.toggle('on',i===on)})},{passive:true});
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,696 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>하우스노트</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#2F3438;--sub:#828C94;--sub2:#6E717C;--line:#EAEDEF;--bd:#DADDE0;--band:#F7F9FA;--accent:#1A9DF2;--red:#FF4650;--tred:#FF7777;--sky:#3AB6FF}
+*{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-text-size-adjust:100%}
+body{font-family:'Noto Sans KR',-apple-system,BlinkMacSystemFont,'Apple SD Gothic Neo',sans-serif;color:var(--ink);background:#fff;overflow-x:hidden;letter-spacing:-.2px}
+a{color:inherit;text-decoration:none}
+button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
+ul{list-style:none}
+svg{display:block}
+.wrap{max-width:1200px;margin:0 auto;padding:0 16px}
+.hs{display:flex;overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch;scroll-snap-type:x proximity}
+.hs::-webkit-scrollbar{display:none}
+.band{height:8px;background:var(--band)}
+.sec{padding:28px 0 30px}
+.sec-h{display:flex;align-items:center;justify-content:space-between;margin-bottom:16px}
+.sec-h h2{font-size:20px;font-weight:700;line-height:28px;letter-spacing:-.4px}
+.sec-h p{font-size:13px;color:#4a5056;margin-top:2px;font-weight:400}
+.chev{width:24px;height:24px;flex:none;color:var(--ink)}
+.btn-more{display:flex;align-items:center;justify-content:center;width:100%;height:44px;border:1px solid var(--bd);border-radius:4px;font-size:15px;margin-top:20px;background:#fff;transition:background .15s}
+.btn-more:hover{background:#f7f8fa}
+.scrap{position:absolute;right:8px;bottom:8px;width:24px;height:24px;color:#fff;filter:drop-shadow(0 0 2px rgba(0,0,0,.35))}
+.scrap.on path{fill:var(--accent);stroke:var(--accent)}
+.ph{position:relative;overflow:hidden;border-radius:4px;background:#eee}
+.ph>svg{width:100%;height:100%}
+.ph::after{content:'';position:absolute;inset:0;border-radius:inherit;box-shadow:inset 0 0 0 1px rgba(0,0,0,.04);pointer-events:none}
+
+/* s1 + s2 상단 고정 */
+.top{position:sticky;top:0;z-index:50;background:#fff;transition:transform .25s ease}
+.top.hide{transform:translateY(-50px)}
+#s1-header{height:50px;background:#fff;position:relative;z-index:2}
+#s1-header .wrap{height:50px;display:flex;align-items:center;justify-content:space-between}
+.ib{width:40px;height:40px;display:flex;align-items:center;justify-content:center;position:relative}
+.ib svg{width:24px;height:24px}
+.logo{position:absolute;left:50%;transform:translateX(-50%);display:flex;align-items:center;gap:6px;font-weight:800;font-size:19px;letter-spacing:-.8px}
+.logo svg{width:24px;height:24px}
+.hr{display:flex;gap:4px;margin-right:-8px}
+.hl{margin-left:-8px}
+.badge-n{position:absolute;top:6px;right:5px;min-width:15px;height:15px;border-radius:8px;background:var(--red);color:#fff;font-size:10px;font-weight:700;line-height:15px;text-align:center;padding:0 3px}
+#s2-tabs{background:#fff;border-bottom:1px solid var(--line)}
+#s2-tabs .hs{gap:0;padding:0 8px;height:40px;align-items:stretch}
+#s2-tabs a{flex:none;display:flex;align-items:center;padding:0 7px;font-size:15px;font-weight:700;position:relative;white-space:nowrap;color:var(--ink)}
+#s2-tabs a.on{color:var(--accent)}
+#s2-tabs a.on::after{content:'';position:absolute;left:7px;right:7px;bottom:0;height:2px;background:var(--accent)}
+#s2-tabs a .hot{color:var(--red)}
+
+/* s3 배너 */
+#s3-banner{padding-top:20px}
+.bnr{position:relative;border-radius:8px;overflow:hidden;aspect-ratio:3.5/1;background:#eee;touch-action:pan-y}
+.bnr-track{display:flex;height:100%;transition:transform .45s cubic-bezier(.4,0,.2,1)}
+.bnr-slide{flex:0 0 100%;height:100%;position:relative}
+.bnr-slide>svg{position:absolute;inset:0;width:100%;height:100%}
+.bnr-slide>svg.pc{display:none}
+.sec-h h2,.hcard p,.info .nm,.bitem .nm,.xitem b,.bnr-txt b,.gitem b{word-break:keep-all;overflow-wrap:anywhere}
+.bnr-txt{position:absolute;left:24px;top:50%;transform:translateY(-50%);z-index:1}
+.bnr-txt small{display:block;font-size:15px;color:#3b4046;margin-bottom:6px;letter-spacing:-.3px}
+.bnr-txt b{display:block;font-size:22px;font-weight:700;letter-spacing:-.6px;color:#1b1e21;line-height:1.25}
+.bnr-cnt{position:absolute;right:0;bottom:0;background:rgba(0,0,0,.42);color:#fff;font-size:12px;font-weight:700;height:22px;padding:0 6px 0 10px;border-radius:8px 0 8px 0;display:flex;align-items:center;gap:4px;z-index:2}
+.bnr-cnt svg{width:12px;height:12px}
+
+/* s4 바로가기 */
+#s4-quick{padding:24px 0 30px}
+.qk{display:grid;grid-template-columns:repeat(5,1fr);row-gap:18px}
+.qk a{display:flex;flex-direction:column;align-items:center;gap:8px;font-size:12px;letter-spacing:-.4px;white-space:nowrap}
+.qk i{width:56px;height:56px;border-radius:16px;background:#F6F6F6;display:flex;align-items:center;justify-content:center;transition:transform .15s}
+.qk a:active i{transform:scale(.94)}
+.qk i svg{width:30px;height:30px}
+
+/* s5 사진 */
+.pcards{gap:12px;margin:0 -16px;padding:0 16px;scroll-padding:16px}
+.pcard{flex:0 0 180px;height:240px;scroll-snap-align:start}
+.pcard .who{position:absolute;left:10px;bottom:10px;display:flex;align-items:center;gap:6px;color:#fff;font-size:13px;font-weight:500;text-shadow:0 0 4px rgba(0,0,0,.45)}
+.pcard .who i{width:20px;height:20px;border-radius:50%;border:1px solid rgba(255,255,255,.8);overflow:hidden;flex:none}
+.pcard .who i svg{width:100%;height:100%}
+.pcard .scrap{right:10px;bottom:10px}
+.pmore{flex:0 0 120px;height:240px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;font-size:14px;color:var(--sub2)}
+.pmore i{width:44px;height:44px;border-radius:50%;border:1px solid var(--bd);display:flex;align-items:center;justify-content:center}
+.pmore svg{width:20px;height:20px}
+
+/* s6 집구경 */
+.hgrid{display:grid;grid-template-columns:1fr 1fr;gap:20px 16px}
+.hcard .ph{aspect-ratio:1/1}
+.hcard p{font-size:15px;line-height:1.5;margin-top:10px;letter-spacing:-.4px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+
+/* s7 카테고리 */
+#s7-category .sec-h{margin-bottom:18px}
+.cats{gap:12px;margin:0 -16px;padding:0 16px}
+.cats a{flex:0 0 72px;display:flex;flex-direction:column;align-items:center;gap:8px;font-size:13px;white-space:nowrap;letter-spacing:-.4px}
+.cats i{width:72px;height:72px;display:block}
+.cats i svg{width:100%;height:100%}
+
+/* s8 특가 */
+.deal{display:flex;gap:12px;padding:16px 0;border-bottom:1px solid var(--line)}
+.deal:first-child{padding-top:0}
+.deal:last-child{border-bottom:0;padding-bottom:0}
+.deal .ph{flex:0 0 47%;width:47%;aspect-ratio:1/1;height:auto;align-self:flex-start}
+.timer{position:absolute;left:8px;top:8px;background:var(--tred);color:#fff;font-size:12px;font-weight:700;padding:3px 6px;border-radius:4px;letter-spacing:0;font-variant-numeric:tabular-nums;z-index:1}
+.stk{position:absolute;right:8px;top:8px;width:46px;height:46px;background:#2F6BF0;color:#fff;font-size:13px;font-weight:800;line-height:1.15;display:flex;align-items:center;justify-content:center;text-align:center;border-radius:2px;z-index:1;letter-spacing:-.4px}
+.stk.sm{width:34px;height:34px;font-size:10px;right:6px;top:6px;background:#1d2a44}
+.info{flex:1;min-width:0;padding-top:24px}
+.info .br{font-size:11px;font-weight:700;color:#424242}
+.info .nm{font-size:14px;line-height:1.45;margin-top:3px;letter-spacing:-.4px;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.info .op{font-size:12px;color:var(--sub);margin-top:6px}
+.info .sp{font-size:12px;color:var(--red);margin-top:4px}
+.price{font-size:18px;font-weight:700;margin-top:2px;letter-spacing:-.3px}
+.price .pc{color:var(--red);margin-right:4px}
+.price .e{font-weight:700}
+.tags{display:flex;flex-wrap:wrap;gap:4px;margin-top:8px}
+.tag{font-size:11px;border:1px solid var(--bd);border-radius:4px;padding:1px 5px;color:#424242;display:inline-flex;align-items:center;gap:3px;height:20px}
+.tag svg{width:11px;height:11px}
+.today{display:flex;align-items:center;gap:3px;color:#8C3BEF;font-weight:800;font-size:13px;margin-top:4px}
+.today svg{width:14px;height:14px}
+.today+.tt{font-size:12px;color:var(--sky);margin-top:2px}
+
+/* s9 가이드 */
+.glist{display:flex;flex-direction:column;gap:16px}
+.gitem{display:flex;gap:12px}
+.gitem .ph{flex:0 0 120px;height:120px}
+.gitem b{display:block;font-size:13px;font-weight:700;margin-bottom:4px}
+.gitem p{font-size:14px;line-height:1.55;color:#424242;display:-webkit-box;-webkit-line-clamp:4;-webkit-box-orient:vertical;overflow:hidden;letter-spacing:-.3px}
+
+/* s10 기획전 */
+.xlist{display:flex;flex-direction:column;gap:16px}
+.xitem{display:flex;align-items:center;gap:12px}
+.xitem .ph{flex:0 0 120px;height:80px}
+.xitem small{display:block;font-size:14px;color:#424242;margin-bottom:4px}
+.xitem b{font-size:16px;font-weight:700;letter-spacing:-.4px}
+
+/* s11 MD추천 */
+.chips{gap:6px;margin:0 -16px 16px;padding:0 16px}
+.chip{flex:none;height:32px;padding:0 12px;border-radius:16px;border:1px solid var(--bd);font-size:13px;background:#fff;white-space:nowrap;transition:background .15s,color .15s}
+.chip.on{background:#141414;border-color:#141414;color:#fff;font-weight:500}
+.bgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px 10px}
+.bitem .ph{aspect-ratio:1/1}
+.flag{position:absolute;left:8px;top:0;width:24px;height:28px;z-index:1;color:#fff;font-size:12px;font-weight:700;display:flex;justify-content:center;padding-top:5px}
+.flag svg{position:absolute;inset:0;width:24px;height:28px}
+.flag span{position:relative}
+.dots{position:absolute;left:50%;bottom:8px;transform:translateX(-50%);display:flex;gap:3px}
+.dots i{width:5px;height:5px;border-radius:50%;border:1px solid rgba(0,0,0,.08)}
+.bitem .br{font-size:11px;font-weight:700;color:#424242;margin-top:10px}
+.bitem .nm{font-size:13px;line-height:1.4;margin-top:2px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;letter-spacing:-.4px}
+.bitem .price{font-size:16px}
+.bitem .op{font-size:12px;color:var(--sub);margin-top:3px}
+.bgrid.fade{animation:fd .3s ease}
+@keyframes fd{from{opacity:0;transform:translateY(4px)}to{opacity:1;transform:none}}
+
+/* s12 인기 검색어 */
+.kw{display:grid;grid-template-columns:1fr 1fr;grid-auto-flow:row;column-gap:24px}
+.kw a{display:block;height:42px;line-height:42px;font-size:15px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;min-width:0}
+.kw .n{width:18px;text-align:center;font-weight:700;font-size:16px}
+.kw .s{width:26px;display:flex;justify-content:center;font-size:9px;font-weight:700;color:var(--red)}
+.kw .s svg{width:9px;height:7px}
+
+/* s13 푸터 */
+#s13-footer{background:var(--band);padding:28px 0 40px;font-size:12px;color:var(--sub2)}
+.cs-h{display:flex;align-items:center;gap:2px;font-size:16px;font-weight:700;color:var(--ink);margin-bottom:14px}
+.cs-h svg{width:16px;height:16px}
+.cs{display:flex;flex-direction:column;gap:8px}
+.cs a{display:flex;align-items:center;justify-content:space-between;background:#fff;border:1px solid var(--line);border-radius:8px;padding:14px 16px 14px 20px}
+.cs b{display:block;font-size:14px;color:var(--ink);margin-bottom:3px}
+.cs span{font-size:12px;color:var(--sub);line-height:1.5}
+.cs svg{width:20px;height:20px;color:#9aa1a7;flex:none}
+.fl{display:flex;flex-wrap:wrap;gap:10px 14px;padding:22px 0;margin-top:22px;border-top:1px solid #e3e6e8;border-bottom:1px solid #e3e6e8;color:#424242}
+.fl a.b{font-weight:700}
+.biz{margin-top:18px}
+.biz button{display:flex;align-items:center;gap:2px;font-size:12px;font-weight:700;color:var(--ink)}
+.biz button svg{width:14px;height:14px;transition:transform .2s}
+.biz.open button svg{transform:rotate(180deg)}
+.biz dl{display:none;margin-top:10px;line-height:1.8;font-size:11px}
+.biz.open dl{display:block}
+.biz dl div{display:flex;gap:6px}
+.biz dt{color:#9aa1a7}
+.fn{font-size:11px;line-height:1.6;margin-top:12px;color:#9aa1a7}
+.sns{display:flex;gap:10px;margin-top:16px}
+.sns a{width:24px;height:24px;border-radius:50%;background:#9aa1a7;display:flex;align-items:center;justify-content:center}
+.sns svg{width:13px;height:13px;color:#fff}
+.copy{margin-top:16px;font-size:11px;color:#9aa1a7}
+.toast{position:fixed;left:50%;bottom:28px;transform:translate(-50%,20px);background:rgba(33,37,41,.92);color:#fff;font-size:13px;padding:10px 16px;border-radius:20px;opacity:0;pointer-events:none;transition:.25s;z-index:99;white-space:nowrap}
+.toast.show{opacity:1;transform:translate(-50%,0)}
+
+/* PC */
+@media (min-width:1024px){
+  .wrap{padding:0 40px}
+  .pcards,.cats,.chips{margin:0;padding:0}
+  #s2-tabs .hs{padding:0 33px;justify-content:center}
+  .bnr{aspect-ratio:auto;height:240px}
+  .bnr-txt{left:56px}
+  .bnr-slide>svg.m{display:none}
+  .bnr-slide>svg.pc{display:block;left:auto;right:0;width:60%}
+  .bnr-txt small{font-size:18px;margin-bottom:8px}
+  .bnr-txt b{font-size:36px;font-weight:700}
+  .qk{grid-template-columns:repeat(10,1fr)}
+  .pcard{flex-basis:220px;height:293px}
+  .hgrid{grid-template-columns:repeat(4,1fr);gap:20px}
+  .cats{display:grid;grid-template-columns:repeat(15,74px);justify-content:space-between;gap:0;overflow:visible}
+  .cats a{width:74px}
+  .dlist{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+  .deal,.deal:first-child,.deal:last-child{flex-direction:column;gap:0;padding:0;border-bottom:0}
+  .deal .ph{width:100%;flex:none}
+  .deal .info{padding-top:12px}
+  .deal .info .nm{font-size:14px}
+  .deal .price{font-size:18px;font-weight:700}
+  .glist{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+  .xlist{display:grid;grid-template-columns:1fr 1fr;gap:20px 32px}
+  .bgrid{grid-template-columns:repeat(6,1fr);gap:20px 16px}
+  .kw{grid-template-columns:repeat(5,1fr);grid-auto-flow:column;grid-template-rows:repeat(2,42px)}
+  .cs{flex-direction:row}.cs a{flex:1}
+  .btn-more{max-width:360px;margin-left:auto;margin-right:auto}
+}
+</style>
+</head>
+<body>
+
+<div class="top" id="top">
+  <header id="s1-header">
+    <div class="wrap">
+      <button class="ib hl" aria-label="메뉴"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M3.5 6h17M3.5 12h17M3.5 18h17"/></svg></button>
+      <a class="logo" href="#" aria-label="하우스노트 홈">
+        <svg viewBox="0 0 24 24"><rect x="1.5" y="1.5" width="21" height="21" rx="6" fill="#2F3438"/><path d="M6.5 12.2 12 7.6l5.5 4.6" fill="none" stroke="#fff" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/><path d="M8.3 11.4v5.4h7.4v-5.4" fill="none" stroke="#fff" stroke-width="1.9" stroke-linejoin="round"/><circle cx="17.6" cy="6.4" r="2" fill="#FFB84D"/></svg>
+        하우스노트
+      </a>
+      <div class="hr">
+        <button class="ib" aria-label="검색"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m15.5 15.5 5 5"/></svg></button>
+        <a class="ib" href="#" aria-label="장바구니"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 3.5h2.6l2.3 11.2h11.2l2-8H6.2"/><circle cx="9" cy="19.5" r="1.4"/><circle cx="17.2" cy="19.5" r="1.4"/></svg><span class="badge-n" id="cartN" hidden>0</span></a>
+      </div>
+    </div>
+  </header>
+  <nav id="s2-tabs" aria-label="주요 메뉴">
+    <div class="hs wrap">
+      <a href="#"><span class="hot">연말세일</span></a>
+      <a href="#" class="on">홈</a>
+      <a href="#">추천</a>
+      <a href="#">집구경</a>
+      <a href="#">공간사진</a>
+      <a href="#">커뮤니티</a>
+      <a href="#">스타일링팁</a>
+      <a href="#">쇼룸안내</a>
+    </div>
+  </nav>
+</div>
+
+<main>
+  <section id="s3-banner"><div class="wrap">
+    <div class="bnr" id="bnr">
+      <div class="bnr-track" id="bnrTrack"></div>
+      <div class="bnr-cnt"><span id="bnrCnt">1 / 6</span><svg viewBox="0 0 12 12" fill="none" stroke="#fff" stroke-width="1.4"><path d="M6 2v8M2 6h8"/></svg></div>
+    </div>
+  </div></section>
+
+  <section id="s4-quick"><div class="wrap"><div class="qk" id="qk"></div></div></section>
+
+  <div class="band"></div>
+  <section id="s5-photos" class="sec"><div class="wrap">
+    <div class="sec-h"><div><h2>이런 공간 찾고 있나요?</h2><p>취향에 맞는 인테리어 사진을 골라 보여드려요</p></div><svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="m9 5 7 7-7 7"/></svg></div>
+    <div class="hs pcards" id="pcards"></div>
+  </div></section>
+
+  <div class="band"></div>
+  <section id="s6-houses" class="sec"><div class="wrap">
+    <div class="sec-h"><h2>오늘의 추천 집구경</h2><svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="m9 5 7 7-7 7"/></svg></div>
+    <div class="hgrid" id="hgrid"></div>
+  </div></section>
+
+  <div class="band"></div>
+  <section id="s7-category" class="sec"><div class="wrap">
+    <div class="sec-h"><h2>카테고리별 상품 찾기</h2></div>
+    <div class="hs cats" id="cats"></div>
+  </div></section>
+
+  <div class="band"></div>
+  <section id="s8-deal" class="sec"><div class="wrap">
+    <div class="sec-h"><h2>오늘의 특가</h2><svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="m9 5 7 7-7 7"/></svg></div>
+    <div class="dlist" id="dlist"></div>
+    <a class="btn-more" href="#">오늘의 특가 더보기</a>
+  </div></section>
+
+  <div class="band"></div>
+  <section id="s9-guide" class="sec"><div class="wrap">
+    <div class="sec-h"><h2>공간별 스타일링 가이드</h2><svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="m9 5 7 7-7 7"/></svg></div>
+    <div class="glist" id="glist"></div>
+    <a class="btn-more" href="#">스타일링 가이드 전체보기</a>
+  </div></section>
+
+  <div class="band"></div>
+  <section id="s10-exhibit" class="sec"><div class="wrap">
+    <div class="sec-h"><h2>이번 주 기획전</h2><svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="m9 5 7 7-7 7"/></svg></div>
+    <div class="xlist" id="xlist"></div>
+    <a class="btn-more" href="#">기획전 더보기</a>
+  </div></section>
+
+  <div class="band"></div>
+  <section id="s11-best" class="sec"><div class="wrap">
+    <div class="sec-h"><h2>MD 추천</h2><svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="m9 5 7 7-7 7"/></svg></div>
+    <div class="hs chips" id="chips" role="tablist"></div>
+    <div class="bgrid" id="bgrid"></div>
+  </div></section>
+
+  <div class="band"></div>
+  <section id="s12-keywords" class="sec"><div class="wrap">
+    <div class="sec-h" style="margin-bottom:8px"><h2>추천 검색어</h2></div>
+    <div class="kw" id="kw"></div>
+  </div></section>
+</main>
+
+<footer id="s13-footer"><div class="wrap">
+  <a class="cs-h" href="#">고객센터<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="m9 5 7 7-7 7"/></svg></a>
+  <div class="cs">
+    <a href="#"><div><b>1:1 문의</b><span>운영 시간 준비 중</span></div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="m9 5 7 7-7 7"/></svg></a>
+    <a href="#"><div><b>채팅 상담</b><span>상품·주문 문의 : 준비 중<br>그 외 문의 : 준비 중</span></div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="m9 5 7 7-7 7"/></svg></a>
+    <a href="#"><div><b>대표 전화 준비 중</b><span>상담 시간 준비 중</span></div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="m9 5 7 7-7 7"/></svg></a>
+  </div>
+  <nav class="fl">
+    <a href="#">브랜드 소개</a><a href="#">이용약관</a><a href="#" class="b">개인정보 처리방침</a><a href="#">공지사항</a><a href="#">입점 문의</a><a href="#">제휴 문의</a><a href="#">쇼룸 안내</a>
+  </nav>
+  <div class="biz" id="biz">
+    <button type="button" aria-expanded="false">하우스노트 사업자 정보<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg></button>
+    <dl>
+      <div><dt>상호</dt><dd>하우스노트</dd></div>
+      <div><dt>대표자</dt><dd>준비 중</dd></div>
+      <div><dt>사업자등록번호</dt><dd>준비 중</dd></div>
+      <div><dt>통신판매업 신고</dt><dd>준비 중</dd></div>
+      <div><dt>주소</dt><dd>준비 중</dd></div>
+      <div><dt>연락처</dt><dd>준비 중</dd></div>
+    </dl>
+  </div>
+  <p class="fn">표시된 상품명·가격은 예시이며, 실제 판매 조건은 오픈 시 안내됩니다.</p>
+  <div class="sns">
+    <a href="#" aria-label="영상 채널"><svg viewBox="0 0 16 16" fill="currentColor"><path d="M5.5 4v8l6.5-4z"/></svg></a>
+    <a href="#" aria-label="사진 채널"><svg viewBox="0 0 16 16" fill="currentColor"><path d="M5.6 3.5 6.5 2.5h3l.9 1H13a1 1 0 0 1 1 1V12a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V4.5a1 1 0 0 1 1-1z"/><circle cx="8" cy="8.2" r="2.4" fill="#9aa1a7"/><circle cx="8" cy="8.2" r="1.4"/></svg></a>
+    <a href="#" aria-label="소식 채널"><svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 2.5c-3.3 0-6 2.1-6 4.7 0 1.6 1 3 2.6 3.9L4 13.5l2.8-1.7c.4.1.8.1 1.2.1 3.3 0 6-2.1 6-4.7S11.3 2.5 8 2.5z"/></svg></a>
+    <a href="#" aria-label="블로그"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><path d="M3 13l1-3.5L10.5 3 13 5.5 6.5 12z"/></svg></a>
+  </div>
+  <p class="copy">© HOUSENOTE. All rights reserved.</p>
+</div></footer>
+
+<div class="toast" id="toast"></div>
+
+<script>
+/* 하우스노트 일러스트 라이브러리 (빌드 시 index.html에 인라인) */
+var HN=(function(){
+let U=0;const uid=()=>'a'+(U++);
+const st=(s)=>s.map(([o,c,op])=>`<stop offset="${o}" stop-color="${c}"${op!=null?` stop-opacity="${op}"`:''}/>`).join('');
+const lg=(id,x1,y1,x2,y2,s)=>`<linearGradient id="${id}" x1="${x1}" y1="${y1}" x2="${x2}" y2="${y2}">${st(s)}</linearGradient>`;
+const rg=(id,cx,cy,r,s)=>`<radialGradient id="${id}" cx="${cx}" cy="${cy}" r="${r}">${st(s)}</radialGradient>`;
+const svg=(vb,body,defs,par)=>`<svg viewBox="${vb}" preserveAspectRatio="${par||'xMidYMid slice'}" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false"><defs>${defs||''}</defs>${body}</svg>`;
+
+/* ---------- 공통 부품 ---------- */
+function room(o){
+  const w=uid(),f=uid(),v=uid();
+  let d=lg(w,0,0,0,1,[[0,o.wall[0]],[1,o.wall[1]]])+lg(f,0,0,0,1,[[0,o.floor[0]],[1,o.floor[1]]])+
+    rg(v,.5,.45,.75,[[0,'#000',0],[.7,'#000',0],[1,'#000',o.night?.45:.18]]);
+  const fy=o.fy||212;
+  let p='';
+  for(let k=-8;k<=8;k++)p+=`<line x1="${150+k*15}" y1="${fy}" x2="${150+k*56}" y2="300" stroke="${o.seam||'#5a3b1f'}" stroke-opacity=".16" stroke-width=".8"/>`;
+  [fy+9,fy+21,fy+37,fy+60].forEach(y=>p+=`<line x1="0" y1="${y}" x2="300" y2="${y}" stroke="${o.seam||'#5a3b1f'}" stroke-opacity=".07"/>`);
+  const body=`<rect width="300" height="300" fill="url(#${w})"/>${o.back||''}<rect y="${fy}" width="300" height="${300-fy}" fill="url(#${f})"/>${p}<rect y="${fy-5}" width="300" height="5" fill="${o.base||'#f4f1ec'}"/><rect y="${fy}" width="300" height="2" fill="#000" opacity=".06"/>${o.body}<rect width="300" height="300" fill="url(#${v})"/>`;
+  return svg(o.vb||'16 22 268 268',body,d+(o.defs||''));
+}
+function win(x,y,w,h,o){o=o||{};const g=uid(),b=uid();
+  const sky=o.sky||['#cfe6f5','#f4f9fc'];
+  let d=lg(g,0,0,0,1,[[0,sky[0]],[1,sky[1]]])+lg(b,0,0,0,1,[[0,'#fff',.38],[1,'#fff',0]]);
+  let s=`<rect x="${x-4}" y="${y-4}" width="${w+8}" height="${h+8}" rx="2" fill="${o.frame||'#fbfaf7'}"/><rect x="${x}" y="${y}" width="${w}" height="${h}" fill="url(#${g})"/>`;
+  if(o.tree)s+=`<ellipse cx="${x+w*.25}" cy="${y+h*.8}" rx="${w*.3}" ry="${h*.25}" fill="#a9c9a0" opacity=".55"/><ellipse cx="${x+w*.8}" cy="${y+h*.85}" rx="${w*.28}" ry="${h*.2}" fill="#9cbf95" opacity=".5"/>`;
+  if(o.moon)s+=`<circle cx="${x+w*.7}" cy="${y+h*.3}" r="${Math.min(w,h)*.08}" fill="#fff7d6" opacity=".9"/>`;
+  s+=`<rect x="${x+w/2-1.5}" y="${y}" width="3" height="${h}" fill="${o.frame||'#fbfaf7'}"/>`;
+  if(o.cross)s+=`<rect x="${x}" y="${y+h*.45}" width="${w}" height="3" fill="${o.frame||'#fbfaf7'}"/>`;
+  if(o.blind){for(let i=0;i<h*.55;i+=5)s+=`<rect x="${x}" y="${y+i}" width="${w}" height="3.2" fill="#f3efe6" opacity=".95"/>`;}
+  s+=`<rect x="${x-8}" y="${y+h+3}" width="${w+16}" height="4" fill="${o.frame||'#fbfaf7'}"/><rect x="${x-8}" y="${y+h+7}" width="${w+16}" height="2" fill="#000" opacity=".08"/>`;
+  if(o.beam!==false)s+=`<polygon points="${x},${y+h} ${x+w},${y+h} ${x+w+70},300 ${x-30},300" fill="url(#${b})"/>`;
+  if(o.curtain){const c=o.curtain;s+=curtainPanel(x-18,y-10,22,h+40,c)+curtainPanel(x+w-4,y-10,22,h+40,c)+`<rect x="${x-24}" y="${y-13}" width="${w+48}" height="3" rx="1.5" fill="#8b7b66"/>`;}
+  return {s,d};
+}
+function curtainPanel(x,y,w,h,c){let s=`<rect x="${x}" y="${y}" width="${w}" height="${h}" fill="${c}"/>`;
+  for(let i=1;i<4;i++)s+=`<rect x="${x+i*w/4-1.2}" y="${y}" width="2.4" height="${h}" fill="#000" opacity=".07"/>`;
+  s+=`<rect x="${x}" y="${y}" width="${w}" height="${h}" fill="#fff" opacity=".12"/>`;return s;}
+function plant(x,y,s,o){o=o||{};const g=uid();s=s||1;
+  const pot=o.pot||'#d9d2c7';
+  let d=lg(g,0,0,1,0,[[0,'#3e7a4f'],[1,'#6fa86f']]);
+  let L='';const leaves=o.leaves||[[-28,-62,-35],[-8,-80,-8],[14,-70,22],[30,-50,48],[-22,-40,-58],[6,-50,6],[22,-34,62]];
+  leaves.forEach(([dx,dy,r],i)=>{L+=`<line x1="0" y1="-6" x2="${dx*.8}" y2="${dy*.75}" stroke="#4d7a45" stroke-width="1.4"/><ellipse cx="${dx}" cy="${dy}" rx="${o.narrow?5:9}" ry="${o.narrow?20:16}" transform="rotate(${r} ${dx} ${dy})" fill="url(#${g})" opacity="${.85+(i%3)*.05}"/>`});
+  return {s:`<g transform="translate(${x} ${y}) scale(${s})"><ellipse cx="0" cy="34" rx="22" ry="4" fill="#000" opacity=".14"/>${L}<path d="M-16 -4 H16 L12 32 H-12 Z" fill="${pot}"/><rect x="-17" y="-7" width="34" height="5" rx="1.5" fill="${pot}"/><path d="M-16 -4 H16 L12 32 H-12 Z" fill="#000" opacity=".06"/></g>`,d};
+}
+function floorLamp(x,y,on,c){const g=uid();let d=rg(g,.5,.5,.5,[[0,'#ffe2a8',.75],[1,'#ffe2a8',0]]);
+  return {s:`${on?`<circle cx="${x}" cy="${y-118}" r="60" fill="url(#${g})"/>`:''}<ellipse cx="${x}" cy="${y}" rx="14" ry="3" fill="#000" opacity=".18"/><rect x="${x-1.2}" y="${y-110}" width="2.4" height="110" fill="#3a3530"/><ellipse cx="${x}" cy="${y-1}" rx="11" ry="2.5" fill="#3a3530"/><path d="M${x-17} ${y-108} L${x-11} ${y-134} H${x+11} L${x+17} ${y-108} Z" fill="${c||'#f2e6d0'}"/>${on?`<path d="M${x-17} ${y-108} L${x-11} ${y-134} H${x+11} L${x+17} ${y-108} Z" fill="#fff3d6" opacity=".55"/>`:''}`,d};}
+function pendant(x,len,on,c,shape){const g=uid();let d=rg(g,.5,.5,.5,[[0,'#ffdca0',.7],[1,'#ffdca0',0]]);
+  const y=len;const sh=shape==='dome'?`<path d="M${x-18} ${y+16} Q${x} ${y-10} ${x+18} ${y+16} Z" fill="${c||'#2f3438'}"/>`:`<path d="M${x-10} ${y+18} L${x-6} ${y} H${x+6} L${x+10} ${y+18} Z" fill="${c||'#e8dcc6'}"/>`;
+  return {s:`${on?`<circle cx="${x}" cy="${y+22}" r="46" fill="url(#${g})"/>`:''}<line x1="${x}" y1="0" x2="${x}" y2="${y}" stroke="#2c2a28" stroke-width="1"/>${sh}${on?`<ellipse cx="${x}" cy="${y+17}" rx="6" ry="2.2" fill="#fff6dc"/>`:''}`,d};}
+function frame(x,y,w,h,inner,fc){return `<rect x="${x+2}" y="${y+3}" width="${w}" height="${h}" fill="#000" opacity=".1"/><rect x="${x}" y="${y}" width="${w}" height="${h}" fill="${fc||'#c9a77c'}"/><rect x="${x+3}" y="${y+3}" width="${w-6}" height="${h-6}" fill="#fbf8f2"/><g>${inner}</g>`;}
+function abstractArt(x,y,w,h,c1,c2){return `<circle cx="${x+w*.4}" cy="${y+h*.45}" r="${Math.min(w,h)*.22}" fill="${c1}"/><rect x="${x+w*.45}" y="${y+h*.5}" width="${w*.3}" height="${h*.3}" fill="${c2}" opacity=".85"/>`;}
+function rug(cx,cy,rx,ry,c1,c2){return `<ellipse cx="${cx}" cy="${cy}" rx="${rx}" ry="${ry}" fill="${c1}"/><ellipse cx="${cx}" cy="${cy}" rx="${rx*.82}" ry="${ry*.78}" fill="none" stroke="${c2}" stroke-width="1.5" opacity=".7"/>`;}
+function sofa(x,y,w,c,dark){ // y=바닥선
+  return `<ellipse cx="${x+w/2}" cy="${y+2}" rx="${w*.55}" ry="5" fill="#000" opacity=".16"/>
+  <rect x="${x+8}" y="${y-4}" width="3" height="6" fill="#3b2f25"/><rect x="${x+w-11}" y="${y-4}" width="3" height="6" fill="#3b2f25"/>
+  <rect x="${x+6}" y="${y-58}" width="${w-12}" height="34" rx="9" fill="${c}"/><rect x="${x+6}" y="${y-58}" width="${w-12}" height="34" rx="9" fill="#000" opacity=".06"/>
+  <rect x="${x+10}" y="${y-30}" width="${w-20}" height="26" rx="6" fill="${c}"/>
+  <rect x="${x+12}" y="${y-30}" width="${(w-24)/2-1}" height="10" rx="4" fill="#fff" opacity=".12"/><rect x="${x+w/2+1}" y="${y-30}" width="${(w-24)/2-1}" height="10" rx="4" fill="#fff" opacity=".12"/>
+  <rect x="${x}" y="${y-38}" width="14" height="34" rx="6" fill="${c}"/><rect x="${x+w-14}" y="${y-38}" width="14" height="34" rx="6" fill="${c}"/>
+  <rect x="${x}" y="${y-38}" width="14" height="34" rx="6" fill="#000" opacity=".08"/><rect x="${x+w-14}" y="${y-38}" width="14" height="34" rx="6" fill="#000" opacity=".08"/>
+  <rect x="${x+18}" y="${y-52}" width="22" height="20" rx="5" transform="rotate(-8 ${x+29} ${y-42})" fill="${dark||'#f4ead8'}"/>
+  <rect x="${x+w-42}" y="${y-51}" width="22" height="20" rx="5" transform="rotate(7 ${x+w-31} ${y-41})" fill="#e7b48a"/>`;}
+function roundTable(cx,y,r,c){return `<ellipse cx="${cx}" cy="${y+1}" rx="${r*.9}" ry="3.5" fill="#000" opacity=".15"/><rect x="${cx-r*.55}" y="${y-18}" width="2.5" height="18" fill="${c||'#9b7350'}" transform="rotate(8 ${cx-r*.55} ${y-18})"/><rect x="${cx+r*.5}" y="${y-18}" width="2.5" height="18" fill="${c||'#9b7350'}" transform="rotate(-8 ${cx+r*.5} ${y-18})"/><ellipse cx="${cx}" cy="${y-19}" rx="${r}" ry="${r*.28}" fill="${c||'#b88a5e'}"/><ellipse cx="${cx}" cy="${y-21}" rx="${r}" ry="${r*.28}" fill="#d4ab7f"/>`;}
+function chair(x,y,c,flip){const s=flip?-1:1;return `<g transform="translate(${x} ${y}) scale(${s} 1)"><ellipse cx="0" cy="1" rx="12" ry="2.5" fill="#000" opacity=".15"/><rect x="-9" y="-22" width="2" height="22" fill="${c}"/><rect x="7" y="-22" width="2" height="22" fill="${c}"/><rect x="-11" y="-24" width="22" height="4" rx="1.5" fill="${c}"/><rect x="7" y="-48" width="2.5" height="26" fill="${c}"/><path d="M5 -48 Q12 -50 13 -44 L11 -34 Q8 -36 5 -36Z" fill="${c}"/></g>`;}
+function books(x,y,n,seed){const cs=['#c8553d','#2f5d62','#e0b44a','#6b7f99','#d9cbb4','#8a6e5a','#3d4a5c','#b7c4b0'];let s='';let cx=x;for(let i=0;i<n;i++){const h=12+((i*7+seed*3)%6),w=3+((i+seed)%3);s+=`<rect x="${cx}" y="${y-h}" width="${w}" height="${h}" fill="${cs[(i+seed)%cs.length]}"/>`;cx+=w+.6;}return s;}
+function bed(x,y,w,o){ // y = 바닥선
+  const bed=o.bed||'#f7f4ee',hb=o.hb||'#b48a62',du=o.du||'#ece6dc';
+  return `<ellipse cx="${x+w/2}" cy="${y+2}" rx="${w*.56}" ry="6" fill="#000" opacity=".17"/>
+  <rect x="${x}" y="${y-78}" width="${w}" height="48" rx="${o.round?14:3}" fill="${hb}"/><rect x="${x}" y="${y-78}" width="${w}" height="48" rx="${o.round?14:3}" fill="#fff" opacity=".07"/>
+  <rect x="${x-3}" y="${y-30}" width="${w+6}" height="26" rx="3" fill="${o.frame||'#8a6a4c'}"/>
+  <rect x="${x+2}" y="${y-38}" width="${w-4}" height="14" rx="4" fill="${bed}"/>
+  <rect x="${x+10}" y="${y-56}" width="${w*.36}" height="20" rx="7" fill="#fbfaf7"/><rect x="${x+w-10-w*.36}" y="${y-56}" width="${w*.36}" height="20" rx="7" fill="#fbfaf7"/>
+  <rect x="${x+14}" y="${y-50}" width="${w*.3}" height="16" rx="6" fill="${o.pil||'#d9c3a5'}"/>
+  <path d="M${x-6} ${y-36} Q${x+w/2} ${y-46} ${x+w+6} ${y-36} L${x+w+8} ${y-8} Q${x+w/2} ${y-2} ${x-8} ${y-8} Z" fill="${du}"/>
+  <path d="M${x+w*.2} ${y-38} Q${x+w*.3} ${y-22} ${x+w*.24} ${y-6}" stroke="#000" stroke-opacity=".08" fill="none" stroke-width="2"/>
+  <path d="M${x+w*.62} ${y-41} Q${x+w*.55} ${y-24} ${x+w*.66} ${y-6}" stroke="#000" stroke-opacity=".08" fill="none" stroke-width="2"/>
+  <path d="M${x-6} ${y-36} Q${x+w/2} ${y-46} ${x+w+6} ${y-36} L${x+w+6} ${y-30} Q${x+w/2} ${y-40} ${x-6} ${y-30} Z" fill="#fff" opacity=".35"/>
+  ${o.throw?`<path d="M${x+w*.55} ${y-37} L${x+w+8} ${y-34} L${x+w+8} ${y-8} Q${x+w*.8} ${y-4} ${x+w*.6} ${y-6} Z" fill="${o.throw}"/>`:''}`;}
+function nightstand(x,y,c,lampOn){const g=uid();const d=rg(g,.5,.5,.5,[[0,'#ffd99a',.8],[1,'#ffd99a',0]]);
+  return {s:`<ellipse cx="${x+14}" cy="${y+1}" rx="17" ry="3" fill="#000" opacity=".15"/><rect x="${x}" y="${y-30}" width="28" height="30" rx="2" fill="${c}"/><rect x="${x+3}" y="${y-26}" width="22" height="10" rx="1" fill="#000" opacity=".08"/><circle cx="${x+14}" cy="${y-21}" r="1.2" fill="#d8c8a8"/>${lampOn?`<circle cx="${x+14}" cy="${y-46}" r="30" fill="url(#${g})"/>`:''}<rect x="${x+12.5}" y="${y-44}" width="3" height="14" fill="#c9b9a0"/><ellipse cx="${x+14}" cy="${y-31}" rx="6" ry="1.6" fill="#c9b9a0"/><path d="M${x+5} ${y-42} Q${x+14} ${y-62} ${x+23} ${y-42} Z" fill="#f6ead2"/>${lampOn?`<path d="M${x+5} ${y-42} Q${x+14} ${y-62} ${x+23} ${y-42} Z" fill="#fff" opacity=".4"/>`:''}`,d};}
+
+/* ---------- 방 장면 (13종) ---------- */
+const R={};
+R.living=()=>{const W=win(150,40,112,128,{tree:true,curtain:'#f2ede4'}),P=plant(48,176,1),L=floorLamp(272,268,false,'#efe3cc');
+  return room({wall:['#efe7dc','#e6dccd'],floor:['#c99b6d','#b4865a'],defs:W.d+P.d+L.d,
+  body:W.s+frame(30,58,50,62,abstractArt(30,58,50,62,'#e3a07a','#7f9a86'),'#d7c3a3')+rug(150,262,120,22,'#e9e2d6','#cfc3b0')+sofa(70,246,160,'#a7b3a2')+roundTable(150,276,34)+`<rect x="138" y="246" width="10" height="9" rx="2" fill="#f0e7d8"/><circle cx="160" cy="250" r="4" fill="#7e9b7a"/>`+P.s+L.s});};
+R.bedroom=()=>{const N=nightstand(36,246,'#d8c3a5',true),N2=nightstand(238,246,'#d8c3a5',true),Pd=pendant(150,30,false,'#efe2c8','dome');
+  return room({wall:['#c9d1c1','#b9c3b0'],floor:['#d0a77d','#b88d63'],base:'#e9e6dd',defs:N.d+N2.d+Pd.d,
+  body:frame(112,64,76,52,`<path d="M115 113 L140 84 L158 100 L170 90 L185 113Z" fill="#b6c3a8"/><circle cx="168" cy="78" r="6" fill="#f0c48a"/>`,'#b99a74')+bed(78,262,144,{hb:'#9c7655',du:'#f1ede6',pil:'#c9b49a',throw:'#d7b48f'})+N.s+N2.s});};
+R.kitchen=()=>{const Pd=pendant(150,70,true,'#2f3438','dome');let tiles='';for(let y=96;y<170;y+=10)for(let x=0;x<300;x+=20)tiles+=`<rect x="${x+((y/10)%2?10:0)}" y="${y}" width="19" height="9" fill="#fbfbf9"/>`;
+  let cab='';for(let i=0;i<5;i++)cab+=`<rect x="${i*60+2}" y="12" width="56" height="70" rx="2" fill="#f4f2ee"/><rect x="${i*60+48}" y="40" width="2" height="14" rx="1" fill="#b9b2a6"/>`;
+  return room({wall:['#e9ebe8','#dfe2de'],floor:['#d7c2a4','#c4ab89'],seam:'#6b5a44',base:'#d9d3c9',defs:Pd.d,
+  back:`<rect y="94" width="300" height="78" fill="#e5e3de"/>${tiles}${cab}<rect y="168" width="300" height="8" fill="#cfc8bc"/><rect y="176" width="300" height="38" fill="#f1efea"/><rect x="40" y="186" width="2" height="12" fill="#b9b2a6"/><rect x="140" y="186" width="2" height="12" fill="#b9b2a6"/><rect x="240" y="186" width="2" height="12" fill="#b9b2a6"/><rect x="60" y="150" width="16" height="18" rx="3" fill="#e2b07e"/><rect x="82" y="156" width="12" height="12" rx="2" fill="#93a99a"/><path d="M210 168 q8 -26 16 0Z" fill="#6f9269"/>`,
+  body:Pd.s+chair(104,272,'#5a4535')+chair(196,272,'#5a4535',true)+roundTable(150,276,48,'#a67b52')+`<ellipse cx="140" cy="254" rx="9" ry="2.5" fill="#fff"/><circle cx="162" cy="252" r="5" fill="#f2c27d"/><rect x="152" y="246" width="5" height="9" rx="1.5" fill="#e7e2d8"/>`});};
+R.desk=()=>{const W=win(176,30,96,120,{blind:true,frame:'#f2f1ee'}),P=plant(270,272,.8,{pot:'#f1ece4'});
+  return room({wall:['#f1eee8','#e7e2d9'],floor:['#b98a5c','#a2764b'],defs:W.d+P.d,
+  body:W.s+`<rect x="18" y="62" width="110" height="4" fill="#a27c58"/><rect x="18" y="104" width="110" height="4" fill="#a27c58"/>${books(24,62,14,1)}${books(26,104,11,4)}<circle cx="110" cy="96" r="7" fill="#7aa07a"/><rect x="104" y="96" width="12" height="8" fill="#e9e1d4"/>
+  <ellipse cx="120" cy="270" rx="90" ry="6" fill="#000" opacity=".14"/><rect x="38" y="196" width="164" height="7" rx="2" fill="#c49a6c"/><rect x="44" y="203" width="4" height="66" fill="#8f6c4b"/><rect x="192" y="203" width="4" height="66" fill="#8f6c4b"/>
+  <rect x="84" y="150" width="70" height="42" rx="3" fill="#2d3136"/><rect x="87" y="153" width="64" height="36" rx="1.5" fill="#9cc3d9"/><path d="M87 175 L105 165 L120 172 L151 158 V189 H87Z" fill="#7da7bf"/><rect x="116" y="192" width="6" height="5" fill="#2d3136"/><rect x="104" y="196" width="30" height="2" fill="#2d3136"/>
+  <rect x="64" y="186" width="10" height="10" rx="2" fill="#f4efe6"/><path d="M168 196 l6 -16 l6 16z" fill="#e5c79e"/>
+  <rect x="104" y="214" width="34" height="34" rx="8" fill="#3c4148"/><rect x="100" y="244" width="42" height="8" rx="3" fill="#3c4148"/><rect x="120" y="252" width="3" height="16" fill="#555"/><path d="M106 270 L121 266 L136 270" stroke="#555" stroke-width="2.5" fill="none"/>`+P.s});};
+R.evening=()=>{const L=floorLamp(54,262,true,'#f1dcb4'),W=win(196,46,74,100,{sky:['#283a5a','#4f6487'],moon:true,frame:'#d8d2c7',beam:false}),P=plant(268,262,.9,{pot:'#3e3a36'});
+  return room({night:true,wall:['#3b4358','#2d3446'],floor:['#7a5a3e','#5f442d'],base:'#2a3040',defs:L.d+W.d+P.d,
+  body:W.s+rug(160,258,120,20,'#8b7a66','#a89580')+`<ellipse cx="190" cy="250" rx="70" ry="5" fill="#000" opacity=".25"/><rect x="128" y="214" width="124" height="34" rx="2" fill="#6b4f39"/><rect x="132" y="219" width="56" height="24" rx="1" fill="#5a412e"/><rect x="192" y="219" width="56" height="24" rx="1" fill="#5a412e"/><rect x="144" y="150" width="88" height="54" rx="3" fill="#15171c"/><rect x="147" y="153" width="82" height="48" fill="#1e2a3d"/><rect x="186" y="204" width="4" height="10" fill="#15171c"/>`+sofa(70,276,120,'#b5674a','#e8c9a6')+L.s+P.s});};
+R.kids=()=>{let flags='';for(let i=0;i<9;i++){const x=20+i*30;flags+=`<path d="M${x} ${40+Math.sin(i/1.3)*4} l12 0 l-6 14z" fill="${['#f4a6a0','#f7d488','#a9cfe0','#b6d7b0'][i%4]}"/>`}
+  const N=nightstand(244,262,'#f0e3d6',false);
+  return room({wall:['#f6e2dc','#efd4cc'],floor:['#e2c7a5','#d1b38f'],base:'#fbf3ee',defs:N.d,
+  back:`<path d="M0 36 Q150 56 300 36" stroke="#c9a997" fill="none" stroke-width="1"/>${flags}<circle cx="70" cy="110" r="22" fill="#fff" opacity=".7"/><path d="M50 116 q20 -18 40 0" fill="#f7d488"/>`,
+  body:`<ellipse cx="110" cy="272" rx="70" ry="5" fill="#000" opacity=".14"/><polygon points="72,270 110,150 148,270" fill="#f7efe4"/><polygon points="110,150 148,270 124,270" fill="#e9dccb"/><path d="M104 270 Q110 216 116 270Z" fill="#c9b49a"/><line x1="102" y1="140" x2="116" y2="160" stroke="#a27c58" stroke-width="2"/><line x1="118" y1="140" x2="104" y2="160" stroke="#a27c58" stroke-width="2"/>
+  <rect x="166" y="196" width="66" height="70" rx="3" fill="#fbf6f0"/><rect x="170" y="200" width="28" height="30" fill="#f4a6a0" opacity=".6"/><rect x="200" y="200" width="28" height="30" fill="#a9cfe0" opacity=".7"/><rect x="170" y="232" width="28" height="30" fill="#f7d488" opacity=".7"/><rect x="200" y="232" width="28" height="30" fill="#b6d7b0" opacity=".7"/><circle cx="186" cy="190" r="7" fill="#e8b48a"/><circle cx="182" cy="184" r="3" fill="#e8b48a"/><circle cx="190" cy="184" r="3" fill="#e8b48a"/><rect x="206" y="180" width="16" height="16" rx="2" fill="#a9cfe0"/>`+rug(150,282,90,12,'#fff','#f4a6a0')+N.s});};
+R.bath=()=>{let t='';for(let y=0;y<212;y+=16)for(let x=0;x<300;x+=16)t+=`<rect x="${x+.5}" y="${y+.5}" width="15" height="15" fill="#f4f6f5"/>`;const P=plant(244,186,.55,{pot:'#fff',narrow:true});
+  const m=uid();const d=lg(m,0,0,1,1,[[0,'#dfe9ee'],[.5,'#f6fafb'],[1,'#c8d6dd']]);
+  return room({wall:['#dde3e1','#d3dad8'],floor:['#cfd3d0','#bfc4c1'],seam:'#555',base:'#c9cfcc',defs:d+P.d,
+  back:t,body:`<circle cx="150" cy="96" r="42" fill="#c7a77c"/><circle cx="150" cy="96" r="38" fill="url(#${m})"/><path d="M128 78 L142 70" stroke="#fff" stroke-width="3" opacity=".8"/>
+  <rect x="80" y="160" width="140" height="10" rx="2" fill="#efece6"/><ellipse cx="150" cy="160" rx="30" ry="6" fill="#fff"/><ellipse cx="150" cy="160" rx="24" ry="4" fill="#e3e7e8"/><rect x="148" y="140" width="4" height="16" rx="2" fill="#9aa1a3"/><rect x="148" y="140" width="12" height="3" rx="1.5" fill="#9aa1a3"/>
+  <ellipse cx="150" cy="248" rx="80" ry="5" fill="#000" opacity=".15"/><rect x="82" y="170" width="136" height="74" rx="2" fill="#b58d62"/><rect x="88" y="176" width="60" height="62" rx="1" fill="#a47d54"/><rect x="152" y="176" width="60" height="62" rx="1" fill="#a47d54"/><rect x="140" y="200" width="2" height="14" fill="#e6d8c2"/><rect x="158" y="200" width="2" height="14" fill="#e6d8c2"/>
+  <rect x="28" y="96" width="34" height="3" rx="1.5" fill="#9aa1a3"/><rect x="31" y="99" width="28" height="56" rx="2" fill="#e9dccb"/><rect x="31" y="140" width="28" height="4" fill="#d1bfa6"/><rect x="96" y="148" width="8" height="12" rx="2" fill="#f2efe8"/><rect x="108" y="150" width="7" height="10" rx="2" fill="#c6d3cf"/>`+P.s+rug(150,276,60,10,'#e9e4da','#cfc6b7')});};
+R.cafe=()=>{const P1=pendant(118,60,true,'#e9dcc4'),P2=pendant(182,74,true,'#e9dcc4');let sh='';
+  [60,100,140].forEach((y,i)=>{sh+=`<rect x="34" y="${y}" width="232" height="4" fill="#9b7452"/><rect x="34" y="${y+4}" width="232" height="2" fill="#000" opacity=".08"/>`;});
+  sh+=`<circle cx="60" cy="50" r="9" fill="#f4f1ec"/><circle cx="60" cy="50" r="5" fill="#e3ddd2"/><rect x="80" y="44" width="12" height="16" rx="2" fill="#d9a46e"/><rect x="96" y="40" width="10" height="20" rx="4" fill="#9cb3a2"/><path d="M220 60 q10 -30 20 0Z" fill="#6e9469"/><rect x="180" y="46" width="24" height="14" rx="3" fill="#f0e9dd"/>`+books(130,100,9,2)+`<rect x="200" y="86" width="14" height="14" rx="7" fill="#e7c08e"/><rect x="220" y="84" width="12" height="16" rx="2" fill="#f4f1ec"/><circle cx="70" cy="128" r="10" fill="#f4f1ec"/><circle cx="92" cy="128" r="10" fill="#efe9de"/><rect x="230" y="124" width="10" height="16" rx="2" fill="#c97b5b"/>`;
+  return room({wall:['#efe4d6','#e4d6c4'],floor:['#a87c55','#8f6640'],base:'#e2d6c4',defs:P1.d+P2.d,
+  body:sh+P1.s+P2.s+`<g transform="translate(150 282) scale(1.4) translate(-150 -276)">`+chair(110,274,'#3c3a37')+chair(190,274,'#3c3a37',true)+`<ellipse cx="150" cy="275" rx="40" ry="4" fill="#000" opacity=".16"/><rect x="148" y="214" width="4" height="60" fill="#3c3a37"/><ellipse cx="150" cy="274" rx="16" ry="3" fill="#3c3a37"/><ellipse cx="150" cy="212" rx="38" ry="9" fill="#e9e3d9"/><ellipse cx="150" cy="210" rx="38" ry="9" fill="#f5f1ea"/><rect x="136" y="198" width="10" height="11" rx="2" fill="#fff"/><path d="M146 201 q5 3 0 6" stroke="#fff" stroke-width="1.6" fill="none"/><ellipse cx="162" cy="207" rx="8" ry="2.4" fill="#d9a46e"/></g>`});};
+R.blueBed=()=>{const W=win(198,40,74,112,{sky:['#d9e7f2','#f5f9fb'],curtain:'#cdd6e0'}),N=nightstand(40,256,'#f2f1ee',true);
+  return room({wall:['#e9edf1','#dde3ea'],floor:['#c4b29a','#ae9b81'],seam:'#4b3f30',base:'#f1f3f5',defs:W.d+N.d,
+  body:W.s+frame(86,52,40,52,`<rect x="92" y="58" width="28" height="40" fill="#8aa1b8"/><circle cx="106" cy="72" r="7" fill="#e9eef3"/>`,'#2f3a4a')+frame(134,62,30,40,`<path d="M137 99 L149 80 L161 99Z" fill="#c8b9a2"/>`,'#2f3a4a')+bed(76,268,140,{hb:'#34445c',du:'#d5dbe2',pil:'#9fb0c4',frame:'#2a3648',round:true})+N.s+rug(150,286,110,10,'#eef0f2','#c7ced6')});};
+R.entry=()=>{const m=uid(),d=lg(m,0,0,1,1,[[0,'#dfe6ea'],[.5,'#f7fafb'],[1,'#cdd8de']]);const P=plant(256,252,.7,{pot:'#cbbfae'});
+  return room({wall:['#f3efe9','#e9e3da'],floor:['#d7d2ca','#c5bfb5'],seam:'#444',base:'#e2dcd2',fy:222,defs:d+P.d,
+  body:`<rect x="104" y="20" width="60" height="150" rx="30" fill="#b58f66"/><rect x="108" y="24" width="52" height="142" rx="26" fill="url(#${m})"/><path d="M118 50 L134 40" stroke="#fff" stroke-width="3" opacity=".8"/>
+  <ellipse cx="80" cy="262" rx="64" ry="5" fill="#000" opacity=".15"/><rect x="20" y="170" width="120" height="88" rx="2" fill="#f6f3ee"/><rect x="24" y="176" width="55" height="78" fill="#efeae2"/><rect x="81" y="176" width="55" height="78" fill="#efeae2"/><rect x="74" y="210" width="2" height="16" fill="#b9ad9b"/><rect x="84" y="210" width="2" height="16" fill="#b9ad9b"/><rect x="20" y="166" width="120" height="5" fill="#c49a6c"/>
+  <rect x="34" y="150" width="14" height="16" rx="3" fill="#cfd8d3"/><path d="M41 150 q-6 -14 0 -22 q6 8 0 22" fill="#7ea27a"/><rect x="100" y="156" width="26" height="10" rx="2" fill="#e5c79e"/>
+  <ellipse cx="200" cy="270" rx="44" ry="4" fill="#000" opacity=".14"/><rect x="160" y="232" width="84" height="7" rx="2" fill="#a67b52"/><rect x="166" y="239" width="4" height="30" fill="#8a6542"/><rect x="234" y="239" width="4" height="30" fill="#8a6542"/><rect x="176" y="246" width="18" height="12" rx="3" fill="#2f3438"/><rect x="200" y="248" width="18" height="10" rx="3" fill="#d6c3a8"/>
+  <rect x="166" y="222" width="30" height="12" rx="5" fill="#d9cbb5"/>`+P.s});};
+R.plants=()=>{const W=win(40,24,220,150,{tree:true,frame:'#f4f1ea',cross:true}),P1=plant(46,250,1.25,{pot:'#c87b56'}),P2=plant(250,256,1.1,{pot:'#efe8dc',narrow:true}),P3=plant(196,180,.6,{pot:'#d8cfc2'}),P4=plant(92,180,.55,{pot:'#c87b56'});
+  return room({wall:['#efe9df','#e3dccf'],floor:['#c7a07a','#ae8761'],defs:W.d+P1.d+P2.d+P3.d+P4.d,
+  body:W.s+`<rect x="70" y="176" width="160" height="6" fill="#d2c3ad"/>`+P3.s+P4.s+`<ellipse cx="150" cy="272" rx="48" ry="5" fill="#000" opacity=".16"/><path d="M110 226 Q150 190 190 226 L184 262 H116 Z" fill="#c9a875"/><path d="M110 226 Q150 190 190 226" stroke="#a88757" stroke-width="3" fill="none"/>${[0,1,2,3,4,5].map(i=>`<line x1="${118+i*13}" y1="${214-Math.sin(i/1.6)*6}" x2="${120+i*12}" y2="262" stroke="#a88757" stroke-opacity=".5"/>`).join('')}<ellipse cx="150" cy="240" rx="34" ry="8" fill="#efe6d6"/><rect x="118" y="262" width="3" height="10" fill="#8a6a44"/><rect x="179" y="262" width="3" height="10" fill="#8a6a44"/>`+P1.s+P2.s});};
+R.studio=()=>{const W=win(206,40,70,104,{tree:true}),Pd=pendant(70,40,true,'#e7dac3');
+  return room({wall:['#f2ede6','#e8e1d6'],floor:['#caa27a','#b38b62'],defs:W.d+Pd.d,
+  body:W.s+bed(14,262,108,{hb:'#e8dccb',du:'#f6f2ea',pil:'#b9c8b5'})+Pd.s+`<ellipse cx="158" cy="268" rx="36" ry="4" fill="#000" opacity=".16"/><rect x="128" y="96" width="60" height="170" fill="none" stroke="#a7825e" stroke-width="4"/><line x1="128" y1="136" x2="188" y2="136" stroke="#a7825e" stroke-width="4"/><line x1="128" y1="180" x2="188" y2="180" stroke="#a7825e" stroke-width="4"/><line x1="128" y1="224" x2="188" y2="224" stroke="#a7825e" stroke-width="4"/>${books(134,134,8,5)}<rect x="160" y="160" width="16" height="18" rx="3" fill="#e5c79e"/><circle cx="144" cy="170" r="8" fill="#7aa07a"/><rect x="138" y="170" width="12" height="9" fill="#f1ebe1"/>${books(134,222,10,3)}<rect x="140" y="248" width="40" height="14" rx="3" fill="#d6c6ae"/>`+sofa(196,276,96,'#d4b38c','#f3ebe0')});};
+R.nook=()=>{const L=floorLamp(212,262,true,'#efe0c4'),W=win(40,44,90,120,{sky:['#f6dcc1','#fbefe0'],frame:'#f6f1ea'}),P=plant(270,258,.85,{pot:'#7d8b7a'});
+  return room({wall:['#ead8c6','#dec8b3'],floor:['#a77a52','#8b6340'],base:'#e8dccd',defs:L.d+W.d+P.d,
+  body:W.s+`<rect x="150" y="70" width="70" height="3" fill="#8f6a48"/>${books(152,70,12,6)}`+rug(150,270,110,16,'#c98a68','#e3b293')+`<ellipse cx="150" cy="264" rx="54" ry="5" fill="#000" opacity=".18"/><path d="M104 196 Q104 168 130 168 H170 Q196 168 196 196 V246 H104 Z" fill="#6e7f6c"/><rect x="98" y="214" width="20" height="40" rx="9" fill="#62735f"/><rect x="182" y="214" width="20" height="40" rx="9" fill="#62735f"/><rect x="112" y="222" width="76" height="24" rx="6" fill="#7d8f7a"/><rect x="108" y="252" width="3" height="10" fill="#4b3a2c"/><rect x="189" y="252" width="3" height="10" fill="#4b3a2c"/><path d="M118 214 L156 206 L176 222 L130 230Z" fill="#efe2cb"/><rect x="132" y="194" width="22" height="16" rx="5" fill="#e9c8a2" transform="rotate(-10 143 202)"/>`+L.s+P.s});};
+
+/* ---------- 상품 일러스트 ---------- */
+function prod(bg,body,defs){const g=uid(),s=uid();return svg('0 0 200 200',`<rect width="200" height="200" fill="url(#${g})"/><ellipse cx="100" cy="170" rx="62" ry="7" fill="#000" opacity=".1"/>${body}`,lg(g,0,0,0,1,[[0,bg[0]],[1,bg[1]]])+(defs||''));}
+const P={};
+P.sideTable=(c)=>{const t=c||'#b98a5c';return `<rect x="96" y="80" width="8" height="88" fill="${t}"/><rect x="96" y="80" width="3" height="88" fill="#fff" opacity=".15"/><ellipse cx="100" cy="168" rx="34" ry="7" fill="${t}"/><ellipse cx="100" cy="166" rx="34" ry="7" fill="#c9a074"/><ellipse cx="100" cy="82" rx="56" ry="13" fill="#9a6f46"/><ellipse cx="100" cy="78" rx="56" ry="13" fill="${t}"/><ellipse cx="100" cy="77" rx="40" ry="8" fill="#fff" opacity=".1"/><rect x="74" y="60" width="16" height="16" rx="3" fill="#f4efe6"/><path d="M118 66 q4 -18 8 0" fill="#7ea27a"/><rect x="114" y="64" width="16" height="10" rx="2" fill="#e6d7c3"/>`};
+P.curtain=(c)=>{const k=c||'#e8e0d2';let s=`<rect x="34" y="28" width="132" height="4" rx="2" fill="#8b7b66"/><circle cx="34" cy="30" r="4" fill="#8b7b66"/><circle cx="166" cy="30" r="4" fill="#8b7b66"/>`;
+  for(let i=0;i<10;i++){const x=40+i*12;s+=`<path d="M${x} 34 Q${x+6} 100 ${x+(i<5?-4:4)} 168 H${x+12+(i<5?-4:4)} Q${x+18} 100 ${x+12} 34Z" fill="${k}"/><path d="M${x+6} 34 Q${x+10} 100 ${x+6+(i<5?-4:4)} 168" stroke="#000" stroke-opacity=".08" stroke-width="3" fill="none"/>`}
+  return s+`<rect x="38" y="34" width="124" height="134" fill="#fff" opacity=".14"/>`};
+P.lamp=(c)=>{const g=uid();return {d:rg(g,.5,.5,.5,[[0,'#ffe3aa',.85],[1,'#ffe3aa',0]]),s:`<circle cx="100" cy="74" r="62" fill="url(#${g})"/><ellipse cx="100" cy="166" rx="28" ry="6" fill="${c||'#c4a27c'}"/><path d="M84 166 Q80 130 100 118 Q120 130 116 166Z" fill="${c||'#d8b791'}"/><path d="M86 160 Q84 132 100 122" stroke="#fff" stroke-opacity=".3" stroke-width="3" fill="none"/><rect x="98" y="96" width="4" height="24" fill="#a88c6c"/><path d="M58 98 L74 46 H126 L142 98Z" fill="#f6ecd8"/><path d="M58 98 L74 46 H126 L142 98Z" fill="#fff" opacity=".35"/><path d="M58 98 H142" stroke="#e2d3b8" stroke-width="2"/>`}};
+P.mugs=()=>`<rect x="40" y="98" width="46" height="62" rx="8" fill="#f1ede5"/><path d="M86 112 q18 2 0 30" stroke="#f1ede5" stroke-width="7" fill="none"/><ellipse cx="63" cy="99" rx="23" ry="5" fill="#6d4a32"/><rect x="106" y="86" width="52" height="76" rx="9" fill="#9fb3a5"/><path d="M158 104 q20 2 0 34" stroke="#9fb3a5" stroke-width="8" fill="none"/><ellipse cx="132" cy="87" rx="26" ry="5.5" fill="#86998b"/><rect x="40" y="122" width="46" height="5" fill="#e0d6c6"/><rect x="110" y="96" width="6" height="58" rx="3" fill="#fff" opacity=".18"/>`;
+P.chair=(c)=>{const k=c||'#a77a50';return `<rect x="58" y="112" width="6" height="58" fill="${k}" transform="rotate(4 61 112)"/><rect x="134" y="112" width="6" height="58" fill="${k}" transform="rotate(-4 137 112)"/><rect x="74" y="112" width="5" height="52" fill="#8a6440"/><rect x="120" y="112" width="5" height="52" fill="#8a6440"/><path d="M52 106 H148 L144 118 H56Z" fill="${k}"/><path d="M54 104 H146 V110 H54Z" fill="#c69b6e"/><rect x="62" y="40" width="6" height="68" fill="${k}"/><rect x="132" y="40" width="6" height="68" fill="${k}"/><path d="M60 40 Q100 30 140 40 V58 Q100 50 60 58Z" fill="${k}"/><rect x="66" y="66" width="68" height="4" rx="2" fill="${k}"/>`};
+P.rug=()=>`<path d="M20 150 L60 92 H140 L180 150Z" fill="#d9cbb5"/><path d="M34 144 L66 98 H134 L166 144Z" fill="none" stroke="#b2876a" stroke-width="3"/><path d="M60 136 L80 106 H120 L140 136Z" fill="#c98e70" opacity=".55"/><path d="M84 128 L94 112 H106 L116 128Z" fill="#7f9a86"/><path d="M20 150 H180 V156 H20Z" fill="#c6b69e"/>${[...Array(16)].map((_,i)=>`<line x1="${24+i*10}" y1="156" x2="${24+i*10}" y2="162" stroke="#c6b69e" stroke-width="2"/>`).join('')}`;
+P.pot=(c)=>{const pl=plant(100,118,1.5,{pot:c||'#efe8dc'});return {s:pl.s,d:pl.d}};
+P.bedding=()=>`<rect x="36" y="128" width="128" height="36" rx="8" fill="#e6dccd"/><rect x="36" y="128" width="128" height="10" rx="5" fill="#fff" opacity=".35"/><rect x="42" y="96" width="116" height="34" rx="8" fill="#b7c4b0"/><rect x="42" y="96" width="116" height="9" rx="4" fill="#fff" opacity=".3"/><rect x="50" y="66" width="100" height="32" rx="8" fill="#f6f1e8"/><path d="M60 72 H140" stroke="#e3d9c8" stroke-width="2"/><rect x="66" y="40" width="68" height="28" rx="10" fill="#d9b48f"/>`;
+P.shelf=()=>`<rect x="46" y="24" width="6" height="146" fill="#a27c58"/><rect x="148" y="24" width="6" height="146" fill="#a27c58"/>${[48,88,128,166].map(y=>`<rect x="46" y="${y}" width="108" height="5" fill="#b88d63"/>`).join('')}${books(56,48,11,2)}<circle cx="80" cy="78" r="9" fill="#7ea27a"/><rect x="74" y="78" width="12" height="10" fill="#efe8dc"/><rect x="104" y="72" width="22" height="16" rx="3" fill="#e5c79e"/>${books(60,128,9,6)}<rect x="110" y="114" width="30" height="14" rx="3" fill="#d6c6ae"/><rect x="58" y="146" width="40" height="20" rx="3" fill="#cbb89c"/><rect x="104" y="150" width="36" height="16" rx="3" fill="#a9b8a7"/>`;
+P.mattress=()=>`<path d="M30 112 L64 84 H170 L136 112Z" fill="#f7f6f2"/><path d="M30 112 H136 V150 H30Z" fill="#ebe8e1"/><path d="M136 112 L170 84 V122 L136 150Z" fill="#dcd8cf"/><path d="M30 120 H136 M30 142 H136" stroke="#cfcac0" stroke-width="1.5"/><path d="M40 100 L60 86 M70 102 L94 86 M104 104 L128 86" stroke="#e3e0d8" stroke-width="2"/><rect x="36" y="126" width="34" height="8" rx="2" fill="#c8bfae"/>`;
+P.cushion=(c)=>`<path d="M44 66 Q100 52 156 66 Q168 110 156 152 Q100 166 44 152 Q32 110 44 66Z" fill="${c||'#d99a73'}"/><path d="M44 66 Q100 52 156 66 Q168 110 156 152 Q100 166 44 152 Q32 110 44 66Z" fill="none" stroke="#000" stroke-opacity=".08" stroke-width="3"/><path d="M60 80 Q100 70 140 80" stroke="#fff" stroke-opacity=".25" stroke-width="5" fill="none"/><circle cx="100" cy="110" r="4" fill="#000" opacity=".12"/>`;
+P.diffuser=()=>`<line x1="96" y1="96" x2="74" y2="26" stroke="#5c4636" stroke-width="2"/><line x1="100" y1="96" x2="102" y2="20" stroke="#5c4636" stroke-width="2"/><line x1="104" y1="96" x2="128" y2="30" stroke="#5c4636" stroke-width="2"/><path d="M78 110 Q78 96 92 94 H108 Q122 96 122 110 V160 Q122 168 112 168 H88 Q78 168 78 160Z" fill="#c7b394" opacity=".9"/><path d="M80 130 H120 V160 Q120 166 112 166 H88 Q80 166 80 160Z" fill="#b69a6f"/><rect x="92" y="86" width="16" height="10" rx="2" fill="#2f3438"/><rect x="88" y="138" width="24" height="14" rx="1" fill="#f6f1e8"/><rect x="84" y="102" width="5" height="50" rx="2.5" fill="#fff" opacity=".25"/>`;
+P.basket=()=>`<path d="M46 86 H154 L144 166 H56Z" fill="#c9a875"/>${[0,1,2,3,4,5,6].map(i=>`<path d="M48 ${96+i*10} H152" stroke="#a88757" stroke-width="2" transform="translate(0 0)"/>`).join('')}${[...Array(9)].map((_,i)=>`<line x1="${54+i*12}" y1="86" x2="${60+i*10}" y2="166" stroke="#a88757" stroke-opacity=".45"/>`).join('')}<rect x="42" y="80" width="116" height="10" rx="5" fill="#b8955f"/><path d="M80 80 Q100 60 120 80" stroke="#b8955f" stroke-width="5" fill="none"/><rect x="66" y="62" width="30" height="20" rx="4" fill="#f1ece3"/>`;
+P.clock=()=>`<circle cx="100" cy="96" r="62" fill="#2f3438"/><circle cx="100" cy="96" r="56" fill="#f8f6f1"/>${[...Array(12)].map((_,i)=>{const a=i*Math.PI/6;return `<rect x="99" y="44" width="2" height="${i%3?5:9}" fill="#2f3438" transform="rotate(${i*30} 100 96)"/>`}).join('')}<rect x="98.5" y="66" width="3" height="32" rx="1.5" fill="#2f3438" transform="rotate(-30 100 96)"/><rect x="99" y="54" width="2" height="44" fill="#c4553d" transform="rotate(70 100 96)"/><circle cx="100" cy="96" r="4" fill="#2f3438"/>`;
+P.mirror=()=>{const g=uid();return {d:lg(g,0,0,1,1,[[0,'#dde7ec'],[.5,'#f8fbfc'],[1,'#c9d6dd']]),s:`<rect x="62" y="16" width="76" height="154" rx="38" fill="#c49a6c"/><rect x="67" y="21" width="66" height="144" rx="33" fill="url(#${g})"/><path d="M80 48 L100 34" stroke="#fff" stroke-width="4" opacity=".8"/><path d="M80 66 L112 44" stroke="#fff" stroke-width="2" opacity=".6"/>`}};
+P.vase=()=>`<path d="M100 98 Q90 60 70 40 M100 98 Q104 54 122 30 M100 98 Q112 72 138 60" stroke="#6b5a48" stroke-width="2" fill="none"/>${[[72,42],[80,52],[120,32],[114,46],[136,60],[126,66],[88,64]].map(([x,y])=>`<circle cx="${x}" cy="${y}" r="5" fill="#f2d7d0"/>`).join('')}<path d="M86 100 Q70 130 82 164 H118 Q130 130 114 100Z" fill="#e9e3d8"/><path d="M86 100 H114" stroke="#d5ccbd" stroke-width="3"/><path d="M90 112 Q82 132 90 158" stroke="#fff" stroke-opacity=".5" stroke-width="4" fill="none"/>`;
+P.towel=()=>`<rect x="44" y="130" width="112" height="34" rx="6" fill="#d9e2e0"/><rect x="48" y="100" width="104" height="32" rx="6" fill="#f3efe7"/><rect x="52" y="72" width="96" height="30" rx="6" fill="#c9b49a"/><path d="M52 92 H148 M48 122 H152 M44 154 H156" stroke="#fff" stroke-opacity=".5" stroke-width="2" stroke-dasharray="3 3"/><rect x="118" y="54" width="22" height="20" rx="4" fill="#fff"/><rect x="122" y="48" width="14" height="8" rx="2" fill="#a7b8b4"/>`;
+P.humid=()=>`<path d="M96 40 Q86 24 96 12 M106 40 Q118 26 108 10" stroke="#cfe2ea" stroke-width="5" fill="none" stroke-linecap="round" opacity=".9"/><rect x="66" y="44" width="68" height="124" rx="30" fill="#f7f7f5"/><rect x="66" y="44" width="68" height="124" rx="30" fill="none" stroke="#e1e3e0" stroke-width="2"/><rect x="88" y="44" width="24" height="8" rx="3" fill="#d9dcda"/><ellipse cx="100" cy="128" rx="20" ry="8" fill="#e8eef0"/><circle cx="100" cy="128" r="3" fill="#8cc7dc"/><rect x="74" y="56" width="8" height="96" rx="4" fill="#fff" opacity=".8"/>`;
+P.pan=()=>`<ellipse cx="86" cy="118" rx="58" ry="22" fill="#2f3438"/><ellipse cx="86" cy="113" rx="52" ry="17" fill="#45494f"/><ellipse cx="86" cy="113" rx="40" ry="12" fill="#3a3d42"/><rect x="138" y="104" width="52" height="10" rx="5" fill="#b98a5c" transform="rotate(-12 138 104)"/><path d="M58 106 Q70 100 84 102" stroke="#fff" stroke-opacity=".2" stroke-width="3" fill="none"/>`;
+P.candle=()=>`<path d="M100 40 Q92 52 100 62 Q108 52 100 40Z" fill="#f4b45c"/><circle cx="100" cy="56" r="14" fill="#ffd590" opacity=".35"/><line x1="100" y1="62" x2="100" y2="72" stroke="#3a3530" stroke-width="2"/><rect x="74" y="72" width="52" height="92" rx="6" fill="#f6efe2"/><rect x="74" y="72" width="52" height="14" rx="6" fill="#efe4d0"/><rect x="80" y="110" width="40" height="22" rx="2" fill="#c9b49a"/><rect x="78" y="80" width="6" height="78" rx="3" fill="#fff" opacity=".4"/>`;
+P.stool=()=>`<rect x="70" y="92" width="6" height="76" fill="#8a6440" transform="rotate(8 73 92)"/><rect x="124" y="92" width="6" height="76" fill="#8a6440" transform="rotate(-8 127 92)"/><rect x="97" y="92" width="6" height="72" fill="#7a5636"/><rect x="74" y="136" width="52" height="4" fill="#8a6440"/><ellipse cx="100" cy="94" rx="40" ry="11" fill="#9a6f46"/><ellipse cx="100" cy="90" rx="40" ry="11" fill="#c49a6c"/>`;
+P.tree=()=>`<rect x="94" y="140" width="12" height="18" fill="#7a5636"/><rect x="80" y="154" width="40" height="16" rx="3" fill="#c87b56"/><path d="M100 22 L132 70 H116 L142 108 H122 L152 146 H48 L78 108 H58 L84 70 H68Z" fill="#3f7a55"/><path d="M100 22 L132 70 H116 L142 108 H122 L152 146 H100Z" fill="#000" opacity=".1"/><path d="M100 14 l3 7 7 .5 -5.5 4.5 2 7 -6.5 -4 -6.5 4 2 -7 -5.5 -4.5 7 -.5z" fill="#f2c45a"/>${[[86,80,'#e0574a'],[116,92,'#f2c45a'],[76,124,'#f2c45a'],[110,128,'#e0574a'],[130,136,'#f4efe6'],[96,108,'#f4efe6']].map(([x,y,c])=>`<circle cx="${x}" cy="${y}" r="5" fill="${c}"/>`).join('')}`;
+P.box=()=>`<path d="M40 90 L100 70 L160 90 L100 110Z" fill="#e6d3b5"/><path d="M40 90 L100 110 V166 L40 146Z" fill="#d7bf99"/><path d="M160 90 L100 110 V166 L160 146Z" fill="#c8ad84"/><path d="M70 80 L130 100 V116" stroke="#b49468" stroke-width="5" fill="none"/>`;
+P.hanger=()=>`<rect x="40" y="34" width="120" height="5" rx="2.5" fill="#2f3438"/><rect x="44" y="34" width="4" height="136" fill="#2f3438"/><rect x="152" y="34" width="4" height="136" fill="#2f3438"/><rect x="40" y="166" width="120" height="5" rx="2.5" fill="#2f3438"/><path d="M62 40 L56 54 H90 L84 40" stroke="#555" fill="none"/><path d="M58 52 H88 L92 120 H54Z" fill="#d9c6aa"/><path d="M98 52 H128 L134 108 H94Z" fill="#7f9a86"/><path d="M134 52 H150 V100 H134Z" fill="#e9e3d8"/><rect x="60" y="146" width="22" height="16" rx="3" fill="#c87b56"/><rect x="104" y="148" width="28" height="14" rx="3" fill="#cfc4b4"/>`;
+P.petbed=()=>`<ellipse cx="100" cy="132" rx="72" ry="32" fill="#b3a28c"/><ellipse cx="100" cy="126" rx="66" ry="28" fill="#cbbba4"/><ellipse cx="100" cy="128" rx="46" ry="16" fill="#efe7d9"/><path d="M60 120 Q100 108 140 120" stroke="#fff" stroke-opacity=".4" stroke-width="4" fill="none"/><circle cx="130" cy="110" r="7" fill="#e3b04b"/>`;
+P.camp=()=>`<path d="M60 168 L140 76 M140 168 L60 76" stroke="#3d4a3f" stroke-width="5"/><path d="M58 76 H142 L132 120 H68Z" fill="#7f8f6a"/><path d="M68 120 H132 L128 128 H72Z" fill="#6b7a58"/><rect x="54" y="70" width="92" height="8" rx="4" fill="#3d4a3f"/>`;
+P.tool=()=>`<rect x="40" y="96" width="120" height="62" rx="6" fill="#d36b4d"/><rect x="40" y="96" width="120" height="14" rx="6" fill="#bd5a3e"/><path d="M78 96 V82 H122 V96" stroke="#2f3438" stroke-width="7" fill="none"/><rect x="92" y="114" width="16" height="10" rx="2" fill="#2f3438"/><rect x="44" y="140" width="112" height="3" fill="#000" opacity=".12"/>`;
+P.hanging=()=>{let v='';const vines=[[78,'M78 128 Q70 150 76 172 Q80 186 72 196',[[74,142],[71,156],[76,168],[78,182]]],[100,'M100 132 Q106 156 98 178',[[104,146],[101,160],[99,172]]],[122,'M122 128 Q134 148 128 166 Q124 180 132 192',[[130,140],[132,154],[127,166],[129,180]]]];
+ vines.forEach(([x,d,ls])=>{v+=`<path d="${d}" stroke="#4d7a45" stroke-width="1.6" fill="none"/>`;ls.forEach(([lx,ly],i)=>{v+=`<ellipse cx="${lx+(i%2?4:-4)}" cy="${ly}" rx="5.5" ry="4" transform="rotate(${i%2?30:-30} ${lx} ${ly})" fill="${i%2?'#6fa86f':'#4f8a57'}"/>`})});
+ let top='';[[76,98],[86,90],[98,86],[110,89],[122,96],[92,96],[106,95],[116,100],[82,102]].forEach(([x,y],i)=>top+=`<ellipse cx="${x}" cy="${y}" rx="7" ry="5" transform="rotate(${(i*37)%60-30} ${x} ${y})" fill="${i%3?'#5f9b62':'#3e7a4f'}"/>`);
+ return `<circle cx="100" cy="6" r="4" fill="none" stroke="#8b7b66" stroke-width="2"/><path d="M100 10 L70 104 M100 10 L100 104 M100 10 L130 104" stroke="#d8c7a8" stroke-width="2"/><path d="M84 52 l8 6 M108 58 l8 -6 M96 58 h8" stroke="#c9b48f" stroke-width="3" stroke-linecap="round"/><circle cx="100" cy="62" r="3" fill="#c9b48f"/>${top}<path d="M68 102 H132 Q130 128 112 134 H88 Q70 128 68 102Z" fill="#d9a57c"/><path d="M68 102 H132 V108 H68Z" fill="#c98e66"/><path d="M76 112 Q78 124 88 130" stroke="#fff" stroke-opacity=".3" stroke-width="3" fill="none"/>${v}`};
+P.sale=()=>`<rect x="20" y="20" width="160" height="160" rx="40" fill="#1d2a44"/><circle cx="66" cy="68" r="14" fill="none" stroke="#fff" stroke-width="10"/><circle cx="134" cy="132" r="14" fill="none" stroke="#fff" stroke-width="10"/><line x1="138" y1="58" x2="62" y2="142" stroke="#fff" stroke-width="12" stroke-linecap="round"/>`;
+
+function product(name,bg,arg){const r=P[name](arg);if(typeof r==='string')return prod(bg,r);return prod(bg,r.s,r.d);}
+function icon(name,arg){const r=P[name](arg);const s=typeof r==='string'?r:r.s,d=typeof r==='string'?'':r.d;return svg('0 0 200 200',s,d,'xMidYMid meet');}
+
+/* ---------- 배너 (6종) ---------- */
+function banner(bg,name,arg,extra,dx){const r=P[name](arg);const s=typeof r==='string'?r:r.s,d=typeof r==='string'?'':r.d;const g=uid();
+  return svg('0 0 400 130',`<rect width="400" height="130" fill="${bg[0]}"/><circle cx="330" cy="40" r="90" fill="${bg[1]}"/><circle cx="236" cy="104" r="26" fill="${bg[1]}" opacity=".7"/>${extra||''}<g transform="translate(${250+(dx||0)} -6) scale(.72)">${s}</g>`,d,'xMaxYMid slice');}
+
+
+function bannerPC(bg,name,arg,sc){const r=P[name](arg);const s=typeof r==='string'?r:r.s,d0=typeof r==='string'?'':r.d;const pl=plant(552,196,1.05,{pot:'#efe8dc'});const f=uid();
+  const d=d0+pl.d+lg(f,0,0,1,0,[[0,'#000',0],[.3,'#000',.045],[1,'#000',.045]]);
+  return svg('0 0 680 240',`<rect width="680" height="240" fill="${bg[0]}"/><circle cx="470" cy="70" r="150" fill="${bg[1]}"/><circle cx="120" cy="150" r="70" fill="${bg[1]}" opacity=".6"/><rect y="200" width="680" height="40" fill="url(#${f})"/>`+frame(150,40,64,80,`<circle cx="182" cy="72" r="14" fill="${bg[1]}"/><rect x="162" y="86" width="40" height="22" fill="#fff" opacity=".6"/>`,'#c9a77c')+sofa(60,204,250,sc||'#c9bba6')+`<rect x="236" y="148" width="40" height="34" rx="9" transform="rotate(6 256 165)" fill="#fff" opacity=".85"/><g transform="translate(330 22) scale(.9)">${s}</g>`+pl.s,d,'xMaxYMax slice');}
+
+/* ---------- 기획전 썸네일 (4종) ---------- */
+const X={};
+X.fabric=()=>svg('0 0 120 80',`<rect width="120" height="80" fill="#efe5d8"/><rect x="14" y="16" width="40" height="52" rx="3" fill="#c98e70" transform="rotate(-8 34 42)"/><rect x="40" y="14" width="40" height="52" rx="3" fill="#e8dcc8" transform="rotate(4 60 40)"/><rect x="66" y="16" width="40" height="52" rx="3" fill="#8fa38f" transform="rotate(10 86 42)"/><path d="M70 24 h30 M72 34 h28 M74 44 h26" stroke="#fff" stroke-opacity=".35" stroke-width="2" transform="rotate(10 86 42)"/>`);
+X.truck=()=>svg('0 0 120 80',`<rect width="120" height="80" fill="#24324a"/><rect x="18" y="26" width="54" height="30" rx="3" fill="#f4f1ea"/><path d="M72 34 H88 L98 46 V56 H72Z" fill="#e6c38c"/><rect x="78" y="37" width="10" height="8" fill="#9fc2d8"/><circle cx="34" cy="58" r="6" fill="#1a1f29"/><circle cx="34" cy="58" r="2.5" fill="#c9ced6"/><circle cx="86" cy="58" r="6" fill="#1a1f29"/><circle cx="86" cy="58" r="2.5" fill="#c9ced6"/><rect x="28" y="32" width="16" height="14" fill="#d9bf98"/><rect x="46" y="36" width="14" height="10" fill="#c8ad84"/><rect x="0" y="64" width="120" height="2" fill="#3b4b66"/>`);
+X.basket=()=>svg('0 0 120 80',`<rect width="120" height="80" fill="#fbf1e2"/><rect x="40" y="18" width="12" height="20" rx="2" fill="#7fb0d6"/><rect x="54" y="14" width="10" height="24" rx="3" fill="#f1ede5"/><circle cx="72" cy="30" r="8" fill="#e98a55"/><path d="M36 38 H84 L78 66 H42Z" fill="#f08c4a"/><path d="M40 46 H80 M42 54 H78" stroke="#fff" stroke-opacity=".5" stroke-width="2"/><path d="M48 38 Q60 22 72 38" stroke="#d7732f" stroke-width="3" fill="none"/>`);
+X.only=()=>svg('0 0 120 80',`<rect width="120" height="80" fill="#e7e9ea"/><rect x="38" y="14" width="44" height="58" rx="3" fill="#2f3438" transform="rotate(-6 60 43)"/><rect x="44" y="12" width="44" height="58" rx="3" fill="#3d434a" transform="rotate(4 66 41)"/><path d="M58 40 h18 M60 46 h14" stroke="#cfd4d8" stroke-width="2" transform="rotate(4 66 41)"/><circle cx="67" cy="32" r="4" fill="none" stroke="#e7c27b" stroke-width="1.5" transform="rotate(4 66 41)"/>`);
+
+return {R,product,icon,banner,bannerPC,X,svg};
+})();
+
+</script>
+<script>
+(function(){
+const $=s=>document.querySelector(s);
+const chev='<svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="m9 5 7 7-7 7"/></svg>';
+const scrap='<button class="scrap" aria-label="스크랩"><svg viewBox="0 0 24 24"><path d="M6 3.8h12v16.6l-6-4.3-6 4.3z" fill="rgba(0,0,0,.08)" stroke="#fff" stroke-width="1.6" stroke-linejoin="round"/></svg></button>';
+const won=n=>n.toLocaleString('ko-KR');
+function toast(m){const t=$('#toast');t.textContent=m;t.classList.add('show');clearTimeout(t._t);t._t=setTimeout(()=>t.classList.remove('show'),1600);}
+
+/* s3 배너 */
+const banners=[
+ {s:'포근한 계절 준비',b:'겨울 패브릭 모음전',bg:['#efe3d6','#e6d3c0'],p:'curtain',a:'#d9c4a8',c:'#b9a990'},
+ {s:'은은한 저녁 조명',b:'무드등·스탠드 특가',bg:['#e6e1f2','#d7cfea'],p:'lamp',c:'#8f86a8'},
+ {s:'#우리집_정리왕 챌린지',b:'수납 꿀팁 공유하고 쿠폰 받기',bg:['#d9efe8','#c6e6dc'],p:'basket',c:'#86a89a'},
+ {s:'원목 가구 기획전',b:'오래 쓰는 사이드 테이블',bg:['#f1e6d4','#e6d5bb'],p:'sideTable',c:'#a7b3a2'},
+ {s:'포근하게 잠드는 밤',b:'사계절 침구 세트 할인',bg:['#e2ecf3','#d0e0eb'],p:'bedding',c:'#8aa1b8'},
+ {s:'초록이 있는 집',b:'창가 행잉 플랜트',bg:['#e8f0dc','#d7e6c4'],p:'hanging',c:'#c9a875',mdx:-35}
+];
+const tr=$('#bnrTrack');
+tr.innerHTML=banners.map(x=>`<a class="bnr-slide" href="#" style="background:${x.bg[0]}">${HN.banner(x.bg,x.p,x.a,'',x.mdx).replace('<svg ','<svg class="m" ')}${HN.bannerPC(x.bg,x.p,x.a,x.c).replace('<svg ','<svg class="pc" ')}<div class="bnr-txt"><small>${x.s}</small><b>${x.b}</b></div></a>`).join('');
+let bi=0;const N=banners.length;
+function go(i){bi=(i+N)%N;tr.style.transform=`translateX(${-bi*100}%)`;$('#bnrCnt').textContent=`${bi+1} / ${N}`;}
+let timer=null;function auto(){if(window.__NOAUTO)return;clearInterval(timer);timer=setInterval(()=>go(bi+1),3500);}
+auto();
+(function(){const el=$('#bnr');let x0=null,dx=0,w=1;
+ el.addEventListener('pointerdown',e=>{x0=e.clientX;dx=0;w=el.clientWidth;tr.style.transition='none';clearInterval(timer);});
+ window.addEventListener('pointermove',e=>{if(x0===null)return;dx=e.clientX-x0;tr.style.transform=`translateX(calc(${-bi*100}% + ${dx}px))`;});
+ window.addEventListener('pointerup',()=>{if(x0===null)return;tr.style.transition='';if(Math.abs(dx)>w*.15)go(bi+(dx<0?1:-1));else go(bi);x0=null;auto();});
+ el.addEventListener('click',e=>{if(Math.abs(dx)>5)e.preventDefault();});
+})();
+
+/* s4 바로가기 */
+const Q=[
+ ['쇼핑하기','<path d="M7 9h18l-2 17H9z" fill="#B983F2"/><path d="M11 9a5 5 0 0 1 10 0" fill="none" stroke="#8E55D9" stroke-width="2.4"/><circle cx="16" cy="17" r="3" fill="#fff"/>'],
+ ['오늘의특가','<path d="M18.5 3 7 18h7.5L12 29l13-16h-8z" fill="#FF5A5F"/>'],
+ ['집구경','<path d="M4 15 16 5l12 10v12a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1z" fill="#3AA7F5"/><rect x="12.5" y="18" width="7" height="10" rx="1" fill="#fff"/><circle cx="16" cy="13" r="2" fill="#fff"/>'],
+ ['매일출석','<rect x="5" y="7" width="22" height="20" rx="4" fill="#2EC4A0"/><rect x="5" y="7" width="22" height="6" rx="3" fill="#1FA585"/><path d="m11 19 3.5 3.5L21 16" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/><rect x="10" y="4" width="2.5" height="6" rx="1.2" fill="#1FA585"/><rect x="19.5" y="4" width="2.5" height="6" rx="1.2" fill="#1FA585"/>'],
+ ['세트할인','<path d="M16 4 27 9.5v13L16 28 5 22.5v-13z" fill="#FF8FA3"/><path d="M5 9.5 16 15l11-5.5M16 15v13" fill="none" stroke="#fff" stroke-width="1.6"/><text x="16" y="13" font-size="6" font-weight="800" fill="#fff" text-anchor="middle">%</text>'],
+ ['꾸미기챌린지','<rect x="4" y="9" width="24" height="17" rx="4" fill="#3B3F45"/><circle cx="16" cy="17.5" r="5" fill="#fff"/><circle cx="16" cy="17.5" r="2.6" fill="#3B3F45"/><rect x="10" y="6" width="8" height="4" rx="1.5" fill="#3B3F45"/><circle cx="24" cy="13" r="1.4" fill="#FFB84D"/>'],
+ ['생활장보기','<path d="M4 12h24l-3 14H7z" fill="#FF8A3D"/><path d="M10 12 14 5M22 12 18 5" stroke="#E46A1D" stroke-width="2.4" stroke-linecap="round"/><path d="M11 17v5M16 17v5M21 17v5" stroke="#fff" stroke-width="2" stroke-linecap="round"/>'],
+ ['지정일배송','<rect x="3" y="9" width="17" height="13" rx="2" fill="#2D6CDF"/><path d="M20 12h5l4 5v5h-9z" fill="#4C8BF5"/><circle cx="9" cy="24" r="3" fill="#1E2A44"/><circle cx="24" cy="24" r="3" fill="#1E2A44"/><path d="M8 15.5h7M8 18.5h4" stroke="#fff" stroke-width="1.8" stroke-linecap="round"/>'],
+ ['이사·청소','<rect x="4" y="15" width="12" height="12" rx="1.5" fill="#3AA7F5"/><path d="M4 19h12" stroke="#fff" stroke-width="1.4"/><path d="M24 4v14" stroke="#2D6CDF" stroke-width="2.4" stroke-linecap="round"/><path d="M19 18h10l-1 9h-8z" fill="#2D6CDF"/><path d="M21.5 21v4M24 21v4M26.5 21v4" stroke="#fff" stroke-width="1.2"/>'],
+ ['시공상담','<path d="M6 26 20 12" stroke="#F2A33A" stroke-width="4" stroke-linecap="round"/><path d="M18 6a6 6 0 0 0 7.5 7.8L28 11a6 6 0 0 1-8-8z" fill="#E0573E"/><circle cx="8" cy="9" r="4" fill="#F2C94C"/><path d="M8 7v4M6 9h4" stroke="#fff" stroke-width="1.4"/>']
+];
+$('#qk').innerHTML=Q.map(([n,p])=>`<a href="#"><i><svg viewBox="0 0 32 32">${p}</svg></i>${n}</a>`).join('');
+
+/* 프로필 점 (사용자 대신 단색 이니셜 원) */
+const av=(c,ch)=>`<svg viewBox="0 0 20 20"><rect width="20" height="20" fill="${c}"/><text x="10" y="14" font-size="10" font-weight="700" fill="#fff" text-anchor="middle" font-family="Noto Sans KR,sans-serif">${ch}</text></svg>`;
+
+/* s5 사진 */
+const photos=[['living','#C9A27A','우','우드앤리넨'],['bedroom','#8FA38F','세','세이지룸'],['kitchen','#6E7F99','아','아침식탁'],['desk','#B5674A','작','작업실기록'],['evening','#4F5B78','밤','밤의거실'],['kids','#E6A39B','토','토토네방']];
+$('#pcards').innerHTML=photos.map(([r,c,ch,n])=>`<a class="ph pcard" href="#">${HN.R[r]()}<span class="who"><i>${av(c,ch)}</i>${n}</span>${scrap}</a>`).join('')+`<a class="pmore" href="#"><i>${'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="m9 5 7 7-7 7"/></svg>'}</i>더보기</a>`;
+
+/* s6 집구경 */
+const houses=[['bath','우드 톤 수납장으로 완성한 따뜻한 분위기의 욕실'],['cafe','펜던트 조명으로 꾸민 카페 같은 다이닝'],['blueBed','차분한 블루 톤으로 정리한 18평 신혼 침실 스타일링'],['entry','들어서는 순간 정돈되는 현관, 아치 거울과 벤치']];
+$('#hgrid').innerHTML=houses.map(([r,t])=>`<a class="hcard" href="#"><div class="ph">${HN.R[r]()}${scrap}</div><p>${t}</p></a>`).join('');
+
+/* s7 카테고리 */
+const cats=[['연말세일','sale'],['연말장식','tree'],['가구','chair','#b88d63'],['패브릭','cushion','#c98e70'],['조명','lamp','#d8b791'],['주방용품','pan'],['데코·식물','pot','#c87b56'],['수납·정리','basket'],['침구','bedding'],['욕실용품','towel'],['생활가전','humid'],['향·캔들','diffuser'],['반려동물','petbed'],['캠핑·레저','camp'],['공구·DIY','tool']];
+$('#cats').innerHTML=cats.map(([n,p,a])=>`<a href="#"><i>${HN.icon(p,a)}</i>${n}</a>`).join('');
+
+/* s8 특가 */
+const deals=[
+ {p:'sideTable',bg:['#f3ede4','#e7ddd0'],br:'하우스노트 우드',nm:'원목 라운드 사이드 테이블 2size (오크/월넛)',op:'옵션 2종 · 색상 2',pc:32,pr:59000,ext:true,tags:['무료배송'],pay:'카드 결제 시 추가 할인'},
+ {p:'curtain',bg:['#eef0ec','#e1e5df'],br:'하우스노트 패브릭',nm:'워싱 린넨 커튼 맞춤 제작 (나비주름/핀형)',op:'사이즈 맞춤 · 색상 6',sp:'회원 특별가',pc:25,pr:38900,ext:true,tags:['무료배송']},
+ {p:'humid',bg:['#eef3f5','#e0e8ec'],br:'하우스노트 리빙',nm:'자연기화 가습기 4L 저소음 무드형',op:'단품',sp:'회원 특별가',pc:30,pr:89000,today:true,tags:['무료배송'],pay:'카드 결제 시 추가 할인'},
+ {p:'chair',bg:['#f4ece2','#e9dccb'],br:'하우스노트 우드',nm:'원목 다이닝 체어 2개 세트 쿠션 포함',op:'색상 3',pc:28,pr:129000,ext:true,tags:['무료배송','지정일배송']}
+];
+const truck='<svg viewBox="0 0 12 12" fill="#424242"><rect x="1" y="3" width="6.5" height="5" rx=".6"/><path d="M7.5 4.5h2l1.5 2V8h-3.5z"/><circle cx="3.3" cy="9" r="1"/><circle cx="9" cy="9" r="1"/></svg>';
+const card='<svg viewBox="0 0 12 12" fill="none" stroke="#424242" stroke-width="1.1"><rect x="1" y="2.5" width="10" height="7" rx="1"/><path d="M1 5h10"/></svg>';
+const bolt='<svg viewBox="0 0 14 14"><circle cx="7" cy="7" r="7" fill="#8C3BEF"/><path d="M7.8 2.8 4.6 7.6h2.2l-.6 3.6 3.2-4.8H7.2z" fill="#fff"/></svg>';
+$('#dlist').innerHTML=deals.map(d=>`<a class="deal" href="#"><div class="ph">${HN.product(d.p,d.bg)}<span class="timer" data-timer>00:00:00 남음</span><span class="stk">오늘<br>특가</span>${scrap}</div>
+<div class="info"><div class="br">${d.br}</div><div class="nm">${d.nm}</div><div class="op">${d.op}</div>${d.sp?`<div class="sp">${d.sp}</div>`:''}<div class="price"><span class="pc">${d.pc}%</span>${won(d.pr)}${d.ext?' <span class="e">외</span>':''}</div>
+${d.today?`<div class="today">${bolt}당일출고</div><div class="tt">평일 13:00까지 결제 시</div>`:''}
+<div class="tags">${d.tags.map(t=>`<span class="tag">${t==='지정일배송'?truck:''}${t}</span>`).join('')}</div>${d.pay?`<div class="tags" style="margin-top:4px"><span class="tag">${card}${d.pay}</span></div>`:''}</div></a>`).join('');
+function tick(){const now=new Date();const end=new Date(now);end.setHours(24,0,0,0);let s=Math.max(0,Math.floor((end-now)/1000));if(window.__FIXTIME)s=window.__FIXTIME;const h=String(Math.floor(s/3600)).padStart(2,'0'),m=String(Math.floor(s%3600/60)).padStart(2,'0'),ss=String(s%60).padStart(2,'0');document.querySelectorAll('[data-timer]').forEach(e=>e.textContent=`${h}:${m}:${ss} 남음`);}
+tick();setInterval(tick,1000);
+
+/* s9 가이드 */
+const guides=[['plants','하우스노트 스타일링','창가 자리에는 키 큰 식물 하나와 낮은 화분 두세 개를 높낮이 다르게 두면 공간이 훨씬 풍성해 보여요. 라탄 의자처럼 가벼운 소재를 함께 두면 볕 좋은 오후의 휴식 코너가 완성됩니다. 화분 받침은 바닥 색과 비슷한 톤으로 고르면 깔끔해요.'],
+ ['studio','하우스노트 스타일링','원룸은 오픈 선반을 가벽처럼 세워 침실과 거실 영역을 나누는 방법을 추천해요. 선반 양면에 책과 소품을 나눠 두면 수납과 공간 분리를 동시에 해결할 수 있어요. 침구와 소파 색을 같은 계열로 맞추면 좁은 공간도 정돈돼 보입니다.'],
+ ['nook','하우스노트 스타일링','거실 한쪽에 1인 소파와 스탠드 조명만 더해도 나만의 독서 코너가 생겨요. 조명은 전구색(따뜻한 빛)으로 고르고, 러그로 영역을 표시하면 아늑함이 커집니다. 벽 선반에는 자주 읽는 책만 올려 두세요.']];
+$('#glist').innerHTML=guides.map(([r,b,t])=>`<a class="gitem" href="#"><div class="ph">${HN.R[r]()}</div><div><b>${b}</b><p>${t}</p></div></a>`).join('');
+
+/* s10 기획전 */
+const ex=[['fabric','주말 한정 혜택','겨울 패브릭 기획전'],['truck','가구 배송, 원하는 날에','지정일 배송 가구 모음'],['basket','전 상품 무료배송','매일 바뀌는 생활 장보기'],['only','','하우스노트 단독 컬렉션']];
+$('#xlist').innerHTML=ex.map(([k,s,b])=>`<a class="xitem" href="#"><div class="ph">${HN.X[k]()}</div><div>${s?`<small>${s}</small>`:''}<b>${b}</b></div></a>`).join('');
+
+/* s11 MD 추천 */
+const items={
+ '전체':[['bedding',['#f1ede6','#e5dfd4'],'하우스노트 슬립','사계절 워싱 차렵이불 세트 Q/K 12컬러',35,49900,['#e6dccd','#b7c4b0','#d9b48f','#8a9bb0'],'오늘'],
+        ['mattress',['#eef0f2','#e1e5e8'],'하우스노트 슬립','미디엄 하드 포켓스프링 매트리스 SS/Q',22,289000,null,'단독'],
+        ['curtain',['#f3f1ee','#e7e3dd'],'하우스노트 패브릭','비침 적은 쉬폰 레이스 커튼 맞춤',18,16800,['#f4f1ea','#e8e0d2','#cfd6dc'],null,'#f4f1ea'],
+        ['clock',['#f0eee9','#e4e0d8'],'하우스노트 데코','무소음 미니멀 벽시계 30cm',20,24900,['#2f3438','#c4a27c']],
+        ['mirror',['#efe9e1','#e3d9cc'],'하우스노트 데코','원목 프레임 아치형 전신거울',27,69000,null,'오늘'],
+        ['vase',['#f4efe9','#e9e0d4'],'하우스노트 데코','세라믹 화병 + 드라이플라워 세트',15,21900,['#e9e3d8','#c9b49a']]],
+ '가구':[['sideTable',['#f3ede4','#e7ddd0'],'하우스노트 우드','원목 라운드 사이드 테이블',32,59000,['#b98a5c','#6b4a32']],
+        ['shelf',['#f1ece4','#e5ddd1'],'하우스노트 우드','5단 오픈 선반 책장 80cm',24,99000,null,'단독'],
+        ['chair',['#f4ece2','#e9dccb'],'하우스노트 우드','원목 다이닝 체어 쿠션형',28,64500,['#a77a50','#2f3438'],null,'#8a6440'],
+        ['stool',['#f2ede6','#e6ddd1'],'하우스노트 우드','원목 3다리 스툴 협탁',19,32000],
+        ['hanger',['#eef0f1','#e2e5e7'],'하우스노트 리빙','스틸 행거 선반형 120cm',21,45900,['#2f3438','#f4f1ea']],
+        ['mattress',['#eef0f2','#e1e5e8'],'하우스노트 슬립','폼 토퍼 매트리스 7cm',30,79000]],
+ '패브릭':[['cushion',['#f4eee8','#eadfd4'],'하우스노트 패브릭','부클 쿠션 커버 45x45',20,12900,['#d99a73','#e6dccd','#7f9a86'],null,'#d99a73'],
+        ['rug',['#f3efe8','#e8e1d6'],'하우스노트 패브릭','워셔블 단모 러그 160x230',33,59900],
+        ['curtain',['#eef0ec','#e1e5df'],'하우스노트 패브릭','워싱 린넨 암막 커튼',25,38900,null,'오늘','#c9b49a'],
+        ['bedding',['#f1ede6','#e5dfd4'],'하우스노트 슬립','순면 베개 커버 2입',15,14900],
+        ['towel',['#eef2f1','#e1e8e6'],'하우스노트 배스','호텔식 세면 타월 5매',18,19900,['#f3efe7','#d9e2e0','#c9b49a']],
+        ['cushion',['#eef1f4','#e1e6eb'],'하우스노트 패브릭','극세사 롱 쿠션 바디필로우',22,27900,null,null,'#9fb0c4']],
+ '조명':[['lamp',['#f5efe5','#ebe1d2'],'하우스노트 라이트','패브릭 쉐이드 단스탠드',26,34900,['#d8b791','#2f3438'],'오늘'],
+        ['candle',['#f4eee6','#e9dfd2'],'하우스노트 라이트','LED 캔들 무드등 3구',20,15900],
+        ['lamp',['#efeeea','#e3e1db'],'하우스노트 라이트','세라믹 바디 테이블 램프',18,42000,null,null,'#9fb3a5'],
+        ['diffuser',['#f3eee6','#e8e0d3'],'하우스노트 홈향','무드 디퓨저 200ml',25,18900],
+        ['clock',['#f0eee9','#e4e0d8'],'하우스노트 데코','야광 미니멀 탁상시계',16,16900],
+        ['candle',['#f1ebe5','#e5dbd0'],'하우스노트 라이트','소이 캔들 우드윅 220g',12,13900]]
+};
+['주방용품','데코·식물','수납·정리','생활용품'].forEach((k,i)=>{
+ const sets={'주방용품':[['pan',['#eef0f1','#e2e5e7'],'하우스노트 키친','논스틱 프라이팬 28cm',30,29900],['mugs',['#f3efe8','#e7e1d6'],'하우스노트 키친','스톤웨어 머그 2개 세트',20,18900],['basket',['#f4efe6','#e8dfd1'],'하우스노트 키친','라탄 빵 바구니',15,12900],['pan',['#f1ede6','#e5dfd4'],'하우스노트 키친','스테인리스 냄비 20cm',22,34900],['mugs',['#eef1ef','#e1e6e2'],'하우스노트 키친','유리 머그 내열 350ml',10,8900],['box',['#f3ede4','#e7ddd0'],'하우스노트 키친','밀폐 용기 10종 세트',28,24900]],
+ '데코·식물':[['pot',['#eef3ea','#e0e9da'],'하우스노트 그린','반려식물 몬스테라 중형',18,32000],['vase',['#f4efe9','#e9e0d4'],'하우스노트 데코','세라믹 화병 S/M',15,15900],['mirror',['#efe9e1','#e3d9cc'],'하우스노트 데코','아치 탁상 거울',20,23900],['tree',['#eef2ec','#e0e8dc'],'하우스노트 데코','연말 미니 트리 60cm',25,29900],['clock',['#f0eee9','#e4e0d8'],'하우스노트 데코','우드 벽시계 25cm',18,22900],['pot',['#f3ede4','#e7ddd0'],'하우스노트 그린','테라코타 화분 3종',12,16900]],
+ '수납·정리':[['basket',['#f4efe6','#e8dfd1'],'하우스노트 리빙','라탄 수납 바구니 L',22,21900],['box',['#f3ede4','#e7ddd0'],'하우스노트 리빙','접이식 수납 박스 3입',18,15900],['shelf',['#f1ece4','#e5ddd1'],'하우스노트 우드','틈새 수납 선반 4단',25,39900],['hanger',['#eef0f1','#e2e5e7'],'하우스노트 리빙','이동식 행거 바퀴형',20,36900],['basket',['#eef1ef','#e1e6e2'],'하우스노트 리빙','코튼 로프 바스켓',15,13900],['box',['#eef0f2','#e1e5e8'],'하우스노트 리빙','투명 서랍 정리함',10,11900]],
+ '생활용품':[['towel',['#eef2f1','#e1e8e6'],'하우스노트 배스','호텔식 바스 타월 2매',18,22900],['humid',['#eef3f5','#e0e8ec'],'하우스노트 리빙','미니 가습기 USB',20,19900],['diffuser',['#f3eee6','#e8e0d3'],'하우스노트 홈향','섬유 향수 500ml',15,12900],['petbed',['#f2ede6','#e6ddd1'],'하우스노트 펫','도넛 방석 반려동물 쿠션',25,29900],['tool',['#f4ece8','#e9dcd6'],'하우스노트 리빙','가정용 공구 세트 24종',18,27900],['camp',['#eef0ea','#e1e5dc'],'하우스노트 아웃도어','접이식 캠핑 체어',22,32900]]};
+ items[k]=sets[k];});
+const chipNames=Object.keys(items);
+$('#chips').innerHTML=chipNames.map((n,i)=>`<button class="chip${i?'':' on'}" role="tab" aria-selected="${!i}">${n}</button>`).join('');
+function renderBest(k){const g=$('#bgrid');g.classList.remove('fade');void g.offsetWidth;g.classList.add('fade');
+ g.innerHTML=items[k].map((it,i)=>{const [p,bg,br,nm,pc,pr,dots,stk,arg]=it;return `<a class="bitem" href="#"><div class="ph">${HN.product(p,bg,arg)}${stk?`<span class="stk sm">${stk==='오늘'?'오늘<br>출고':'단독'}</span>`:''}${dots?`<span class="dots">${dots.map(c=>`<i style="background:${c}"></i>`).join('')}</span>`:''}${scrap}</div><div class="br">${br}</div><div class="nm">${nm}</div><div class="price"><span class="pc">${pc}%</span>${won(pr)}</div><div class="op">무료배송</div></a>`}).join('');}
+renderBest('전체');
+$('#chips').addEventListener('click',e=>{const b=e.target.closest('.chip');if(!b)return;document.querySelectorAll('.chip').forEach(c=>{c.classList.toggle('on',c===b);c.setAttribute('aria-selected',c===b)});renderBest(b.textContent);});
+
+/* s12 인기 검색어 */
+const kws=['암막커튼','원목 선반','극세사 이불','무드등','크리스마스 트리','러그','수납 바구니','가습기','접이식 테이블','욕실 매트'];
+$('#kw').innerHTML=kws.map(k=>`<a href="#">${k}</a>`).join('');
+
+/* 스크랩·장바구니 상호작용 */
+let cart=0;
+document.addEventListener('click',e=>{const s=e.target.closest('.scrap');if(s){e.preventDefault();e.stopPropagation();s.classList.toggle('on');toast(s.classList.contains('on')?'스크랩했어요':'스크랩을 취소했어요');return;}
+ const a=e.target.closest('a[href="#"]');if(a)e.preventDefault();});
+document.querySelectorAll('form').forEach(f=>f.addEventListener('submit',e=>e.preventDefault()));
+
+/* 상단바 숨김 */
+let ly=window.scrollY;const top=$('#top');
+window.addEventListener('scroll',()=>{const y=window.scrollY;if(y>120&&y>ly+4)top.classList.add('hide');else if(y<ly-4||y<=120)top.classList.remove('hide');ly=y;},{passive:true});
+
+/* 푸터 사업자 정보 */
+$('#biz button').addEventListener('click',function(){const b=$('#biz');b.classList.toggle('open');this.setAttribute('aria-expanded',b.classList.contains('open'));});
+})();
+</script>
+</body>
+</html>

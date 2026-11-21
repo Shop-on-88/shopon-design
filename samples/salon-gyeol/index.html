@@ -1,0 +1,854 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>살롱 드 결</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Lato:wght@400;700;900&family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#231c18; --text:#4e4843; --sub:#7d7670; --line:#e8e4df; --bar:#e6e2dd;
+  --linen:#f4efe8; --drawerTop:#e7e3de; --drawer:#8f8a84; --foot:#5f5b57;
+  --hh:70px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-text-size-adjust:100%}
+body{font-family:'Lato','Noto Sans KR',sans-serif;color:var(--text);background:#fff;overflow-x:hidden;font-size:14px;line-height:1.6}
+.kr{font-family:'Noto Sans KR',sans-serif}
+button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
+a{color:inherit;text-decoration:none}
+svg{display:block}
+.wrap{max-width:1200px;margin:0 auto}
+.cap{font-family:'Lato',sans-serif;text-transform:uppercase}
+
+/* s1 header */
+#s1-header{position:fixed;top:0;left:0;right:0;z-index:50;background:#fff}
+#s1-header .in{max-width:1200px;margin:0 auto;height:var(--hh);position:relative;display:flex;align-items:center;justify-content:center;border-bottom:1px solid #efedea}
+.logo{display:flex;align-items:center;gap:9px;color:var(--ink)}
+.logo .wm{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:25px;letter-spacing:.04em;line-height:1}
+.logo .wm i{font-style:italic;font-weight:500;font-size:19px;margin-right:4px;color:#6d625a}
+#ham{position:absolute;right:16px;top:50%;transform:translateY(-50%);width:40px;height:40px;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:5px}
+#ham span{display:block;width:19px;height:1.5px;background:#7a7570}
+body.pad{padding-top:var(--hh)}
+
+/* drawer */
+#dim{position:fixed;inset:0;background:rgba(255,255,255,.62);z-index:60;opacity:0;pointer-events:none;transition:opacity .35s}
+#drawer{position:fixed;top:0;right:0;bottom:0;width:min(70vw,300px);z-index:61;transform:translateX(100%);transition:transform .4s cubic-bezier(.2,.7,.2,1);display:flex;flex-direction:column;background:var(--drawer);overflow-y:auto}
+body.menu #dim{opacity:1;pointer-events:auto}
+body.menu #drawer{transform:none}
+#dx{position:fixed;top:14px;right:12px;z-index:62;width:42px;height:42px;display:none;align-items:center;justify-content:center}
+body.menu #dx{display:flex}
+.dr-top{background:var(--drawerTop);padding:56px 26px 28px}
+.dr-top a{display:block;font-size:12px;font-weight:700;color:#6c6762;line-height:26px}
+.dr-body{padding:62px 26px 26px;color:#fff;flex:1}
+.dr-body h4{font-size:15px;font-weight:700;letter-spacing:.02em;margin:0 0 8px 2px}
+.dr-body .ln{display:block;font-size:13px;line-height:25px;color:#f3f1ee;font-weight:400}
+.dr-body .big{display:block;font-size:15px;font-weight:700;margin-top:36px;color:#fbfaf8}
+.dr-sns{border-top:1px solid rgba(255,255,255,.7);padding:18px 20px 34px;display:flex;gap:6px;background:var(--drawer)}
+.ring{width:30px;height:30px;border:1.5px solid rgba(255,255,255,.85);border-radius:50%;display:flex;align-items:center;justify-content:center}
+
+/* s2 hero */
+#s2-hero{position:relative;height:calc(100svh - var(--hh));min-height:560px;max-height:900px;overflow:hidden;background:#8d8883;touch-action:pan-y}
+.slides{position:absolute;inset:0}
+.slide{position:absolute;inset:0;opacity:0;transform:translateX(6%);transition:opacity .9s ease,transform .9s ease}
+.slide.on{opacity:1;transform:none;z-index:2}
+.slide.out{opacity:0;transform:translateX(-6%)}
+.slide svg{position:absolute;inset:0;width:100%;height:100%}
+.slide:after,.care-hero:after{content:'';position:absolute;left:0;right:0;bottom:0;height:48%;background:linear-gradient(to bottom,rgba(20,16,14,0),rgba(20,16,14,.42));pointer-events:none}
+.slide .cpt,.care-hero .cpt{z-index:2}
+.slide .cpt{position:absolute;left:0;right:0;bottom:17%;text-align:center;color:#fff;padding:0 20px;text-shadow:0 1px 14px rgba(0,0,0,.18)}
+.cpt h2{font-family:'Lato',sans-serif;font-weight:700;font-size:26px;letter-spacing:.03em;text-transform:uppercase;line-height:1.2}
+.cpt p{font-size:12px;margin-top:12px;letter-spacing:.02em}
+.cpt p+p{margin-top:6px;font-family:'Lato';font-weight:700;letter-spacing:.04em;text-transform:uppercase;font-size:11.5px}
+#dots{position:absolute;left:0;right:0;bottom:24px;z-index:5;display:flex;justify-content:center;gap:12px}
+#dots button{width:11px;height:11px;border-radius:50%;border:1.5px solid rgba(255,255,255,.9);padding:0}
+#dots button.on{background:#fff}
+
+/* section title (ref6 style) */
+.ttl{text-align:center;padding-top:88px}
+.ttl h3{font-size:18px;font-weight:700;color:#57514c;font-family:'Noto Sans KR',sans-serif;letter-spacing:-.01em}
+.ttl .bar{width:210px;height:4px;background:var(--bar);margin:20px auto 0}
+.ttl .en{display:block;font-family:'Lato';font-size:11px;letter-spacing:.24em;color:#a39b93;margin-bottom:8px;font-weight:700}
+
+/* s3 booking */
+#s3-booking{padding-bottom:40px}
+.stores{display:grid;grid-template-columns:1fr 1fr;padding:30px 15px 0}
+.st{text-align:center;padding-bottom:22px}
+.st .ph{aspect-ratio:1.66/1;overflow:hidden;background:#eee}
+.st .ph svg{width:100%;height:100%}
+.st b{display:block;font-size:14px;color:#57514c;margin-top:18px;font-family:'Noto Sans KR'}
+.st span{display:block;font-size:13px;color:#77716b;margin-top:8px}
+.st:active .ph{opacity:.85}
+
+/* s4 style */
+#s4-style{padding-bottom:30px}
+.tabs{display:flex;gap:0;overflow-x:auto;scrollbar-width:none;padding:34px 15px 0;justify-content:flex-start;border-bottom:1px solid var(--line);margin:0 15px}
+.tabs::-webkit-scrollbar{display:none}
+.tabs{padding-left:0;padding-right:0}
+.tab{flex:1 1 0;min-width:0;padding:0 0 12px;text-align:center;font-family:'Lato';font-weight:700;font-size:11.5px;letter-spacing:.03em;color:#a8a19a;position:relative;text-transform:uppercase}
+.tab small{display:block;font-family:'Noto Sans KR';font-weight:500;font-size:11px;letter-spacing:0;color:inherit;margin-bottom:2px}
+.tab.on{color:var(--ink)}
+.tab.on:after{content:'';position:absolute;left:8%;right:8%;bottom:-1px;height:2px;background:var(--ink)}
+.sgrid{display:grid;grid-template-columns:1fr 1fr;padding:46px 15px 0;row-gap:56px}
+.sc{text-align:center;display:flex;flex-direction:column;align-items:center}
+.sc h5{font-size:15px;font-weight:700;color:#1d1916;margin-bottom:16px;font-family:'Noto Sans KR';letter-spacing:-.01em}
+.sc h5 em{display:block;font-style:normal;font-family:'Lato';font-weight:700;font-size:12px;letter-spacing:.06em;color:#9a928a;margin-top:2px;text-transform:uppercase}
+.sc .pic{width:152px;aspect-ratio:2/3;overflow:hidden;background:#e9e8e6}
+.sc .pic svg{width:100%;height:100%}
+.sc .pr{font-size:12px;color:#8a837c;margin-top:10px}
+.sgrid.fade{animation:fd .45s ease}
+@keyframes fd{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+
+/* s5 color/menu */
+#s5-color{background:var(--linen);padding-bottom:64px;margin-top:50px}
+#s5-color .ttl .bar{background:#e2dad0}
+.acc{margin:34px 15px 0;border-top:1px solid #d9d1c7}
+.acc-it{border-bottom:1px solid #d9d1c7}
+.acc-h{width:100%;display:flex;align-items:center;justify-content:space-between;padding:19px 4px;text-align:left}
+.acc-h b{font-family:'Lato';font-weight:700;font-size:15px;letter-spacing:.08em;color:var(--ink);text-transform:uppercase}
+.acc-h b span{font-family:'Noto Sans KR';font-weight:500;font-size:13px;letter-spacing:0;color:#857d75;margin-left:8px;text-transform:none}
+.acc-h i{width:14px;height:14px;position:relative}
+.acc-h i:before,.acc-h i:after{content:'';position:absolute;left:0;right:0;top:6px;height:1.5px;background:#6e6761;transition:transform .3s}
+.acc-h i:after{transform:rotate(90deg)}
+.acc-it.open .acc-h i:after{transform:rotate(0)}
+.acc-b{max-height:0;overflow:hidden;transition:max-height .4s ease}
+.acc-it.open .acc-b{max-height:420px}
+.row{display:flex;justify-content:space-between;align-items:baseline;padding:9px 4px;font-size:14px;color:#5a534d}
+.row .n{font-family:'Noto Sans KR'}
+.row .n small{display:block;font-size:12px;color:#9a928a}
+.row .p{font-family:'Lato';font-weight:700;color:#3a332e;white-space:nowrap;padding-left:12px}
+.acc-b .inner{padding:0 0 16px}
+.swatch{display:flex;gap:8px;padding:2px 4px 14px}
+.swatch span{flex:1;height:30px}
+.note{font-size:12px;color:#8f877f;margin:18px 19px 0}
+
+/* s6 care */
+#s6-care{padding-bottom:20px}
+.care-hero{position:relative;height:440px;overflow:hidden}
+.care-hero svg{position:absolute;inset:0}
+.care-hero svg{width:100%;height:100%}
+.care-hero .cpt{position:absolute;left:0;right:0;bottom:56px;text-align:center;color:#fff}
+.cares{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);border-bottom:1px solid var(--line)}
+.cr{background:#fff;padding:26px 18px 24px;display:flex;flex-direction:column}
+.cr .no{font-family:'Lato';font-weight:900;font-size:11px;letter-spacing:.2em;color:#b2aaa1}
+.cr h6{font-size:15px;color:var(--ink);font-weight:700;margin-top:8px;font-family:'Noto Sans KR'}
+.cr p{font-size:12.5px;color:#7a736c;margin:6px 0 14px;line-height:1.55}
+.cr .m{margin-top:auto!important;display:flex;justify-content:space-between;margin-top:14px;font-size:12px;color:#8d857e;border-top:1px solid #efebe6;padding-top:10px}
+.cr .m b{font-family:'Lato';color:#3a332e;font-size:13px}
+
+/* s7 collection */
+#s7-collection{padding-bottom:64px}
+.rail{display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-padding:0 15px;padding:34px 15px 4px;scrollbar-width:none}
+.rail::-webkit-scrollbar{display:none}
+.cc{flex:0 0 72%;max-width:300px;scroll-snap-align:start;position:relative}
+.cc .im{aspect-ratio:13/17;overflow:hidden;position:relative}
+.cc .im svg{width:100%;height:100%}
+.cc .tag{position:absolute;left:14px;top:14px;font-family:'Lato';font-weight:900;font-size:10.5px;letter-spacing:.2em;color:#fff}
+.cc h5{font-family:'Lato';font-weight:700;font-size:16px;letter-spacing:.06em;color:var(--ink);margin-top:14px;text-transform:uppercase}
+.cc p{font-size:12.5px;color:#7a736c;margin-top:3px}
+.prog{height:2px;background:#ece8e3;margin:22px 15px 0;position:relative}
+.prog i{position:absolute;left:0;top:0;bottom:0;width:25%;background:#3b3430;transition:left .2s}
+
+/* s8 salon */
+#s8-salon{background:#f7f5f2;padding-bottom:56px}
+.seg{display:grid;grid-template-columns:1fr 1fr;margin:34px 15px 0;border:1px solid #cfc8c0}
+.seg button{padding:13px 0;font-family:'Lato';font-weight:700;font-size:12.5px;letter-spacing:.14em;color:#8a827a}
+.seg button.on{background:#3b3430;color:#fff}
+.map{margin:18px 15px 0;aspect-ratio:375/230;overflow:hidden;background:#ebe7e1}
+.map svg{width:100%;height:100%}
+.info{margin:22px 15px 0;background:#fff;padding:6px 18px}
+.info .r{display:flex;padding:13px 0;border-bottom:1px solid #f0ece7;font-size:13.5px}
+.info .r:last-child{border-bottom:0}
+.info .r b{width:84px;flex:0 0 84px;color:#3a332e;font-weight:700;font-family:'Noto Sans KR'}
+.info .r span{color:#6b645e}
+.btns{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:16px 15px 0}
+.btn{display:flex;align-items:center;justify-content:center;gap:8px;height:50px;font-size:14px;font-weight:700;font-family:'Noto Sans KR';border:1px solid #3b3430;color:#3b3430;background:#fff}
+.btn.dk{background:#3b3430;color:#fff}
+
+/* s9 footer */
+#s9-footer{background:#fff}
+.f-sns{display:flex;justify-content:center;gap:10px;padding:36px 0 22px}
+.f-sns .ring{border-color:#9a948e;width:36px;height:36px}
+.f-info{text-align:center;font-size:12px;color:#8a847e;line-height:1.9;padding:0 20px 26px;font-family:'Noto Sans KR'}
+.f-info a{margin:0 7px;color:#5e5853;font-weight:500}
+.f-bar{background:var(--foot);color:#d4d0cc;text-align:center;font-size:12px;padding:13px 16px;letter-spacing:.01em}
+#top{position:fixed;right:14px;bottom:18px;z-index:40;width:40px;height:40px;border:1px solid #c9c3bc;background:rgba(255,255,255,.92);display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity .3s}
+#top.show{opacity:1;pointer-events:auto}
+
+/* layer (sheet) */
+#lay{position:fixed;inset:0;z-index:80;background:rgba(30,25,22,.45);opacity:0;pointer-events:none;transition:opacity .3s}
+#sheet{visibility:hidden;position:fixed;left:0;right:0;bottom:0;z-index:81;background:#fff;max-height:88svh;overflow-y:auto;transform:translateY(100%);transition:transform .4s cubic-bezier(.2,.7,.2,1);max-width:560px;margin:0 auto}
+body.sheet #lay{opacity:1;pointer-events:auto}
+body.sheet #sheet{transform:none;visibility:visible}
+.sh-h{position:sticky;top:0;background:#fff;display:flex;align-items:center;justify-content:space-between;padding:18px 18px 14px;border-bottom:1px solid var(--line);z-index:2}
+.sh-h b{font-size:16px;color:var(--ink);font-family:'Noto Sans KR'}
+.sh-b{padding:6px 18px 26px}
+.lbl{font-family:'Lato';font-weight:900;font-size:11px;letter-spacing:.2em;color:#a39b93;margin:20px 0 10px}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chip{border:1px solid #d8d2cb;padding:9px 13px;font-size:13px;color:#5b544e;font-family:'Noto Sans KR'}
+.chip.on{border-color:#3b3430;background:#3b3430;color:#fff}
+.chip small{display:block;font-size:11px;color:inherit;opacity:.75}
+.chips.days{display:grid;grid-template-columns:repeat(7,1fr);gap:5px}.days .chip{min-width:0;text-align:center;padding:8px 0}
+.sum{margin-top:22px;background:var(--linen);padding:14px 16px;font-size:13px;color:#5f5852;display:none}
+.sum.show{display:block}
+.sum b{color:var(--ink)}
+.sh-b .btn{width:100%;margin-top:18px}
+.sd-pic{width:100%;max-width:260px;margin:12px auto 0;aspect-ratio:2/3;overflow:hidden}
+.sd-pic svg{width:100%;height:100%}
+.sd-t{text-align:center;margin-top:16px}
+.sd-t h5{font-size:18px;color:var(--ink);font-family:'Noto Sans KR'}
+.sd-t p{font-size:13px;color:#7a736c;margin-top:6px}
+
+@media (min-width:1024px){
+  #s2-hero{height:740px;max-width:1200px;margin:0 auto}
+  .cpt h2{font-size:40px}
+  .care-hero{max-width:1120px}
+  .cpt p{font-size:14px}
+  .stores{grid-template-columns:repeat(3,1fr);gap:0 18px;padding:40px 0 0}
+  #s3-booking .wrap,#s4-style .wrap,#s5-color .wrap,#s6-care .wrap,#s7-collection .wrap,#s8-salon .wrap{padding:0 40px}
+  .tabs{margin:0;justify-content:center}
+  .sgrid{grid-template-columns:repeat(4,1fr);padding:56px 0 0}
+  .sc .pic{width:200px}
+  .acc{margin:40px auto 0;max-width:820px}
+  .note{max-width:820px;margin:18px auto 0}
+  .care-hero{height:520px}
+  .care-hero .cpt{bottom:28px}
+  .care-hero .cpt h2{font-size:34px}
+  .cares{grid-template-columns:repeat(4,1fr)}
+  .rail{padding:40px 0 4px;gap:20px}
+  .cc{flex:0 0 calc(25% - 15px);max-width:none}
+  .prog{display:none}
+  .salon-grid{display:grid;grid-template-columns:1.25fr 1fr;gap:28px;align-items:start;margin-top:34px}
+  .salon-grid .seg{grid-column:1/-1;margin:0;max-width:420px}
+  .salon-grid .map,.salon-grid .info,.salon-grid .btns{margin-left:0;margin-right:0}
+  .salon-grid .map{margin-top:0}
+  .salon-grid .info{margin-top:0}
+  .f-bar{font-size:12.5px}
+  #sheet{bottom:auto;top:50%;transform:translateY(-40%);opacity:0;pointer-events:none;transition:transform .35s,opacity .35s}
+  body.sheet #sheet{transform:translateY(-50%);opacity:1;pointer-events:auto;visibility:visible}
+}
+</style>
+</head>
+<body class="pad">
+
+<header id="s1-header">
+  <div class="in">
+    <a href="#s2-hero" class="logo" aria-label="살롱 드 결">
+      <svg width="26" height="26" viewBox="0 0 26 26" aria-hidden="true"><circle cx="13" cy="13" r="11.6" fill="none" stroke="#231c18" stroke-width="1.3"/><path d="M6.5 15.5c2.2-3.6 4.4-3.6 6.5 0s4.3 3.6 6.5 0" fill="none" stroke="#231c18" stroke-width="1.3" stroke-linecap="round"/><path d="M6.5 10.5c2.2-3.6 4.4-3.6 6.5 0s4.3 3.6 6.5 0" fill="none" stroke="#8a7a6c" stroke-width="1.3" stroke-linecap="round"/></svg>
+      <span class="wm"><i>salon de</i>Gyeol</span>
+    </a>
+    <button id="ham" aria-label="메뉴 열기"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<div id="dim"></div>
+<button id="dx" aria-label="메뉴 닫기"><svg width="20" height="20" viewBox="0 0 20 20"><path d="M2 2l16 16M18 2L2 18" stroke="#111" stroke-width="1.8"/></svg></button>
+<nav id="drawer" aria-label="전체 메뉴">
+  <div class="dr-top kr">
+    <a href="#s9-footer" data-go>채용 안내</a>
+    <a href="#s3-booking" data-go>아틀리에 예약</a>
+    <a href="#s3-booking" data-go>룸 예약</a>
+  </div>
+  <div class="dr-body">
+    <h4 class="cap">Salon de Gyeol</h4>
+    <a class="ln" href="#s8-salon" data-go data-salon="0">결 아틀리에 ATELIER</a>
+    <a class="ln" href="#s8-salon" data-go data-salon="1">결 룸 ROOM</a>
+    <a class="ln" href="#s4-style" data-go data-tab="0">뉴디자인 NEW DESIGN</a>
+    <a class="ln" href="#s4-style" data-go data-tab="1">숏 SHORT</a>
+    <a class="ln" href="#s4-style" data-go data-tab="2">단발 BOB</a>
+    <a class="ln" href="#s4-style" data-go data-tab="3">미디움 MEDIUM</a>
+    <a class="ln" href="#s4-style" data-go data-tab="4">롱 LONG</a>
+    <a class="ln" href="#s4-style" data-go data-tab="5">맨즈 MEN</a>
+    <a class="ln" href="#s5-color" data-go>컬러 · 메뉴 COLOR</a>
+    <a class="ln" href="#s6-care" data-go>케어 CARE</a>
+    <a class="ln" href="#s7-collection" data-go>컬렉션 COLLECTION</a>
+    <a class="big cap" href="#s6-care" data-go>Gyeol After Care</a>
+    <a class="big cap" href="#s7-collection" data-go>Gyeol Class</a>
+  </div>
+  <div class="dr-sns">
+    <a class="ring" href="#s9-footer" data-go aria-label="메일"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8"><rect x="3" y="5" width="18" height="14"/><path d="M3 6l9 7 9-7"/></svg></a>
+    <a class="ring" href="#s9-footer" data-go aria-label="상담"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8"><path d="M4 5h16v11H9l-5 4z"/></svg></a>
+    <a class="ring" href="#s8-salon" data-go aria-label="오시는 길"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8"><path d="M12 21s-6-6.2-6-11a6 6 0 0112 0c0 4.8-6 11-6 11z"/><circle cx="12" cy="10" r="2.2"/></svg></a>
+  </div>
+</nav>
+
+<main>
+<!-- s2 hero -->
+<section id="s2-hero" aria-label="메인 슬라이드">
+  <div class="slides" id="slides">
+    <div class="slide on" data-art="h1"><div class="cpt"><h2>Soft Contour</h2><p>27SS 시즌 스타일 · 부드러운 윤곽</p></div></div>
+    <div class="slide" data-art="h2"><div class="cpt"><h2>Gyeol Atelier</h2><p>예약제로 운영하는 조용한 공간</p></div></div>
+    <div class="slide" data-art="h3"><div class="cpt"><h2>Gyeol Room</h2><p>머무는 시간까지 가벼운 살롱</p></div></div>
+    <div class="slide" data-art="h4"><div class="cpt"><h2>Gyeol After Care</h2><p>살롱에서 집까지 이어지는 관리</p></div></div>
+    <div class="slide" data-art="h5"><div class="cpt"><h2>Gyeol Class</h2><p>디자이너를 위한 교육 프로그램</p></div></div>
+  </div>
+  <div id="dots"></div>
+</section>
+
+<!-- s3 booking -->
+<section id="s3-booking">
+  <div class="wrap">
+    <div class="ttl"><span class="en">RESERVATION</span><h3>살롱 드 결 온라인 예약</h3><div class="bar"></div></div>
+    <div class="stores" id="stores"></div>
+  </div>
+</section>
+
+<!-- s4 style -->
+<section id="s4-style">
+  <div class="wrap">
+    <div class="ttl"><span class="en">STYLE</span><h3>스타일 둘러보기</h3><div class="bar"></div></div>
+    <div class="tabs" id="tabs" role="tablist"></div>
+    <div class="sgrid" id="sgrid"></div>
+  </div>
+</section>
+
+<!-- s5 color / menu -->
+<section id="s5-color">
+  <div class="wrap">
+    <div class="ttl"><span class="en">COLOR &amp; MENU</span><h3>시술 메뉴와 가격</h3><div class="bar"></div></div>
+    <div class="acc" id="acc"></div>
+    <p class="note">표시 가격은 기본 길이 기준 예시이며, 모발 길이와 상태에 따라 상담 후 달라질 수 있습니다.</p>
+  </div>
+</section>
+
+<!-- s6 care -->
+<section id="s6-care">
+  <div class="care-hero wrap" id="careArt"><div class="cpt"><h2>Gyeol Care</h2><p>두피와 모발을 함께 돌보는 시간</p></div></div>
+  <div class="wrap"><div class="cares" id="cares"></div></div>
+</section>
+
+<!-- s7 collection -->
+<section id="s7-collection">
+  <div class="wrap">
+    <div class="ttl"><span class="en">COLLECTION</span><h3>시즌 컬렉션</h3><div class="bar"></div></div>
+    <div class="rail" id="rail"></div>
+    <div class="prog"><i id="progI"></i></div>
+  </div>
+</section>
+
+<!-- s8 salon -->
+<section id="s8-salon">
+  <div class="wrap">
+    <div class="ttl"><span class="en">SALON</span><h3>매장 안내</h3><div class="bar"></div></div>
+    <div class="salon-grid">
+      <div class="seg" id="seg"><button class="on">ATELIER</button><button>ROOM</button></div>
+      <div class="map" id="map"></div>
+      <div>
+        <div class="info" id="info"></div>
+        <div class="btns">
+          <button class="btn" type="button" id="callBtn"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 005 5L15 13l5 2v4a1 1 0 01-1 1A16 16 0 014 5a1 1 0 011-1z"/></svg>전화 준비 중</button>
+          <button class="btn dk" type="button" id="salonBook">예약하기</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<!-- s9 footer -->
+<footer id="s9-footer">
+  <div class="f-sns">
+    <span class="ring" aria-label="메일"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#7d7670" stroke-width="1.7"><rect x="3" y="5" width="18" height="14"/><path d="M3 6l9 7 9-7"/></svg></span>
+    <span class="ring" aria-label="상담"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#7d7670" stroke-width="1.7"><path d="M4 5h16v11H9l-5 4z"/></svg></span>
+    <span class="ring" aria-label="오시는 길"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#7d7670" stroke-width="1.7"><path d="M12 21s-6-6.2-6-11a6 6 0 0112 0c0 4.8-6 11-6 11z"/><circle cx="12" cy="10" r="2.2"/></svg></span>
+  </div>
+  <div class="f-info">
+    <div><a href="#s9-footer">이용약관</a><a href="#s9-footer">개인정보처리방침</a><a href="#s9-footer">채용 안내</a></div>
+    <div>상호 살롱 드 결 · 대표 준비 중 · 사업자등록번호 준비 중</div>
+    <div>주소 준비 중 · 연락처 준비 중 · 이메일 준비 중</div>
+  </div>
+  <div class="f-bar">SALON DE GYEOL &nbsp;·&nbsp; Copyright © All Rights reserved.</div>
+</footer>
+<button id="top" aria-label="맨 위로"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#5e5853" stroke-width="2"><path d="M5 15l7-7 7 7"/></svg></button>
+
+<div id="lay"></div>
+<div id="sheet" role="dialog" aria-modal="true">
+  <div class="sh-h"><b id="shT">예약</b><button id="shx" aria-label="닫기"><svg width="18" height="18" viewBox="0 0 20 20"><path d="M3 3l14 14M17 3L3 17" stroke="#222" stroke-width="1.7"/></svg></button></div>
+  <div class="sh-b" id="shB"></div>
+</div>
+
+<script>
+(function(){
+const $=s=>document.querySelector(s), $$=s=>[...document.querySelectorAll(s)];
+let uid=0; const U=p=>p+(++uid);
+
+/* ---------- HERO ART ---------- */
+function hairBackView(){ // slide 1: back view, smooth egg silhouette, crown part, soft tips
+  const g=U('g');
+  const tipsY=[16,34,8,40,22,46,12,30,6], pts=[[188,106],[238,116],[272,150],[288,202],[298,262],[292,322],[286,384],[292,452],[290,520],[284,570]];
+  const n=9, x0=284, x1=92, step=(x0-x1)/n;
+  for(let k=0;k<n;k++){const xc=x0-(k+.5)*step; pts.push([xc+step*.42,596+tipsY[k]*.35]); pts.push([xc,604+tipsY[k]]);}
+  pts.push([92,570],[86,520],[84,452],[90,384],[84,322],[78,262],[88,202],[104,150],[138,116]);
+  const hp=smooth(pts);
+  let strands='';
+  for(let i=0;i<34;i++){const k=i-16.5, side=k<0?-1:1, x=188+k*6.2, w=(i%3)*5+7;
+    strands+=`<path d="M${188+side*1.5} ${118+Math.abs(k)*1.2} C${188+k*3.4} 150 ${x} 210 ${x+k*.5} 290 C${x+k*.7-12} 350 ${x+w} 400 ${x-4} 450 S${x+w+2} 540 ${x-3+(i%4)*3} ${640}" fill="none" stroke="${i%4==1?'#2e1d12':'url(#'+g+'s)'}" stroke-width="${1+(i%3)*.6}" opacity="${.28+(i%4)*.12}"/>`;}
+  let wisps='';
+  for(let k=0;k<n;k++){const xc=x0-(k+.5)*step, ty=604+tipsY[k];
+    [-7,0,6].forEach((d,m)=>{wisps+=`<path d="M${xc+d} ${ty-24} C${xc+d+(m-1)*3} ${ty-8} ${xc+d+(m-1)*5} ${ty+4} ${xc+d+(m-1)*6} ${ty+10+m*3}" stroke="${m==1?'#4a2f1d':'#5e3d28'}" stroke-width="${2.4-m*.5}" stroke-linecap="round" fill="none"/>`;});}
+  return `<svg viewBox="0 0 375 760" preserveAspectRatio="xMidYMid slice">
+  <defs>
+   <linearGradient id="${g}bg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#d4cdc4"/><stop offset=".55" stop-color="#aaa29a"/><stop offset="1" stop-color="#7f7871"/></linearGradient>
+   <radialGradient id="${g}lt" gradientUnits="userSpaceOnUse" cx="150" cy="170" r="430"><stop offset="0" stop-color="#fff" stop-opacity=".45"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></radialGradient>
+   <linearGradient id="${g}h" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#8f6040"/><stop offset=".45" stop-color="#5e3d28"/><stop offset="1" stop-color="#3a2618"/></linearGradient>
+   <linearGradient id="${g}s" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#c99769"/><stop offset="1" stop-color="#8a5a37"/></linearGradient>
+   <linearGradient id="${g}k" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#4a4541"/><stop offset="1" stop-color="#2a2725"/></linearGradient>
+   <radialGradient id="${g}vol" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#d7a77a" stop-opacity=".35"/><stop offset="1" stop-color="#d7a77a" stop-opacity="0"/></radialGradient>
+   <clipPath id="${g}cp"><path d="${hp}"/></clipPath>
+  </defs>
+  <rect x="-1000" width="2375" height="760" fill="url(#${g}bg)"/><rect x="-1000" width="2375" height="760" fill="url(#${g}lt)"/>
+  <path d="M-30 800 C-10 650 90 548 170 530 L206 530 C286 548 385 650 405 800Z" fill="url(#${g}k)"/>
+  ${Array.from({length:24},(_,i)=>`<path d="M${30+i*13.5} 780 L${30+i*13.5+(i-11.5)*1.6} ${566+Math.abs(i-11.5)*4}" stroke="#fff" stroke-opacity=".05" stroke-width="5"/>`).join('')}
+  <path d="${hp}" fill="url(#${g}h)"/>
+  <g clip-path="url(#${g}cp)">${strands}
+   <ellipse cx="96" cy="270" rx="34" ry="60" fill="url(#${g}vol)"/><ellipse cx="280" cy="270" rx="34" ry="60" fill="url(#${g}vol)"/>
+   <path d="M120 200 C130 150 160 128 186 124 C170 150 150 180 130 236Z" fill="#e2b78e" opacity=".14"/><path d="M256 200 C246 150 216 128 190 124 C206 150 226 180 246 236Z" fill="#e2b78e" opacity=".09"/>
+   <path d="M86 262 C96 300 92 330 84 360 M290 262 C280 300 284 330 292 360" stroke="#2a1a10" stroke-width="7" opacity=".22" fill="none"/>
+  </g>
+  <path d="M188 110 C187 128 188 146 187 164" stroke="#e9c9a8" stroke-width="1.6" stroke-linecap="round" fill="none" opacity=".45"/>
+  <path d="M188 110 C187 128 188 146 187 164" stroke="#2e1d12" stroke-width="4" stroke-linecap="round" fill="none" opacity=".18" transform="translate(3 0)"/>
+  ${wisps}
+  </svg>`;
+}
+function atelier(){
+  const g=U('g'); let win='';
+  const cols=[38,128,218];
+  [[250,110],[400,110]].forEach(([y,h],r)=>cols.forEach((x,c)=>{
+    win+=`<rect x="${x}" y="${y}" width="80" height="${h}" fill="url(#${g}gl)"/><rect x="${x}" y="${y}" width="80" height="${h}" fill="none" stroke="#5a4f46" stroke-width="3"/><path d="M${x+40} ${y}V${y+h}" stroke="#5a4f46" stroke-width="2"/>
+    <path d="M${x+4} ${y+4} q10 ${h/2} 2 ${h-8} M${x+16} ${y+4} q6 ${h/2} 0 ${h-8} M${x+50} ${y+4} q10 ${h/2} 2 ${h-8}" stroke="#fff" stroke-opacity=".55" stroke-width="5" fill="none"/>`;
+  }));
+  return `<svg viewBox="0 0 375 760" preserveAspectRatio="xMidYMid slice">
+  <defs>
+   <linearGradient id="${g}sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#b9cfe0"/><stop offset="1" stop-color="#eef2f3"/></linearGradient>
+   <linearGradient id="${g}w" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#d8c9b8"/><stop offset="1" stop-color="#c2b19e"/></linearGradient>
+   <linearGradient id="${g}gl" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#e6eef0"/><stop offset=".5" stop-color="#b9c9cf"/><stop offset="1" stop-color="#8ea2aa"/></linearGradient>
+   <linearGradient id="${g}gf" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#3e3833"/><stop offset="1" stop-color="#1f1b18"/></linearGradient>
+   <radialGradient id="${g}warm" cx=".5" cy=".6" r=".6"><stop offset="0" stop-color="#f7d9a8" stop-opacity=".9"/><stop offset="1" stop-color="#f7d9a8" stop-opacity="0"/></radialGradient>
+  </defs>
+  <rect x="-1000" width="2375" height="760" fill="url(#${g}sky)"/>
+  <ellipse cx="300" cy="120" rx="90" ry="22" fill="#fff" opacity=".6"/><ellipse cx="80" cy="80" rx="70" ry="16" fill="#fff" opacity=".5"/>
+  <rect x="-1000" y="190" width="2375" height="570" fill="url(#${g}w)"/>
+  <rect x="-1000" y="180" width="2375" height="14" fill="#a8947f"/>
+  ${[230,380,530].map(y=>`<rect x="-1000" y="${y}" width="2375" height="6" fill="#b29f8b"/>`).join('')}
+  <circle cx="330" cy="300" r="26" fill="url(#${g}gl)" stroke="#5a4f46" stroke-width="3"/><path d="M304 300h52M330 274v52" stroke="#5a4f46" stroke-width="2"/>
+  ${win}
+  <rect x="-1000" y="560" width="2375" height="200" fill="url(#${g}gf)"/>
+  <rect x="24" y="580" width="327" height="180" fill="#2b2622"/>
+  <rect x="34" y="590" width="140" height="170" fill="url(#${g}warm)"/><rect x="200" y="590" width="140" height="170" fill="url(#${g}warm)"/>
+  <path d="M34 590h140v170H34zM200 590h140v170H200z" fill="none" stroke="#6d6158" stroke-width="2"/>
+  <path d="M10 560 L365 560 L345 596 L30 596Z" fill="#6b5a4b"/>
+  ${Array.from({length:12},(_,i)=>`<path d="M${30+i*26.3} 596 L${43+i*26.3} 560" stroke="#7d6a59" stroke-width="12"/>`).join('')}
+  <path d="M10 560 L365 560" stroke="#4d4036" stroke-width="3"/>
+  <g transform="translate(316 640)"><rect x="-6" y="40" width="12" height="80" fill="#4a3b2c"/><circle r="38" fill="#5f7a52"/><circle cx="-18" cy="10" r="24" fill="#6f8c5f"/><circle cx="16" cy="-14" r="22" fill="#7f9b6c"/></g>
+  <g transform="translate(40 168)"><circle r="14" fill="#7a9566"/><circle cx="16" cy="4" r="10" fill="#8aa676"/></g>
+  <g transform="translate(250 166)"><circle r="12" fill="#7a9566"/><circle cx="-14" cy="5" r="9" fill="#8aa676"/></g>
+  
+  </svg>`;
+}
+function room(){
+  const g=U('g');
+  return `<svg viewBox="0 0 375 760" preserveAspectRatio="xMidYMid slice">
+  <defs>
+   <linearGradient id="${g}wall" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ebe1d3"/><stop offset="1" stop-color="#dacdba"/></linearGradient>
+   <linearGradient id="${g}fl" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#cdb393"/><stop offset="1" stop-color="#a88b69"/></linearGradient>
+   <radialGradient id="${g}mir" cx=".4" cy=".35" r=".7"><stop offset="0" stop-color="#f5efe6"/><stop offset=".7" stop-color="#cfc3b2"/><stop offset="1" stop-color="#b3a491"/></radialGradient>
+   <linearGradient id="${g}ch" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#b98a5e"/><stop offset="1" stop-color="#8a603d"/></linearGradient>
+   <radialGradient id="${g}glow" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#fff2d6" stop-opacity=".95"/><stop offset="1" stop-color="#fff2d6" stop-opacity="0"/></radialGradient>
+  </defs>
+  <rect x="-1000" width="2375" height="760" fill="url(#${g}wall)"/>
+  <polygon points="0,0 120,0 330,560 210,560" fill="#fff" opacity=".18"/>
+  <polygon points="150,0 200,0 375,470 375,560 330,560" fill="#fff" opacity=".12"/>
+  <rect x="-1000" y="520" width="2375" height="240" fill="url(#${g}fl)"/>
+  ${Array.from({length:9},(_,i)=>`<path d="M${187+(i-4)*12} 520 L${187+(i-4)*110} 760" stroke="#8f7456" stroke-opacity=".35" stroke-width="1.2"/>`).join('')}
+  <path d="M-1000 600 L1375 600 M-1000 680 L1375 680" stroke="#8f7456" stroke-opacity=".25"/>
+  <rect x="-1000" y="512" width="2375" height="10" fill="#bba68c"/>
+  <line x1="187" y1="0" x2="187" y2="120" stroke="#3e352d" stroke-width="1.5"/>
+  <circle cx="187" cy="150" r="80" fill="url(#${g}glow)"/>
+  <path d="M160 120 Q187 104 214 120 L206 146 L168 146Z" fill="#efe6d8" stroke="#a49481"/>
+  <ellipse cx="187" cy="300" rx="92" ry="112" fill="#a98f74"/>
+  <ellipse cx="187" cy="300" rx="84" ry="104" fill="url(#${g}mir)"/>
+  <path d="M130 240 L170 220 M126 268 L190 232" stroke="#fff" stroke-width="6" opacity=".55" stroke-linecap="round"/>
+  <rect x="60" y="410" width="255" height="16" fill="#9b7752"/><rect x="60" y="426" width="255" height="6" fill="#6f5338"/>
+  <g transform="translate(92 362)"><path d="M-12 48 C-14 20 14 20 12 48Z" fill="#cfc4b4"/><path d="M0 22 C-8 -10 6 -30 -2 -52 M0 10 C10 -14 20 -20 24 -40" stroke="#6f5a45" stroke-width="2" fill="none"/></g>
+  <g transform="translate(266 386)"><rect x="-10" y="0" width="12" height="24" fill="#e9e3da"/><rect x="6" y="6" width="10" height="18" fill="#c7b59d"/></g>
+  <g>
+   <path d="M128 470 C126 420 150 404 187 404 C224 404 248 420 246 470 L246 540 L128 540Z" fill="url(#${g}ch)"/>
+   <path d="M112 540 C112 520 128 512 187 512 C246 512 262 520 262 540 L262 566 C262 576 254 580 187 580 C120 580 112 576 112 566Z" fill="#9d714a"/>
+   <path d="M120 530 L120 500 C120 492 134 492 134 500 L134 534 M254 530 L254 500 C254 492 240 492 240 500 L240 534" stroke="#7d5a3b" stroke-width="7" fill="none" stroke-linecap="round"/>
+   <rect x="180" y="580" width="14" height="76" fill="#b9b4ae"/><rect x="183" y="580" width="4" height="76" fill="#e8e5e1"/>
+   <ellipse cx="187" cy="664" rx="66" ry="12" fill="#c8c3bd"/><ellipse cx="187" cy="660" rx="66" ry="10" fill="#e3dfda"/>
+   <ellipse cx="187" cy="684" rx="110" ry="14" fill="#5e4a36" opacity=".18"/>
+  </g>
+  
+  </svg>`;
+}
+function aftercare(){
+  const g=U('g');
+  return `<svg viewBox="0 0 375 760" preserveAspectRatio="xMidYMid slice">
+  <defs>
+   <linearGradient id="${g}bg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#6b625a"/><stop offset=".6" stop-color="#4a433d"/><stop offset="1" stop-color="#2c2723"/></linearGradient>
+   <linearGradient id="${g}st" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#cdbfae"/><stop offset=".5" stop-color="#e3d8ca"/><stop offset="1" stop-color="#b3a491"/></linearGradient>
+   <linearGradient id="${g}am" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#5a2f12"/><stop offset=".35" stop-color="#a35f2a"/><stop offset=".6" stop-color="#7b4419"/><stop offset="1" stop-color="#3f200b"/></linearGradient>
+   <linearGradient id="${g}fr" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#cfcac3"/><stop offset=".4" stop-color="#f6f3ef"/><stop offset="1" stop-color="#b8b2aa"/></linearGradient>
+   <linearGradient id="${g}cl" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#8f8a7f"/><stop offset=".45" stop-color="#d9d4c7"/><stop offset="1" stop-color="#7b766c"/></linearGradient>
+   <radialGradient id="${g}sp" gradientUnits="userSpaceOnUse" cx="188" cy="230" r="330"><stop offset="0" stop-color="#fff" stop-opacity=".35"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></radialGradient>
+  </defs>
+  <rect x="-1000" width="2375" height="760" fill="url(#${g}bg)"/><rect x="-1000" width="2375" height="760" fill="url(#${g}sp)"/>
+  <g opacity=".16" fill="#000">${Array.from({length:7},(_,i)=>`<ellipse cx="${40+i*48}" cy="${120+(i%3)*40}" rx="34" ry="10" transform="rotate(${-30+i*9} ${40+i*48} ${120+(i%3)*40})"/>`).join('')}</g>
+  <rect x="40" y="470" width="190" height="290" fill="url(#${g}st)"/><rect x="40" y="470" width="190" height="10" fill="#efe7dc"/>
+  <rect x="200" y="530" width="150" height="230" fill="url(#${g}st)" opacity=".92"/><rect x="200" y="530" width="150" height="8" fill="#efe7dc"/>
+  ${Array.from({length:14},(_,i)=>`<path d="M${46+i*13} 486 q4 120 -2 270" stroke="#a8977f" stroke-opacity=".25" fill="none"/>`).join('')}
+  <ellipse cx="110" cy="474" rx="44" ry="6" fill="#000" opacity=".25"/>
+  <path d="M82 300 h56 v170 a4 4 0 0 1 -4 4 h-48 a4 4 0 0 1 -4 -4z" fill="url(#${g}am)"/>
+  <rect x="96" y="262" width="28" height="40" fill="#1e1b19"/><rect x="104" y="240" width="12" height="24" fill="#2a2623"/><path d="M110 244 h30 v6 h-24" fill="#2a2623"/>
+  <rect x="90" y="360" width="40" height="50" fill="#efe6d8" opacity=".9"/><path d="M98 376h24M98 386h18" stroke="#8a7a68" stroke-width="2"/>
+  <path d="M90 310 v150" stroke="#fff" stroke-opacity=".35" stroke-width="5"/>
+  <ellipse cx="190" cy="474" rx="34" ry="5" fill="#000" opacity=".25"/>
+  <rect x="160" y="350" width="60" height="124" rx="26" fill="url(#${g}fr)"/>
+  <rect x="176" y="330" width="28" height="22" fill="#d7d1c9"/>
+  <path d="M170 370 v80" stroke="#fff" stroke-width="6" opacity=".6" stroke-linecap="round"/>
+  <ellipse cx="282" cy="534" rx="40" ry="5" fill="#000" opacity=".25"/>
+  <path d="M248 440 h68 v90 a6 6 0 0 1 -6 6 h-56 a6 6 0 0 1 -6 -6z" fill="url(#${g}cl)"/>
+  <rect x="246" y="424" width="72" height="18" fill="#3a3531"/>
+  <path d="M256 448 v76" stroke="#fff" stroke-width="5" opacity=".4"/>
+  <g transform="translate(300 530)"><path d="M0 0 C-30 -40 -10 -80 26 -96 C20 -60 24 -30 0 0Z" fill="#7c8b63"/><path d="M0 0 C6 -30 14 -60 26 -96" stroke="#5b6a45" stroke-width="1.5" fill="none"/></g>
+  
+  </svg>`;
+}
+function maniHead(x,y,s,hc,style){
+  return `<g transform="translate(${x} ${y}) scale(${s})">
+   <rect x="-3" y="70" width="6" height="150" fill="#3a3632"/><path d="M0 220 L-40 280 M0 220 L40 280 M0 220 V285" stroke="#3a3632" stroke-width="4"/>
+   <path d="M-22 40 L22 40 L26 74 L-26 74Z" fill="#d9c7b5"/>
+   <ellipse cx="0" cy="0" rx="34" ry="44" fill="#e6d6c6"/>
+   ${style===0?`<path d="M-40 6 C-46 -64 46 -64 40 6 L42 60 C30 64 24 60 22 54 L24 0 C10 -16 -10 -16 -24 0 L-22 54 C-24 60 -30 64 -42 60Z" fill="${hc}"/>`:
+     style===1?`<path d="M-38 10 C-48 -66 48 -66 38 10 C40 24 36 30 30 32 C30 6 20 -12 0 -14 C-20 -12 -30 6 -30 32 C-36 30 -40 24 -38 10Z" fill="${hc}"/>`:
+     `<path d="M-40 0 C-48 -66 48 -66 40 0 C44 40 52 80 46 120 C34 110 30 90 26 70 L24 4 C8 -10 -8 -10 -24 4 L-26 70 C-30 90 -34 110 -46 120 C-52 80 -44 40 -40 0Z" fill="${hc}"/>`}
+  </g>`;
+}
+function academy(){
+  const g=U('g');
+  return `<svg viewBox="0 0 375 760" preserveAspectRatio="xMidYMid slice">
+  <defs>
+   <linearGradient id="${g}bg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2e2b29"/><stop offset="1" stop-color="#151312"/></linearGradient>
+   <linearGradient id="${g}cone" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff4dd" stop-opacity=".55"/><stop offset="1" stop-color="#fff4dd" stop-opacity="0"/></linearGradient>
+   <linearGradient id="${g}tb" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#8a7560"/><stop offset="1" stop-color="#5a4a3b"/></linearGradient>
+  </defs>
+  <rect x="-1000" width="2375" height="760" fill="url(#${g}bg)"/>
+  ${[70,187,305].map(x=>`<polygon points="${x-10},40 ${x+10},40 ${x+90},520 ${x-90},520" fill="url(#${g}cone)"/><rect x="${x-14}" y="24" width="28" height="22" rx="3" fill="#4b4642"/><ellipse cx="${x}" cy="47" rx="10" ry="3" fill="#fff6e0"/>`).join('')}
+  <path d="M-1000 24 H1375" stroke="#3d3936" stroke-width="5"/>
+  <ellipse cx="187" cy="560" rx="420" ry="44" fill="#2a2522"/>
+  ${maniHead(80,330,1,'#6a4a33',0)}${maniHead(187,300,1.1,'#2b2220',2)}${maniHead(295,330,1,'#8b6a4b',1)}
+  <rect x="-1000" y="600" width="2375" height="160" fill="url(#${g}tb)"/>
+  <rect x="-1000" y="596" width="2375" height="6" fill="#a08a72"/>
+  <g transform="translate(110 660) rotate(-14)"><path d="M0 0 L120 -6 L120 -1 L0 6Z" fill="#d7d4d0"/><path d="M0 4 L118 18 L117 22 L0 9Z" fill="#bdb9b4"/><circle cx="-12" cy="-6" r="10" fill="none" stroke="#2b2724" stroke-width="5"/><circle cx="-10" cy="16" r="10" fill="none" stroke="#2b2724" stroke-width="5"/></g>
+  <g transform="translate(230 700) rotate(8)"><rect width="110" height="12" rx="2" fill="#1f1c1a"/>${Array.from({length:20},(_,i)=>`<rect x="${4+i*5.2}" y="12" width="2.4" height="14" fill="#1f1c1a"/>`).join('')}</g>
+  
+  </svg>`;
+}
+
+/* ---------- STORE INTERIORS (230x140) ---------- */
+const room0=(g,wall1,wall2,fl1,fl2)=>`<defs><linearGradient id="${g}w" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="${wall1}"/><stop offset="1" stop-color="${wall2}"/></linearGradient><linearGradient id="${g}f" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="${fl1}"/><stop offset="1" stop-color="${fl2}"/></linearGradient></defs><rect width="230" height="140" fill="url(#${g}w)"/>`;
+const storeArt=[
+ ()=>{const g=U('s');return `<svg viewBox="0 0 230 140" preserveAspectRatio="xMidYMid slice">${room0(g,'#f1ece5','#e3dacd','#d8c6ad','#c1aa8a')}
+  <polygon points="0,110 230,96 230,140 0,140" fill="url(#${g}f)"/>
+  ${[0,1,2,3].map(i=>{const x=18+i*52,s=1-i*.12;return `<rect x="${x}" y="${30+i*3}" width="${34*s}" height="${48*s}" fill="#dfe5e6" stroke="#b49b7c" stroke-width="2"/><rect x="${x-4}" y="${80+i*1.5}" width="${44*s}" height="5" fill="#a88760"/><path d="M${x+6} ${92} q${10*s} -12 ${22*s} 0 v${14*s} h-${22*s}z" fill="#c59b6e"/><rect x="${x+15*s}" y="${106}" width="3" height="${10*s}" fill="#aaa"/>`}).join('')}
+  <polygon points="0,0 60,0 120,96 70,96" fill="#fff" opacity=".22"/></svg>`},
+ ()=>{const g=U('s');return `<svg viewBox="0 0 230 140" preserveAspectRatio="xMidYMid slice">${room0(g,'#e7e3dc','#cfc7bc','#bfb3a2','#a39583')}
+  <polygon points="0,104 230,104 230,140 0,140" fill="url(#${g}f)"/><rect y="40" width="230" height="4" fill="#bfb4a6"/>
+  ${[0,1,2].map(i=>{const x=22+i*72;return `<ellipse cx="${x+22}" cy="62" rx="22" ry="8" fill="#f7f5f2" stroke="#cfc8be"/><rect x="${x+18}" y="64" width="8" height="30" fill="#e9e5df"/><path d="M${x+4} 76 C${x+20} 70 ${x+50} 74 ${x+60} 96 L${x+66} 104 H${x+10} C${x+4} 96 ${x} 86 ${x+4} 76Z" fill="#3e3631"/><path d="M${x+20} 64 v-14 h8" stroke="#9a948c" stroke-width="2" fill="none"/>`}).join('')}
+  <rect x="190" y="12" width="30" height="22" fill="#fff" opacity=".5"/></svg>`},
+ ()=>{const g=U('s');return `<svg viewBox="0 0 230 140" preserveAspectRatio="xMidYMid slice">${room0(g,'#d9cfc2','#efe8de','#cbb99f','#ae9a7e')}
+  <polygon points="0,108 230,108 230,140 0,140" fill="url(#${g}f)"/>
+  ${[70,115,160].map(x=>`<line x1="${x}" y1="0" x2="${x}" y2="30" stroke="#5a4c40"/><path d="M${x-10} 30 h20 l-4 10 h-12z" fill="#e8dcc8"/><ellipse cx="${x}" cy="44" rx="16" ry="8" fill="#ffe9bf" opacity=".5"/>`).join('')}
+  <path d="M40 70 h150 v38 h-150z" fill="#8a6a4b"/><path d="M40 70 h150 v6 h-150z" fill="#b18c66"/>
+  ${Array.from({length:14},(_,i)=>`<path d="M${46+i*10.5} 78 v28" stroke="#6f533a" stroke-width="2"/>`).join('')}
+  <rect x="150" y="60" width="18" height="10" fill="#efe6d8"/><path d="M60 70 C56 50 70 40 66 26" stroke="#6f7f58" stroke-width="2" fill="none"/></svg>`},
+ ()=>{const g=U('s');return `<svg viewBox="0 0 230 140" preserveAspectRatio="xMidYMid slice">${room0(g,'#eef0ee','#dfe2df','#d6cbbb','#b9ab96')}
+  <rect x="20" y="10" width="120" height="86" fill="#cfdde3"/><path d="M80 10v86M20 53h120" stroke="#fff" stroke-width="3"/><polygon points="20,10 70,10 40,96 20,96" fill="#fff" opacity=".35"/>
+  <polygon points="0,100 230,100 230,140 0,140" fill="url(#${g}f)"/>
+  <path d="M30 86 h110 a8 8 0 0 1 8 8 v16 h-126 v-16 a8 8 0 0 1 8 -8z" fill="#cdbfa9"/><rect x="26" y="98" width="126" height="16" fill="#b9a98f"/>
+  <g transform="translate(185 100)"><path d="M-12 0 h24 l-4 20 h-16z" fill="#bca991"/><path d="M0 0 C-10 -30 -30 -40 -36 -60 M0 0 C6 -30 24 -44 30 -70 M0 0 C0 -40 -4 -60 4 -80" stroke="#5f7550" stroke-width="2" fill="none"/>${[[-30,-50],[-20,-34],[22,-52],[14,-36],[2,-66],[-4,-50],[28,-66]].map(([x,y])=>`<ellipse cx="${x}" cy="${y}" rx="7" ry="4" fill="#7a9264" transform="rotate(${x} ${x} ${y})"/>`).join('')}</g></svg>`},
+ ()=>{const g=U('s');return `<svg viewBox="0 0 230 140" preserveAspectRatio="xMidYMid slice">${room0(g,'#d8d0c8','#c4b9ae','#a8998a','#8a7b6c')}
+  <rect x="20" y="62" width="190" height="8" fill="#8f6e4f"/><rect x="20" y="104" width="190" height="8" fill="#8f6e4f"/>
+  ${Array.from({length:9},(_,i)=>{const x=30+i*20,h=18+(i%3)*8,c=['#efeae3','#c69c6d','#3b3430','#d9d2c7','#9a8a78'][i%5];return `<rect x="${x}" y="${62-h}" width="12" height="${h}" rx="${i%2?5:1}" fill="${c}"/><rect x="${x+3}" y="${58-h}" width="6" height="5" fill="#2b2724"/>`}).join('')}
+  ${Array.from({length:7},(_,i)=>`<rect x="${36+i*25}" y="${84+(i%2)*4}" width="16" height="${20-(i%2)*4}" fill="${['#e9e3da','#b78c62','#d4cbc0'][i%3]}"/>`).join('')}
+  <polygon points="0,112 230,112 230,140 0,140" fill="url(#${g}f)"/></svg>`},
+ ()=>{const g=U('s');return `<svg viewBox="0 0 230 140" preserveAspectRatio="xMidYMid slice">${room0(g,'#f4f1ec','#e6e0d7','#e0d6c8','#cbbda9')}
+  <polygon points="115,60 230,0 230,140 115,90" fill="#ece5da"/><polygon points="115,60 0,0 0,140 115,90" fill="#f5f1eb"/>
+  <polygon points="0,140 115,90 230,140" fill="url(#${g}f)"/>
+  ${Array.from({length:6},(_,i)=>`<path d="M${10+i*16} ${6+i*8} q6 50 0 ${120-i*14}" stroke="#d9cfc0" stroke-width="6" fill="none" opacity=".8"/>`).join('')}
+  <rect x="104" y="58" width="22" height="34" fill="#c9b79e"/><rect x="108" y="62" width="14" height="26" fill="#efe9df"/>
+  <path d="M150 40 l40 -20 v60 l-40 12z" fill="#d9e0e1" stroke="#b49b7c"/>
+  <ellipse cx="170" cy="118" rx="22" ry="5" fill="#8f7a62" opacity=".3"/><path d="M160 116 c0 -20 20 -20 20 0z" fill="#b48a62"/></svg>`},
+];
+const stores=[['본점 예약','아틀리에 · 전화 준비 중'],['라운지점 예약','룸 · 전화 준비 중'],['가든점 예약','룸 · 전화 준비 중'],['리버점 예약','룸 · 전화 준비 중'],['센트럴점 예약','아틀리에 · 전화 준비 중'],['스튜디오점 예약','룸 · 전화 준비 중']];
+$('#stores').innerHTML=stores.map((s,i)=>`<button class="st" type="button" data-store="${i}"><div class="ph">${storeArt[i]()}</div><b>${s[0]}</b><span>${s[1]}</span></button>`).join('');
+
+/* ---------- HAIR PORTRAIT GENERATOR (300x450) ---------- */
+function smooth(pts){ // catmull-rom to bezier, closed
+  let d=`M${pts[0][0]} ${pts[0][1]}`;
+  for(let i=0;i<pts.length;i++){
+    const p0=pts[(i-1+pts.length)%pts.length],p1=pts[i],p2=pts[(i+1)%pts.length],p3=pts[(i+2)%pts.length];
+    const c1=[p1[0]+(p2[0]-p0[0])/6,p1[1]+(p2[1]-p0[1])/6],c2=[p2[0]-(p3[0]-p1[0])/6,p2[1]-(p3[1]-p1[1])/6];
+    d+=` C${c1[0].toFixed(1)} ${c1[1].toFixed(1)} ${c2[0].toFixed(1)} ${c2[1].toFixed(1)} ${p2[0].toFixed(1)} ${p2[1].toFixed(1)}`;
+  }
+  return d+'Z';
+}
+function hairBack(o){ // o: len, flare, amp, freq, crown, tight
+  const cx=150, top=o.crown||96, pts=[];
+  const L=o.len, n=10;
+  // right side top->bottom
+  for(let i=0;i<=n;i++){const t=i/n,y=top+38+(L-top-38)*t;
+    const base=58+ (o.tight?-(1-t)*4:0) + o.flare*t*t, wav=o.amp*Math.sin(t*o.freq*Math.PI+.6)*Math.min(1,t*3);
+    pts.push([cx+base+wav,y]);}
+  // bottom edge
+  const bt=o.blunt?0:14;
+  pts.push([cx+30,L+bt*.6],[cx,L+(o.vback?bt+18:bt*.3)],[cx-30,L+bt*.6]);
+  for(let i=n;i>=0;i--){const t=i/n,y=top+38+(L-top-38)*t;
+    const base=58+(o.tight?-(1-t)*4:0)+o.flare*t*t, wav=o.amp*Math.sin(t*o.freq*Math.PI+2.2)*Math.min(1,t*3);
+    pts.push([cx-base+wav,y]);}
+  pts.push([cx-44,top+6],[cx,top-4],[cx+44,top+6]);
+  return smooth(pts);
+}
+const fronts={
+ blunt:`M96 176 C94 122 122 100 150 100 C178 100 206 122 204 176 C196 174 188 172 150 172 C112 172 104 174 96 176Z`,
+ curtain:`M150 104 C118 104 98 128 94 190 C104 160 122 134 146 124 L150 112 L154 124 C178 134 196 160 206 190 C202 128 182 104 150 104Z`,
+ side:`M94 186 C92 126 124 100 156 102 C190 104 210 130 206 170 C186 150 160 140 130 150 C112 158 100 172 94 186Z`,
+ choppy:`M98 172 C98 124 124 104 152 104 C182 104 204 126 202 168 C196 156 190 152 184 160 C178 146 168 144 162 156 C154 142 142 144 136 158 C128 146 116 150 112 162 C106 154 100 160 98 172Z`,
+ none:`M96 160 C96 120 122 100 150 100 C178 100 204 120 204 160 C196 140 176 128 150 128 C124 128 104 140 96 160Z`,
+ quiff:`M98 170 C92 118 122 92 156 94 C192 96 212 124 204 166 C200 150 192 140 180 136 C170 128 150 126 132 132 C114 138 104 152 98 170Z`,
+ crop:`M100 168 C98 124 124 104 150 104 C178 104 202 124 200 168 C196 160 186 156 176 158 L124 158 C114 156 104 160 100 168Z`,
+ block:`M99 158 C94 112 122 88 154 88 C188 88 210 112 203 158 C199 146 190 138 178 134 C166 128 146 127 130 132 C114 137 104 146 99 158Z`,
+ part:`M96 178 C92 126 112 102 131 99 L134 101 C124 122 110 148 96 178Z M138 99 C172 94 210 116 206 168 C194 142 172 126 141 120Z`
+};
+const garments=[
+ (c)=>`<path d="M30 450 C34 392 78 366 118 360 L150 384 L182 360 C222 366 266 392 270 450Z" fill="${c}"/><path d="M118 360 L150 384 L182 360" fill="none" stroke="#000" stroke-opacity=".15" stroke-width="2"/>`,
+ (c)=>`<path d="M30 450 C34 392 78 366 120 358 C130 372 170 372 180 358 C222 366 266 392 270 450Z" fill="${c}"/><path d="M120 358 C130 372 170 372 180 358" fill="none" stroke="#fff" stroke-opacity=".25" stroke-width="4"/>`,
+ (c)=>`<path d="M30 450 C34 392 78 366 118 360 L150 420 L182 360 C222 366 266 392 270 450Z" fill="${c}"/><path d="M118 360 L132 352 L150 384 L168 352 L182 360 L150 420Z" fill="#f4f0ea"/>`,
+ (c)=>`<path d="M40 450 C44 400 84 374 120 368 L120 450Z M180 368 C216 374 256 400 260 450 L180 450Z" fill="${c}"/><path d="M120 368 C120 400 180 400 180 368 L180 450 L120 450Z" fill="#efe9e1"/>`
+];
+function lock(side,L,amp,wavy){ // wide hair lock in front of shoulder, split tips
+  const pts=[], n=10, cx=150, s=side, top=150;
+  const W=t=>50*(1-t*.4);
+  const X=t=>cx+s*(45+t*19)+(wavy?amp*Math.sin(t*Math.PI*2.6)*Math.min(1,t*3):0);
+  const P=(t,k)=>{const y=top+(L-top)*t;return [X(t)+s*W(t)*k,y];};
+  for(let i=0;i<=n;i++) pts.push(P(i/n,.45));
+  const xo=X(1)+s*W(1)*.45, xi=X(1)-s*W(1)*.55, wd=xo-xi;
+  pts.push([xo-wd*.12,L+12],[xo-wd*.3,L-4],[xo-wd*.5,L+16],[xo-wd*.68,L-4],[xo-wd*.86,L+10]);
+  for(let i=n;i>=0;i--) pts.push(P(i/n,-.55));
+  return smooth(pts);
+}
+function backMass(side,L,amp,wavy){ // hair visible behind/over shoulder outside the lock
+  const s=side, cx=150, y0=196, y1=Math.min(392,L);
+  const pts=[];
+  for(let i=0;i<=6;i++){const t=i/6,y=y0+(y1-y0)*t,x=cx+s*(62+Math.min(1,t*2.6)*24+t*4)+(wavy?amp*.6*Math.sin(t*Math.PI*2):0);pts.push([x,y]);}
+  pts.push([cx+s*80,y1+8],[cx+s*70,y1-2]);
+  for(let i=6;i>=0;i--){const t=i/6,y=y0+(y1-y0)*t;pts.push([cx+s*(62+t*4),y]);}
+  return smooth(pts);
+}
+function curlRows(top,bot,col,op){let d='';for(let y=top;y<bot;y+=15){const off=(y/15%2)*7;d+=`<path d="M${70+off} ${y}${' q5 -9 10 0 t10 0'.repeat(9)}" stroke="${col}" stroke-width="2" fill="none" opacity="${op}"/>`;}return d;}
+function portrait(st){
+  const g=U('p'), hc=st.hc, hl=st.hl, L=st.back.len, m=st.male;
+  const sk=st.sk||(m?'#ecd2bc':'#f1d9c6'), sk2=st.sk2||(m?'#d4b094':'#ddbba1');
+  const backD=hairBack(st.back), frontD=fronts[st.front];
+  let strands='';
+  for(let i=0;i<9;i++){const x=104+i*11.5,dx=(i%2?6:-5);
+    strands+=`<path d="M${x} ${st.back.crown?st.back.crown+30:130} C${x+dx} ${(L+130)/2} ${x-dx} ${(L+180)/2} ${x+dx*.5} ${L-6}" stroke="${hl}" stroke-width="1.3" fill="none" opacity=".35"/>`;}
+  const LL=st.lockLen||L, wv=!!st.wavy, am=wv?11:0;
+  const locks=st.overShoulder?(LL>400?`<path d="${backMass(-1,LL,am,wv)}" fill="url(#${g}h)"/><path d="${backMass(1,LL,am,wv)}" fill="url(#${g}h)"/><path d="${backMass(-1,LL,am,wv)}" fill="#000" opacity=".12"/><path d="${backMass(1,LL,am,wv)}" fill="#000" opacity=".12"/>`:'')+[-1,1].map(sd=>`<path d="${lock(sd,LL,LL>400?am:st.back.amp*.6,LL>400?wv:true)}" fill="url(#${g}h)"/>`).join('')+(LL>400?[-1,1].map(sd=>Array.from({length:4},(_,k)=>`<path d="M${150+sd*(48+k*8)} 270 C${150+sd*(50+k*8)} 330 ${150+sd*(54+k*8)} 380 ${150+sd*(58+k*8)} ${LL-6}" stroke="${hl}" stroke-width="1.2" fill="none" opacity=".3"/>`).join('')).join(''):''):'';
+  const face=m?`<path d="M100 188 C100 148 122 132 150 132 C178 132 200 148 200 188 C200 222 197 238 186 250 C176 259 163 262 150 262 C137 262 124 259 114 250 C103 238 100 222 100 188Z" fill="url(#${g}sk)"/>`:`<ellipse cx="150" cy="196" rx="50" ry="64" fill="url(#${g}sk)"/>`;
+  const shoulder=m?'translate(150 0) scale(1.083 1) translate(-150 0)':'';
+  return `<svg viewBox="0 0 300 450" preserveAspectRatio="xMidYMid slice">
+  <defs>
+   <linearGradient id="${g}bg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="${st.bg||'#eceae7'}"/><stop offset="1" stop-color="${st.bg2||'#dcd9d4'}"/></linearGradient>
+   <linearGradient id="${g}h" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="${hl}"/><stop offset=".45" stop-color="${hc}"/><stop offset="1" stop-color="${st.hd||hc}"/></linearGradient>
+   <radialGradient id="${g}sk" cx=".45" cy=".4" r=".7"><stop offset="0" stop-color="${sk}"/><stop offset="1" stop-color="${sk2}"/></radialGradient>
+   <clipPath id="${g}cb"><path d="${backD}"/></clipPath><clipPath id="${g}cf"><path d="${frontD}"/></clipPath>
+  </defs>
+  <rect width="300" height="450" fill="url(#${g}bg)"/>
+  <ellipse cx="150" cy="430" rx="160" ry="40" fill="#000" opacity=".05"/>
+  <path d="${backD}" fill="${st.buzz?'#8f7d6f':'url(#'+g+'h)'}"/>
+  <g clip-path="url(#${g}cb)">${st.curl?curlRows(110,L,st.hd||hc,.55)+curlRows(118,L,hl,.4):strands}</g>
+  <path d="M131 250 L169 250 L172 312 C162 322 138 322 128 312Z" fill="url(#${g}sk)"/>
+  <path d="M131 262 C140 280 160 280 169 262 L170 284 C160 292 140 292 130 284Z" fill="#000" opacity=".08"/>
+  <g transform="${shoulder}"><g transform="translate(0 -44)">${garments[st.gar](st.gc)}</g><rect x="30" y="404" width="240" height="46" fill="${st.gc}"/>${st.gar==3?'<rect x="120" y="404" width="60" height="46" fill="#efe9e1"/>':''}</g>
+  ${locks}
+  ${face}
+  <ellipse cx="100" cy="200" rx="7" ry="12" fill="${sk2}"/><ellipse cx="200" cy="200" rx="7" ry="12" fill="${sk2}"/>
+  <ellipse cx="133" cy="196" rx="13" ry="6" fill="${sk2}" opacity=".55"/><ellipse cx="167" cy="196" rx="13" ry="6" fill="${sk2}" opacity=".55"/>
+  <path d="M150 204 C147 216 146 224 152 228" stroke="${sk2}" stroke-width="3" fill="none" opacity=".8" stroke-linecap="round"/>
+  <path d="M141 241 q9 ${m?2:4} 18 0" stroke="${m?'#c39a84':'#c28478'}" stroke-width="${m?2:2.6}" fill="none" stroke-linecap="round" opacity="${m?.6:.7}"/>
+  ${m?`<path d="M114 250 C126 259 138 262 150 262 C162 262 174 259 186 250" stroke="${sk2}" stroke-width="3" fill="none" opacity=".6"/>`:''}
+  ${st.sideL?`<path d="M100 170 C92 220 96 270 108 300 C110 260 108 220 112 180Z" fill="url(#${g}h)"/><path d="M200 170 C208 220 204 270 192 300 C190 260 192 220 188 180Z" fill="url(#${g}h)"/>`:''}
+  <path d="${frontD}" fill="url(#${g}h)"/>
+  <g clip-path="url(#${g}cf)">${st.curl?curlRows(96,180,st.hd||hc,.5):Array.from({length:8},(_,i)=>`<path d="M${150+(i-3.5)*4} 100 C${150+(i-3.5)*12} 120 ${150+(i-3.5)*16} 150 ${150+(i-3.5)*18} 200" stroke="${hl}" stroke-width="1.2" fill="none" opacity=".4"/>`).join('')}</g>
+  ${st.front==='part'?`<path d="M134 100 C133 108 133 116 135 124" stroke="${sk}" stroke-width="2.4" fill="none" stroke-linecap="round"/>`:''}
+  ${st.buzz?`<path d="M99 158 C101 150 104 146 108 142 M203 158 C201 150 198 146 194 142" stroke="${st.hd||hc}" stroke-width="2.5" fill="none" opacity=".7"/>`:''}
+  </svg>`;
+}
+const HC={dk:['#3b2a22','#6e5140','#241913'],ash:['#5a4c45','#8a7b72','#3a302b'],ch:['#76462a','#b07548','#4a2a17'],bk:['#1f1b1a','#4a4240','#100d0c'],be:['#97765a','#c9a682','#6b5038'],bu:['#5a2a30','#8f4a52','#381820'],gr:['#6b6866','#a29f9b','#45423f'],ho:['#8a5e34','#c18f58','#5c3b1d']};
+const mk=(n,en,price,c,front,back,gar,gc,ex={})=>({n,en,price,hc:HC[c][0],hl:HC[c][1],hd:HC[c][2],front,back,gar,gc,...ex});
+const B=(len,flare,amp,freq,ex={})=>({len,flare,amp,freq,...ex});
+const STYLES=[
+ {k:'New',kr:'뉴디자인',items:[
+  mk('소프트 레이어','Soft layer','커트 45,000원~','be','curtain',B(330,26,8,3),1,'#5d5853',{overShoulder:1}),
+  mk('리플 웨이브','Ripple wave','펌 160,000원~','bu','curtain',B(300,30,12,5),0,'#e7e1d8',{overShoulder:1,lockLen:300,bg:'#e7e3de'}),
+  mk('매트 단발','Matte bob','커트 45,000원~','ash','blunt',B(262,8,0,1,{blunt:1}),3,'#2f3a44'),
+  mk('클라우드 컬','Cloud curl','펌 170,000원~','ho','choppy',B(306,30,5,9),1,'#a9b3a0',{curl:1})]},
+ {k:'Short',kr:'숏',items:[
+  mk('크롭 숏컷','Crop short','커트 42,000원~','ho','side',B(236,-6,0,1,{tight:1}),1,'#9aa29a'),
+  mk('픽시 커트','Pixie cut','커트 42,000원~','ch','choppy',B(232,-6,3,3,{tight:1}),0,'#2e2c2b'),
+  mk('숏 볼륨펌','Short volume perm','펌 140,000원~','be','choppy',B(240,8,4,9),2,'#556070',{curl:1}),
+  mk('허쉬 숏','Hush short','커트 42,000원~','gr','curtain',B(250,4,6,3),1,'#d9cfc2')]},
+ {k:'Bob',kr:'단발',items:[
+  mk('일자 단발','Straight bob','커트 45,000원~','bk','blunt',B(268,6,0,1,{blunt:1}),1,'#e9e4dc'),
+  mk('C컬 단발','C-curl bob','펌 150,000원~','dk','curtain',B(272,18,5,2),0,'#7c6a5a'),
+  mk('앞내림 단발','Front-long bob','커트 45,000원~','ash','side',B(276,10,0,1,{vback:1}),2,'#3e4a3e'),
+  mk('웨이브 단발','Wave bob','펌 150,000원~','bu','none',B(272,22,10,4),3,'#2d2a2a')]},
+ {k:'Medium',kr:'미디움',items:[
+  mk('레이어드 미디움','Layered medium','커트 45,000원~','ho','curtain',B(320,20,6,3),1,'#d8d0c4',{overShoulder:1,lockLen:322}),
+  mk('슬로우 웨이브','Slow wave','펌 170,000원~','ch','side',B(326,30,12,4),0,'#4a4643',{overShoulder:1,lockLen:326}),
+  mk('허쉬 미디움','Hush medium','커트 45,000원~','dk','choppy',B(316,14,4,5),2,'#8a9aa6',{sideL:1}),
+  mk('S컬 미디움','S-curl medium','펌 170,000원~','be','none',B(322,26,14,5),1,'#efe8de',{overShoulder:1,lockLen:322})]},
+ {k:'Long',kr:'롱',items:[
+  mk('롱 스트레이트','Long straight','매직 180,000원~','bk','curtain',B(440,10,0,1,{blunt:1}),1,'#c9c2b8',{overShoulder:1,lockLen:436}),
+  mk('롱 웨이브','Long wave','펌 190,000원~','ch','side',B(440,30,14,5),0,'#3e3a37',{overShoulder:1,lockLen:438,wavy:1}),
+  mk('롱 레이어','Long layer','커트 48,000원~','ash','choppy',B(436,18,6,3),3,'#5b6b7a',{overShoulder:1,lockLen:432,sideL:1}),
+  mk('굵은 S컬','Bold S-curl','펌 190,000원~','ho','none',B(440,34,18,4),2,'#2c3640',{overShoulder:1,lockLen:438,wavy:1})]},
+ {k:'Men',kr:'맨즈',items:[
+  mk('댄디 컷','Dandy cut','커트 32,000원~','bk','crop',B(214,-14,0,1,{tight:1,crown:100}),2,'#2f3439',{male:1}),
+  mk('투블럭 컷','Two-block cut','커트 32,000원~','dk','block',B(206,-18,0,1,{tight:1,crown:92}),1,'#7d8a7a',{male:1,buzz:1,sk:'#e9cdb5',sk2:'#d0a989'}),
+  mk('가르마 펌','Side part perm','펌 110,000원~','ash','part',B(212,-14,0,1,{tight:1}),0,'#d7d1c8',{male:1}),
+  mk('내추럴 펌','Natural perm','펌 110,000원~','ch','choppy',B(222,-8,4,9,{tight:1}),1,'#3c3734',{male:1,curl:1,sk:'#e8ccb3',sk2:'#cfa585'})]}
+];
+const tabsEl=$('#tabs'), grid=$('#sgrid');
+tabsEl.innerHTML=STYLES.map((s,i)=>`<button class="tab${i?'':' on'}" role="tab" data-i="${i}"><small>${s.kr}</small>${s.k}</button>`).join('');
+const artCache={};
+function renderStyles(i){
+  grid.classList.remove('fade'); void grid.offsetWidth; grid.classList.add('fade');
+  grid.innerHTML=STYLES[i].items.map((s,j)=>{const key=i+'-'+j; artCache[key]=artCache[key]||portrait(s); return `<button class="sc" type="button" data-s="${key}"><h5>${s.n}<em>${s.en}</em></h5><div class="pic">${artCache[key]}</div><div class="pr">${s.price}</div></button>`}).join('');
+}
+function setTab(i){$$('.tab').forEach((t,k)=>t.classList.toggle('on',k==i)); renderStyles(i);}
+tabsEl.addEventListener('click',e=>{const t=e.target.closest('.tab'); if(t) setTab(+t.dataset.i);});
+setTab(0);
+
+/* ---------- MENU / PRICE ---------- */
+const MENU=[
+ ['Cut','커트',[['디자인 커트','샴푸 · 스타일링 포함','45,000원'],['남성 커트','','32,000원'],['앞머리 커트','','10,000원'],['학생 커트','중 · 고등학생','28,000원']]],
+ ['Perm','펌',[['디자인 펌','기본 길이','160,000원~'],['볼륨 매직','','180,000원~'],['남성 펌','','110,000원~'],['뿌리 볼륨','','70,000원~']]],
+ ['Color','염색',[['전체 염색','','130,000원~'],['뿌리 염색','','80,000원~'],['톤다운 · 새치 커버','','90,000원~'],['하이라이트','부분 · 10포일 기준','120,000원~']],1],
+ ['Care','두피 · 모발 케어',[['두피 스케일링','','60,000원'],['모발 클리닉','','70,000원~'],['헤드 스파','','80,000원'],['케어 + 드라이','','90,000원']]]
+];
+$('#acc').innerHTML=MENU.map((m,i)=>`<div class="acc-it${i==0?' open':''}"><button class="acc-h" type="button"><b>${m[0]}<span>${m[1]}</span></b><i></i></button><div class="acc-b"><div class="inner">${m[3]?`<div class="swatch">${['#2a201c','#4a352a','#6e4c36','#8c6a4f','#a88a6c','#6a5a55','#5a2d34'].map(c=>`<span style="background:${c}"></span>`).join('')}</div>`:''}${m[2].map(r=>`<div class="row"><span class="n">${r[0]}${r[1]?`<small>${r[1]}</small>`:''}</span><span class="p">${r[2]}</span></div>`).join('')}</div></div></div>`).join('');
+$('#acc').addEventListener('click',e=>{const h=e.target.closest('.acc-h'); if(!h) return; const it=h.parentElement; const was=it.classList.contains('open'); $$('.acc-it').forEach(x=>x.classList.remove('open')); if(!was) it.classList.add('open');});
+
+/* ---------- CARE ---------- */
+(function(){const g=U('c');
+$('#careArt').insertAdjacentHTML('afterbegin',`<svg viewBox="0 0 375 440" preserveAspectRatio="xMidYMid slice">
+ <defs><linearGradient id="${g}bg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#a7ab9b"/><stop offset="1" stop-color="#6f7466"/></linearGradient>
+ <linearGradient id="${g}bw" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#d6d2ca"/><stop offset=".4" stop-color="#f7f5f1"/><stop offset="1" stop-color="#c3beb5"/></linearGradient>
+ <linearGradient id="${g}wt" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#d9e6e6"/><stop offset="1" stop-color="#a9c0c0"/></linearGradient>
+ <radialGradient id="${g}lt" gradientUnits="userSpaceOnUse" cx="260" cy="40" r="380"><stop offset="0" stop-color="#fff" stop-opacity=".45"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></radialGradient></defs>
+ <rect x="-1000" width="2375" height="440" fill="url(#${g}bg)"/><rect x="-1000" width="2375" height="440" fill="url(#${g}lt)"/>
+ <rect x="-1000" y="250" width="2375" height="190" fill="#5d6256"/><rect x="-1000" y="246" width="2375" height="6" fill="#8b9080"/>
+ <ellipse cx="170" cy="252" rx="120" ry="14" fill="#000" opacity=".2"/>
+ <path d="M60 180 C60 250 110 262 170 262 C230 262 280 250 280 180Z" fill="url(#${g}bw)"/>
+ <ellipse cx="170" cy="180" rx="110" ry="22" fill="#ece9e4"/><ellipse cx="170" cy="182" rx="96" ry="16" fill="url(#${g}wt)"/>
+ <ellipse cx="150" cy="180" rx="30" ry="4" fill="#fff" opacity=".6"/>
+ ${[0,1,2].map(i=>`<path d="M${130+i*36} 150 c-14 -20 14 -34 0 -56 c-12 -18 10 -30 4 -46" stroke="#fff" stroke-width="3" fill="none" opacity="${.35-i*.06}" stroke-linecap="round"/>`).join('')}
+ <g transform="translate(300 214)"><rect x="-34" y="-6" width="68" height="40" rx="20" fill="#efe9df"/><path d="M-34 14 h68" stroke="#d8cfc2" stroke-width="2"/><ellipse cx="34" cy="14" rx="8" ry="20" fill="#e2d9cc"/><path d="M30 2 a6 12 0 0 1 0 24" stroke="#cbbfae" fill="none"/></g>
+ <g transform="translate(46 222)"><rect x="-10" y="-30" width="20" height="54" rx="4" fill="#3b3430"/><rect x="-6" y="-42" width="12" height="14" fill="#8a7a68"/><rect x="-7" y="-10" width="14" height="16" fill="#e9e1d4"/></g>
+ 
+</svg>`);})();
+const CARES=[['01','스칼프 리셋','두피 진단과 각질 정돈','40분','60,000원'],['02','모발 리페어','손상 모발에 단계별 영양 공급','50분','70,000원~'],['03','헤드 스파','마사지와 따뜻한 타월 케어','30분','80,000원'],['04','결 클래식 케어','두피와 모발 관리를 한 번에','70분','120,000원']];
+$('#cares').innerHTML=CARES.map(c=>`<div class="cr"><div class="no">CARE ${c[0]}</div><h6>${c[1]}</h6><p>${c[2]}</p><div class="m"><span>${c[3]}</span><b>${c[4]}</b></div></div>`).join('');
+
+/* ---------- COLLECTION ---------- */
+const COL=[
+ ['27SS','Soft Layer','가볍게 흐르는 층과 결',(g)=>`<defs><linearGradient id="${g}" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#d9cfc3"/><stop offset="1" stop-color="#a99a8a"/></linearGradient></defs><rect width="260" height="340" fill="url(#${g})"/>${Array.from({length:18},(_,i)=>`<path d="M${-20+i*16} -10 C${30+i*12} 90 ${-10+i*16} 200 ${40+i*13} 350" stroke="${i%3?'#7a5a42':'#f1e6d8'}" stroke-width="${2+(i%4)}" fill="none" opacity="${.35+(i%3)*.15}"/>`).join('')}`],
+ ['COLOR','Muted Brown','차분하게 가라앉은 브라운 톤',(g)=>`<defs><linearGradient id="${g}" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#e9e2d8"/><stop offset="1" stop-color="#cfc3b4"/></linearGradient></defs><rect width="260" height="340" fill="url(#${g})"/>${['#2a201c','#4a352a','#6e4c36','#8c6a4f','#a88a6c','#c2a68a'].map((c,i)=>`<g transform="rotate(${-36+i*13} 70 290)"><rect x="60" y="80" width="26" height="210" rx="13" fill="${c}"/><rect x="60" y="80" width="8" height="210" rx="4" fill="#fff" opacity=".12"/></g>`).join('')}<circle cx="70" cy="290" r="8" fill="#3b3430"/><g transform="translate(190 200) rotate(30)"><rect x="-6" y="-80" width="12" height="110" rx="3" fill="#3b3430"/><path d="M-12 30 h24 l-4 34 h-16z" fill="#d8cfc2"/><path d="M-8 64 h16 l-2 16 h-12z" fill="#6e4c36"/></g>`],
+ ['PERM','Wave Study','손으로 그린 듯한 자연스러운 웨이브',(g)=>`<defs><linearGradient id="${g}" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#5c5550"/><stop offset="1" stop-color="#2e2a27"/></linearGradient></defs><rect width="260" height="340" fill="url(#${g})"/>${Array.from({length:12},(_,i)=>`<path d="M-10 ${40+i*24} q32 -22 65 0 t65 0 t65 0 t65 0 t65 0" stroke="${i%2?'#c9a682':'#e8dccb'}" stroke-width="${1.5+(i%3)}" fill="none" opacity="${.3+(i%4)*.15}"/>`).join('')}`],
+ ['MEN','Clean Short','짧고 단정한 실루엣',(g)=>`<defs><linearGradient id="${g}" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#c8ccc8"/><stop offset="1" stop-color="#8f9590"/></linearGradient></defs><rect width="260" height="340" fill="url(#${g})"/><g transform="translate(130 160) rotate(-30)"><path d="M-6 -100 L6 -100 L4 30 L-4 30Z" fill="#eceae6"/><path d="M-2 -100 L0 -100 L0 30 L-2 30Z" fill="#fff"/><path d="M6 -96 L20 -100 L8 30 L4 30Z" fill="#c9c6c1"/><circle cx="-14" cy="52" r="16" fill="none" stroke="#2b2724" stroke-width="7"/><circle cx="16" cy="56" r="16" fill="none" stroke="#2b2724" stroke-width="7"/></g><g transform="translate(70 270) rotate(-8)"><rect width="140" height="14" rx="3" fill="#3b3430"/>${Array.from({length:24},(_,i)=>`<rect x="${6+i*5.4}" y="14" width="2.6" height="${i<10?20:12}" fill="#3b3430"/>`).join('')}</g>`]
+];
+$('#rail').innerHTML=COL.map(c=>{const g=U('k');return `<div class="cc"><div class="im"><svg viewBox="0 0 260 340" preserveAspectRatio="xMidYMid slice">${c[3](g)}</svg><span class="tag">${c[0]}</span></div><h5>${c[1]}</h5><p>${c[2]}</p></div>`}).join('');
+const rail=$('#rail'); rail.addEventListener('scroll',()=>{const m=rail.scrollWidth-rail.clientWidth; $('#progI').style.left=(m?rail.scrollLeft/m*75:0)+'%';},{passive:true});
+
+/* ---------- SALON ---------- */
+function mapArt(v){const g=U('m');return `<svg viewBox="0 0 375 230" preserveAspectRatio="xMidYMid slice">
+ <rect width="375" height="230" fill="#ece8e2"/>
+ ${v?`<path d="M0 170 C80 150 160 200 240 180 S340 140 375 150 L375 230 L0 230Z" fill="#c9d6d9"/>`:`<path d="M0 40 C90 60 150 20 240 40 S340 70 375 50 L375 0 L0 0Z" fill="#c9d6d9"/>`}
+ <rect x="${v?40:250}" y="${v?30:110}" width="90" height="60" rx="4" fill="#d2dcc6"/>
+ ${[60,140,230,310].map(x=>`<path d="M${x} 0 V230" stroke="#fff" stroke-width="${x==140?12:6}"/>`).join('')}
+ ${[80,130,200].map(y=>`<path d="M0 ${y} H375" stroke="#fff" stroke-width="${y==130?12:6}"/>`).join('')}
+ <path d="M0 230 L375 60" stroke="#f6f3ee" stroke-width="8"/>
+ ${Array.from({length:10},(_,i)=>`<rect x="${(i*37)%340+10}" y="${(i*53)%180+20}" width="${18+(i%3)*6}" height="${14+(i%2)*6}" fill="#ddd7cf"/>`).join('')}
+ <g transform="translate(${v?230:150} ${v?110:120})"><ellipse cx="0" cy="26" rx="14" ry="4" fill="#000" opacity=".2"/><path d="M0 26 C-14 6 -18 -2 -18 -12 a18 18 0 0 1 36 0 c0 10 -4 18 -18 38z" fill="#3b3430"/><circle cy="-12" r="6.5" fill="#fff"/></g>
+</svg>`;}
+const SAL=[[['구분','결 아틀리에 · 1:1 프라이빗'],['영업 시간','화–토 10:00–20:00 / 일 10:00–18:00'],['휴무','매주 월요일'],['주소','준비 중'],['주차','준비 중']],[['구분','결 룸 · 오픈 스테이션'],['영업 시간','매일 10:00–21:00'],['휴무','명절 당일'],['주소','준비 중'],['주차','준비 중']]];
+function setSalon(i){$$('#seg button').forEach((b,k)=>b.classList.toggle('on',k==i)); $('#map').innerHTML=mapArt(i); $('#info').innerHTML=SAL[i].map(r=>`<div class="r"><b>${r[0]}</b><span>${r[1]}</span></div>`).join('');}
+$('#seg').addEventListener('click',e=>{const b=e.target.closest('button'); if(b) setSalon([...b.parentElement.children].indexOf(b));});
+setSalon(0);
+
+/* ---------- HERO SLIDER ---------- */
+const arts={h1:hairBackView,h2:atelier,h3:room,h4:aftercare,h5:academy};
+const sl=$$('.slide'); sl.forEach(s=>s.insertAdjacentHTML('afterbegin',arts[s.dataset.art]()));
+const mqPC=matchMedia('(min-width:1024px)');
+function fitArt(){const pc=mqPC.matches;
+  sl.forEach(s=>{const v=s.querySelector('svg'); v.setAttribute('viewBox',pc?'0 50 375 690':'0 0 375 760'); v.setAttribute('preserveAspectRatio',pc?'xMidYMin meet':'xMidYMid slice');});
+  const c=$('#careArt svg'); c.setAttribute('viewBox',pc?'0 30 375 410':'0 0 375 440'); c.setAttribute('preserveAspectRatio',pc?'xMidYMin meet':'xMidYMid slice');}
+fitArt(); mqPC.addEventListener('change',fitArt);
+const dots=$('#dots'); dots.innerHTML=sl.map((_,i)=>`<button aria-label="${i+1}번 슬라이드"${i?'':' class="on"'}></button>`).join('');
+let cur=0,timer=null;
+function go(n){n=(n+sl.length)%sl.length; if(n===cur) return; sl[cur].classList.remove('on'); sl[cur].classList.add('out'); const old=sl[cur]; setTimeout(()=>old.classList.remove('out'),900); cur=n; sl[cur].classList.add('on'); $$('#dots button').forEach((d,i)=>d.classList.toggle('on',i===cur)); restart();}
+function restart(){clearInterval(timer); if(!window.__STILL) timer=setInterval(()=>go(cur+1),5000);}
+dots.addEventListener('click',e=>{const b=e.target.closest('button'); if(b) go([...dots.children].indexOf(b));});
+let sx=null; const hero=$('#s2-hero');
+hero.addEventListener('touchstart',e=>{sx=e.touches[0].clientX},{passive:true});
+hero.addEventListener('touchend',e=>{if(sx===null)return; const dx=e.changedTouches[0].clientX-sx; if(Math.abs(dx)>40) go(cur+(dx<0?1:-1)); sx=null;});
+restart();
+
+/* ---------- MENU DRAWER ---------- */
+const body=document.body;
+$('#ham').addEventListener('click',()=>body.classList.add('menu'));
+$('#dx').addEventListener('click',()=>body.classList.remove('menu'));
+$('#dim').addEventListener('click',()=>body.classList.remove('menu'));
+$$('[data-go]').forEach(a=>a.addEventListener('click',e=>{e.preventDefault(); body.classList.remove('menu');
+  if(a.dataset.tab) setTab(+a.dataset.tab); if(a.dataset.salon) setSalon(+a.dataset.salon);
+  const t=$(a.getAttribute('href')); if(t) window.scrollTo({top:t.getBoundingClientRect().top+scrollY-70,behavior:'smooth'});}));
+
+/* ---------- TOP BTN ---------- */
+const topB=$('#top'); addEventListener('scroll',()=>topB.classList.toggle('show',scrollY>500),{passive:true});
+topB.addEventListener('click',()=>scrollTo({top:0,behavior:'smooth'}));
+
+/* ---------- SHEET (booking / style detail) ---------- */
+const shB=$('#shB'), shT=$('#shT');
+function openSheet(t,html){shT.textContent=t; shB.innerHTML=html; $('#sheet').scrollTop=0; body.classList.add('sheet');}
+function closeSheet(){body.classList.remove('sheet');}
+$('#shx').addEventListener('click',closeSheet); $('#lay').addEventListener('click',closeSheet);
+addEventListener('keydown',e=>{if(e.key==='Escape'){closeSheet(); body.classList.remove('menu');}});
+function bookingHTML(store,style){
+  const d=new Date(), W='일월화수목금토';
+  const days=Array.from({length:7},(_,i)=>{const x=new Date(d.getFullYear(),d.getMonth(),d.getDate()+i+1);return `<button type="button" class="chip${i?'':' on'}" data-g="d" data-v="${x.getMonth()+1}/${x.getDate()} (${W[x.getDay()]})"><small>${W[x.getDay()]}</small>${x.getDate()}</button>`}).join('');
+  const sv=['디자인 커트','디자인 펌','전체 염색','두피 스케일링','헤드 스파'];
+  return `<div class="lbl">SALON</div><div class="chips">${stores.map((s,i)=>`<button type="button" class="chip${i==store?' on':''}" data-g="s" data-v="${s[0].replace(' 예약','')}">${s[0].replace(' 예약','')}</button>`).join('')}</div>
+  <div class="lbl">MENU</div><div class="chips">${(style?[style]:[]).concat(sv).map((v,i)=>`<button type="button" class="chip${i?'':' on'}" data-g="m" data-v="${v}">${v}</button>`).join('')}</div>
+  <div class="lbl">DATE</div><div class="chips days">${days}</div>
+  <div class="lbl">TIME</div><div class="chips">${['10:00','11:30','13:00','14:30','16:00','17:30','19:00'].map((t,i)=>`<button type="button" class="chip${i==1?' on':''}" data-g="t" data-v="${t}">${t}</button>`).join('')}</div>
+  <div class="sum" id="sum"></div>
+  <button type="button" class="btn dk" id="bkGo">선택 내용 확인</button>`;
+}
+shB.addEventListener('click',e=>{const c=e.target.closest('.chip'); if(c){shB.querySelectorAll(`.chip[data-g="${c.dataset.g}"]`).forEach(x=>x.classList.remove('on')); c.classList.add('on'); return;}
+  if(e.target.closest('#bkGo')){const v=g=>{const x=shB.querySelector(`.chip.on[data-g="${g}"]`);return x?x.dataset.v:'-'}; const s=$('#sum'); s.innerHTML=`<b>${v('s')}</b> · ${v('m')}<br>${v('d')} ${v('t')}<br><span style="font-size:12px;color:#8f877f">온라인 예약 오픈 준비 중입니다. 선택하신 내용은 저장되지 않습니다.</span>`; s.classList.add('show');}
+  const sb=e.target.closest('#sdBook'); if(sb) openSheet('예약하기',bookingHTML(0,sb.dataset.n));
+});
+$('#stores').addEventListener('click',e=>{const s=e.target.closest('.st'); if(s) openSheet(stores[s.dataset.store][0],bookingHTML(+s.dataset.store));});
+$('#salonBook').addEventListener('click',()=>openSheet('예약하기',bookingHTML($('#seg button.on')===$$('#seg button')[0]?0:1)));
+$('#callBtn').addEventListener('click',()=>openSheet('전화 문의',`<p style="padding:24px 0 10px;text-align:center;color:#6b645e">매장 전화번호 준비 중입니다.</p>`));
+grid.addEventListener('click',e=>{const c=e.target.closest('.sc'); if(!c) return; const [i,j]=c.dataset.s.split('-'); const s=STYLES[i].items[j];
+  openSheet(STYLES[i].kr+' 스타일',`<div class="sd-pic">${portrait(s)}</div><div class="sd-t"><h5>${s.n} <span style="font-family:Lato;font-weight:700">${s.en}</span></h5><p>${s.price} · 소요 시간은 상담 후 안내</p></div><button type="button" class="btn dk" id="sdBook" data-n="${s.n}">이 스타일로 예약</button>`);});
+})();
+</script>
+</body>
+</html>

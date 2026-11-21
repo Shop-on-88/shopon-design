@@ -1,0 +1,1100 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>모닝빈 커피</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;800;900&family=Playfair+Display:wght@500;600;700&family=Oswald:wght@500;600&family=Dancing+Script:wght@600;700&display=swap" rel="stylesheet">
+<style>
+:root{--ivory:#f6f5ef;--ink:#222;--brown:#4a3f39;--accent:#c9772f;--accent2:#e7a24a;--espresso:#2a1d17;--gold:#c99a4a;--navy:#0c2640;--hd:54px}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font-family:'Noto Sans KR',sans-serif;color:var(--ink);background:#fff;overflow-x:hidden;word-break:keep-all;letter-spacing:-.01em}
+a{color:inherit;text-decoration:none}
+button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
+svg{display:block}
+.inner{max-width:1200px;margin:0 auto;position:relative}
+.btn-line{display:inline-flex;align-items:center;justify-content:center;border:2px solid #fff;color:#fff;font-weight:700;font-size:17px;height:38px;padding:0 22px;border-radius:2px;transition:background .2s,color .2s}
+.btn-line:hover{background:#fff;color:#222}
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .8s ease,transform .8s ease}
+.reveal.in{opacity:1;transform:none}
+
+/* s1 header */
+#s1-header{position:fixed;top:0;left:0;right:0;z-index:50;background:var(--ivory);height:var(--hd);box-shadow:0 1px 0 rgba(0,0,0,.04)}
+#s1-header .inner{height:100%;display:flex;align-items:center;justify-content:space-between;padding:0 12px 0 10px}
+.logo{display:flex;align-items:center;gap:7px}
+.logo .sym{width:36px;height:36px}
+.logo b{font-size:15px;font-weight:900;color:#3a2a22;letter-spacing:.02em;line-height:1}
+.logo b small{display:block;font-size:8.5px;font-weight:700;letter-spacing:.32em;color:var(--accent);margin-top:3px}
+.hd-icons{display:flex;align-items:center;gap:20px}
+.hd-icons button{width:28px;height:28px;display:flex;align-items:center;justify-content:center;color:var(--brown)}
+.hd-icons svg{width:24px;height:24px}
+.gnb{display:none}
+.mini-bn{position:fixed;top:calc(var(--hd) + 26px);right:10px;z-index:45;width:98px;height:68px;border-radius:4px;overflow:hidden;box-shadow:0 4px 12px rgba(0,0,0,.25);background:linear-gradient(135deg,#e8475d,#b8142f);color:#fff;text-align:left;padding:7px 8px}
+.mini-bn em{display:block;font-style:normal;font-size:11px;font-weight:800;line-height:1.2}
+.mini-bn span{display:block;font-size:11px;opacity:.9;margin-top:2px}
+.mini-bn .cup{position:absolute;right:6px;bottom:6px;width:34px;height:40px}
+.mini-bn .x{position:absolute;top:2px;right:3px;width:16px;height:16px;font-size:13px;line-height:16px;text-align:center;color:#fff;opacity:.9}
+.dim{position:fixed;inset:0;background:rgba(0,0,0,.75);z-index:60;opacity:0;visibility:hidden;transition:.3s}
+.dim.on{opacity:1;visibility:visible}
+body.dr-on #s1-header .inner,body.dr-on .mini-bn{visibility:hidden}
+.drawer{position:fixed;top:0;right:0;bottom:0;width:70%;max-width:380px;background:#121212;z-index:61;transform:translateX(100%);transition:transform .35s ease;overflow-y:auto;color:#fff}
+.drawer.on{transform:none}
+.dr-close{position:fixed;top:9px;left:calc(15% - 18px);z-index:62;width:36px;height:36px;display:none}
+.dim.on + .drawer + .dr-close,.dr-close.on{display:block}
+.dr-search{display:flex;gap:6px;padding:22px 9px 22px 21px;border-bottom:1px solid #333;background:#2a2421}
+.dr-search input{flex:1;min-width:0;height:38px;border:0;border-radius:2px;padding:0 10px;font:inherit;font-size:14px}
+.dr-search button{height:38px;padding:0 14px;background:#5d5d5d;color:#fff;font-size:15px;text-decoration:underline;border-radius:2px}
+.dr-nav>li{list-style:none;border-bottom:1px solid #2e2e2e}
+.dr-nav>li:first-child>button{background:#2a2421}
+.dr-nav>li>button{width:100%;display:flex;justify-content:space-between;align-items:center;padding:0 22px 0 16px;height:58px;font-size:14px;letter-spacing:.01em;text-align:left}
+.dr-nav>li>button svg{width:18px;height:18px;transition:transform .25s}
+.dr-nav>li.open>button svg{transform:rotate(180deg)}
+.dr-nav ul{max-height:0;overflow:hidden;transition:max-height .3s;background:#1d1d1d}
+.dr-nav li.open ul{max-height:260px}
+.dr-nav ul li{list-style:none}
+.dr-nav ul a{display:block;padding:11px 26px;font-size:13px;color:#cfcfcf}
+
+/* s2 hero */
+#s2-hero{position:relative;overflow:hidden;background:linear-gradient(180deg,#5d0b1c 0%,#8e1328 18%,#c21d36 45%,#d4243c 75%,#c61d35 100%);color:#fff;padding:calc(var(--hd) + 44px) 0 54px}
+#s2-hero .deco{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
+#s2-hero .inner{z-index:1}
+.deco-pc{display:none}
+.hero-tt{font-family:'Playfair Display',serif;font-weight:600;font-size:44px;line-height:1.02;letter-spacing:-.02em;padding:0 34px;text-shadow:0 2px 10px rgba(0,0,0,.15)}
+.hero-sub{padding:14px 36px 0;font-size:13px;opacity:.9;font-weight:500}
+.drinks{margin-top:26px}
+.drink{display:grid;grid-template-columns:52% 48%;align-items:center;margin-top:-6px}
+.drink .pic{padding:0 4px 0 26px}
+.drink .mug{width:100%;height:auto;filter:drop-shadow(0 10px 14px rgba(60,0,10,.25))}
+.drink .txt{padding:0 18px 0 6px}
+.drink:nth-child(even) .pic{order:2;padding:0 26px 0 4px}
+.drink:nth-child(even) .txt{order:1;text-align:right;padding:0 6px 0 18px}
+.drink:nth-child(even) .txt hr{margin-left:auto}
+.drink h3{font-size:15px;font-weight:800;line-height:1.25;letter-spacing:.02em;text-transform:uppercase}
+.drink hr{border:0;border-top:1px solid rgba(255,255,255,.85);width:112px;margin:10px 0 8px}
+.drink p{font-size:12px;font-weight:500}
+.drink p span{opacity:.8;margin-left:4px}
+.hero-cta{text-align:center;margin-top:34px}
+.hero-cta .btn-line{height:38px;font-size:17px;padding:0 20px}
+
+/* s3 notice */
+#s3-notice{background:#111;color:#fff}
+#s3-notice .inner{height:82px;display:flex;align-items:center;padding:0 22px 0 26px;gap:14px}
+#s3-notice .spk{width:26px;height:26px;flex:none}
+.tick{flex:1;min-width:0;height:22px;overflow:hidden;position:relative}
+.tick ul{list-style:none;transition:transform .5s ease}
+.tick li{height:22px;line-height:22px;font-size:14px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.plus{width:30px;height:30px;border:1.5px solid #fff;border-radius:50%;flex:none;display:flex;align-items:center;justify-content:center}
+.plus svg{width:14px;height:14px}
+
+/* s4 promotion */
+#s4-promotion{background:var(--ivory)}
+.promo-bar{height:82px;display:flex;align-items:center;justify-content:center;gap:28px;width:100%}
+.promo-bar strong{font-size:20px;font-weight:700;color:#222;letter-spacing:-.02em}
+.promo-bar i{width:28px;height:28px;border:1.5px solid #222;border-radius:50%;display:flex;align-items:center;justify-content:center;transition:transform .3s}
+.promo-bar i svg{width:14px;height:14px}
+#s4-promotion.open .promo-bar i{transform:rotate(180deg)}
+.promo-wrap{max-height:0;overflow:hidden;transition:max-height .5s ease}
+#s4-promotion.open .promo-wrap{max-height:560px}
+.promo-view{position:relative;overflow:hidden;padding:8px 0 22px}
+.promo-track{display:flex;gap:var(--pg,12px);transition:transform .5s ease;padding-left:9%}
+.pcard{flex:0 0 82%;background:#fff;text-align:center;padding-bottom:16px;opacity:.55;transition:opacity .4s;box-shadow:0 1px 0 rgba(0,0,0,.04)}
+.pcard.on{opacity:1}
+.pcard{position:relative;opacity:1}
+.pcard:not(.on)::after{content:'';position:absolute;inset:0;background:rgba(246,245,239,.6);pointer-events:none}
+.pcard:not(.on)>div{visibility:hidden}
+@media (min-width:1024px){.pcard.prv>svg{order:2}.pcard.prv{grid-template-columns:1fr 1.3fr}}
+.pcard svg{width:100%;height:auto}
+.pcard h4{font-size:14px;font-weight:800;color:#6c6c6c;letter-spacing:.02em;margin-top:14px}
+.pcard p{font-size:12px;color:#555;margin-top:4px}
+.pcard time{display:block;font-size:11px;color:#777;margin-top:8px}
+.pcard .btn-g{display:inline-flex;height:28px;align-items:center;padding:0 18px;border:1.5px solid #888;color:#555;font-size:12px;margin-top:10px;border-radius:2px}
+.parr{position:absolute;top:36%;width:34px;height:34px;border:1.5px solid #222;border-radius:50%;background:rgba(255,255,255,.85);display:flex;align-items:center;justify-content:center;z-index:2}
+.parr svg{width:14px;height:14px}
+.parr.prev{left:4px}.parr.next{right:4px}
+.pctl{display:flex;justify-content:center;align-items:center;gap:8px;padding-bottom:22px}
+.pctl .pause{width:16px;height:16px;display:flex;align-items:center;justify-content:center}
+.pctl .pause svg{width:12px;height:12px}
+.pctl .dot{width:11px;height:11px;border-radius:50%;background:#bbb}
+.pctl .dot.on{background:#fff;border:2.5px solid var(--accent)}
+
+/* s5 rewards */
+#s5-rewards{background:var(--espresso);color:#fff;text-align:center;padding:30px 18px 52px}
+.rw-em{width:82px;height:82px;margin:0 auto}
+.rw-mark{margin-top:10px;line-height:1}
+.rw-mark b{display:block;font-size:19px;font-weight:900;letter-spacing:.08em}
+.rw-mark span{display:block;font-size:12px;font-weight:800;letter-spacing:.42em;margin-top:6px;color:var(--accent2);padding-left:.42em}
+.rw-tt{font-size:15.5px;font-weight:400;margin-top:26px;line-height:1.5}
+.rw-tt strong{display:block;font-weight:700}
+.rw-q{font-size:12px;line-height:1.85;margin-top:12px;color:#ece6e1}
+.rw-q strong{display:block;color:#fff}
+.rw-btns{display:flex;gap:7px;justify-content:center;margin-top:16px}
+.rw-btns button{width:128px;height:28px;font-size:12px;border-radius:2px}
+.rw-btns .fill{background:var(--accent);color:#fff}
+.rw-btns .ln{border:1.5px solid #fff}
+.rw-div{height:1px;background:rgba(255,255,255,.22);margin:20px 0 18px}
+.rw-p{font-size:12px;line-height:1.95}
+.rw-p strong{font-weight:700}
+.rw-wide{width:262px;height:28px;border:1.5px solid #fff;font-size:12px;margin-top:18px;border-radius:2px}
+
+/* s6 season bean */
+#s6-season-bean{position:relative;overflow:hidden;background:radial-gradient(120% 70% at 50% 30%,#d01d37,#b3152d 70%,#9c1027);color:#fff;text-align:center;padding:52px 26px 60px}
+.rib-v{position:absolute;top:0;bottom:0;left:10px;width:34px;background:linear-gradient(90deg,#f6ead2 0 18%,#c9952f 18% 30%,#f6ead2 30% 70%,#c9952f 70% 82%,#f6ead2 82% 100%);opacity:.95}
+.rib-h{position:absolute;left:0;right:0;height:30px;background:linear-gradient(180deg,#f6ead2 0 18%,#c9952f 18% 32%,#f6ead2 32% 68%,#c9952f 68% 82%,#f6ead2 82%);opacity:.95}
+.rib-h.a{top:118px}.rib-h.b{display:none}
+.script{position:absolute;top:22px;left:0;right:0;font-family:'Dancing Script',cursive;font-size:96px;color:#fff;opacity:.16;transform:rotate(-8deg);pointer-events:none}
+#s6-season-bean .bag{position:relative;width:170px;height:auto;margin:0 auto;filter:drop-shadow(0 14px 20px rgba(50,0,10,.4))}
+.sb-lead{position:relative;font-size:14px;line-height:1.6;margin-top:22px;color:#ffe3e7;font-weight:500}
+.sb-name{position:relative;font-size:23px;font-weight:800;margin-top:6px;letter-spacing:-.02em}
+.sb-name small{font-size:15px;font-weight:600;opacity:.85;margin-left:6px}
+.sb-desc{position:relative;font-size:13px;line-height:1.75;margin-top:14px;color:#ffdfe4}
+#s6-season-bean .btn-line{position:relative;margin-top:24px}
+#s6-season-bean .trees{position:absolute;right:6px;bottom:0;width:100px;height:auto}
+
+/* s7 reserve bean */
+#s7-reserve-bean{position:relative;overflow:hidden;background:
+ radial-gradient(60% 40% at 50% 30%,rgba(40,80,120,.35),transparent),
+ repeating-radial-gradient(circle at 20% 30%,rgba(255,255,255,.025) 0 2px,transparent 2px 22px),
+ linear-gradient(180deg,#123a5e,#0b2740 55%,#071b2d);color:#fff;text-align:center;padding:62px 20px 56px}
+.rv-em{width:40px;margin:0 auto}
+.rv-em svg{width:40px;height:40px}
+.rv-word{font-size:11px;font-weight:700;letter-spacing:.5em;padding-left:.5em;color:#e2b45e;margin-top:10px}
+.rv-tt{font-family:'Playfair Display',serif;font-size:50px;font-weight:700;color:#e2b45e;line-height:1.05;margin-top:16px;letter-spacing:-.01em}
+.rv-cap{font-size:11px;letter-spacing:.06em;color:#e2b45e;margin-top:10px;font-weight:600}
+.rv-yr{font-size:15px;color:#e2b45e;letter-spacing:.14em;margin-top:18px;font-weight:600}
+.rbox{width:300px;max-width:100%;height:auto;margin:18px auto 0}
+.rv-note{font-size:14px;color:#c9c3b6;margin-top:6px}
+.rv-sp{font-size:14px;letter-spacing:.08em;color:#e2b45e;margin-top:14px;font-weight:700}
+#s7-reserve-bean .btn-line{border-color:#e2b45e;color:#e2b45e;margin-top:30px}
+#s7-reserve-bean .btn-line:hover{background:#e2b45e;color:#0b2740}
+
+/* s8 favorite */
+#s8-favorite{background:
+ repeating-linear-gradient(37deg,rgba(255,255,255,.018) 0 2px,transparent 2px 5px),
+ repeating-linear-gradient(-53deg,rgba(0,0,0,.05) 0 1px,transparent 1px 4px),
+ linear-gradient(180deg,#46454b,#38373c);color:#fff;text-align:center;padding:16px 0 66px;overflow:hidden}
+.collage{width:100%;max-width:480px;height:auto;margin:0 auto}
+.fav-tt{font-size:22px;line-height:1.4;font-weight:400;margin-top:8px;letter-spacing:-.03em}
+.fav-tt b{font-weight:800}
+.fav-p{font-size:13.5px;line-height:1.95;margin-top:16px;color:#e6e4e8;font-weight:300}
+.fav-p b{color:#fff;font-weight:700}
+#s8-favorite .btn-line{margin-top:20px}
+
+/* s9 magazine */
+#s9-magazine{background:#fff;padding:34px 0 46px;overflow:hidden}
+.mag-frame{position:relative;margin-right:20px;border:1px solid #111;border-left:0;border-radius:0 230px 230px 0;padding:34px 30px 40px 26px;text-align:center}
+.mag-frame:after{content:'';position:absolute;left:0;bottom:-1px;width:70px;border-top:1px solid #111}
+.mag-em{width:50px;height:auto;margin:0 auto}
+.mag-tt{font-family:'Oswald',sans-serif;font-weight:600;font-size:30px;letter-spacing:.14em;margin-top:18px;color:#111;line-height:1}
+.mag-p{font-size:15px;line-height:1.5;margin-top:14px;color:#222;font-weight:500}
+.mag-col{position:relative;height:396px;margin-top:-56px}
+.mag-col>div{position:absolute;overflow:hidden}
+.mag-col svg{width:100%;height:auto}
+.mc1{left:46px;top:96px;width:144px;border-radius:72px 72px 0 0}
+.mc2{left:168px;top:60px;width:134px}
+.mc3{left:198px;top:184px;width:177px}
+.mc4{left:70px;top:272px;width:172px;border-radius:80px}
+.mag-line{position:absolute;right:62px;top:300px;height:96px;border-left:1px solid #111}
+.mag-btn{text-align:center;margin-top:8px}
+.mag-btn.in{display:none}
+.mag-btn a{display:inline-flex;align-items:center;justify-content:center;width:124px;height:32px;border:2px solid #111;border-radius:6px;font-size:13px;font-weight:700;color:#111}
+.mag-btn a:hover{background:#111;color:#fff}
+
+/* s10 store */
+#s10-store{position:relative;background:#ececec;padding:0 0 46px;overflow:hidden;text-align:center;color:#333}
+.st-pat{position:absolute;left:0;right:0;top:280px;height:90px;opacity:.12}
+.st-pics{position:relative;height:350px}
+.st-pics .c1{position:absolute;left:-12px;top:8px;width:240px;height:240px;border-radius:50%;box-shadow:0 10px 24px rgba(0,0,0,.25)}
+.st-pics .c2{position:absolute;right:38px;top:176px;width:146px;height:146px;border-radius:50%;box-shadow:0 10px 22px rgba(0,0,0,.3)}
+.st-pics svg{width:100%;height:100%}
+.st-tt{position:relative;font-size:20px;font-weight:400;letter-spacing:-.04em;margin-top:6px}
+.st-tt b{font-weight:800}
+.st-sub{position:relative;font-size:13.5px;margin-top:6px;letter-spacing:-.03em}
+.st-p{position:relative;font-size:13.5px;line-height:1.9;margin-top:22px;letter-spacing:-.03em}
+.st-p b{font-weight:700}
+.st-btn{position:relative;display:inline-flex;align-items:center;justify-content:center;width:94px;height:28px;border:1.5px solid #888;color:#777;font-size:12px;margin-top:14px;border-radius:2px;background:rgba(255,255,255,.4)}
+.st-last{position:relative;font-size:13.5px;margin-top:14px;letter-spacing:-.03em}
+
+/* s11 footer */
+#s11-footer{background:#2b2a29;color:#fff}
+.ft-acc{background:#5a4d45}
+.ft-acc>li{list-style:none;border-bottom:1px solid #6e625a}
+.ft-acc>li>button{width:100%;height:38px;display:flex;align-items:center;justify-content:space-between;padding:0 15px 0 8px;font-size:11px;letter-spacing:.02em;text-align:left}
+.ft-acc>li>button svg{width:16px;height:16px;transition:transform .25s}
+.ft-acc li.open>button svg{transform:rotate(180deg)}
+.ft-acc ul{max-height:0;overflow:hidden;transition:max-height .3s;background:#4b403a}
+.ft-acc li.open ul{max-height:200px}
+.ft-acc ul li{list-style:none}
+.ft-acc ul a{display:block;font-size:12px;padding:8px 16px;color:#e4dcd6}
+.ft-acc h5{display:none}
+.ft-big{display:flex;gap:8px;justify-content:center;padding:22px 16px}
+.ft-big a{flex:1;max-width:102px;height:38px;border:1.5px solid #fff;display:flex;align-items:center;justify-content:center;font-size:14px}
+.ft-roll{display:flex;flex-direction:column;align-items:center;padding:6px 0 10px}
+.roll-box{width:236px;height:40px;background:#262524;overflow:hidden;border-radius:2px}
+.roll-box ul{list-style:none;transition:transform .5s}
+.roll-box li{height:40px;display:flex;align-items:center;justify-content:center;gap:8px;font-size:11px;color:#ddd}
+.roll-box li svg{width:20px;height:20px;flex:none}
+.roll-pause{margin-top:8px;width:16px;height:16px;display:flex;align-items:center;justify-content:center;color:#888}
+.roll-pause svg{width:10px;height:10px}
+.ft-links{display:flex;flex-wrap:wrap;justify-content:center;padding:14px 18px 0;gap:6px 0}
+.ft-links a{font-size:11px;color:#ddd;padding:0 8px;border-right:1px solid #555;line-height:1.2}
+.ft-links a:last-child,.ft-links a.eol{border-right:0}
+.ft-links a.hl{color:var(--accent2)}
+.ft-sbtn{display:flex;justify-content:center;gap:8px;margin-top:16px}
+.ft-sbtn a{height:26px;padding:0 10px;border:1.5px solid #fff;display:flex;align-items:center;font-size:11px}
+.ft-info{text-align:center;font-size:11px;color:#9a9692;line-height:1.7;margin-top:18px;list-style:none}
+.ft-copy{text-align:center;font-size:11px;color:#9a9692;padding:14px 0 26px}
+
+/* layer */
+.layer{position:fixed;inset:0;z-index:80;display:flex;align-items:flex-end;justify-content:center;background:rgba(0,0,0,.55);opacity:0;visibility:hidden;transition:.25s}
+.layer.on{opacity:1;visibility:visible}
+.sheet{width:100%;max-width:520px;background:#fff;border-radius:16px 16px 0 0;padding:24px 22px 28px;transform:translateY(30px);transition:.3s}
+.layer.on .sheet{transform:none}
+.sheet h6{font-size:18px;font-weight:800;color:#222}
+.sheet p{font-size:14px;line-height:1.7;color:#555;margin-top:10px;white-space:pre-line}
+.sheet .row{display:flex;gap:8px;margin-top:18px}
+.sheet .row button{flex:1;height:44px;border-radius:4px;font-weight:700;font-size:14px}
+.sheet .ok{background:var(--espresso);color:#fff}
+.sheet .no{border:1px solid #ccc;color:#444}
+
+@media (min-width:1024px){
+ :root{--hd:76px}
+ #s1-header .inner{padding:0 24px}
+ .logo .sym{width:46px;height:46px}
+ .logo b{font-size:19px}.logo b small{font-size:10px}
+ .gnb{display:flex;gap:34px;margin-left:auto;margin-right:40px}
+ .gnb a{font-size:14px;font-weight:700;color:#3a2a22;letter-spacing:.04em}
+ .gnb a:hover{color:var(--accent)}
+ .mini-bn{right:calc(50% - 600px + 10px);width:120px;height:80px}
+ .mini-bn em{font-size:13px}.mini-bn span{font-size:12px}
+ .dr-close{left:auto;right:400px}
+ .hero-tt{font-size:76px;padding:0 40px;text-align:center}
+ .hero-sub{text-align:center;font-size:16px}
+ .drinks{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin-top:40px;padding:0 20px}
+ .drink,.drink:nth-child(even){display:block;margin:0;text-align:center}
+ .drink .pic,.drink:nth-child(even) .pic{padding:0 10px}
+ .drink .txt,.drink:nth-child(even) .txt{text-align:center;padding:14px 0 0}
+ .drink:nth-child(even){margin-top:60px}
+ .drink hr,.drink:nth-child(even) .txt hr{margin:10px auto 8px}
+ .drink h3{font-size:17px}.drink p{font-size:14px}
+ .hero-cta{margin-top:50px}
+ .btn-line{height:46px;font-size:18px;padding:0 30px}
+ .hero-cta .btn-line{height:50px;font-size:20px;padding:0 28px}
+ #s3-notice .inner{padding:0 30px}
+ .tick li{font-size:16px}
+ .promo-bar strong{font-size:24px}
+ #s4-promotion .inner{max-width:none}
+ .promo-track{--pg:60px;padding-left:calc((100% - 860px)/2)}
+ .pcard{flex:0 0 860px;display:grid;grid-template-columns:1.3fr 1fr;align-items:center;text-align:left;padding:0}
+ .pcard>div{padding:20px 30px}
+ .pcard h4{font-size:18px;margin-top:0}.pcard p{font-size:14px}.pcard time{font-size:13px}
+ #s4-promotion.open .promo-wrap{max-height:620px}
+ .parr{top:50%;margin-top:-30px;width:40px;height:40px}
+ .parr.prev{left:calc(50% - 430px - 50px)}.parr.next{right:calc(50% - 430px - 50px)}
+ #s5-rewards{padding:60px 40px}
+ #s5-rewards .inner{display:grid;grid-template-columns:260px 1fr 1fr;gap:50px;align-items:center;text-align:left}
+ .rw-em{width:120px;height:120px}
+ .rw-head{text-align:center}
+ .rw-tt{margin-top:0;font-size:22px}.rw-q,.rw-p{font-size:14px}
+ .rw-btns{justify-content:flex-start}
+ .rw-btns button{width:150px;height:36px;font-size:14px}
+ .rw-div{display:none}
+ .rw-side{border-left:1px solid rgba(255,255,255,.2);padding-left:50px}
+ .rw-wide{width:260px;height:36px;font-size:14px}
+ #s6-season-bean{padding:110px 40px 140px}
+ #s6-season-bean .inner{display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:40px;text-align:left;max-width:1000px}
+ #s6-season-bean .bag{width:260px}
+ .rib-v{left:calc(50% - 560px)}
+ .rib-h.a{top:62px}
+ .script{font-size:96px;opacity:.13;top:auto;bottom:6px;left:calc(50% + 40px);right:auto;width:440px;text-align:left;transform:rotate(-4deg)}
+ .deco-m{display:none}.deco-pc{display:block}
+ #s2-hero .rbn{display:none}
+ .sb-lead{font-size:17px}.sb-name{font-size:34px}.sb-desc{font-size:15px}
+ #s6-season-bean .trees{width:160px;right:calc(50% - 560px)}
+ #s7-reserve-bean{padding:90px 40px}
+ #s7-reserve-bean .inner{display:grid;grid-template-columns:1fr 1fr;grid-template-areas:'head box' 'foot box';column-gap:30px;max-width:1000px}
+ .rv-head{grid-area:head;align-self:end}.rv-box{grid-area:box;align-self:center}.rv-foot{grid-area:foot;align-self:start}
+ .rv-note{margin-top:22px}.rv-sp{margin-top:14px}#s7-reserve-bean .btn-line{margin-top:22px}
+ .rv-tt{font-size:80px}
+ .rbox{width:420px}
+ #s8-favorite{padding:60px 40px}
+ #s8-favorite .inner{display:grid;grid-template-columns:1.1fr 1fr;align-items:center;gap:30px}
+ .collage{max-width:560px}
+ .fav-tt{font-size:34px}.fav-p{font-size:16px}
+ #s9-magazine{padding:120px 40px}
+ #s9-magazine .inner{display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:20px}
+ .mag-frame{margin-right:0;padding:70px 60px}
+ .mag-tt{font-size:44px}.mag-p{font-size:18px}
+ .mag-col{margin:0;height:396px;width:375px;justify-self:center;transform:scale(1.5);transform-origin:center center}
+ .mag-btn.out{display:none}.mag-btn.in{display:block;margin-top:24px}
+ .mag-btn{grid-column:1/-1}
+ #s10-store{padding:70px 40px}
+ #s10-store .inner{display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:30px}
+ .st-pics{height:440px}
+ .st-pics .c1{left:20px;top:0;width:330px;height:330px}
+ .st-pics .c2{right:40px;top:220px;width:200px;height:200px}
+ .st-tt{font-size:30px}.st-sub,.st-p,.st-last{font-size:17px}
+ .st-btn{width:120px;height:36px;font-size:14px}
+ .st-pat{top:auto;bottom:0}
+ .ft-acc{display:grid;grid-template-columns:repeat(6,1fr);padding:30px calc(50% - 600px)}
+ .ft-acc>li{border:0;padding:0 16px}
+ .ft-acc>li>button{display:none}
+ .ft-acc h5{display:block;font-size:13px;font-weight:700;letter-spacing:.04em;margin-bottom:10px}
+ .ft-acc ul{max-height:none;background:none}
+ .ft-acc ul a{padding:4px 0;font-size:13px}
+ .ft-big a{max-width:160px;height:46px;font-size:16px}
+ .ft-links a,.ft-info,.ft-copy{font-size:13px}
+}
+</style>
+</head>
+<body>
+
+<header id="s1-header">
+ <div class="inner">
+  <a href="#" class="logo" aria-label="모닝빈 커피 홈"><svg viewBox="0 0 48 48" class="sym" aria-hidden="true">
+  <rect x="2" y="2" width="44" height="44" rx="13" fill="#3a2a22"/>
+  <path d="M10 30 A14 14 0 0 1 38 30 Z" fill="#e7a24a"/>
+  <g stroke="#e7a24a" stroke-width="2.2" stroke-linecap="round"><path d="M24 9 V12.5"/><path d="M12.5 13.5 L14.8 16"/><path d="M35.5 13.5 L33.2 16"/></g>
+  <ellipse cx="24" cy="33.5" rx="9.5" ry="6.4" fill="#f6efe4"/>
+  <path d="M15.5 33.6 C20 31 28 36 32.5 33.4" stroke="#3a2a22" stroke-width="2" fill="none" stroke-linecap="round"/>
+</svg><b>MORNING BEAN<small>COFFEE</small></b></a>
+  <nav class="gnb" aria-label="주요 메뉴"><a href="#s2-hero">MENU</a><a href="#s6-season-bean">COFFEE</a><a href="#s5-rewards">MEMBERS</a><a href="#s10-store">STORE</a><a href="#s3-notice">NEWS</a></nav>
+  <div class="hd-icons">
+   <button type="button" aria-label="내 정보" data-layer="my"><svg viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="7.2" r="4.6"/><path d="M3 22c0-5.2 4-8.6 9-8.6s9 3.4 9 8.6z"/></svg></button>
+   <button type="button" aria-label="매장 위치" data-go="#s10-store"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 1.5c-4.4 0-8 3.4-8 7.8C4 15 12 22.5 12 22.5S20 15 20 9.3c0-4.4-3.6-7.8-8-7.8zm0 10.9a3 3 0 1 1 0-6 3 3 0 0 1 0 6z"/></svg></button>
+   <button type="button" aria-label="전체 메뉴 열기" id="burger"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M3 5.5h18M3 12h18M3 18.5h18"/></svg></button>
+  </div>
+ </div>
+</header>
+<button type="button" class="mini-bn" id="miniBn" data-layer="berry"><em>딸기 시즌</em><span>12월 한정</span><svg class="cup" viewBox="0 0 34 40" aria-hidden="true"><defs><linearGradient id="mbc" x1="0" y1="1" x2="0" y2="0"><stop offset="0" stop-color="#e2263f"/><stop offset=".45" stop-color="#f27a8c"/><stop offset=".6" stop-color="#fde3e7"/><stop offset="1" stop-color="#fff"/></linearGradient></defs><path d="M22 1 L18 12" stroke="#fff" stroke-width="2.4" stroke-linecap="round"/><path d="M5 10 L8 37 Q8.5 39 11 39 L23 39 Q25.5 39 26 37 L29 10Z" fill="url(#mbc)" stroke="#fff" stroke-width="1.4"/><ellipse cx="17" cy="10" rx="12" ry="2.2" fill="#fff"/><rect x="9" y="14" width="2" height="20" rx="1" fill="#fff" opacity=".6"/><path d="M14 31 c1.5-2 3.5-2 4 0z M20 33 c1-1.8 3-1.6 3 0z" fill="#b80f2b"/></svg><span class="x" id="miniX" aria-label="닫기">&times;</span></button>
+<div class="dim" id="dim"></div>
+<aside class="drawer" id="drawer" aria-label="전체 메뉴">
+ <form class="dr-search" onsubmit="event.preventDefault()"><input type="search" aria-label="검색어" placeholder="메뉴 검색"><button type="submit">Search</button></form>
+ <ul class="dr-nav">
+  <li><button type="button">My Morning Bean<svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round"><path d="M5 9l7 7 7-7"/></svg></button><ul><li><a href="#">스탬프 적립 내역</a></li><li><a href="#">모바일 쿠폰함</a></li></ul></li>
+  <li><button type="button">COFFEE<svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round"><path d="M5 9l7 7 7-7"/></svg></button><ul><li><a href="#">하우스 블렌드</a></li><li><a href="#">싱글 오리진</a></li><li><a href="#">드립백</a></li></ul></li>
+  <li><button type="button">MENU<svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round"><path d="M5 9l7 7 7-7"/></svg></button><ul><li><a href="#">커피</a></li><li><a href="#">라떼 · 티</a></li><li><a href="#">베이커리</a></li><li><a href="#">디저트</a></li></ul></li>
+  <li><button type="button">STORE<svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round"><path d="M5 9l7 7 7-7"/></svg></button><ul><li><a href="#s10-store">오시는 길</a></li><li><a href="#">영업시간</a></li></ul></li>
+  <li><button type="button">ROASTING<svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round"><path d="M5 9l7 7 7-7"/></svg></button><ul><li><a href="#">로스팅 이야기</a></li><li><a href="#">원두 클래스</a></li></ul></li>
+  <li><button type="button">Members<svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round"><path d="M5 9l7 7 7-7"/></svg></button><ul><li><a href="#s5-rewards">멤버스 혜택</a></li><li><a href="#">생일 쿠폰</a></li></ul></li>
+  <li><button type="button">GROUP ORDER<svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round"><path d="M5 9l7 7 7-7"/></svg></button><ul><li><a href="#">단체 주문 안내</a></li><li><a href="#">케이터링</a></li></ul></li>
+  <li><button type="button">WHAT'S NEW<svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round"><path d="M5 9l7 7 7-7"/></svg></button><ul><li><a href="#s3-notice">공지사항</a></li><li><a href="#s4-promotion">이벤트</a></li></ul></li>
+ </ul>
+</aside>
+<button type="button" class="dr-close" id="drClose" aria-label="메뉴 닫기"><svg viewBox="0 0 24 24" stroke="#fff" stroke-width="3.4" stroke-linecap="round"><path d="M4 4l16 16M20 4L4 20"/></svg></button>
+
+<main>
+<section id="s2-hero">
+ <svg class="deco deco-pc" viewBox="0 0 1440 900" preserveAspectRatio="xMidYMin slice" aria-hidden="true"><path d="M-60 470 C60 500 110 600 70 700 S40 860 130 960" stroke="#f7e6c4" stroke-width="40" fill="none"/><path d="M-60 470 C60 500 110 600 70 700 S40 860 130 960" stroke="#d7a54c" stroke-width="31" fill="none"/><path d="M-60 470 C60 500 110 600 70 700 S40 860 130 960" stroke="#fbeed2" stroke-width="19" fill="none"/><path d="M-60 470 C60 500 110 600 70 700 S40 860 130 960" stroke="#d7a54c" stroke-width="8" fill="none"/><path d="M1500 70 C1340 90 1300 200 1360 270 S1480 330 1500 360" stroke="#f7e6c4" stroke-width="40" fill="none"/><path d="M1500 70 C1340 90 1300 200 1360 270 S1480 330 1500 360" stroke="#d7a54c" stroke-width="31" fill="none"/><path d="M1500 70 C1340 90 1300 200 1360 270 S1480 330 1500 360" stroke="#fbeed2" stroke-width="19" fill="none"/><path d="M1500 70 C1340 90 1300 200 1360 270 S1480 330 1500 360" stroke="#d7a54c" stroke-width="8" fill="none"/><path transform="translate(140 280) scale(2.6)" opacity="1" fill="#fff" d="M0 -10 C1 -3 3 -1 10 0 C3 1 1 3 0 10 C-1 3 -3 1 -10 0 C-3 -1 -1 -3 0 -10Z"/><path transform="translate(300 160) scale(1.4)" opacity="0.8" fill="#fff" d="M0 -10 C1 -3 3 -1 10 0 C3 1 1 3 0 10 C-1 3 -3 1 -10 0 C-3 -1 -1 -3 0 -10Z"/><path transform="translate(1060 250) scale(2)" opacity="0.9" fill="#fff" d="M0 -10 C1 -3 3 -1 10 0 C3 1 1 3 0 10 C-1 3 -3 1 -10 0 C-3 -1 -1 -3 0 -10Z"/><path transform="translate(1330 520) scale(1.6)" opacity="0.8" fill="#fff" d="M0 -10 C1 -3 3 -1 10 0 C3 1 1 3 0 10 C-1 3 -3 1 -10 0 C-3 -1 -1 -3 0 -10Z"/><path transform="translate(980 860) scale(1.8)" opacity="0.9" fill="#fff" d="M0 -10 C1 -3 3 -1 10 0 C3 1 1 3 0 10 C-1 3 -3 1 -10 0 C-3 -1 -1 -3 0 -10Z"/><path transform="translate(420 820) scale(1.2)" opacity="0.7" fill="#fff" d="M0 -10 C1 -3 3 -1 10 0 C3 1 1 3 0 10 C-1 3 -3 1 -10 0 C-3 -1 -1 -3 0 -10Z"/><path transform="translate(90 720) scale(1.2)" opacity="0.7" fill="#fff" d="M0 -10 C1 -3 3 -1 10 0 C3 1 1 3 0 10 C-1 3 -3 1 -10 0 C-3 -1 -1 -3 0 -10Z"/></svg>
+ <svg class="deco deco-m" viewBox="0 0 375 1240" preserveAspectRatio="xMidYMin slice" aria-hidden="true"><g class="rbn"><path d="M420 110 C300 120 250 190 290 240 S400 300 420 330" stroke="#f7e6c4" stroke-width="34" fill="none"/><path d="M420 110 C300 120 250 190 290 240 S400 300 420 330" stroke="#d7a54c" stroke-width="26" fill="none"/><path d="M420 110 C300 120 250 190 290 240 S400 300 420 330" stroke="#fbeed2" stroke-width="16" fill="none"/><path d="M420 110 C300 120 250 190 290 240 S400 300 420 330" stroke="#d7a54c" stroke-width="7" fill="none"/><path d="M420 110 C300 120 250 190 290 240 S400 300 420 330" stroke="#000" stroke-opacity=".12" stroke-width="34" fill="none" transform="translate(0 10)" style="mix-blend-mode:multiply"/></g><g class="rbn"><path d="M-40 600 C70 620 130 690 70 750 S-20 810 -40 830" stroke="#f7e6c4" stroke-width="34" fill="none"/><path d="M-40 600 C70 620 130 690 70 750 S-20 810 -40 830" stroke="#d7a54c" stroke-width="26" fill="none"/><path d="M-40 600 C70 620 130 690 70 750 S-20 810 -40 830" stroke="#fbeed2" stroke-width="16" fill="none"/><path d="M-40 600 C70 620 130 690 70 750 S-20 810 -40 830" stroke="#d7a54c" stroke-width="7" fill="none"/><path d="M-40 600 C70 620 130 690 70 750 S-20 810 -40 830" stroke="#000" stroke-opacity=".12" stroke-width="34" fill="none" transform="translate(0 10)" style="mix-blend-mode:multiply"/></g><g class="rbn"><path d="M430 800 C370 810 350 870 375 930 S420 960 430 990" stroke="#f7e6c4" stroke-width="34" fill="none"/><path d="M430 800 C370 810 350 870 375 930 S420 960 430 990" stroke="#d7a54c" stroke-width="26" fill="none"/><path d="M430 800 C370 810 350 870 375 930 S420 960 430 990" stroke="#fbeed2" stroke-width="16" fill="none"/><path d="M430 800 C370 810 350 870 375 930 S420 960 430 990" stroke="#d7a54c" stroke-width="7" fill="none"/><path d="M430 800 C370 810 350 870 375 930 S420 960 430 990" stroke="#000" stroke-opacity=".12" stroke-width="34" fill="none" transform="translate(0 10)" style="mix-blend-mode:multiply"/></g><path transform="translate(36 72) scale(0.9)" opacity="0.9" fill="#fff" d="M0 -10 C1 -3 3 -1 10 0 C3 1 1 3 0 10 C-1 3 -3 1 -10 0 C-3 -1 -1 -3 0 -10Z"/><path transform="translate(300 120) scale(0.8)" opacity="0.8" fill="#fff" d="M0 -10 C1 -3 3 -1 10 0 C3 1 1 3 0 10 C-1 3 -3 1 -10 0 C-3 -1 -1 -3 0 -10Z"/><path transform="translate(330 236) scale(1.5)" opacity="1" fill="#fff" d="M0 -10 C1 -3 3 -1 10 0 C3 1 1 3 0 10 C-1 3 -3 1 -10 0 C-3 -1 -1 -3 0 -10Z"/><path transform="translate(24 248) scale(0.7)" opacity="0.7" fill="#fff" d="M0 -10 C1 -3 3 -1 10 0 C3 1 1 3 0 10 C-1 3 -3 1 -10 0 C-3 -1 -1 -3 0 -10Z"/><path transform="translate(272 218) scale(1)" opacity="0.9" fill="#fff" d="M0 -10 C1 -3 3 -1 10 0 C3 1 1 3 0 10 C-1 3 -3 1 -10 0 C-3 -1 -1 -3 0 -10Z"/><path transform="translate(350 400) scale(0.9)" opacity="0.8" fill="#fff" d="M0 -10 C1 -3 3 -1 10 0 C3 1 1 3 0 10 C-1 3 -3 1 -10 0 C-3 -1 -1 -3 0 -10Z"/><path transform="translate(40 640) scale(1.2)" opacity="1" fill="#fff" d="M0 -10 C1 -3 3 -1 10 0 C3 1 1 3 0 10 C-1 3 -3 1 -10 0 C-3 -1 -1 -3 0 -10Z"/><path transform="translate(340 680) scale(1.3)" opacity="1" fill="#fff" d="M0 -10 C1 -3 3 -1 10 0 C3 1 1 3 0 10 C-1 3 -3 1 -10 0 C-3 -1 -1 -3 0 -10Z"/><path transform="translate(200 770) scale(0.7)" opacity="0.7" fill="#fff" d="M0 -10 C1 -3 3 -1 10 0 C3 1 1 3 0 10 C-1 3 -3 1 -10 0 C-3 -1 -1 -3 0 -10Z"/><path transform="translate(50 930) scale(1.3)" opacity="1" fill="#fff" d="M0 -10 C1 -3 3 -1 10 0 C3 1 1 3 0 10 C-1 3 -3 1 -10 0 C-3 -1 -1 -3 0 -10Z"/><path transform="translate(330 1040) scale(1.4)" opacity="1" fill="#fff" d="M0 -10 C1 -3 3 -1 10 0 C3 1 1 3 0 10 C-1 3 -3 1 -10 0 C-3 -1 -1 -3 0 -10Z"/><path transform="translate(22 1086) scale(0.8)" opacity="0.7" fill="#fff" d="M0 -10 C1 -3 3 -1 10 0 C3 1 1 3 0 10 C-1 3 -3 1 -10 0 C-3 -1 -1 -3 0 -10Z"/><path transform="translate(300 1180) scale(0.9)" opacity="0.8" fill="#fff" d="M0 -10 C1 -3 3 -1 10 0 C3 1 1 3 0 10 C-1 3 -3 1 -10 0 C-3 -1 -1 -3 0 -10Z"/><path transform="translate(200 560) scale(0.6)" opacity="0.6" fill="#fff" d="M0 -10 C1 -3 3 -1 10 0 C3 1 1 3 0 10 C-1 3 -3 1 -10 0 C-3 -1 -1 -3 0 -10Z"/></svg>
+ <div class="inner">
+  <h2 class="hero-tt">Slow<br>Winter<br>Mornings</h2>
+  <p class="hero-sub">겨울 아침을 데워 줄 따뜻한 시즌 음료</p>
+  <div class="drinks">
+   <div class="drink"><div class="pic"><svg viewBox="0 -24 220 236" class="mug" aria-hidden="true">
+      <defs>
+        <linearGradient id="m1lq" x1="0" y1="1" x2="0" y2="0"><stop offset="0" stop-color="#f2b52b"/><stop offset="0.6" stop-color="#f7cd4f"/><stop offset="1" stop-color="#fbe07c"/></linearGradient>
+        <linearGradient id="m1gl" x1="0" x2="1"><stop offset="0" stop-color="#fff" stop-opacity=".45"/><stop offset=".2" stop-color="#fff" stop-opacity=".08"/><stop offset=".8" stop-color="#fff" stop-opacity=".05"/><stop offset="1" stop-color="#fff" stop-opacity=".35"/></linearGradient>
+        <linearGradient id="m1sh" x1="0" x2="1"><stop offset="0" stop-color="#000" stop-opacity=".18"/><stop offset=".35" stop-color="#000" stop-opacity="0"/><stop offset=".75" stop-color="#000" stop-opacity="0"/><stop offset="1" stop-color="#000" stop-opacity=".22"/></linearGradient>
+        <radialGradient id="m1cr" cx=".45" cy=".3" r=".7"><stop offset="0" stop-color="#fff"/><stop offset=".7" stop-color="#f7efe6"/><stop offset="1" stop-color="#e2d3c2"/></radialGradient>
+        <clipPath id="m1cl"><path d="M47 66 L50 178 Q52 192 69 192 L131 192 Q148 192 150 178 L153 66 Z"/></clipPath>
+      </defs>
+      <ellipse cx="104" cy="204" rx="74" ry="8" fill="#000" opacity=".28"/>
+      <g stroke="#fff" stroke-width="3" fill="none" stroke-linecap="round" opacity=".35">
+          <path d="M82 18 C74 8 90 0 82 -12"/><path d="M104 14 C96 2 112 -6 104 -20"/><path d="M124 18 C118 8 130 2 124 -10"/></g>
+      <path d="M156 66 C196 62 204 142 152 154" stroke="#fff" stroke-opacity=".62" stroke-width="15" fill="none" stroke-linecap="round"/>
+      <path d="M156 66 C196 62 204 142 152 154" stroke="#fff" stroke-opacity=".85" stroke-width="3" fill="none" stroke-linecap="round" transform="translate(-3 0)"/>
+      <path d="M40 40 L44 182 Q46 199 66 199 L134 199 Q154 199 156 182 L160 40 Z" fill="#fff" fill-opacity=".14"/>
+      <g clip-path="url(#m1cl)">
+        <rect x="40" y="66" width="120" height="134" fill="url(#m1lq)"/>
+        <rect x="40" y="66" width="120" height="134" fill="url(#m1sh)"/>
+      </g>
+      
+      
+        <ellipse cx="100" cy="66" rx="54" ry="7" fill="#f6c94d" opacity=".9"/>
+        <g transform="translate(118 64) rotate(-18) scale(1 .42)">
+          <circle r="24" fill="#f7d34a" stroke="#e9a91c" stroke-width="4"/>
+          <circle r="18" fill="#fde98a"/>
+          <g stroke="#f7d34a" stroke-width="2.4">
+            <path d="M0 0 L0 -18 M0 0 L15.6 -9 M0 0 L15.6 9 M0 0 L0 18 M0 0 L-15.6 9 M0 0 L-15.6 -9"/>
+          </g>
+        </g>
+        <g transform="translate(80 63)"><path d="M0 0 C-6 -10 2 -18 10 -16 C10 -8 6 -2 0 0Z" fill="#6aa04a"/><path d="M0 0 C6 -8 14 -10 20 -6 C14 0 6 2 0 0Z" fill="#83b85c"/></g>
+      <path d="M40 40 L44 182 Q46 199 66 199 L134 199 Q154 199 156 182 L160 40 Z" fill="url(#m1gl)" stroke="#fff" stroke-opacity=".55" stroke-width="2"/>
+      <rect x="52" y="52" width="7" height="128" rx="3.5" fill="#fff" opacity=".5"/>
+      <rect x="64" y="60" width="2.5" height="100" rx="1.2" fill="#fff" opacity=".35"/>
+      <rect x="143" y="56" width="4" height="118" rx="2" fill="#fff" opacity=".25"/>
+      <ellipse cx="100" cy="40" rx="60" ry="8" fill="none" stroke="#fff" stroke-opacity=".75" stroke-width="2.5"/>
+      <path d="M48 192 Q100 202 152 192" stroke="#fff" stroke-opacity=".5" stroke-width="3" fill="none"/>
+    </svg></div><div class="txt"><h3>Honey<br>Citron<br>Tea</h3><hr><p>꿀 유자차<span>5,500원</span></p></div></div>
+   <div class="drink"><div class="pic"><svg viewBox="0 -24 220 236" class="mug" aria-hidden="true">
+      <defs>
+        <linearGradient id="m2lq" x1="0" y1="1" x2="0" y2="0"><stop offset="0" stop-color="#d81f3c"/><stop offset="0.35" stop-color="#e8536a"/><stop offset="0.5" stop-color="#f7c9cf"/><stop offset="1" stop-color="#fdeff0"/></linearGradient>
+        <linearGradient id="m2gl" x1="0" x2="1"><stop offset="0" stop-color="#fff" stop-opacity=".45"/><stop offset=".2" stop-color="#fff" stop-opacity=".08"/><stop offset=".8" stop-color="#fff" stop-opacity=".05"/><stop offset="1" stop-color="#fff" stop-opacity=".35"/></linearGradient>
+        <linearGradient id="m2sh" x1="0" x2="1"><stop offset="0" stop-color="#000" stop-opacity=".18"/><stop offset=".35" stop-color="#000" stop-opacity="0"/><stop offset=".75" stop-color="#000" stop-opacity="0"/><stop offset="1" stop-color="#000" stop-opacity=".22"/></linearGradient>
+        <radialGradient id="m2cr" cx=".45" cy=".3" r=".7"><stop offset="0" stop-color="#fff"/><stop offset=".7" stop-color="#f7efe6"/><stop offset="1" stop-color="#e2d3c2"/></radialGradient>
+        <clipPath id="m2cl"><path d="M47 62 L50 178 Q52 192 69 192 L131 192 Q148 192 150 178 L153 62 Z"/></clipPath>
+      </defs>
+      <ellipse cx="104" cy="204" rx="74" ry="8" fill="#000" opacity=".28"/>
+      
+      <path d="M156 66 C196 62 204 142 152 154" stroke="#fff" stroke-opacity=".62" stroke-width="15" fill="none" stroke-linecap="round"/>
+      <path d="M156 66 C196 62 204 142 152 154" stroke="#fff" stroke-opacity=".85" stroke-width="3" fill="none" stroke-linecap="round" transform="translate(-3 0)"/>
+      <path d="M40 40 L44 182 Q46 199 66 199 L134 199 Q154 199 156 182 L160 40 Z" fill="#fff" fill-opacity=".14"/>
+      <g clip-path="url(#m2cl)">
+        <rect x="40" y="62" width="120" height="138" fill="url(#m2lq)"/>
+        <rect x="40" y="62" width="120" height="138" fill="url(#m2sh)"/>
+      </g>
+      <g clip-path="url(#m2cl)">
+          <path d="M58 190 L63 176 L74 172 L80 182 L76 192Z" fill="#c4122f"/><path d="M86 192 L90 182 L100 180 L108 186 L104 194Z" fill="#d91d3a"/>
+          <path d="M114 190 L117 179 L129 175 L137 184 L132 193Z" fill="#b80f2b"/><path d="M98 176 L104 168 L113 171 L110 180Z" fill="#e0334e"/>
+          <path d="M66 174 L72 166 L80 170 L76 177Z" fill="#d91d3a"/>
+          <g fill="#ffe1a8"><circle cx="66" cy="182" r="1"/><circle cx="72" cy="186" r=".9"/><circle cx="94" cy="186" r="1"/><circle cx="101" cy="189" r=".9"/><circle cx="122" cy="183" r="1"/><circle cx="128" cy="188" r=".9"/><circle cx="105" cy="174" r=".9"/><circle cx="72" cy="171" r=".8"/></g>
+          <path d="M60 188 L70 184 M118 186 L128 182" stroke="#ff8fa0" stroke-width="1" opacity=".7"/></g>
+      
+        <ellipse cx="100" cy="62" rx="54" ry="7" fill="#fbe3e6"/>
+        <g transform="translate(140 48) rotate(24)">
+          <path d="M0 -14 C14 -14 16 4 0 20 C-16 4 -14 -14 0 -14Z" fill="#e2263f"/>
+          <path d="M-8 -14 L0 -8 L8 -14 L4 -20 L0 -16 L-4 -20Z" fill="#4e9a43"/>
+          <g fill="#ffd8a8"><circle cx="-5" cy="-4" r="1"/><circle cx="4" cy="-2" r="1"/><circle cx="-2" cy="5" r="1"/><circle cx="5" cy="8" r="1"/><circle cx="-6" cy="8" r="1"/></g>
+        </g>
+      <path d="M40 40 L44 182 Q46 199 66 199 L134 199 Q154 199 156 182 L160 40 Z" fill="url(#m2gl)" stroke="#fff" stroke-opacity=".55" stroke-width="2"/>
+      <rect x="52" y="52" width="7" height="128" rx="3.5" fill="#fff" opacity=".5"/>
+      <rect x="64" y="60" width="2.5" height="100" rx="1.2" fill="#fff" opacity=".35"/>
+      <rect x="143" y="56" width="4" height="118" rx="2" fill="#fff" opacity=".25"/>
+      <ellipse cx="100" cy="40" rx="60" ry="8" fill="none" stroke="#fff" stroke-opacity=".75" stroke-width="2.5"/>
+      <path d="M48 192 Q100 202 152 192" stroke="#fff" stroke-opacity=".5" stroke-width="3" fill="none"/>
+    </svg></div><div class="txt"><h3>Strawberry<br>Milk<br>Latte</h3><hr><p>딸기 라떼<span>5,800원</span></p></div></div>
+   <div class="drink"><div class="pic"><svg viewBox="0 -24 220 236" class="mug" aria-hidden="true">
+      <defs>
+        <linearGradient id="m3lq" x1="0" y1="1" x2="0" y2="0"><stop offset="0" stop-color="#5a2f17"/><stop offset="0.35" stop-color="#a8642d"/><stop offset="0.7" stop-color="#d8a06a"/><stop offset="1" stop-color="#efd2ad"/></linearGradient>
+        <linearGradient id="m3gl" x1="0" x2="1"><stop offset="0" stop-color="#fff" stop-opacity=".45"/><stop offset=".2" stop-color="#fff" stop-opacity=".08"/><stop offset=".8" stop-color="#fff" stop-opacity=".05"/><stop offset="1" stop-color="#fff" stop-opacity=".35"/></linearGradient>
+        <linearGradient id="m3sh" x1="0" x2="1"><stop offset="0" stop-color="#000" stop-opacity=".18"/><stop offset=".35" stop-color="#000" stop-opacity="0"/><stop offset=".75" stop-color="#000" stop-opacity="0"/><stop offset="1" stop-color="#000" stop-opacity=".22"/></linearGradient>
+        <radialGradient id="m3cr" cx=".45" cy=".3" r=".7"><stop offset="0" stop-color="#fff"/><stop offset=".7" stop-color="#f7efe6"/><stop offset="1" stop-color="#e2d3c2"/></radialGradient>
+        <clipPath id="m3cl"><path d="M47 70 L50 178 Q52 192 69 192 L131 192 Q148 192 150 178 L153 70 Z"/></clipPath>
+      </defs>
+      <ellipse cx="104" cy="204" rx="74" ry="8" fill="#000" opacity=".28"/>
+      
+      <path d="M156 66 C196 62 204 142 152 154" stroke="#fff" stroke-opacity=".62" stroke-width="15" fill="none" stroke-linecap="round"/>
+      <path d="M156 66 C196 62 204 142 152 154" stroke="#fff" stroke-opacity=".85" stroke-width="3" fill="none" stroke-linecap="round" transform="translate(-3 0)"/>
+      <path d="M40 40 L44 182 Q46 199 66 199 L134 199 Q154 199 156 182 L160 40 Z" fill="#fff" fill-opacity=".14"/>
+      <g clip-path="url(#m3cl)">
+        <rect x="40" y="70" width="120" height="130" fill="url(#m3lq)"/>
+        <rect x="40" y="70" width="120" height="130" fill="url(#m3sh)"/>
+      </g>
+      
+      
+        <g>
+          <ellipse cx="100" cy="70" rx="54" ry="7" fill="#f3e6d3"/>
+          <path d="M46 70 C40 52 58 44 70 48 C70 28 96 22 104 36 C112 18 140 26 136 46 C150 42 162 56 154 70 Z" fill="url(#m3cr)"/>
+          <path d="M66 50 C80 40 96 42 104 36 M100 50 C114 40 126 40 136 46" stroke="#e3d6c6" stroke-width="3" fill="none" stroke-linecap="round"/>
+          <path d="M60 56 C74 62 84 44 98 52 S124 44 142 58" stroke="#b5671f" stroke-width="3.2" fill="none" stroke-linecap="round"/>
+          <path d="M78 40 C88 48 104 30 118 40" stroke="#c87a2c" stroke-width="2.6" fill="none" stroke-linecap="round"/>
+          <circle cx="90" cy="34" r="1.6" fill="#d9a35a"/><circle cx="112" cy="30" r="1.4" fill="#d9a35a"/><circle cx="126" cy="42" r="1.5" fill="#d9a35a"/><circle cx="74" cy="46" r="1.3" fill="#d9a35a"/>
+        </g>
+      <path d="M40 40 L44 182 Q46 199 66 199 L134 199 Q154 199 156 182 L160 40 Z" fill="url(#m3gl)" stroke="#fff" stroke-opacity=".55" stroke-width="2"/>
+      <rect x="52" y="52" width="7" height="128" rx="3.5" fill="#fff" opacity=".5"/>
+      <rect x="64" y="60" width="2.5" height="100" rx="1.2" fill="#fff" opacity=".35"/>
+      <rect x="143" y="56" width="4" height="118" rx="2" fill="#fff" opacity=".25"/>
+      <ellipse cx="100" cy="40" rx="60" ry="8" fill="none" stroke="#fff" stroke-opacity=".75" stroke-width="2.5"/>
+      <path d="M48 192 Q100 202 152 192" stroke="#fff" stroke-opacity=".5" stroke-width="3" fill="none"/>
+    </svg></div><div class="txt"><h3>Caramel<br>Cream<br>Latte</h3><hr><p>카라멜 크림 라떼<span>5,900원</span></p></div></div>
+   <div class="drink"><div class="pic"><svg viewBox="0 -24 220 236" class="mug" aria-hidden="true">
+      <defs>
+        <linearGradient id="m4lq" x1="0" y1="1" x2="0" y2="0"><stop offset="0" stop-color="#6b3a1d"/><stop offset="0.25" stop-color="#b9824f"/><stop offset="0.6" stop-color="#e6c8a2"/><stop offset="1" stop-color="#f6e8d4"/></linearGradient>
+        <linearGradient id="m4gl" x1="0" x2="1"><stop offset="0" stop-color="#fff" stop-opacity=".45"/><stop offset=".2" stop-color="#fff" stop-opacity=".08"/><stop offset=".8" stop-color="#fff" stop-opacity=".05"/><stop offset="1" stop-color="#fff" stop-opacity=".35"/></linearGradient>
+        <linearGradient id="m4sh" x1="0" x2="1"><stop offset="0" stop-color="#000" stop-opacity=".18"/><stop offset=".35" stop-color="#000" stop-opacity="0"/><stop offset=".75" stop-color="#000" stop-opacity="0"/><stop offset="1" stop-color="#000" stop-opacity=".22"/></linearGradient>
+        <radialGradient id="m4cr" cx=".45" cy=".3" r=".7"><stop offset="0" stop-color="#fff"/><stop offset=".7" stop-color="#f7efe6"/><stop offset="1" stop-color="#e2d3c2"/></radialGradient>
+        <clipPath id="m4cl"><path d="M47 58 L50 178 Q52 192 69 192 L131 192 Q148 192 150 178 L153 58 Z"/></clipPath>
+      </defs>
+      <ellipse cx="104" cy="204" rx="74" ry="8" fill="#000" opacity=".28"/>
+      <g stroke="#fff" stroke-width="3" fill="none" stroke-linecap="round" opacity=".35">
+          <path d="M82 18 C74 8 90 0 82 -12"/><path d="M104 14 C96 2 112 -6 104 -20"/><path d="M124 18 C118 8 130 2 124 -10"/></g>
+      <path d="M156 66 C196 62 204 142 152 154" stroke="#fff" stroke-opacity=".62" stroke-width="15" fill="none" stroke-linecap="round"/>
+      <path d="M156 66 C196 62 204 142 152 154" stroke="#fff" stroke-opacity=".85" stroke-width="3" fill="none" stroke-linecap="round" transform="translate(-3 0)"/>
+      <path d="M40 40 L44 182 Q46 199 66 199 L134 199 Q154 199 156 182 L160 40 Z" fill="#fff" fill-opacity=".14"/>
+      <g clip-path="url(#m4cl)">
+        <rect x="40" y="58" width="120" height="142" fill="url(#m4lq)"/>
+        <rect x="40" y="58" width="120" height="142" fill="url(#m4sh)"/>
+      </g>
+      
+      
+        <ellipse cx="100" cy="58" rx="54" ry="8" fill="#c99363"/>
+        <ellipse cx="100" cy="58" rx="44" ry="6" fill="#f4e7d4"/>
+        <path d="M100 62 C84 56 86 51 94 52 C97 52 99 54 100 55 C101 54 103 52 106 52 C114 51 116 56 100 62Z" fill="#b97e4d" opacity=".75"/>
+      <path d="M40 40 L44 182 Q46 199 66 199 L134 199 Q154 199 156 182 L160 40 Z" fill="url(#m4gl)" stroke="#fff" stroke-opacity=".55" stroke-width="2"/>
+      <rect x="52" y="52" width="7" height="128" rx="3.5" fill="#fff" opacity=".5"/>
+      <rect x="64" y="60" width="2.5" height="100" rx="1.2" fill="#fff" opacity=".35"/>
+      <rect x="143" y="56" width="4" height="118" rx="2" fill="#fff" opacity=".25"/>
+      <ellipse cx="100" cy="40" rx="60" ry="8" fill="none" stroke="#fff" stroke-opacity=".75" stroke-width="2.5"/>
+      <path d="M48 192 Q100 202 152 192" stroke="#fff" stroke-opacity=".5" stroke-width="3" fill="none"/>
+    </svg></div><div class="txt"><h3>Classic<br>Cafe<br>Latte</h3><hr><p>카페라떼<span>4,800원</span></p></div></div>
+   <div class="drink"><div class="pic"><svg viewBox="0 -24 220 236" class="mug" aria-hidden="true">
+      <defs>
+        <linearGradient id="m5lq" x1="0" y1="1" x2="0" y2="0"><stop offset="0" stop-color="#2a120a"/><stop offset="0.6" stop-color="#4b2414"/><stop offset="1" stop-color="#6a3420"/></linearGradient>
+        <linearGradient id="m5gl" x1="0" x2="1"><stop offset="0" stop-color="#fff" stop-opacity=".45"/><stop offset=".2" stop-color="#fff" stop-opacity=".08"/><stop offset=".8" stop-color="#fff" stop-opacity=".05"/><stop offset="1" stop-color="#fff" stop-opacity=".35"/></linearGradient>
+        <linearGradient id="m5sh" x1="0" x2="1"><stop offset="0" stop-color="#000" stop-opacity=".18"/><stop offset=".35" stop-color="#000" stop-opacity="0"/><stop offset=".75" stop-color="#000" stop-opacity="0"/><stop offset="1" stop-color="#000" stop-opacity=".22"/></linearGradient>
+        <radialGradient id="m5cr" cx=".45" cy=".3" r=".7"><stop offset="0" stop-color="#fff"/><stop offset=".7" stop-color="#f7efe6"/><stop offset="1" stop-color="#e2d3c2"/></radialGradient>
+        <clipPath id="m5cl"><path d="M47 62 L50 178 Q52 192 69 192 L131 192 Q148 192 150 178 L153 62 Z"/></clipPath>
+      </defs>
+      <ellipse cx="104" cy="204" rx="74" ry="8" fill="#000" opacity=".28"/>
+      <g stroke="#fff" stroke-width="3" fill="none" stroke-linecap="round" opacity=".35">
+          <path d="M82 18 C74 8 90 0 82 -12"/><path d="M104 14 C96 2 112 -6 104 -20"/><path d="M124 18 C118 8 130 2 124 -10"/></g>
+      <path d="M156 66 C196 62 204 142 152 154" stroke="#fff" stroke-opacity=".62" stroke-width="15" fill="none" stroke-linecap="round"/>
+      <path d="M156 66 C196 62 204 142 152 154" stroke="#fff" stroke-opacity=".85" stroke-width="3" fill="none" stroke-linecap="round" transform="translate(-3 0)"/>
+      <path d="M40 40 L44 182 Q46 199 66 199 L134 199 Q154 199 156 182 L160 40 Z" fill="#fff" fill-opacity=".14"/>
+      <g clip-path="url(#m5cl)">
+        <rect x="40" y="62" width="120" height="138" fill="url(#m5lq)"/>
+        <rect x="40" y="62" width="120" height="138" fill="url(#m5sh)"/>
+      </g>
+      
+      
+        <ellipse cx="100" cy="62" rx="54" ry="7" fill="#5a2d1c"/>
+        <g>
+          <rect x="70" y="50" width="16" height="13" rx="3" fill="#fff6f2" transform="rotate(-12 78 56)"/>
+          <rect x="90" y="46" width="17" height="14" rx="3" fill="#fde1e4" transform="rotate(10 98 53)"/>
+          <rect x="110" y="51" width="16" height="13" rx="3" fill="#fff" transform="rotate(-6 118 57)"/>
+          <rect x="126" y="54" width="13" height="11" rx="3" fill="#ffe9d9" transform="rotate(18 132 59)"/>
+          <rect x="58" y="56" width="12" height="10" rx="3" fill="#fde1e4" transform="rotate(20 64 61)"/>
+        </g>
+        <path d="M64 64 C80 68 120 68 140 64" stroke="#3a1a0f" stroke-width="2" fill="none" opacity=".5"/>
+      <path d="M40 40 L44 182 Q46 199 66 199 L134 199 Q154 199 156 182 L160 40 Z" fill="url(#m5gl)" stroke="#fff" stroke-opacity=".55" stroke-width="2"/>
+      <rect x="52" y="52" width="7" height="128" rx="3.5" fill="#fff" opacity=".5"/>
+      <rect x="64" y="60" width="2.5" height="100" rx="1.2" fill="#fff" opacity=".35"/>
+      <rect x="143" y="56" width="4" height="118" rx="2" fill="#fff" opacity=".25"/>
+      <ellipse cx="100" cy="40" rx="60" ry="8" fill="none" stroke="#fff" stroke-opacity=".75" stroke-width="2.5"/>
+      <path d="M48 192 Q100 202 152 192" stroke="#fff" stroke-opacity=".5" stroke-width="3" fill="none"/>
+    </svg></div><div class="txt"><h3>Marshmallow<br>Hot<br>Chocolate</h3><hr><p>핫 초콜릿<span>5,300원</span></p></div></div>
+  </div>
+  <div class="hero-cta"><a href="#" class="btn-line" data-layer="season">자세히 보기</a></div>
+ </div>
+</section>
+
+<section id="s3-notice">
+ <div class="inner">
+  <svg class="spk" viewBox="0 0 26 26" fill="none" stroke="#fff" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round"><path d="M3 9.5h4.5L13 4.5v17l-5.5-5H3z"/><path d="M17 9c1.4 1.1 1.4 6.9 0 8"/><path d="M20 6c3 2.6 3 11.4 0 14"/></svg>
+  <div class="tick" aria-live="polite"><ul id="tickList">
+   <li>겨울 시즌 음료 5종 출시 안내</li>
+   <li>12월 영업시간 변경 안내 (평일 오전 7시 오픈)</li>
+   <li>원두 소분 판매(100g) 시작 안내</li>
+   <li>매장 앞 주차 이용 안내</li>
+   <li>겨울 시즌 음료 5종 출시 안내</li>
+  </ul></div>
+  <button type="button" class="plus" aria-label="공지 더보기" data-layer="notice"><svg viewBox="0 0 14 14" stroke="#fff" stroke-width="2" stroke-linecap="round"><path d="M7 1v12M1 7h12"/></svg></button>
+ </div>
+</section>
+
+<section id="s4-promotion">
+ <div class="inner">
+  <button type="button" class="promo-bar" id="promoBar" aria-expanded="false"><strong>모닝빈 이벤트</strong><i><svg viewBox="0 0 14 14" fill="none" stroke="#222" stroke-width="2" stroke-linecap="round"><path d="M2 5l5 5 5-5"/></svg></i></button>
+  <div class="promo-wrap">
+   <div class="promo-view">
+    <div class="promo-track" id="promoTrack">
+     <article class="pcard on"><svg viewBox="0 0 320 180" aria-hidden="true"><defs>
+ <linearGradient id="p1bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f9d6dc"/><stop offset="1" stop-color="#f3a7b3"/></linearGradient>
+ <linearGradient id="p1cup" x1="0" y1="1" x2="0" y2="0"><stop offset="0" stop-color="#d3203b"/><stop offset=".45" stop-color="#ef6b80"/><stop offset=".55" stop-color="#fbd6dc"/><stop offset="1" stop-color="#fff4f5"/></linearGradient></defs>
+ <rect width="320" height="180" fill="url(#p1bg)"/>
+ <circle cx="250" cy="40" r="80" fill="#fff" opacity=".25"/>
+ <text x="22" y="62" font-family="Playfair Display,serif" font-size="30" font-weight="700" fill="#9b1028">Strawberry</text>
+ <text x="22" y="92" font-family="Playfair Display,serif" font-size="30" font-weight="700" fill="#9b1028">Season</text>
+ <rect x="22" y="108" width="64" height="2" fill="#9b1028" opacity=".5"/>
+ <g transform="translate(196 34)">
+  <ellipse cx="44" cy="134" rx="56" ry="6" fill="#7a0d20" opacity=".2"/>
+  <path d="M8 6 L14 128 Q15 136 24 136 L64 136 Q73 136 74 128 L80 6Z" fill="url(#p1cup)"/>
+  <path d="M8 6 L14 128 Q15 136 24 136 L64 136 Q73 136 74 128 L80 6Z" fill="#fff" fill-opacity=".12" stroke="#fff" stroke-opacity=".7" stroke-width="2"/>
+  <rect x="17" y="16" width="5" height="104" rx="2.5" fill="#fff" opacity=".5"/>
+  <ellipse cx="44" cy="6" rx="36" ry="5" fill="#fff6f7" stroke="#fff" stroke-width="2"/>
+  <path d="M58 -24 L50 30" stroke="#fff" stroke-width="5" stroke-linecap="round"/><path d="M58 -24 L50 30" stroke="#e2263f" stroke-width="5" stroke-dasharray="5 6" stroke-linecap="round"/>
+ </g>
+ <g transform="translate(150 140) rotate(-20)"><path d="M0 -14 C14 -14 16 4 0 20 C-16 4 -14 -14 0 -14Z" fill="#e2263f"/><path d="M-8 -14 L0 -8 L8 -14 L4 -20 L0 -16 L-4 -20Z" fill="#4e9a43"/></g>
+ <g transform="translate(296 150) rotate(30) scale(.8)"><path d="M0 -14 C14 -14 16 4 0 20 C-16 4 -14 -14 0 -14Z" fill="#cf1a35"/><path d="M-8 -14 L0 -8 L8 -14 L4 -20 L0 -16 L-4 -20Z" fill="#4e9a43"/></g>
+</svg><div><h4>STRAWBERRY SEASON</h4><p>생딸기를 듬뿍 넣은 딸기 음료 3종 출시</p><time>기간 : 2026년 12월 1일 – 2027년 2월 28일</time><a href="#" class="btn-g" data-layer="berry">자세히 보기</a></div></article>
+     <article class="pcard"><svg viewBox="0 0 320 180" aria-hidden="true"><defs>
+ <linearGradient id="p2bg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f4e6d2"/><stop offset="1" stop-color="#e3c9a5"/></linearGradient>
+ <linearGradient id="p2cr" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#e8a34f"/><stop offset=".6" stop-color="#c47324"/><stop offset="1" stop-color="#94511a"/></linearGradient>
+ <linearGradient id="p2cup" x1="0" x2="1"><stop offset="0" stop-color="#e9e3da"/><stop offset=".4" stop-color="#fff"/><stop offset="1" stop-color="#d9d1c5"/></linearGradient></defs>
+ <rect width="320" height="180" fill="url(#p2bg)"/>
+ <rect y="128" width="320" height="52" fill="#b98756"/><rect y="128" width="320" height="4" fill="#9c6c3f"/>
+ <text x="22" y="52" font-family="Noto Sans KR,sans-serif" font-size="13" font-weight="700" fill="#8a4b17" letter-spacing="3">MORNING SET</text>
+ <text x="22" y="82" font-family="Playfair Display,serif" font-size="26" font-weight="700" fill="#3a2418">Croissant</text>
+ <text x="22" y="108" font-family="Playfair Display,serif" font-size="26" font-weight="700" fill="#3a2418">&amp; Coffee</text>
+ <g transform="translate(150 96)">
+</g><g transform="translate(132 72) scale(0.9)">
+  <defs><linearGradient id="crA" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#eeae5c"/><stop offset=".55" stop-color="#c97a2c"/><stop offset="1" stop-color="#93501a"/></linearGradient></defs>
+  <ellipse cx="65" cy="60" rx="66" ry="7" fill="#5e3a1d" opacity=".28"/>
+  <path d="M6 56 C-2 26 28 -6 65 -6 C102 -6 132 26 124 56 C118 60 110 54 106 48 C96 34 82 30 65 30 C48 30 34 34 24 48 C20 54 12 60 6 56Z" fill="url(#crA)"/>
+  <g fill="none" stroke="#7d4012" stroke-width="2.2" stroke-linecap="round" opacity=".75">
+   <path d="M14 26 C26 32 30 42 27 50"/><path d="M34 6 C45 15 49 26 46 34"/><path d="M62 -5 C69 6 70 20 65 30"/><path d="M92 4 C85 14 84 26 86 33"/><path d="M114 22 C104 30 101 40 104 48"/></g>
+  <g fill="none" stroke="#fbd28e" stroke-width="2" stroke-linecap="round" opacity=".75">
+   <path d="M22 36 C30 26 40 18 52 12"/><path d="M76 10 C88 14 100 22 108 32"/><path d="M50 9 C58 7 66 7 72 8"/></g>
+ </g>
+ <g transform="translate(250 44)">
+  <ellipse cx="30" cy="88" rx="44" ry="6" fill="#5e3a1d" opacity=".3"/>
+  <path d="M0 16 L6 80 Q8 88 18 88 L46 88 Q56 88 58 80 L64 16Z" fill="url(#p2cup)"/>
+  <path d="M62 32 C80 32 80 62 58 64" stroke="#e2dbd0" stroke-width="7" fill="none"/>
+  <ellipse cx="32" cy="16" rx="32" ry="6" fill="#3b1d0e"/><ellipse cx="32" cy="16" rx="32" ry="6" fill="none" stroke="#fff" stroke-width="2"/>
+  <ellipse cx="32" cy="16" rx="20" ry="3" fill="#c38a54" opacity=".6"/>
+  <g stroke="#fff" stroke-width="2.4" fill="none" opacity=".6" stroke-linecap="round"><path d="M24 4 C18 -4 30 -10 24 -18"/><path d="M40 4 C34 -4 46 -10 40 -18"/></g>
+ </g>
+</svg><div><h4>MORNING SET</h4><p>오전 10시까지 크루아상 + 아메리카노 6,500원</p><time>기간 : 평일 오전 7시 – 10시</time><a href="#" class="btn-g" data-layer="set">자세히 보기</a></div></article>
+     <article class="pcard"><svg viewBox="0 0 320 180" aria-hidden="true"><defs>
+ <linearGradient id="p3bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#173a5c"/><stop offset="1" stop-color="#0a1e33"/></linearGradient>
+ <linearGradient id="p3bag" x1="0" x2="1"><stop offset="0" stop-color="#7a5232"/><stop offset=".45" stop-color="#a87648"/><stop offset="1" stop-color="#6b4528"/></linearGradient></defs>
+ <rect width="320" height="180" fill="url(#p3bg)"/>
+ <g fill="#d9b06a" opacity=".5"><circle cx="40" cy="30" r="1.4"/><circle cx="120" cy="20" r="1"/><circle cx="290" cy="30" r="1.6"/><circle cx="270" cy="150" r="1.2"/><circle cx="160" cy="160" r="1"/></g>
+ <text x="22" y="60" font-family="Noto Sans KR,sans-serif" font-size="12" font-weight="700" fill="#d9b06a" letter-spacing="3">SINGLE ORIGIN</text>
+ <text x="22" y="92" font-family="Playfair Display,serif" font-size="28" font-weight="700" fill="#e8c27a">Ethiopia</text>
+ <text x="22" y="116" font-family="Noto Sans KR,sans-serif" font-size="12" fill="#c8d3de">Yirgacheffe · Light Roast</text>
+ <g transform="translate(200 26)">
+  <ellipse cx="44" cy="134" rx="54" ry="6" fill="#000" opacity=".35"/>
+  <path d="M8 18 L4 128 Q4 134 10 134 L78 134 Q84 134 84 128 L80 18 Z" fill="url(#p3bag)"/>
+  <path d="M8 18 L18 0 L70 0 L80 18 Z" fill="#5e3c22"/>
+  <rect x="18" y="46" width="52" height="56" rx="4" fill="#f4e9d6"/>
+  <rect x="22" y="50" width="44" height="48" rx="2" fill="none" stroke="#c49a52" stroke-width="1.2"/>
+  <ellipse cx="44" cy="66" rx="9" ry="6" fill="#6b4528"/><path d="M36 66 C40 63 48 69 52 66" stroke="#f4e9d6" stroke-width="1.6" fill="none"/>
+  <rect x="28" y="80" width="32" height="3" fill="#6b4528"/><rect x="32" y="87" width="24" height="2" fill="#a88a64"/>
+ </g>
+</svg><div><h4>SINGLE ORIGIN 2026</h4><p>에티오피아 예가체프 원두 200g 입고</p><time>기간 : 2026년 11월 20일 – 소진 시까지</time><a href="#" class="btn-g" data-layer="origin">자세히 보기</a></div></article>
+    </div>
+    <button type="button" class="parr prev" id="pPrev" aria-label="이전 이벤트"><svg viewBox="0 0 14 14" fill="none" stroke="#222" stroke-width="2" stroke-linecap="round"><path d="M9 2L4 7l5 5"/></svg></button>
+    <button type="button" class="parr next" id="pNext" aria-label="다음 이벤트"><svg viewBox="0 0 14 14" fill="none" stroke="#222" stroke-width="2" stroke-linecap="round"><path d="M5 2l5 5-5 5"/></svg></button>
+   </div>
+   <div class="pctl"><button type="button" class="pause" id="pPause" aria-label="자동 넘김 정지"><svg viewBox="0 0 12 12" fill="#555"><rect x="2" y="1" width="3" height="10"/><rect x="7" y="1" width="3" height="10"/></svg></button><button type="button" class="dot on" aria-label="1번 이벤트"></button><button type="button" class="dot" aria-label="2번 이벤트"></button><button type="button" class="dot" aria-label="3번 이벤트"></button></div>
+  </div>
+ </div>
+</section>
+
+<section id="s5-rewards">
+ <div class="inner">
+  <div class="rw-head reveal">
+   <svg class="rw-em" viewBox="0 0 120 120" aria-hidden="true"><defs><radialGradient id="rwg" cx=".4" cy=".35" r=".75"><stop offset="0" stop-color="#f0b45e"/><stop offset="1" stop-color="#b8661f"/></radialGradient></defs>
+    <circle cx="60" cy="60" r="58" fill="url(#rwg)"/><circle cx="60" cy="60" r="50" fill="none" stroke="#fff3df" stroke-width="2" stroke-dasharray="2 5"/>
+    <path d="M30 70 A30 30 0 0 1 90 70 Z" fill="#fff3df"/>
+    <g stroke="#fff3df" stroke-width="3.5" stroke-linecap="round"><path d="M60 26v8"/><path d="M34 36l5 5"/><path d="M86 36l-5 5"/><path d="M22 58h7"/><path d="M98 58h-7"/></g>
+    <ellipse cx="60" cy="78" rx="19" ry="13" fill="#3a2a22"/><path d="M43 78c9-5 25 5 34 0" stroke="#e7a24a" stroke-width="3" fill="none" stroke-linecap="round"/></svg>
+   <div class="rw-mark"><b>MORNING BEAN</b><span>MEMBERS</span></div>
+  </div>
+  <div class="rw-body reveal">
+   <h2 class="rw-tt">스탬프 모으는 즐거움,<strong>모닝빈 멤버스</strong></h2>
+   <p class="rw-q">음료 한 잔에 스탬프 하나,<br>열 개가 모이면 좋아하는 음료 한 잔을 드려요.<br>적립은 매장 카운터에서 전화번호로 간단하게.</p>
+   <div class="rw-btns"><button type="button" class="fill" data-layer="join">멤버 가입</button><button type="button" class="ln" data-layer="stamp">스탬프 확인</button></div>
+  </div>
+  <div class="rw-div"></div>
+  <div class="rw-side reveal">
+   <p class="rw-p">친구에게 음료 쿠폰을 보내 보세요.<br>받은 쿠폰은 매장 카운터에서<br>바로 사용할 수 있어요.<br>생일 달에는 조각 케이크 할인 쿠폰도<br>함께 보내 드려요.</p>
+   <button type="button" class="rw-wide" data-layer="gift">음료 쿠폰 보내기</button>
+  </div>
+ </div>
+</section>
+
+<section id="s6-season-bean">
+ <div class="rib-v"></div><div class="rib-h a"></div><div class="rib-h b"></div>
+ <div class="script">Winter</div>
+ <div class="inner">
+  <div class="reveal"><svg viewBox="0 0 220 330" class="bag" aria-hidden="true"><defs>
+ <linearGradient id="sbag" x1="0" x2="1"><stop offset="0" stop-color="#8e0d22"/><stop offset=".18" stop-color="#c61a36"/><stop offset=".5" stop-color="#d9233f"/><stop offset=".82" stop-color="#b8152f"/><stop offset="1" stop-color="#7c0a1c"/></linearGradient>
+ <linearGradient id="slab" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#5a3420"/><stop offset="1" stop-color="#3a1f12"/></linearGradient></defs>
+ <ellipse cx="112" cy="318" rx="92" ry="9" fill="#3d0410" opacity=".45"/>
+ <path d="M30 30 L22 300 Q22 312 34 312 L186 312 Q198 312 198 300 L190 30 Z" fill="url(#sbag)"/>
+ <path d="M30 30 L40 6 L180 6 L190 30 Z" fill="#a51229"/>
+ <g stroke="#7a0a1c" stroke-width="1.4" opacity=".6"><path d="M40 6 L42 30"/><path d="M60 6 L61 30"/><path d="M80 6 L80 30"/><path d="M100 6 L100 30"/><path d="M120 6 L120 30"/><path d="M140 6 L140 30"/><path d="M160 6 L159 30"/></g>
+ <rect x="22" y="196" width="176" height="26" fill="#f6ead2"/>
+ <rect x="22" y="200" width="176" height="5" fill="#c9952f"/><rect x="22" y="213" width="176" height="5" fill="#c9952f"/>
+ <rect x="96" y="30" width="28" height="282" fill="#f6ead2"/>
+ <rect x="100" y="30" width="5" height="282" fill="#c9952f"/><rect x="115" y="30" width="5" height="282" fill="#c9952f"/>
+ <path d="M60 52 C78 40 142 40 160 52 L156 84 C140 76 80 76 64 84 Z" fill="url(#slab)"/>
+ <text x="110" y="70" text-anchor="middle" font-family="Noto Sans KR,sans-serif" font-size="13" font-weight="800" fill="#f6ead2">시즌 한정</text>
+ <rect x="58" y="96" width="104" height="92" rx="4" fill="#f9f1e3" opacity=".96"/>
+ <text x="110" y="128" text-anchor="middle" font-family="Dancing Script,cursive" font-size="28" fill="#b3162f">Winter</text>
+ <text x="110" y="146" text-anchor="middle" font-family="Noto Sans KR,sans-serif" font-size="8.5" font-weight="700" fill="#5a3420" letter-spacing="2">BLEND · 2026</text>
+ <path d="M80 158 H140" stroke="#c9952f" stroke-width="1"/>
+ <text x="110" y="174" text-anchor="middle" font-family="Noto Sans KR,sans-serif" font-size="8" fill="#5a3420" letter-spacing="1">DARK ROAST · 250g</text>
+ <rect x="34" y="40" width="10" height="250" rx="5" fill="#fff" opacity=".14"/>
+ <rect x="172" y="40" width="6" height="250" rx="3" fill="#000" opacity=".12"/>
+</svg></div>
+  <div class="reveal">
+   <p class="sb-lead">한겨울 아침을 위해<br>진하게 볶은 시즌 원두</p>
+   <h2 class="sb-name">윈터 블렌드 250g<small>18,000원</small></h2>
+   <p class="sb-desc">맛 : 다크 초콜릿 · 구운 견과 · 시나몬<br>추천 : 핸드드립 · 모카포트 · 라떼<br>매주 월요일에 볶아 일주일 안에만 팔아요.</p>
+   <a href="#" class="btn-line" data-layer="season-bean">자세히 보기</a>
+  </div>
+ </div>
+ <svg viewBox="0 0 120 140" class="trees" aria-hidden="true"><g fill="#e2566a" opacity=".85">
+ <path d="M40 10 L58 50 H48 L64 82 H52 L70 116 H10 L28 82 H16 L32 50 H22 Z"/><rect x="36" y="116" width="8" height="16"/>
+ <path d="M92 34 L106 64 H98 L110 90 H100 L114 118 H70 L84 90 H74 L86 64 H78 Z"/><rect x="88" y="118" width="7" height="14"/></g>
+ <g fill="#fff3c9"><circle cx="40" cy="44" r="2"/><circle cx="50" cy="74" r="2"/><circle cx="30" cy="96" r="2"/><circle cx="96" cy="78" r="1.8"/><circle cx="88" cy="104" r="1.8"/></g></svg>
+</section>
+
+<section id="s7-reserve-bean">
+ <div class="inner rv-grid">
+  <div class="rv-head reveal">
+   <div class="rv-em"><svg viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="20" r="19" fill="#e2b45e"/><circle cx="20" cy="20" r="15.5" fill="none" stroke="#0b2740" stroke-width="1" opacity=".5"/><ellipse cx="20" cy="20" rx="7.5" ry="10" transform="rotate(30 20 20)" fill="#0b2740"/><path d="M16 13.5 C22 17 18 23 24 26.5" stroke="#e2b45e" stroke-width="1.6" fill="none" stroke-linecap="round"/></svg></div>
+   <p class="rv-word">SELECT</p>
+   <h2 class="rv-tt">Single<br>Origin</h2>
+   <p class="rv-cap">ETHIOPIA YIRGACHEFFE · WASHED PROCESS</p>
+   <p class="rv-yr">2026</p>
+  </div>
+  <div class="rv-box reveal"><svg viewBox="0 0 300 330" class="rbox" aria-hidden="true"><defs>
+ <pattern id="dam" width="56" height="64" patternUnits="userSpaceOnUse"><rect width="56" height="64" fill="#eaa99f"/>
+  <g fill="none" stroke="#c4473b" stroke-width="1.6" opacity=".8" stroke-linecap="round">
+   <path d="M28 2 C14 14 14 26 28 32 C42 38 42 50 28 62"/>
+   <path d="M28 18 C20 16 14 10 16 4"/><path d="M28 46 C36 44 42 38 40 32"/></g>
+  <g fill="#c4473b" opacity=".75">
+   <path d="M28 32 C20 26 18 18 24 12 C30 18 32 26 28 32Z"/><path d="M28 32 C36 38 38 46 32 52 C26 46 24 38 28 32Z"/>
+   <path d="M16 4 C10 6 6 12 8 18 C14 16 17 10 16 4Z"/><path d="M40 32 C46 30 50 24 48 18 C42 20 39 26 40 32Z"/>
+   <path d="M0 40 C6 36 12 38 14 44 C8 48 2 46 0 40Z"/><path d="M56 40 C50 36 44 38 42 44 C48 48 54 46 56 40Z"/></g>
+  <g fill="#d9b06a"><circle cx="14" cy="44" r="1.3"/><circle cx="42" cy="12" r="1.3"/></g></pattern>
+ <linearGradient id="gold" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f6dc9a"/><stop offset=".45" stop-color="#c99a4a"/><stop offset=".7" stop-color="#f1d089"/><stop offset="1" stop-color="#a87a32"/></linearGradient>
+ <linearGradient id="ref" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff" stop-opacity=".22"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient>
+ <linearGradient id="rfade" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff" stop-opacity=".25"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient>
+ <clipPath id="rclip"><rect x="0" y="241" width="300" height="100"/></clipPath>
+ <mask id="rmask" maskUnits="userSpaceOnUse" x="70" y="242" width="160" height="77"><rect x="70" y="242" width="160" height="77" fill="url(#rfade)"/></mask>
+ <linearGradient id="rib" x1="0" x2="1"><stop offset="0" stop-color="#b98a3e"/><stop offset=".5" stop-color="#f3d690"/><stop offset="1" stop-color="#a87a32"/></linearGradient></defs>
+ <path d="M14 300 C50 270 70 236 110 200 S210 90 248 50 C262 36 280 30 296 34" stroke="url(#rib)" stroke-width="20" fill="none"/>
+ <rect x="70" y="20" width="160" height="220" rx="8" fill="url(#dam)"/>
+ <rect x="70" y="20" width="160" height="220" rx="8" fill="none" stroke="#b5463c" stroke-width="2"/>
+ <path d="M150 62 L210 92 V168 L150 198 L90 168 V92 Z" fill="#1d1410"/>
+ <path d="M150 70 L203 96 V164 L150 190 L97 164 V96 Z" fill="url(#gold)"/>
+ <path d="M150 78 L196 100 V160 L150 182 L104 160 V100 Z" fill="none" stroke="#5a3d16" stroke-width="1.2"/>
+ <ellipse cx="150" cy="97" rx="7" ry="5" fill="#2a1d10"/><path d="M143.5 97 C146 95 154 99 156.5 97" stroke="#e9c77f" stroke-width="1.2" fill="none"/>
+ <text x="150" y="124" text-anchor="middle" font-family="Noto Sans KR,sans-serif" font-size="6" font-weight="700" letter-spacing=".8" fill="#2a1d10">MORNING BEAN SELECT</text>
+ <text x="150" y="146" text-anchor="middle" font-family="Playfair Display,serif" font-size="21" font-weight="700" fill="#1d1410">Ethiopia</text>
+ <text x="150" y="160" text-anchor="middle" font-family="Noto Sans KR,sans-serif" font-size="6" fill="#2a1d10" letter-spacing=".6">YIRGACHEFFE · WASHED</text>
+ <text x="150" y="174" text-anchor="middle" font-family="Noto Sans KR,sans-serif" font-size="8" font-weight="700" fill="#2a1d10">2026</text>
+ <g mask="url(#rmask)"><g transform="translate(0 482) scale(1 -1)"><rect x="70" y="20" width="160" height="220" rx="8" fill="url(#dam)"/></g></g>
+ <g clip-path="url(#rclip)"><path d="M14 300 C50 270 70 236 110 200 S210 90 248 50 C262 36 280 30 296 34" stroke="url(#rib)" stroke-width="20" fill="none"/></g>
+ <path d="M226 228 C246 236 262 230 268 214 C274 196 258 186 248 196 C240 206 252 226 274 238 C286 244 296 250 300 262" stroke="url(#rib)" stroke-width="12" fill="none" stroke-linecap="round"/>
+ <path d="M70 34 C56 30 46 40 52 50 C58 60 72 54 74 44 C76 30 62 16 44 18" stroke="url(#rib)" stroke-width="10" fill="none" stroke-linecap="round"/>
+ <g fill="#f1d089"><circle cx="40" cy="220" r="1.6"/><circle cx="270" cy="40" r="2"/><circle cx="282" cy="120" r="1.4"/><circle cx="24" cy="120" r="1.2"/><circle cx="256" cy="250" r="1.8"/></g>
+</svg></div>
+  <div class="rv-foot reveal">
+   <p class="rv-note">가볍고 산뜻한 꽃 향의 라이트 로스트</p>
+   <p class="rv-sp">200g · 16,000원</p>
+   <a href="#" class="btn-line" data-layer="origin">자세히 보기</a>
+  </div>
+ </div>
+</section>
+
+<section id="s8-favorite">
+ <div class="inner">
+  <div><svg viewBox="0 0 375 400" class="collage" aria-hidden="true"><defs>
+ <filter id="ds" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="6" stdDeviation="6" flood-opacity=".45"/></filter>
+ <linearGradient id="tmb" x1="0" x2="1"><stop offset="0" stop-color="#e9e1d4"/><stop offset=".45" stop-color="#fffaf2"/><stop offset="1" stop-color="#d6ccbd"/></linearGradient>
+ <linearGradient id="mugc" x1="0" x2="1"><stop offset="0" stop-color="#d8cfc3"/><stop offset=".4" stop-color="#fbf7f1"/><stop offset="1" stop-color="#cfc5b8"/></linearGradient>
+ <linearGradient id="cake" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff"/><stop offset="1" stop-color="#f3e3d0"/></linearGradient></defs>
+ <g transform="translate(170 210) rotate(20) scale(1)"><ellipse rx="7" ry="5" fill="#4a2a17"/><path d="M-6 0 C-2 -2 2 2 6 0" stroke="#22120a" stroke-width="1.3" fill="none"/><ellipse rx="5" ry="2" cx="-1" cy="-2.4" fill="#8a5a36" opacity=".55"/></g><g transform="translate(186 222) rotate(-30) scale(1.1)"><ellipse rx="7" ry="5" fill="#4a2a17"/><path d="M-6 0 C-2 -2 2 2 6 0" stroke="#22120a" stroke-width="1.3" fill="none"/><ellipse rx="5" ry="2" cx="-1" cy="-2.4" fill="#8a5a36" opacity=".55"/></g><g transform="translate(200 205) rotate(60) scale(0.9)"><ellipse rx="7" ry="5" fill="#4a2a17"/><path d="M-6 0 C-2 -2 2 2 6 0" stroke="#22120a" stroke-width="1.3" fill="none"/><ellipse rx="5" ry="2" cx="-1" cy="-2.4" fill="#8a5a36" opacity=".55"/></g><g transform="translate(214 228) rotate(10) scale(1)"><ellipse rx="7" ry="5" fill="#4a2a17"/><path d="M-6 0 C-2 -2 2 2 6 0" stroke="#22120a" stroke-width="1.3" fill="none"/><ellipse rx="5" ry="2" cx="-1" cy="-2.4" fill="#8a5a36" opacity=".55"/></g><g transform="translate(178 240) rotate(80) scale(1)"><ellipse rx="7" ry="5" fill="#4a2a17"/><path d="M-6 0 C-2 -2 2 2 6 0" stroke="#22120a" stroke-width="1.3" fill="none"/><ellipse rx="5" ry="2" cx="-1" cy="-2.4" fill="#8a5a36" opacity=".55"/></g><g transform="translate(230 212) rotate(-50) scale(1)"><ellipse rx="7" ry="5" fill="#4a2a17"/><path d="M-6 0 C-2 -2 2 2 6 0" stroke="#22120a" stroke-width="1.3" fill="none"/><ellipse rx="5" ry="2" cx="-1" cy="-2.4" fill="#8a5a36" opacity=".55"/></g><g transform="translate(246 236) rotate(30) scale(0.9)"><ellipse rx="7" ry="5" fill="#4a2a17"/><path d="M-6 0 C-2 -2 2 2 6 0" stroke="#22120a" stroke-width="1.3" fill="none"/><ellipse rx="5" ry="2" cx="-1" cy="-2.4" fill="#8a5a36" opacity=".55"/></g><g transform="translate(160 232) rotate(-10) scale(0.9)"><ellipse rx="7" ry="5" fill="#4a2a17"/><path d="M-6 0 C-2 -2 2 2 6 0" stroke="#22120a" stroke-width="1.3" fill="none"/><ellipse rx="5" ry="2" cx="-1" cy="-2.4" fill="#8a5a36" opacity=".55"/></g><g transform="translate(300 300) rotate(40) scale(1)"><ellipse rx="7" ry="5" fill="#4a2a17"/><path d="M-6 0 C-2 -2 2 2 6 0" stroke="#22120a" stroke-width="1.3" fill="none"/><ellipse rx="5" ry="2" cx="-1" cy="-2.4" fill="#8a5a36" opacity=".55"/></g><g transform="translate(318 318) rotate(-20) scale(1.1)"><ellipse rx="7" ry="5" fill="#4a2a17"/><path d="M-6 0 C-2 -2 2 2 6 0" stroke="#22120a" stroke-width="1.3" fill="none"/><ellipse rx="5" ry="2" cx="-1" cy="-2.4" fill="#8a5a36" opacity=".55"/></g><g transform="translate(330 290) rotate(70) scale(0.9)"><ellipse rx="7" ry="5" fill="#4a2a17"/><path d="M-6 0 C-2 -2 2 2 6 0" stroke="#22120a" stroke-width="1.3" fill="none"/><ellipse rx="5" ry="2" cx="-1" cy="-2.4" fill="#8a5a36" opacity=".55"/></g><g transform="translate(60 330) rotate(10) scale(1)"><ellipse rx="7" ry="5" fill="#4a2a17"/><path d="M-6 0 C-2 -2 2 2 6 0" stroke="#22120a" stroke-width="1.3" fill="none"/><ellipse rx="5" ry="2" cx="-1" cy="-2.4" fill="#8a5a36" opacity=".55"/></g><g transform="translate(40 300) rotate(-60) scale(0.9)"><ellipse rx="7" ry="5" fill="#4a2a17"/><path d="M-6 0 C-2 -2 2 2 6 0" stroke="#22120a" stroke-width="1.3" fill="none"/><ellipse rx="5" ry="2" cx="-1" cy="-2.4" fill="#8a5a36" opacity=".55"/></g><g transform="translate(260 340) rotate(50) scale(1)"><ellipse rx="7" ry="5" fill="#4a2a17"/><path d="M-6 0 C-2 -2 2 2 6 0" stroke="#22120a" stroke-width="1.3" fill="none"/><ellipse rx="5" ry="2" cx="-1" cy="-2.4" fill="#8a5a36" opacity=".55"/></g>
+ <g transform="translate(16 40) rotate(-12)" filter="url(#ds)">
+  <rect width="120" height="138" fill="#fff"/><rect x="8" y="8" width="104" height="100" fill="#f1d6b3"/>
+  <g transform="translate(14 40) scale(0.71)">
+  <defs><linearGradient id="crB" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#eeae5c"/><stop offset=".55" stop-color="#c97a2c"/><stop offset="1" stop-color="#93501a"/></linearGradient></defs>
+  <ellipse cx="65" cy="60" rx="66" ry="7" fill="#5e3a1d" opacity=".28"/>
+  <path d="M6 56 C-2 26 28 -6 65 -6 C102 -6 132 26 124 56 C118 60 110 54 106 48 C96 34 82 30 65 30 C48 30 34 34 24 48 C20 54 12 60 6 56Z" fill="url(#crB)"/>
+  <g fill="none" stroke="#7d4012" stroke-width="2.2" stroke-linecap="round" opacity=".75">
+   <path d="M14 26 C26 32 30 42 27 50"/><path d="M34 6 C45 15 49 26 46 34"/><path d="M62 -5 C69 6 70 20 65 30"/><path d="M92 4 C85 14 84 26 86 33"/><path d="M114 22 C104 30 101 40 104 48"/></g>
+  <g fill="none" stroke="#fbd28e" stroke-width="2" stroke-linecap="round" opacity=".75">
+   <path d="M22 36 C30 26 40 18 52 12"/><path d="M76 10 C88 14 100 22 108 32"/><path d="M50 9 C58 7 66 7 72 8"/></g>
+ </g>
+ </g>
+ <g transform="translate(140 14) rotate(3)" filter="url(#ds)">
+  <rect width="124" height="150" fill="#fff"/><rect x="8" y="8" width="108" height="110" fill="#c7202f"/>
+  <ellipse cx="62" cy="104" rx="40" ry="7" fill="#8f0f1d"/>
+  <path d="M28 60 L28 100 Q62 110 96 100 L96 60 Z" fill="url(#cake)"/>
+  <rect x="28" y="72" width="68" height="6" fill="#f39aa6"/><rect x="28" y="86" width="68" height="6" fill="#f39aa6"/>
+  <ellipse cx="62" cy="60" rx="34" ry="8" fill="#fff"/>
+  <g fill="#fff"><circle cx="40" cy="54" r="6"/><circle cx="54" cy="50" r="6"/><circle cx="70" cy="50" r="6"/><circle cx="84" cy="54" r="6"/></g>
+  <path d="M62 30 C74 30 76 44 62 54 C48 44 50 30 62 30Z" fill="#e2263f"/><path d="M56 30 L62 34 L68 30 L64 25 L62 28 L60 25Z" fill="#4e9a43"/>
+ </g>
+ <g transform="translate(262 42) rotate(10)" filter="url(#ds)">
+  <rect width="118" height="138" fill="#fff"/><rect x="8" y="8" width="102" height="100" fill="#efe3cf"/>
+  <path d="M38 30 L42 100 Q43 104 48 104 L70 104 Q75 104 76 100 L80 30Z" fill="#fff" fill-opacity=".5" stroke="#bfb19b" stroke-width="1.6"/>
+  <path d="M40 50 L42 100 Q43 104 48 104 L70 104 Q75 104 76 100 L78 50Z" fill="#3b1d0e"/>
+  <rect x="46" y="54" width="10" height="10" rx="2" fill="#fff" opacity=".55" transform="rotate(12 51 59)"/><rect x="60" y="62" width="10" height="10" rx="2" fill="#fff" opacity=".5" transform="rotate(-8 65 67)"/>
+  <path d="M66 14 L58 80" stroke="#2b2b2b" stroke-width="4" stroke-linecap="round"/>
+ </g>
+ <g transform="translate(18 212) rotate(-14)" filter="url(#ds)">
+  <rect x="0" y="0" width="58" height="176" rx="12" fill="url(#tmb)"/>
+  <rect x="-3" y="-8" width="64" height="22" rx="7" fill="#b45c1f"/>
+  <rect x="0" y="54" width="58" height="26" fill="#c9772f"/>
+  <text x="29" y="72" text-anchor="middle" font-family="Noto Sans KR,sans-serif" font-size="9" font-weight="800" fill="#fff" letter-spacing="1">MORNING</text>
+  <path d="M40 -8 L52 -60" stroke="#fff" stroke-width="5" stroke-linecap="round"/><path d="M40 -8 L52 -60" stroke="#c9772f" stroke-width="5" stroke-dasharray="6 6" stroke-linecap="round"/>
+  <rect x="8" y="90" width="6" height="74" rx="3" fill="#fff" opacity=".7"/>
+ </g>
+ <g transform="translate(130 250)" filter="url(#ds)">
+  <rect x="0" y="0" width="92" height="118" rx="6" fill="#d6b48a"/>
+  <path d="M0 0 H92 V18 H0 Z" fill="#c29d72"/><path d="M38 0 V18 M54 0 V18" stroke="#a88258" stroke-width="2"/>
+  <circle cx="46" cy="64" r="22" fill="#f6efe4"/>
+  <ellipse cx="46" cy="66" rx="10" ry="7" fill="#5a3420"/><path d="M37 66 C42 63 50 69 55 66" stroke="#f6efe4" stroke-width="1.8" fill="none"/>
+  <text x="46" y="104" text-anchor="middle" font-family="Noto Sans KR,sans-serif" font-size="9" font-weight="800" fill="#5a3420" letter-spacing="1.5">DRIP BAG</text>
+ </g>
+ <g transform="translate(244 236)" filter="url(#ds)">
+  <path d="M84 30 C116 28 118 80 84 84" stroke="#c9772f" stroke-width="12" fill="none"/>
+  <path d="M0 10 L4 104 Q6 118 22 118 L66 118 Q82 118 84 104 L88 10 Z" fill="url(#mugc)"/>
+  <ellipse cx="44" cy="10" rx="44" ry="9" fill="#efe7db"/><ellipse cx="44" cy="11" rx="38" ry="6" fill="#4b2414"/>
+  <g fill="#c9772f" opacity=".9"><circle cx="24" cy="50" r="5"/><circle cx="44" cy="64" r="5"/><circle cx="64" cy="50" r="5"/><circle cx="34" cy="84" r="5"/><circle cx="56" cy="88" r="5"/></g>
+ </g>
+</svg></div>
+  <div class="reveal">
+   <h2 class="fav-tt">커피부터 갓 구운 빵까지,<br><b>모닝빈의 아침 메뉴</b></h2>
+   <p class="fav-p"><b>커피</b> · 고소하고 진한 아침의 첫 잔<br><b>베이커리</b> · 매일 아침 가게에서 굽는 빵<br><b>시즌 음료</b> · 계절마다 바뀌는 한정 메뉴<br><b>원두 · 드립백</b> · 집에서도 즐기는 모닝빈</p>
+   <a href="#" class="btn-line" data-layer="menu">자세히 보기</a>
+  </div>
+ </div>
+</section>
+
+<section id="s9-magazine">
+ <div class="inner">
+  <div class="mag-frame reveal">
+   <svg viewBox="0 0 60 44" class="mag-em" aria-hidden="true"><g fill="none" stroke="#111" stroke-width="2.2" stroke-linejoin="round">
+ <path d="M30 10 C24 5 14 4 4 6 V38 C14 36 24 37 30 41 C36 37 46 36 56 38 V6 C46 4 36 5 30 10Z"/><path d="M30 10 V41"/>
+ <path d="M10 14 C15 13 20 13 24 15 M10 21 C15 20 20 20 24 22 M10 28 C15 27 20 27 24 29" stroke-width="1.4" stroke-linecap="round"/></g>
+ <ellipse cx="44" cy="20" rx="6" ry="8" transform="rotate(25 44 20)" fill="#111"/><path d="M41 14.5 C46 18 41 22 46 26" stroke="#fff" stroke-width="1.3" fill="none"/></svg>
+   <h2 class="mag-tt">COFFEE NOTE</h2>
+   <p class="mag-p">집에서 맛있게 내리는 방법부터<br>원두가 자란 산지 이야기까지 담았어요.</p>
+   <div class="mag-btn in"><a href="#" data-layer="note">자세히 보기</a></div>
+  </div>
+  <div class="mag-col">
+   <div class="mc2"><svg viewBox="0 0 176 166" aria-hidden="true"><defs>
+ <linearGradient id="wood" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#8d8a86"/><stop offset="1" stop-color="#4b4845"/></linearGradient>
+ <linearGradient id="wine" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#6a1323"/><stop offset="1" stop-color="#2e0610"/></linearGradient></defs>
+ <rect width="176" height="166" fill="url(#wood)"/>
+ <g stroke="#3d3a37" stroke-width="1" opacity=".5"><path d="M0 30 C60 26 120 36 176 30"/><path d="M0 70 C50 64 130 78 176 70"/><path d="M0 112 C70 106 110 118 176 110"/><path d="M0 150 C60 146 120 156 176 150"/></g>
+ <path d="M40 20 C40 54 50 70 66 72 C82 70 92 54 92 20 Z" fill="#fff" fill-opacity=".2" stroke="#e8e6e2" stroke-width="1.5"/>
+ <path d="M42 40 C44 58 52 68 66 70 C80 68 88 58 90 40 Z" fill="url(#wine)"/>
+ <path d="M66 72 V120" stroke="#e8e6e2" stroke-width="2"/><ellipse cx="66" cy="122" rx="20" ry="4" fill="none" stroke="#e8e6e2" stroke-width="2"/>
+ <g transform="translate(96 96)">
+  <path d="M0 6 L4 50 Q6 56 14 56 L44 56 Q52 56 54 50 L58 6Z" fill="#3b2a20"/>
+  <path d="M56 16 C72 16 72 42 54 44" stroke="#3b2a20" stroke-width="6" fill="none"/>
+  <ellipse cx="29" cy="6" rx="29" ry="5" fill="#a8743f"/><ellipse cx="29" cy="6" rx="22" ry="3" fill="#c99363"/>
+ </g>
+ <g transform="translate(110 40) rotate(20) scale(0.8)"><ellipse rx="7" ry="5" fill="#4a2a17"/><path d="M-6 0 C-2 -2 2 2 6 0" stroke="#22120a" stroke-width="1.3" fill="none"/><ellipse rx="5" ry="2" cx="-1" cy="-2.4" fill="#8a5a36" opacity=".55"/></g><g transform="translate(126 50) rotate(-30) scale(0.8)"><ellipse rx="7" ry="5" fill="#4a2a17"/><path d="M-6 0 C-2 -2 2 2 6 0" stroke="#22120a" stroke-width="1.3" fill="none"/><ellipse rx="5" ry="2" cx="-1" cy="-2.4" fill="#8a5a36" opacity=".55"/></g><g transform="translate(140 36) rotate(60) scale(0.8)"><ellipse rx="7" ry="5" fill="#4a2a17"/><path d="M-6 0 C-2 -2 2 2 6 0" stroke="#22120a" stroke-width="1.3" fill="none"/><ellipse rx="5" ry="2" cx="-1" cy="-2.4" fill="#8a5a36" opacity=".55"/></g><g transform="translate(150 58) rotate(10) scale(0.8)"><ellipse rx="7" ry="5" fill="#4a2a17"/><path d="M-6 0 C-2 -2 2 2 6 0" stroke="#22120a" stroke-width="1.3" fill="none"/><ellipse rx="5" ry="2" cx="-1" cy="-2.4" fill="#8a5a36" opacity=".55"/></g><g transform="translate(120 70) rotate(80) scale(0.8)"><ellipse rx="7" ry="5" fill="#4a2a17"/><path d="M-6 0 C-2 -2 2 2 6 0" stroke="#22120a" stroke-width="1.3" fill="none"/><ellipse rx="5" ry="2" cx="-1" cy="-2.4" fill="#8a5a36" opacity=".55"/></g><g transform="translate(140 76) rotate(-40) scale(0.8)"><ellipse rx="7" ry="5" fill="#4a2a17"/><path d="M-6 0 C-2 -2 2 2 6 0" stroke="#22120a" stroke-width="1.3" fill="none"/><ellipse rx="5" ry="2" cx="-1" cy="-2.4" fill="#8a5a36" opacity=".55"/></g><g transform="translate(30 140) rotate(30) scale(0.8)"><ellipse rx="7" ry="5" fill="#4a2a17"/><path d="M-6 0 C-2 -2 2 2 6 0" stroke="#22120a" stroke-width="1.3" fill="none"/><ellipse rx="5" ry="2" cx="-1" cy="-2.4" fill="#8a5a36" opacity=".55"/></g><g transform="translate(16 120) rotate(-20) scale(0.8)"><ellipse rx="7" ry="5" fill="#4a2a17"/><path d="M-6 0 C-2 -2 2 2 6 0" stroke="#22120a" stroke-width="1.3" fill="none"/><ellipse rx="5" ry="2" cx="-1" cy="-2.4" fill="#8a5a36" opacity=".55"/></g>
+</svg></div>
+   <div class="mc1"><svg viewBox="0 0 190 230" aria-hidden="true"><defs>
+ <clipPath id="ar"><path d="M0 230 V95 A95 95 0 0 1 190 95 V230 Z"/></clipPath>
+ <linearGradient id="arbg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f4efe7"/><stop offset="1" stop-color="#d9cfc0"/></linearGradient>
+ <linearGradient id="kettle" x1="0" x2="1"><stop offset="0" stop-color="#6f6f72"/><stop offset=".45" stop-color="#e2e2e4"/><stop offset="1" stop-color="#5c5c60"/></linearGradient></defs>
+ <g clip-path="url(#ar)">
+  <rect width="190" height="230" fill="url(#arbg)"/>
+  <rect y="170" width="190" height="60" fill="#9b7653"/><rect y="170" width="190" height="4" fill="#7c5a3b"/>
+  <path d="M70 92 L130 92 L108 134 L92 134 Z" fill="#f2f0ec" stroke="#cfc6b8" stroke-width="1.5"/>
+  <path d="M74 98 L126 98 L106 130 L94 130 Z" fill="#7a4b2a"/>
+  <path d="M78 136 L122 136 L118 174 Q100 180 82 174 Z" fill="#fff" fill-opacity=".35" stroke="#cfc6b8" stroke-width="1.5"/>
+  <path d="M80 150 L120 150 L118 172 Q100 178 82 172 Z" fill="#5a2f17"/>
+  <path d="M100 134 V150" stroke="#5a2f17" stroke-width="2"/>
+  <g transform="translate(12 30) rotate(18)">
+   <path d="M20 30 L70 30 L66 74 Q45 82 24 74 Z" fill="url(#kettle)"/>
+   <path d="M66 40 C86 40 98 30 110 22" stroke="#8a8a8e" stroke-width="5" fill="none" stroke-linecap="round"/>
+   <path d="M22 40 C4 40 4 66 24 66" stroke="#3a3a3c" stroke-width="5" fill="none"/>
+   <rect x="34" y="22" width="22" height="9" rx="3" fill="#3a3a3c"/>
+  </g>
+  <path d="M118 66 C114 76 108 84 104 94" stroke="#c9a37a" stroke-width="2" fill="none" opacity=".8"/>
+ </g></svg></div>
+   <div class="mc3"><svg viewBox="0 0 224 160" aria-hidden="true"><defs>
+ <linearGradient id="cafebg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#5a3b26"/><stop offset="1" stop-color="#2c1a10"/></linearGradient>
+ <linearGradient id="tray" x1="0" x2="1"><stop offset="0" stop-color="#a0682f"/><stop offset=".5" stop-color="#c88a4a"/><stop offset="1" stop-color="#8a5726"/></linearGradient></defs>
+ <rect width="224" height="160" fill="url(#cafebg)"/>
+ <rect x="150" y="0" width="74" height="90" fill="#7c5838" opacity=".6"/><rect x="156" y="6" width="62" height="78" fill="#d9c3a2" opacity=".25"/>
+ <ellipse cx="100" cy="122" rx="110" ry="40" fill="#6e4a2c"/>
+ <path d="M30 110 L170 110 L180 140 L20 140 Z" fill="url(#tray)"/>
+ <g transform="translate(70 62)">
+  <path d="M0 8 L5 50 Q7 58 16 58 L48 58 Q57 58 59 50 L64 8Z" fill="#2a211c"/>
+  <path d="M62 18 C80 18 80 44 60 46" stroke="#2a211c" stroke-width="6" fill="none"/>
+  <ellipse cx="32" cy="8" rx="32" ry="6" fill="#d8b47c"/>
+  <g stroke="#a26a35" stroke-width="2"><path d="M8 8 H56"/><path d="M14 4 L50 12"/><path d="M14 12 L50 4"/></g>
+ </g>
+</svg></div>
+   <div class="mc4"><svg viewBox="0 0 230 150" aria-hidden="true"><defs>
+ <clipPath id="pill"><rect width="230" height="150" rx="75"/></clipPath>
+ <radialGradient id="crema" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#e0b27e"/><stop offset=".75" stop-color="#b9783f"/><stop offset="1" stop-color="#7a4520"/></radialGradient>
+ <linearGradient id="tbl" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#cfc3b2"/><stop offset="1" stop-color="#a99a86"/></linearGradient></defs>
+ <g clip-path="url(#pill)">
+  <rect width="230" height="150" fill="url(#tbl)"/>
+  <ellipse cx="118" cy="80" rx="96" ry="78" fill="#f4efe8"/><ellipse cx="118" cy="80" rx="96" ry="78" fill="none" stroke="#ddd3c6" stroke-width="3"/>
+  <circle cx="118" cy="78" r="62" fill="#fbf8f3"/><circle cx="118" cy="78" r="52" fill="url(#crema)"/>
+  <g fill="#fbf3e6">
+   <path d="M118 128 C112 118 112 104 118 96 C124 104 124 118 118 128Z"/>
+   <path d="M118 98 C96 96 90 84 98 78 C104 86 112 90 118 90 C124 90 132 86 138 78 C146 84 140 96 118 98Z"/>
+   <path d="M118 86 C100 84 96 72 104 66 C108 74 114 78 118 78 C122 78 128 74 132 66 C140 72 136 84 118 86Z"/>
+   <path d="M118 74 C106 72 104 62 110 57 C113 63 116 66 118 66 C120 66 123 63 126 57 C132 62 130 72 118 74Z"/>
+   <path d="M118 62 C111 61 110 53 114 49 C116 54 117 55 118 55 C119 55 120 54 122 49 C126 53 125 61 118 62Z"/>
+   <ellipse cx="118" cy="43" rx="7" ry="6"/></g>
+  <path d="M214 60 C232 60 236 100 214 104" stroke="#f4efe8" stroke-width="14" fill="none"/>
+  <rect x="10" y="118" width="40" height="6" rx="3" fill="#b58b5c" transform="rotate(-20 30 121)"/><ellipse cx="18" cy="128" rx="9" ry="6" fill="#b58b5c" transform="rotate(-20 18 128)"/>
+ </g></svg></div>
+   <span class="mag-line"></span>
+  </div>
+  <div class="mag-btn out"><a href="#" data-layer="note">자세히 보기</a></div>
+ </div>
+</section>
+
+<section id="s10-store">
+ <svg class="st-pat" viewBox="0 0 375 90" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><g transform="translate(20 20) rotate(30) scale(1.4)"><ellipse rx="7" ry="5" fill="#4a2a17"/><path d="M-6 0 C-2 -2 2 2 6 0" stroke="#22120a" stroke-width="1.3" fill="none"/><ellipse rx="5" ry="2" cx="-1" cy="-2.4" fill="#8a5a36" opacity=".55"/></g><g transform="translate(70 50) rotate(-20) scale(1.4)"><ellipse rx="7" ry="5" fill="#4a2a17"/><path d="M-6 0 C-2 -2 2 2 6 0" stroke="#22120a" stroke-width="1.3" fill="none"/><ellipse rx="5" ry="2" cx="-1" cy="-2.4" fill="#8a5a36" opacity=".55"/></g><g transform="translate(130 18) rotate(60) scale(1.4)"><ellipse rx="7" ry="5" fill="#4a2a17"/><path d="M-6 0 C-2 -2 2 2 6 0" stroke="#22120a" stroke-width="1.3" fill="none"/><ellipse rx="5" ry="2" cx="-1" cy="-2.4" fill="#8a5a36" opacity=".55"/></g><g transform="translate(180 60) rotate(10) scale(1.4)"><ellipse rx="7" ry="5" fill="#4a2a17"/><path d="M-6 0 C-2 -2 2 2 6 0" stroke="#22120a" stroke-width="1.3" fill="none"/><ellipse rx="5" ry="2" cx="-1" cy="-2.4" fill="#8a5a36" opacity=".55"/></g><g transform="translate(240 26) rotate(-40) scale(1.4)"><ellipse rx="7" ry="5" fill="#4a2a17"/><path d="M-6 0 C-2 -2 2 2 6 0" stroke="#22120a" stroke-width="1.3" fill="none"/><ellipse rx="5" ry="2" cx="-1" cy="-2.4" fill="#8a5a36" opacity=".55"/></g><g transform="translate(300 54) rotate(70) scale(1.4)"><ellipse rx="7" ry="5" fill="#4a2a17"/><path d="M-6 0 C-2 -2 2 2 6 0" stroke="#22120a" stroke-width="1.3" fill="none"/><ellipse rx="5" ry="2" cx="-1" cy="-2.4" fill="#8a5a36" opacity=".55"/></g><g transform="translate(350 20) rotate(20) scale(1.4)"><ellipse rx="7" ry="5" fill="#4a2a17"/><path d="M-6 0 C-2 -2 2 2 6 0" stroke="#22120a" stroke-width="1.3" fill="none"/><ellipse rx="5" ry="2" cx="-1" cy="-2.4" fill="#8a5a36" opacity=".55"/></g></svg>
+ <div class="inner">
+  <div class="st-pics"><div class="c1"><svg viewBox="0 0 300 300" aria-hidden="true"><defs>
+ <clipPath id="ci1"><circle cx="150" cy="150" r="150"/></clipPath>
+ <linearGradient id="wall" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#d9a774"/><stop offset="1" stop-color="#b07a48"/></linearGradient>
+ <radialGradient id="lamp" cx=".5" cy=".3" r=".7"><stop offset="0" stop-color="#fff6dc"/><stop offset="1" stop-color="#f1d7a6"/></radialGradient>
+ <radialGradient id="glow" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#fff3d0" stop-opacity=".8"/><stop offset="1" stop-color="#fff3d0" stop-opacity="0"/></radialGradient></defs>
+ <g clip-path="url(#ci1)">
+  <rect width="300" height="300" fill="url(#wall)"/>
+  <path d="M60 0 V170 M90 0 V170 M120 0 V170 M150 0 V170" stroke="#9c6a3c" stroke-width="2" opacity=".5"/>
+  <rect x="0" y="40" width="54" height="130" fill="#cfe1ea"/><rect x="0" y="40" width="54" height="130" fill="none" stroke="#7a5536" stroke-width="5"/><path d="M27 40 V170 M0 105 H54" stroke="#7a5536" stroke-width="3"/>
+  <rect x="74" y="30" width="120" height="8" fill="#6e4426"/><rect x="74" y="74" width="120" height="8" fill="#6e4426"/>
+  <g fill="#f3ede4"><rect x="82" y="12" width="12" height="18" rx="2"/><rect x="100" y="16" width="12" height="14" rx="2"/><rect x="118" y="10" width="12" height="20" rx="2"/><rect x="150" y="14" width="14" height="16" rx="2"/><rect x="170" y="12" width="12" height="18" rx="2"/></g>
+  <g fill="#8a5a36"><rect x="84" y="54" width="14" height="20" rx="2"/><rect x="104" y="58" width="14" height="16" rx="2"/><rect x="124" y="52" width="14" height="22" rx="2"/><rect x="146" y="56" width="14" height="18" rx="2"/><rect x="166" y="54" width="14" height="20" rx="2"/></g>
+  <path d="M0 170 H300 V300 H0Z" fill="#7c4f2c"/>
+  <rect x="10" y="150" width="160" height="64" rx="4" fill="#efe6d8"/><rect x="10" y="150" width="160" height="10" fill="#d6c4a8"/>
+  <path d="M20 214 V256 M160 214 V256" stroke="#5a3820" stroke-width="5"/>
+  <rect x="34" y="118" width="40" height="32" rx="3" fill="#2f2f31"/><rect x="40" y="124" width="28" height="12" rx="2" fill="#4a4a4e"/>
+  <rect x="120" y="128" width="16" height="22" rx="3" fill="#c9772f"/><rect x="142" y="132" width="14" height="18" rx="3" fill="#e9dccb"/>
+  <circle cx="186" cy="132" r="62" fill="url(#glow)"/>
+  <path d="M156 140 C156 114 170 104 186 104 C202 104 216 114 216 140 Z" fill="url(#lamp)"/>
+  <rect x="184" y="140" width="4" height="114" fill="#3a2a20"/>
+  <ellipse cx="186" cy="256" rx="15" ry="4" fill="#2a1d16"/>
+  <g transform="translate(200 0)">
+   <rect x="4" y="194" width="40" height="36" rx="9" fill="#e09a5c"/>
+   <rect x="0" y="224" width="48" height="18" rx="6" fill="#d0874a"/>
+   <path d="M7 242 L5 262 M41 242 L43 262" stroke="#4a2c16" stroke-width="3.5" stroke-linecap="round"/>
+  </g>
+  <g stroke="#4a2c16" stroke-width="3.5" stroke-linecap="round">
+   <path d="M50 240 L45 290 M70 240 L75 290 M47 268 H73"/>
+   <path d="M114 240 L109 290 M134 240 L139 290 M111 268 H137"/></g>
+  <ellipse cx="60" cy="238" rx="19" ry="5.5" fill="#5e3a20"/><ellipse cx="60" cy="236" rx="19" ry="4.5" fill="#8a5a36"/>
+  <ellipse cx="124" cy="238" rx="19" ry="5.5" fill="#5e3a20"/><ellipse cx="124" cy="236" rx="19" ry="4.5" fill="#8a5a36"/>
+ </g></svg></div><div class="c2"><svg viewBox="0 0 200 200" aria-hidden="true"><defs>
+ <clipPath id="ci2"><circle cx="100" cy="100" r="100"/></clipPath>
+ <linearGradient id="dusk" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2d3e7a"/><stop offset=".6" stop-color="#6d7fb8"/><stop offset="1" stop-color="#c7b9c9"/></linearGradient>
+ <linearGradient id="win" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffe7a8"/><stop offset="1" stop-color="#f3b45c"/></linearGradient></defs>
+ <g clip-path="url(#ci2)">
+  <rect width="200" height="200" fill="url(#dusk)"/>
+  <g fill="#fff" opacity=".7"><circle cx="40" cy="30" r="1"/><circle cx="150" cy="22" r="1.2"/><circle cx="170" cy="50" r=".9"/></g>
+  <rect x="30" y="60" width="150" height="100" fill="#8a5a3c"/>
+  <g stroke="#6e4428" stroke-width="2" opacity=".6"><path d="M30 76 H180 M30 92 H180 M30 108 H180"/></g>
+  <rect x="24" y="52" width="162" height="12" fill="#3a2a22"/>
+  <text x="105" y="61.5" text-anchor="middle" font-family="Noto Sans KR,sans-serif" font-size="8" font-weight="800" fill="#f1c27a" letter-spacing="2">MORNING BEAN</text>
+  <path d="M34 96 L176 96 L168 112 L42 112 Z" fill="#c9772f"/>
+  <g fill="#f6efe4"><path d="M54 96 L60 96 L56 112 L50 112Z"/><path d="M78 96 L84 96 L82 112 L76 112Z"/><path d="M102 96 L108 96 L108 112 L102 112Z"/><path d="M126 96 L132 96 L134 112 L128 112Z"/><path d="M150 96 L156 96 L160 112 L154 112Z"/></g>
+  <rect x="44" y="116" width="62" height="44" fill="url(#win)"/><path d="M75 116 V160" stroke="#3a2a22" stroke-width="2"/>
+  <rect x="118" y="116" width="34" height="44" fill="#ffd98c"/><rect x="118" y="116" width="34" height="44" fill="none" stroke="#3a2a22" stroke-width="3"/>
+  <circle cx="146" cy="140" r="2" fill="#3a2a22"/>
+  <rect x="0" y="160" width="200" height="40" fill="#5b5f6b"/><path d="M0 172 H200" stroke="#80848f" stroke-width="2"/>
+  <ellipse cx="18" cy="150" rx="26" ry="30" fill="#2f4a37"/><ellipse cx="190" cy="148" rx="24" ry="32" fill="#344f3c"/>
+  <rect x="160" y="150" width="14" height="12" fill="#c9772f"/><path d="M158 150 C160 140 174 140 176 150" fill="#5a8a50"/>
+ </g></svg></div></div>
+  <div class="reveal">
+   <h2 class="st-tt">동네 골목 안 <b>작은 커피집, 모닝빈</b></h2>
+   <p class="st-sub">아침 7시, 갓 구운 빵 냄새가 먼저 반겨요.</p>
+   <p class="st-p"><b>브런치 타임</b>에는 창가 자리에서 느긋하게<br><b>테이크아웃</b>은 미리 주문하고 바로 픽업<br><b>원두 클래스</b>는 토요일 오전, 이웃과 함께</p>
+   <a href="#" class="st-btn" data-layer="map">오시는 길</a>
+   <p class="st-last">자리가 넉넉하지 않은 작은 가게예요. 포장도 환영해요.</p>
+  </div>
+ </div>
+</section>
+</main>
+
+<footer id="s11-footer">
+ <ul class="ft-acc">
+  <li><button type="button">CUSTOMER SERVICE<svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round"><path d="M5 9l7 7 7-7"/></svg></button><h5>CUSTOMER SERVICE</h5><ul><li><a href="#">자주 묻는 질문</a></li><li><a href="#">1:1 문의</a></li></ul></li>
+  <li><button type="button">ABOUT US<svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round"><path d="M5 9l7 7 7-7"/></svg></button><h5>ABOUT US</h5><ul><li><a href="#">모닝빈 이야기</a></li><li><a href="#">로스팅 철학</a></li></ul></li>
+  <li><button type="button">GROUP ORDER<svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round"><path d="M5 9l7 7 7-7"/></svg></button><h5>GROUP ORDER</h5><ul><li><a href="#">단체 주문</a></li><li><a href="#">케이터링</a></li></ul></li>
+  <li><button type="button">PARTNERSHIP<svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round"><path d="M5 9l7 7 7-7"/></svg></button><h5>PARTNERSHIP</h5><ul><li><a href="#">원두 납품 문의</a></li></ul></li>
+  <li><button type="button">ONLINE COMMUNITY<svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round"><path d="M5 9l7 7 7-7"/></svg></button><h5>ONLINE COMMUNITY</h5><ul><li><a href="#">인스타그램</a></li><li><a href="#">블로그</a></li></ul></li>
+  <li><button type="button">RECRUIT<svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round"><path d="M5 9l7 7 7-7"/></svg></button><h5>RECRUIT</h5><ul><li><a href="#">바리스타 채용</a></li></ul></li>
+ </ul>
+ <div class="ft-big"><a href="#">HOME</a><a href="#s2-hero">MENU</a><a href="#s10-store">STORE</a></div>
+ <div class="ft-roll">
+  <div class="roll-box"><ul id="rollList">
+   <li><svg viewBox="0 0 20 20" fill="none" stroke="#e7a24a" stroke-width="1.6"><circle cx="10" cy="10" r="8"/><path d="M10 5v5l3 2" stroke-linecap="round"/></svg>평일 07:00 – 21:00 영업</li>
+   <li><svg viewBox="0 0 20 20" fill="none" stroke="#e7a24a" stroke-width="1.6"><rect x="3" y="4" width="14" height="13" rx="2"/><path d="M3 8h14M7 2v4M13 2v4"/></svg>주말 08:00 – 20:00 영업</li>
+   <li><svg viewBox="0 0 20 20" fill="none" stroke="#e7a24a" stroke-width="1.6"><ellipse cx="10" cy="10" rx="6" ry="8"/><path d="M8 3c3 4-1 10 2 14"/></svg>매주 월요일 원두 로스팅 데이</li>
+   <li><svg viewBox="0 0 20 20" fill="none" stroke="#e7a24a" stroke-width="1.6"><circle cx="10" cy="10" r="8"/><path d="M10 5v5l3 2" stroke-linecap="round"/></svg>평일 07:00 – 21:00 영업</li>
+  </ul></div>
+  <button type="button" class="roll-pause" id="rollPause" aria-label="배너 정지"><svg viewBox="0 0 10 10" fill="#888"><rect x="1" y="0" width="3" height="10"/><rect x="6" y="0" width="3" height="10"/></svg></button>
+ </div>
+ <nav class="ft-links" aria-label="약관"><a href="#" class="hl">개인정보처리방침</a><a href="#">영상정보처리기기 운영방침</a><a href="#">홈페이지 이용약관</a><a href="#" class="hl">위치정보 이용약관</a><a href="#">모바일 쿠폰 이용약관</a><a href="#">멤버스 이용약관</a></nav>
+ <div class="ft-sbtn"><a href="#s10-store">오시는 길</a><a href="#" data-layer="group">단체 주문 문의</a><a href="#">사이트 맵</a></div>
+ <ul class="ft-info"><li>상호 : 모닝빈 커피 · 대표 : 준비 중</li><li>사업자등록번호 : 준비 중</li><li>주소 : 준비 중</li><li>TEL : 준비 중</li></ul>
+ <p class="ft-copy">ⓒ 2026 Morning Bean Coffee. All Rights Reserved.</p>
+</footer>
+
+<div class="layer" id="layer" role="dialog" aria-modal="true"><div class="sheet"><h6 id="lyT"></h6><p id="lyP"></p><div class="row"><button type="button" class="no" id="lyNo">닫기</button><button type="button" class="ok" id="lyOk">확인</button></div></div></div>
+
+<script>
+(function(){
+ var $=function(s,c){return (c||document).querySelector(s)}, $$=function(s,c){return Array.prototype.slice.call((c||document).querySelectorAll(s))};
+ var timers=[];
+ /* drawer */
+ var dim=$('#dim'),dr=$('#drawer'),cl=$('#drClose');
+ function drawer(on){dim.classList.toggle('on',on);dr.classList.toggle('on',on);cl.classList.toggle('on',on);document.body.style.overflow=on?'hidden':'';document.body.classList.toggle('dr-on',on)}
+ $('#burger').onclick=function(){drawer(true)};cl.onclick=dim.onclick=function(){drawer(false)};
+ $$('.dr-nav a').forEach(function(a){a.addEventListener('click',function(){drawer(false)})});
+ function acc(sel){$$(sel+'>li>button').forEach(function(b){b.onclick=function(){var li=b.parentNode,o=li.classList.contains('open');$$(sel+'>li').forEach(function(x){x.classList.remove('open')});if(!o)li.classList.add('open')}})}
+ acc('.dr-nav');acc('.ft-acc');
+ /* mini banner */
+ $('#miniX').addEventListener('click',function(e){e.stopPropagation();$('#miniBn').style.display='none'});
+ /* data-go */
+ $$('[data-go]').forEach(function(b){b.onclick=function(){$(b.getAttribute('data-go')).scrollIntoView({behavior:'smooth'})}});
+ /* layer */
+ var info={
+  my:['내 정보','멤버 로그인 기능은 준비 중입니다.\n매장에서 스탬프 카드를 받아 적립하실 수 있어요.'],
+  season:['겨울 시즌 음료','꿀 유자차 5,500원 · 딸기 라떼 5,800원\n카라멜 크림 라떼 5,900원 · 카페라떼 4,800원\n핫 초콜릿 5,300원\n가격은 매장 사정에 따라 달라질 수 있어요.'],
+  notice:['공지사항','· 겨울 시즌 음료 5종 출시 안내\n· 12월 영업시간 변경 안내\n· 원두 소분 판매(100g) 시작 안내\n· 매장 앞 주차 이용 안내'],
+  berry:['딸기 시즌','딸기 라떼 5,800원 · 딸기 크림 케이크 6,200원\n딸기 요거트 스무디 6,000원\n기간 : 2026년 12월 1일 – 2027년 2월 28일'],
+  set:['모닝 세트','크루아상 + 아메리카노 6,500원\n평일 오전 7시 – 10시에만 주문할 수 있어요.'],
+  origin:['싱글 오리진 · 에티오피아','예가체프 워시드 200g 16,000원\n자스민과 베르가못 향이 나는 가벼운 로스팅 원두입니다.'],
+  join:['멤버 가입','멤버 가입은 매장 카운터에서 도와드려요.\n온라인 가입 기능은 준비 중입니다.'],
+  stamp:['스탬프 확인','스탬프 조회 기능은 준비 중입니다.'],
+  gift:['모바일 쿠폰 선물하기','모바일 쿠폰 선물 기능은 준비 중입니다.'],
+  'season-bean':['윈터 블렌드 250g','18,000원 · 다크 로스트\n홀빈 / 핸드드립용 / 에스프레소용 분쇄 가능'],
+  menu:['메뉴 안내','아메리카노 4,300원 · 카페라떼 4,800원\n바닐라 라떼 5,300원 · 크루아상 3,800원\n소금빵 3,500원 · 드립백 5입 9,000원'],
+  note:['커피 노트','원두 이야기와 집에서 맛있게 내리는 방법을 정리한 커피 노트를 준비하고 있어요.'],
+  map:['오시는 길','주소 : 준비 중\n영업시간 : 평일 07:00 – 21:00 / 주말 08:00 – 20:00'],
+  group:['단체 주문 문의','단체 주문 연락처는 준비 중입니다.']
+ };
+ var ly=$('#layer');
+ function openLy(k){var d=info[k]||['안내','준비 중입니다.'];$('#lyT').textContent=d[0];$('#lyP').textContent=d[1];ly.classList.add('on')}
+ function closeLy(){ly.classList.remove('on')}
+ $$('[data-layer]').forEach(function(el){el.addEventListener('click',function(e){e.preventDefault();openLy(el.getAttribute('data-layer'))})});
+ $('#lyNo').onclick=$('#lyOk').onclick=closeLy;ly.addEventListener('click',function(e){if(e.target===ly)closeLy()});
+ $$('a[href="#"]').forEach(function(a){if(!a.hasAttribute('data-layer'))a.addEventListener('click',function(e){e.preventDefault();window.scrollTo({top:0,behavior:'smooth'})})});
+ /* notice ticker */
+ var tl=$('#tickList'),ti=0,tn=tl.children.length;
+ function tick(){ti++;tl.style.transition='transform .5s ease';tl.style.transform='translateY(-'+(ti*22)+'px)';if(ti===tn-1){setTimeout(function(){tl.style.transition='none';ti=0;tl.style.transform='translateY(0)'},520)}}
+ timers.push(setInterval(tick,3200));
+ /* promotion */
+ var ps=$('#s4-promotion'),pb=$('#promoBar');
+ pb.onclick=function(){var o=ps.classList.toggle('open');pb.setAttribute('aria-expanded',o);place(false)};
+ var track=$('#promoTrack'),real=$$('.pcard'),N=real.length,dots=$$('.pctl .dot'),pos=1,pauto=true;
+ var cf=real[0].cloneNode(true),cl2=real[N-1].cloneNode(true);
+ [cf,cl2].forEach(function(c){c.classList.remove('on');c.setAttribute('aria-hidden','true');$$('[data-layer]',c).forEach(function(el){el.setAttribute('tabindex','-1');el.addEventListener('click',function(e){e.preventDefault();openLy(el.getAttribute('data-layer'))})})});
+ track.insertBefore(cl2,real[0]);track.appendChild(cf);
+ var cards=$$('.pcard',track);
+ function cw(){return cards[0].getBoundingClientRect().width+parseFloat(getComputedStyle(track).columnGap||12)}
+ function place(anim){track.style.transition=anim?'transform .5s ease':'none';track.style.transform='translateX(-'+(pos*cw())+'px)';cards.forEach(function(c,i){c.classList.toggle('on',i===pos);c.classList.toggle('prv',i===pos-1)});var r=(pos-1+N)%N;dots.forEach(function(d,i){d.classList.toggle('on',i===r)})}
+ function pgo(n){pos=n+1;place(true);if(pos===0)setTimeout(function(){pos=N;place(false)},520);if(pos===N+1)setTimeout(function(){pos=1;place(false)},520)}
+ Object.defineProperty(window,'__pi',{get:function(){return (pos-1+N)%N}});
+ var pi=0;function cur(){return (pos-1+N)%N}
+ place(false);
+ $('#pPrev').onclick=function(){pgo(cur()-1)};$('#pNext').onclick=function(){pgo(cur()+1)};
+ dots.forEach(function(d,i){d.onclick=function(){pgo(i)}});
+ var pp=$('#pPause');
+ pp.onclick=function(){pauto=!pauto;pp.innerHTML=pauto?'<svg viewBox="0 0 12 12" fill="#555"><rect x="2" y="1" width="3" height="10"/><rect x="7" y="1" width="3" height="10"/></svg>':'<svg viewBox="0 0 12 12" fill="#555"><path d="M2 1l9 5-9 5z"/></svg>';pp.setAttribute('aria-label',pauto?'자동 넘김 정지':'자동 넘김 시작')};
+ timers.push(setInterval(function(){if(pauto&&ps.classList.contains('open'))pgo(cur()+1)},4000));
+ window.addEventListener('resize',function(){place(false)});
+ /* footer roll */
+ var rl=$('#rollList'),ri=0,rn=rl.children.length,rauto=true,rp=$('#rollPause');
+ timers.push(setInterval(function(){if(!rauto)return;ri++;rl.style.transition='transform .5s';rl.style.transform='translateY(-'+(ri*40)+'px)';if(ri===rn-1)setTimeout(function(){rl.style.transition='none';ri=0;rl.style.transform='none'},520)},3000));
+ rp.onclick=function(){rauto=!rauto;rp.innerHTML=rauto?'<svg viewBox="0 0 10 10" fill="#888"><rect x="1" y="0" width="3" height="10"/><rect x="6" y="0" width="3" height="10"/></svg>':'<svg viewBox="0 0 10 10" fill="#888"><path d="M1 0l8 5-8 5z"/></svg>'};
+ /* footer link line ends */
+ var fl=$$('.ft-links a');function eol(){fl.forEach(function(a,i){var n=fl[i+1];a.classList.toggle('eol',!n||n.offsetTop>a.offsetTop+2)})}eol();window.addEventListener('resize',eol);document.fonts&&document.fonts.ready.then(eol);
+ /* reveal */
+ var rv=$$('.reveal');
+ if('IntersectionObserver' in window){var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.15});rv.forEach(function(el){io.observe(el)})}else rv.forEach(function(el){el.classList.add('in')});
+ /* capture helpers */
+ window.__stopAuto=function(){timers.forEach(clearInterval);rv.forEach(function(el){el.classList.add('in')})};
+ window.__promo=function(open,n){ps.classList.toggle('open',open);if(typeof n==='number'){pos=n+1;place(false)}};
+ window.__drawer=drawer;
+})();
+</script>
+</body>
+</html>

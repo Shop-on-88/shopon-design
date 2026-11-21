@@ -1,0 +1,973 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>윤결 스파</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500&family=Manrope:wght@200;300;400;500&family=Cormorant+Garamond:ital,wght@1,500;1,600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#161616; --sub:#5d5d5d; --gray:#9a9a9a; --line:#e7e7e5;
+  --card:#f4f4f2; --sky:#edf3f7; --sky2:#d9e5ee; --navy:#24324b;
+  --stone:#d9d3c8; --sage:#8b917c; --red:#cf4a3f;
+  --hdr:92px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font-family:'Manrope','Noto Sans KR',sans-serif;color:var(--ink);background:#fff;font-size:14px;line-height:1.6;overflow-x:hidden;word-break:keep-all}
+a{color:inherit;text-decoration:none}
+button,input,select,textarea{font:inherit;}
+button,dl,dt,dd,address,input,select,textarea{font-family:inherit}
+button{color:inherit;background:none;border:0;cursor:pointer}
+ul{list-style:none}
+svg{display:block}
+.en{font-family:'Manrope','Noto Sans KR',sans-serif}
+.wrap{width:100%;max-width:1200px;margin:0 auto;padding:0 24px}
+.h-lg{font-size:26px;font-weight:300;letter-spacing:-.02em;line-height:1.3;text-align:center}
+.h-md{font-size:20px;font-weight:300;letter-spacing:-.01em;line-height:1.35}
+.eyebrow{display:block;font-family:'Manrope','Noto Sans KR',sans-serif;font-size:11px;letter-spacing:.24em;color:var(--gray);text-align:center;margin-bottom:10px;font-weight:400}
+section{scroll-margin-top:var(--hdr)}
+
+/* s1 header */
+#s1-header{position:fixed;left:0;right:0;top:0;z-index:50;transition:background .3s,border-color .3s;border-bottom:1px solid transparent}
+#s1-header.solid{background:#fff;border-color:var(--line)}
+.hdr-in{max-width:1200px;margin:0 auto;padding:0 20px;display:flex;flex-wrap:wrap;align-items:center}
+.logo{display:flex;align-items:center;gap:8px;height:56px}
+.logo svg{width:26px;height:26px}
+.logo b{font-family:'Manrope','Noto Sans KR',sans-serif;font-weight:300;font-size:21px;letter-spacing:.02em}
+.logo small{font-family:'Manrope','Noto Sans KR',sans-serif;font-size:9px;letter-spacing:.3em;color:var(--sub);margin-left:2px;align-self:flex-end;padding-bottom:17px}
+.hdr-tools{margin-left:auto;display:flex;align-items:center;gap:14px}
+.hdr-tools .region{font-size:12px;color:var(--gray);margin-right:2px}
+.hdr-tools a{position:relative;display:block}
+.hdr-tools svg{width:22px;height:22px;stroke:var(--ink);fill:none;stroke-width:1.1}
+.hdr-tools .cnt{position:absolute;left:0;right:0;top:8px;text-align:center;font-family:'Manrope','Noto Sans KR',sans-serif;font-size:9px}
+.gnb{order:3;width:100%;display:flex;justify-content:center;gap:48px;height:36px;align-items:flex-start}
+.gnb a{font-size:13px;letter-spacing:.02em;padding:4px 0;position:relative}
+.gnb a::after{content:"";position:absolute;left:50%;right:50%;bottom:0;height:1px;background:var(--ink);transition:.25s}
+.gnb a:hover::after,.gnb a.on::after{left:0;right:0}
+
+/* s2 hero */
+#s2-hero{padding-top:var(--hdr)}
+.hero{position:relative;width:100%;max-width:1200px;margin:0 auto;aspect-ratio:375/250;overflow:hidden;background:var(--sky)}
+.slide{position:absolute;inset:0;opacity:0;transition:opacity .9s ease;display:grid;grid-template-columns:1fr 1fr;grid-template-rows:auto 1fr auto;padding:16px 18px 12px}
+.slide.on{opacity:1}
+.slide .t{grid-column:1/3;text-align:center;font-size:13px;font-weight:500;color:var(--navy);letter-spacing:-.01em}
+.slide .big{align-self:center;color:var(--navy)}
+.slide .big em{display:block;font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:600;font-size:64px;line-height:.95;letter-spacing:-.02em}
+.slide .big span{display:block;font-size:12px;margin-bottom:4px;color:var(--navy)}
+.slide .pic{align-self:center;justify-self:center;width:100%;max-width:190px;position:relative}
+.slide .tag{position:absolute;right:4px;top:6px;width:38px;height:38px;border-radius:50%;background:#f3e2b8;color:#6b5527;font-family:'Manrope','Noto Sans KR',sans-serif;font-size:10px;font-weight:500;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 6px rgba(36,50,75,.12)}
+.slide .per{grid-column:1/3;text-align:left;padding-right:104px;font-size:10px;color:var(--navy);opacity:.8;letter-spacing:.02em}
+.slide.s-a{background:linear-gradient(115deg,#f4f8fb 0%,#e3edf4 55%,#d6e3ec 100%)}
+.slide.s-b{background:linear-gradient(115deg,#f2f4f6 0%,#e4e8ec 60%,#d3d9df 100%)}
+.slide.s-c{background:linear-gradient(115deg,#f6f5f2 0%,#e8ebee 55%,#d8e2ea 100%)}
+.hero-ui{position:absolute;right:12px;bottom:10px;display:flex;align-items:center;gap:8px;z-index:3}
+.hero-ui .num{font-family:'Manrope','Noto Sans KR',sans-serif;font-size:10px;color:var(--navy);letter-spacing:.06em}
+.hero-ui button{width:22px;height:22px;display:flex;align-items:center;justify-content:center}
+.hero-ui svg{width:12px;height:12px;stroke:var(--navy);fill:none;stroke-width:1.4}
+.hero-bar{position:absolute;left:0;bottom:0;height:2px;background:var(--navy);opacity:.5;width:0;z-index:3}
+
+/* product-like cards */
+.sec{padding:96px 0 0}
+.rail{display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-padding-left:24px;padding:34px 24px 6px;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+.rail::-webkit-scrollbar{display:none}
+.card{flex:0 0 58%;scroll-snap-align:start;min-width:0}
+.card .img{position:relative;aspect-ratio:1/1;background:var(--card);overflow:hidden}
+.card .img svg{width:100%;height:100%}
+.badge{position:absolute;right:10px;top:10px;width:34px;height:34px;border-radius:50%;background:var(--red);color:#fff;font-family:'Manrope','Noto Sans KR',sans-serif;font-size:10px;font-weight:500;display:flex;align-items:center;justify-content:center}
+.card .meta{display:flex;gap:12px;align-items:flex-start;padding-top:14px}
+.card .code{font-family:'Manrope','Noto Sans KR',sans-serif;font-weight:200;font-size:30px;line-height:1;letter-spacing:-.02em;min-width:44px}
+.card .nm{font-size:14px;line-height:1.35}
+.card .pr{font-family:'Manrope','Noto Sans KR',sans-serif;font-size:13px;color:var(--ink);margin-top:3px}
+.card .pr s{color:var(--gray);font-size:11px;margin-right:4px}
+.card .tm{font-size:12px;color:var(--gray);margin-top:1px}
+.rail-bar{height:1px;background:var(--line);margin:22px 24px 0;position:relative}
+.rail-bar i{position:absolute;left:0;top:-1px;height:3px;background:var(--ink);width:30%;transition:left .15s}
+
+/* s4 */
+.rec{display:grid;grid-template-columns:minmax(0,1fr);margin-top:34px;align-items:start}
+.rec blockquote{padding:0 24px;font-size:13.5px;line-height:1.85;color:#2a2a2a}
+.rec .rail{padding:28px 24px 6px;gap:14px;scroll-padding-left:24px}
+.rec .card{flex:0 0 200px}
+
+/* s5 */
+.num-wrap{display:grid;grid-template-columns:minmax(0,1fr);grid-template-areas:"txt" "img" "fnd";align-items:start}
+.num-txt{grid-area:txt;padding:0 24px 30px}
+.num-txt h2{font-family:'Manrope','Noto Sans KR',sans-serif;font-weight:300;font-size:19px;line-height:1.45;letter-spacing:.01em;margin-bottom:14px}
+.num-txt p{font-size:13.5px;line-height:1.8;color:#2c2c2c}
+.num-txt p+p{margin-top:14px}
+.num-img{grid-area:img;margin-left:24px;height:420px;overflow:hidden}
+.num-img svg{width:100%;height:100%}
+.finder{grid-area:fnd;margin:30px 24px 0;padding-bottom:6px;border-top:1px solid var(--ink);padding-top:18px}
+.finder .q{font-size:13px;margin-bottom:12px}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{border:1px solid #cfcfcc;padding:8px 13px;font-size:12.5px;transition:.2s;background:#fff}
+.chip:hover{border-color:var(--ink)}
+.chip.on{background:var(--ink);color:#fff;border-color:var(--ink)}
+.chip:disabled{color:#c4c4c4;border-color:#ececec;text-decoration:line-through;cursor:default;background:#fafafa}
+.finder .ans{display:flex;align-items:center;gap:14px;margin-top:16px;min-height:52px;padding:10px 0;border-bottom:1px solid var(--line)}
+.finder .ans b{font-family:'Manrope','Noto Sans KR',sans-serif;font-weight:200;font-size:34px;line-height:1;min-width:52px}
+.finder .ans span{font-size:13px;color:var(--sub)}
+.finder .ans a{margin-left:auto;font-size:12px;border-bottom:1px solid var(--ink);white-space:nowrap}
+
+/* s6 program */
+.tabs{display:flex;justify-content:center;gap:0;margin:30px 24px 0;border-bottom:1px solid var(--line)}
+.tab{flex:1;max-width:150px;padding:12px 0;font-size:14px;color:var(--gray);position:relative;transition:color .2s}
+.tab.on{color:var(--ink)}
+.tab::after{content:"";position:absolute;left:0;right:0;bottom:-1px;height:2px;background:var(--ink);transform:scaleX(0);transition:transform .3s}
+.tab.on::after{transform:scaleX(1)}
+.plist{padding:0 24px}
+.plist ul{display:none}
+.plist ul.on{display:block;animation:fade .45s ease}
+@keyframes fade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+.prow{display:grid;grid-template-columns:52px 1fr auto;gap:4px 12px;padding:22px 0;border-bottom:1px solid var(--line);align-items:start}
+.prow .code{font-family:'Manrope','Noto Sans KR',sans-serif;font-weight:200;font-size:28px;line-height:1}
+.prow h3{font-size:15px;font-weight:400;line-height:1.35}
+.prow p{grid-column:2/4;font-size:12.5px;color:var(--sub);line-height:1.7}
+.prow .r{text-align:right;font-family:'Manrope','Noto Sans KR',sans-serif;font-size:14px;white-space:nowrap}
+.prow .r small{display:block;font-family:'Manrope','Noto Sans KR',sans-serif;font-size:11.5px;color:var(--gray)}
+.pnote{font-size:11.5px;color:var(--gray);margin-top:14px}
+
+/* s7 guide (list) */
+.guide{display:grid;gap:0}
+.guide h2{margin-bottom:20px}
+.glist div{display:grid;grid-template-columns:104px 1fr;font-size:13.5px;line-height:1.6;padding:3px 0}
+.glist dt{font-family:'Manrope','Noto Sans KR',sans-serif;color:#2b2b2b}
+.glist dd{color:#2b2b2b}
+
+/* s8 note */
+.note h2{margin-bottom:18px}
+.note p{font-size:13.5px;line-height:1.8;color:#2b2b2b}
+.note q{display:block;margin-top:22px;font-size:13.5px;quotes:"\201C" "\201D"}
+.note cite{display:block;font-style:normal;font-family:'Manrope','Noto Sans KR',sans-serif;font-size:13px;margin-top:2px}
+
+/* s9 booking */
+.bk{margin-top:30px;display:grid;gap:26px;grid-template-columns:minmax(0,1fr)}
+.bk>*{min-width:0}
+.step h3{display:flex;align-items:baseline;gap:10px;font-size:14px;font-weight:400;margin-bottom:12px}
+.step h3 i{font-style:normal;font-family:'Manrope','Noto Sans KR',sans-serif;font-weight:200;font-size:24px;line-height:1}
+.mon{font-size:12.5px;color:var(--sub);margin:-4px 0 8px}
+.dates{display:flex;gap:8px;overflow-x:auto;scrollbar-width:none;padding-bottom:2px;margin-right:-24px;padding-right:24px;scroll-padding-left:0}
+.dates::-webkit-scrollbar{display:none}
+.date{flex:0 0 56px;border:1px solid #cfcfcc;padding:9px 0;text-align:center;background:#fff;transition:.2s}
+.date small{display:block;font-size:10.5px;color:var(--gray)}
+.date b{display:block;font-family:'Manrope','Noto Sans KR',sans-serif;font-weight:300;font-size:18px;line-height:1.25}
+.date.on{background:var(--ink);color:#fff;border-color:var(--ink)}
+.date.on small{color:#cfcfcf}
+.date b.m{font-size:14px;line-height:1.6}
+.date.sun b{color:var(--red)}
+.date.on.sun b{color:#fff}
+.times{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
+.times .chip{padding:9px 0;text-align:center;font-family:'Manrope','Noto Sans KR',sans-serif;font-size:13px}
+.sum{background:var(--sky);padding:18px 18px 20px}
+.sum dl div{display:flex;justify-content:space-between;font-size:13px;padding:4px 0}
+.sum dt{color:var(--sub)}
+.sum dd{text-align:right}
+.btn{display:block;width:100%;margin-top:14px;background:var(--ink);color:#fff;padding:15px 0;font-size:14px;letter-spacing:.04em;text-align:center;transition:opacity .2s}
+.btn:disabled{opacity:.3;cursor:default}
+.done{display:none;margin-top:12px;border-top:1px solid #c9d6e0;padding-top:12px;font-size:12.5px;color:var(--navy);line-height:1.7}
+.done.on{display:block;animation:fade .4s ease}
+
+/* s10 location */
+#s10-location .lead{font-size:13.5px;line-height:1.8;color:#2b2b2b;text-align:center;margin-top:20px}
+.map{margin:30px 24px 0;aspect-ratio:400/260;background:#efefef;overflow:hidden}
+.map svg{width:100%;height:100%}
+.mk{r:13.5px}
+.mkt{font-size:13.5px}
+.route{transition:opacity .3s,stroke-width .3s}
+.map.focus .route{opacity:.18}
+.map.focus .route.on{opacity:1;stroke-width:3.2}
+.legend{display:flex;justify-content:center;gap:5px;margin:16px 24px 0;flex-wrap:wrap}
+.legend .chip{display:flex;align-items:center;gap:5px;font-size:11.5px;padding:8px 8px}
+.legend .chip i{width:12px}
+.legend .chip i{width:16px;height:0;border-top:2px solid currentColor}
+.legend .chip:nth-child(2) i{border-top-style:dashed}
+.legend .chip:nth-child(3) i{border-top-style:dotted}
+.loc-info{margin:22px 24px 0;font-size:13px}
+.loc-info div{display:grid;grid-template-columns:70px 1fr;padding:3px 0}
+.loc-info dt{color:var(--gray)}
+
+/* s11 footer */
+#s11-footer{margin-top:120px;border-top:1px solid var(--line);padding:44px 0 60px}
+.ft{display:grid;grid-template-columns:minmax(0,1fr);gap:32px 20px}
+.ft .hrs{white-space:nowrap}
+.ft .logo{height:auto}
+.ft .logo small{padding-bottom:5px}
+.ft .loc{margin-top:16px;font-size:12.5px}
+.ft .loc span{display:block;color:var(--gray);font-size:12px}
+.ft h4{font-family:'Manrope','Noto Sans KR',sans-serif;font-weight:400;font-size:15px;margin-bottom:14px}
+.ft dl div{display:grid;grid-template-columns:52px 1fr;font-size:12.5px;padding:2px 0}
+.ft dt{color:var(--gray);font-family:'Manrope','Noto Sans KR',sans-serif}
+.ft .biz{font-size:12px;color:var(--gray);line-height:1.75}
+.ft .links{grid-column:1/-1;display:flex;flex-wrap:wrap;gap:6px 20px;font-size:12.5px;border-top:1px solid var(--line);padding-top:18px}
+.ft .links span{margin-left:auto;color:var(--gray);font-family:'Manrope','Noto Sans KR',sans-serif;font-size:11.5px}
+
+@media (min-width:1024px){
+  :root{--hdr:84px}
+  .wrap{padding:0 40px}
+  .hdr-in{padding:0 40px;flex-wrap:nowrap;height:84px}
+  .logo{height:auto}
+  .logo small{padding-bottom:5px}
+  .logo b{font-size:24px}
+  .gnb{order:0;width:auto;height:auto;margin-left:80px;gap:56px;align-items:center}
+  .gnb a{font-size:14px}
+  .hdr-tools{gap:20px}
+  .hero{max-width:none;aspect-ratio:auto;height:520px}
+  .slide{padding:48px max(80px,calc(50% - 560px)) 40px}
+  .hero-ui{right:max(40px,calc(50% - 560px));bottom:34px}
+  .slide .per{padding:0 140px}
+  .slide .t{font-size:18px}
+  .slide .big em{font-size:140px}
+  .slide .big span{font-size:18px}
+  .slide .pic{max-width:380px}
+  .slide .tag{width:64px;height:64px;font-size:14px}
+  .slide .per{font-size:13px;text-align:center;padding-right:0}
+  .sec{padding-top:150px}
+  .h-lg{font-size:34px}
+  .h-md{font-size:24px}
+  .rail{padding:48px 40px 6px;gap:24px;max-width:1200px;margin:0 auto;scroll-padding-left:40px}
+  .card{flex-basis:calc((100% - 72px)/4)}
+  .rail-bar{max-width:1120px;margin:26px auto 0}
+  .rec{grid-template-columns:34% 66%;max-width:1200px;margin:48px auto 0}
+  .rec blockquote{padding:0 60px 0 40px;font-size:15px}
+  .rec .rail{padding:0 40px 6px 0;margin:0;scroll-padding-left:0}
+  .rec .card{flex:0 0 calc((100% - 28px)/3)}
+  .num-wrap{grid-template-columns:calc(max(40px,50vw - 560px) + 440px) minmax(0,1fr);grid-template-areas:"txt img" "fnd img";grid-template-rows:auto 1fr}
+  .num-txt{padding:10px 50px 0 max(40px,calc(50vw - 560px))}
+  .num-txt h2{font-size:30px}
+  .num-txt p{font-size:14.5px}
+  .num-img{margin:0;height:calc((100vw - max(40px,50vw - 560px) - 440px)*5/6)}
+  .finder{margin:40px 50px 0 max(40px,calc(50vw - 560px))}
+  .tabs{max-width:640px;margin:44px auto 0}
+  .plist{max-width:1200px;margin:0 auto;padding:0 40px}
+  .plist ul.on{display:grid;grid-template-columns:1fr 1fr 1fr;gap:0 40px}
+  .prow{grid-template-columns:52px 1fr auto;padding:28px 0}
+  .g-n{display:grid;grid-template-columns:1fr 1fr;gap:80px}
+  .glist div{font-size:15px;grid-template-columns:150px 1fr}
+  .note p,.note q{font-size:15px}
+  .bk{grid-template-columns:minmax(0,1.1fr) minmax(0,1fr) minmax(0,.9fr);gap:40px;margin-top:48px;align-items:start}
+  .step.full{grid-column:1/3}
+  .dates{display:grid;grid-template-columns:repeat(7,48px);gap:6px;overflow:visible;margin-right:0;padding-right:0}
+  .date{width:48px}
+  .date b.m{font-size:13px}
+  .bk .sum{grid-row:1/3;grid-column:3}
+  #s10-location .lead{font-size:15px}
+  .mk{r:6px}
+  .mkt{font-size:7.5px}
+  .map{max-width:900px;margin:44px auto 0;aspect-ratio:400/260}
+  .legend{margin-top:20px}
+  .loc-info{max-width:1120px;margin:24px auto 0;display:flex;gap:60px;justify-content:center}
+  .ft{grid-template-columns:1.2fr 1.2fr 1.4fr 1fr;gap:40px}
+  .ft .links{grid-column:auto;flex-direction:column;border:0;padding:0;gap:6px}
+  .ft .links span{margin:20px 0 0}
+}
+</style>
+</head>
+<body>
+
+<!-- s1 header -->
+<header id="s1-header">
+  <div class="hdr-in">
+    <a href="#s2-hero" class="logo" aria-label="윤결 스파 홈">
+      <svg viewBox="0 0 32 32" fill="none" stroke="#161616" stroke-width="1.1"><circle cx="16" cy="16" r="14.5"/><path d="M16 6c3.6 4.2 5.4 7.4 5.4 10a5.4 5.4 0 0 1-10.8 0c0-2.6 1.8-5.8 5.4-10z"/><path d="M8 25.5h16"/></svg>
+      <b>yungyeol</b><small>SPA</small>
+    </a>
+    <nav class="gnb" aria-label="주요 메뉴">
+      <a href="#s6-program">프로그램</a>
+      <a href="#s9-booking">예약</a>
+      <a href="#s10-location">오시는 길</a>
+    </nav>
+    <div class="hdr-tools">
+      <span class="region">서울</span>
+      <a href="#s6-program" aria-label="코스 찾기"><svg viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.3 15.3l5.2 5.2"/></svg></a>
+      <a href="#s7-guide" aria-label="이용 안내"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4.5 21c.6-4.2 3.6-6.6 7.5-6.6s6.9 2.4 7.5 6.6"/></svg></a>
+      <a href="#s9-booking" aria-label="예약"><svg viewBox="0 0 24 24"><rect x="4" y="5.5" width="16" height="15"/><path d="M4 10h16M8.5 3v5M15.5 3v5"/></svg><span class="cnt" id="hdrCnt">0</span></a>
+    </div>
+  </div>
+</header>
+
+<!-- s2 hero -->
+<section id="s2-hero" aria-label="이달의 안내">
+  <div class="hero" id="hero">
+    <div class="slide s-a on">
+      <p class="t">12월, 윤결이 준비한 첫 방문 혜택</p>
+      <div class="big"><span>페이셜 케어 첫 방문</span><em>20%</em></div>
+      <div class="pic">
+        <svg viewBox="0 0 220 180" aria-hidden="true">
+          <defs>
+            <linearGradient id="h1jar" x1="0" x2="1"><stop offset="0" stop-color="#ffffff"/><stop offset=".5" stop-color="#f1f4f6"/><stop offset="1" stop-color="#cdd6dd"/></linearGradient>
+            <linearGradient id="h1cap" x1="0" x2="1"><stop offset="0" stop-color="#a7ad99"/><stop offset=".45" stop-color="#c6cbb8"/><stop offset="1" stop-color="#7f866f"/></linearGradient>
+            <linearGradient id="h1pump" x1="0" x2="1"><stop offset="0" stop-color="#ffffff"/><stop offset=".6" stop-color="#eef1f3"/><stop offset="1" stop-color="#c3ccd4"/></linearGradient>
+            <radialGradient id="h1cream" cx=".45" cy=".4" r=".7"><stop offset="0" stop-color="#ffffff"/><stop offset="1" stop-color="#dfe7e4"/></radialGradient>
+          </defs>
+          <ellipse cx="110" cy="164" rx="98" ry="9" fill="#24324b" opacity=".08"/>
+          <!-- pump bottle -->
+          <rect x="128" y="52" width="46" height="110" rx="6" fill="url(#h1pump)"/>
+          <rect x="140" y="38" width="22" height="16" fill="url(#h1cap)"/>
+          <path d="M147 38v-12h22v6h-14v6z" fill="url(#h1cap)"/>
+          <rect x="136" y="92" width="30" height="38" fill="none" stroke="#9aa3ab" stroke-width=".7"/>
+          <path d="M141 103h20M141 109h14M141 115h18" stroke="#9aa3ab" stroke-width=".8"/>
+          <rect x="166" y="56" width="4" height="102" rx="2" fill="#ffffff" opacity=".7"/>
+          <!-- jar -->
+          <path d="M40 118h70v38a6 6 0 0 1-6 6H46a6 6 0 0 1-6-6z" fill="url(#h1jar)"/>
+          <ellipse cx="75" cy="118" rx="35" ry="8" fill="url(#h1cream)"/>
+          <path d="M58 117c8-5 22-6 30-1" stroke="#c8d3cf" stroke-width="1.4" fill="none" stroke-linecap="round"/>
+          <rect x="46" y="124" width="4" height="32" rx="2" fill="#fff" opacity=".8"/>
+          <!-- spatula -->
+          <path d="M84 92l50-16 2 5-50 16z" fill="#e8ece9" stroke="#b9c2be" stroke-width=".6"/>
+          <ellipse cx="82" cy="98" rx="9" ry="5" transform="rotate(-18 82 98)" fill="#f4f6f5" stroke="#b9c2be" stroke-width=".6"/>
+          <!-- leaf -->
+          <path d="M18 160c6-22 22-34 40-36-6 18-20 32-40 36z" fill="#9ca58c"/>
+          <path d="M20 158c10-12 22-22 34-31" stroke="#7d866d" stroke-width=".8" fill="none"/>
+        </svg>
+        <span class="tag">Tea</span>
+      </div>
+      <p class="per en">12.01 — 12.31 · 첫 방문 고객 대상 · 웰컴 티 제공</p>
+    </div>
+    <div class="slide s-b">
+      <p class="t">평일 오전, 조용한 시간</p>
+      <div class="big"><span>오전 예약 시 15분 추가</span><em>AM 10</em></div>
+      <div class="pic">
+        <svg viewBox="0 0 220 180" aria-hidden="true">
+          <defs>
+            <radialGradient id="h2s1" cx=".35" cy=".3" r=".8"><stop offset="0" stop-color="#6b6f74"/><stop offset="1" stop-color="#26292d"/></radialGradient>
+            <radialGradient id="h2s2" cx=".35" cy=".3" r=".8"><stop offset="0" stop-color="#9a9d9f"/><stop offset="1" stop-color="#4b4f53"/></radialGradient>
+            <radialGradient id="h2s3" cx=".35" cy=".3" r=".8"><stop offset="0" stop-color="#d6d0c4"/><stop offset="1" stop-color="#8f8778"/></radialGradient>
+            <radialGradient id="h2glow" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#ffe8b0" stop-opacity=".9"/><stop offset="1" stop-color="#ffe8b0" stop-opacity="0"/></radialGradient>
+            <linearGradient id="h2glass" x1="0" x2="1"><stop offset="0" stop-color="#ffffff" stop-opacity=".9"/><stop offset="1" stop-color="#c7d1d9" stop-opacity=".8"/></linearGradient>
+          </defs>
+          <ellipse cx="110" cy="164" rx="100" ry="9" fill="#24324b" opacity=".09"/>
+          <ellipse cx="72" cy="150" rx="46" ry="16" fill="url(#h2s1)"/>
+          <ellipse cx="70" cy="124" rx="36" ry="13" fill="url(#h2s2)"/>
+          <ellipse cx="72" cy="103" rx="26" ry="10" fill="url(#h2s3)"/>
+          <ellipse cx="64" cy="99" rx="10" ry="3" fill="#fff" opacity=".35"/>
+          <ellipse cx="60" cy="119" rx="12" ry="3.5" fill="#fff" opacity=".18"/>
+          <circle cx="158" cy="78" r="38" fill="url(#h2glow)"/>
+          <rect x="136" y="100" width="44" height="62" rx="4" fill="url(#h2glass)"/>
+          <rect x="140" y="110" width="36" height="48" rx="2" fill="#f7f2e7"/>
+          <path d="M158 110v-8" stroke="#3a3a3a" stroke-width="1.2"/>
+          <path d="M158 84c-5 7-6 11-3 15a4 4 0 0 0 6 0c3-4 2-8-3-15z" fill="#f2b75a"/>
+          <path d="M158 91c-2 3-2 5-1 7a1.6 1.6 0 0 0 2 0c1-2 1-4-1-7z" fill="#fff4d9"/>
+          <rect x="174" y="104" width="3" height="54" rx="1.5" fill="#fff" opacity=".7"/>
+        </svg>
+      </div>
+      <p class="per en">평일 10:00 — 12:00 시작 예약 · 바디 케어 대상</p>
+    </div>
+    <div class="slide s-c">
+      <p class="t">둘이 함께 쉬는 연말</p>
+      <div class="big"><span>커플 코스 예약 안내</span><em>for 2</em></div>
+      <div class="pic">
+        <svg viewBox="0 0 220 180" aria-hidden="true">
+          <defs>
+            <linearGradient id="h3r1" x1="0" x2="1"><stop offset="0" stop-color="#ffffff"/><stop offset="1" stop-color="#dfe4e8"/></linearGradient>
+            <linearGradient id="h3r2" x1="0" x2="1"><stop offset="0" stop-color="#e7e0d3"/><stop offset="1" stop-color="#bdb3a1"/></linearGradient>
+          </defs>
+          <path d="M14 20h192" stroke="#8a929a" stroke-width="2.4" stroke-linecap="round"/>
+          <!-- robe 1 -->
+          <path d="M70 22l-10 8" stroke="#9aa2aa" stroke-width="1.4"/>
+          <path d="M42 34c8-6 18-10 28-10s20 4 28 10l6 128H36z" fill="url(#h3r1)"/>
+          <path d="M70 24l-12 48 12 22 12-22z" fill="#eef1f3"/>
+          <path d="M58 72l12 22 12-22" stroke="#c4ccd2" stroke-width="1" fill="none"/>
+          <rect x="38" y="96" width="64" height="7" fill="#d4dbe0"/>
+          <path d="M60 103l-6 30M76 103l6 28" stroke="#d4dbe0" stroke-width="5" stroke-linecap="round"/>
+          <path d="M42 40l-12 60 10 2 8-46z" fill="#e8ecef"/>
+          <path d="M98 40l12 60-10 2-8-46z" fill="#d9dfe3"/>
+          <!-- robe 2 -->
+          <path d="M146 22l-10 8" stroke="#9aa2aa" stroke-width="1.4"/>
+          <path d="M118 34c8-6 18-10 28-10s20 4 28 10l6 128h-68z" fill="url(#h3r2)"/>
+          <path d="M146 24l-12 48 12 22 12-22z" fill="#ece6da"/>
+          <path d="M134 72l12 22 12-22" stroke="#a89d89" stroke-width="1" fill="none"/>
+          <rect x="114" y="96" width="64" height="7" fill="#24324b" opacity=".85"/>
+          <path d="M136 103l-6 30M152 103l6 28" stroke="#24324b" stroke-opacity=".85" stroke-width="5" stroke-linecap="round"/>
+          <path d="M118 40l-12 60 10 2 8-46z" fill="#d8d0c1"/>
+          <path d="M174 40l12 60-10 2-8-46z" fill="#b5ab98"/>
+          <ellipse cx="110" cy="170" rx="90" ry="6" fill="#24324b" opacity=".07"/>
+        </svg>
+        <span class="tag">2인</span>
+      </div>
+      <p class="per en">커플 코스 · 2인 1실 · 사전 예약제</p>
+    </div>
+    <div class="hero-ui">
+      <button id="hPrev" aria-label="이전"><svg viewBox="0 0 12 12"><path d="M8 1L3 6l5 5"/></svg></button>
+      <span class="num"><b id="hNow">01</b> / 03</span>
+      <button id="hNext" aria-label="다음"><svg viewBox="0 0 12 12"><path d="M4 1l5 5-5 5"/></svg></button>
+    </div>
+    <i class="hero-bar" id="hBar"></i>
+  </div>
+</section>
+
+<!-- s3 offer -->
+<section id="s3-offer" class="sec">
+  <h2 class="h-lg">12월, 코스 혜택</h2>
+  <div class="rail" id="rail1">
+    <article class="card">
+      <div class="img">
+        <svg viewBox="0 0 300 300" aria-hidden="true">
+          <defs>
+            <radialGradient id="c1bowl" cx=".5" cy=".5" r=".5"><stop offset=".72" stop-color="#ffffff"/><stop offset=".9" stop-color="#e6e9ea"/><stop offset="1" stop-color="#cfd5d8"/></radialGradient>
+            <radialGradient id="c1cream" cx=".42" cy=".38" r=".7"><stop offset="0" stop-color="#f3f7f4"/><stop offset="1" stop-color="#c9dad2"/></radialGradient>
+            <linearGradient id="c1wood" x1="0" x2="1"><stop offset="0" stop-color="#c79c6c"/><stop offset=".5" stop-color="#e2c29b"/><stop offset="1" stop-color="#a77a4b"/></linearGradient>
+          </defs>
+          <rect width="300" height="300" fill="#f4f4f2"/>
+          <ellipse cx="150" cy="166" rx="92" ry="92" fill="#1b1b1b" opacity=".06"/>
+          <circle cx="146" cy="156" r="88" fill="url(#c1bowl)"/>
+          <circle cx="146" cy="156" r="66" fill="url(#c1cream)"/>
+          <path d="M110 150c10-22 48-28 66-8 12 14 0 34-22 34-18 0-26-14-14-22 9-6 20 0 16 8" fill="none" stroke="#b3c9bf" stroke-width="3" stroke-linecap="round"/>
+          <ellipse cx="124" cy="132" rx="16" ry="7" fill="#fff" opacity=".55" transform="rotate(-30 124 132)"/>
+          <g transform="rotate(-38 210 210)">
+            <rect x="150" y="204" width="110" height="12" rx="6" fill="url(#c1wood)"/>
+            <rect x="136" y="202" width="18" height="16" fill="#c9ced2"/>
+            <path d="M136 202c-18 0-34 3-40 8 6 5 22 8 40 8z" fill="#fafafa" stroke="#dcdcdc" stroke-width=".8"/>
+          </g>
+          <path d="M40 60c14-4 28 4 32 18-14 4-28-4-32-18z" fill="#9aa48b"/>
+          <path d="M56 40c12 4 18 16 14 30-12-4-18-16-14-30z" fill="#b3bba3"/>
+          <path d="M44 62c10 4 20 10 28 16M58 44c4 10 8 18 12 26" stroke="#7b846b" stroke-width="1" fill="none"/>
+        </svg>
+        <span class="badge">20%</span>
+      </div>
+      <div class="meta"><span class="code">F1</span><div><p class="nm">페이셜 케어</p><p class="pr"><s>98,000</s>78,400원</p><p class="tm">첫 방문 시 · 60분</p></div></div>
+    </article>
+    <article class="card">
+      <div class="img">
+        <svg viewBox="0 0 300 300" aria-hidden="true">
+          <defs>
+            <linearGradient id="c2amb" x1="0" x2="1"><stop offset="0" stop-color="#7a4419"/><stop offset=".35" stop-color="#c0813f"/><stop offset=".6" stop-color="#a5662b"/><stop offset="1" stop-color="#5e3210"/></linearGradient>
+            <radialGradient id="c2st" cx=".35" cy=".3" r=".8"><stop offset="0" stop-color="#7a7e82"/><stop offset="1" stop-color="#2a2d30"/></radialGradient>
+            <radialGradient id="c2st2" cx=".35" cy=".3" r=".8"><stop offset="0" stop-color="#e2ddd2"/><stop offset="1" stop-color="#a59d8e"/></radialGradient>
+          </defs>
+          <rect width="300" height="300" fill="#f4f4f2"/>
+          <ellipse cx="150" cy="250" rx="110" ry="12" fill="#1b1b1b" opacity=".07"/>
+          <rect x="128" y="62" width="30" height="22" fill="#1e1e1e"/>
+          <path d="M132 62c0-16 22-16 22 0" fill="#2b2b2b"/>
+          <rect x="138" y="84" width="10" height="10" fill="#1e1e1e"/>
+          <path d="M112 112c0-12 10-18 20-18h22c10 0 20 6 20 18v124a10 10 0 0 1-10 10h-42a10 10 0 0 1-10-10z" fill="url(#c2amb)"/>
+          <rect x="120" y="150" width="46" height="56" fill="#f3ede1"/>
+          <path d="M128 168h30M128 176h22M128 184h26" stroke="#b9a98a" stroke-width="1.2"/>
+          <rect x="118" y="108" width="5" height="128" rx="2.5" fill="#fff" opacity=".35"/>
+          <path d="M210 128c-8 12-10 18-6 24a7 7 0 0 0 12 0c4-6 2-12-6-24z" fill="#d49a52" opacity=".9"/>
+          <ellipse cx="208" cy="148" rx="2" ry="3" fill="#fff" opacity=".6"/>
+          <ellipse cx="214" cy="236" rx="44" ry="16" fill="url(#c2st)"/>
+          <ellipse cx="222" cy="214" rx="30" ry="11" fill="url(#c2st2)"/>
+          <ellipse cx="72" cy="240" rx="34" ry="12" fill="url(#c2st2)"/>
+          <ellipse cx="210" cy="229" rx="14" ry="3" fill="#fff" opacity=".2"/>
+        </svg>
+      </div>
+      <div class="meta"><span class="code">B1</span><div><p class="nm">바디 케어</p><p class="pr">130,000원</p><p class="tm">90분</p></div></div>
+    </article>
+    <article class="card">
+      <div class="img">
+        <svg viewBox="0 0 300 300" aria-hidden="true">
+          <defs>
+            <radialGradient id="c3f" cx=".5" cy=".45" r=".55"><stop offset="0" stop-color="#f4ead9"/><stop offset=".6" stop-color="#ffffff"/><stop offset="1" stop-color="#e6e4df"/></radialGradient>
+            <radialGradient id="c3p" cx=".5" cy=".45" r=".55"><stop offset="0" stop-color="#e9c6bd"/><stop offset=".7" stop-color="#f6e6e0"/><stop offset="1" stop-color="#e0cbc4"/></radialGradient>
+          </defs>
+          <rect width="300" height="300" fill="#f4f4f2"/>
+          <path d="M60 40c40 10 70 70 80 220" stroke="#e3e6e8" stroke-width="40" fill="none" opacity=".7"/>
+          <ellipse cx="150" cy="268" rx="60" ry="8" fill="#1b1b1b" opacity=".06"/>
+          <path d="M140 170l-14 92M150 170v94M160 170l14 92M146 170l-26 88M156 170l24 86" stroke="#7f8a6c" stroke-width="3" stroke-linecap="round"/>
+          <path d="M126 196h50l-4 22h-42z" fill="#8b917c"/>
+          <path d="M150 206l-20 34M150 206l20 32" stroke="#8b917c" stroke-width="5" stroke-linecap="round"/>
+          <path d="M104 150c-20-6-30 4-30 16 14 2 26-4 30-16z" fill="#a3ad90"/>
+          <path d="M196 150c20-6 30 4 30 16-14 2-26-4-30-16z" fill="#a3ad90"/>
+          <g>
+            <circle cx="118" cy="128" r="30" fill="url(#c3f)"/>
+            <circle cx="118" cy="128" r="18" fill="none" stroke="#e4ddd0" stroke-width="2"/>
+            <circle cx="118" cy="128" r="8" fill="#efe4d0"/>
+            <circle cx="184" cy="126" r="30" fill="url(#c3f)"/>
+            <circle cx="184" cy="126" r="18" fill="none" stroke="#e4ddd0" stroke-width="2"/>
+            <circle cx="184" cy="126" r="8" fill="#efe4d0"/>
+            <circle cx="151" cy="96" r="32" fill="url(#c3p)"/>
+            <circle cx="151" cy="96" r="20" fill="none" stroke="#dcbcb2" stroke-width="2"/>
+            <circle cx="151" cy="96" r="9" fill="#e5bfb4"/>
+            <circle cx="150" cy="150" r="26" fill="url(#c3f)"/>
+            <circle cx="150" cy="150" r="15" fill="none" stroke="#e4ddd0" stroke-width="2"/>
+            <circle cx="150" cy="150" r="6" fill="#efe4d0"/>
+            <circle cx="102" cy="92" r="9" fill="#fff" stroke="#e6e2da"/>
+            <circle cx="200" cy="88" r="9" fill="#fff" stroke="#e6e2da"/>
+            <circle cx="124" cy="64" r="7" fill="#fff" stroke="#e6e2da"/>
+          </g>
+        </svg>
+      </div>
+      <div class="meta"><span class="code">W1</span><div><p class="nm">웨딩 케어</p><p class="pr">180,000원</p><p class="tm">120분</p></div></div>
+    </article>
+    <article class="card">
+      <div class="img">
+        <svg viewBox="0 0 300 300" aria-hidden="true">
+          <defs>
+            <linearGradient id="c4tray" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#d9b88f"/><stop offset="1" stop-color="#a97f55"/></linearGradient>
+            <linearGradient id="c4cup" x1="0" x2="1"><stop offset="0" stop-color="#ffffff"/><stop offset=".6" stop-color="#f0f2f3"/><stop offset="1" stop-color="#c9d0d5"/></linearGradient>
+            <radialGradient id="c4tea" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#d8a55a"/><stop offset="1" stop-color="#a7692b"/></radialGradient>
+          </defs>
+          <rect width="300" height="300" fill="#f4f4f2"/>
+          <path d="M40 190l30-60h160l30 60z" fill="url(#c4tray)"/>
+          <path d="M40 190h220v10H40z" fill="#8f6640"/>
+          <path d="M74 136h152M66 152h168M58 168h184" stroke="#c8a274" stroke-width=".8" opacity=".7"/>
+          <ellipse cx="150" cy="212" rx="120" ry="8" fill="#1b1b1b" opacity=".06"/>
+          <!-- cup 1 -->
+          <ellipse cx="110" cy="172" rx="34" ry="8" fill="#000" opacity=".1"/>
+          <path d="M80 130h60l-6 36a8 8 0 0 1-8 6h-32a8 8 0 0 1-8-6z" fill="url(#c4cup)"/>
+          <ellipse cx="110" cy="130" rx="30" ry="7" fill="#f6f7f7"/>
+          <ellipse cx="110" cy="131" rx="25" ry="5" fill="url(#c4tea)"/>
+          <path d="M140 138c12 0 12 16 0 18" stroke="#d3d9dd" stroke-width="4" fill="none"/>
+          <!-- cup 2 -->
+          <ellipse cx="190" cy="176" rx="34" ry="8" fill="#000" opacity=".1"/>
+          <path d="M160 134h60l-6 36a8 8 0 0 1-8 6h-32a8 8 0 0 1-8-6z" fill="url(#c4cup)"/>
+          <ellipse cx="190" cy="134" rx="30" ry="7" fill="#f6f7f7"/>
+          <ellipse cx="190" cy="135" rx="25" ry="5" fill="url(#c4tea)"/>
+          <path d="M220 142c12 0 12 16 0 18" stroke="#d3d9dd" stroke-width="4" fill="none"/>
+          <path d="M104 116c-8-10 8-16 0-28M116 114c-6-8 6-14 0-24M186 120c-8-10 8-16 0-28M198 118c-6-8 6-14 0-24" stroke="#b9c1c7" stroke-width="2" fill="none" stroke-linecap="round" opacity=".8"/>
+          <circle cx="150" cy="96" r="5" fill="#9aa48b"/>
+          <path d="M146 92c-8-6-6-14 2-14 4 4 4 10-2 14z" fill="#b3bba3"/>
+        </svg>
+      </div>
+      <div class="meta"><span class="code">C1</span><div><p class="nm">커플 코스 (2인)</p><p class="pr">240,000원</p><p class="tm">90분</p></div></div>
+    </article>
+    <article class="card">
+      <div class="img">
+        <svg viewBox="0 0 300 300" aria-hidden="true">
+          <defs>
+            <linearGradient id="c5wd" x1="0" x2="1"><stop offset="0" stop-color="#b98b5a"/><stop offset=".5" stop-color="#ddb98d"/><stop offset="1" stop-color="#9c6e40"/></linearGradient>
+          </defs>
+          <rect width="300" height="300" fill="#f4f4f2"/>
+          <ellipse cx="150" cy="236" rx="120" ry="10" fill="#1b1b1b" opacity=".07"/>
+          <!-- rolled towels -->
+          <rect x="70" y="170" width="160" height="62" rx="31" fill="#2c3a55"/>
+          <circle cx="70" cy="201" r="31" fill="#3a4a68"/>
+          <path d="M70 201m-22 0a22 22 0 1 1 22 22a15 15 0 1 1 -14-15a8 8 0 1 1 8 8" fill="none" stroke="#1f2a40" stroke-width="2"/>
+          <rect x="88" y="112" width="140" height="58" rx="29" fill="#d8d1c4"/>
+          <circle cx="88" cy="141" r="29" fill="#e5dfd3"/>
+          <path d="M88 141m-20 0a20 20 0 1 1 20 20a14 14 0 1 1 -13-14a7 7 0 1 1 7 7" fill="none" stroke="#bdb4a3" stroke-width="2"/>
+          <rect x="106" y="60" width="118" height="52" rx="26" fill="#fbfbfa"/>
+          <circle cx="106" cy="86" r="26" fill="#ffffff" stroke="#e3e3e0"/>
+          <path d="M106 86m-17 0a17 17 0 1 1 17 17a12 12 0 1 1 -11-12a6 6 0 1 1 6 6" fill="none" stroke="#d4d4d0" stroke-width="2"/>
+          <path d="M120 64h96M120 70h96" stroke="#ececea" stroke-width="1"/>
+          <!-- comb -->
+          <g transform="rotate(-8 190 254)">
+            <rect x="120" y="244" width="140" height="12" rx="3" fill="url(#c5wd)"/>
+            <path d="M126 256v16M134 256v16M142 256v16M150 256v16M158 256v16M166 256v16M174 256v16M182 256v16M190 256v16M198 256v16M206 256v16M214 256v16M222 256v16M230 256v16M238 256v16M246 256v16M254 256v16" stroke="#b78955" stroke-width="3.4" stroke-linecap="round"/>
+          </g>
+        </svg>
+      </div>
+      <div class="meta"><span class="code">H1</span><div><p class="nm">헤드 스파</p><p class="pr">70,000원</p><p class="tm">50분</p></div></div>
+    </article>
+  </div>
+  <div class="rail-bar"><i id="bar1"></i></div>
+</section>
+
+<!-- s4 recommend -->
+<section id="s4-recommend" class="sec">
+  <h2 class="h-lg">이 달의 추천 코스</h2>
+  <div class="rec">
+    <blockquote>“찬 바람이 불기 시작하면 몸도 마음도 쉽게 움츠러듭니다.<br><br>이럴 때는 따뜻한 타월과 느린 손길로 시작해, 하루의 긴장을 천천히 내려놓는 시간을 가져보세요.”</blockquote>
+    <div class="rail" id="rail2">
+      <article class="card">
+        <div class="img">
+          <svg viewBox="0 0 300 300" aria-hidden="true">
+            <defs>
+              <linearGradient id="r1tw" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffffff"/><stop offset="1" stop-color="#e4e1da"/></linearGradient>
+              <linearGradient id="r1tw2" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#e6e0d4"/><stop offset="1" stop-color="#c9c0b0"/></linearGradient>
+              <linearGradient id="r1jar" x1="0" x2="1"><stop offset="0" stop-color="#dfe6ea" stop-opacity=".95"/><stop offset=".45" stop-color="#ffffff" stop-opacity=".85"/><stop offset="1" stop-color="#b7c4cc" stop-opacity=".95"/></linearGradient>
+              <linearGradient id="r1lid" x1="0" x2="1"><stop offset="0" stop-color="#a98157"/><stop offset=".5" stop-color="#d2ae84"/><stop offset="1" stop-color="#8c6741"/></linearGradient>
+              <radialGradient id="r1salt" cx=".5" cy=".3" r=".8"><stop offset="0" stop-color="#ffffff"/><stop offset="1" stop-color="#e9e3ea"/></radialGradient>
+            </defs>
+            <rect width="300" height="300" fill="#f4f4f2"/>
+            <ellipse cx="150" cy="252" rx="128" ry="10" fill="#1b1b1b" opacity=".07"/>
+            <!-- folded towels -->
+            <path d="M28 214h150v34a6 6 0 0 1-6 6H34a6 6 0 0 1-6-6z" fill="url(#r1tw2)"/>
+            <path d="M28 214c0-8 6-12 14-12h122c8 0 14 4 14 12z" fill="#ece7dd"/>
+            <path d="M40 232h126" stroke="#b8ad9a" stroke-width="1"/>
+            <path d="M34 170h140v34a6 6 0 0 1-6 6H40a6 6 0 0 1-6-6z" fill="url(#r1tw)"/>
+            <path d="M34 170c0-8 6-12 14-12h112c8 0 14 4 14 12z" fill="#ffffff"/>
+            <path d="M46 188h116M46 194h116" stroke="#dedad2" stroke-width="1"/>
+            <path d="M174 176c8 4 8 26 0 30" stroke="#d8d3ca" stroke-width="2" fill="none"/>
+            <!-- salt jar -->
+            <ellipse cx="226" cy="250" rx="40" ry="6" fill="#000" opacity=".08"/>
+            <path d="M192 150h68v92a10 10 0 0 1-10 10h-48a10 10 0 0 1-10-10z" fill="url(#r1jar)"/>
+            <path d="M196 196h60v44a8 8 0 0 1-8 8h-44a8 8 0 0 1-8-8z" fill="url(#r1salt)"/>
+            <g fill="#ffffff" opacity=".9"><circle cx="206" cy="204" r="2"/><circle cx="220" cy="200" r="1.6"/><circle cx="236" cy="206" r="2.2"/><circle cx="248" cy="201" r="1.5"/><circle cx="214" cy="214" r="1.4"/></g>
+            <rect x="198" y="156" width="5" height="88" rx="2.5" fill="#fff" opacity=".75"/>
+            <rect x="186" y="134" width="80" height="18" rx="4" fill="url(#r1lid)"/>
+            <path d="M190 140h72" stroke="#b48d62" stroke-width="1"/>
+            <!-- wooden scoop -->
+            <g transform="rotate(-24 150 150)">
+              <rect x="150" y="116" width="62" height="6" rx="3" fill="url(#r1lid)"/>
+              <ellipse cx="146" cy="119" rx="14" ry="9" fill="#c49f74"/>
+              <ellipse cx="146" cy="117" rx="10" ry="5" fill="#f5f1f4"/>
+            </g>
+            <!-- sprig -->
+            <path d="M54 150c4-20 16-32 32-36-2 18-14 30-32 36z" fill="#9aa48b"/>
+            <path d="M56 148c8-12 16-22 28-32" stroke="#7b846b" stroke-width="1" fill="none"/>
+          </svg>
+        </div>
+        <div class="meta"><span class="code">B3</span><div><p class="nm">풋 케어</p><p class="pr">55,000원</p><p class="tm">40분</p></div></div>
+      </article>
+      <article class="card">
+        <div class="img">
+          <svg viewBox="0 0 300 300" aria-hidden="true">
+            <defs>
+              <radialGradient id="r2s" cx=".35" cy=".3" r=".8"><stop offset="0" stop-color="#6e7276"/><stop offset="1" stop-color="#202326"/></radialGradient>
+              <linearGradient id="r2t" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fbfaf8"/><stop offset="1" stop-color="#e2ded6"/></linearGradient>
+            </defs>
+            <rect width="300" height="300" fill="#f4f4f2"/>
+            <path d="M24 96l252-20 0 150-252 20z" fill="url(#r2t)"/>
+            <path d="M24 96l252-20M24 112l252-20M24 230l252-20M24 246l252-20" stroke="#d7d2c8" stroke-width="1"/>
+            <path d="M24 246v10l252-20v-10" fill="#d5cfc4"/>
+            <g>
+              <ellipse cx="66" cy="176" rx="24" ry="14" fill="#000" opacity=".1" transform="translate(3 6)"/>
+              <ellipse cx="66" cy="176" rx="24" ry="14" fill="url(#r2s)"/>
+              <ellipse cx="112" cy="168" rx="26" ry="15" fill="#000" opacity=".1" transform="translate(3 6)"/>
+              <ellipse cx="112" cy="168" rx="26" ry="15" fill="url(#r2s)"/>
+              <ellipse cx="160" cy="160" rx="28" ry="16" fill="#000" opacity=".1" transform="translate(3 6)"/>
+              <ellipse cx="160" cy="160" rx="28" ry="16" fill="url(#r2s)"/>
+              <ellipse cx="208" cy="152" rx="26" ry="15" fill="#000" opacity=".1" transform="translate(3 6)"/>
+              <ellipse cx="208" cy="152" rx="26" ry="15" fill="url(#r2s)"/>
+              <ellipse cx="250" cy="146" rx="20" ry="12" fill="url(#r2s)"/>
+              <ellipse cx="60" cy="171" rx="9" ry="3" fill="#fff" opacity=".25"/>
+              <ellipse cx="106" cy="162" rx="10" ry="3" fill="#fff" opacity=".25"/>
+              <ellipse cx="153" cy="154" rx="11" ry="3" fill="#fff" opacity=".25"/>
+              <ellipse cx="201" cy="146" rx="10" ry="3" fill="#fff" opacity=".25"/>
+            </g>
+            <path d="M200 60c8-24 30-30 46-26-6 18-24 30-46 26z" fill="#9aa48b"/>
+            <path d="M202 58c12-8 26-16 42-22" stroke="#7b846b" stroke-width="1" fill="none"/>
+          </svg>
+        </div>
+        <div class="meta"><span class="code">B2</span><div><p class="nm">등·어깨 케어</p><p class="pr">85,000원</p><p class="tm">60분</p></div></div>
+      </article>
+      <article class="card">
+        <div class="img">
+          <svg viewBox="0 0 300 300" aria-hidden="true">
+            <defs>
+              <linearGradient id="r3c" x1="0" x2="1"><stop offset="0" stop-color="#ffffff"/><stop offset=".55" stop-color="#eeeeea"/><stop offset="1" stop-color="#c8c6bf"/></linearGradient>
+              <linearGradient id="r3g" x1="0" x2="1"><stop offset="0" stop-color="#d9e3ea" stop-opacity=".9"/><stop offset=".5" stop-color="#ffffff" stop-opacity=".7"/><stop offset="1" stop-color="#b8c6d0" stop-opacity=".9"/></linearGradient>
+            </defs>
+            <rect width="300" height="300" fill="#f4f4f2"/>
+            <ellipse cx="150" cy="252" rx="120" ry="10" fill="#1b1b1b" opacity=".07"/>
+            <!-- diffuser -->
+            <path d="M84 250c-24 0-34-30-30-60 4-32 26-52 56-52s52 20 56 52c4 30-6 60-30 60z" fill="url(#r3c)"/>
+            <ellipse cx="110" cy="140" rx="16" ry="5" fill="#d4d2cb"/>
+            <ellipse cx="110" cy="139" rx="7" ry="2.4" fill="#8d8a82"/>
+            <path d="M110 134c-14-16 10-24-2-44s14-28 6-46" stroke="#ffffff" stroke-width="10" fill="none" stroke-linecap="round" opacity=".9"/>
+            <path d="M110 134c-14-16 10-24-2-44s14-28 6-46" stroke="#dfe6eb" stroke-width="3" fill="none" stroke-linecap="round" opacity=".7"/>
+            <path d="M70 196c6 18 16 28 30 32" stroke="#fff" stroke-width="4" fill="none" opacity=".6" stroke-linecap="round"/>
+            <!-- reed bottle -->
+            <path d="M196 252h52v-74c0-10-8-16-14-18v-12h-24v12c-6 2-14 8-14 18z" fill="url(#r3g)"/>
+            <path d="M200 206h44v42h-44z" fill="#e8c78f" opacity=".55"/>
+            <path d="M212 148l-24-96M218 148l-4-104M222 148l18-98M216 148l-38-84" stroke="#3a3530" stroke-width="2" stroke-linecap="round"/>
+            <rect x="200" y="182" width="4" height="64" rx="2" fill="#fff" opacity=".7"/>
+          </svg>
+        </div>
+        <div class="meta"><span class="code">F2</span><div><p class="nm">아로마 페이셜</p><p class="pr">110,000원</p><p class="tm">70분</p></div></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- s5 number -->
+<section id="s5-number" class="sec">
+  <div class="num-wrap">
+    <div class="num-txt">
+      <h2>FIND YOUR CARE<br>NUMBER</h2>
+      <p>오늘의 나에게 맞는 코스는 무엇일까요?</p>
+      <p>계절과 생활 리듬에 따라 쉬고 싶은 곳도 달라집니다.</p>
+      <p>윤결은 먼저 상담을 하고, 그날의 컨디션에 맞는 코스 번호를 함께 고릅니다.</p>
+    </div>
+    <div class="num-img">
+      <svg viewBox="0 0 600 500" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+        <defs>
+          <linearGradient id="n1wall" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f3f2ef"/><stop offset="1" stop-color="#dcd9d2"/></linearGradient>
+          <linearGradient id="n1beam" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffffff" stop-opacity=".8"/><stop offset="1" stop-color="#ffffff" stop-opacity="0"/></linearGradient>
+          <linearGradient id="n1sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#cbdbe7"/><stop offset="1" stop-color="#eef3f6"/></linearGradient>
+          <linearGradient id="n1cur" x1="0" x2="1"><stop offset="0" stop-color="#e6e1d7"/><stop offset=".25" stop-color="#fbfaf7"/><stop offset=".5" stop-color="#dbd5c9"/><stop offset=".75" stop-color="#f6f4ef"/><stop offset="1" stop-color="#d4cdc0"/></linearGradient>
+          <linearGradient id="n1sheet" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffffff"/><stop offset="1" stop-color="#e4e2dd"/></linearGradient>
+          <linearGradient id="n1floor" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#76695a"/><stop offset="1" stop-color="#3f362d"/></linearGradient>
+          <linearGradient id="n1tbl" x1="0" x2="1"><stop offset="0" stop-color="#9c8162"/><stop offset=".5" stop-color="#c2a682"/><stop offset="1" stop-color="#8a7054"/></linearGradient>
+          <radialGradient id="n1lamp" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#fff2d2" stop-opacity=".95"/><stop offset="1" stop-color="#fff2d2" stop-opacity="0"/></radialGradient>
+        </defs>
+        <rect width="600" height="410" fill="url(#n1wall)"/>
+        <path d="M540 0h60v410h-60z" fill="#d4d0c8" opacity=".55"/>
+        <path d="M0 404h600v6H0z" fill="#e6e2da"/>
+        <!-- window (frame fully visible) -->
+        <rect x="330" y="42" width="150" height="186" fill="url(#n1sky)"/>
+        <path d="M405 42v186M330 135h150" stroke="#f8f8f6" stroke-width="6"/>
+        <rect x="330" y="42" width="150" height="186" fill="none" stroke="#f8f8f6" stroke-width="9"/>
+        <path d="M342 58l46 34M418 56l46 32" stroke="#fff" stroke-width="7" opacity=".5"/>
+        <rect x="316" y="228" width="178" height="10" fill="#ebe8e1"/>
+        <path d="M318 238h174" stroke="#cfcac0" stroke-width="1"/>
+        <path d="M330 238L210 404h300L480 238z" fill="url(#n1beam)" opacity=".5"/>
+        <!-- vase on sill -->
+        <path d="M444 228c-7 0-9-9-7-20 2-9 5-13 5-22h9c0 9 3 13 5 22 2 11 0 20-7 20z" fill="#b6a996"/>
+        <circle cx="466" cy="220" r="8" fill="#c9bfae"/>
+        <ellipse cx="452" cy="228" rx="26" ry="2.5" fill="#cfc8bb"/>
+        <!-- left curtain -->
+        <path d="M0 0h118c-12 130 8 260-10 404H0z" fill="url(#n1cur)"/>
+        <path d="M26 0c4 140-4 270 2 404M56 0c-4 150 6 270-2 404M88 0c-2 130 2 260-8 404" stroke="#cfc8bb" stroke-width="1.2" fill="none" opacity=".8"/>
+        <!-- right curtain -->
+        <path d="M600 0h-46c6 130-6 270 6 404h40z" fill="url(#n1cur)"/>
+        <path d="M576 0c-3 140 4 270-2 404" stroke="#cfc8bb" stroke-width="1.2" fill="none" opacity=".8"/>
+        <!-- lamp -->
+        <path d="M250 0v78" stroke="#3c3c3c" stroke-width="1"/>
+        <circle cx="250" cy="104" r="52" fill="url(#n1lamp)"/>
+        <path d="M232 94c0-14 36-14 36 0l5 11h-46z" fill="#efe9dc"/>
+        <ellipse cx="250" cy="105" rx="23" ry="3" fill="#fff6dc"/>
+        <!-- floor -->
+        <path d="M0 410h600v90H0z" fill="url(#n1floor)"/>
+        <path d="M0 430h600M0 456h600M0 484h600M90 410l-40 90M220 410l-14 90M360 410l10 90M500 410l36 90" stroke="#5a4f42" stroke-width="1" opacity=".7"/>
+        <!-- bed -->
+        <path d="M206 318h340v86H206z" fill="#2f2924"/>
+        <path d="M196 300l44-32h320v32z" fill="url(#n1sheet)"/>
+        <path d="M196 300h364v56c-50 10-100 2-150 10s-150 6-214-4z" fill="#f3f2ef"/>
+        <path d="M196 300v62M256 314c-6 20 4 34 0 52M350 314c4 18-4 32 2 50M450 314c-4 16 6 30 0 46" stroke="#dcd9d2" stroke-width="1.2" fill="none"/>
+        <path d="M222 366v56M540 366v56" stroke="#1d1915" stroke-width="7"/>
+        <ellipse cx="380" cy="426" rx="190" ry="6" fill="#000" opacity=".18"/>
+        <!-- folded towels -->
+        <rect x="372" y="262" width="124" height="22" rx="4" fill="#9a9f8a"/>
+        <rect x="378" y="242" width="112" height="22" rx="4" fill="#2c3a55"/>
+        <path d="M382 253h104" stroke="#3f4f6e" stroke-width="1"/>
+        <path d="M376 273h116" stroke="#868b76" stroke-width="1"/>
+        <!-- side table + plant (legs reach floor) -->
+        <ellipse cx="138" cy="482" rx="50" ry="5" fill="#000" opacity=".2"/>
+        <rect x="94" y="382" width="88" height="10" fill="url(#n1tbl)"/>
+        <path d="M102 392v86M174 392v86" stroke="#7f6649" stroke-width="6"/>
+        <path d="M104 440h68" stroke="#7f6649" stroke-width="4"/>
+        <path d="M118 382h40l-5-34h-30z" fill="#D6CFC2"/>
+        <path d="M146 348h7l5 34h-10z" fill="#C4BCAE"/>
+        <path d="M118 382h40l-5-34h-30z" fill="none" stroke="#b9b1a3" stroke-width="1"/>
+        <path d="M138 348c-12-34-34-38-38-62 20 6 34 26 38 62zM138 348c7-34 25-50 45-56-4 24-25 40-45 56zM138 348c0-30 7-52 5-78 11 25 7 52-5 78z" fill="#8b917c"/>
+      </svg>
+    </div>
+    <div class="finder">
+      <p class="q">지금 가장 쉬고 싶은 곳을 골라보세요</p>
+      <div class="chips" id="finder">
+        <button class="chip" data-code="F1" data-name="페이셜 케어 · 60분">얼굴</button>
+        <button class="chip" data-code="B2" data-name="등·어깨 케어 · 60분">등과 어깨</button>
+        <button class="chip" data-code="B3" data-name="풋 케어 · 40분">다리와 발</button>
+        <button class="chip" data-code="H1" data-name="헤드 스파 · 50분">머리</button>
+        <button class="chip" data-code="W1" data-name="웨딩 케어 · 120분">특별한 날 준비</button>
+      </div>
+      <div class="ans"><b id="fCode">—</b><span id="fName">항목을 누르면 코스 번호를 보여드립니다.</span><a href="#s9-booking" id="fGo" hidden>예약하기</a></div>
+    </div>
+  </div>
+</section>
+
+<!-- s6 program -->
+<section id="s6-program" class="sec">
+  <span class="eyebrow">PROGRAM</span>
+  <h2 class="h-lg">프로그램</h2>
+  <div class="tabs" role="tablist">
+    <button class="tab on" data-t="0" role="tab">페이셜</button>
+    <button class="tab" data-t="1" role="tab">바디</button>
+    <button class="tab" data-t="2" role="tab">웨딩</button>
+    <button class="tab" data-t="3" role="tab">커플</button>
+  </div>
+  <div class="plist">
+    <ul class="on">
+      <li class="prow"><span class="code">F1</span><h3>페이셜 케어</h3><span class="r">98,000원<small>60분</small></span><p>클렌징, 각질 정돈, 마스크, 마무리 크림 순서로 진행하는 기본 코스입니다.</p></li>
+      <li class="prow"><span class="code">F2</span><h3>아로마 페이셜</h3><span class="r">110,000원<small>70분</small></span><p>고른 향의 오일로 얼굴과 목, 데콜테까지 부드럽게 관리합니다.</p></li>
+      <li class="prow"><span class="code">F3</span><h3>프리미엄 페이셜</h3><span class="r">150,000원<small>90분</small></span><p>페이셜 케어에 모델링 마스크와 손·팔 관리를 더한 코스입니다.</p></li>
+    </ul>
+    <ul>
+      <li class="prow"><span class="code">B1</span><h3>바디 케어</h3><span class="r">130,000원<small>90분</small></span><p>따뜻한 타월로 시작해 전신을 차분한 리듬으로 관리합니다.</p></li>
+      <li class="prow"><span class="code">B2</span><h3>등·어깨 케어</h3><span class="r">85,000원<small>60분</small></span><p>등과 어깨, 목 뒤를 중심으로 집중해서 진행합니다.</p></li>
+      <li class="prow"><span class="code">B3</span><h3>풋 케어</h3><span class="r">55,000원<small>40분</small></span><p>족욕 후 발과 종아리를 관리하는 짧은 코스입니다.</p></li>
+    </ul>
+    <ul>
+      <li class="prow"><span class="code">W1</span><h3>웨딩 케어</h3><span class="r">180,000원<small>120분</small></span><p>페이셜과 등·어깨 라인 관리를 함께 진행하는 코스입니다.</p></li>
+      <li class="prow"><span class="code">W2</span><h3>웨딩 4회 패키지</h3><span class="r">640,000원<small>4회</small></span><p>예식 일정에 맞춰 방문 간격을 상담 후 정합니다.</p></li>
+      <li class="prow"><span class="code">W3</span><h3>혼주 케어</h3><span class="r">140,000원<small>90분</small></span><p>페이셜과 손 관리로 구성한 가족을 위한 코스입니다.</p></li>
+    </ul>
+    <ul>
+      <li class="prow"><span class="code">C1</span><h3>커플 코스</h3><span class="r">240,000원<small>2인 · 90분</small></span><p>2인 1실에서 바디 케어와 티 타임을 함께합니다.</p></li>
+      <li class="prow"><span class="code">C2</span><h3>커플 프리미엄</h3><span class="r">320,000원<small>2인 · 120분</small></span><p>커플 코스에 페이셜 케어를 더한 코스입니다.</p></li>
+      <li class="prow"><span class="code">C3</span><h3>친구와 함께</h3><span class="r">170,000원<small>2인 · 60분</small></span><p>등·어깨 케어를 나란히 받는 짧은 코스입니다.</p></li>
+    </ul>
+    <p class="pnote">표시된 가격과 시간은 예시이며, 상담 후 일부 달라질 수 있습니다.</p>
+  </div>
+</section>
+
+<!-- s7 guide + s8 note -->
+<div class="wrap g-n">
+  <section id="s7-guide" class="sec guide">
+    <h2 class="h-md">윤결 이용 안내</h2>
+    <dl class="glist">
+      <div><dt>평일</dt><dd>10:00 – 21:00</dd></div>
+      <div><dt>주말·공휴일</dt><dd>10:00 – 19:00</dd></div>
+      <div><dt>예약</dt><dd>방문 전 예약제로 운영합니다</dd></div>
+      <div><dt>첫 방문</dt><dd>상담 후 코스를 안내합니다</dd></div>
+      <div><dt>변경·취소</dt><dd>방문 하루 전까지 알려주세요</dd></div>
+      <div><dt>주차</dt><dd>준비 중</dd></div>
+    </dl>
+  </section>
+  <section id="s8-note" class="sec note">
+    <h2 class="h-md">윤결의 약속</h2>
+    <p>한 사람을 위한 방, 갓 세탁한 하얀 리넨, 서두르지 않는 진행. 머무는 동안 조용히 쉬실 수 있도록 작은 부분까지 준비합니다.</p>
+    <q>하얀 리넨처럼, 깨끗하고 고요한 시간</q>
+    <cite>- YUNGYEOL SPA</cite>
+  </section>
+</div>
+
+<!-- s9 booking -->
+<section id="s9-booking" class="sec">
+  <span class="eyebrow">RESERVATION</span>
+  <h2 class="h-lg">온라인 예약</h2>
+  <form class="wrap bk" id="bkForm" novalidate>
+    <div class="step full">
+      <h3><i>01</i>코스 선택</h3>
+      <div class="chips" id="bkCourse">
+        <button type="button" class="chip" data-v="F1 페이셜 케어" data-p="98,000원 · 60분">F1 페이셜</button>
+        <button type="button" class="chip" data-v="F2 아로마 페이셜" data-p="110,000원 · 70분">F2 아로마</button>
+        <button type="button" class="chip" data-v="B1 바디 케어" data-p="130,000원 · 90분">B1 바디</button>
+        <button type="button" class="chip" data-v="B2 등·어깨 케어" data-p="85,000원 · 60분">B2 등·어깨</button>
+        <button type="button" class="chip" data-v="W1 웨딩 케어" data-p="180,000원 · 120분">W1 웨딩</button>
+        <button type="button" class="chip" data-v="C1 커플 코스" data-p="240,000원 · 90분">C1 커플</button>
+        <button type="button" class="chip" data-v="H1 헤드 스파" data-p="70,000원 · 50분">H1 헤드</button>
+      </div>
+    </div>
+    <div class="step">
+      <h3><i>02</i>날짜</h3>
+      <p class="mon" id="bkMon"></p>
+      <div class="dates" id="bkDate"></div>
+    </div>
+    <div class="step">
+      <h3><i>03</i>시간</h3>
+      <div class="times" id="bkTime"></div>
+    </div>
+    <div class="sum">
+      <dl>
+        <div><dt>코스</dt><dd id="sC">선택 전</dd></div>
+        <div><dt>가격·시간</dt><dd id="sP">-</dd></div>
+        <div><dt>날짜</dt><dd id="sD">선택 전</dd></div>
+        <div><dt>시간</dt><dd id="sT">선택 전</dd></div>
+      </dl>
+      <button class="btn" id="bkBtn" type="submit" disabled>예약 내용 확인</button>
+      <p class="done" id="bkDone"></p>
+    </div>
+  </form>
+</section>
+
+<!-- s10 location -->
+<section id="s10-location" class="sec">
+  <span class="eyebrow">LOCATION</span>
+  <h2 class="h-md" style="text-align:center">오시는 길</h2>
+  <p class="lead">도심 속 조용한 골목,<br>하얀 문을 찾아주세요.</p>
+  <div class="map" id="map">
+    <svg viewBox="0 0 400 260" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+      <rect width="400" height="260" fill="#ededec"/>
+      <path d="M-10 196c60-20 120 10 190-8s120-50 230-30v40c-100-14-150 16-230 30s-130-12-190 6z" fill="#dfe5e9"/>
+      <g fill="#cfd0d1">
+        <rect x="14" y="14" width="70" height="44"/><rect x="96" y="14" width="56" height="44"/><rect x="164" y="14" width="80" height="44"/><rect x="256" y="14" width="50" height="44"/><rect x="318" y="14" width="70" height="44"/>
+        <rect x="14" y="72" width="40" height="52"/><rect x="66" y="72" width="86" height="52"/><rect x="164" y="72" width="34" height="52"/><rect x="210" y="72" width="34" height="52"/><rect x="256" y="72" width="132" height="52"/>
+        <rect x="14" y="138" width="88" height="40"/><rect x="114" y="138" width="38" height="36"/><rect x="164" y="138" width="80" height="30"/><rect x="256" y="138" width="60" height="22"/><rect x="328" y="134" width="60" height="18"/>
+        <rect x="20" y="226" width="90" height="30"/><rect x="200" y="226" width="80" height="30"/><rect x="300" y="222" width="90" height="34"/>
+      </g>
+      <rect x="210" y="72" width="34" height="52" fill="#b9bcbf"/>
+      <path class="route on" data-r="0" d="M40 30C80 70 150 40 190 70s30 22 37 30" stroke="#2b2f36" stroke-width="2.4" fill="none" stroke-linecap="round"/>
+      <path class="route on" data-r="1" d="M360 30c-30 40-60 30-90 50s-30 18-43 22" stroke="#2b2f36" stroke-width="2.4" fill="none" stroke-dasharray="7 5" stroke-linecap="round"/>
+      <path class="route on" data-r="2" d="M120 206c40-30 70-60 96-80" stroke="#2b2f36" stroke-width="2.4" fill="none" stroke-dasharray="1.5 5" stroke-linecap="round"/>
+      <g fill="#2b2f36"><circle class="mk" cx="40" cy="30" r="6"/><circle class="mk" cx="360" cy="30" r="6"/><circle class="mk" cx="120" cy="206" r="6"/></g>
+      <g fill="#fff" font-family="Manrope,sans-serif" font-weight="500" text-anchor="middle" dominant-baseline="central"><text class="mkt" x="40" y="30">M</text><text class="mkt" x="360" y="30">B</text><text class="mkt" x="120" y="206">P</text></g>
+      <circle cx="227" cy="100" r="16" fill="#24324b" opacity=".12"/>
+      <path d="M227 112c-9-11-13-17-13-23a13 13 0 0 1 26 0c0 6-4 12-13 23z" fill="#24324b"/>
+      <circle cx="227" cy="89" r="5" fill="#fff"/>
+    </svg>
+  </div>
+  <div class="legend" id="legend">
+    <button class="chip" data-r="0"><i></i>지하철역에서</button>
+    <button class="chip" data-r="1"><i></i>버스 정류장에서</button>
+    <button class="chip" data-r="2"><i></i>주차장에서</button>
+  </div>
+  <dl class="loc-info">
+    <div><dt>주소</dt><dd>준비 중</dd></div>
+    <div><dt>전화</dt><dd>준비 중</dd></div>
+    <div><dt>운영</dt><dd>평일 10:00 – 21:00 · 주말 10:00 – 19:00</dd></div>
+  </dl>
+</section>
+
+<!-- s11 footer -->
+<footer id="s11-footer">
+  <div class="wrap ft">
+    <div>
+      <a href="#s2-hero" class="logo"><svg viewBox="0 0 32 32" fill="none" stroke="#161616" stroke-width="1.1"><circle cx="16" cy="16" r="14.5"/><path d="M16 6c3.6 4.2 5.4 7.4 5.4 10a5.4 5.4 0 0 1-10.8 0c0-2.6 1.8-5.8 5.4-10z"/><path d="M8 25.5h16"/></svg><b>yungyeol</b><small>SPA</small></a>
+      <p class="loc">한국어/KOR<span>Change Language</span></p>
+    </div>
+    <div>
+      <h4>Customer Care</h4>
+      <dl>
+        <div><dt>Tel.</dt><dd>준비 중</dd></div>
+        <div><dt>Email.</dt><dd>준비 중</dd></div>
+        <div><dt>Hours.</dt><dd><span class="hrs">평일 10:00 - 21:00</span><br><span class="hrs">주말 10:00 - 19:00</span></dd></div>
+      </dl>
+    </div>
+    <div>
+      <h4>Business Information</h4>
+      <p class="biz">상호. 윤결 스파<br>대표. 준비 중<br>사업자등록번호. 준비 중<br>주소. 준비 중</p>
+    </div>
+    <div class="links">
+      <a href="#s11-footer">개인정보처리방침</a>
+      <a href="#s11-footer">이용약관</a>
+      <span>YUNGYEOL SPA All Rights Reserved.</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  // header
+  var hdr=document.getElementById('s1-header');
+  function onScroll(){hdr.classList.toggle('solid',window.scrollY>10)}
+  window.addEventListener('scroll',onScroll,{passive:true});onScroll();
+  var links=[].slice.call(document.querySelectorAll('.gnb a'));
+  function navOn(){var mid=innerHeight*.45,act=null;['s6-program','s9-booking','s10-location'].forEach(function(id){var r=document.getElementById(id).getBoundingClientRect();if(r.top<mid&&r.bottom>mid)act=id});links.forEach(function(a){a.classList.toggle('on',a.getAttribute('href')==='#'+act)})}
+  window.addEventListener('scroll',navOn,{passive:true});navOn();
+
+  // hero
+  var slides=[].slice.call(document.querySelectorAll('.slide')),cur=0,timer=null,bar=document.getElementById('hBar'),now=document.getElementById('hNow'),auto=true;
+  function go(n){slides[cur].classList.remove('on');cur=(n+slides.length)%slides.length;slides[cur].classList.add('on');now.textContent='0'+(cur+1);restart()}
+  function restart(){clearTimeout(timer);bar.style.transition='none';bar.style.width='0';if(!auto)return;void bar.offsetWidth;bar.style.transition='width 5s linear';bar.style.width='100%';timer=setTimeout(function(){go(cur+1)},5000)}
+  document.getElementById('hPrev').onclick=function(){go(cur-1)};
+  document.getElementById('hNext').onclick=function(){go(cur+1)};
+  var sx=null,hero=document.getElementById('hero');
+  hero.addEventListener('touchstart',function(e){sx=e.touches[0].clientX},{passive:true});
+  hero.addEventListener('touchend',function(e){if(sx===null)return;var d=e.changedTouches[0].clientX-sx;if(Math.abs(d)>40)go(cur+(d<0?1:-1));sx=null});
+  restart();
+  window.__hero=function(n){go(n)};
+  window.__stopAuto=function(){auto=false;clearTimeout(timer);bar.style.transition='none';bar.style.width='0'};
+
+  // rail progress
+  function railBar(r,b){function u(){var m=r.scrollWidth-r.clientWidth;var w=Math.max(18,r.clientWidth/r.scrollWidth*100);b.style.width=w+'%';b.style.left=(m>0?r.scrollLeft/m*(100-w):0)+'%'}r.addEventListener('scroll',u,{passive:true});window.addEventListener('resize',u);u()}
+  railBar(document.getElementById('rail1'),document.getElementById('bar1'));
+
+  // finder
+  var fc=document.getElementById('fCode'),fn=document.getElementById('fName'),fg=document.getElementById('fGo');
+  [].forEach.call(document.querySelectorAll('#finder .chip'),function(b,i,all){b.onclick=function(){[].forEach.call(all,function(x){x.classList.remove('on')});b.classList.add('on');fc.textContent=b.dataset.code;fn.textContent=b.dataset.name;fg.hidden=false;fg.dataset.code=b.dataset.code}});
+  fg.addEventListener('click',function(){var c=fg.dataset.code;var t=[].filter.call(document.querySelectorAll('#bkCourse .chip'),function(x){return x.dataset.v.indexOf(c)===0})[0];if(t)t.click()});
+
+  // tabs
+  var tabs=[].slice.call(document.querySelectorAll('.tab')),lists=[].slice.call(document.querySelectorAll('.plist ul'));
+  tabs.forEach(function(t,i){t.onclick=function(){tabs.forEach(function(x,j){x.classList.toggle('on',i===j);lists[j].classList.toggle('on',i===j)})}});
+
+  // booking
+  var st={c:null,p:null,d:null,t:null};
+  var sC=document.getElementById('sC'),sP=document.getElementById('sP'),sD=document.getElementById('sD'),sT=document.getElementById('sT'),btn=document.getElementById('bkBtn'),done=document.getElementById('bkDone');
+  function sync(){sC.textContent=st.c||'선택 전';sP.textContent=st.p||'-';sD.textContent=st.d||'선택 전';sT.textContent=st.t||'선택 전';btn.disabled=!(st.c&&st.d&&st.t);done.classList.remove('on');document.getElementById('hdrCnt').textContent=(st.c&&st.d&&st.t)?'1':'0'}
+  function single(container,cb){container.addEventListener('click',function(e){var b=e.target.closest('button');if(!b||b.disabled)return;[].forEach.call(container.querySelectorAll('button'),function(x){x.classList.remove('on')});b.classList.add('on');cb(b);sync()})}
+  single(document.getElementById('bkCourse'),function(b){st.c=b.dataset.v;st.p=b.dataset.p});
+  var dw=['일','월','화','수','목','금','토'],dBox=document.getElementById('bkDate'),base=new Date();base.setHours(0,0,0,0);
+  var first=null,last=null;for(var i=1;i<=14;i++){var d=new Date(base.getTime()+i*864e5);if(!first)first=d;last=d;var b=document.createElement('button');b.type='button';b.className='date'+(d.getDay()===0?' sun':'');b.dataset.v=(d.getMonth()+1)+'월 '+d.getDate()+'일 ('+dw[d.getDay()]+')';b.dataset.w=d.getDay();b.innerHTML='<small>'+dw[d.getDay()]+'</small>'+(d.getDate()===1&&i>1?'<b class="m">'+(d.getMonth()+1)+'/1</b>':'<b>'+d.getDate()+'</b>');dBox.appendChild(b)}
+  document.getElementById('bkMon').textContent=(first.getMonth()===last.getMonth())?(first.getMonth()+1)+'월':(first.getMonth()+1)+'월 – '+(last.getMonth()+1)+'월';
+  var tBox=document.getElementById('bkTime'),slots=['10:00','11:00','12:00','13:00','14:00','15:00','16:00','17:00','18:00','19:00','20:00'];
+  function drawTimes(w){tBox.innerHTML='';var end=(w===0||w===6)?'17:00':'20:00';slots.forEach(function(s,k){var b=document.createElement('button');b.type='button';b.className='chip';b.textContent=s;if(s>end||(k%4===2))b.disabled=true;tBox.appendChild(b)});st.t=null}
+  drawTimes(1);
+  single(dBox,function(b){st.d=b.dataset.v;drawTimes(+b.dataset.w)});
+  single(tBox,function(b){st.t=b.textContent});
+  document.getElementById('bkForm').addEventListener('submit',function(e){e.preventDefault();if(btn.disabled)return;done.innerHTML=st.d+' '+st.t+', '+st.c+'로 선택하셨습니다.<br>온라인 예약 접수는 준비 중입니다. 화면의 선택 내용만 확인할 수 있습니다.';done.classList.add('on')});
+  sync();
+
+  // map legend
+  var map=document.getElementById('map'),routes=[].slice.call(map.querySelectorAll('.route')),lg=[].slice.call(document.querySelectorAll('#legend .chip'));
+  lg.forEach(function(b){b.onclick=function(){var on=b.classList.contains('on');lg.forEach(function(x){x.classList.remove('on')});routes.forEach(function(r){r.classList.remove('on')});if(on){map.classList.remove('focus');return}b.classList.add('on');map.classList.add('focus');routes[+b.dataset.r].classList.add('on')}});
+})();
+</script>
+</body>
+</html>

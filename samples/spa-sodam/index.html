@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>소담 스파</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@200;300;400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{--wine:#73263a;--taupe:#c3b4a9;--taupe-d:#a8978b;--ink:#2e2c2b;--gray:#666260;--light:#b9b4b0;--line:#dedad6;--pad:10px}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font-family:'Noto Sans KR',system-ui,sans-serif;color:var(--ink);background:#fff;font-size:14px;line-height:1.6;letter-spacing:-.03em;overflow-x:hidden;padding-top:60px}
+a{color:inherit;text-decoration:none}
+button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
+ul{list-style:none}
+svg{display:block}
+.wrap{max-width:1200px;margin:0 auto;padding:0 var(--pad)}
+
+/* s1 header */
+#s1-header{position:fixed;top:0;left:0;right:0;z-index:50;background:#fff;border-bottom:1px solid var(--line)}
+#s1-header .bar{height:60px;display:flex;align-items:center;justify-content:space-between;max-width:1200px;margin:0 auto;padding:0 20px 0 6px}
+.logo{display:flex;align-items:center;gap:7px;font-size:21px;font-weight:500;letter-spacing:.14em;color:#3a3634}
+.logo svg{width:26px;height:26px}
+.burger{width:45px;height:26px;position:relative}
+.burger i{position:absolute;left:0;right:0;height:3px;background:var(--wine);transition:transform .3s,opacity .3s,top .3s}
+.burger i:nth-child(1){top:0}.burger i:nth-child(2){top:11px}.burger i:nth-child(3){top:22px}
+.burger.on i:nth-child(1){top:11px;transform:rotate(45deg)}
+.burger.on i:nth-child(2){opacity:0}
+.burger.on i:nth-child(3){top:11px;transform:rotate(-45deg)}
+.menu{max-height:0;overflow:hidden;transition:max-height .35s ease;background:#fff}
+.menu.on{max-height:360px;border-top:1px solid var(--line)}
+.menu ul{max-width:1200px;margin:0 auto}
+.menu a{display:flex;justify-content:space-between;padding:13px 16px;font-size:15px;border-bottom:1px solid #eeebe8;color:#3a3634}
+.menu a span{color:var(--light)}
+.menu-dim{position:fixed;left:0;right:0;top:60px;bottom:0;z-index:40;background:rgba(0,0,0,.35);opacity:0;pointer-events:none;transition:opacity .3s}
+.menu-dim.on{opacity:1;pointer-events:auto}
+.menu.on{box-shadow:0 8px 16px rgba(0,0,0,.18)}
+
+/* s2 hero */
+#s2-hero{position:relative}
+.hero-view{position:relative;height:375px;overflow:hidden;background:#a59b90}
+.hero-slide{position:absolute;inset:0;opacity:0;transition:opacity .9s ease}
+.hero-slide.on{opacity:1}
+.hero-slide svg{width:100%;height:100%}
+.hero-pc{display:none}
+.hero-copy{position:absolute;left:16px;right:16px;top:60px;color:#fff;font-size:23px;font-weight:300;line-height:1.2;letter-spacing:-.06em;text-shadow:0 1px 6px rgba(60,45,35,.25)}
+.resv{position:absolute;left:10px;right:10px;top:150px;background:#fff;border:1px solid #ebe7e3;padding:18px 18px 26px;z-index:3}
+.resv h3{font-size:18px;font-weight:700;letter-spacing:0;color:#333;font-family:Arial,'Noto Sans KR',sans-serif}
+.resv p{word-break:keep-all;margin-top:10px;font-size:14px;color:var(--gray);line-height:1.7;letter-spacing:0}
+.btn-taupe{margin-top:14px;display:flex;align-items:center;justify-content:center;gap:10px;width:62%;height:38px;background:var(--taupe);color:#fff;font-weight:700;font-size:14px;transition:background .2s}
+.btn-taupe:hover{background:var(--taupe-d)}
+.dots{display:flex;justify-content:center;gap:10px;padding:34px 0 0}
+.dots button{width:8px;height:8px;border-radius:50%;background:#6a6665}
+.dots button.on{background:var(--wine)}
+
+/* section heads */
+.sec-head{text-align:center}
+.sec-head h2{font-family:Arial,'Noto Sans KR',sans-serif;font-size:36px;font-weight:300;line-height:1.2;letter-spacing:0;text-transform:uppercase;color:#333}
+.sec-head h2 b{font-family:'Noto Sans KR',sans-serif;font-weight:400}
+.sec-head p{margin-top:12px;font-size:14.5px;color:var(--gray)}
+
+/* s3 program */
+#s3-program{padding:44px 0 0}
+.prog-list{margin-top:44px;display:grid;gap:16px}
+.prog{display:grid;grid-template-columns:1fr 1fr;border:1px solid var(--line);min-height:160px;background:#fff;transition:border-color .2s}
+.prog:hover{border-color:var(--taupe-d)}
+.prog .pic{position:relative;overflow:hidden}
+.prog .pic svg{position:absolute;inset:0;width:100%;height:100%}
+.prog .txt{padding:16px 10px 14px;text-align:center;display:flex;flex-direction:column;justify-content:center;align-items:center}
+.prog h3{display:inline-block;font-size:18px;font-weight:400;padding-bottom:6px;border-bottom:2px solid var(--wine);color:#222}
+.prog p{margin-top:12px;font-size:14px;color:var(--gray);line-height:1.6;word-break:keep-all;text-wrap:balance}
+.prog .price{margin-top:8px;font-size:13px;color:#3a3634;font-weight:500}
+
+/* s4 news */
+#s4-news{padding:92px 0 90px}
+.news{margin-top:52px;display:block;overflow:hidden}
+.news .thumb{float:left;width:105px;height:105px;border-radius:50%;overflow:hidden;margin-right:22px;margin-bottom:6px}
+.news .thumb svg{width:100%;height:100%}
+.news h3{font-size:14px;font-weight:400;color:#111;padding-top:8px}
+.news time{display:block;margin-top:6px;font-size:11.5px;color:var(--light)}
+.news p{margin-top:12px;font-size:14px;color:var(--gray);line-height:1.8}
+
+/* s5 gallery */
+#s5-gallery{position:relative;padding:38px 0 62px;overflow:hidden;
+ background:
+  radial-gradient(120% 80% at 80% 100%,rgba(255,236,200,.55),transparent 60%),
+  repeating-linear-gradient(90deg,rgba(120,80,40,.07) 0 2px,transparent 2px 9px,rgba(255,255,255,.05) 9px 11px,transparent 11px 23px),
+  linear-gradient(180deg,#b98d62 0%,#c9a57c 40%,#d8bc94 75%,#c7a47a 100%)}
+#s5-gallery .sec-head h2,#s5-gallery .sec-head p{color:#fff}
+
+.gal-view{margin-top:36px;overflow:hidden}
+.gal-track{display:flex;gap:30px;transition:transform .7s ease}
+.gal-item{flex:0 0 calc((100% - 30px)/2);aspect-ratio:1/1.02;overflow:hidden;background:#8a7260}
+.gal-item svg{width:100%;height:100%}
+#s5-gallery .dots{padding-top:12px}
+
+/* s6 branch */
+#s6-branch{padding:34px 0 68px}
+#s6-branch h3{font-size:16px;font-weight:700;color:var(--wine)}
+#s6-branch .addr{margin-top:16px;font-size:14px;color:var(--gray)}
+#s6-branch ul{margin-top:6px}
+#s6-branch li{position:relative;padding-left:15px;font-size:14px;color:var(--gray);line-height:2}
+#s6-branch li::before{content:"";position:absolute;left:3px;top:13px;width:3px;height:3px;border-radius:50%;background:var(--light)}
+.btn-line{margin-top:16px;display:inline-flex;align-items:center;justify-content:center;width:124px;height:40px;border:1px solid var(--line);font-size:13.5px;color:#222;background:#fff;transition:border-color .2s}
+.btn-line:hover{border-color:var(--wine)}
+.branch-more{max-height:0;overflow:hidden;transition:max-height .4s ease}
+.branch-more.on{max-height:420px}
+.branch-more .in{margin-top:18px;border:1px solid var(--line);display:grid}
+.branch-more svg{width:100%;height:auto}
+.branch-more dl{padding:14px 16px;font-size:11.5px;color:var(--gray);display:grid;grid-template-columns:70px 1fr;row-gap:4px}
+.branch-more dt{color:#3a3634}
+
+/* s7 footer */
+#s7-footer{background:var(--taupe);padding:26px 0 30px;color:#4a4441}
+#s7-footer nav{display:flex;flex-wrap:wrap;row-gap:10px;font-size:15px}
+#s7-footer nav a{padding-right:10px;margin-right:10px;border-right:1px solid #6d635d;line-height:1}
+#s7-footer .info{margin-top:22px;font-size:11px;line-height:1.9;letter-spacing:-.02em}
+#s7-footer .info strong{display:block}
+#s7-footer .info span{white-space:nowrap}
+#s7-footer .info span+span::before{content:"|";margin:0 6px}
+
+/* reservation layer */
+.layer{position:fixed;inset:0;z-index:80;background:rgba(40,32,28,.5);display:none;align-items:flex-end;justify-content:center}
+.layer.on{display:flex}
+.sheet{width:100%;max-width:480px;background:#fff;padding:22px 20px 26px;max-height:90vh;overflow:auto}
+.sheet header{display:flex;justify-content:space-between;align-items:center}
+.sheet h3{font-family:Arial,sans-serif;font-size:18px;font-weight:700;color:#333}
+.sheet .x svg{width:20px;height:20px}
+.sheet label{display:block;margin-top:14px;font-size:12px;color:var(--gray)}
+.sheet select,.sheet input{display:block;width:100%;margin-top:6px;height:40px;border:1px solid var(--line);padding:0 10px;font:inherit;font-size:13px;background:#fff;border-radius:0;color:#222}
+.sheet .btn-taupe{width:100%;height:42px;font-size:14px;margin-top:20px}
+.sheet .msg{margin-top:12px;font-size:12px;color:var(--wine);min-height:19px}
+
+@media (min-width:1024px){
+ :root{--pad:24px}
+ body{padding-top:80px;font-size:15px}
+ #s1-header .bar{height:80px;padding:0 24px}
+ .logo{font-size:26px}.logo svg{width:32px;height:32px}
+ .burger{width:54px;height:30px}.burger i:nth-child(2){top:13px}.burger i:nth-child(3){top:26px}
+ .burger.on i:nth-child(1),.burger.on i:nth-child(3){top:13px}
+ .menu-dim{top:80px}
+ .hero-view{height:540px}
+ .hero-pc{display:inline}.hero-m{display:none}
+ .hero-in{position:absolute;inset:0;max-width:1200px;margin:0 auto;pointer-events:none}
+ .hero-in>*{pointer-events:auto}
+ .hero-copy{left:24px;top:90px;font-size:38px}
+ .resv{left:24px;right:auto;width:520px;top:270px;padding:28px 30px 34px}
+ .resv h3{font-size:24px}.resv p{font-size:15px}
+ .btn-taupe{height:44px;font-size:15px}
+ .dots{padding-top:40px}.dots button{width:10px;height:10px}
+ .sec-head h2{font-size:52px}.sec-head p{font-size:16px}
+ #s3-program{padding-top:70px}
+ .prog-list{grid-template-columns:repeat(3,1fr);gap:24px;margin-top:60px}
+ .prog{min-height:230px;grid-template-columns:42% 58%}
+ .prog .txt{padding:28px 16px}
+ .prog .m-only{display:none}
+ .prog .pc-shift2{transform:translate(-18px,0)}
+ .prog .pc-shift{transform:translate(-22px,-6px)}
+ .prog h3{font-size:22px}.prog p{font-size:14px}.prog .price{font-size:14px}
+ #s4-news{padding:130px 0}
+ .news{max-width:860px;margin:64px auto 0}
+ .news .thumb{width:150px;height:150px;margin-right:36px}
+ .news h3{font-size:19px;padding-top:22px}.news time{font-size:12px}.news p{font-size:14px}
+ #s5-gallery{padding:70px 0 90px}
+ .gal-item{flex-basis:calc((100% - 90px)/4)}
+ #s6-branch{padding:70px 0 100px}
+ #s6-branch .wrap{display:grid;grid-template-columns:300px 1fr auto;column-gap:40px;align-items:center;border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding-top:36px;padding-bottom:36px;max-width:1152px}
+ #s6-branch h3{font-size:24px;grid-row:1/3}
+ #s6-branch .addr{grid-column:2;margin-top:0}
+ #s6-branch ul{grid-column:2;display:flex;gap:28px;margin-top:4px}
+ #s6-branch .addr,#s6-branch li{font-size:15px}
+ #s6-branch li::before{top:14px}
+ .btn-line{width:150px;height:44px;font-size:14px;grid-column:3;grid-row:1/3;margin-top:0}
+ .branch-more{grid-column:1/-1}
+ .branch-more .in{grid-template-columns:1fr 1fr;max-width:860px}
+ .branch-more dl{font-size:13.5px;align-content:center;grid-template-columns:90px 1fr}
+ #s7-footer{padding:40px 0 46px}
+ #s7-footer nav{font-size:16px}
+ #s7-footer .info{font-size:12px}
+ .layer{align-items:center}
+}
+@media (max-width:1023px){.hero-in{position:static}}
+</style>
+</head>
+<body>
+
+<header id="s1-header">
+  <div class="bar">
+    <a class="logo" href="#s2-hero" aria-label="소담 스파">
+      <svg viewBox="0 0 32 32" fill="none"><path d="M4 18c0 6 5.4 10 12 10s12-4 12-10z" fill="#5f6b5a"/><path d="M16 15c-4-3-4-8 0-12 4 4 4 9 0 12z" fill="#93a087"/><path d="M16 15c-1-4 2-7 7-7 0 4-3 7-7 7z" fill="#b9c2ab"/><path d="M16 15c1-4-2-7-7-7 0 4 3 7 7 7z" fill="#778468"/></svg>
+      <span>소담 스파</span>
+    </a>
+    <button class="burger" id="burger" aria-label="메뉴 열기" aria-expanded="false"><i></i><i></i><i></i></button>
+  </div>
+  <nav class="menu" id="menu">
+    <ul>
+      <li><a href="#s2-hero">소담 스파<span>&rsaquo;</span></a></li>
+      <li><a href="#s3-program">프로그램<span>&rsaquo;</span></a></li>
+      <li><a href="#s5-gallery">갤러리<span>&rsaquo;</span></a></li>
+      <li><a href="#s4-news">소식<span>&rsaquo;</span></a></li>
+      <li><a href="#" data-resv>온라인예약<span>&rsaquo;</span></a></li>
+      <li><a href="#s6-branch">오시는 길<span>&rsaquo;</span></a></li>
+    </ul>
+  </nav>
+</header>
+<div class="menu-dim" id="menuDim"></div>
+
+<main>
+<section id="s2-hero">
+  <div class="hero-view" id="heroView">
+    <div class="hero-slide on">
+      <svg viewBox="0 0 750 750" preserveAspectRatio="xMidYMax slice" aria-hidden="true">
+        <defs>
+          <linearGradient id="h1bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#d9d5cf"/><stop offset=".55" stop-color="#cbc5bd"/><stop offset="1" stop-color="#b3aaa0"/></linearGradient>
+          <linearGradient id="h1wood" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#c79b72"/><stop offset=".5" stop-color="#b98558"/><stop offset="1" stop-color="#d0a882"/></linearGradient>
+          <radialGradient id="st1" cx=".35" cy=".3" r=".8"><stop offset="0" stop-color="#8d8782"/><stop offset="1" stop-color="#4d4844"/></radialGradient>
+          <radialGradient id="st2" cx=".35" cy=".3" r=".8"><stop offset="0" stop-color="#a39d97"/><stop offset="1" stop-color="#5f5a55"/></radialGradient>
+          <linearGradient id="leaf" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#9fb08a"/><stop offset="1" stop-color="#5d7350"/></linearGradient>
+        </defs>
+        <rect width="750" height="750" fill="url(#h1bg)"/>
+        <g opacity=".5" stroke="#bdb6ad" stroke-width="1"><path d="M0 300h750M0 430h750M0 560h750M0 690h750"/></g>
+        <ellipse class="hero-pc" cx="420" cy="662" rx="190" ry="22" fill="#6f665d" opacity=".35"/>
+        <ellipse cx="420" cy="628" rx="150" ry="37" fill="url(#st1)"/>
+        <ellipse cx="412" cy="566" rx="118" ry="34" fill="url(#st2)"/>
+        <ellipse cx="424" cy="508" rx="88" ry="28" fill="url(#st1)"/>
+        <ellipse cx="408" cy="498" rx="30" ry="7" fill="#fff" opacity=".16"/>
+        <g transform="translate(560 420) rotate(-28)">
+          <path d="M0 0c40-70 120-110 210-104C190-30 110 20 0 0z" fill="url(#leaf)"/>
+          <path d="M0 0C70-30 130-64 210-104" stroke="#e3ead8" stroke-width="2" fill="none" opacity=".7"/>
+        </g>
+        <g transform="translate(520 500) rotate(8)">
+          <path d="M0 0c50-40 120-50 190-22C150 30 70 40 0 0z" fill="#7d916c"/>
+          <path d="M0 0c60-8 120-12 190-22" stroke="#e3ead8" stroke-width="2" fill="none" opacity=".6"/>
+        </g>
+        <g transform="translate(650 708) scale(.7) translate(-180 -662)"><g fill="#f4efe6"><ellipse cx="170" cy="640" rx="34" ry="14" transform="rotate(-20 170 640)"/><ellipse cx="214" cy="672" rx="34" ry="14" transform="rotate(30 214 672)"/><ellipse cx="150" cy="684" rx="34" ry="14" transform="rotate(80 150 684)"/></g>
+        <circle cx="182" cy="664" r="9" fill="#e2b866"/></g>
+      </svg>
+    </div>
+    <div class="hero-slide">
+      <svg viewBox="0 0 750 750" preserveAspectRatio="xMidYMax slice" aria-hidden="true">
+        <defs>
+          <linearGradient id="h2bg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#e4dfd8"/><stop offset=".62" stop-color="#d6cfc6"/><stop offset=".62" stop-color="#b9a48f"/><stop offset="1" stop-color="#a38b74"/></linearGradient>
+          <linearGradient id="glass" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#c48a3c"/><stop offset=".45" stop-color="#e7b869"/><stop offset="1" stop-color="#a86f2a"/></linearGradient>
+          <linearGradient id="towel" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#faf7f2"/><stop offset="1" stop-color="#d8d0c5"/></linearGradient>
+          <radialGradient id="flame" cx=".5" cy=".7" r=".6"><stop offset="0" stop-color="#fff6c9"/><stop offset="1" stop-color="#f0a53a"/></radialGradient>
+        </defs>
+        <rect width="750" height="750" fill="url(#h2bg)"/>
+        <g class="hero-pc" transform="translate(232.8 333.2) scale(.64)"><ellipse cx="300" cy="640" rx="130" ry="16" fill="#5c4a3a" opacity=".3"/>
+        <rect x="230" y="330" width="140" height="300" rx="26" fill="url(#glass)"/>
+        <rect x="246" y="350" width="22" height="250" rx="11" fill="#fff" opacity=".28"/>
+        <rect x="272" y="270" width="56" height="64" rx="6" fill="#3c3531"/>
+        <rect x="264" y="318" width="72" height="18" rx="5" fill="#57504b"/>
+        <rect x="250" y="450" width="100" height="96" fill="#f5efe4" opacity=".92"/>
+        <path d="M300 472c-12 10-12 26 0 38 12-12 12-28 0-38z" fill="#7d916c"/>
+        <path d="M270 526h60" stroke="#8a7f74" stroke-width="3"/></g>
+        <g transform="translate(50 0)"><ellipse cx="560" cy="650" rx="112" ry="13" fill="#5c4a3a" opacity=".28"/>
+        <g><rect x="430" y="560" width="250" height="84" rx="42" fill="url(#towel)"/><circle cx="472" cy="602" r="42" fill="#efe9df"/><path d="M472 572a30 30 0 1 0 1 60a22 22 0 1 1-1-44a14 14 0 1 0 0 28" stroke="#cfc6ba" stroke-width="4" fill="none"/></g>
+        <g><rect x="460" y="486" width="210" height="76" rx="38" fill="url(#towel)"/><circle cx="498" cy="524" r="38" fill="#f3eee6"/><path d="M498 498a26 26 0 1 0 1 52a18 18 0 1 1-1-36" stroke="#cfc6ba" stroke-width="4" fill="none"/></g></g>
+        <g class="hero-m"><rect x="450" y="284" width="300" height="9" fill="#a8845f"/><rect x="450" y="293" width="300" height="4" fill="#7d6a58" opacity=".35"/>
+          <g transform="translate(366 -68.8) scale(.56)"><rect x="230" y="330" width="140" height="300" rx="26" fill="url(#glass)"/><rect x="246" y="350" width="22" height="250" rx="11" fill="#fff" opacity=".28"/><rect x="272" y="270" width="56" height="64" rx="6" fill="#3c3531"/><rect x="264" y="318" width="72" height="18" rx="5" fill="#57504b"/><rect x="250" y="450" width="100" height="96" fill="#f5efe4" opacity=".92"/><path d="M300 472c-12 10-12 26 0 38 12-12 12-28 0-38z" fill="#7d916c"/></g>
+          <rect x="612" y="236" width="44" height="48" rx="6" fill="#efe7da"/></g>
+        <g transform="translate(634 84)"><path d="M0 160C-6 90 10 30 60 0c10 60-10 120-60 160z" fill="#8ea07b"/><path d="M0 160C-40 110-50 60-30 10c36 40 46 90 30 150z" fill="#6f8560"/></g>
+      </svg>
+    </div>
+    <div class="hero-in">
+      <p class="hero-copy">도심 속 조용한 쉼,<br>소담 스파에서<br>천천히 머물다 가세요.</p>
+      <div class="resv">
+        <h3>RESERVATION</h3>
+        <p>방문 전 예약을 부탁드립니다. 일정이 바뀌면 편하게 연락 주세요.</p>
+        <a href="#" class="btn-taupe" data-resv>온라인 예약 바로가기 <span>&gt;</span></a>
+      </div>
+    </div>
+  </div>
+  <div class="dots" id="heroDots"><button class="on" aria-label="슬라이드 1"></button><button aria-label="슬라이드 2"></button></div>
+</section>
+
+<section id="s3-program">
+  <div class="wrap">
+    <div class="sec-head"><h2><b>추천</b> Program</h2><p>몸 상태에 맞춰 고르는 세 가지 코스</p></div>
+    <div class="prog-list">
+      <a class="prog" href="#" data-resv data-course="부분 관리">
+        <div class="pic">
+          <svg viewBox="0 0 360 300" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+            <defs><radialGradient id="p1a" cx=".4" cy=".35" r=".9"><stop offset="0" stop-color="#fbf7f2"/><stop offset="1" stop-color="#e7ddd2"/></radialGradient><radialGradient id="p1w" cx=".45" cy=".4" r=".7"><stop offset="0" stop-color="#dfeceb"/><stop offset="1" stop-color="#a9c4c2"/></radialGradient><linearGradient id="p1b" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#9a6e4b"/><stop offset="1" stop-color="#6d4a31"/></linearGradient></defs>
+            <rect width="360" height="300" fill="url(#p1a)"/>
+            <ellipse cx="120" cy="190" rx="150" ry="120" fill="#cbbfb2" opacity=".5"/>
+            <ellipse cx="112" cy="178" rx="146" ry="116" fill="url(#p1b)"/>
+            <ellipse cx="112" cy="174" rx="128" ry="100" fill="url(#p1w)"/>
+            <ellipse cx="90" cy="150" rx="70" ry="40" fill="#fff" opacity=".25"/>
+            <g fill="#f0b8bf"><ellipse cx="60" cy="210" rx="16" ry="9" transform="rotate(-30 60 210)"/><ellipse cx="170" cy="130" rx="14" ry="8" transform="rotate(40 170 130)"/><ellipse cx="150" cy="232" rx="13" ry="7" transform="rotate(10 150 232)"/></g>
+            <g fill="#e58f9c"><ellipse cx="96" cy="118" rx="12" ry="7" transform="rotate(60 96 118)"/><ellipse cx="196" cy="196" rx="12" ry="7" transform="rotate(-50 196 196)"/></g>
+            <g class="pc-shift"><g transform="translate(250 230)"><g fill="#fffdf8"><ellipse cx="0" cy="-22" rx="13" ry="22"/><ellipse cx="0" cy="-22" rx="13" ry="22" transform="rotate(72)"/><ellipse cx="0" cy="-22" rx="13" ry="22" transform="rotate(144)"/><ellipse cx="0" cy="-22" rx="13" ry="22" transform="rotate(216)"/><ellipse cx="0" cy="-22" rx="13" ry="22" transform="rotate(288)"/></g><circle r="10" fill="#f1c95c"/></g></g>
+            <g class="m-only"><ellipse cx="300" cy="150" rx="34" ry="24" fill="#6d6661"/><ellipse cx="292" cy="143" rx="14" ry="6" fill="#fff" opacity=".2"/></g>
+            <g transform="translate(-40 0)"><g fill="none" stroke="#fff" stroke-width="3" opacity=".95"><circle cx="262" cy="70" r="42" fill="rgba(255,255,255,.55)"/><path d="M232 34l-12-10M292 34l12-10M240 108l-8 10M284 108l8 10"/></g>
+            <text x="262" y="84" text-anchor="middle" font-family="Arial" font-size="38" fill="#a8978b">60</text></g>
+          </svg>
+        </div>
+        <div class="txt"><h3>부분 관리</h3><p>발 관리와 페이셜 중 원하는 부위만 고르는 코스</p><p class="price">60분 · 45,000원부터</p></div>
+      </a>
+      <a class="prog" href="#" data-resv data-course="아로마 전신">
+        <div class="pic">
+          <svg viewBox="0 0 360 300" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+            <defs><linearGradient id="p2a" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#8b7767"/><stop offset="1" stop-color="#5f4e42"/></linearGradient><linearGradient id="p2s" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f1cfb4"/><stop offset="1" stop-color="#d9a987"/></linearGradient><linearGradient id="p2o" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f0c35a"/><stop offset="1" stop-color="#c98f24"/></linearGradient></defs>
+            <rect width="360" height="300" fill="url(#p2a)"/>
+            <g stroke="#9c8878" stroke-width="1" opacity=".5"><path d="M0 40h360M0 90h360M0 140h360"/></g>
+            <path d="M-10 300c20-70 90-96 190-92 90 4 150 30 190 60v40z" fill="url(#p2s)"/>
+            <path d="M40 250c50-28 120-34 200-22" stroke="#fff" stroke-width="6" opacity=".25" fill="none" stroke-linecap="round"/>
+            <path d="M-10 300c10-30 30-48 60-58l10 58z" fill="#f4eee5"/>
+            <g class="pc-shift2"><g transform="translate(250 60) rotate(24)"><path d="M-46-14h92l-12 46a14 14 0 0 1-14 10h-40a14 14 0 0 1-14-10z" fill="#d7b98f"/><ellipse cx="0" cy="-14" rx="46" ry="10" fill="#e9d2ae"/><ellipse cx="0" cy="-13" rx="36" ry="6" fill="url(#p2o)"/></g>
+            <path d="M228 78c-6 30-10 70-10 130" stroke="url(#p2o)" stroke-width="7" stroke-linecap="round" fill="none"/>
+            <ellipse cx="216" cy="212" rx="26" ry="7" fill="#e3ae3f" opacity=".85"/></g>
+            <g class="m-only"><path d="M270 0c30 20 60 50 90 44V0z" fill="#e2c3a6"/></g>
+            <g transform="translate(150 110) scale(.8) translate(-92 -110)"><g fill="none" stroke="#fff" stroke-width="3" opacity=".9"><circle cx="92" cy="110" r="46"/><path d="M60 72l-12-10M124 72l12-10M68 152l-8 10M116 152l8 10"/></g>
+            <text x="92" y="122" text-anchor="middle" font-family="Arial" font-size="32" fill="#fff">90~</text></g>
+          </svg>
+        </div>
+        <div class="txt"><h3>아로마 전신</h3><p>등부터 다리까지 오일로 푸는 전신 코스</p><p class="price">90~120분 · 90,000원부터</p></div>
+      </a>
+      <a class="prog" href="#" data-resv data-course="커플 코스">
+        <div class="pic">
+          <svg viewBox="0 0 360 300" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+            <defs><linearGradient id="p3a" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#e9e1d6"/><stop offset=".6" stop-color="#dbd0c2"/><stop offset=".6" stop-color="#9f876f"/><stop offset="1" stop-color="#8a735d"/></linearGradient><linearGradient id="p3b" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fbf8f3"/><stop offset="1" stop-color="#ded5c9"/></linearGradient></defs>
+            <rect width="360" height="300" fill="url(#p3a)"/>
+            <g transform="translate(64 0)"><rect x="150" y="20" width="60" height="110" fill="#f6e9c9" opacity=".8"/><path d="M150 20h60M150 75h60M180 20v110" stroke="#b9a68c" stroke-width="2"/></g>
+            <g><rect x="14" y="170" width="150" height="26" rx="4" fill="url(#p3b)"/><rect x="14" y="196" width="150" height="34" fill="#6d4f3c"/><rect x="24" y="230" width="8" height="46" fill="#4b3628"/><rect x="146" y="230" width="8" height="46" fill="#4b3628"/><rect x="26" y="158" width="48" height="16" rx="8" fill="#fff"/><rect x="60" y="176" width="104" height="54" fill="#73263a" opacity=".55"/></g>
+            <g><rect x="196" y="170" width="150" height="26" rx="4" fill="url(#p3b)"/><rect x="196" y="196" width="150" height="34" fill="#6d4f3c"/><rect x="206" y="230" width="8" height="46" fill="#4b3628"/><rect x="328" y="230" width="8" height="46" fill="#4b3628"/><rect x="208" y="158" width="48" height="16" rx="8" fill="#fff"/><rect x="242" y="176" width="104" height="54" fill="#73263a" opacity=".55"/></g>
+            <g transform="translate(180 236)"><rect x="-16" y="0" width="32" height="40" fill="#5a4334"/><ellipse cx="0" cy="0" rx="22" ry="6" fill="#77594a"/><path d="M0-4c-10-10-8-22 0-30 8 8 10 20 0 30z" fill="#7d916c"/></g>
+            <g transform="translate(82 0)"><g fill="none" stroke="#fff" stroke-width="3" opacity=".95"><circle cx="70" cy="80" r="40" fill="rgba(255,255,255,.4)"/><path d="M42 46l-12-10M98 46l12-10M50 116l-8 10M90 116l8 10"/></g>
+            <text x="70" y="92" text-anchor="middle" font-family="Arial" font-size="32" fill="#8a735d">120</text></g>
+          </svg>
+        </div>
+        <div class="txt"><h3>커플 코스</h3><p>두 분이 한 방에서 나란히 받는 전신·발 코스</p><p class="price">120분 · 2인 220,000원</p></div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section id="s4-news">
+  <div class="wrap">
+    <div class="sec-head"><h2>News &amp; Updates</h2><p>달라지는 점과 휴무 일정을 알려 드려요</p></div>
+    <a class="news" href="#" id="newsItem">
+      <span class="thumb">
+        <svg viewBox="0 0 200 200" aria-hidden="true"><rect width="200" height="200" fill="#a69a8f"/><path d="M0 0h200v70C140 96 60 96 0 70z" fill="#b6aba0"/><path d="M100 58c-9-7-9-18 0-27 9 9 9 20 0 27z" fill="#f3efe9"/><path d="M100 58c-2-9 4-16 16-16 0 9-7 16-16 16zM100 58c2-9-4-16-16-16 0 9 7 16 16 16z" fill="#e2dbd2"/><text x="100" y="118" text-anchor="middle" font-family="Arial" font-style="italic" font-weight="700" font-size="34" fill="#fff">새 단장</text><path d="M52 138h96" stroke="#fff" stroke-width="1.5" opacity=".7"/><text x="100" y="156" text-anchor="middle" font-family="Arial" font-size="11" fill="#fff" opacity=".9">SODAM SPA</text></svg>
+      </span>
+      <h3>소담 스파 새 단장 안내</h3>
+      <time>2026-11-02</time>
+      <p>관리실과 라운지 공사를 마치고 11월부터 다시 손님을 맞습니다. 넓어진 족욕 공간과 새로 짠 코스 구성은 매장에서 직접 둘러보실 수 있어요. 공사 기간 동안 기다려 주셔서 고맙습니다...</p>
+    </a>
+  </div>
+</section>
+
+<section id="s5-gallery">
+  <div class="wrap">
+    <div class="sec-head"><h2><b>소담 스파</b> Gallery</h2><p>관리실부터 라운지까지, 공간을 먼저 둘러보세요</p></div>
+    <div class="gal-view">
+      <div class="gal-track" id="galTrack">
+        <div class="gal-item"><svg viewBox="0 0 300 306" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+          <defs><linearGradient id="g1w" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#efe6d6"/><stop offset="1" stop-color="#d9cbb5"/></linearGradient><linearGradient id="g1f" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#9b9186"/><stop offset="1" stop-color="#6f675f"/></linearGradient></defs>
+          <rect width="300" height="306" fill="url(#g1w)"/>
+          <g fill="#5b3d2c"><rect x="0" y="40" width="300" height="5"/><rect x="0" y="86" width="300" height="5"/><rect x="0" y="132" width="300" height="5"/><rect x="60" y="0" width="5" height="180"/><rect x="150" y="0" width="5" height="180"/><rect x="240" y="0" width="5" height="180"/></g>
+          <g fill="#fbf8f2" stroke="#d8cdbb"><rect x="10" y="14" width="18" height="26" rx="4"/><rect x="32" y="14" width="18" height="26" rx="4"/><rect x="72" y="14" width="18" height="26" rx="4"/><rect x="96" y="14" width="18" height="26" rx="4"/><rect x="120" y="14" width="18" height="26" rx="4"/><rect x="164" y="60" width="18" height="26" rx="4"/><rect x="188" y="60" width="18" height="26" rx="4"/><rect x="212" y="60" width="18" height="26" rx="4"/><rect x="10" y="106" width="18" height="26" rx="4"/><rect x="34" y="106" width="18" height="26" rx="4"/><rect x="250" y="14" width="18" height="26" rx="4"/><rect x="274" y="14" width="18" height="26" rx="4"/><rect x="72" y="60" width="18" height="26" rx="4"/><rect x="250" y="106" width="18" height="26" rx="4"/></g>
+          <path d="M0 214h300v92H0z" fill="url(#g1f)"/>
+          <path d="M20 176h260v24H20z" fill="#b99b78"/><path d="M20 200h260v26H20z" fill="#5a4030"/>
+          <g fill="#c9ae8c"><rect x="30" y="150" width="70" height="28" rx="4"/><rect x="116" y="150" width="70" height="28" rx="4"/><rect x="202" y="150" width="70" height="28" rx="4"/></g>
+          <g><path d="M40 232h56l-6 44H46z" fill="#3f4a55"/><ellipse cx="68" cy="232" rx="28" ry="7" fill="#6c7a87"/><path d="M124 232h56l-6 44h-44z" fill="#3f4a55"/><ellipse cx="152" cy="232" rx="28" ry="7" fill="#6c7a87"/><path d="M208 232h56l-6 44h-44z" fill="#3f4a55"/><ellipse cx="236" cy="232" rx="28" ry="7" fill="#6c7a87"/></g>
+        </svg></div>
+        <div class="gal-item"><svg viewBox="0 0 300 306" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+          <defs><linearGradient id="g2w" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#7c6a55"/><stop offset=".6" stop-color="#8d7a63"/><stop offset=".6" stop-color="#6b4a30"/><stop offset="1" stop-color="#7d5a3c"/></linearGradient><linearGradient id="g2l" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff3cf"/><stop offset="1" stop-color="#fff3cf" stop-opacity="0"/></linearGradient></defs>
+          <rect width="300" height="306" fill="url(#g2w)"/>
+          <rect x="0" y="0" width="300" height="46" fill="#4d3d30"/><rect x="0" y="46" width="180" height="6" fill="#fff3cf"/><rect x="0" y="52" width="180" height="60" fill="url(#g2l)" opacity=".6"/>
+          <g stroke="#5c3e28" stroke-width="2" opacity=".6"><path d="M200 46v170M230 46v170M262 46v170"/></g>
+          <rect x="0" y="150" width="180" height="12" fill="#3a2d24"/><rect x="0" y="162" width="180" height="70" fill="#5a4636"/>
+          <g><rect x="20" y="120" width="12" height="30" fill="#c9a24e"/><rect x="40" y="128" width="16" height="22" rx="3" fill="#efe7da"/><path d="M70 150c-4-20 2-34 10-44 8 10 14 24 10 44z" fill="#6f8560"/><rect x="110" y="112" width="40" height="38" fill="#2f2622"/><rect x="114" y="116" width="32" height="30" fill="#b9a48f"/></g>
+          <path d="M0 232h300v74H0z" fill="#b5a593"/>
+          <path d="M60 210h230v34H60z" fill="#f4efe7"/><path d="M60 244h230v40H60z" fill="#4a2f2a"/>
+          <rect x="130" y="204" width="90" height="46" fill="#5d3a33"/><rect x="150" y="212" width="50" height="18" rx="3" fill="#d9c9a8"/>
+          <rect x="76" y="198" width="46" height="16" rx="8" fill="#fff"/>
+        </svg></div>
+        <div class="gal-item"><svg viewBox="0 0 300 306" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+          <defs><linearGradient id="g3f" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#4b3b30"/><stop offset="1" stop-color="#8a7260"/></linearGradient><radialGradient id="g3l" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#ffe9b0"/><stop offset="1" stop-color="#ffe9b0" stop-opacity="0"/></radialGradient></defs>
+          <rect width="300" height="306" fill="#3a2e27"/>
+          <path d="M0 0l110 70v130L0 306z" fill="#6b5546"/><path d="M300 0L190 70v130l110 106z" fill="#5c493c"/>
+          <path d="M110 70h80v130h-80z" fill="#c9b79e"/><path d="M130 100h40v100h-40z" fill="#8f7b66"/>
+          <path d="M0 306l110-106h80l110 106z" fill="url(#g3f)"/>
+          <g><circle cx="40" cy="150" r="46" fill="url(#g3l)"/><rect x="30" y="134" width="20" height="32" rx="4" fill="#ffe9b0"/><circle cx="262" cy="150" r="46" fill="url(#g3l)"/><rect x="252" y="134" width="20" height="32" rx="4" fill="#ffe9b0"/><circle cx="92" cy="140" r="26" fill="url(#g3l)"/><rect x="87" y="131" width="10" height="18" rx="2" fill="#ffe9b0"/><circle cx="208" cy="140" r="26" fill="url(#g3l)"/><rect x="203" y="131" width="10" height="18" rx="2" fill="#ffe9b0"/></g>
+          <path d="M120 306l22-106h16l22 106z" fill="#73263a" opacity=".6"/>
+        </svg></div>
+        <div class="gal-item"><svg viewBox="0 0 300 306" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+          <defs><linearGradient id="g4b" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#e6ddd0"/><stop offset="1" stop-color="#cdbfae"/></linearGradient><linearGradient id="g4t" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#8a5f3f"/><stop offset="1" stop-color="#5f3f28"/></linearGradient></defs>
+          <rect width="300" height="306" fill="url(#g4b)"/>
+          <rect x="170" y="0" width="130" height="150" fill="#f3ecd9"/><path d="M170 0h130M170 75h130M235 0v150" stroke="#a8957c" stroke-width="3"/>
+          <ellipse cx="150" cy="232" rx="170" ry="60" fill="url(#g4t)"/>
+          <ellipse cx="150" cy="222" rx="150" ry="46" fill="#9a6e4b" opacity=".5"/>
+          <g><path d="M70 190h70v22a35 22 0 0 1-70 0z" fill="#f8f4ec"/><ellipse cx="105" cy="190" rx="35" ry="9" fill="#fff"/><ellipse cx="105" cy="191" rx="28" ry="6" fill="#b98b3e"/><path d="M140 196c16-2 18 20 0 20" stroke="#f8f4ec" stroke-width="6" fill="none"/></g>
+          <g><path d="M182 176h56v34a28 14 0 0 1-56 0z" fill="#4a4f47"/><ellipse cx="210" cy="176" rx="28" ry="8" fill="#6b7166"/><path d="M196 176c0-16 28-16 28 0" stroke="#3a3e37" stroke-width="5" fill="none"/><path d="M238 186l22-8" stroke="#4a4f47" stroke-width="7" stroke-linecap="round"/></g>
+          <g fill="none" stroke="#fff" stroke-width="3" opacity=".6" stroke-linecap="round"><path d="M96 170c-8-10 8-16 0-28M114 170c-8-10 8-16 0-28"/></g>
+          <g transform="translate(40 150)"><rect x="-10" y="20" width="20" height="40" fill="#efe7da"/><path d="M0 22c-20-20-16-46 0-62 16 16 20 42 0 62z" fill="#7d916c"/><path d="M0 22c-30-6-40-26-36-46 22 4 36 22 36 46z" fill="#5d7350"/></g>
+        </svg></div>
+        <div class="gal-item"><svg viewBox="0 0 300 306" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+          <defs><linearGradient id="g5w" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#d5c6b1"/><stop offset="1" stop-color="#bba88f"/></linearGradient><linearGradient id="g5m" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#eef3f3"/><stop offset="1" stop-color="#b9c9c9"/></linearGradient></defs>
+          <rect width="300" height="306" fill="url(#g5w)"/>
+          <circle cx="150" cy="110" r="78" fill="#8a6a4a"/><circle cx="150" cy="110" r="70" fill="url(#g5m)"/><path d="M104 70l60 80M130 56l40 54" stroke="#fff" stroke-width="6" opacity=".5"/>
+          <rect x="0" y="206" width="300" height="16" fill="#efe9df"/><rect x="0" y="222" width="300" height="84" fill="#6b4a30"/>
+          <path d="M40 222h4v84h-4zM150 222h4v84h-4zM256 222h4v84h-4z" fill="#553823"/>
+          <ellipse cx="150" cy="204" rx="50" ry="10" fill="#fbf8f2"/><ellipse cx="150" cy="203" rx="40" ry="6" fill="#d7e2e2"/>
+          <path d="M150 196v-30h24" stroke="#b08a4a" stroke-width="5" fill="none" stroke-linecap="round"/>
+          <g><rect x="40" y="170" width="16" height="36" rx="4" fill="#73263a" opacity=".8"/><rect x="62" y="178" width="14" height="28" rx="4" fill="#efe7da"/><rect x="230" y="184" width="40" height="22" rx="4" fill="#fbf8f2"/><rect x="234" y="174" width="32" height="12" rx="4" fill="#f1ebe1"/></g>
+          <path d="M20 0v60" stroke="#4b3b30" stroke-width="2"/><path d="M6 60h28l-6 24H12z" fill="#ffe9b0"/>
+          <path d="M280 0v60" stroke="#4b3b30" stroke-width="2"/><path d="M266 60h28l-6 24h-16z" fill="#ffe9b0"/>
+        </svg></div>
+        <div class="gal-item"><svg viewBox="0 0 300 306" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+          <defs><linearGradient id="g6w" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#a08a74"/><stop offset="1" stop-color="#7f6a57"/></linearGradient><linearGradient id="g6d" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#d9c3a3"/><stop offset="1" stop-color="#b8996f"/></linearGradient></defs>
+          <rect width="300" height="306" fill="url(#g6w)"/>
+          <g stroke="#6d5947" stroke-width="2" opacity=".6"><path d="M30 0v180M60 0v180M90 0v180M120 0v180M150 0v180M180 0v180M210 0v180M240 0v180M270 0v180"/></g>
+          <path d="M110 60c-10-10-10-26 0-38 10 12 10 28 0 38z" fill="#f3efe9" transform="translate(40 30) scale(1.6)" opacity=".9"/>
+          <rect x="20" y="170" width="260" height="14" fill="#f4efe7"/><rect x="30" y="184" width="240" height="90" fill="url(#g6d)"/>
+          <g stroke="#a88a62" stroke-width="2"><path d="M30 214h240M30 244h240"/></g>
+          <rect x="0" y="274" width="300" height="32" fill="#5c4b3e"/>
+          <g><rect x="46" y="140" width="22" height="30" rx="3" fill="#2f2622"/><rect x="230" y="146" width="12" height="24" rx="3" fill="#efe7da"/><path d="M236 146c-12-14-10-30 0-42 10 12 12 28 0 42z" fill="#7d916c"/></g>
+          <path d="M150 0v40" stroke="#3a2e27" stroke-width="2"/><ellipse cx="150" cy="48" rx="34" ry="12" fill="#ffe9b0"/>
+        </svg></div>
+        <div class="gal-item"><svg viewBox="0 0 300 306" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+          <defs><linearGradient id="g7w" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#e9e3da"/><stop offset=".68" stop-color="#d8cfc3"/><stop offset=".68" stop-color="#a8937d"/><stop offset="1" stop-color="#927c66"/></linearGradient></defs>
+          <rect width="300" height="306" fill="url(#g7w)"/>
+          <rect x="24" y="24" width="110" height="130" fill="#cfe0d6"/><path d="M24 24h110v130H24z" fill="none" stroke="#7a6451" stroke-width="5"/><path d="M79 24v130" stroke="#7a6451" stroke-width="3"/><path d="M40 150c6-40 20-60 30-80M100 150c0-34 10-52 22-66" stroke="#7d916c" stroke-width="5" fill="none"/>
+          <g><path d="M150 150c0-30 22-48 60-48s60 18 60 48v60H150z" fill="#73263a" opacity=".75"/><rect x="140" y="196" width="140" height="34" rx="10" fill="#8b3a4d"/><rect x="150" y="230" width="8" height="36" fill="#4b3628"/><rect x="262" y="230" width="8" height="36" fill="#4b3628"/><rect x="176" y="168" width="68" height="34" rx="8" fill="#f1e7d6"/></g>
+          <g><rect x="60" y="214" width="56" height="8" fill="#5a4030"/><rect x="84" y="222" width="8" height="46" fill="#5a4030"/><ellipse cx="88" cy="270" rx="22" ry="5" fill="#4b3628"/><path d="M74 198h28l-4 16H78z" fill="#fbf8f2"/></g>
+          <ellipse cx="210" cy="274" rx="90" ry="10" fill="#6f5c4b" opacity=".4"/>
+        </svg></div>
+        <div class="gal-item"><svg viewBox="0 0 300 306" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+          <defs><linearGradient id="g8w" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#b9a892"/><stop offset="1" stop-color="#8f7c68"/></linearGradient><linearGradient id="g8t" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fbf8f3"/><stop offset="1" stop-color="#ddd3c6"/></linearGradient></defs>
+          <rect width="300" height="306" fill="url(#g8w)"/>
+          <rect x="0" y="210" width="300" height="96" fill="#5f4634"/><rect x="0" y="204" width="300" height="10" fill="#7d5d45"/>
+          <g><rect x="60" y="164" width="180" height="44" rx="22" fill="url(#g8t)"/><circle cx="82" cy="186" r="22" fill="#f1ebe1"/><path d="M82 170a16 16 0 1 0 1 32a10 10 0 1 1-1-20" stroke="#cfc6ba" stroke-width="3" fill="none"/></g>
+          <g><rect x="76" y="124" width="150" height="42" rx="21" fill="url(#g8t)"/><circle cx="97" cy="145" r="21" fill="#f6f1e9"/><path d="M97 130a15 15 0 1 0 1 30a9 9 0 1 1-1-18" stroke="#cfc6ba" stroke-width="3" fill="none"/></g>
+          <g><rect x="94" y="86" width="116" height="40" rx="20" fill="url(#g8t)"/><circle cx="114" cy="106" r="20" fill="#f1ebe1"/><path d="M114 92a14 14 0 1 0 1 28a8 8 0 1 1-1-16" stroke="#cfc6ba" stroke-width="3" fill="none"/></g>
+          <g transform="translate(246 204)"><ellipse cx="0" cy="0" rx="30" ry="8" fill="#3d3632"/><ellipse cx="0" cy="-8" rx="26" ry="10" fill="#5a524d"/><ellipse cx="2" cy="-20" rx="20" ry="8" fill="#6f6761"/><ellipse cx="0" cy="-30" rx="13" ry="6" fill="#57504b"/></g>
+          <g transform="translate(34 204)"><rect x="-12" y="-44" width="24" height="44" rx="5" fill="#c98f24"/><rect x="-7" y="-58" width="14" height="16" fill="#3c3531"/><rect x="-8" y="-30" width="16" height="16" fill="#f5efe4"/></g>
+          <path d="M150 20c-14 16-14 34 0 50 14-16 14-34 0-50z" fill="#f3efe9" opacity=".5"/>
+        </svg></div>
+      </div>
+    </div>
+    <div class="dots" id="galDots"></div>
+  </div>
+</section>
+
+<section id="s6-branch">
+  <div class="wrap">
+    <h3>소담 스파 본점</h3>
+    <p class="addr">주소 준비 중</p>
+    <ul><li>전화 준비 중</li><li>이메일 준비 중</li></ul>
+    <button class="btn-line" id="branchBtn" aria-expanded="false">자세히보기</button>
+    <div class="branch-more" id="branchMore">
+      <div class="in">
+        <svg viewBox="0 0 400 200" aria-hidden="true"><rect width="400" height="200" fill="#efeae4"/><path d="M0 70h400M0 140h400M120 0v200M280 0v200" stroke="#fff" stroke-width="16"/><path d="M0 104h400" stroke="#fbf8f2" stroke-width="6"/><rect x="136" y="84" width="60" height="40" fill="#dcd3c8"/><rect x="204" y="84" width="60" height="40" fill="#d3dccd"/><rect x="20" y="20" width="84" height="34" fill="#dcd3c8"/><rect x="296" y="156" width="84" height="30" fill="#d3dccd"/><path d="M232 96c-12 0-20 9-20 19 0 14 20 32 20 32s20-18 20-32c0-10-8-19-20-19z" fill="#73263a"/><circle cx="232" cy="115" r="7" fill="#fff"/></svg>
+        <dl><dt>운영 시간</dt><dd>매일 10:00 ~ 22:00</dd><dt>예약</dt><dd>사전 예약제</dd><dt>주차</dt><dd>준비 중</dd><dt>오시는 길</dt><dd>준비 중</dd></dl>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer id="s7-footer">
+  <div class="wrap">
+    <nav><a href="#" data-resv>Reservation</a><a href="#s3-program">Program</a><a href="#s4-news">이용안내</a><a href="#s6-branch">Location</a></nav>
+    <div class="info">
+      <strong>소담 스파</strong>
+      <span>주소 준비 중</span><span>상호 소담 스파 본점</span><span>사업자번호 준비 중</span><span>대표 준비 중</span><br>
+      고객센터 : 준비 중<br>
+      Copyright &copy; 소담 스파 All rights reserved.
+    </div>
+  </div>
+</footer>
+
+<div class="layer" id="layer" aria-hidden="true">
+  <div class="sheet" role="dialog" aria-label="온라인 예약">
+    <header><h3>RESERVATION</h3><button class="x" id="layerX" aria-label="닫기"><svg viewBox="0 0 20 20" fill="none" stroke="#333" stroke-width="1.6"><path d="M3 3l14 14M17 3L3 17"/></svg></button></header>
+    <form id="resvForm">
+      <label>프로그램
+        <select id="fCourse"><option>부분 관리 · 발 관리 60분 45,000원</option><option>부분 관리 · 페이셜 60분 55,000원</option><option>아로마 전신 90분 90,000원</option><option>아로마 전신 120분 120,000원</option><option>커플 코스 120분 2인 220,000원</option></select>
+      </label>
+      <label>희망 날짜<select id="fDate"><option value="">날짜 선택</option></select></label>
+      <label>인원
+        <select><option>1명</option><option>2명</option><option>3명</option><option>4명</option></select>
+      </label>
+      <button class="btn-taupe" type="submit">예약 내용 확인 <span>&gt;</span></button>
+      <p class="msg" id="fMsg"></p>
+    </form>
+  </div>
+</div>
+
+<script>
+(function(){
+  var $=function(s,r){return (r||document).querySelector(s)},$$=function(s,r){return [].slice.call((r||document).querySelectorAll(s))};
+  var timers=[];
+  // menu
+  var burger=$('#burger'),menu=$('#menu');
+  function setMenu(on){burger.classList.toggle('on',on);menu.classList.toggle('on',on);$('#menuDim').classList.toggle('on',on);burger.setAttribute('aria-expanded',on)}
+  burger.addEventListener('click',function(){setMenu(!menu.classList.contains('on'))});
+  $('#menuDim').addEventListener('click',function(){setMenu(false)});
+  $$('a',menu).forEach(function(a){a.addEventListener('click',function(){setMenu(false)})});
+  // hero slider
+  var slides=$$('.hero-slide'),hd=$$('#heroDots button'),hi=0;
+  function hero(n){hi=(n+slides.length)%slides.length;slides.forEach(function(s,i){s.classList.toggle('on',i===hi)});hd.forEach(function(d,i){d.classList.toggle('on',i===hi)})}
+  hd.forEach(function(d,i){d.addEventListener('click',function(){hero(i)})});
+  timers.push(setInterval(function(){hero(hi+1)},4500));
+  // gallery slider
+  var track=$('#galTrack'),items=$$('.gal-item',track),gd=$('#galDots'),gi=0,pages=1;
+  function per(){return window.matchMedia('(min-width:1024px)').matches?4:2}
+  function build(){
+    pages=Math.ceil(items.length/per());gd.innerHTML='';
+    for(var i=0;i<pages;i++){(function(i){var b=document.createElement('button');b.setAttribute('aria-label','갤러리 '+(i+1));b.addEventListener('click',function(){gal(i)});gd.appendChild(b)})(i)}
+    gal(Math.min(gi,pages-1));
+  }
+  function gal(n){gi=(n+pages)%pages;var w=track.parentNode.clientWidth+30;track.style.transform='translateX('+(-gi*w)+'px)';$$('button',gd).forEach(function(d,i){d.classList.toggle('on',i===gi)})}
+  build();window.addEventListener('resize',build);
+  timers.push(setInterval(function(){gal(gi+1)},5000));
+  var sx=null;track.addEventListener('touchstart',function(e){sx=e.touches[0].clientX},{passive:true});
+  track.addEventListener('touchend',function(e){if(sx===null)return;var dx=e.changedTouches[0].clientX-sx;if(Math.abs(dx)>40)gal(gi+(dx<0?1:-1));sx=null});
+  window.__stopAuto=function(){timers.forEach(clearInterval);hero(0);gal(0)};window.__hero=hero;window.__gal=gal;
+  // branch detail
+  var bb=$('#branchBtn'),bm=$('#branchMore');
+  bb.addEventListener('click',function(){var on=!bm.classList.contains('on');bm.classList.toggle('on',on);bb.setAttribute('aria-expanded',on);bb.textContent=on?'접기':'자세히보기'});
+  // reservation layer
+  var layer=$('#layer'),msg=$('#fMsg');
+  (function(){var w=['일','월','화','수','목','금','토'],d=new Date(),sel=$('#fDate');for(var i=1;i<=14;i++){var t=new Date(d.getFullYear(),d.getMonth(),d.getDate()+i),o=document.createElement('option');o.textContent=(t.getMonth()+1)+'월 '+t.getDate()+'일 ('+w[t.getDay()]+')';sel.appendChild(o)}})();
+  function openL(course){layer.classList.add('on');layer.setAttribute('aria-hidden','false');msg.textContent='';
+    if(course){$$('#fCourse option').some(function(o){if(o.textContent.indexOf(course)===0){o.selected=true;return true}})}}
+  function closeL(){layer.classList.remove('on');layer.setAttribute('aria-hidden','true')}
+  $$('[data-resv]').forEach(function(a){a.addEventListener('click',function(e){e.preventDefault();openL(a.getAttribute('data-course'))})});
+  $('#layerX').addEventListener('click',closeL);
+  layer.addEventListener('click',function(e){if(e.target===layer)closeL()});
+  $('#resvForm').addEventListener('submit',function(e){e.preventDefault();
+    var d=$('#fDate').value;msg.textContent=d?('선택하신 내용: '+$('#fCourse').value+' / '+d+' · 온라인 예약 접수는 준비 중입니다.'):'희망 날짜를 선택해 주세요.'});
+  $('#newsItem').addEventListener('click',function(e){e.preventDefault()});
+})();
+</script>
+</body>
+</html>
