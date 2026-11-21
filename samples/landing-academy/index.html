@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>브라이트 영어캠프 · 무료 레벨테스트 신청</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&family=Outfit:wght@500;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--b:#2457f5;--b2:#5b84ff;--sky:#eef3ff;--ink:#14213d;--sub:#66708a;--y:#ffc83d;--g:#20b486}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Noto Sans KR',system-ui,sans-serif;color:var(--ink);background:#fff;word-break:keep-all;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+.in{max-width:1080px;margin:0 auto;padding:0 20px}
+.nav{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.94);backdrop-filter:blur(8px);border-bottom:1px solid #edf0f6}
+.nav .in{display:flex;align-items:center;justify-content:space-between;height:60px}
+.lg{display:flex;align-items:center;gap:8px;font-family:Outfit;font-weight:800;font-size:19px}
+.lg i{width:30px;height:30px;border-radius:9px;background:linear-gradient(135deg,var(--b),var(--b2));display:grid;place-items:center;color:#fff;font-style:normal;font-size:15px}
+.nav a.c{background:var(--b);color:#fff;font-weight:700;font-size:14px;padding:9px 16px;border-radius:30px}
+.hero{background:linear-gradient(180deg,var(--sky),#fff);overflow:hidden}
+.hero .in{display:grid;grid-template-columns:1fr;gap:26px;align-items:center;padding:56px 20px 64px}
+@media(min-width:900px){.hero .in{grid-template-columns:1.05fr .95fr;padding:80px 20px 90px}}
+.pill{display:inline-flex;gap:6px;align-items:center;background:#fff;border:1px solid #dbe3fb;color:var(--b);font-weight:700;font-size:13px;padding:6px 12px;border-radius:30px}
+.hero h1{font-size:clamp(32px,5.4vw,52px);line-height:1.22;font-weight:900;letter-spacing:-.03em;margin-top:16px}
+.hero h1 em{font-style:normal;color:var(--b);background:linear-gradient(transparent 62%,#ffe7a3 62%)}
+.hero p{font-size:17px;color:var(--sub);margin-top:14px;line-height:1.7}
+.stat{display:flex;gap:22px;margin-top:24px;flex-wrap:wrap}
+.stat b{display:block;font-family:Outfit;font-weight:800;font-size:30px;color:var(--b)}
+.stat span{font-size:13px;color:var(--sub)}
+.art{position:relative}
+.art svg{width:100%;height:auto;display:block}
+.sec{padding:76px 0}
+.sec h2{text-align:center;font-size:clamp(25px,4vw,34px);font-weight:900;letter-spacing:-.02em}
+.sec .sb{text-align:center;color:var(--sub);margin-top:8px}
+.pts{display:grid;grid-template-columns:1fr;gap:16px;margin-top:34px}
+@media(min-width:760px){.pts{grid-template-columns:repeat(2,1fr)}}
+@media(min-width:1000px){.pts{grid-template-columns:repeat(4,1fr)}}
+.pt{background:#fff;border:1px solid #e8ecf5;border-radius:18px;padding:22px 20px;box-shadow:0 8px 24px rgba(36,87,245,.06)}
+.pt .ic{width:46px;height:46px;border-radius:14px;display:grid;place-items:center;font-size:22px;background:var(--sky)}
+.pt b{display:block;font-size:17px;margin-top:14px}
+.pt p{font-size:14px;color:var(--sub);margin-top:6px;line-height:1.6}
+.bg2{background:var(--sky)}
+.plans{display:grid;grid-template-columns:1fr;gap:16px;margin-top:34px}
+@media(min-width:820px){.plans{grid-template-columns:repeat(3,1fr)}}
+.pl{background:#fff;border-radius:20px;padding:26px 22px;border:2px solid transparent;position:relative}
+.pl.best{border-color:var(--b);box-shadow:0 16px 40px rgba(36,87,245,.18)}
+.pl .bd{position:absolute;top:-13px;left:22px;background:var(--b);color:#fff;font-size:12px;font-weight:700;padding:4px 12px;border-radius:20px}
+.pl h3{font-size:19px}
+.pl .who{font-size:13px;color:var(--sub);margin-top:4px}
+.pl .pr{font-family:Outfit;font-weight:800;font-size:32px;margin-top:14px}
+.pl .pr small{font-family:'Noto Sans KR';font-size:14px;color:var(--sub);font-weight:500}
+.pl ul{list-style:none;margin-top:14px;display:grid;gap:8px;font-size:14px}
+.pl li::before{content:"✓";color:var(--g);font-weight:900;margin-right:8px}
+.steps{display:grid;grid-template-columns:1fr;gap:12px;margin-top:34px;counter-reset:s}
+@media(min-width:820px){.steps{grid-template-columns:repeat(4,1fr)}}
+.stp{counter-increment:s;background:#fff;border:1px solid #e8ecf5;border-radius:16px;padding:18px}
+.stp::before{content:"STEP " counter(s);font-family:Outfit;font-weight:800;font-size:12px;color:var(--b);letter-spacing:.1em}
+.stp b{display:block;margin-top:6px;font-size:16px}
+.stp p{font-size:13.5px;color:var(--sub);margin-top:4px;line-height:1.55}
+.faq{max-width:760px;margin:30px auto 0}
+.faq details{border-bottom:1px solid #e8ecf5;padding:16px 4px}
+.faq summary{cursor:pointer;font-weight:700;font-size:16px;list-style:none;display:flex;justify-content:space-between;gap:10px}
+.faq summary::after{content:"+";color:var(--b);font-size:20px;line-height:1}
+.faq details[open] summary::after{content:"−"}
+.faq p{margin-top:10px;color:var(--sub);font-size:14.5px;line-height:1.7}
+.form{background:linear-gradient(135deg,var(--b),#1b3fc0);color:#fff}
+.form .in{display:grid;grid-template-columns:1fr;gap:28px;padding:70px 20px;align-items:center}
+@media(min-width:900px){.form .in{grid-template-columns:1fr 1fr}}
+.form h2{text-align:left;font-size:clamp(26px,4vw,36px);font-weight:900}
+.form p.d{color:#d6e0ff;margin-top:10px;line-height:1.7}
+.form .tags{display:flex;gap:8px;flex-wrap:wrap;margin-top:18px}
+.form .tags span{background:rgba(255,255,255,.14);padding:6px 12px;border-radius:30px;font-size:13px}
+.box{background:#fff;color:var(--ink);border-radius:20px;padding:24px}
+.box form{display:grid;gap:10px}
+.box input,.box select{width:100%;height:50px;border:1px solid #dfe4ee;border-radius:12px;padding:0 14px;font:inherit;font-size:15px;background:#fafbfe}
+.box .row{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.box label{display:flex;gap:8px;font-size:12.5px;color:var(--sub);align-items:flex-start}
+.box button{height:54px;border:0;border-radius:12px;background:var(--y);color:var(--ink);font:inherit;font-weight:900;font-size:17px;cursor:pointer}
+.ok{display:none;text-align:center;padding:30px 10px}
+.ok b{font-size:22px;color:var(--b)}
+.ok p{color:var(--sub);margin-top:8px}
+footer{padding:26px 0;text-align:center;font-size:12.5px;color:var(--sub)}
+</style>
+</head>
+<body>
+<nav class="nav"><div class="in"><div class="lg"><i>B</i>BRIGHT English</div><a class="c" href="#apply">무료 레벨테스트</a></div></nav>
+
+<section class="hero">
+  <div class="in">
+    <div>
+      <span class="pill">🇵🇭 클락 · 1:1 원어민 수업</span>
+      <h1>겨울방학 4주,<br>아이 영어가 <em>말</em>이 됩니다</h1>
+      <p>하루 6시간 1:1 수업 + 그룹 액티비티.<br>한국인 매니저가 수업부터 생활까지 매일 챙겨요.</p>
+      <div class="stat"><div><b>1:1</b><span>매일 4시간</span></div><div><b>12명</b><span>기수별 정원</span></div><div><b>24시간</b><span>한국인 매니저</span></div></div>
+    </div>
+    <div class="art">
+      <svg viewBox="0 0 480 400" aria-hidden="true">
+        <circle cx="260" cy="200" r="170" fill="#dde7ff"/>
+        <circle cx="390" cy="80" r="36" fill="#ffc83d"/>
+        <rect x="90" y="250" width="300" height="20" rx="10" fill="#b9c9f5"/>
+        <g transform="translate(120 120)"><circle cx="40" cy="40" r="30" fill="#f2c7a5"/><path d="M12 34c4-24 52-24 56 0-10-8-46-8-56 0z" fill="#3a2a22"/><rect x="10" y="70" width="60" height="64" rx="22" fill="#2457f5"/><circle cx="30" cy="42" r="3" fill="#14213d"/><circle cx="50" cy="42" r="3" fill="#14213d"/><path d="M32 54q8 6 16 0" stroke="#14213d" stroke-width="3" fill="none" stroke-linecap="round"/></g>
+        <g transform="translate(270 110)"><circle cx="40" cy="40" r="32" fill="#c98b62"/><path d="M8 36c2-26 62-30 64 0-12-10-50-10-64 0z" fill="#1f1611"/><rect x="8" y="72" width="64" height="70" rx="24" fill="#20b486"/><circle cx="29" cy="42" r="3" fill="#14213d"/><circle cx="51" cy="42" r="3" fill="#14213d"/><path d="M30 56q10 8 20 0" stroke="#14213d" stroke-width="3" fill="none" stroke-linecap="round"/></g>
+        <g><rect x="150" y="40" width="130" height="54" rx="16" fill="#fff" stroke="#2457f5" stroke-width="3"/><path d="M180 94l-8 18 24-18" fill="#fff" stroke="#2457f5" stroke-width="3" stroke-linejoin="round"/><text x="215" y="74" text-anchor="middle" font-family="Outfit" font-weight="800" font-size="22" fill="#2457f5">Hello!</text></g>
+        <g><rect x="300" y="20" width="120" height="50" rx="16" fill="#2457f5"/><text x="360" y="52" text-anchor="middle" font-family="Outfit" font-weight="700" font-size="18" fill="#fff">Great job!</text></g>
+        <g transform="translate(200 270)"><rect width="90" height="60" rx="6" fill="#fff" stroke="#b9c9f5" stroke-width="3"/><path d="M45 4v52" stroke="#b9c9f5" stroke-width="3"/><path d="M12 18h22M12 28h22M56 18h22M56 28h22" stroke="#dde7ff" stroke-width="4"/></g>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<section class="sec">
+  <div class="in">
+    <h2>왜 브라이트 캠프일까요?</h2>
+    <p class="sb">처음 오는 가족도 안심할 수 있게 준비했어요</p>
+    <div class="pts">
+      <div class="pt"><div class="ic">🎯</div><b>레벨별 맞춤 커리큘럼</b><p>첫날 레벨테스트로 말하기·읽기·쓰기 수준에 맞춰 반을 정해요.</p></div>
+      <div class="pt"><div class="ic">👩‍🏫</div><b>검증된 강사진</b><p>TESOL 자격·교육 경력 2년 이상 강사만 1:1 수업을 맡아요.</p></div>
+      <div class="pt"><div class="ic">📊</div><b>주간 리포트</b><p>매주 금요일 학부모님께 수업 영상과 성장 리포트를 보내드려요.</p></div>
+      <div class="pt"><div class="ic">🏠</div><b>안전한 생활 관리</b><p>보안 빌리지 기숙사, 한식 위주 식사, 24시간 한국인 매니저.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec bg2">
+  <div class="in">
+    <h2>프로그램 &amp; 비용</h2>
+    <p class="sb">4주 기준 · 숙식·공항 픽업 포함</p>
+    <div class="plans">
+      <div class="pl"><h3>주니어 캠프</h3><p class="who">초등 1–3학년 · 보호자 동반 가능</p><div class="pr">₱98,000 <small>/ 4주</small></div><ul><li>1:1 수업 매일 3시간</li><li>파닉스 · 스토리북</li><li>주말 액티비티 2회</li></ul></div>
+      <div class="pl best"><span class="bd">가장 인기</span><h3>스탠다드 캠프</h3><p class="who">초등 4학년 – 중학생</p><div class="pr">₱118,000 <small>/ 4주</small></div><ul><li>1:1 수업 매일 4시간</li><li>그룹 토론 · 발표 2시간</li><li>주말 현장학습 4회</li><li>수료증 · 최종 리포트</li></ul></div>
+      <div class="pl"><h3>스피킹 집중</h3><p class="who">중·고등학생 · 성인</p><div class="pr">₱132,000 <small>/ 4주</small></div><ul><li>1:1 수업 매일 5시간</li><li>스피치 · 인터뷰 훈련</li><li>공인시험 모의고사 2회</li></ul></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec">
+  <div class="in">
+    <h2>등록은 이렇게 진행돼요</h2>
+    <div class="steps">
+      <div class="stp"><b>무료 상담 신청</b><p>아래 양식을 남기시면 24시간 안에 연락드려요.</p></div>
+      <div class="stp"><b>온라인 레벨테스트</b><p>줌으로 20분, 원어민 강사와 무료 테스트.</p></div>
+      <div class="stp"><b>맞춤 일정 안내</b><p>결과지와 함께 반 배정 · 비용을 안내해요.</p></div>
+      <div class="stp"><b>입국 &amp; 수업 시작</b><p>공항 픽업부터 첫 수업까지 함께해요.</p></div>
+    </div>
+    <div class="faq">
+      <details><summary>비자는 따로 준비해야 하나요?</summary><p>한국 여권은 30일까지 무비자 입국이 되지만, 어학 수업을 들으려면 SSP(특별 학습 허가)가 필요해요. 만 15세 미만이 부모 없이 입국하면 WEG 서류도 필요해요. 캠프에서 서류 준비를 도와드려요.</p></details>
+      <details><summary>부모님도 같이 지낼 수 있나요?</summary><p>주니어 캠프는 보호자 동반 객실을 선택할 수 있어요. 자세한 비용은 상담 때 안내해 드려요.</p></details>
+      <details><summary>중간에 아프면 어떻게 하나요?</summary><p>제휴 병원으로 매니저가 동행하고, 보호자께 바로 연락드려요.</p></details>
+    </div>
+  </div>
+</section>
+
+<section class="form" id="apply">
+  <div class="in">
+    <div>
+      <h2>무료 레벨테스트<br>지금 신청하세요</h2>
+      <p class="d">12월 기수는 정원 12명 중 4자리가 남았어요.<br>상담만 받아도 영어 학습 진단 리포트를 드려요.</p>
+      <div class="tags"><span>✓ 상담 무료</span><span>✓ 카톡 상담 가능</span><span>✓ 24시간 내 연락</span></div>
+    </div>
+    <div class="box">
+      <form id="af" onsubmit="return sendA(event)">
+        <div class="row"><input required placeholder="학부모 성함"><input required placeholder="연락처" inputmode="tel"></div>
+        <div class="row"><select required><option value="">학생 학년</option><option>초등 1–3</option><option>초등 4–6</option><option>중학생</option><option>고등·성인</option></select><select><option>희망 기수</option><option>12월</option><option>1월</option><option>2월</option></select></div>
+        <input placeholder="카카오톡 ID (선택)">
+        <label><input type="checkbox" required style="width:auto;height:auto;margin-top:3px"> 상담을 위한 개인정보 수집·이용에 동의합니다</label>
+        <button>무료 상담 신청하기</button>
+      </form>
+      <div class="ok" id="aok"><b>신청이 접수됐어요 🎉</b><p>24시간 안에 담당 매니저가 연락드릴게요.</p></div>
+    </div>
+  </div>
+</section>
+<footer>© BRIGHT English Camp · Clark · 이 페이지는 Shop On Design 랜딩페이지 샘플입니다</footer>
+<script>function sendA(e){e.preventDefault();document.getElementById('af').style.display='none';document.getElementById('aok').style.display='block';return false}</script>
+</body>
+</html>

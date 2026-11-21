@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>화로담 그랜드 오픈 · 쿠폰 받기</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Noto+Sans+KR:wght@400;500;700;900&family=Noto+Serif+KR:wght@700;900&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#1a120d;--gold:#f0c57b;--red:#c9401f;--cream:#fbf5ec;--sub:#8a7d70}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Noto Sans KR',system-ui,sans-serif;background:var(--cream);color:var(--ink);word-break:keep-all;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+.in{max-width:1080px;margin:0 auto;padding:0 20px}
+/* hero */
+.hero{position:relative;background:var(--ink);color:#fff;overflow:hidden}
+.hero svg.bg{position:absolute;inset:0;width:100%;height:100%}
+.hero .in{position:relative;padding:72px 20px 80px;display:grid;grid-template-columns:1fr;gap:30px;align-items:center}
+@media(min-width:900px){.hero .in{grid-template-columns:1.1fr .9fr;padding:100px 20px 110px}}
+.eyebrow{display:inline-block;font-size:13px;font-weight:700;letter-spacing:.32em;color:var(--gold);border:1px solid rgba(240,197,123,.5);padding:6px 14px;border-radius:30px}
+.hero h1{font-family:'Noto Serif KR',serif;font-weight:900;font-size:clamp(38px,6vw,64px);line-height:1.15;margin-top:18px}
+.hero h1 em{font-style:normal;color:var(--gold)}
+.hero p.lead{font-size:17px;color:#e6d8c6;margin-top:16px;line-height:1.7}
+.count{display:flex;gap:10px;margin-top:26px}
+.count div{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);border-radius:12px;min-width:70px;padding:10px 8px;text-align:center}
+.count b{display:block;font-family:'Black Han Sans';font-weight:400;font-size:32px;color:#fff}
+.count span{font-size:11px;color:#cbb9a3;letter-spacing:.1em}
+.coupon{position:relative;background:#fff;color:var(--ink);border-radius:20px;padding:26px 24px;box-shadow:0 30px 60px rgba(0,0,0,.4)}
+.coupon::before,.coupon::after{content:"";position:absolute;top:50%;width:28px;height:28px;border-radius:50%;background:var(--ink);transform:translateY(-50%)}
+.coupon::before{left:-14px}.coupon::after{right:-14px}
+.coupon .tag{font-size:12px;font-weight:700;color:var(--red);letter-spacing:.2em}
+.coupon h2{font-family:'Black Han Sans';font-weight:400;font-size:46px;margin-top:4px}
+.coupon h2 small{font-size:20px}
+.coupon p{font-size:13.5px;color:var(--sub);margin-top:4px}
+.coupon hr{border:0;border-top:2px dashed #e7ddd0;margin:18px 0}
+.f{display:grid;gap:10px}
+.f input{width:100%;height:50px;border:1px solid #e3d9cc;border-radius:12px;padding:0 14px;font:inherit;font-size:15px;background:#fcfaf6}
+.f input:focus{outline:2px solid var(--gold);border-color:transparent}
+.f label{display:flex;gap:8px;align-items:flex-start;font-size:12.5px;color:var(--sub)}
+.btn{height:54px;border:0;border-radius:12px;background:var(--red);color:#fff;font:inherit;font-weight:900;font-size:17px;cursor:pointer;box-shadow:0 8px 20px rgba(201,64,31,.35)}
+.btn:active{transform:translateY(1px)}
+.done{display:none;text-align:center;padding:10px 0}
+.done b{font-family:'Black Han Sans';font-weight:400;font-size:28px;color:var(--red)}
+.done p{margin-top:6px}
+.code{display:inline-block;margin-top:12px;font-family:monospace;font-size:22px;letter-spacing:.2em;border:2px dashed var(--ink);padding:8px 16px;border-radius:8px}
+/* benefits */
+.sec{padding:80px 0}
+.sec h3{text-align:center;font-family:'Noto Serif KR',serif;font-size:clamp(26px,4vw,36px)}
+.sec .sub{text-align:center;color:var(--sub);margin-top:8px}
+.bens{display:grid;grid-template-columns:1fr;gap:16px;margin-top:36px}
+@media(min-width:720px){.bens{grid-template-columns:repeat(3,1fr)}}
+.ben{background:#fff;border-radius:18px;padding:26px 22px;border:1px solid #efe5d8}
+.ben .n{font-family:'Black Han Sans';font-size:44px;color:var(--gold);line-height:1}
+.ben b{display:block;font-size:19px;margin-top:10px}
+.ben p{font-size:14px;color:var(--sub);margin-top:6px;line-height:1.6}
+/* menu */
+.dark{background:#211812;color:#fff}
+.dark .sub{color:#c7b6a2}
+.menu{display:grid;grid-template-columns:1fr;gap:18px;margin-top:36px}
+@media(min-width:720px){.menu{grid-template-columns:repeat(3,1fr)}}
+.mi{background:#2c2018;border-radius:18px;overflow:hidden}
+.mi svg{width:100%;height:auto;display:block}
+.mi div{padding:16px 18px 18px}
+.mi b{font-size:18px}
+.mi p{font-size:13.5px;color:#c7b6a2;margin-top:4px}
+.mi .pr{margin-top:8px;font-weight:900;color:var(--gold);font-size:17px}
+.mi .pr s{color:#8d7c6a;font-weight:400;font-size:14px;margin-right:6px}
+/* review */
+.revs{display:grid;grid-template-columns:1fr;gap:14px;margin-top:32px}
+@media(min-width:720px){.revs{grid-template-columns:repeat(3,1fr)}}
+.rv{background:#fff;border-radius:16px;padding:20px;border:1px solid #efe5d8}
+.rv .st{color:#f2a52b;letter-spacing:2px}
+.rv p{font-size:14.5px;margin-top:8px;line-height:1.65}
+.rv small{display:block;margin-top:10px;color:var(--sub);font-size:12.5px}
+/* info */
+.info{display:grid;grid-template-columns:1fr;gap:20px;margin-top:32px;align-items:stretch}
+@media(min-width:820px){.info{grid-template-columns:1fr 1fr}}
+.map{border-radius:18px;overflow:hidden;border:1px solid #efe5d8;min-height:240px;background:#e9e2d6}
+.map svg{width:100%;height:100%;display:block}
+.dl{background:#fff;border-radius:18px;padding:24px;border:1px solid #efe5d8}
+.dl div{display:flex;gap:14px;padding:12px 0;border-bottom:1px solid #f1e9de;font-size:15px}
+.dl div:last-child{border:0}
+.dl b{width:70px;flex-shrink:0;color:var(--sub);font-weight:500}
+.cta{position:sticky;bottom:0;z-index:20;background:rgba(26,18,13,.96);color:#fff;backdrop-filter:blur(6px)}
+.cta .in{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px 20px}
+.cta span{font-size:14px}
+.cta span b{color:var(--gold)}
+.cta a{background:var(--gold);color:var(--ink);font-weight:900;padding:12px 20px;border-radius:30px;font-size:15px;white-space:nowrap}
+footer{padding:28px 0 90px;text-align:center;font-size:12.5px;color:var(--sub)}
+</style>
+</head>
+<body>
+<section class="hero">
+  <svg class="bg" viewBox="0 0 1200 700" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><defs><radialGradient id="h" cx="75%" cy="65%" r="60%"><stop offset="0" stop-color="#d8501e" stop-opacity=".9"/><stop offset=".5" stop-color="#5a1e0e" stop-opacity=".7"/><stop offset="1" stop-color="#1a120d" stop-opacity="0"/></radialGradient></defs><rect width="1200" height="700" fill="url(#h)"/><g fill="#ffb36b" opacity=".6"><circle cx="820" cy="560" r="3"/><circle cx="900" cy="500" r="2"/><circle cx="1000" cy="580" r="3"/><circle cx="760" cy="620" r="2"/><circle cx="1080" cy="520" r="2"/></g><g fill="none" stroke="#fff" stroke-width="2" opacity=".12"><path d="M880 420c-14-30 14-44 0-74"/><path d="M960 420c-14-30 14-44 0-74"/></g></svg>
+  <div class="in">
+    <div>
+      <span class="eyebrow">GRAND OPEN · 12.1</span>
+      <h1>앙헬레스에<br><em>참숯 화로</em>가<br>켜졌습니다</h1>
+      <p class="lead">21일 숙성 한우와 제주 흑돼지를 직원이 직접 구워 드려요.<br>오픈 2주 동안만, 쿠폰 받고 20% 할인받으세요.</p>
+      <div class="count" id="cd"><div><b id="cdD">06</b><span>DAYS</span></div><div><b id="cdH">12</b><span>HOURS</span></div><div><b id="cdM">30</b><span>MIN</span></div><div><b id="cdS">00</b><span>SEC</span></div></div>
+    </div>
+    <div class="coupon" id="cp">
+      <div id="cpForm">
+        <span class="tag">OPEN COUPON</span>
+        <h2>20<small>%</small> OFF</h2>
+        <p>전 메뉴 · 4인 이하 · 12월 14일까지</p>
+        <hr>
+        <form class="f" onsubmit="return getCoupon(event)">
+          <input required name="n" placeholder="이름" autocomplete="name">
+          <input required name="p" placeholder="휴대폰 번호 (09XX-XXX-XXXX)" inputmode="tel">
+          <label><input type="checkbox" required style="width:auto;height:auto;margin-top:3px"> 쿠폰 발송을 위한 개인정보 수집에 동의합니다</label>
+          <button class="btn">무료 쿠폰 받기</button>
+        </form>
+      </div>
+      <div class="done" id="cpDone"><b>쿠폰이 발급됐어요!</b><p>매장에서 아래 코드를 보여 주세요</p><span class="code">HWR-2024</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec">
+  <div class="in">
+    <h3>오픈 기간 3가지 혜택</h3>
+    <p class="sub">12월 1일 – 12월 14일 · 매장 식사 고객</p>
+    <div class="bens">
+      <div class="ben"><div class="n">01</div><b>전 메뉴 20% 할인</b><p>쿠폰을 보여주시면 고기·식사·주류 모두 20% 할인해 드려요.</p></div>
+      <div class="ben"><div class="n">02</div><b>소주 1병 무료</b><p>한우 메뉴 주문 테이블에 소주 또는 생맥주 1잔을 드려요.</p></div>
+      <div class="ben"><div class="n">03</div><b>리뷰 쓰면 계란찜</b><p>구글·페이스북 리뷰 작성 시 폭탄 계란찜이 서비스!</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec dark">
+  <div class="in">
+    <h3>화로담 대표 메뉴</h3>
+    <p class="sub">오픈 할인가로 맛보세요</p>
+    <div class="menu">
+      <div class="mi"><svg viewBox="0 0 400 240" aria-hidden="true"><rect width="400" height="240" fill="#3a1a0e"/><circle cx="200" cy="170" r="140" fill="#b8341b" opacity=".6"/><g stroke="#1a120d" stroke-width="6"><line x1="30" y1="150" x2="370" y2="150"/><line x1="30" y1="185" x2="370" y2="185"/></g><rect x="90" y="140" width="220" height="60" rx="18" fill="#d96f62" transform="rotate(-4 200 170)"/><path d="M100 160c50-8 110 6 200-4M104 182c60 6 120-6 196 2" stroke="#f7d5cc" stroke-width="6" fill="none"/></svg><div><b>한우 꽃등심 150g</b><p>21일 건식 숙성 1++ 등급</p><div class="pr"><s>₱1,980</s>₱1,584</div></div></div>
+      <div class="mi"><svg viewBox="0 0 400 240" aria-hidden="true"><rect width="400" height="240" fill="#2a1d15"/><circle cx="200" cy="170" r="130" fill="#8a3a1c" opacity=".55"/><g stroke="#1a120d" stroke-width="6"><line x1="30" y1="150" x2="370" y2="150"/><line x1="30" y1="185" x2="370" y2="185"/></g><g><rect x="80" y="138" width="110" height="64" rx="10" fill="#f0d2c6"/><rect x="80" y="138" width="110" height="18" rx="8" fill="#c78a72"/><rect x="210" y="142" width="110" height="64" rx="10" fill="#f0d2c6"/><rect x="210" y="142" width="110" height="18" rx="8" fill="#c78a72"/></g></svg><div><b>제주 흑돼지 오겹 180g</b><p>두툼하게 썰어 육즙 가득</p><div class="pr"><s>₱690</s>₱552</div></div></div>
+      <div class="mi"><svg viewBox="0 0 400 240" aria-hidden="true"><rect width="400" height="240" fill="#27201a"/><ellipse cx="200" cy="200" rx="140" ry="24" fill="#120d09"/><path d="M80 190c0-50 54-84 120-84s120 34 120 84z" fill="#3b2b20"/><path d="M96 178c22-26 186-26 208 0" fill="#c98a4c"/><g stroke="#f4e0c0" stroke-width="5" fill="none" stroke-linecap="round"><path d="M120 160c20-12 40 8 60-4s40 8 60-4s40 8 40 0"/></g><circle cx="200" cy="140" r="14" fill="#f3b33d"/></svg><div><b>차돌 된장찌개</b><p>집된장 · 차돌박이 듬뿍</p><div class="pr"><s>₱350</s>₱280</div></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec">
+  <div class="in">
+    <h3>고객 후기</h3><p class="sub">실제 매장 후기로 바꿔 넣는 자리예요 (예시 문구)</p>
+    <div class="revs">
+      <div class="rv"><div class="st">★★★★★</div><p>고기를 직접 구워 주셔서 편하게 먹었어요. 숯 향이 진짜 한국 같아요.</p><small>후기 예시</small></div>
+      <div class="rv"><div class="st">★★★★★</div><p>된장찌개가 너무 맛있어서 점심에도 또 왔어요. 반찬 리필도 친절해요.</p><small>후기 예시</small></div>
+      <div class="rv"><div class="st">★★★★★</div><p>필리핀 친구들 데려갔는데 다들 양념갈비에 반했어요!</p><small>후기 예시</small></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" style="padding-top:0">
+  <div class="in">
+    <h3>오시는 길</h3>
+    <div class="info">
+      <div class="map"><svg viewBox="0 0 500 300" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><rect width="500" height="300" fill="#e9e2d6"/><g stroke="#fff" stroke-width="18"><line x1="0" y1="180" x2="500" y2="140"/><line x1="200" y1="0" x2="240" y2="300"/></g><g stroke="#f5efe5" stroke-width="8"><line x1="0" y1="60" x2="500" y2="80"/><line x1="380" y1="0" x2="360" y2="300"/><line x1="80" y1="0" x2="100" y2="300"/></g><rect x="260" y="70" width="70" height="50" fill="#d8cfbf"/><rect x="120" y="200" width="60" height="60" fill="#cdd9c2"/><path d="M250 150c0-20 30-20 30 0 0 14-15 30-15 30s-15-16-15-30z" fill="#c9401f"/><circle cx="265" cy="150" r="5" fill="#fff"/></svg></div>
+      <div class="dl">
+        <div><b>주소</b><span>Friendship Hwy, Anunas, Angeles City</span></div>
+        <div><b>영업</b><span>매일 11:00 – 24:00 (라스트오더 23:00)</span></div>
+        <div><b>예약</b><span>0917-000-0000 · 카카오톡 hwarodam</span></div>
+        <div><b>주차</b><span>매장 앞 10대 · 무료</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="cta"><div class="in"><span>오픈 쿠폰 마감까지 <b id="ctaD">6일</b></span><a href="#cp">쿠폰 받기</a></div></div>
+<footer>© 화로담 숯불구이 · 이 페이지는 Shop On Design 랜딩페이지 샘플입니다</footer>
+
+<script>
+(function(){
+  var end=Date.now()+((6*24+12)*60+30)*60000;
+  function pad(n){return (n<10?'0':'')+n}
+  function tick(){var s=Math.max(0,Math.floor((end-Date.now())/1000));
+    document.getElementById('cdD').textContent=pad(Math.floor(s/86400));document.getElementById('cdH').textContent=pad(Math.floor(s%86400/3600));
+    document.getElementById('cdM').textContent=pad(Math.floor(s%3600/60));document.getElementById('cdS').textContent=pad(s%60);
+    document.getElementById('ctaD').textContent=Math.floor(s/86400)+'일 '+pad(Math.floor(s%86400/3600))+'시간';}
+  tick();setInterval(tick,1000);
+})();
+function getCoupon(e){e.preventDefault();document.getElementById('cpForm').style.display='none';document.getElementById('cpDone').style.display='block';return false}
+</script>
+</body>
+</html>

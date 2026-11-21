@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>바삭공장 치킨 &amp; 펍 · 메뉴판</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Noto+Sans+KR:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+:root{--y:#ffcc1f;--r:#e8341c;--k:#1b1b1b;--w:#fff;--cr:#fff6dc}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Noto Sans KR',system-ui,sans-serif;background:var(--k);color:var(--k);word-break:keep-all;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1180px;margin:0 auto;padding:24px 14px 60px}
+.poster{background:var(--y);border:4px solid var(--k);border-radius:18px;overflow:hidden;box-shadow:10px 10px 0 var(--r)}
+.top{position:relative;background:var(--r);color:var(--w);padding:30px 24px 26px;border-bottom:4px solid var(--k);overflow:hidden}
+.top .burst{position:absolute;right:-30px;top:-30px;width:220px;opacity:.18}
+.top h1{font-family:'Black Han Sans',sans-serif;font-weight:400;font-size:clamp(40px,8vw,72px);line-height:1;letter-spacing:-.01em;text-shadow:4px 4px 0 var(--k)}
+.top h1 span{color:var(--y)}
+.top p{margin-top:10px;font-weight:700;font-size:15px}
+.top .tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:14px}
+.top .tags b{background:var(--k);color:var(--y);font-size:12px;padding:5px 11px;border-radius:30px}
+.mascot{position:absolute;right:20px;bottom:-8px;width:140px}
+@media(max-width:560px){.mascot{width:96px;right:6px}}
+.grid{display:grid;grid-template-columns:1fr;gap:0}
+@media(min-width:900px){.grid{grid-template-columns:1.25fr 1fr}.grid>.c+.c{border-left:4px solid var(--k)}}
+.c{padding:22px 20px 26px}
+h2{font-family:'Black Han Sans',sans-serif;font-weight:400;font-size:30px;display:flex;align-items:center;gap:10px;margin-bottom:12px}
+h2 i{font-style:normal;font-family:'Noto Sans KR';font-weight:900;font-size:12px;background:var(--k);color:var(--y);padding:3px 9px;border-radius:4px;letter-spacing:.06em}
+.ck{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+@media(min-width:560px){.ck{grid-template-columns:repeat(3,1fr)}}
+.card{background:var(--w);border:3px solid var(--k);border-radius:14px;padding:12px 10px 12px;text-align:center;position:relative;box-shadow:4px 4px 0 var(--k)}
+.card svg{width:96px;height:72px;margin:0 auto 4px;display:block}
+.card b{display:block;font-weight:900;font-size:15.5px}
+.card small{display:block;font-size:11.5px;color:#666;margin-top:2px;min-height:28px;line-height:1.3}
+.card .p{margin-top:6px;font-family:'Black Han Sans';font-size:22px;color:var(--r)}
+.card .p em{font-style:normal;font-size:13px;color:var(--k);font-family:'Noto Sans KR';font-weight:700}
+.st{position:absolute;top:-12px;left:-8px;background:var(--r);color:var(--w);font-weight:900;font-size:11px;padding:4px 9px;border:2px solid var(--k);border-radius:20px;transform:rotate(-8deg)}
+.half{margin-top:16px;background:var(--k);color:var(--y);border-radius:14px;padding:14px 16px;display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap}
+.half b{font-family:'Black Han Sans';font-weight:400;font-size:22px}
+.half span{font-size:13px;color:#fff}
+.list .r{display:flex;justify-content:space-between;gap:10px;padding:10px 0;border-bottom:3px dotted rgba(0,0,0,.35);font-weight:700;font-size:15.5px}
+.list .r:last-child{border-bottom:0}
+.list .r span{font-family:'Black Han Sans';font-weight:400;font-size:19px;white-space:nowrap}
+.list .r small{display:block;font-size:12px;font-weight:500;color:#5a4a00}
+.box{margin-top:20px;background:var(--w);border:3px solid var(--k);border-radius:14px;padding:16px;box-shadow:4px 4px 0 var(--k)}
+.box h3{font-family:'Black Han Sans';font-weight:400;font-size:24px;color:var(--r)}
+.box p{font-size:13px;margin-top:4px;line-height:1.6}
+.box .big{font-family:'Black Han Sans';font-size:30px;margin-top:6px}
+.box .big s{font-family:'Noto Sans KR';font-size:15px;color:#888;margin-right:6px}
+.hh{margin-top:20px;background:var(--r);color:var(--w);border:3px solid var(--k);border-radius:14px;padding:14px 16px;text-align:center}
+.hh b{font-family:'Black Han Sans';font-weight:400;font-size:26px;display:block;color:var(--y)}
+.hh span{font-size:13.5px;font-weight:700}
+.foot{background:var(--k);color:var(--y);padding:14px 18px;display:flex;flex-wrap:wrap;gap:8px 22px;justify-content:center;font-weight:700;font-size:13px}
+.spicy{color:var(--r)}
+</style>
+</head>
+<body>
+<div class="wrap">
+<div class="poster">
+  <header class="top">
+    <svg class="burst" viewBox="0 0 200 200" aria-hidden="true"><path fill="#fff" d="M100 0l14 38 38-20-12 40 42 2-34 26 32 28-42 4 14 40-38-20-14 40-14-40-38 20 14-40-42-4 32-28-34-26 42-2-12-40 38 20z"/></svg>
+    <h1>바삭<span>공장</span></h1>
+    <p>매일 새 기름 · 국내산 염지 레시피 · 주문 즉시 2번 튀김</p>
+    <div class="tags"><b>🍗 CHICKEN</b><b>🍺 PUB</b><b>🛵 배달 · 포장</b></div>
+    <svg class="mascot" viewBox="0 0 140 150" aria-hidden="true">
+      <ellipse cx="70" cy="146" rx="46" ry="5" fill="#000" opacity=".25"/>
+      <path d="M30 90c0-36 18-62 40-62s40 26 40 62-18 54-40 54-40-18-40-54z" fill="#f6a92b" stroke="#1b1b1b" stroke-width="4"/>
+      <path d="M40 98c8 10 52 10 60 0" stroke="#c9741a" stroke-width="5" fill="none" stroke-linecap="round"/>
+      <circle cx="56" cy="70" r="7" fill="#1b1b1b"/><circle cx="84" cy="70" r="7" fill="#1b1b1b"/><circle cx="58" cy="68" r="2" fill="#fff"/><circle cx="86" cy="68" r="2" fill="#fff"/>
+      <path d="M62 84q8 8 16 0" stroke="#1b1b1b" stroke-width="4" fill="none" stroke-linecap="round"/>
+      <path d="M58 30c-4-14 6-22 12-14 4-12 16-8 14 4 10-4 14 8 4 12" fill="#e8341c" stroke="#1b1b1b" stroke-width="4"/>
+      <path d="M30 100l-16 10M110 100l16 10" stroke="#1b1b1b" stroke-width="6" stroke-linecap="round"/>
+      <rect x="114" y="92" width="18" height="26" rx="3" fill="#ffcc1f" stroke="#1b1b1b" stroke-width="3"/><path d="M114 98h18" stroke="#fff" stroke-width="3"/>
+    </svg>
+  </header>
+
+  <div class="grid">
+    <div class="c">
+      <h2>치킨 <i>1마리 · 반반 가능</i></h2>
+      <div class="ck">
+        <div class="card"><span class="st">BEST</span>
+          <svg viewBox="0 0 96 72" aria-hidden="true"><ellipse cx="48" cy="58" rx="40" ry="9" fill="#ead7a6"/><path d="M22 46c-6-16 8-30 22-26 6-12 24-10 28 2 12 2 14 18 6 26-14 10-46 10-56-2z" fill="#e3a23c" stroke="#1b1b1b" stroke-width="3"/><path d="M34 34l4 4M50 28l3 5M62 36l4 3M44 44l3 3" stroke="#a5651c" stroke-width="3" stroke-linecap="round"/></svg>
+          <b>후라이드</b><small>겉바속촉 기본에 충실한 맛</small><div class="p">₱690</div></div>
+        <div class="card"><span class="st">인기</span>
+          <svg viewBox="0 0 96 72" aria-hidden="true"><ellipse cx="48" cy="58" rx="40" ry="9" fill="#ead7a6"/><path d="M22 46c-6-16 8-30 22-26 6-12 24-10 28 2 12 2 14 18 6 26-14 10-46 10-56-2z" fill="#c8361d" stroke="#1b1b1b" stroke-width="3"/><g fill="#fff"><circle cx="38" cy="34" r="2"/><circle cx="54" cy="30" r="2"/><circle cx="62" cy="40" r="2"/><circle cx="46" cy="44" r="2"/></g></svg>
+          <b>양념치킨</b><small>달콤 매콤 수제 양념 소스</small><div class="p">₱750</div></div>
+        <div class="card">
+          <svg viewBox="0 0 96 72" aria-hidden="true"><ellipse cx="48" cy="58" rx="40" ry="9" fill="#ead7a6"/><path d="M22 46c-6-16 8-30 22-26 6-12 24-10 28 2 12 2 14 18 6 26-14 10-46 10-56-2z" fill="#9a5a24" stroke="#1b1b1b" stroke-width="3"/><path d="M30 36c10 4 26 4 38-2" stroke="#e9c27a" stroke-width="3" fill="none"/></svg>
+          <b>간장마늘</b><small>통마늘 듬뿍 단짠 간장</small><div class="p">₱750</div></div>
+        <div class="card">
+          <svg viewBox="0 0 96 72" aria-hidden="true"><ellipse cx="48" cy="58" rx="40" ry="9" fill="#ead7a6"/><path d="M22 46c-6-16 8-30 22-26 6-12 24-10 28 2 12 2 14 18 6 26-14 10-46 10-56-2z" fill="#f2d16b" stroke="#1b1b1b" stroke-width="3"/><g fill="#fffbe6"><rect x="34" y="30" width="8" height="5" rx="2"/><rect x="52" y="28" width="8" height="5" rx="2"/><rect x="58" y="40" width="8" height="5" rx="2"/></g></svg>
+          <b>스노우 치즈</b><small>치즈 시즈닝 + 꿀 드리즐</small><div class="p">₱780</div></div>
+        <div class="card"><span class="st" style="background:#1b1b1b">🌶 매운맛</span>
+          <svg viewBox="0 0 96 72" aria-hidden="true"><ellipse cx="48" cy="58" rx="40" ry="9" fill="#ead7a6"/><path d="M22 46c-6-16 8-30 22-26 6-12 24-10 28 2 12 2 14 18 6 26-14 10-46 10-56-2z" fill="#8f1d10" stroke="#1b1b1b" stroke-width="3"/><path d="M40 30c4 4 0 8 4 12M56 30c4 4 0 8 4 12" stroke="#ff7b2f" stroke-width="3" fill="none"/></svg>
+          <b>불닭 핫치킨</b><small class="spicy">매운맛 3단계 선택</small><div class="p">₱780</div></div>
+        <div class="card">
+          <svg viewBox="0 0 96 72" aria-hidden="true"><ellipse cx="48" cy="58" rx="40" ry="9" fill="#ead7a6"/><rect x="20" y="26" width="18" height="26" rx="8" fill="#e3a23c" stroke="#1b1b1b" stroke-width="3"/><rect x="40" y="22" width="18" height="30" rx="8" fill="#c8361d" stroke="#1b1b1b" stroke-width="3"/><rect x="60" y="26" width="18" height="26" rx="8" fill="#9a5a24" stroke="#1b1b1b" stroke-width="3"/></svg>
+          <b>순살 3종</b><small>후라이드·양념·간장 한 번에</small><div class="p">₱820</div></div>
+      </div>
+      <div class="half"><b>반반 치킨 OK!</b><span>2가지 맛 선택 · 가격은 높은 메뉴 기준 · 순살 변경 +₱70</span></div>
+    </div>
+
+    <div class="c">
+      <h2>안주 <i>SIDE</i></h2>
+      <div class="list">
+        <div class="r"><b>떡볶이<small>밀떡 · 어묵 · 계란</small></b><span>₱280</span></div>
+        <div class="r"><b>치즈볼 (5개)</b><span>₱190</span></div>
+        <div class="r"><b>감자튀김 · 웨지감자</b><span>₱180</span></div>
+        <div class="r"><b>골뱅이 소면</b><span>₱420</span></div>
+        <div class="r"><b>오징어 땅콩 · 마른안주</b><span>₱260</span></div>
+      </div>
+
+      <h2 style="margin-top:22px">맥주 · 소주 <i>DRINK</i></h2>
+      <div class="list">
+        <div class="r"><b>생맥주 500cc<small>필리핀 라거 · 크래프트 IPA</small></b><span>₱150</span></div>
+        <div class="r"><b>생맥주 피처 1700cc</b><span>₱450</span></div>
+        <div class="r"><b>소주 · 과일 소주</b><span>₱320</span></div>
+        <div class="r"><b>콜라 · 사이다 (500ml)</b><span>₱80</span></div>
+      </div>
+
+      <div class="box">
+        <h3>치맥 세트</h3>
+        <p>치킨 1마리 + 생맥주 피처 + 감자튀김</p>
+        <div class="big"><s>₱1,320</s>₱1,090</div>
+      </div>
+      <div class="hh"><b>HAPPY HOUR 17–19시</b><span>생맥주 500cc 1+1 · 매장 식사 시</span></div>
+    </div>
+  </div>
+
+  <div class="foot"><span>📍 Balibago, Angeles City</span><span>☎ 0917-000-0000</span><span>⏰ 16:00 – 02:00</span><span>배달앱 · 카톡 주문 가능</span></div>
+</div>
+</div>
+</body>
+</html>

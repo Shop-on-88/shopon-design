@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>소이 브루잉 · 메뉴판</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;800&family=Outfit:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f4efe7;--card:#fffaf3;--ink:#2a2420;--sub:#8b8077;--line:#e6ddd0;--mint:#7fb7a4;--peach:#f2b28c;--brown:#7a5236;--cream:#fbe9d3}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Noto Sans KR',system-ui,sans-serif;background:var(--bg);color:var(--ink);word-break:keep-all;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1180px;margin:0 auto;padding:26px 16px 60px}
+.board{background:var(--card);border-radius:22px;box-shadow:0 18px 50px rgba(122,82,54,.14);overflow:hidden}
+.head{position:relative;padding:38px 28px 30px;background:linear-gradient(160deg,#fde7d3 0%,#f7efe4 55%,#e5f1ec 100%);text-align:center;overflow:hidden}
+.head svg.deco{position:absolute;opacity:.9}
+.head .d1{left:-20px;top:-10px;width:150px}.head .d2{right:-16px;bottom:-24px;width:170px}
+.logo{display:inline-flex;align-items:center;gap:10px;position:relative}
+.logo svg{width:44px;height:44px}
+.logo b{font-family:Outfit,sans-serif;font-weight:800;font-size:30px;letter-spacing:-.02em;color:var(--brown)}
+.head p{position:relative;margin-top:8px;font-size:13px;color:var(--sub);letter-spacing:.06em}
+.chips{position:relative;display:flex;flex-wrap:wrap;gap:6px;justify-content:center;margin-top:16px}
+.chips span{font-size:12px;font-weight:700;background:#fff;border:1px solid var(--line);padding:5px 12px;border-radius:30px;color:var(--brown)}
+.cols{display:grid;grid-template-columns:1fr;gap:0}
+@media(min-width:900px){.cols{grid-template-columns:1.1fr 1fr}.cols>div+div{border-left:1px solid var(--line)}}
+.col{padding:26px 26px 30px}
+.sec+.sec{margin-top:28px}
+.sec h2{display:flex;align-items:baseline;gap:10px;font-size:20px;font-weight:800}
+.sec h2 em{font-family:Outfit,sans-serif;font-style:normal;font-size:12px;font-weight:600;color:var(--mint);letter-spacing:.18em}
+.th{display:grid;grid-template-columns:1fr 62px 62px;font-size:11px;font-weight:700;color:var(--sub);margin-top:12px;padding-bottom:6px;border-bottom:2px solid var(--ink)}
+.th span{text-align:right}
+.row{display:grid;grid-template-columns:1fr 62px 62px;align-items:center;padding:11px 0;border-bottom:1px solid var(--line)}
+.row b{font-size:15.5px;font-weight:700;display:flex;align-items:center;gap:6px;flex-wrap:wrap}
+.row small{display:block;font-size:12px;color:var(--sub);font-weight:400;margin-top:2px}
+.row span{text-align:right;font-family:Outfit,sans-serif;font-weight:600;font-size:15px}
+.row span.no{color:#cbbfb2}
+.new{font-size:10px;font-weight:800;padding:2px 6px;border-radius:4px;background:var(--peach);color:#fff;letter-spacing:.04em}
+.hot{font-size:10px;font-weight:800;padding:2px 6px;border-radius:4px;background:var(--mint);color:#fff}
+.sig{display:grid;grid-template-columns:110px 1fr;gap:16px;align-items:center;background:linear-gradient(135deg,#fff4e8,#f1f8f4);border-radius:16px;padding:16px;margin-top:14px}
+.sig svg{width:110px;height:110px}
+.sig h3{font-size:18px;font-weight:800}
+.sig p{font-size:12.5px;color:var(--sub);margin-top:4px;line-height:1.55}
+.sig .p{margin-top:8px;font-family:Outfit;font-weight:800;font-size:20px;color:var(--brown)}
+.cake{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:14px}
+@media(min-width:560px){.cake{grid-template-columns:repeat(3,1fr)}}
+.ck{background:#fff;border:1px solid var(--line);border-radius:14px;padding:12px;text-align:center}
+.ck svg{width:72px;height:60px;margin:0 auto 6px;display:block}
+.ck b{display:block;font-size:13.5px}
+.ck span{font-family:Outfit;font-weight:600;font-size:14px;color:var(--brown)}
+.opt{margin-top:22px;background:#fbf6ef;border-radius:14px;padding:14px 16px;font-size:12.5px;color:var(--sub);line-height:1.8}
+.opt b{color:var(--ink)}
+.bot{display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:center;padding:18px;border-top:1px solid var(--line);font-size:12.5px;color:var(--sub)}
+.bot b{color:var(--brown)}
+</style>
+</head>
+<body>
+<div class="wrap">
+<div class="board">
+  <header class="head">
+    <svg class="deco d1" viewBox="0 0 150 120" aria-hidden="true"><circle cx="40" cy="40" r="46" fill="#f9d2b4" opacity=".7"/><path d="M95 30c20 6 34 26 26 46" stroke="#7fb7a4" stroke-width="5" fill="none" stroke-linecap="round"/><circle cx="104" cy="90" r="8" fill="#7fb7a4" opacity=".6"/></svg>
+    <svg class="deco d2" viewBox="0 0 170 140" aria-hidden="true"><circle cx="110" cy="90" r="60" fill="#cfe7de" opacity=".8"/><path d="M30 60c10-20 40-26 56-8" stroke="#f2b28c" stroke-width="6" fill="none" stroke-linecap="round"/></svg>
+    <div class="logo">
+      <svg viewBox="0 0 44 44" aria-hidden="true"><rect width="44" height="44" rx="13" fill="#7a5236"/><path d="M12 17h17v8a8 8 0 0 1-8 8h-1a8 8 0 0 1-8-8z" fill="#fbe9d3"/><path d="M29 19h3a3.5 3.5 0 0 1 0 7h-3" stroke="#fbe9d3" stroke-width="2.4" fill="none"/><path d="M17 9c-2 2 2 3 0 5M22 9c-2 2 2 3 0 5" stroke="#f2b28c" stroke-width="2" fill="none" stroke-linecap="round"/></svg>
+      <b>SOY BREWING</b>
+    </div>
+    <p>SPECIALTY COFFEE &amp; HOMEMADE DESSERT</p>
+    <div class="chips"><span>☕ 매일 로스팅</span><span>🥛 오트밀크 변경 +₱30</span><span>🍰 수제 디저트</span></div>
+  </header>
+
+  <div class="cols">
+    <div class="col">
+      <section class="sec">
+        <h2>커피 <em>COFFEE</em></h2>
+        <div class="th"><i></i><span>HOT</span><span>ICE</span></div>
+        <div class="row"><b>아메리카노<small>오늘의 원두 · 고소한 / 산뜻한 선택</small></b><span>130</span><span>140</span></div>
+        <div class="row"><b>카페 라떼</b><span>160</span><span>170</span></div>
+        <div class="row"><b>바닐라빈 라떼 <i class="hot">인기</i><small>마다가스카르 바닐라빈 시럽</small></b><span>180</span><span>190</span></div>
+        <div class="row"><b>아인슈페너<small>쫀득한 크림 · 달콤 쌉싸름</small></b><span class="no">—</span><span>200</span></div>
+        <div class="row"><b>흑당 크림 라떼 <i class="new">NEW</i></b><span class="no">—</span><span>210</span></div>
+        <div class="row"><b>핸드드립 (싱글 오리진)<small>에티오피아 · 콜롬비아 · 과테말라</small></b><span>220</span><span>230</span></div>
+      </section>
+
+      <div class="sig">
+        <svg viewBox="0 0 110 110" aria-hidden="true"><ellipse cx="55" cy="98" rx="34" ry="6" fill="#e6ddd0"/><path d="M28 30h54l-6 64a6 6 0 0 1-6 5H40a6 6 0 0 1-6-5z" fill="#fff" stroke="#e6ddd0" stroke-width="2"/><path d="M31 52h48l-4 42a5 5 0 0 1-5 4H40a5 5 0 0 1-5-4z" fill="#a46a43"/><path d="M33 52h44l-1 10H34z" fill="#fbe9d3"/><path d="M30 30c4-12 46-12 50 0" fill="#fffaf3" stroke="#e6ddd0" stroke-width="2"/><circle cx="46" cy="23" r="8" fill="#fffaf3"/><circle cx="60" cy="21" r="10" fill="#fffaf3"/><circle cx="70" cy="26" r="7" fill="#fffaf3"/><rect x="62" y="4" width="4" height="40" rx="2" fill="#7fb7a4" transform="rotate(14 64 24)"/></svg>
+        <div><h3>소이 시그니처 크림라떼</h3><p>직접 만든 소금 크림 위에 볶은 콩가루를 올린 소이 브루잉 대표 메뉴</p><div class="p">₱220</div></div>
+      </div>
+
+      <section class="sec">
+        <h2>논커피 <em>NON-COFFEE</em></h2>
+        <div class="th"><i></i><span>HOT</span><span>ICE</span></div>
+        <div class="row"><b>말차 라떼</b><span>180</span><span>190</span></div>
+        <div class="row"><b>고구마 라떼</b><span>170</span><span>180</span></div>
+        <div class="row"><b>망고 패션 에이드 <i class="new">NEW</i><small>필리핀 망고 · 패션후르츠</small></b><span class="no">—</span><span>190</span></div>
+        <div class="row"><b>유자 캐모마일 티</b><span>160</span><span>170</span></div>
+      </section>
+    </div>
+
+    <div class="col">
+      <section class="sec">
+        <h2>디저트 <em>DESSERT</em></h2>
+        <div class="cake">
+          <div class="ck"><svg viewBox="0 0 72 60" aria-hidden="true"><path d="M8 50h56l-6-22H14z" fill="#f6d7b8"/><path d="M14 28h44l-3-10H17z" fill="#fff"/><circle cx="36" cy="14" r="6" fill="#e2485b"/><rect x="8" y="50" width="56" height="4" rx="2" fill="#e6ddd0"/></svg><b>딸기 생크림</b><span>₱190</span></div>
+          <div class="ck"><svg viewBox="0 0 72 60" aria-hidden="true"><rect x="12" y="20" width="48" height="32" rx="4" fill="#5b3a29"/><rect x="12" y="20" width="48" height="8" rx="4" fill="#3c2519"/><path d="M12 36h48" stroke="#f6e3c9" stroke-width="3"/><rect x="8" y="52" width="56" height="4" rx="2" fill="#e6ddd0"/></svg><b>꾸덕 초코</b><span>₱180</span></div>
+          <div class="ck"><svg viewBox="0 0 72 60" aria-hidden="true"><path d="M10 50h52L52 22H20z" fill="#f9e3a8"/><path d="M20 22h32l-4-6H24z" fill="#c98b3c"/><rect x="8" y="50" width="56" height="4" rx="2" fill="#e6ddd0"/></svg><b>바스크 치즈</b><span>₱170</span></div>
+          <div class="ck"><svg viewBox="0 0 72 60" aria-hidden="true"><ellipse cx="36" cy="40" rx="26" ry="12" fill="#e9b57a"/><ellipse cx="36" cy="34" rx="26" ry="12" fill="#f3cc93"/><path d="M18 32c10 6 26 6 36 0" stroke="#c98b3c" stroke-width="2.5" fill="none"/></svg><b>소금빵 (2개)</b><span>₱150</span></div>
+          <div class="ck"><svg viewBox="0 0 72 60" aria-hidden="true"><circle cx="24" cy="36" r="14" fill="#c9e3d7"/><circle cx="48" cy="36" r="14" fill="#f6c6b0"/><circle cx="36" cy="26" r="14" fill="#fbe9d3"/></svg><b>마카롱 3구</b><span>₱160</span></div>
+          <div class="ck"><svg viewBox="0 0 72 60" aria-hidden="true"><path d="M14 22h44l-6 28H20z" fill="#fff" stroke="#e6ddd0" stroke-width="2"/><path d="M18 32h36l-3 16H21z" fill="#f2b28c"/><circle cx="30" cy="28" r="3" fill="#7fb7a4"/><circle cx="42" cy="27" r="3" fill="#e2485b"/></svg><b>망고 빙수</b><span>₱290</span></div>
+        </div>
+      </section>
+
+      <section class="sec">
+        <h2>브런치 <em>BRUNCH</em></h2>
+        <div class="row" style="grid-template-columns:1fr auto"><b>에그 베네딕트<small>수란 · 홀랜다이즈 · 베이컨</small></b><span>₱320</span></div>
+        <div class="row" style="grid-template-columns:1fr auto"><b>리코타 샐러드 <i class="hot">인기</i></b><span>₱280</span></div>
+        <div class="row" style="grid-template-columns:1fr auto"><b>바질 페스토 파니니</b><span>₱260</span></div>
+      </section>
+
+      <div class="opt">
+        <b>옵션</b> · 샷 추가 +₱40 · 디카페인 변경 +₱30 · 오트·아몬드 밀크 +₱30 · 사이즈업(16oz) +₱30<br>
+        <b>세트</b> · 커피 + 디저트 주문 시 <b>₱20 할인</b> · 텀블러 지참 시 ₱10 할인
+      </div>
+    </div>
+  </div>
+
+  <div class="bot"><span><b>SOY BREWING</b> Clark Freeport Zone</span><span>매일 08:00 – 22:00</span><span>Wi-Fi · 콘센트 · 주차 가능</span></div>
+</div>
+</div>
+</body>
+</html>

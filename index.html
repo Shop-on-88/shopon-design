@@ -887,7 +887,7 @@ body.menu-open .drawer{transform:none;visibility:visible;box-shadow:-10px 0 40px
 <script>
 (function(){
 var KAKAO='https://open.kakao.com/o/sDiX3nTi';
-var THUMBS={"cafe": "/samples/thumbs/cafe.jpg", "food": "/samples/thumbs/food.jpg", "salon-gyeol": "/samples/thumbs/salon-gyeol.jpg", "salon-lumi": "/samples/thumbs/salon-lumi.jpg", "shop-dailyfit": "/samples/thumbs/shop-dailyfit.jpg", "shop-housenote": "/samples/thumbs/shop-housenote.jpg", "spa-cheongyeon": "/samples/thumbs/spa-cheongyeon.jpg", "spa-sodam": "/samples/thumbs/spa-sodam.jpg", "spa-yungyeol": "/samples/thumbs/spa-yungyeol.jpg", "tour": "/samples/thumbs/tour.jpg"};
+var THUMBS={"cafe": "/samples/thumbs/cafe.jpg", "food": "/samples/thumbs/food.jpg", "salon-gyeol": "/samples/thumbs/salon-gyeol.jpg", "salon-lumi": "/samples/thumbs/salon-lumi.jpg", "shop-dailyfit": "/samples/thumbs/shop-dailyfit.jpg", "shop-housenote": "/samples/thumbs/shop-housenote.jpg", "spa-cheongyeon": "/samples/thumbs/spa-cheongyeon.jpg", "spa-sodam": "/samples/thumbs/spa-sodam.jpg", "spa-yungyeol": "/samples/thumbs/spa-yungyeol.jpg", "tour": "/samples/thumbs/tour.jpg", "menu-bbq": "/samples/thumbs/menu-bbq.jpg", "menu-cafe": "/samples/thumbs/menu-cafe.jpg", "menu-chicken": "/samples/thumbs/menu-chicken.jpg", "sns-food": "/samples/thumbs/sns-food.jpg", "sns-beauty": "/samples/thumbs/sns-beauty.jpg", "landing-open": "/samples/thumbs/landing-open.jpg", "landing-academy": "/samples/thumbs/landing-academy.jpg"};
 var SAMPLES=[
  {s:'food',code:'SD-FD01',cat:'food',ko:['온기죽집','식당','따뜻한 한식'],en:['Ongi Porridge','Restaurant','Warm Korean']},
  {s:'cafe',code:'SD-CF01',cat:'food',ko:['모닝빈 커피','카페','시즌 메뉴 강조'],en:['Morning Bean Coffee','Cafe','Seasonal menu']},
@@ -898,12 +898,19 @@ var SAMPLES=[
  {s:'salon-gyeol',code:'SD-HR02',cat:'beauty',ko:['살롱 드 결','미용실','미니멀 화보'],en:['Salon de Gyeol','Hair salon','Minimal editorial']},
  {s:'spa-cheongyeon',code:'SD-SP02',cat:'beauty',ko:['청연 한방 스파','마사지·스파','한방 전통'],en:['Cheongyeon Herbal Spa','Massage & spa','Traditional herbal']},
  {s:'shop-dailyfit',code:'SD-SH02',cat:'shop',ko:['데일리핏','쇼핑몰','패션 매거진'],en:['DailyFit','Online store','Fashion editorial']},
- {s:'spa-yungyeol',code:'SD-SP03',cat:'beauty',ko:['윤결 스파','마사지·스파','밝은 클린'],en:['Yungyeol Spa','Massage & spa','Clean & bright']}
+ {s:'spa-yungyeol',code:'SD-SP03',cat:'beauty',ko:['윤결 스파','마사지·스파','밝은 클린'],en:['Yungyeol Spa','Massage & spa','Clean & bright']},
+ {s:'menu-bbq',code:'SD-MN01',cat:'menu',ko:['화로담 숯불구이','메뉴판','블랙 & 골드'],en:['Hwarodam BBQ','Menu','Black & gold']},
+ {s:'menu-cafe',code:'SD-MN02',cat:'menu',ko:['소이 브루잉','메뉴판','파스텔 카페'],en:['Soy Brewing','Menu','Pastel cafe']},
+ {s:'menu-chicken',code:'SD-MN03',cat:'menu',ko:['바삭공장','메뉴판','팝아트 치킨펍'],en:['Basak Factory','Menu','Pop-art chicken pub']},
+ {s:'sns-food',code:'SD-SN01',cat:'sns',ko:['화로담 SNS 세트','SNS 광고','식당 피드·스토리'],en:['Hwarodam social set','Social ads','Restaurant feed & story']},
+ {s:'sns-beauty',code:'SD-SN02',cat:'sns',ko:['네일 아뜰리에 봄','SNS 광고','뷰티 피드·스토리'],en:['Nail Atelier Bom','Social ads','Beauty feed & story']},
+ {s:'landing-open',code:'SD-LP01',cat:'landing',ko:['그랜드 오픈 쿠폰','랜딩페이지','카운트다운·쿠폰'],en:['Grand-open coupon','Landing page','Countdown & coupon']},
+ {s:'landing-academy',code:'SD-LP02',cat:'landing',ko:['브라이트 영어캠프','랜딩페이지','상담 신청형'],en:['Bright English Camp','Landing page','Lead form']}
 ];
 var TABS=[
  {k:'all',ko:'전체',en:'All'},{k:'food',ko:'식당·카페',en:'Restaurants & Cafes'},{k:'beauty',ko:'미용·스파',en:'Beauty & Spa'},
  {k:'travel',ko:'여행',en:'Travel'},{k:'shop',ko:'쇼핑몰',en:'Online Stores'},
- {k:'menu',ko:'메뉴판',en:'Menus',prep:1},{k:'sns',ko:'SNS 광고',en:'Social Ads',prep:1},{k:'landing',ko:'랜딩페이지',en:'Landing Pages',prep:1}
+ {k:'menu',ko:'메뉴판',en:'Menus'},{k:'sns',ko:'SNS 광고',en:'Social Ads'},{k:'landing',ko:'랜딩페이지',en:'Landing Pages'}
 ];
 var T={
  ko:{responsive:'반응형',apply:'신청하기',view:'샘플 보기',soon:'준비 중',prepT:'{x} 샘플 준비 중입니다',prepP:'제작은 지금도 상담 가능합니다. 원하시는 스타일을 알려 주세요.',prepB:'상담으로 문의하기',
