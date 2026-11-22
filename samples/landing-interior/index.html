@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>온결 인테리어 · 무료 실측 상담</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&family=Noto+Sans+KR:wght@300;400;500;700&family=Playfair+Display:ital,wght@1,500&display=swap" rel="stylesheet">
+<style>
+:root{--cr:#f5f0e8;--cr2:#ebe3d6;--oak:#b98a5a;--oak2:#d8b48a;--sg:#6f8466;--sg2:#a9b99d;--sg9:#2f3a2c;--ch:#2a2925;--mu:#76716a;--wh:#fffdf9}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Noto Sans KR',system-ui,sans-serif;background:var(--cr);color:var(--ch);word-break:keep-all;-webkit-font-smoothing:antialiased;line-height:1.65;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+button,input,select,textarea{font:inherit}
+.w{max-width:1200px;margin:0 auto;padding:0 28px}
+.gb{font-family:'Gowun Batang',serif}
+.it{font-family:'Playfair Display',serif;font-style:italic;font-weight:500}
+.ico{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round;flex:none}
+.lab{font-family:'Playfair Display',serif;font-style:italic;font-size:18px;color:var(--oak)}
+h2.t{font-family:'Gowun Batang',serif;font-weight:700;font-size:clamp(28px,3.4vw,42px);line-height:1.35;letter-spacing:-.02em;margin-top:8px}
+.lead{color:var(--mu);font-size:16px;margin-top:14px;max-width:560px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;height:54px;padding:0 28px;border-radius:999px;font-weight:700;font-size:15px;border:0;cursor:pointer;transition:.25s;white-space:nowrap}
+.btn.d{background:var(--sg9);color:var(--wh)}.btn.d:hover{background:#1f281d}
+.btn.o{background:var(--oak);color:#fff}.btn.o:hover{background:#a37647}
+
+/* top bar */
+.note{background:var(--sg9);color:#e6eadf;font-size:13.5px;text-align:center;padding:10px 16px}
+.note b{color:var(--oak2);font-weight:700}
+.hd{position:sticky;top:0;z-index:40;background:rgba(245,240,232,.92);backdrop-filter:blur(8px);border-bottom:1px solid rgba(42,41,37,.08)}
+.hd .w{height:70px;display:flex;align-items:center;justify-content:space-between}
+.logo{display:flex;align-items:center;gap:10px}
+.logo svg{width:34px;height:34px}
+.logo b{font-family:'Gowun Batang',serif;font-size:19px;font-weight:700;letter-spacing:.02em;line-height:1.1;display:block}
+.logo small{display:block;font-size:11px;letter-spacing:.24em;color:var(--mu)}
+.hd .btn{height:44px;padding:0 22px;font-size:14px}
+
+/* hero */
+.hero{padding:56px 0 90px;position:relative}
+.hero .w{display:grid;grid-template-columns:1.12fr 1fr;gap:64px;align-items:center;position:relative}
+.hero:before{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(111,132,102,.09) 1px,transparent 1px),linear-gradient(90deg,rgba(111,132,102,.09) 1px,transparent 1px);background-size:32px 32px;-webkit-mask-image:linear-gradient(180deg,#000 60%,transparent);mask-image:linear-gradient(180deg,#000 60%,transparent);pointer-events:none}
+.hero .chip{position:relative;display:inline-flex;align-items:center;gap:8px;background:var(--wh);border:1px solid var(--cr2);border-radius:30px;padding:7px 14px;font-size:13.5px;font-weight:500;color:var(--sg9)}
+.hero .chip i{width:7px;height:7px;border-radius:50%;background:var(--sg)}
+.hero h1{font-family:'Gowun Batang',serif;font-weight:700;font-size:clamp(36px,4.6vw,60px);line-height:1.28;letter-spacing:-.03em;margin:22px 0 20px}
+.hero h1 em{font-style:normal;text-decoration:underline;text-decoration-color:rgba(185,138,90,.5);text-decoration-thickness:.22em;text-underline-offset:-.06em;text-decoration-skip-ink:none}
+.hero p{font-size:17px;color:var(--mu);max-width:470px}
+.spec{margin-top:30px;max-width:520px;border-top:1.5px solid var(--ch);position:relative}
+.ruler{height:10px;background:repeating-linear-gradient(90deg,var(--ch) 0 1px,transparent 1px 13px);opacity:.5;margin-bottom:4px}
+.sr{display:grid;grid-template-columns:34px 110px 1fr auto;align-items:baseline;gap:10px;padding:13px 0;border-bottom:1px dashed #cfc3b0}
+.sr span{font-family:"Playfair Display",serif;font-style:italic;color:var(--oak);font-size:15px}
+.sr b{font-family:"Gowun Batang",serif;font-size:18px;font-weight:700}
+.sr em{font-style:normal;font-size:13.5px;color:var(--mu)}
+.sr strong{font-family:"Gowun Batang",serif;font-size:20px;color:var(--sg9)}
+.offer{display:flex;gap:0;margin-top:30px;background:var(--wh);border:1px solid var(--cr2);border-radius:18px;overflow:hidden;max-width:500px}
+.offer div{flex:1;padding:18px 20px}
+.offer div+div{border-left:1px dashed #d8cdbc}
+.offer b{display:block;font-family:'Gowun Batang',serif;font-size:22px;font-weight:700;color:var(--sg9)}
+.offer span{font-size:13px;color:var(--mu)}
+.hero .bt{display:flex;align-items:center;gap:16px;margin-top:28px;flex-wrap:wrap}
+.hero .bt small{font-size:13px;color:var(--mu)}
+.scene{position:relative;border-radius:28px;overflow:hidden;box-shadow:0 40px 80px -40px rgba(47,58,44,.55)}
+.scene svg{display:block;width:100%;height:auto}
+.scene .pin{position:absolute;background:var(--wh);border-radius:14px;padding:10px 14px;box-shadow:0 14px 30px -12px rgba(0,0,0,.3);font-size:13px;display:flex;align-items:center;gap:10px}
+.scene .pin b{display:block;font-size:14px}
+.scene .pin span{color:var(--mu);font-size:12px}
+.scene .pin i{width:34px;height:34px;border-radius:10px;background:var(--cr);display:flex;align-items:center;justify-content:center;color:var(--sg9)}
+.scene .p1{right:20px;bottom:22px}
+.scene .p2{left:20px;top:20px}
+
+/* worries */
+.wr{padding:110px 0;background:var(--wh)}
+.wr .head{text-align:center}
+.wr .head .lead{margin:14px auto 0}
+.wgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:54px}
+.wc{border:1px solid var(--cr2);border-radius:22px;padding:30px 28px;background:var(--cr);position:relative}
+.wc .q{font-family:'Gowun Batang',serif;font-size:18px;color:var(--mu);padding-bottom:18px;border-bottom:1px solid #ddd2c2}
+.wc .q:before{content:"“";font-family:'Playfair Display',serif;font-size:42px;color:var(--oak2);line-height:0;vertical-align:-14px;margin-right:4px}
+.wc .a{display:flex;gap:12px;margin-top:18px}
+.wc .a i{width:30px;height:30px;border-radius:50%;background:var(--sg9);color:#fff;display:flex;align-items:center;justify-content:center;flex:none}
+.wc .a b{display:block;font-size:17px;font-weight:700}
+.wc .a p{font-size:14.5px;color:var(--mu);margin-top:4px}
+
+/* packages */
+.pk{padding:110px 0}
+.pk .head{display:flex;justify-content:space-between;align-items:flex-end;gap:30px;flex-wrap:wrap}
+.pgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:50px}
+.pc{background:var(--wh);border-radius:24px;overflow:hidden;border:1px solid var(--cr2);display:flex;flex-direction:column}
+.pc .im{aspect-ratio:16/10;background:var(--cr2)}
+.pc .im svg{width:100%;height:100%;display:block}
+.pc .tx{padding:26px 26px 28px;display:flex;flex-direction:column;flex:1}
+.pc .tp{display:flex;justify-content:space-between;align-items:center}
+.pc h3{font-family:'Gowun Batang',serif;font-size:23px;font-weight:700}
+.pc .dur{font-size:12.5px;font-weight:500;background:var(--cr);padding:4px 11px;border-radius:20px;color:var(--sg9)}
+.pc ul{list-style:none;margin-top:16px;display:grid;gap:8px;flex:1}
+.pc li{display:flex;gap:9px;font-size:14.5px;color:#4d4a44}
+.pc li svg{color:var(--sg);margin-top:4px;width:15px;height:15px}
+.pc .pr{margin-top:22px;padding-top:18px;border-top:1px solid var(--cr2);display:flex;align-items:baseline;gap:6px}
+.pc .pr b{font-family:'Gowun Batang',serif;font-size:28px;font-weight:700}
+.pc .pr span{font-size:14px;color:var(--mu)}
+.pc.hl{border:2px solid var(--sg9)}
+.pc.hl .dur{background:var(--sg9);color:#fff}
+.pnote{font-size:13px;color:var(--mu);margin-top:22px}
+
+/* process */
+.pr2{padding:110px 0;background:var(--sg9);color:#eef0e8;position:relative;overflow:hidden}
+.pr2 .lab{color:var(--oak2)}
+.pr2 .lead{color:rgba(238,240,232,.66)}
+.tl{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:60px;position:relative}
+.tl:before{content:"";position:absolute;left:0;right:0;top:31px;height:1px;background:rgba(238,240,232,.2)}
+.ts{position:relative;padding-right:28px}
+.ts .n{width:62px;height:62px;border-radius:50%;background:var(--sg9);border:1px solid rgba(238,240,232,.3);display:flex;align-items:center;justify-content:center;position:relative;z-index:1}
+.ts .n svg{width:26px;height:26px;stroke:var(--oak2)}
+.ts.on .n{background:var(--oak);border-color:var(--oak)}.ts.on .n svg{stroke:#fff}
+.ts em{display:block;font-family:'Playfair Display',serif;font-style:italic;color:var(--oak2);font-size:15px;margin-top:22px}
+.ts b{display:block;font-family:'Gowun Batang',serif;font-size:21px;margin-top:2px}
+.ts p{font-size:14.5px;color:rgba(238,240,232,.64);margin-top:6px}
+.free{display:inline-block;vertical-align:4px;margin-left:8px;background:var(--oak);color:#fff;font-family:"Noto Sans KR",sans-serif;font-size:11.5px;font-weight:700;padding:2px 9px;border-radius:20px}
+
+/* faq */
+.faq{padding:110px 0;background:var(--wh)}
+.faq .w{display:grid;grid-template-columns:.8fr 1.2fr;gap:70px}
+.qa{border-top:1px solid var(--ch)}
+.qa details{border-bottom:1px solid #ddd2c2}
+.qa summary{list-style:none;cursor:pointer;padding:24px 44px 24px 0;font-family:'Gowun Batang',serif;font-weight:700;font-size:18px;position:relative}
+.qa summary::-webkit-details-marker{display:none}
+.qa summary:after{content:"";position:absolute;right:8px;top:50%;width:12px;height:12px;border-right:1.6px solid var(--ch);border-bottom:1.6px solid var(--ch);transform:translateY(-75%) rotate(45deg);transition:.25s}
+.qa details[open] summary:after{transform:translateY(-25%) rotate(-135deg)}
+.qa details p{padding:0 0 24px;color:var(--mu);font-size:15px}
+
+/* form */
+.fm{padding:110px 0 130px}
+.fbox{background:var(--wh);border-radius:32px;border:1px solid var(--cr2);display:grid;grid-template-columns:.85fr 1.15fr;overflow:hidden;box-shadow:0 40px 80px -50px rgba(47,58,44,.45)}
+.fside{background:var(--cr2);padding:50px 44px;position:relative;overflow:hidden}
+.fside ul{list-style:none;margin-top:30px;display:grid;gap:16px}
+.fside li{display:flex;gap:12px;font-size:15px;font-weight:500}
+.fside li i{width:26px;height:26px;border-radius:50%;background:var(--sg9);color:#fff;display:flex;align-items:center;justify-content:center;flex:none}
+.fside li i svg{width:14px;height:14px}
+.fside .deco{display:block;width:100%;max-width:300px;margin-top:40px}
+form.f{padding:50px 48px}
+.f h3{font-family:'Gowun Batang',serif;font-size:26px;font-weight:700}
+.f .row{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:22px}
+.f .full{grid-column:1/-1}
+.f label.l{display:block;font-size:13px;font-weight:700;color:#55514a;margin-bottom:7px}
+.f input,.f select{width:100%;height:52px;border:1px solid #ddd2c2;border-radius:14px;background:var(--cr);padding:0 16px;font-size:15px;color:var(--ch);outline:none;transition:.2s}
+.f input:focus,.f select:focus{border-color:var(--sg);background:#fff}
+.seg{display:flex;flex-wrap:wrap;gap:8px}
+.seg label{cursor:pointer}
+.seg input{position:absolute;opacity:0;width:1px;height:1px}
+.seg span{display:inline-block;padding:11px 18px;border-radius:30px;border:1px solid #ddd2c2;font-size:14px;font-weight:500;background:var(--cr);transition:.2s}
+.seg input:checked+span{background:var(--sg9);border-color:var(--sg9);color:#fff}
+.agree{display:flex;gap:10px;align-items:flex-start;font-size:13.5px;color:var(--mu);margin-top:20px;cursor:pointer}
+.agree input{width:18px;height:18px;margin-top:3px;accent-color:var(--sg9)}
+.f .btn{width:100%;margin-top:22px}
+.err{color:#b04a2c;font-size:13px;margin-top:10px;display:none}
+.done{display:none;text-align:center;padding:50px 10px}
+.done svg{width:70px;height:70px;stroke:var(--sg);fill:none;stroke-width:1.5}
+.done b{display:block;font-family:'Gowun Batang',serif;font-size:26px;margin-top:16px}
+.done p{color:var(--mu);margin-top:8px}
+form.f.ok .fb{display:none}form.f.ok .done{display:block}
+
+footer{background:var(--ch);color:rgba(255,255,255,.55);font-size:13px;padding:40px 0 50px}
+footer .w{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+.mcta{display:none}
+
+@media(max-width:1000px){
+ .hero .w,.faq .w,.fbox{grid-template-columns:1fr}
+ .hero .w{gap:40px}
+ .wgrid,.pgrid{grid-template-columns:1fr 1fr}
+ .tl{grid-template-columns:1fr 1fr;gap:40px 0}
+ .tl:before{display:none}
+}
+@media(max-width:640px){
+ .w{padding:0 20px}
+ .hd .btn{display:none}
+ .hero{padding:36px 0 70px}
+ .hero p{font-size:15.5px}
+ .sr{grid-template-columns:28px 1fr auto;row-gap:2px}
+ .sr span{grid-column:1;grid-row:1}
+ .sr b{grid-column:2;grid-row:1}
+ .sr em{grid-column:2;grid-row:2}
+ .sr strong{grid-column:3;grid-row:1/3;align-self:center}
+ .scene .pin{padding:8px 11px}.scene .pin i{width:28px;height:28px}
+ .scene .p2{display:none}
+ .scene .dim{display:none}
+ .wr,.pk,.pr2,.faq{padding:80px 0}
+ .fm{padding:70px 0 120px}
+ .wgrid,.pgrid{grid-template-columns:1fr}
+ .pk .head{gap:0}
+ .tl{grid-template-columns:1fr;gap:30px}
+ .ts{display:grid;grid-template-columns:62px 1fr;gap:0 18px;padding:0}
+ .ts em{margin-top:4px}
+ .ts>div:not(.n){grid-column:2;grid-row:1}
+ .fside{padding:36px 24px}
+ form.f{padding:34px 22px}
+ .f .row{grid-template-columns:1fr}
+ .mcta{display:flex;position:fixed;left:12px;right:12px;bottom:12px;z-index:50;height:54px;border-radius:999px;background:var(--sg9);color:#fff;align-items:center;justify-content:center;gap:8px;font-weight:700;box-shadow:0 14px 30px -10px rgba(0,0,0,.45)}
+ footer{padding-bottom:90px}
+}
+</style>
+</head>
+<body>
+<header class="hd">
+ <div class="w">
+  <a class="logo" href="#top"><svg viewBox="0 0 34 34"><rect x="1" y="1" width="32" height="32" rx="9" fill="#2f3a2c"/><path d="M9 25V15l8-6 8 6v10" fill="none" stroke="#d8b48a" stroke-width="2" stroke-linejoin="round"/><path d="M14 25v-5a3 3 0 0 1 6 0v5" fill="none" stroke="#f5f0e8" stroke-width="2"/></svg><span><b>온결 인테리어</b><small>ONGYEOL INTERIOR</small></span></a>
+  <a class="btn d" href="#form">무료 실측 신청</a>
+ </div>
+</header>
+
+<section class="hero" id="top">
+ <div class="w">
+  <div class="scene">
+   <svg viewBox="0 0 640 520" aria-hidden="true">
+    <defs>
+     <linearGradient id="wall" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ece4d6"/><stop offset="1" stop-color="#e2d7c5"/></linearGradient>
+     <linearGradient id="floor" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#c99e70"/><stop offset="1" stop-color="#a87b4f"/></linearGradient>
+     <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#cfdccb"/><stop offset="1" stop-color="#f2eadb"/></linearGradient>
+     <linearGradient id="sofa" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#8a9c80"/><stop offset="1" stop-color="#5f7257"/></linearGradient>
+     <linearGradient id="sunbeam" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fff6df" stop-opacity=".7"/><stop offset="1" stop-color="#fff6df" stop-opacity="0"/></linearGradient>
+     <radialGradient id="lampg" cx="50%" cy="0" r="80%"><stop offset="0" stop-color="#ffe2a8" stop-opacity=".6"/><stop offset="1" stop-color="#ffe2a8" stop-opacity="0"/></radialGradient>
+     <filter id="sb"><feGaussianBlur stdDeviation="6"/></filter>
+    </defs>
+    <rect width="640" height="520" fill="url(#wall)"/>
+    <!-- arch window -->
+    <path d="M70 330 V170 a90 90 0 0 1 180 0 V330z" fill="url(#sky)"/>
+    <path d="M70 330 V170 a90 90 0 0 1 180 0 V330z" fill="none" stroke="#fffdf9" stroke-width="10"/>
+    <path d="M160 80 V330 M70 210 H250" stroke="#fffdf9" stroke-width="6"/>
+    <clipPath id="wclip"><path d="M75 325 V170 a85 85 0 0 1 170 0 V325z"/></clipPath><g fill="#a9b99d" opacity=".8" clip-path="url(#wclip)"><ellipse cx="110" cy="300" rx="40" ry="26"/><ellipse cx="210" cy="306" rx="50" ry="24"/></g>
+    <!-- sunbeam -->
+    <path d="M70 330 L250 330 L420 470 L150 470z" fill="url(#sunbeam)"/>
+    <g transform="translate(0 46)"><!-- shelf wall -->
+    <rect x="430" y="110" width="170" height="8" rx="2" fill="#b98a5a"/>
+    <rect x="430" y="190" width="170" height="8" rx="2" fill="#b98a5a"/>
+    <g><rect x="446" y="76" width="16" height="34" rx="2" fill="#6f8466"/><rect x="464" y="84" width="14" height="26" rx="2" fill="#d8b48a"/><rect x="480" y="80" width="12" height="30" rx="2" fill="#2f3a2c"/><path d="M540 110 q0-30 20-30 q20 0 20 30z" fill="#efe7da" stroke="#c9b9a2"/><circle cx="520" cy="96" r="12" fill="#c46e4a" opacity=".85"/></g>
+    <g><rect x="450" y="156" width="40" height="34" rx="4" fill="#fffdf9" stroke="#c9b9a2"/><rect x="456" y="162" width="28" height="22" fill="#a9b99d"/><path d="M520 190 q-6-34 14-40 q20 6 14 40z" fill="#e6dccb"/><path d="M534 150 q-14-20 -4-34 M534 150 q10-22 22-26" stroke="#6f8466" stroke-width="3" fill="none"/><rect x="566" y="166" width="22" height="24" rx="3" fill="#2f3a2c"/></g>
+    </g><!-- pendant -->
+    <line x1="350" y1="0" x2="350" y2="120" stroke="#2a2925" stroke-width="2"/>
+    <path d="M320 150 q30-44 60 0z" fill="#2f3a2c"/>
+    <ellipse cx="350" cy="150" rx="30" ry="5" fill="#ffe2a8"/>
+    <path d="M300 150 L400 150 L470 360 L230 360z" fill="url(#lampg)"/>
+    <!-- floor -->
+    <path d="M0 380 H640 V520 H0z" fill="url(#floor)"/>
+    <g stroke="#9a6e44" stroke-width="1.2" opacity=".55"><path d="M0 410 H640M0 446 H640M0 486 H640"/><path d="M120 380v30M300 380v30M480 380v30M60 410v36M220 410v36M420 410v36M580 410v36M160 446v40M360 446v40M540 446v40"/></g>
+    <rect x="0" y="372" width="640" height="10" fill="#fffdf9"/>
+    <!-- rug -->
+    <ellipse cx="350" cy="452" rx="250" ry="42" fill="#efe7da"/>
+    <ellipse cx="350" cy="452" rx="226" ry="34" fill="none" stroke="#d8c9b2" stroke-width="2"/>
+    <!-- sofa -->
+    <ellipse cx="330" cy="430" rx="190" ry="14" fill="#000" opacity=".22" filter="url(#sb)"/>
+    <rect x="160" y="300" width="340" height="80" rx="26" fill="url(#sofa)"/>
+    <rect x="140" y="340" width="380" height="80" rx="24" fill="#6f8466"/>
+    <rect x="174" y="346" width="152" height="44" rx="14" fill="#8a9c80"/>
+    <rect x="334" y="346" width="152" height="44" rx="14" fill="#8a9c80"/>
+    <rect x="128" y="320" width="44" height="100" rx="20" fill="#5f7257"/>
+    <rect x="488" y="320" width="44" height="100" rx="20" fill="#5f7257"/>
+    <rect x="160" y="420" width="10" height="20" rx="3" fill="#7a5532"/><rect x="490" y="420" width="10" height="20" rx="3" fill="#7a5532"/>
+    <!-- cushions -->
+    <rect x="200" y="300" width="70" height="56" rx="16" fill="#efe7da" transform="rotate(-8 235 328)"/>
+    <rect x="390" y="302" width="64" height="52" rx="16" fill="#d8b48a" transform="rotate(7 422 328)"/>
+    <path d="M404 316 l36 24 M404 340 l36 -24" stroke="#c49a6c" stroke-width="2" transform="rotate(7 422 328)"/>
+    <!-- side table & plant -->
+    <ellipse cx="575" cy="380" rx="32" ry="8" fill="#b98a5a"/>
+    <rect x="570" y="380" width="10" height="56" fill="#9a6e44"/>
+    <ellipse cx="575" cy="436" rx="22" ry="5" fill="#9a6e44"/>
+    <path d="M560 380 q-2-24 15-26 q17 2 15 26z" fill="#efe7da"/>
+    <g stroke="#5f7257" stroke-width="3" fill="none" stroke-linecap="round"><path d="M575 356 q-20-30 -12-60"/><path d="M575 356 q14-36 30-44"/><path d="M575 356 q2-40 -2-70"/></g>
+    <g fill="#6f8466"><ellipse cx="562" cy="300" rx="14" ry="7" transform="rotate(-60 562 300)"/><ellipse cx="604" cy="312" rx="14" ry="7" transform="rotate(30 604 312)"/><ellipse cx="573" cy="284" rx="14" ry="7" transform="rotate(-90 573 284)"/><ellipse cx="592" cy="330" rx="12" ry="6" transform="rotate(20 592 330)"/></g>
+    <!-- floor lamp left -->
+    <rect x="40" y="250" width="4" height="190" fill="#2a2925"/><ellipse cx="42" cy="440" rx="22" ry="5" fill="#2a2925"/>
+    <path d="M22 250 h40 l-8 -36 h-24z" fill="#efe7da" stroke="#c9b9a2"/>
+    <!-- measuring tape overlay -->
+    <g transform="translate(140 470)">
+     <rect x="0" y="0" width="380" height="22" rx="3" fill="#e9c35a"/>
+     <g stroke="#6b5520" stroke-width="1.5"><path d="M10 0v10M30 0v6M50 0v10M70 0v6M90 0v10M110 0v6M130 0v10M150 0v6M170 0v10M190 0v6M210 0v10M230 0v6M250 0v10M270 0v6M290 0v10M310 0v6M330 0v10M350 0v6M370 0v10"/></g>
+    </g>
+    <g transform="translate(118 462)"><rect x="0" y="0" width="38" height="38" rx="8" fill="#2a2925"/><circle cx="19" cy="19" r="10" fill="#e9c35a"/><circle cx="19" cy="19" r="3" fill="#2a2925"/></g>
+    <g class="dim"><!-- dimension line -->
+    <g stroke="#2f3a2c" stroke-width="1.5"><path d="M140 280 H520"/><path d="M140 272 v16 M520 272 v16"/></g>
+    <rect x="296" y="268" width="68" height="24" rx="12" fill="#2f3a2c"/>
+    <text x="330" y="285" text-anchor="middle" font-family="Noto Sans KR" font-size="13" font-weight="700" fill="#fff">3,240</text></g>
+   </svg>
+   <div class="pin p2"><i><svg class="ico" viewBox="0 0 24 24"><path d="M12 3l8 4.5v9L12 21l-8-4.5v-9z"/><path d="M12 12l8-4.5M12 12v9M12 12L4 7.5"/></svg></i><div><b>3D 시안 제공</b><span>계약 전 미리 확인</span></div></div>
+   <div class="pin p1"><i><svg class="ico" viewBox="0 0 24 24"><path d="M4 7h16v10H4z"/><path d="M8 7v4M12 7v6M16 7v4"/></svg></i><div><b>방문 실측 무료</b><span>30–60분 소요</span></div></div>
+  </div>
+  <div>
+   <span class="chip"><i></i>아파트 · 빌라 부분 / 전체 리모델링</span>
+   <h1>견적서보다 먼저,<br><em>우리 집 치수</em>부터<br>재 드립니다</h1>
+   <p>방문 실측 후 3D 시안으로 완성 모습을 미리 보여 드려요. 마음에 들 때만 계약하시면 됩니다.</p>
+   <div class="spec">
+    <div class="ruler" aria-hidden="true"></div>
+    <div class="sr"><span>01</span><b>방문 실측</b><em>30–60분 · 배관·전기 점검</em><strong>0원</strong></div>
+    <div class="sr"><span>02</span><b>3D 시안</b><em>시안 1회 · 수정 1회</em><strong>0원</strong></div>
+    <div class="sr"><span>03</span><b>항목별 견적서</b><em>실측 치수 기준</em><strong>0원</strong></div>
+   </div>
+   <div class="bt"><a class="btn d" href="#form">무료 실측 신청하기 <svg class="ico" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a><small>신청 후 1일 안에 일정 연락</small></div>
+  </div>
+ </div>
+</section>
+
+<section class="wr">
+ <div class="w">
+  <div class="head"><span class="lab">Why measure first</span><h2 class="t">인테리어 상담에서<br>가장 많이 듣는 걱정</h2><p class="lead">그래서 온결은 견적보다 실측과 시안을 먼저 드립니다.</p></div>
+  <div class="wgrid">
+   <div class="wc"><p class="q">견적이 나중에 계속 늘어나요</p><div class="a"><i><svg class="ico" viewBox="0 0 24 24" style="width:15px;height:15px"><path d="M5 12l5 5 9-10"/></svg></i><div><b>실측 기반 항목별 견적</b><p>현장 치수로 자재 수량을 계산해 항목마다 금액을 적어 드려요.</p></div></div></div>
+   <div class="wc"><p class="q">완성되면 어떤 느낌일지 몰라요</p><div class="a"><i><svg class="ico" viewBox="0 0 24 24" style="width:15px;height:15px"><path d="M5 12l5 5 9-10"/></svg></i><div><b>계약 전 3D 시안</b><p>색·자재·조명을 바꿔 가며 화면으로 먼저 확인합니다.</p></div></div></div>
+   <div class="wc"><p class="q">공사 기간이 자꾸 밀려요</p><div class="a"><i><svg class="ico" viewBox="0 0 24 24" style="width:15px;height:15px"><path d="M5 12l5 5 9-10"/></svg></i><div><b>날짜별 공정표 공유</b><p>철거부터 입주 청소까지 일정을 미리 정해 공유해요.</p></div></div></div>
+  </div>
+ </div>
+</section>
+
+<section class="pk">
+ <div class="w">
+  <div class="head"><div><span class="lab">Packages</span><h2 class="t">많이 찾으시는 공사</h2></div><p class="lead" style="max-width:420px">아래 금액은 시작가 예시이며, 실측 후 정확한 견적을 안내드립니다.</p></div>
+  <div class="pgrid">
+   <article class="pc">
+    <div class="im"><svg viewBox="0 0 320 200" aria-hidden="true"><rect width="320" height="200" fill="#e7e2d8"/><g stroke="#d6cfc2" stroke-width="1.5"><path d="M0 40h320M0 80h320M0 120h320M40 0v140M80 0v140M120 0v140M160 0v140M200 0v140M240 0v140M280 0v140"/></g><rect y="140" width="320" height="60" fill="#cfc6b6"/><rect x="40" y="96" width="150" height="60" rx="26" fill="#fffdf9" stroke="#d6cfc2" stroke-width="2"/><rect x="52" y="104" width="126" height="40" rx="18" fill="#dde8ea"/><path d="M200 30 v60" stroke="#9aa3aa" stroke-width="3"/><circle cx="200" cy="30" r="8" fill="#9aa3aa"/><g fill="#cfe0e6" opacity=".9"><circle cx="196" cy="48" r="2"/><circle cx="204" cy="56" r="2"/><circle cx="198" cy="64" r="2"/></g><rect x="230" y="70" width="60" height="70" rx="4" fill="#b98a5a"/><rect x="236" y="76" width="48" height="26" rx="2" fill="#fffdf9"/><ellipse cx="260" cy="89" rx="16" ry="7" fill="#e7eef0"/><rect x="236" y="106" width="48" height="28" rx="2" fill="#a37647"/><rect x="236" y="20" width="48" height="40" rx="20" fill="#dde8ea" stroke="#9aa3aa" stroke-width="2"/><path d="M60 160 q-6-20 6-24 q12 4 6 24z" fill="#6f8466"/></svg></div>
+    <div class="tx"><div class="tp"><h3>욕실 리모델링</h3><span class="dur">3–4일</span></div>
+     <ul><li><svg class="ico" viewBox="0 0 24 24"><path d="M5 12l5 5 9-10"/></svg>타일 철거·방수·재시공</li><li><svg class="ico" viewBox="0 0 24 24"><path d="M5 12l5 5 9-10"/></svg>도기·수전·욕실장 교체</li><li><svg class="ico" viewBox="0 0 24 24"><path d="M5 12l5 5 9-10"/></svg>천장·조명 포함</li></ul>
+     <div class="pr"><b>390만 원</b><span>부터</span></div></div>
+   </article>
+   <article class="pc hl">
+    <div class="im"><svg viewBox="0 0 320 200" aria-hidden="true"><rect width="320" height="200" fill="#ece4d6"/><rect x="30" y="30" width="260" height="46" rx="4" fill="#fffdf9" stroke="#ddd2c2" stroke-width="2"/><path d="M95 30v46M160 30v46M225 30v46" stroke="#ddd2c2" stroke-width="2"/><g fill="#b98a5a"><rect x="86" y="50" width="4" height="12" rx="2"/><rect x="151" y="50" width="4" height="12" rx="2"/><rect x="216" y="50" width="4" height="12" rx="2"/></g><rect x="30" y="98" width="260" height="10" fill="#efe7da"/><rect x="30" y="108" width="260" height="70" fill="#6f8466"/><path d="M95 108v70M160 108v70M225 108v70" stroke="#5f7257" stroke-width="2"/><g fill="#d8b48a"><rect x="58" y="120" width="12" height="3" rx="1.5"/><rect x="122" y="120" width="12" height="3" rx="1.5"/><rect x="188" y="120" width="12" height="3" rx="1.5"/><rect x="252" y="120" width="12" height="3" rx="1.5"/></g><rect x="200" y="84" width="50" height="14" rx="3" fill="#2a2925"/><circle cx="214" cy="91" r="4" fill="#555"/><circle cx="236" cy="91" r="4" fill="#555"/><path d="M90 98 v-14 q0-8 8-8 h6" stroke="#9aa3aa" stroke-width="3" fill="none"/><rect x="70" y="92" width="40" height="6" rx="2" fill="#cfd6d9"/><g transform="translate(140 80)"><rect width="22" height="18" rx="3" fill="#fffdf9" stroke="#ddd2c2"/><path d="M6 0 q0-10 10-6" stroke="#6f8466" stroke-width="2" fill="none"/></g><rect y="178" width="320" height="22" fill="#c99e70"/></svg></div>
+    <div class="tx"><div class="tp"><h3>주방 리모델링</h3><span class="dur">4–5일</span></div>
+     <ul><li><svg class="ico" viewBox="0 0 24 24"><path d="M5 12l5 5 9-10"/></svg>상·하부장 맞춤 제작</li><li><svg class="ico" viewBox="0 0 24 24"><path d="M5 12l5 5 9-10"/></svg>상판·싱크볼·수전 교체</li><li><svg class="ico" viewBox="0 0 24 24"><path d="M5 12l5 5 9-10"/></svg>벽 타일·후드·조명</li></ul>
+     <div class="pr"><b>480만 원</b><span>부터</span></div></div>
+   </article>
+   <article class="pc">
+    <div class="im"><svg viewBox="0 0 320 200" aria-hidden="true"><rect width="320" height="200" fill="#f0eadf"/><g fill="none" stroke="#2f3a2c" stroke-width="2"><rect x="30" y="24" width="260" height="152"/><path d="M150 24v70M150 120v56M30 100h80M190 100h100M220 100v76"/></g><g stroke="#2f3a2c" stroke-width="2" fill="none"><path d="M150 94 a26 26 0 0 1 26 26"/><path d="M110 100 a24 24 0 0 0 -24 -24"/></g><rect x="44" y="116" width="70" height="40" rx="6" fill="#a9b99d"/><rect x="170" y="40" width="100" height="44" rx="4" fill="#d8b48a"/><rect x="176" y="46" width="44" height="32" rx="3" fill="#efe7da"/><rect x="232" y="118" width="44" height="44" rx="4" fill="#dde8ea"/><circle cx="70" cy="60" r="18" fill="#efe7da" stroke="#b98a5a" stroke-width="2"/><g font-family="Noto Sans KR" font-size="11" fill="#76716a" font-weight="500"><text x="52" y="94">거실</text><text x="196" y="96">안방</text><text x="236" y="174">욕실</text></g></svg></div>
+    <div class="tx"><div class="tp"><h3>아파트 전체</h3><span class="dur">3–5주</span></div>
+     <ul><li><svg class="ico" viewBox="0 0 24 24"><path d="M5 12l5 5 9-10"/></svg>도배·바닥·조명 전체</li><li><svg class="ico" viewBox="0 0 24 24"><path d="M5 12l5 5 9-10"/></svg>욕실·주방·현관 포함</li><li><svg class="ico" viewBox="0 0 24 24"><path d="M5 12l5 5 9-10"/></svg>폐기물 처리·입주 청소</li></ul>
+     <div class="pr"><b>평당 160만 원</b><span>부터</span></div></div>
+   </article>
+  </div>
+  <p class="pnote">※ 금액은 부가세 별도 예시이며, 현장 상태·자재 선택에 따라 달라집니다.</p>
+ </div>
+</section>
+
+<section class="pr2">
+ <div class="w">
+  <span class="lab">Process</span><h2 class="t">신청부터 입주까지 네 단계</h2><p class="lead">처음 두 단계는 비용 없이 진행됩니다. 시안을 보고 결정하세요.</p>
+  <div class="tl">
+   <div class="ts on"><div class="n"><svg class="ico" viewBox="0 0 24 24"><path d="M4 7h16v10H4z"/><path d="M8 7v4M12 7v6M16 7v4"/></svg></div><div><em>Step 01</em><b>방문 실측<span class="free">무료</span></b><p>원하시는 날짜에 방문해 치수와 배관·전기 상태를 확인해요.</p></div></div>
+   <div class="ts on"><div class="n"><svg class="ico" viewBox="0 0 24 24"><path d="M12 3l8 4.5v9L12 21l-8-4.5v-9z"/><path d="M12 12l8-4.5M12 12v9M12 12L4 7.5"/></svg></div><div><em>Step 02</em><b>3D 시안<span class="free">무료</span></b><p>실측 일주일 안에 3D 시안과 자재 보드를 보내 드려요.</p></div></div>
+   <div class="ts"><div class="n"><svg class="ico" viewBox="0 0 24 24"><path d="M6 3h9l4 4v14H6z"/><path d="M9 11h7M9 15h7M9 7h3"/></svg></div><div><em>Step 03</em><b>견적 · 계약</b><p>항목별 견적서와 공정표를 확인하신 뒤 계약합니다.</p></div></div>
+   <div class="ts"><div class="n"><svg class="ico" viewBox="0 0 24 24"><path d="M3 21h18M5 21V10l7-6 7 6v11"/><path d="M10 21v-6h4v6"/></svg></div><div><em>Step 04</em><b>시공 · 입주</b><p>공정마다 사진으로 진행 상황을 공유하고 입주 청소로 마무리해요.</p></div></div>
+  </div>
+ </div>
+</section>
+
+<section class="faq">
+ <div class="w">
+  <div><span class="lab">FAQ</span><h2 class="t">자주 묻는 질문</h2><p class="lead">더 궁금한 점은 신청서에 남겨 주시면 상담 때 함께 설명드릴게요.</p></div>
+  <div class="qa">
+   <details open><summary>실측만 받고 계약하지 않아도 되나요?</summary><p>네, 실측과 첫 3D 시안은 계약 여부와 관계없이 무료입니다. 시안과 견적을 보신 뒤 천천히 결정하셔도 됩니다.</p></details>
+   <details><summary>살면서 부분 공사도 가능한가요?</summary><p>욕실·주방 같은 부분 공사는 거주 중에도 진행할 수 있어요. 소음이 큰 철거 일정은 미리 알려 드립니다.</p></details>
+   <details><summary>관리사무소 신고나 이웃 동의는 누가 하나요?</summary><p>공사 신고서 작성과 엘리베이터 보양, 안내문 부착까지 저희가 준비합니다.</p></details>
+   <details><summary>공사 후 문제가 생기면 어떻게 하나요?</summary><p>계약서에 적힌 하자 보수 기간 동안 방문 점검과 보수를 해 드립니다.</p></details>
+  </div>
+ </div>
+</section>
+
+<section class="fm" id="form">
+ <div class="w">
+  <div class="fbox">
+   <div class="fside">
+    <span class="lab">Free measuring</span>
+    <h2 class="t">무료 실측 신청</h2>
+    <ul>
+     <li><i><svg class="ico" viewBox="0 0 24 24"><path d="M5 12l5 5 9-10"/></svg></i>방문 실측·현장 점검 0원</li>
+     <li><i><svg class="ico" viewBox="0 0 24 24"><path d="M5 12l5 5 9-10"/></svg></i>3D 시안 1회 + 수정 1회 0원</li>
+     <li><i><svg class="ico" viewBox="0 0 24 24"><path d="M5 12l5 5 9-10"/></svg></i>계약 강요 없는 상담</li>
+    </ul>
+    <svg class="deco" viewBox="0 0 300 190" aria-hidden="true"><rect x="10" y="10" width="280" height="150" fill="#f5f0e8" stroke="#2f3a2c" stroke-width="2"/><rect x="10" y="150" width="280" height="10" fill="#d8b48a"/><rect x="40" y="40" width="90" height="80" rx="2" fill="#dfe7da" stroke="#2f3a2c" stroke-width="2"/><path d="M85 40v80M40 80h90" stroke="#2f3a2c" stroke-width="1.5"/><rect x="190" y="70" width="70" height="80" fill="#efe7da" stroke="#2f3a2c" stroke-width="2"/><circle cx="250" cy="112" r="2.5" fill="#2f3a2c"/><g transform="translate(150 132)"><rect x="-10" y="-8" width="20" height="16" rx="3" fill="#2a2925"/><circle cx="4" cy="0" r="3" fill="#d4482c"/></g><path d="M150 124 L150 22" stroke="#d4482c" stroke-width="1.5" stroke-dasharray="4 3"/><circle cx="150" cy="20" r="3" fill="#d4482c"/><rect x="156" y="56" width="52" height="20" rx="10" fill="#b98a5a"/><text x="182" y="70" text-anchor="middle" font-family="Noto Sans KR" font-size="11.5" font-weight="700" fill="#fff">2,310</text><g stroke="#6f8466" stroke-width="1.5"><path d="M40 176h90M40 171v10M130 171v10"/></g><text x="85" y="188" text-anchor="middle" font-family="Noto Sans KR" font-size="13" font-weight="700" fill="#6f8466">1,200</text></svg>
+   </div>
+   <form class="f" id="f" novalidate>
+    <div class="fb">
+     <h3>어떤 공사를 생각하세요?</h3>
+     <div class="row">
+      <div class="full"><label class="l">공사 종류</label>
+       <div class="seg"><label><input type="radio" name="k" checked><span>욕실</span></label><label><input type="radio" name="k"><span>주방</span></label><label><input type="radio" name="k"><span>전체 리모델링</span></label><label><input type="radio" name="k"><span>도배·바닥</span></label><label><input type="radio" name="k"><span>기타</span></label></div>
+      </div>
+      <div><label class="l" for="nm">이름</label><input id="nm" placeholder="이름을 입력해 주세요"></div>
+      <div><label class="l" for="ph">연락처</label><input id="ph" placeholder="000-0000-0000" inputmode="tel"></div>
+      <div><label class="l" for="ar">지역</label><input id="ar" placeholder="예: 서울 ○○구"></div>
+      <div><label class="l" for="sz">평형</label><select id="sz"><option>20평 미만</option><option selected>20–30평대</option><option>40평 이상</option><option>잘 모르겠어요</option></select></div>
+     </div>
+     <label class="agree"><input type="checkbox" id="ag"><span>상담 연락을 위한 개인정보 수집·이용에 동의합니다.</span></label>
+     <button class="btn d" type="submit">무료 실측 신청하기</button>
+     <p class="err" id="err">이름, 연락처 입력과 동의 체크를 확인해 주세요.</p>
+    </div>
+    <div class="done"><svg viewBox="0 0 70 70"><circle cx="35" cy="35" r="31"/><path d="M22 36l9 9 17-19"/></svg><b>신청이 접수되었어요</b><p>하루 안에 실측 가능한 날짜를 연락드릴게요.</p></div>
+   </form>
+  </div>
+ </div>
+</section>
+
+<footer><div class="w"><span>온결 인테리어 · 상담 000-0000-0000 · 카카오톡 ID: example</span><span>© 온결 인테리어</span></div></footer>
+<a class="mcta" href="#form">무료 실측 신청하기 <svg class="ico" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+
+<script>
+(function(){
+ var f=document.getElementById('f'),err=document.getElementById('err');
+ f.addEventListener('submit',function(e){
+  e.preventDefault();
+  var ok=document.getElementById('nm').value.trim()&&document.getElementById('ph').value.trim()&&document.getElementById('ag').checked;
+  if(!ok){err.style.display='block';return}
+  err.style.display='none';f.classList.add('ok');
+ });
+})();
+</script>
+</body>
+</html>

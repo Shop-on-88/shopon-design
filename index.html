@@ -934,7 +934,7 @@ body.menu-open .drawer{transform:none;visibility:visible;box-shadow:-10px 0 40px
 <script>
 (function(){
 var KAKAO='https://open.kakao.com/o/sDiX3nTi';
-var THUMBS={"cafe": "/samples/thumbs/cafe.jpg", "food": "/samples/thumbs/food.jpg", "salon-gyeol": "/samples/thumbs/salon-gyeol.jpg", "salon-lumi": "/samples/thumbs/salon-lumi.jpg", "shop-dailyfit": "/samples/thumbs/shop-dailyfit.jpg", "shop-housenote": "/samples/thumbs/shop-housenote.jpg", "spa-cheongyeon": "/samples/thumbs/spa-cheongyeon.jpg", "spa-sodam": "/samples/thumbs/spa-sodam.jpg", "spa-yungyeol": "/samples/thumbs/spa-yungyeol.jpg", "tour": "/samples/thumbs/tour.jpg", "menu-bbq": "/samples/thumbs/menu-bbq.jpg", "menu-cafe": "/samples/thumbs/menu-cafe.jpg", "menu-chicken": "/samples/thumbs/menu-chicken.jpg", "sns-food": "/samples/thumbs/sns-food.jpg", "sns-beauty": "/samples/thumbs/sns-beauty.jpg", "landing-open": "/samples/thumbs/landing-open.jpg", "landing-academy": "/samples/thumbs/landing-academy.jpg", "tour-golf": "/samples/thumbs/tour-golf.jpg", "menu-pocha-en": "/samples/thumbs/menu-pocha-en.jpg", "sns-flower": "/samples/thumbs/sns-flower.jpg", "landing-laundry": "/samples/thumbs/landing-laundry.jpg"};
+var THUMBS={"cafe": "/samples/thumbs/cafe.jpg", "food": "/samples/thumbs/food.jpg", "salon-gyeol": "/samples/thumbs/salon-gyeol.jpg", "salon-lumi": "/samples/thumbs/salon-lumi.jpg", "shop-dailyfit": "/samples/thumbs/shop-dailyfit.jpg", "shop-housenote": "/samples/thumbs/shop-housenote.jpg", "spa-cheongyeon": "/samples/thumbs/spa-cheongyeon.jpg", "spa-sodam": "/samples/thumbs/spa-sodam.jpg", "spa-yungyeol": "/samples/thumbs/spa-yungyeol.jpg", "tour": "/samples/thumbs/tour.jpg", "menu-bbq": "/samples/thumbs/menu-bbq.jpg", "menu-cafe": "/samples/thumbs/menu-cafe.jpg", "menu-chicken": "/samples/thumbs/menu-chicken.jpg", "sns-food": "/samples/thumbs/sns-food.jpg", "sns-beauty": "/samples/thumbs/sns-beauty.jpg", "landing-open": "/samples/thumbs/landing-open.jpg", "landing-academy": "/samples/thumbs/landing-academy.jpg", "tour-golf": "/samples/thumbs/tour-golf.jpg", "menu-pocha-en": "/samples/thumbs/menu-pocha-en.jpg", "sns-flower": "/samples/thumbs/sns-flower.jpg", "landing-laundry": "/samples/thumbs/landing-laundry.jpg", "food-hongun": "/samples/thumbs/food-hongun.jpg", "menu-ramen-tsuki": "/samples/thumbs/menu-ramen-tsuki.jpg", "sns-detailing-en": "/samples/thumbs/sns-detailing-en.jpg", "landing-interior": "/samples/thumbs/landing-interior.jpg"};
 var SAMPLES=[
  {s:'food',code:'SD-FD01',cat:'food',ko:['온기죽집','식당','따뜻한 한식'],en:['Ongi Porridge','Restaurant','Warm Korean']},
  {s:'cafe',code:'SD-CF01',cat:'food',ko:['모닝빈 커피','카페','시즌 메뉴 강조'],en:['Morning Bean Coffee','Cafe','Seasonal menu']},
@@ -947,16 +947,20 @@ var SAMPLES=[
  {s:'shop-dailyfit',code:'SD-SH02',cat:'shop',ko:['데일리핏','쇼핑몰','패션 매거진'],en:['DailyFit','Online store','Fashion editorial']},
  {s:'spa-yungyeol',code:'SD-SP03',cat:'beauty',ko:['윤결 스파','마사지·스파','밝은 클린'],en:['Yungyeol Spa','Massage & spa','Clean & bright']},
  {s:'tour-golf',code:'SD-TR02',cat:'travel',ko:['솔바람 골프트래블','골프투어','그린 & 브라스 에디토리얼'],en:['Solbaram Golf Travel','Golf tour agency','Green & brass editorial']},
+ {s:'food-hongun',code:'SD-CN01',cat:'food',ko:['홍운반점','중식당','다크 & 불맛 레드'],en:['Hongun Chinese Kitchen','Korean-Chinese restaurant','Dark & wok-fire red']},
  {s:'menu-bbq',code:'SD-MN01',cat:'menu',ko:['화로담 숯불구이','메뉴판','블랙 & 골드'],en:['Hwarodam BBQ','Menu','Black & gold']},
  {s:'menu-cafe',code:'SD-MN02',cat:'menu',ko:['소이 브루잉','메뉴판','파스텔 카페'],en:['Soy Brewing','Menu','Pastel cafe']},
  {s:'menu-chicken',code:'SD-MN03',cat:'menu',ko:['바삭공장','메뉴판','팝아트 치킨펍'],en:['Basak Factory','Menu','Pop-art chicken pub']},
  {s:'menu-pocha-en',code:'SD-MN04',cat:'menu',ko:['포차골목 분식 (영문)','메뉴판','레트로 스트리트푸드'],en:['Pocha Lane','Menu','Retro street food']},
+ {s:'menu-ramen-tsuki',code:'SD-MN05',cat:'menu',ko:['라멘 츠키','메뉴판','인디고 & 머스터드 라멘'],en:['Ramen Tsuki','Menu','Indigo & mustard ramen']},
  {s:'sns-food',code:'SD-SN01',cat:'sns',ko:['화로담 SNS 세트','SNS 광고','식당 피드·스토리'],en:['Hwarodam social set','Social ads','Restaurant feed & story']},
  {s:'sns-beauty',code:'SD-SN02',cat:'sns',ko:['네일 아뜰리에 봄','SNS 광고','뷰티 피드·스토리'],en:['Nail Atelier Bom','Social ads','Beauty feed & story']},
  {s:'sns-flower',code:'SD-SN03',cat:'sns',ko:['들꽃상점 연말 예약','SNS 광고','꽃집 피드·스토리'],en:['Deulkkot flower pre-order','Social ads','Florist feed & story']},
+ {s:'sns-detailing-en',code:'SD-SN04',cat:'sns',ko:['킨탑 디테일링 연말 (영문)','SNS 광고','세차 그래파이트 & 라임'],en:['Kintab Auto Detailing holiday','Social ads','Graphite & lime car care']},
  {s:'landing-open',code:'SD-LP01',cat:'landing',ko:['그랜드 오픈 쿠폰','랜딩페이지','카운트다운·쿠폰'],en:['Grand-open coupon','Landing page','Countdown & coupon']},
  {s:'landing-academy',code:'SD-LP02',cat:'landing',ko:['브라이트 영어캠프','랜딩페이지','상담 신청형'],en:['Bright English Camp','Landing page','Lead form']},
- {s:'landing-laundry',code:'SD-LP03',cat:'landing',ko:['포근세탁 첫 수거 할인','랜딩페이지','쿠폰·신청형'],en:['Pogeun Laundry first pickup','Landing page','Coupon & sign-up']}
+ {s:'landing-laundry',code:'SD-LP03',cat:'landing',ko:['포근세탁 첫 수거 할인','랜딩페이지','쿠폰·신청형'],en:['Pogeun Laundry first pickup','Landing page','Coupon & sign-up']},
+ {s:'landing-interior',code:'SD-LP04',cat:'landing',ko:['온결 인테리어 무료 실측','랜딩페이지','실측·상담 신청형'],en:['Ongyeol Interior free measuring','Landing page','Measuring & lead form']}
 ];
 var TABS=[
  {k:'all',ko:'전체',en:'All'},{k:'food',ko:'식당·카페',en:'Restaurants & Cafes'},{k:'beauty',ko:'미용·스파',en:'Beauty & Spa'},
