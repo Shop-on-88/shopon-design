@@ -7,6 +7,14 @@
 <meta name="description" content="가게 홈페이지, QR 웹메뉴판, 인쇄용 메뉴판, SNS 광고 이미지, 랜딩페이지 제작. 업종별 디자인 시안을 보고 상담을 신청하세요.">
 <meta property="og:title" content="Shop On Design">
 <meta property="og:description" content="가게 홈페이지 · 메뉴판 · SNS 광고 제작">
+<meta name="theme-color" content="#1f4dff">
+<link rel="manifest" href="/manifest.json">
+<link rel="icon" type="image/png" sizes="32x32" href="/app/favicon-32.png">
+<link rel="apple-touch-icon" href="/app/apple-touch-icon.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Shop On">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;800&family=Outfit:wght@500;700;800&display=swap" rel="stylesheet">
@@ -346,6 +354,26 @@ body.menu-open .drawer{transform:none;visibility:visible;box-shadow:-10px 0 40px
   .fab a,.fab button{width:54px;height:54px}
 }
 @media (max-width:359px){.btn-talk{display:none}.logo small{display:none}}
+
+.appbar{position:fixed;left:12px;right:12px;bottom:12px;z-index:90;display:none;align-items:center;gap:12px;background:#fff;border:1px solid var(--line);border-radius:16px;box-shadow:0 10px 30px rgba(20,30,60,.16);padding:12px 12px 12px 14px;max-width:520px;margin:0 auto}
+.appbar.on{display:flex;animation:abUp .35s ease}
+@keyframes abUp{from{transform:translateY(20px);opacity:0}to{transform:none;opacity:1}}
+.appbar img{width:42px;height:42px;border-radius:11px;flex-shrink:0}
+.appbar .t{flex:1;min-width:0;line-height:1.35}
+.appbar .t b{display:block;font-size:14px;font-weight:700}
+.appbar .t span{display:block;font-size:12px;color:var(--sub)}
+.appbar .go{flex-shrink:0;border-radius:999px;background:var(--ac);color:#fff;font-size:13px;font-weight:700;padding:9px 16px}
+.appbar .x{flex-shrink:0;width:28px;height:28px;display:grid;place-items:center;color:var(--mute)}
+.appbar .x svg{width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:2.2;stroke-linecap:round}
+.ios-tip{position:fixed;inset:0;z-index:95;background:rgba(15,20,35,.5);display:none;align-items:flex-end;justify-content:center;padding:16px}
+.ios-tip.on{display:flex}
+.ios-tip .bx{background:#fff;border-radius:18px;padding:22px 20px 18px;max-width:420px;width:100%;text-align:center}
+.ios-tip h3{font-size:17px;margin-bottom:12px}
+.ios-tip ol{text-align:left;font-size:14px;color:var(--sub);padding-left:20px;line-height:1.8;margin-bottom:16px}
+.ios-tip ol b{color:var(--tx)}
+.ios-tip button{border-radius:999px;background:var(--tx);color:#fff;font-size:14px;font-weight:700;padding:10px 28px}
+.drawer .app-dl{display:none}
+.drawer .app-dl.on{display:flex}
 </style>
 </head>
 <body>
@@ -397,6 +425,7 @@ body.menu-open .drawer{transform:none;visibility:visible;box-shadow:-10px 0 40px
     <a href="#process" data-go="process"><span data-en="How It Works">제작 진행 과정</span><svg class="ico" viewBox="0 0 24 24"><path d="m9 6 6 6-6 6"/></svg></a>
     <a href="#faq" data-go="faq"><span data-en="FAQ">자주 묻는 질문</span><svg class="ico" viewBox="0 0 24 24"><path d="m9 6 6 6-6 6"/></svg></a>
     <a href="#inquiry" data-go="inquiry"><span data-en="Contact">제작 문의</span><svg class="ico" viewBox="0 0 24 24"><path d="m9 6 6 6-6 6"/></svg></a>
+      <a href="#" class="app-dl" id="drawerApp"><span data-en="Install app">앱 설치하기</span><svg class="ico" viewBox="0 0 24 24"><path d="M12 4v11m-4-4 4 4 4-4M5 19h14"/></svg></a>
   </nav>
   <div class="d-sub">
     <p data-en="Ask us anything on KakaoTalk.">궁금한 점은 카카오톡으로 편하게 물어보세요.</p>
@@ -884,6 +913,24 @@ body.menu-open .drawer{transform:none;visibility:visible;box-shadow:-10px 0 40px
   <button class="f3" type="button" id="toTop" aria-label="맨 위로" data-en-aria="Back to top"><svg class="ico" viewBox="0 0 24 24"><path d="m6 15 6-6 6 6"/></svg>TOP</button>
 </div>
 
+<div class="appbar" id="appbar" role="dialog" aria-label="앱 설치">
+  <img src="/app/icon-192.png" alt="">
+  <div class="t"><b data-en="Get the Shop On app">Shop On 앱으로 저장하기</b><span data-en="See samples and ask us anytime">홈 화면에서 시안 보고 바로 상담</span></div>
+  <button type="button" class="go" id="appGo" data-en="Install">설치</button>
+  <button type="button" class="x" id="appX" aria-label="닫기"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
+</div>
+<div class="ios-tip" id="iosTip" role="dialog" aria-label="홈 화면에 추가">
+  <div class="bx">
+    <h3 data-en="Add to Home Screen">홈 화면에 앱 추가하기</h3>
+    <ol>
+      <li data-en="Tap the Share button at the bottom of Safari">사파리 아래쪽 <b>공유 버튼</b>을 눌러요</li>
+      <li data-en="Choose “Add to Home Screen”"><b>“홈 화면에 추가”</b>를 골라요</li>
+      <li data-en="Tap “Add” at the top right">오른쪽 위 <b>“추가”</b>를 누르면 끝</li>
+    </ol>
+    <button type="button" id="iosOk" data-en="OK">확인</button>
+  </div>
+</div>
+
 <script>
 (function(){
 var KAKAO='https://open.kakao.com/o/sDiX3nTi';
@@ -1062,6 +1109,29 @@ var start='ko';
 try{var s=localStorage.getItem('sd_lang');if(s==='en'||s==='ko')start=s}catch(e){}
 if(/^#en\b/i.test(location.hash))start='en';
 setLang(start,false);
+})();
+</script>
+<script>
+(function(){
+  if('serviceWorker' in navigator){window.addEventListener('load',function(){navigator.serviceWorker.register('/sw.js').catch(function(){})})}
+  var standalone=window.matchMedia('(display-mode: standalone)').matches||navigator.standalone===true;
+  if(standalone)return;
+  var ua=navigator.userAgent,ios=/iphone|ipad|ipod/i.test(ua)&&!window.MSStream,mobile=/android|iphone|ipad|ipod/i.test(ua);
+  var bar=document.getElementById('appbar'),tip=document.getElementById('iosTip'),dl=document.getElementById('drawerApp'),deferred=null;
+  function closed(){try{return Date.now()-(+localStorage.getItem('sdAppX')||0)<7*864e5}catch(e){return false}}
+  function show(){if(dl)dl.classList.add('on');if(mobile&&!closed())setTimeout(function(){bar.classList.add('on')},2500)}
+  function install(){
+    if(deferred){deferred.prompt();deferred.userChoice.finally(function(){deferred=null;bar.classList.remove('on')})}
+    else if(ios){tip.classList.add('on')}
+  }
+  window.addEventListener('beforeinstallprompt',function(e){e.preventDefault();deferred=e;show()});
+  window.addEventListener('appinstalled',function(){bar.classList.remove('on');if(dl)dl.classList.remove('on')});
+  if(ios)show();
+  document.getElementById('appGo').addEventListener('click',install);
+  if(dl)dl.addEventListener('click',function(e){e.preventDefault();install()});
+  document.getElementById('appX').addEventListener('click',function(){bar.classList.remove('on');try{localStorage.setItem('sdAppX',Date.now())}catch(e){}});
+  document.getElementById('iosOk').addEventListener('click',function(){tip.classList.remove('on')});
+  tip.addEventListener('click',function(e){if(e.target===tip)tip.classList.remove('on')});
 })();
 </script>
 </body>
