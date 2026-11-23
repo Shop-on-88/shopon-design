@@ -1,0 +1,1326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Shiori Omakase · Ten-seat sushi counter, Angeles City</title>
+<meta name="description" content="A ten-seat omakase sushi counter in Angeles City, Pampanga. Lunch and dinner courses, seasonal fish, sake pairing and private counter bookings.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Montserrat:wght@400;500;600&family=Noto+Serif+JP:wght@600&display=swap" rel="stylesheet">
+<script>document.documentElement.classList.add('js')</script>
+<style>
+:root{
+  --washi:#f5f0e6;--washi2:#efe7d8;--paper:#fbf8f2;
+  --hinoki:#e9d7b4;--hinoki2:#d9bf90;--hinoki3:#b8935b;
+  --moss:#1d3a2f;--moss2:#142a22;--moss3:#2c5243;--nori:#0f1f19;
+  --seal:#cf3f26;
+  --ink:#1b2420;--ink2:#46514b;--mut:#76807a;--line:#d9cfbd;--line2:rgba(245,240,230,.16)
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-variant-numeric:lining-nums;font-family:'Montserrat',sans-serif;background:var(--washi);color:var(--ink);font-size:16px;line-height:1.7;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+button,input,select,textarea{font-family:inherit;font-size:inherit;color:inherit}
+.serif{font-family:'Cormorant Garamond',serif}
+.jp{font-family:'Noto Serif JP',serif;font-weight:600}
+.wrap{max-width:1240px;margin:0 auto;padding:0 40px}
+body:before{content:"";position:fixed;inset:0;pointer-events:none;z-index:0;opacity:.5;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .45 0 0 0 0 .38 0 0 0 0 .26 0 0 0 .09 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+main,header,footer{position:relative;z-index:1}
+
+/* type pieces */
+.kicker{display:flex;align-items:center;gap:14px;font-size:12px;letter-spacing:.32em;text-transform:uppercase;font-weight:600;color:var(--ink2)}
+.kicker i{width:8px;height:8px;border-radius:50%;background:var(--seal);flex:none}
+.kicker span.no{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:18px;letter-spacing:0;text-transform:none;color:var(--hinoki3)}
+.kicker:after{content:"";height:1px;background:currentColor;opacity:.3;flex:1;max-width:120px}
+h2.h{font-family:'Cormorant Garamond',serif;font-weight:500;font-size:clamp(38px,4.6vw,64px);line-height:1.04;letter-spacing:-.01em;margin-top:22px}
+h2.h em{font-style:italic;color:var(--moss3)}
+.lead{font-size:17px;color:var(--ink2);max-width:520px;margin-top:22px}
+.rule{height:1px;background:var(--line)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:12px;height:54px;padding:0 30px;border:0;border-radius:2px;background:var(--moss);color:var(--washi);font-size:13px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;cursor:pointer;transition:background .2s,transform .2s;white-space:nowrap}
+.btn:hover{background:var(--moss3)}
+.btn svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:1.6}
+.btn.line{background:transparent;color:var(--ink);border:1px solid var(--ink)}
+.btn.line:hover{background:var(--ink);color:var(--washi)}
+.btn.light{background:var(--washi);color:var(--moss)}
+.btn.light:hover{background:#fff}
+
+/* nav */
+header{position:sticky;top:0;z-index:40;background:rgba(245,240,230,.9);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+header .wrap{display:flex;align-items:center;justify-content:space-between;height:76px;gap:24px}
+.logo{display:flex;align-items:center;gap:14px}
+.logo .seal{width:40px;height:40px;border-radius:50%;background:var(--seal);display:grid;place-items:center;color:#fbf3ea;font-size:19px;box-shadow:inset 0 0 0 3px rgba(255,255,255,.18)}
+.logo b{display:block;font-family:'Cormorant Garamond',serif;font-weight:600;font-size:26px;letter-spacing:.26em;line-height:1}
+.logo small{display:block;font-size:11px;letter-spacing:.28em;text-transform:uppercase;color:var(--mut);margin-top:5px}
+.links{display:flex;gap:30px;font-size:13px;letter-spacing:.08em;font-weight:500}
+.links a{position:relative;padding:6px 0;color:var(--ink2)}
+.links a:hover{color:var(--ink)}
+.links a:after{content:"";position:absolute;left:0;right:100%;bottom:0;height:1px;background:var(--ink);transition:right .25s}
+.links a:hover:after{right:0}
+header .btn{height:44px;padding:0 22px;font-size:12px}
+.burger{display:none;width:44px;height:44px;background:none;border:1px solid var(--line);border-radius:2px;cursor:pointer}
+.burger svg{width:22px;height:22px;stroke:var(--ink);stroke-width:1.5;fill:none}
+.mnav{display:none}
+
+/* hero */
+.hero{position:relative;overflow:hidden;background:var(--moss2);color:var(--washi);padding:40px 0 34px}
+.hero:before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(90deg,rgba(255,255,255,.022) 0 1px,transparent 1px 72px),radial-gradient(900px 300px at 50% 72%,rgba(233,215,180,.10),transparent 70%)}
+.hero .cord{position:absolute;top:0;width:1px;background:rgba(200,180,138,.5);height:var(--ch,300px)}
+.hero .vtxt{position:absolute;left:26px;top:40px;writing-mode:vertical-rl;font-size:12px;letter-spacing:.42em;text-transform:uppercase;color:rgba(245,240,230,.5)}
+.hero .vtxt .jp{letter-spacing:0;font-size:16px;color:var(--hinoki);margin-bottom:14px}
+.fotm{position:absolute;right:28px;top:36px;display:flex;flex-direction:column;align-items:center;gap:12px;color:var(--washi);z-index:2}
+.fotm .sl{width:46px;height:46px;background:var(--seal);display:grid;place-items:center;font-size:24px;color:#fbf1e6;border-radius:3px;box-shadow:inset 0 0 0 3px rgba(255,255,255,.14)}
+.fotm .vt{writing-mode:vertical-rl;font-size:12px;letter-spacing:.3em;text-transform:uppercase;color:rgba(245,240,230,.75)}
+.fotm .vt b{font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:600;font-size:20px;letter-spacing:.06em;text-transform:none;color:var(--hinoki);margin-top:10px}
+.hero .top{position:relative;text-align:center}
+.hero .kicker{justify-content:center;color:rgba(245,240,230,.72)}
+.hero .kicker:before{content:"";height:1px;background:currentColor;opacity:.3;flex:1;max-width:80px}
+.hero h1{font-family:'Cormorant Garamond',serif;font-weight:500;font-size:clamp(46px,6.1vw,88px);line-height:1;letter-spacing:-.015em;margin-top:18px}
+.hero h1 em{font-style:italic;color:var(--hinoki)}
+.hero h1 .dot{display:inline-block;width:.15em;height:.15em;border-radius:50%;background:var(--seal);margin-left:.06em;vertical-align:.08em}
+.hero .lead{font-size:17px;color:rgba(245,240,230,.74);max-width:600px;margin:18px auto 0}
+.hero .band{display:block;width:100%;height:auto;margin-top:-24px;position:relative}
+.seats10{position:relative;display:flex;align-items:center;justify-content:center;margin-top:6px}
+.seats10 > span:first-child{position:absolute;right:calc(50% + 29.06% + 34px)}
+.seats10 > span:last-child{position:absolute;left:calc(50% + 29.06% + 34px)}
+.seats10 ol{list-style:none;display:flex;justify-content:space-between;width:calc(58.125% + 32px)}
+.seats10 li{width:32px;height:32px;border-radius:50%;border:1px solid rgba(233,215,180,.55);display:grid;place-items:center;font-family:'Cormorant Garamond',serif;font-weight:600;font-size:16px;color:var(--hinoki)}
+.seats10 > span{font-size:11px;letter-spacing:.3em;text-transform:uppercase;color:rgba(245,240,230,.55);white-space:nowrap}
+.swipe{display:none}
+/* booking strip */
+.book{position:relative;margin-top:22px}
+.bk{display:grid;grid-template-columns:auto 1.1fr 1.1fr .8fr 1.1fr auto;align-items:stretch;border-top:1px solid rgba(233,215,180,.35);border-bottom:1px solid rgba(233,215,180,.35)}
+.bk .ttl{display:flex;align-items:center;gap:12px;padding:0 28px 0 0;border-right:1px solid var(--line2);font-family:'Cormorant Garamond',serif;font-size:26px;font-style:italic;color:var(--washi);white-space:nowrap}
+.bk .ttl i{width:9px;height:9px;border-radius:50%;background:var(--seal)}
+.bk .f{padding:12px 22px;border-right:1px solid var(--line2);display:flex;flex-direction:column;justify-content:center;min-width:0}
+.bk label,.bk .lbl{font-size:11px;letter-spacing:.26em;text-transform:uppercase;font-weight:600;color:var(--hinoki)}
+.lbl{font-size:11px;letter-spacing:.26em;text-transform:uppercase;font-weight:600;color:var(--mut)}
+.bk input,.bk select{border:0;background:transparent;color:var(--washi);font-size:16px;font-weight:500;padding:3px 0;width:100%;outline:none;cursor:pointer;appearance:none;-webkit-appearance:none;min-width:0;color-scheme:dark}
+.bk input::placeholder{color:rgba(245,240,230,.4)}
+.bk select option{color:#1b2420;background:#fff}
+.bk select{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1l5 5 5-5' fill='none' stroke='%23e9d7b4' stroke-width='1.4'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right center;padding-right:20px}
+.step{display:flex;align-items:center;gap:12px;margin-top:2px}
+.step button{width:28px;height:28px;border:1px solid rgba(233,215,180,.5);background:transparent;color:var(--washi);border-radius:50%;cursor:pointer;font-size:16px;line-height:1;display:grid;place-items:center}
+.step button:hover{border-color:var(--washi)}
+.step output{font-size:17px;font-weight:600;min-width:20px;text-align:center}
+.bk .go{display:flex;align-items:center;padding-left:22px}
+.bk .go .btn{height:50px}
+.bk2{display:none;grid-template-columns:auto 1.4fr 1fr 1fr auto}
+.bk2 .sum{padding:12px 22px;border-right:1px solid var(--line2);display:flex;flex-direction:column;justify-content:center}
+.bk2 .sum b{font-family:'Cormorant Garamond',serif;font-size:21px;font-weight:600;color:var(--washi);line-height:1.2}
+.bk .f.err{background:rgba(207,63,38,.18)}
+.done{display:none;padding:16px 0;align-items:center;gap:20px;border-top:1px solid rgba(233,215,180,.35);border-bottom:1px solid rgba(233,215,180,.35)}
+.done .mk{width:46px;height:46px;border-radius:50%;background:var(--seal);flex:none;display:grid;place-items:center}
+.done .mk svg{width:22px;height:22px;stroke:#fff;fill:none;stroke-width:2}
+.done h3{font-family:'Cormorant Garamond',serif;font-size:24px;font-weight:600;line-height:1.2}
+.done p{font-size:14px;color:rgba(245,240,230,.72)}
+.done button{margin-left:auto;background:none;border:0;border-bottom:1px solid currentColor;color:var(--hinoki);font-size:12px;letter-spacing:.2em;text-transform:uppercase;cursor:pointer;padding:4px 0;white-space:nowrap}
+
+/* counter / philosophy */
+.counter{background:var(--washi2);color:var(--ink);padding:120px 0;border-bottom:1px solid var(--line);position:relative;overflow:hidden}
+.counter:before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(90deg,rgba(146,104,48,.03) 0 1px,transparent 1px 72px)}
+.counter .wrap{position:relative;display:grid;grid-template-columns:1.05fr 1fr;gap:80px;align-items:center}
+.counter .kicker{color:var(--ink2)}
+.counter h2.h em{color:var(--moss3)}
+.counter .lead{color:var(--ink2)}
+.counter .art svg{width:100%;height:auto;display:block;box-shadow:0 40px 70px -40px rgba(20,42,34,.6)}
+.tenets{margin-top:44px;display:grid;gap:0;border-top:1px solid var(--line)}
+.tenets div{display:grid;grid-template-columns:64px 1fr;gap:18px;padding:20px 0;border-bottom:1px solid var(--line)}
+.tenets b{font-family:'Noto Serif JP',serif;font-weight:600;font-size:26px;color:var(--hinoki3);line-height:1.1}
+.tenets h4{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:23px;line-height:1.2}
+.tenets p{font-size:14px;color:var(--ink2);margin-top:4px}
+
+/* courses */
+.sec{padding:120px 0}
+.shead{display:grid;grid-template-columns:1.25fr .85fr;gap:60px;align-items:end;margin-bottom:64px}
+.shead .lead{margin-top:0;justify-self:end}
+.courses{display:grid;grid-template-columns:1fr 1.12fr 1fr;border-top:1px solid var(--ink);border-bottom:1px solid var(--line)}
+.course{padding:34px 34px 40px;border-right:1px solid var(--line);display:flex;flex-direction:column;position:relative}
+.course:last-child{border-right:0}
+.course.main{background:var(--paper)}
+.course .ill{height:170px;display:flex;align-items:center;justify-content:center;margin:6px 0 22px}
+.course .ill svg{height:100%;width:auto;max-width:100%}
+.course .when{font-size:11px;letter-spacing:.26em;text-transform:uppercase;font-weight:600;color:var(--mut)}
+.course h3{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:34px;line-height:1.1;margin-top:8px}
+.course h3 small{display:block;font-size:17px;font-style:italic;font-weight:500;color:var(--hinoki3);margin-top:4px}
+.price{display:flex;align-items:baseline;gap:10px;margin:18px 0 20px;padding-bottom:18px;border-bottom:1px solid var(--line)}
+.price b{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:44px;line-height:1}
+.price span{font-size:13px;color:var(--mut)}
+.course ol{list-style:none;counter-reset:c;display:grid;gap:9px;font-size:14px;color:var(--ink2);flex:1}
+.course ol li{counter-increment:c;display:grid;grid-template-columns:26px 1fr;gap:6px}
+.course ol li:before{content:counter(c,decimal-leading-zero);font-family:'Cormorant Garamond',serif;font-style:italic;font-size:16px;color:var(--hinoki3);line-height:1.5}
+.course .foot{margin-top:24px;font-size:13px;color:var(--mut);display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.course .flag{position:absolute;top:0;left:34px;transform:translateY(-50%);background:var(--moss);color:var(--washi);font-size:11px;letter-spacing:.24em;text-transform:uppercase;padding:5px 12px;font-weight:600}
+.addons{display:grid;grid-template-columns:1fr 1.12fr 1fr;gap:0;margin-top:0;border-bottom:1px solid var(--line)}
+.addons div{padding:22px 34px;border-right:1px solid var(--line);display:flex;justify-content:space-between;gap:12px;font-size:14px;color:var(--ink2);align-items:baseline}
+.addons div:last-child{border-right:0}
+.addons b{font-family:'Cormorant Garamond',serif;font-size:22px;color:var(--ink);font-weight:600;white-space:nowrap}
+
+/* fish of the month */
+.fish{background:var(--hinoki);position:relative;overflow:hidden}
+.fish:before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(178deg,rgba(146,104,48,.07) 0 1px,transparent 1px 14px),repeating-linear-gradient(181deg,rgba(255,255,255,.12) 0 2px,transparent 2px 33px)}
+.fish .wrap{position:relative}
+.fishgrid{display:grid;grid-template-columns:1.25fr 1fr;gap:70px;align-items:center}
+.fish .art{position:relative}
+.fish .art svg{width:100%;height:auto;display:block}
+.fish .bignm{font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:500;font-size:clamp(60px,8vw,118px);line-height:.9;margin-top:18px}
+.fish .sub{font-size:13px;letter-spacing:.26em;text-transform:uppercase;color:var(--ink2);margin-top:14px}
+.ways{margin-top:34px;border-top:1px solid rgba(27,36,32,.25)}
+.ways div{display:grid;grid-template-columns:1fr auto;gap:14px;padding:16px 0;border-bottom:1px solid rgba(27,36,32,.14);align-items:baseline}
+.ways h4{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:600;line-height:1.2}
+.ways p{font-size:13px;color:var(--ink2);grid-column:1/-1;margin-top:-6px}
+.ways b{font-size:13px;letter-spacing:.14em;text-transform:uppercase;font-weight:600;color:var(--moss)}
+.months{display:grid;grid-template-columns:repeat(12,1fr);margin-top:80px;border-top:1px solid rgba(27,36,32,.3);border-bottom:1px solid rgba(27,36,32,.3)}
+.months div{padding:16px 6px 18px;text-align:center;border-right:1px solid rgba(27,36,32,.14);position:relative}
+.months div:last-child{border-right:0}
+.months small{display:block;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--ink2)}
+.months b{display:block;font-family:'Cormorant Garamond',serif;font-weight:600;font-size:18px;line-height:1.2;margin-top:4px}
+.months .now{background:var(--moss);color:var(--washi)}
+.months .now small{color:var(--hinoki)}
+.months .now:after{content:"";position:absolute;top:-6px;left:50%;width:11px;height:11px;border-radius:50%;background:var(--seal);transform:translateX(-50%)}
+
+/* a la carte */
+.carte{display:grid;grid-template-columns:1fr 1fr .9fr;gap:60px;align-items:start}
+.mlist h3{font-family:'Cormorant Garamond',serif;font-size:28px;font-weight:600;display:flex;align-items:baseline;justify-content:space-between;border-bottom:1px solid var(--ink);padding-bottom:10px;margin-bottom:8px}
+.mlist h3 small{font-family:'Montserrat',sans-serif;font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--mut);font-weight:600}
+.mi{display:flex;align-items:baseline;gap:10px;padding:11px 0;border-bottom:1px solid var(--line)}
+.mi .n{font-weight:500;font-size:15px}
+.mi .n small{display:block;font-size:12px;color:var(--mut);font-weight:400;margin-top:1px}
+.mi .d{flex:1;border-bottom:1px dotted #b9ad97;transform:translateY(-4px);min-width:16px}
+.mi .p{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:20px;white-space:nowrap}
+.mlist + .mlist{margin-top:40px}
+.sake{background:var(--moss);color:var(--washi);padding:34px 32px 36px;position:relative}
+.sake svg{width:100%;height:auto;display:block;margin:-6px 0 14px}
+.sake h3{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:30px;line-height:1.1}
+.sake p{font-size:14px;color:rgba(245,240,230,.75);margin-top:10px}
+.pair{margin-top:20px;border-top:1px solid var(--line2)}
+.pair div{display:flex;justify-content:space-between;gap:12px;padding:12px 0;border-bottom:1px solid var(--line2);font-size:14px;align-items:baseline}
+.pair b{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:600;color:var(--hinoki);white-space:nowrap}
+.carte-note{font-size:13px;color:var(--mut);margin-top:22px}
+
+/* visit / seats */
+.visit{background:var(--paper);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.seatwrap{display:grid;grid-template-columns:1.5fr 1fr;gap:56px;align-items:center}
+.seatmap svg{width:100%;height:auto;display:block}
+.seat{cursor:pointer}
+.seatmap .sm-v{display:none}
+.seat circle.s{transition:fill .2s,stroke .2s}
+.seat:hover circle.s{fill:#fff}
+.seat.on circle.s{fill:var(--moss);stroke:var(--moss)}
+.seat.on text{fill:var(--washi)}
+.seat.on text.l{fill:var(--moss);font-weight:600}
+.pform .from span+span:before{content:"· "}
+.seat:focus{outline:none}
+.seat:focus-visible circle.s{stroke:var(--seal);stroke-width:2.5}
+.seatinfo{border:1px solid var(--line);background:var(--washi);padding:30px 30px 32px}
+.seatinfo .lbl{display:block}
+.seatinfo h4{font-family:'Cormorant Garamond',serif;font-size:32px;font-weight:600;line-height:1.1;margin-top:10px}
+.seatinfo p{font-size:14px;color:var(--ink2);margin-top:10px;min-height:72px}
+.seatinfo .legend{display:flex;gap:20px;margin-top:18px;font-size:12px;color:var(--mut);flex-wrap:wrap}
+.seatinfo .legend span{display:flex;align-items:center;gap:8px}
+.seatinfo .legend i{width:12px;height:12px;border-radius:50%;border:1.4px solid var(--ink2);display:inline-block}
+.seatinfo .legend i.f{background:var(--moss);border-color:var(--moss)}
+.steps{display:grid;grid-template-columns:repeat(5,1fr);margin-top:80px;border-top:1px solid var(--ink)}
+.steps div{padding:26px 26px 0 0;margin-right:22px;position:relative}
+.steps div:before{content:"";position:absolute;top:-5px;left:0;width:9px;height:9px;border-radius:50%;background:var(--paper);border:1px solid var(--ink)}
+.steps div:first-child:before{background:var(--seal);border-color:var(--seal)}
+.steps b{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:17px;color:var(--hinoki3);font-weight:500}
+.steps h4{font-family:'Cormorant Garamond',serif;font-size:23px;font-weight:600;line-height:1.15;margin-top:4px}
+.steps p{font-size:14px;color:var(--ink2);margin-top:8px}
+
+/* private */
+.private{background:var(--moss2);color:var(--washi);position:relative;overflow:hidden}
+.private:before{content:"";position:absolute;right:-200px;top:-200px;width:700px;height:700px;border-radius:50%;background:radial-gradient(circle,rgba(233,215,180,.10),transparent 65%)}
+.private .wrap{position:relative;display:grid;grid-template-columns:.95fr 1.05fr;gap:80px;align-items:start}
+.private .kicker{color:rgba(245,240,230,.75)}
+.private h2.h em{color:var(--hinoki)}
+.private .lead{color:rgba(245,240,230,.75)}
+.private .art{margin-top:40px}
+.private .art svg{width:100%;max-width:520px;height:auto;display:block}
+.inc{margin-top:30px;display:grid;grid-template-columns:1fr 1fr;gap:0;border-top:1px solid var(--line2)}
+.inc div{padding:16px 16px 16px 0;border-bottom:1px solid var(--line2);font-size:14px;color:rgba(245,240,230,.82);display:flex;gap:12px;align-items:flex-start}
+.inc svg{width:20px;height:20px;flex:none;stroke:var(--hinoki);fill:none;stroke-width:1.4;margin-top:1px}
+.pform{background:var(--washi);color:var(--ink);padding:44px 44px 40px;position:relative}
+.pform:before{content:"";position:absolute;top:22px;right:22px;width:14px;height:14px;border-radius:50%;background:var(--seal)}
+.pform h3{font-family:'Cormorant Garamond',serif;font-size:34px;font-weight:600;line-height:1.1}
+.pform .from{font-size:14px;color:var(--ink2);margin-top:6px}
+.pform .from b{font-family:'Cormorant Garamond',serif;font-size:22px;color:var(--ink)}
+.fg{display:grid;grid-template-columns:1fr 1fr;gap:18px 20px;margin-top:28px}
+.fg .full{grid-column:1/-1}
+.fld label{display:block;font-size:11px;letter-spacing:.24em;text-transform:uppercase;font-weight:600;color:var(--mut);margin-bottom:6px}
+.fld input,.fld select,.fld textarea{width:100%;border:0;border-bottom:1px solid #b9ad97;background:transparent;padding:9px 0;font-size:16px;outline:none;border-radius:0;appearance:none;-webkit-appearance:none}
+.fld select{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1l5 5 5-5' fill='none' stroke='%2346514b' stroke-width='1.4'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right center}
+.fld textarea{resize:vertical;min-height:70px}
+.fld input:focus,.fld select:focus,.fld textarea:focus{border-bottom-color:var(--moss)}
+.fld.err input,.fld.err select{border-bottom-color:var(--seal)}
+.fld .em{display:none;font-size:12px;color:var(--seal);margin-top:4px}
+.fld.err .em{display:block}
+.chips{display:flex;gap:8px;flex-wrap:wrap}
+.chips label{margin:0;text-transform:none;letter-spacing:0;font-size:14px;font-weight:500;color:var(--ink2);border:1px solid var(--line);padding:8px 14px;cursor:pointer;border-radius:999px;transition:.2s}
+.chips input{position:absolute;opacity:0;pointer-events:none}
+.chips input:checked + span{color:var(--washi)}
+.chips label:has(input:checked){background:var(--moss);border-color:var(--moss);color:var(--washi)}
+.pform .btn{margin-top:30px;width:100%}
+.pform .fine{font-size:12px;color:var(--mut);margin-top:14px;text-align:center}
+.pdone{display:none;text-align:center;padding:40px 0 20px}
+.pdone .mk{width:70px;height:70px;border-radius:50%;background:var(--seal);display:grid;place-items:center;margin:0 auto 22px}
+.pdone .mk svg{width:30px;height:30px;stroke:#fff;fill:none;stroke-width:1.8}
+.pdone h3{font-size:36px}
+.pdone p{font-size:15px;color:var(--ink2);margin:12px auto 0;max-width:380px}
+.pdone .recap{margin:24px auto 0;max-width:380px;border-top:1px solid var(--line);text-align:left}
+.pdone .recap div{display:flex;justify-content:space-between;gap:12px;padding:10px 0;border-bottom:1px solid var(--line);font-size:14px}
+.pdone .recap span{color:var(--mut)}
+.pdone button{margin-top:24px;background:none;border:0;border-bottom:1px solid currentColor;font-size:12px;letter-spacing:.2em;text-transform:uppercase;cursor:pointer;padding:4px 0}
+
+/* location */
+.loc{display:grid;grid-template-columns:1.1fr 1fr;gap:70px;align-items:center}
+.map{border:1px solid var(--line);background:var(--paper);position:relative;aspect-ratio:600/460}
+.map svg{width:100%;height:100%;display:block;position:absolute;inset:0}
+.hours{display:grid;gap:0;border-top:1px solid var(--ink);margin-top:34px}
+.hours div{display:grid;grid-template-columns:130px 1fr;gap:16px;padding:14px 0;border-bottom:1px solid var(--line);font-size:15px}
+.hours div span:first-child{font-size:12px;letter-spacing:.2em;text-transform:uppercase;font-weight:600;color:var(--mut);padding-top:2px}
+.hours .off{color:var(--mut)}
+.contact{margin-top:30px;display:grid;gap:14px}
+.contact a,.contact div{display:flex;gap:14px;align-items:center;font-size:15px}
+.contact svg{width:20px;height:20px;stroke:var(--moss);fill:none;stroke-width:1.5;flex:none}
+
+/* faq */
+.faqgrid{display:grid;grid-template-columns:.8fr 1.2fr;gap:70px}
+.faq details{border-bottom:1px solid var(--line)}
+.faq details:first-child{border-top:1px solid var(--ink)}
+.faq summary{list-style:none;cursor:pointer;padding:22px 44px 22px 0;font-family:'Cormorant Garamond',serif;font-size:24px;font-weight:600;line-height:1.25;position:relative}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary:after{content:"";position:absolute;right:6px;top:50%;width:14px;height:14px;margin-top:-7px;background:linear-gradient(var(--ink),var(--ink)) center/14px 1.4px no-repeat,linear-gradient(var(--ink),var(--ink)) center/1.4px 14px no-repeat;transition:transform .25s}
+.faq details[open] summary:after{transform:rotate(45deg)}
+.faq details p{font-size:15px;color:var(--ink2);padding:0 40px 24px 0;max-width:640px}
+
+/* footer */
+footer{background:var(--nori);color:rgba(245,240,230,.75);padding:80px 0 34px}
+.fbig{font-family:'Cormorant Garamond',serif;font-weight:500;font-size:clamp(40px,6vw,84px);line-height:1;color:var(--washi);display:flex;align-items:flex-end;justify-content:space-between;gap:30px;flex-wrap:wrap;padding-bottom:50px;border-bottom:1px solid var(--line2)}
+.fbig em{color:var(--hinoki)}
+.fcols{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:40px;padding:44px 0;font-size:14px}
+.fcols h5{font-size:11px;letter-spacing:.28em;text-transform:uppercase;color:var(--hinoki);margin-bottom:14px;font-weight:600}
+.fcols a{display:block;padding:3px 0}
+.fcols a.logo{display:flex}
+.fcols a:hover{color:var(--washi)}
+.fcols .logo b{color:var(--washi)}
+.fcols .logo small{color:rgba(245,240,230,.55)}
+.fbot{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;font-size:12px;padding-top:24px;border-top:1px solid var(--line2);color:rgba(245,240,230,.5)}
+
+/* reveal */
+.js .rv{opacity:0;transform:translateY(18px);transition:opacity .8s ease,transform .8s ease}
+.js .rv.in{opacity:1;transform:none}
+@keyframes sway{0%,100%{transform:skewX(0)}50%{transform:skewX(1.2deg)}}
+.nr{transform-origin:top center;animation:sway 6s ease-in-out infinite}
+.nr.b{animation-delay:-2s}.nr.c{animation-delay:-4s}
+@keyframes steam{0%{opacity:0;transform:translateY(6px)}40%{opacity:.6}100%{opacity:0;transform:translateY(-14px)}}
+.stm{animation:steam 4s ease-in-out infinite}.stm.b{animation-delay:-2s}
+@media (prefers-reduced-motion:reduce){.nr,.stm{animation:none}.rv{opacity:1;transform:none}}
+
+/* responsive */
+@media (max-width:1180px){
+  .bk,.bk2{grid-template-columns:1fr 1fr 1fr}
+  .bk .ttl{grid-column:1/-1;padding:14px 0;border-right:0;border-bottom:1px solid var(--line2)}
+  .bk .f:nth-child(4){border-right:0}
+  .bk .f:nth-child(5){grid-column:1/3;border-top:1px solid var(--line2)}
+  .bk .go{border-top:1px solid var(--line2);padding:12px 0 12px 22px}
+  .bk2 .f:nth-child(4){border-right:0}
+  .bk2 .go{grid-column:1/-1;padding-left:0}
+  .bk2 .go .btn{width:100%}
+  .fotm{right:16px}
+  .links{gap:20px}
+  .carte{grid-template-columns:1fr 1fr}
+  .sake{grid-column:1/-1;display:grid;grid-template-columns:.8fr 1fr;gap:36px;align-items:center}
+  .sake svg{margin:0}
+}
+@media (max-width:1020px){
+  .hero .top{position:relative;z-index:2;pointer-events:none}
+  .bandx{position:relative;margin-top:-96px;overflow-x:auto;overflow-y:hidden;scroll-snap-type:x proximity;-webkit-overflow-scrolling:touch;scrollbar-width:none;-webkit-mask-image:linear-gradient(90deg,transparent 0,#000 28px,#000 calc(100% - 28px),transparent 100%);mask-image:linear-gradient(90deg,transparent 0,#000 28px,#000 calc(100% - 28px),transparent 100%)}
+  .bandx::-webkit-scrollbar{display:none}
+  .bandin{width:1084px;padding-bottom:4px}
+  .hero .band{margin-top:0}
+  .seats10 li{scroll-snap-align:center}
+  .seats10 > span{display:none}
+  .swipe{display:block;text-align:center;font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:rgba(245,240,230,.55);margin-top:12px}
+  .hero .vtxt,.hero .cord{display:none}
+  .fotm{position:static;flex-direction:row;justify-content:center;gap:10px;margin:0 auto 22px;width:max-content}
+  .fotm .sl{width:34px;height:34px;font-size:18px}
+  .fotm .vt{writing-mode:horizontal-tb;letter-spacing:.2em;font-size:11px}
+  .fotm .vt b{margin:0 0 0 8px;font-size:18px}
+  .links,header .btn.hide-m{display:none}
+  .burger{display:grid;place-items:center}
+  .mnav{display:none;position:absolute;left:0;right:0;top:76px;background:var(--washi);border-bottom:1px solid var(--line);padding:10px 24px 24px}
+  .mnav.open{display:block}
+  .mnav a{display:block;padding:14px 0;border-bottom:1px solid var(--line);font-family:'Cormorant Garamond',serif;font-size:24px;font-weight:600}
+  .counter .wrap,.fishgrid,.seatwrap,.private .wrap,.loc,.faqgrid{grid-template-columns:1fr;gap:48px}
+  .shead{grid-template-columns:1fr;gap:20px}
+  .shead .lead{justify-self:start}
+  .courses{grid-template-columns:1fr}
+  .course{border-right:0;border-bottom:1px solid var(--line)}
+  .course:last-child{border-bottom:0}
+  .course .flag{left:34px}
+  .addons{grid-template-columns:1fr}
+  .addons div{border-right:0;border-bottom:1px solid var(--line)}
+  .addons div:last-child{border-bottom:0}
+  .months{grid-template-columns:repeat(6,1fr)}
+  .months div:nth-child(6){border-right:0}
+  .months div:nth-child(n+7){border-top:1px solid rgba(27,36,32,.14)}
+  .steps{grid-template-columns:1fr 1fr;gap:0 24px;border-top:0}
+  .steps div{border-top:1px solid var(--ink);margin-right:0}
+  .steps div{margin-bottom:28px}
+  .fcols{grid-template-columns:1fr 1fr}
+}
+@media (max-width:640px){
+  .wrap{padding:0 20px}
+  .hero{padding-top:28px}
+  .hero h1{font-size:46px}
+  .hero .lead{font-size:16px}
+  .bk,.bk2{grid-template-columns:1fr 1fr}
+  .bk .f{padding:12px 14px 12px 0}
+  .bk .f + .f{padding-left:14px}
+  .bk .f:nth-child(2){grid-column:1/-1;border-right:0;padding-left:0}
+  .bk .f:nth-child(3){border-top:1px solid var(--line2);padding-left:0}
+  .bk .f:nth-child(4){border-top:1px solid var(--line2)}
+  .bk .f:nth-child(5){grid-column:1/-1;border-right:0;padding-left:0}
+  .bk .go{grid-column:1/-1;padding:14px 0}
+  .bk .go .btn{width:100%}
+  .bk2 .sum{grid-column:1/-1;border-right:0;border-bottom:1px solid var(--line2);padding-left:0}
+  .bk2 .f:nth-child(3){padding-left:0}
+  .bk2 .f:nth-child(4){border-right:0;border-top:0}
+  .done{flex-wrap:wrap}
+  .done button{margin-left:0}
+  .kicker{letter-spacing:.2em;gap:10px}
+  body{font-size:15px}
+  header .wrap{height:66px}
+  .mnav{top:66px}
+  .logo .seal{width:34px;height:34px;font-size:16px}
+  .logo b{font-size:22px}
+  header .btn{height:40px;padding:0 14px;font-size:11px;letter-spacing:.14em}
+  .sec,.counter{padding:84px 0}
+  .shead{margin-bottom:44px}
+  .course{padding:30px 22px 34px}
+  .course .flag{left:22px}
+  .addons div{padding:18px 22px}
+  .months{grid-template-columns:repeat(4,1fr)}
+  .months div:nth-child(6){border-right:1px solid rgba(27,36,32,.14)}
+  .months div:nth-child(4n){border-right:0}
+  .months div:nth-child(n+5){border-top:1px solid rgba(27,36,32,.14)}
+  .months{margin-top:56px}
+  .carte{grid-template-columns:1fr;gap:44px}
+  .sake{grid-template-columns:1fr;gap:0;padding:28px 22px 30px}
+  .steps{grid-template-columns:1fr}
+  .steps div{margin-right:0;padding-right:0}
+  .seatinfo{padding:24px 22px}
+  .pform{padding:34px 22px 30px}
+  .fg{grid-template-columns:1fr}
+  .inc{grid-template-columns:1fr}
+  .hours div{grid-template-columns:100px 1fr}
+  .faq summary{font-size:21px}
+  .faq details p{padding-right:0}
+  .fcols{grid-template-columns:1fr;gap:30px}
+  .fbig{font-size:44px}
+  .seatmap .sm-h{display:none}
+  .seatmap .sm-v{display:block;max-width:360px;margin:0 auto}
+  .logo small{display:none}
+  .from b{display:inline-block}
+  .from span{display:block}
+  .pform .from span+span:before{content:none}
+  .map{aspect-ratio:1/1}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <a href="#top" class="logo" aria-label="Shiori Omakase home">
+      <span class="seal jp">栞</span>
+      <span><b>SHIORI</b><small>Omakase · Angeles City</small></span>
+    </a>
+    <nav class="links" aria-label="Main">
+      <a href="#counter">The Counter</a>
+      <a href="#courses">Courses</a>
+      <a href="#fish">Fish of the Month</a>
+      <a href="#carte">À la carte</a>
+      <a href="#visit">Your Visit</a>
+      <a href="#private">Private</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+    <div style="display:flex;gap:10px;align-items:center">
+      <a href="#reserve" class="btn">Reserve</a>
+      <button class="burger" aria-label="Open menu" id="burger"><svg viewBox="0 0 24 24"><path d="M3 7h18M3 12h18M3 17h12"/></svg></button>
+    </div>
+  </div>
+  <div class="mnav" id="mnav">
+    <a href="#counter">The Counter</a><a href="#courses">Courses</a><a href="#fish">Fish of the Month</a><a href="#carte">À la carte</a><a href="#visit">Your Visit</a><a href="#private">Private</a><a href="#faq">FAQ</a>
+  </div>
+</header>
+
+<main>
+<!-- HERO -->
+<section class="hero" id="top">
+  <span class="cord" style="left:10.42%"></span><span class="cord" style="left:89.58%"></span>
+  <div class="vtxt"><span class="jp">栞</span>Shiori Omakase · Angeles City</div>
+  <a class="fotm" href="#fish" aria-label="Fish of the month: madai"><span class="sl jp">鯛</span><span class="vt">Fish of the month<b>Madai</b></span></a>
+  <div class="wrap top">
+    <div class="kicker"><i></i>Ten seats · One hinoki counter</div>
+    <h1>The tide writes <span style="white-space:nowrap">the menu.</span><br><em>We turn the page</em><span class="dot"></span></h1>
+    <p class="lead">A quiet omakase counter in Angeles City. Ten courses, set down one at a time across pale hinoki, shaped the moment you are ready.</p>
+  </div>
+<div class="bandx" id="bandx"><div class="bandin">
+<svg class="band" viewBox="0 0 1440 250" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Illustration of the hinoki counter under two pendant lamps, set with the ten courses of an omakase in order">
+<defs>
+<linearGradient id="h_top" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#e2c895"/><stop offset="1" stop-color="#f2e1bd"/></linearGradient>
+<linearGradient id="h_front" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#b38d57"/><stop offset="1" stop-color="#7c5d36"/></linearGradient>
+<filter id="h_grain" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency=".003 .45" numOctaves="3" seed="11"/><feColorMatrix values="0 0 0 0 .5 0 0 0 0 .33 0 0 0 0 .13 0 0 0 .6 -.2"/><feComposite in2="SourceGraphic" operator="in"/></filter>
+<filter id="h_b4" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="4"/></filter>
+<filter id="h_b12" x="-20%" y="-50%" width="140%" height="200%"><feGaussianBlur stdDeviation="12"/></filter>
+<radialGradient id="h_glow" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#ffd99a" stop-opacity=".42"/><stop offset="1" stop-color="#ffd99a" stop-opacity="0"/></radialGradient>
+<radialGradient id="h_pool" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#fff6dc" stop-opacity=".75"/><stop offset="1" stop-color="#fff6dc" stop-opacity="0"/></radialGradient>
+<linearGradient id="h_shade" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f6e7c6"/><stop offset="1" stop-color="#dcb978"/></linearGradient>
+<radialGradient id="h_rice" cx=".45" cy=".3" r=".8"><stop offset="0" stop-color="#fffdf8"/><stop offset=".7" stop-color="#f1ebdd"/><stop offset="1" stop-color="#d8cdb6"/></radialGradient>
+<linearGradient id="h_tai" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fbf1ec"/><stop offset="1" stop-color="#e9c6bc"/></linearGradient>
+<linearGradient id="h_kan" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f9e6dc"/><stop offset="1" stop-color="#e5bfae"/></linearGradient>
+<linearGradient id="h_toro" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f6b3a7"/><stop offset=".6" stop-color="#e68377"/><stop offset="1" stop-color="#c95c55"/></linearGradient>
+<linearGradient id="h_nori" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#16241d"/><stop offset=".5" stop-color="#2b3d32"/><stop offset="1" stop-color="#0f1813"/></linearGradient>
+<radialGradient id="h_uni" cx=".4" cy=".3" r=".8"><stop offset="0" stop-color="#ffe08a"/><stop offset="1" stop-color="#e59a1f"/></radialGradient>
+<linearGradient id="h_egg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f7d469"/><stop offset="1" stop-color="#e8b83f"/></linearGradient>
+<linearGradient id="h_indigo" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#1f3346"/><stop offset=".5" stop-color="#3d5f7c"/><stop offset="1" stop-color="#18283a"/></linearGradient>
+<linearGradient id="h_celadon" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#9fb5a5"/><stop offset=".45" stop-color="#d3e0d3"/><stop offset="1" stop-color="#7f9787"/></linearGradient>
+<linearGradient id="h_plate" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f4f1ea"/><stop offset="1" stop-color="#cfd2ca"/></linearGradient>
+<linearGradient id="h_sash" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#d9545c"/><stop offset="1" stop-color="#9a2632"/></linearGradient>
+<linearGradient id="h_yunomi" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#6c5a48"/><stop offset=".45" stop-color="#a48d72"/><stop offset="1" stop-color="#4d3f31"/></linearGradient>
+<linearGradient id="h_chop" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#2e2117"/><stop offset="1" stop-color="#5c4330"/></linearGradient>
+</defs>
+<ellipse cx="150" cy="165" rx="300" ry="160" fill="url(#h_glow)"/>
+<line x1="150" y1="0" x2="150" y2="34" stroke="#c8b48a" stroke-opacity=".55"/><path d="M124 34 h52 l12 36 h-76z" fill="url(#h_shade)"/><path d="M112 70 h76" stroke="#fff2d2" stroke-width="3"/><ellipse cx="150" cy="72" rx="34" ry="5" fill="#fff5d8" filter="url(#h_b4)"/>
+<ellipse cx="1290" cy="165" rx="300" ry="160" fill="url(#h_glow)"/>
+<line x1="1290" y1="0" x2="1290" y2="34" stroke="#c8b48a" stroke-opacity=".55"/><path d="M1264 34 h52 l12 36 h-76z" fill="url(#h_shade)"/><path d="M1252 70 h76" stroke="#fff2d2" stroke-width="3"/><ellipse cx="1290" cy="72" rx="34" ry="5" fill="#fff5d8" filter="url(#h_b4)"/>
+<ellipse cx="720" cy="246" rx="760" ry="18" fill="#000" opacity=".45" filter="url(#h_b12)"/>
+<path d="M-40 150 H1480 L1500 202 H-60Z" fill="url(#h_top)"/><path d="M-40 150 H1480 L1500 202 H-60Z" fill="#c69a5a" filter="url(#h_grain)"/>
+<path d="M-60 202 H1500 V236 H-60Z" fill="url(#h_front)"/><path d="M-60 202 H1500" stroke="#fff" stroke-opacity=".35"/><path d="M-40 150.5 H1480" stroke="#fff" stroke-opacity=".5"/>
+<ellipse cx="150" cy="176" rx="190" ry="22" fill="url(#h_pool)"/>
+<ellipse cx="1290" cy="176" rx="190" ry="22" fill="url(#h_pool)"/>
+<ellipse cx="720" cy="176" rx="520" ry="22" fill="url(#h_pool)" opacity=".35"/>
+<g transform="translate(120 178) rotate(-4)"><ellipse cx="60" cy="8" rx="80" ry="5" fill="#2a1b0c" opacity=".35" filter="url(#h_b4)"/><rect x="30" y="-4" width="24" height="10" rx="5" fill="#e8e2d6"/><rect x="-10" y="-8" width="150" height="4" rx="2" fill="url(#h_chop)"/><rect x="-8" y="0" width="150" height="4" rx="2" fill="url(#h_chop)"/></g>
+<g transform="translate(1290 180)"><ellipse cx="0" cy="8" rx="40" ry="6" fill="#2a1b0c" opacity=".35" filter="url(#h_b4)"/><ellipse cx="0" cy="0" rx="36" ry="10" fill="url(#h_plate)"/><ellipse cx="0" cy="0" rx="25" ry="6" fill="#2a160b"/><ellipse cx="-6" cy="-2" rx="8" ry="1.6" fill="#fff" opacity=".35"/></g>
+<g transform="translate(300 186) scale(1.12)"><ellipse cx="0" cy="12" rx="32" ry="6" fill="#2a1b0c" opacity=".45" filter="url(#h_b4)"/><path d="M-30 -22 h60 c-3 20 -14 30 -30 30 s-27 -10 -30 -30z" fill="url(#h_indigo)"/><ellipse cx="0" cy="-22" rx="30" ry="7" fill="#24384a"/><ellipse cx="0" cy="-22" rx="25" ry="5" fill="#e9efe4"/><g><ellipse cx="-8" cy="-24" rx="9" ry="3" fill="#7fae5c"/><ellipse cx="6" cy="-23" rx="8" ry="3" fill="#a7c97f"/><path d="M-2 -27 c6 -6 14 -4 16 0" stroke="#e48a8a" stroke-width="4" fill="none" stroke-linecap="round"/></g><path d="M-24 -12 c10 6 38 6 48 0" stroke="#fff" stroke-opacity=".25" stroke-width="2" fill="none"/></g>
+<text x="300" y="224" text-anchor="middle" font-family="Montserrat, sans-serif" font-size="15" letter-spacing=".5" fill="#fbf3e2" fill-opacity=".82">Sunomono</text>
+<g transform="translate(393 186) scale(1.12)"><ellipse cx="0" cy="12" rx="42" ry="6" fill="#2a1b0c" opacity=".45" filter="url(#h_b4)"/><path d="M-44 -6 L40 -14 L46 0 L-38 8Z" fill="url(#h_plate)"/><path d="M-38 8 L46 0 L46 4 L-38 12Z" fill="#a8aba2"/><path d="M-30 -2 c6 -16 18 -20 26 -14 c-2 10 -12 16 -26 14z" fill="url(#h_sash)"/><path d="M-12 -4 c6 -16 18 -20 26 -14 c-2 10 -12 16 -26 14z" fill="url(#h_sash)"/><path d="M6 -6 c6 -16 18 -20 26 -14 c-2 10 -12 16 -26 14z" fill="#f3e2db"/><path d="M8 -9 c6 -9 14 -12 22 -11" stroke="#e17d72" stroke-width="2.4" fill="none"/><path d="M-40 0 c8 -10 20 -12 28 -6 c-8 6 -18 8 -28 6z" fill="#5f8c4c"/></g>
+<text x="393" y="224" text-anchor="middle" font-family="Montserrat, sans-serif" font-size="15" letter-spacing=".5" fill="#fbf3e2" fill-opacity=".82">Sashimi</text>
+<g transform="translate(486 186) scale(1.12)"><ellipse cx="0" cy="12" rx="26" ry="6" fill="#2a1b0c" opacity=".45" filter="url(#h_b4)"/><path d="M-20 -30 h40 v28 c0 10 -9 14 -20 14 s-20 -4 -20 -14z" fill="url(#h_celadon)"/><path d="M-23 -30 c2 -14 12 -20 23 -20 s21 6 23 20z" fill="url(#h_celadon)"/><ellipse cx="0" cy="-50" rx="6" ry="3" fill="#8fa596"/><path d="M-23 -30 h46" stroke="#5e7466" stroke-width="1.5"/><path d="M-14 -42 c4 -4 10 -6 14 -5" stroke="#fff" stroke-opacity=".5" stroke-width="2.4" fill="none" stroke-linecap="round"/></g>
+<text x="486" y="224" text-anchor="middle" font-family="Montserrat, sans-serif" font-size="15" letter-spacing=".5" fill="#fbf3e2" fill-opacity=".82">Chawan</text>
+<g transform="translate(579 186) scale(1.12)"><ellipse cx="0" cy="12" rx="38" ry="6" fill="#2a1b0c" opacity=".45" filter="url(#h_b4)"/><g transform="translate(0 -12) scale(.7)"><path d="M-46 6 C-48 -12 -30 -22 0 -22 C30 -22 48 -12 46 6 C44 22 26 30 0 30 C-26 30 -44 22 -46 6Z" fill="url(#h_rice)"/><path d="M-56 -2 C-52 -30 -18 -40 8 -38 C36 -36 58 -26 60 -6 C52 4 28 8 0 6 C-28 4 -44 8 -56 -2Z" fill="url(#h_tai)"/><path d="M-50 -14 C-26 -34 20 -38 56 -16 C40 -26 -10 -30 -50 -14Z" fill="#e47f74"/><circle cx="6" cy="-24" r="5" fill="#cfe2a6"/></g></g>
+<text x="579" y="224" text-anchor="middle" font-family="Montserrat, sans-serif" font-size="15" letter-spacing=".5" fill="#fbf3e2" fill-opacity=".82">Madai</text>
+<g transform="translate(672 186) scale(1.12)"><ellipse cx="0" cy="12" rx="38" ry="6" fill="#2a1b0c" opacity=".45" filter="url(#h_b4)"/><g transform="translate(0 -12) scale(.7)"><path d="M-46 6 C-48 -12 -30 -22 0 -22 C30 -22 48 -12 46 6 C44 22 26 30 0 30 C-26 30 -44 22 -46 6Z" fill="url(#h_rice)"/><path d="M-56 -2 C-52 -30 -18 -40 8 -38 C36 -36 58 -26 60 -6 C52 4 28 8 0 6 C-28 4 -44 8 -56 -2Z" fill="url(#h_kan)"/><path d="M-50 -10 C-20 -22 24 -24 58 -12" stroke="#c46f6a" stroke-width="5" fill="none" opacity=".7"/><path d="M-36 -26 C-10 -34 22 -34 44 -24" stroke="#fff" stroke-opacity=".6" stroke-width="2" fill="none"/></g></g>
+<text x="672" y="224" text-anchor="middle" font-family="Montserrat, sans-serif" font-size="15" letter-spacing=".5" fill="#fbf3e2" fill-opacity=".82">Kanpachi</text>
+<g transform="translate(765 186) scale(1.12)"><ellipse cx="0" cy="12" rx="38" ry="6" fill="#2a1b0c" opacity=".45" filter="url(#h_b4)"/><g transform="translate(0 -12) scale(.7)"><path d="M-46 6 C-48 -12 -30 -22 0 -22 C30 -22 48 -12 46 6 C44 22 26 30 0 30 C-26 30 -44 22 -46 6Z" fill="url(#h_rice)"/><path d="M-56 -2 C-52 -30 -18 -40 8 -38 C36 -36 58 -26 60 -6 C52 4 28 8 0 6 C-28 4 -44 8 -56 -2Z" fill="url(#h_toro)"/><path d="M-40 -12 C-20 -24 10 -28 40 -22 M-46 -4 C-22 -16 12 -18 50 -12 M-30 -28 C-10 -34 14 -34 32 -30" stroke="#fff" stroke-opacity=".65" stroke-width="2.4" fill="none" stroke-linecap="round"/></g></g>
+<text x="765" y="224" text-anchor="middle" font-family="Montserrat, sans-serif" font-size="15" letter-spacing=".5" fill="#fbf3e2" fill-opacity=".82">Otoro</text>
+<g transform="translate(858 186) scale(1.12)"><ellipse cx="0" cy="12" rx="30" ry="6" fill="#2a1b0c" opacity=".45" filter="url(#h_b4)"/><path d="M-26 -30 h52 v28 a26 7 0 0 1 -52 0z" fill="url(#h_nori)"/><ellipse cx="0" cy="-30" rx="26" ry="7" fill="#2a3a30"/><g fill="url(#h_uni)"><ellipse cx="-12" cy="-35" rx="11" ry="6"/><ellipse cx="4" cy="-37" rx="12" ry="6"/><ellipse cx="14" cy="-32" rx="10" ry="5"/><ellipse cx="-4" cy="-31" rx="11" ry="5"/></g><g stroke="#c67a14" stroke-opacity=".5" fill="none"><path d="M-20 -35 h14 M-4 -37 h16 M6 -32 h14"/></g></g>
+<text x="858" y="224" text-anchor="middle" font-family="Montserrat, sans-serif" font-size="15" letter-spacing=".5" fill="#fbf3e2" fill-opacity=".82">Uni</text>
+<g transform="translate(951 186) scale(1.12)"><ellipse cx="0" cy="12" rx="36" ry="6" fill="#2a1b0c" opacity=".45" filter="url(#h_b4)"/><g transform="rotate(-18)"><path d="M-40 6 L30 -24 L36 10 Z" fill="url(#h_nori)"/><path d="M30 -24 C42 -26 46 -10 36 10 C30 0 28 -12 30 -24Z" fill="#f2ece0"/><path d="M30 -20 c8 -2 12 6 8 18 c-4 -6 -8 -12 -8 -18z" fill="#e88b8f"/><g fill="#7aa35a"><circle cx="34" cy="-24" r="3"/><circle cx="40" cy="-20" r="3"/></g></g></g>
+<text x="951" y="224" text-anchor="middle" font-family="Montserrat, sans-serif" font-size="15" letter-spacing=".5" fill="#fbf3e2" fill-opacity=".82">Temaki</text>
+<g transform="translate(1044 186) scale(1.12)"><ellipse cx="0" cy="12" rx="34" ry="6" fill="#2a1b0c" opacity=".45" filter="url(#h_b4)"/><g transform="translate(0 -6)"><path d="M-32 -16 h64 v22 h-64z" fill="url(#h_egg)"/><path d="M-32 -16 h64 l-4 -6 h-56z" fill="#b87a2c"/><path d="M-32 -6 h64 M-32 1 h64" stroke="#d9a63a" stroke-width="1"/><rect x="-6" y="-22" width="12" height="28" fill="url(#h_nori)"/></g></g>
+<text x="1044" y="224" text-anchor="middle" font-family="Montserrat, sans-serif" font-size="15" letter-spacing=".5" fill="#fbf3e2" fill-opacity=".82">Tamago</text>
+<g transform="translate(1137 186) scale(1.12)"><ellipse cx="0" cy="12" rx="24" ry="6" fill="#2a1b0c" opacity=".45" filter="url(#h_b4)"/><path d="M-20 -40 h40 l-3 40 a17 5 0 0 1 -34 0z" fill="url(#h_yunomi)"/><ellipse cx="0" cy="-40" rx="20" ry="5" fill="#3a2e24"/><ellipse cx="0" cy="-39" rx="16" ry="3.5" fill="#97a753"/><path d="M-19 -24 c10 4 28 4 38 0" stroke="#e7dcc6" stroke-opacity=".5" stroke-width="2" fill="none"/><path class="stm" d="M-4 -46 c-8 -10 8 -16 0 -28" stroke="#fff" stroke-opacity=".45" stroke-width="2" fill="none" stroke-linecap="round"/></g>
+<text x="1137" y="224" text-anchor="middle" font-family="Montserrat, sans-serif" font-size="15" letter-spacing=".5" fill="#fbf3e2" fill-opacity=".82">Tea</text>
+</svg>
+
+  <div class="seats10" aria-label="Ten counter seats"><span>Seat 1 · Grill</span><ol><li>1</li><li>2</li><li>3</li><li>4</li><li>5</li><li>6</li><li>7</li><li>8</li><li>9</li><li>10</li></ol><span>Door · Seat 10</span></div>
+  </div></div>
+  <p class="swipe">Swipe along the counter <span aria-hidden="true">→</span></p>
+  <div class="wrap book" id="reserve">
+    <form class="bk" id="bk1" novalidate>
+      <div class="ttl"><i></i>Reserve</div>
+      <div class="f" id="fDate"><label for="bDate">Date</label><input type="date" id="bDate" required></div>
+      <div class="f"><label for="bTime">Seating</label>
+        <select id="bTime">
+          <option>Lunch · 12:00</option><option>Lunch · 13:30</option><option selected>Dinner · 18:00</option><option>Dinner · 20:30</option>
+        </select></div>
+      <div class="f"><span class="lbl">Guests</span>
+        <div class="step"><button type="button" data-d="-1" aria-label="Fewer guests">−</button><output id="bGuests">2</output><button type="button" data-d="1" aria-label="More guests">+</button></div></div>
+      <div class="f"><label for="bCourse">Course</label>
+        <select id="bCourse">
+          <option>Dinner Omakase</option><option>Lunch Omakase</option><option>Chirashi Box</option>
+        </select></div>
+      <div class="go"><button class="btn light" type="submit">Check seats <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button></div>
+    </form>
+    <form class="bk bk2" id="bk2" novalidate>
+      <div class="ttl"><i></i>Almost</div>
+      <div class="sum"><span class="lbl">Your seating</span><b id="sumTxt">—</b></div>
+      <div class="f" id="fName"><label for="bName">Name</label><input id="bName" placeholder="Full name" autocomplete="name"></div>
+      <div class="f" id="fMob"><label for="bMob">Mobile</label><input id="bMob" placeholder="0900-000-0000" inputmode="tel" autocomplete="tel"></div>
+      <div class="go"><button class="btn light" type="submit">Request <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button></div>
+    </form>
+    <div class="done" id="bkDone" role="status">
+      <div class="mk"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></div>
+      <div><h3 id="doneH">Your seats are on hold</h3><p id="doneP">We will message you to confirm within the day.</p></div>
+      <button type="button" id="bkReset">Change booking</button>
+    </div>
+  </div>
+</section>
+
+<!-- COUNTER / PHILOSOPHY -->
+<section class="counter" id="counter">
+  <div class="wrap">
+    <div class="rv">
+      <div class="kicker"><span class="no">01</span>The counter</div>
+      <h2 class="h">A bookmark between<br>the sea and <em>the table.</em></h2>
+      <p class="lead"><i>Shiori</i> means bookmark. Our counter marks a single page of the season: whatever the boats bring in that week, aged, cut and seasoned by hand, then served one piece at a time across ten seats of pale hinoki.</p>
+      <div class="tenets">
+        <div><b class="jp">一</b><span><h4>Rice first</h4><p>Short-grain rice seasoned with red vinegar, kept at body warmth in a wooden ohitsu all service.</p></span></div>
+        <div><b class="jp">二</b><span><h4>Fish rested, not rushed</h4><p>Some fish are cured in kelp, some aged for days. Each is served when it tastes most like itself.</p></span></div>
+        <div><b class="jp">三</b><span><h4>One piece, one moment</h4><p>Nigiri is brushed with soy and placed in front of you. Eat it within a breath, while the rice is still warm.</p></span></div>
+      </div>
+    </div>
+    <div class="art rv">
+      <svg viewBox="0 0 600 560" role="img" aria-label="Illustration of a wooden hangiri rice tub with a paddle, a kelp-cured fillet on a cutting board and a long sushi knife"><defs>
+<linearGradient id="c_wall" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f1e8d6"/><stop offset="1" stop-color="#dccbab"/></linearGradient>
+<linearGradient id="c_top" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#3b403b"/><stop offset="1" stop-color="#202421"/></linearGradient>
+<filter id="c_stone" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency=".9" numOctaves="2" seed="5"/><feColorMatrix values="0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 .08 0"/><feComposite in2="SourceGraphic" operator="in"/></filter>
+<linearGradient id="c_stave" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#a87b43"/><stop offset=".3" stop-color="#e6c893"/><stop offset=".65" stop-color="#d6b077"/><stop offset="1" stop-color="#8d6534"/></linearGradient>
+<linearGradient id="c_cu" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#7a3f1c"/><stop offset=".35" stop-color="#e09a5c"/><stop offset=".6" stop-color="#b8692f"/><stop offset="1" stop-color="#6a3415"/></linearGradient>
+<radialGradient id="c_rice" cx=".45" cy=".35" r=".7"><stop offset="0" stop-color="#fffdf7"/><stop offset=".75" stop-color="#f1e9d8"/><stop offset="1" stop-color="#d9ccb2"/></radialGradient>
+<linearGradient id="c_paddle" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f3e3c2"/><stop offset="1" stop-color="#cfae78"/></linearGradient>
+<linearGradient id="c_board" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f3e2c0"/><stop offset="1" stop-color="#d9bb86"/></linearGradient>
+<filter id="c_grain" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency=".006 .35" numOctaves="3" seed="2"/><feColorMatrix values="0 0 0 0 .55 0 0 0 0 .38 0 0 0 0 .16 0 0 0 .5 -.15"/><feComposite in2="SourceGraphic" operator="in"/></filter>
+<linearGradient id="c_kelp" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#55603a"/><stop offset=".5" stop-color="#36401f"/><stop offset="1" stop-color="#242c14"/></linearGradient>
+<linearGradient id="c_fish" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f7e6de"/><stop offset=".6" stop-color="#efc9bd"/><stop offset="1" stop-color="#df9f92"/></linearGradient>
+<linearGradient id="c_blade" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fbfcfc"/><stop offset=".45" stop-color="#c9d0d2"/><stop offset="1" stop-color="#7d878b"/></linearGradient>
+<linearGradient id="c_handle" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#e2cf9f"/><stop offset="1" stop-color="#a88a55"/></linearGradient>
+<radialGradient id="c_vin" cx=".5" cy=".4" r=".6"><stop offset="0" stop-color="#8a3a22"/><stop offset="1" stop-color="#4a1c0f"/></radialGradient>
+<linearGradient id="c_bowl" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#d9d6cc"/><stop offset=".45" stop-color="#fbfaf6"/><stop offset="1" stop-color="#b9b5aa"/></linearGradient>
+<filter id="c_b6" x="-30%" y="-30%" width="160%" height="160%"><feGaussianBlur stdDeviation="6"/></filter>
+<filter id="c_b2" x="-30%" y="-30%" width="160%" height="160%"><feGaussianBlur stdDeviation="2"/></filter>
+<clipPath id="c_riceclip"><ellipse cx="220" cy="292" rx="152" ry="42"/></clipPath>
+</defs><rect width="600" height="560" fill="url(#c_wall)"/><path d="M360 0 L470 0 L300 250 L190 250Z" fill="#fff" opacity=".28"/><path d="M490 0 L530 0 L360 250 L320 250Z" fill="#fff" opacity=".18"/><line x1="96" y1="0" x2="96" y2="40" stroke="#8a6a3d"/><rect x="70" y="40" width="52" height="120" rx="2" fill="#f7f1e4" stroke="#cbb994"/><text x="96" y="86" text-anchor="middle" font-family="Noto Serif JP, serif" font-size="26" fill="#1d3a2f">米</text><text x="96" y="122" text-anchor="middle" font-family="Noto Serif JP, serif" font-size="26" fill="#1d3a2f">酢</text><circle cx="96" cy="146" r="5" fill="#cf3f26"/><rect x="0" y="250" width="600" height="310" fill="url(#c_top)"/><rect x="0" y="250" width="600" height="310" fill="#fff" filter="url(#c_stone)"/><path d="M0 250.5 H600" stroke="#fff" stroke-opacity=".25"/><ellipse cx="226" cy="372" rx="190" ry="34" fill="#000" opacity=".5" filter="url(#c_b6)"/><path d="M50 292 L64 344 A160 40 0 0 0 376 344 L390 292 Z" fill="url(#c_stave)"/><path d="M67 303.6 L59.8 363.3" stroke="#7a5428" stroke-opacity=".28" stroke-width="1"/><path d="M84 303.2 L77.6 365.6" stroke="#7a5428" stroke-opacity=".28" stroke-width="1"/><path d="M101 302.8 L95.4 367.9" stroke="#7a5428" stroke-opacity=".28" stroke-width="1"/><path d="M118 302.4 L113.2 370.2" stroke="#7a5428" stroke-opacity=".28" stroke-width="1"/><path d="M135 302.0 L131.0 372.5" stroke="#7a5428" stroke-opacity=".28" stroke-width="1"/><path d="M152 301.6 L148.8 374.8" stroke="#7a5428" stroke-opacity=".28" stroke-width="1"/><path d="M169 301.2 L166.6 377.1" stroke="#7a5428" stroke-opacity=".28" stroke-width="1"/><path d="M186 300.8 L184.4 379.4" stroke="#7a5428" stroke-opacity=".28" stroke-width="1"/><path d="M203 300.4 L202.2 381.7" stroke="#7a5428" stroke-opacity=".28" stroke-width="1"/><path d="M220 300.0 L220.0 384.0" stroke="#7a5428" stroke-opacity=".28" stroke-width="1"/><path d="M237 300.4 L237.8 381.7" stroke="#7a5428" stroke-opacity=".28" stroke-width="1"/><path d="M254 300.8 L255.6 379.4" stroke="#7a5428" stroke-opacity=".28" stroke-width="1"/><path d="M271 301.2 L273.4 377.1" stroke="#7a5428" stroke-opacity=".28" stroke-width="1"/><path d="M288 301.6 L291.2 374.8" stroke="#7a5428" stroke-opacity=".28" stroke-width="1"/><path d="M305 302.0 L309.0 372.5" stroke="#7a5428" stroke-opacity=".28" stroke-width="1"/><path d="M322 302.4 L326.8 370.2" stroke="#7a5428" stroke-opacity=".28" stroke-width="1"/><path d="M339 302.8 L344.6 367.9" stroke="#7a5428" stroke-opacity=".28" stroke-width="1"/><path d="M356 303.2 L362.4 365.6" stroke="#7a5428" stroke-opacity=".28" stroke-width="1"/><path d="M373 303.6 L380.2 363.3" stroke="#7a5428" stroke-opacity=".28" stroke-width="1"/><path d="M60.4 312 A160.0 42 0 0 0 379.6 312" stroke="url(#c_cu)" stroke-width="7" fill="none"/><path d="M68.0 340 A153.0 42 0 0 0 372.0 340" stroke="url(#c_cu)" stroke-width="7" fill="none"/><ellipse cx="220" cy="292" rx="170" ry="50" fill="#d8b27a"/><ellipse cx="220" cy="290" rx="170" ry="50" fill="none" stroke="#f2dcb2" stroke-width="2"/><ellipse cx="220" cy="292" rx="152" ry="42" fill="url(#c_rice)"/><g clip-path="url(#c_riceclip)"><ellipse cx="193.9" cy="305.9" rx="3.2" ry="1.6" transform="rotate(166 193.9 305.9)" fill="#ffffff" opacity="0.79"/><ellipse cx="239.9" cy="280.9" rx="3.2" ry="1.6" transform="rotate(149 239.9 280.9)" fill="#ffffff" opacity="0.85"/><ellipse cx="191.0" cy="291.6" rx="3.2" ry="1.6" transform="rotate(111 191.0 291.6)" fill="#ffffff" opacity="0.82"/><ellipse cx="226.5" cy="321.6" rx="3.2" ry="1.6" transform="rotate(15 226.5 321.6)" fill="#e9dfcb" opacity="0.75"/><ellipse cx="270.5" cy="305.3" rx="3.2" ry="1.6" transform="rotate(160 270.5 305.3)" fill="#ffffff" opacity="0.79"/><ellipse cx="326.2" cy="303.6" rx="3.2" ry="1.6" transform="rotate(12 326.2 303.6)" fill="#e9dfcb" opacity="0.79"/><ellipse cx="353.1" cy="302.7" rx="3.2" ry="1.6" transform="rotate(74 353.1 302.7)" fill="#ffffff" opacity="0.79"/><ellipse cx="110.3" cy="284.4" rx="3.2" ry="1.6" transform="rotate(143 110.3 284.4)" fill="#e9dfcb" opacity="0.84"/><ellipse cx="268.2" cy="319.7" rx="3.2" ry="1.6" transform="rotate(163 268.2 319.7)" fill="#ffffff" opacity="0.75"/><ellipse cx="323.6" cy="311.4" rx="3.2" ry="1.6" transform="rotate(144 323.6 311.4)" fill="#ffffff" opacity="0.77"/><ellipse cx="253.8" cy="323.7" rx="3.2" ry="1.6" transform="rotate(109 253.8 323.7)" fill="#e9dfcb" opacity="0.74"/><ellipse cx="79.2" cy="300.2" rx="3.2" ry="1.6" transform="rotate(92 79.2 300.2)" fill="#ffffff" opacity="0.80"/><ellipse cx="254.5" cy="259.8" rx="3.2" ry="1.6" transform="rotate(62 254.5 259.8)" fill="#ffffff" opacity="0.90"/><ellipse cx="187.2" cy="318.8" rx="3.2" ry="1.6" transform="rotate(87 187.2 318.8)" fill="#e9dfcb" opacity="0.75"/><ellipse cx="184.9" cy="330.5" rx="3.2" ry="1.6" transform="rotate(30 184.9 330.5)" fill="#ffffff" opacity="0.72"/><ellipse cx="264.7" cy="312.1" rx="3.2" ry="1.6" transform="rotate(125 264.7 312.1)" fill="#ffffff" opacity="0.77"/><ellipse cx="260.6" cy="289.4" rx="3.2" ry="1.6" transform="rotate(142 260.6 289.4)" fill="#ffffff" opacity="0.83"/><ellipse cx="279.6" cy="276.2" rx="3.2" ry="1.6" transform="rotate(177 279.6 276.2)" fill="#ffffff" opacity="0.86"/><ellipse cx="86.1" cy="292.7" rx="3.2" ry="1.6" transform="rotate(17 86.1 292.7)" fill="#e9dfcb" opacity="0.82"/><ellipse cx="317.1" cy="282.6" rx="3.2" ry="1.6" transform="rotate(170 317.1 282.6)" fill="#ffffff" opacity="0.84"/><ellipse cx="210.1" cy="269.9" rx="3.2" ry="1.6" transform="rotate(147 210.1 269.9)" fill="#e9dfcb" opacity="0.88"/><ellipse cx="254.9" cy="272.8" rx="3.2" ry="1.6" transform="rotate(98 254.9 272.8)" fill="#e9dfcb" opacity="0.87"/><ellipse cx="136.7" cy="323.8" rx="3.2" ry="1.6" transform="rotate(90 136.7 323.8)" fill="#ffffff" opacity="0.74"/><ellipse cx="247.0" cy="298.5" rx="3.2" ry="1.6" transform="rotate(73 247.0 298.5)" fill="#ffffff" opacity="0.80"/><ellipse cx="221.4" cy="317.0" rx="3.2" ry="1.6" transform="rotate(127 221.4 317.0)" fill="#ffffff" opacity="0.76"/><ellipse cx="114.4" cy="301.3" rx="3.2" ry="1.6" transform="rotate(35 114.4 301.3)" fill="#e9dfcb" opacity="0.80"/><ellipse cx="272.0" cy="276.1" rx="3.2" ry="1.6" transform="rotate(106 272.0 276.1)" fill="#e9dfcb" opacity="0.86"/><ellipse cx="182.0" cy="269.5" rx="3.2" ry="1.6" transform="rotate(59 182.0 269.5)" fill="#ffffff" opacity="0.88"/><ellipse cx="252.3" cy="309.2" rx="3.2" ry="1.6" transform="rotate(59 252.3 309.2)" fill="#ffffff" opacity="0.78"/><ellipse cx="251.2" cy="277.1" rx="3.2" ry="1.6" transform="rotate(72 251.2 277.1)" fill="#ffffff" opacity="0.86"/><ellipse cx="140.4" cy="303.9" rx="3.2" ry="1.6" transform="rotate(144 140.4 303.9)" fill="#ffffff" opacity="0.79"/><ellipse cx="318.0" cy="318.3" rx="3.2" ry="1.6" transform="rotate(158 318.0 318.3)" fill="#e9dfcb" opacity="0.75"/><ellipse cx="213.5" cy="265.0" rx="3.2" ry="1.6" transform="rotate(174 213.5 265.0)" fill="#e9dfcb" opacity="0.89"/><ellipse cx="146.1" cy="307.8" rx="3.2" ry="1.6" transform="rotate(26 146.1 307.8)" fill="#ffffff" opacity="0.78"/><ellipse cx="166.9" cy="302.2" rx="3.2" ry="1.6" transform="rotate(53 166.9 302.2)" fill="#ffffff" opacity="0.79"/><ellipse cx="309.6" cy="311.8" rx="3.2" ry="1.6" transform="rotate(26 309.6 311.8)" fill="#ffffff" opacity="0.77"/><ellipse cx="247.8" cy="302.4" rx="3.2" ry="1.6" transform="rotate(93 247.8 302.4)" fill="#e9dfcb" opacity="0.79"/><ellipse cx="281.8" cy="299.8" rx="3.2" ry="1.6" transform="rotate(96 281.8 299.8)" fill="#ffffff" opacity="0.80"/><ellipse cx="218.7" cy="315.6" rx="3.2" ry="1.6" transform="rotate(93 218.7 315.6)" fill="#ffffff" opacity="0.76"/><ellipse cx="298.5" cy="310.5" rx="3.2" ry="1.6" transform="rotate(119 298.5 310.5)" fill="#ffffff" opacity="0.77"/><ellipse cx="198.4" cy="306.1" rx="3.2" ry="1.6" transform="rotate(87 198.4 306.1)" fill="#e9dfcb" opacity="0.78"/><ellipse cx="96.3" cy="296.5" rx="3.2" ry="1.6" transform="rotate(132 96.3 296.5)" fill="#ffffff" opacity="0.81"/><ellipse cx="323.9" cy="283.2" rx="3.2" ry="1.6" transform="rotate(37 323.9 283.2)" fill="#e9dfcb" opacity="0.84"/><ellipse cx="332.1" cy="274.1" rx="3.2" ry="1.6" transform="rotate(76 332.1 274.1)" fill="#e9dfcb" opacity="0.86"/><ellipse cx="301.8" cy="266.7" rx="3.2" ry="1.6" transform="rotate(66 301.8 266.7)" fill="#ffffff" opacity="0.88"/><ellipse cx="295.0" cy="279.0" rx="3.2" ry="1.6" transform="rotate(57 295.0 279.0)" fill="#ffffff" opacity="0.85"/><ellipse cx="235.6" cy="269.4" rx="3.2" ry="1.6" transform="rotate(57 235.6 269.4)" fill="#e9dfcb" opacity="0.88"/><ellipse cx="251.2" cy="258.2" rx="3.2" ry="1.6" transform="rotate(49 251.2 258.2)" fill="#e9dfcb" opacity="0.90"/><ellipse cx="273.7" cy="260.7" rx="3.2" ry="1.6" transform="rotate(58 273.7 260.7)" fill="#ffffff" opacity="0.90"/><ellipse cx="91.9" cy="293.6" rx="3.2" ry="1.6" transform="rotate(7 91.9 293.6)" fill="#e9dfcb" opacity="0.82"/><ellipse cx="155.0" cy="295.1" rx="3.2" ry="1.6" transform="rotate(154 155.0 295.1)" fill="#e9dfcb" opacity="0.81"/><ellipse cx="82.7" cy="304.6" rx="3.2" ry="1.6" transform="rotate(89 82.7 304.6)" fill="#e9dfcb" opacity="0.79"/><ellipse cx="173.5" cy="306.1" rx="3.2" ry="1.6" transform="rotate(58 173.5 306.1)" fill="#ffffff" opacity="0.78"/><ellipse cx="165.4" cy="315.7" rx="3.2" ry="1.6" transform="rotate(156 165.4 315.7)" fill="#e9dfcb" opacity="0.76"/><ellipse cx="99.8" cy="296.2" rx="3.2" ry="1.6" transform="rotate(164 99.8 296.2)" fill="#ffffff" opacity="0.81"/><ellipse cx="143.8" cy="259.7" rx="3.2" ry="1.6" transform="rotate(51 143.8 259.7)" fill="#ffffff" opacity="0.90"/><ellipse cx="277.9" cy="324.0" rx="3.2" ry="1.6" transform="rotate(85 277.9 324.0)" fill="#ffffff" opacity="0.74"/><ellipse cx="340.2" cy="280.7" rx="3.2" ry="1.6" transform="rotate(118 340.2 280.7)" fill="#ffffff" opacity="0.85"/><ellipse cx="340.6" cy="280.8" rx="3.2" ry="1.6" transform="rotate(43 340.6 280.8)" fill="#e9dfcb" opacity="0.85"/><ellipse cx="333.6" cy="297.3" rx="3.2" ry="1.6" transform="rotate(119 333.6 297.3)" fill="#e9dfcb" opacity="0.81"/><ellipse cx="302.8" cy="320.9" rx="3.2" ry="1.6" transform="rotate(121 302.8 320.9)" fill="#e9dfcb" opacity="0.75"/><ellipse cx="154.5" cy="315.9" rx="3.2" ry="1.6" transform="rotate(33 154.5 315.9)" fill="#ffffff" opacity="0.76"/><ellipse cx="259.0" cy="259.5" rx="3.2" ry="1.6" transform="rotate(26 259.0 259.5)" fill="#ffffff" opacity="0.90"/><ellipse cx="310.3" cy="281.3" rx="3.2" ry="1.6" transform="rotate(49 310.3 281.3)" fill="#e9dfcb" opacity="0.85"/><ellipse cx="238.2" cy="311.5" rx="3.2" ry="1.6" transform="rotate(74 238.2 311.5)" fill="#ffffff" opacity="0.77"/><ellipse cx="227.4" cy="269.2" rx="3.2" ry="1.6" transform="rotate(139 227.4 269.2)" fill="#ffffff" opacity="0.88"/><ellipse cx="317.2" cy="320.0" rx="3.2" ry="1.6" transform="rotate(90 317.2 320.0)" fill="#e9dfcb" opacity="0.75"/><ellipse cx="149.2" cy="261.2" rx="3.2" ry="1.6" transform="rotate(132 149.2 261.2)" fill="#ffffff" opacity="0.90"/><ellipse cx="312.4" cy="278.0" rx="3.2" ry="1.6" transform="rotate(136 312.4 278.0)" fill="#ffffff" opacity="0.86"/><ellipse cx="80.2" cy="289.5" rx="3.2" ry="1.6" transform="rotate(46 80.2 289.5)" fill="#e9dfcb" opacity="0.83"/><ellipse cx="229.5" cy="276.7" rx="3.2" ry="1.6" transform="rotate(36 229.5 276.7)" fill="#ffffff" opacity="0.86"/><ellipse cx="202.6" cy="262.5" rx="3.2" ry="1.6" transform="rotate(83 202.6 262.5)" fill="#e9dfcb" opacity="0.89"/><ellipse cx="117.7" cy="286.7" rx="3.2" ry="1.6" transform="rotate(27 117.7 286.7)" fill="#e9dfcb" opacity="0.83"/><ellipse cx="281.5" cy="298.1" rx="3.2" ry="1.6" transform="rotate(10 281.5 298.1)" fill="#e9dfcb" opacity="0.80"/><ellipse cx="107.7" cy="290.5" rx="3.2" ry="1.6" transform="rotate(16 107.7 290.5)" fill="#ffffff" opacity="0.82"/><ellipse cx="138.9" cy="273.5" rx="3.2" ry="1.6" transform="rotate(131 138.9 273.5)" fill="#ffffff" opacity="0.87"/><ellipse cx="201.8" cy="320.1" rx="3.2" ry="1.6" transform="rotate(122 201.8 320.1)" fill="#ffffff" opacity="0.75"/><ellipse cx="221.6" cy="320.9" rx="3.2" ry="1.6" transform="rotate(66 221.6 320.9)" fill="#e9dfcb" opacity="0.75"/><ellipse cx="272.8" cy="280.8" rx="3.2" ry="1.6" transform="rotate(114 272.8 280.8)" fill="#ffffff" opacity="0.85"/><ellipse cx="292.0" cy="310.4" rx="3.2" ry="1.6" transform="rotate(18 292.0 310.4)" fill="#e9dfcb" opacity="0.77"/><ellipse cx="157.7" cy="300.0" rx="3.2" ry="1.6" transform="rotate(77 157.7 300.0)" fill="#e9dfcb" opacity="0.80"/><ellipse cx="267.0" cy="282.5" rx="3.2" ry="1.6" transform="rotate(164 267.0 282.5)" fill="#e9dfcb" opacity="0.84"/><ellipse cx="307.8" cy="321.4" rx="3.2" ry="1.6" transform="rotate(119 307.8 321.4)" fill="#ffffff" opacity="0.75"/><ellipse cx="310.5" cy="284.6" rx="3.2" ry="1.6" transform="rotate(124 310.5 284.6)" fill="#ffffff" opacity="0.84"/><ellipse cx="185.0" cy="275.5" rx="3.2" ry="1.6" transform="rotate(180 185.0 275.5)" fill="#ffffff" opacity="0.86"/><ellipse cx="133.1" cy="289.7" rx="3.2" ry="1.6" transform="rotate(50 133.1 289.7)" fill="#ffffff" opacity="0.83"/><ellipse cx="295.9" cy="305.2" rx="3.2" ry="1.6" transform="rotate(86 295.9 305.2)" fill="#ffffff" opacity="0.79"/><ellipse cx="201.2" cy="294.0" rx="3.2" ry="1.6" transform="rotate(84 201.2 294.0)" fill="#ffffff" opacity="0.82"/><ellipse cx="178.6" cy="329.6" rx="3.2" ry="1.6" transform="rotate(28 178.6 329.6)" fill="#e9dfcb" opacity="0.73"/><ellipse cx="255.3" cy="253.7" rx="3.2" ry="1.6" transform="rotate(26 255.3 253.7)" fill="#ffffff" opacity="0.92"/><ellipse cx="200.4" cy="329.7" rx="3.2" ry="1.6" transform="rotate(46 200.4 329.7)" fill="#ffffff" opacity="0.73"/><ellipse cx="286.9" cy="310.9" rx="3.2" ry="1.6" transform="rotate(173 286.9 310.9)" fill="#e9dfcb" opacity="0.77"/><ellipse cx="216.9" cy="307.4" rx="3.2" ry="1.6" transform="rotate(131 216.9 307.4)" fill="#ffffff" opacity="0.78"/><ellipse cx="206.2" cy="280.6" rx="3.2" ry="1.6" transform="rotate(14 206.2 280.6)" fill="#e9dfcb" opacity="0.85"/><ellipse cx="277.7" cy="326.6" rx="3.2" ry="1.6" transform="rotate(68 277.7 326.6)" fill="#e9dfcb" opacity="0.73"/><ellipse cx="130.8" cy="265.2" rx="3.2" ry="1.6" transform="rotate(21 130.8 265.2)" fill="#e9dfcb" opacity="0.89"/><ellipse cx="233.3" cy="312.3" rx="3.2" ry="1.6" transform="rotate(31 233.3 312.3)" fill="#ffffff" opacity="0.77"/><ellipse cx="160.7" cy="317.2" rx="3.2" ry="1.6" transform="rotate(68 160.7 317.2)" fill="#e9dfcb" opacity="0.76"/><ellipse cx="341.7" cy="301.0" rx="3.2" ry="1.6" transform="rotate(28 341.7 301.0)" fill="#e9dfcb" opacity="0.80"/><ellipse cx="215.2" cy="309.0" rx="3.2" ry="1.6" transform="rotate(79 215.2 309.0)" fill="#e9dfcb" opacity="0.78"/><ellipse cx="153.2" cy="288.5" rx="3.2" ry="1.6" transform="rotate(114 153.2 288.5)" fill="#ffffff" opacity="0.83"/><ellipse cx="258.7" cy="313.2" rx="3.2" ry="1.6" transform="rotate(4 258.7 313.2)" fill="#e9dfcb" opacity="0.77"/><ellipse cx="239.8" cy="293.2" rx="3.2" ry="1.6" transform="rotate(129 239.8 293.2)" fill="#ffffff" opacity="0.82"/><ellipse cx="258.4" cy="317.6" rx="3.2" ry="1.6" transform="rotate(114 258.4 317.6)" fill="#ffffff" opacity="0.76"/><ellipse cx="261.4" cy="268.1" rx="3.2" ry="1.6" transform="rotate(126 261.4 268.1)" fill="#ffffff" opacity="0.88"/><ellipse cx="333.1" cy="266.6" rx="3.2" ry="1.6" transform="rotate(78 333.1 266.6)" fill="#e9dfcb" opacity="0.88"/><ellipse cx="307.3" cy="289.4" rx="3.2" ry="1.6" transform="rotate(180 307.3 289.4)" fill="#e9dfcb" opacity="0.83"/><ellipse cx="315.3" cy="322.6" rx="3.2" ry="1.6" transform="rotate(13 315.3 322.6)" fill="#e9dfcb" opacity="0.74"/><ellipse cx="338.2" cy="294.8" rx="3.2" ry="1.6" transform="rotate(65 338.2 294.8)" fill="#ffffff" opacity="0.81"/><ellipse cx="335.0" cy="303.1" rx="3.2" ry="1.6" transform="rotate(97 335.0 303.1)" fill="#e9dfcb" opacity="0.79"/><ellipse cx="181.9" cy="273.4" rx="3.2" ry="1.6" transform="rotate(62 181.9 273.4)" fill="#e9dfcb" opacity="0.87"/><ellipse cx="282.0" cy="296.8" rx="3.2" ry="1.6" transform="rotate(68 282.0 296.8)" fill="#ffffff" opacity="0.81"/><ellipse cx="207.8" cy="331.1" rx="3.2" ry="1.6" transform="rotate(140 207.8 331.1)" fill="#ffffff" opacity="0.72"/><ellipse cx="357.6" cy="300.1" rx="3.2" ry="1.6" transform="rotate(55 357.6 300.1)" fill="#ffffff" opacity="0.80"/><ellipse cx="312.7" cy="292.2" rx="3.2" ry="1.6" transform="rotate(121 312.7 292.2)" fill="#ffffff" opacity="0.82"/><ellipse cx="178.4" cy="275.4" rx="3.2" ry="1.6" transform="rotate(1 178.4 275.4)" fill="#ffffff" opacity="0.86"/><ellipse cx="243.3" cy="278.2" rx="3.2" ry="1.6" transform="rotate(150 243.3 278.2)" fill="#ffffff" opacity="0.85"/><ellipse cx="301.9" cy="295.1" rx="3.2" ry="1.6" transform="rotate(59 301.9 295.1)" fill="#ffffff" opacity="0.81"/><ellipse cx="353.7" cy="282.3" rx="3.2" ry="1.6" transform="rotate(39 353.7 282.3)" fill="#e9dfcb" opacity="0.84"/><ellipse cx="190.2" cy="255.3" rx="3.2" ry="1.6" transform="rotate(99 190.2 255.3)" fill="#e9dfcb" opacity="0.91"/><ellipse cx="200.7" cy="264.4" rx="3.2" ry="1.6" transform="rotate(72 200.7 264.4)" fill="#e9dfcb" opacity="0.89"/><ellipse cx="200.5" cy="285.4" rx="3.2" ry="1.6" transform="rotate(131 200.5 285.4)" fill="#e9dfcb" opacity="0.84"/><ellipse cx="206.3" cy="256.1" rx="3.2" ry="1.6" transform="rotate(35 206.3 256.1)" fill="#e9dfcb" opacity="0.91"/><ellipse cx="222.0" cy="261.8" rx="3.2" ry="1.6" transform="rotate(4 222.0 261.8)" fill="#e9dfcb" opacity="0.90"/><ellipse cx="97.6" cy="273.0" rx="3.2" ry="1.6" transform="rotate(174 97.6 273.0)" fill="#e9dfcb" opacity="0.87"/><ellipse cx="192.7" cy="282.9" rx="3.2" ry="1.6" transform="rotate(10 192.7 282.9)" fill="#ffffff" opacity="0.84"/><ellipse cx="188.9" cy="301.9" rx="3.2" ry="1.6" transform="rotate(115 188.9 301.9)" fill="#ffffff" opacity="0.80"/><ellipse cx="137.5" cy="269.2" rx="3.2" ry="1.6" transform="rotate(174 137.5 269.2)" fill="#ffffff" opacity="0.88"/><ellipse cx="211.2" cy="318.9" rx="3.2" ry="1.6" transform="rotate(17 211.2 318.9)" fill="#e9dfcb" opacity="0.75"/><ellipse cx="110.3" cy="291.5" rx="3.2" ry="1.6" transform="rotate(168 110.3 291.5)" fill="#ffffff" opacity="0.82"/><ellipse cx="217.2" cy="264.5" rx="3.2" ry="1.6" transform="rotate(19 217.2 264.5)" fill="#e9dfcb" opacity="0.89"/><ellipse cx="232.5" cy="326.6" rx="3.2" ry="1.6" transform="rotate(59 232.5 326.6)" fill="#e9dfcb" opacity="0.73"/><ellipse cx="324.2" cy="287.7" rx="3.2" ry="1.6" transform="rotate(97 324.2 287.7)" fill="#ffffff" opacity="0.83"/><ellipse cx="288.0" cy="280.6" rx="3.2" ry="1.6" transform="rotate(11 288.0 280.6)" fill="#e9dfcb" opacity="0.85"/><ellipse cx="193.9" cy="283.3" rx="3.2" ry="1.6" transform="rotate(37 193.9 283.3)" fill="#ffffff" opacity="0.84"/><ellipse cx="147.6" cy="264.9" rx="3.2" ry="1.6" transform="rotate(159 147.6 264.9)" fill="#ffffff" opacity="0.89"/><ellipse cx="256.8" cy="292.8" rx="3.2" ry="1.6" transform="rotate(68 256.8 292.8)" fill="#e9dfcb" opacity="0.82"/><ellipse cx="276.7" cy="302.9" rx="3.2" ry="1.6" transform="rotate(125 276.7 302.9)" fill="#ffffff" opacity="0.79"/><ellipse cx="118.3" cy="289.2" rx="3.2" ry="1.6" transform="rotate(119 118.3 289.2)" fill="#e9dfcb" opacity="0.83"/><ellipse cx="331.1" cy="290.8" rx="3.2" ry="1.6" transform="rotate(79 331.1 290.8)" fill="#e9dfcb" opacity="0.82"/><ellipse cx="238.3" cy="289.9" rx="3.2" ry="1.6" transform="rotate(117 238.3 289.9)" fill="#ffffff" opacity="0.83"/><ellipse cx="70.5" cy="290.3" rx="3.2" ry="1.6" transform="rotate(68 70.5 290.3)" fill="#ffffff" opacity="0.82"/><ellipse cx="345.3" cy="272.7" rx="3.2" ry="1.6" transform="rotate(19 345.3 272.7)" fill="#ffffff" opacity="0.87"/><ellipse cx="288.3" cy="314.5" rx="3.2" ry="1.6" transform="rotate(92 288.3 314.5)" fill="#ffffff" opacity="0.76"/><ellipse cx="265.7" cy="266.2" rx="3.2" ry="1.6" transform="rotate(28 265.7 266.2)" fill="#e9dfcb" opacity="0.88"/><ellipse cx="236.6" cy="329.6" rx="3.2" ry="1.6" transform="rotate(124 236.6 329.6)" fill="#ffffff" opacity="0.73"/><ellipse cx="299.1" cy="324.8" rx="3.2" ry="1.6" transform="rotate(174 299.1 324.8)" fill="#ffffff" opacity="0.74"/><ellipse cx="202.0" cy="306.2" rx="3.2" ry="1.6" transform="rotate(88 202.0 306.2)" fill="#ffffff" opacity="0.78"/><ellipse cx="282.6" cy="307.9" rx="3.2" ry="1.6" transform="rotate(83 282.6 307.9)" fill="#e9dfcb" opacity="0.78"/><ellipse cx="247.6" cy="280.3" rx="3.2" ry="1.6" transform="rotate(50 247.6 280.3)" fill="#e9dfcb" opacity="0.85"/><ellipse cx="285.8" cy="279.5" rx="3.2" ry="1.6" transform="rotate(95 285.8 279.5)" fill="#ffffff" opacity="0.85"/><ellipse cx="112.1" cy="315.8" rx="3.2" ry="1.6" transform="rotate(19 112.1 315.8)" fill="#ffffff" opacity="0.76"/><ellipse cx="149.2" cy="301.2" rx="3.2" ry="1.6" transform="rotate(12 149.2 301.2)" fill="#ffffff" opacity="0.80"/><ellipse cx="335.7" cy="302.4" rx="3.2" ry="1.6" transform="rotate(162 335.7 302.4)" fill="#e9dfcb" opacity="0.79"/><ellipse cx="220.3" cy="312.6" rx="3.2" ry="1.6" transform="rotate(130 220.3 312.6)" fill="#ffffff" opacity="0.77"/><ellipse cx="239.3" cy="256.9" rx="3.2" ry="1.6" transform="rotate(109 239.3 256.9)" fill="#e9dfcb" opacity="0.91"/><ellipse cx="265.2" cy="262.6" rx="3.2" ry="1.6" transform="rotate(141 265.2 262.6)" fill="#ffffff" opacity="0.89"/><ellipse cx="213.7" cy="283.3" rx="3.2" ry="1.6" transform="rotate(105 213.7 283.3)" fill="#ffffff" opacity="0.84"/><ellipse cx="222.0" cy="259.9" rx="3.2" ry="1.6" transform="rotate(73 222.0 259.9)" fill="#ffffff" opacity="0.90"/><ellipse cx="314.6" cy="276.4" rx="3.2" ry="1.6" transform="rotate(43 314.6 276.4)" fill="#ffffff" opacity="0.86"/><ellipse cx="174.6" cy="310.2" rx="3.2" ry="1.6" transform="rotate(167 174.6 310.2)" fill="#ffffff" opacity="0.77"/><ellipse cx="174.2" cy="273.8" rx="3.2" ry="1.6" transform="rotate(142 174.2 273.8)" fill="#e9dfcb" opacity="0.87"/><ellipse cx="307.8" cy="313.9" rx="3.2" ry="1.6" transform="rotate(19 307.8 313.9)" fill="#ffffff" opacity="0.77"/><ellipse cx="307.8" cy="276.3" rx="3.2" ry="1.6" transform="rotate(56 307.8 276.3)" fill="#ffffff" opacity="0.86"/><ellipse cx="155.0" cy="322.2" rx="3.2" ry="1.6" transform="rotate(109 155.0 322.2)" fill="#ffffff" opacity="0.74"/><ellipse cx="236.0" cy="303.3" rx="3.2" ry="1.6" transform="rotate(87 236.0 303.3)" fill="#ffffff" opacity="0.79"/><ellipse cx="181.6" cy="314.0" rx="3.2" ry="1.6" transform="rotate(145 181.6 314.0)" fill="#ffffff" opacity="0.76"/><ellipse cx="358.8" cy="296.7" rx="3.2" ry="1.6" transform="rotate(98 358.8 296.7)" fill="#ffffff" opacity="0.81"/><ellipse cx="129.0" cy="288.3" rx="3.2" ry="1.6" transform="rotate(86 129.0 288.3)" fill="#e9dfcb" opacity="0.83"/><ellipse cx="106.3" cy="292.4" rx="3.2" ry="1.6" transform="rotate(92 106.3 292.4)" fill="#ffffff" opacity="0.82"/><ellipse cx="101.0" cy="291.3" rx="3.2" ry="1.6" transform="rotate(55 101.0 291.3)" fill="#ffffff" opacity="0.82"/><ellipse cx="294.1" cy="277.0" rx="3.2" ry="1.6" transform="rotate(165 294.1 277.0)" fill="#ffffff" opacity="0.86"/><ellipse cx="352.4" cy="281.5" rx="3.2" ry="1.6" transform="rotate(5 352.4 281.5)" fill="#ffffff" opacity="0.85"/><ellipse cx="103.1" cy="307.8" rx="3.2" ry="1.6" transform="rotate(121 103.1 307.8)" fill="#e9dfcb" opacity="0.78"/><ellipse cx="179.5" cy="292.7" rx="3.2" ry="1.6" transform="rotate(135 179.5 292.7)" fill="#e9dfcb" opacity="0.82"/><ellipse cx="293.6" cy="288.5" rx="3.2" ry="1.6" transform="rotate(27 293.6 288.5)" fill="#ffffff" opacity="0.83"/><ellipse cx="305.4" cy="324.2" rx="3.2" ry="1.6" transform="rotate(27 305.4 324.2)" fill="#e9dfcb" opacity="0.74"/><ellipse cx="198.7" cy="260.3" rx="3.2" ry="1.6" transform="rotate(117 198.7 260.3)" fill="#ffffff" opacity="0.90"/><ellipse cx="220.9" cy="290.5" rx="3.2" ry="1.6" transform="rotate(32 220.9 290.5)" fill="#ffffff" opacity="0.82"/><ellipse cx="325.6" cy="276.5" rx="3.2" ry="1.6" transform="rotate(77 325.6 276.5)" fill="#e9dfcb" opacity="0.86"/><ellipse cx="143.6" cy="271.3" rx="3.2" ry="1.6" transform="rotate(111 143.6 271.3)" fill="#e9dfcb" opacity="0.87"/><ellipse cx="250.3" cy="298.9" rx="3.2" ry="1.6" transform="rotate(134 250.3 298.9)" fill="#e9dfcb" opacity="0.80"/><ellipse cx="247.4" cy="311.1" rx="3.2" ry="1.6" transform="rotate(153 247.4 311.1)" fill="#ffffff" opacity="0.77"/><ellipse cx="74.4" cy="282.7" rx="3.2" ry="1.6" transform="rotate(71 74.4 282.7)" fill="#e9dfcb" opacity="0.84"/><ellipse cx="133.3" cy="262.3" rx="3.2" ry="1.6" transform="rotate(121 133.3 262.3)" fill="#ffffff" opacity="0.89"/><ellipse cx="195.4" cy="290.0" rx="3.2" ry="1.6" transform="rotate(105 195.4 290.0)" fill="#e9dfcb" opacity="0.82"/><ellipse cx="212.2" cy="297.5" rx="3.2" ry="1.6" transform="rotate(127 212.2 297.5)" fill="#e9dfcb" opacity="0.81"/><ellipse cx="194.3" cy="282.9" rx="3.2" ry="1.6" transform="rotate(58 194.3 282.9)" fill="#e9dfcb" opacity="0.84"/><ellipse cx="283.7" cy="283.4" rx="3.2" ry="1.6" transform="rotate(8 283.7 283.4)" fill="#e9dfcb" opacity="0.84"/><ellipse cx="202.2" cy="268.4" rx="3.2" ry="1.6" transform="rotate(101 202.2 268.4)" fill="#ffffff" opacity="0.88"/><ellipse cx="257.6" cy="259.1" rx="3.2" ry="1.6" transform="rotate(129 257.6 259.1)" fill="#ffffff" opacity="0.90"/><ellipse cx="152.9" cy="292.5" rx="3.2" ry="1.6" transform="rotate(49 152.9 292.5)" fill="#ffffff" opacity="0.82"/><ellipse cx="243.3" cy="326.3" rx="3.2" ry="1.6" transform="rotate(75 243.3 326.3)" fill="#ffffff" opacity="0.73"/><ellipse cx="136.4" cy="270.1" rx="3.2" ry="1.6" transform="rotate(57 136.4 270.1)" fill="#ffffff" opacity="0.87"/><ellipse cx="250.1" cy="286.9" rx="3.2" ry="1.6" transform="rotate(152 250.1 286.9)" fill="#ffffff" opacity="0.83"/><ellipse cx="165.7" cy="303.5" rx="3.2" ry="1.6" transform="rotate(152 165.7 303.5)" fill="#ffffff" opacity="0.79"/><ellipse cx="254.8" cy="295.1" rx="3.2" ry="1.6" transform="rotate(100 254.8 295.1)" fill="#ffffff" opacity="0.81"/><ellipse cx="200.1" cy="270.2" rx="3.2" ry="1.6" transform="rotate(28 200.1 270.2)" fill="#e9dfcb" opacity="0.87"/><ellipse cx="298.2" cy="282.4" rx="3.2" ry="1.6" transform="rotate(47 298.2 282.4)" fill="#e9dfcb" opacity="0.84"/><ellipse cx="118.7" cy="287.8" rx="3.2" ry="1.6" transform="rotate(79 118.7 287.8)" fill="#e9dfcb" opacity="0.83"/><ellipse cx="153.7" cy="308.9" rx="3.2" ry="1.6" transform="rotate(84 153.7 308.9)" fill="#ffffff" opacity="0.78"/><ellipse cx="252.5" cy="299.1" rx="3.2" ry="1.6" transform="rotate(20 252.5 299.1)" fill="#ffffff" opacity="0.80"/><ellipse cx="270.7" cy="288.1" rx="3.2" ry="1.6" transform="rotate(53 270.7 288.1)" fill="#ffffff" opacity="0.83"/><ellipse cx="229.8" cy="269.9" rx="3.2" ry="1.6" transform="rotate(110 229.8 269.9)" fill="#ffffff" opacity="0.88"/><ellipse cx="201.6" cy="275.0" rx="3.2" ry="1.6" transform="rotate(138 201.6 275.0)" fill="#e9dfcb" opacity="0.86"/><ellipse cx="251.7" cy="314.6" rx="3.2" ry="1.6" transform="rotate(121 251.7 314.6)" fill="#ffffff" opacity="0.76"/><ellipse cx="105.5" cy="311.2" rx="3.2" ry="1.6" transform="rotate(103 105.5 311.2)" fill="#ffffff" opacity="0.77"/><ellipse cx="256.6" cy="294.2" rx="3.2" ry="1.6" transform="rotate(15 256.6 294.2)" fill="#ffffff" opacity="0.81"/><ellipse cx="217.6" cy="254.1" rx="3.2" ry="1.6" transform="rotate(86 217.6 254.1)" fill="#ffffff" opacity="0.91"/><ellipse cx="145.5" cy="325.6" rx="3.2" ry="1.6" transform="rotate(11 145.5 325.6)" fill="#ffffff" opacity="0.74"/><ellipse cx="202.4" cy="270.0" rx="3.2" ry="1.6" transform="rotate(70 202.4 270.0)" fill="#ffffff" opacity="0.88"/><ellipse cx="199.4" cy="261.6" rx="3.2" ry="1.6" transform="rotate(162 199.4 261.6)" fill="#e9dfcb" opacity="0.90"/><ellipse cx="345.0" cy="306.5" rx="3.2" ry="1.6" transform="rotate(27 345.0 306.5)" fill="#ffffff" opacity="0.78"/><ellipse cx="361.1" cy="281.5" rx="3.2" ry="1.6" transform="rotate(98 361.1 281.5)" fill="#e9dfcb" opacity="0.85"/><ellipse cx="335.9" cy="273.3" rx="3.2" ry="1.6" transform="rotate(33 335.9 273.3)" fill="#e9dfcb" opacity="0.87"/><ellipse cx="275.0" cy="324.7" rx="3.2" ry="1.6" transform="rotate(77 275.0 324.7)" fill="#e9dfcb" opacity="0.74"/><ellipse cx="236.7" cy="261.1" rx="3.2" ry="1.6" transform="rotate(83 236.7 261.1)" fill="#e9dfcb" opacity="0.90"/><ellipse cx="91.2" cy="300.6" rx="3.2" ry="1.6" transform="rotate(152 91.2 300.6)" fill="#ffffff" opacity="0.80"/><ellipse cx="262.3" cy="324.8" rx="3.2" ry="1.6" transform="rotate(63 262.3 324.8)" fill="#ffffff" opacity="0.74"/><ellipse cx="158.6" cy="269.6" rx="3.2" ry="1.6" transform="rotate(139 158.6 269.6)" fill="#ffffff" opacity="0.88"/><ellipse cx="359.9" cy="287.3" rx="3.2" ry="1.6" transform="rotate(18 359.9 287.3)" fill="#ffffff" opacity="0.83"/><ellipse cx="260.2" cy="298.3" rx="3.2" ry="1.6" transform="rotate(127 260.2 298.3)" fill="#e9dfcb" opacity="0.80"/><ellipse cx="281.5" cy="289.1" rx="3.2" ry="1.6" transform="rotate(34 281.5 289.1)" fill="#ffffff" opacity="0.83"/><ellipse cx="130.4" cy="269.5" rx="3.2" ry="1.6" transform="rotate(137 130.4 269.5)" fill="#e9dfcb" opacity="0.88"/><ellipse cx="193.3" cy="280.0" rx="3.2" ry="1.6" transform="rotate(75 193.3 280.0)" fill="#ffffff" opacity="0.85"/><ellipse cx="136.4" cy="282.0" rx="3.2" ry="1.6" transform="rotate(66 136.4 282.0)" fill="#ffffff" opacity="0.84"/><ellipse cx="221.2" cy="311.8" rx="3.2" ry="1.6" transform="rotate(39 221.2 311.8)" fill="#ffffff" opacity="0.77"/><ellipse cx="274.4" cy="282.5" rx="3.2" ry="1.6" transform="rotate(16 274.4 282.5)" fill="#ffffff" opacity="0.84"/><ellipse cx="326.7" cy="290.6" rx="3.2" ry="1.6" transform="rotate(59 326.7 290.6)" fill="#e9dfcb" opacity="0.82"/><ellipse cx="302.4" cy="308.1" rx="3.2" ry="1.6" transform="rotate(9 302.4 308.1)" fill="#ffffff" opacity="0.78"/><ellipse cx="85.9" cy="297.7" rx="3.2" ry="1.6" transform="rotate(114 85.9 297.7)" fill="#e9dfcb" opacity="0.81"/><ellipse cx="298.7" cy="297.4" rx="3.2" ry="1.6" transform="rotate(30 298.7 297.4)" fill="#ffffff" opacity="0.81"/><ellipse cx="109.8" cy="270.5" rx="3.2" ry="1.6" transform="rotate(49 109.8 270.5)" fill="#e9dfcb" opacity="0.87"/><ellipse cx="123.0" cy="318.8" rx="3.2" ry="1.6" transform="rotate(114 123.0 318.8)" fill="#e9dfcb" opacity="0.75"/><ellipse cx="239.1" cy="259.8" rx="3.2" ry="1.6" transform="rotate(1 239.1 259.8)" fill="#ffffff" opacity="0.90"/><ellipse cx="122.8" cy="274.1" rx="3.2" ry="1.6" transform="rotate(55 122.8 274.1)" fill="#ffffff" opacity="0.86"/><ellipse cx="203.1" cy="299.1" rx="3.2" ry="1.6" transform="rotate(65 203.1 299.1)" fill="#ffffff" opacity="0.80"/><ellipse cx="204.0" cy="254.0" rx="3.2" ry="1.6" transform="rotate(2 204.0 254.0)" fill="#e9dfcb" opacity="0.92"/><ellipse cx="143.1" cy="305.2" rx="3.2" ry="1.6" transform="rotate(158 143.1 305.2)" fill="#ffffff" opacity="0.79"/><ellipse cx="258.6" cy="326.2" rx="3.2" ry="1.6" transform="rotate(140 258.6 326.2)" fill="#ffffff" opacity="0.73"/><ellipse cx="107.8" cy="311.5" rx="3.2" ry="1.6" transform="rotate(169 107.8 311.5)" fill="#ffffff" opacity="0.77"/><ellipse cx="191.0" cy="282.7" rx="3.2" ry="1.6" transform="rotate(41 191.0 282.7)" fill="#ffffff" opacity="0.84"/><ellipse cx="200.2" cy="331.4" rx="3.2" ry="1.6" transform="rotate(170 200.2 331.4)" fill="#ffffff" opacity="0.72"/><ellipse cx="300.2" cy="285.5" rx="3.2" ry="1.6" transform="rotate(145 300.2 285.5)" fill="#e9dfcb" opacity="0.84"/><ellipse cx="202.6" cy="294.8" rx="3.2" ry="1.6" transform="rotate(93 202.6 294.8)" fill="#e9dfcb" opacity="0.81"/><ellipse cx="146.2" cy="308.1" rx="3.2" ry="1.6" transform="rotate(1 146.2 308.1)" fill="#ffffff" opacity="0.78"/><ellipse cx="248.0" cy="303.2" rx="3.2" ry="1.6" transform="rotate(23 248.0 303.2)" fill="#ffffff" opacity="0.79"/><ellipse cx="295.5" cy="273.8" rx="3.2" ry="1.6" transform="rotate(41 295.5 273.8)" fill="#ffffff" opacity="0.87"/><ellipse cx="273.7" cy="296.8" rx="3.2" ry="1.6" transform="rotate(101 273.7 296.8)" fill="#ffffff" opacity="0.81"/><ellipse cx="154.3" cy="275.1" rx="3.2" ry="1.6" transform="rotate(129 154.3 275.1)" fill="#ffffff" opacity="0.86"/><ellipse cx="185.2" cy="305.1" rx="3.2" ry="1.6" transform="rotate(43 185.2 305.1)" fill="#e9dfcb" opacity="0.79"/><ellipse cx="301.5" cy="309.7" rx="3.2" ry="1.6" transform="rotate(50 301.5 309.7)" fill="#ffffff" opacity="0.78"/><ellipse cx="236.3" cy="284.9" rx="3.2" ry="1.6" transform="rotate(123 236.3 284.9)" fill="#ffffff" opacity="0.84"/><ellipse cx="126.7" cy="272.0" rx="3.2" ry="1.6" transform="rotate(22 126.7 272.0)" fill="#e9dfcb" opacity="0.87"/><ellipse cx="120.9" cy="267.1" rx="3.2" ry="1.6" transform="rotate(41 120.9 267.1)" fill="#e9dfcb" opacity="0.88"/><ellipse cx="293.4" cy="267.3" rx="3.2" ry="1.6" transform="rotate(157 293.4 267.3)" fill="#e9dfcb" opacity="0.88"/><ellipse cx="250.6" cy="277.0" rx="3.2" ry="1.6" transform="rotate(55 250.6 277.0)" fill="#ffffff" opacity="0.86"/><ellipse cx="275.0" cy="286.0" rx="3.2" ry="1.6" transform="rotate(91 275.0 286.0)" fill="#ffffff" opacity="0.83"/><ellipse cx="222.4" cy="326.1" rx="3.2" ry="1.6" transform="rotate(49 222.4 326.1)" fill="#ffffff" opacity="0.73"/><ellipse cx="99.3" cy="278.7" rx="3.2" ry="1.6" transform="rotate(9 99.3 278.7)" fill="#e9dfcb" opacity="0.85"/><ellipse cx="177.9" cy="314.3" rx="3.2" ry="1.6" transform="rotate(116 177.9 314.3)" fill="#ffffff" opacity="0.76"/><ellipse cx="162.1" cy="276.1" rx="3.2" ry="1.6" transform="rotate(107 162.1 276.1)" fill="#ffffff" opacity="0.86"/><ellipse cx="220.4" cy="317.0" rx="3.2" ry="1.6" transform="rotate(94 220.4 317.0)" fill="#ffffff" opacity="0.76"/><ellipse cx="198.8" cy="294.3" rx="3.2" ry="1.6" transform="rotate(158 198.8 294.3)" fill="#e9dfcb" opacity="0.81"/><ellipse cx="122.1" cy="297.8" rx="3.2" ry="1.6" transform="rotate(158 122.1 297.8)" fill="#e9dfcb" opacity="0.81"/><ellipse cx="158.6" cy="296.4" rx="3.2" ry="1.6" transform="rotate(121 158.6 296.4)" fill="#ffffff" opacity="0.81"/><ellipse cx="302.0" cy="301.8" rx="3.2" ry="1.6" transform="rotate(93 302.0 301.8)" fill="#ffffff" opacity="0.80"/><ellipse cx="119.9" cy="302.2" rx="3.2" ry="1.6" transform="rotate(10 119.9 302.2)" fill="#ffffff" opacity="0.79"/><ellipse cx="318.4" cy="320.0" rx="3.2" ry="1.6" transform="rotate(80 318.4 320.0)" fill="#e9dfcb" opacity="0.75"/><ellipse cx="185.1" cy="291.3" rx="3.2" ry="1.6" transform="rotate(129 185.1 291.3)" fill="#e9dfcb" opacity="0.82"/><ellipse cx="143.8" cy="263.0" rx="3.2" ry="1.6" transform="rotate(6 143.8 263.0)" fill="#e9dfcb" opacity="0.89"/><ellipse cx="348.3" cy="291.2" rx="3.2" ry="1.6" transform="rotate(28 348.3 291.2)" fill="#ffffff" opacity="0.82"/><ellipse cx="324.5" cy="288.8" rx="3.2" ry="1.6" transform="rotate(42 324.5 288.8)" fill="#e9dfcb" opacity="0.83"/><ellipse cx="207.3" cy="273.5" rx="3.2" ry="1.6" transform="rotate(89 207.3 273.5)" fill="#e9dfcb" opacity="0.87"/><ellipse cx="218.8" cy="314.8" rx="3.2" ry="1.6" transform="rotate(157 218.8 314.8)" fill="#ffffff" opacity="0.76"/><ellipse cx="242.8" cy="278.1" rx="3.2" ry="1.6" transform="rotate(128 242.8 278.1)" fill="#e9dfcb" opacity="0.85"/><ellipse cx="105.5" cy="295.8" rx="3.2" ry="1.6" transform="rotate(157 105.5 295.8)" fill="#ffffff" opacity="0.81"/><ellipse cx="207.9" cy="299.0" rx="3.2" ry="1.6" transform="rotate(46 207.9 299.0)" fill="#ffffff" opacity="0.80"/><ellipse cx="168.3" cy="276.0" rx="3.2" ry="1.6" transform="rotate(83 168.3 276.0)" fill="#e9dfcb" opacity="0.86"/><ellipse cx="284.9" cy="322.9" rx="3.2" ry="1.6" transform="rotate(29 284.9 322.9)" fill="#e9dfcb" opacity="0.74"/><ellipse cx="352.5" cy="303.1" rx="3.2" ry="1.6" transform="rotate(115 352.5 303.1)" fill="#ffffff" opacity="0.79"/><ellipse cx="96.5" cy="273.9" rx="3.2" ry="1.6" transform="rotate(26 96.5 273.9)" fill="#ffffff" opacity="0.87"/><ellipse cx="84.6" cy="283.8" rx="3.2" ry="1.6" transform="rotate(95 84.6 283.8)" fill="#ffffff" opacity="0.84"/><ellipse cx="333.8" cy="290.2" rx="3.2" ry="1.6" transform="rotate(92 333.8 290.2)" fill="#ffffff" opacity="0.82"/><ellipse cx="282.7" cy="301.4" rx="3.2" ry="1.6" transform="rotate(157 282.7 301.4)" fill="#e9dfcb" opacity="0.80"/><ellipse cx="349.6" cy="302.8" rx="3.2" ry="1.6" transform="rotate(64 349.6 302.8)" fill="#ffffff" opacity="0.79"/><ellipse cx="356.7" cy="284.1" rx="3.2" ry="1.6" transform="rotate(169 356.7 284.1)" fill="#e9dfcb" opacity="0.84"/><ellipse cx="206.2" cy="257.6" rx="3.2" ry="1.6" transform="rotate(56 206.2 257.6)" fill="#ffffff" opacity="0.91"/><ellipse cx="146.5" cy="274.5" rx="3.2" ry="1.6" transform="rotate(131 146.5 274.5)" fill="#ffffff" opacity="0.86"/><ellipse cx="320.1" cy="300.3" rx="3.2" ry="1.6" transform="rotate(156 320.1 300.3)" fill="#e9dfcb" opacity="0.80"/><ellipse cx="227.6" cy="292.3" rx="3.2" ry="1.6" transform="rotate(90 227.6 292.3)" fill="#ffffff" opacity="0.82"/><ellipse cx="111.5" cy="287.8" rx="3.2" ry="1.6" transform="rotate(105 111.5 287.8)" fill="#ffffff" opacity="0.83"/><ellipse cx="162.6" cy="282.4" rx="3.2" ry="1.6" transform="rotate(159 162.6 282.4)" fill="#e9dfcb" opacity="0.84"/><ellipse cx="229.7" cy="296.0" rx="3.2" ry="1.6" transform="rotate(62 229.7 296.0)" fill="#e9dfcb" opacity="0.81"/><ellipse cx="183.9" cy="295.1" rx="3.2" ry="1.6" transform="rotate(37 183.9 295.1)" fill="#e9dfcb" opacity="0.81"/><ellipse cx="239.1" cy="267.2" rx="3.2" ry="1.6" transform="rotate(67 239.1 267.2)" fill="#e9dfcb" opacity="0.88"/><ellipse cx="347.5" cy="304.5" rx="3.2" ry="1.6" transform="rotate(89 347.5 304.5)" fill="#ffffff" opacity="0.79"/><ellipse cx="117.5" cy="277.3" rx="3.2" ry="1.6" transform="rotate(132 117.5 277.3)" fill="#e9dfcb" opacity="0.86"/><ellipse cx="221.3" cy="330.0" rx="3.2" ry="1.6" transform="rotate(11 221.3 330.0)" fill="#ffffff" opacity="0.72"/><ellipse cx="283.8" cy="294.7" rx="3.2" ry="1.6" transform="rotate(40 283.8 294.7)" fill="#ffffff" opacity="0.81"/><ellipse cx="223.0" cy="287.6" rx="3.2" ry="1.6" transform="rotate(141 223.0 287.6)" fill="#e9dfcb" opacity="0.83"/><ellipse cx="251.4" cy="316.3" rx="3.2" ry="1.6" transform="rotate(132 251.4 316.3)" fill="#e9dfcb" opacity="0.76"/><ellipse cx="100.0" cy="290.6" rx="3.2" ry="1.6" transform="rotate(156 100.0 290.6)" fill="#ffffff" opacity="0.82"/><ellipse cx="190.0" cy="312.4" rx="3.2" ry="1.6" transform="rotate(12 190.0 312.4)" fill="#e9dfcb" opacity="0.77"/><ellipse cx="203.3" cy="264.7" rx="3.2" ry="1.6" transform="rotate(137 203.3 264.7)" fill="#ffffff" opacity="0.89"/><ellipse cx="292.4" cy="263.4" rx="3.2" ry="1.6" transform="rotate(119 292.4 263.4)" fill="#ffffff" opacity="0.89"/><ellipse cx="184.9" cy="278.1" rx="3.2" ry="1.6" transform="rotate(26 184.9 278.1)" fill="#ffffff" opacity="0.85"/><ellipse cx="187.5" cy="281.0" rx="3.2" ry="1.6" transform="rotate(177 187.5 281.0)" fill="#e9dfcb" opacity="0.85"/><ellipse cx="217.1" cy="301.1" rx="3.2" ry="1.6" transform="rotate(162 217.1 301.1)" fill="#ffffff" opacity="0.80"/><ellipse cx="97.4" cy="305.9" rx="3.2" ry="1.6" transform="rotate(133 97.4 305.9)" fill="#e9dfcb" opacity="0.79"/><ellipse cx="179.1" cy="329.0" rx="3.2" ry="1.6" transform="rotate(55 179.1 329.0)" fill="#ffffff" opacity="0.73"/><ellipse cx="158.3" cy="291.2" rx="3.2" ry="1.6" transform="rotate(60 158.3 291.2)" fill="#e9dfcb" opacity="0.82"/><ellipse cx="237.5" cy="307.3" rx="3.2" ry="1.6" transform="rotate(83 237.5 307.3)" fill="#ffffff" opacity="0.78"/><ellipse cx="131.0" cy="312.0" rx="3.2" ry="1.6" transform="rotate(97 131.0 312.0)" fill="#e9dfcb" opacity="0.77"/><ellipse cx="134.9" cy="267.6" rx="3.2" ry="1.6" transform="rotate(170 134.9 267.6)" fill="#e9dfcb" opacity="0.88"/><ellipse cx="119.6" cy="285.8" rx="3.2" ry="1.6" transform="rotate(135 119.6 285.8)" fill="#e9dfcb" opacity="0.84"/><ellipse cx="282.0" cy="271.4" rx="3.2" ry="1.6" transform="rotate(59 282.0 271.4)" fill="#ffffff" opacity="0.87"/><ellipse cx="195.5" cy="309.2" rx="3.2" ry="1.6" transform="rotate(159 195.5 309.2)" fill="#ffffff" opacity="0.78"/><ellipse cx="163.0" cy="285.4" rx="3.2" ry="1.6" transform="rotate(8 163.0 285.4)" fill="#ffffff" opacity="0.84"/><ellipse cx="333.3" cy="315.9" rx="3.2" ry="1.6" transform="rotate(88 333.3 315.9)" fill="#e9dfcb" opacity="0.76"/><ellipse cx="212.0" cy="285.3" rx="3.2" ry="1.6" transform="rotate(35 212.0 285.3)" fill="#e9dfcb" opacity="0.84"/><ellipse cx="136.5" cy="267.1" rx="3.2" ry="1.6" transform="rotate(11 136.5 267.1)" fill="#ffffff" opacity="0.88"/><ellipse cx="143.8" cy="279.0" rx="3.2" ry="1.6" transform="rotate(136 143.8 279.0)" fill="#e9dfcb" opacity="0.85"/><ellipse cx="347.9" cy="307.0" rx="3.2" ry="1.6" transform="rotate(98 347.9 307.0)" fill="#ffffff" opacity="0.78"/><ellipse cx="233.8" cy="304.9" rx="3.2" ry="1.6" transform="rotate(8 233.8 304.9)" fill="#e9dfcb" opacity="0.79"/><ellipse cx="330.4" cy="273.6" rx="3.2" ry="1.6" transform="rotate(22 330.4 273.6)" fill="#e9dfcb" opacity="0.87"/><ellipse cx="165.5" cy="276.2" rx="3.2" ry="1.6" transform="rotate(25 165.5 276.2)" fill="#ffffff" opacity="0.86"/><ellipse cx="251.4" cy="261.0" rx="3.2" ry="1.6" transform="rotate(75 251.4 261.0)" fill="#ffffff" opacity="0.90"/><ellipse cx="200.7" cy="294.7" rx="3.2" ry="1.6" transform="rotate(65 200.7 294.7)" fill="#e9dfcb" opacity="0.81"/><ellipse cx="344.8" cy="302.4" rx="3.2" ry="1.6" transform="rotate(82 344.8 302.4)" fill="#e9dfcb" opacity="0.79"/><ellipse cx="137.0" cy="275.5" rx="3.2" ry="1.6" transform="rotate(73 137.0 275.5)" fill="#e9dfcb" opacity="0.86"/><ellipse cx="314.6" cy="297.0" rx="3.2" ry="1.6" transform="rotate(111 314.6 297.0)" fill="#ffffff" opacity="0.81"/><ellipse cx="303.7" cy="307.9" rx="3.2" ry="1.6" transform="rotate(12 303.7 307.9)" fill="#ffffff" opacity="0.78"/><ellipse cx="249.0" cy="328.3" rx="3.2" ry="1.6" transform="rotate(23 249.0 328.3)" fill="#ffffff" opacity="0.73"/><ellipse cx="197.1" cy="317.7" rx="3.2" ry="1.6" transform="rotate(134 197.1 317.7)" fill="#ffffff" opacity="0.76"/><ellipse cx="231.3" cy="252.6" rx="3.2" ry="1.6" transform="rotate(1 231.3 252.6)" fill="#ffffff" opacity="0.92"/><ellipse cx="323.1" cy="310.9" rx="3.2" ry="1.6" transform="rotate(47 323.1 310.9)" fill="#e9dfcb" opacity="0.77"/><ellipse cx="97.4" cy="270.5" rx="3.2" ry="1.6" transform="rotate(131 97.4 270.5)" fill="#ffffff" opacity="0.87"/><ellipse cx="295.0" cy="284.6" rx="3.2" ry="1.6" transform="rotate(54 295.0 284.6)" fill="#e9dfcb" opacity="0.84"/><ellipse cx="227.1" cy="308.2" rx="3.2" ry="1.6" transform="rotate(162 227.1 308.2)" fill="#e9dfcb" opacity="0.78"/><ellipse cx="70.9" cy="294.4" rx="3.2" ry="1.6" transform="rotate(143 70.9 294.4)" fill="#e9dfcb" opacity="0.81"/><ellipse cx="157.9" cy="274.8" rx="3.2" ry="1.6" transform="rotate(102 157.9 274.8)" fill="#e9dfcb" opacity="0.86"/><ellipse cx="320.7" cy="270.3" rx="3.2" ry="1.6" transform="rotate(108 320.7 270.3)" fill="#e9dfcb" opacity="0.87"/><ellipse cx="287.3" cy="294.9" rx="3.2" ry="1.6" transform="rotate(67 287.3 294.9)" fill="#ffffff" opacity="0.81"/><ellipse cx="160.4" cy="287.4" rx="3.2" ry="1.6" transform="rotate(161 160.4 287.4)" fill="#ffffff" opacity="0.83"/><ellipse cx="113.9" cy="299.1" rx="3.2" ry="1.6" transform="rotate(176 113.9 299.1)" fill="#e9dfcb" opacity="0.80"/><ellipse cx="166.3" cy="273.2" rx="3.2" ry="1.6" transform="rotate(83 166.3 273.2)" fill="#ffffff" opacity="0.87"/><ellipse cx="288.0" cy="272.2" rx="3.2" ry="1.6" transform="rotate(141 288.0 272.2)" fill="#e9dfcb" opacity="0.87"/><ellipse cx="268.1" cy="315.2" rx="3.2" ry="1.6" transform="rotate(65 268.1 315.2)" fill="#ffffff" opacity="0.76"/><ellipse cx="291.6" cy="311.4" rx="3.2" ry="1.6" transform="rotate(178 291.6 311.4)" fill="#ffffff" opacity="0.77"/><ellipse cx="249.6" cy="312.5" rx="3.2" ry="1.6" transform="rotate(180 249.6 312.5)" fill="#e9dfcb" opacity="0.77"/><ellipse cx="125.6" cy="269.1" rx="3.2" ry="1.6" transform="rotate(63 125.6 269.1)" fill="#e9dfcb" opacity="0.88"/><ellipse cx="149.3" cy="277.8" rx="3.2" ry="1.6" transform="rotate(60 149.3 277.8)" fill="#ffffff" opacity="0.86"/><ellipse cx="275.2" cy="328.7" rx="3.2" ry="1.6" transform="rotate(26 275.2 328.7)" fill="#ffffff" opacity="0.73"/><ellipse cx="183.7" cy="277.2" rx="3.2" ry="1.6" transform="rotate(38 183.7 277.2)" fill="#e9dfcb" opacity="0.86"/><ellipse cx="255.7" cy="259.1" rx="3.2" ry="1.6" transform="rotate(111 255.7 259.1)" fill="#ffffff" opacity="0.90"/><ellipse cx="330.8" cy="316.2" rx="3.2" ry="1.6" transform="rotate(71 330.8 316.2)" fill="#ffffff" opacity="0.76"/><ellipse cx="198.9" cy="296.8" rx="3.2" ry="1.6" transform="rotate(102 198.9 296.8)" fill="#e9dfcb" opacity="0.81"/><ellipse cx="154.8" cy="299.3" rx="3.2" ry="1.6" transform="rotate(161 154.8 299.3)" fill="#ffffff" opacity="0.80"/><ellipse cx="295.3" cy="294.8" rx="3.2" ry="1.6" transform="rotate(103 295.3 294.8)" fill="#ffffff" opacity="0.81"/><ellipse cx="226.7" cy="328.9" rx="3.2" ry="1.6" transform="rotate(179 226.7 328.9)" fill="#ffffff" opacity="0.73"/><ellipse cx="219.4" cy="266.0" rx="3.2" ry="1.6" transform="rotate(58 219.4 266.0)" fill="#e9dfcb" opacity="0.88"/><ellipse cx="139.2" cy="261.3" rx="3.2" ry="1.6" transform="rotate(164 139.2 261.3)" fill="#e9dfcb" opacity="0.90"/><ellipse cx="294.2" cy="265.6" rx="3.2" ry="1.6" transform="rotate(164 294.2 265.6)" fill="#ffffff" opacity="0.89"/><ellipse cx="150.3" cy="300.4" rx="3.2" ry="1.6" transform="rotate(179 150.3 300.4)" fill="#ffffff" opacity="0.80"/><ellipse cx="103.9" cy="309.1" rx="3.2" ry="1.6" transform="rotate(161 103.9 309.1)" fill="#ffffff" opacity="0.78"/><ellipse cx="281.0" cy="269.5" rx="3.2" ry="1.6" transform="rotate(5 281.0 269.5)" fill="#e9dfcb" opacity="0.88"/><ellipse cx="116.2" cy="309.7" rx="3.2" ry="1.6" transform="rotate(46 116.2 309.7)" fill="#e9dfcb" opacity="0.78"/><ellipse cx="212.7" cy="295.6" rx="3.2" ry="1.6" transform="rotate(125 212.7 295.6)" fill="#e9dfcb" opacity="0.81"/><ellipse cx="279.0" cy="304.4" rx="3.2" ry="1.6" transform="rotate(55 279.0 304.4)" fill="#ffffff" opacity="0.79"/><ellipse cx="248.9" cy="254.0" rx="3.2" ry="1.6" transform="rotate(132 248.9 254.0)" fill="#ffffff" opacity="0.92"/><ellipse cx="278.1" cy="269.8" rx="3.2" ry="1.6" transform="rotate(52 278.1 269.8)" fill="#e9dfcb" opacity="0.88"/><ellipse cx="100.4" cy="289.6" rx="3.2" ry="1.6" transform="rotate(94 100.4 289.6)" fill="#ffffff" opacity="0.83"/><ellipse cx="96.5" cy="312.8" rx="3.2" ry="1.6" transform="rotate(53 96.5 312.8)" fill="#e9dfcb" opacity="0.77"/><ellipse cx="263.4" cy="318.2" rx="3.2" ry="1.6" transform="rotate(31 263.4 318.2)" fill="#e9dfcb" opacity="0.75"/><ellipse cx="129.7" cy="271.0" rx="3.2" ry="1.6" transform="rotate(64 129.7 271.0)" fill="#ffffff" opacity="0.87"/><ellipse cx="206.0" cy="294.7" rx="3.2" ry="1.6" transform="rotate(107 206.0 294.7)" fill="#e9dfcb" opacity="0.81"/><ellipse cx="134.8" cy="268.2" rx="3.2" ry="1.6" transform="rotate(148 134.8 268.2)" fill="#ffffff" opacity="0.88"/><ellipse cx="240.7" cy="326.0" rx="3.2" ry="1.6" transform="rotate(134 240.7 326.0)" fill="#e9dfcb" opacity="0.74"/><ellipse cx="366.9" cy="290.6" rx="3.2" ry="1.6" transform="rotate(118 366.9 290.6)" fill="#ffffff" opacity="0.82"/><ellipse cx="310.9" cy="317.6" rx="3.2" ry="1.6" transform="rotate(162 310.9 317.6)" fill="#ffffff" opacity="0.76"/><ellipse cx="140.2" cy="265.5" rx="3.2" ry="1.6" transform="rotate(37 140.2 265.5)" fill="#ffffff" opacity="0.89"/><ellipse cx="132.7" cy="264.3" rx="3.2" ry="1.6" transform="rotate(105 132.7 264.3)" fill="#ffffff" opacity="0.89"/><ellipse cx="189.5" cy="320.5" rx="3.2" ry="1.6" transform="rotate(32 189.5 320.5)" fill="#e9dfcb" opacity="0.75"/><ellipse cx="89.7" cy="298.8" rx="3.2" ry="1.6" transform="rotate(58 89.7 298.8)" fill="#ffffff" opacity="0.80"/><ellipse cx="166.2" cy="306.1" rx="3.2" ry="1.6" transform="rotate(109 166.2 306.1)" fill="#e9dfcb" opacity="0.78"/><ellipse cx="86.3" cy="296.1" rx="3.2" ry="1.6" transform="rotate(71 86.3 296.1)" fill="#ffffff" opacity="0.81"/><ellipse cx="172.0" cy="273.3" rx="3.2" ry="1.6" transform="rotate(124 172.0 273.3)" fill="#ffffff" opacity="0.87"/><ellipse cx="140.8" cy="267.3" rx="3.2" ry="1.6" transform="rotate(92 140.8 267.3)" fill="#ffffff" opacity="0.88"/><ellipse cx="189.5" cy="315.5" rx="3.2" ry="1.6" transform="rotate(21 189.5 315.5)" fill="#e9dfcb" opacity="0.76"/><ellipse cx="330.2" cy="272.2" rx="3.2" ry="1.6" transform="rotate(35 330.2 272.2)" fill="#ffffff" opacity="0.87"/><ellipse cx="155.6" cy="317.2" rx="3.2" ry="1.6" transform="rotate(168 155.6 317.2)" fill="#ffffff" opacity="0.76"/><ellipse cx="336.0" cy="282.3" rx="3.2" ry="1.6" transform="rotate(64 336.0 282.3)" fill="#e9dfcb" opacity="0.84"/><ellipse cx="97.9" cy="274.5" rx="3.2" ry="1.6" transform="rotate(47 97.9 274.5)" fill="#e9dfcb" opacity="0.86"/><ellipse cx="186.6" cy="304.8" rx="3.2" ry="1.6" transform="rotate(103 186.6 304.8)" fill="#e9dfcb" opacity="0.79"/><ellipse cx="289.8" cy="324.8" rx="3.2" ry="1.6" transform="rotate(155 289.8 324.8)" fill="#e9dfcb" opacity="0.74"/><ellipse cx="340.1" cy="312.4" rx="3.2" ry="1.6" transform="rotate(140 340.1 312.4)" fill="#e9dfcb" opacity="0.77"/><ellipse cx="255.3" cy="276.9" rx="3.2" ry="1.6" transform="rotate(177 255.3 276.9)" fill="#ffffff" opacity="0.86"/><ellipse cx="341.0" cy="309.4" rx="3.2" ry="1.6" transform="rotate(171 341.0 309.4)" fill="#e9dfcb" opacity="0.78"/><ellipse cx="147.4" cy="285.0" rx="3.2" ry="1.6" transform="rotate(59 147.4 285.0)" fill="#e9dfcb" opacity="0.84"/><ellipse cx="109.6" cy="297.0" rx="3.2" ry="1.6" transform="rotate(123 109.6 297.0)" fill="#ffffff" opacity="0.81"/><ellipse cx="284.7" cy="314.1" rx="3.2" ry="1.6" transform="rotate(127 284.7 314.1)" fill="#ffffff" opacity="0.76"/><ellipse cx="115.8" cy="271.9" rx="3.2" ry="1.6" transform="rotate(41 115.8 271.9)" fill="#e9dfcb" opacity="0.87"/><ellipse cx="109.8" cy="298.0" rx="3.2" ry="1.6" transform="rotate(170 109.8 298.0)" fill="#ffffff" opacity="0.81"/><ellipse cx="124.4" cy="297.6" rx="3.2" ry="1.6" transform="rotate(173 124.4 297.6)" fill="#ffffff" opacity="0.81"/><ellipse cx="142.0" cy="267.8" rx="3.2" ry="1.6" transform="rotate(7 142.0 267.8)" fill="#ffffff" opacity="0.88"/><ellipse cx="343.4" cy="301.8" rx="3.2" ry="1.6" transform="rotate(84 343.4 301.8)" fill="#e9dfcb" opacity="0.80"/><ellipse cx="306.7" cy="307.5" rx="3.2" ry="1.6" transform="rotate(36 306.7 307.5)" fill="#ffffff" opacity="0.78"/><ellipse cx="196.4" cy="261.0" rx="3.2" ry="1.6" transform="rotate(86 196.4 261.0)" fill="#ffffff" opacity="0.90"/><ellipse cx="172.6" cy="272.3" rx="3.2" ry="1.6" transform="rotate(134 172.6 272.3)" fill="#ffffff" opacity="0.87"/><ellipse cx="288.1" cy="280.8" rx="3.2" ry="1.6" transform="rotate(87 288.1 280.8)" fill="#ffffff" opacity="0.85"/><ellipse cx="91.4" cy="279.9" rx="3.2" ry="1.6" transform="rotate(74 91.4 279.9)" fill="#ffffff" opacity="0.85"/><ellipse cx="133.4" cy="292.9" rx="3.2" ry="1.6" transform="rotate(69 133.4 292.9)" fill="#e9dfcb" opacity="0.82"/><ellipse cx="182.0" cy="306.9" rx="3.2" ry="1.6" transform="rotate(126 182.0 306.9)" fill="#e9dfcb" opacity="0.78"/><ellipse cx="178.9" cy="311.7" rx="3.2" ry="1.6" transform="rotate(76 178.9 311.7)" fill="#ffffff" opacity="0.77"/><ellipse cx="263.7" cy="290.0" rx="3.2" ry="1.6" transform="rotate(10 263.7 290.0)" fill="#ffffff" opacity="0.83"/><ellipse cx="129.9" cy="283.5" rx="3.2" ry="1.6" transform="rotate(146 129.9 283.5)" fill="#ffffff" opacity="0.84"/><ellipse cx="216.3" cy="295.0" rx="3.2" ry="1.6" transform="rotate(48 216.3 295.0)" fill="#e9dfcb" opacity="0.81"/><ellipse cx="90.3" cy="297.5" rx="3.2" ry="1.6" transform="rotate(15 90.3 297.5)" fill="#e9dfcb" opacity="0.81"/><ellipse cx="319.0" cy="275.2" rx="3.2" ry="1.6" transform="rotate(157 319.0 275.2)" fill="#ffffff" opacity="0.86"/><ellipse cx="162.6" cy="262.5" rx="3.2" ry="1.6" transform="rotate(174 162.6 262.5)" fill="#ffffff" opacity="0.89"/><ellipse cx="335.7" cy="299.8" rx="3.2" ry="1.6" transform="rotate(160 335.7 299.8)" fill="#e9dfcb" opacity="0.80"/><ellipse cx="271.3" cy="302.1" rx="3.2" ry="1.6" transform="rotate(9 271.3 302.1)" fill="#ffffff" opacity="0.79"/><ellipse cx="336.7" cy="314.8" rx="3.2" ry="1.6" transform="rotate(3 336.7 314.8)" fill="#ffffff" opacity="0.76"/><ellipse cx="278.6" cy="260.2" rx="3.2" ry="1.6" transform="rotate(143 278.6 260.2)" fill="#e9dfcb" opacity="0.90"/><ellipse cx="261.9" cy="278.9" rx="3.2" ry="1.6" transform="rotate(8 261.9 278.9)" fill="#ffffff" opacity="0.85"/><ellipse cx="111.1" cy="305.5" rx="3.2" ry="1.6" transform="rotate(13 111.1 305.5)" fill="#ffffff" opacity="0.79"/><ellipse cx="85.1" cy="287.0" rx="3.2" ry="1.6" transform="rotate(107 85.1 287.0)" fill="#ffffff" opacity="0.83"/><ellipse cx="307.4" cy="278.9" rx="3.2" ry="1.6" transform="rotate(3 307.4 278.9)" fill="#e9dfcb" opacity="0.85"/><ellipse cx="95.8" cy="269.8" rx="3.2" ry="1.6" transform="rotate(168 95.8 269.8)" fill="#e9dfcb" opacity="0.88"/><ellipse cx="124.8" cy="295.9" rx="3.2" ry="1.6" transform="rotate(26 124.8 295.9)" fill="#ffffff" opacity="0.81"/><ellipse cx="80.2" cy="298.6" rx="3.2" ry="1.6" transform="rotate(160 80.2 298.6)" fill="#ffffff" opacity="0.80"/><ellipse cx="344.0" cy="293.0" rx="3.2" ry="1.6" transform="rotate(31 344.0 293.0)" fill="#e9dfcb" opacity="0.82"/><ellipse cx="264.1" cy="277.5" rx="3.2" ry="1.6" transform="rotate(31 264.1 277.5)" fill="#ffffff" opacity="0.86"/><ellipse cx="346.4" cy="295.8" rx="3.2" ry="1.6" transform="rotate(62 346.4 295.8)" fill="#ffffff" opacity="0.81"/><ellipse cx="214.8" cy="253.6" rx="3.2" ry="1.6" transform="rotate(93 214.8 253.6)" fill="#e9dfcb" opacity="0.92"/><ellipse cx="188.5" cy="256.0" rx="3.2" ry="1.6" transform="rotate(21 188.5 256.0)" fill="#ffffff" opacity="0.91"/><ellipse cx="121.0" cy="282.0" rx="3.2" ry="1.6" transform="rotate(171 121.0 282.0)" fill="#e9dfcb" opacity="0.84"/><ellipse cx="216.3" cy="331.3" rx="3.2" ry="1.6" transform="rotate(8 216.3 331.3)" fill="#ffffff" opacity="0.72"/><ellipse cx="340.5" cy="295.0" rx="3.2" ry="1.6" transform="rotate(158 340.5 295.0)" fill="#ffffff" opacity="0.81"/><ellipse cx="172.0" cy="323.7" rx="3.2" ry="1.6" transform="rotate(42 172.0 323.7)" fill="#e9dfcb" opacity="0.74"/><ellipse cx="279.5" cy="265.1" rx="3.2" ry="1.6" transform="rotate(80 279.5 265.1)" fill="#ffffff" opacity="0.89"/><ellipse cx="131.5" cy="280.0" rx="3.2" ry="1.6" transform="rotate(173 131.5 280.0)" fill="#ffffff" opacity="0.85"/><ellipse cx="270.1" cy="289.1" rx="3.2" ry="1.6" transform="rotate(165 270.1 289.1)" fill="#ffffff" opacity="0.83"/><ellipse cx="253.2" cy="265.8" rx="3.2" ry="1.6" transform="rotate(115 253.2 265.8)" fill="#e9dfcb" opacity="0.89"/><ellipse cx="244.4" cy="262.6" rx="3.2" ry="1.6" transform="rotate(74 244.4 262.6)" fill="#ffffff" opacity="0.89"/><ellipse cx="132.7" cy="269.6" rx="3.2" ry="1.6" transform="rotate(153 132.7 269.6)" fill="#ffffff" opacity="0.88"/><ellipse cx="103.3" cy="267.6" rx="3.2" ry="1.6" transform="rotate(38 103.3 267.6)" fill="#e9dfcb" opacity="0.88"/><ellipse cx="184.7" cy="316.4" rx="3.2" ry="1.6" transform="rotate(63 184.7 316.4)" fill="#ffffff" opacity="0.76"/><ellipse cx="173.7" cy="263.5" rx="3.2" ry="1.6" transform="rotate(59 173.7 263.5)" fill="#e9dfcb" opacity="0.89"/><ellipse cx="218.7" cy="293.6" rx="3.2" ry="1.6" transform="rotate(67 218.7 293.6)" fill="#ffffff" opacity="0.82"/><ellipse cx="299.2" cy="324.0" rx="3.2" ry="1.6" transform="rotate(10 299.2 324.0)" fill="#ffffff" opacity="0.74"/><ellipse cx="309.8" cy="321.2" rx="3.2" ry="1.6" transform="rotate(146 309.8 321.2)" fill="#ffffff" opacity="0.75"/><ellipse cx="352.3" cy="286.5" rx="3.2" ry="1.6" transform="rotate(140 352.3 286.5)" fill="#e9dfcb" opacity="0.83"/><ellipse cx="295.7" cy="279.8" rx="3.2" ry="1.6" transform="rotate(21 295.7 279.8)" fill="#ffffff" opacity="0.85"/><ellipse cx="127.7" cy="294.4" rx="3.2" ry="1.6" transform="rotate(59 127.7 294.4)" fill="#ffffff" opacity="0.81"/><ellipse cx="308.2" cy="300.9" rx="3.2" ry="1.6" transform="rotate(52 308.2 300.9)" fill="#e9dfcb" opacity="0.80"/><ellipse cx="207.6" cy="290.0" rx="3.2" ry="1.6" transform="rotate(98 207.6 290.0)" fill="#ffffff" opacity="0.82"/><ellipse cx="334.8" cy="310.8" rx="3.2" ry="1.6" transform="rotate(16 334.8 310.8)" fill="#ffffff" opacity="0.77"/><ellipse cx="95.3" cy="273.8" rx="3.2" ry="1.6" transform="rotate(133 95.3 273.8)" fill="#ffffff" opacity="0.87"/><ellipse cx="152.7" cy="291.3" rx="3.2" ry="1.6" transform="rotate(54 152.7 291.3)" fill="#ffffff" opacity="0.82"/><ellipse cx="273.0" cy="322.4" rx="3.2" ry="1.6" transform="rotate(92 273.0 322.4)" fill="#ffffff" opacity="0.74"/><ellipse cx="136.3" cy="319.4" rx="3.2" ry="1.6" transform="rotate(38 136.3 319.4)" fill="#ffffff" opacity="0.75"/><ellipse cx="313.1" cy="278.9" rx="3.2" ry="1.6" transform="rotate(27 313.1 278.9)" fill="#ffffff" opacity="0.85"/><ellipse cx="178.2" cy="294.6" rx="3.2" ry="1.6" transform="rotate(80 178.2 294.6)" fill="#ffffff" opacity="0.81"/><ellipse cx="159.3" cy="315.9" rx="3.2" ry="1.6" transform="rotate(5 159.3 315.9)" fill="#ffffff" opacity="0.76"/><ellipse cx="259.4" cy="327.8" rx="3.2" ry="1.6" transform="rotate(144 259.4 327.8)" fill="#ffffff" opacity="0.73"/><ellipse cx="150.0" cy="283.6" rx="3.2" ry="1.6" transform="rotate(71 150.0 283.6)" fill="#ffffff" opacity="0.84"/><ellipse cx="344.0" cy="280.4" rx="3.2" ry="1.6" transform="rotate(155 344.0 280.4)" fill="#e9dfcb" opacity="0.85"/><ellipse cx="219.3" cy="299.8" rx="3.2" ry="1.6" transform="rotate(51 219.3 299.8)" fill="#e9dfcb" opacity="0.80"/><ellipse cx="202.1" cy="296.6" rx="3.2" ry="1.6" transform="rotate(8 202.1 296.6)" fill="#ffffff" opacity="0.81"/><ellipse cx="289.8" cy="272.3" rx="3.2" ry="1.6" transform="rotate(16 289.8 272.3)" fill="#e9dfcb" opacity="0.87"/><ellipse cx="128.1" cy="262.4" rx="3.2" ry="1.6" transform="rotate(180 128.1 262.4)" fill="#e9dfcb" opacity="0.89"/><ellipse cx="214.9" cy="322.0" rx="3.2" ry="1.6" transform="rotate(164 214.9 322.0)" fill="#ffffff" opacity="0.74"/><ellipse cx="313.8" cy="278.4" rx="3.2" ry="1.6" transform="rotate(46 313.8 278.4)" fill="#ffffff" opacity="0.85"/><ellipse cx="299.2" cy="325.2" rx="3.2" ry="1.6" transform="rotate(56 299.2 325.2)" fill="#ffffff" opacity="0.74"/><ellipse cx="355.9" cy="278.1" rx="3.2" ry="1.6" transform="rotate(15 355.9 278.1)" fill="#e9dfcb" opacity="0.85"/><ellipse cx="333.3" cy="271.3" rx="3.2" ry="1.6" transform="rotate(12 333.3 271.3)" fill="#ffffff" opacity="0.87"/><ellipse cx="91.5" cy="289.1" rx="3.2" ry="1.6" transform="rotate(123 91.5 289.1)" fill="#ffffff" opacity="0.83"/><ellipse cx="300.0" cy="319.4" rx="3.2" ry="1.6" transform="rotate(50 300.0 319.4)" fill="#e9dfcb" opacity="0.75"/><ellipse cx="185.2" cy="321.3" rx="3.2" ry="1.6" transform="rotate(167 185.2 321.3)" fill="#ffffff" opacity="0.75"/><ellipse cx="185.9" cy="310.1" rx="3.2" ry="1.6" transform="rotate(31 185.9 310.1)" fill="#ffffff" opacity="0.77"/><ellipse cx="147.5" cy="310.2" rx="3.2" ry="1.6" transform="rotate(36 147.5 310.2)" fill="#e9dfcb" opacity="0.77"/><ellipse cx="299.9" cy="274.8" rx="3.2" ry="1.6" transform="rotate(49 299.9 274.8)" fill="#e9dfcb" opacity="0.86"/><ellipse cx="295.5" cy="322.4" rx="3.2" ry="1.6" transform="rotate(19 295.5 322.4)" fill="#e9dfcb" opacity="0.74"/><ellipse cx="314.7" cy="264.0" rx="3.2" ry="1.6" transform="rotate(35 314.7 264.0)" fill="#e9dfcb" opacity="0.89"/><ellipse cx="359.3" cy="281.9" rx="3.2" ry="1.6" transform="rotate(98 359.3 281.9)" fill="#e9dfcb" opacity="0.85"/><ellipse cx="150.2" cy="272.6" rx="3.2" ry="1.6" transform="rotate(86 150.2 272.6)" fill="#ffffff" opacity="0.87"/><ellipse cx="225.2" cy="305.5" rx="3.2" ry="1.6" transform="rotate(93 225.2 305.5)" fill="#ffffff" opacity="0.79"/><ellipse cx="226.3" cy="301.4" rx="3.2" ry="1.6" transform="rotate(115 226.3 301.4)" fill="#ffffff" opacity="0.80"/><ellipse cx="306.0" cy="321.5" rx="3.2" ry="1.6" transform="rotate(68 306.0 321.5)" fill="#ffffff" opacity="0.75"/><ellipse cx="220.5" cy="298.4" rx="3.2" ry="1.6" transform="rotate(146 220.5 298.4)" fill="#e9dfcb" opacity="0.80"/><ellipse cx="188.9" cy="306.1" rx="3.2" ry="1.6" transform="rotate(125 188.9 306.1)" fill="#ffffff" opacity="0.78"/><ellipse cx="119.7" cy="299.6" rx="3.2" ry="1.6" transform="rotate(39 119.7 299.6)" fill="#e9dfcb" opacity="0.80"/><ellipse cx="353.0" cy="305.2" rx="3.2" ry="1.6" transform="rotate(171 353.0 305.2)" fill="#e9dfcb" opacity="0.79"/><ellipse cx="92.5" cy="278.6" rx="3.2" ry="1.6" transform="rotate(30 92.5 278.6)" fill="#ffffff" opacity="0.85"/><ellipse cx="247.1" cy="315.0" rx="3.2" ry="1.6" transform="rotate(66 247.1 315.0)" fill="#e9dfcb" opacity="0.76"/><ellipse cx="261.8" cy="286.3" rx="3.2" ry="1.6" transform="rotate(74 261.8 286.3)" fill="#ffffff" opacity="0.83"/><ellipse cx="291.7" cy="323.1" rx="3.2" ry="1.6" transform="rotate(75 291.7 323.1)" fill="#ffffff" opacity="0.74"/><ellipse cx="156.3" cy="271.5" rx="3.2" ry="1.6" transform="rotate(129 156.3 271.5)" fill="#ffffff" opacity="0.87"/><ellipse cx="224.2" cy="293.4" rx="3.2" ry="1.6" transform="rotate(134 224.2 293.4)" fill="#ffffff" opacity="0.82"/><ellipse cx="200.7" cy="298.2" rx="3.2" ry="1.6" transform="rotate(104 200.7 298.2)" fill="#ffffff" opacity="0.80"/><ellipse cx="169.8" cy="285.6" rx="3.2" ry="1.6" transform="rotate(46 169.8 285.6)" fill="#ffffff" opacity="0.84"/><ellipse cx="227.7" cy="308.6" rx="3.2" ry="1.6" transform="rotate(153 227.7 308.6)" fill="#ffffff" opacity="0.78"/><ellipse cx="319.8" cy="308.3" rx="3.2" ry="1.6" transform="rotate(126 319.8 308.3)" fill="#e9dfcb" opacity="0.78"/><ellipse cx="245.1" cy="305.2" rx="3.2" ry="1.6" transform="rotate(171 245.1 305.2)" fill="#e9dfcb" opacity="0.79"/><ellipse cx="263.2" cy="263.7" rx="3.2" ry="1.6" transform="rotate(51 263.2 263.7)" fill="#ffffff" opacity="0.89"/><ellipse cx="181.6" cy="265.0" rx="3.2" ry="1.6" transform="rotate(14 181.6 265.0)" fill="#ffffff" opacity="0.89"/><ellipse cx="174.2" cy="309.4" rx="3.2" ry="1.6" transform="rotate(163 174.2 309.4)" fill="#e9dfcb" opacity="0.78"/><ellipse cx="201.4" cy="292.2" rx="3.2" ry="1.6" transform="rotate(122 201.4 292.2)" fill="#ffffff" opacity="0.82"/><ellipse cx="182.1" cy="274.8" rx="3.2" ry="1.6" transform="rotate(144 182.1 274.8)" fill="#e9dfcb" opacity="0.86"/><ellipse cx="179.3" cy="304.0" rx="3.2" ry="1.6" transform="rotate(95 179.3 304.0)" fill="#ffffff" opacity="0.79"/><ellipse cx="276.2" cy="273.4" rx="3.2" ry="1.6" transform="rotate(114 276.2 273.4)" fill="#e9dfcb" opacity="0.87"/><ellipse cx="300.7" cy="302.4" rx="3.2" ry="1.6" transform="rotate(62 300.7 302.4)" fill="#e9dfcb" opacity="0.79"/><ellipse cx="276.4" cy="275.0" rx="3.2" ry="1.6" transform="rotate(97 276.4 275.0)" fill="#ffffff" opacity="0.86"/><ellipse cx="284.9" cy="279.1" rx="3.2" ry="1.6" transform="rotate(27 284.9 279.1)" fill="#e9dfcb" opacity="0.85"/><ellipse cx="112.6" cy="292.9" rx="3.2" ry="1.6" transform="rotate(135 112.6 292.9)" fill="#e9dfcb" opacity="0.82"/><ellipse cx="269.2" cy="306.8" rx="3.2" ry="1.6" transform="rotate(22 269.2 306.8)" fill="#ffffff" opacity="0.78"/><ellipse cx="239.8" cy="303.7" rx="3.2" ry="1.6" transform="rotate(64 239.8 303.7)" fill="#ffffff" opacity="0.79"/><ellipse cx="240.1" cy="290.5" rx="3.2" ry="1.6" transform="rotate(178 240.1 290.5)" fill="#e9dfcb" opacity="0.82"/><ellipse cx="220" cy="262" rx="150" ry="16" fill="#9e7a45" opacity=".18" filter="url(#c_b2)"/></g><g transform="translate(-30 22) rotate(-64 300 270)"><ellipse cx="300" cy="300" rx="14" ry="3" fill="#000" opacity=".25" filter="url(#c_b2)"/><rect x="290" y="210" width="16" height="70" rx="6" fill="url(#c_paddle)"/><path d="M280 270 C276 300 282 330 298 334 C314 330 320 300 316 270 Z" fill="url(#c_paddle)"/><path d="M286 284 c2 18 6 32 12 38" stroke="#fff" stroke-opacity=".5" stroke-width="2" fill="none"/></g><g class="stm"><path d="M170 240 c-14 -20 14 -30 0 -54" stroke="#fff" stroke-opacity=".85" stroke-width="3.5" fill="none" stroke-linecap="round"/></g><g class="stm b"><path d="M236 236 c-14 -20 14 -30 0 -56" stroke="#fff" stroke-opacity=".75" stroke-width="3.5" fill="none" stroke-linecap="round"/></g><g transform="translate(490 300)"><ellipse cx="0" cy="26" rx="46" ry="9" fill="#000" opacity=".45" filter="url(#c_b6)"/><path d="M-40 0 h80 c-4 22 -20 30 -40 30 s-36 -8 -40 -30z" fill="url(#c_bowl)"/><ellipse cx="0" cy="0" rx="40" ry="10" fill="#efece4"/><ellipse cx="0" cy="1" rx="33" ry="7" fill="url(#c_vin)"/><ellipse cx="-10" cy="-1" rx="10" ry="1.6" fill="#fff" opacity=".35"/><path d="M-36 10 c14 6 58 6 72 0" stroke="#1d3a2f" stroke-opacity=".4" stroke-width="2" fill="none"/></g><g transform="rotate(-5 440 450)"><ellipse cx="440" cy="506" rx="180" ry="20" fill="#000" opacity=".5" filter="url(#c_b6)"/><rect x="270" y="392" width="316" height="104" rx="5" fill="url(#c_board)"/><rect x="270" y="392" width="316" height="104" rx="5" fill="#c69a5a" filter="url(#c_grain)"/><path d="M270 490 h316 v12 a5 5 0 0 1 -5 5 h-306 a5 5 0 0 1 -5 -5z" fill="#a67f48"/><path d="M276 396 h318" stroke="#fff" stroke-opacity=".5"/><path d="M300 452 C320 418 400 408 470 414 C500 417 516 428 518 444 C500 458 420 466 300 452Z" fill="url(#c_fish)"/><path d="M320 442 C370 428 430 424 500 430" stroke="#fff" stroke-opacity=".55" stroke-width="2" fill="none"/><path d="M340 452 C380 444 440 442 510 446" stroke="#d98f84" stroke-opacity=".5" stroke-width="1.5" fill="none"/><path d="M380 404 C420 398 470 400 500 408 L518 446 C500 460 440 466 400 464 C392 444 386 424 380 404Z" fill="url(#c_kelp)"/><path d="M384 406 C396 430 404 448 404 462" stroke="#6d7a46" stroke-width="2" fill="none"/><circle cx="434.8" cy="445.5" r="1.4" fill="#f4efe0" opacity=".7"/><circle cx="454.1" cy="421.5" r="1.2" fill="#f4efe0" opacity=".7"/><circle cx="443.3" cy="415.8" r="1.0" fill="#f4efe0" opacity=".7"/><circle cx="435.9" cy="430.6" r="1.4" fill="#f4efe0" opacity=".7"/><circle cx="482.3" cy="416.4" r="0.9" fill="#f4efe0" opacity=".7"/><circle cx="494.0" cy="433.7" r="1.0" fill="#f4efe0" opacity=".7"/><circle cx="431.6" cy="438.8" r="1.3" fill="#f4efe0" opacity=".7"/><circle cx="447.7" cy="449.9" r="0.8" fill="#f4efe0" opacity=".7"/><circle cx="470.3" cy="439.8" r="1.4" fill="#f4efe0" opacity=".7"/><circle cx="467.3" cy="413.4" r="1.8" fill="#f4efe0" opacity=".7"/><circle cx="414.9" cy="426.5" r="1.2" fill="#f4efe0" opacity=".7"/><circle cx="489.7" cy="440.6" r="1.6" fill="#f4efe0" opacity=".7"/><circle cx="463.6" cy="451.4" r="1.1" fill="#f4efe0" opacity=".7"/><circle cx="448.1" cy="434.4" r="1.1" fill="#f4efe0" opacity=".7"/><circle cx="423.9" cy="439.2" r="1.2" fill="#f4efe0" opacity=".7"/><circle cx="492.7" cy="438.5" r="0.8" fill="#f4efe0" opacity=".7"/><circle cx="420.4" cy="419.5" r="1.1" fill="#f4efe0" opacity=".7"/><circle cx="429.1" cy="438.8" r="1.0" fill="#f4efe0" opacity=".7"/><circle cx="450.0" cy="427.9" r="1.8" fill="#f4efe0" opacity=".7"/><circle cx="453.1" cy="413.9" r="1.8" fill="#f4efe0" opacity=".7"/><circle cx="502.5" cy="413.6" r="1.7" fill="#f4efe0" opacity=".7"/><circle cx="469.0" cy="448.7" r="1.4" fill="#f4efe0" opacity=".7"/><circle cx="469.7" cy="444.3" r="0.8" fill="#f4efe0" opacity=".7"/><circle cx="419.5" cy="416.9" r="0.8" fill="#f4efe0" opacity=".7"/><circle cx="432.5" cy="413.6" r="0.9" fill="#f4efe0" opacity=".7"/><circle cx="443.0" cy="418.7" r="0.9" fill="#f4efe0" opacity=".7"/><g transform="translate(538 452)"><path d="M-22 6 c4 -18 22 -24 34 -18 c-2 12 -16 22 -34 18z" fill="url(#c_fish)"/><path d="M-10 10 c4 -18 22 -24 34 -18 c-2 12 -16 22 -34 18z" fill="url(#c_fish)"/><path d="M2 14 c4 -18 22 -24 34 -18 c-2 12 -16 22 -34 18z" fill="url(#c_fish)"/><path d="M4 12 c6 -12 18 -16 28 -14" stroke="#d98f84" stroke-width="1.6" fill="none"/></g></g><g transform="translate(0 -14) rotate(-6 330 528)"><ellipse cx="320" cy="540" rx="250" ry="8" fill="#000" opacity=".45" filter="url(#c_b2)"/><path d="M150 520 L440 512 L440 532 L186 534 C168 533 156 528 150 520Z" fill="url(#c_blade)"/><path d="M152 521 L440 513" stroke="#fff" stroke-width="1.5"/><path d="M186 532 L440 528" stroke="#6b7477" stroke-width="1"/><rect x="440" y="510" width="16" height="25" rx="2" fill="#1c1a18"/><rect x="456" y="511" width="120" height="23" rx="8" fill="url(#c_handle)"/><path d="M462 515 h108" stroke="#fff" stroke-opacity=".35" stroke-width="2"/></g><circle cx="560" cy="36" r="10" fill="#cf3f26"/></svg>
+    </div>
+  </div>
+</section>
+
+<!-- COURSES -->
+<section class="sec" id="courses">
+  <div class="wrap">
+    <div class="shead rv">
+      <div>
+        <div class="kicker"><span class="no">02</span>Omakase courses</div>
+        <h2 class="h">Leave it to the counter.<br><em>Three ways to sit.</em></h2>
+      </div>
+      <p class="lead">Every course follows the fish of the week, so the exact pieces change. What does not change: rice made for that service, and a chef who adjusts the pace to you.</p>
+    </div>
+    <div class="courses rv">
+      <article class="course">
+        <div class="ill">
+          <svg viewBox="0 0 220 170" aria-hidden="true">
+            <defs>
+              <linearGradient id="box" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#2a3a32"/><stop offset="1" stop-color="#111d17"/></linearGradient>
+              <radialGradient id="rc3" cx=".5" cy=".5" r=".7"><stop offset="0" stop-color="#fffcf4"/><stop offset="1" stop-color="#e4dbc8"/></radialGradient>
+              <filter id="b3"><feGaussianBlur stdDeviation="5"/></filter>
+            </defs>
+            <ellipse cx="110" cy="150" rx="88" ry="12" fill="#6b5333" opacity=".3" filter="url(#b3)"/>
+            <path d="M20 40 L200 40 L188 148 L32 148Z" fill="url(#box)"/>
+            <path d="M20 40 h180" stroke="#cf3f26" stroke-width="3"/>
+            <rect x="34" y="52" width="152" height="86" rx="2" fill="url(#rc3)"/>
+            <rect x="40" y="58" width="34" height="22" rx="2" fill="#c33945"/><rect x="40" y="58" width="34" height="6" rx="2" fill="#e56f73"/>
+            <rect x="80" y="58" width="30" height="22" rx="2" fill="#f4ddd2"/><path d="M80 60 h30" stroke="#e48074" stroke-width="3"/>
+            <rect x="116" y="58" width="30" height="22" rx="2" fill="#f0c158"/>
+            <path d="M152 60 c8 -2 26 0 28 10 c-4 10 -24 12 -28 4z" fill="#f08035"/>
+            <g fill="#ef7a2e"><circle cx="160" cy="70" r="3"/><circle cx="167" cy="66" r="3"/><circle cx="172" cy="72" r="3"/></g>
+            <rect x="44" y="88" width="34" height="20" rx="2" fill="#9cb0b5"/><path d="M44 93 h34" stroke="#eef3f4" stroke-width="2"/>
+            <path d="M86 90 c12 -6 28 -6 38 2 c-6 12 -30 14 -38 -2z" fill="#4f7b44"/>
+            <rect x="130" y="90" width="22" height="18" rx="2" fill="#f2b4a6"/>
+            <path d="M158 92 c6 0 20 2 22 12 c-6 6 -18 6 -22 -2z" fill="#a4c46a"/>
+            <g fill="#2a3a30"><rect x="48" y="116" width="28" height="14" rx="2"/></g>
+            <rect x="84" y="116" width="40" height="14" rx="2" fill="#e8584a"/>
+            <circle cx="140" cy="122" r="7" fill="#f4e7b0"/><circle cx="160" cy="124" r="6" fill="#f6d3c6"/>
+          </svg>
+        </div>
+        <span class="when">Tue – Sat · Lunch</span>
+        <h3>Chirashi Box<small>Bara-chirashi in lacquer</small></h3>
+        <div class="price"><b>₱1,450</b><span>per box</span></div>
+        <ol>
+          <li>Seasoned rice under diced fish of the day</li>
+          <li>Tamago, ikura and pickled vegetables</li>
+          <li>Miso soup and a small sunomono</li>
+          <li>At the counter, or packed to go</li>
+        </ol>
+        <div class="foot"><span>Ready in about 15 min</span><span>Pre-order a day ahead</span></div>
+      </article>
+      <article class="course main">
+        <span class="flag">Evening</span>
+        <div class="ill">
+          <svg viewBox="0 0 260 170" aria-hidden="true">
+            <defs>
+              <linearGradient id="pl" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f3efe6"/><stop offset="1" stop-color="#c9cfc8"/></linearGradient>
+              <linearGradient id="bowl" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#3a2219"/><stop offset=".5" stop-color="#6a3a28"/><stop offset="1" stop-color="#2a170f"/></linearGradient>
+              <linearGradient id="lid" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#a13226"/><stop offset="1" stop-color="#5e1a12"/></linearGradient>
+              <linearGradient id="sashimi" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f5c7bd"/><stop offset="1" stop-color="#d86e69"/></linearGradient>
+              <filter id="b4"><feGaussianBlur stdDeviation="4"/></filter>
+            </defs>
+            <ellipse cx="130" cy="150" rx="120" ry="10" fill="#6b5333" opacity=".28" filter="url(#b4)"/>
+            <!-- lidded bowl -->
+            <g transform="translate(58 96)">
+              <path d="M-38 0 h76 c-4 34 -18 46 -38 46 s-34 -12 -38 -46z" fill="url(#bowl)"/>
+              <path d="M-42 0 c4 -26 22 -36 42 -36 s38 10 42 36z" fill="url(#lid)"/>
+              <ellipse cx="0" cy="-36" rx="10" ry="4" fill="#5e1a12"/>
+              <path d="M-26 -16 c8 -10 20 -14 30 -12" stroke="#fff" stroke-opacity=".35" stroke-width="3" fill="none" stroke-linecap="round"/>
+              <path d="M-42 0 h84" stroke="#d8a14a" stroke-width="1.5"/>
+            </g>
+            <!-- sashimi plate -->
+            <g transform="translate(170 116)">
+              <ellipse cx="0" cy="10" rx="74" ry="22" fill="url(#pl)"/>
+              <ellipse cx="0" cy="6" rx="64" ry="16" fill="#eef0ea"/>
+              <path d="M-50 4 c10 -22 24 -26 36 -20 c-4 14 -18 22 -36 20z" fill="url(#sashimi)"/>
+              <path d="M-26 6 c10 -24 26 -28 38 -22 c-4 16 -20 24 -38 22z" fill="url(#sashimi)"/>
+              <path d="M0 8 c10 -24 26 -28 38 -22 c-4 16 -20 24 -38 22z" fill="#f3e2db"/>
+              <path d="M2 4 c10 -14 24 -20 34 -18" stroke="#e17d72" stroke-width="3" fill="none"/>
+              <path d="M28 10 c6 -18 22 -22 32 -16 c-4 12 -16 18 -32 16z" fill="#f3e2db"/>
+              <path d="M32 6 c6 -10 18 -14 26 -12" stroke="#e17d72" stroke-width="3" fill="none"/>
+              <path d="M-60 12 c10 -14 30 -18 44 -10 c-12 8 -30 12 -44 10z" fill="#5f8c4c"/>
+              <circle cx="46" cy="14" r="5" fill="#a9c46e"/>
+            </g>
+            <!-- sake cup tiny -->
+            <g transform="translate(122 54)">
+              <path d="M-14 0 h28 l-4 18 h-20z" fill="#e9e4da"/>
+              <ellipse cx="0" cy="0" rx="14" ry="4" fill="#cfd8d6"/>
+              <ellipse cx="0" cy="1" rx="10" ry="2.4" fill="#5b7ea3" opacity=".6"/>
+            </g>
+          </svg>
+        </div>
+        <span class="when">Tue – Sun · 18:00 &amp; 20:30</span>
+        <h3>Dinner Omakase<small>Yoru · about two hours</small></h3>
+        <div class="price"><b>₱4,800</b><span>per guest</span></div>
+        <ol>
+          <li>Three seasonal otsumami small plates</li>
+          <li>Sashimi of two aged fish</li>
+          <li>Chawanmushi with dashi of the day</li>
+          <li>Twelve pieces of nigiri, one by one</li>
+          <li>Negitoro hand roll from the chef's hand</li>
+          <li>Red miso soup, tamago and a seasonal sweet</li>
+        </ol>
+        <div class="foot"><span>Sake pairing available</span><span>Counter only</span></div>
+      </article>
+      <article class="course">
+        <div class="ill">
+          <svg viewBox="0 0 240 170" aria-hidden="true">
+            <defs>
+              <linearGradient id="gt" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ead6ad"/><stop offset="1" stop-color="#c9a66d"/></linearGradient>
+              <radialGradient id="rc5" cx=".45" cy=".3" r=".8"><stop offset="0" stop-color="#fffdf8"/><stop offset="1" stop-color="#dcd2bd"/></radialGradient>
+              <linearGradient id="sal" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#d84a54"/><stop offset="1" stop-color="#97222f"/></linearGradient>
+              <linearGradient id="hot" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fff6ea"/><stop offset="1" stop-color="#efd9bc"/></linearGradient>
+              <linearGradient id="kpc" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fbeee6"/><stop offset="1" stop-color="#eccfc2"/></linearGradient>
+              <filter id="b5"><feGaussianBlur stdDeviation="4"/></filter>
+            </defs>
+            <ellipse cx="120" cy="142" rx="104" ry="10" fill="#6b5333" opacity=".3" filter="url(#b5)"/>
+            <path d="M14 88 L226 88 L218 128 L22 128Z" fill="url(#gt)"/>
+            <path d="M22 128 h196 v8 h-196z" fill="#9a7745"/>
+            <rect x="36" y="136" width="20" height="10" fill="#8a6a3d"/><rect x="186" y="136" width="20" height="10" fill="#8a6a3d"/>
+            <g transform="translate(66 92)">
+              <path d="M-26 4 c-2 -10 10 -16 26 -16 s28 6 26 16 c-2 10 -12 14 -26 14 s-24 -4 -26 -14z" fill="url(#rc5)"/>
+              <path d="M-32 -2 c2 -16 20 -22 36 -21 s32 8 32 18 c-6 6 -22 6 -36 5 s-26 2 -32 -2z" fill="url(#sal)"/>
+              <path d="M-20 -14 c12 -6 28 -6 40 0" stroke="#fff" stroke-opacity=".4" stroke-width="3" fill="none" stroke-linecap="round"/>
+            </g>
+            <g transform="translate(122 92)">
+              <path d="M-26 4 c-2 -10 10 -16 26 -16 s28 6 26 16 c-2 10 -12 14 -26 14 s-24 -4 -26 -14z" fill="url(#rc5)"/>
+              <ellipse cx="2" cy="-8" rx="26" ry="12" fill="url(#hot)"/>
+              <path d="M-16 -10 c8 4 26 4 36 -2" stroke="#d9b98d" stroke-width="1.2" fill="none"/>
+              <path d="M-12 -14 c8 2 20 2 28 -2" stroke="#d9b98d" stroke-width="1.2" fill="none"/>
+              <circle cx="4" cy="-14" r="2.6" fill="#e9eef0"/>
+            </g>
+            <g transform="translate(178 92)">
+              <path d="M-26 4 c-2 -10 10 -16 26 -16 s28 6 26 16 c-2 10 -12 14 -26 14 s-24 -4 -26 -14z" fill="url(#rc5)"/>
+              <path d="M-32 -2 c2 -16 20 -22 36 -21 s32 8 32 18 c-6 6 -22 6 -36 5 s-26 2 -32 -2z" fill="url(#kpc)"/>
+              <path d="M-30 -6 c14 -14 44 -16 64 -6" stroke="#c99b74" stroke-width="3" fill="none" opacity=".6"/>
+              <path d="M-4 -22 l8 -6 l6 8" stroke="#6b9a4a" stroke-width="2.4" fill="none"/>
+            </g>
+            <!-- tea -->
+            <g transform="translate(196 40)">
+              <path d="M-16 0 h32 l-3 30 a13 4 0 0 1 -26 0z" fill="#8a7a65"/>
+              <ellipse cx="0" cy="0" rx="16" ry="4" fill="#4c4033"/>
+              <ellipse cx="0" cy="1" rx="12" ry="2.4" fill="#9fae5a"/>
+            </g>
+            <circle cx="30" cy="40" r="6" fill="#cf3f26"/>
+          </svg>
+        </div>
+        <span class="when">Tue – Sun · 12:00 &amp; 13:30</span>
+        <h3>Lunch Omakase<small>Hiru · about seventy minutes</small></h3>
+        <div class="price"><b>₱2,800</b><span>per guest</span></div>
+        <ol>
+          <li>Seasonal appetiser</li>
+          <li>Ten pieces of nigiri</li>
+          <li>Kanpyo maki roll</li>
+          <li>Miso soup and tamago</li>
+          <li>Hojicha and a small sweet</li>
+        </ol>
+        <div class="foot"><span>Add sake by the glass</span><span>Counter only</span></div>
+      </article>
+    </div>
+    <div class="addons rv">
+      <div><span>Extra nigiri after any course</span><b>from ₱160</b></div>
+      <div><span>Sake pairing, 4 or 6 pours</span><b>₱1,900 / 2,700</b></div>
+      <div><span>Tea pairing, alcohol-free</span><b>₱900</b></div>
+    </div>
+  </div>
+</section>
+
+<!-- FISH OF THE MONTH -->
+<section class="sec fish" id="fish">
+  <div class="wrap">
+    <div class="fishgrid">
+      <div class="art rv">
+        <svg viewBox="10 30 620 340" role="img" aria-label="Brush-style illustration of a red sea bream">
+          <defs>
+            <linearGradient id="taiB" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#c8392e"/><stop offset=".45" stop-color="#e2705f"/><stop offset=".8" stop-color="#f3c4b4"/><stop offset="1" stop-color="#f8e3d6"/></linearGradient>
+            <pattern id="scale" width="18" height="12" patternUnits="userSpaceOnUse"><path d="M0 12 a9 9 0 0 1 18 0" fill="none" stroke="#7a1d16" stroke-opacity=".28" stroke-width="1.1"/><path d="M-9 6 a9 9 0 0 1 18 0 M9 6 a9 9 0 0 1 18 0" fill="none" stroke="#7a1d16" stroke-opacity=".22" stroke-width="1.1"/></pattern>
+            <filter id="rough" x="-5%" y="-5%" width="110%" height="110%"><feTurbulence type="fractalNoise" baseFrequency=".04" numOctaves="2" seed="3"/><feDisplacementMap in="SourceGraphic" scale="5"/></filter>
+            <filter id="ink" x="-20%" y="-20%" width="140%" height="140%"><feTurbulence type="fractalNoise" baseFrequency=".02" numOctaves="3" seed="8"/><feDisplacementMap in="SourceGraphic" scale="40"/><feGaussianBlur stdDeviation="2"/></filter>
+            <radialGradient id="sheen" cx=".4" cy=".3" r=".5"><stop offset="0" stop-color="#fff" stop-opacity=".5"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></radialGradient>
+            <filter id="fs" x="-10%" y="-10%" width="120%" height="140%"><feGaussianBlur stdDeviation="10"/></filter>
+          </defs>
+          <!-- ink wash -->
+          <path d="M60 230 C120 120 300 80 470 110 C560 126 610 190 590 260 C560 340 380 360 230 340 C110 324 30 300 60 230Z" fill="#1d3a2f" opacity=".14" filter="url(#ink)"/>
+          <path d="M30 330 C200 310 420 320 620 300" stroke="#1d3a2f" stroke-opacity=".35" stroke-width="3" fill="none" filter="url(#rough)"/>
+          <path d="M80 350 C240 338 400 344 560 334" stroke="#1d3a2f" stroke-opacity=".2" stroke-width="2" fill="none"/>
+          <ellipse cx="320" cy="320" rx="230" ry="16" fill="#5a3b1f" opacity=".3" filter="url(#fs)"/>
+          <g filter="url(#rough)">
+            <!-- tail -->
+            <path d="M112 200 C80 170 50 132 30 110 C42 160 46 190 40 214 C46 240 46 270 30 316 C56 290 84 254 112 226Z" fill="#c8392e"/>
+            <path d="M40 130 L100 205 M44 170 L104 210 M42 214 L106 214 M44 260 L104 220 M36 300 L100 226" stroke="#7a1d16" stroke-opacity=".5" stroke-width="1.6"/>
+            <!-- dorsal fin -->
+            <path d="M190 132 C230 70 330 50 420 78 C440 86 450 98 452 110 C380 96 280 104 190 140Z" fill="#b62f25"/>
+            <path d="M210 128 L230 82 M250 116 L270 68 M290 108 L310 60 M330 102 L350 62 M370 100 L392 70 M410 102 L430 84" stroke="#5e140f" stroke-opacity=".7" stroke-width="2.4" stroke-linecap="round"/>
+            <!-- anal & pelvic fins -->
+            <path d="M210 286 C240 320 300 330 330 316 C300 304 260 296 230 280Z" fill="#d9584a"/>
+            <path d="M350 296 C360 330 392 344 410 336 C398 318 386 304 372 292Z" fill="#d9584a"/>
+            <!-- body -->
+            <path d="M110 212 C150 150 250 110 370 108 C460 108 540 140 574 196 C580 206 580 216 572 226 C540 274 460 304 360 306 C250 306 160 274 110 222Z" fill="url(#taiB)"/>
+            <path d="M110 212 C150 150 250 110 370 108 C460 108 540 140 574 196 C580 206 580 216 572 226 C540 274 460 304 360 306 C250 306 160 274 110 222Z" fill="url(#scale)"/>
+            <path d="M150 170 C250 120 420 110 540 170 C430 140 270 146 150 190Z" fill="url(#sheen)"/>
+            <!-- blue spots -->
+            <g fill="#6fc3d8" opacity=".75"><circle cx="260" cy="160" r="3"/><circle cx="300" cy="150" r="3"/><circle cx="340" cy="148" r="3"/><circle cx="280" cy="182" r="2.6"/><circle cx="322" cy="176" r="2.6"/><circle cx="370" cy="166" r="3"/><circle cx="240" cy="188" r="2.4"/><circle cx="410" cy="160" r="2.6"/></g>
+            <!-- gill -->
+            <path d="M470 132 C450 170 448 230 474 286" stroke="#7a1d16" stroke-width="4" fill="none" stroke-linecap="round" opacity=".8"/>
+            <path d="M488 140 C474 180 474 230 490 270" stroke="#7a1d16" stroke-width="2" fill="none" opacity=".45"/>
+            <!-- pectoral fin -->
+            <path d="M440 220 C410 230 380 250 362 268 C392 262 424 250 446 232Z" fill="#f08a72"/>
+            <path d="M436 226 L378 262 M440 230 L392 262" stroke="#a83627" stroke-opacity=".5" stroke-width="1.2"/>
+            <!-- head / mouth -->
+            <path d="M560 210 C568 214 576 216 580 214" stroke="#5e140f" stroke-width="3" fill="none" stroke-linecap="round"/>
+            <circle cx="522" cy="176" r="15" fill="#f4e7d2"/>
+            <circle cx="522" cy="176" r="15" fill="none" stroke="#5e140f" stroke-width="2.4"/>
+            <circle cx="524" cy="175" r="8" fill="#1b1410"/>
+            <circle cx="527" cy="171" r="2.6" fill="#fff"/>
+            <!-- lateral line -->
+            <path d="M140 200 C240 150 360 140 460 150" stroke="#7a1d16" stroke-opacity=".45" stroke-width="1.6" fill="none" stroke-dasharray="2 5"/>
+          </g>
+          <!-- brush outline stroke -->
+          <path d="M108 212 C150 148 252 106 372 104 C462 104 544 138 578 196" stroke="#1b2420" stroke-width="3.6" fill="none" stroke-linecap="round" opacity=".7" filter="url(#rough)"/>
+          <path d="M574 226 C540 276 462 308 360 310 C250 310 170 280 112 226" stroke="#1b2420" stroke-width="2" fill="none" stroke-linecap="round" opacity=".45" filter="url(#rough)"/>
+          <!-- seal -->
+          <g transform="translate(560 66)">
+            <rect x="-30" y="-30" width="60" height="60" rx="6" fill="#cf3f26" filter="url(#rough)"/>
+            <text x="0" y="12" text-anchor="middle" font-family="Noto Serif JP, serif" font-size="34" font-weight="600" fill="#fbf1e6">鯛</text>
+          </g>
+          <text x="60" y="66" font-family="Cormorant Garamond, serif" font-style="italic" font-size="22" fill="#1b2420" opacity=".7">Pagrus major</text>
+          <path d="M60 78 h120" stroke="#1b2420" stroke-opacity=".4"/>
+        </svg>
+      </div>
+      <div class="rv">
+        <div class="kicker"><span class="no">03</span>Fish of the month · November</div>
+        <div class="bignm">Madai</div>
+        <div class="sub">Red sea bream · Autumn season</div>
+        <p class="lead">Firm, sweet and clean. In cooler months madai builds a layer of fat under the skin, which is exactly what we want. This month it appears three ways in every dinner course.</p>
+        <div class="ways">
+          <div><h4>Kobujime nigiri</h4><b>Cured</b><p>Pressed between sheets of kelp overnight for a quiet umami.</p></div>
+          <div><h4>Matsukawa aburi</h4><b>Seared</b><p>Skin briefly torched, finished with sudachi and sea salt.</p></div>
+          <div><h4>Ushiojiru</h4><b>Broth</b><p>A clear soup made from the bones, served as the course turns.</p></div>
+        </div>
+      </div>
+    </div>
+    <div class="months rv" aria-label="Seasonal fish calendar">
+      <div><small>Jan</small><b>Kanburi</b></div><div><small>Feb</small><b>Hirame</b></div><div><small>Mar</small><b>Sayori</b></div><div><small>Apr</small><b>Sakuradai</b></div>
+      <div><small>May</small><b>Katsuo</b></div><div><small>Jun</small><b>Aji</b></div><div><small>Jul</small><b>Anago</b></div><div><small>Aug</small><b>Kanpachi</b></div>
+      <div><small>Sep</small><b>Sanma</b></div><div><small>Oct</small><b>Saba</b></div><div class="now"><small>Nov</small><b>Madai</b></div><div><small>Dec</small><b>Buri</b></div>
+    </div>
+  </div>
+</section>
+
+<!-- A LA CARTE & SAKE -->
+<section class="sec" id="carte">
+  <div class="wrap">
+    <div class="shead rv">
+      <div>
+        <div class="kicker"><span class="no">04</span>À la carte &amp; sake</div>
+        <h2 class="h">One more piece?<br><em>Ask the chef.</em></h2>
+      </div>
+      <p class="lead">After your course, you may add single pieces from the counter. Prices are per piece and may move with the market; the chef will tell you what is on the board today.</p>
+    </div>
+    <div class="carte">
+      <div class="rv">
+        <div class="mlist">
+          <h3>Nigiri <small>Per piece</small></h3>
+          <div class="mi"><span class="n">Akami<small>Lean bluefin, soy-marinated</small></span><span class="d"></span><span class="p">₱280</span></div>
+          <div class="mi"><span class="n">Chutoro<small>Medium-fat belly</small></span><span class="d"></span><span class="p">₱420</span></div>
+          <div class="mi"><span class="n">Otoro<small>Fatty belly, lightly seared on request</small></span><span class="d"></span><span class="p">₱560</span></div>
+          <div class="mi"><span class="n">Madai<small>Kelp-cured sea bream</small></span><span class="d"></span><span class="p">₱260</span></div>
+          <div class="mi"><span class="n">Kanpachi<small>Amberjack, yuzu kosho</small></span><span class="d"></span><span class="p">₱300</span></div>
+          <div class="mi"><span class="n">Aji<small>Horse mackerel, ginger &amp; chive</small></span><span class="d"></span><span class="p">₱240</span></div>
+        </div>
+        <div class="mlist">
+          <h3>To finish <small>Each</small></h3>
+          <div class="mi"><span class="n">Negitoro hand roll<small>Fatty tuna &amp; scallion</small></span><span class="d"></span><span class="p">₱420</span></div>
+          <div class="mi"><span class="n">Anago<small>Simmered sea eel, sweet tare</small></span><span class="d"></span><span class="p">₱360</span></div>
+          <div class="mi"><span class="n">Tamago<small>Castella-style egg</small></span><span class="d"></span><span class="p">₱160</span></div>
+        </div>
+      </div>
+      <div class="rv">
+        <div class="mlist">
+          <h3>From the shell <small>Per piece</small></h3>
+          <div class="mi"><span class="n">Hotate<small>Scallop, sea salt &amp; lime</small></span><span class="d"></span><span class="p">₱320</span></div>
+          <div class="mi"><span class="n">Ebi<small>Poached tiger prawn</small></span><span class="d"></span><span class="p">₱280</span></div>
+          <div class="mi"><span class="n">Ikura gunkan<small>Soy-cured salmon roe</small></span><span class="d"></span><span class="p">₱380</span></div>
+          <div class="mi"><span class="n">Uni gunkan<small>Sea urchin, when available</small></span><span class="d"></span><span class="p">₱620</span></div>
+        </div>
+        <div class="mlist">
+          <h3>Rolls &amp; sides <small>Each</small></h3>
+          <div class="mi"><span class="n">Kanpyo maki<small>Simmered gourd, six pieces</small></span><span class="d"></span><span class="p">₱220</span></div>
+          <div class="mi"><span class="n">Kappa maki<small>Cucumber &amp; sesame</small></span><span class="d"></span><span class="p">₱180</span></div>
+          <div class="mi"><span class="n">Chawanmushi<small>Silky steamed egg, dashi</small></span><span class="d"></span><span class="p">₱320</span></div>
+          <div class="mi"><span class="n">Red miso soup<small>With fish-bone dashi</small></span><span class="d"></span><span class="p">₱180</span></div>
+        </div>
+      </div>
+      <aside class="sake rv">
+        <svg viewBox="0 0 360 240" role="img" aria-label="Illustration of a ceramic sake bottle, two small cups and a wooden masu">
+          <defs>
+            <linearGradient id="tok" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#d8d1c3"/><stop offset=".4" stop-color="#f6f1e6"/><stop offset="1" stop-color="#b9b1a2"/></linearGradient>
+            <linearGradient id="drip" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#3e5f73"/><stop offset="1" stop-color="#6d8ea0" stop-opacity=".6"/></linearGradient>
+            <linearGradient id="masu" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f1dfbb"/><stop offset="1" stop-color="#c9a66d"/></linearGradient>
+            <linearGradient id="masuS" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#c9a66d"/><stop offset="1" stop-color="#a8844f"/></linearGradient>
+            <linearGradient id="och" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#2a3530"/><stop offset=".5" stop-color="#4b5a52"/><stop offset="1" stop-color="#1c2420"/></linearGradient>
+            <filter id="b6"><feGaussianBlur stdDeviation="5"/></filter>
+          </defs>
+          <ellipse cx="180" cy="214" rx="160" ry="12" fill="#000" opacity=".35" filter="url(#b6)"/>
+          <!-- mat -->
+          <g stroke="#e9d7b4" stroke-opacity=".18"><path d="M20 206 h320 M24 214 h312 M30 222 h300"/></g>
+          <!-- tokkuri -->
+          <g transform="translate(110 0)">
+            <path d="M-12 30 h24 v8 c0 10 -4 14 -4 24 c0 18 44 40 44 92 c0 36 -24 54 -52 54 s-52 -18 -52 -54 c0 -52 44 -74 44 -92 c0 -10 -4 -14 -4 -24z" fill="url(#tok)"/>
+            <path d="M-46 138 c10 -10 30 -6 46 4 s34 10 46 -2 c2 6 4 12 4 18 c0 36 -24 54 -52 54 s-52 -18 -52 -54 c0 -8 2 -14 8 -20z" fill="url(#drip)"/>
+            <path d="M-46 138 c4 8 2 18 6 22 M-20 146 c2 10 0 18 4 24 M14 148 c2 8 2 16 6 20 M38 138 c0 10 -2 16 2 22" stroke="#3e5f73" stroke-width="5" stroke-linecap="round" fill="none" opacity=".7"/>
+            <ellipse cx="0" cy="30" rx="13" ry="4" fill="#cfc7b8"/>
+            <path d="M-24 92 c-6 20 -8 40 -4 60" stroke="#fff" stroke-opacity=".7" stroke-width="5" fill="none" stroke-linecap="round"/>
+            <circle cx="0" cy="118" r="11" fill="#cf3f26"/>
+          </g>
+          <!-- ochoko cups -->
+          <g transform="translate(212 178)">
+            <path d="M-22 0 h44 l-6 26 h-32z" fill="url(#och)"/>
+            <ellipse cx="0" cy="0" rx="22" ry="6" fill="#16201b"/>
+            <ellipse cx="0" cy="1" rx="17" ry="4" fill="#e9e1c9" opacity=".85"/>
+            <path d="M-18 6 c6 3 30 3 36 0" stroke="#7b8c82" stroke-width="1.5" fill="none"/>
+          </g>
+          <g transform="translate(262 186)">
+            <path d="M-20 0 h40 l-6 22 h-28z" fill="#e9e3d6"/>
+            <ellipse cx="0" cy="0" rx="20" ry="5.4" fill="#d6cfc0"/>
+            <circle cx="0" cy="1" r="0" fill="none"/>
+            <ellipse cx="0" cy="1" rx="12" ry="3" fill="none" stroke="#3e5f73" stroke-width="2"/>
+          </g>
+          <!-- masu -->
+          <g transform="translate(298 120)">
+            <path d="M-34 0 L18 -12 L46 6 L-6 18Z" fill="url(#masu)"/>
+            <path d="M-34 0 L-6 18 L-6 82 L-34 64Z" fill="url(#masuS)"/>
+            <path d="M-6 18 L46 6 L46 70 L-6 82Z" fill="#d7b884"/>
+            <path d="M-28 2 L18 -8 L40 6 L-6 14Z" fill="#7a5d36" opacity=".55"/>
+            <path d="M-20 4 L14 -4 L30 6 L-4 12Z" fill="#f4efe0" opacity=".7"/>
+            <text x="20" y="54" text-anchor="middle" font-family="Noto Serif JP, serif" font-size="18" fill="#7a5d36" transform="rotate(-13 20 50)">栞</text>
+          </g>
+        </svg>
+        <div>
+          <h3>Sake, chosen for the fish</h3>
+          <p>Small-batch junmai and ginjo from independent breweries, poured chilled or warm. Pairings follow the course, not a fixed list.</p>
+          <div class="pair">
+            <div><span>Pairing · 4 pours</span><b>₱1,900</b></div>
+            <div><span>Pairing · 6 pours</span><b>₱2,700</b></div>
+            <div><span>Junmai, dry · glass / tokkuri</span><b>₱420 / ₱1,100</b></div>
+            <div><span>Junmai ginjo · glass / tokkuri</span><b>₱520 / ₱1,400</b></div>
+            <div><span>Nigori, cloudy · glass</span><b>₱380</b></div>
+            <div><span>Umeshu · glass</span><b>₱320</b></div>
+          </div>
+        </div>
+      </aside>
+    </div>
+    <p class="carte-note">À la carte is served after a course only. Prices in Philippine pesos, inclusive of VAT; a 10% service charge applies.</p>
+  </div>
+</section>
+
+<!-- VISIT / SEATS -->
+<section class="sec visit" id="visit">
+  <div class="wrap">
+    <div class="shead rv">
+      <div>
+        <div class="kicker"><span class="no">05</span>Your visit</div>
+        <h2 class="h">Ten seats, one line<br>of hinoki. <em>Pick your view.</em></h2>
+      </div>
+      <p class="lead">Tap a seat to see what that spot is like. You can note your preferred seat when we confirm, and we will try to keep it for you.</p>
+    </div>
+    <div class="seatwrap">
+      <div class="seatmap rv">
+        <svg class="sm-h" viewBox="0 0 760 330" role="group" aria-label="Seat map of the ten-seat counter">
+          <defs>
+            <linearGradient id="slab" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#efdcb6"/><stop offset="1" stop-color="#d6b47e"/></linearGradient>
+            <pattern id="hatch" width="8" height="8" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><path d="M0 0v8" stroke="#1d3a2f" stroke-opacity=".12" stroke-width="3"/></pattern>
+            <filter id="b7"><feGaussianBlur stdDeviation="6"/></filter>
+          </defs>
+          <!-- kitchen -->
+          <rect x="40" y="20" width="680" height="84" fill="url(#hatch)" stroke="#1d3a2f" stroke-opacity=".3"/>
+          <text x="60" y="48" font-family="Montserrat, sans-serif" font-size="12" letter-spacing="3" fill="#46514b">CHEF'S STATION</text>
+          <rect x="300" y="44" width="160" height="40" rx="3" fill="#fbf8f2" stroke="#b8935b"/>
+          <text x="380" y="69" text-anchor="middle" font-family="Montserrat, sans-serif" font-size="12" fill="#46514b">Neta case</text>
+          <rect x="520" y="44" width="80" height="40" rx="3" fill="#fbf8f2" stroke="#b8935b"/>
+          <text x="560" y="69" text-anchor="middle" font-family="Montserrat, sans-serif" font-size="12" fill="#46514b">Rice</text>
+          <circle cx="236" cy="72" r="20" fill="#fbf8f2" stroke="#b8935b"/>
+          <text x="236" y="76" text-anchor="middle" font-family="Montserrat, sans-serif" font-size="12" fill="#46514b">Grill</text>
+          <!-- counter slab -->
+          <rect x="40" y="150" width="680" height="18" rx="9" fill="#6b5333" opacity=".25" filter="url(#b7)"/>
+          <rect x="40" y="116" width="680" height="46" rx="4" fill="url(#slab)"/>
+          <path d="M44 122 h672" stroke="#fff" stroke-opacity=".6"/>
+          <path d="M60 140 C200 132 360 146 520 136 S700 140 712 138" stroke="#b8935b" stroke-opacity=".35" fill="none"/>
+          <!-- seats -->
+          <g class="seats" font-family="Cormorant Garamond, serif" font-size="20" font-weight="600" text-anchor="middle" data-dir="h"></g>
+          <!-- entrance -->
+          <path d="M720 290 v-60" stroke="#1b2420" stroke-width="1"/>
+          <path d="M700 300 h40" stroke="#1b2420" stroke-width="2"/>
+          <text x="720" y="318" text-anchor="middle" font-family="Montserrat, sans-serif" font-size="12" letter-spacing="2" fill="#46514b">ENTRY</text>
+          <circle cx="720" cy="222" r="5" fill="#cf3f26"/>
+          <text x="40" y="318" font-family="Montserrat, sans-serif" font-size="12" letter-spacing="2" fill="#46514b">HINOKI COUNTER · 7.2 M</text>
+        </svg>
+        <svg class="sm-v" viewBox="0 0 340 660" role="group" aria-label="Seat map of the ten-seat counter">
+          <defs>
+            <linearGradient id="slabV" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#efdcb6"/><stop offset="1" stop-color="#d6b47e"/></linearGradient>
+            <pattern id="hatchV" width="8" height="8" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><path d="M0 0v8" stroke="#1d3a2f" stroke-opacity=".12" stroke-width="3"/></pattern>
+          </defs>
+          <rect x="10" y="10" width="96" height="600" fill="url(#hatchV)" stroke="#1d3a2f" stroke-opacity=".3"/>
+          <text x="30" y="590" transform="rotate(-90 30 590)" font-family="Montserrat, sans-serif" font-size="13" letter-spacing="3" fill="#46514b">CHEF'S STATION</text>
+          <circle cx="66" cy="96" r="24" fill="#fbf8f2" stroke="#b8935b"/>
+          <text x="66" y="101" text-anchor="middle" font-family="Montserrat, sans-serif" font-size="13" fill="#46514b">Grill</text>
+          <rect x="42" y="200" width="52" height="170" rx="3" fill="#fbf8f2" stroke="#b8935b"/>
+          <text x="72" y="285" transform="rotate(-90 72 285)" text-anchor="middle" font-family="Montserrat, sans-serif" font-size="13" fill="#46514b">Neta case</text>
+          <rect x="42" y="420" width="52" height="80" rx="3" fill="#fbf8f2" stroke="#b8935b"/>
+          <text x="72" y="460" transform="rotate(-90 72 460)" text-anchor="middle" font-family="Montserrat, sans-serif" font-size="13" fill="#46514b">Rice</text>
+          <rect x="118" y="10" width="40" height="600" rx="4" fill="url(#slabV)"/>
+          <path d="M124 14 v592" stroke="#fff" stroke-opacity=".6"/>
+          <g class="seats" font-family="Cormorant Garamond, serif" font-size="20" font-weight="600" text-anchor="middle" data-dir="v"></g>
+          <circle cx="300" cy="630" r="5" fill="#cf3f26"/>
+          <text x="286" y="635" text-anchor="end" font-family="Montserrat, sans-serif" font-size="13" letter-spacing="2" fill="#46514b">ENTRY</text>
+        </svg>
+      </div>
+      <div class="seatinfo rv" aria-live="polite">
+        <span class="lbl" id="seatLbl">Seat 5 – 6</span>
+        <h4 id="seatH">Centre of the counter</h4>
+        <p id="seatP">Straight across from the neta case. You see every fish come out and every cut made. Our suggestion for a first visit.</p>
+        <div class="legend"><span><i></i>Seat</span><span><i class="f"></i>Selected</span></div>
+      </div>
+    </div>
+    <div class="steps rv">
+      <div><b>Step one</b><h4>Reserve a seating</h4><p>Choose a date and time above. We hold it and message you within the day.</p></div>
+      <div><b>Step two</b><h4>Tell us what you avoid</h4><p>Allergies, no raw shellfish, no wasabi. We plan the course before you arrive.</p></div>
+      <div><b>Step three</b><h4>Arrive ten minutes early</h4><p>All guests at a seating begin together, so everyone is served while the rice is warm.</p></div>
+      <div><b>Step four</b><h4>Eat each piece right away</h4><p>Fingers or chopsticks, both are right. No extra soy needed; it is already brushed on.</p></div>
+      <div><b>Step five</b><h4>Linger over tea</h4><p>Finish with tamago and hojicha. Ask for extra pieces before the sweet.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- PRIVATE -->
+<section class="sec private" id="private">
+  <div class="wrap">
+    <div class="rv">
+      <div class="kicker"><span class="no">06</span>Private counter</div>
+      <h2 class="h">Close the noren.<br><em>The counter is yours.</em></h2>
+      <p class="lead">Book all ten seats for a birthday, a family dinner or a client evening. The chef builds a menu around your date, and the room stays quiet for your group.</p>
+      <div class="inc">
+        <div><svg viewBox="0 0 24 24"><path d="M4 20h16M6 20V9l6-5 6 5v11"/></svg>Exclusive use of the dining room</div>
+        <div><svg viewBox="0 0 24 24"><path d="M5 4h14v6a7 7 0 0 1-14 0zM12 17v3M8 20h8"/></svg>Sake pairing planned in advance</div>
+        <div><svg viewBox="0 0 24 24"><path d="M4 6h16v12H4zM4 9h16"/></svg>Printed menu with your guests' names</div>
+        <div><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/><path d="M12 8v4l3 2"/></svg>Lunch or dinner, up to three hours</div>
+      </div>
+      <div class="art">
+        <svg viewBox="0 0 520 300" role="img" aria-label="Illustration of a washi noren curtain with the Shiori mark">
+          <defs>
+            <linearGradient id="nw" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#e9e1d1"/><stop offset=".5" stop-color="#f7f2e8"/><stop offset="1" stop-color="#ddd3c0"/></linearGradient>
+            <linearGradient id="rod" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#d9bf90"/><stop offset="1" stop-color="#8a6a3d"/></linearGradient>
+            <linearGradient id="fold" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#000" stop-opacity=".12"/><stop offset=".25" stop-color="#000" stop-opacity="0"/><stop offset=".75" stop-color="#000" stop-opacity="0"/><stop offset="1" stop-color="#000" stop-opacity=".14"/></linearGradient>
+            <filter id="b8"><feGaussianBlur stdDeviation="8"/></filter>
+            <filter id="tex" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency=".9 .05" numOctaves="2" seed="2"/><feColorMatrix values="0 0 0 0 .4 0 0 0 0 .35 0 0 0 0 .25 0 0 0 .35 -.05"/><feComposite in2="SourceGraphic" operator="in"/></filter>
+            <clipPath id="nclip"><rect x="40" y="30" width="440" height="250"/></clipPath>
+          </defs>
+          <ellipse cx="260" cy="290" rx="220" ry="10" fill="#000" opacity=".35" filter="url(#b8)"/>
+          <g>
+            <g class="nr"><path d="M44 34 h142 v236 l-10 6 l-10 -6 l-10 6 l-10 -6 l-10 6 l-10 -6 l-10 6 l-10 -6 l-10 6 l-10 -6 l-10 6 l-10 -6 l-10 6 l-10 -6 l-10 6z" fill="url(#nw)"/><rect x="44" y="34" width="142" height="240" fill="#c8b48a" filter="url(#tex)" opacity=".7"/><rect x="44" y="34" width="142" height="240" fill="url(#fold)"/></g>
+            <g class="nr b"><path d="M190 34 h140 v236 l-10 6 l-10 -6 l-10 6 l-10 -6 l-10 6 l-10 -6 l-10 6 l-10 -6 l-10 6 l-10 -6 l-10 6 l-10 -6 l-10 6 l-10 -6 l-10 6z" fill="url(#nw)"/><rect x="190" y="34" width="140" height="240" fill="#c8b48a" filter="url(#tex)" opacity=".7"/><rect x="190" y="34" width="140" height="240" fill="url(#fold)"/></g>
+            <g class="nr c"><path d="M334 34 h142 v236 l-10 6 l-10 -6 l-10 6 l-10 -6 l-10 6 l-10 -6 l-10 6 l-10 -6 l-10 6 l-10 -6 l-10 6 l-10 -6 l-10 6 l-10 -6 l-10 6z" fill="url(#nw)"/><rect x="334" y="34" width="142" height="240" fill="#c8b48a" filter="url(#tex)" opacity=".7"/><rect x="334" y="34" width="142" height="240" fill="url(#fold)"/></g>
+          </g>
+          <!-- printed mark -->
+          <circle cx="260" cy="140" r="64" fill="none" stroke="#1d3a2f" stroke-width="3"/>
+          <circle cx="260" cy="140" r="56" fill="none" stroke="#1d3a2f" stroke-width="1"/>
+          <text x="260" y="162" text-anchor="middle" font-family="Noto Serif JP, serif" font-size="62" font-weight="600" fill="#1d3a2f">栞</text>
+          <circle cx="306" cy="96" r="8" fill="#cf3f26"/>
+          <text x="96" y="200" text-anchor="middle" font-family="Cormorant Garamond, serif" font-size="22" font-weight="600" letter-spacing="6" fill="#1d3a2f" opacity=".85">SHI</text>
+          <text x="424" y="200" text-anchor="middle" font-family="Cormorant Garamond, serif" font-size="22" font-weight="600" letter-spacing="6" fill="#1d3a2f" opacity=".85">ORI</text>
+          <path d="M60 236 h110 M350 236 h110" stroke="#1d3a2f" stroke-opacity=".5"/>
+          <!-- rod -->
+          <rect x="20" y="22" width="480" height="14" rx="7" fill="url(#rod)"/>
+          <circle cx="20" cy="29" r="9" fill="#6b5333"/><circle cx="500" cy="29" r="9" fill="#6b5333"/>
+        </svg>
+      </div>
+    </div>
+    <div class="pform rv" id="pform">
+      <form id="pf" novalidate>
+        <h3>Private booking request</h3>
+        <p class="from"><span>Dinner for ten from <b>₱48,000</b></span> <span>Lunch for ten from <b>₱28,000</b></span></p>
+        <div class="fg">
+          <div class="fld" id="pName"><label for="pn">Your name</label><input id="pn" autocomplete="name"><span class="em">Please add a name</span></div>
+          <div class="fld" id="pMob"><label for="pm">Mobile</label><input id="pm" inputmode="tel" placeholder="0900-000-0000" autocomplete="tel"><span class="em">Please add a mobile number</span></div>
+          <div class="fld" id="pDate"><label for="pd">Preferred date</label><input type="date" id="pd"><span class="em">Please choose a date</span></div>
+          <div class="fld"><label for="pg">Guests</label>
+            <select id="pg"><option>6 guests</option><option>7 guests</option><option>8 guests</option><option>9 guests</option><option selected>10 guests</option></select></div>
+          <div class="fld full"><label>Service</label>
+            <div class="chips">
+              <label><input type="radio" name="svc" value="Dinner" checked><span>Dinner</span></label>
+              <label><input type="radio" name="svc" value="Lunch"><span>Lunch</span></label>
+            </div></div>
+          <div class="fld full"><label>Occasion</label>
+            <div class="chips" id="occ">
+              <label><input type="radio" name="occ" value="Birthday" checked><span>Birthday</span></label>
+              <label><input type="radio" name="occ" value="Anniversary"><span>Anniversary</span></label>
+              <label><input type="radio" name="occ" value="Business dinner"><span>Business</span></label>
+              <label><input type="radio" name="occ" value="Family gathering"><span>Family</span></label>
+              <label><input type="radio" name="occ" value="Other"><span>Other</span></label>
+            </div></div>
+          <div class="fld full"><label for="pnote">Notes &amp; dietary needs</label><textarea id="pnote" rows="2" placeholder="Allergies, a cake, a speech, anything we should know"></textarea></div>
+        </div>
+        <button class="btn" type="submit">Send request <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+        <p class="fine">A 30% deposit holds the date once we confirm by phone.</p>
+      </form>
+      <div class="pdone" id="pdone" role="status">
+        <div class="mk"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></div>
+        <h3>Request received</h3>
+        <p id="pdP">Thank you. Our host will call you within one working day to plan the menu.</p>
+        <div class="recap" id="recap"></div>
+        <button type="button" id="pReset">Send another request</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LOCATION -->
+<section class="sec" id="find">
+  <div class="wrap">
+    <div class="loc">
+      <div class="map rv">
+        <svg viewBox="0 0 600 460" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Simplified map showing the counter's location">
+          <defs><pattern id="blk" width="6" height="6" patternUnits="userSpaceOnUse"><circle cx="1" cy="1" r=".8" fill="#b8935b" opacity=".35"/></pattern></defs>
+          <rect width="600" height="460" fill="#fbf8f2"/>
+          <g fill="url(#blk)" stroke="#d9cfbd">
+            <rect x="30" y="30" width="150" height="110"/><rect x="220" y="30" width="170" height="110"/><rect x="430" y="30" width="150" height="110"/>
+            <rect x="30" y="190" width="150" height="100"/><rect x="430" y="190" width="150" height="100"/>
+            <rect x="30" y="340" width="150" height="100"/><rect x="220" y="340" width="170" height="100"/><rect x="430" y="340" width="150" height="100"/>
+          </g>
+          <rect x="220" y="190" width="170" height="100" fill="#e9d7b4" stroke="#b8935b"/>
+          <path d="M0 165 H600" stroke="#1d3a2f" stroke-width="24" stroke-opacity=".92"/>
+          <path d="M0 165 H190 M420 165 H600" stroke="#f5f0e6" stroke-width="1.5" stroke-dasharray="10 10"/>
+          <path d="M200 0 V460 M410 0 V460" stroke="#cfc4ae" stroke-width="10"/>
+          <path d="M0 315 H600" stroke="#cfc4ae" stroke-width="10"/>
+          <path d="M520 0 C500 120 560 200 540 300 S520 420 560 460" stroke="#9fb8b0" stroke-width="18" fill="none" opacity=".55"/>
+          <text x="305" y="170" text-anchor="middle" font-family="Montserrat, sans-serif" font-size="14" font-weight="600" letter-spacing="3" fill="#f5f0e6">MAIN AVENUE</text>
+          <text x="214" y="456" font-family="Montserrat, sans-serif" font-size="15" letter-spacing="2" fill="#76807a" transform="rotate(-90 214 456)" dx="40">SIDE STREET</text>
+          <g transform="translate(305 228)">
+            <circle r="28" fill="#cf3f26" opacity=".14"/>
+            <circle r="20" fill="#cf3f26"/>
+            <text y="7" text-anchor="middle" font-family="Noto Serif JP, serif" font-size="20" fill="#fbf1e6">栞</text>
+          </g>
+          <text x="305" y="280" text-anchor="middle" font-family="Cormorant Garamond, serif" font-size="22" font-weight="600" fill="#1b2420">Shiori</text>
+          <g transform="translate(470 230)"><rect x="-16" y="-16" width="32" height="32" rx="4" fill="#1d3a2f"/><text y="6" text-anchor="middle" font-family="Montserrat, sans-serif" font-size="16" font-weight="600" fill="#f5f0e6">P</text></g>
+          <text x="470" y="274" text-anchor="middle" font-family="Montserrat, sans-serif" font-size="15" fill="#46514b">Parking</text>
+          <g transform="translate(496 408)"><circle r="22" fill="#fff" stroke="#d9cfbd"/><path d="M0 -16 L5 -4 L0 -6.5 L-5 -4Z" fill="#1d3a2f"/><text y="13" text-anchor="middle" font-family="Montserrat, sans-serif" font-size="12" font-weight="600" fill="#46514b">N</text></g>
+        </svg>
+      </div>
+      <div class="rv">
+        <div class="kicker"><span class="no">07</span>Find us</div>
+        <h2 class="h">Behind a pale<br>wood door, <em>off the<br>main avenue.</em></h2>
+        <div class="hours">
+          <div><span>Lunch</span><span>Tue – Sun · 12:00 and 13:30 seatings</span></div>
+          <div><span>Dinner</span><span>Tue – Sun · 18:00 and 20:30 seatings</span></div>
+          <div><span>Chirashi</span><span>Tue – Sat · 11:30 – 14:00, pick-up or counter</span></div>
+          <div><span>Monday</span><span class="off">Closed · market day for the kitchen</span></div>
+        </div>
+        <div class="contact">
+          <div><svg viewBox="0 0 24 24"><path d="M12 21s-7-6.3-7-12a7 7 0 0 1 14 0c0 5.7-7 12-7 12z"/><circle cx="12" cy="9" r="2.5"/></svg>Address placeholder, Angeles City, Pampanga</div>
+          <a href="tel:09000000000"><svg viewBox="0 0 24 24"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a1 1 0 0 1-1 1A16 16 0 0 1 4 5a1 1 0 0 1 1-1z"/></svg>0900-000-0000</a>
+          <a href="mailto:hello@example.com"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="1"/><path d="M3 7l9 6 9-6"/></svg>hello@example.com</a>
+          <div><svg viewBox="0 0 24 24"><path d="M4 5h16v11H8l-4 4z"/></svg>Message us: @shiori.example</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="sec faq" id="faq" style="padding-top:40px">
+  <div class="wrap">
+    <div class="faqgrid">
+      <div class="rv">
+        <div class="kicker"><span class="no">08</span>Questions</div>
+        <h2 class="h">Before you<br><em>sit down.</em></h2>
+        <p class="lead">Anything else, send us a message. A person, not a bot, will reply.</p>
+      </div>
+      <div class="rv">
+        <details open><summary>Is there a dress code?</summary><p>Smart casual. We ask guests to skip strong perfume or cologne, since the counter is small and aroma is part of every piece.</p></details>
+        <details><summary>Can you work around allergies or pregnancy?</summary><p>Yes. Tell us when we confirm your booking. We can prepare a fully cooked or no-shellfish course with a day's notice.</p></details>
+        <details><summary>Are children welcome?</summary><p>Guests aged 10 and up are welcome at lunch and the 18:00 dinner seating. Each guest takes a full course.</p></details>
+        <details><summary>What is your cancellation policy?</summary><p>Free changes up to 24 hours before your seating. Later cancellations or no-shows are charged 50% of the course, as fish is bought for each guest.</p></details>
+        <details><summary>How can I pay?</summary><p>Cash, debit and credit cards, bank transfer and major e-wallets. Private bookings settle the deposit by bank transfer.</p></details>
+        <details><summary>May I bring my own wine or sake?</summary><p>One bottle per two guests, with a corkage fee of ₱800 per bottle. We are happy to chill or warm it for you.</p></details>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="fbig"><span>See you at <em>the counter.</em></span><a href="#reserve" class="btn light">Reserve a seat</a></div>
+    <div class="fcols">
+      <div>
+        <a href="#top" class="logo" style="padding:0"><span class="seal jp">栞</span><span><b>SHIORI</b><small>Omakase · Angeles City</small></span></a>
+        <p style="margin-top:18px;max-width:300px">A ten-seat sushi counter serving lunch and dinner omakase, Tuesday to Sunday.</p>
+      </div>
+      <div><h5>Eat</h5><a href="#courses">Omakase courses</a><a href="#fish">Fish of the month</a><a href="#carte">À la carte &amp; sake</a></div>
+      <div><h5>Visit</h5><a href="#visit">Seats &amp; etiquette</a><a href="#private">Private counter</a><a href="#faq">FAQ</a></div>
+      <div><h5>Contact</h5><a href="tel:09000000000">0900-000-0000</a><a href="mailto:hello@example.com">hello@example.com</a><span style="display:block;padding:3px 0">Address placeholder, Angeles City</span></div>
+    </div>
+    <div class="fbot"><span>© Shiori Omakase</span><span>Prices in ₱ · menu changes with the season</span></div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  // mobile nav
+  var bg=document.getElementById('burger'),mn=document.getElementById('mnav');
+  bg.addEventListener('click',function(){mn.classList.toggle('open')});
+  mn.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){mn.classList.remove('open')})});
+
+  // dates
+  function iso(d){return d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0')}
+  var t=new Date(),tm=new Date(t);tm.setDate(t.getDate()+1);
+  var bDate=document.getElementById('bDate'),pd=document.getElementById('pd');
+  bDate.min=iso(t);bDate.value=iso(tm);pd.min=iso(t);
+  function nice(v){if(!v)return'';var p=v.split('-');var d=new Date(+p[0],+p[1]-1,+p[2]);return d.toLocaleDateString('en-PH',{weekday:'short',day:'numeric',month:'short'})}
+
+  // guests stepper
+  var g=2,out=document.getElementById('bGuests');
+  document.querySelectorAll('.step button').forEach(function(b){b.addEventListener('click',function(){g=Math.min(10,Math.max(1,g+ +b.dataset.d));out.textContent=g})});
+
+  // course follows seating
+  var bTime=document.getElementById('bTime'),bCourse=document.getElementById('bCourse');
+  bTime.addEventListener('change',function(){
+    var lunch=bTime.value.indexOf('Lunch')===0;
+    bCourse.selectedIndex=lunch?1:0;
+  });
+  bCourse.addEventListener('change',function(){
+    var v=bCourse.value;
+    if(v.indexOf('Dinner')===0&&bTime.value.indexOf('Lunch')===0)bTime.selectedIndex=2;
+    if(v.indexOf('Dinner')!==0&&bTime.value.indexOf('Dinner')===0)bTime.selectedIndex=0;
+  });
+
+  var bk1=document.getElementById('bk1'),bk2=document.getElementById('bk2'),done=document.getElementById('bkDone');
+  bk1.addEventListener('submit',function(e){
+    e.preventDefault();
+    var f=document.getElementById('fDate');
+    if(!bDate.value){f.classList.add('err');bDate.focus();return}
+    f.classList.remove('err');
+    document.getElementById('sumTxt').textContent=nice(bDate.value)+' · '+bTime.value.split('· ')[1]+' · '+g+(g>1?' guests':' guest');
+    bk1.style.display='none';bk2.style.display='grid';document.getElementById('bName').focus();
+  });
+  bk2.addEventListener('submit',function(e){
+    e.preventDefault();
+    var n=document.getElementById('bName'),m=document.getElementById('bMob'),ok=true;
+    [[n,'fName'],[m,'fMob']].forEach(function(x){var el=document.getElementById(x[1]);if(!x[0].value.trim()){el.classList.add('err');ok=false}else el.classList.remove('err')});
+    if(!ok)return;
+    document.getElementById('doneH').textContent='Thank you, '+n.value.trim().split(' ')[0]+'. Your seats are on hold.';
+    document.getElementById('doneP').textContent=bCourse.value.split(' · ')[0]+', '+document.getElementById('sumTxt').textContent+'. We will message '+m.value.trim()+' to confirm within the day.';
+    bk2.style.display='none';done.style.display='flex';
+  });
+  document.getElementById('bkReset').addEventListener('click',function(){done.style.display='none';bk1.style.display='';});
+
+  // seat map
+  var info={
+    1:['Seat 1','Beside the grill','Warm side of the counter. Watch skins being seared and smell the binchotan. Good for a guest who likes a show.'],
+    2:['Seat 2','Near the grill','Close to the aburi station, still a clear view of the rice tub.'],
+    3:['Seat 3','Left of centre','A calm spot with a good angle on the knife work.'],
+    4:['Seat 4','Facing the neta case','You see each block of fish brought out and sliced for your piece.'],
+    5:['Seat 5','Centre of the counter','Straight across from the chef. You see every fish come out and every cut made. Our suggestion for a first visit.'],
+    6:['Seat 6','Centre of the counter','Straight across from the chef, paired with seat 5 for couples.'],
+    7:['Seat 7','Right of centre','Easy conversation with the chef while he shapes the rice.'],
+    8:['Seat 8','By the rice','Closest to the ohitsu. Ask about the rice; the chef will happily talk.'],
+    9:['Seat 9','Quiet end','Softer light and a little more privacy for two.'],
+    10:['Seat 10','Nearest the door','Easy in and out, suited to guests who prefer an aisle.']
+  };
+  var short=['','Grill side','Near the grill','Left of centre','Facing the case','Centre','Centre','Right of centre','By the rice','Quiet end','By the door'];
+  var gs=document.querySelector('.seatmap');
+  document.querySelectorAll('.seatmap .seats').forEach(function(g){
+    var v=g.dataset.dir==='v',html='';
+    for(var i=1;i<=10;i++){
+      var x=v?186:40+34+(i-1)*68,y=v?40+(i-1)*58:214;
+      html+='<g class="seat'+(i===5||i===6?' on':'')+'" data-n="'+i+'" tabindex="0" role="button" aria-label="Seat '+i+'">'+
+        (v?'<ellipse cx="'+(x+6)+'" cy="'+(y+22)+'" rx="20" ry="5" fill="#6b5333" opacity=".15"/>':'<ellipse cx="'+x+'" cy="252" rx="22" ry="6" fill="#6b5333" opacity=".18"/>')+
+        '<circle class="s" cx="'+x+'" cy="'+y+'" r="'+(v?22:24)+'" fill="#fbf8f2" stroke="#46514b" stroke-width="1.4"/>'+
+        '<text x="'+x+'" y="'+(y+7)+'" fill="#1b2420">'+i+'</text>'+
+        (v?'<text class="l" x="220" y="'+(y+5)+'" text-anchor="start" font-family="Montserrat, sans-serif" font-size="13" font-weight="400" fill="#76807a">'+short[i]+'</text>':'')+'</g>';
+    }
+    g.innerHTML=html;
+  });
+  function pick(n){
+    gs.querySelectorAll('.seat').forEach(function(s){s.classList.toggle('on',+s.dataset.n===n)});
+    document.getElementById('seatLbl').textContent=info[n][0];
+    document.getElementById('seatH').textContent=info[n][1];
+    document.getElementById('seatP').textContent=info[n][2];
+  }
+  gs.querySelectorAll('.seat').forEach(function(s){
+    s.addEventListener('click',function(){pick(+s.dataset.n)});
+    s.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();pick(+s.dataset.n)}});
+  });
+
+  // private form
+  var pf=document.getElementById('pf'),pdone=document.getElementById('pdone');
+  pf.addEventListener('submit',function(e){
+    e.preventDefault();var ok=true;
+    [['pn','pName'],['pm','pMob'],['pd','pDate']].forEach(function(x){var v=document.getElementById(x[0]).value.trim(),el=document.getElementById(x[1]);if(!v){el.classList.add('err');ok=false}else el.classList.remove('err')});
+    if(!ok)return;
+    var svc=pf.querySelector('input[name=svc]:checked').value,occ=pf.querySelector('input[name=occ]:checked').value,gg=document.getElementById('pg').value;
+    var n=parseInt(gg,10),per=svc==='Dinner'?4800:2800,min=svc==='Dinner'?48000:28000,est=Math.max(min,n*per);
+    var rows=[['Date',nice(pd.value)],['Service',svc],['Group',gg],['Occasion',occ],['Estimate from','₱'+est.toLocaleString('en-PH')]];
+    document.getElementById('recap').innerHTML=rows.map(function(r){return '<div><span>'+r[0]+'</span><b>'+r[1]+'</b></div>'}).join('');
+    var esc=function(t){return t.replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})};
+    document.getElementById('pdP').innerHTML='Thank you, '+esc(document.getElementById('pn').value.trim().split(' ')[0])+'. Our host will call <span style="white-space:nowrap">'+esc(document.getElementById('pm').value.trim())+'</span> within one working day to plan the menu.';
+    pf.style.display='none';pdone.style.display='block';
+  });
+  document.getElementById('pReset').addEventListener('click',function(){pf.reset();pdone.style.display='none';pf.style.display='';});
+
+  // counter scroller initial position
+  var bx=document.getElementById('bandx');function bxInit(){if(bx&&bx.scrollWidth>bx.clientWidth+4){bx.scrollLeft=bx.clientWidth>500?(bx.scrollWidth-bx.clientWidth)/2:172}}
+  bxInit();
+
+  // lamp cords
+  function cords(){var b=document.querySelector('.hero .band');if(!b)return;document.querySelectorAll('.hero .cord').forEach(function(c){c.style.height=(b.offsetTop+1)+'px'})}
+  cords();window.addEventListener('resize',cords);document.fonts&&document.fonts.ready.then(cords);
+
+  // reveal
+  var rv=document.querySelectorAll('.rv');
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){es.forEach(function(en){if(en.isIntersecting){en.target.classList.add('in');io.unobserve(en.target)}})},{threshold:.08});
+    rv.forEach(function(el){io.observe(el)});
+  } else rv.forEach(function(el){el.classList.add('in')});
+})();
+</script>
+</body>
+</html>

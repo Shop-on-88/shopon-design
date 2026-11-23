@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>구름찜 딤섬 · 딤섬 & 차 메뉴판 디자인</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@700&family=Gowun+Batang:wght@700&family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Noto Sans KR',sans-serif;background:#e9f3ec;color:#223630;word-break:keep-all;-webkit-font-smoothing:antialiased;
+ background-image:radial-gradient(ellipse 60% 40% at 8% 0%,rgba(255,255,255,.9),transparent 70%),radial-gradient(ellipse 50% 40% at 96% 24%,rgba(143,194,168,.32),transparent 70%)}
+.top{height:12px;background:linear-gradient(90deg,#2f6b57,#5d9f84);position:relative}
+.top:after{content:"";position:absolute;left:0;right:0;top:12px;height:2px;background:#b38b45}
+.wrap{max-width:1180px;margin:0 auto;padding:52px 20px 120px}
+.hd{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:18px;margin-bottom:32px}
+.hd small{font-family:'Cormorant Garamond',serif;font-weight:700;font-size:15px;letter-spacing:.3em;color:#a57c45}
+.hd h1{font-family:'Gowun Batang',serif;font-weight:700;font-size:clamp(30px,4.2vw,44px);margin-top:8px;line-height:1.25;color:#1f4c3e}
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px}
+.chips span{font-size:13px;font-weight:500;border:1px solid rgba(179,139,69,.55);color:#2f6b57;padding:5px 12px;border-radius:20px;background:rgba(251,248,238,.75)}
+.cta{display:inline-flex;align-items:center;gap:8px;height:52px;padding:0 28px;border-radius:26px;background:#2f6b57;color:#fff;font-weight:700;font-size:15px;text-decoration:none;transition:.2s;white-space:nowrap;box-shadow:0 10px 24px -12px rgba(31,76,62,.75);border:1px solid #b38b45}
+.cta:hover{background:#1f4c3e}
+.cta svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.view{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,.75fr);gap:28px;align-items:start}
+figure{background:#fbf8ee;padding:10px;border-radius:6px;box-shadow:0 30px 60px -30px rgba(31,76,62,.5);border:1px solid rgba(179,139,69,.4)}
+figure a{display:block}
+figure img{display:block;width:100%;height:auto}
+figcaption{font-size:13px;color:#5b6f67;padding:10px 4px 2px;display:flex;flex-wrap:wrap;justify-content:space-between;gap:4px 10px}
+.side{display:grid;gap:16px;position:sticky;top:24px}
+.zoom{border-radius:8px;overflow:hidden;background:#fbf8ee;border:1px solid rgba(179,139,69,.45)}
+.zoom img{display:block;width:100%;height:auto}
+.zoom p{font-size:13px;color:#5b6f67;padding:10px 14px}
+.info{background:linear-gradient(160deg,#3f8a71,#285f4e);color:#eef5f0;border-radius:8px;padding:22px;border:1px solid rgba(216,189,128,.6)}
+.info h2{font-family:'Gowun Batang',serif;font-weight:700;font-size:21px;margin-bottom:10px;color:#fff}
+.info li{list-style:none;font-size:14px;line-height:1.9;display:flex;gap:10px}
+.info li:before{content:"";width:8px;height:8px;border:1.5px solid #d8bd80;border-radius:50%;margin-top:9px;flex:none}
+.bar{position:fixed;left:0;right:0;bottom:0;background:rgba(240,247,242,.97);border-top:2px solid #b38b45;padding:12px 20px;display:flex;justify-content:center;align-items:center;gap:18px;flex-wrap:wrap}
+.bar p{font-size:14px;color:#223630}
+.bar .cta{height:46px;box-shadow:none}
+@media(max-width:860px){.view{grid-template-columns:1fr}.side{position:static;grid-template-columns:1fr 1fr}.info{grid-column:span 2}}
+@media(max-width:620px){.hd .cta{display:none}.bar p{display:none}.bar .cta{width:100%;justify-content:center}.side{grid-template-columns:1fr}.info{grid-column:auto}}
+</style>
+</head>
+<body>
+<div class="top"></div>
+<div class="wrap">
+ <div class="hd">
+  <div>
+   <small>MENU DESIGN · SD-MN15</small>
+   <h1>구름찜 딤섬 메뉴판</h1>
+   <div class="chips"><span>A4 세로 · 1페이지</span><span>딤섬 · 면 · 차 · 세트</span><span>비취 민트 &amp; 대나무 골드</span><span>원화 가격</span><span>인쇄 · 웹 겸용</span></div>
+  </div>
+  <a class="cta" href="https://design.shoponph.online/#inquiry">이 디자인으로 상담하기 <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+ </div>
+ <div class="view">
+  <figure><a href="page1.png" target="_blank" rel="noopener"><img src="page1.png" alt="구름찜 딤섬 메뉴판" width="2480" height="3508"></a><figcaption><span>찜 딤섬 · 지짐 · 면 · 디저트 · 차 · 세트 · 안내</span><span style="white-space:nowrap">눌러서 크게 보기</span></figcaption></figure>
+  <div class="side">
+   <div class="zoom"><img src="detail-steamer.jpg" alt="달문 창 안의 대나무 찜기와 하가우 일러스트 부분 확대" width="1080" height="1123"><p>달문 창살 프레임 속 대나무 찜기 일러스트</p></div>
+   <div class="zoom"><img src="detail-xlb.jpg" alt="샤오롱바오와 숟가락 일러스트 부분 확대" width="1080" height="1098"><p>샤오롱바오 한 숟가락과 흑초 접시</p></div>
+   <div class="info"><h2>이 메뉴판의 구성</h2><ul><li>비취 민트 바탕에 둥근 달문 창과 금선 구름무늬</li><li>대표 찜 딤섬을 큰 찜기 그림과 함께 소개</li><li>디저트 · 차는 작은 원창 그림을 넣은 카드로</li><li>세트 띠, 영업시간 · 원산지 · 포장 안내 칸 포함</li></ul></div>
+  </div>
+ </div>
+</div>
+<div class="bar"><p>우리 가게 메뉴판도 이렇게 맑고 단정한 분위기로</p><a class="cta" href="https://design.shoponph.online/#inquiry">이 디자인으로 상담하기</a></div>
+</body>
+</html>
