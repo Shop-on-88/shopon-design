@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>네일 달손 · BGC 네일 스튜디오</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#121726;--ink2:#2b3350;--ice:#e6edf4;--ice2:#d3dfea;--frost:#f5f8fb;--peri:#5d6bf0;--peri2:#8e98ff;--mute:#66708a;--line:#c9d5e2}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Noto Sans KR',sans-serif;color:var(--ink);background:var(--frost);word-break:keep-all;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+.en{font-family:'Outfit',sans-serif}
+.in{max-width:1200px;margin:0 auto;padding:0 28px}
+/* header */
+header{position:sticky;top:0;z-index:20;background:rgba(245,248,251,.82);backdrop-filter:blur(14px);border-bottom:1px solid rgba(201,213,226,.6)}
+header .in{display:flex;align-items:center;justify-content:space-between;height:72px}
+.logo{display:flex;align-items:center;gap:10px}
+.logo svg{width:34px;height:34px}
+.logo b{font-family:'Outfit';font-weight:600;font-size:19px;letter-spacing:.2em}
+.logo span{font-size:13px;color:var(--mute);letter-spacing:.1em}
+nav{display:flex;gap:34px;font-size:15px;font-weight:500}
+nav a{color:var(--ink2)}
+nav a:hover{color:var(--peri)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;height:50px;padding:0 26px;border-radius:40px;font-weight:700;font-size:15px;transition:.2s;border:0;cursor:pointer;font-family:inherit}
+.btn.dark{background:var(--ink);color:#fff}
+.btn.dark:hover{background:var(--peri)}
+.btn.ghost{border:1.5px solid var(--ink);color:var(--ink);background:transparent}
+.btn.ghost:hover{background:var(--ink);color:#fff}
+.btn.sm{height:42px;padding:0 20px;font-size:14px}
+/* hero */
+.hero{position:relative;overflow:hidden;background:radial-gradient(900px 520px at 78% 40%,#dfe6ff 0%,rgba(223,230,255,0) 60%),linear-gradient(180deg,#f5f8fb,#e8eef5)}
+.hero .in{display:grid;grid-template-columns:1.02fr 1fr;align-items:center;gap:40px;min-height:calc(100vh - 72px);max-height:860px;padding-top:40px;padding-bottom:60px}
+.kicker{display:inline-flex;align-items:center;gap:10px;font-family:'Outfit';font-size:13px;font-weight:600;letter-spacing:.28em;color:var(--peri)}
+.kicker:before{content:"";width:28px;height:1.5px;background:var(--peri)}
+.hero h1{font-size:clamp(40px,5.2vw,70px);line-height:1.18;font-weight:700;letter-spacing:-.035em;margin:22px 0 24px}
+.hero h1 em{font-style:normal;background:linear-gradient(100deg,#7d8aa3 0%,#1b2134 30%,#a8b4c8 55%,#30384f 80%);-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero p.lead{font-size:18px;line-height:1.8;color:var(--ink2);max-width:470px;font-weight:400}
+.hero .acts{display:flex;gap:12px;margin-top:36px;flex-wrap:wrap}
+.hero .meta{display:flex;gap:34px;margin-top:48px;padding-top:26px;border-top:1px solid var(--line);max-width:480px}
+.hero .meta div{font-size:13px;color:var(--mute);line-height:1.6}
+.hero .meta b{display:block;font-family:'Outfit';font-size:22px;font-weight:600;color:var(--ink);letter-spacing:.02em}
+.art{position:relative;aspect-ratio:1/1;width:100%;max-width:560px;justify-self:end}
+.art svg{width:100%;height:100%;display:block}
+/* strip */
+.strip{background:var(--ink);color:#cfd7ea;overflow:hidden;white-space:nowrap}
+.strip div{display:inline-flex;gap:46px;padding:18px 0;font-family:'Outfit';font-size:15px;letter-spacing:.24em;animation:mv 40s linear infinite}
+.strip i{font-style:normal;color:var(--peri2)}
+@keyframes mv{to{transform:translateX(-50%)}}
+/* section heads */
+section{padding:110px 0}
+.sh{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;margin-bottom:50px;flex-wrap:wrap}
+.sh h2{font-size:clamp(30px,3.4vw,44px);font-weight:700;letter-spacing:-.03em;line-height:1.3;margin-top:14px}
+.sh p{max-width:380px;color:var(--mute);font-size:15px;line-height:1.8}
+/* designs */
+.designs{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.card{background:#fff;border-radius:22px;overflow:hidden;border:1px solid #e1e8f0;transition:.3s;box-shadow:0 2px 0 rgba(18,23,38,.02)}
+.card:hover{transform:translateY(-6px);box-shadow:0 30px 50px -30px rgba(43,51,80,.45)}
+.card .pic{aspect-ratio:4/3;position:relative}
+.card .pic svg{position:absolute;inset:0;width:100%;height:100%}
+.card .tx{padding:22px 24px 24px;display:flex;justify-content:space-between;align-items:flex-end;gap:12px}
+.card h3{font-size:19px;font-weight:700;letter-spacing:-.02em}
+.card small{display:block;font-size:13px;color:var(--mute);margin-top:6px;line-height:1.5}
+.card .pr{font-family:'Outfit';font-weight:600;font-size:20px;white-space:nowrap}
+.tag{position:absolute;left:16px;top:16px;z-index:2;font-size:12px;font-weight:700;background:rgba(255,255,255,.88);color:var(--ink);padding:6px 11px;border-radius:30px;letter-spacing:.02em}
+/* price */
+.price{background:linear-gradient(180deg,#e8eef5,#f5f8fb)}
+.pgrid{display:grid;grid-template-columns:1fr 1fr;gap:26px}
+.pbox{background:#fff;border-radius:24px;padding:36px 38px;border:1px solid #e1e8f0}
+.pbox h3{display:flex;align-items:baseline;justify-content:space-between;font-size:21px;font-weight:700;padding-bottom:18px;border-bottom:1.5px solid var(--ink);margin-bottom:8px}
+.pbox h3 span{font-family:'Outfit';font-size:13px;font-weight:500;letter-spacing:.24em;color:var(--peri)}
+.row{display:flex;align-items:baseline;gap:12px;padding:16px 0;border-bottom:1px dashed var(--line)}
+.row:last-child{border-bottom:0}
+.row b{font-weight:500;font-size:16px}
+.row small{display:block;font-size:13px;color:var(--mute);margin-top:4px}
+.row .dot{flex:1;border-bottom:1px dotted #b9c6d6;transform:translateY(-4px);min-width:20px}
+.row .v{font-family:'Outfit';font-weight:600;font-size:18px;white-space:nowrap}
+.note{margin-top:22px;font-size:14px;color:var(--mute);line-height:1.8}
+/* steps */
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;counter-reset:s}
+.step{position:relative;padding:30px 26px 32px;border-radius:22px;background:#fff;border:1px solid #e1e8f0}
+.step .n{font-family:'Outfit';font-size:46px;font-weight:300;color:var(--peri);line-height:1}
+.step svg{width:44px;height:44px;position:absolute;right:24px;top:28px;stroke:var(--ink);fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
+.step h3{font-size:18px;font-weight:700;margin:24px 0 10px}
+.step p{font-size:14px;color:var(--mute);line-height:1.75}
+.step .t{display:inline-block;margin-top:16px;font-size:12px;font-weight:700;color:var(--ink2);background:var(--ice);padding:5px 11px;border-radius:20px}
+/* space */
+.space{background:var(--ink);color:#e6ebf5}
+.space .grid{display:grid;grid-template-columns:1.2fr 1fr;gap:60px;align-items:center}
+.space .vis{border-radius:28px;overflow:hidden;aspect-ratio:5/4}
+.space .vis svg{width:100%;height:100%;display:block}
+.space .kicker{color:var(--peri2)}
+.space .kicker:before{background:var(--peri2)}
+.space h2{font-size:clamp(30px,3.4vw,44px);font-weight:700;letter-spacing:-.03em;line-height:1.3;margin:14px 0 22px;color:#fff}
+.space p{color:#aeb8d0;font-size:16px;line-height:1.85}
+.feat{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:34px}
+.feat div{border:1px solid #2f3856;border-radius:16px;padding:18px 18px;font-size:14px;color:#cdd5e8;line-height:1.6}
+.feat b{display:block;color:#fff;font-size:15px;margin-bottom:4px}
+/* info */
+.info{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.ibox{padding:30px 28px;border-radius:22px;border:1px solid #e1e8f0;background:#fff}
+.ibox h3{font-size:18px;font-weight:700;margin-bottom:12px;display:flex;gap:10px;align-items:center}
+.ibox h3 svg{width:22px;height:22px;stroke:var(--peri);fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.ibox p{font-size:14px;line-height:1.85;color:var(--ink2)}
+/* booking */
+.book{background:radial-gradient(700px 420px at 10% 0%,#dfe6ff,transparent 60%),#eef2f8}
+.bk{display:grid;grid-template-columns:.9fr 1.1fr;gap:50px;align-items:start}
+.bk .l p{color:var(--mute);font-size:15px;line-height:1.85;margin-top:16px}
+.bk .l h2{font-size:clamp(30px,3.4vw,44px);font-weight:700;letter-spacing:-.03em;line-height:1.3;margin-top:14px}
+.contact{margin-top:30px;display:grid;gap:12px}
+.contact div{display:flex;gap:12px;align-items:center;font-size:15px;background:#fff;border-radius:14px;padding:14px 18px;border:1px solid #dde5ee}
+.contact svg{width:20px;height:20px;stroke:var(--ink);fill:none;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round;flex:none}
+form{background:#fff;border-radius:26px;padding:36px;box-shadow:0 40px 70px -40px rgba(43,51,80,.45)}
+label{display:block;font-size:14px;font-weight:700;margin:0 0 10px}
+.fl{margin-bottom:22px}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chips button{height:40px;padding:0 16px;border-radius:30px;border:1.5px solid var(--line);background:#fff;font-family:inherit;font-size:14px;color:var(--ink2);cursor:pointer;transition:.15s}
+.chips button.on{background:var(--ink);border-color:var(--ink);color:#fff}
+input,select{width:100%;height:50px;border-radius:14px;border:1.5px solid var(--line);padding:0 16px;font-family:inherit;font-size:15px;color:var(--ink);background:#fbfcfe}
+input:focus,select:focus{outline:none;border-color:var(--peri)}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+form .btn{width:100%;height:56px;margin-top:6px;font-size:16px}
+.done{display:none;text-align:center;padding:30px 10px}
+.done svg{width:64px;height:64px}
+.done h3{font-size:22px;margin:16px 0 8px}
+.done p{color:var(--mute);font-size:15px;line-height:1.7}
+footer{background:var(--ink);color:#9aa5c0;padding:46px 0;font-size:13px}
+footer .in{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;align-items:center}
+footer .logo b{color:#fff}
+/* responsive */
+@media(max-width:1020px){nav{display:none}.hero .in{grid-template-columns:1fr;max-height:none;min-height:0;padding-top:50px}.art{justify-self:center;max-width:480px}.designs{grid-template-columns:1fr 1fr}.steps{grid-template-columns:1fr 1fr}.space .grid,.bk{grid-template-columns:1fr}.info{grid-template-columns:1fr}}
+@media(max-width:640px){.in{padding:0 20px}section{padding:76px 0}.designs,.pgrid,.steps,.feat{grid-template-columns:1fr}.pbox{padding:28px 22px}.hero .meta{gap:20px}.hero .meta b{font-size:19px}header .btn{height:38px;padding:0 16px;font-size:13px}.two{grid-template-columns:1fr}form{padding:26px 20px}.hero p.lead{font-size:16px}}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+ <defs>
+  <linearGradient id="chrome" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f4f7fb"/><stop offset=".28" stop-color="#9aa6bb"/><stop offset=".5" stop-color="#ffffff"/><stop offset=".72" stop-color="#717d95"/><stop offset="1" stop-color="#dfe5ee"/></linearGradient>
+  <linearGradient id="aurora" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#cfd5ff"/><stop offset=".35" stop-color="#8e98ff"/><stop offset=".6" stop-color="#d9f2ff"/><stop offset="1" stop-color="#6c78e8"/></linearGradient>
+  <linearGradient id="ink" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#3a4363"/><stop offset="1" stop-color="#0f1320"/></linearGradient>
+  <linearGradient id="milk" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffffff"/><stop offset="1" stop-color="#e9e4ea"/></linearGradient>
+  <linearGradient id="gloss" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#fff" stop-opacity="0"/><stop offset=".5" stop-color="#fff" stop-opacity=".85"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient>
+  <filter id="sh" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="14" stdDeviation="14" flood-color="#2b3350" flood-opacity=".28"/></filter>
+  <filter id="sh2" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="6" stdDeviation="6" flood-color="#2b3350" flood-opacity=".22"/></filter>
+  <path id="tip" d="M-34 70 L-34 -10 C-34 -52 -20 -74 0 -74 C20 -74 34 -52 34 -10 L34 70 C34 78 28 82 20 82 L-20 82 C-28 82 -34 78 -34 70Z"/>
+ </defs>
+</svg>
+
+<header>
+ <div class="in">
+  <a class="logo" href="#top"><svg viewBox="0 0 40 40"><circle cx="20" cy="20" r="19" fill="url(#ink)"/><path d="M24 9a11 11 0 1 0 7 18A9 9 0 0 1 24 9z" fill="url(#chrome)"/></svg><div><b>DALSON</b> <span>네일 달손</span></div></a>
+  <nav><a href="#designs">디자인</a><a href="#price">가격</a><a href="#process">시술 과정</a><a href="#space">공간</a><a href="#book">예약</a></nav>
+  <a class="btn dark sm" href="#book">예약하기</a>
+ </div>
+</header>
+
+<main id="top">
+<section class="hero" style="padding:0">
+ <div class="in">
+  <div>
+   <span class="kicker">NAIL STUDIO · BGC</span>
+   <h1>손끝에 머무는<br><em>은빛 계절</em>을<br>칠해 드려요</h1>
+   <p class="lead">크롬, 오로라, 밀크 글레이즈까지. 한 사람의 손 모양과 피부 톤에 맞춰 디자인을 고르고, 꼼꼼하게 얇게 올리는 젤 시술을 해 드립니다.</p>
+   <div class="acts"><a class="btn dark" href="#book">시간 골라 예약하기</a><a class="btn ghost" href="#designs">이번 시즌 디자인</a></div>
+   <div class="meta">
+    <div><b>11:00–21:00</b>매일 운영 · 마지막 접수 19:30</div>
+    <div><b>1 : 1</b>디자이너 전담 시술</div>
+   </div>
+  </div>
+  <div class="art" aria-hidden="true">
+   <svg viewBox="0 0 560 560">
+    <defs>
+     <radialGradient id="orb" cx=".4" cy=".35" r=".7"><stop offset="0" stop-color="#ffffff"/><stop offset=".55" stop-color="#dbe3f3"/><stop offset="1" stop-color="#b8c4dc"/></radialGradient>
+     <linearGradient id="bottle" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#5d6bf0" stop-opacity=".85"/><stop offset=".35" stop-color="#aab2ff" stop-opacity=".9"/><stop offset=".6" stop-color="#6e7bf6" stop-opacity=".9"/><stop offset="1" stop-color="#3c48c8" stop-opacity=".95"/></linearGradient>
+    </defs>
+    <circle cx="290" cy="280" r="228" fill="url(#orb)"/>
+    <circle cx="290" cy="280" r="228" fill="none" stroke="#fff" stroke-width="2" opacity=".8"/>
+    <circle cx="290" cy="280" r="258" fill="none" stroke="#b8c4dc" stroke-width="1" stroke-dasharray="2 8"/>
+    <!-- polish bottle -->
+    <g filter="url(#sh)" transform="translate(415 320)">
+     <rect x="-28" y="-150" width="56" height="96" rx="8" fill="url(#chrome)"/>
+     <rect x="-28" y="-150" width="12" height="96" rx="6" fill="#fff" opacity=".5"/>
+     <rect x="-40" y="-60" width="80" height="18" rx="5" fill="#9aa6bb"/>
+     <path d="M-62 -44 h124 c14 0 22 10 22 24 v124 c0 18 -14 30 -32 30 h-104 c-18 0 -32 -12 -32 -30 v-124 c0 -14 8 -24 22 -24z" fill="url(#bottle)"/>
+     <path d="M-52 -30 c-6 0 -8 4 -8 10 v110 c0 6 4 10 10 12" stroke="#fff" stroke-width="7" stroke-linecap="round" fill="none" opacity=".6"/>
+     <text x="0" y="52" text-anchor="middle" font-family="Outfit" font-weight="600" font-size="15" letter-spacing="4" fill="#fff">DALSON</text>
+     <text x="0" y="72" text-anchor="middle" font-family="Outfit" font-size="11" letter-spacing="3" fill="#e9ecff">NO.07 FROST</text>
+    </g>
+    <!-- fan of tips -->
+    <g transform="translate(205 345)">
+     <g transform="rotate(-38) translate(0 -120)" filter="url(#sh2)"><use href="#tip" fill="url(#milk)"/><use href="#tip" fill="url(#gloss)" opacity=".5" transform="scale(.4 1) translate(-30 0)"/></g>
+     <g transform="rotate(-19) translate(0 -138)" filter="url(#sh2)"><use href="#tip" fill="url(#aurora)"/><use href="#tip" fill="url(#gloss)" opacity=".7" transform="scale(.35 .9) translate(-40 0)"/></g>
+     <g transform="rotate(0) translate(0 -150)" filter="url(#sh2)"><use href="#tip" fill="url(#chrome)"/><use href="#tip" fill="url(#gloss)" opacity=".8" transform="scale(.3 .9) translate(-50 0)"/></g>
+     <g transform="rotate(19) translate(0 -138)" filter="url(#sh2)"><use href="#tip" fill="url(#ink)"/><circle cx="-6" cy="-20" r="5" fill="#cfd7ea"/><circle cx="10" cy="4" r="3" fill="#cfd7ea"/><circle cx="-10" cy="22" r="2.5" fill="#cfd7ea"/><use href="#tip" fill="url(#gloss)" opacity=".35" transform="scale(.3 .9) translate(-50 0)"/></g>
+     <g transform="rotate(38) translate(0 -120)" filter="url(#sh2)"><use href="#tip" fill="#ecf0f7"/><path d="M-34 -10 C-34 -52 -20 -74 0 -74 C20 -74 34 -52 34 -10 Q0 -34 -34 -10Z" fill="url(#chrome)"/><use href="#tip" fill="url(#gloss)" opacity=".5" transform="scale(.3 .9) translate(-50 0)"/></g>
+     <circle r="14" fill="url(#chrome)" filter="url(#sh2)"/>
+    </g>
+    <!-- sparkles -->
+    <g fill="#5d6bf0"><path d="M120 120 l6 18 18 6 -18 6 -6 18 -6 -18 -18 -6 18 -6z"/><path d="M470 110 l4 12 12 4 -12 4 -4 12 -4 -12 -12 -4 12 -4z" opacity=".7"/></g>
+    <g fill="#fff"><path d="M330 120 l3 9 9 3 -9 3 -3 9 -3 -9 -9 -3 9 -3z"/><path d="M100 400 l4 12 12 4 -12 4 -4 12 -4 -12 -12 -4 12 -4z"/></g>
+   </svg>
+  </div>
+ </div>
+</section>
+
+<div class="strip" aria-hidden="true"><div class="en"><span>GEL ONE-COLOR</span><i>✦</i><span>CHROME POWDER</span><i>✦</i><span>AURORA CAT-EYE</span><i>✦</i><span>MILK GLAZE</span><i>✦</i><span>PEDICURE</span><i>✦</i><span>CARE &amp; REMOVAL</span><i>✦</i><span>GEL ONE-COLOR</span><i>✦</i><span>CHROME POWDER</span><i>✦</i><span>AURORA CAT-EYE</span><i>✦</i><span>MILK GLAZE</span><i>✦</i><span>PEDICURE</span><i>✦</i><span>CARE &amp; REMOVAL</span><i>✦</i></div></div>
+
+<section id="designs">
+ <div class="in">
+  <div class="sh"><div><span class="kicker">WINTER COLLECTION</span><h2>이번 시즌 디자인</h2></div><p>사진 속 디자인 그대로도, 색만 바꿔서도 시술할 수 있어요. 손톱 길이와 모양에 맞춰 상담 후 조정합니다.</p></div>
+  <div class="designs">
+   <article class="card"><div class="pic"><span class="tag">크롬</span>
+    <svg viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice"><rect width="400" height="300" fill="#dfe6f0"/><circle cx="320" cy="40" r="120" fill="#eef2f8"/>
+     <g filter="url(#sh2)"><g transform="translate(120 170) scale(.9)"><use href="#tip" fill="url(#chrome)"/></g><g transform="translate(200 150) scale(1)"><use href="#tip" fill="url(#chrome)"/><use href="#tip" fill="url(#gloss)" transform="scale(.3 .9) translate(-50 0)"/></g><g transform="translate(280 170) scale(.9)"><use href="#tip" fill="url(#chrome)"/></g></g></svg></div>
+    <div class="tx"><div><h3>미러 크롬</h3><small>은빛 파우더 · 원컬러 위 마감</small></div><span class="pr">₱1,650</span></div></article>
+   <article class="card"><div class="pic"><span class="tag">캣아이</span>
+    <svg viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice"><defs><linearGradient id="d2" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#2b3350"/><stop offset="1" stop-color="#121726"/></linearGradient><linearGradient id="cat" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#1d2340"/><stop offset=".45" stop-color="#8e98ff"/><stop offset=".55" stop-color="#e3e7ff"/><stop offset=".65" stop-color="#8e98ff"/><stop offset="1" stop-color="#1d2340"/></linearGradient></defs><rect width="400" height="300" fill="url(#d2)"/><g fill="#8e98ff" opacity=".5"><circle cx="40" cy="50" r="2"/><circle cx="360" cy="70" r="2.5"/><circle cx="330" cy="250" r="1.6"/><circle cx="70" cy="240" r="2"/></g>
+     <g filter="url(#sh2)"><g transform="translate(110 160) rotate(-12) scale(.88)"><use href="#tip" fill="url(#cat)"/></g><g transform="translate(200 145)"><use href="#tip" fill="url(#cat)"/></g><g transform="translate(290 160) rotate(12) scale(.88)"><use href="#tip" fill="url(#cat)"/></g></g></svg></div>
+    <div class="tx"><div><h3>오로라 캣아이</h3><small>자석으로 빛줄기를 세운 딥 네이비</small></div><span class="pr">₱1,800</span></div></article>
+   <article class="card"><div class="pic"><span class="tag">글레이즈</span>
+    <svg viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice"><defs><radialGradient id="d3" cx=".3" cy=".3" r=".9"><stop offset="0" stop-color="#fbf7f8"/><stop offset="1" stop-color="#e6dde4"/></radialGradient><linearGradient id="pearl" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fff"/><stop offset=".5" stop-color="#f1e8ef"/><stop offset=".75" stop-color="#e2e8fb"/><stop offset="1" stop-color="#f7f2f5"/></linearGradient></defs><rect width="400" height="300" fill="url(#d3)"/>
+     <ellipse cx="200" cy="262" rx="150" ry="14" fill="#d4c8d1" opacity=".6"/>
+     <g filter="url(#sh2)"><g transform="translate(100 168) rotate(-8) scale(.82)"><use href="#tip" fill="url(#pearl)"/></g><g transform="translate(165 152) scale(.92)"><use href="#tip" fill="url(#pearl)"/></g><g transform="translate(235 152) scale(.92)"><use href="#tip" fill="url(#pearl)"/></g><g transform="translate(300 168) rotate(8) scale(.82)"><use href="#tip" fill="url(#pearl)"/></g></g>
+     <g fill="#fff"><path d="M330 70 l3 9 9 3 -9 3 -3 9 -3 -9 -9 -3 9 -3z"/></g></svg></div>
+    <div class="tx"><div><h3>밀크 글레이즈</h3><small>우윳빛 베이스에 은은한 펄 코트</small></div><span class="pr">₱1,400</span></div></article>
+   <article class="card"><div class="pic"><span class="tag">프렌치</span>
+    <svg viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice"><rect width="400" height="300" fill="#c9d5f6"/><path d="M0 220 C120 180 260 260 400 200 V300 H0Z" fill="#b5c3ef"/>
+     <g filter="url(#sh2)"><g transform="translate(130 158) rotate(-6)"><use href="#tip" fill="#f3e9e6"/><path d="M-34 -10 C-34 -52 -20 -74 0 -74 C20 -74 34 -52 34 -10 Q0 -34 -34 -10Z" fill="url(#chrome)"/></g><g transform="translate(270 158) rotate(6)"><use href="#tip" fill="#f3e9e6"/><path d="M-34 -10 C-34 -52 -20 -74 0 -74 C20 -74 34 -52 34 -10 Q0 -34 -34 -10Z" fill="url(#chrome)"/></g></g>
+     <g stroke="#fff" stroke-width="3" fill="none" stroke-linecap="round"><path d="M200 70 c-18 -18 -40 -6 -30 10 c8 12 30 6 30 -10 c0 16 22 22 30 10 c10 -16 -12 -28 -30 -10"/><path d="M200 70 l-14 34 M200 70 l14 34"/></g></svg></div>
+    <div class="tx"><div><h3>실버 라인 프렌치</h3><small>누드 베이스 · 끝선만 크롬으로</small></div><span class="pr">₱1,550</span></div></article>
+   <article class="card"><div class="pic"><span class="tag">아트</span>
+    <svg viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice"><defs><linearGradient id="d5" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#eef2f8"/><stop offset="1" stop-color="#d9e2ee"/></linearGradient></defs><rect width="400" height="300" fill="url(#d5)"/>
+     <g filter="url(#sh2)"><g transform="translate(140 155) rotate(-10)"><use href="#tip" fill="#aebdf3"/><g fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round"><path d="M0 -36 v44 M-19 -25 l38 22 M19 -25 l-38 22"/><path d="M-6 -36 l6 6 6 -6 M-6 8 l6 -6 6 6"/></g></g><g transform="translate(260 155) rotate(10)"><use href="#tip" fill="url(#ink)"/><g fill="#fff"><circle cx="-8" cy="-30" r="3"/><circle cx="10" cy="-6" r="2"/><circle cx="-4" cy="16" r="2.6"/><circle cx="14" cy="34" r="1.8"/></g><path d="M-10 46 l4 10 10 4 -10 4 -4 10 -4 -10 -10 -4 10 -4z" fill="url(#chrome)"/></g></g></svg></div>
+    <div class="tx"><div><h3>스노우 포인트</h3><small>눈송이 핸드 드로잉 2개 손가락</small></div><span class="pr">₱1,900</span></div></article>
+   <article class="card"><div class="pic"><span class="tag">페디</span>
+    <svg viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice"><defs><linearGradient id="d6" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f6eef0"/><stop offset="1" stop-color="#e9dde2"/></linearGradient><linearGradient id="toe" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f6dccb"/><stop offset="1" stop-color="#e3b9a2"/></linearGradient><linearGradient id="rose" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#e98aa4"/><stop offset="1" stop-color="#b8456a"/></linearGradient></defs><rect width="400" height="300" fill="url(#d6)"/><path d="M0 230 Q200 200 400 230 V300 H0Z" fill="#fff" opacity=".7"/>
+ <g filter="url(#sh2)">
+  <path d="M60 300 C60 200 90 150 130 140 L300 128 C340 126 360 150 360 190 C360 240 350 280 340 300Z" fill="url(#toe)"/>
+  <g><rect x="78" y="78" width="78" height="112" rx="39" fill="url(#toe)"/><path d="M90 104 c0 -16 12 -24 27 -24 s27 8 27 24 v18 c0 8 -6 12 -12 12 h-30 c-6 0 -12 -4 -12 -12z" fill="url(#rose)"/></g>
+  <g><rect x="166" y="88" width="54" height="92" rx="27" fill="url(#toe)"/><path d="M175 108 c0 -11 8 -16 18 -16 s18 5 18 16 v12 c0 6 -4 9 -9 9 h-18 c-5 0 -9 -3 -9 -9z" fill="url(#rose)"/></g>
+  <g><rect x="228" y="98" width="48" height="84" rx="24" fill="url(#toe)"/><path d="M236 116 c0 -9 7 -14 16 -14 s16 5 16 14 v10 c0 5 -4 8 -8 8 h-16 c-4 0 -8 -3 -8 -8z" fill="url(#rose)"/></g>
+  <g><rect x="284" y="112" width="42" height="74" rx="21" fill="url(#toe)"/><path d="M291 128 c0 -8 6 -12 14 -12 s14 4 14 12 v8 c0 4 -3 7 -7 7 h-14 c-4 0 -7 -3 -7 -7z" fill="url(#rose)"/></g>
+  <g><rect x="332" y="130" width="36" height="62" rx="18" fill="url(#toe)"/><path d="M338 144 c0 -6 5 -10 12 -10 s12 4 12 10 v7 c0 4 -3 6 -6 6 h-12 c-3 0 -6 -2 -6 -6z" fill="url(#rose)"/></g>
+  <g fill="#ffffff" opacity=".7"><ellipse cx="108" cy="98" rx="6" ry="10"/><ellipse cx="186" cy="104" rx="4" ry="7"/><ellipse cx="246" cy="112" rx="3.5" ry="6"/></g>
+ </g>
+ <g fill="#fff"><path d="M40 60 l4 12 12 4 -12 4 -4 12 -4 -12 -12 -4 12 -4z"/></g></svg></div>
+    <div class="tx"><div><h3>젤 페디 원컬러</h3><small>각질 정리 포함 · 컬러 자유 선택</small></div><span class="pr">₱1,500</span></div></article>
+  </div>
+ </div>
+</section>
+
+<section class="price" id="price">
+ <div class="in">
+  <div class="sh"><div><span class="kicker">PRICE LIST</span><h2>가격 안내</h2></div><p>모든 가격은 페소(₱) 기준이며, 상담 후 길이 연장·추가 아트가 있으면 시술 전에 금액을 먼저 알려 드려요.</p></div>
+  <div class="pgrid">
+   <div class="pbox"><h3>핸드 <span>HAND</span></h3>
+    <div class="row"><div><b>젤 원컬러</b><small>베이스 · 컬러 2회 · 탑</small></div><span class="dot"></span><span class="v">₱1,200</span></div>
+    <div class="row"><div><b>그라데이션 · 글레이즈</b><small>펄 코트 포함</small></div><span class="dot"></span><span class="v">₱1,400</span></div>
+    <div class="row"><div><b>크롬 · 캣아이</b><small>파우더 또는 자석 젤</small></div><span class="dot"></span><span class="v">₱1,650~</span></div>
+    <div class="row"><div><b>시즌 아트</b><small>포인트 2개 손가락 기준</small></div><span class="dot"></span><span class="v">₱1,900~</span></div>
+    <div class="row"><div><b>연장 (1개)</b><small>젤 연장 · 길이 상담</small></div><span class="dot"></span><span class="v">₱150</span></div>
+   </div>
+   <div class="pbox"><h3>풋 · 케어 <span>FOOT &amp; CARE</span></h3>
+    <div class="row"><div><b>젤 페디 원컬러</b><small>각질 정리 포함</small></div><span class="dot"></span><span class="v">₱1,500</span></div>
+    <div class="row"><div><b>페디 아트</b><small>엄지 포인트</small></div><span class="dot"></span><span class="v">₱1,750~</span></div>
+    <div class="row"><div><b>베이직 손 케어</b><small>큐티클 · 모양 정리</small></div><span class="dot"></span><span class="v">₱600</span></div>
+    <div class="row"><div><b>젤 제거</b><small>타 샵 시술 포함</small></div><span class="dot"></span><span class="v">₱400</span></div>
+    <div class="row"><div><b>보수 (1개)</b><small>7일 이후 · 1개 기준</small></div><span class="dot"></span><span class="v">₱100</span></div>
+   </div>
+  </div>
+  <p class="note">· 현금, 계좌이체, 카드 결제 가능 · 예약 시간 10분 이상 늦으면 시술이 짧아질 수 있어요.</p>
+ </div>
+</section>
+
+<section id="process">
+ <div class="in">
+  <div class="sh"><div><span class="kicker">PROCESS</span><h2>이렇게 진행돼요</h2></div><p>평균 소요 시간은 원컬러 기준 1시간 10분. 아트는 디자인에 따라 달라요.</p></div>
+  <div class="steps">
+   <div class="step"><span class="n en">01</span><svg viewBox="0 0 48 48"><path d="M8 12h32v20H20l-8 7v-7H8z"/><path d="M16 20h16M16 25h10"/></svg><h3>디자인 상담</h3><p>원하는 사진을 보여 주시거나 샘플 팁에서 골라요. 피부 톤에 맞는 색을 같이 찾아요.</p><span class="t">10분</span></div>
+   <div class="step"><span class="n en">02</span><svg viewBox="0 0 48 48"><path d="M14 40V18c0-3 2-5 5-5s5 2 5 5v8"/><path d="M24 22c0-3 2-5 5-5s5 2 5 5v12c0 4-3 6-6 6H18"/><path d="M19 8v-2M29 12v-2"/></svg><h3>손 케어</h3><p>큐티클 정리와 손톱 모양 다듬기. 기존 젤이 있으면 손상 없이 제거해요.</p><span class="t">20분</span></div>
+   <div class="step"><span class="n en">03</span><svg viewBox="0 0 48 48"><rect x="18" y="6" width="12" height="12" rx="2"/><path d="M14 22h20v18a3 3 0 0 1-3 3H17a3 3 0 0 1-3-3z"/><path d="M20 30h8"/></svg><h3>젤 · 아트</h3><p>얇게 여러 번 올려 들뜸을 줄여요. 아트는 중간에 한 번 더 확인하고 진행해요.</p><span class="t">40분~</span></div>
+   <div class="step"><span class="n en">04</span><svg viewBox="0 0 48 48"><path d="M24 6l4 10 10 4-10 4-4 10-4-10-10-4 10-4z"/><path d="M38 34l2 4 4 2-4 2-2 4-2-4-4-2 4-2z"/></svg><h3>마무리 · 관리 안내</h3><p>탑 코트와 오일로 마무리. 오래 유지하는 방법과 7일 보수 기준을 알려 드려요.</p><span class="t">5분</span></div>
+  </div>
+ </div>
+</section>
+
+<section class="space" id="space">
+ <div class="in grid">
+  <div class="vis" aria-hidden="true">
+   <svg viewBox="0 0 600 480" preserveAspectRatio="xMidYMid slice">
+    <defs>
+     <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2b3460"/><stop offset=".6" stop-color="#6b72b8"/><stop offset="1" stop-color="#c7b7d8"/></linearGradient>
+     <linearGradient id="wall" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#1a2033"/><stop offset="1" stop-color="#252c45"/></linearGradient>
+     <linearGradient id="desk" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#eef2f8"/><stop offset="1" stop-color="#b9c4d6"/></linearGradient>
+     <radialGradient id="lampglow" cx=".5" cy="0" r="1"><stop offset="0" stop-color="#fff7e8" stop-opacity=".22"/><stop offset="1" stop-color="#fff7e8" stop-opacity="0"/></radialGradient>
+    </defs>
+    <rect width="600" height="480" fill="url(#wall)"/>
+    <!-- window -->
+    <rect x="300" y="40" width="250" height="250" rx="125" fill="url(#sky)"/>
+    <g fill="#1b2240" opacity=".9"><rect x="320" y="180" width="26" height="110"/><rect x="352" y="140" width="34" height="150"/><rect x="392" y="196" width="22" height="94"/><rect x="420" y="120" width="30" height="170"/><rect x="456" y="168" width="40" height="122"/><rect x="500" y="200" width="30" height="90"/></g>
+    <g fill="#ffe7b0" opacity=".85"><rect x="360" y="156" width="4" height="5"/><rect x="372" y="176" width="4" height="5"/><rect x="428" y="140" width="4" height="5"/><rect x="438" y="170" width="4" height="5"/><rect x="466" y="190" width="4" height="5"/><rect x="480" y="210" width="4" height="5"/><rect x="330" y="200" width="4" height="5"/></g>
+    <circle cx="370" cy="96" r="14" fill="#f4f1ff" opacity=".9"/>
+    <rect x="300" y="40" width="250" height="250" rx="125" fill="none" stroke="#9aa6bb" stroke-width="6"/>
+    <!-- shelf with bottles -->
+    <rect x="40" y="120" width="210" height="8" rx="4" fill="#9aa6bb"/>
+    <g>
+     <g transform="translate(66 92)"><rect x="-6" y="-18" width="12" height="16" rx="2" fill="#cfd7ea"/><rect x="-13" y="-2" width="26" height="30" rx="6" fill="#8e98ff"/></g>
+     <g transform="translate(100 92)"><rect x="-6" y="-18" width="12" height="16" rx="2" fill="#cfd7ea"/><rect x="-13" y="-2" width="26" height="30" rx="6" fill="#f1e8ef"/></g>
+     <g transform="translate(134 92)"><rect x="-6" y="-18" width="12" height="16" rx="2" fill="#cfd7ea"/><rect x="-13" y="-2" width="26" height="30" rx="6" fill="#5d6bf0"/></g>
+     <g transform="translate(168 92)"><rect x="-6" y="-18" width="12" height="16" rx="2" fill="#cfd7ea"/><rect x="-13" y="-2" width="26" height="30" rx="6" fill="#c7b7d8"/></g>
+     <g transform="translate(202 92)"><rect x="-6" y="-18" width="12" height="16" rx="2" fill="#cfd7ea"/><rect x="-13" y="-2" width="26" height="30" rx="6" fill="#e9eef6"/></g>
+     <g transform="translate(232 92)"><rect x="-6" y="-18" width="12" height="16" rx="2" fill="#cfd7ea"/><rect x="-13" y="-2" width="26" height="30" rx="6" fill="#2b3350" stroke="#4a5478"/></g>
+    </g>
+    <rect x="40" y="200" width="210" height="8" rx="4" fill="#9aa6bb"/>
+    <g transform="translate(70 172)"><path d="M0 28 C-8 10 -2 -12 16 -16 C10 0 14 14 0 28Z" fill="#6f8f88"/><path d="M4 28 C14 6 34 0 40 4 C30 12 26 24 4 28Z" fill="#87a79f"/><rect x="-6" y="24" width="30" height="8" rx="3" fill="#cfd7ea"/></g>
+    <rect x="130" y="160" width="90" height="40" rx="6" fill="#e9eef6"/><rect x="136" y="166" width="78" height="28" rx="4" fill="#cfd7ea"/>
+    <!-- lamp -->
+    <path d="M262 262 L170 340 H410 L310 262Z" fill="url(#lampglow)"/>
+    <path d="M286 230 v-40" stroke="#9aa6bb" stroke-width="3"/>
+    <path d="M250 262 c0 -22 16 -34 36 -34 s36 12 36 34z" fill="url(#chrome)"/>
+    <!-- desk -->
+    <path d="M40 340 H560 L600 380 H0Z" fill="url(#desk)"/>
+    <rect x="0" y="380" width="600" height="100" fill="#2a3150"/>
+    <rect x="0" y="380" width="600" height="6" fill="#3a4366"/>
+    <!-- hand rest & items -->
+    <ellipse cx="250" cy="348" rx="70" ry="12" fill="#f5f8fb"/>
+    <rect x="210" y="330" width="80" height="20" rx="10" fill="#d3dfea"/>
+    <g transform="translate(380 336)"><rect x="-10" y="-30" width="20" height="24" rx="3" fill="url(#chrome)"/><rect x="-18" y="-8" width="36" height="22" rx="6" fill="#8e98ff"/></g>
+    <g transform="translate(440 340)"><rect x="-36" y="-6" width="72" height="14" rx="7" fill="#2b3350"/><rect x="-30" y="-2" width="60" height="6" rx="3" fill="#5d6bf0" opacity=".6"/></g>
+    <g transform="translate(130 342)"><path d="M0 0 h50" stroke="#9aa6bb" stroke-width="4" stroke-linecap="round"/><path d="M8 -8 h34" stroke="#cfd7ea" stroke-width="3" stroke-linecap="round"/></g>
+    <!-- chairs -->
+    <g><ellipse cx="210" cy="468" rx="56" ry="8" fill="#121726" opacity=".6"/><ellipse cx="390" cy="468" rx="56" ry="8" fill="#121726" opacity=".6"/><g stroke="#9aa6bb" stroke-width="4" stroke-linecap="round"><path d="M186 420 l-12 46M234 420 l12 46M210 422 v44"/><path d="M366 420 l-12 46M414 420 l12 46M390 422 v44"/><path d="M182 448 h56M362 448 h56" stroke-width="3"/></g><ellipse cx="210" cy="414" rx="44" ry="12" fill="#5d6bf0"/><ellipse cx="210" cy="410" rx="44" ry="11" fill="#8e98ff"/><ellipse cx="390" cy="414" rx="44" ry="12" fill="#5d6bf0"/><ellipse cx="390" cy="410" rx="44" ry="11" fill="#8e98ff"/></g>
+   </svg>
+  </div>
+  <div>
+   <span class="kicker">OUR STUDIO</span>
+   <h2>창밖 야경을 보며<br>쉬어 가는 자리</h2>
+   <p>시술석은 세 자리뿐이에요. 옆 사람과 팔꿈치가 닿지 않게 넓게 두었고, 눈부시지 않은 조명 아래에서 편하게 앉아 계시면 됩니다.</p>
+   <div class="feat">
+    <div><b>시술석 3석</b>1:1 전담, 기다림 없이</div>
+    <div><b>도구 소독</b>손님마다 새 파일 사용</div>
+    <div><b>음료 제공</b>따뜻한 차 · 아이스 티</div>
+    <div><b>건물 주차</b>지하 주차장 이용 가능</div>
+   </div>
+  </div>
+ </div>
+</section>
+
+<section>
+ <div class="in">
+  <div class="sh"><div><span class="kicker">GUIDE</span><h2>이용 안내</h2></div></div>
+  <div class="info">
+   <div class="ibox"><h3><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>예약 · 변경</h3><p>예약은 전날까지 받아요. 변경·취소는 시술 3시간 전까지 카카오톡으로 알려 주세요.</p></div>
+   <div class="ibox"><h3><svg viewBox="0 0 24 24"><path d="M4 7h16v12H4z"/><path d="M8 7V5h8v2"/><path d="M4 12h16"/></svg>준비물 없이</h3><p>손만 오시면 돼요. 디자인 사진이 있으면 미리 보내 주시면 상담 시간이 줄어요.</p></div>
+   <div class="ibox"><h3><svg viewBox="0 0 24 24"><path d="M12 3l2.5 5.5L20 9l-4 4 1 6-5-3-5 3 1-6-4-4 5.5-.5z"/></svg>7일 보수</h3><p>시술 후 7일 안에 들뜨거나 깨진 손톱은 무료로 다시 해 드려요(외부 충격 제외).</p></div>
+  </div>
+ </div>
+</section>
+
+<section class="book" id="book">
+ <div class="in bk">
+  <div class="l">
+   <span class="kicker">RESERVATION</span>
+   <h2>원하는 날짜와<br>시간을 골라 주세요</h2>
+   <p>신청을 남기시면 디자이너가 확인 후 카카오톡으로 확정 메시지를 보내 드려요.</p>
+   <div class="contact">
+    <div><svg viewBox="0 0 24 24"><path d="M5 4h4l2 5-3 2a11 11 0 0 0 5 5l2-3 5 2v4a2 2 0 0 1-2 2A17 17 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>000-0000-0000</div>
+    <div><svg viewBox="0 0 24 24"><path d="M4 5h16v11H9l-5 4z"/></svg>카카오톡 ID: example</div>
+    <div><svg viewBox="0 0 24 24"><path d="M12 21s-7-6-7-11a7 7 0 0 1 14 0c0 5-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>BGC, Taguig · 상세 주소는 예약 확정 시 안내</div>
+   </div>
+  </div>
+  <form id="f" onsubmit="return sub(event)">
+   <div id="fw">
+    <div class="fl"><label>날짜</label><div class="chips" id="days"></div></div>
+    <div class="fl"><label>시간</label><div class="chips" id="times"></div></div>
+    <div class="fl"><label for="m">시술</label><select id="m"><option>젤 원컬러 · ₱1,200</option><option>미러 크롬 · ₱1,650</option><option>오로라 캣아이 · ₱1,800</option><option>밀크 글레이즈 · ₱1,400</option><option>스노우 포인트 · ₱1,900</option><option>젤 페디 원컬러 · ₱1,500</option></select></div>
+    <div class="two fl"><div><label for="nm">이름</label><input id="nm" placeholder="이름" required></div><div><label for="ph">연락처</label><input id="ph" placeholder="카카오톡 ID 또는 번호" required></div></div>
+    <button class="btn dark" type="submit">예약 신청하기</button>
+   </div>
+   <div class="done" id="dn"><svg viewBox="0 0 64 64"><circle cx="32" cy="32" r="30" fill="url(#ink)"/><path d="M20 33l8 8 16-17" stroke="#fff" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg><h3>예약 신청이 접수됐어요</h3><p id="dt"></p></div>
+  </form>
+ </div>
+</section>
+</main>
+
+<footer><div class="in"><a class="logo" href="#top"><svg viewBox="0 0 40 40"><circle cx="20" cy="20" r="19" fill="#2b3350"/><path d="M24 9a11 11 0 1 0 7 18A9 9 0 0 1 24 9z" fill="url(#chrome)"/></svg><div><b>DALSON</b></div></a><span>네일 달손 · 매일 11:00–21:00 · 000-0000-0000</span><span>© DALSON NAIL STUDIO</span></div></footer>
+
+<script>
+const dn=['일','월','화','수','목','금','토'];const days=document.getElementById('days'),times=document.getElementById('times');let sd='',st='';
+const now=new Date();for(let i=1;i<=6;i++){const d=new Date(now);d.setDate(now.getDate()+i);const b=document.createElement('button');b.type='button';b.textContent=(d.getMonth()+1)+'/'+d.getDate()+' ('+dn[d.getDay()]+')';b.onclick=()=>{[...days.children].forEach(x=>x.classList.remove('on'));b.classList.add('on');sd=b.textContent};if(i==1){b.classList.add('on');sd=b.textContent}days.appendChild(b)}
+['11:00','13:00','15:00','17:00','19:00'].forEach((t,i)=>{const b=document.createElement('button');b.type='button';b.textContent=t;b.onclick=()=>{[...times.children].forEach(x=>x.classList.remove('on'));b.classList.add('on');st=t};if(i==2){b.classList.add('on');st=t}times.appendChild(b)});
+function sub(e){e.preventDefault();document.getElementById('fw').style.display='none';document.getElementById('dn').style.display='block';document.getElementById('dt').textContent=sd+' '+st+' · '+document.getElementById('m').value.split(' · ')[0]+'. 확정 메시지를 곧 보내 드릴게요.';return false}
+</script>
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>무명솥 국밥 · 메뉴판 디자인</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@800&family=Noto+Sans+KR:wght@400;500;700&family=Noto+Serif+KR:wght@500&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Noto Sans KR',sans-serif;background:#1f1b17;color:#efe6d6;word-break:keep-all;-webkit-font-smoothing:antialiased;
+ background-image:radial-gradient(ellipse 70% 45% at 85% 0%,rgba(168,50,31,.28),transparent 70%)}
+.wrap{max-width:1180px;margin:0 auto;padding:44px 20px 120px}
+.hd{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:18px;margin-bottom:32px}
+.hd small{font-family:'Noto Serif KR',serif;font-weight:500;font-size:13px;letter-spacing:.3em;color:#c9b79a}
+.hd h1{font-family:'Nanum Myeongjo',serif;font-weight:800;font-size:clamp(30px,4.2vw,44px);letter-spacing:-.01em;margin-top:8px;line-height:1.25}
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px}
+.chips span{font-size:13px;font-weight:500;border:1.5px solid #5a4e42;color:#e2d6c2;padding:5px 12px;border-radius:4px}
+.cta{display:inline-flex;align-items:center;gap:8px;height:52px;padding:0 26px;border-radius:6px;background:#a8321f;color:#f7ecda;font-weight:700;font-size:15px;text-decoration:none;transition:.2s;white-space:nowrap}
+.cta:hover{background:#8d2817}
+.cta svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.view{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,.75fr);gap:28px;align-items:start}
+figure{background:#2a241f;padding:10px;border-radius:6px;box-shadow:0 30px 60px -26px rgba(0,0,0,.7)}
+figure a{display:block}
+figure img{display:block;width:100%;height:auto;border-radius:2px}
+figcaption{font-size:13px;color:#b5a68f;padding:10px 4px 2px;display:flex;justify-content:space-between;gap:10px}
+.side{display:grid;gap:16px;position:sticky;top:24px}
+.zoom{border-radius:6px;overflow:hidden;background:#2a241f}
+.zoom div{aspect-ratio:1/1;background:url(page1.png) no-repeat;background-size:200%}
+.zoom p{font-size:13px;color:#b5a68f;padding:10px 12px}
+.info{background:#efe6d6;color:#1f1b17;border-radius:6px;padding:22px}
+.info h2{font-family:'Nanum Myeongjo',serif;font-weight:800;font-size:22px;margin-bottom:12px}
+.info li{list-style:none;font-size:14px;line-height:1.9;display:flex;gap:10px}
+.info li:before{content:"";width:7px;height:7px;background:#a8321f;margin-top:11px;flex:none;transform:rotate(45deg)}
+.bar{position:fixed;left:0;right:0;bottom:0;background:rgba(239,230,214,.97);color:#1f1b17;padding:12px 20px;display:flex;justify-content:center;align-items:center;gap:18px;flex-wrap:wrap}
+.bar p{font-size:14px}
+.bar .cta{height:46px}
+@media(max-width:860px){.view{grid-template-columns:1fr}.side{position:static;grid-template-columns:1fr 1fr}.info{grid-column:span 2}}
+@media(max-width:620px){.hd .cta{display:none}.bar p{display:none}.bar .cta{width:100%;justify-content:center}.side{grid-template-columns:1fr}.info{grid-column:auto}}
+</style>
+</head>
+<body>
+<div class="wrap">
+ <div class="hd">
+  <div>
+   <small>MENU DESIGN · SD-MN10</small>
+   <h1>무명솥 국밥 메뉴판</h1>
+   <div class="chips"><span>A4 세로 · 1페이지</span><span>국밥 · 수육</span><span>원화 가격</span><span>인쇄 · 웹 겸용</span></div>
+  </div>
+  <a class="cta" href="https://design.shoponph.online/#inquiry">이 디자인으로 상담하기 <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+ </div>
+ <div class="view">
+  <figure><a href="page1.png" target="_blank" rel="noopener"><img src="page1.png" alt="무명솥 국밥 메뉴판" width="2480" height="3508"></a><figcaption><span>국밥 · 수육 · 안주 · 추가 · 음료</span><span style="white-space:nowrap">눌러서 크게 보기</span></figcaption></figure>
+  <div class="side">
+   <div class="zoom"><div style="background-position:0% 80%;background-size:300%"></div><p>가마솥 일러스트 부분</p></div>
+   <div class="zoom"><div style="background-position:93% 39%;background-size:168%"></div><p>국밥 메뉴 부분</p></div>
+  </div>
+ </div>
+</div>
+<div class="bar"><p>우리 가게 메뉴판도 이런 분위기로 만들어 보세요</p><a class="cta" href="https://design.shoponph.online/#inquiry">이 디자인으로 상담하기</a></div>
+</body>
+</html>
