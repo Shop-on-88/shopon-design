@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>향신당 커리 · 인도 커리 메뉴판 디자인</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Noto+Sans+KR:wght@400;500;700&family=Playfair+Display:ital,wght@1,500;1,700&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Noto Sans KR',sans-serif;background:#f7f0e1;color:#1b2b66;word-break:keep-all;-webkit-font-smoothing:antialiased;
+ background-image:radial-gradient(ellipse 50% 40% at 100% 0%,rgba(231,162,26,.28),transparent 70%),radial-gradient(ellipse 50% 40% at 0% 50%,rgba(14,108,120,.12),transparent 70%)}
+.top{height:18px;background:#1b2b66 radial-gradient(circle at 9px 9px,#e7a21a 0 5px,#b23f28 5px 6px,transparent 6px) 0 0/36px 18px}
+.wrap{max-width:1180px;margin:0 auto;padding:48px 20px 120px}
+.hd{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:18px;margin-bottom:32px}
+.hd small{font-size:14px;font-weight:700;letter-spacing:.22em;color:#0e6c78}
+.hd h1{font-family:'Black Han Sans',sans-serif;font-weight:400;font-size:clamp(32px,4.4vw,50px);margin-top:8px;line-height:1.18}
+.hd h1 em{font-style:normal;color:#b23f28}
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:14px}
+.chips span{font-size:13px;font-weight:500;border:1.5px solid rgba(27,43,102,.22);padding:5px 12px;border-radius:20px;background:rgba(255,250,240,.8);color:#3c3a4a}
+.cta{display:inline-flex;align-items:center;gap:8px;height:52px;padding:0 26px;border-radius:40px;background:#1b2b66;color:#f7f0e1;font-weight:700;font-size:15px;text-decoration:none;transition:.2s;white-space:nowrap}
+.cta:hover{background:#b23f28}
+.cta svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.view{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,.75fr);gap:28px;align-items:start}
+figure{background:#fffaf0;padding:10px;border-radius:16px;box-shadow:0 30px 60px -30px rgba(27,43,102,.55);border:1px solid rgba(27,43,102,.1)}
+figure a{display:block}
+figure img{display:block;width:100%;height:auto;border-radius:8px}
+figcaption{font-size:13px;color:#5d5446;padding:10px 4px 2px;display:flex;flex-wrap:wrap;justify-content:space-between;gap:4px 10px}
+.side{display:grid;gap:16px;position:sticky;top:24px}
+.zoom{border-radius:16px;overflow:hidden;background:#fffaf0;box-shadow:0 18px 40px -28px rgba(27,43,102,.6)}
+.zoom img{display:block;width:100%;height:auto}
+.zoom p{font-size:13px;color:#5d5446;padding:10px 14px}
+.info{background:#1b2b66;color:#e6e8f2;border-radius:16px;padding:22px}
+.info h2{font-family:'Black Han Sans',sans-serif;font-weight:400;font-size:24px;margin-bottom:10px;color:#f3c34a}
+.info li{list-style:none;font-size:14px;line-height:1.8;display:flex;gap:10px}
+.info li:before{content:"";width:8px;height:8px;background:#e7a21a;margin-top:9px;flex:none;transform:rotate(45deg)}
+.bar{position:fixed;left:0;right:0;bottom:0;background:rgba(27,43,102,.97);padding:12px 20px;display:flex;justify-content:center;align-items:center;gap:18px;flex-wrap:wrap}
+.bar p{font-size:14px;color:#e6e8f2}
+.bar .cta{height:46px;background:#e7a21a;color:#1b2b66}
+.bar .cta:hover{background:#f3c34a}
+@media(max-width:860px){.view{grid-template-columns:1fr}.side{position:static;grid-template-columns:1fr 1fr}.info{grid-column:span 2}}
+@media(max-width:620px){.hd .cta{display:none}.bar p{display:none}.bar .cta{width:100%;justify-content:center}.side{grid-template-columns:1fr}.info{grid-column:auto}}
+</style>
+</head>
+<body>
+<div class="top"></div>
+<div class="wrap">
+ <div class="hd">
+  <div>
+   <small>MENU DESIGN · SD-MN21</small>
+   <h1>향신당 <em>커리</em> 메뉴판</h1>
+   <div class="chips"><span>A4 세로 · 1장</span><span>커리 · 탄두르 · 난·라이스 · 세트 · 음료</span><span>터메릭 옐로 &amp; 피콕 블루 블록프린트</span><span>원화 가격</span><span>인쇄 · 웹 겸용</span></div>
+  </div>
+  <a class="cta" href="https://design.shoponph.online/#inquiry">이 디자인으로 상담하기 <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+ </div>
+ <div class="view">
+  <figure><a href="page1.png" target="_blank" rel="noopener"><img src="page1.png" alt="향신당 커리 메뉴판 전체" width="2480" height="3508"></a><figcaption><span>커리 · 탄두르 그릴 · 난·라이스 · 세트 · 음료</span><span style="white-space:nowrap">눌러서 크게 보기</span></figcaption></figure>
+  <div class="side">
+   <div class="zoom"><img src="detail-curry.jpg" alt="커리 6종과 고추 아이콘 맵기 표시 확대" width="1600" height="591"><p>커리 6종 · 고추 아이콘으로 맵기 3단계 표시</p></div>
+   <div class="zoom"><img src="detail-sets.jpg" alt="2인 세트, 점심 탈리, 채식 플레이트 카드 확대" width="1600" height="339"><p>2인 세트 · 점심 탈리 · 채식 플레이트 카드</p></div>
+   <div class="info"><h2>이 메뉴판에 담긴 것</h2><ul><li>인도 블록프린트 무늬 테두리</li><li>커리·탄두리·라씨·짜이 일러스트</li><li>맵기 조절 안내와 세트 구성</li><li>연락처·휴무·포장 안내 띠</li></ul></div>
+  </div>
+ </div>
+</div>
+<div class="bar"><p>우리 가게 메뉴판도 이런 분위기로 만들어 보세요</p><a class="cta" href="https://design.shoponph.online/#inquiry">이 디자인으로 상담하기</a></div>
+</body>
+</html>
