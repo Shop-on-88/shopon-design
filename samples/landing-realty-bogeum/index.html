@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>보금 리얼티 · 마닐라 콘도 렌트 무료 매물 상담</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#18233a;--navy-2:#24324f;--slate:#5b6880;--sand:#f1e9db;--sand-2:#e6dac4;--paper:#fbf8f2;--brick:#b95f37;--brick-d:#9b4b29;--line:#d8ccb6;--ok:#3f7a62}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'IBM Plex Sans KR',sans-serif;background:var(--sand);color:var(--navy);word-break:keep-all;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+button{font-family:inherit;cursor:pointer}
+.in{max-width:1200px;margin:0 auto;padding:0 28px}
+.sg{font-family:'Space Grotesk',sans-serif}
+/* header */
+header{position:absolute;top:0;left:0;right:0;z-index:20}
+.hd{display:flex;align-items:center;justify-content:space-between;height:84px}
+.logo{display:flex;align-items:center;gap:12px;color:#fff}
+.logo svg{width:40px;height:40px}
+.logo b{font-size:21px;font-weight:700;letter-spacing:-.01em}
+.logo small{display:block;font-family:'Space Grotesk';font-size:11px;letter-spacing:.28em;color:#c9b99c;font-weight:600}
+.hd-r{display:flex;align-items:center;gap:22px;color:#d9cfbd;font-size:14px}
+.hd-r .sg{font-weight:600;letter-spacing:.04em}
+.hbtn{height:44px;padding:0 20px;border-radius:8px;background:var(--brick);color:#fff;font-weight:600;font-size:14px;display:inline-flex;align-items:center}
+/* hero */
+.hero{background:var(--navy);color:#fff;position:relative;overflow:hidden;padding:150px 0 110px}
+.hero .grid-bg{position:absolute;inset:0;opacity:.5}
+.hero .in{position:relative;display:grid;grid-template-columns:1.08fr .92fr;gap:56px;align-items:center}
+.eyebrow{display:inline-flex;align-items:center;gap:10px;font-size:14px;font-weight:600;color:#e7c9a8;border:1px solid rgba(231,201,168,.35);padding:8px 14px;border-radius:6px}
+.eyebrow i{width:7px;height:7px;background:var(--brick);border-radius:50%}
+.hero h1{font-size:clamp(40px,4.8vw,64px);line-height:1.18;font-weight:700;letter-spacing:-.025em;margin:24px 0 22px}
+.hero h1 em{font-style:normal;color:#f0b48f;position:relative}
+.hero .lead{font-size:18px;line-height:1.8;color:#c3cad8;max-width:520px}
+.hero .chips{display:flex;gap:10px;flex-wrap:wrap;margin-top:30px}
+.hero .chips span{display:flex;align-items:center;gap:8px;font-size:14px;color:#e6e9f0;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);padding:9px 14px;border-radius:8px}
+.hero .chips svg{width:16px;height:16px;stroke:#f0b48f;fill:none;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+.skyline{margin-top:40px;max-width:560px}
+.skyline svg{width:100%;height:auto;display:block}
+/* form card */
+.fcard{background:var(--paper);color:var(--navy);border-radius:18px;padding:34px 32px 30px;box-shadow:0 40px 80px -30px rgba(0,0,0,.6);position:relative}
+.fcard{border-top:6px solid var(--brick)}
+.fcard h2{font-size:24px;font-weight:700;letter-spacing:-.01em}
+.fcard .sub{font-size:14.5px;color:var(--slate);margin:6px 0 22px;line-height:1.6}
+.f{display:grid;gap:14px}
+.f2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+label{display:grid;gap:7px;font-size:13.5px;font-weight:600;color:var(--navy-2)}
+input,select{font:inherit;font-size:15px;font-weight:400;height:48px;border-radius:10px;border:1.5px solid var(--line);background:#fff;padding:0 14px;color:var(--navy);outline:none;width:100%}
+input:focus,select:focus{border-color:var(--brick)}
+.seg{display:grid;grid-template-columns:repeat(4,1fr);gap:6px}
+.seg button{height:44px;border-radius:10px;border:1.5px solid var(--line);background:#fff;font-size:14px;font-weight:600;color:var(--navy-2)}
+.seg button.on{background:var(--navy);border-color:var(--navy);color:#fff}
+.agree{display:flex;gap:10px;align-items:flex-start;font-size:13px;font-weight:400;color:var(--slate);line-height:1.5;grid-template-columns:none}
+.agree input{width:18px;height:18px;margin-top:2px;flex:none;accent-color:var(--brick)}
+.sbtn{height:56px;border:0;border-radius:10px;background:var(--brick);color:#fff;font-size:16px;font-weight:700;display:flex;align-items:center;justify-content:center;gap:10px;transition:.2s}
+.sbtn:hover{background:var(--brick-d)}
+.sbtn svg{width:18px;height:18px;fill:none;stroke:#fff;stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round}
+.done{display:none;text-align:center;padding:20px 6px}
+.done svg{width:64px;height:64px;margin-bottom:14px}
+.done h3{font-size:22px;font-weight:700;margin-bottom:8px}
+.done p{font-size:15px;color:var(--slate);line-height:1.7}
+.fcard.sent .f,.fcard.sent .sub,.fcard.sent h2{display:none}
+.fcard.sent .done{display:block}
+/* offer strip */
+.offer{background:var(--paper);border-bottom:1px solid var(--line)}
+.offer .in{display:grid;grid-template-columns:repeat(3,1fr)}
+.of{display:flex;gap:18px;align-items:flex-start;padding:38px 28px 38px 0}
+.of+.of{border-left:1px solid var(--line);padding-left:28px}
+.of svg{width:48px;height:48px;flex:none}
+.of h3{font-size:18px;font-weight:700;margin-bottom:6px}
+.of p{font-size:14.5px;color:var(--slate);line-height:1.65}
+/* sections */
+.sec{padding:110px 0}
+.sh{margin-bottom:48px;display:flex;justify-content:space-between;align-items:flex-end;gap:30px;flex-wrap:wrap}
+.sh small{font-family:'Space Grotesk';font-size:13px;font-weight:600;letter-spacing:.26em;color:var(--brick)}
+.sh h2{font-size:clamp(30px,3.4vw,44px);line-height:1.28;font-weight:700;letter-spacing:-.02em;margin-top:10px}
+.sh p{font-size:16px;color:var(--slate);line-height:1.75;max-width:430px}
+/* areas */
+.areas{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.ar{background:var(--paper);border:1px solid var(--line);border-radius:16px;overflow:hidden;cursor:pointer;transition:.25s;display:flex;flex-direction:column}
+.ar:hover,.ar.on{border-color:var(--navy);box-shadow:0 24px 40px -26px rgba(24,35,58,.55);transform:translateY(-3px)}
+.ar .pic{height:150px;position:relative}
+.ar .pic svg{position:absolute;inset:0;width:100%;height:100%}
+.ar .bd{padding:20px 20px 22px;display:flex;flex-direction:column;gap:10px;flex:1}
+.ar h3{font-size:22px;font-weight:700;display:flex;justify-content:space-between;align-items:baseline}
+.ar h3 span{font-family:'Space Grotesk';font-size:12px;font-weight:600;letter-spacing:.16em;color:var(--slate)}
+.ar p{font-size:14px;color:var(--slate);line-height:1.6}
+.ar .rng{margin-top:auto;padding-top:14px;border-top:1px dashed var(--line);display:flex;justify-content:space-between;align-items:baseline;gap:8px}
+.ar .rng small{font-size:12.5px;color:var(--slate)}
+.ar .rng b{font-family:'Space Grotesk';font-size:18px;font-weight:700;white-space:nowrap}
+.note{font-size:13px;color:var(--slate);margin-top:18px}
+/* budget tool */
+.tool{background:var(--navy);color:#fff;border-radius:24px;padding:54px;display:grid;grid-template-columns:.95fr 1.05fr;gap:54px;position:relative;overflow:hidden}
+.tool .grid-bg{position:absolute;inset:0;opacity:.4}
+.tool>*{position:relative}
+.tool h2{font-size:clamp(28px,3vw,38px);line-height:1.3;font-weight:700;letter-spacing:-.02em}
+.tool .sub{font-size:16px;color:#bfc7d6;line-height:1.75;margin:16px 0 30px}
+.bud{font-family:'Space Grotesk';font-size:56px;font-weight:700;color:#f0b48f;line-height:1}
+.bud small{font-family:'IBM Plex Sans KR';font-size:16px;font-weight:500;color:#bfc7d6;margin-left:8px}
+input[type=range]{-webkit-appearance:none;appearance:none;height:6px;border-radius:6px;background:linear-gradient(90deg,var(--brick) var(--p,40%),rgba(255,255,255,.18) var(--p,40%));border:0;padding:0;margin:26px 0 10px}
+input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:26px;height:26px;border-radius:50%;background:#fff;border:5px solid var(--brick);cursor:pointer}
+.ticks{display:flex;justify-content:space-between;font-family:'Space Grotesk';font-size:13px;color:#98a3b8}
+.res{display:grid;gap:12px}
+.ri{display:grid;grid-template-columns:66px 1fr auto;gap:18px;align-items:center;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.12);border-radius:14px;padding:16px 18px;transition:.25s}
+.ri svg{width:66px;height:52px}
+.ri h4{font-size:17px;font-weight:600}
+.ri p{font-size:13.5px;color:#aeb8ca;margin-top:3px}
+.ri .st{font-size:13px;font-weight:700;padding:6px 12px;border-radius:30px;white-space:nowrap}
+.ri.y .st{background:#e3f0e9;color:#2c6a50}
+.ri.m .st{background:#f8e4cf;color:#9b4b29}
+.ri.n{opacity:.45}
+.ri.n .st{background:rgba(255,255,255,.12);color:#cfd6e2}
+/* process */
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:0;position:relative;counter-reset:s}
+.steps:before{content:"";position:absolute;left:28px;right:28px;top:27px;height:2px;background:repeating-linear-gradient(90deg,var(--navy) 0 8px,transparent 8px 16px);opacity:.35}
+.st4{position:relative;padding-right:26px}
+.st4 .n{width:56px;height:56px;border-radius:50%;background:var(--paper);border:2px solid var(--navy);display:grid;place-items:center;font-family:'Space Grotesk';font-weight:700;font-size:18px;position:relative;z-index:1}
+.st4:first-child .n{background:var(--brick);border-color:var(--brick);color:#fff}
+.st4 h3{font-size:19px;font-weight:700;margin:22px 0 8px}
+.st4 p{font-size:14.5px;color:var(--slate);line-height:1.7}
+.st4 .t{display:inline-block;margin-top:12px;font-size:12.5px;font-weight:600;color:var(--navy-2);background:var(--sand-2);padding:4px 10px;border-radius:6px}
+/* contract card */
+.contract{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:center}
+.doc{background:#fff;border-radius:14px;padding:34px 34px 30px;box-shadow:0 30px 60px -30px rgba(24,35,58,.45);position:relative;transform:rotate(-1.2deg)}
+.doc .dh{display:flex;justify-content:space-between;align-items:center;border-bottom:2px solid var(--navy);padding-bottom:14px;margin-bottom:18px}
+.doc .dh b{font-family:'Space Grotesk';font-size:15px;letter-spacing:.18em}
+.doc .dh span{font-size:12.5px;color:var(--slate)}
+.dl{display:grid;grid-template-columns:110px 1fr;gap:10px 16px;font-size:14.5px;line-height:1.55}
+.dl dt{color:var(--slate);font-weight:500}
+.dl dd{font-weight:600}
+.hl{background:linear-gradient(transparent 55%,#f6d3bb 55%)}
+.pin{position:absolute;right:-18px;top:196px;background:var(--brick);color:#fff;font-size:13px;font-weight:600;padding:10px 14px;border-radius:10px;line-height:1.5;box-shadow:0 14px 24px -10px rgba(155,75,41,.6);max-width:200px}
+.pin:before{content:"";position:absolute;left:-7px;top:18px;border:7px solid transparent;border-left:0;border-right-color:var(--brick)}
+.checks{display:grid;gap:12px;margin-top:26px}
+.checks div{display:flex;gap:12px;font-size:16px;line-height:1.6}
+.checks svg{width:22px;height:22px;flex:none;margin-top:2px}
+/* faq */
+.faq{display:grid;grid-template-columns:.8fr 1.2fr;gap:60px}
+details{border-top:1px solid var(--line);padding:22px 0}
+details:last-child{border-bottom:1px solid var(--line)}
+summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;gap:20px;font-size:17px;font-weight:600}
+summary::-webkit-details-marker{display:none}
+summary:after{content:"";width:12px;height:12px;border-right:2px solid var(--brick);border-bottom:2px solid var(--brick);transform:rotate(45deg);flex:none;margin-top:4px;transition:.2s}
+details[open] summary:after{transform:rotate(-135deg);margin-top:10px}
+details p{font-size:15px;color:var(--slate);line-height:1.8;margin-top:12px;max-width:620px}
+/* final */
+.final{background:var(--brick);color:#fff;border-radius:24px;padding:54px 56px;display:flex;justify-content:space-between;align-items:center;gap:30px;flex-wrap:wrap;position:relative;overflow:hidden}
+.final svg.deco{position:absolute;right:-30px;bottom:-40px;width:340px;opacity:.16}
+.final h2{font-size:clamp(28px,3vw,38px);font-weight:700;line-height:1.3;letter-spacing:-.02em;position:relative}
+.final p{font-size:16px;color:#f6dccb;margin-top:10px;position:relative}
+.final a{position:relative;height:58px;padding:0 30px;border-radius:10px;background:#fff;color:var(--brick-d);font-weight:700;font-size:16px;display:inline-flex;align-items:center;gap:10px;white-space:nowrap}
+footer{padding:50px 0 60px;font-size:13.5px;color:var(--slate)}
+footer .in{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;padding-top:30px;background:linear-gradient(var(--line),var(--line)) no-repeat 28px 0/calc(100% - 56px) 1px}
+footer b{color:var(--navy);font-size:15px}
+/* mobile sticky */
+.mbar{display:none}
+@media(max-width:1020px){
+ .hero .in,.tool,.contract,.faq{grid-template-columns:1fr}
+ .areas{grid-template-columns:1fr 1fr}
+ .steps{grid-template-columns:1fr 1fr;row-gap:40px}
+ .steps:before{display:none}
+ .pin{right:10px;top:-24px}
+}
+@media(max-width:760px){
+ .in{padding:0 20px}
+ .hd{height:70px}
+ .hd-r .sg,.hd-r>span{display:none}
+ .hbtn{height:40px;padding:0 14px;font-size:13px}
+ .hero{padding:110px 0 70px}
+ .hero .lead{font-size:16px}
+ .skyline{display:none}
+ .fcard{padding:28px 20px 24px}
+ .f2{grid-template-columns:1fr}
+ .seg button{font-size:13px}
+ .offer .in{grid-template-columns:1fr}
+ .of{padding:24px 0}
+ .of+.of{border-left:0;border-top:1px solid var(--line);padding-left:0}
+ .sec{padding:76px 0}
+ .areas{grid-template-columns:1fr}
+ .ar .pic{height:130px}
+ .tool{padding:34px 22px;border-radius:18px;gap:34px}
+ .bud{font-size:44px}
+ .ri{grid-template-columns:52px 1fr;gap:12px;padding:14px}
+ .ri svg{width:52px;height:42px}
+ .ri .st{grid-column:2;justify-self:start}
+ .steps{grid-template-columns:1fr;row-gap:28px}
+ .st4{display:grid;grid-template-columns:52px 1fr;column-gap:18px;padding-right:0}
+ .st4 .n{width:52px;height:52px;grid-row:span 3}
+ .st4 h3{margin:2px 0 6px}
+ .st4 .t{justify-self:start;margin-top:10px}
+ .doc{padding:26px 20px;transform:none}
+ .dl{grid-template-columns:92px 1fr;font-size:14px}
+ .pin{position:static;margin-top:16px;max-width:none}
+ .pin:before{display:none}
+ .final{padding:36px 24px}
+ .faq{gap:0}
+ .faq .sh{margin-bottom:20px}
+ footer .in{background-position:20px 0;background-size:calc(100% - 40px) 1px}
+ .final a{width:100%;justify-content:center}
+ .mbar{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:30;background:rgba(24,35,58,.97);padding:10px 16px;gap:10px;transform:translateY(110%);transition:.3s}
+ .mbar.on{transform:none}
+ .mbar a{flex:1;height:50px;border-radius:10px;background:var(--brick);color:#fff;font-weight:700;font-size:15px;display:flex;align-items:center;justify-content:center}
+}
+</style>
+</head>
+<body>
+<header>
+ <div class="in hd">
+  <a href="#" class="logo"><svg viewBox="0 0 40 40"><rect x="1" y="1" width="38" height="38" rx="9" fill="#b95f37"/><path d="M9 30 V17 L20 9 L31 17 V30" fill="none" stroke="#fff" stroke-width="2.6" stroke-linejoin="round"/><rect x="16" y="20" width="8" height="10" rx="1.5" fill="#fff"/><circle cx="20" cy="15.5" r="1.8" fill="#fff"/></svg><div><b>보금 리얼티</b><small>MANILA CONDO RENT</small></div></a>
+  <div class="hd-r"><span>평일 09:00–19:00</span><span class="sg">0900-000-0000</span><a href="#form" class="hbtn">무료 상담 신청</a></div>
+ </div>
+</header>
+
+<section class="hero">
+ <svg class="grid-bg" preserveAspectRatio="none" viewBox="0 0 1440 900"><defs><pattern id="g1" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M40 0H0V40" fill="none" stroke="#2f3e5e" stroke-width="1"/></pattern><pattern id="g2" width="200" height="200" patternUnits="userSpaceOnUse"><path d="M200 0H0V200" fill="none" stroke="#3a4b6f" stroke-width="1.4"/></pattern><radialGradient id="fade" cx="30%" cy="40%" r="80%"><stop offset="0" stop-color="#18233a" stop-opacity="0"/><stop offset="1" stop-color="#18233a" stop-opacity="1"/></radialGradient></defs><rect width="1440" height="900" fill="url(#g1)"/><rect width="1440" height="900" fill="url(#g2)"/><rect width="1440" height="900" fill="url(#fade)"/></svg>
+ <div class="in">
+  <div>
+   <span class="eyebrow"><i></i>BGC · 마카티 · 오르티가스 · 알라방</span>
+   <h1>마닐라 첫 콘도,<br><em>계약서 한 줄</em>까지<br>한국어로 같이 봅니다</h1>
+   <p class="lead">예산과 출퇴근 동선만 알려 주세요. 조건에 맞는 매물을 추려 한국어로 브리핑하고, 영문 임대차 계약서의 보증금·해지 조항을 미리 짚어 드립니다.</p>
+   <div class="chips"><span><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>상담·매물 브리핑 무료</span><span><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>현장 투어 한국어 동행</span><span><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>입주 전 하자 점검표</span></div>
+   <div class="skyline">
+    <svg viewBox="0 0 560 190" aria-hidden="true">
+     <defs>
+      <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#18233a" stop-opacity="0"/><stop offset="1" stop-color="#b95f37" stop-opacity=".35"/></linearGradient>
+      <linearGradient id="fa" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#3d5180"/><stop offset="1" stop-color="#26355a"/></linearGradient>
+      <linearGradient id="fb" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#26355a"/><stop offset="1" stop-color="#18233a"/></linearGradient>
+      <linearGradient id="fc" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2c3c62"/><stop offset="1" stop-color="#1d2944"/></linearGradient>
+      <linearGradient id="glass" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f0b48f" stop-opacity=".35"/><stop offset=".5" stop-color="#f0b48f" stop-opacity="0"/></linearGradient>
+     </defs>
+     <rect x="0" y="80" width="560" height="110" fill="url(#sky)"/>
+     <ellipse cx="300" cy="190" rx="260" ry="40" fill="#f0b48f" opacity=".12"/>
+     <g fill="url(#fc)" opacity=".75"><rect x="6" y="104" width="40" height="86"/><rect x="200" y="96" width="34" height="94"/><rect x="470" y="110" width="40" height="80"/><rect x="520" y="124" width="40" height="66"/></g>
+     <!-- tower A -->
+     <path d="M54 62 L94 54 V190 H54Z" fill="url(#fa)"/><path d="M94 54 L118 62 V190 H94Z" fill="url(#fb)"/>
+     <g stroke="#18233a" stroke-width="1" opacity=".6"><path d="M54 80 L94 73 M54 98 L94 91 M54 116 L94 109 M54 134 L94 127 M54 152 L94 145 M54 170 L94 163"/></g>
+     <g fill="#f0b48f"><path d="M60 92 l10 -2 v6 l-10 2z"/><path d="M76 125 l10 -2 v6 l-10 2z"/><path d="M60 146 l10 -2 v6 l-10 2z"/></g>
+     <!-- tower B (tall, rooftop pool) -->
+     <path d="M136 30 L190 22 V190 H136Z" fill="url(#fa)"/><path d="M190 22 L216 30 V190 H190Z" fill="url(#fb)"/>
+     <path d="M136 30 L190 22 L216 30 L162 38Z" fill="#4a6090"/>
+     <path d="M150 31 L186 26 L202 31 L166 36Z" fill="#6fb3c4" opacity=".85"/>
+     <rect x="136" y="30" width="54" height="160" fill="url(#glass)"/>
+     <g stroke="#18233a" stroke-width="1" opacity=".55"><path d="M136 52 L190 44 M136 72 L190 64 M136 92 L190 84 M136 112 L190 104 M136 132 L190 124 M136 152 L190 144 M136 172 L190 164 M154 36 V190 M172 33 V190"/></g>
+     <g fill="#f0b48f"><path d="M140 66 l12 -2 v7 l-12 2z"/><path d="M174 80 l12 -2 v7 l-12 2z"/><path d="M158 120 l12 -2 v7 l-12 2z"/><path d="M140 146 l12 -2 v7 l-12 2z"/></g>
+     <g fill="#e7c9a8" opacity=".9"><rect x="192" y="60" width="22" height="3"/><rect x="192" y="84" width="22" height="3"/><rect x="192" y="108" width="22" height="3"/><rect x="192" y="132" width="22" height="3"/><rect x="192" y="156" width="22" height="3"/></g>
+     <!-- tower C (balcony stack) -->
+     <path d="M250 48 L300 42 V190 H250Z" fill="url(#fa)"/><path d="M300 42 L322 48 V190 H300Z" fill="url(#fb)"/>
+     <g fill="#e7c9a8" opacity=".85"><path d="M246 66 l58 -7 v4 l-58 7z"/><path d="M246 90 l58 -7 v4 l-58 7z"/><path d="M246 114 l58 -7 v4 l-58 7z"/><path d="M246 138 l58 -7 v4 l-58 7z"/><path d="M246 162 l58 -7 v4 l-58 7z"/></g>
+     <g fill="#f0b48f"><path d="M258 80 l10 -1 v6 l-10 1z"/><path d="M282 102 l10 -1 v6 l-10 1z"/><path d="M262 152 l10 -1 v6 l-10 1z"/></g>
+     <!-- tower D -->
+     <path d="M340 70 L380 64 V190 H340Z" fill="url(#fa)"/><path d="M380 64 L402 70 V190 H380Z" fill="url(#fb)"/>
+     <path d="M340 70 L380 64 L360 46Z" fill="#4a6090"/><path d="M380 64 L402 70 L360 46Z" fill="#2c3c62"/>
+     <g fill="#f0b48f"><path d="M346 96 l10 -1 v6 l-10 1z"/><path d="M362 130 l10 -1 v6 l-10 1z"/></g>
+     <g fill="#6f84ad" opacity=".6"><path d="M362 96 l10 -1 v6 l-10 1z"/><path d="M346 160 l10 -1 v6 l-10 1z"/></g>
+     <!-- tower E -->
+     <path d="M418 84 L456 80 V190 H418Z" fill="url(#fa)"/><path d="M456 80 L474 84 V190 H456Z" fill="url(#fb)"/>
+     <g fill="#f0b48f"><path d="M424 110 l10 -1 v6 l-10 1z"/><path d="M440 150 l10 -1 v6 l-10 1z"/></g>
+     <!-- trees -->
+     <g fill="#3f7a62"><circle cx="232" cy="182" r="10"/><circle cx="246" cy="184" r="8"/><circle cx="410" cy="182" r="9"/><circle cx="126" cy="184" r="8"/></g>
+     <path d="M0 189 H560" stroke="#b95f37" stroke-width="2"/>
+     <!-- blueprint dimension -->
+     <g stroke="#e7c9a8" stroke-width="1" fill="none" opacity=".85"><path d="M136 17 H216" stroke-dasharray="3 3"/><path d="M136 13 V21 M216 13 V21"/><path d="M232 22 V190" stroke-dasharray="3 3"/><path d="M227 22 H237 M227 190 H237"/></g>
+     <text x="176" y="10" font-family="Space Grotesk" font-size="11" fill="#e7c9a8" text-anchor="middle" letter-spacing="1">ROOF DECK</text>
+     <text x="244" y="110" font-family="Space Grotesk" font-size="11" fill="#e7c9a8" letter-spacing="1" transform="rotate(-90 244 110)" text-anchor="middle">38F</text>
+    </svg>
+   </div>
+  </div>
+  <div class="fcard" id="form">
+   <h2>무료 매물 브리핑 신청</h2>
+   <p class="sub">남겨 주신 조건으로 매물 3~5곳을 추려 하루 안에 연락드려요.</p>
+   <form class="f" onsubmit="return send(event)">
+    <label>희망 지역<select id="area"><option>BGC (보니파시오)</option><option>마카티 CBD</option><option>오르티가스</option><option>알라방</option><option>아직 정하지 않음</option></select></label>
+    <label>방 구성<div class="seg" id="rooms"><button type="button">스튜디오</button><button type="button" class="on">1베드</button><button type="button">2베드</button><button type="button">3베드</button></div></label>
+    <div class="f2">
+     <label>월 예산 (₱)<select><option>₱25,000 이하</option><option selected>₱25,000–45,000</option><option>₱45,000–70,000</option><option>₱70,000 이상</option></select></label>
+     <label>입주 희망 시기<select><option>한 달 안</option><option selected>1–2개월 뒤</option><option>3개월 이후</option></select></label>
+    </div>
+    <div class="f2">
+     <label>성함<input placeholder="홍길동" required></label>
+     <label>연락처<input placeholder="카카오톡 ID: example" required></label>
+    </div>
+    <label class="agree"><input type="checkbox" checked required>상담 연락을 위한 개인정보 수집·이용에 동의합니다.</label>
+    <button class="sbtn" type="submit">매물 브리핑 받기 <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+   </form>
+   <div class="done"><svg viewBox="0 0 64 64"><circle cx="32" cy="32" r="30" fill="#e3f0e9"/><path d="M20 33l8 8 16-17" fill="none" stroke="#3f7a62" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/></svg><h3>신청이 접수됐어요</h3><p id="doneTxt">조건에 맞는 매물을 추려 하루 안에 연락드릴게요.</p></div>
+  </div>
+ </div>
+</section>
+
+<section class="offer">
+ <div class="in">
+  <div class="of"><svg viewBox="0 0 48 48" fill="none" stroke="#b95f37" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="8" width="36" height="28" rx="3"/><path d="M6 16h36M14 26h10M14 30h16"/><path d="M18 42h12M24 36v6"/></svg><div><h3>조건별 매물 브리핑</h3><p>사진만 보고 고르지 않도록 관리비·주차·채광까지 표로 정리해 보내 드려요.</p></div></div>
+  <div class="of"><svg viewBox="0 0 48 48" fill="none" stroke="#b95f37" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4h18l8 8v32H12z"/><path d="M30 4v8h8M18 22h14M18 28h14M18 34h8"/></svg><div><h3>한국어 계약서 요약</h3><p>영문 계약서에서 보증금 반환, 중도 해지, 수리 책임 조항을 한국어로 짚어 드립니다.</p></div></div>
+  <div class="of"><svg viewBox="0 0 48 48" fill="none" stroke="#b95f37" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M10 22 24 10l14 12v20H10z"/><path d="m18 32 4 4 8-9"/></svg><div><h3>입주 전 점검 동행</h3><p>에어컨·수압·누수·가전 상태를 체크리스트로 함께 확인하고 사진으로 남겨요.</p></div></div>
+ </div>
+</section>
+
+<section class="sec">
+ <div class="in">
+  <div class="sh"><div><small>AREA GUIDE</small><h2>어디서 살지부터<br>같이 정해요</h2></div><p>회사·학교 위치와 생활 반경을 들으면 지역 후보부터 좁혀 드려요. 카드를 누르면 상담 지역으로 선택됩니다.</p></div>
+  <div class="areas">
+   <div class="ar" data-a="BGC (보니파시오)">
+    <div class="pic"><svg viewBox="0 0 280 150" preserveAspectRatio="xMidYMid slice"><defs><linearGradient id="a1" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f5d9c2"/><stop offset="1" stop-color="#eec0a0"/></linearGradient></defs><rect width="280" height="150" fill="url(#a1)"/><circle cx="214" cy="46" r="20" fill="#fbe9da"/><g fill="#24324f"><rect x="40" y="40" width="34" height="110"/><rect x="80" y="20" width="40" height="130" rx="3"/><rect x="126" y="54" width="30" height="96"/><rect x="162" y="30" width="36" height="120"/><path d="M162 30 L198 18 V30Z"/><rect x="204" y="70" width="40" height="80"/></g><g fill="#f0b48f"><rect x="90" y="36" width="8" height="5"/><rect x="104" y="60" width="8" height="5"/><rect x="172" y="50" width="8" height="5"/><rect x="48" y="66" width="7" height="5"/></g><path d="M0 142 C60 132 120 150 280 136 V150 H0Z" fill="#3f7a62"/></svg></div>
+    <div class="bd"><h3>BGC <span>TAGUIG</span></h3><p>보행로가 넓고 상가·병원·국제학교가 가까워 가족 단위가 많이 찾는 곳</p><div class="rng"><small>1베드 월세 예시</small><b>₱45k–75k</b></div></div>
+   </div>
+   <div class="ar" data-a="마카티 CBD">
+    <div class="pic"><svg viewBox="0 0 280 150" preserveAspectRatio="xMidYMid slice"><defs><linearGradient id="a2" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#d9dfe9"/><stop offset="1" stop-color="#b9c4d6"/></linearGradient></defs><rect width="280" height="150" fill="url(#a2)"/><g fill="#18233a"><rect x="20" y="60" width="30" height="90"/><rect x="56" y="14" width="44" height="136"/><rect x="64" y="4" width="28" height="12"/><rect x="106" y="40" width="34" height="110"/><rect x="146" y="24" width="40" height="126"/><rect x="192" y="50" width="30" height="100"/><rect x="228" y="34" width="34" height="116"/></g><g stroke="#5b6880" stroke-width="2"><path d="M56 40 H100 M56 66 H100 M56 92 H100 M146 50 H186 M146 80 H186 M146 110 H186"/></g><g fill="#f0b48f"><rect x="114" y="60" width="7" height="5"/><rect x="236" y="56" width="7" height="5"/><rect x="200" y="80" width="7" height="5"/></g><path d="M0 140 H280" stroke="#b95f37" stroke-width="4"/></svg></div>
+    <div class="bd"><h3>마카티 <span>MAKATI</span></h3><p>오피스 밀집 지역이라 도보 출퇴근이 쉽고, 오래된 대형 단지와 신축이 섞여 있어요</p><div class="rng"><small>1베드 월세 예시</small><b>₱38k–65k</b></div></div>
+   </div>
+   <div class="ar" data-a="오르티가스">
+    <div class="pic"><svg viewBox="0 0 280 150" preserveAspectRatio="xMidYMid slice"><defs><linearGradient id="a3" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#e9e3cf"/><stop offset="1" stop-color="#d5cba9"/></linearGradient></defs><rect width="280" height="150" fill="url(#a3)"/><g fill="#24324f"><rect x="30" y="50" width="40" height="100" rx="18"/><rect x="80" y="26" width="36" height="124"/><rect x="124" y="44" width="46" height="106"/><path d="M124 44 a23 18 0 0 1 46 0Z"/><rect x="180" y="64" width="32" height="86"/><rect x="220" y="36" width="36" height="114"/></g><g fill="#f0b48f"><rect x="90" y="46" width="7" height="5"/><rect x="138" y="70" width="8" height="5"/><rect x="230" y="60" width="7" height="5"/></g><path d="M0 124 H280 M0 132 H280" stroke="#9aa4b6" stroke-width="3"/><g fill="#b95f37"><rect x="40" y="118" width="40" height="12" rx="3"/><rect x="180" y="118" width="40" height="12" rx="3"/></g></svg></div>
+    <div class="bd"><h3>오르티가스 <span>PASIG</span></h3><p>대형 쇼핑몰과 지하철역 주변으로 단지가 모여 있어 같은 예산에 넓은 평형을 보기 좋아요</p><div class="rng"><small>1베드 월세 예시</small><b>₱28k–48k</b></div></div>
+   </div>
+   <div class="ar" data-a="알라방">
+    <div class="pic"><svg viewBox="0 0 280 150" preserveAspectRatio="xMidYMid slice"><defs><linearGradient id="a4" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#d7e6dc"/><stop offset="1" stop-color="#b4cfbf"/></linearGradient></defs><rect width="280" height="150" fill="url(#a4)"/><g fill="#3f7a62"><circle cx="40" cy="104" r="26"/><circle cx="236" cy="100" r="30"/><circle cx="140" cy="116" r="22"/></g><g fill="#24324f"><rect x="62" y="44" width="38" height="106"/><rect x="108" y="64" width="44" height="86"/><rect x="160" y="30" width="40" height="120"/><path d="M160 30 L180 16 L200 30Z"/></g><g fill="#f0b48f"><rect x="72" y="64" width="7" height="5"/><rect x="170" y="52" width="7" height="5"/><rect x="122" y="84" width="7" height="5"/></g><path d="M0 146 H280" stroke="#2c5a46" stroke-width="8"/></svg></div>
+    <div class="bd"><h3>알라방 <span>MUNTINLUPA</span></h3><p>남쪽 주거 지역으로 녹지가 많고 조용해, 아이 있는 가족과 장기 체류자가 선호해요</p><div class="rng"><small>1베드 월세 예시</small><b>₱30k–55k</b></div></div>
+   </div>
+  </div>
+  <p class="note">※ 금액은 상담 안내를 위한 예시 범위이며, 단지·층·옵션에 따라 달라집니다.</p>
+ </div>
+</section>
+
+<section class="sec" style="padding-top:0">
+ <div class="in">
+  <div class="tool">
+   <svg class="grid-bg" preserveAspectRatio="none" viewBox="0 0 1200 600"><rect width="1200" height="600" fill="url(#g1)"/></svg>
+   <div>
+    <small class="sg" style="font-size:13px;font-weight:600;letter-spacing:.26em;color:#f0b48f">BUDGET CHECK</small>
+    <h2 style="margin-top:10px">월 예산을 움직여<br>가능한 평형을 보세요</h2>
+    <p class="sub">관리비를 포함한 월 예산 기준 예시예요. 정확한 매물은 상담에서 조건을 듣고 추려 드립니다.</p>
+    <div class="bud" id="budv">₱40,000<small>/ 월</small></div>
+    <input type="range" id="bud" min="20000" max="100000" step="5000" value="40000" aria-label="월 예산">
+    <div class="ticks"><span>₱20k</span><span>₱60k</span><span>₱100k</span></div>
+   </div>
+   <div class="res" id="res">
+    <div class="ri" data-min="22000" data-good="30000"><svg viewBox="0 0 66 52" fill="none" stroke="#f0b48f" stroke-width="2"><rect x="3" y="3" width="60" height="46" rx="3"/><path d="M3 34h22v15M40 3v14h23"/><rect x="8" y="8" width="14" height="10" rx="2" fill="#f0b48f" fill-opacity=".25"/></svg><div><h4>스튜디오</h4><p>24–30㎡ · 1인 거주</p></div><span class="st">가능</span></div>
+    <div class="ri" data-min="32000" data-good="45000"><svg viewBox="0 0 66 52" fill="none" stroke="#f0b48f" stroke-width="2"><rect x="3" y="3" width="60" height="46" rx="3"/><path d="M30 3v26M30 37v12M3 26h27"/><rect x="36" y="8" width="20" height="12" rx="2" fill="#f0b48f" fill-opacity=".25"/></svg><div><h4>1베드</h4><p>40–55㎡ · 부부·1인</p></div><span class="st">가능</span></div>
+    <div class="ri" data-min="50000" data-good="65000"><svg viewBox="0 0 66 52" fill="none" stroke="#f0b48f" stroke-width="2"><rect x="3" y="3" width="60" height="46" rx="3"/><path d="M24 3v20M42 3v20M3 23h21M42 23h21M30 49V34"/><rect x="8" y="8" width="11" height="10" rx="2" fill="#f0b48f" fill-opacity=".25"/><rect x="47" y="8" width="11" height="10" rx="2" fill="#f0b48f" fill-opacity=".25"/></svg><div><h4>2베드</h4><p>65–90㎡ · 자녀 1–2명</p></div><span class="st">가능</span></div>
+    <div class="ri" data-min="75000" data-good="95000"><svg viewBox="0 0 66 52" fill="none" stroke="#f0b48f" stroke-width="2"><rect x="3" y="3" width="60" height="46" rx="3"/><path d="M22 3v18M44 3v18M3 21h60M33 21v28"/><rect x="7" y="7" width="10" height="9" rx="2" fill="#f0b48f" fill-opacity=".25"/><rect x="27" y="7" width="12" height="9" rx="2" fill="#f0b48f" fill-opacity=".25"/><rect x="49" y="7" width="10" height="9" rx="2" fill="#f0b48f" fill-opacity=".25"/></svg><div><h4>3베드</h4><p>100㎡ 이상 · 가족·가사도우미 방</p></div><span class="st">가능</span></div>
+   </div>
+  </div>
+ </div>
+</section>
+
+<section class="sec" style="padding-top:20px">
+ <div class="in">
+  <div class="sh"><div><small>HOW IT WORKS</small><h2>상담부터 입주까지<br>네 단계면 충분해요</h2></div><p>상담과 매물 브리핑은 무료이며, 계약이 성사될 때만 수수료가 발생합니다.</p></div>
+  <div class="steps">
+   <div class="st4"><div class="n">01</div><h3>조건 상담</h3><p>예산, 지역, 입주 시기, 반려동물·주차 여부를 카카오톡으로 편하게 알려 주세요.</p><span class="t">당일 연락</span></div>
+   <div class="st4"><div class="n">02</div><h3>매물 투어</h3><p>추린 매물을 하루에 몰아서 함께 둘러봐요. 영상 투어도 가능합니다.</p><span class="t">반나절 일정</span></div>
+   <div class="st4"><div class="n">03</div><h3>계약서 검토</h3><p>보증금·선납 월세·해지 조건을 한국어로 정리하고, 집주인과의 협의를 돕습니다.</p><span class="t">한국어 요약본 제공</span></div>
+   <div class="st4"><div class="n">04</div><h3>입주 점검</h3><p>열쇠 받는 날 함께 방문해 하자를 기록하고, 퇴거 때 보증금 분쟁에 대비해요.</p><span class="t">사진 점검표 전달</span></div>
+  </div>
+ </div>
+</section>
+
+<section class="sec" style="background:var(--paper)">
+ <div class="in contract">
+  <div class="doc">
+   <div class="dh"><b>LEASE SUMMARY</b><span>한국어 요약 예시</span></div>
+   <dl class="dl">
+    <dt>단지 / 호수</dt><dd>BGC 예시 레지던스 · 21층 1베드</dd>
+    <dt>월 임대료</dt><dd>₱52,000 (관리비 포함)</dd>
+    <dt>보증금</dt><dd><span class="hl">2개월분 · 퇴거 후 30일 내 반환</span></dd>
+    <dt>선납</dt><dd>1개월분 + 수표 11장 (PDC)</dd>
+    <dt>중도 해지</dt><dd><span class="hl">6개월 이후 60일 전 통보</span></dd>
+    <dt>수리 책임</dt><dd>₱3,000 이하 소모품은 세입자</dd>
+   </dl>
+   <div class="pin">해지 통보 기간이 짧은지 꼭 확인해야 하는 조항이에요</div>
+  </div>
+  <div>
+   <div class="sh" style="margin-bottom:10px"><div><small>CONTRACT CHECK</small><h2>영문 계약서는<br>이렇게 정리해 드려요</h2></div></div>
+   <div class="checks">
+    <div><svg viewBox="0 0 22 22"><circle cx="11" cy="11" r="10" fill="#b95f37"/><path d="M6.5 11.5l3 3 6-6.5" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>보증금 반환 기한과 공제 항목</div>
+    <div><svg viewBox="0 0 22 22"><circle cx="11" cy="11" r="10" fill="#b95f37"/><path d="M6.5 11.5l3 3 6-6.5" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>선납 수표(PDC) 장수와 날짜</div>
+    <div><svg viewBox="0 0 22 22"><circle cx="11" cy="11" r="10" fill="#b95f37"/><path d="M6.5 11.5l3 3 6-6.5" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>중도 해지 시 통보 기간과 위약금</div>
+    <div><svg viewBox="0 0 22 22"><circle cx="11" cy="11" r="10" fill="#b95f37"/><path d="M6.5 11.5l3 3 6-6.5" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>가전·가구 목록과 수리 비용 분담</div>
+   </div>
+  </div>
+ </div>
+</section>
+
+<section class="sec">
+ <div class="in faq">
+  <div class="sh" style="display:block"><small>FAQ</small><h2>상담 전에<br>많이 물어보세요</h2></div>
+  <div>
+   <details open><summary>상담만 받아도 비용이 드나요?</summary><p>아니요. 상담, 매물 브리핑, 투어 동행까지는 무료입니다. 계약이 성사되면 집주인 측과 정한 중개 수수료 안에서 진행돼요.</p></details>
+   <details><summary>한국에 있는데 미리 집을 구할 수 있나요?</summary><p>영상 투어와 계약서 요약본으로 입국 전 계약도 도와드려요. 입국 날 공항에서 열쇠를 받을 수 있게 일정을 맞춥니다.</p></details>
+   <details><summary>반려동물과 함께 살 수 있는 곳도 있나요?</summary><p>단지마다 규정이 달라서, 상담 때 반려동물 여부를 알려 주시면 허용되는 단지만 추려 드립니다.</p></details>
+   <details><summary>계약 기간은 보통 얼마나 되나요?</summary><p>대부분 1년 단위이고, 6개월 단기 계약은 월세가 조금 높게 책정되는 경우가 많아요. 매물마다 조건을 비교해 드립니다.</p></details>
+  </div>
+ </div>
+</section>
+
+<section class="sec" style="padding-top:0">
+ <div class="in">
+  <div class="final">
+   <svg class="deco" viewBox="0 0 200 200"><path d="M20 190 V80 L100 20 L180 80 V190" fill="none" stroke="#fff" stroke-width="14" stroke-linejoin="round"/><rect x="76" y="110" width="48" height="80" fill="#fff"/></svg>
+   <div><h2>조건만 남기면,<br>매물은 저희가 추려 올게요</h2><p>카카오톡 ID: example · 0900-000-0000</p></div>
+   <a href="#form">무료 매물 브리핑 신청 →</a>
+  </div>
+ </div>
+</section>
+
+<footer>
+ <div class="in"><div><b>보금 리얼티</b><br>마닐라 콘도 렌트 상담 · 주소 예시: Unit 000, 00 Street, Taguig</div><div>평일 09:00–19:00 · 토요일 투어 예약제</div></div>
+</footer>
+<div class="mbar" id="mbar"><a href="#form">무료 매물 브리핑 신청</a></div>
+<script>
+(function(){
+ var rooms='1베드';
+ document.querySelectorAll('#rooms button').forEach(function(b){b.addEventListener('click',function(){document.querySelectorAll('#rooms button').forEach(function(x){x.classList.remove('on')});b.classList.add('on');rooms=b.textContent})});
+ var area=document.getElementById('area');
+ document.querySelectorAll('.ar').forEach(function(c){c.addEventListener('click',function(){document.querySelectorAll('.ar').forEach(function(x){x.classList.remove('on')});c.classList.add('on');for(var i=0;i<area.options.length;i++){if(area.options[i].text===c.dataset.a)area.selectedIndex=i}document.getElementById('form').scrollIntoView({behavior:'smooth',block:'center'})})});
+ window.send=function(e){e.preventDefault();var a=area.options[area.selectedIndex].text;document.getElementById('doneTxt').textContent=a+' · '+rooms+' 조건으로 매물을 추려 하루 안에 연락드릴게요.';document.getElementById('form').classList.add('sent');return false};
+ var r=document.getElementById('bud'),v=document.getElementById('budv');
+ function upd(){var x=+r.value;v.innerHTML='₱'+x.toLocaleString('en-US')+'<small>/ 월</small>';r.style.setProperty('--p',((x-20000)/80000*100)+'%');
+  document.querySelectorAll('#res .ri').forEach(function(it){var mn=+it.dataset.min,gd=+it.dataset.good,st=it.querySelector('.st');it.classList.remove('y','m','n');if(x>=gd){it.classList.add('y');st.textContent='넉넉해요'}else if(x>=mn){it.classList.add('m');st.textContent='단지 따라 가능'}else{it.classList.add('n');st.textContent='예산 부족'}})}
+ r.addEventListener('input',upd);upd();
+ var mb=document.getElementById('mbar');window.addEventListener('scroll',function(){mb.classList.toggle('on',window.scrollY>700)});
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>버섯골 샤브 · 메뉴판 디자인</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@800&family=Noto+Sans+KR:wght@400;500;700&family=Outfit:wght@600&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Noto Sans KR',sans-serif;background:#f3eee2;color:#1d2622;word-break:keep-all;-webkit-font-smoothing:antialiased;
+ background-image:radial-gradient(ellipse 80% 50% at 90% 0%,rgba(226,98,43,.12),transparent 70%)}
+.wrap{max-width:1180px;margin:0 auto;padding:44px 20px 120px}
+.hd{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:18px;margin-bottom:32px}
+.hd small{font-family:'Outfit',sans-serif;font-weight:600;font-size:13px;letter-spacing:.26em;color:#e2622b}
+.hd h1{font-family:'Nanum Myeongjo',serif;font-weight:800;color:#21423a;font-size:clamp(30px,4.2vw,44px);letter-spacing:-.01em;margin-top:8px;line-height:1.25}
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px}
+.chips span{font-size:13px;font-weight:500;background:#fbf8f1;border:1.5px solid #21423a;color:#21423a;padding:5px 12px;border-radius:30px}
+.cta{display:inline-flex;align-items:center;gap:8px;height:52px;padding:0 26px;border-radius:40px;background:#21423a;color:#fbf8f1;font-weight:700;font-size:15px;text-decoration:none;transition:.2s;white-space:nowrap}
+.cta:hover{background:#163029}
+.cta svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.view{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,.75fr);gap:28px;align-items:start}
+figure{background:#fbf8f1;padding:10px;border-radius:8px;box-shadow:0 30px 60px -26px rgba(33,66,58,.45)}
+figure a{display:block}
+figure img{display:block;width:100%;height:auto;border-radius:4px}
+figcaption{font-size:13px;color:#5f6a64;padding:10px 4px 2px;display:flex;justify-content:space-between;gap:10px}
+.side{display:grid;gap:16px;position:sticky;top:24px}
+.zoom{border-radius:10px;overflow:hidden;box-shadow:0 20px 40px -24px rgba(33,66,58,.5);background:#fbf8f1}
+.zoom div{aspect-ratio:1/1;background:url(page1.png) no-repeat;background-size:180%}
+.zoom p{font-size:13px;color:#5f6a64;padding:10px 12px}
+.info{background:#21423a;color:#e8e2d3;border-radius:10px;padding:22px 22px}
+.info h2{font-family:'Nanum Myeongjo',serif;font-weight:800;font-size:22px;color:#fff;margin-bottom:12px}
+.info li{list-style:none;font-size:14px;line-height:1.9;display:flex;gap:10px}
+.info li:before{content:"";width:7px;height:7px;border-radius:50%;background:#e2622b;margin-top:11px;flex:none}
+.bar{position:fixed;left:0;right:0;bottom:0;background:rgba(33,66,58,.97);color:#f3eee2;padding:12px 20px;display:flex;justify-content:center;align-items:center;gap:18px;flex-wrap:wrap}
+.bar p{font-size:14px;opacity:.85}
+.bar .cta{height:46px;background:#e2622b;color:#fff}
+.bar .cta:hover{background:#c9531f}
+@media(max-width:860px){.view{grid-template-columns:1fr}.side{position:static;grid-template-columns:1fr 1fr}}
+@media(max-width:620px){.hd .cta{display:none}.bar p{display:none}.bar .cta{width:100%;justify-content:center}.side{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="wrap">
+ <div class="hd">
+  <div>
+   <small>MENU DESIGN · SD-MN09</small>
+   <h1>버섯골 샤브 메뉴판</h1>
+   <div class="chips"><span>A4 세로 · 1페이지</span><span>샤브샤브 · 전골</span><span>원화 가격</span><span>인쇄 · 웹 겸용</span></div>
+  </div>
+  <a class="cta" href="https://design.shoponph.online/#inquiry">이 디자인으로 상담하기 <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+ </div>
+ <div class="view">
+  <figure><a href="page1.png" target="_blank" rel="noopener"><img src="page1.png" alt="버섯골 샤브 메뉴판" width="2480" height="3508"></a><figcaption><span>육수 · 세트 · 마무리 · 추가 · 음료</span><span style="white-space:nowrap">눌러서 크게 보기</span></figcaption></figure>
+  <div class="side">
+   <div class="zoom"><div style="background-position:100% 0%;background-size:240%"></div><p>칸 냄비 일러스트 부분</p></div>
+   <div class="zoom"><div style="background-position:0% 88%"></div><p>세트 메뉴 부분</p></div>
+  </div>
+ </div>
+</div>
+<div class="bar"><p>우리 가게 메뉴판도 이런 느낌으로 만들어 보세요</p><a class="cta" href="https://design.shoponph.online/#inquiry">이 디자인으로 상담하기</a></div>
+</body>
+</html>
