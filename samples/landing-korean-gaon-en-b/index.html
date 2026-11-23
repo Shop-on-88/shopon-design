@@ -1,0 +1,767 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Gaon Korean Language Studio · Free Trial Lesson</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;0,800;1,600&display=swap" rel="stylesheet">
+<style>
+:root{--paper:#faf6ee;--paper2:#f3ecdf;--navy:#14244a;--ink:#0c1834;--tan:#f0712a;--tan2:#d95a16;--tanl:#fde4d1;--sky:#dfe7f1;--mute:#5a6580;--grid:rgba(240,113,42,.2)}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Montserrat',sans-serif;background:var(--paper);color:var(--navy);-webkit-font-smoothing:antialiased;line-height:1.6;overflow-x:hidden}
+img,svg{display:block;max-width:100%}
+a{color:inherit}
+.kr{font-family:'Gowun Batang',serif}
+.wrap{max-width:1200px;margin:0 auto;padding:0 28px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;height:56px;padding:0 30px;border-radius:12px;background:var(--tan);color:#fff;font-weight:700;font-size:16px;text-decoration:none;border:0;cursor:pointer;font-family:inherit;box-shadow:0 10px 22px -10px rgba(217,90,22,.7),inset 0 -3px 0 rgba(0,0,0,.12);transition:.2s}
+.btn:hover{background:var(--tan2);transform:translateY(-1px)}
+.btn svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round}
+.btn.ghost{background:transparent;color:var(--navy);box-shadow:inset 0 0 0 2px var(--navy)}
+.btn.ghost:hover{background:var(--navy);color:#fff}
+.eyebrow{display:inline-flex;align-items:center;gap:10px;font-size:13px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--tan2)}
+.eyebrow:before{content:"";width:22px;height:22px;border:2px solid var(--tan);background:linear-gradient(var(--tan),var(--tan)) center/2px 100% no-repeat,linear-gradient(var(--tan),var(--tan)) center/100% 2px no-repeat;opacity:.8}
+h2.sec{font-size:clamp(30px,3.6vw,46px);line-height:1.15;font-weight:800;letter-spacing:-.02em;margin-top:14px}
+h2.sec em{font-style:normal;color:var(--tan)}
+.lead{font-size:17px;color:var(--mute);max-width:620px;margin-top:14px}
+
+/* nav */
+.nav{position:sticky;top:0;z-index:40;background:rgba(250,246,238,.92);backdrop-filter:blur(8px);border-bottom:1px solid rgba(20,36,74,.1)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:74px;gap:20px}
+.logo{display:flex;align-items:center;gap:12px;text-decoration:none}
+.logo svg{width:42px;height:42px}
+.logo b{display:block;font-size:17px;font-weight:800;letter-spacing:.02em;line-height:1.1}
+.logo small{display:block;font-size:11px;font-weight:600;letter-spacing:.2em;color:var(--mute);text-transform:uppercase}
+.nav ul{display:flex;gap:30px;list-style:none}
+.nav ul a{text-decoration:none;font-size:14px;font-weight:600;color:var(--navy);opacity:.8}
+.nav ul a:hover{opacity:1;color:var(--tan2)}
+.nav .btn{height:44px;padding:0 20px;font-size:14px}
+
+/* hero */
+.hero{position:relative;overflow:hidden;padding:64px 0 70px;background:
+ linear-gradient(90deg,var(--grid) 1px,transparent 1px) 0 0/36px 36px,
+ linear-gradient(var(--grid) 1px,transparent 1px) 0 0/36px 36px,var(--paper)}
+.hero:after{content:"";position:absolute;inset:0;background:radial-gradient(ellipse 55% 70% at 74% 48%,var(--paper) 30%,rgba(250,246,238,.6) 60%,transparent 85%);pointer-events:none}
+.hero .wrap{position:relative;z-index:2;display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
+.mtag{display:inline-flex;align-items:center;gap:0}
+.mtag span{width:40px;height:40px;display:inline-flex;align-items:center;justify-content:center;border:2px solid var(--tan);margin-right:-2px;background:#fff;font-size:22px;font-weight:700;color:var(--tan2)}
+.mtag em{font-style:normal;margin-left:16px;font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--navy)}
+.calchip{display:inline-flex;align-items:center;gap:14px;margin-top:34px;padding:10px 18px 10px 12px;border-radius:16px;background:#fff;border:1.5px solid rgba(20,36,74,.14);text-decoration:none;box-shadow:0 14px 30px -22px rgba(12,24,52,.5);transition:.2s}
+.calchip:hover{border-color:var(--tan)}
+.calchip>svg{width:40px;height:44px;flex:none}
+.calchip b{display:block;font-size:15px;font-weight:800;color:var(--ink);line-height:1.3}
+.calchip i{display:block;font-style:normal;font-size:13px;color:var(--mute);font-weight:500}
+.calchip .ar{width:18px;height:18px;fill:none;stroke:var(--tan2);stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round;flex:none}
+.hero h1{font-size:clamp(40px,5.2vw,70px);line-height:1.04;font-weight:800;letter-spacing:-.035em;margin:24px 0 0;color:var(--ink)}
+.hero h1 .hl{position:relative;display:inline-block;color:var(--tan)}
+.hero h1 .hl:after{content:"";position:absolute;left:-2px;right:-4px;bottom:.06em;height:.16em;background:var(--tanl);z-index:-1;border-radius:3px}
+.hero h1 .kr{font-weight:700;font-size:.82em;letter-spacing:0;color:var(--navy)}
+.hero p.sub{font-size:18px;color:var(--mute);margin-top:22px;max-width:540px}
+.hero p.sub b{color:var(--navy)}
+.actions{display:flex;flex-wrap:wrap;align-items:center;gap:14px;margin-top:32px}
+.art{position:relative}
+.art svg{width:100%;height:auto;filter:drop-shadow(0 30px 40px rgba(12,24,52,.18))}
+
+/* manuscript strip */
+.strip{background:var(--navy);color:#fff;padding:34px 0;overflow:hidden}
+.strip .wrap{display:flex;align-items:center;justify-content:space-between;gap:30px;flex-wrap:wrap}
+.cells{display:flex;gap:0;border:2px solid rgba(240,113,42,.85);background:#fffdf8}
+.cell{width:78px;height:96px;border-right:1.5px solid rgba(240,113,42,.55);display:flex;flex-direction:column;align-items:center;justify-content:center;color:var(--ink)}
+.cell:last-child{border-right:0}
+.cell b{font-family:'Gowun Batang',serif;font-size:42px;line-height:1;font-weight:700}
+.cell i{font-style:normal;font-size:12px;font-weight:700;color:var(--tan2);margin-top:8px;letter-spacing:.06em}
+.strip p{font-size:18px;max-width:430px;color:#d6deee}
+.strip p b{color:#fff}
+.strip p em{font-style:normal;color:#ffb27f;font-weight:700}
+
+/* curriculum */
+section.pad{padding:110px 0}
+.weeks{display:grid;grid-template-columns:repeat(4,1fr);gap:22px;margin-top:54px;position:relative}
+.weeks:before{content:"";position:absolute;left:4%;right:4%;top:36px;border-top:2px dashed rgba(240,113,42,.5)}
+.wk{position:relative;background:#fff;border-radius:18px;padding:26px 24px 28px;box-shadow:0 1px 0 rgba(20,36,74,.08),0 24px 40px -30px rgba(12,24,52,.45);border:1px solid rgba(20,36,74,.08)}
+.wk .no{display:inline-flex;align-items:center;justify-content:center;height:24px;padding:0 10px;border-radius:6px;background:var(--navy);color:#fff;font-size:12px;font-weight:700;letter-spacing:.1em;position:relative}
+.wk svg{width:74px;height:74px;margin:18px 0 14px}
+.wk h3{font-size:19px;font-weight:800;line-height:1.3;color:var(--ink)}
+.wk p{font-size:14.5px;color:var(--mute);margin-top:8px}
+.wk .k{display:inline-block;margin-top:14px;font-family:'Gowun Batang',serif;font-weight:700;font-size:17px;color:var(--tan2);background:var(--tanl);padding:3px 10px;border-radius:6px}
+
+/* try widget */
+.try{background:var(--paper2);position:relative;overflow:hidden}
+.try .wrap{display:grid;grid-template-columns:.9fr 1.1fr;gap:56px;align-items:center}
+.board{background:#fffdf8;border-radius:22px;padding:28px;box-shadow:0 30px 60px -36px rgba(12,24,52,.55);border:1px solid rgba(20,36,74,.08)}
+.tabs{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.tabs button{font-family:inherit;border:2px solid rgba(20,36,74,.15);background:#fff;border-radius:14px;padding:10px 6px;cursor:pointer;color:var(--navy);transition:.2s}
+.tabs button b{display:block;font-family:'Gowun Batang',serif;font-size:34px;line-height:1.1}
+.tabs button span{font-size:12px;font-weight:700;letter-spacing:.08em;color:var(--mute)}
+.tabs button[aria-pressed=true]{border-color:var(--tan);background:var(--tanl)}
+.tabs button[aria-pressed=true] span{color:var(--tan2)}
+.stage{display:grid;grid-template-columns:200px 1fr;gap:26px;align-items:center;margin-top:22px}
+.sheet{width:200px;height:200px;position:relative;background:
+ linear-gradient(rgba(240,113,42,.35),rgba(240,113,42,.35)) center/1.5px 100% no-repeat,
+ linear-gradient(rgba(240,113,42,.35),rgba(240,113,42,.35)) center/100% 1.5px no-repeat,#fff;border:2.5px solid var(--tan);border-radius:4px}
+.sheet svg{position:absolute;inset:14px;width:calc(100% - 28px);height:calc(100% - 28px)}
+.sheet path{fill:none;stroke:var(--ink);stroke-width:13;stroke-linecap:round;stroke-linejoin:round}
+.sheet path.draw{stroke-dasharray:300;stroke-dashoffset:300;animation:dr 1.1s ease forwards}
+@keyframes dr{to{stroke-dashoffset:0}}
+.info h3{font-size:24px;font-weight:800;color:var(--ink)}
+.info h3 small{font-size:14px;font-weight:600;color:var(--tan2);margin-left:6px}
+.info p{font-size:15px;color:var(--mute);margin-top:8px}
+.info .tip{margin-top:12px;font-size:13.5px;background:var(--sky);border-radius:10px;padding:10px 12px;color:var(--navy)}
+.replay{margin-top:12px;font-family:inherit;font-size:13px;font-weight:700;color:var(--navy);background:none;border:0;border-bottom:2px solid var(--tan);cursor:pointer;padding:2px 0}
+.quiz{margin-top:24px;border-top:1.5px dashed rgba(20,36,74,.2);padding-top:20px}
+.quiz p{font-size:15px;font-weight:700;color:var(--ink)}
+.opts{display:flex;gap:10px;margin-top:12px;flex-wrap:wrap}
+.opts button{font-family:'Gowun Batang',serif;font-size:30px;font-weight:700;width:76px;height:66px;border-radius:12px;border:2px solid rgba(20,36,74,.18);background:#fff;cursor:pointer;color:var(--navy);transition:.15s}
+.opts button:hover{border-color:var(--navy)}
+.opts button.ok{background:#e3f1e6;border-color:#2f8a4f;color:#1d6236}
+.opts button.no{background:#fbe5e0;border-color:#c8492c}
+.fb{font-size:14px;margin-top:10px;min-height:22px;font-weight:600}
+.try ul.points{list-style:none;margin-top:26px;display:grid;gap:12px}
+.try ul.points li{display:flex;gap:12px;font-size:15.5px;color:var(--navy)}
+.try ul.points li svg{width:22px;height:22px;flex:none;margin-top:1px}
+
+/* pricing */
+.plans{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:54px;align-items:stretch}
+.plan{background:#fff;border-radius:22px;padding:32px 30px;border:1.5px solid rgba(20,36,74,.12);display:flex;flex-direction:column;position:relative}
+.plan.feat{background:var(--navy);color:#fff;border-color:var(--navy);box-shadow:0 34px 60px -34px rgba(12,24,52,.8)}
+.plan .tag{position:absolute;top:-14px;left:30px;background:var(--tan);color:#fff;font-size:12px;font-weight:700;letter-spacing:.08em;padding:5px 12px;border-radius:6px}
+.plan svg.pi{width:54px;height:54px}
+.plan h3{font-size:22px;font-weight:800;margin-top:16px}
+.plan .desc{font-size:14.5px;color:var(--mute);margin-top:6px;min-height:46px}
+.plan.feat .desc{color:#c3cde2}
+.price{margin-top:22px;display:flex;align-items:baseline;gap:8px;flex-wrap:wrap}
+.price b{font-size:44px;font-weight:800;letter-spacing:-.02em;line-height:1}
+.price span{font-size:14px;color:var(--mute);font-weight:600}
+.plan.feat .price span{color:#c3cde2}
+.plan ul{list-style:none;margin:22px 0 28px;display:grid;gap:10px;flex:1}
+.plan li{display:flex;gap:10px;font-size:14.5px}
+.plan li:before{content:"";flex:none;width:16px;height:16px;margin-top:3px;border:2px solid var(--tan);border-radius:3px;background:linear-gradient(var(--tan),var(--tan)) center/6px 6px no-repeat}
+.plan .btn{width:100%}
+.plan:not(.feat) .btn{background:var(--paper2);color:var(--navy);box-shadow:inset 0 0 0 2px rgba(20,36,74,.15)}
+.plan:not(.feat) .btn:hover{background:var(--navy);color:#fff}
+.note{margin-top:22px;font-size:14px;color:var(--mute);text-align:center}
+.note b{color:var(--navy)}
+
+/* schedule */
+.sched{background:var(--navy);color:#fff;position:relative;overflow:hidden}
+.sched:before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(255,255,255,.05) 1px,transparent 1px) 0 0/36px 36px,linear-gradient(rgba(255,255,255,.05) 1px,transparent 1px) 0 0/36px 36px}
+.sched .wrap{position:relative}
+.sched .eyebrow{color:#ffb27f}
+.sched .lead{color:#c3cde2}
+.cal{display:grid;grid-template-columns:1.3fr .7fr;gap:28px;margin-top:50px;align-items:start}
+.table{background:#fffdf8;color:var(--navy);border-radius:20px;overflow:hidden}
+.row{display:grid;grid-template-columns:1.25fr 1.2fr .9fr .8fr;gap:12px;padding:20px 26px;border-bottom:1px solid rgba(20,36,74,.1);align-items:center;font-size:15px}
+.row:last-child{border-bottom:0}
+.row.h{background:var(--paper2);font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--mute);padding:14px 26px}
+.row b{display:block;font-weight:700;color:var(--ink)}
+.row small{font-size:13px;color:var(--mute)}
+.chip{display:inline-block;font-size:12px;font-weight:700;padding:4px 10px;border-radius:20px;background:var(--tanl);color:var(--tan2)}
+.chip.sky{background:var(--sky);color:var(--navy)}
+.trial{background:var(--tan);border-radius:20px;padding:28px;color:#fff;position:relative;overflow:hidden}
+.trial h3{font-size:22px;font-weight:800;line-height:1.25}
+.trial p{font-size:14.5px;margin-top:8px;color:#fff3ea}
+.dates{display:grid;gap:10px;margin-top:20px}
+.date{display:flex;align-items:center;gap:14px;background:rgba(255,255,255,.16);border-radius:12px;padding:10px 14px}
+.date .d{width:52px;height:56px;background:#fff;color:var(--ink);border-radius:8px;display:flex;flex-direction:column;align-items:center;justify-content:center;flex:none;line-height:1}
+.date .d small{font-size:11px;font-weight:700;color:var(--tan2);letter-spacing:.08em}
+.date .d b{font-size:22px;font-weight:800;margin-top:3px}
+.date span{font-size:14px;font-weight:600}
+.date span i{display:block;font-style:normal;font-weight:500;font-size:13px;color:#fff3ea}
+
+/* teacher */
+.teach .wrap{display:grid;grid-template-columns:1fr 1fr;grid-template-areas:"art head" "art vals";column-gap:64px;row-gap:0;align-items:center}
+.teach .thead{grid-area:head;align-self:end}.teach .art{grid-area:art}.teach .vals{grid-area:vals;align-self:start}
+.teach .art svg{filter:drop-shadow(0 30px 40px rgba(12,24,52,.22));border-radius:28px}
+.vals{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:30px}
+.val{background:#fff;border-radius:16px;padding:20px;border:1px solid rgba(20,36,74,.1)}
+.val b{display:flex;align-items:center;gap:10px;font-size:16px;font-weight:800;color:var(--ink)}
+.val b i{font-style:normal;font-family:'Gowun Batang',serif;width:34px;height:34px;border:2px solid var(--tan);display:inline-flex;align-items:center;justify-content:center;color:var(--tan2);font-size:18px;border-radius:4px;flex:none}
+.val p{font-size:14px;color:var(--mute);margin-top:8px}
+
+/* faq */
+.faq{background:var(--paper2)}
+.faq .wrap{display:grid;grid-template-columns:.8fr 1.2fr;gap:56px;align-items:start}
+details{background:#fff;border-radius:14px;margin-bottom:12px;border:1px solid rgba(20,36,74,.1)}
+summary{list-style:none;cursor:pointer;padding:20px 24px;font-weight:700;font-size:16px;display:flex;justify-content:space-between;gap:16px;align-items:center;color:var(--ink)}
+summary::-webkit-details-marker{display:none}
+summary:after{content:"+";flex:none;width:30px;height:30px;border-radius:8px;background:var(--tanl);color:var(--tan2);display:flex;align-items:center;justify-content:center;font-size:20px;font-weight:700;transition:.2s}
+details[open] summary:after{content:"–";background:var(--tan);color:#fff}
+details p{padding:0 24px 22px;font-size:15px;color:var(--mute)}
+
+/* form */
+.signup .wrap{display:grid;grid-template-columns:.85fr 1.15fr;gap:56px;align-items:start}
+.offer{background:var(--navy);color:#fff;border-radius:24px;padding:36px;position:relative;overflow:hidden}
+.offer .eyebrow{color:#ffb27f}
+.offer h2{font-size:34px;line-height:1.15;font-weight:800;margin-top:14px}
+.offer h2 em{font-style:normal;color:#ffb27f}
+.offer ul{list-style:none;margin-top:22px;display:grid;gap:12px}
+.offer li{display:flex;gap:12px;font-size:15px;color:#dbe2f0}
+.offer li b{flex:none;width:26px;height:26px;border-radius:6px;background:var(--tan);display:flex;align-items:center;justify-content:center;font-size:13px;color:#fff}
+.offer{padding-bottom:180px!important}.offer svg.stamp{position:absolute;right:26px;bottom:22px;width:140px;height:140px;opacity:.9}
+form{background:#fff;border-radius:24px;padding:36px;border:1px solid rgba(20,36,74,.1);box-shadow:0 30px 60px -40px rgba(12,24,52,.5)}
+.fgrid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.f{display:flex;flex-direction:column;gap:7px}
+.f.full{grid-column:1/-1}
+.f label,.f .lb{font-size:13px;font-weight:700;color:var(--ink)}
+.f input,.f select{height:52px;border:1.5px solid rgba(20,36,74,.2);border-radius:10px;padding:0 14px;font-family:inherit;font-size:15px;color:var(--navy);background:var(--paper);outline:none}
+.f input:focus,.f select:focus{border-color:var(--tan);background:#fff}
+.pick{display:flex;flex-wrap:wrap;gap:8px}
+.pick label{cursor:pointer}
+.pick input{position:absolute;opacity:0;pointer-events:none}
+.pick span{display:inline-block;padding:10px 14px;border-radius:10px;border:1.5px solid rgba(20,36,74,.2);font-size:14px;font-weight:600;background:var(--paper);transition:.15s}
+.pick input:checked+span{background:var(--navy);color:#fff;border-color:var(--navy)}
+.pick input:focus-visible+span{outline:2px solid var(--tan);outline-offset:2px}
+.agree{display:flex;gap:10px;align-items:flex-start;font-size:13.5px;color:var(--mute)}
+.agree input{width:18px;height:18px;margin-top:2px;accent-color:var(--tan)}
+form .btn{width:100%;margin-top:6px}
+.err{color:#c8492c;font-size:13px;font-weight:600;min-height:20px}
+.done{display:none;text-align:center;padding:30px 10px}
+.done svg{width:96px;height:96px;margin:0 auto}
+.done h3{font-size:26px;font-weight:800;margin-top:16px;color:var(--ink)}
+.done p{color:var(--mute);margin-top:8px;font-size:15px}
+.done .kr{font-size:28px;color:var(--tan2);margin-top:12px;font-weight:700}
+
+footer{background:var(--ink);color:#aeb8cf;padding:56px 0 40px}
+footer .wrap{display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:30px}
+footer .logo b{color:#fff}
+footer .logo small{color:#8f9ab3}
+footer h4{color:#fff;font-size:14px;letter-spacing:.12em;text-transform:uppercase;margin-bottom:12px}
+footer p,footer li{font-size:14px;list-style:none;line-height:1.9}
+footer .cp{grid-column:1/-1;border-top:1px solid rgba(255,255,255,.1);padding-top:22px;margin-top:10px;font-size:13px;color:#7f8aa5}
+.mbar{display:none}
+
+@media(max-width:1080px){.weeks{grid-template-columns:repeat(2,1fr)}.weeks:before{display:none}.nav ul{display:none}}
+@media(max-width:960px){
+ .hero .wrap,.try .wrap,.teach .wrap,.faq .wrap,.signup .wrap,.cal{grid-template-columns:1fr}
+ .plans{grid-template-columns:1fr;max-width:520px;margin-left:auto;margin-right:auto}
+ .art{max-width:560px;margin:0 auto;width:100%}
+ .hero .art{order:2}
+ .teach .wrap{grid-template-areas:"head" "art" "vals";row-gap:30px}
+ section.pad{padding:80px 0}
+}
+@media(max-width:640px){
+ .wrap{padding:0 18px}
+ .nav .wrap{height:64px}.nav .btn{display:none}
+ .logo svg{width:36px;height:36px}
+ .hero{padding:40px 0 50px}
+ .hero h1{font-size:40px}
+ .hero p.sub{font-size:16px}
+ .actions .btn{width:100%}
+ .mtag span{width:34px;height:34px;font-size:19px}
+ .mtag em{font-size:12px;margin-left:12px;letter-spacing:.04em}
+ .calchip{width:100%}
+ .cell{width:calc((100vw - 40px)/5);height:84px}
+ .cell b{font-size:34px}
+ .strip p{font-size:16px}
+ .weeks{grid-template-columns:1fr}
+ .stage{grid-template-columns:1fr;justify-items:center;text-align:center}
+ .info .tip{text-align:left}
+ .board{padding:20px}
+ .opts{justify-content:center}
+ .quiz p{text-align:center}
+ .row{grid-template-columns:1fr 1fr;padding:16px 18px;gap:8px 12px}
+ .row.h{display:none}
+ .row>div:nth-child(3),.row>div:nth-child(4){font-size:14px}
+ .row>div:nth-child(3) b:before{content:"Starts ";font-weight:500;color:var(--mute)}
+ .vals{grid-template-columns:1fr}
+ .fgrid{grid-template-columns:1fr}
+ form,.offer{padding:24px}
+ .offer h2{font-size:28px}
+ footer .wrap{grid-template-columns:1fr}
+ footer{padding-bottom:116px}
+ .mbar{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:50;background:rgba(12,24,52,.97);padding:10px 14px;gap:10px;align-items:center}
+ .mbar p{color:#fff;font-size:13px;font-weight:600;flex:1;line-height:1.35}
+ .mbar p b{color:#ffb27f}
+ .mbar .btn{height:48px;padding:0 18px;font-size:14px}
+}
+</style>
+</head>
+<body>
+
+<header class="nav">
+ <div class="wrap">
+  <a class="logo" href="#top" aria-label="Gaon Korean Language Studio">
+   <svg viewBox="0 0 48 48" aria-hidden="true"><defs><linearGradient id="lg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#1d3366"/><stop offset="1" stop-color="#0c1834"/></linearGradient></defs><rect x="2" y="2" width="44" height="44" rx="10" fill="url(#lg)"/><path d="M14 14h20M24 14v20M14 24h20" stroke="#f0712a" stroke-width="1.2" opacity=".55"/><path d="M13 15h13v13" fill="none" stroke="#fff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><circle cx="33" cy="33" r="6" fill="none" stroke="#f0712a" stroke-width="4"/></svg>
+   <span><b>GAON</b><small>Korean Language Studio</small></span>
+  </a>
+  <ul>
+   <li><a href="#course">Course</a></li>
+   <li><a href="#try">Try Hangul</a></li>
+   <li><a href="#plans">Pricing</a></li>
+   <li><a href="#schedule">Schedule</a></li>
+   <li><a href="#faq">FAQ</a></li>
+  </ul>
+  <a class="btn" href="#signup">Book free trial</a>
+ </div>
+</header>
+
+<section class="hero" id="top">
+ <div class="wrap">
+  <div class="art" aria-hidden="true">
+   <svg viewBox="0 0 580 520">
+    <defs>
+     <linearGradient id="desk" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#e8dcc7"/><stop offset="1" stop-color="#d6c5a8"/></linearGradient>
+     <linearGradient id="pap" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ffffff"/><stop offset="1" stop-color="#f6efe2"/></linearGradient>
+     <linearGradient id="pen" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ff9a5a"/><stop offset=".5" stop-color="#f0712a"/><stop offset="1" stop-color="#c85212"/></linearGradient>
+     <linearGradient id="cup" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#1d3366"/><stop offset=".6" stop-color="#2b4a8a"/><stop offset="1" stop-color="#14244a"/></linearGradient>
+     <linearGradient id="tea" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#c98a3e"/><stop offset="1" stop-color="#8f561c"/></linearGradient>
+     <linearGradient id="book" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#14244a"/><stop offset="1" stop-color="#24407a"/></linearGradient>
+     <radialGradient id="glow" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#ffd2b2" stop-opacity=".9"/><stop offset="1" stop-color="#ffd2b2" stop-opacity="0"/></radialGradient>
+     <filter id="sh" x="-20%" y="-20%" width="140%" height="150%"><feDropShadow dx="0" dy="12" stdDeviation="12" flood-color="#0c1834" flood-opacity=".18"/></filter>
+     <filter id="sh2" x="-20%" y="-20%" width="140%" height="150%"><feDropShadow dx="0" dy="5" stdDeviation="5" flood-color="#0c1834" flood-opacity=".2"/></filter>
+     <pattern id="mgrid" width="44" height="44" patternUnits="userSpaceOnUse"><rect width="44" height="44" fill="none" stroke="#f0712a" stroke-opacity=".5" stroke-width="1.2"/></pattern>
+    </defs>
+    <circle cx="300" cy="250" r="230" fill="url(#glow)"/>
+    <!-- manuscript sheet -->
+    <g filter="url(#sh)" transform="rotate(4 340 220)">
+     <rect x="170" y="40" width="330" height="360" rx="6" fill="url(#pap)"/>
+     <rect x="194" y="70" width="264" height="44" fill="url(#mgrid)"/>
+     <rect x="194" y="130" width="264" height="44" fill="url(#mgrid)"/>
+     <rect x="194" y="190" width="264" height="44" fill="url(#mgrid)"/>
+     <rect x="194" y="250" width="264" height="44" fill="url(#mgrid)"/>
+     <rect x="194" y="310" width="264" height="44" fill="url(#mgrid)"/>
+     <g font-family="Gowun Batang" font-weight="700" fill="#14244a" text-anchor="middle" font-size="30">
+      <text x="216" y="102">안</text><text x="260" y="102">녕</text><text x="304" y="102">하</text><text x="348" y="102">세</text><text x="392" y="102">요</text>
+      <text x="216" y="162">ㄱ</text><text x="260" y="162">ㄴ</text><text x="304" y="162">ㄷ</text><text x="348" y="162">ㄹ</text>
+      <text x="216" y="222">가</text><text x="260" y="222">나</text><text x="304" y="222">다</text>
+      <text x="216" y="282" fill="#f0712a">감</text><text x="260" y="282" fill="#f0712a">사</text><text x="304" y="282" fill="#f0712a">합</text><text x="348" y="282" fill="#f0712a">니</text><text x="392" y="282" fill="#f0712a">다</text>
+     </g>
+     <g font-family="Gowun Batang" font-weight="700" fill="#14244a" text-anchor="middle" font-size="30" opacity=".18"><text x="348" y="222">라</text><text x="392" y="222">마</text></g>
+     <path d="M200 338c20-8 40 6 60-2s38 4 58-4" fill="none" stroke="#14244a" stroke-width="2.5" stroke-linecap="round" opacity=".35"/>
+    </g>
+    <!-- textbook -->
+    <g filter="url(#sh)" transform="translate(-28 34) rotate(-8 140 360)">
+     <rect x="40" y="300" width="200" height="150" rx="8" fill="url(#book)"/>
+     <rect x="40" y="436" width="200" height="14" fill="#e9e1d1"/>
+     <rect x="40" y="300" width="16" height="150" fill="#0c1834" opacity=".5"/>
+     <rect x="76" y="326" width="140" height="56" rx="6" fill="none" stroke="#f0712a" stroke-width="2"/>
+     <text x="146" y="364" text-anchor="middle" font-family="Gowun Batang" font-weight="700" font-size="30" fill="#fff">한글</text>
+     <rect x="76" y="398" width="90" height="6" rx="3" fill="#8fa3cc"/>
+     <rect x="76" y="412" width="60" height="6" rx="3" fill="#8fa3cc" opacity=".6"/>
+    </g>
+    <!-- big card -->
+    <g filter="url(#sh)" transform="translate(8 74) rotate(-6 470 330)">
+     <rect x="398" y="250" width="150" height="170" rx="12" fill="#14244a"/>
+     <rect x="410" y="262" width="126" height="126" rx="4" fill="#fffdf8"/>
+     <path d="M473 262v126M410 325h126" stroke="#f0712a" stroke-opacity=".45" stroke-width="1.5" stroke-dasharray="4 4"/>
+     <text x="473" y="362" text-anchor="middle" font-family="Gowun Batang" font-weight="700" font-size="92" fill="#0c1834">가</text>
+     <text x="473" y="408" text-anchor="middle" font-family="Montserrat" font-weight="700" font-size="15" fill="#ffb27f" letter-spacing="3">GA</text>
+    </g>
+    <!-- pencil -->
+    <g filter="url(#sh2)" transform="rotate(-32 330 440)">
+     <rect x="230" y="430" width="200" height="22" rx="3" fill="url(#pen)"/>
+     <rect x="230" y="430" width="200" height="7" fill="#ffb27f" opacity=".5"/>
+     <rect x="414" y="430" width="22" height="22" fill="#cfd6e4"/>
+     <rect x="436" y="430" width="18" height="22" rx="4" fill="#f4a3a3"/>
+     <path d="M230 430l-34 11 34 11z" fill="#f2d3a6"/>
+     <path d="M207 437.5l-11 3.5 11 3.5z" fill="#14244a"/>
+    </g>
+    <!-- tea cup -->
+    <g filter="url(#sh2)">
+     <ellipse cx="96" cy="250" rx="62" ry="14" fill="#0c1834" opacity=".12"/>
+     <path d="M44 170h104l-10 70a14 14 0 0 1-14 12H68a14 14 0 0 1-14-12z" fill="url(#cup)"/>
+     <ellipse cx="96" cy="170" rx="52" ry="12" fill="#1d3366"/>
+     <ellipse cx="96" cy="171" rx="45" ry="9" fill="url(#tea)"/>
+     <path d="M60 200h72" stroke="#f0712a" stroke-width="3" opacity=".8"/>
+     <path d="M70 212h52" stroke="#ffb27f" stroke-width="2" opacity=".6"/>
+     <path d="M84 150c-8-14 8-20 0-36M106 150c-8-14 8-20 0-36" fill="none" stroke="#14244a" stroke-opacity=".25" stroke-width="3" stroke-linecap="round"/>
+    </g>
+    <!-- speech bubble -->
+    <g filter="url(#sh2)">
+     <path d="M30 40h140a16 16 0 0 1 16 16v44a16 16 0 0 1-16 16H82l-22 20 4-20H30a16 16 0 0 1-16-16V56a16 16 0 0 1 16-16z" fill="#f0712a"/>
+     <text x="100" y="80" text-anchor="middle" font-family="Gowun Batang" font-weight="700" font-size="28" fill="#fff">안녕!</text>
+     <text x="100" y="102" text-anchor="middle" font-family="Montserrat" font-weight="600" font-size="13" fill="#ffe7d6" letter-spacing="1">annyeong!</text>
+    </g>
+    <!-- stamp -->
+    <g transform="rotate(-12 530 120)" opacity=".92">
+     <circle cx="530" cy="120" r="40" fill="none" stroke="#d95a16" stroke-width="4"/>
+     <circle cx="530" cy="120" r="32" fill="none" stroke="#d95a16" stroke-width="1.5"/>
+     <text x="530" y="131" text-anchor="middle" font-family="Gowun Batang" font-weight="700" font-size="28" fill="#d95a16">가온</text>
+    </g>
+   </svg>
+  </div>
+  <div class="htext">
+   <div class="mtag"><span class="kr">무</span><span class="kr">료</span><em>Free trial lesson · January course</em></div>
+   <h1>Read <span class="hl">Korean</span><br>in 8 weeks.<br><span class="kr">처음부터, 천천히.</span></h1>
+   <p class="sub">Start from zero with Hangul, the Korean alphabet. Small classes, patient teachers and lessons in English. <b>Your first lesson is on us.</b></p>
+   <div class="actions">
+    <a class="btn" href="#signup">Book my free trial <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+    <a class="btn ghost" href="#try">Try 3 letters now</a>
+   </div>
+   <a class="calchip" href="#schedule">
+    <svg viewBox="0 0 44 48" aria-hidden="true"><defs><linearGradient id="cg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ff8d4c"/><stop offset="1" stop-color="#d95a16"/></linearGradient></defs><rect x="2" y="6" width="40" height="40" rx="7" fill="#fff" stroke="#14244a" stroke-opacity=".15"/><path d="M2 13a7 7 0 0 1 7-7h26a7 7 0 0 1 7 7v5H2z" fill="url(#cg)"/><rect x="11" y="2" width="4" height="10" rx="2" fill="#14244a"/><rect x="29" y="2" width="4" height="10" rx="2" fill="#14244a"/><text x="22" y="40" text-anchor="middle" font-family="Montserrat" font-weight="800" font-size="17" fill="#0c1834">2</text></svg>
+    <span><b>Trial lessons · Jan 2, 5 &amp; 6</b><i>Course starts Jan 9 · 6 seats per class</i></span>
+    <svg class="ar" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+   </a>
+  </div>
+ </div>
+</section>
+
+<div class="strip">
+ <div class="wrap">
+  <div class="cells" aria-label="안녕하세요 written in manuscript squares">
+   <div class="cell"><b>안</b><i>an</i></div><div class="cell"><b>녕</b><i>nyeong</i></div><div class="cell"><b>하</b><i>ha</i></div><div class="cell"><b>세</b><i>se</i></div><div class="cell"><b>요</b><i>yo</i></div>
+  </div>
+  <p>Five squares, one greeting. By week 2 you will <b>read this on your own</b> — and by week 8 you can <em>order, count and introduce yourself</em> in Korean.</p>
+ </div>
+</div>
+
+<section class="pad" id="course">
+ <div class="wrap">
+  <span class="eyebrow">The 8-week beginner course</span>
+  <h2 class="sec">From your first letter<br>to your <em>first real conversation</em></h2>
+  <p class="lead">Every week builds on the last. Homework takes about 15 minutes a day, and each class ends with something you can use outside the classroom.</p>
+  <div class="weeks">
+   <div class="wk"><span class="no">WEEK 1–2</span>
+    <svg viewBox="0 0 80 80"><defs><linearGradient id="w1" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fde4d1"/><stop offset="1" stop-color="#f9c9a5"/></linearGradient></defs><rect x="6" y="6" width="68" height="68" rx="14" fill="url(#w1)"/><path d="M40 14v52M14 40h52" stroke="#f0712a" stroke-opacity=".35" stroke-dasharray="3 3"/><path d="M22 24h16v16" fill="none" stroke="#14244a" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/><path d="M48 22v18h12" fill="none" stroke="#14244a" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/><path d="M30 48v12M24 54h12" stroke="#f0712a" stroke-width="5" stroke-linecap="round"/><circle cx="54" cy="56" r="7" fill="none" stroke="#f0712a" stroke-width="5"/></svg>
+    <h3>Hangul basics</h3><p>All 14 basic consonants and 10 vowels, how syllable blocks work, and clean handwriting.</p><span class="k">ㄱ ㄴ ㅏ ㅗ</span></div>
+   <div class="wk"><span class="no">WEEK 3–4</span>
+    <svg viewBox="0 0 80 80"><defs><linearGradient id="w2" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#dfe7f1"/><stop offset="1" stop-color="#bccbe2"/></linearGradient></defs><rect x="6" y="6" width="68" height="68" rx="14" fill="url(#w2)"/><rect x="16" y="20" width="48" height="34" rx="5" fill="#fff"/><path d="M16 26h48" stroke="#14244a" stroke-width="2" opacity=".2"/><text x="40" y="47" text-anchor="middle" font-family="Gowun Batang" font-weight="700" font-size="18" fill="#14244a">빵집</text><path d="M30 54l-4 12M50 54l4 12" stroke="#14244a" stroke-width="3" stroke-linecap="round"/><circle cx="62" cy="20" r="8" fill="#f0712a"/><path d="M58 20l3 3 5-6" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"/></svg>
+    <h3>Read signs &amp; menus</h3><p>Final consonants (batchim), sound changes and reading real shop signs and menu boards.</p><span class="k">빵집 · 김밥</span></div>
+   <div class="wk"><span class="no">WEEK 5–6</span>
+    <svg viewBox="0 0 80 80"><defs><linearGradient id="w3" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fde4d1"/><stop offset="1" stop-color="#f9c9a5"/></linearGradient></defs><rect x="6" y="6" width="68" height="68" rx="14" fill="url(#w3)"/><ellipse cx="40" cy="52" rx="24" ry="8" fill="#14244a" opacity=".15"/><path d="M18 40h44a22 16 0 0 1-44 0z" fill="#14244a"/><path d="M22 40c4-8 10-6 14-10 6 4 12 2 20 10" fill="#f0712a"/><circle cx="32" cy="36" r="3" fill="#fff"/><circle cx="46" cy="35" r="3" fill="#fff"/><path d="M56 16l-10 22M62 18l-10 22" stroke="#c98a3e" stroke-width="3" stroke-linecap="round"/></svg>
+    <h3>Everyday Korean</h3><p>Numbers, prices, time and polite phrases for cafés, restaurants and shopping.</p><span class="k">이거 주세요</span></div>
+   <div class="wk"><span class="no">WEEK 7–8</span>
+    <svg viewBox="0 0 80 80"><defs><linearGradient id="w4" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#dfe7f1"/><stop offset="1" stop-color="#bccbe2"/></linearGradient></defs><rect x="6" y="6" width="68" height="68" rx="14" fill="url(#w4)"/><path d="M14 22h30a6 6 0 0 1 6 6v12a6 6 0 0 1-6 6H28l-8 7v-7h-6a6 6 0 0 1-6-6V28a6 6 0 0 1 6-6z" fill="#14244a"/><path d="M36 38h30a6 6 0 0 1 6 6v10a6 6 0 0 1-6 6h-6v7l-8-7H36a6 6 0 0 1-6-6V44a6 6 0 0 1 6-6z" fill="#f0712a"/><path d="M18 31h20M18 37h12" stroke="#fff" stroke-width="2.5" stroke-linecap="round"/><path d="M38 47h26M38 53h16" stroke="#fff" stroke-width="2.5" stroke-linecap="round"/></svg>
+    <h3>Talk about yourself</h3><p>Self-introduction, hobbies, family and short role-play conversations with classmates.</p><span class="k">저는 ○○예요</span></div>
+  </div>
+ </div>
+</section>
+
+<section class="pad try" id="try">
+ <div class="wrap">
+  <div>
+   <span class="eyebrow">Try it right now</span>
+   <h2 class="sec">Learn 3 letters<br>in <em>one minute</em></h2>
+   <p class="lead">Tap a letter to see how it is written stroke by stroke, then put two of them together. This is exactly how your first lesson starts.</p>
+   <ul class="points">
+    <li><svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" fill="#fde4d1"/><path d="M7 12l3 3 7-7" fill="none" stroke="#d95a16" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Hangul has only 24 basic letters</li>
+    <li><svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" fill="#fde4d1"/><path d="M7 12l3 3 7-7" fill="none" stroke="#d95a16" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Letters stack into square syllable blocks</li>
+    <li><svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" fill="#fde4d1"/><path d="M7 12l3 3 7-7" fill="none" stroke="#d95a16" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Many shapes follow your mouth position</li>
+   </ul>
+  </div>
+  <div class="board">
+   <div class="tabs" role="group" aria-label="Choose a letter">
+    <button type="button" data-l="g" aria-pressed="true"><b>ㄱ</b><span>G / K</span></button>
+    <button type="button" data-l="n" aria-pressed="false"><b>ㄴ</b><span>N</span></button>
+    <button type="button" data-l="a" aria-pressed="false"><b>ㅏ</b><span>A</span></button>
+   </div>
+   <div class="stage">
+    <div class="sheet"><svg viewBox="0 0 100 100" id="glyph"></svg></div>
+    <div class="info">
+     <h3 id="lt">giyeok <small id="ls">sounds like “g” in go</small></h3>
+     <p id="ld">Two strokes: across, then down. Its shape shows the back of your tongue touching the roof of your mouth.</p>
+     <div class="tip" id="lx">Memory tip: it looks like a <b>gun</b> pointing left — <b>g</b>un starts with g.</div>
+     <button class="replay" type="button" id="replay">Replay strokes ↻</button>
+    </div>
+   </div>
+   <div class="quiz">
+    <p>Quick check: which block reads “<span style="color:#d95a16">na</span>”?</p>
+    <div class="opts">
+     <button type="button" data-a="0">가</button>
+     <button type="button" data-a="1">나</button>
+     <button type="button" data-a="0">아</button>
+    </div>
+    <div class="fb" id="fb" aria-live="polite"></div>
+   </div>
+  </div>
+ </div>
+</section>
+
+<section class="pad" id="plans">
+ <div class="wrap">
+  <span class="eyebrow">Class formats &amp; pricing</span>
+  <h2 class="sec">Pick the way you <em>like to learn</em></h2>
+  <p class="lead">Same 8-week curriculum in every format. Not sure which one fits? Try the free lesson first and decide after.</p>
+  <div class="plans">
+   <div class="plan">
+    <svg class="pi" viewBox="0 0 56 56"><rect width="56" height="56" rx="14" fill="#dfe7f1"/><rect x="12" y="16" width="32" height="22" rx="3" fill="#14244a"/><path d="M15 36h26l4 6H11z" fill="#8fa3cc"/><circle cx="28" cy="25" r="5" fill="#f0712a"/><path d="M22 34a6 5 0 0 1 12 0" fill="#ffb27f"/></svg>
+    <h3>Online Live</h3>
+    <p class="desc">Join from home on video. Same teacher, same small class.</p>
+    <div class="price"><b>₱3,900</b><span>/ 8 weeks · 1× a week</span></div>
+    <ul><li>8 live classes, 90 minutes each</li><li>Digital workbook &amp; handwriting sheets</li><li>Class replay for 7 days</li></ul>
+    <a class="btn" href="#signup">Try online for free</a>
+   </div>
+   <div class="plan feat">
+    <span class="tag">STARTS JAN 9</span>
+    <svg class="pi" viewBox="0 0 56 56"><rect width="56" height="56" rx="14" fill="#f0712a"/><circle cx="18" cy="22" r="5" fill="#fff"/><circle cx="38" cy="22" r="5" fill="#fff"/><circle cx="28" cy="18" r="5.5" fill="#ffe0cb"/><path d="M10 40a8 7 0 0 1 16 0zM30 40a8 7 0 0 1 16 0z" fill="#fff"/><path d="M19 38a9 8 0 0 1 18 0z" fill="#ffe0cb"/></svg>
+    <h3>Group Class</h3>
+    <p class="desc">Learn side by side with up to 5 classmates at the studio.</p>
+    <div class="price"><b>₱4,800</b><span>/ 8 weeks · 1× a week</span></div>
+    <ul><li>8 classes at the studio, 90 minutes each</li><li>Printed workbook included</li><li>Barley tea &amp; snacks every class</li><li>Speaking practice in pairs</li></ul>
+    <a class="btn" href="#signup">Book a free group trial</a>
+   </div>
+   <div class="plan">
+    <svg class="pi" viewBox="0 0 56 56"><rect width="56" height="56" rx="14" fill="#fde4d1"/><circle cx="20" cy="22" r="6" fill="#14244a"/><circle cx="36" cy="22" r="6" fill="#f0712a"/><path d="M10 42a10 9 0 0 1 20 0zM26 42a10 9 0 0 1 20 0z" fill="#14244a" opacity=".85"/><path d="M26 42a10 9 0 0 1 20 0z" fill="#f0712a"/></svg>
+    <h3>1:1 Private</h3>
+    <p class="desc">Your pace, your schedule. Good for busy work weeks.</p>
+    <div class="price"><b>₱9,600</b><span>/ 8 sessions · 60 min</span></div>
+    <ul><li>Flexible day &amp; time each week</li><li>Studio or online, your choice</li><li>Lessons tailored to your goals</li></ul>
+    <a class="btn" href="#signup">Try 1:1 for free</a>
+   </div>
+  </div>
+  <p class="note">Free trial lesson: <b>₱0</b>, no payment details needed · Printed workbook for online students: ₱450 (optional)</p>
+ </div>
+</section>
+
+<section class="pad sched" id="schedule">
+ <div class="wrap">
+  <span class="eyebrow">January 2027 schedule</span>
+  <h2 class="sec">Choose a time slot<br>that <em style="color:#ffb27f">fits your week</em></h2>
+  <p class="lead">Each class has 6 seats. Trial lessons run a week before the course starts, so you can meet the teacher first.</p>
+  <div class="cal">
+   <div class="table" role="table" aria-label="Class schedule">
+    <div class="row h" role="row"><div>Class</div><div>When</div><div>Starts</div><div>Seats</div></div>
+    <div class="row" role="row"><div><b>Weekend Group</b><small>Studio</small></div><div>Saturdays<br><small>10:00 – 11:30 AM</small></div><div><b>Jan 9</b></div><div><span class="chip">6 seats</span></div></div>
+    <div class="row" role="row"><div><b>After-work Group</b><small>Studio</small></div><div>Tuesdays<br><small>7:00 – 8:30 PM</small></div><div><b>Jan 12</b></div><div><span class="chip">6 seats</span></div></div>
+    <div class="row" role="row"><div><b>Online Live</b><small>Video class</small></div><div>Wednesdays<br><small>8:00 – 9:30 PM</small></div><div><b>Jan 13</b></div><div><span class="chip sky">6 seats</span></div></div>
+    <div class="row" role="row"><div><b>1:1 Private</b><small>Studio or online</small></div><div>Mon – Sat<br><small>You choose the time</small></div><div><b>Any week</b></div><div><span class="chip sky">By booking</span></div></div>
+   </div>
+   <div class="trial">
+    <h3>Free trial lesson dates</h3>
+    <p>45 minutes. Write your name in Hangul before you leave.</p>
+    <div class="dates">
+     <div class="date"><div class="d"><small>JAN</small><b>2</b></div><span>Saturday · 10:00 AM<i>Studio trial</i></span></div>
+     <div class="date"><div class="d"><small>JAN</small><b>5</b></div><span>Tuesday · 7:00 PM<i>Studio trial</i></span></div>
+     <div class="date"><div class="d"><small>JAN</small><b>6</b></div><span>Wednesday · 8:00 PM<i>Online trial</i></span></div>
+    </div>
+   </div>
+  </div>
+ </div>
+</section>
+
+<section class="pad teach">
+ <div class="wrap">
+  <div class="thead">
+   <span class="eyebrow">Your teachers</span>
+   <h2 class="sec">Native teachers<br>who <em>explain in English</em></h2>
+   <p class="lead">Our teachers grew up speaking Korean and teach every beginner class in clear English. Mistakes are part of the lesson — nobody gets put on the spot.</p>
+  </div>
+  <div class="art" aria-hidden="true">
+   <svg viewBox="0 0 560 480">
+    <defs>
+     <linearGradient id="wd" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#d9b48a"/><stop offset=".55" stop-color="#c49668"/><stop offset="1" stop-color="#a87a4e"/></linearGradient>
+     <radialGradient id="wl" cx=".35" cy=".3" r=".8"><stop offset="0" stop-color="#fff3df" stop-opacity=".55"/><stop offset="1" stop-color="#fff3df" stop-opacity="0"/></radialGradient>
+     <linearGradient id="ws" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ffffff"/><stop offset="1" stop-color="#f4ede0"/></linearGradient>
+     <linearGradient id="rp" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ff7a4a"/><stop offset=".5" stop-color="#e2461f"/><stop offset="1" stop-color="#b8330f"/></linearGradient>
+     <linearGradient id="mug" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#0f1d3d"/><stop offset=".45" stop-color="#2b4a8a"/><stop offset="1" stop-color="#14244a"/></linearGradient>
+     <linearGradient id="tea2" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#c98a3e"/><stop offset="1" stop-color="#7d4a17"/></linearGradient>
+     <linearGradient id="fc" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#1f3a6e"/><stop offset="1" stop-color="#0f1d3d"/></linearGradient>
+     <linearGradient id="nt" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ffe9d8"/><stop offset="1" stop-color="#fbcfae"/></linearGradient>
+     <filter id="d1" x="-20%" y="-20%" width="140%" height="150%"><feDropShadow dx="4" dy="14" stdDeviation="10" flood-color="#3b2410" flood-opacity=".32"/></filter>
+     <filter id="d2" x="-30%" y="-30%" width="160%" height="170%"><feDropShadow dx="3" dy="6" stdDeviation="4" flood-color="#3b2410" flood-opacity=".35"/></filter>
+     <pattern id="mg2" width="40" height="40" patternUnits="userSpaceOnUse"><rect width="40" height="40" fill="none" stroke="#f0712a" stroke-opacity=".55" stroke-width="1.2"/><path d="M20 4v32M4 20h32" stroke="#f0712a" stroke-opacity=".18" stroke-dasharray="2 3"/></pattern>
+    </defs>
+    <!-- desk -->
+    <rect x="0" y="0" width="560" height="480" rx="28" fill="url(#wd)"/>
+    <g stroke="#8a5d34" stroke-opacity=".22" stroke-width="2" fill="none">
+     <path d="M0 70c120 10 240-14 360 0s160 6 200 0"/><path d="M0 170c140 14 260-12 380 2s140 4 180-4"/><path d="M0 280c110 8 230-16 350-2s170 10 210 0"/><path d="M0 390c130 12 250-10 370 4s150 2 190-6"/>
+     <path d="M60 120c30-6 60 6 90 0" stroke-opacity=".3"/><path d="M380 330c30-8 50 4 80-2" stroke-opacity=".3"/>
+    </g>
+    <rect x="0" y="0" width="560" height="480" rx="28" fill="url(#wl)"/>
+    <!-- flashcards -->
+    <g filter="url(#d1)" transform="rotate(10 455 120)">
+     <rect x="392" y="52" width="130" height="150" rx="10" fill="#fffdf8" transform="rotate(-8 457 127)"/>
+     <rect x="392" y="52" width="130" height="150" rx="10" fill="url(#fc)"/>
+     <rect x="404" y="64" width="106" height="92" rx="4" fill="#fffdf8"/>
+     <text x="457" y="132" text-anchor="middle" font-family="Gowun Batang" font-weight="700" font-size="58" fill="#0c1834">물</text>
+     <text x="457" y="184" text-anchor="middle" font-family="Montserrat" font-weight="700" font-size="16" fill="#ffb27f" letter-spacing="2">WATER</text>
+    </g>
+    <!-- worksheet -->
+    <g filter="url(#d1)" transform="rotate(-5 230 250)">
+     <rect x="58" y="70" width="330" height="360" rx="6" fill="url(#ws)"/>
+     <text x="82" y="104" font-family="Montserrat" font-weight="700" font-size="15" fill="#14244a" letter-spacing="2">WEEK 1 · PRACTICE</text>
+     <text x="366" y="104" text-anchor="end" font-family="Gowun Batang" font-weight="700" font-size="16" fill="#5a6580">이름: 마리아</text>
+     <rect x="82" y="120" width="280" height="40" fill="url(#mg2)"/><rect x="82" y="168" width="280" height="40" fill="url(#mg2)"/><rect x="82" y="216" width="280" height="40" fill="url(#mg2)"/><rect x="82" y="264" width="280" height="40" fill="url(#mg2)"/>
+     <g font-family="Gowun Batang" font-weight="700" font-size="28" text-anchor="middle">
+      <g fill="#14244a"><text x="102" y="150">가</text><text x="102" y="198">나</text><text x="102" y="246">다</text><text x="102" y="294">라</text></g>
+      <g fill="#14244a" opacity=".18"><text x="142" y="150">가</text><text x="142" y="198">나</text><text x="142" y="246">다</text><text x="142" y="294">라</text></g>
+      <g fill="#2b3f72"><text x="182" y="151" transform="rotate(-3 182 140)">가</text><text x="222" y="150" transform="rotate(2 222 140)">가</text><text x="262" y="152">가</text>
+       <text x="182" y="199" transform="rotate(3 182 188)">나</text><text x="222" y="198">나</text><text x="262" y="200" transform="rotate(-2 262 190)">나</text><text x="302" y="198">나</text>
+       <text x="182" y="246">다</text><text x="222" y="248" transform="rotate(-4 222 236)">다</text>
+       <text x="182" y="295" transform="rotate(2 182 284)">라</text></g>
+     </g>
+     <!-- red pen marks -->
+     <g fill="none" stroke="#e2461f" stroke-width="2.6" stroke-linecap="round">
+      <ellipse cx="222" cy="140" rx="19" ry="17" transform="rotate(-10 222 140)"/>
+      <path d="M298 140l6 7 12-16"/><path d="M338 188l6 7 12-16"/>
+      <path d="M244 226c6 18 18 22 34 14"/><path d="M272 236l7 4-1-8"/>
+     </g>
+     <text x="262" y="236" font-family="Montserrat" font-style="italic" font-weight="600" font-size="14" fill="#e2461f" transform="rotate(-6 262 236)">longer line</text>
+     <path d="M82 330h220M82 350h180M82 370h200" stroke="#14244a" stroke-opacity=".14" stroke-width="2"/>
+     <text x="82" y="346" font-family="Gowun Batang" font-weight="700" font-size="16" fill="#2b3f72">안녕하세요. 저는 마리아예요.</text>
+     <path d="M82 352c40 4 90-2 150 2" fill="none" stroke="#e2461f" stroke-width="2" stroke-linecap="round" opacity=".75"/>
+     <!-- teacher stamp -->
+     <g transform="rotate(-14 318 386)" opacity=".9">
+      <circle cx="318" cy="386" r="34" fill="none" stroke="#e2461f" stroke-width="3.5"/>
+      <circle cx="318" cy="386" r="28" fill="none" stroke="#e2461f" stroke-width="1.2"/>
+      <text x="318" y="381" text-anchor="middle" font-family="Gowun Batang" font-weight="700" font-size="13" fill="#e2461f">참</text>
+      <text x="318" y="398" text-anchor="middle" font-family="Gowun Batang" font-weight="700" font-size="13" fill="#e2461f">잘했어요</text>
+     </g>
+    </g>
+    <!-- paper clip -->
+    <path d="M110 58v-10a10 10 0 0 1 20 0v40a6 6 0 0 1-12 0V54" fill="none" stroke="#9aa6bd" stroke-width="3.5" stroke-linecap="round" transform="rotate(-5 120 60)"/>
+    <!-- sticky note -->
+    <g filter="url(#d2)" transform="rotate(7 455 300)">
+     <rect x="400" y="246" width="112" height="104" fill="url(#nt)"/>
+     <path d="M400 246h112v14H400z" fill="#f0712a" opacity=".25"/>
+     <text x="456" y="290" text-anchor="middle" font-family="Gowun Batang" font-weight="700" font-size="17" fill="#14244a">숙제</text>
+     <text x="456" y="314" text-anchor="middle" font-family="Montserrat" font-weight="600" font-size="15" fill="#5a6580">Homework</text>
+     <text x="456" y="334" text-anchor="middle" font-family="Montserrat" font-weight="700" font-size="15" fill="#d95a16">p. 12 – 13</text>
+    </g>
+    <!-- red pen -->
+    <g filter="url(#d2)" transform="rotate(-38 330 420)">
+     <rect x="240" y="410" width="170" height="16" rx="8" fill="url(#rp)"/>
+     <rect x="240" y="410" width="170" height="5" rx="2.5" fill="#fff" opacity=".25"/>
+     <rect x="356" y="408" width="60" height="20" rx="9" fill="#14244a"/>
+     <rect x="370" y="404" width="40" height="5" rx="2.5" fill="#cfd6e4"/>
+     <path d="M240 412l-22 6 22 6z" fill="#e8e2d6"/><path d="M226 416l-8 2 8 2z" fill="#b8330f"/>
+    </g>
+    <!-- eraser -->
+    <g filter="url(#d2)" transform="rotate(-18 470 410)">
+     <rect x="440" y="392" width="62" height="30" rx="5" fill="#fffdf8"/>
+     <rect x="440" y="392" width="34" height="30" rx="5" fill="#2b4a8a"/>
+     <rect x="452" y="392" width="22" height="30" fill="#2b4a8a"/>
+     <text x="458" y="412" text-anchor="middle" font-family="Montserrat" font-weight="800" font-size="11" fill="#fff">G</text>
+    </g>
+    <!-- mug -->
+    <g filter="url(#d1)">
+     <ellipse cx="482" cy="452" rx="0" ry="0"/>
+     <circle cx="70" cy="410" r="46" fill="#14244a" opacity=".08"/>
+     <path d="M100 392a16 16 0 0 1 0 32" fill="none" stroke="#1d3366" stroke-width="8"/>
+     <circle cx="64" cy="408" r="40" fill="url(#mug)"/>
+     <circle cx="64" cy="408" r="32" fill="url(#tea2)"/>
+     <ellipse cx="54" cy="398" rx="14" ry="6" fill="#fff" opacity=".22"/>
+    </g>
+   </svg>
+  </div>
+  <div class="vals">
+   <div class="val"><b><i>천</i>Slow and clear</b><p>Every new sound is shown, repeated and written together.</p></div>
+   <div class="val"><b><i>말</i>Speak every class</b><p>Pair practice from day one, with phrases you can really use.</p></div>
+   <div class="val"><b><i>글</i>Handwriting check</b><p>Your worksheets get marked and returned the next class.</p></div>
+   <div class="val"><b><i>정</i>Friendly studio</b><p>Barley tea, small tables and a cozy room near the city center.</p></div>
+  </div>
+ </div>
+</section>
+
+<section class="pad faq" id="faq">
+ <div class="wrap">
+  <div>
+   <span class="eyebrow">Questions</span>
+   <h2 class="sec">Before you<br><em>sign up</em></h2>
+   <p class="lead">Still unsure? Send us a message and we will help you pick a class.</p>
+  </div>
+  <div>
+   <details open><summary>I know zero Korean. Is that okay?</summary><p>Yes. The January course is made for complete beginners. We start with the very first letter and go step by step.</p></details>
+   <details><summary>What happens in the free trial lesson?</summary><p>You learn about 6 letters, read your first syllables and write your name in Hangul. You also see the classroom and meet the teacher. There is no payment and no obligation.</p></details>
+   <details><summary>How old do I need to be?</summary><p>Group classes are for ages 16 and up. For younger learners, a 1:1 class with a parent present is a good fit.</p></details>
+   <details><summary>Can I switch from online to studio?</summary><p>Yes, if there is a free seat in the studio class at your level. Just tell us a week before.</p></details>
+   <details><summary>How do I pay for the course?</summary><p>After your trial lesson you can pay at the studio by cash, bank transfer or card. Online students get a payment link by email.</p></details>
+  </div>
+ </div>
+</section>
+
+<section class="pad signup" id="signup">
+ <div class="wrap">
+  <div class="offer">
+   <span class="eyebrow">Free trial lesson</span>
+   <h2>Write your name in Hangul — <em>free</em>, in 45 minutes.</h2>
+   <ul>
+    <li><b>1</b>Fill in the form and pick a trial date</li>
+    <li><b>2</b>We confirm your seat by text within one working day</li>
+    <li><b>3</b>Come in (or log in) and learn your first letters</li>
+   </ul>
+   <svg class="stamp" viewBox="0 0 170 170" aria-hidden="true"><g transform="rotate(-14 85 85)"><circle cx="85" cy="85" r="70" fill="none" stroke="#f0712a" stroke-width="6"/><circle cx="85" cy="85" r="58" fill="none" stroke="#f0712a" stroke-width="2"/><text x="85" y="100" text-anchor="middle" font-family="Gowun Batang" font-weight="700" font-size="44" fill="#f0712a">무료</text></g></svg>
+  </div>
+  <form id="f" novalidate>
+   <div id="fields">
+    <div class="fgrid">
+     <div class="f"><label for="nm">Full name</label><input id="nm" name="nm" autocomplete="name" placeholder="Juan Dela Cruz"></div>
+     <div class="f"><label for="ph">Mobile number</label><input id="ph" name="ph" inputmode="tel" placeholder="09XX XXX XXXX"></div>
+     <div class="f full"><label for="fm">Class format</label>
+      <select id="fm"><option>Group class (studio)</option><option>Online live</option><option>1:1 private</option><option>Not sure yet</option></select></div>
+     <div class="f full"><span class="lb">Trial date</span>
+      <div class="pick">
+       <label><input type="radio" name="dt" value="Sat Jan 2" checked><span>Sat · Jan 2, 10 AM</span></label>
+       <label><input type="radio" name="dt" value="Tue Jan 5"><span>Tue · Jan 5, 7 PM</span></label>
+       <label><input type="radio" name="dt" value="Wed Jan 6 online"><span>Wed · Jan 6, 8 PM (online)</span></label>
+      </div></div>
+     <div class="f full"><span class="lb">Your Korean level</span>
+      <div class="pick">
+       <label><input type="radio" name="lv" checked><span>Total beginner</span></label>
+       <label><input type="radio" name="lv"><span>I know a few letters</span></label>
+       <label><input type="radio" name="lv"><span>I can read slowly</span></label>
+      </div></div>
+     <div class="f full"><label class="agree"><input type="checkbox" id="ag">I agree to be contacted by text or email about my trial lesson.</label></div>
+    </div>
+    <div class="err" id="er" aria-live="polite"></div>
+    <button class="btn" type="submit">Reserve my free trial <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+   </div>
+   <div class="done" id="done">
+    <svg viewBox="0 0 96 96"><rect x="8" y="8" width="80" height="80" rx="20" fill="#fde4d1"/><path d="M48 8v80M8 48h80" stroke="#f0712a" stroke-opacity=".3" stroke-dasharray="4 4"/><path d="M28 50l13 13 27-29" fill="none" stroke="#d95a16" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    <h3>Your seat is on hold!</h3>
+    <p id="dmsg">We will text you to confirm your trial lesson.</p>
+    <p class="kr">곧 만나요!</p>
+    <p>(See you soon!)</p>
+   </div>
+  </form>
+ </div>
+</section>
+
+<footer>
+ <div class="wrap">
+  <div>
+   <a class="logo" href="#top"><svg viewBox="0 0 48 48" aria-hidden="true"><rect x="2" y="2" width="44" height="44" rx="10" fill="#1d3366"/><path d="M13 15h13v13" fill="none" stroke="#fff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><circle cx="33" cy="33" r="6" fill="none" stroke="#f0712a" stroke-width="4"/></svg><span><b>GAON</b><small>Korean Language Studio</small></span></a>
+   <p style="margin-top:14px;max-width:320px">Small Korean classes for beginners, at the studio and online.</p>
+  </div>
+  <div><h4>Visit</h4><ul><li>Unit 000, Sample Building</li><li>Example Street, Metro Manila</li><li>Mon – Sat · 10 AM – 9 PM</li></ul></div>
+  <div><h4>Contact</h4><ul><li>Mobile: 0000-000-0000</li><li>Email: email@example.com</li><li>Messages answered daily</li></ul></div>
+  <div class="cp">© Gaon Korean Language Studio. Prices in Philippine pesos (₱).</div>
+ </div>
+</footer>
+
+<div class="mbar"><p>Free 45-min trial lesson<br><b>January beginner course</b></p><a class="btn" href="#signup">Book free trial</a></div>
+
+<script>
+(function(){
+ var L={
+  g:{t:'giyeok',s:'sounds like “g” in go',d:'Two strokes: across, then down. Its shape shows the back of your tongue touching the roof of your mouth.',x:'Memory tip: it looks like a <b>gun</b> pointing left — <b>g</b>un starts with g.',p:['M18 24H76','M76 24C76 50 70 70 54 84']},
+  n:{t:'nieun',s:'sounds like “n” in no',d:'One stroke: down, then right. It shows your tongue tip touching behind your top teeth.',x:'Memory tip: it looks like a <b>nose</b> seen from the side — <b>n</b>ose starts with n.',p:['M26 16V78H82']},
+  a:{t:'a',s:'sounds like “a” in father',d:'Two strokes: a long line down, then a short line to the right. Vowels always sit next to or under a consonant.',x:'Memory tip: the short line points <b>a</b>way to the right — say “<b>ah</b>”.',p:['M42 12V88','M42 50H70']}
+ };
+ var g=document.getElementById('glyph'),cur='g';
+ function draw(k){
+  cur=k;var o=L[k];
+  g.innerHTML=o.p.map(function(d,i){return '<path class="draw" d="'+d+'" style="animation-delay:'+(i*0.75)+'s"/>'}).join('');
+  document.getElementById('lt').innerHTML=o.t+' <small>'+o.s+'</small>';
+  document.getElementById('ld').textContent=o.d;
+  document.getElementById('lx').innerHTML=o.x;
+  document.querySelectorAll('.tabs button').forEach(function(b){b.setAttribute('aria-pressed',b.dataset.l===k?'true':'false')});
+ }
+ document.querySelectorAll('.tabs button').forEach(function(b){b.addEventListener('click',function(){draw(b.dataset.l)})});
+ document.getElementById('replay').addEventListener('click',function(){draw(cur)});
+ draw('g');
+ var fb=document.getElementById('fb');
+ document.querySelectorAll('.opts button').forEach(function(b){b.addEventListener('click',function(){
+  document.querySelectorAll('.opts button').forEach(function(x){x.classList.remove('ok','no')});
+  if(b.dataset.a==='1'){b.classList.add('ok');fb.style.color='#1d6236';fb.textContent='That’s it! ㄴ (n) + ㅏ (a) = 나 (na). You just read Korean.'}
+  else{b.classList.add('no');fb.style.color='#c8492c';fb.textContent='Almost — look for ㄴ (n) on the left, then ㅏ (a).'}
+ })});
+ var f=document.getElementById('f');
+ f.addEventListener('submit',function(e){
+  e.preventDefault();
+  var nm=document.getElementById('nm').value.trim(),ph=document.getElementById('ph').value.replace(/\D/g,''),er=document.getElementById('er');
+  if(!nm){er.textContent='Please enter your name.';return}
+  if(ph.length<10){er.textContent='Please enter a valid mobile number.';return}
+  if(!document.getElementById('ag').checked){er.textContent='Please tick the box so we can contact you.';return}
+  var dt=f.querySelector('input[name=dt]:checked').value;
+  document.getElementById('dmsg').textContent='Thanks, '+nm.split(' ')[0]+'! We saved a seat for '+dt+'. We will text you to confirm.';
+  document.getElementById('fields').style.display='none';
+  document.getElementById('done').style.display='block';
+ });
+})();
+</script>
+</body>
+</html>
