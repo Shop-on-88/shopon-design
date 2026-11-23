@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>다온상회 · 마닐라 한국 식품 장보기</title>
+<meta name="description" content="김치, 쌀, 장류, 냉동식품까지. 마닐라에서 한국 식품을 주문하면 문 앞까지 배송해 드리는 온라인 상회.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Do+Hyeon&family=Noto+Sans+KR:wght@400;500;700;900&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{--g:#1f4d3a;--g2:#163a2b;--leaf:#8cc06b;--napa:#e3efc9;--cream:#f7f1e3;--paper:#fffdf7;--red:#c8361f;--red2:#a32a16;--yel:#f5c84b;--ink:#1d2620;--mut:#5f6b62;--line:rgba(31,77,58,.14)}
+html{scroll-behavior:smooth}
+body{font-family:'Noto Sans KR',sans-serif;background:var(--cream);color:var(--ink);word-break:keep-all;-webkit-font-smoothing:antialiased;line-height:1.6;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+button{font-family:inherit;cursor:pointer}
+.in{max-width:1200px;margin:0 auto;padding:0 24px}
+.dh{font-family:'Do Hyeon',sans-serif;font-weight:400}
+/* notice */
+.notice{background:var(--g2);color:#e9f1dc;font-size:14px;text-align:center;padding:9px 16px}
+.notice b{color:var(--yel);font-weight:700}
+/* header */
+header{position:sticky;top:0;z-index:40;background:var(--paper);border-bottom:1px solid var(--line)}
+.hrow{display:flex;align-items:center;gap:22px;height:76px}
+.logo{display:flex;align-items:center;gap:10px;flex:none}
+.logo svg{width:46px;height:46px}
+.logo b{font-family:'Do Hyeon';font-weight:400;font-size:30px;color:var(--g);line-height:1}
+.logo small{display:block;font-family:'Outfit';font-weight:700;font-size:11px;letter-spacing:.26em;color:var(--red);margin-top:3px}
+.search{flex:1;max-width:460px;display:flex;align-items:center;gap:8px;height:46px;border:2px solid var(--g);border-radius:999px;padding:0 8px 0 18px;background:#fff}
+.search input{flex:1;border:0;outline:none;font-size:15px;font-family:inherit;min-width:0;background:none}
+.search button{width:34px;height:34px;border-radius:50%;border:0;background:var(--g);display:flex;align-items:center;justify-content:center}
+.search svg{width:18px;height:18px;fill:none;stroke:#fff;stroke-width:2.4;stroke-linecap:round}
+.hlinks{display:flex;align-items:center;gap:20px;margin-left:auto;font-size:15px;font-weight:500;color:var(--mut)}
+.hlinks a:hover{color:var(--g)}
+.cartbtn{position:relative;display:inline-flex;align-items:center;gap:8px;height:46px;padding:0 18px;border-radius:999px;background:var(--red);color:#fff;font-weight:700;font-size:15px;border:0}
+.cartbtn svg{width:20px;height:20px;fill:none;stroke:#fff;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.cartbtn em{font-style:normal;min-width:22px;height:22px;border-radius:11px;background:var(--yel);color:var(--ink);font-size:13px;font-weight:900;display:inline-flex;align-items:center;justify-content:center;padding:0 6px}
+.cnav{border-top:1px solid var(--line)}
+.cnav .in{display:flex;gap:28px;height:48px;align-items:center;font-size:15px;font-weight:700;overflow-x:auto;scrollbar-width:none}
+.cnav .in::-webkit-scrollbar{display:none}
+.cnav a{white-space:nowrap;color:var(--ink)}
+.cnav a:hover,.cnav a.on{color:var(--red)}
+/* hero */
+.hero{position:relative;background:var(--g);color:#f4f1e4;overflow:hidden}
+.awn{height:34px;background:repeating-linear-gradient(90deg,var(--red) 0 44px,var(--paper) 44px 88px);position:relative}
+.awn::after{content:"";position:absolute;left:0;right:0;bottom:-16px;height:16px;background:radial-gradient(circle at 22px 0,var(--red) 21px,transparent 22px) 0 0/88px 16px,radial-gradient(circle at 66px 0,var(--paper) 21px,transparent 22px) 0 0/88px 16px}
+.hero .in{display:grid;grid-template-columns:1fr 1.05fr;gap:30px;align-items:center;padding-top:60px;padding-bottom:70px}
+.hk{display:inline-flex;align-items:center;gap:8px;background:rgba(245,200,75,.16);color:var(--yel);border:1px solid rgba(245,200,75,.4);font-size:14px;font-weight:700;padding:6px 14px;border-radius:999px}
+.hk svg{width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.hero h1{font-family:'Do Hyeon';font-weight:400;font-size:clamp(44px,6vw,76px);line-height:1.12;margin:18px 0 18px;letter-spacing:-1px}
+.hero h1 em{font-style:normal;color:var(--yel)}
+.hero p.lead{font-size:17px;color:#cfdccb;max-width:470px}
+.hbtns{display:flex;gap:10px;margin-top:28px;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;height:52px;padding:0 26px;border-radius:999px;font-weight:700;font-size:16px;border:0;transition:.2s;white-space:nowrap}
+.btn svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round}
+.btn.y{background:var(--yel);color:var(--ink)}
+.btn.y:hover{background:#ffd75e}
+.btn.o{border:1.5px solid rgba(244,241,228,.45);color:#f4f1e4}
+.btn.o:hover{background:rgba(255,255,255,.08)}
+.hstats{display:flex;gap:0;margin-top:34px;border-top:1px solid rgba(244,241,228,.18);padding-top:20px;max-width:480px}
+.hstats div{flex:1;padding-right:14px}
+.hstats div+div{border-left:1px solid rgba(244,241,228,.18);padding-left:16px}
+.hstats b{display:block;font-family:'Outfit';font-weight:700;font-size:24px;color:#fff}
+.hstats span{font-size:13px;color:#b9cbb6}
+.hart svg{width:100%;height:auto;display:block}
+/* section */
+section{padding:84px 0}
+.sh{display:flex;justify-content:space-between;align-items:flex-end;gap:20px;margin-bottom:32px;flex-wrap:wrap}
+.sh small{font-family:'Outfit';font-weight:700;font-size:13px;letter-spacing:.28em;color:var(--red)}
+.sh h2{font-family:'Do Hyeon';font-weight:400;font-size:clamp(30px,3.6vw,42px);line-height:1.2;color:var(--g);margin-top:6px}
+.sh p{color:var(--mut);font-size:15px;max-width:420px}
+/* categories */
+.cats{display:grid;grid-template-columns:repeat(8,1fr);gap:14px}
+.cat{background:var(--paper);border:1px solid var(--line);border-radius:20px;padding:18px 8px 16px;text-align:center;transition:.2s}
+.cat:hover{transform:translateY(-4px);box-shadow:0 18px 30px -20px rgba(31,77,58,.5);border-color:var(--leaf)}
+.cat .ci{width:72px;height:72px;border-radius:50%;margin:0 auto 10px;display:flex;align-items:center;justify-content:center}
+.cat .ci svg{width:52px;height:52px}
+.cat b{font-size:15px;font-weight:700;display:block}
+.cat span{font-size:12px;color:var(--mut)}
+/* products */
+.wk{background:var(--paper);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.tabs{display:flex;gap:8px;flex-wrap:wrap}
+.tab{height:40px;padding:0 16px;border-radius:999px;border:1.5px solid var(--line);background:#fff;font-size:14px;font-weight:700;color:var(--mut)}
+.tab[aria-pressed=true]{background:var(--g);border-color:var(--g);color:#fff}
+.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.pd{background:#fff;border:1px solid var(--line);border-radius:20px;overflow:hidden;display:flex;flex-direction:column;transition:.2s}
+.pd:hover{box-shadow:0 24px 40px -28px rgba(31,77,58,.55)}
+.pd .img{aspect-ratio:1/0.82;display:flex;align-items:center;justify-content:center;position:relative}
+.pd .img svg{width:78%;height:86%}
+.pd .badge{position:absolute;left:12px;top:12px;background:var(--red);color:#fff;font-size:12px;font-weight:700;padding:3px 9px;border-radius:6px}
+.pd .badge.g{background:var(--g)}
+.pd .bd{padding:16px 16px 18px;display:flex;flex-direction:column;gap:4px;flex:1}
+.pd .bd small{font-size:12px;color:var(--mut);font-weight:500}
+.pd h3{font-size:16px;font-weight:700;line-height:1.4}
+.pd .pr{display:flex;align-items:baseline;gap:8px;margin-top:auto;padding-top:8px}
+.pd .pr b{font-family:'Outfit';font-weight:700;font-size:22px;color:var(--ink)}
+.pd .pr s{font-family:'Outfit';font-size:14px;color:#9aa39c}
+.add{margin-top:10px;height:42px;border-radius:12px;border:1.5px solid var(--g);background:#fff;color:var(--g);font-weight:700;font-size:14px;display:flex;align-items:center;justify-content:center;gap:6px;transition:.15s}
+.add:hover{background:var(--g);color:#fff}
+.add.done{background:var(--g);color:#fff}
+.add svg{width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:2.4;stroke-linecap:round}
+.pd.hide{display:none}
+/* kimjang */
+.kj{background:var(--red);color:#fff6ea;border-radius:30px;overflow:hidden;display:grid;grid-template-columns:1.1fr .9fr;position:relative}
+.kj .tx{padding:48px 48px 46px}
+.kj small{font-family:'Outfit';font-weight:700;font-size:13px;letter-spacing:.28em;color:var(--yel)}
+.kj h2{font-family:'Do Hyeon';font-weight:400;font-size:clamp(32px,4vw,48px);line-height:1.15;margin:10px 0 14px}
+.kj p{color:#ffe0d2;font-size:16px;max-width:460px}
+.kj ul{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:22px 0 26px;max-width:480px}
+.kj li{list-style:none;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.22);border-radius:14px;padding:12px 14px;font-size:14px}
+.kj li b{display:block;font-family:'Outfit';font-size:20px;color:#fff}
+.kj .art{background:#e9573c;position:relative;min-height:340px}
+.kj .art svg{position:absolute;inset:0;width:100%;height:100%}
+/* delivery */
+.dl{display:grid;grid-template-columns:.95fr 1.05fr;gap:30px;align-items:stretch}
+.map{background:var(--napa);border-radius:26px;position:relative;overflow:hidden;min-height:400px}
+.map svg{position:absolute;inset:0;width:100%;height:100%}
+.zones{display:flex;flex-direction:column;gap:14px}
+.zn{background:var(--paper);border:1px solid var(--line);border-radius:20px;padding:20px 22px;display:grid;grid-template-columns:52px 1fr auto;gap:16px;align-items:center}
+.zn .dot{width:52px;height:52px;border-radius:16px;display:flex;align-items:center;justify-content:center;font-family:'Outfit';font-weight:800;color:#fff;font-size:18px}
+.zn h3{font-size:17px;font-weight:700}
+.zn p{font-size:14px;color:var(--mut)}
+.zn .fee{text-align:right;font-size:13px;color:var(--mut)}
+.zn .fee b{display:block;font-family:'Outfit';font-size:20px;color:var(--ink)}
+.freebar{background:var(--g);color:#eaf3df;border-radius:20px;padding:18px 22px;font-size:15px;display:flex;align-items:center;gap:14px}
+.freebar svg{flex:none;width:34px;height:34px}
+.freebar b{color:var(--yel)}
+/* steps */
+.how{background:var(--g2);color:#e9f1dc}
+.how .sh h2{color:#fff}.how .sh p{color:#b9cbb6}.how .sh small{color:var(--yel)}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.stp{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);border-radius:22px;padding:24px 22px}
+.stp .n{font-family:'Outfit';font-weight:800;font-size:15px;color:var(--ink);background:var(--yel);width:34px;height:34px;border-radius:10px;display:flex;align-items:center;justify-content:center}
+.stp h3{font-size:18px;font-weight:700;margin:16px 0 6px;color:#fff}
+.stp p{font-size:14px;color:#c4d4c0}
+.pick{margin-top:22px;display:grid;grid-template-columns:auto 1fr auto;gap:22px;align-items:center;background:var(--cream);color:var(--ink);border-radius:22px;padding:22px 26px}
+.pick svg{width:60px;height:60px}
+.pick h3{font-size:18px;font-weight:700;color:var(--g)}
+.pick p{font-size:14px;color:var(--mut)}
+.pick .btn{background:var(--g);color:#fff;height:46px}
+/* faq */
+.faqg{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;align-items:start}
+details{background:var(--paper);border:1px solid var(--line);border-radius:18px;padding:0 20px}
+summary{list-style:none;cursor:pointer;padding:18px 0;font-weight:700;font-size:16px;display:flex;justify-content:space-between;gap:12px;align-items:center}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";flex:none;width:28px;height:28px;border-radius:50%;background:var(--napa);color:var(--g);display:flex;align-items:center;justify-content:center;font-family:'Outfit';font-size:20px;font-weight:600}
+details[open] summary::after{content:"–";background:var(--g);color:#fff}
+details p{padding:0 0 18px;font-size:15px;color:var(--mut)}
+footer{background:#13261d;color:#a9bba6;padding:54px 0 40px;font-size:14px}
+.fg{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:28px}
+footer h4{color:#fff;font-size:15px;margin-bottom:10px}
+footer li{list-style:none;margin-top:6px}
+footer .logo b{color:#fff}
+.copy{border-top:1px solid rgba(255,255,255,.12);margin-top:34px;padding-top:18px;font-size:13px}
+.toast{position:fixed;left:50%;bottom:24px;transform:translate(-50%,120px);background:var(--ink);color:#fff;border-radius:16px;padding:14px 20px;font-size:15px;display:flex;gap:14px;align-items:center;z-index:60;transition:.3s;opacity:0;visibility:hidden;box-shadow:0 20px 40px -20px rgba(0,0,0,.6);max-width:calc(100% - 32px)}
+.toast.on{transform:translate(-50%,0);opacity:1;visibility:visible}
+.toast b{color:var(--yel);font-family:'Outfit'}
+@media(max-width:1060px){
+ .hlinks a{display:none}
+ .cats{grid-template-columns:repeat(4,1fr)}
+ .grid{grid-template-columns:repeat(3,1fr)}
+ .steps{grid-template-columns:1fr 1fr}
+}
+@media(max-width:860px){
+ .search{display:none}
+ .hero .in{grid-template-columns:1fr;padding-top:40px;padding-bottom:50px}
+ .hart{max-width:520px;margin:0 auto;width:100%}
+ .grid{grid-template-columns:1fr 1fr;gap:14px}
+ .kj,.dl{grid-template-columns:1fr}
+ .kj .art{min-height:260px}
+ .faqg{grid-template-columns:1fr}
+ .fg{grid-template-columns:1fr 1fr}
+}
+@media(max-width:560px){
+ .in{padding:0 16px}
+ .notice{font-size:13px}
+ .hrow{height:64px;gap:12px}
+ .logo b{font-size:26px}.logo svg{width:40px;height:40px}
+ .cartbtn{padding:0 14px;height:42px}
+ .cartbtn span{display:none}
+ section{padding:62px 0}
+ .cats{gap:10px}
+ .cat{padding:14px 4px 12px;border-radius:16px}
+ .cat .ci{width:56px;height:56px}.cat .ci svg{width:40px;height:40px}
+ .cat b{font-size:13px}.cat span{display:none}
+ .pd .bd{padding:12px 12px 14px}
+ .pd h3{font-size:14px}
+ .pd .pr b{font-size:19px}
+ .add{height:40px;font-size:13px}
+ .kj .tx{padding:34px 22px}
+ .kj ul{grid-template-columns:1fr 1fr}
+ .zn{grid-template-columns:44px 1fr;padding:16px}
+ .zn .dot{width:44px;height:44px;font-size:15px}
+ .zn .fee{grid-column:2;text-align:left;display:flex;gap:8px;align-items:baseline}
+ .zn .fee b{font-size:17px}
+ .steps{grid-template-columns:1fr}
+ .pick{grid-template-columns:1fr;text-align:left}
+ .fg{grid-template-columns:1fr}
+ .hstats b{font-size:20px}
+}
+</style>
+</head>
+<body>
+<div class="notice">메트로 마닐라 <b>오후 2시 전 주문 시 당일 배송</b> · ₱2,500 이상 주문 시 배송비 무료</div>
+<header>
+ <div class="in hrow">
+  <a class="logo" href="#top" aria-label="다온상회">
+   <svg viewBox="0 0 46 46"><rect width="46" height="46" rx="14" fill="#1f4d3a"/><path d="M6 15h34v5H6z" fill="#c8361f"/><path d="M6 15h6v5H6zM18 15h5v5h-5zM29 15h5v5h-5z" fill="#fffdf7"/><path d="M12 22h22l-2 16H14z" fill="#f5c84b"/><path d="M17 22c0-6 12-6 12 0" stroke="#fffdf7" stroke-width="2.4" fill="none"/><path d="M23 26c-3 2-4 6-1 9 3-2 4-6 1-9z" fill="#1f4d3a"/></svg>
+   <span><b>다온상회</b><small>K-GROCERY MNL</small></span>
+  </a>
+  <form class="search" role="search" onsubmit="event.preventDefault();document.getElementById('weekly').scrollIntoView()"><input aria-label="상품 검색" placeholder="찾으시는 상품을 입력하세요 (예: 떡국떡)"><button aria-label="검색"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="6.5"/><path d="M16 16l4 4"/></svg></button></form>
+  <div class="hlinks"><a href="#delivery">배송 안내</a><a href="#how">주문 방법</a><a href="#faq">고객센터</a>
+   <button class="cartbtn" id="cartbtn" type="button"><svg viewBox="0 0 24 24"><path d="M3 4h2l2.4 11h11l2-8H6.2"/><circle cx="9" cy="19.5" r="1.5"/><circle cx="17" cy="19.5" r="1.5"/></svg><span>장바구니</span><em id="cc">0</em></button>
+  </div>
+ </div>
+ <nav class="cnav" aria-label="상품 분류"><div class="in"><a class="on" href="#weekly">이번 주 장보기</a><a href="#cats">김치·반찬</a><a href="#cats">쌀·잡곡</a><a href="#cats">라면·면</a><a href="#cats">장류·양념</a><a href="#cats">냉동·만두</a><a href="#cats">과자·간식</a><a href="#kimjang">김장 사전 예약</a><a href="#delivery">배송 지역</a></div></nav>
+</header>
+
+<div class="hero" id="top">
+ <div class="awn"></div>
+ <div class="in">
+  <div>
+   <span class="hk"><svg viewBox="0 0 24 24"><path d="M3 16V7h11v9M14 10h4l3 3v3h-7"/><circle cx="7" cy="17.5" r="1.8"/><circle cx="17" cy="17.5" r="1.8"/></svg>메트로 마닐라 당일 배송</span>
+   <h1>한국 장바구니를<br><em>마닐라 문 앞</em>까지</h1>
+   <p class="lead">김치와 반찬, 쌀과 장류, 냉동 만두까지. 동네 상회에서 장 보듯 골라 담으면 시원하게 포장해 집으로 보내 드립니다.</p>
+   <div class="hbtns"><a class="btn y" href="#weekly">이번 주 장보기 <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a><a class="btn o" href="#kimjang">김장 사전 예약</a></div>
+   <div class="hstats"><div><b>14:00</b><span>당일 배송 마감</span></div><div><b>₱2,500</b><span>이상 배송비 무료</span></div><div><b>0~4°C</b><span>냉장 보냉 포장</span></div></div>
+  </div>
+  <div class="hart" aria-hidden="true">
+   <svg viewBox="0 0 600 520">
+    <defs>
+     <radialGradient id="hg1" cx=".5" cy=".55" r=".5"><stop offset="0" stop-color="#2f6b52"/><stop offset="1" stop-color="#1f4d3a" stop-opacity="0"/></radialGradient>
+     <linearGradient id="bag" x1="0" x2="1"><stop offset="0" stop-color="#d9b07a"/><stop offset=".55" stop-color="#c99a5e"/><stop offset="1" stop-color="#a87a44"/></linearGradient>
+     <linearGradient id="bagT" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#b78850"/><stop offset="1" stop-color="#cfa46b"/></linearGradient>
+     <linearGradient id="napa" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#7fb85a"/><stop offset=".45" stop-color="#bfdc8f"/><stop offset="1" stop-color="#f4f7de"/></linearGradient>
+     <linearGradient id="radish" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#d8eab0"/><stop offset=".3" stop-color="#fbfbf2"/><stop offset="1" stop-color="#e6e3d4"/></linearGradient>
+     <linearGradient id="jar" x1="0" x2="1"><stop offset="0" stop-color="#b52a16"/><stop offset=".5" stop-color="#d9442a"/><stop offset="1" stop-color="#8f1f0e"/></linearGradient>
+     <linearGradient id="rice" x1="0" x2="1"><stop offset="0" stop-color="#f6f0de"/><stop offset="1" stop-color="#dcd3b8"/></linearGradient>
+     <linearGradient id="noodle" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f5c84b"/><stop offset="1" stop-color="#e0a421"/></linearGradient>
+     <filter id="sh" x="-30%" y="-30%" width="160%" height="170%"><feDropShadow dx="0" dy="18" stdDeviation="16" flood-color="#0b2017" flood-opacity=".5"/></filter>
+    </defs>
+    <circle cx="300" cy="280" r="250" fill="url(#hg1)"/>
+    <ellipse cx="300" cy="470" rx="230" ry="26" fill="#0f2a1f" opacity=".55"/>
+    <!-- rice sack left -->
+    <g filter="url(#sh)" transform="translate(70 270)">
+     <path d="M20 0 Q60 -14 100 0 L118 190 Q60 204 2 190Z" fill="url(#rice)"/>
+     <path d="M20 0 Q60 -14 100 0 L96 18 Q60 8 24 18Z" fill="#c9bd98"/>
+     <path d="M30 4 l6 8 6 -8 6 8 6 -8 6 8 6 -8 6 8 6 -8 6 8" stroke="#8a7b56" stroke-width="2" fill="none"/>
+     <rect x="18" y="70" width="84" height="74" rx="8" fill="#1f4d3a"/>
+     <text x="60" y="114" text-anchor="middle" font-family="Do Hyeon" font-size="30" fill="#fffdf7">쌀</text>
+     <text x="60" y="134" text-anchor="middle" font-family="Outfit" font-weight="700" font-size="12" fill="#f5c84b">10 KG</text>
+     <g fill="#f5c84b"><ellipse cx="44" cy="88" rx="3" ry="5" transform="rotate(-20 44 88)"/><ellipse cx="76" cy="88" rx="3" ry="5" transform="rotate(20 76 88)"/></g>
+    </g>
+    <!-- grocery bag -->
+    <g filter="url(#sh)">
+     <!-- produce behind -->
+     <g transform="translate(210 70)">
+      <path d="M40 140 C10 90 20 20 70 0 C100 30 110 100 90 150Z" fill="url(#napa)"/>
+      <path d="M70 0 C76 50 78 100 70 150" stroke="#f4f7de" stroke-width="5" fill="none"/>
+      <path d="M50 30 C60 60 64 100 62 140M86 26 C84 60 82 100 80 144" stroke="#6a9e48" stroke-width="2" fill="none" opacity=".6"/>
+      <path d="M90 150 C120 90 150 40 200 30 C210 80 170 130 120 160Z" fill="url(#napa)"/>
+      <path d="M200 30 C170 70 140 120 116 156" stroke="#f4f7de" stroke-width="4" fill="none"/>
+     </g>
+     <g transform="translate(360 40)">
+      <path d="M10 170 L22 10" stroke="#3f8a3a" stroke-width="10" stroke-linecap="round"/>
+      <path d="M28 170 L46 4" stroke="#4fa047" stroke-width="10" stroke-linecap="round"/>
+      <path d="M44 172 L74 22" stroke="#3f8a3a" stroke-width="9" stroke-linecap="round"/>
+      <path d="M8 170 L46 172 L44 200 L6 198Z" fill="#f4f7e6"/>
+     </g>
+     <g transform="translate(160 150) rotate(-24)">
+      <path d="M30 0 C10 -16 0 -40 14 -54 C24 -40 30 -24 36 0Z" fill="#6aa84a"/><path d="M40 0 C44 -26 56 -46 74 -50 C70 -30 60 -14 46 2Z" fill="#7fbf58"/>
+      <path d="M8 6 Q40 -6 76 6 Q86 70 50 128 Q40 140 30 128 Q-4 70 8 6Z" fill="url(#radish)"/>
+      <path d="M20 40 h12M28 66 h14M36 92 h10" stroke="#cfcbb6" stroke-width="2" stroke-linecap="round"/>
+     </g>
+     <!-- bag body -->
+     <path d="M170 220 L430 220 L452 470 L148 470Z" fill="url(#bag)"/>
+     <path d="M170 220 L430 220 L426 246 L174 246Z" fill="url(#bagT)"/>
+     <path d="M170 220 l10 -10 l10 10 l10 -10 l10 10 l10 -10 l10 10 l10 -10 l10 10 l10 -10 l10 10 l10 -10 l10 10 l10 -10 l10 10 l10 -10 l10 10 l10 -10 l10 10 l10 -10 l10 10 l10 -10 l10 10 l10 -10 l10 10 l10 -10 l10 10" fill="#cfa46b"/>
+     <rect x="214" y="300" width="172" height="112" rx="16" fill="#1f4d3a"/>
+     <path d="M214 316 h172" stroke="#c8361f" stroke-width="8"/>
+     <text x="300" y="370" text-anchor="middle" font-family="Do Hyeon" font-size="40" fill="#fffdf7">다온상회</text>
+     <text x="300" y="396" text-anchor="middle" font-family="Outfit" font-weight="700" font-size="13" letter-spacing="3" fill="#f5c84b">K-GROCERY</text>
+     <path d="M430 220 L452 470 L420 470 L404 220Z" fill="#000" opacity=".1"/>
+    </g>
+    <!-- gochujang jar -->
+    <g filter="url(#sh)" transform="translate(452 318)">
+     <rect x="4" y="0" width="104" height="22" rx="6" fill="#2b2b2b"/>
+     <path d="M0 22 h112 v96 q0 22 -22 22 h-68 q-22 0 -22 -22z" fill="url(#jar)"/>
+     <rect x="14" y="48" width="84" height="56" rx="8" fill="#fffdf7"/>
+     <text x="56" y="80" text-anchor="middle" font-family="Do Hyeon" font-size="22" fill="#a32a16">고추장</text>
+     <text x="56" y="97" text-anchor="middle" font-family="Outfit" font-weight="700" font-size="11" fill="#5f6b62">1 KG</text>
+     <path d="M18 30 q6 40 0 96" stroke="#fff" stroke-opacity=".25" stroke-width="6" fill="none"/>
+    </g>
+    <!-- noodle pack -->
+    <g filter="url(#sh)" transform="translate(196 418) rotate(-5)">
+     <path d="M0 6 L8 0 L172 0 L180 6 L180 62 L172 68 L8 68 L0 62Z" fill="url(#noodle)"/>
+     <path d="M0 6 l8 -6 v68 l-8 -6z M180 6 l-8 -6 v68 l8 -6z" fill="#c98b12"/>
+     <circle cx="48" cy="34" r="22" fill="#c8361f"/>
+     <path d="M34 30 q14 -10 28 0 M34 38 q14 -10 28 0" stroke="#ffd75e" stroke-width="3" fill="none"/>
+     <text x="122" y="40" text-anchor="middle" font-family="Do Hyeon" font-size="22" fill="#1d2620">매운 라면</text>
+    </g>
+    <!-- tofu -->
+    <g filter="url(#sh)" transform="translate(394 444)">
+     <rect width="110" height="52" rx="8" fill="#fbfaf3"/>
+     <rect x="0" y="0" width="110" height="16" rx="6" fill="#8cc06b"/>
+     <text x="55" y="42" text-anchor="middle" font-family="Do Hyeon" font-size="20" fill="#1f4d3a">두부</text>
+    </g>
+    <g fill="#f5c84b"><path d="M520 120 l6 16 16 6 -16 6 -6 16 -6 -16 -16 -6 16 -6z"/><path d="M90 150 l4 10 10 4 -10 4 -4 10 -4 -10 -10 -4 10 -4z"/></g>
+   </svg>
+  </div>
+ </div>
+</div>
+
+<section id="cats">
+ <div class="in">
+  <div class="sh"><div><small>CATEGORY</small><h2>무엇을 찾으세요?</h2></div><p>한국에서 먹던 그 맛 그대로. 자주 찾는 여덟 가지 분류로 나눠 두었습니다.</p></div>
+  <div class="cats">
+   <a class="cat" href="#weekly"><div class="ci" style="background:#fde3dc"><svg viewBox="0 0 52 52"><path d="M10 18h32l-3 26H13z" fill="#c8361f"/><rect x="8" y="12" width="36" height="8" rx="3" fill="#8f1f0e"/><path d="M18 30c4-4 12-4 16 0" stroke="#ffd75e" stroke-width="3" fill="none"/></svg></div><b>김치·반찬</b><span>배추김치, 깍두기</span></a>
+   <a class="cat" href="#weekly"><div class="ci" style="background:#f3efe0"><svg viewBox="0 0 52 52"><path d="M14 10q12-6 24 0l4 34q-16 4-32 0z" fill="#efe7cf" stroke="#b8a77c" stroke-width="2"/><rect x="16" y="22" width="20" height="14" rx="3" fill="#1f4d3a"/><ellipse cx="26" cy="29" rx="3" ry="5" fill="#f5c84b"/></svg></div><b>쌀·잡곡</b><span>백미, 현미, 찹쌀</span></a>
+   <a class="cat" href="#weekly"><div class="ci" style="background:#fff2c9"><svg viewBox="0 0 52 52"><path d="M8 24h36q-2 18-18 18T8 24z" fill="#c8361f"/><path d="M14 22q4-8 8 0t8 0 8 0" stroke="#e0a421" stroke-width="3" fill="none"/><path d="M34 6l-6 18M40 8l-8 16" stroke="#6b4a2e" stroke-width="2.4" stroke-linecap="round"/></svg></div><b>라면·면</b><span>라면, 냉면, 칼국수</span></a>
+   <a class="cat" href="#weekly"><div class="ci" style="background:#fde3dc"><svg viewBox="0 0 52 52"><rect x="14" y="8" width="24" height="8" rx="3" fill="#2b2b2b"/><path d="M12 16h28v24q0 6-6 6H18q-6 0-6-6z" fill="#b52a16"/><rect x="16" y="24" width="20" height="12" rx="2" fill="#fffdf7"/></svg></div><b>장류·양념</b><span>고추장, 된장, 간장</span></a>
+   <a class="cat" href="#weekly"><div class="ci" style="background:#dfeef6"><svg viewBox="0 0 52 52"><path d="M8 32q2-14 18-14t18 14q-18 6-36 0z" fill="#fbf6e6" stroke="#cdbf96" stroke-width="2"/><path d="M14 26q3 4 6 0M22 24q3 4 6 0M30 26q3 4 6 0" stroke="#cdbf96" stroke-width="2" fill="none"/><path d="M38 8v10M33 13h10M35 10l6 6M41 10l-6 6" stroke="#5aa0c8" stroke-width="2" stroke-linecap="round"/></svg></div><b>냉동·만두</b><span>만두, 떡, 어묵</span></a>
+   <a class="cat" href="#weekly"><div class="ci" style="background:#fff2c9"><svg viewBox="0 0 52 52"><path d="M12 10h28l-2 6 2 6-2 6 2 6-2 6 2 6H12l2-6-2-6 2-6-2-6 2-6z" fill="#f5c84b"/><circle cx="26" cy="28" r="8" fill="#c8361f"/></svg></div><b>과자·간식</b><span>과자, 음료, 떡</span></a>
+   <a class="cat" href="#weekly"><div class="ci" style="background:#fde3dc"><svg viewBox="0 0 52 52"><path d="M10 30q0-14 16-16 16 2 16 16-16 10-32 0z" fill="#d9534a"/><path d="M16 26q10 4 20 0M18 32q8 3 16 0" stroke="#fbd0c8" stroke-width="2.4" fill="none"/></svg></div><b>정육·수산</b><span>삼겹살, 불고기</span></a>
+   <a class="cat" href="#weekly"><div class="ci" style="background:#e3efc9"><svg viewBox="0 0 52 52"><rect x="12" y="16" width="16" height="28" rx="4" fill="#1f4d3a"/><rect x="16" y="10" width="8" height="8" rx="2" fill="#8cc06b"/><rect x="30" y="24" width="12" height="20" rx="3" fill="#8cc06b"/><rect x="15" y="26" width="10" height="8" rx="2" fill="#fffdf7"/></svg></div><b>생활용품</b><span>주방, 세제, 잡화</span></a>
+  </div>
+ </div>
+</section>
+
+<section class="wk" id="weekly">
+ <div class="in">
+  <div class="sh"><div><small>THIS WEEK</small><h2>이번 주 장보기</h2></div>
+   <div class="tabs" role="group" aria-label="분류 거르기"><button class="tab" aria-pressed="true" data-f="all">전체</button><button class="tab" aria-pressed="false" data-f="fresh">냉장·신선</button><button class="tab" aria-pressed="false" data-f="frozen">냉동</button><button class="tab" aria-pressed="false" data-f="pantry">상온</button></div>
+  </div>
+  <div class="grid" id="grid"></div>
+ </div>
+</section>
+
+<section id="kimjang">
+ <div class="in">
+  <div class="kj">
+   <div class="tx">
+    <small>KIMJANG PRE-ORDER</small>
+    <h2>올겨울 김장,<br>절임배추부터 예약하세요</h2>
+    <p>12월 둘째 주에 한 번에 받아 보실 수 있도록 미리 주문을 받습니다. 양념만 따로, 배추만 따로도 가능합니다.</p>
+    <ul>
+     <li>절임배추 20kg<b>₱2,950</b></li>
+     <li>김장 양념 5kg<b>₱2,400</b></li>
+     <li>절임배추 + 양념 세트<b>₱5,050</b></li>
+     <li>예약 마감<b>12월 6일</b></li>
+    </ul>
+    <a class="btn y" href="#how">예약 방법 보기 <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+   </div>
+   <div class="art" aria-hidden="true">
+    <svg viewBox="0 0 480 400" preserveAspectRatio="xMidYMid slice">
+     <defs><linearGradient id="kn" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#8cc06b"/><stop offset=".5" stop-color="#d3e8a6"/><stop offset="1" stop-color="#fbf9e6"/></linearGradient>
+     <linearGradient id="tub" x1="0" x2="1"><stop offset="0" stop-color="#2f6b52"/><stop offset="1" stop-color="#1f4d3a"/></linearGradient>
+     <filter id="ks"><feDropShadow dx="0" dy="14" stdDeviation="12" flood-color="#5a1408" flood-opacity=".45"/></filter></defs>
+     <rect width="480" height="400" fill="#e9573c"/>
+     
+     <g filter="url(#ks)">
+      <ellipse cx="240" cy="300" rx="190" ry="40" fill="#163a2b"/>
+      <path d="M50 250 h380 l-20 60 q-170 40 -340 0z" fill="url(#tub)"/>
+      <ellipse cx="240" cy="250" rx="190" ry="36" fill="#2f6b52"/>
+      <ellipse cx="240" cy="252" rx="172" ry="28" fill="#c8361f"/>
+      <g transform="translate(110 150) rotate(-18)"><path d="M0 100 C-10 50 20 0 60 0 C100 0 120 50 110 100 Q55 120 0 100Z" fill="url(#kn)"/><path d="M55 4 C58 40 58 80 55 112" stroke="#fbf9e6" stroke-width="5" fill="none"/></g>
+      <g transform="translate(220 120) rotate(8)"><path d="M0 120 C-12 60 22 0 70 0 C118 0 140 60 128 120 Q64 144 0 120Z" fill="url(#kn)"/><path d="M64 4 C68 50 68 96 64 134" stroke="#fbf9e6" stroke-width="6" fill="none"/><path d="M30 60 q10 10 0 30M100 56 q-10 12 0 32" stroke="#c8361f" stroke-width="5" fill="none" opacity=".8"/></g>
+      <g fill="#a32a16"><circle cx="160" cy="250" r="5"/><circle cx="300" cy="246" r="4"/><circle cx="350" cy="256" r="5"/><circle cx="200" cy="258" r="4"/></g>
+     </g>
+     <g transform="translate(360 60)"><circle r="48" fill="#f5c84b"/><text y="-6" text-anchor="middle" font-family="Do Hyeon" font-size="22" fill="#1d2620">12월</text><text y="20" text-anchor="middle" font-family="Do Hyeon" font-size="22" fill="#1d2620">둘째 주</text></g>
+    </svg>
+   </div>
+  </div>
+ </div>
+</section>
+
+<section id="delivery" style="padding-top:0">
+ <div class="in">
+  <div class="sh"><div><small>DELIVERY</small><h2>어디까지 배송되나요?</h2></div><p>냉장·냉동 상품은 보냉 상자와 아이스팩으로 포장해 보내 드립니다.</p></div>
+  <div class="dl">
+   <div class="map" aria-hidden="true">
+    <svg viewBox="0 0 500 420" preserveAspectRatio="xMidYMid slice">
+     <rect width="500" height="420" fill="#cfe4ec"/>
+     <g stroke="#b6d3de" stroke-width="1.5" fill="none"><path d="M0 60 Q250 40 500 70M0 140 Q250 120 500 150M0 230 Q250 210 500 240M0 320 Q250 300 500 330"/></g>
+     <path d="M150 0 C200 40 230 80 220 130 C210 170 240 190 260 210 C300 250 280 300 250 330 C230 350 260 390 300 420 L500 420 L500 0Z" fill="#e3efc9"/>
+     <path d="M60 300 C90 280 130 300 140 330 C150 360 120 400 80 410 C40 400 30 330 60 300Z" fill="#e3efc9"/>
+     <path d="M150 0 C200 40 230 80 220 130 C210 170 240 190 260 210 C300 250 280 300 250 330 C230 350 260 390 300 420" stroke="#8cc06b" stroke-width="3" fill="none"/>
+     <g fill="none" stroke="#fffdf7" stroke-width="5" stroke-linecap="round"><path d="M260 200 L360 160 L440 190"/><path d="M360 160 L340 60"/><path d="M290 280 L380 300"/></g>
+     <circle cx="340" cy="60" r="60" fill="#f5c84b" opacity=".25"/>
+     <circle cx="300" cy="230" r="78" fill="#1f4d3a" opacity=".18"/>
+     <g transform="translate(300 230)"><circle r="14" fill="#1f4d3a"/><circle r="5" fill="#fff"/></g>
+     <g transform="translate(340 60)"><circle r="12" fill="#e0a421"/><circle r="4.5" fill="#fff"/></g>
+     <g transform="translate(100 350)"><circle r="12" fill="#c8361f"/><circle r="4.5" fill="#fff"/></g>
+     <g font-family="Noto Sans KR" font-weight="700" font-size="16" fill="#1d2620"><text x="322" y="236">메트로 마닐라</text><text x="322" y="66" text-anchor="end">클락·앙헬레스</text><text x="120" y="356">세부</text></g>
+     <path d="M300 230 Q320 140 340 60" stroke="#1f4d3a" stroke-width="2.5" stroke-dasharray="6 6" fill="none"/>
+     <path d="M300 230 Q180 300 100 350" stroke="#1f4d3a" stroke-width="2.5" stroke-dasharray="6 6" fill="none"/>
+    </svg>
+   </div>
+   <div class="zones">
+    <div class="zn"><div class="dot" style="background:var(--g)">당일</div><div><h3>메트로 마닐라</h3><p>오후 2시 전 주문 시 당일 저녁 도착 (일요일 휴무)</p></div><div class="fee">배송비<b>₱150</b></div></div>
+    <div class="zn"><div class="dot" style="background:#e0a421">익일</div><div><h3>클락 · 앙헬레스 · 라구나</h3><p>전날 오후 5시까지 주문 시 다음 날 도착</p></div><div class="fee">배송비<b>₱280</b></div></div>
+    <div class="zn"><div class="dot" style="background:var(--red)">2~3일</div><div><h3>세부 · 다바오 · 그 밖의 지역</h3><p>상온 상품만 택배 발송, 냉동은 지역별 문의</p></div><div class="fee">배송비<b>₱390~</b></div></div>
+    <div class="freebar"><svg viewBox="0 0 34 34"><circle cx="17" cy="17" r="16" fill="#f5c84b"/><path d="M9 17.5l5 5 11-11" stroke="#1d2620" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg><span>메트로 마닐라는 <b>₱2,500 이상</b>, 그 밖의 지역은 <b>₱4,000 이상</b> 주문하시면 배송비가 무료입니다.</span></div>
+   </div>
+  </div>
+ </div>
+</section>
+
+<section class="how" id="how">
+ <div class="in">
+  <div class="sh"><div><small>HOW TO ORDER</small><h2>주문은 이렇게 하세요</h2></div><p>회원 가입 없이도 주문할 수 있습니다. 결제는 계좌이체, 모바일 송금, 현장 결제 중 편한 방법으로.</p></div>
+  <div class="steps">
+   <div class="stp"><div class="n">1</div><h3>장바구니 담기</h3><p>필요한 상품을 골라 담고 배송 지역을 선택합니다.</p></div>
+   <div class="stp"><div class="n">2</div><h3>주문서 보내기</h3><p>이름, 주소, 받으실 시간대를 적어 주문서를 보냅니다.</p></div>
+   <div class="stp"><div class="n">3</div><h3>확인 연락</h3><p>재고를 확인한 뒤 결제 금액과 도착 시간을 안내해 드립니다.</p></div>
+   <div class="stp"><div class="n">4</div><h3>문 앞 도착</h3><p>보냉 포장 그대로 받아 냉장고에 넣으시면 끝.</p></div>
+  </div>
+  <div class="pick">
+   <svg viewBox="0 0 60 60" aria-hidden="true"><rect width="60" height="60" rx="16" fill="#1f4d3a"/><path d="M12 22h36v4H12z" fill="#c8361f"/><path d="M12 22h7v4h-7zM26 22h7v4h-7zM40 22h8v4h-8z" fill="#fffdf7"/><path d="M15 26h30v20H15z" fill="#f7f1e3"/><path d="M26 34h8v12h-8z" fill="#1f4d3a"/></svg>
+   <div><h3>매장에서 직접 받아 가셔도 됩니다</h3><p>주문 후 2시간 뒤부터 픽업 가능 · 매일 09:00 – 20:00 · 마카티 ○○로 000</p></div>
+   <a class="btn" href="#faq">픽업 안내</a>
+  </div>
+ </div>
+</section>
+
+<section id="faq">
+ <div class="in">
+  <div class="sh"><div><small>FAQ</small><h2>자주 묻는 질문</h2></div><p>그 밖의 문의는 000-0000-0000 또는 카카오톡 ID: example 로 남겨 주세요.</p></div>
+  <div class="faqg">
+   <details open><summary>냉동식품이 녹지 않게 오나요?</summary><p>스티로폼 보냉 상자에 아이스팩을 넣어 포장하고, 메트로 마닐라는 당일 안에 전달합니다.</p></details>
+   <details><summary>원하는 상품이 목록에 없어요.</summary><p>찾으시는 상품명을 남겨 주시면 다음 입고 때 들여올 수 있는지 확인해 연락드립니다.</p></details>
+   <details><summary>주문을 바꾸거나 취소할 수 있나요?</summary><p>상품 포장 전까지는 자유롭게 바꾸실 수 있습니다. 당일 배송은 오후 1시까지 연락 주세요.</p></details>
+   <details><summary>영수증(공식 영수증)을 받을 수 있나요?</summary><p>주문서에 상호와 주소를 적어 주시면 상품과 함께 넣어 드립니다.</p></details>
+  </div>
+ </div>
+</section>
+
+<footer>
+ <div class="in">
+  <div class="fg">
+   <div><span class="logo"><svg viewBox="0 0 46 46" width="40" height="40"><rect width="46" height="46" rx="14" fill="#2f6b52"/><path d="M6 15h34v5H6z" fill="#c8361f"/><path d="M12 22h22l-2 16H14z" fill="#f5c84b"/></svg><span><b>다온상회</b></span></span><p style="margin-top:12px">마닐라에서 한국 식품을 문 앞까지.<br>마카티 ○○로 000</p></div>
+   <div><h4>쇼핑</h4><ul><li><a href="#weekly">이번 주 장보기</a></li><li><a href="#cats">상품 분류</a></li><li><a href="#kimjang">김장 사전 예약</a></li></ul></div>
+   <div><h4>안내</h4><ul><li><a href="#delivery">배송 지역 · 요금</a></li><li><a href="#how">주문 방법</a></li><li><a href="#faq">자주 묻는 질문</a></li></ul></div>
+   <div><h4>고객센터</h4><ul><li>000-0000-0000</li><li>카카오톡 ID: example</li><li>매일 09:00 – 20:00</li></ul></div>
+  </div>
+  <p class="copy">© 다온상회</p>
+ </div>
+</footer>
+<div class="toast" id="toast" role="status" aria-live="polite"><span id="tmsg">장바구니에 담았습니다</span><b id="ttot">₱0</b></div>
+<script>
+(function(){
+ // product art generators — each package drawn differently
+ function art(t,c){
+  var A={
+  kimchi:'<svg viewBox="0 0 200 170"><ellipse cx="100" cy="158" rx="70" ry="9" fill="#000" opacity=".1"/><rect x="40" y="30" width="120" height="22" rx="8" fill="#a32a16"/><path d="M36 50h128v84q0 22-22 22H58q-22 0-22-22z" fill="#fde3dc" stroke="#e8b3a6" stroke-width="2"/><path d="M50 92c20-30 80-30 100 0 0 26-20 46-50 46S50 118 50 92z" fill="#c8361f"/><path d="M66 90c14-14 54-14 68 0" stroke="#e9f3c9" stroke-width="7" fill="none" stroke-linecap="round"/><path d="M70 110c10 8 50 8 60 0" stroke="#e9573c" stroke-width="5" fill="none"/><rect x="60" y="60" width="80" height="18" rx="4" fill="#fffdf7"/><text x="100" y="74" text-anchor="middle" font-family="Do Hyeon" font-size="15" fill="#a32a16">포기김치</text></svg>',
+  rice:'<svg viewBox="0 0 200 170"><ellipse cx="100" cy="158" rx="66" ry="9" fill="#000" opacity=".1"/><path d="M52 24q48-14 96 0l10 128q-58 10-116 0z" fill="#f4eedc" stroke="#cbbd95" stroke-width="2"/><path d="M56 30l6 8 6-8 6 8 6-8 6 8 6-8 6 8 6-8 6 8 6-8 6 8 6-8 6 8" stroke="#a89566" stroke-width="2" fill="none"/><rect x="62" y="70" width="76" height="56" rx="8" fill="#1f4d3a"/><text x="100" y="102" text-anchor="middle" font-family="Do Hyeon" font-size="24" fill="#fffdf7">백미</text><text x="100" y="118" text-anchor="middle" font-family="Outfit" font-weight="700" font-size="11" fill="#f5c84b">10 KG</text></svg>',
+  mandu:'<svg viewBox="0 0 200 170"><ellipse cx="100" cy="158" rx="72" ry="9" fill="#000" opacity=".1"/><rect x="30" y="34" width="140" height="116" rx="14" fill="#5aa0c8"/><rect x="30" y="34" width="140" height="30" rx="14" fill="#3b7fa8"/><text x="100" y="56" text-anchor="middle" font-family="Do Hyeon" font-size="16" fill="#fff">고기 왕만두</text><g transform="translate(46 80)"><path d="M0 40q4-36 34-36t34 36q-34 12-68 0z" fill="#fbf6e6" stroke="#d8c99c" stroke-width="2"/><path d="M10 26q5 5 10 0M24 20q5 5 10 0M38 26q5 5 10 0" stroke="#d8c99c" stroke-width="2" fill="none"/></g><g transform="translate(96 88)"><path d="M0 36q4-32 30-32t30 32q-30 10-60 0z" fill="#fbf6e6" stroke="#d8c99c" stroke-width="2"/></g><path d="M150 76v14M143 83h14" stroke="#fff" stroke-width="2.4" stroke-linecap="round"/></svg>',
+  ttok:'<svg viewBox="0 0 200 170"><ellipse cx="100" cy="158" rx="70" ry="9" fill="#000" opacity=".1"/><path d="M38 40h124l-6 112H44z" fill="#fff" fill-opacity=".85" stroke="#cdd8d0" stroke-width="2"/><rect x="38" y="30" width="124" height="16" rx="4" fill="#1f4d3a"/>'+[[60,70],[96,64],[132,72],[70,100],[110,98],[140,108],[56,128],[92,126],[128,132]].map(function(p){return '<ellipse cx="'+p[0]+'" cy="'+p[1]+'" rx="16" ry="9" fill="#f7f4ea" stroke="#d8d2be" stroke-width="2" transform="rotate(-18 '+p[0]+' '+p[1]+')"/>'}).join('')+'<rect x="66" y="80" width="68" height="18" rx="4" fill="#c8361f"/><text x="100" y="94" text-anchor="middle" font-family="Do Hyeon" font-size="14" fill="#fff">떡국떡 1kg</text></svg>',
+  gochu:'<svg viewBox="0 0 200 170"><ellipse cx="100" cy="158" rx="58" ry="9" fill="#000" opacity=".1"/><rect x="54" y="24" width="92" height="20" rx="6" fill="#2b2b2b"/><path d="M48 44h104v88q0 22-22 22H70q-22 0-22-22z" fill="#b52a16"/><rect x="56" y="70" width="88" height="50" rx="8" fill="#fffdf7"/><text x="100" y="98" text-anchor="middle" font-family="Do Hyeon" font-size="17" fill="#a32a16">햇살 고추장</text><text x="100" y="113" text-anchor="middle" font-family="Outfit" font-weight="700" font-size="11" fill="#5f6b62">500 G</text><path d="M62 52q6 40 0 92" stroke="#fff" stroke-opacity=".22" stroke-width="7" fill="none"/></svg>',
+  ramyeon:'<svg viewBox="0 0 200 170"><ellipse cx="100" cy="158" rx="74" ry="9" fill="#000" opacity=".1"/><g transform="rotate(-6 100 90)"><path d="M26 54l8-6h132l8 6v64l-8 6H34l-8-6z" fill="#1d2620"/><path d="M26 54l8-6v76l-8-6zM174 54l-8-6v76l8-6z" fill="#000"/><circle cx="72" cy="86" r="24" fill="#c8361f"/><path d="M56 82q16-10 32 0M56 90q16-10 32 0" stroke="#f5c84b" stroke-width="3" fill="none"/><text x="132" y="84" text-anchor="middle" font-family="Do Hyeon" font-size="18" fill="#f5c84b">짜장 라면</text><text x="132" y="104" text-anchor="middle" font-family="Outfit" font-weight="700" font-size="11" fill="#fff">5 PACK</text></g></svg>',
+  pork:'<svg viewBox="0 0 200 170"><ellipse cx="100" cy="158" rx="76" ry="9" fill="#000" opacity=".1"/><rect x="26" y="50" width="148" height="96" rx="12" fill="#fff" stroke="#dbe3dd" stroke-width="2"/>'+[0,1,2].map(function(i){var y=64+i*24;return '<rect x="40" y="'+y+'" width="120" height="20" rx="6" fill="#e9887a"/><rect x="40" y="'+(y+6)+'" width="120" height="4" fill="#fbe0d8"/><rect x="40" y="'+(y+14)+'" width="120" height="3" fill="#fbe0d8"/>'}).join('')+'<rect x="122" y="38" width="62" height="28" rx="6" fill="#1f4d3a"/><text x="153" y="57" text-anchor="middle" font-family="Do Hyeon" font-size="15" fill="#fff">삼겹살</text></svg>',
+  laver:'<svg viewBox="0 0 200 170"><ellipse cx="100" cy="158" rx="72" ry="9" fill="#000" opacity=".1"/>'+[0,1,2].map(function(i){return '<g transform="translate('+(36+i*8)+' '+(40+i*10)+')"><rect width="112" height="86" rx="8" fill="'+['#2f6b52','#24563f','#1d2620'][i]+'"/></g>'}).join('')+'<rect x="66" y="88" width="84" height="40" rx="6" fill="#f5c84b"/><text x="108" y="114" text-anchor="middle" font-family="Do Hyeon" font-size="18" fill="#1d2620">조미김 16봉</text></svg>'
+  };return A[t];
+ }
+ var P=[
+  {id:1,t:'kimchi',f:'fresh',bg:'#fdeee9',cat:'김치 · 냉장',nm:'포기김치 2kg',p:690,o:780,badge:'이번 주 특가'},
+  {id:2,t:'rice',f:'pantry',bg:'#f6f2e6',cat:'쌀 · 상온',nm:'단단한 백미 10kg',p:1450},
+  {id:3,t:'mandu',f:'frozen',bg:'#e6f1f7',cat:'만두 · 냉동',nm:'고기 왕만두 1.2kg',p:520,o:590,badge:'이번 주 특가'},
+  {id:4,t:'ttok',f:'frozen',bg:'#eef4ef',cat:'떡 · 냉동',nm:'떡국떡 1kg',p:330,badge:'떡국 준비',bc:'g'},
+  {id:5,t:'gochu',f:'pantry',bg:'#fdeee9',cat:'장류 · 상온',nm:'햇살 고추장 500g',p:280},
+  {id:6,t:'ramyeon',f:'pantry',bg:'#fff6dc',cat:'라면 · 상온',nm:'짜장 라면 5개입',p:310,o:350,badge:'이번 주 특가'},
+  {id:7,t:'pork',f:'fresh',bg:'#fdeee9',cat:'정육 · 냉장',nm:'두툼 삼겹살 600g',p:480},
+  {id:8,t:'laver',f:'pantry',bg:'#eef4ef',cat:'김 · 상온',nm:'곱게 구운 조미김 16봉',p:260}
+ ];
+ var g=document.getElementById('grid');
+ g.innerHTML=P.map(function(x){return '<article class="pd" data-f="'+x.f+'"><div class="img" style="background:'+x.bg+'">'+(x.badge?'<span class="badge'+(x.bc?' '+x.bc:'')+'">'+x.badge+'</span>':'')+art(x.t)+'</div><div class="bd"><small>'+x.cat+'</small><h3>'+x.nm+'</h3><div class="pr"><b>₱'+x.p.toLocaleString()+'</b>'+(x.o?'<s>₱'+x.o.toLocaleString()+'</s>':'')+'</div><button class="add" type="button" data-id="'+x.id+'"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg>담기</button></div></article>'}).join('');
+ var cart={},cc=document.getElementById('cc'),toast=document.getElementById('toast'),tm;
+ function total(){var s=0,n=0;for(var k in cart){var x=P.filter(function(p){return p.id==k})[0];s+=x.p*cart[k];n+=cart[k]}return{s:s,n:n}}
+ g.addEventListener('click',function(e){var b=e.target.closest('.add');if(!b)return;var id=b.dataset.id;cart[id]=(cart[id]||0)+1;var t=total();cc.textContent=t.n;b.classList.add('done');b.innerHTML='<svg viewBox="0 0 24 24"><path d="M5 12l5 5 9-10"/></svg>'+cart[id]+'개 담김';
+  var x=P.filter(function(p){return p.id==id})[0];document.getElementById('tmsg').textContent=x.nm+' 담았습니다 · 합계';document.getElementById('ttot').textContent='₱'+t.s.toLocaleString()+(t.s>=2500?' · 배송비 무료':' · ₱'+(2500-t.s).toLocaleString()+' 더 담으면 무료배송');toast.classList.add('on');clearTimeout(tm);tm=setTimeout(function(){toast.classList.remove('on')},2600)});
+ document.querySelectorAll('.tab').forEach(function(t){t.addEventListener('click',function(){document.querySelectorAll('.tab').forEach(function(o){o.setAttribute('aria-pressed',o===t)});var f=t.dataset.f;g.querySelectorAll('.pd').forEach(function(p){p.classList.toggle('hide',f!=='all'&&p.dataset.f!==f)})})});
+ document.getElementById('cartbtn').addEventListener('click',function(){var t=total();document.getElementById('tmsg').textContent=t.n?('장바구니 '+t.n+'개 · 합계'):'장바구니가 비어 있습니다';document.getElementById('ttot').textContent=t.n?'₱'+t.s.toLocaleString():'';toast.classList.add('on');clearTimeout(tm);tm=setTimeout(function(){toast.classList.remove('on')},2400)});
+})();
+</script>
+</body>
+</html>

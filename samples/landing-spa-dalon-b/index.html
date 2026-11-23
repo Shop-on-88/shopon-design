@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>달온 찜질 스파 · 평일 첫 방문 찜질 + 마사지 패키지</title>
+<meta name="description" content="황토방 찜질과 전신 마사지 60분, 식혜와 구운 계란까지. 평일 첫 방문 패키지 예약 신청.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@700;800&family=Noto+Sans+KR:wght@400;500;700;900&family=Outfit:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{--rice:#f3ead9;--rice2:#ebdec6;--clay:#b5532f;--clay2:#8f3c1f;--char:#2b211c;--char2:#3a2d26;--jade:#5f8f7a;--steam:#fffaf1;--ochre:#d99a4e;--mut:#6e5d50}
+html{scroll-behavior:smooth}
+body{font-family:'Noto Sans KR',sans-serif;background:var(--rice);color:var(--char);word-break:keep-all;-webkit-font-smoothing:antialiased;line-height:1.6;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+.ser{font-family:'Nanum Myeongjo',serif;font-weight:800}
+.in{max-width:1180px;margin:0 auto;padding:0 24px}
+/* header */
+header{position:sticky;top:0;z-index:30;background:rgba(243,234,217,.92);backdrop-filter:blur(8px);border-bottom:1px solid rgba(43,33,28,.1)}
+header .in{display:flex;align-items:center;height:72px;gap:28px}
+.logo{display:flex;align-items:center;gap:10px}
+.logo svg{width:40px;height:40px}
+.logo b{font-family:'Nanum Myeongjo';font-weight:800;font-size:24px;letter-spacing:-.5px}
+.logo small{display:block;font-family:'Outfit';font-size:11px;font-weight:600;letter-spacing:.3em;color:var(--clay);margin-top:-2px}
+nav{display:flex;gap:26px;margin-left:auto;font-size:15px;font-weight:500;color:var(--mut)}
+nav a:hover{color:var(--clay)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;height:48px;padding:0 24px;border-radius:999px;background:var(--clay);color:var(--steam);font-weight:700;font-size:15px;border:0;cursor:pointer;transition:.2s;white-space:nowrap;font-family:inherit}
+.btn:hover{background:var(--clay2)}
+.btn.ghost{background:transparent;color:var(--char);border:1.5px solid rgba(43,33,28,.35)}
+.btn.ghost:hover{border-color:var(--char);background:rgba(43,33,28,.04)}
+.btn svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+/* hero */
+.hero{position:relative;overflow:hidden;padding:56px 0 84px;background:radial-gradient(900px 600px at 78% 40%,#f9dcc0 0,transparent 60%),var(--rice)}
+.hero .in{display:grid;grid-template-columns:1.02fr 1fr;gap:40px;align-items:center}
+.kick{display:inline-flex;align-items:center;gap:10px;font-size:14px;font-weight:700;color:var(--clay);background:rgba(181,83,47,.1);padding:7px 14px;border-radius:999px}
+.kick i{width:7px;height:7px;border-radius:50%;background:var(--clay)}
+.hero h1{font-family:'Nanum Myeongjo';font-weight:800;font-size:clamp(36px,5vw,60px);line-height:1.22;letter-spacing:-1.5px;margin:20px 0 18px}
+.hero h1 em{font-style:normal;color:var(--clay);position:relative}
+.hero h1 em::after{content:"";position:absolute;left:0;right:0;bottom:4px;height:10px;background:rgba(217,154,78,.35);z-index:-1;border-radius:4px}
+.lead{font-size:17px;color:var(--mut);max-width:500px}
+.offer{margin-top:28px;background:var(--char);color:var(--steam);border-radius:22px;padding:24px 26px;display:grid;grid-template-columns:1fr auto;gap:14px 20px;align-items:center;max-width:540px;position:relative;box-shadow:0 30px 50px -30px rgba(43,33,28,.7)}
+.offer::before{content:"첫 방문";position:absolute;top:-14px;left:24px;background:var(--ochre);color:var(--char);font-size:13px;font-weight:900;padding:4px 12px;border-radius:999px}
+.offer h3{font-size:17px;font-weight:700;line-height:1.45}
+.offer h3 span{display:block;font-size:14px;font-weight:400;color:#cdbdaa;margin-top:4px}
+.price{text-align:right}
+.price s{display:block;font-family:'Outfit';font-size:16px;color:#a8988a}
+.price b{font-family:'Outfit';font-weight:700;font-size:40px;line-height:1;color:#ffd9a8}
+.offer .btns{grid-column:1/-1;display:flex;gap:10px;flex-wrap:wrap;border-top:1px dashed rgba(255,250,241,.25);padding-top:16px}
+.offer .btn.ghost{color:var(--steam);border-color:rgba(255,250,241,.35)}
+.meta{display:flex;gap:22px;margin-top:22px;flex-wrap:wrap;font-size:14px;color:var(--mut)}
+.meta span{display:flex;align-items:center;gap:6px}
+.meta svg{width:18px;height:18px;fill:none;stroke:var(--jade);stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.art{position:relative}
+.art svg{width:100%;height:auto;display:block}
+.steam path{animation:rise 6s ease-in-out infinite;transform-box:fill-box;transform-origin:center}
+.steam path:nth-child(2){animation-delay:-2s}.steam path:nth-child(3){animation-delay:-4s}
+@keyframes rise{0%,100%{transform:translateY(0);opacity:.7}50%{transform:translateY(-14px);opacity:.35}}
+@media (prefers-reduced-motion:reduce){.steam path{animation:none}}
+/* section common */
+section{padding:92px 0}
+.sh{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;margin-bottom:40px;flex-wrap:wrap}
+.sh small{font-family:'Outfit';font-size:13px;font-weight:700;letter-spacing:.3em;color:var(--clay)}
+.sh h2{font-family:'Nanum Myeongjo';font-weight:800;font-size:clamp(28px,3.4vw,40px);line-height:1.3;letter-spacing:-1px;margin-top:8px}
+.sh p{font-size:16px;color:var(--mut);max-width:420px}
+/* package */
+.pk{background:var(--steam);border-top:1px solid rgba(43,33,28,.08);border-bottom:1px solid rgba(43,33,28,.08)}
+.pkg{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;position:relative}
+.pc{background:var(--rice);border-radius:22px;padding:26px 26px 28px;position:relative;border:1px solid rgba(43,33,28,.08)}
+.pc .ill{height:150px;border-radius:16px;margin-bottom:20px;display:flex;align-items:center;justify-content:center;overflow:hidden}
+.pc .ill svg{width:100%;height:100%}
+.pc .n{font-family:'Outfit';font-size:13px;font-weight:700;letter-spacing:.2em;color:var(--clay)}
+.pc h3{font-size:21px;font-weight:900;margin:4px 0 8px;letter-spacing:-.4px}
+.pc p{font-size:15px;color:var(--mut)}
+.pc .plus{position:absolute;right:-20px;top:92px;width:40px;height:40px;border-radius:50%;background:var(--char);color:var(--steam);display:flex;align-items:center;justify-content:center;font-size:22px;font-weight:700;z-index:2;box-shadow:0 0 0 6px var(--steam)}
+/* rooms */
+.rooms{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.rm{border-radius:22px;overflow:hidden;position:relative;min-height:330px;color:var(--steam);display:flex;flex-direction:column;justify-content:flex-end;padding:22px}
+.rm svg{position:absolute;inset:0;width:100%;height:100%}
+.rm::after{content:"";position:absolute;left:0;right:0;bottom:0;height:100%;background:linear-gradient(to top,rgba(26,16,12,.94) 0,rgba(26,16,12,.88) 30%,rgba(26,16,12,.4) 46%,transparent 60%);pointer-events:none}
+.rm h3,.rm p,.rm .t{z-index:1}
+.rm .t{position:relative;font-family:'Outfit';font-weight:700;font-size:15px;background:rgba(0,0,0,.28);align-self:flex-start;padding:4px 12px;border-radius:999px;margin-bottom:auto;backdrop-filter:blur(4px)}
+.rm h3{position:relative;font-family:'Nanum Myeongjo';font-weight:800;font-size:26px}
+.rm p{position:relative;font-size:14px;opacity:.92;margin-top:4px}
+/* compare */
+.cmp{background:var(--char);color:var(--steam);position:relative;overflow:hidden}
+.cmp .sh small{color:var(--ochre)}.cmp .sh p{color:#cdbdaa}
+.cgrid{display:grid;grid-template-columns:1fr 1.1fr;gap:24px;align-items:stretch}
+.cbox{border-radius:22px;padding:30px;border:1px solid rgba(255,250,241,.18)}
+.cbox h3{font-size:18px;font-weight:700;margin-bottom:16px;display:flex;justify-content:space-between;align-items:center}
+.cbox h3 span{font-family:'Outfit';font-size:13px;letter-spacing:.2em;color:#a8988a}
+.row{display:flex;justify-content:space-between;gap:12px;padding:12px 0;border-bottom:1px dashed rgba(255,250,241,.2);font-size:16px}
+.row b{font-family:'Outfit';font-weight:600}
+.tot{display:flex;justify-content:space-between;align-items:baseline;margin-top:18px}
+.tot span{font-size:15px;color:#cdbdaa}
+.tot b{font-family:'Outfit';font-size:34px;font-weight:700}
+.cbox.hl{background:linear-gradient(160deg,#c45f37,#8f3c1f);border:0;position:relative;box-shadow:0 30px 60px -30px rgba(0,0,0,.8)}
+.cbox.hl .row{border-color:rgba(255,250,241,.3)}
+.cbox.hl .tot b{font-size:52px;color:#ffe2bb}
+.cbox.hl .tot span{color:#ffe2bb}
+.save{display:inline-block;margin-top:16px;background:var(--steam);color:var(--clay2);font-weight:900;font-size:15px;padding:8px 14px;border-radius:10px}
+.fine{font-size:14px;color:#a8988a;margin-top:18px}
+/* steps */
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:0;position:relative;counter-reset:s}
+.steps::before{content:"";position:absolute;left:12%;right:12%;top:38px;border-top:2px dashed rgba(181,83,47,.4)}
+.st{text-align:center;padding:0 16px;position:relative}
+.st .ic{width:78px;height:78px;border-radius:50%;background:var(--steam);border:2px solid var(--clay);margin:0 auto 18px;display:flex;align-items:center;justify-content:center;position:relative}
+.st .ic svg{width:36px;height:36px;fill:none;stroke:var(--clay);stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.st .ic::after{counter-increment:s;content:counter(s);position:absolute;top:-4px;right:-4px;width:26px;height:26px;border-radius:50%;background:var(--char);color:var(--steam);font-family:'Outfit';font-size:13px;font-weight:700;display:flex;align-items:center;justify-content:center}
+.st h3{font-size:18px;font-weight:900}
+.st p{font-size:15px;color:var(--mut);margin-top:6px}
+/* form */
+.bk{background:var(--rice2);position:relative}
+.bgrid{display:grid;grid-template-columns:.9fr 1.1fr;gap:40px;align-items:start}
+.binfo h2{font-family:'Nanum Myeongjo';font-weight:800;font-size:clamp(28px,3.4vw,40px);line-height:1.3;letter-spacing:-1px;margin:8px 0 16px}
+.binfo small{font-family:'Outfit';font-size:13px;font-weight:700;letter-spacing:.3em;color:var(--clay)}
+.binfo p{color:var(--mut);font-size:16px}
+.chk{margin-top:24px;display:grid;gap:12px}
+.chk li{list-style:none;display:flex;gap:12px;align-items:flex-start;font-size:15px}
+.chk li svg{flex:none;width:22px;height:22px;margin-top:1px}
+.hours{margin-top:28px;background:var(--steam);border-radius:18px;padding:20px 22px;display:grid;grid-template-columns:auto 1fr;gap:8px 18px;font-size:15px}
+.hours b{color:var(--clay);font-weight:700}
+form{background:var(--steam);border-radius:26px;padding:32px;box-shadow:0 30px 60px -36px rgba(43,33,28,.55);border:1px solid rgba(43,33,28,.06)}
+.fg{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.f{display:flex;flex-direction:column;gap:7px}
+.f.full{grid-column:1/-1}
+label,.lb{font-size:14px;font-weight:700}
+input,select{height:50px;border-radius:12px;border:1.5px solid rgba(43,33,28,.18);background:#fff;padding:0 14px;font-size:16px;font-family:inherit;color:var(--char)}
+input:focus,select:focus{outline:none;border-color:var(--clay);box-shadow:0 0 0 4px rgba(181,83,47,.12)}
+.seg{display:flex;gap:8px;flex-wrap:wrap}
+.seg label{font-weight:500;font-size:15px;cursor:pointer}
+.seg input{position:absolute;opacity:0;pointer-events:none}
+.seg span{display:inline-flex;align-items:center;height:44px;padding:0 16px;border-radius:999px;border:1.5px solid rgba(43,33,28,.2);background:#fff;transition:.15s}
+.seg input:checked+span{background:var(--char);color:var(--steam);border-color:var(--char)}
+.seg input:focus-visible+span{box-shadow:0 0 0 4px rgba(181,83,47,.25)}
+.agree{display:flex;gap:10px;align-items:center;font-size:14px;color:var(--mut);margin-top:6px}
+.agree input{width:20px;height:20px;accent-color:var(--clay)}
+form .btn{width:100%;height:56px;font-size:17px;margin-top:20px}
+.msg{display:none;margin-top:16px;border-radius:14px;padding:16px 18px;background:#e6f0ea;color:#2f5a48;font-size:15px;font-weight:500}
+.msg.on{display:block}
+.err{color:var(--clay2);font-size:13px;min-height:0}
+/* faq */
+.faq{max-width:860px;margin:0 auto}
+details{border-bottom:1px solid rgba(43,33,28,.14);padding:4px 0}
+summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:20px 4px;font-size:17px;font-weight:700}
+summary::-webkit-details-marker{display:none}
+summary i{flex:none;width:30px;height:30px;border-radius:50%;background:var(--rice2);position:relative;transition:.2s}
+summary i::before,summary i::after{content:"";position:absolute;left:50%;top:50%;width:12px;height:2px;background:var(--char);transform:translate(-50%,-50%)}
+summary i::after{transform:translate(-50%,-50%) rotate(90deg);transition:.2s}
+details[open] summary i{background:var(--clay)}
+details[open] summary i::before,details[open] summary i::after{background:var(--steam)}
+details[open] summary i::after{transform:translate(-50%,-50%) rotate(0)}
+details p{padding:0 4px 22px;color:var(--mut);font-size:15px}
+/* footer */
+footer{background:var(--char);color:#cdbdaa;padding:54px 0 60px;font-size:14px}
+footer .in{display:flex;justify-content:space-between;gap:30px;flex-wrap:wrap}
+footer .logo b{color:var(--steam)}
+footer p{margin-top:10px;line-height:1.8}
+.mbar{display:none}
+@media(max-width:980px){
+ nav{display:none}
+ .hero .in{grid-template-columns:1fr}
+ .art{max-width:560px;margin:0 auto;width:100%}
+ .pkg{grid-template-columns:1fr}
+ .pc .plus{right:auto;left:50%;top:auto;bottom:-20px;transform:translateX(-50%)}
+ .rooms{grid-template-columns:1fr 1fr}
+ .cgrid,.bgrid{grid-template-columns:1fr}
+ .steps{grid-template-columns:1fr 1fr;gap:34px 0}
+ .steps::before{display:none}
+}
+@media(max-width:560px){
+ header .btn{display:none}
+ .hero{padding:36px 0 56px}
+ section{padding:68px 0}
+ .offer{grid-template-columns:1fr;padding:24px 20px}
+ .price{text-align:left;display:flex;align-items:baseline;gap:10px}
+ .offer .btns .btn{flex:1}
+ .rm{min-height:260px}
+ .fg{grid-template-columns:1fr}
+ form{padding:24px 18px}
+ .mbar{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:40;background:rgba(43,33,28,.97);padding:10px 14px;gap:10px;align-items:center}
+ .mbar p{color:#ffd9a8;font-family:'Outfit';font-weight:700;font-size:20px;line-height:1.1}
+ .mbar p small{display:block;font-family:'Noto Sans KR';font-size:12px;font-weight:400;color:#cdbdaa}
+ .mbar .btn{flex:1;height:48px}
+ .cbox{padding:24px 20px}
+ .cbox.hl .tot b{font-size:42px}
+ footer{padding-bottom:110px}
+}
+</style>
+</head>
+<body>
+<header>
+ <div class="in">
+  <a class="logo" href="#top" aria-label="달온 찜질 스파">
+   <svg viewBox="0 0 40 40"><circle cx="20" cy="20" r="19" fill="#b5532f"/><path d="M8 28 Q8 12 20 12 Q32 12 32 28Z" fill="#f3ead9"/><path d="M15 28 Q15 20 20 20 Q25 20 25 28Z" fill="#2b211c"/><circle cx="27" cy="9.5" r="3.2" fill="#ffd9a8"/></svg>
+   <span><b>달온</b><small>JJIMJIL SPA</small></span>
+  </a>
+  <nav><a href="#package">패키지 구성</a><a href="#rooms">찜질방 시설</a><a href="#price">가격</a><a href="#steps">이용 순서</a><a href="#faq">자주 묻는 질문</a></nav>
+  <a class="btn" href="#book">예약 신청</a>
+ </div>
+</header>
+
+<div class="hero" id="top">
+ <div class="in">
+  <div>
+   <span class="kick"><i></i>마닐라 · 평일 첫 방문 한정 패키지</span>
+   <h1>따끈한 황토방에서<br><em>하루를 내려놓는</em> 시간</h1>
+   <p class="lead">찜질방 종일 이용에 전신 마사지 60분, 시원한 식혜와 구운 계란까지 한 번에. 처음 오시는 분께 평일 패키지를 할인 가격으로 드립니다.</p>
+   <div class="offer">
+    <h3>평일 찜질 + 전신 마사지 60분<span>식혜 1잔 · 구운 계란 2개 · 찜질복 · 수건 포함</span></h3>
+    <div class="price"><s>₱2,200</s><b>₱1,690</b></div>
+    <div class="btns"><a class="btn" href="#book">예약 신청하기 <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a><a class="btn ghost" href="#package">구성 보기</a></div>
+   </div>
+   <div class="meta">
+    <span><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>매일 10:00 – 22:00</span>
+    <span><svg viewBox="0 0 24 24"><path d="M4 20V9l8-5 8 5v11"/><path d="M9 20v-6h6v6"/></svg>남녀 구역 분리</span>
+    <span><svg viewBox="0 0 24 24"><rect x="3" y="7" width="18" height="11" rx="2"/><path d="M7 7V5h10v2M3 12h18"/></svg>건물 내 주차</span>
+   </div>
+  </div>
+  <div class="art" aria-hidden="true">
+   <svg viewBox="0 0 560 520">
+    <defs>
+     <radialGradient id="hg" cx=".5" cy=".55" r=".55"><stop offset="0" stop-color="#ffe0bf"/><stop offset="1" stop-color="#ffe0bf" stop-opacity="0"/></radialGradient>
+     <linearGradient id="dome" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#d27a4a"/><stop offset=".6" stop-color="#b5532f"/><stop offset="1" stop-color="#8a3a1c"/></linearGradient>
+     <linearGradient id="domeL" x1="0" x2="1"><stop offset="0" stop-color="#fff" stop-opacity=".22"/><stop offset=".5" stop-color="#fff" stop-opacity="0"/><stop offset="1" stop-color="#000" stop-opacity=".2"/></linearGradient>
+     <radialGradient id="door" cx=".5" cy=".8" r=".9"><stop offset="0" stop-color="#ffb35c"/><stop offset=".45" stop-color="#c8501f"/><stop offset="1" stop-color="#3a1608"/></radialGradient>
+     <linearGradient id="floor" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#c9a879"/><stop offset="1" stop-color="#a88559"/></linearGradient>
+     <linearGradient id="towel" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f6c9a6"/><stop offset="1" stop-color="#e3a07a"/></linearGradient>
+     <linearGradient id="cup" x1="0" x2="1"><stop offset="0" stop-color="#5f8f7a"/><stop offset="1" stop-color="#3f6a58"/></linearGradient>
+     <linearGradient id="egg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#d8a271"/><stop offset="1" stop-color="#8f5a30"/></linearGradient>
+     <pattern id="brick" width="44" height="22" patternUnits="userSpaceOnUse"><rect width="44" height="22" fill="none"/><path d="M0 21.5h44M22 0v11M0 11h44M11 11v11M33 11v11" stroke="#7a3216" stroke-opacity=".35" stroke-width="1.4"/></pattern>
+     <filter id="soft" x="-20%" y="-20%" width="140%" height="160%"><feDropShadow dx="0" dy="14" stdDeviation="12" flood-color="#5a2c14" flood-opacity=".28"/></filter>
+     <filter id="blur"><feGaussianBlur stdDeviation="6"/></filter>
+    </defs>
+    <circle cx="300" cy="270" r="250" fill="url(#hg)"/>
+    <circle cx="430" cy="92" r="40" fill="#ffd9a8"/><circle cx="446" cy="84" r="36" fill="#f9dcc0" opacity=".9"/>
+    <path d="M30 420 Q280 380 540 420 L540 470 Q280 500 30 470Z" fill="url(#floor)"/>
+    <g stroke="#8f6a3e" stroke-opacity=".35" stroke-width="2"><path d="M70 430 L40 470M140 418 L120 478M220 412 L210 482M300 410 L300 484M380 412 L392 482M460 418 L482 476"/></g>
+    <g filter="url(#soft)">
+     <path d="M110 420 Q110 150 300 150 Q490 150 490 420Z" fill="url(#dome)"/>
+     <path d="M110 420 Q110 150 300 150 Q490 150 490 420Z" fill="url(#brick)"/>
+     <path d="M110 420 Q110 150 300 150 Q490 150 490 420Z" fill="url(#domeL)"/>
+     <path d="M230 420 Q230 300 300 300 Q370 300 370 420Z" fill="url(#door)"/>
+     <path d="M222 420 Q222 290 300 290 Q378 290 378 420" fill="none" stroke="#f3ead9" stroke-width="7"/>
+     <path d="M300 300 L300 420" stroke="#3a1608" stroke-width="3" opacity=".3"/>
+     <rect x="262" y="214" width="76" height="34" rx="6" fill="#2b211c"/>
+     <text x="300" y="238" text-anchor="middle" font-family="Nanum Myeongjo" font-weight="800" font-size="19" fill="#ffd9a8">황토방</text>
+    </g>
+    <g class="steam" fill="none" stroke="#fffaf1" stroke-width="10" stroke-linecap="round" opacity=".75">
+     <path d="M250 130 C230 100 270 80 250 50"/><path d="M300 120 C280 86 322 66 300 30"/><path d="M350 130 C330 100 370 80 350 50"/>
+    </g>
+    <!-- towel sheep head -->
+    <g transform="translate(60 330)" filter="url(#soft)">
+     <path d="M0 90 Q0 20 70 18 Q140 20 140 90Z" fill="url(#towel)"/>
+     <path d="M10 40 Q-14 34 -8 62 Q4 70 22 56Z" fill="url(#towel)"/><path d="M130 40 Q154 34 148 62 Q136 70 118 56Z" fill="url(#towel)"/>
+     <path d="M30 90 Q30 50 70 46 Q110 50 110 90Z" fill="#f9dcc4"/>
+     <g stroke="#c47a52" stroke-width="2" fill="none" opacity=".6"><path d="M20 30 Q70 10 120 30"/><path d="M8 60 Q70 36 132 60"/></g>
+     <circle cx="56" cy="70" r="5" fill="#2b211c"/><circle cx="84" cy="70" r="5" fill="#2b211c"/><path d="M62 82 Q70 88 78 82" stroke="#2b211c" stroke-width="3" fill="none" stroke-linecap="round"/>
+    </g>
+    <!-- tray: sikhye + eggs -->
+    <g transform="translate(372 380)" filter="url(#soft)">
+     <ellipse cx="80" cy="54" rx="98" ry="22" fill="#6b4a2e"/>
+     <ellipse cx="80" cy="48" rx="98" ry="22" fill="#8f6a44"/>
+     <path d="M20 -10 L60 -10 L54 46 Q40 54 26 46Z" fill="url(#cup)"/>
+     <ellipse cx="40" cy="-10" rx="20" ry="5" fill="#f3e2b8"/>
+     <circle cx="34" cy="-11" r="2" fill="#fff"/><circle cx="44" cy="-9" r="2" fill="#fff"/><circle cx="40" cy="-12" r="1.6" fill="#fff"/>
+     <rect x="24" y="8" width="32" height="5" fill="#f3ead9" opacity=".6"/>
+     <ellipse cx="102" cy="36" rx="20" ry="24" fill="url(#egg)"/><ellipse cx="96" cy="28" rx="6" ry="8" fill="#f2c79c" opacity=".7"/>
+     <ellipse cx="140" cy="38" rx="19" ry="23" fill="url(#egg)" transform="rotate(14 140 38)"/><ellipse cx="135" cy="30" rx="5" ry="7" fill="#f2c79c" opacity=".7"/>
+    </g>
+    <g fill="#fffaf1" opacity=".55" filter="url(#blur)"><ellipse cx="160" cy="250" rx="60" ry="22"/><ellipse cx="470" cy="300" rx="50" ry="18"/></g>
+   </svg>
+  </div>
+ </div>
+</div>
+
+<section class="pk" id="package">
+ <div class="in">
+  <div class="sh"><div><small>PACKAGE</small><h2>한 번 예약으로<br>세 가지를 함께</h2></div><p>따로 결제할 필요 없이, 도착해서 이름만 말씀해 주시면 됩니다.</p></div>
+  <div class="pkg">
+   <div class="pc">
+    <div class="ill" style="background:linear-gradient(160deg,#f3c7a4,#d98b5c)">
+     <svg viewBox="0 0 300 150" aria-hidden="true"><path d="M0 150 L0 110 Q150 90 300 110 L300 150Z" fill="#b5532f" opacity=".5"/><path d="M90 130 Q90 50 150 50 Q210 50 210 130Z" fill="#b5532f"/><path d="M130 130 Q130 96 150 96 Q170 96 170 130Z" fill="#3a1608"/><path d="M128 130 Q128 92 150 92 Q172 92 172 130" stroke="#f3ead9" stroke-width="4" fill="none"/><g stroke="#fffaf1" stroke-width="6" fill="none" stroke-linecap="round" opacity=".8"><path d="M130 40 c-10 -12 10 -20 0 -32"/><path d="M170 40 c-10 -12 10 -20 0 -32"/></g><text x="238" y="64" font-family="Outfit" font-weight="700" font-size="26" fill="#fffaf1">62°</text></svg>
+    </div>
+    <div class="n">01 · ALL DAY</div><h3>찜질방 종일 이용</h3><p>황토방·소금방·얼음방과 수면실까지, 입장 후 문 닫는 시간까지 자유롭게.</p>
+    <span class="plus">+</span>
+   </div>
+   <div class="pc">
+    <div class="ill" style="background:linear-gradient(160deg,#cfe0d6,#8fb5a2)">
+     <svg viewBox="0 0 300 150" aria-hidden="true"><rect x="40" y="96" width="220" height="16" rx="8" fill="#3f6a58"/><rect x="56" y="112" width="8" height="30" fill="#3f6a58"/><rect x="236" y="112" width="8" height="30" fill="#3f6a58"/><path d="M60 96 Q60 78 90 78 L230 78 Q250 78 250 96Z" fill="#fffaf1"/><circle cx="92" cy="68" r="17" fill="#e8b48e"/><path d="M78 62 Q92 44 108 60 L106 66 Q92 56 80 68Z" fill="#2b211c"/><path d="M110 80 Q170 64 236 80" fill="#f6c9a6"/><path d="M110 80 Q170 64 236 80 L236 90 L110 90Z" fill="#f2bf98"/><g fill="none" stroke="#fffaf1" stroke-width="3" stroke-linecap="round" opacity=".9"><path d="M186 40 q10 -10 20 0"/><path d="M200 26 q10 -10 20 0"/></g><circle cx="250" cy="40" r="10" fill="#fffaf1" opacity=".7"/></svg>
+    </div>
+    <div class="n">02 · 60 MIN</div><h3>전신 마사지 60분</h3><p>오일 또는 건식 중 선택. 강도는 예약 때 미리 알려 주시면 맞춰 드립니다.</p>
+    <span class="plus">+</span>
+   </div>
+   <div class="pc">
+    <div class="ill" style="background:linear-gradient(160deg,#f5e3bd,#e0b874)">
+     <svg viewBox="0 0 300 150" aria-hidden="true"><ellipse cx="150" cy="128" rx="120" ry="14" fill="#8f6a44" opacity=".5"/><path d="M80 40 L130 40 L122 126 Q105 134 88 126Z" fill="#5f8f7a"/><ellipse cx="105" cy="40" rx="25" ry="6" fill="#f3e2b8"/><circle cx="98" cy="40" r="2.4" fill="#fff"/><circle cx="110" cy="39" r="2.4" fill="#fff"/><rect x="86" y="70" width="40" height="6" fill="#fffaf1" opacity=".5"/><ellipse cx="180" cy="104" rx="24" ry="29" fill="#a86e3e"/><ellipse cx="172" cy="94" rx="7" ry="9" fill="#e7b88a" opacity=".7"/><ellipse cx="226" cy="108" rx="22" ry="27" fill="#93592c" transform="rotate(12 226 108)"/><ellipse cx="220" cy="98" rx="6" ry="8" fill="#e7b88a" opacity=".7"/></svg>
+    </div>
+    <div class="n">03 · SNACK</div><h3>식혜 한 잔 · 구운 계란 2개</h3><p>매일 아침 가게에서 직접 끓여 식힌 식혜와, 황토 가마에서 구운 계란.</p>
+   </div>
+  </div>
+ </div>
+</section>
+
+<section id="rooms">
+ <div class="in">
+  <div class="sh"><div><small>ROOMS</small><h2>온도가 다른 네 개의 방</h2></div><p>뜨거운 방과 시원한 방을 번갈아 오가며 쉬어 가세요. 온도는 하루 평균 기준입니다.</p></div>
+  <div class="rooms">
+   <div class="rm">
+    <svg viewBox="0 0 280 330" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><defs><linearGradient id="r1" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#d9773f"/><stop offset="1" stop-color="#6e2a10"/></linearGradient></defs><rect width="280" height="330" fill="url(#r1)"/><path d="M-20 200 Q140 60 300 200 L300 330 L-20 330Z" fill="#8a3a1c"/><path d="M-20 200 Q140 60 300 200" stroke="#f0a064" stroke-width="3" fill="none" opacity=".6"/><g stroke="#5a2410" stroke-opacity=".5" stroke-width="2"><path d="M0 230h280M0 262h280M0 294h280M40 200v30M110 200v30M180 200v30M250 200v30M75 230v32M145 230v32M215 230v32"/></g><circle cx="140" cy="90" r="40" fill="#ffc07a" opacity=".35"/><rect y="230" width="280" height="100" fill="url(#r1)" opacity=".35"/></svg>
+    <span class="t">62°C</span><h3>황토방</h3><p>황토 벽돌로 쌓은 둥근 방</p>
+   </div>
+   <div class="rm">
+    <svg viewBox="0 0 280 330" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><defs><linearGradient id="r2" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#e9c9b8"/><stop offset="1" stop-color="#a1695a"/></linearGradient></defs><rect width="280" height="330" fill="url(#r2)"/><g fill="#fff" opacity=".45"><rect x="20" y="40" width="40" height="40" rx="6" transform="rotate(12 40 60)"/><rect x="190" y="70" width="52" height="52" rx="8" transform="rotate(-10 216 96)"/><rect x="110" y="20" width="30" height="30" rx="5" transform="rotate(24 125 35)"/><rect x="70" y="120" width="44" height="44" rx="7" transform="rotate(-6 92 142)"/></g><path d="M0 230 Q140 200 280 230 L280 330 L0 330Z" fill="#7d4a3f" opacity=".75"/><g fill="#f8e6dc"><circle cx="40" cy="250" r="3"/><circle cx="90" cy="240" r="2.5"/><circle cx="160" cy="246" r="3"/><circle cx="220" cy="238" r="2.5"/></g></svg>
+    <span class="t">48°C</span><h3>소금방</h3><p>분홍빛 암염 블록 벽</p>
+   </div>
+   <div class="rm">
+    <svg viewBox="0 0 280 330" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><defs><linearGradient id="r3" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#cfe6ea"/><stop offset="1" stop-color="#4f7f8a"/></linearGradient></defs><rect width="280" height="330" fill="url(#r3)"/><g fill="#fff" opacity=".55"><path d="M40 0 L60 0 L50 70Z"/><path d="M100 0 L116 0 L108 46Z"/><path d="M170 0 L194 0 L182 86Z"/><path d="M236 0 L252 0 L244 54Z"/></g><g stroke="#fff" stroke-width="3" stroke-linecap="round" opacity=".7" transform="translate(200 160)"><path d="M0 -26V26M-22 -13L22 13M-22 13L22 -13"/></g><path d="M0 240 Q140 214 280 240 L280 330 L0 330Z" fill="#3c6670" opacity=".8"/></svg>
+    <span class="t">12°C</span><h3>얼음방</h3><p>땀 식히며 잠깐 쉬는 곳</p>
+   </div>
+   <div class="rm">
+    <svg viewBox="0 0 280 330" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><defs><linearGradient id="r4" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#3a2d40"/><stop offset="1" stop-color="#1e1822"/></linearGradient></defs><rect width="280" height="330" fill="url(#r4)"/><circle cx="210" cy="70" r="26" fill="#ffe2bb"/><circle cx="222" cy="62" r="24" fill="#3a2d40"/><g fill="#ffe2bb"><circle cx="60" cy="50" r="2"/><circle cx="120" cy="90" r="1.6"/><circle cx="40" cy="130" r="1.8"/><circle cx="160" cy="40" r="1.6"/></g><g transform="translate(30 192)"><rect width="220" height="26" rx="8" fill="#6a5470"/><path d="M8 0 Q8 -16 40 -16 L60 -16 Q70 -16 70 0Z" fill="#f3ead9"/><path d="M70 2 Q140 -18 212 2 L212 10 L70 10Z" fill="#b9917a"/></g><rect y="270" width="280" height="60" fill="#140f17" opacity=".6"/></svg>
+    <span class="t">26°C</span><h3>수면실</h3><p>불을 낮춘 조용한 휴식 공간</p>
+   </div>
+  </div>
+ </div>
+</section>
+
+<section class="cmp" id="price">
+ <div class="in">
+  <div class="sh"><div><small>PRICE</small><h2>따로 이용할 때보다<br>₱510 가볍게</h2></div><p>첫 방문 패키지는 평일(월–금) 1인 1회 적용됩니다. 주말에는 ₱300이 추가됩니다.</p></div>
+  <div class="cgrid">
+   <div class="cbox">
+    <h3>따로 이용할 때 <span>REGULAR</span></h3>
+    <div class="row"><span>찜질방 종일 이용</span><b>₱650</b></div>
+    <div class="row"><span>전신 마사지 60분</span><b>₱1,350</b></div>
+    <div class="row"><span>식혜 + 구운 계란 2개</span><b>₱200</b></div>
+    <div class="tot"><span>합계</span><b>₱2,200</b></div>
+   </div>
+   <div class="cbox hl">
+    <h3>평일 첫 방문 패키지 <span style="color:#ffe2bb">FIRST VISIT</span></h3>
+    <div class="row"><span>찜질방 종일 + 마사지 60분 + 식혜·계란</span><b>포함</b></div>
+    <div class="row"><span>찜질복 · 수건 · 개인 사물함</span><b>포함</b></div>
+    <div class="tot"><span>1인</span><b>₱1,690</b></div>
+    <span class="save">₱510 할인 · 2인 함께 예약 가능</span>
+   </div>
+  </div>
+  <p class="fine">* 부가세 포함 기준입니다. 마사지는 예약 순으로 시간이 배정됩니다.</p>
+ </div>
+</section>
+
+<section id="steps">
+ <div class="in">
+  <div class="sh"><div><small>HOW IT WORKS</small><h2>예약부터 이용까지 네 단계</h2></div><p>신청서를 남기시면 카카오톡이나 문자로 시간을 확정해 드립니다.</p></div>
+  <div class="steps">
+   <div class="st"><div class="ic"><svg viewBox="0 0 24 24"><rect x="5" y="3" width="14" height="18" rx="2"/><path d="M9 8h6M9 12h6M9 16h3"/></svg></div><h3>신청서 작성</h3><p>날짜와 시간대, 인원을 골라 남겨 주세요.</p></div>
+   <div class="st"><div class="ic"><svg viewBox="0 0 24 24"><path d="M4 5h16v11H9l-5 4z"/><path d="M9 10l2 2 4-4"/></svg></div><h3>시간 확정 연락</h3><p>영업시간 안에 30분 이내로 답장드립니다.</p></div>
+   <div class="st"><div class="ic"><svg viewBox="0 0 24 24"><path d="M4 20V10l8-6 8 6v10"/><path d="M10 20v-5h4v5"/></svg></div><h3>방문 · 찜질</h3><p>카운터에서 이름을 말씀하시고 찜질복을 받으세요.</p></div>
+   <div class="st"><div class="ic"><svg viewBox="0 0 24 24"><path d="M3 15h18M5 15v4M19 15v4"/><path d="M5 15c0-3 2-4 4-4h10c1 0 2 1 2 2v2"/><circle cx="8" cy="8" r="2.5"/></svg></div><h3>마사지 · 휴식</h3><p>예약한 시간에 마사지실로 안내해 드립니다.</p></div>
+  </div>
+ </div>
+</section>
+
+<section class="bk" id="book">
+ <div class="in bgrid">
+  <div class="binfo">
+   <small>BOOKING</small>
+   <h2>평일 첫 방문 패키지<br>예약 신청</h2>
+   <p>아래 내용을 남겨 주시면 가능한 시간을 확인해 연락드립니다. 신청만으로 결제되지 않습니다.</p>
+   <ul class="chk">
+    <li><svg viewBox="0 0 22 22"><circle cx="11" cy="11" r="10" fill="#5f8f7a"/><path d="M6.5 11.2l3 3 6-6.2" stroke="#fff" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>남녀 구역이 나뉘어 있고, 커플은 마사지실 2인실 선택 가능</li>
+    <li><svg viewBox="0 0 22 22"><circle cx="11" cy="11" r="10" fill="#5f8f7a"/><path d="M6.5 11.2l3 3 6-6.2" stroke="#fff" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>찜질복 · 수건 · 세면도구 기본 제공</li>
+    <li><svg viewBox="0 0 22 22"><circle cx="11" cy="11" r="10" fill="#5f8f7a"/><path d="M6.5 11.2l3 3 6-6.2" stroke="#fff" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>방문 하루 전까지 무료로 날짜 변경</li>
+   </ul>
+   <div class="hours"><b>영업</b><span>매일 10:00 – 22:00 (마사지 마지막 접수 20:30)</span><b>위치</b><span>마닐라 ○○로 000, 2층</span><b>문의</b><span>000-0000-0000<br>카카오톡 ID: example</span></div>
+  </div>
+  <form id="f" novalidate>
+   <div class="fg">
+    <div class="f"><label for="nm">이름</label><input id="nm" name="nm" autocomplete="name" placeholder="예: 김달온" required></div>
+    <div class="f"><label for="ph">연락처</label><input id="ph" name="ph" inputmode="tel" autocomplete="tel" placeholder="000-0000-0000" required></div>
+    <div class="f"><label for="dt">희망 날짜 (평일)</label><input id="dt" name="dt" type="date" required></div>
+    <div class="f"><label for="tm">시간대</label><select id="tm" name="tm"><option>오전 (10:00 – 12:00)</option><option>오후 (13:00 – 17:00)</option><option selected>저녁 (17:00 – 20:30)</option></select></div>
+    <div class="f full"><span class="lb">인원</span><div class="seg"><label><input type="radio" name="pp" value="1" checked><span>1명</span></label><label><input type="radio" name="pp" value="2"><span>2명</span></label><label><input type="radio" name="pp" value="3"><span>3명</span></label><label><input type="radio" name="pp" value="4"><span>4명</span></label></div></div>
+    <div class="f full"><span class="lb">마사지 방식 · 강도</span><div class="seg"><label><input type="radio" name="ms" value="오일 · 부드럽게" checked><span>오일 · 부드럽게</span></label><label><input type="radio" name="ms" value="오일 · 보통"><span>오일 · 보통</span></label><label><input type="radio" name="ms" value="건식 · 강하게"><span>건식 · 강하게</span></label></div></div>
+    <div class="f full"><label class="agree"><input type="checkbox" id="ag" checked> 예약 안내 연락을 위한 개인정보 수집에 동의합니다</label></div>
+   </div>
+   <p class="err" id="er" role="alert"></p>
+   <button class="btn" type="submit">예약 신청 보내기</button>
+   <div class="msg" id="ok" role="status"></div>
+  </form>
+ </div>
+</section>
+
+<section id="faq">
+ <div class="in">
+  <div class="sh" style="justify-content:center;text-align:center"><div><small>FAQ</small><h2>자주 묻는 질문</h2></div></div>
+  <div class="faq">
+   <details open><summary>찜질방만 먼저 이용하고 마사지는 나중에 받아도 되나요?<i></i></summary><p>네. 예약한 마사지 시간 전후로 언제든 찜질방을 이용하실 수 있습니다. 문 닫는 시간까지 머무셔도 됩니다.</p></details>
+   <details><summary>첫 방문 패키지는 몇 번까지 쓸 수 있나요?<i></i></summary><p>처음 오시는 분 1인 1회, 평일에 한해 적용됩니다. 두 번째 방문부터는 일반 가격 또는 다른 이벤트 가격으로 이용하실 수 있습니다.</p></details>
+   <details><summary>아이와 함께 가도 되나요?<i></i></summary><p>보호자와 함께라면 만 7세 이상 어린이 입장이 가능합니다. 마사지는 성인만 받으실 수 있습니다.</p></details>
+   <details><summary>예약을 바꾸거나 취소하려면 어떻게 하나요?<i></i></summary><p>방문 하루 전까지 연락 주시면 무료로 날짜를 바꿔 드립니다. 당일 변경은 마사지 시간 사정에 따라 어려울 수 있습니다.</p></details>
+  </div>
+ </div>
+</section>
+
+<footer>
+ <div class="in">
+  <div>
+   <span class="logo"><svg viewBox="0 0 40 40" width="40" height="40"><circle cx="20" cy="20" r="19" fill="#b5532f"/><path d="M8 28 Q8 12 20 12 Q32 12 32 28Z" fill="#f3ead9"/><path d="M15 28 Q15 20 20 20 Q25 20 25 28Z" fill="#2b211c"/><circle cx="27" cy="9.5" r="3.2" fill="#ffd9a8"/></svg><span><b>달온 찜질 스파</b></span></span>
+   <p>마닐라 ○○로 000, 2층<br>매일 10:00 – 22:00 · 000-0000-0000 · <span style="white-space:nowrap">카카오톡 ID: example</span></p>
+  </div>
+  <p>© 달온 찜질 스파</p>
+ </div>
+</footer>
+<div class="mbar"><p>₱1,690<small>평일 첫 방문 패키지</small></p><a class="btn" href="#book">예약 신청</a></div>
+<script>
+(function(){
+ var f=document.getElementById('f'),er=document.getElementById('er'),ok=document.getElementById('ok'),dt=document.getElementById('dt');
+ var d=new Date();d.setDate(d.getDate()+1);while(d.getDay()===0||d.getDay()===6){d.setDate(d.getDate()+1)}
+ function iso(x){return x.getFullYear()+'-'+String(x.getMonth()+1).padStart(2,'0')+'-'+String(x.getDate()).padStart(2,'0')}
+ dt.min=iso(new Date());dt.value=iso(d);
+ f.addEventListener('submit',function(e){
+  e.preventDefault();er.textContent='';ok.classList.remove('on');
+  var nm=f.nm.value.trim(),ph=f.ph.value.trim();
+  if(!nm){er.textContent='이름을 입력해 주세요.';f.nm.focus();return}
+  if(ph.replace(/\D/g,'').length<7){er.textContent='연락 가능한 번호를 입력해 주세요.';f.ph.focus();return}
+  var day=new Date(dt.value+'T00:00');if(!dt.value||isNaN(day)){er.textContent='희망 날짜를 골라 주세요.';return}
+  if(day.getDay()===0||day.getDay()===6){er.textContent='첫 방문 패키지는 평일(월–금)에만 적용됩니다. 평일 날짜를 골라 주세요.';dt.focus();return}
+  if(!document.getElementById('ag').checked){er.textContent='개인정보 수집에 동의해 주세요.';return}
+  var pp=f.querySelector('input[name=pp]:checked').value,ms=f.querySelector('input[name=ms]:checked').value;
+  var w=['일','월','화','수','목','금','토'][day.getDay()];
+  ok.innerHTML='<b>'+nm.replace(/[<>&]/g,'')+'</b>님, 신청이 접수되었습니다. '+(day.getMonth()+1)+'월 '+day.getDate()+'일('+w+') '+f.tm.value.split(' ')[0]+' · '+pp+'명 · '+ms+' — 확인 후 연락드릴게요. (예상 금액 ₱'+(1690*pp).toLocaleString()+')';
+  ok.classList.add('on');
+ });
+})();
+</script>
+</body>
+</html>
