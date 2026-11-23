@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ayos Gadget Repair · Free Diagnosis + ₱300 Off Your First Screen</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{--ink:#121716;--ink2:#1a2120;--board:#0e3a2d;--board2:#124a39;--mint:#7fe3bb;--mint2:#b9f3da;--cu:#d08a52;--cu2:#f0b27c;--paper:#eef3ef;--mute:#9fb2aa;--line:rgba(127,227,187,.18)}
+html{scroll-behavior:smooth}
+body{font-family:'Space Grotesk',sans-serif;background:var(--ink);color:var(--paper);-webkit-font-smoothing:antialiased;overflow-x:hidden;line-height:1.5}
+.mono{font-family:'JetBrains Mono',monospace}
+a{color:inherit}
+.wrap{max-width:1200px;margin:0 auto;padding:0 28px}
+/* nav */
+.nav{position:sticky;top:0;z-index:30;background:rgba(18,23,22,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:68px;gap:16px}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none;font-weight:700;font-size:20px;letter-spacing:-.01em}
+.logo svg{width:34px;height:34px}
+.logo small{display:block;font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:500;color:var(--mint);letter-spacing:.14em}
+.nav ul{display:flex;gap:28px;list-style:none;font-size:15px;color:var(--mute)}
+.nav ul a{text-decoration:none}
+.nav ul a:hover{color:var(--mint)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;height:50px;padding:0 24px;border-radius:6px;background:var(--mint);color:#08251c;font-weight:700;font-size:16px;text-decoration:none;border:0;cursor:pointer;font-family:inherit;transition:.2s;white-space:nowrap;box-shadow:0 0 0 1px rgba(127,227,187,.4),0 10px 30px -10px rgba(127,227,187,.55)}
+.btn:hover{background:var(--mint2);transform:translateY(-1px)}
+.btn svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+.btn.ghost{background:transparent;color:var(--paper);box-shadow:inset 0 0 0 1.5px rgba(238,243,239,.35)}
+.btn.ghost:hover{box-shadow:inset 0 0 0 1.5px var(--cu2);color:var(--cu2)}
+.nav .btn{height:42px;font-size:14px;padding:0 18px}
+/* hero */
+.hero{position:relative;overflow:hidden;background:radial-gradient(900px 520px at 78% 40%,rgba(18,74,57,.9),transparent 70%),linear-gradient(180deg,#121716,#101514)}
+.traces{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;opacity:.9}
+.hero .wrap{position:relative;display:grid;grid-template-columns:1.02fr .98fr;gap:40px;align-items:center;min-height:calc(100vh - 68px);max-height:900px;padding-top:48px;padding-bottom:56px}
+.tag{display:inline-flex;align-items:center;gap:10px;font-family:'JetBrains Mono',monospace;font-size:13px;color:var(--mint);border:1px solid var(--line);background:rgba(14,58,45,.55);padding:7px 12px;border-radius:4px;letter-spacing:.04em}
+.tag i{width:8px;height:8px;border-radius:50%;background:var(--mint);box-shadow:0 0 0 4px rgba(127,227,187,.18)}
+.hero h1{font-size:clamp(40px,5vw,68px);line-height:1.02;letter-spacing:-.035em;font-weight:700;margin:22px 0 20px}
+.hero h1 .cu{color:var(--cu2)}
+.hero h1 .ul{text-decoration:underline;text-decoration-color:var(--mint);text-decoration-thickness:5px;text-underline-offset:10px}
+.hero p.lead{text-wrap:pretty;font-size:19px;color:#c6d4ce;max-width:520px}
+.offer{display:flex;gap:0;margin:30px 0 30px;max-width:560px;border:1px solid rgba(208,138,82,.5);border-radius:8px;overflow:hidden;background:rgba(18,23,22,.6)}
+.offer div{flex:1;padding:16px 18px}
+.offer div+div{border-left:1px dashed rgba(208,138,82,.5)}
+.offer b{display:block;font-size:28px;letter-spacing:-.02em;line-height:1.1}
+.offer b.cu{color:var(--cu2)}
+.offer span{font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--mute);letter-spacing:.04em}
+.hero .row{display:flex;flex-wrap:wrap;gap:12px;align-items:center}
+.hero .note{font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--mute);margin-top:18px}
+.art{position:relative}
+.art svg{width:100%;height:auto;display:block;filter:drop-shadow(0 40px 60px rgba(0,0,0,.55))}
+/* sections */
+section{padding:100px 0;position:relative}
+.sh{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap;margin-bottom:44px}
+.lbl{font-family:'JetBrains Mono',monospace;font-size:13px;color:var(--cu2);letter-spacing:.12em}
+h2{text-wrap:balance;font-size:clamp(32px,3.8vw,48px);line-height:1.08;letter-spacing:-.03em;font-weight:700;margin-top:12px;max-width:720px}
+.sh p{text-wrap:pretty;color:var(--mute);max-width:400px;font-size:16px}
+/* fix grid */
+.fix{background:linear-gradient(180deg,#101514,#141a19)}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.card{position:relative;background:var(--ink2);border:1px solid var(--line);border-radius:10px;padding:26px 24px 24px;overflow:hidden;transition:.25s}
+.card:hover{border-color:rgba(127,227,187,.5);transform:translateY(-3px)}
+.card .ic{width:64px;height:64px;margin-bottom:18px}
+.card h3{font-size:21px;letter-spacing:-.01em;margin-bottom:6px}
+.card p{text-wrap:pretty;color:var(--mute);font-size:15px;min-height:46px}
+.card .pr{display:flex;justify-content:space-between;align-items:baseline;margin-top:18px;padding-top:14px;border-top:1px dashed rgba(238,243,239,.16)}
+.card .pr span{font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--mute)}
+.card .pr b{font-size:19px;color:var(--mint)}
+.card .pin{position:absolute;top:18px;right:18px;font-family:'JetBrains Mono',monospace;font-size:11px;color:rgba(238,243,239,.4)}
+.card.wide{grid-column:span 1}
+/* bench banner */
+.bench{background:var(--board);overflow:hidden}
+.bench .wrap{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
+.bench svg.big{width:100%;height:auto;display:block}
+.steps{list-style:none;display:grid;gap:4px;margin-top:30px;counter-reset:s}
+.steps li{display:grid;grid-template-columns:56px 1fr;gap:16px;padding:18px 0;border-top:1px solid rgba(185,243,218,.18)}
+.steps li:last-child{border-bottom:1px solid rgba(185,243,218,.18)}
+.steps li b{font-size:19px;display:block;margin-bottom:2px}
+.steps li p{text-wrap:pretty;color:#b5cfc4;font-size:15px}
+.steps .n{width:44px;height:44px;border-radius:50%;border:1.5px solid var(--cu2);color:var(--cu2);display:grid;place-items:center;font-family:'JetBrains Mono',monospace;font-weight:700;font-size:15px;position:relative}
+.steps .n:after{content:"";position:absolute;left:50%;top:44px;width:1.5px;height:30px;background:linear-gradient(var(--cu2),transparent)}
+.steps li:last-child .n:after{display:none}
+/* pricing */
+.tbl{border:1px solid var(--line);border-radius:10px;overflow:hidden;background:var(--ink2)}
+.tbl table{width:100%;border-collapse:collapse}
+.tbl th,.tbl td{text-align:left;padding:17px 22px;font-size:16px}
+.tbl thead th{font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.1em;color:var(--mint);font-weight:500;background:#0f2a22;text-transform:uppercase}
+.tbl tbody tr{border-top:1px solid rgba(238,243,239,.08)}
+.tbl tbody tr:hover{background:rgba(127,227,187,.05)}
+.tbl td.p{font-weight:700;white-space:nowrap}
+.tbl td.t{font-family:'JetBrains Mono',monospace;font-size:13px;color:var(--mute);white-space:nowrap}
+.tbl td .s{display:block;font-size:13px;color:var(--mute);margin-top:2px}
+.tbl td.o{color:var(--cu2);font-weight:600;white-space:nowrap}
+.fine{font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--mute);margin-top:14px}
+/* conditions */
+.cond{background:linear-gradient(180deg,#141a19,#101514)}
+.coupon{position:relative;display:grid;grid-template-columns:.9fr 1.1fr;align-items:stretch;border-radius:14px;overflow:hidden;background:linear-gradient(135deg,#d99561,#b8703f);color:#1d120a}
+.coupon:before,.coupon:after{content:"";position:absolute;left:calc(45% - 14px);width:28px;height:28px;border-radius:50%;background:#121716}
+.coupon:before{top:-14px}.coupon:after{bottom:-14px}
+.coupon .l{padding:40px 40px;border-right:2px dashed rgba(29,18,10,.35);position:relative;overflow:hidden}
+.coupon .l small{font-family:'JetBrains Mono',monospace;font-size:13px;letter-spacing:.12em;font-weight:700}
+.coupon .l b{display:block;font-size:clamp(56px,7vw,92px);line-height:.95;letter-spacing:-.04em;margin:12px 0 8px}
+.coupon .l p{font-size:17px;font-weight:600}
+.coupon .l .code{display:inline-block;margin-top:20px;font-family:'JetBrains Mono',monospace;font-size:15px;font-weight:700;background:#1d120a;color:var(--cu2);padding:9px 14px;border-radius:5px;letter-spacing:.1em}
+.coupon .r{padding:36px 40px;background:rgba(255,240,226,.16);display:flex;flex-direction:column;justify-content:center}
+.coupon .r h3{font-size:22px;margin-bottom:14px}
+.coupon .r ul{list-style:none;display:grid;gap:14px}
+.coupon .r li{text-wrap:pretty;display:grid;grid-template-columns:22px 1fr;gap:10px;font-size:16px;font-weight:500}
+.coupon .r li svg{width:20px;height:20px;margin-top:2px;fill:none;stroke:#1d120a;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+/* faq + form */
+.split{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start}
+details{border-top:1px solid rgba(238,243,239,.12);padding:20px 0}
+details:last-of-type{border-bottom:1px solid rgba(238,243,239,.12)}
+summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;gap:16px;font-size:18px;font-weight:600}
+summary::-webkit-details-marker{display:none}
+summary:after{content:"+";font-family:'JetBrains Mono',monospace;color:var(--mint);font-size:22px;line-height:1;transition:.2s}
+details[open] summary:after{transform:rotate(45deg)}
+details p{text-wrap:pretty;color:var(--mute);font-size:15px;margin-top:10px;max-width:520px}
+.form{background:var(--paper);color:#13201b;border-radius:14px;padding:34px;position:relative;box-shadow:0 30px 60px -30px rgba(0,0,0,.8)}
+.form:before{content:"";position:absolute;inset:-1px;border-radius:15px;padding:1px;background:linear-gradient(135deg,var(--mint),transparent 40%,var(--cu));-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude;pointer-events:none}
+.form h3{font-size:26px;letter-spacing:-.02em}
+.form > p{text-wrap:pretty;color:#4c5d56;font-size:15px;margin:6px 0 22px}
+.f{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.f label{display:grid;gap:6px;font-size:13px;font-weight:600;color:#33433d}
+.f label.full,.f .lab.full{grid-column:span 2}
+.f .lab{display:grid;gap:6px;font-size:13px;font-weight:600;color:#33433d}
+.f input,.f select,.f textarea{font-family:inherit;font-size:16px;padding:12px 14px;border:1.5px solid #cdd8d2;border-radius:7px;background:#fff;color:#13201b;width:100%}
+.f textarea{min-height:84px;resize:vertical}
+.f input:focus,.f select:focus,.f textarea:focus{outline:none;border-color:#1f8a63;box-shadow:0 0 0 3px rgba(31,138,99,.18)}
+.chipsel{display:flex;flex-wrap:wrap;gap:8px}
+.chipsel input{display:none}
+.chipsel span{display:inline-block;font-size:14px;font-weight:500;padding:8px 13px;border-radius:999px;border:1.5px solid #cdd8d2;cursor:pointer;background:#fff}
+.chipsel input:checked+span{background:#0e3a2d;color:var(--mint2);border-color:#0e3a2d}
+.form .btn{width:100%;margin-top:20px;background:#0e3a2d;color:var(--mint2);box-shadow:none;height:54px}
+.form .btn:hover{background:#124a39}
+.form .sm{font-family:'JetBrains Mono',monospace;font-size:11px;color:#5d6e67;margin-top:12px;text-align:center}
+.ok{display:none;text-align:center;padding:24px 4px}
+.ok svg{width:84px;height:84px;margin:0 auto 14px;display:block}
+.ok h3{margin-bottom:8px}
+.ok p{color:#4c5d56;font-size:15px}
+.ok .tk{display:inline-block;margin-top:16px;font-family:'JetBrains Mono',monospace;font-weight:700;background:#0e3a2d;color:var(--mint2);padding:10px 16px;border-radius:6px;letter-spacing:.08em}
+.form.done .ok{display:block}.form.done form,.form.done > h3,.form.done > p{display:none}
+/* footer */
+footer{background:#0c100f;border-top:1px solid var(--line);padding:56px 0 40px}
+footer .wrap{display:grid;grid-template-columns:1.3fr 1fr 1fr 1fr;gap:32px}
+footer h4{font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.12em;color:var(--mint);font-weight:500;margin-bottom:12px}
+footer p,footer li{color:var(--mute);font-size:14px;list-style:none;line-height:1.9}
+footer .ci{display:flex;align-items:center;gap:8px}
+footer .ci svg{width:16px;height:16px;fill:none;stroke:var(--cu2);stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;flex:none}
+footer .cp{grid-column:1/-1;border-top:1px solid rgba(238,243,239,.08);padding-top:20px;font-family:'JetBrains Mono',monospace;font-size:12px;color:#6f817a}
+.mbar{display:none}
+@media(max-width:1080px){.cards{grid-template-columns:1fr 1fr}.nav ul{display:none}}
+@media(max-width:900px){
+ .hero .wrap{grid-template-columns:1fr;min-height:0;max-height:none;padding-top:36px;gap:20px}
+ .art{max-width:520px;margin:0 auto;width:100%}
+ .bench .wrap,.split{grid-template-columns:1fr;gap:40px}
+ .coupon{grid-template-columns:1fr}
+ .coupon:before,.coupon:after{display:none}
+ .coupon .l{border-right:0;border-bottom:2px dashed rgba(29,18,10,.35)}
+ footer .wrap{grid-template-columns:1fr 1fr}
+}
+@media(max-width:620px){
+ .wrap{padding:0 18px}
+ section{padding:72px 0}
+ .nav .btn{display:none}
+ .hero h1{font-size:42px}
+ .hero .wrap{padding-bottom:12px}
+ .fix{padding-top:48px}
+ .hero p.lead{text-wrap:pretty;font-size:17px}
+ .offer b{font-size:24px}
+ .offer div{padding:14px 14px}
+ .offer span{font-size:11px;letter-spacing:0;white-space:nowrap}
+ .hero .row .btn{flex:1 1 100%}
+ .cards{grid-template-columns:1fr}
+ .card p{text-wrap:pretty;min-height:0}
+ .tbl thead{display:none}
+ .tbl tbody tr{display:grid;grid-template-columns:1fr auto;gap:6px 14px;padding:16px 16px;align-items:start}
+ .tbl td{padding:0;font-size:15px}
+ .tbl td.p{text-align:right;font-size:15px}
+ .tbl td.o{grid-column:1/-1;font-family:'JetBrains Mono',monospace;font-size:12px;font-weight:500}
+ .tbl td.o:before{content:"OFFER · "}
+ .tbl .hide{display:none}
+ .coupon .l,.coupon .r{padding:28px 24px}
+ .form{padding:26px 20px}
+ .f{grid-template-columns:1fr}.f label.full,.f .lab.full{grid-column:auto}
+ footer .wrap{grid-template-columns:1fr}
+ body{padding-bottom:76px}
+ .mbar{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:40;gap:10px;padding:10px 14px;background:rgba(12,16,15,.96);border-top:1px solid var(--line)}
+ .mbar .btn{flex:1;height:52px}
+ .mbar .btn.ghost{flex:0 0 52px;padding:0}
+}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+ <div class="wrap">
+  <a class="logo" href="#top">
+   <svg viewBox="0 0 40 40"><defs><linearGradient id="lg1" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#b9f3da"/><stop offset="1" stop-color="#3fbf8e"/></linearGradient></defs><rect x="4" y="4" width="32" height="32" rx="7" fill="#0e3a2d" stroke="url(#lg1)" stroke-width="2"/><path d="M12 27 20 12l8 15M15 22h10" fill="none" stroke="#b9f3da" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/><circle cx="12" cy="27" r="2.4" fill="#f0b27c"/><circle cx="28" cy="27" r="2.4" fill="#f0b27c"/></svg>
+   <span>Ayos<small>GADGET REPAIR</small></span>
+  </a>
+  <ul><li><a href="#fix">What we fix</a></li><li><a href="#how">How it works</a></li><li><a href="#prices">Prices</a></li><li><a href="#faq">FAQ</a></li></ul>
+  <a class="btn" href="#book">Book free check</a>
+ </div>
+</nav>
+
+<header class="hero" id="top">
+ <svg class="traces" viewBox="0 0 1440 900" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+  <g fill="none" stroke="#d08a52" stroke-opacity=".22" stroke-width="2">
+   <path d="M0 880h180l30-30h150"/><path d="M1440 90h-180l-50 50h-120"/><path d="M1440 820h-260l-40-40H980"/><path d="M120 0v60l40 40"/>
+  </g>
+  <g fill="none" stroke="#7fe3bb" stroke-opacity=".12" stroke-width="1.5">
+   <path d="M0 300h60l30 30h20"/><path d="M0 560h70l30-30h10"/><path d="M380 900v-50l30-30h90"/><path d="M1440 420h-60l-30-30h-70"/>
+  </g>
+  <g fill="#d08a52" fill-opacity=".45"><circle cx="360" cy="850" r="5"/><circle cx="1090" cy="140" r="5"/><circle cx="980" cy="780" r="5"/><circle cx="160" cy="100" r="4"/></g>
+  <g fill="#7fe3bb" fill-opacity=".3"><circle cx="110" cy="330" r="4"/><circle cx="110" cy="530" r="4"/><circle cx="500" cy="820" r="4"/><circle cx="1280" cy="390" r="4"/></g>
+ </svg>
+ <div class="wrap">
+  <div>
+   <span class="tag"><i></i>BENCH OPEN · WALK-IN OR BOOK AHEAD</span>
+   <h1>Cracked, dead<br>or <span class="ul">soaked?</span><br>We'll check it <span class="cu">free.</span></h1>
+   <p class="lead">Phone and laptop repair done at an open bench, so you see what's wrong before you pay a single peso.</p>
+   <div class="offer">
+    <div><b>₱0</b><span>FREE DIAGNOSIS</span></div>
+    <div><b class="cu">₱300 OFF</b><span>FIRST SCREEN REPAIR</span></div>
+   </div>
+   <div class="row">
+    <a class="btn" href="#book">Claim free diagnosis <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+    <a class="btn ghost" href="#prices">See price guide</a>
+   </div>
+   <p class="note">// For first-time customers · see&nbsp;terms</p>
+  </div>
+  <div class="art">
+   <svg viewBox="0 0 600 560" role="img" aria-label="Exploded view of a smartphone with labeled parts">
+    <defs>
+     <linearGradient id="glass" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#2b3836"/><stop offset=".45" stop-color="#17201f"/><stop offset="1" stop-color="#0d1312"/></linearGradient>
+     <linearGradient id="shine" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fff" stop-opacity=".35"/><stop offset=".35" stop-color="#fff" stop-opacity="0"/></linearGradient>
+     <linearGradient id="scr" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1d5c47"/><stop offset="1" stop-color="#0b2b21"/></linearGradient>
+     <linearGradient id="pcb" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#168060"/><stop offset="1" stop-color="#0b3f2f"/></linearGradient>
+     <linearGradient id="bat" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#3a3f3e"/><stop offset=".5" stop-color="#5a615f"/><stop offset="1" stop-color="#2e3332"/></linearGradient>
+     <linearGradient id="back" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#e6b07e"/><stop offset=".5" stop-color="#c47c45"/><stop offset="1" stop-color="#8f522a"/></linearGradient>
+     <linearGradient id="chip" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#3b4442"/><stop offset="1" stop-color="#151a19"/></linearGradient>
+     <filter id="soft" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="12"/></filter>
+    </defs>
+    <ellipse cx="300" cy="520" rx="220" ry="22" fill="#000" opacity=".45" filter="url(#soft)"/>
+    <!-- back cover -->
+    <g transform="translate(330 70) skewY(-14)">
+     <rect x="0" y="40" width="170" height="320" rx="26" fill="url(#back)"/>
+     <rect x="18" y="58" width="58" height="72" rx="16" fill="#6b3b1d" opacity=".55"/>
+     <circle cx="38" cy="80" r="11" fill="#1a1f1e" stroke="#f0b27c" stroke-width="2"/><circle cx="58" cy="108" r="11" fill="#1a1f1e" stroke="#f0b27c" stroke-width="2"/><circle cx="38" cy="80" r="4" fill="#2f6f8a"/><circle cx="58" cy="108" r="4" fill="#2f6f8a"/>
+     <rect x="0" y="40" width="170" height="320" rx="26" fill="url(#shine)"/>
+    </g>
+    <!-- board + battery -->
+    <g transform="translate(220 110) skewY(-14)">
+     <rect x="0" y="40" width="170" height="320" rx="22" fill="#0b1110" stroke="#2b3634" stroke-width="2"/>
+     <rect x="14" y="56" width="142" height="104" rx="8" fill="url(#pcb)"/>
+     <g stroke="#f0b27c" stroke-width="1.6" fill="none" opacity=".85"><path d="M24 70h40l10 10h30"/><path d="M24 100h22l12-12h40"/><path d="M110 150v-26l12-12h24"/><path d="M30 150v-20h30"/></g>
+     <rect x="70" y="84" width="40" height="40" rx="4" fill="url(#chip)" stroke="#7fe3bb" stroke-opacity=".5"/>
+     <g fill="#d08a52"><rect x="66" y="90" width="4" height="3"/><rect x="66" y="100" width="4" height="3"/><rect x="66" y="110" width="4" height="3"/><rect x="110" y="90" width="4" height="3"/><rect x="110" y="100" width="4" height="3"/><rect x="110" y="110" width="4" height="3"/></g>
+     <rect x="124" y="64" width="22" height="16" rx="2" fill="#1d2523"/><rect x="22" y="120" width="26" height="18" rx="2" fill="#1d2523"/>
+     <rect x="20" y="176" width="130" height="150" rx="10" fill="url(#bat)"/>
+     <rect x="20" y="176" width="130" height="150" rx="10" fill="url(#shine)" opacity=".6"/>
+     <path d="M78 228l-10 26h14l-8 26 22-34H82l8-18z" fill="#7fe3bb"/>
+     <rect x="62" y="336" width="46" height="12" rx="4" fill="#3a4240" stroke="#f0b27c" stroke-width="1.4"/>
+    </g>
+    <!-- screen -->
+    <g transform="translate(90 160) skewY(-14)">
+     <rect x="0" y="40" width="180" height="330" rx="28" fill="url(#glass)" stroke="#43514e" stroke-width="2"/>
+     <rect x="10" y="52" width="160" height="306" rx="20" fill="url(#scr)"/>
+     <g stroke="#e9fff5" stroke-opacity=".75" stroke-width="1.4" fill="none" stroke-linecap="round"><path d="M128 120 104 150 112 176 86 214"/><path d="M104 150 70 140 48 162"/><path d="M112 176 146 196"/><path d="M86 214 92 252 74 290"/><path d="M86 214 52 226"/></g>
+     <circle cx="128" cy="120" r="5" fill="#e9fff5" opacity=".9"/>
+     <rect x="70" y="60" width="40" height="8" rx="4" fill="#0b1110"/>
+     <rect x="0" y="40" width="180" height="330" rx="28" fill="url(#shine)"/>
+    </g>
+    <!-- callouts -->
+    <g font-family="JetBrains Mono, monospace" font-size="20" fill="#b9f3da">
+     <g stroke="#d08a52" stroke-width="1.6" fill="none"><path d="M150 252 118 168H10"/><path d="M310 300 400 60h160"/><path d="M450 330V448h140"/></g>
+     <circle cx="150" cy="252" r="5" fill="#f0b27c"/><circle cx="310" cy="300" r="5" fill="#f0b27c"/><circle cx="450" cy="330" r="5" fill="#f0b27c"/>
+     <text x="10" y="160">01 SCREEN</text><text x="420" y="52">02 BATTERY</text><text x="462" y="440">03 HOUSING</text>
+    </g>
+    <!-- screwdriver -->
+    <g transform="translate(150 500) rotate(-4)">
+     <rect x="0" y="0" width="120" height="26" rx="13" fill="#d08a52"/><rect x="0" y="0" width="120" height="10" rx="5" fill="#f0b27c" opacity=".6"/>
+     <g stroke="#8f522a" stroke-width="3"><path d="M24 4v18M44 4v18M64 4v18"/></g>
+     <rect x="120" y="9" width="86" height="8" rx="2" fill="#c9d3cf"/><path d="M206 9l12 4-12 4z" fill="#9aa5a1"/>
+    </g>
+   </svg>
+  </div>
+ </div>
+</header>
+
+<section class="fix" id="fix">
+ <div class="wrap">
+  <div class="sh">
+   <div><span class="lbl">[ 01 ] WHAT WE FIX</span><h2>One bench for phones, tablets and laptops.</h2></div>
+   <p>Most major phone and laptop brands. Typical price ranges below; we quote your exact price after the free check.</p>
+  </div>
+  <div class="cards">
+   <article class="card"><span class="pin">J1</span>
+    <svg class="ic" viewBox="0 0 64 64"><defs><linearGradient id="i1" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#1d5c47"/><stop offset="1" stop-color="#0b2b21"/></linearGradient></defs><rect x="16" y="4" width="32" height="56" rx="7" fill="url(#i1)" stroke="#7fe3bb" stroke-width="2"/><path d="M38 14 31 24l3 7-8 10M31 24l-8-2" fill="none" stroke="#e9fff5" stroke-width="1.6" stroke-linecap="round"/><rect x="27" y="8" width="10" height="2.5" rx="1.2" fill="#7fe3bb"/></svg>
+    <h3>Cracked screens</h3><p>Glass, touch and display replacement, with a quick test before you leave.</p>
+    <div class="pr"><span>FROM</span><b>₱1,800 – ₱6,500</b></div></article>
+   <article class="card"><span class="pin">J2</span>
+    <svg class="ic" viewBox="0 0 64 64"><defs><linearGradient id="i2" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#3a3f3e"/><stop offset=".5" stop-color="#5f6664"/><stop offset="1" stop-color="#2e3332"/></linearGradient></defs><rect x="12" y="14" width="40" height="40" rx="6" fill="url(#i2)" stroke="#9fb2aa" stroke-width="1.5"/><rect x="26" y="8" width="12" height="6" rx="2" fill="#d08a52"/><path d="M34 22 26 36h8l-4 12 10-16h-8l4-10z" fill="#7fe3bb"/></svg>
+    <h3>Battery swaps</h3><p>For phones that die by lunch, swell, or shut down at 30%.</p>
+    <div class="pr"><span>FROM</span><b>₱1,200 – ₱3,200</b></div></article>
+   <article class="card"><span class="pin">J3</span>
+    <svg class="ic" viewBox="0 0 64 64"><rect x="18" y="6" width="28" height="30" rx="5" fill="#1a2120" stroke="#7fe3bb" stroke-width="2"/><rect x="26" y="36" width="12" height="10" rx="2" fill="#d08a52"/><path d="M32 46v10" stroke="#d08a52" stroke-width="3" stroke-linecap="round"/><rect x="26" y="16" width="12" height="6" rx="2" fill="#0e3a2d" stroke="#f0b27c" stroke-width="1.4"/><path d="M27 28h10" stroke="#9fb2aa" stroke-width="1.6" stroke-linecap="round"/></svg>
+    <h3>Charging ports</h3><p>Loose cable, slow charge or no charge. Cleaning or full port replacement.</p>
+    <div class="pr"><span>FROM</span><b>₱600 – ₱1,900</b></div></article>
+   <article class="card"><span class="pin">J4</span>
+    <svg class="ic" viewBox="0 0 64 64"><defs><linearGradient id="i4" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#b9f3da"/><stop offset="1" stop-color="#2d9c74"/></linearGradient></defs><path d="M32 6C24 18 16 27 16 37a16 16 0 0 0 32 0C48 27 40 18 32 6z" fill="url(#i4)"/><path d="M24 38a8 8 0 0 0 8 8" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round" opacity=".8"/><circle cx="46" cy="14" r="4" fill="#f0b27c"/></svg>
+    <h3>Water damage check</h3><p>Board cleaning and drying. Bring it in fast and switched off.</p>
+    <div class="pr"><span>CHECK</span><b>Free · cleaning ₱900+</b></div></article>
+   <article class="card"><span class="pin">J5</span>
+    <svg class="ic" viewBox="0 0 64 64"><defs><linearGradient id="i5" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2b3836"/><stop offset="1" stop-color="#121716"/></linearGradient></defs><rect x="10" y="12" width="44" height="28" rx="3" fill="url(#i5)" stroke="#7fe3bb" stroke-width="2"/><path d="M4 46h56l-4 6H8z" fill="#5a615f"/><g fill="#d08a52"><rect x="12" y="42" width="5" height="3" rx="1"/><rect x="19" y="42" width="5" height="3" rx="1"/><rect x="26" y="42" width="12" height="3" rx="1"/><rect x="40" y="42" width="5" height="3" rx="1"/><rect x="47" y="42" width="5" height="3" rx="1"/></g><path d="M18 30l6-6 5 4 8-9 9 7" fill="none" stroke="#b9f3da" stroke-width="2" stroke-linejoin="round"/></svg>
+    <h3>Laptop keyboards</h3><p>Sticky keys, dead rows, spilled coffee. Keyboard and hinge work.</p>
+    <div class="pr"><span>FROM</span><b>₱1,500 – ₱4,800</b></div></article>
+   <article class="card"><span class="pin">J6</span>
+    <svg class="ic" viewBox="0 0 64 64"><defs><linearGradient id="i6" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#168060"/><stop offset="1" stop-color="#0b3f2f"/></linearGradient></defs><rect x="6" y="20" width="52" height="24" rx="3" fill="url(#i6)" stroke="#b9f3da" stroke-width="1.5"/><rect x="14" y="26" width="12" height="12" rx="1.5" fill="#151a19"/><rect x="30" y="26" width="12" height="12" rx="1.5" fill="#151a19"/><g fill="#f0b27c"><rect x="48" y="24" width="2" height="16"/><rect x="52" y="24" width="2" height="16"/></g><path d="M6 32H2" stroke="#d08a52" stroke-width="3"/></svg>
+    <h3>SSD &amp; RAM upgrades</h3><p>Make an old laptop feel quick again. We move your files over.</p>
+    <div class="pr"><span>FROM</span><b>₱2,400 – ₱7,500</b></div></article>
+  </div>
+ </div>
+</section>
+
+<section class="bench" id="how">
+ <div class="wrap">
+  <div>
+   <svg class="big" viewBox="0 0 560 440" role="img" aria-label="Laptop opened on a repair mat with tools">
+    <defs>
+     <linearGradient id="mat" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#1d6a51"/><stop offset="1" stop-color="#0a2e23"/></linearGradient>
+     <linearGradient id="lid" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#3a4442"/><stop offset="1" stop-color="#1c2322"/></linearGradient>
+     <linearGradient id="dsp" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0d1e19"/><stop offset="1" stop-color="#16382d"/></linearGradient>
+     <linearGradient id="base" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#6b7472"/><stop offset="1" stop-color="#3a4240"/></linearGradient>
+     <linearGradient id="cu" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#8f522a"/><stop offset=".5" stop-color="#f0b27c"/><stop offset="1" stop-color="#b8703f"/></linearGradient>
+     <pattern id="grid" width="24" height="24" patternUnits="userSpaceOnUse"><path d="M24 0H0v24" fill="none" stroke="#b9f3da" stroke-opacity=".12" stroke-width="1"/></pattern>
+     <filter id="sh2"><feGaussianBlur stdDeviation="8"/></filter>
+    </defs>
+    <rect x="10" y="20" width="540" height="400" rx="22" fill="url(#mat)"/>
+    <rect x="10" y="20" width="540" height="400" rx="22" fill="url(#grid)"/>
+    <g font-family="JetBrains Mono, monospace" font-size="18" fill="#b9f3da" opacity=".75"><text x="30" y="52">MAT-02 · ESD SAFE</text><text x="388" y="404">0 · 5 · 10 cm</text></g>
+    <ellipse cx="280" cy="350" rx="200" ry="18" fill="#000" opacity=".45" filter="url(#sh2)"/>
+    <!-- laptop -->
+    <path d="M120 90h300a10 10 0 0 1 10 10v176H110V100a10 10 0 0 1 10-10z" fill="url(#lid)"/>
+    <rect x="124" y="104" width="292" height="164" rx="4" fill="url(#dsp)"/>
+    <g font-family="JetBrains Mono, monospace" font-size="18" fill="#7fe3bb"><text x="140" y="134">&gt; run diagnostics</text><text x="140" y="160" fill="#9fb2aa">battery .... 71%</text><text x="140" y="186" fill="#9fb2aa">storage .... OK</text><text x="140" y="212" fill="#f0b27c">keys row 3 . FAIL</text><text x="140" y="238" fill="#9fb2aa">ports ...... OK</text></g>
+    <rect x="140" y="250" width="180" height="8" rx="4" fill="#0b2b21"/><rect x="140" y="250" width="128" height="8" rx="4" fill="#7fe3bb"/>
+    <path d="M80 276h380l26 46a6 6 0 0 1-5 9H59a6 6 0 0 1-5-9z" fill="url(#base)"/>
+    <g fill="#2b3332"><rect x="110" y="284" width="320" height="8" rx="2"/><rect x="104" y="296" width="332" height="8" rx="2"/><rect x="98" y="308" width="344" height="8" rx="2"/></g>
+    <rect x="236" y="308" width="70" height="8" rx="2" fill="#d08a52"/>
+    <rect x="228" y="320" width="84" height="6" rx="3" fill="#525b59"/>
+    <!-- tweezers -->
+    <g transform="translate(450 120) rotate(28)"><path d="M0 0l6 120 4 0-2-120z" fill="#c9d3cf"/><path d="M14 0l-4 120 4 0 6-120z" fill="#9aa5a1"/></g>
+    <!-- spudger & screws -->
+    <g transform="translate(38 360) rotate(-8)"><rect width="150" height="14" rx="7" fill="url(#cu)"/></g>
+    <g fill="#c9d3cf" stroke="#7d8885" stroke-width="1"><circle cx="476" cy="300" r="6"/><circle cx="496" cy="318" r="6"/><circle cx="470" cy="330" r="6"/></g>
+    <g stroke="#5d6866" stroke-width="1.4"><path d="M472 300h8M492 318h8M466 330h8"/></g>
+    <!-- chip on mat -->
+    <g transform="translate(60 90)"><rect width="34" height="34" rx="3" fill="#151a19" stroke="#7fe3bb" stroke-opacity=".5"/><g fill="#d08a52"><rect x="-4" y="6" width="4" height="3"/><rect x="-4" y="16" width="4" height="3"/><rect x="-4" y="26" width="4" height="3"/><rect x="34" y="6" width="4" height="3"/><rect x="34" y="16" width="4" height="3"/><rect x="34" y="26" width="4" height="3"/></g></g>
+   </svg>
+  </div>
+  <div>
+   <span class="lbl">[ 02 ] HOW IT WORKS</span>
+   <h2>From drop&#8209;off to pick&#8209;up in four clear steps.</h2>
+   <ol class="steps">
+    <li><span class="n">01</span><div><b>Book or walk in</b><p>Pick a time below or just come by the bench. Tell us what happened.</p></div></li>
+    <li><span class="n">02</span><div><b>Free diagnosis</b><p>We open it up and show you the fault. Most checks take 20 to 40 minutes.</p></div></li>
+    <li><span class="n">03</span><div><b>Fixed price, your call</b><p>You get one written price. Say yes and we start; say no and you pay nothing.</p></div></li>
+    <li><span class="n">04</span><div><b>Test &amp; pick up</b><p>We test it with you before you leave, plus a 30-day service warranty on replaced parts.</p></div></li>
+   </ol>
+  </div>
+ </div>
+</section>
+
+<section id="prices">
+ <div class="wrap">
+  <div class="sh">
+   <div><span class="lbl">[ 03 ] PRICE GUIDE</span><h2>Know the range before you walk in.</h2></div>
+   <p>Prices depend on model and part grade. Your free check gives the exact figure.</p>
+  </div>
+  <div class="tbl">
+   <table>
+    <thead><tr><th>Service</th><th class="hide">Usual time</th><th>Price range</th><th>With this offer</th></tr></thead>
+    <tbody>
+     <tr><td>Phone screen replacement<span class="s">Glass + display assembly</span></td><td class="t hide">1–2 hrs</td><td class="p">₱1,800 – ₱6,500</td><td class="o">₱300 off</td></tr>
+     <tr><td>Phone battery swap<span class="s">Includes health test</span></td><td class="t hide">45 min</td><td class="p">₱1,200 – ₱3,200</td><td class="o">Free check</td></tr>
+     <tr><td>Charging port repair<span class="s">Clean or replace</span></td><td class="t hide">30–60 min</td><td class="p">₱600 – ₱1,900</td><td class="o">Free check</td></tr>
+     <tr><td>Water damage cleaning<span class="s">Board clean &amp; dry</span></td><td class="t hide">1 day</td><td class="p">₱900 – ₱2,500</td><td class="o">Free check</td></tr>
+     <tr><td>Laptop keyboard&nbsp;replacement<span class="s">Most 13–15" models</span></td><td class="t hide">1 day</td><td class="p">₱1,500 – ₱4,800</td><td class="o">Free check</td></tr>
+     <tr><td>SSD upgrade + file&nbsp;transfer<span class="s">Part + labor</span></td><td class="t hide">2–3 hrs</td><td class="p">₱2,400 – ₱7,500</td><td class="o">Free check</td></tr>
+    </tbody>
+   </table>
+  </div>
+  <p class="fine">Estimates only · VAT and parts may&nbsp;vary</p>
+ </div>
+</section>
+
+<section class="cond">
+ <div class="wrap">
+  <div class="coupon">
+   <div class="l">
+    <small>FIRST-VISIT OFFER</small>
+    <b>₱300<br>OFF</b>
+    <p>your first screen replacement, plus a free diagnosis on any device.</p>
+    <span class="code">CODE · AYOS300</span>
+   </div>
+   <div class="r">
+    <h3>Offer conditions</h3>
+    <ul>
+     <li><svg viewBox="0 0 24 24"><path d="M5 12l5 5L20 7"/></svg>First-time customers, one device per person</li>
+     <li><svg viewBox="0 0 24 24"><path d="M5 12l5 5L20 7"/></svg>Discount applies to screen replacements ₱1,800 and up</li>
+     <li><svg viewBox="0 0 24 24"><path d="M5 12l5 5L20 7"/></svg>Book online or show the code at the counter</li>
+     <li><svg viewBox="0 0 24 24"><path d="M5 12l5 5L20 7"/></svg>Free diagnosis has no minimum and no obligation</li>
+     <li><svg viewBox="0 0 24 24"><path d="M5 12l5 5L20 7"/></svg>Valid until 31 December</li>
+    </ul>
+   </div>
+  </div>
+ </div>
+</section>
+
+<section id="faq">
+ <div class="wrap split">
+  <div>
+   <span class="lbl">[ 04 ] FAQ</span>
+   <h2>Before you hand over your device.</h2>
+   <div style="margin-top:30px">
+    <details open><summary>Will I lose my photos and files?</summary><p>Screen, battery and port work usually leaves your data untouched. For board or storage jobs we tell you first, and you can back up before we start.</p></details>
+    <details><summary>Do I have to pay if I don't push through?</summary><p>No. The diagnosis is free. If you decide not to repair, you take your device home at no charge.</p></details>
+    <details><summary>Which brands do you repair?</summary><p>Most major phone, tablet and laptop brands. Tell us the model in the form and we'll confirm parts before your visit.</p></details>
+    <details><summary>Can I wait while you fix it?</summary><p>Yes, for most screen, battery and port jobs. There's a bench-side seat so you can watch the work.</p></details>
+    <details><summary>Is there a warranty?</summary><p>Repairs come with a 30-day service warranty on the replaced part. Physical or water damage after pick-up is not covered.</p></details>
+   </div>
+  </div>
+  <div class="form" id="book">
+   <h3>Book your free diagnosis</h3>
+   <p>Pick a slot and we'll hold a bench for you. No payment needed.</p>
+   <form id="f" novalidate>
+    <div class="f">
+     <label>Full name<input name="n" required placeholder="Juan Dela Cruz"></label>
+     <label>Mobile number<input name="m" required inputmode="tel" placeholder="0000-000-0000"></label>
+     <div class="full lab">Device<span class="chipsel">
+      <label style="display:inline"><input type="radio" name="d" value="Phone" checked><span>Phone</span></label>
+      <label style="display:inline"><input type="radio" name="d" value="Tablet"><span>Tablet</span></label>
+      <label style="display:inline"><input type="radio" name="d" value="Laptop"><span>Laptop</span></label>
+     </span></div>
+     <label>What's wrong?<select name="p"><option>Cracked screen</option><option>Battery drains fast</option><option>Won't charge</option><option>Got wet</option><option>Keyboard / keys</option><option>Slow, needs upgrade</option><option>Not sure</option></select></label>
+     <label>Preferred day<select name="t"><option>Today</option><option>Tomorrow</option><option>This weekend</option></select></label>
+     <label class="full">Model &amp; notes (optional)<textarea name="x" placeholder="e.g. dropped it yesterday, touch still works"></textarea></label>
+    </div>
+    <button class="btn" type="submit">Reserve my free check <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+    <p class="sm">We'll text to confirm your slot.</p>
+   </form>
+   <div class="ok">
+    <svg viewBox="0 0 84 84"><circle cx="42" cy="42" r="38" fill="#0e3a2d"/><circle cx="42" cy="42" r="30" fill="none" stroke="#7fe3bb" stroke-width="2" stroke-dasharray="4 5"/><path d="M28 43l10 10 19-21" fill="none" stroke="#b9f3da" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    <h3 id="okh">Bench reserved!</h3>
+    <p id="okp">We'll send a confirmation to your number.</p>
+    <span class="tk">CODE · AYOS300</span>
+   </div>
+  </div>
+ </div>
+</section>
+
+<footer>
+ <div class="wrap">
+  <div>
+   <a class="logo" href="#top"><svg viewBox="0 0 40 40"><rect x="4" y="4" width="32" height="32" rx="7" fill="#0e3a2d" stroke="#7fe3bb" stroke-width="2"/><path d="M12 27 20 12l8 15M15 22h10" fill="none" stroke="#b9f3da" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/><circle cx="12" cy="27" r="2.4" fill="#f0b27c"/><circle cx="28" cy="27" r="2.4" fill="#f0b27c"/></svg><span>Ayos<small>GADGET REPAIR</small></span></a>
+   <p style="margin-top:14px;max-width:280px">Open-bench phone and laptop repair. See the fault, get one price, then decide.</p>
+  </div>
+  <div><h4>VISIT</h4><ul><li>Unit 0, Example Building</li><li>Sample St., City</li><li>Mon–Sat · 10:00–19:00</li></ul></div>
+  <div><h4>CONTACT</h4><ul>
+   <li class="ci"><svg viewBox="0 0 24 24"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>0000-000-0000</li>
+   <li class="ci"><svg viewBox="0 0 24 24"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1.1-4.6A8 8 0 1 1 21 12z"/></svg>Chat: example</li>
+   <li class="ci"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>hello@example.com</li></ul></div>
+  <div><h4>JUMP TO</h4><ul><li><a href="#fix" style="text-decoration:none">What we fix</a></li><li><a href="#prices" style="text-decoration:none">Prices</a></li><li><a href="#book" style="text-decoration:none">Book free check</a></li></ul></div>
+  <p class="cp">© Ayos Gadget Repair</p>
+ </div>
+</footer>
+
+<div class="mbar">
+ <a class="btn ghost" href="#prices" aria-label="Prices"><svg viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h10"/></svg></a>
+ <a class="btn" href="#book">Claim free diagnosis</a>
+</div>
+
+<script>
+document.getElementById('f').addEventListener('submit',function(e){
+ e.preventDefault();
+ var n=this.n.value.trim(),m=this.m.value.trim();
+ if(!n){this.n.focus();this.n.style.borderColor='#d08a52';return}
+ if(!m){this.m.focus();this.m.style.borderColor='#d08a52';return}
+ var d=this.querySelector('input[name=d]:checked').value;
+ document.getElementById('okh').textContent='Bench reserved, '+n.split(' ')[0]+'!';
+ document.getElementById('okp').textContent=d+' · '+this.p.value+' · '+this.t.value+'. We’ll text a confirmation to '+m+'.';
+ this.closest('.form').classList.add('done');
+});
+</script>
+</body>
+</html>

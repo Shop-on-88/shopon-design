@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>물빛면옥 · 평양냉면 메뉴판 디자인</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@700&family=Nanum+Myeongjo:wght@800&family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Noto Sans KR',sans-serif;background:#f3f0e8;color:#1c2233;word-break:keep-all;-webkit-font-smoothing:antialiased;
+ background-image:radial-gradient(ellipse 60% 40% at 10% 0%,rgba(255,255,255,.9),transparent 70%),radial-gradient(ellipse 50% 40% at 95% 20%,rgba(44,86,179,.08),transparent 70%)}
+.top{height:14px;background:#1f3f8f;position:relative}
+.top:after{content:"";position:absolute;left:0;right:0;top:14px;height:12px;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='12'%3E%3Cpath d='M0 2c7 10 13 10 20 0s13-10 20 0' fill='none' stroke='%231f3f8f' stroke-width='2'/%3E%3C/svg%3E") repeat-x}
+.wrap{max-width:1180px;margin:0 auto;padding:52px 20px 120px}
+.hd{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:18px;margin-bottom:32px}
+.hd small{font-family:'Cormorant Garamond',serif;font-weight:700;font-size:15px;letter-spacing:.3em;color:#2c56b3}
+.hd h1{font-family:'Nanum Myeongjo',serif;font-weight:800;font-size:clamp(30px,4.2vw,44px);margin-top:8px;line-height:1.25;color:#14295e}
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px}
+.chips span{font-size:13px;font-weight:500;border:1px solid rgba(31,63,143,.35);color:#1f3f8f;padding:5px 12px;border-radius:20px;background:rgba(255,255,255,.6)}
+.cta{display:inline-flex;align-items:center;gap:8px;height:52px;padding:0 26px;border-radius:2px;background:#1f3f8f;color:#fff;font-weight:700;font-size:15px;text-decoration:none;transition:.2s;white-space:nowrap;box-shadow:0 10px 24px -12px rgba(20,41,94,.7)}
+.cta:hover{background:#14295e}
+.cta svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.view{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,.75fr);gap:28px;align-items:start}
+figure{background:#fff;padding:10px;border-radius:3px;box-shadow:0 30px 60px -30px rgba(20,41,94,.45);border:1px solid rgba(31,63,143,.18)}
+figure a{display:block}
+figure img{display:block;width:100%;height:auto}
+figcaption{font-size:13px;color:#56607a;padding:10px 4px 2px;display:flex;flex-wrap:wrap;justify-content:space-between;gap:4px 10px}
+.side{display:grid;gap:16px;position:sticky;top:24px}
+.zoom{border-radius:3px;overflow:hidden;background:#fff;border:1px solid rgba(31,63,143,.18)}
+.zoom p{font-size:13px;color:#56607a;padding:10px 12px}
+.info{background:linear-gradient(160deg,#21428f,#152c66);color:#eef2fa;border-radius:3px;padding:22px}
+.info h2{font-family:'Nanum Myeongjo',serif;font-weight:800;font-size:21px;margin-bottom:10px}
+.info li{list-style:none;font-size:14px;line-height:1.9;display:flex;gap:10px}
+.info li:before{content:"";width:7px;height:7px;border:1.5px solid #a9bce6;margin-top:10px;flex:none;transform:rotate(45deg)}
+.bar{position:fixed;left:0;right:0;bottom:0;background:rgba(246,243,236,.97);border-top:2px solid #1f3f8f;padding:12px 20px;display:flex;justify-content:center;align-items:center;gap:18px;flex-wrap:wrap}
+.bar p{font-size:14px;color:#1c2233}
+.bar .cta{height:46px;box-shadow:none}
+@media(max-width:860px){.view{grid-template-columns:1fr}.side{position:static;grid-template-columns:1fr 1fr}.info{grid-column:span 2}}
+@media(max-width:620px){.hd .cta{display:none}.bar p{display:none}.bar .cta{width:100%;justify-content:center}.side{grid-template-columns:1fr}.info{grid-column:auto}}
+</style>
+</head>
+<body>
+<div class="top"></div>
+<div class="wrap">
+ <div class="hd">
+  <div>
+   <small>MENU DESIGN · SD-MN14</small>
+   <h1>물빛면옥 평양냉면 메뉴판</h1>
+   <div class="chips"><span>A4 세로 · 1페이지</span><span>냉면 · 수육 · 만두</span><span>청화백자 코발트</span><span>원화 가격</span><span>인쇄 · 웹 겸용</span></div>
+  </div>
+  <a class="cta" href="https://design.shoponph.online/#inquiry">이 디자인으로 상담하기 <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+ </div>
+ <div class="view">
+  <figure><a href="page1.png" target="_blank" rel="noopener"><img src="page1.png" alt="물빛면옥 평양냉면 메뉴판" width="2480" height="3508"></a><figcaption><span>냉면 · 수육 · 만두 · 음료 · 안내</span><span style="white-space:nowrap">눌러서 크게 보기</span></figcaption></figure>
+  <div class="side">
+   <div class="zoom"><img src="detail-bowl.jpg" alt="냉면 한 그릇 일러스트 부분 확대" width="1080" height="984" style="display:block;width:100%;height:auto"><p>청화 구름무늬 냉면 그릇 일러스트</p></div>
+   <div class="zoom"><img src="detail-suyuk.jpg" alt="수육 · 편육 그림과 소 · 대 가격 부분 확대" width="1080" height="1000" style="display:block;width:100%;height:auto"><p>수육 접시 그림과 소 · 대 가격 부분</p></div>
+   <div class="info"><h2>이 메뉴판의 구성</h2><ul><li>백자 바탕에 코발트 붓선 무늬와 물결 띠</li><li>대표 냉면을 큰 그릇 그림과 함께 소개</li><li>수육 · 만두는 그림과 소 · 대 가격을 나란히</li><li>영업시간 · 원산지 · 포장 안내 칸 포함</li></ul></div>
+  </div>
+ </div>
+</div>
+<div class="bar"><p>우리 가게 메뉴판도 이렇게 단정하고 시원한 분위기로</p><a class="cta" href="https://design.shoponph.online/#inquiry">이 디자인으로 상담하기</a></div>
+</body>
+</html>
