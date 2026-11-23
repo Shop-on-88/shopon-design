@@ -1,0 +1,846 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>나무결 목공방 · 겨울 원데이 클래스 예약</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&family=Noto+Sans+KR:wght@400;500;700;900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{--wal:#4a2e1d;--wal2:#6b4329;--wal3:#8a5a37;--oak:#d3a26b;--oak2:#e8c493;--pen:#f3c234;--pen2:#ffd95c;--bp:#2d5f93;--bp2:#4f82b8;--paper:#f3f0e8;--paper2:#e9e4d8;--ink:#231912;--mut:#6c5e52;--line:rgba(45,95,147,.16)}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:84px}
+body{font-family:'Noto Sans KR',sans-serif;background:var(--paper);color:var(--ink);word-break:keep-all;-webkit-font-smoothing:antialiased;line-height:1.65;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+img,svg{display:block;max-width:100%}
+.wrap{max-width:1180px;margin:0 auto;padding:0 24px}
+.mono{font-family:'Space Mono',monospace}
+.serif{font-family:'Gowun Batang',serif}
+.ico{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;flex:none}
+.grid-bg{background-color:var(--paper);background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px),linear-gradient(rgba(45,95,147,.07) 1px,transparent 1px),linear-gradient(90deg,rgba(45,95,147,.07) 1px,transparent 1px);background-size:120px 120px,120px 120px,24px 24px,24px 24px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;height:56px;padding:0 28px;border-radius:999px;font-weight:700;font-size:16px;border:0;cursor:pointer;font-family:inherit;transition:.2s;white-space:nowrap}
+.btn.p{background:var(--pen);color:var(--wal);box-shadow:inset 0 -3px 0 rgba(0,0,0,.12),0 10px 24px -10px rgba(243,194,52,.9)}
+.btn.p:hover{background:var(--pen2);transform:translateY(-1px)}
+.btn.w{background:var(--wal);color:#f8efe0}
+.btn.w:hover{background:var(--wal2)}
+.btn.g{border:1.5px solid rgba(248,239,224,.4);color:#f8efe0}
+.btn.g:hover{border-color:#f8efe0}
+.tag{display:inline-flex;align-items:center;gap:8px;font-family:'Space Mono',monospace;font-size:12px;letter-spacing:.14em;color:var(--bp);text-transform:uppercase}
+.tag:before{content:"";width:26px;height:1.5px;background:var(--bp)}
+.sec{padding:110px 0}
+.sh{max-width:720px;margin-bottom:52px}
+.sh h2{font-family:'Gowun Batang',serif;font-weight:700;font-size:clamp(30px,3.6vw,44px);line-height:1.3;margin:14px 0 14px;letter-spacing:-.01em}
+.sh p{color:var(--mut);font-size:17px}
+/* nav */
+.nav{position:sticky;top:0;z-index:40;background:rgba(74,46,29,.97);backdrop-filter:blur(8px);color:#f8efe0}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:70px;gap:20px}
+.logo{display:flex;align-items:center;gap:11px}
+.logo b{font-family:'Gowun Batang',serif;font-size:22px;font-weight:700;letter-spacing:.02em;display:block;line-height:1.1}
+.logo small{font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.22em;color:var(--pen);display:block;line-height:1;margin-top:4px}
+.nav ul{display:flex;gap:30px;list-style:none;font-size:15px;color:#e5d5bf}
+.nav ul a:hover{color:var(--pen)}
+.nav .btn{height:44px;padding:0 20px;font-size:14px}
+/* hero */
+.hero{position:relative;overflow:hidden;background:radial-gradient(900px 520px at 78% 30%,#7a4c2e 0%,transparent 70%),linear-gradient(160deg,#3b2416 0%,#4a2e1d 55%,#2c1b11 100%);color:#f8efe0;padding:70px 0 0}
+.hero:before{content:"";position:absolute;inset:0;background-image:repeating-linear-gradient(176deg,rgba(255,255,255,.018) 0 2px,transparent 2px 9px),repeating-linear-gradient(174deg,rgba(0,0,0,.05) 0 1px,transparent 1px 23px);pointer-events:none}
+.hero .wrap{position:relative;display:grid;grid-template-columns:1fr 1.08fr;gap:40px;align-items:center}
+.offer{display:inline-flex;align-items:center;gap:10px;background:rgba(243,194,52,.12);border:1.5px dashed rgba(243,194,52,.7);color:var(--pen2);font-size:14px;font-weight:700;padding:8px 16px;border-radius:999px}
+.offer .mono{white-space:nowrap;flex:none;font-size:12px;background:var(--pen);color:var(--wal);padding:2px 8px;border-radius:999px;letter-spacing:.06em}
+.hero h1{font-family:'Gowun Batang',serif;font-weight:700;font-size:clamp(40px,5.2vw,68px);line-height:1.2;margin:24px 0 22px;letter-spacing:-.02em}
+.hero h1 .u{position:relative;white-space:nowrap;color:var(--pen2)}
+.hero h1 .u:after{content:"";position:absolute;left:-2%;right:-2%;bottom:.06em;height:.16em;background:var(--pen);opacity:.32;border-radius:4px;transform:rotate(-1deg)}
+.hero .lead{font-size:18px;color:#e5d5bf;max-width:520px}
+.hero .acts{display:flex;gap:12px;flex-wrap:wrap;margin:34px 0 40px}
+.specs{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid rgba(248,239,224,.18);max-width:540px}
+.specs div{padding:18px 0 22px;border-right:1px solid rgba(248,239,224,.14);padding-left:18px}
+.specs div:first-child{padding-left:0}
+.specs div:last-child{border-right:0}
+.specs b{display:block;font-family:'Space Mono',monospace;font-size:24px;color:#fff;line-height:1.2}
+.specs span{font-size:13px;color:#cbb79d}
+.hero-art{position:relative;align-self:end}
+.hero-art svg{width:100%;height:auto;filter:drop-shadow(0 40px 50px rgba(0,0,0,.35))}
+/* strip */
+.strip{background:var(--pen);color:var(--wal);overflow:hidden}
+.strip .wrap{display:flex;align-items:center;justify-content:space-between;gap:24px;padding-top:22px;padding-bottom:22px;flex-wrap:wrap}
+.strip p{font-weight:700;font-size:18px;display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+.strip p .mono{font-size:13px;letter-spacing:.1em;border:1.5px solid var(--wal);padding:3px 10px;border-radius:4px}
+.strip .dim{flex:1;min-width:120px;height:14px;position:relative;margin:0 10px}
+.strip .dim:before{content:"";position:absolute;left:0;right:0;top:50%;height:1.5px;background:var(--wal)}
+.strip .dim:after{content:"";position:absolute;left:0;right:0;top:0;bottom:0;border-left:1.5px solid var(--wal);border-right:1.5px solid var(--wal)}
+.strip a{font-weight:700;font-size:15px;display:inline-flex;align-items:center;gap:6px;border-bottom:2px solid var(--wal)}
+/* classes */
+.cls{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
+.card{background:#fffdf8;border:1px solid #dcd3c2;border-radius:22px;overflow:hidden;display:flex;flex-direction:column;transition:.25s;box-shadow:0 20px 40px -32px rgba(74,46,29,.6)}
+.card:hover{transform:translateY(-4px);box-shadow:0 34px 50px -30px rgba(74,46,29,.55)}
+.card .pic{position:relative;aspect-ratio:4/3;border-bottom:1px solid #dcd3c2}
+.card .pic svg{width:100%;height:100%}
+.card .no{position:absolute;left:16px;top:14px;font-family:'Space Mono',monospace;font-size:12px;color:var(--bp);letter-spacing:.1em;background:rgba(255,253,248,.9);padding:2px 8px;border-radius:4px;border:1px solid rgba(45,95,147,.3)}
+.card .bd{padding:26px 26px 28px;display:flex;flex-direction:column;flex:1}
+.card h3{font-family:'Gowun Batang',serif;font-size:25px;font-weight:700;line-height:1.3}
+.card .sub{color:var(--mut);font-size:15px;margin:8px 0 18px;flex:1}
+.card dl{display:grid;grid-template-columns:auto 1fr;gap:6px 16px;font-size:14px;padding:16px 0;border-top:1px dashed #cdbfa8;border-bottom:1px dashed #cdbfa8;margin-bottom:18px}
+.card dt{color:var(--mut)}
+.card dd{font-weight:500;text-align:right}
+.card .pr{display:flex;align-items:flex-end;justify-content:space-between;gap:10px;flex-wrap:wrap}
+.card .pr b{font-family:'Space Mono',monospace;font-size:28px;line-height:1;color:var(--wal)}
+.card .pr b small{font-family:'Noto Sans KR';font-size:15px;font-weight:500;margin-left:2px}
+.card .pr span{font-size:13px;color:var(--bp);font-weight:700;background:rgba(45,95,147,.08);padding:4px 10px;border-radius:999px}
+.card.hl{border:2px solid var(--wal)}
+.card.hl .flag{position:absolute;right:14px;top:14px;background:var(--wal);color:var(--pen);font-size:12px;font-weight:700;padding:5px 11px;border-radius:999px}
+/* steps */
+.steps-sec{background:var(--wal);color:#f8efe0;position:relative;overflow:hidden}
+.steps-sec:before{content:"";position:absolute;inset:0;background-image:repeating-linear-gradient(178deg,rgba(255,255,255,.025) 0 2px,transparent 2px 13px);pointer-events:none}
+.steps-sec .tag{color:var(--pen)}.steps-sec .tag:before{background:var(--pen)}
+.steps-sec .sh p{color:#d8c4a8}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:0;position:relative;counter-reset:s}
+.step{padding:0 26px 0 0;position:relative}
+.step .dot{width:84px;height:84px;border-radius:50%;background:#5c3a24;border:1.5px solid rgba(243,194,52,.5);display:grid;place-items:center;position:relative;z-index:1;margin-bottom:24px}
+.step .dot svg{width:42px;height:42px;fill:none;stroke:var(--pen);stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+.step:not(:last-child):after{content:"";position:absolute;top:42px;left:92px;right:8px;border-top:1.5px dashed rgba(243,194,52,.45)}
+.step .t{font-family:'Space Mono',monospace;font-size:12px;color:var(--pen);letter-spacing:.12em}
+.step h3{font-family:'Gowun Batang',serif;font-size:23px;margin:6px 0 10px}
+.step p{font-size:15px;color:#d8c4a8}
+/* include */
+.inc{display:grid;grid-template-columns:1.1fr .9fr;gap:26px}
+.box{background:#fffdf8;border:1px solid #dcd3c2;border-radius:22px;padding:34px}
+.box h3{font-family:'Gowun Batang',serif;font-size:24px;margin-bottom:6px}
+.box > p{color:var(--mut);font-size:15px;margin-bottom:22px}
+.ilist{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.ilist li{list-style:none;display:flex;gap:12px;align-items:flex-start;background:var(--paper);border-radius:14px;padding:15px}
+.ilist li .ico{color:var(--bp);width:24px;height:24px;margin-top:1px}
+.ilist b{display:block;font-size:15px}
+.ilist span{font-size:13px;color:var(--mut)}
+.box.bring{background:#26405f;color:#eaf1f8;border-color:#26405f;position:relative;overflow:hidden}
+.box.bring:before{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.07) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.07) 1px,transparent 1px);background-size:22px 22px;pointer-events:none}
+.box.bring > *{position:relative}
+.box.bring > p{color:#b9cde2}
+.blist li{list-style:none;display:flex;gap:14px;padding:14px 0;border-bottom:1px dashed rgba(234,241,248,.25);font-size:15px}
+.blist li:last-child{border-bottom:0}
+.blist .mono{color:var(--pen);font-size:13px;min-width:28px;padding-top:2px}
+.note{margin-top:18px;font-size:13px;color:#b9cde2;display:flex;gap:8px}
+/* space */
+.space{display:grid;grid-template-columns:1.45fr .55fr;gap:26px;align-items:stretch}
+.space .art{border-radius:24px;overflow:hidden;background:#2b1a10;box-shadow:0 30px 60px -36px rgba(35,25,18,.8)}
+.space .art svg{width:100%;height:100%}
+.facts{display:grid;gap:14px}
+.fact{background:#fffdf8;border:1px solid #dcd3c2;border-radius:18px;padding:22px 22px}
+.fact b{font-family:'Space Mono',monospace;font-size:30px;color:var(--wal);line-height:1;display:block}
+.fact b small{font-family:'Noto Sans KR';font-size:15px;margin-left:3px}
+.fact span{display:block;font-weight:700;margin:8px 0 2px}
+.fact p{font-size:14px;color:var(--mut)}
+/* form */
+.book{background:linear-gradient(180deg,var(--paper2),var(--paper))}
+#space{padding-bottom:40px}
+.sum{scroll-margin-top:0}
+.bk{display:grid;grid-template-columns:1.15fr .85fr;gap:26px;align-items:start}
+.panel{background:#fffdf8;border:1px solid #dcd3c2;border-radius:24px;padding:34px;box-shadow:0 30px 60px -44px rgba(74,46,29,.7)}
+.lbl{display:flex;align-items:center;justify-content:space-between;font-weight:700;font-size:15px;margin:0 0 12px}
+.lbl .mono{font-size:12px;color:var(--bp);font-weight:400;letter-spacing:.08em}
+.fgroup{margin-bottom:28px}
+.opts{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.opt input,.date input{position:absolute;opacity:0;pointer-events:none}
+.opt label{display:block;border:1.5px solid #d6cbb7;border-radius:14px;padding:14px 14px;cursor:pointer;transition:.15s;height:100%}
+.opt label b{display:block;font-size:15px}
+.opt label span{font-family:'Space Mono',monospace;font-size:13px;color:var(--mut)}
+.opt input:checked + label{border-color:var(--wal);background:#fbf2e3;box-shadow:inset 0 0 0 1px var(--wal)}
+.dates{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+.date label{display:flex;flex-direction:column;align-items:center;border:1.5px solid #d6cbb7;border-radius:14px;padding:11px 6px 12px;cursor:pointer;transition:.15s;text-align:center}
+.date label .m{font-family:'Space Mono',monospace;font-size:12px;color:var(--bp)}
+.date label b{font-family:'Space Mono',monospace;font-size:24px;line-height:1.2}
+.date label span{font-size:13px;color:var(--mut)}
+.date input:checked + label{background:var(--wal);border-color:var(--wal);color:#f8efe0}
+.date input:checked + label .m{color:var(--pen)}
+.date input:checked + label span{color:#e5d5bf}
+.date.full label{opacity:.5;cursor:not-allowed;background:repeating-linear-gradient(-45deg,transparent 0 6px,rgba(108,94,82,.08) 6px 12px)}
+.date input:focus-visible + label,.opt input:focus-visible + label{outline:2px solid var(--bp);outline-offset:2px}
+.slots{display:flex;gap:10px;margin-top:12px;flex-wrap:wrap}
+.slots .opt label{padding:10px 18px;border-radius:999px;font-size:14px;font-weight:500}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.field label{display:block;font-size:14px;font-weight:700;margin-bottom:7px}
+.field input,.field textarea{width:100%;font-family:inherit;font-size:16px;border:1.5px solid #d6cbb7;border-radius:12px;padding:13px 14px;background:#fff;color:var(--ink);transition:.15s}
+.field input:focus,.field textarea:focus{outline:0;border-color:var(--bp);box-shadow:0 0 0 3px rgba(45,95,147,.15)}
+.field textarea{min-height:92px;resize:vertical}
+.field.err input{border-color:#c0462c}
+.field .em{display:none;color:#b23d24;font-size:13px;margin-top:5px}
+.field.err .em{display:block}
+.stepper{display:inline-flex;align-items:center;border:1.5px solid #d6cbb7;border-radius:999px;overflow:hidden;background:#fff}
+.stepper button{width:46px;height:46px;border:0;background:transparent;font-size:22px;cursor:pointer;color:var(--wal)}
+.stepper button:hover{background:var(--paper)}
+.stepper output{min-width:56px;text-align:center;font-family:'Space Mono',monospace;font-size:18px;font-weight:700}
+.agree{display:flex;gap:10px;align-items:flex-start;font-size:14px;color:var(--mut);margin:6px 0 22px}
+.agree input{width:18px;height:18px;margin-top:3px;accent-color:var(--wal)}
+.sum{position:sticky;top:96px;background:var(--wal);color:#f8efe0;border-radius:24px;padding:32px;overflow:hidden}
+.sum:before{content:"";position:absolute;right:-60px;top:-60px;width:220px;height:220px;border-radius:50%;border:1.5px dashed rgba(243,194,52,.35)}
+.sum h3{font-family:'Gowun Batang',serif;font-size:24px;margin-bottom:20px;position:relative}
+.sum ul{list-style:none;font-size:15px}
+.sum li{display:flex;justify-content:space-between;gap:14px;padding:11px 0;border-bottom:1px dashed rgba(248,239,224,.22)}
+.sum li span{color:#cbb79d}
+.sum li b{text-align:right;font-weight:500}
+.sum li.dc b{color:var(--pen2)}
+.total{display:flex;justify-content:space-between;align-items:flex-end;margin:22px 0 24px;gap:10px}
+.total span{font-size:15px;color:#cbb79d}
+.total b{font-family:'Space Mono',monospace;font-size:34px;line-height:1;color:#fff}
+.total b small{font-family:'Noto Sans KR';font-size:16px;margin-left:3px}
+.sum .btn{width:100%}
+.sum .fine{font-size:13px;color:#cbb79d;margin-top:14px}
+.done{display:none;text-align:center;padding:20px 8px}
+.done.on{display:block}
+.done .ok{width:74px;height:74px;border-radius:50%;background:var(--pen);display:grid;place-items:center;margin:0 auto 18px}
+.done .ok svg{width:36px;height:36px;stroke:var(--wal);stroke-width:2.4;fill:none;stroke-linecap:round;stroke-linejoin:round}
+.done h3{font-family:'Gowun Batang',serif;font-size:28px;margin-bottom:10px}
+.done p{color:var(--mut);font-size:15px}
+.done .rc{margin:22px auto 0;max-width:440px;text-align:left;background:var(--paper);border-radius:16px;padding:18px 20px;font-size:15px}
+.done .rc div{display:flex;justify-content:space-between;gap:12px;padding:6px 0}
+.done .rc span{color:var(--mut)}
+.done .again{margin-top:22px;background:none;border:0;font:inherit;color:var(--bp);font-weight:700;cursor:pointer;text-decoration:underline}
+/* faq */
+.faq{max-width:860px}
+.faq details{border-bottom:1px solid #d6cbb7}
+.faq summary{list-style:none;cursor:pointer;padding:24px 50px 24px 0;font-size:18px;font-weight:700;position:relative;display:flex;gap:16px}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary .mono{color:var(--bp);font-size:14px;padding-top:3px;font-weight:400}
+.faq summary:after{content:"";position:absolute;right:8px;top:50%;width:14px;height:14px;border-right:2px solid var(--wal);border-bottom:2px solid var(--wal);transform:translateY(-70%) rotate(45deg);transition:.2s}
+.faq details[open] summary:after{transform:translateY(-20%) rotate(-135deg)}
+.faq details p{padding:0 0 24px 44px;color:var(--mut);font-size:16px}
+/* end */
+.end{background:linear-gradient(160deg,#3b2416,#4a2e1d);color:#f8efe0;text-align:center;padding:96px 0;position:relative;overflow:hidden}
+.end h2{font-family:'Gowun Batang',serif;font-size:clamp(30px,4vw,48px);line-height:1.3;margin:16px 0 14px}
+.end p{color:#d8c4a8;font-size:17px;margin-bottom:32px}
+.end .tag{color:var(--pen)}.end .tag:before{background:var(--pen)}
+.foot{background:#22150d;color:#a8957f;font-size:14px;padding:44px 0 50px}
+.foot .wrap{display:flex;justify-content:space-between;gap:30px;flex-wrap:wrap}
+.foot .logo b{color:#f8efe0}
+.foot ul{list-style:none;display:grid;gap:6px}
+.foot ul b{color:#e5d5bf;font-weight:500;margin-right:8px}
+.mbar{display:none}
+@media(max-width:1020px){
+ .hero .wrap{grid-template-columns:1fr}
+ .hero-art{max-width:680px;margin:0 auto;width:100%}
+ .cls{grid-template-columns:1fr 1fr}
+ .cls .card:last-child{grid-column:span 2}
+ .cls .card:last-child .pic{aspect-ratio:16/7}
+ .steps{grid-template-columns:1fr 1fr;gap:40px 0}
+ .step:nth-child(2):after{display:none}
+ .inc,.space,.bk{grid-template-columns:1fr}
+ .facts{grid-template-columns:repeat(3,1fr)}
+ .sum{position:relative;top:auto}
+ .nav ul{display:none}
+}
+@media(max-width:640px){
+ .wrap{padding:0 18px}
+ .sec{padding:76px 0}
+ .sh{margin-bottom:36px}
+ .sh p{font-size:16px}
+ #space{padding-bottom:24px}
+ .nav .wrap{height:62px}
+ .nav .btn{display:none}
+ .logo b{font-size:20px}
+ .hero{padding-top:44px}
+ .hero .lead{font-size:16px}
+ .hero .acts .btn{flex:1}
+ .specs b{font-size:20px}
+ .specs div{padding-left:12px}
+ .offer{font-size:13px;padding:8px 12px;border-radius:16px}
+ .strip p{font-size:16px}
+ .strip .dim{display:none}
+ .cls{grid-template-columns:1fr}
+ .cls .card:last-child{grid-column:auto}
+ .cls .card:last-child .pic{aspect-ratio:4/3}
+ .steps{grid-template-columns:1fr;gap:30px}
+ .step{display:grid;grid-template-columns:72px 1fr;gap:0 18px;padding:0}
+ .step .dot{width:72px;height:72px;margin:0;grid-row:span 3}
+ .step .dot svg{width:36px;height:36px}
+ .step:after{display:none!important}
+ .step h3{margin:2px 0 6px;font-size:21px}
+ .box{padding:26px 22px}
+ .ilist{grid-template-columns:1fr}
+ .facts{grid-template-columns:1fr}
+ .panel{padding:24px 18px}
+ .opts{grid-template-columns:1fr}
+ .dates{grid-template-columns:repeat(4,1fr);gap:7px}
+ .date label{padding:9px 2px 10px}
+ .date label b{font-size:20px}
+ .row2{grid-template-columns:1fr}
+ .sum{padding:26px 22px}
+ .faq summary{font-size:16px;padding-right:40px}
+ .faq details p{padding-left:0;font-size:15px}
+ .foot{padding-bottom:110px}
+ .mbar{display:flex;visibility:hidden;opacity:0;transform:translateY(20px);transition:.3s;position:fixed;left:0;right:0;bottom:0;z-index:50;padding:10px 14px;background:rgba(34,21,13,.97);gap:10px;align-items:center}
+ .mbar.on{transform:none;visibility:visible;opacity:1}
+ .mbar .t{flex:1;color:#e5d5bf;font-size:13px;line-height:1.35}
+ .mbar .t b{display:block;color:var(--pen2);font-size:15px}
+ .mbar .btn{height:48px;padding:0 22px;font-size:15px}
+}
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+ <defs>
+  <linearGradient id="gOak" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ecc994"/><stop offset=".55" stop-color="#d6a46b"/><stop offset="1" stop-color="#b98146"/></linearGradient>
+  <linearGradient id="gOakEdge" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#b47a41"/><stop offset="1" stop-color="#8d5a2c"/></linearGradient>
+  <linearGradient id="gWal" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#8b5a38"/><stop offset=".6" stop-color="#6b4329"/><stop offset="1" stop-color="#4f301c"/></linearGradient>
+  <linearGradient id="gWalEdge" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#55331e"/><stop offset="1" stop-color="#3a2213"/></linearGradient>
+  <linearGradient id="gCherry" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#d48a62"/><stop offset=".6" stop-color="#b56a43"/><stop offset="1" stop-color="#8e4b2b"/></linearGradient>
+  <linearGradient id="gSteel" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#e9edf0"/><stop offset=".5" stop-color="#aeb8c0"/><stop offset="1" stop-color="#7d8a95"/></linearGradient>
+  <pattern id="pBp" width="20" height="20" patternUnits="userSpaceOnUse"><path d="M20 0H0V20" fill="none" stroke="#2d5f93" stroke-opacity=".12" stroke-width="1"/></pattern>
+  <marker id="arr" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 1L9 5L0 9z" fill="#2d5f93"/></marker>
+  <marker id="arrY" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 1L9 5L0 9z" fill="#f3c234"/></marker>
+ </defs>
+</svg>
+
+<nav class="nav">
+ <div class="wrap">
+  <a class="logo" href="#top">
+   <svg width="40" height="40" viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="20" r="19" fill="#f3c234"/><g fill="none" stroke="#4a2e1d" stroke-width="1.6"><ellipse cx="20" cy="20" rx="13" ry="10.5"/><ellipse cx="20.6" cy="20.4" rx="9" ry="7"/><ellipse cx="21.2" cy="20.8" rx="5" ry="3.8"/></g><circle cx="21.6" cy="21" r="1.4" fill="#4a2e1d"/></svg>
+   <span><b>나무결 목공방</b><small>NAMUGYEOL WOODSHOP</small></span>
+  </a>
+  <ul><li><a href="#class">클래스</a></li><li><a href="#flow">진행 순서</a></li><li><a href="#space">공방 소개</a></li><li><a href="#faq">자주 묻는 질문</a></li></ul>
+  <a class="btn p" href="#book">원데이 클래스 신청</a>
+ </div>
+</nav>
+
+<header class="hero" id="top">
+ <div class="wrap">
+  <div class="hero-txt">
+   <span class="offer"><span class="mono">12.1 — 1.31</span>2인 함께 신청하면 1인당 10,000원 할인</span>
+   <h1>세 시간 뒤,<br>내 손으로 다듬은<br><span class="u">원목 도마</span> 하나</h1>
+   <p class="lead">처음 공구를 잡아 보는 분도 괜찮아요. 나무 고르기부터 오일 마감까지, 공방지기가 옆에서 한 단계씩 함께합니다. 겨울 원데이 클래스는 소규모로만 열려요.</p>
+   <div class="acts">
+    <a class="btn p" href="#book">일정 고르고 신청하기 <svg class="ico" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+    <a class="btn g" href="#class">클래스 3종 보기</a>
+   </div>
+   <div class="specs">
+    <div><b>3h~</b><span>원데이 진행 시간</span></div>
+    <div><b>6명</b><span>한 타임 최대 인원</span></div>
+    <div><b>0원</b><span>추가 재료비</span></div>
+   </div>
+  </div>
+  <div class="hero-art">
+   <svg viewBox="0 0 640 560" role="img" aria-label="작업대 위의 원목 도마와 대패, 연필, 직각자 일러스트">
+    <defs>
+     <radialGradient id="hLamp" cx="50%" cy="0%" r="80%"><stop offset="0" stop-color="#ffe3a3" stop-opacity=".55"/><stop offset=".55" stop-color="#ffcf73" stop-opacity=".12"/><stop offset="1" stop-color="#ffcf73" stop-opacity="0"/></radialGradient>
+     <linearGradient id="hBench" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#9a6a42"/><stop offset="1" stop-color="#7a4f2f"/></linearGradient>
+     <linearGradient id="hBenchF" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#5e3a22"/><stop offset="1" stop-color="#3f2614"/></linearGradient>
+     <linearGradient id="hPencil" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffe07a"/><stop offset=".5" stop-color="#f3c234"/><stop offset="1" stop-color="#c99712"/></linearGradient>
+     <linearGradient id="hPlane" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#b9774a"/><stop offset="1" stop-color="#7f4a28"/></linearGradient>
+     <clipPath id="cBoard"><path d="M168 318 L402 318 Q418 318 426 326 L470 366 Q476 372 466 372 L214 372 Q200 372 192 365 L150 326 Q144 318 168 318Z"/></clipPath>
+     <filter id="soft" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="6"/></filter>
+    </defs>
+    <!-- blueprint sheet on wall -->
+    <g transform="rotate(-4 330 140)">
+     <rect x="170" y="36" width="330" height="214" rx="4" fill="#27486f"/>
+     <rect x="170" y="36" width="330" height="214" rx="4" fill="url(#pBp)" opacity="1" style="mix-blend-mode:screen"/>
+     <g stroke="#cfe0f2" stroke-opacity=".22" stroke-width="1"><path d="M170 76H500M170 116H500M170 156H500M170 196H500M210 36V250M250 36V250M290 36V250M330 36V250M370 36V250M410 36V250M450 36V250"/></g>
+     <g fill="none" stroke="#e7f0fa" stroke-width="1.6" stroke-linecap="round">
+      <path d="M210 120 H400 Q416 120 424 128 L452 150 H232 Q222 150 216 144 L204 130 Q200 120 210 120Z"/>
+      <circle cx="404" cy="134" r="7"/>
+      <path d="M210 186 H452 M210 180 V192 M452 180 V192" stroke-opacity=".8"/>
+      <path d="M470 120 V150 M464 120 H476 M464 150 H476" stroke-opacity=".8"/>
+     </g>
+     <text x="330" y="208" text-anchor="middle" font-family="Space Mono" font-size="17" font-weight="700" fill="#f3c234">420 mm</text>
+     <text x="486" y="140" font-family="Space Mono" font-size="15" fill="#e7f0fa" opacity=".9">18</text>
+     <text x="190" y="64" font-family="Space Mono" font-size="15" fill="#e7f0fa" opacity=".8">CUTTING BOARD · A-01</text>
+     <circle cx="182" cy="46" r="4" fill="#f3c234"/><circle cx="488" cy="46" r="4" fill="#f3c234"/>
+    </g>
+    <!-- lamp -->
+    <path d="M520 0 V60" stroke="#1e130b" stroke-width="2"/>
+    <path d="M490 92 Q520 52 550 92Z" fill="#2a1a0f"/>
+    <ellipse cx="520" cy="94" rx="31" ry="5" fill="#ffe3a3"/>
+    <ellipse cx="430" cy="300" rx="260" ry="210" fill="url(#hLamp)"/>
+    <!-- pegboard tools left -->
+    <g opacity=".95">
+     <rect x="44" y="70" width="8" height="8" rx="4" fill="#2a1a0f"/>
+     <path d="M48 78 v8" stroke="#2a1a0f" stroke-width="2"/>
+     <path d="M30 86 h36 v18 h-36z" fill="#3a2414"/>
+     <path d="M34 104 l4 128 h20 l4 -128z" fill="url(#gSteel)"/>
+     <path d="M38 112 v112 M44 112 v112 M50 112 v112" stroke="#6f7c87" stroke-width=".8" opacity=".6"/>
+     <path d="M38 232 l2 8 l2 -8 l2 8 l2 -8 l2 8 l2 -8 l2 8 l2 -8 l2 8" fill="none" stroke="#7d8a95" stroke-width="1.2"/>
+     <rect x="104" y="70" width="8" height="8" rx="4" fill="#2a1a0f"/>
+     <rect x="96" y="86" width="24" height="62" rx="6" fill="url(#gCherry)"/>
+     <path d="M101 92 v50" stroke="#fff" stroke-opacity=".25" stroke-width="3" stroke-linecap="round"/>
+     <rect x="104" y="148" width="8" height="10" fill="#6e7a84"/>
+     <path d="M104 158 h8 v52 l-4 10 l-4 -10z" fill="url(#gSteel)"/>
+    </g>
+    <!-- bench -->
+    <ellipse cx="320" cy="530" rx="300" ry="22" fill="#000" opacity=".35" filter="url(#soft)"/>
+    <path d="M70 300 H560 L626 386 H136 Z" fill="url(#hBench)"/>
+    <g clip-path="none" stroke="#5a3820" stroke-opacity=".35" stroke-width="1.2" fill="none">
+     <path d="M90 316 H574"/><path d="M104 334 H588"/><path d="M118 352 H602"/><path d="M130 370 H614"/>
+    </g>
+    <g stroke="#3e2614" stroke-opacity=".25" stroke-width="1" fill="none"><path d="M200 300 Q260 318 330 306 T520 312"/><path d="M160 344 Q240 360 330 348 T600 352"/></g>
+    <path d="M136 386 H626 V414 H136 Z" fill="url(#hBenchF)"/>
+    <path d="M70 300 L136 386 V414 L70 328 Z" fill="#4a2e1a"/>
+    <rect x="160" y="414" width="26" height="120" fill="#3a2314"/>
+    <rect x="576" y="414" width="26" height="120" fill="#3a2314"/>
+    <rect x="92" y="340" width="20" height="160" fill="#2e1c10"/>
+    <path d="M186 470 H576 V486 H186Z" fill="#4a2e1a"/>
+    <!-- shadow under board -->
+    <path d="M160 380 H480 L470 388 H180Z" fill="#2a1a0f" opacity=".35" filter="url(#soft)"/>
+    <!-- board thickness -->
+    <path d="M192 365 Q200 372 214 372 L466 372 Q476 372 470 366 L470 380 Q474 386 464 386 L214 386 Q200 386 192 379 Z" fill="url(#gOakEdge)"/>
+    <path d="M150 326 L192 365 L192 379 L150 340 Z" fill="#9a6232"/>
+    <!-- board top -->
+    <path d="M168 318 L402 318 Q418 318 426 326 L470 366 Q476 372 466 372 L214 372 Q200 372 192 365 L150 326 Q144 318 168 318Z" fill="url(#gOak)"/>
+    <g clip-path="url(#cBoard)" fill="none" stroke="#a86f3a" stroke-opacity=".45" stroke-width="1.1">
+     <path d="M140 326 Q240 322 300 330 T480 334"/><path d="M146 334 Q230 338 310 336 T490 344"/>
+     <path d="M156 344 Q260 340 330 348 T500 352"/><path d="M168 354 Q250 360 340 356 T500 362"/>
+     <path d="M182 364 Q270 362 350 366 T500 370"/>
+     <ellipse cx="282" cy="342" rx="22" ry="6" stroke-opacity=".5"/><ellipse cx="282" cy="342" rx="11" ry="3"/>
+    </g>
+    <path d="M170 322 L400 322" stroke="#fff" stroke-opacity=".35" stroke-width="2" stroke-linecap="round"/>
+    <!-- handle hole -->
+    <ellipse cx="420" cy="342" rx="13" ry="7" fill="#6a4020"/>
+    <ellipse cx="420" cy="343.5" rx="10" ry="4.5" fill="#3a2314"/>
+    <!-- leather strap -->
+    <path d="M420 346 q-6 24 6 40 q8 10 4 22" fill="none" stroke="#3b2a1e" stroke-width="3.5" stroke-linecap="round"/>
+    <!-- blueprint dims on bench -->
+    <g stroke="#9fc2e6" stroke-width="1.4" fill="none">
+     <path d="M196 404 H468" marker-start="url(#arrY)" marker-end="url(#arrY)" stroke="#f3c234"/>
+     <path d="M192 390 V412 M470 390 V412" stroke="#f3c234" stroke-opacity=".7"/>
+    </g>
+    <text x="332" y="430" text-anchor="middle" font-family="Space Mono" font-size="18" font-weight="700" fill="#ffd95c">420 × 220 × 18</text>
+    <!-- plane -->
+    <g transform="translate(470 270)">
+     <ellipse cx="62" cy="60" rx="70" ry="10" fill="#1d120a" opacity=".4" filter="url(#soft)"/>
+     <path d="M0 40 L120 40 L128 52 L8 52 Z" fill="#4a2e1a"/>
+     <path d="M4 22 L116 22 L120 40 L0 40 Z" fill="url(#hPlane)"/>
+     <path d="M8 26 H112" stroke="#fff" stroke-opacity=".25" stroke-width="2"/>
+     <path d="M58 22 L72 -6 L80 -4 L70 22Z" fill="url(#gSteel)"/>
+     <path d="M20 22 Q22 2 38 2 Q46 2 46 12 L44 22Z" fill="#6b3d20"/>
+     <circle cx="98" cy="14" r="9" fill="#5b331a"/><path d="M90 22 h16" stroke="#5b331a" stroke-width="6"/>
+     <circle cx="96" cy="11" r="3" fill="#fff" opacity=".2"/>
+    </g>
+    <!-- shavings -->
+    <g fill="none" stroke-linecap="round">
+     <path d="M520 344 q16 -10 22 2 q4 12 -10 12 q-10 -2 -6 -10 q4 -6 10 -2" stroke="#e8c493" stroke-width="5"/>
+     <path d="M520 344 q16 -10 22 2 q4 12 -10 12 q-10 -2 -6 -10 q4 -6 10 -2" stroke="#c69258" stroke-width="1.2"/>
+     <path d="M556 360 q14 -12 22 0 q4 10 -8 10 q-8 0 -4 -8" stroke="#f0d3a6" stroke-width="4.5"/>
+     <path d="M556 360 q14 -12 22 0 q4 10 -8 10 q-8 0 -4 -8" stroke="#c69258" stroke-width="1"/>
+     <path d="M490 360 q10 -8 18 0 q2 8 -6 7" stroke="#e8c493" stroke-width="4"/>
+    </g>
+    <!-- try square -->
+    <g transform="translate(96 312) rotate(-6)">
+     <path d="M0 0 H22 V58 H0Z" fill="url(#gCherry)"/>
+     <path d="M22 6 H128 V20 H22Z" fill="url(#gSteel)"/>
+     <g stroke="#4f5b65" stroke-width="1"><path d="M34 6v6M46 6v4M58 6v6M70 6v4M82 6v6M94 6v4M106 6v6M118 6v4"/></g>
+     <circle cx="11" cy="14" r="2.4" fill="#e8d2a6"/><circle cx="11" cy="44" r="2.4" fill="#e8d2a6"/>
+    </g>
+    <!-- pencil -->
+    <g transform="translate(240 286) rotate(-8)">
+     <ellipse cx="80" cy="16" rx="86" ry="5" fill="#1d120a" opacity=".35" filter="url(#soft)"/>
+     <path d="M0 0 H150 V12 H0Z" fill="url(#hPencil)"/>
+     <path d="M0 4 H150" stroke="#c99712" stroke-width="1"/>
+     <path d="M150 0 L176 6 L150 12Z" fill="#efcf9f"/>
+     <path d="M168 4.2 L176 6 L168 7.8Z" fill="#2a2a2a"/>
+     <rect x="-14" y="0" width="14" height="12" fill="#aab4bc"/>
+     <rect x="-24" y="0" width="10" height="12" rx="3" fill="#d96a5a"/>
+    </g>
+   </svg>
+  </div>
+ </div>
+</header>
+
+<div class="strip">
+ <div class="wrap">
+  <p><span class="mono">WINTER ONE-DAY</span>12월 · 1월 원데이 클래스, 2인 신청 시 1인당 10,000원 할인</p>
+  <div class="dim" aria-hidden="true"></div>
+  <a href="#book">남은 자리 확인 <svg class="ico" viewBox="0 0 24 24" style="width:18px;height:18px"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+ </div>
+</div>
+
+<section class="sec grid-bg" id="class">
+ <div class="wrap">
+  <div class="sh">
+   <span class="tag">01 · Classes</span>
+   <h2>무엇을 만들지 골라 보세요</h2>
+   <p>세 가지 모두 초보자 기준으로 짠 클래스예요. 완성품은 그날 바로 가져가실 수 있습니다.</p>
+  </div>
+  <div class="cls">
+   <article class="card">
+    <div class="pic">
+     <svg viewBox="0 0 400 300" aria-hidden="true">
+      <rect width="400" height="300" fill="#eef3f7"/><rect width="400" height="300" fill="url(#pBp)"/>
+      <ellipse cx="200" cy="232" rx="150" ry="14" fill="#4a2e1d" opacity=".18"/>
+      <path d="M70 150 L290 150 Q306 150 314 158 L344 186 Q350 194 338 194 L104 194 Q92 194 86 188 L56 160 Q48 150 70 150Z" transform="translate(0 20)" fill="#a96f3c"/>
+      <path d="M70 150 L290 150 Q306 150 314 158 L344 186 Q350 194 338 194 L104 194 Q92 194 86 188 L56 160 Q48 150 70 150Z" fill="url(#gOak)"/>
+      <path d="M86 188 L86 206 Q92 214 104 214 L338 214 Q350 214 344 206 L344 186 Q350 194 338 194 L104 194 Q92 194 86 188Z" fill="url(#gOakEdge)"/>
+      <g fill="none" stroke="#a86f3a" stroke-opacity=".45" stroke-width="1.2"><path d="M64 158 Q160 154 220 162 T340 168"/><path d="M74 168 Q170 172 240 168 T344 180"/><path d="M86 180 Q170 176 250 184 T340 190"/></g>
+      <ellipse cx="300" cy="170" rx="12" ry="6" fill="#6a4020"/><ellipse cx="300" cy="171.5" rx="9" ry="4" fill="#3a2314"/>
+      <g stroke="#2d5f93" stroke-width="1.3" fill="none"><path d="M86 244 H344" marker-start="url(#arr)" marker-end="url(#arr)"/><path d="M86 222 V252 M344 222 V252" stroke-opacity=".6"/><path d="M364 194 V214" marker-start="url(#arr)" marker-end="url(#arr)"/></g>
+      <text x="215" y="270" text-anchor="middle" font-family="Space Mono" font-size="14" fill="#2d5f93">380 mm</text>
+      <text x="372" y="208" font-family="Space Mono" font-size="12" fill="#2d5f93">20</text>
+      <path d="M300 110 q-6 30 0 54" fill="none" stroke="#3b2a1e" stroke-width="3" stroke-linecap="round"/>
+     </svg>
+     <span class="no">A-01</span>
+    </div>
+    <div class="bd">
+     <h3>손잡이 원목 도마</h3>
+     <p class="sub">월넛·오크·체리 중 한 가지를 골라 손잡이 모양을 직접 그리고, 톱질부터 오일 마감까지 완성해요.</p>
+     <dl><dt>진행 시간</dt><dd>3시간</dd><dt>완성 크기</dt><dd>약 380 × 200 mm</dd><dt>난이도</dt><dd>처음 해도 괜찮아요</dd></dl>
+     <div class="pr"><b>65,000<small>원</small></b><span>2인 시 1인 55,000원</span></div>
+    </div>
+   </article>
+   <article class="card hl">
+    <div class="pic">
+     <svg viewBox="0 0 400 300" aria-hidden="true">
+      <rect width="400" height="300" fill="#f6efe2"/><rect width="400" height="300" fill="url(#pBp)"/>
+      <ellipse cx="200" cy="236" rx="160" ry="14" fill="#4a2e1d" opacity=".2"/>
+      <!-- tray -->
+      <path d="M60 140 L320 140 L352 176 L92 176Z" fill="#5a361f"/>
+      <path d="M70 146 L314 146 L338 172 L94 172Z" fill="url(#gWal)"/>
+      <g stroke="#3e2414" stroke-opacity=".5" stroke-width="1" fill="none"><path d="M80 152 Q190 148 320 154"/><path d="M86 160 Q200 164 328 162"/><path d="M90 168 Q210 166 334 169"/></g>
+      <path d="M92 176 L352 176 L352 212 L92 212Z" fill="url(#gWalEdge)"/>
+      <path d="M60 140 L92 176 L92 212 L60 176Z" fill="#3a2213"/>
+      <path d="M60 140 L320 140" stroke="#a4704a" stroke-width="2"/>
+      <rect x="196" y="186" width="54" height="12" rx="6" fill="#1f120a"/>
+      <path d="M68 154 l14 16 v14 l-14 -16z" fill="#1f120a" opacity=".8"/>
+      <!-- cups on tray -->
+      <ellipse cx="150" cy="158" rx="22" ry="7" fill="#f3f0e8"/><path d="M128 158 v-22 q22 8 44 0 v22 q-22 8 -44 0z" fill="#e9e4d8"/><ellipse cx="150" cy="136" rx="22" ry="7" fill="#f8f5ef"/><ellipse cx="150" cy="136" rx="17" ry="4.6" fill="#7a4a2a"/>
+      <path d="M172 142 q12 0 12 9 q0 8 -12 8" fill="none" stroke="#e9e4d8" stroke-width="4"/>
+      <ellipse cx="250" cy="160" rx="34" ry="9" fill="#d9b98b"/><ellipse cx="250" cy="156" rx="30" ry="7" fill="#e8c493"/>
+      <g fill="#c7834b"><circle cx="238" cy="154" r="4"/><circle cx="252" cy="152" r="4"/><circle cx="262" cy="156" r="4"/><circle cx="246" cy="158" r="3.5"/></g>
+      <g stroke="#2d5f93" stroke-width="1.3" fill="none"><path d="M92 238 H352" marker-start="url(#arr)" marker-end="url(#arr)"/><path d="M92 218 V246 M352 218 V246" stroke-opacity=".6"/></g>
+      <text x="222" y="266" text-anchor="middle" font-family="Space Mono" font-size="14" fill="#2d5f93">420 × 280 mm</text>
+     </svg>
+     <span class="no">B-02</span><span class="flag">2인 함께 추천</span>
+    </div>
+    <div class="bd">
+     <h3>월넛 서빙 트레이</h3>
+     <p class="sub">가장자리 턱을 짜 맞추고 양쪽 손잡이 홈을 파는 클래스. 둘이서 하나씩 만들어 가기 좋아요.</p>
+     <dl><dt>진행 시간</dt><dd>4시간</dd><dt>완성 크기</dt><dd>약 420 × 280 mm</dd><dt>난이도</dt><dd>도마보다 한 단계 위</dd></dl>
+     <div class="pr"><b>85,000<small>원</small></b><span>2인 시 1인 75,000원</span></div>
+    </div>
+   </article>
+   <article class="card">
+    <div class="pic">
+     <svg viewBox="0 0 400 300" aria-hidden="true" preserveAspectRatio="xMidYMid meet">
+      <rect width="400" height="300" fill="#eaf0f6"/><rect width="400" height="300" fill="url(#pBp)"/>
+      <ellipse cx="200" cy="250" rx="120" ry="12" fill="#4a2e1d" opacity=".2"/>
+      <!-- stool -->
+      <g>
+       <path d="M128 132 L140 248 L150 248 L142 132Z" fill="#9a5a34"/>
+       <path d="M258 132 L262 248 L272 248 L272 132Z" fill="#8a4f2c"/>
+       <path d="M160 120 L168 232 L178 232 L174 120Z" fill="#7a4426"/>
+       <path d="M232 120 L236 232 L246 232 L246 120Z" fill="#6f3e22"/>
+       <path d="M146 200 H266 V208 H146Z" fill="#a8653b"/>
+       <path d="M172 186 H240 V192 H172Z" fill="#7a4426"/>
+       <ellipse cx="200" cy="126" rx="88" ry="26" fill="#8e4b2b"/>
+       <path d="M112 118 V128 A88 26 0 0 0 288 128 V118Z" fill="#8e4b2b"/>
+       <ellipse cx="200" cy="118" rx="88" ry="26" fill="url(#gCherry)"/>
+       <g fill="none" stroke="#7b3e20" stroke-opacity=".4" stroke-width="1.1"><ellipse cx="206" cy="118" rx="60" ry="15"/><ellipse cx="210" cy="118" rx="34" ry="8"/><path d="M124 112 Q200 104 280 114"/></g>
+       <path d="M140 106 Q200 94 262 104" stroke="#fff" stroke-opacity=".28" stroke-width="3" fill="none" stroke-linecap="round"/>
+      </g>
+      <g stroke="#2d5f93" stroke-width="1.3" fill="none"><path d="M312 118 V248" marker-start="url(#arr)" marker-end="url(#arr)"/><path d="M290 118 H322 M280 248 H322" stroke-opacity=".6"/><path d="M112 72 H288" marker-start="url(#arr)" marker-end="url(#arr)"/><path d="M112 64 V96 M288 64 V96" stroke-opacity=".6"/></g>
+      <text x="328" y="188" font-family="Space Mono" font-size="14" fill="#2d5f93">450</text>
+      <text x="200" y="58" text-anchor="middle" font-family="Space Mono" font-size="14" fill="#2d5f93">ø 320</text>
+     </svg>
+     <span class="no">C-03</span>
+    </div>
+    <div class="bd">
+     <h3>체리 원형 미니 스툴</h3>
+     <p class="sub">원형 상판에 다리 네 개를 끼워 맞추는 짜맞춤 입문. 현관이나 침대 옆에 두기 좋은 높이예요.</p>
+     <dl><dt>진행 시간</dt><dd>5시간 30분 (점심 포함)</dd><dt>완성 크기</dt><dd>ø 320 × 높이 450 mm</dd><dt>난이도</dt><dd>도마 경험이 있으면 좋아요</dd></dl>
+     <div class="pr"><b>120,000<small>원</small></b><span>2인 시 1인 110,000원</span></div>
+    </div>
+   </article>
+  </div>
+ </div>
+</section>
+
+<section class="sec steps-sec" id="flow">
+ <div class="wrap" style="position:relative">
+  <div class="sh">
+   <span class="tag">02 · How it goes</span>
+   <h2>공방에서 보내는 하루는<br>이렇게 흘러가요</h2>
+   <p>도마 클래스 기준이에요. 각 단계마다 공방지기가 시범을 먼저 보여 드립니다.</p>
+  </div>
+  <div class="steps">
+   <div class="step">
+    <div class="dot"><svg viewBox="0 0 48 48"><path d="M8 16h32v20H8z"/><path d="M8 22h32M8 29h32"/><path d="M14 16c3 3 3 17 0 20M30 16c-3 4-2 16 1 20"/></svg></div>
+    <span class="t">STEP 01 · 20분</span><h3>나무 고르기</h3><p>월넛·오크·체리 판재를 직접 만져 보고, 결과 색을 보며 마음에 드는 한 장을 골라요.</p>
+   </div>
+   <div class="step">
+    <div class="dot"><svg viewBox="0 0 48 48"><path d="M10 34l20-20"/><path d="M27 11l10 10-4 4-10-10z"/><path d="M12 30l-2 8 8-2"/><path d="M34 34h6M37 31v6"/></svg></div>
+    <span class="t">STEP 02 · 70분</span><h3>그리고 재단하기</h3><p>연필로 손잡이 모양을 그리고, 톱과 띠톱으로 선을 따라 잘라 냅니다.</p>
+   </div>
+   <div class="step">
+    <div class="dot"><svg viewBox="0 0 48 48"><rect x="10" y="20" width="28" height="12" rx="3"/><path d="M14 20v-4h20v4"/><path d="M12 36h4M20 36h4M28 36h4M16 40h4M24 40h4"/></svg></div>
+    <span class="t">STEP 03 · 50분</span><h3>사포로 다듬기</h3><p>거친 사포에서 고운 사포로 단계를 올리며 모서리를 둥글게, 표면을 매끈하게.</p>
+   </div>
+   <div class="step">
+    <div class="dot"><svg viewBox="0 0 48 48"><path d="M18 8h12v6l4 4v20a4 4 0 01-4 4H18a4 4 0 01-4-4V18l4-4z"/><path d="M18 14h12"/><path d="M24 24c-3 4-4 6-4 8a4 4 0 008 0c0-2-1-4-4-8z"/></svg></div>
+    <span class="t">STEP 04 · 40분</span><h3>오일 마감 · 포장</h3><p>식품용 오일을 바르고 말린 뒤, 이름을 새긴 가죽끈을 달아 포장해 드려요.</p>
+   </div>
+  </div>
+ </div>
+</section>
+
+<section class="sec grid-bg" id="incl">
+ <div class="wrap">
+  <div class="sh">
+   <span class="tag">03 · Included</span>
+   <h2>몸만 오셔도 됩니다</h2>
+   <p>클래스 요금 안에 재료와 공구, 마감재까지 모두 들어 있어요.</p>
+  </div>
+  <div class="inc">
+   <div class="box">
+    <h3>요금에 포함된 것</h3>
+    <p>추가로 결제하실 것은 없어요.</p>
+    <ul class="ilist">
+     <li><svg class="ico" viewBox="0 0 24 24"><path d="M3 7h18v10H3z"/><path d="M7 7c1.5 2 1.5 8 0 10M15 7c-1.5 2.5-1 7.5.5 10"/></svg><div><b>원목 판재</b><span>월넛 · 오크 · 체리 중 택 1</span></div></li>
+     <li><svg class="ico" viewBox="0 0 24 24"><path d="M4 20l9-9"/><path d="M12 6l6 6-3 3-6-6z"/><path d="M15 3l6 6"/></svg><div><b>공구 · 전동공구 사용</b><span>안전 교육 후 함께 사용</span></div></li>
+     <li><svg class="ico" viewBox="0 0 24 24"><path d="M9 3h6v4l3 3v9a2 2 0 01-2 2H8a2 2 0 01-2-2v-9l3-3z"/><path d="M9 7h6"/></svg><div><b>식품용 마감 오일</b><span>집에서 쓸 소분 오일도 드려요</span></div></li>
+     <li><svg class="ico" viewBox="0 0 24 24"><path d="M6 4h12l-1 16H7z"/><path d="M9 4V2h6v2"/><path d="M9 10h6"/></svg><div><b>앞치마 · 장갑 · 보안경</b><span>사이즈별로 준비</span></div></li>
+     <li><svg class="ico" viewBox="0 0 24 24"><path d="M5 12a7 7 0 0114 0v6H5z"/><path d="M3 18h18"/><path d="M12 3v2"/></svg><div><b>따뜻한 차 한 잔</b><span>쉬는 시간에 드려요</span></div></li>
+     <li><svg class="ico" viewBox="0 0 24 24"><path d="M3 8l9-5 9 5v8l-9 5-9-5z"/><path d="M3 8l9 5 9-5M12 13v8"/></svg><div><b>완성품 포장</b><span>가죽끈 이니셜 각인 포함</span></div></li>
+    </ul>
+   </div>
+   <div class="box bring">
+    <h3>오실 때 챙겨 주세요</h3>
+    <p>나무 가루가 날 수 있어 편한 차림을 추천해요.</p>
+    <ul class="blist">
+     <li><span class="mono">01</span><span>소매가 넉넉하지 않은 편한 옷, 운동화</span></li>
+     <li><span class="mono">02</span><span>긴 머리는 묶을 수 있는 머리끈</span></li>
+     <li><span class="mono">03</span><span>만들고 싶은 손잡이 모양 사진 (없어도 괜찮아요)</span></li>
+     <li><span class="mono">04</span><span>스툴 클래스는 점심이 포함되어 따로 준비하지 않으셔도 돼요</span></li>
+    </ul>
+    <p class="note"><svg class="ico" viewBox="0 0 24 24" style="width:18px;height:18px"><circle cx="12" cy="12" r="9"/><path d="M12 8v5M12 16h.01"/></svg>만 13세 이상부터 참여할 수 있어요.</p>
+   </div>
+  </div>
+ </div>
+</section>
+
+<section class="sec" id="space" style="background:var(--paper2)">
+ <div class="wrap">
+  <div class="sh">
+   <span class="tag">04 · Workshop</span>
+   <h2>큰 창 아래, 작업대 여섯 개</h2>
+   <p>오전엔 햇빛이, 오후엔 노란 조명이 작업대를 비추는 작은 공방이에요. 집진기가 돌아가 나무 가루 걱정이 덜합니다.</p>
+  </div>
+  <div class="space">
+   <div class="art">
+    <svg viewBox="0 0 760 460" preserveAspectRatio="xMidYMid slice" role="img" aria-label="큰 창과 작업대가 있는 목공방 내부 일러스트">
+     <defs>
+      <linearGradient id="sWall" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#e9dcc6"/><stop offset="1" stop-color="#d9c6a6"/></linearGradient>
+      <linearGradient id="sFloor" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#9c6b42"/><stop offset="1" stop-color="#6e4527"/></linearGradient>
+      <linearGradient id="sSky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#bcd5ea"/><stop offset="1" stop-color="#eef3f6"/></linearGradient>
+      <linearGradient id="sBeam" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fff6d8" stop-opacity=".6"/><stop offset="1" stop-color="#fff6d8" stop-opacity="0"/></linearGradient>
+      <radialGradient id="sGlow" cx="50%" cy="0" r="1"><stop offset="0" stop-color="#ffe3a3" stop-opacity=".7"/><stop offset="1" stop-color="#ffe3a3" stop-opacity="0"/></radialGradient>
+     </defs>
+     <rect width="760" height="330" fill="url(#sWall)"/>
+     <rect y="330" width="760" height="130" fill="url(#sFloor)"/>
+     <g stroke="#5a3820" stroke-opacity=".35"><path d="M0 352H760M0 380H760M0 414H760M0 452H760"/><path d="M120 330 L60 460M300 330 L280 460M480 330 L500 460M660 330 L720 460"/></g>
+     <!-- window -->
+     <rect x="70" y="40" width="300" height="200" fill="url(#sSky)"/>
+     <path d="M70 196 Q120 168 170 186 T280 176 T370 186 V240 H70Z" fill="#9fb89a" opacity=".7"/>
+     <path d="M70 214 Q140 196 210 210 T370 206 V240 H70Z" fill="#7f9c7b"/>
+     <g stroke="#4a2e1d" stroke-width="8" fill="none"><rect x="70" y="40" width="300" height="200"/><path d="M220 40V240M70 140H370"/></g>
+     <rect x="60" y="240" width="320" height="12" fill="#4a2e1d"/>
+     <path d="M70 252 L370 252 L520 420 L160 420Z" fill="url(#sBeam)"/>
+     <!-- plant -->
+     <path d="M90 240 h30 l-4 -26 h-22z" fill="#c4734d"/>
+     <g fill="#5e8a5a"><ellipse cx="98" cy="200" rx="7" ry="16" transform="rotate(-20 98 200)"/><ellipse cx="112" cy="196" rx="7" ry="18" transform="rotate(18 112 196)"/><ellipse cx="105" cy="190" rx="6" ry="18"/></g>
+     <!-- pegboard -->
+     <rect x="430" y="50" width="280" height="170" rx="6" fill="#c9a47a"/>
+     <g fill="#a07e57"><circle cx="450" cy="70" r="2.5"/><circle cx="480" cy="70" r="2.5"/><circle cx="510" cy="70" r="2.5"/><circle cx="540" cy="70" r="2.5"/><circle cx="570" cy="70" r="2.5"/><circle cx="600" cy="70" r="2.5"/><circle cx="630" cy="70" r="2.5"/><circle cx="660" cy="70" r="2.5"/><circle cx="690" cy="70" r="2.5"/><circle cx="450" cy="200" r="2.5"/><circle cx="480" cy="200" r="2.5"/><circle cx="510" cy="200" r="2.5"/><circle cx="540" cy="200" r="2.5"/><circle cx="570" cy="200" r="2.5"/><circle cx="600" cy="200" r="2.5"/><circle cx="630" cy="200" r="2.5"/><circle cx="660" cy="200" r="2.5"/><circle cx="690" cy="200" r="2.5"/></g>
+     <!-- tools on pegboard -->
+     <path d="M456 84 h28 v14 h-28z" fill="#3a2414"/><path d="M460 98 l3 88 h14 l3 -88z" fill="url(#gSteel)"/>
+     <rect x="506" y="84" width="14" height="44" rx="4" fill="url(#gCherry)"/><path d="M509 128h8v40l-4 8-4-8z" fill="url(#gSteel)"/>
+     <rect x="534" y="84" width="14" height="38" rx="4" fill="#4f7aa6"/><path d="M537 122h8v34l-4 6-4-6z" fill="url(#gSteel)"/>
+     <rect x="562" y="84" width="14" height="42" rx="4" fill="#d3a26b"/><path d="M565 126h8v44h-8z" fill="url(#gSteel)"/>
+     <path d="M600 90 h64 v12 h-50 v60 h-14z" fill="url(#gSteel)"/>
+     <circle cx="684" cy="120" r="18" fill="none" stroke="#3a2414" stroke-width="6"/><path d="M684 138 v40" stroke="#3a2414" stroke-width="6"/>
+     <!-- lamps -->
+     <g><path d="M240 0 V40" stroke="#2a1a0f" stroke-width="2"/><path d="M220 60 Q240 30 260 60Z" fill="#2a1a0f"/><ellipse cx="240" cy="61" rx="20" ry="4" fill="#ffe3a3"/></g>
+     <g><path d="M400 0 V214" stroke="#2a1a0f" stroke-width="2"/><path d="M378 238 Q400 206 422 238Z" fill="#2a1a0f"/><ellipse cx="400" cy="239" rx="22" ry="4" fill="#ffe3a3"/><ellipse cx="420" cy="300" rx="170" ry="80" fill="url(#sGlow)"/></g>
+     <!-- bench back -->
+     <path d="M300 300 H740 L760 330 H320Z" fill="#a8774c"/>
+     <path d="M320 330 H760 V348 H320Z" fill="#5a3820"/>
+     <rect x="340" y="348" width="16" height="70" fill="#3e2614"/><rect x="720" y="348" width="16" height="70" fill="#3e2614"/>
+     <!-- items on back bench -->
+     <path d="M400 292 h90 l10 10 h-90z" fill="url(#gOak)"/>
+     <ellipse cx="620" cy="300" rx="30" ry="8" fill="url(#gWal)"/>
+     <rect x="660" y="270" width="22" height="30" rx="3" fill="#2d5f93"/><rect x="664" y="262" width="14" height="8" fill="#26405f"/>
+     <!-- front bench -->
+     <path d="M20 380 H520 L560 420 H40Z" fill="#b88457"/>
+     <g stroke="#7a4f2f" stroke-opacity=".35"><path d="M40 392H530M50 406H545"/></g>
+     <path d="M40 420 H560 V444 H40Z" fill="#4f301c"/>
+     <!-- stool on floor -->
+     <g transform="translate(600 330)"><ellipse cx="50" cy="20" rx="46" ry="12" fill="url(#gCherry)"/><path d="M20 26 l-6 100 h8 l8 -96z M80 26 l6 100 h-8 l-8 -96z" fill="#7a4426"/></g>
+     <!-- items front bench -->
+     <path d="M90 372 h150 q10 0 16 6 l10 8 h-160 q-8 0 -12 -4z" fill="url(#gOak)"/>
+     <ellipse cx="236" cy="380" rx="6" ry="3" fill="#6a4020"/>
+     <path d="M310 366 l100 -6 l2 10 l-100 6z" fill="#f3c234"/><path d="M410 360 l14 4 l-12 6z" fill="#efcf9f"/>
+     <path d="M440 378 h60 v-10 h-60z" fill="url(#hPlane)"/><path d="M462 368 l6 -14 h4 l-4 14z" fill="url(#gSteel)"/>
+     <!-- dust collector -->
+     <g transform="translate(20 250)"><rect x="0" y="40" width="46" height="90" rx="8" fill="#26405f"/><rect x="6" y="54" width="34" height="22" rx="4" fill="#4f82b8"/><path d="M23 40 V10 H70" fill="none" stroke="#8e9aa5" stroke-width="7"/></g>
+    </svg>
+   </div>
+   <div class="facts">
+    <div class="fact"><b>6<small>석</small></b><span>1인 1작업대</span><p>옆 사람과 공구를 나눠 쓰지 않아도 되는 넉넉한 자리예요.</p></div>
+    <div class="fact"><b>2<small>대</small></b><span>집진기 상시 가동</span><p>톱질·샌딩 때 나는 가루를 바로 빨아들여요.</p></div>
+    <div class="fact"><b>1:3</b><span>공방지기 1명당 수강생</span><p>6명 타임에는 두 명이 함께 봐 드려요.</p></div>
+   </div>
+  </div>
+ </div>
+</section>
+
+<section class="sec book grid-bg" id="book">
+ <div class="wrap">
+  <div class="sh">
+   <span class="tag">05 · Booking</span>
+   <h2>일정을 고르고 신청해 주세요</h2>
+   <p>신청하시면 공방에서 확인 연락을 드리고, 그때 결제 방법을 안내해 드려요.</p>
+  </div>
+  <div class="bk">
+   <form class="panel" id="form" novalidate>
+    <div class="fgroup">
+     <div class="lbl">클래스 선택 <span class="mono">CLASS</span></div>
+     <div class="opts">
+      <div class="opt"><input type="radio" name="cls" id="c1" value="손잡이 원목 도마" data-price="65000" checked><label for="c1"><b>원목 도마</b><span>65,000 · 3h</span></label></div>
+      <div class="opt"><input type="radio" name="cls" id="c2" value="월넛 서빙 트레이" data-price="85000"><label for="c2"><b>서빙 트레이</b><span>85,000 · 4h</span></label></div>
+      <div class="opt"><input type="radio" name="cls" id="c3" value="체리 원형 미니 스툴" data-price="120000"><label for="c3"><b>미니 스툴</b><span>120,000 · 5.5h</span></label></div>
+     </div>
+    </div>
+    <div class="fgroup">
+     <div class="lbl">날짜 <span class="mono">DEC · JAN</span></div>
+     <div class="dates" id="dates">
+      <div class="date"><input type="radio" name="d" id="d1" value="12월 5일 (토)" checked><label for="d1"><span class="m">DEC</span><b>05</b><span>토요일</span></label></div>
+      <div class="date"><input type="radio" name="d" id="d2" value="12월 6일 (일)"><label for="d2"><span class="m">DEC</span><b>06</b><span>일요일</span></label></div>
+      <div class="date full"><input type="radio" name="d" id="d3" value="12월 12일 (토)" disabled><label for="d3"><span class="m">DEC</span><b>12</b><span>마감</span></label></div>
+      <div class="date"><input type="radio" name="d" id="d4" value="12월 19일 (토)"><label for="d4"><span class="m">DEC</span><b>19</b><span>토요일</span></label></div>
+      <div class="date"><input type="radio" name="d" id="d5" value="12월 27일 (일)"><label for="d5"><span class="m">DEC</span><b>27</b><span>일요일</span></label></div>
+      <div class="date"><input type="radio" name="d" id="d6" value="1월 9일 (토)"><label for="d6"><span class="m">JAN</span><b>09</b><span>토요일</span></label></div>
+      <div class="date"><input type="radio" name="d" id="d7" value="1월 17일 (일)"><label for="d7"><span class="m">JAN</span><b>17</b><span>일요일</span></label></div>
+      <div class="date"><input type="radio" name="d" id="d8" value="1월 24일 (토)"><label for="d8"><span class="m">JAN</span><b>24</b><span>토요일</span></label></div>
+     </div>
+     <div class="slots">
+      <div class="opt"><input type="radio" name="t" id="t1" value="오전 10:00" checked><label for="t1">오전 10:00</label></div>
+      <div class="opt"><input type="radio" name="t" id="t2" value="오후 2:00"><label for="t2">오후 2:00</label></div>
+     </div>
+    </div>
+    <div class="fgroup">
+     <div class="lbl">인원 <span class="mono">PEOPLE · MAX 4</span></div>
+     <div class="stepper"><button type="button" id="minus" aria-label="인원 줄이기">−</button><output id="ppl">1</output><button type="button" id="plus" aria-label="인원 늘리기">+</button></div>
+    </div>
+    <div class="row2 fgroup">
+     <div class="field" id="fName"><label for="name">신청자 이름</label><input id="name" autocomplete="name" placeholder="홍길동"><div class="em">이름을 입력해 주세요.</div></div>
+     <div class="field" id="fTel"><label for="tel">연락처</label><input id="tel" inputmode="tel" autocomplete="tel" placeholder="010-0000-0000"><div class="em">연락 가능한 번호를 입력해 주세요.</div></div>
+    </div>
+    <div class="field fgroup"><label for="memo">요청 사항 (선택)</label><textarea id="memo" placeholder="원하는 나무 종류, 각인할 이니셜 등을 적어 주세요."></textarea></div>
+    <label class="agree"><input type="checkbox" id="agree"><span>신청 확인 연락을 위해 이름과 연락처를 받는 데 동의합니다.</span></label>
+    <button class="btn w" type="submit" style="width:100%">이 일정으로 신청하기</button>
+   </form>
+   <aside class="sum" id="sum">
+    <div id="sumBody">
+     <h3>신청 내용 확인</h3>
+     <ul>
+      <li><span>클래스</span><b id="sCls">손잡이 원목 도마</b></li>
+      <li><span>일정</span><b id="sDate">12월 5일 (토) · 오전 10:00</b></li>
+      <li><span>인원</span><b id="sPpl">1명</b></li>
+      <li><span>정가</span><b id="sBase">65,000원</b></li>
+      <li class="dc"><span>2인 함께 할인</span><b id="sDc">2명부터 적용</b></li>
+     </ul>
+     <div class="total"><span>예상 결제 금액</span><b id="sTot">65,000<small>원</small></b></div>
+     <a class="btn p" href="#form" id="sumGo">신청서 작성하기</a>
+     <p class="fine">결제는 확인 연락 후 진행돼요. 수업 3일 전까지는 일정 변경이 가능합니다.</p>
+    </div>
+    <div class="done" id="done" style="color:var(--ink);background:#fffdf8;border-radius:18px;margin:-6px">
+     <div class="ok"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></div>
+     <h3>신청이 접수되었어요</h3>
+     <p>공방에서 확인 후 연락드릴게요.</p>
+     <div class="rc" id="rc"></div>
+     <button class="again" type="button" id="again">다른 일정으로 다시 신청</button>
+    </div>
+   </aside>
+  </div>
+ </div>
+</section>
+
+<section class="sec" id="faq">
+ <div class="wrap">
+  <div class="sh">
+   <span class="tag">06 · FAQ</span>
+   <h2>자주 묻는 질문</h2>
+  </div>
+  <div class="faq">
+   <details open><summary><span class="mono">Q1</span>공구를 한 번도 써 본 적이 없어도 되나요?</summary><p>네, 수강생 대부분이 처음 오시는 분들이에요. 전동공구는 안전 교육 후 공방지기가 옆에서 함께 다루고, 위험한 공정은 직접 시범을 보여 드립니다.</p></details>
+   <details><summary><span class="mono">Q2</span>2인 할인은 어떻게 적용되나요?</summary><p>12월 1일부터 1월 31일까지, 같은 일정에 2명 이상 함께 신청하시면 인원마다 10,000원씩 할인돼요. 서로 다른 클래스를 골라도 같은 시간이면 적용됩니다.</p></details>
+   <details><summary><span class="mono">Q3</span>일정을 바꾸거나 취소하고 싶어요.</summary><p>수업 3일 전까지는 일정 변경과 전액 환불이 가능해요. 그 이후에는 재료 준비가 끝나 일정 변경만 한 번 도와드립니다.</p></details>
+   <details><summary><span class="mono">Q4</span>완성품은 그날 가져갈 수 있나요?</summary><p>도마와 트레이는 오일이 마른 뒤 포장해서 바로 가져가세요. 스툴은 접착제가 굳을 시간이 필요해 다음 날부터 찾아가시거나 택배로 받으실 수 있어요.</p></details>
+   <details><summary><span class="mono">Q5</span>단체나 회사 워크숍도 가능한가요?</summary><p>평일 저녁이나 주말 하루를 통째로 잡아 최대 12명까지 진행할 수 있어요. 아래 연락처로 원하시는 날짜와 인원을 알려 주세요.</p></details>
+  </div>
+ </div>
+</section>
+
+<section class="end">
+ <div class="wrap">
+  <span class="tag">Winter one-day class</span>
+  <h2>올겨울, 오래 쓸 물건 하나를<br>직접 만들어 보세요</h2>
+  <p>12월 · 1월 원데이 클래스 · 2인 함께 신청 시 1인당 10,000원 할인</p>
+  <a class="btn p" href="#book">일정 고르러 가기 <svg class="ico" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+ </div>
+</section>
+
+<footer class="foot">
+ <div class="wrap">
+  <div>
+   <a class="logo" href="#top"><svg width="34" height="34" viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="20" r="19" fill="#f3c234"/><g fill="none" stroke="#4a2e1d" stroke-width="1.6"><ellipse cx="20" cy="20" rx="13" ry="10.5"/><ellipse cx="20.6" cy="20.4" rx="9" ry="7"/><ellipse cx="21.2" cy="20.8" rx="5" ry="3.8"/></g></svg><span><b>나무결 목공방</b></span></a>
+   <p style="margin-top:12px">원데이 클래스 · 정규 목공 과정 · 맞춤 가구</p>
+  </div>
+  <ul>
+   <li><b>전화</b>000-0000-0000</li>
+   <li><b>카카오톡</b>카카오톡 ID: example</li>
+   <li><b>운영</b>화–일 10:00 – 19:00 · 월요일 휴무</li>
+  </ul>
+ </div>
+</footer>
+
+<div class="mbar"><div class="t"><b>2인 신청 시 1인 10,000원 할인</b>12월 · 1월 원데이 클래스</div><a class="btn p" href="#book">신청하기</a></div>
+
+<script>
+(function(){
+ var ppl=1,form=document.getElementById('form');
+ function won(n){return n.toLocaleString('ko-KR')}
+ function val(name){var e=form.querySelector('input[name="'+name+'"]:checked');return e}
+ function upd(){
+  var c=val('cls'),d=val('d'),t=val('t'),price=+c.dataset.price;
+  var dc=ppl>=2?10000*ppl:0,tot=price*ppl-dc;
+  document.getElementById('sCls').textContent=c.value;
+  document.getElementById('sDate').textContent=(d?d.value:'-')+' · '+t.value;
+  document.getElementById('sPpl').textContent=ppl+'명';
+  document.getElementById('sBase').textContent=won(price*ppl)+'원';
+  document.getElementById('sDc').textContent=dc?'− '+won(dc)+'원':'2명부터 적용';
+  document.getElementById('sTot').innerHTML=won(tot)+'<small>원</small>';
+  document.getElementById('ppl').textContent=ppl;
+  return {c:c.value,d:d.value+' · '+t.value,p:ppl,tot:tot};
+ }
+ form.addEventListener('change',upd);
+ document.getElementById('minus').onclick=function(){if(ppl>1){ppl--;upd()}};
+ document.getElementById('plus').onclick=function(){if(ppl<4){ppl++;upd()}};
+ function setErr(id,on){document.getElementById(id).classList.toggle('err',on)}
+ form.addEventListener('submit',function(e){
+  e.preventDefault();
+  var n=document.getElementById('name').value.trim(),tel=document.getElementById('tel').value.replace(/[^0-9]/g,'');
+  setErr('fName',!n);setErr('fTel',tel.length<9);
+  var ag=document.getElementById('agree');
+  var lab=ag.parentNode;lab.style.color=ag.checked?'':'#b23d24';
+  if(!n||tel.length<9||!ag.checked){var f=form.querySelector('.err input')||ag;f.focus();return}
+  var s=upd();
+  document.getElementById('rc').innerHTML='<div><span>클래스</span><b>'+s.c+'</b></div><div><span>일정</span><b>'+s.d+'</b></div><div><span>인원</span><b>'+s.p+'명</b></div><div><span>예상 금액</span><b>'+won(s.tot)+'원</b></div>';
+  document.getElementById('sumBody').style.display='none';
+  document.getElementById('done').classList.add('on');
+  if(window.innerWidth<1020)document.getElementById('sum').scrollIntoView({behavior:'smooth',block:'start'});
+ });
+ document.getElementById('again').onclick=function(){document.getElementById('done').classList.remove('on');document.getElementById('sumBody').style.display='';form.reset();ppl=1;upd()};
+ ['name','tel'].forEach(function(id){document.getElementById(id).addEventListener('input',function(){this.parentNode.classList.remove('err')})});
+ upd();
+ var mb=document.querySelector('.mbar'),bk=document.getElementById('book');
+ function sc(){var r=bk.getBoundingClientRect();mb.classList.toggle('on',scrollY>520&&!(r.top<innerHeight&&r.bottom>0))}
+ addEventListener('scroll',sc,{passive:true});sc();
+})();
+</script>
+</body>
+</html>
