@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>가벼운이사 · 포장이사 무료 방문 견적</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Noto+Sans+KR:wght@400;500;700;900&family=Outfit:wght@500;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--teal:#0e5552;--teal2:#0a3f3d;--kraft:#d3a66c;--kraft2:#b98a4f;--paper:#f6efe3;--paper2:#efe3cf;--ink:#1c2626;--mut:#5b6664;--coral:#e8603c;--line:#e2d5bf;--w:#fff}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Noto Sans KR',sans-serif;color:var(--ink);background:var(--paper);word-break:keep-all;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1160px;margin:0 auto;padding:0 28px}
+.bh{font-family:'Black Han Sans',sans-serif;font-weight:400}
+.num{font-family:'Outfit',sans-serif}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;height:58px;padding:0 30px;border-radius:12px;font-weight:700;font-size:17px;border:0;cursor:pointer;font-family:inherit;transition:.2s;white-space:nowrap}
+.btn svg{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+.btn.co{background:var(--coral);color:#fff;box-shadow:0 14px 26px -14px rgba(232,96,60,.9)}
+.btn.co:hover{background:#d24f2c}
+.btn.tl{background:var(--teal);color:#fff}
+.btn.tl:hover{background:var(--teal2)}
+.btn.ln{background:transparent;color:var(--ink);border:2px solid var(--ink)}
+.btn.ln:hover{background:var(--ink);color:var(--paper)}
+.tag{display:inline-flex;align-items:center;gap:8px;font-size:14px;font-weight:700;color:var(--teal);letter-spacing:.02em}
+.tag:before{content:"";width:22px;height:3px;background:var(--coral);border-radius:2px}
+h2.t{font-family:'Black Han Sans',sans-serif;font-weight:400;font-size:clamp(34px,4vw,50px);line-height:1.22;margin-top:14px}
+h2.t em{font-style:normal;color:var(--coral)}
+.lead{font-size:18px;line-height:1.75;color:var(--mut);margin-top:14px}
+.sec{padding:104px 0}
+
+/* top */
+.top{position:sticky;top:0;z-index:30;background:rgba(246,239,227,.94);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;height:72px;gap:16px}
+.logo{display:flex;align-items:center;gap:11px;font-family:'Black Han Sans';font-size:25px;color:var(--teal)}
+.logo svg{width:40px;height:40px}
+.logo small{font-family:'Noto Sans KR';font-size:13px;font-weight:500;color:var(--mut)}
+.top nav{display:flex;gap:28px;font-size:15px;font-weight:500;color:var(--mut)}
+.top nav a:hover{color:var(--ink)}
+.top .btn{height:46px;font-size:15px;padding:0 20px;border-radius:10px}
+
+/* hero */
+.hero{position:relative;overflow:hidden;background:
+ linear-gradient(180deg,rgba(246,239,227,0) 70%,var(--paper) 100%),
+ repeating-linear-gradient(90deg,rgba(185,138,79,.06) 0 2px,transparent 2px 9px),var(--paper2)}
+.hero .wrap{display:grid;grid-template-columns:1.02fr .98fr;gap:36px;align-items:center;padding-top:64px;padding-bottom:56px;position:relative}
+.stamp{display:inline-flex;align-items:center;gap:10px;background:var(--teal);color:#fff;padding:8px 16px 8px 10px;border-radius:40px;font-size:14px;font-weight:700}
+.stamp b{background:var(--kraft);color:var(--teal2);border-radius:30px;padding:3px 10px;font-size:13px}
+.hero h1{font-family:'Black Han Sans',sans-serif;font-weight:400;font-size:clamp(46px,5.7vw,76px);line-height:1.13;margin:22px 0 20px;letter-spacing:-.005em}
+.hero h1 em{font-style:normal;color:var(--teal);position:relative;white-space:nowrap}
+.hero h1 em:after{content:"";position:absolute;left:-4px;right:-4px;bottom:4px;height:15px;background:repeating-linear-gradient(-45deg,var(--kraft) 0 8px,#ddb67f 8px 16px);z-index:-1;border-radius:3px;opacity:.9}
+.hero p.lead{font-size:19px;max-width:520px}
+.offer{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:28px;max-width:540px}
+.offer div{background:#fff;border:1.5px solid var(--line);border-radius:14px;padding:14px 14px 12px}
+.offer small{display:block;font-size:13px;color:var(--mut);font-weight:500}
+.offer b{display:block;font-size:19px;font-weight:900;margin-top:4px;color:var(--ink)}
+.offer b span{font-family:'Outfit';font-weight:800;font-size:24px;color:var(--coral)}
+.hero .acts{display:flex;gap:12px;margin-top:26px;flex-wrap:wrap}
+.hero .art svg{width:100%;height:auto;display:block}
+
+/* tape strip */
+.tape{background:var(--kraft);color:var(--teal2);transform:rotate(-1.2deg);margin:-14px -20px 0;position:relative;z-index:2;box-shadow:0 10px 24px -16px rgba(0,0,0,.4)}
+.tape .row{display:flex;justify-content:center;gap:44px;padding:15px 20px;font-weight:900;font-size:17px;flex-wrap:wrap;background:repeating-linear-gradient(90deg,transparent 0 120px,rgba(255,255,255,.08) 120px 122px)}
+.tape span{display:flex;align-items:center;gap:10px;white-space:nowrap}
+.tape svg{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round}
+
+/* services */
+.svc{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:48px}
+.card{background:#fff;border-radius:20px;border:1.5px solid var(--line);overflow:hidden;display:flex;flex-direction:column}
+.card .pic{aspect-ratio:16/10;background:var(--paper2);position:relative}
+.card .pic svg{width:100%;height:100%;display:block}
+.card .bd{padding:24px 24px 26px;display:flex;flex-direction:column;flex:1}
+.card h3{font-family:'Black Han Sans';font-weight:400;font-size:27px;line-height:1.3;height:35px}
+.card p{font-size:15.5px;line-height:1.7;color:var(--mut);margin-top:8px}
+.card ul{list-style:none;margin-top:14px;display:grid;gap:7px;font-size:15px}
+.card li{display:flex;gap:9px;align-items:flex-start}
+.card li:before{content:"";flex:none;width:16px;height:16px;margin-top:3px;border-radius:4px;background:var(--teal) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M4 8.3l2.6 2.5L12 5.3' fill='none' stroke='%23fff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E")}
+.card .pr{margin-top:auto;padding-top:18px;display:flex;justify-content:space-between;align-items:baseline;border-top:1.5px dashed var(--line);margin-top:20px}
+.card .pr small{font-size:14px;color:var(--mut)}
+.card .pr b{font-family:'Outfit';font-weight:800;font-size:28px;color:var(--teal)}
+.card .pr b span{font-family:'Noto Sans KR';font-size:15px;font-weight:700;margin-left:2px}
+
+/* steps */
+.steps-sec{background:var(--teal);color:#eaf2ef;position:relative;overflow:hidden}
+.steps-sec .tag{color:var(--kraft)}
+.steps-sec h2.t{color:#fff}
+.steps-sec h2.t em{color:var(--kraft)}
+.steps-sec .lead{color:#b9d0cb}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:50px;position:relative}
+.steps:before{content:"";position:absolute;left:8%;right:8%;top:38px;border-top:2px dashed rgba(211,166,108,.55)}
+.st{position:relative;text-align:center;padding:0 6px}
+.st .ic{width:78px;height:78px;margin:0 auto;border-radius:50%;background:var(--teal2);border:2px solid var(--kraft);display:grid;place-items:center;position:relative}
+.st .ic svg{width:34px;height:34px;fill:none;stroke:var(--kraft);stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.st .ic i{position:absolute;right:-6px;top:-6px;width:30px;height:30px;border-radius:50%;background:var(--coral);color:#fff;font-family:'Outfit';font-style:normal;font-weight:800;font-size:15px;display:grid;place-items:center}
+.st h3{font-size:20px;font-weight:900;margin-top:18px;color:#fff}
+.st p{font-size:15px;line-height:1.7;color:#b9d0cb;margin-top:8px}
+
+/* price table */
+.ptab{margin-top:44px;background:#fff;border-radius:20px;border:1.5px solid var(--line);overflow:hidden}
+.ptab table{width:100%;border-collapse:collapse}
+.ptab th,.ptab td{padding:18px 22px;text-align:left;font-size:16px;border-bottom:1px solid var(--line)}
+.ptab th{background:var(--paper2);font-size:14px;color:var(--mut);font-weight:700}
+.ptab tr:last-child td{border-bottom:0}
+.ptab td b{font-weight:900}
+.ptab td.p{font-family:'Outfit';font-weight:800;font-size:21px;color:var(--teal);white-space:nowrap}
+.ptab td.p span{font-family:'Noto Sans KR';font-size:14px;font-weight:500;color:var(--mut);margin-left:3px}
+.ptab .chip{display:inline-block;font-size:13px;font-weight:700;background:#fde6de;color:#b5401f;border-radius:20px;padding:3px 10px;margin-left:8px;white-space:nowrap}
+.note{font-size:14px;color:var(--mut);margin-top:14px;line-height:1.7}
+
+/* check */
+.check{display:grid;grid-template-columns:.9fr 1.1fr;gap:56px;align-items:center}
+.clip{background:#fff;border-radius:18px;padding:34px 32px 30px;border:1.5px solid var(--line);position:relative;box-shadow:0 30px 50px -36px rgba(28,38,38,.5)}
+.clip:before{content:"";position:absolute;top:-16px;left:50%;transform:translateX(-50%);width:120px;height:32px;border-radius:8px;background:var(--kraft);box-shadow:inset 0 -4px 0 rgba(0,0,0,.12)}
+.clip h3{font-family:'Black Han Sans';font-weight:400;font-size:24px;margin-bottom:16px}
+.clip label{display:flex;gap:12px;align-items:flex-start;padding:12px 0;border-bottom:1px dashed var(--line);font-size:16px;cursor:pointer;line-height:1.5}
+.clip label:last-child{border-bottom:0}
+.clip input{width:20px;height:20px;accent-color:var(--teal);margin-top:2px;flex:none}
+.clip small{display:block;color:var(--mut);font-size:14px}
+.prog{margin-top:18px;display:flex;align-items:center;gap:12px;font-size:14px;color:var(--mut);font-weight:500}
+.prog div{flex:1;height:8px;background:var(--paper2);border-radius:8px;overflow:hidden}
+.prog i{display:block;height:100%;width:0;background:var(--teal);transition:.3s}
+
+/* faq */
+.faq{margin-top:40px;display:grid;gap:12px;max-width:860px}
+.faq details{background:#fff;border:1.5px solid var(--line);border-radius:14px;padding:0 24px}
+.faq summary{list-style:none;cursor:pointer;padding:21px 0;font-weight:700;font-size:17px;display:flex;justify-content:space-between;gap:16px}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary:after{content:"+";font-family:'Outfit';font-weight:700;font-size:24px;line-height:1;color:var(--coral)}
+.faq details[open] summary:after{content:"–"}
+.faq details p{padding:0 0 22px;font-size:16px;line-height:1.75;color:var(--mut)}
+
+/* form */
+.form-sec{background:linear-gradient(180deg,var(--paper) 0%,var(--paper2) 100%)}
+.fbox{display:grid;grid-template-columns:.85fr 1.15fr;background:#fff;border-radius:24px;overflow:hidden;border:1.5px solid var(--line);box-shadow:0 40px 70px -50px rgba(14,85,82,.6)}
+.fbox .l{background:var(--teal);color:#e7f0ee;padding:44px 40px;position:relative;overflow:hidden}
+.fbox .l h2{font-family:'Black Han Sans';font-weight:400;font-size:38px;line-height:1.25;color:#fff}
+.fbox .l h2 em{font-style:normal;color:var(--kraft)}
+.fbox .l p{font-size:16px;line-height:1.75;margin-top:14px;color:#b9d0cb}
+.fbox .l ul{list-style:none;margin-top:24px;display:grid;gap:12px;font-size:15.5px}
+.fbox .l li{display:flex;gap:10px;align-items:center}
+.fbox .l li svg{width:20px;height:20px;flex:none;fill:none;stroke:var(--kraft);stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round}
+.fbox .l .boxes{position:absolute;right:-20px;bottom:-14px;width:230px;opacity:.95}
+.fbox .l .ph{margin-top:28px;padding-top:20px;border-top:1px solid rgba(255,255,255,.16);font-size:14px;color:#b9d0cb;position:relative;z-index:1}
+.fbox .l .ph b{display:block;font-family:'Outfit';font-size:26px;color:#fff;font-weight:700;margin-top:2px}
+form{padding:40px}
+.fg{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.f{display:flex;flex-direction:column;gap:7px}
+.f.full{grid-column:span 2}
+.f label{font-size:14px;font-weight:700}
+.f input,.f select{height:52px;border:1.5px solid var(--line);border-radius:10px;padding:0 14px;font-size:16px;font-family:inherit;background:#fffdf9;color:var(--ink);outline:none;transition:.2s}
+.f input:focus,.f select:focus{border-color:var(--teal);box-shadow:0 0 0 3px rgba(14,85,82,.12)}
+.seg{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
+.seg input{display:none}
+.seg label{height:48px;border:1.5px solid var(--line);border-radius:10px;display:grid;place-items:center;font-size:15px;font-weight:500;cursor:pointer;background:#fffdf9;transition:.15s}
+.seg input:checked+label{background:var(--teal);border-color:var(--teal);color:#fff;font-weight:700}
+.agree{display:flex;gap:10px;align-items:center;font-size:14px;color:var(--mut);margin-top:18px}
+.agree input{width:18px;height:18px;accent-color:var(--teal)}
+form .btn{width:100%;margin-top:20px}
+.done{display:none;padding:40px;text-align:center;flex-direction:column;align-items:center;justify-content:center}
+.done svg{width:84px;height:84px}
+.done h3{font-family:'Black Han Sans';font-weight:400;font-size:30px;margin-top:18px}
+.done p{font-size:16px;color:var(--mut);line-height:1.75;margin-top:10px}
+.done .tk{margin-top:20px;background:var(--paper);border:1.5px dashed var(--kraft2);border-radius:12px;padding:14px 22px;font-size:15px}
+.done .tk b{font-family:'Outfit';font-weight:800;color:var(--teal);font-size:20px;margin-left:6px}
+
+footer{background:var(--ink);color:#a9b4b2;padding:44px 0 110px;font-size:14px;line-height:1.9}
+footer .wrap{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap}
+footer .logo{color:#fff;font-size:23px}
+.mbar{display:none}
+
+@media(max-width:960px){
+ .top nav{display:none}
+ .hero .wrap,.check,.fbox{grid-template-columns:minmax(0,1fr)}
+ .fbox>*{min-width:0}
+ .hero .art{max-width:560px;margin:0 auto;width:100%}
+ .svc{grid-template-columns:1fr;max-width:560px;margin-left:auto;margin-right:auto}
+ .steps{grid-template-columns:1fr 1fr;row-gap:40px}
+ .steps:before{display:none}
+}
+@media(max-width:620px){
+ .wrap{padding:0 18px}
+ .sec{padding:72px 0}
+ .top .wrap{height:62px}
+ .top .btn{display:none}
+ .logo{font-size:22px}.logo small{display:none}
+ .hero .wrap{padding-top:40px;padding-bottom:40px;gap:20px}
+ .hero h1{font-size:44px}
+ .hero p.lead{font-size:17px}
+ .offer{grid-template-columns:1fr 1fr 1fr;gap:8px}
+ .offer div{padding:12px 10px}
+ .offer b{font-size:15px}.offer b span{font-size:20px}
+ .offer small{font-size:12px}
+ .hero .acts .btn{flex:1;padding:0 16px}
+ .tape .row{gap:10px 20px;font-size:15px;justify-content:center;padding:14px 34px}
+ h2.t{font-size:32px}
+ .lead{font-size:16.5px}
+ .steps{grid-template-columns:1fr;row-gap:30px}
+ .st{display:grid;grid-template-columns:78px 1fr;gap:0 18px;text-align:left;align-items:start}
+ .st .ic{grid-row:span 2;margin:0}
+ .st h3{margin-top:6px}
+ .ptab thead{display:none}
+ .ptab table,.ptab tbody{display:block}
+ .ptab tr{display:grid;grid-template-columns:1fr auto;grid-template-areas:"a p" "b p" "c p";gap:4px 12px;padding:18px 18px;border-bottom:1px solid var(--line);align-items:center}
+ .ptab tr:last-child{border-bottom:0}
+ .ptab td{border:0!important;padding:0!important;font-size:14.5px;color:var(--mut)}
+ .ptab td:nth-child(1){grid-area:a;font-size:16.5px;color:var(--ink)}
+ .ptab td:nth-child(2){grid-area:b}
+ .ptab td:nth-child(3){grid-area:c}
+ .ptab td.p{grid-area:p;font-size:21px;text-align:right}
+ .ptab .chip{margin-left:6px}
+ .clip{padding:30px 20px 24px}
+ .fbox .l{padding:34px 24px 150px}
+ .fbox .l h2{font-size:31px}
+ form,.done{padding:28px 20px}
+ .fg{grid-template-columns:1fr}
+ .f.full{grid-column:auto}
+ .seg{grid-template-columns:1fr 1fr}
+ .mbar{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:40;padding:10px 14px;background:rgba(246,239,227,.97);border-top:1px solid var(--line);gap:8px}
+ .mbar .btn{flex:1;height:52px;font-size:16px;padding:0 10px}
+ .mbar .btn.ln{flex:.55}
+}
+</style>
+</head>
+<body>
+
+<header class="top">
+ <div class="wrap">
+  <a class="logo" href="#">
+   <svg viewBox="0 0 40 40"><rect x="3" y="9" width="34" height="27" rx="5" fill="#d3a66c"/><path d="M3 15h34" stroke="#b98a4f" stroke-width="2"/><rect x="15" y="9" width="10" height="13" fill="#0e5552"/><path d="M12 4l8 5 8-5" fill="none" stroke="#0e5552" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><path d="M10 28h8" stroke="#fff" stroke-width="2.5" stroke-linecap="round"/></svg>
+   가벼운이사 <small>포장 · 반포장 · 원룸</small>
+  </a>
+  <nav><a href="#svc">이사 종류</a><a href="#steps">진행 과정</a><a href="#price">예상 비용</a><a href="#faq">자주 묻는 질문</a></nav>
+  <a class="btn co" href="#apply">무료 방문 견적</a>
+ </div>
+</header>
+
+<section class="hero">
+ <div class="wrap">
+  <div>
+   <span class="stamp"><b>12월 한정</b>방문 견적 고객 이사 박스 20개 무료</span>
+   <h1>짐은 무겁게,<br>이사는 <em>가볍게</em></h1>
+   <p class="lead">견적 담당자가 집에 직접 와서 짐 양을 보고 금액을 정합니다. 견적서에 적힌 금액 그대로, 당일 추가 요금 없이 진행합니다.</p>
+   <div class="offer">
+    <div><small>방문 견적</small><b><span class="num">0</span>원</b></div>
+    <div><small>평일 이사</small><b><span class="num">10</span>% 할인</b></div>
+    <div><small>이사 박스</small><b><span class="num">20</span>개 제공</b></div>
+   </div>
+   <div class="acts">
+    <a class="btn co" href="#apply">방문 견적 신청하기 <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+    <a class="btn ln" href="#price">예상 비용 보기</a>
+   </div>
+  </div>
+  <div class="art">
+   <svg viewBox="0 0 560 470" role="img" aria-label="이사 트럭과 상자 일러스트">
+    <defs>
+     <linearGradient id="hsky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#e8d8bd"/><stop offset="1" stop-color="#f4ead9"/></linearGradient>
+     <linearGradient id="hbox" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#e0b67c"/><stop offset="1" stop-color="#c2925a"/></linearGradient>
+     <linearGradient id="hbox2" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#d6a96e"/><stop offset="1" stop-color="#b3824a"/></linearGradient>
+     <linearGradient id="htruck" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#14706b"/><stop offset="1" stop-color="#0b4644"/></linearGradient>
+     <linearGradient id="hcab" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fbf6ee"/><stop offset="1" stop-color="#e5dccd"/></linearGradient>
+     <linearGradient id="hwin" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#bfe0de"/><stop offset="1" stop-color="#6fa9a5"/></linearGradient>
+     <radialGradient id="hsh" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#5b4128" stop-opacity=".35"/><stop offset="1" stop-color="#5b4128" stop-opacity="0"/></radialGradient>
+     <filter id="hds" x="-20%" y="-20%" width="140%" height="150%"><feDropShadow dx="0" dy="10" stdDeviation="10" flood-color="#5b4128" flood-opacity=".22"/></filter>
+    </defs>
+    <circle cx="300" cy="215" r="200" fill="url(#hsky)"/>
+    <g opacity=".55" stroke="#c9ab80" stroke-width="2" fill="none"><path d="M120 120h70M100 140h50"/><path d="M420 90h60M440 108h40"/></g>
+    <!-- buildings -->
+    <g opacity=".75">
+     <rect x="150" y="120" width="70" height="160" rx="4" fill="#dcc6a3"/>
+     <rect x="228" y="80" width="86" height="200" rx="4" fill="#d3bb94"/>
+     <rect x="322" y="140" width="64" height="140" rx="4" fill="#dcc6a3"/>
+     <g fill="#f4ead9"><rect x="162" y="136" width="14" height="14" rx="2"/><rect x="190" y="136" width="14" height="14" rx="2"/><rect x="162" y="166" width="14" height="14" rx="2"/><rect x="190" y="166" width="14" height="14" rx="2"/><rect x="162" y="196" width="14" height="14" rx="2"/><rect x="190" y="196" width="14" height="14" rx="2"/>
+     <rect x="242" y="98" width="16" height="16" rx="2"/><rect x="270" y="98" width="16" height="16" rx="2"/><rect x="242" y="128" width="16" height="16" rx="2"/><rect x="270" y="128" width="16" height="16" rx="2"/><rect x="242" y="158" width="16" height="16" rx="2"/><rect x="270" y="158" width="16" height="16" rx="2"/><rect x="242" y="188" width="16" height="16" rx="2"/><rect x="270" y="188" width="16" height="16" rx="2"/>
+     <rect x="334" y="156" width="14" height="14" rx="2"/><rect x="360" y="156" width="14" height="14" rx="2"/><rect x="334" y="186" width="14" height="14" rx="2"/><rect x="360" y="186" width="14" height="14" rx="2"/></g>
+    </g>
+    <ellipse cx="290" cy="402" rx="250" ry="22" fill="url(#hsh)"/>
+    <!-- truck -->
+    <g filter="url(#hds)">
+     <rect x="60" y="190" width="300" height="180" rx="12" fill="url(#htruck)"/>
+     <rect x="60" y="190" width="300" height="20" rx="10" fill="#18807a"/>
+     <path d="M76 226h268" stroke="#0a3f3d" stroke-width="2" opacity=".5"/>
+     <text x="210" y="282" text-anchor="middle" font-family="Black Han Sans" font-size="40" fill="#f6efe3">가벼운이사</text>
+     <rect x="128" y="300" width="164" height="6" rx="3" fill="#d3a66c"/>
+     <text x="210" y="334" text-anchor="middle" font-family="Noto Sans KR" font-weight="700" font-size="16" fill="#b9d0cb">포장 · 반포장 · 원룸</text>
+     <path d="M360 236h76c12 0 22 6 28 16l30 48c4 6 6 13 6 20v42c0 5-4 8-8 8H360z" fill="url(#hcab)"/>
+     <path d="M378 252h52c6 0 11 3 14 8l24 40h-90z" fill="url(#hwin)"/>
+     <path d="M384 258l20 0-26 38" stroke="#fff" stroke-width="5" opacity=".45" stroke-linecap="round"/>
+     <rect x="470" y="330" width="34" height="12" rx="4" fill="#e8603c"/>
+     <rect x="380" y="316" width="22" height="5" rx="2.5" fill="#9b9283"/>
+     <rect x="52" y="360" width="456" height="18" rx="6" fill="#2b3433"/>
+    </g>
+    <g>
+     <circle cx="140" cy="380" r="34" fill="#1c2626"/><circle cx="140" cy="380" r="15" fill="#a9b4b2"/><circle cx="140" cy="380" r="5" fill="#1c2626"/>
+     <circle cx="430" cy="380" r="34" fill="#1c2626"/><circle cx="430" cy="380" r="15" fill="#a9b4b2"/><circle cx="430" cy="380" r="5" fill="#1c2626"/>
+    </g>
+    <!-- boxes stack on ground, left -->
+    <g filter="url(#hds)">
+     <rect x="4" y="300" width="96" height="82" rx="6" fill="url(#hbox)"/>
+     <rect x="44" y="300" width="18" height="82" fill="#f3e3c4" opacity=".7"/>
+     <path d="M14 366h28M14 374h18" stroke="#8a6232" stroke-width="3" stroke-linecap="round"/>
+     <rect x="14" y="236" width="76" height="66" rx="6" fill="url(#hbox2)"/>
+     <rect x="44" y="236" width="16" height="66" fill="#f3e3c4" opacity=".7"/>
+     <g transform="translate(20 252)" fill="none" stroke="#7a5428" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M3 16v-7l6-6 6 6v7z"/></g>
+    </g>
+    <!-- tag -->
+    <g transform="translate(430 120) rotate(10)" filter="url(#hds)">
+     <rect x="0" y="0" width="92" height="46" rx="10" fill="#e8603c"/>
+     <circle cx="14" cy="23" r="5.5" fill="#f6efe3"/>
+     <text x="54" y="31" text-anchor="middle" font-family="Outfit" font-weight="800" font-size="22" fill="#fff">FREE</text>
+    </g>
+    <path d="M436 118c-20-30-40-40-62-40" fill="none" stroke="#b98a4f" stroke-width="2" stroke-dasharray="3 5"/>
+   </svg>
+  </div>
+ </div>
+ <div class="tape"><div class="row">
+  <span><svg viewBox="0 0 24 24"><path d="M3 12l6 6L21 6"/></svg>견적서 금액 그대로 진행</span>
+  <span><svg viewBox="0 0 24 24"><path d="M3 12l6 6L21 6"/></svg>가구 · 가전 보호 포장</span>
+  <span><svg viewBox="0 0 24 24"><path d="M3 12l6 6L21 6"/></svg>입주 청소 함께 예약</span>
+  <span><svg viewBox="0 0 24 24"><path d="M3 12l6 6L21 6"/></svg>이사 후 정리까지</span>
+ </div></div>
+</section>
+
+<section class="sec" id="svc">
+ <div class="wrap">
+  <span class="tag">이사 종류</span>
+  <h2 class="t">우리 집에 맞는 방식으로<br><em>골라서</em> 신청하세요</h2>
+  <p class="lead">짐 양과 일정, 예산에 맞춰 세 가지 방식 중에서 고르시면 됩니다.</p>
+  <div class="svc">
+   <article class="card">
+    <div class="pic"><svg viewBox="0 0 320 200"><defs><linearGradient id="c1" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#e0b67c"/><stop offset="1" stop-color="#bf8f56"/></linearGradient></defs><rect width="320" height="200" fill="#efe3cf"/><circle cx="160" cy="100" r="78" fill="#e6d3b2"/>
+     <rect x="70" y="56" width="92" height="104" rx="6" fill="#0e5552"/><rect x="78" y="66" width="76" height="40" rx="3" fill="#18807a"/><rect x="78" y="112" width="76" height="40" rx="3" fill="#18807a"/><circle cx="148" cy="86" r="3" fill="#d3a66c"/><circle cx="148" cy="132" r="3" fill="#d3a66c"/>
+     <path d="M66 52h100v112H66z" fill="none" stroke="#f6efe3" stroke-width="6" stroke-dasharray="2 10" opacity=".9"/>
+     <rect x="176" y="98" width="78" height="62" rx="5" fill="url(#c1)"/><rect x="207" y="98" width="16" height="62" fill="#f3e3c4" opacity=".7"/>
+     <rect x="186" y="62" width="58" height="40" rx="5" fill="url(#c1)"/><rect x="208" y="62" width="14" height="40" fill="#f3e3c4" opacity=".7"/>
+     <rect x="50" y="160" width="220" height="6" rx="3" fill="#c9ab80"/></svg></div>
+    <div class="bd"><h3>포장이사</h3><p>포장부터 운반, 새 집 정리까지 맡기는 방식입니다. 맞벌이 가정에 맞습니다.</p>
+     <ul><li>주방 · 옷장 · 책장 포장과 정리</li><li>가구 분해 · 조립, 가전 설치 연결</li><li>이사 당일 담당 팀장 1명 배정</li></ul>
+     <div class="pr"><small>3인 기준 · 24평</small><b>1,280,000<span>원부터</span></b></div></div>
+   </article>
+   <article class="card">
+    <div class="pic"><svg viewBox="0 0 320 200"><defs><linearGradient id="c2" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#e0b67c"/><stop offset="1" stop-color="#bf8f56"/></linearGradient></defs><rect width="320" height="200" fill="#e9ddc6"/><circle cx="160" cy="100" r="78" fill="#dfcba7"/>
+     <rect x="64" y="104" width="120" height="56" rx="10" fill="#e8603c"/><rect x="64" y="88" width="120" height="30" rx="10" fill="#f07650"/><rect x="56" y="104" width="18" height="56" rx="7" fill="#d24f2c"/><rect x="174" y="104" width="18" height="56" rx="7" fill="#d24f2c"/>
+     <path d="M60 96c20 30 108 30 128 0" fill="none" stroke="#f6efe3" stroke-width="4" stroke-dasharray="1 9" stroke-linecap="round"/>
+     <rect x="200" y="96" width="70" height="64" rx="5" fill="url(#c2)"/><rect x="228" y="96" width="14" height="64" fill="#f3e3c4" opacity=".7"/>
+     <path d="M206 72l24-20 24 20" fill="none" stroke="#0e5552" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/><path d="M230 52v36" stroke="#0e5552" stroke-width="5" stroke-linecap="round"/>
+     <rect x="50" y="160" width="220" height="6" rx="3" fill="#c9ab80"/></svg></div>
+    <div class="bd"><h3>반포장이사</h3><p>큰 짐은 저희가 포장하고, 잔짐은 직접 싸 두시는 방식입니다.</p>
+     <ul><li>가구 · 가전 · 침대는 보호 포장</li><li>박스 짐은 고객님이 미리 준비</li><li>새 집에서 큰 가구 배치까지</li></ul>
+     <div class="pr"><small>2인 기준 · 18평</small><b>780,000<span>원부터</span></b></div></div>
+   </article>
+   <article class="card">
+    <div class="pic"><svg viewBox="0 0 320 200"><defs><linearGradient id="c3" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#e0b67c"/><stop offset="1" stop-color="#bf8f56"/></linearGradient><linearGradient id="c3t" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#14706b"/><stop offset="1" stop-color="#0b4644"/></linearGradient></defs><rect width="320" height="200" fill="#efe3cf"/><circle cx="160" cy="100" r="78" fill="#e6d3b2"/>
+     <rect x="70" y="80" width="118" height="70" rx="8" fill="url(#c3t)"/><path d="M188 98h34c6 0 10 3 13 8l13 22v22h-60z" fill="#f6efe3"/><path d="M196 106h24l12 20h-36z" fill="#9fcac6"/>
+     <rect x="84" y="56" width="44" height="30" rx="4" fill="url(#c3)"/><rect x="134" y="62" width="40" height="24" rx="4" fill="url(#c3)"/>
+     <circle cx="100" cy="154" r="15" fill="#1c2626"/><circle cx="100" cy="154" r="6" fill="#a9b4b2"/><circle cx="222" cy="154" r="15" fill="#1c2626"/><circle cx="222" cy="154" r="6" fill="#a9b4b2"/>
+     <text x="129" y="122" text-anchor="middle" font-family="Outfit" font-weight="800" font-size="22" fill="#d3a66c">1톤</text>
+     <rect x="50" y="168" width="220" height="5" rx="2.5" fill="#c9ab80"/></svg></div>
+    <div class="bd"><h3>원룸·소형 이사</h3><p>자취방, 오피스텔처럼 짐이 적은 집을 1톤 차량으로 옮깁니다.</p>
+     <ul><li>1톤 차량 + 기사님 1~2명</li><li>엘리베이터 없는 건물도 가능</li><li>같은 시 · 구 안 이동 기준</li></ul>
+     <div class="pr"><small>원룸 · 오피스텔</small><b>290,000<span>원부터</span></b></div></div>
+   </article>
+  </div>
+ </div>
+</section>
+
+<section class="sec steps-sec" id="steps">
+ <div class="wrap">
+  <span class="tag">진행 과정</span>
+  <h2 class="t">신청부터 정리까지,<br><em>네 단계</em>면 끝납니다</h2>
+  <p class="lead">방문 견적 날짜만 정해 주시면 나머지는 담당자가 차례대로 안내합니다.</p>
+  <div class="steps">
+   <div class="st"><div class="ic"><i>1</i><svg viewBox="0 0 24 24"><rect x="5" y="3" width="14" height="18" rx="2"/><path d="M9 8h6M9 12h6M9 16h3"/></svg></div><h3>견적 신청</h3><p>아래 양식에 이사 예정일과 집 크기를 남겨 주세요.</p></div>
+   <div class="st"><div class="ic"><i>2</i><svg viewBox="0 0 24 24"><path d="M3 11l9-7 9 7v9a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z"/></svg></div><h3>방문 견적</h3><p>담당자가 방문해 짐 양을 보고 그 자리에서 금액을 드립니다.</p></div>
+   <div class="st"><div class="ic"><i>3</i><svg viewBox="0 0 24 24"><rect x="2" y="7" width="13" height="10" rx="1"/><path d="M15 10h4l3 3v4h-7"/><circle cx="6.5" cy="18" r="2"/><circle cx="17.5" cy="18" r="2"/></svg></div><h3>이사 당일</h3><p>약속한 시간에 도착해 포장하고 운반합니다.</p></div>
+   <div class="st"><div class="ic"><i>4</i><svg viewBox="0 0 24 24"><path d="M4 21V9l8-6 8 6v12"/><path d="M9 14l2 2 4-4"/></svg></div><h3>정리 확인</h3><p>새 집에서 가구 배치와 파손 여부를 함께 확인합니다.</p></div>
+  </div>
+ </div>
+</section>
+
+<section class="sec" id="price">
+ <div class="wrap">
+  <span class="tag">예상 비용</span>
+  <h2 class="t">집 크기별로 미리 보는<br><em>시작 가격</em></h2>
+  <p class="lead">같은 시 안 이동, 엘리베이터 사용 기준 예시입니다. 정확한 금액은 방문 견적 후 정해집니다.</p>
+  <div class="ptab">
+   <table>
+    <thead><tr><th>집 크기</th><th>추천 방식</th><th>차량 · 인원</th><th>시작 가격</th></tr></thead>
+    <tbody>
+     <tr><td><b>원룸 · 오피스텔</b></td><td>소형 이사</td><td>1톤 · 2명</td><td class="p">290,000<span>원</span></td></tr>
+     <tr><td><b>투룸 · 15평 내외</b></td><td>반포장이사</td><td>2.5톤 · 3명</td><td class="p">620,000<span>원</span></td></tr>
+     <tr><td><b>24평 내외</b></td><td>포장이사<span class="chip">평일 10% 할인</span></td><td>5톤 · 4명</td><td class="p">1,280,000<span>원</span></td></tr>
+     <tr><td><b>34평 이상</b></td><td>포장이사<span class="chip">평일 10% 할인</span></td><td>5톤 2대 · 6명</td><td class="p">1,890,000<span>원</span></td></tr>
+    </tbody>
+   </table>
+  </div>
+  <p class="note">· 사다리차, 에어컨 이전 설치, 피아노 운반은 별도입니다. · 평일 할인은 월~목 이사에 적용됩니다. · 이사 박스 20개는 12월 방문 견적 고객께 미리 보내 드립니다.</p>
+ </div>
+</section>
+
+<section class="sec" style="padding-top:0">
+ <div class="wrap check">
+  <div>
+   <span class="tag">이사 전 체크</span>
+   <h2 class="t">이사 2주 전,<br>이것만 <em>챙겨 두세요</em></h2>
+   <p class="lead">방문 견적 때 담당자가 같은 목록으로 한 번 더 확인해 드립니다. 미리 표시해 두시면 상담이 빨라집니다.</p>
+  </div>
+  <div class="clip">
+   <h3>이사 준비 목록</h3>
+   <label><input type="checkbox" class="ck"><span>엘리베이터 사용 예약<small>관리사무소에 날짜 · 시간 신청</small></span></label>
+   <label><input type="checkbox" class="ck"><span>버릴 가구 · 가전 정리<small>대형 폐기물 스티커 미리 구입</small></span></label>
+   <label><input type="checkbox" class="ck"><span>도시가스 · 인터넷 이전 신청<small>이사 3~5일 전까지</small></span></label>
+   <label><input type="checkbox" class="ck"><span>귀중품 · 서류 따로 챙기기<small>당일 직접 들고 이동</small></span></label>
+   <label><input type="checkbox" class="ck"><span>새 집 주차 위치 확인<small>트럭 대는 자리 미리 알아 두기</small></span></label>
+   <div class="prog"><div><i id="pbar"></i></div><span id="ptxt">0 / 5 완료</span></div>
+  </div>
+ </div>
+</section>
+
+<section class="sec" id="faq" style="padding-top:0;padding-bottom:40px">
+ <div class="wrap">
+  <span class="tag">자주 묻는 질문</span>
+  <h2 class="t">신청 전에 많이 <em>물어보세요</em></h2>
+  <div class="faq">
+   <details open><summary>방문 견적을 받으면 꼭 계약해야 하나요?</summary><p>아닙니다. 견적만 받아 보시고 결정하셔도 됩니다. 방문 견적 비용은 받지 않습니다.</p></details>
+   <details><summary>이사 당일에 금액이 달라질 수 있나요?</summary><p>견적 때 확인하지 않은 짐이 크게 늘어난 경우가 아니라면 견적서 금액 그대로 진행합니다. 달라질 수 있는 항목은 견적서에 따로 적어 드립니다.</p></details>
+   <details><summary>무료 이사 박스는 언제 받을 수 있나요?</summary><p>12월 중 방문 견적을 받으신 고객께 견적 후 3일 안에 20개를 보내 드립니다. 계약하지 않으셔도 드립니다.</p></details>
+   <details><summary>주말 이사도 가능한가요?</summary><p>가능합니다. 다만 주말과 월말은 일찍 마감되니 2~3주 전에 신청해 주세요. 평일 10% 할인은 월~목 이사에만 적용됩니다.</p></details>
+  </div>
+ </div>
+</section>
+
+<section class="sec form-sec" id="apply" style="padding-top:56px">
+ <div class="wrap">
+  <div class="fbox">
+   <div class="l">
+    <h2>무료 방문 견적<br><em>지금 신청하세요</em></h2>
+    <p>남겨 주신 연락처로 담당자가 방문 날짜를 정하러 연락드립니다.</p>
+    <ul>
+     <li><svg viewBox="0 0 24 24"><path d="M4 12l5 5L20 6"/></svg>방문 견적 비용 0원</li>
+     <li><svg viewBox="0 0 24 24"><path d="M4 12l5 5L20 6"/></svg>12월 견적 고객 이사 박스 20개</li>
+     <li><svg viewBox="0 0 24 24"><path d="M4 12l5 5L20 6"/></svg>월~목 이사 10% 할인</li>
+    </ul>
+    <div class="ph">전화 상담<b>000-0000-0000</b></div>
+    <svg class="boxes" viewBox="0 0 230 160" aria-hidden="true"><defs><linearGradient id="fb" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#e0b67c"/><stop offset="1" stop-color="#b98a4f"/></linearGradient></defs><rect x="20" y="70" width="110" height="90" rx="6" fill="url(#fb)"/><rect x="66" y="70" width="18" height="90" fill="#f3e3c4" opacity=".6"/><rect x="120" y="96" width="96" height="64" rx="6" fill="url(#fb)"/><rect x="160" y="96" width="16" height="64" fill="#f3e3c4" opacity=".6"/><rect x="50" y="16" width="80" height="58" rx="6" fill="url(#fb)"/><rect x="82" y="16" width="14" height="58" fill="#f3e3c4" opacity=".6"/></svg>
+   </div>
+   <div>
+    <form id="f" onsubmit="return sub(event)">
+     <div class="fg">
+      <div class="f"><label for="nm">이름</label><input id="nm" required placeholder="홍길동"></div>
+      <div class="f"><label for="tel">연락처</label><input id="tel" required placeholder="000-0000-0000" inputmode="tel"></div>
+      <div class="f"><label for="dt">이사 예정일</label><input id="dt" type="date" required></div>
+      <div class="f"><label for="kind">이사 방식</label><select id="kind"><option>포장이사</option><option>반포장이사</option><option>원룸 · 소형 이사</option><option>아직 모르겠어요</option></select></div>
+      <div class="f full"><label>집 크기</label>
+       <div class="seg"><input type="radio" name="sz" id="s1"><label for="s1">원룸</label><input type="radio" name="sz" id="s2" checked><label for="s2">투룸</label><input type="radio" name="sz" id="s3"><label for="s3">24평 내외</label><input type="radio" name="sz" id="s4"><label for="s4">34평 이상</label></div>
+      </div>
+      <div class="f"><label for="from">출발 지역</label><input id="from" placeholder="예) 서울 마포구"></div>
+      <div class="f"><label for="to">도착 지역</label><input id="to" placeholder="예) 경기 고양시"></div>
+     </div>
+     <label class="agree"><input type="checkbox" required checked>상담을 위한 개인정보 수집에 동의합니다</label>
+     <button class="btn co" type="submit">방문 견적 신청하기 <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+    </form>
+    <div class="done" id="done">
+     <svg viewBox="0 0 84 84"><circle cx="42" cy="42" r="40" fill="#0e5552"/><path d="M26 43l11 11 21-23" fill="none" stroke="#d3a66c" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+     <h3>신청이 접수되었습니다</h3>
+     <p>담당자가 방문 날짜를 정하러 곧 연락드립니다.<br>이사 박스 20개는 견적 후 3일 안에 보내 드립니다.</p>
+     <div class="tk">접수 번호<b id="tk">GB-0000</b></div>
+    </div>
+   </div>
+  </div>
+ </div>
+</section>
+
+<footer>
+ <div class="wrap">
+  <div><a class="logo" href="#">가벼운이사</a><p style="margin-top:8px">포장이사 · 반포장이사 · 원룸 이사</p></div>
+  <div>전화 000-0000-0000<br>카카오톡 ID: example<br>상담 시간 매일 08:00 ~ 20:00</div>
+ </div>
+</footer>
+
+<div class="mbar"><a class="btn ln" href="#price">비용 보기</a><a class="btn co" href="#apply">무료 방문 견적</a></div>
+
+<script>
+function sub(e){e.preventDefault();document.getElementById('f').style.display='none';var d=document.getElementById('done');d.style.display='flex';document.getElementById('tk').textContent='GB-'+(1000+Math.floor(Math.random()*9000));return false}
+var cks=document.querySelectorAll('.ck');cks.forEach(function(c){c.addEventListener('change',function(){var n=0;cks.forEach(function(x){if(x.checked)n++});document.getElementById('pbar').style.width=(n/cks.length*100)+'%';document.getElementById('ptxt').textContent=n+' / '+cks.length+' 완료'})});
+var dt=document.getElementById('dt');var t=new Date(Date.now()+14*864e5);dt.min=new Date().toISOString().slice(0,10);dt.value=t.toISOString().slice(0,10);
+</script>
+</body>
+</html>
