@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Uling Inasal House · Charcoal-grilled Bacolod-style Inasal</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,700;0,800;1,700&display=swap" rel="stylesheet">
+<style>
+:root{--cream:#f7efdf;--paper:#fbf6ea;--leaf:#1f5c3a;--deep:#12301f;--fire:#e2582a;--ember:#b83c17;--gold:#f2b33d;--ink:#1c1a17;--mut:#5d5a4f;--line:#e2d6bd}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Outfit',sans-serif;background:var(--cream);color:var(--ink);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+.ser{font-family:'Playfair Display',serif}
+.wrap{max-width:1200px;margin:0 auto;padding:0 28px}
+.btn{display:inline-flex;align-items:center;gap:10px;height:52px;padding:0 26px;border-radius:999px;font-weight:700;font-size:16px;border:0;cursor:pointer;transition:.2s;font-family:inherit;white-space:nowrap}
+.btn svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+.btn.fire{background:var(--fire);color:#fff;box-shadow:0 14px 28px -14px rgba(184,60,23,.9)}
+.btn.fire:hover{background:var(--ember)}
+.btn.ghost{background:transparent;color:var(--cream);border:1.5px solid rgba(247,239,223,.45)}
+.btn.ghost:hover{background:rgba(247,239,223,.1)}
+.eyebrow{font-size:13px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--fire);display:flex;align-items:center;gap:10px}
+.eyebrow:before{content:"";width:26px;height:2px;background:currentColor}
+h2.t{font-family:'Playfair Display',serif;font-weight:800;font-size:clamp(34px,4.4vw,56px);line-height:1.05;letter-spacing:-.01em;margin-top:14px}
+h2.t em{font-style:italic;color:var(--leaf)}
+
+/* nav */
+nav{position:sticky;top:0;z-index:30;background:rgba(18,48,31,.96);backdrop-filter:blur(8px);color:var(--cream)}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;height:74px;gap:20px}
+.logo{display:flex;align-items:center;gap:12px}
+.logo svg{width:42px;height:42px}
+.logo b{font-family:'Playfair Display',serif;font-size:22px;letter-spacing:.01em;display:block;line-height:1}
+.logo small{display:block;font-size:11px;letter-spacing:.26em;font-weight:600;color:var(--gold);margin-top:4px}
+.links{display:flex;gap:30px;font-size:15px;font-weight:500}
+.links a{opacity:.85}.links a:hover{opacity:1;color:var(--gold)}
+nav .btn{height:44px;padding:0 20px;font-size:15px}
+.burger{display:none;background:none;border:0;color:var(--cream);width:44px;height:44px;cursor:pointer}
+.burger svg{width:26px;height:26px;stroke:currentColor;stroke-width:2;fill:none;stroke-linecap:round}
+
+/* hero */
+.hero{background:var(--deep);color:var(--cream);position:relative;overflow:hidden}
+.hero:before{content:"";position:absolute;inset:0;background:radial-gradient(700px 420px at 78% 62%,rgba(226,88,42,.38),transparent 70%),radial-gradient(500px 300px at 10% 0%,rgba(242,179,61,.12),transparent 70%)}
+.hero .wrap{position:relative;display:grid;grid-template-columns:1.02fr .98fr;gap:30px;align-items:center;min-height:calc(100vh - 74px);max-height:860px;padding-top:40px;padding-bottom:56px}
+.hero h1{font-family:'Playfair Display',serif;font-weight:800;font-size:clamp(48px,6.4vw,94px);line-height:.98;letter-spacing:-.02em;margin:20px 0 24px}
+.hero h1 em{font-style:italic;color:var(--gold)}
+.hero h1 span{color:var(--fire)}
+.hero p.lead{font-size:19px;line-height:1.6;color:#dcd3bf;max-width:500px}
+.hero .acts{display:flex;gap:14px;margin-top:34px;flex-wrap:wrap}
+.hero .facts{display:flex;gap:34px;margin-top:44px;padding-top:26px;border-top:1px solid rgba(247,239,223,.16);flex-wrap:wrap}
+.hero .facts b{display:block;font-family:'Playfair Display',serif;font-size:30px;color:var(--gold);line-height:1}
+.hero .facts span{font-size:14px;color:#cfc6b2;display:block;margin-top:6px}
+.hero .art{position:relative}
+.hero .art svg{width:100%;height:auto;display:block;filter:drop-shadow(0 40px 50px rgba(0,0,0,.45))}
+.badge{position:absolute;right:4%;top:6%;width:132px;height:132px;border-radius:50%;background:var(--gold);color:var(--deep);display:grid;place-items:center;text-align:center;transform:rotate(-10deg);box-shadow:0 18px 30px -14px rgba(0,0,0,.6)}
+.badge b{font-family:'Playfair Display',serif;font-size:30px;display:block;line-height:1}
+.badge span{font-size:12px;font-weight:700;letter-spacing:.12em;display:block;margin-top:4px}
+
+/* strip */
+.strip{background:var(--fire);color:#fff;overflow:hidden;white-space:nowrap;border-top:3px solid var(--gold)}
+.strip div{display:inline-flex;gap:46px;padding:16px 0;animation:mq 34s linear infinite;font-weight:700;font-size:17px;letter-spacing:.06em;text-transform:uppercase}
+.strip span{display:inline-flex;align-items:center;gap:46px}
+.strip span:after{content:"";width:9px;height:9px;background:var(--gold);transform:rotate(45deg)}
+@keyframes mq{to{transform:translateX(-50%)}}
+
+/* fire steps */
+.sec{padding:110px 0}
+.fireproc .wrap{display:grid;grid-template-columns:.9fr 1.1fr;gap:70px;align-items:start}
+.fireproc p.intro{font-size:18px;line-height:1.75;color:var(--mut);margin-top:22px;max-width:440px}
+.steps{display:grid;gap:18px}
+.step{display:grid;grid-template-columns:96px 1fr;gap:24px;align-items:center;background:var(--paper);border:1px solid var(--line);border-radius:22px;padding:22px 26px 22px 22px}
+.step .ic{width:96px;height:96px;border-radius:18px;background:var(--deep);display:grid;place-items:center}
+.step .ic svg{width:64px;height:64px}
+.step small{font-size:13px;font-weight:700;letter-spacing:.18em;color:var(--fire)}
+.step h3{font-family:'Playfair Display',serif;font-size:25px;margin:4px 0 6px}
+.step p{font-size:15.5px;line-height:1.6;color:var(--mut)}
+
+/* menu */
+.menu{background:var(--paper);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.mhead{display:flex;justify-content:space-between;align-items:flex-end;gap:30px;flex-wrap:wrap}
+.tabs{display:flex;gap:8px;flex-wrap:wrap}
+.tabs button{font-family:inherit;font-size:15px;font-weight:600;height:44px;padding:0 20px;border-radius:999px;border:1.5px solid var(--line);background:#fff;color:var(--ink);cursor:pointer}
+.tabs button[aria-selected=true]{background:var(--leaf);border-color:var(--leaf);color:#fff}
+.mgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:44px}
+.item{background:#fff;border:1px solid var(--line);border-radius:22px;overflow:hidden;display:flex;flex-direction:column}
+.item .pic{aspect-ratio:16/11;background:radial-gradient(circle at 50% 60%,#fde6c4,#f1d4a6 70%);display:grid;place-items:center;position:relative}
+.item .pic svg{width:82%;height:auto}
+.item .pic .tag{position:absolute;left:16px;top:16px;background:var(--deep);color:var(--gold);font-size:12px;font-weight:700;letter-spacing:.1em;padding:6px 11px;border-radius:6px;text-transform:uppercase}
+.item .bd{padding:20px 22px 24px;display:flex;flex-direction:column;gap:8px;flex:1}
+.item .row{display:flex;justify-content:space-between;align-items:baseline;gap:14px}
+.item h3{font-size:20px;font-weight:700}
+.item .pr{font-family:'Playfair Display',serif;font-size:24px;color:var(--fire);white-space:nowrap}
+.item p{font-size:15px;line-height:1.55;color:var(--mut)}
+.item[hidden]{display:none}
+.note{margin-top:26px;font-size:14px;color:var(--mut)}
+
+/* sets */
+.sets .wrap>.sh{text-align:center;max-width:680px;margin:0 auto}
+.sets .eyebrow{justify-content:center}
+.sets .sh p{font-size:18px;line-height:1.7;color:var(--mut);margin-top:18px}
+.sgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:54px;align-items:stretch}
+.set{border-radius:26px;padding:34px 30px;background:#fff;border:1px solid var(--line);display:flex;flex-direction:column}
+.set.hot{background:var(--leaf);color:var(--cream);border-color:var(--leaf);transform:translateY(-14px);box-shadow:0 40px 60px -34px rgba(18,48,31,.8)}
+.set .pp{font-size:14px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--fire)}
+.set.hot .pp{color:var(--gold)}
+.set h3{font-family:'Playfair Display',serif;font-size:32px;margin:10px 0 4px}
+.set .price{font-family:'Playfair Display',serif;font-size:50px;line-height:1.1;margin:14px 0 4px}
+.set .price small{font-family:'Outfit';font-size:16px;font-weight:500;opacity:.7}
+.set ul{list-style:none;margin:20px 0 28px;display:grid;gap:12px;flex:1}
+.set li{display:flex;gap:12px;font-size:16px;line-height:1.45}
+.set li svg{width:20px;height:20px;flex:none;margin-top:1px;stroke:var(--fire);fill:none;stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round}
+.set.hot li svg{stroke:var(--gold)}
+.set .btn{justify-content:center;width:100%}
+.set .btn.line{background:transparent;border:1.5px solid var(--ink);color:var(--ink)}
+.set .btn.line:hover{background:var(--ink);color:#fff}
+
+/* trays */
+.trays{background:var(--deep);color:var(--cream);position:relative;overflow:hidden}
+.trays:after{content:"";position:absolute;right:8%;top:50%;transform:translateY(-50%);width:620px;height:620px;border-radius:50%;background:radial-gradient(circle,rgba(226,88,42,.35),transparent 65%)}
+.trays .wrap{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:center;position:relative;z-index:1}
+.trays h2.t em{color:var(--gold)}
+.trays p.intro{font-size:18px;line-height:1.7;color:#d6cdb9;margin-top:20px}
+.tlist{margin-top:30px;display:grid;gap:0;border-top:1px solid rgba(247,239,223,.18)}
+.tlist div{display:flex;justify-content:space-between;gap:16px;padding:18px 0;border-bottom:1px solid rgba(247,239,223,.18);font-size:17px}
+.tlist b{font-family:'Playfair Display',serif;color:var(--gold);font-size:21px;white-space:nowrap}
+.tlist span small{display:block;font-size:14px;color:#b9b19e;margin-top:3px}
+.tray-art{background:linear-gradient(160deg,#1b4029,#0f2618);border-radius:30px;padding:30px;border:1px solid rgba(247,239,223,.1)}
+.tray-art svg{width:100%;height:auto;display:block}
+
+/* visit + reserve */
+.visit .wrap{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:stretch}
+.card{background:#fff;border:1px solid var(--line);border-radius:26px;padding:38px}
+.map{border-radius:18px;overflow:hidden;margin:24px 0 26px;border:1px solid var(--line)}
+.map svg{display:block;width:100%;height:auto}
+.hrs{display:grid;gap:12px}
+.hrs div{display:flex;justify-content:space-between;gap:16px;font-size:16px;padding-bottom:12px;border-bottom:1px dashed var(--line)}
+.hrs div:last-child{border:0}
+.hrs b{font-weight:600}
+.contact{display:grid;gap:10px;margin-top:22px;font-size:16px;color:var(--mut)}
+.contact span{display:flex;gap:12px;align-items:center}
+.contact svg{width:20px;height:20px;stroke:var(--leaf);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;flex:none}
+form{display:grid;gap:16px;margin-top:24px}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+label{display:grid;gap:7px;font-size:14px;font-weight:600}
+input,select,textarea{font-family:inherit;font-size:16px;height:52px;border:1.5px solid var(--line);border-radius:14px;padding:0 16px;background:var(--paper);color:var(--ink);width:100%}
+textarea{height:96px;padding:14px 16px;resize:vertical}
+input:focus,select:focus,textarea:focus{outline:none;border-color:var(--leaf);background:#fff}
+.seg{display:flex;gap:8px;flex-wrap:wrap}
+.seg label{display:block}
+.seg input{display:none}
+.seg span{display:inline-block;height:44px;line-height:41px;padding:0 18px;border-radius:12px;border:1.5px solid var(--line);font-weight:600;font-size:15px;cursor:pointer;background:var(--paper)}
+.seg input:checked+span{background:var(--leaf);border-color:var(--leaf);color:#fff}
+form .btn{justify-content:center;width:100%;height:56px}
+.ok{display:none;text-align:center;padding:40px 10px}
+.ok svg{width:72px;height:72px}
+.ok h3{font-family:'Playfair Display',serif;font-size:30px;margin:16px 0 8px}
+.ok p{color:var(--mut);font-size:16px;line-height:1.6}
+.done form{display:none}.done .ok{display:block}
+
+footer{background:var(--ink);color:#bdb6a6;padding:60px 0 40px}
+footer .wrap{display:flex;justify-content:space-between;gap:30px;flex-wrap:wrap;align-items:flex-start}
+footer .logo{color:var(--cream)}
+footer p{font-size:14px;line-height:1.8;margin-top:16px;max-width:360px}
+footer .fl{display:flex;gap:40px;font-size:15px;flex-wrap:wrap}
+footer .fl div{display:grid;gap:10px;align-content:start}
+footer .fl b{color:var(--cream);font-size:13px;letter-spacing:.18em;text-transform:uppercase}
+footer .cp{width:100%;border-top:1px solid #34312b;padding-top:24px;margin-top:20px;font-size:13px}
+
+.fab{display:none}
+@media(max-width:1000px){
+ .links{display:none}.burger{display:block}nav .btn{display:none}
+ .hero .wrap{grid-template-columns:1fr;max-height:none;min-height:0;padding-top:40px}
+ .hero .art{max-width:560px;margin:0 auto;width:100%}
+ .fireproc .wrap,.trays .wrap,.visit .wrap{grid-template-columns:1fr;gap:44px}
+ .mgrid{grid-template-columns:1fr 1fr}
+ .sgrid{grid-template-columns:1fr;max-width:520px;margin-left:auto;margin-right:auto}
+ .set.hot{transform:none}
+}
+@media(max-width:620px){
+ .wrap{padding:0 18px}
+ nav .wrap{height:64px}
+ .logo svg{width:36px;height:36px}.logo b{font-size:19px}
+ .hero h1{font-size:50px}
+ .hero p.lead{font-size:17px}
+ .hero .acts .btn{flex:1;justify-content:center;padding:0 16px}
+ .hero .facts{gap:22px}
+ .hero .facts b{font-size:26px}
+ .badge{width:104px;height:104px;right:0;top:0}.badge b{font-size:24px}.badge span{font-size:11px}
+ .sec{padding:76px 0}
+ .step{grid-template-columns:1fr;gap:16px;padding:22px}
+ .step .ic{width:72px;height:72px}.step .ic svg{width:48px;height:48px}
+ .mgrid{grid-template-columns:1fr}
+ .tabs{width:100%}
+ .tabs{flex-wrap:nowrap}
+ .tabs button{flex:1;padding:0 8px;min-width:0}
+ .card{padding:26px 20px}
+ .two{grid-template-columns:1fr}
+ .tray-art{padding:16px}
+ .fab{display:flex;position:fixed;left:14px;right:14px;bottom:14px;z-index:40;justify-content:center;transform:translateY(120px);transition:transform .3s}.fab.on{transform:none}
+ footer{padding-bottom:100px}
+}
+</style>
+</head>
+<body>
+<nav>
+ <div class="wrap">
+  <a class="logo" href="#top" aria-label="Uling Inasal House home">
+   <svg viewBox="0 0 48 48"><circle cx="24" cy="24" r="23" fill="#e2582a"/><path d="M24 9c5 7 9 10 9 17a9 9 0 0 1-18 0c0-4 2-6 4-9 1 3 2 4 4 5-1-5 0-9 1-13z" fill="#f2b33d"/><path d="M24 24c2 3 4 4 4 7a4 4 0 0 1-8 0c0-2 2-4 4-7z" fill="#fff4d8"/><path d="M12 38h24" stroke="#12301f" stroke-width="3" stroke-linecap="round"/></svg>
+   <span><b>Uling</b><small>INASAL HOUSE</small></span>
+  </a>
+  <div class="links"><a href="#fire">Our Fire</a><a href="#menu">Menu</a><a href="#sets">Sets</a><a href="#trays">Party Trays</a><a href="#visit">Visit</a></div>
+  <a class="btn fire" href="#reserve">Reserve a Table</a>
+  <button class="burger" aria-label="Open menu"><svg viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+ </div>
+</nav>
+
+<header class="hero" id="top">
+ <div class="wrap">
+  <div>
+   <div class="eyebrow" style="color:var(--gold)">Bacolod-style · Charcoal grilled</div>
+   <h1>Smoke, <em>atsuete</em><br>&amp; a little <span>fire.</span></h1>
+   <p class="lead">Chicken marinated overnight in lemongrass, calamansi and garlic, basted in golden annatto oil and grilled slowly over real uling. Served on banana leaf, the way it should be.</p>
+   <div class="acts">
+    <a class="btn fire" href="#reserve">Reserve a Table <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+    <a class="btn ghost" href="#menu">See the Menu</a>
+   </div>
+   <div class="facts">
+    <div><b>12 hrs</b><span>overnight marinade</span></div>
+    <div><b>₱25</b><span>rice refill</span></div>
+    <div><b>Daily</b><span>open from 10AM</span></div>
+   </div>
+  </div>
+  <div class="art">
+   <svg viewBox="0 0 600 560" role="img" aria-label="Grilled chicken inasal on banana leaf with rice and calamansi">
+    <defs>
+     <radialGradient id="hb" cx="50%" cy="55%" r="55%"><stop offset="0" stop-color="#2c6b45"/><stop offset="1" stop-color="#163b25"/></radialGradient>
+     <linearGradient id="lf" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#4f9a55"/><stop offset=".55" stop-color="#2f7a3d"/><stop offset="1" stop-color="#1d5a2b"/></linearGradient>
+     <radialGradient id="ck" cx="40%" cy="35%" r="70%"><stop offset="0" stop-color="#ffb347"/><stop offset=".45" stop-color="#e9792a"/><stop offset=".85" stop-color="#b5481b"/><stop offset="1" stop-color="#7a2c10"/></radialGradient>
+     <radialGradient id="rc" cx="45%" cy="35%" r="70%"><stop offset="0" stop-color="#fff9e6"/><stop offset=".7" stop-color="#f5e6be"/><stop offset="1" stop-color="#dcc795"/></radialGradient>
+     <radialGradient id="cl" cx="40%" cy="35%" r="65%"><stop offset="0" stop-color="#c7ec7a"/><stop offset=".6" stop-color="#6fb13a"/><stop offset="1" stop-color="#3f7c1f"/></radialGradient>
+     <radialGradient id="plate" cx="50%" cy="40%" r="60%"><stop offset="0" stop-color="#3a352d"/><stop offset="1" stop-color="#1a1814"/></radialGradient>
+     <linearGradient id="smk" x1="0" y1="1" x2="0" y2="0"><stop offset="0" stop-color="#fff" stop-opacity=".35"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient>
+    </defs>
+    <ellipse cx="300" cy="330" rx="280" ry="210" fill="url(#plate)"/>
+    <ellipse cx="300" cy="322" rx="262" ry="194" fill="none" stroke="#4d463a" stroke-width="3"/>
+    <!-- banana leaf -->
+    <path d="M70 360C90 200 260 130 470 150c60 6 90 40 70 90-30 80-160 190-330 200-80 5-150-20-140-80z" fill="url(#lf)"/>
+    <path d="M90 352C190 300 340 220 520 190" stroke="#a8d48a" stroke-width="5" fill="none" opacity=".7"/>
+    <g stroke="#1b4d25" stroke-width="2" opacity=".55" fill="none">
+     <path d="M140 330l-30-60M190 305l-28-80M240 282l-20-92M290 262l-10-98M340 244l-4-96M390 228l4-82M440 214l10-62"/>
+     <path d="M160 320l40 70M210 296l46 86M262 274l48 90M312 254l46 84M364 236l44 74M414 220l38 60"/>
+    </g>
+    <!-- rice dome -->
+    <ellipse cx="200" cy="350" rx="82" ry="22" fill="#000" opacity=".25"/>
+    <path d="M122 342c0-58 36-92 80-92s80 34 80 92c-20 14-140 14-160 0z" fill="url(#rc)"/>
+    <g fill="#fff" opacity=".9"><ellipse cx="170" cy="300" rx="5" ry="2.6" transform="rotate(-20 170 300)"/><ellipse cx="196" cy="282" rx="5" ry="2.6" transform="rotate(15 196 282)"/><ellipse cx="226" cy="296" rx="5" ry="2.6" transform="rotate(-40 226 296)"/><ellipse cx="150" cy="326" rx="5" ry="2.6"/><ellipse cx="250" cy="322" rx="5" ry="2.6" transform="rotate(30 250 322)"/><ellipse cx="206" cy="318" rx="5" ry="2.6" transform="rotate(-10 206 318)"/><ellipse cx="182" cy="330" rx="5" ry="2.6" transform="rotate(40 182 330)"/></g>
+    <path d="M178 262c8-4 18-5 26-2" stroke="#e8662c" stroke-width="5" stroke-linecap="round" fill="none" opacity=".85"/>
+    <circle cx="214" cy="266" r="4" fill="#3f8a3b"/><circle cx="190" cy="258" r="3.4" fill="#3f8a3b"/>
+    <!-- chicken leg quarter -->
+    <ellipse cx="378" cy="300" rx="128" ry="34" fill="#000" opacity=".28"/>
+    <path d="M268 262c-10-64 50-112 128-102 76 10 128 64 116 116-10 44-70 54-140 40-50-10-96-14-104-54z" fill="url(#ck)"/>
+    <path d="M486 218c26-14 50-8 58 6 6 12-6 22-20 20 8 12 0 26-14 24-12-2-18-16-14-28" fill="#f7e2bf" stroke="#c99f69" stroke-width="2"/>
+    <path d="M470 236c8-6 14-12 20-18" stroke="#9a4a1c" stroke-width="16" stroke-linecap="round"/>
+    <!-- grill marks -->
+    <g stroke="#4a1a08" stroke-width="9" stroke-linecap="round" opacity=".72">
+     <path d="M300 214l60 68M332 190l72 82M372 176l70 80M418 178l54 60"/>
+    </g>
+    <g fill="#ffd27a" opacity=".55"><ellipse cx="338" cy="196" rx="30" ry="12" transform="rotate(-18 338 196)"/><ellipse cx="420" cy="196" rx="18" ry="7" transform="rotate(-8 420 196)"/></g>
+    <g fill="#5b2a0f" opacity=".6"><circle cx="300" cy="260" r="3"/><circle cx="360" cy="300" r="2.6"/><circle cx="446" cy="270" r="3"/><circle cx="392" cy="240" r="2.2"/></g>
+    <path d="M274 268c20 30 80 44 150 40" stroke="#ffcf7a" stroke-width="3" fill="none" opacity=".4"/>
+    <!-- calamansi halves -->
+    <ellipse cx="160" cy="430" rx="40" ry="12" fill="#000" opacity=".25"/>
+    <circle cx="140" cy="410" r="30" fill="url(#cl)"/>
+    <circle cx="186" cy="420" r="26" fill="#f3e27a"/><circle cx="186" cy="420" r="21" fill="#e6c94a"/>
+    <g stroke="#fff6c2" stroke-width="2"><path d="M186 400v40M166 420h40M172 406l28 28M200 406l-28 28"/></g>
+    <circle cx="186" cy="420" r="4" fill="#fff6c2"/>
+    <!-- sawsawan bowl -->
+    <ellipse cx="470" cy="420" rx="62" ry="22" fill="#000" opacity=".28"/>
+    <ellipse cx="466" cy="402" rx="58" ry="24" fill="#efe6d1"/>
+    <ellipse cx="466" cy="398" rx="46" ry="16" fill="#6b3416"/>
+    <ellipse cx="458" cy="394" rx="20" ry="5" fill="#a8572a" opacity=".8"/>
+    <g fill="#d1361c"><circle cx="476" cy="396" r="3.4"/><circle cx="452" cy="402" r="2.6"/><circle cx="488" cy="402" r="2.4"/></g>
+    <g fill="#f5f0dc"><circle cx="466" cy="392" r="2.4"/><circle cx="444" cy="396" r="2"/></g>
+    <!-- smoke -->
+    <g fill="none" stroke="url(#smk)" stroke-width="10" stroke-linecap="round">
+     <path d="M350 150c-20-30 20-50 0-80s20-50 6-70"/>
+     <path d="M420 154c-16-26 14-40 0-66s16-40 4-60"/>
+    </g>
+    <g fill="#f2b33d"><circle cx="520" cy="320" r="3"/><circle cx="96" cy="250" r="2.4"/><circle cx="548" cy="260" r="2"/></g>
+   </svg>
+   <div class="badge"><div><b>₱189</b><span>PAA + RICE</span></div></div>
+  </div>
+ </div>
+</header>
+
+<div class="strip" aria-hidden="true"><div><span>Overnight marinade</span><span>Real charcoal</span><span>Annatto basting</span><span>Banana leaf plating</span><span>Party trays</span><span>Dine-in · Take-out</span><span>Overnight marinade</span><span>Real charcoal</span><span>Annatto basting</span><span>Banana leaf plating</span><span>Party trays</span><span>Dine-in · Take-out</span></div></div>
+
+<section class="sec fireproc" id="fire">
+ <div class="wrap">
+  <div>
+   <div class="eyebrow">Our Fire</div>
+   <h2 class="t">Three steps.<br><em>No shortcuts.</em></h2>
+   <p class="intro">Good inasal is patient food. Every piece goes through the same three steps before it reaches your table, from the marinade bucket the night before to the last brush of oil over the coals.</p>
+  </div>
+  <div class="steps">
+   <div class="step"><div class="ic"><svg viewBox="0 0 64 64" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M14 26h36l-4 26a4 4 0 0 1-4 3H22a4 4 0 0 1-4-3z" fill="#2d6b45" stroke="#f7efdf" stroke-width="2.5"/><path d="M12 26h40" stroke="#f7efdf" stroke-width="3"/><path d="M26 18c0-4 3-6 6-8M36 20c2-3 6-4 8-3" stroke="#a6d47c" stroke-width="2.6"/><circle cx="26" cy="38" r="4" fill="#f2b33d"/><circle cx="38" cy="42" r="3" fill="#c7ec7a"/></svg></div><div><small>STEP 01</small><h3>Marinate overnight</h3><p>Lemongrass, calamansi, garlic, ginger and coconut vinegar for twelve hours, so the flavour reaches the bone.</p></div></div>
+   <div class="step"><div class="ic"><svg viewBox="0 0 64 64" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M18 46l20-20" stroke="#c99f69" stroke-width="5"/><path d="M38 26l8-8 6 6-8 8z" fill="#f2b33d" stroke="#f7efdf" stroke-width="2"/><path d="M14 52c4-6 10-6 14-2" stroke="#e2582a" stroke-width="3.5"/><circle cx="48" cy="40" r="5" fill="#e2582a"/><circle cx="52" cy="50" r="3" fill="#f2b33d"/></svg></div><div><small>STEP 02</small><h3>Baste in atsuete oil</h3><p>Annatto seeds steeped in warm oil with garlic. It is what gives inasal its sunset colour and gentle sweetness.</p></div></div>
+   <div class="step"><div class="ic"><svg viewBox="0 0 64 64" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M10 34h44" stroke="#f7efdf" stroke-width="3"/><path d="M14 40h36l-4 12H18z" fill="#3a352d" stroke="#f7efdf" stroke-width="2.5"/><path d="M22 44h4M30 46h4M38 44h4" stroke="#e2582a" stroke-width="3"/><path d="M24 28c-3-5 3-7 0-12M34 28c-3-5 3-7 0-12M44 28c-3-5 3-7 0-12" stroke="#f2b33d" stroke-width="2.6"/></svg></div><div><small>STEP 03</small><h3>Grill over uling</h3><p>Slow-grilled over hardwood charcoal and turned by hand. Expect about fifteen minutes. It is worth the wait.</p></div></div>
+  </div>
+ </div>
+</section>
+
+<section class="sec menu" id="menu">
+ <div class="wrap">
+  <div class="mhead">
+   <div><div class="eyebrow">The Menu</div><h2 class="t">From the <em>grill</em><br>to your leaf.</h2></div>
+   <div class="tabs" role="tablist">
+    <button role="tab" aria-selected="true" data-k="grill">Grill</button>
+    <button role="tab" aria-selected="false" data-k="sides">Sides</button>
+    <button role="tab" aria-selected="false" data-k="drinks">Drinks</button>
+   </div>
+  </div>
+  <div class="mgrid">
+   <!-- grill -->
+   <article class="item" data-k="grill"><div class="pic"><span class="tag">House cut</span>
+    <svg viewBox="0 0 240 150"><defs><radialGradient id="m1" cx="40%" cy="35%" r="70%"><stop offset="0" stop-color="#ffb347"/><stop offset=".6" stop-color="#d9621f"/><stop offset="1" stop-color="#8a3311"/></radialGradient></defs><ellipse cx="120" cy="122" rx="96" ry="16" fill="#000" opacity=".16"/><path d="M40 100c-6-44 30-70 80-64 48 6 80 36 72 70-6 26-46 30-90 22-34-6-58-6-62-28z" fill="url(#m1)"/><path d="M178 64c18-8 32-4 36 4 4 8-4 14-12 12 4 8-2 16-10 14-8-2-10-10-8-18" fill="#f7e2bf" stroke="#c99f69" stroke-width="1.5"/><g stroke="#4a1a08" stroke-width="6" stroke-linecap="round" opacity=".7"><path d="M70 56l40 46M100 44l46 54M136 44l40 44"/></g><ellipse cx="96" cy="50" rx="20" ry="7" fill="#ffd27a" opacity=".5" transform="rotate(-14 96 50)"/></svg></div>
+    <div class="bd"><div class="row"><h3>Paa (Leg Quarter)</h3><span class="pr">₱189</span></div><p>Our classic. Juicy thigh and leg, charred edges, served with garlic rice.</p></div></article>
+   <article class="item" data-k="grill"><div class="pic"><span class="tag">Leaner</span>
+    <svg viewBox="0 0 240 150"><defs><radialGradient id="m2" cx="45%" cy="30%" r="75%"><stop offset="0" stop-color="#ffc066"/><stop offset=".6" stop-color="#e07a2c"/><stop offset="1" stop-color="#9a3e16"/></radialGradient></defs><ellipse cx="120" cy="124" rx="90" ry="14" fill="#000" opacity=".16"/><path d="M36 92c10-40 60-60 110-56 40 4 64 26 58 52-6 30-60 44-110 38-40-4-64-14-58-34z" fill="url(#m2)"/><g stroke="#4a1a08" stroke-width="6" stroke-linecap="round" opacity=".66"><path d="M64 70l56 34M96 54l66 40M136 46l56 36"/></g><path d="M50 100c30 16 90 20 140 4" stroke="#ffd27a" stroke-width="3" fill="none" opacity=".5"/><g fill="#3f8a3b"><circle cx="160" cy="72" r="3"/><circle cx="90" cy="88" r="2.6"/></g></svg></div>
+    <div class="bd"><div class="row"><h3>Pecho (Breast &amp; Wing)</h3><span class="pr">₱199</span></div><p>Breast with wing attached, basted twice so it stays tender and bright.</p></div></article>
+   <article class="item" data-k="grill"><div class="pic"><span class="tag">Sticks</span>
+    <svg viewBox="0 0 240 150"><ellipse cx="120" cy="126" rx="96" ry="12" fill="#000" opacity=".15"/><g stroke="#c99f69" stroke-width="4" stroke-linecap="round"><path d="M20 110L220 50"/><path d="M24 130L224 72"/></g><g><rect x="58" y="76" width="28" height="22" rx="7" fill="#c75a22" transform="rotate(-16 72 87)"/><rect x="92" y="66" width="28" height="22" rx="7" fill="#a8461a" transform="rotate(-16 106 77)"/><rect x="126" y="57" width="28" height="22" rx="7" fill="#d16a28" transform="rotate(-16 140 68)"/><rect x="160" y="47" width="28" height="22" rx="7" fill="#b24c1c" transform="rotate(-16 174 58)"/><rect x="62" y="96" width="28" height="22" rx="7" fill="#b9501d" transform="rotate(-16 76 107)"/><rect x="96" y="86" width="28" height="22" rx="7" fill="#d4702c" transform="rotate(-16 110 97)"/><rect x="130" y="77" width="28" height="22" rx="7" fill="#a5431a" transform="rotate(-16 144 88)"/><rect x="164" y="68" width="28" height="22" rx="7" fill="#c75a22" transform="rotate(-16 178 79)"/></g><g fill="#5b230b" opacity=".6"><circle cx="72" cy="86" r="2"/><circle cx="140" cy="66" r="2"/><circle cx="110" cy="96" r="2"/><circle cx="178" cy="78" r="2"/></g><g fill="#ffd27a" opacity=".55"><ellipse cx="104" cy="72" rx="8" ry="3"/><ellipse cx="172" cy="52" rx="8" ry="3"/></g></svg></div>
+    <div class="bd"><div class="row"><h3>Pork BBQ (3 sticks)</h3><span class="pr">₱165</span></div><p>Sweet-salty glaze, banana ketchup base, grilled until sticky at the edges.</p></div></article>
+   <article class="item" data-k="grill"><div class="pic"><span class="tag">Crisp skin</span>
+    <svg viewBox="0 0 240 150"><ellipse cx="120" cy="128" rx="96" ry="12" fill="#000" opacity=".15"/><g transform="translate(74 82) rotate(-14)"><rect x="-22" y="-34" width="44" height="68" rx="8" fill="#e9c9a4"/><rect x="-22" y="-34" width="44" height="14" rx="7" fill="#7a2e0f"/><rect x="-22" y="-26" width="44" height="6" fill="#b5541f"/><rect x="-22" y="-16" width="44" height="14" fill="#c98463"/><rect x="-22" y="4" width="44" height="12" fill="#b97151"/><rect x="-22" y="22" width="44" height="12" rx="4" fill="#c98463"/><path d="M-18 -30h36" stroke="#ffcf7a" stroke-width="2" opacity=".5"/></g><g transform="translate(118 78) rotate(-4)"><rect x="-22" y="-34" width="44" height="68" rx="8" fill="#e9c9a4"/><rect x="-22" y="-34" width="44" height="14" rx="7" fill="#7a2e0f"/><rect x="-22" y="-26" width="44" height="6" fill="#b5541f"/><rect x="-22" y="-16" width="44" height="14" fill="#c98463"/><rect x="-22" y="4" width="44" height="12" fill="#b97151"/><rect x="-22" y="22" width="44" height="12" rx="4" fill="#c98463"/><path d="M-18 -30h36" stroke="#ffcf7a" stroke-width="2" opacity=".5"/></g><g transform="translate(162 82) rotate(8)"><rect x="-22" y="-34" width="44" height="68" rx="8" fill="#e9c9a4"/><rect x="-22" y="-34" width="44" height="14" rx="7" fill="#7a2e0f"/><rect x="-22" y="-26" width="44" height="6" fill="#b5541f"/><rect x="-22" y="-16" width="44" height="14" fill="#c98463"/><rect x="-22" y="4" width="44" height="12" fill="#b97151"/><rect x="-22" y="22" width="44" height="12" rx="4" fill="#c98463"/><path d="M-18 -30h36" stroke="#ffcf7a" stroke-width="2" opacity=".5"/></g><g fill="#3f8a3b"><path d="M188 116c12-10 26-8 32 0-10 10-24 10-32 0z"/></g><g fill="#f2b33d"><circle cx="40" cy="110" r="4"/><circle cx="52" cy="118" r="3"/></g></svg></div>
+    <div class="bd"><div class="row"><h3>Liempo Inihaw</h3><span class="pr">₱229</span></div><p>Pork belly in soy-calamansi, grilled crisp and sliced. Comes with atchara.</p></div></article>
+   <article class="item" data-k="grill"><div class="pic"><span class="tag">Snack</span>
+    <svg viewBox="0 0 240 150"><ellipse cx="120" cy="126" rx="96" ry="12" fill="#000" opacity=".15"/><g stroke="#c99f69" stroke-width="4" stroke-linecap="round"><path d="M40 60l60 70M90 50l60 76M140 46l54 74"/></g><g><ellipse cx="62" cy="80" rx="15" ry="13" fill="#d06a2a"/><ellipse cx="76" cy="98" rx="14" ry="12" fill="#b9501d"/><ellipse cx="112" cy="72" rx="15" ry="13" fill="#c45d24"/><ellipse cx="126" cy="92" rx="14" ry="12" fill="#a8461a"/><ellipse cx="158" cy="68" rx="15" ry="13" fill="#d4702c"/><ellipse cx="172" cy="88" rx="14" ry="12" fill="#b24c1c"/></g><g fill="#ffd27a" opacity=".5"><ellipse cx="58" cy="74" rx="6" ry="3"/><ellipse cx="108" cy="66" rx="6" ry="3"/><ellipse cx="154" cy="62" rx="6" ry="3"/></g></svg></div>
+    <div class="bd"><div class="row"><h3>Chicken Isaw &amp; Skin</h3><span class="pr">₱95</span></div><p>Two sticks each, grilled crunchy and served with spiced cane vinegar.</p></div></article>
+   <article class="item" data-k="grill"><div class="pic"><span class="tag">Seafood</span>
+    <svg viewBox="0 0 240 150"><defs><linearGradient id="fs" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#d6c1a0"/><stop offset=".5" stop-color="#a5865d"/><stop offset="1" stop-color="#6e5434"/></linearGradient></defs><ellipse cx="120" cy="126" rx="96" ry="12" fill="#000" opacity=".15"/><path d="M30 80c30-34 120-40 170 0-50 40-140 34-170 0z" fill="url(#fs)"/><path d="M196 80l26-24v48z" fill="#8a6a42"/><circle cx="58" cy="76" r="6" fill="#f7efdf"/><circle cx="58" cy="76" r="3" fill="#1c1a17"/><g stroke="#3d2a14" stroke-width="5" stroke-linecap="round" opacity=".55"><path d="M84 60l20 40M114 56l20 44M144 58l20 40"/></g><path d="M60 92c30 10 80 12 120 0" stroke="#f2b33d" stroke-width="3" fill="none" opacity=".6"/><g fill="#e2582a"><circle cx="120" cy="78" r="3"/><circle cx="96" cy="82" r="2.4"/></g></svg></div>
+    <div class="bd"><div class="row"><h3>Inihaw na Bangus</h3><span class="pr">₱249</span></div><p>Whole milkfish stuffed with tomato and onion, wrapped in leaf and grilled.</p></div></article>
+   <!-- sides -->
+   <article class="item" data-k="sides" hidden><div class="pic"><span class="tag">Refill ₱25</span>
+    <svg viewBox="0 0 240 150"><defs><radialGradient id="r2" cx="45%" cy="35%" r="70%"><stop offset="0" stop-color="#fff9e6"/><stop offset="1" stop-color="#e6cf98"/></radialGradient></defs><ellipse cx="120" cy="124" rx="80" ry="14" fill="#000" opacity=".16"/><path d="M56 116c0-50 28-78 64-78s64 28 64 78c-16 10-112 10-128 0z" fill="url(#r2)"/><g fill="#c9772f" opacity=".8"><circle cx="96" cy="70" r="3"/><circle cx="130" cy="62" r="2.6"/><circle cx="146" cy="86" r="3"/><circle cx="108" cy="96" r="2.6"/><circle cx="82" cy="100" r="2.2"/></g><g fill="#3f8a3b"><circle cx="118" cy="50" r="3"/><circle cx="104" cy="58" r="2.4"/></g></svg></div>
+    <div class="bd"><div class="row"><h3>Garlic Rice</h3><span class="pr">₱45</span></div><p>Toasted garlic, a brush of chicken oil. Refills at ₱25 per cup.</p></div></article>
+   <article class="item" data-k="sides" hidden><div class="pic"><span class="tag">Pickled</span>
+    <svg viewBox="0 0 240 150"><ellipse cx="120" cy="126" rx="70" ry="12" fill="#000" opacity=".16"/><path d="M78 40h84v12a8 8 0 0 1-4 6v56a12 12 0 0 1-12 12H94a12 12 0 0 1-12-12V58a8 8 0 0 1-4-6z" fill="#f6efd8" opacity=".55" stroke="#d7c79e" stroke-width="2"/><rect x="74" y="30" width="92" height="14" rx="5" fill="#1f5c3a"/><g><rect x="90" y="66" width="60" height="50" rx="8" fill="#f1c25a" opacity=".9"/><path d="M96 80h48M96 92h48M96 104h48" stroke="#e2582a" stroke-width="4" stroke-linecap="round" opacity=".7"/><circle cx="110" cy="74" r="4" fill="#d1361c"/><circle cx="132" cy="98" r="3" fill="#3f8a3b"/></g></svg></div>
+    <div class="bd"><div class="row"><h3>Atchara</h3><span class="pr">₱40</span></div><p>House-pickled green papaya with carrot and ginger. Bright and crunchy.</p></div></article>
+   <article class="item" data-k="sides" hidden><div class="pic"><span class="tag">Soup</span>
+    <svg viewBox="0 0 240 150"><ellipse cx="120" cy="128" rx="84" ry="12" fill="#000" opacity=".16"/><path d="M40 70h160c0 40-34 60-80 60s-80-20-80-60z" fill="#efe6d1"/><ellipse cx="120" cy="70" rx="80" ry="16" fill="#e8b25a"/><ellipse cx="120" cy="70" rx="64" ry="11" fill="#d7962f"/><g fill="#3f8a3b"><path d="M90 66c8-6 18-6 22 0-8 6-16 6-22 0z"/><path d="M134 72c6-6 16-6 20 0-6 6-14 6-20 0z"/></g><g fill="#f7efdf"><circle cx="118" cy="68" r="5"/><circle cx="148" cy="64" r="4"/></g><g fill="none" stroke="#fff" stroke-width="5" stroke-linecap="round" opacity=".3"><path d="M100 40c-6-8 6-12 0-22M136 42c-6-8 6-12 0-22"/></g></svg></div>
+    <div class="bd"><div class="row"><h3>Chicken Binakol Soup</h3><span class="pr">₱85</span></div><p>Ginger broth with young coconut and malunggay leaves, served hot.</p></div></article>
+   <!-- drinks -->
+   <article class="item" data-k="drinks" hidden><div class="pic"><span class="tag">Fresh</span>
+    <svg viewBox="0 0 240 150"><ellipse cx="120" cy="136" rx="50" ry="8" fill="#000" opacity=".16"/><path d="M86 30h68l-8 102a6 6 0 0 1-6 5h-40a6 6 0 0 1-6-5z" fill="#e9f3c6" opacity=".7" stroke="#cfdda0" stroke-width="2"/><path d="M90 60h60l-6 72a6 6 0 0 1-6 5h-36a6 6 0 0 1-6-5z" fill="#d9e35f"/><g fill="#fff" opacity=".7"><rect x="100" y="70" width="14" height="14" rx="3" transform="rotate(12 107 77)"/><rect x="122" y="88" width="14" height="14" rx="3" transform="rotate(-10 129 95)"/></g><circle cx="150" cy="40" r="16" fill="#6fb13a"/><circle cx="150" cy="40" r="11" fill="#e6c94a"/><path d="M128 18l-10 110" stroke="#e2582a" stroke-width="5" stroke-linecap="round"/></svg></div>
+    <div class="bd"><div class="row"><h3>Calamansi Cooler</h3><span class="pr">₱75</span></div><p>Freshly squeezed calamansi with a touch of muscovado, over ice.</p></div></article>
+   <article class="item" data-k="drinks" hidden><div class="pic"><span class="tag">Iced</span>
+    <svg viewBox="0 0 240 150"><ellipse cx="120" cy="136" rx="50" ry="8" fill="#000" opacity=".16"/><path d="M86 30h68l-8 102a6 6 0 0 1-6 5h-40a6 6 0 0 1-6-5z" fill="#f6e9c8" opacity=".6" stroke="#dcc795" stroke-width="2"/><path d="M89 50h62l-7 82a6 6 0 0 1-6 5h-36a6 6 0 0 1-6-5z" fill="#b0743a"/><path d="M89 50h62l-2 20H91z" fill="#7a4a1e"/><g fill="#fff" opacity=".6"><rect x="102" y="76" width="14" height="14" rx="3" transform="rotate(12 109 83)"/><rect x="124" y="98" width="14" height="14" rx="3" transform="rotate(-10 131 105)"/></g><g fill="#1f5c3a"><path d="M140 22c10-10 26-8 30 2-10 8-22 8-30-2z"/></g></svg></div>
+    <div class="bd"><div class="row"><h3>Sago't Gulaman</h3><span class="pr">₱65</span></div><p>Brown sugar syrup, tapioca pearls and jelly. The sweet end to the meal.</p></div></article>
+   <article class="item" data-k="drinks" hidden><div class="pic"><span class="tag">Whole</span>
+    <svg viewBox="0 0 240 150"><ellipse cx="120" cy="136" rx="60" ry="9" fill="#000" opacity=".16"/><path d="M70 82c0-40 24-62 50-62s50 22 50 62-22 52-50 52-50-12-50-52z" fill="#7aa53f"/><path d="M74 72c8-30 26-44 46-44s38 14 46 44c-24-8-68-8-92 0z" fill="#f6f0dc"/><ellipse cx="120" cy="40" rx="30" ry="10" fill="#efe6c8"/><path d="M134 36l12-30" stroke="#e2582a" stroke-width="6" stroke-linecap="round"/><path d="M84 100c12 18 60 20 74 0" stroke="#5c8a2c" stroke-width="3" fill="none"/></svg></div>
+    <div class="bd"><div class="row"><h3>Buko Juice</h3><span class="pr">₱90</span></div><p>Served in the young coconut, with the soft meat scooped for you.</p></div></article>
+  </div>
+  <p class="note">Prices are in Philippine peso and include VAT.</p>
+ </div>
+</section>
+
+<section class="sec sets" id="sets">
+ <div class="wrap">
+  <div class="sh">
+   <div class="eyebrow">Sets &amp; Boodle</div>
+   <h2 class="t">Come solo.<br><em>Bring the barkada.</em></h2>
+   <p>Pick a set and we prepare everything on banana leaf. Please book Boodle sets a day ahead.</p>
+  </div>
+  <div class="sgrid">
+   <div class="set">
+    <span class="pp">For one</span><h3>Solo Plate</h3>
+    <div class="price">₱239<small> / person</small></div>
+    <ul>
+     <li><svg viewBox="0 0 24 24"><path d="m5 12 5 5 9-10"/></svg>Paa or Pecho inasal</li>
+     <li><svg viewBox="0 0 24 24"><path d="m5 12 5 5 9-10"/></svg>Garlic rice and atchara</li>
+     <li><svg viewBox="0 0 24 24"><path d="m5 12 5 5 9-10"/></svg>Calamansi cooler</li>
+    </ul>
+    <a class="btn line" href="#reserve">Reserve</a>
+   </div>
+   <div class="set hot">
+    <span class="pp">For 4 people</span><h3>Barkada Set</h3>
+    <div class="price">₱1,190<small> / table</small></div>
+    <ul>
+     <li><svg viewBox="0 0 24 24"><path d="m5 12 5 5 9-10"/></svg>2 Paa + 2 Pecho inasal</li>
+     <li><svg viewBox="0 0 24 24"><path d="m5 12 5 5 9-10"/></svg>Pork BBQ, 6 sticks</li>
+     <li><svg viewBox="0 0 24 24"><path d="m5 12 5 5 9-10"/></svg>Garlic rice platter, binakol soup</li>
+     <li><svg viewBox="0 0 24 24"><path d="m5 12 5 5 9-10"/></svg>1 pitcher calamansi cooler</li>
+    </ul>
+    <a class="btn fire" href="#reserve">Reserve this set</a>
+   </div>
+   <div class="set">
+    <span class="pp">For 8 people</span><h3>Boodle Feast</h3>
+    <div class="price">₱2,690<small> / table</small></div>
+    <ul>
+     <li><svg viewBox="0 0 24 24"><path d="m5 12 5 5 9-10"/></svg>Inasal, liempo and bangus</li>
+     <li><svg viewBox="0 0 24 24"><path d="m5 12 5 5 9-10"/></svg>Isaw, skin and pork BBQ</li>
+     <li><svg viewBox="0 0 24 24"><path d="m5 12 5 5 9-10"/></svg>Rice, salted egg and tomato salad</li>
+     <li><svg viewBox="0 0 24 24"><path d="m5 12 5 5 9-10"/></svg>Book one day ahead</li>
+    </ul>
+    <a class="btn line" href="#reserve">Reserve</a>
+   </div>
+  </div>
+ </div>
+</section>
+
+<section class="sec trays" id="trays">
+ <div class="wrap">
+  <div>
+   <div class="eyebrow" style="color:var(--gold)">Party Trays</div>
+   <h2 class="t">Birthdays, office<br>lunches, <em>fiestas.</em></h2>
+   <p class="intro">Order trays for pick-up or delivery within the area. Tell us the date and headcount and we will confirm by message.</p>
+   <div class="tlist">
+    <div><span>Inasal Tray<small>12 pieces, mixed cuts</small></span><b>₱2,150</b></div>
+    <div><span>Pork BBQ Tray<small>30 sticks</small></span><b>₱1,450</b></div>
+    <div><span>Garlic Rice Tray<small>good for 10–12</small></span><b>₱480</b></div>
+   </div>
+   <div style="margin-top:32px"><a class="btn fire" href="#reserve">Ask about trays <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+  </div>
+  <div class="tray-art">
+   <svg viewBox="0 0 520 400" role="img" aria-label="Party tray of grilled chicken and pork skewers">
+    <defs><linearGradient id="tr" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#3b3a36"/><stop offset="1" stop-color="#1e1d1a"/></linearGradient><radialGradient id="ck2" cx="40%" cy="35%" r="70%"><stop offset="0" stop-color="#ffb347"/><stop offset=".6" stop-color="#d9621f"/><stop offset="1" stop-color="#83300f"/></radialGradient></defs>
+    <rect x="30" y="60" width="460" height="300" rx="26" fill="url(#tr)"/>
+    <rect x="46" y="76" width="428" height="268" rx="18" fill="#2e6b3c"/>
+    <g stroke="#1b4d25" stroke-width="2" opacity=".6"><path d="M60 330L460 90M60 260l170-100M260 330l200-120"/></g>
+    <g>
+     <path d="M70 150c-4-30 22-48 56-44 32 4 52 26 46 48-6 20-34 22-62 16-22-4-38-6-40-20z" fill="url(#ck2)"/>
+     <path d="M176 140c-4-30 22-48 56-44 32 4 52 26 46 48-6 20-34 22-62 16-22-4-38-6-40-20z" fill="url(#ck2)"/>
+     <path d="M282 150c-4-30 22-48 56-44 32 4 52 26 46 48-6 20-34 22-62 16-22-4-38-6-40-20z" fill="url(#ck2)"/>
+     <path d="M90 236c-4-30 22-48 56-44 32 4 52 26 46 48-6 20-34 22-62 16-22-4-38-6-40-20z" fill="url(#ck2)"/>
+     <g stroke="#4a1a08" stroke-width="5" stroke-linecap="round" opacity=".6"><path d="M90 124l30 34M120 116l34 38M196 114l30 34M226 106l34 38M302 124l30 34M332 116l34 38M110 210l30 34M140 202l34 38"/></g>
+    </g>
+    <g stroke="#c99f69" stroke-width="4" stroke-linecap="round"><path d="M230 300l220-70M230 326l220-70M396 150l60 120"/></g>
+    <g fill="#b9501d"><rect x="252" y="276" width="26" height="20" rx="6" transform="rotate(-18 265 286)"/><rect x="290" y="264" width="26" height="20" rx="6" transform="rotate(-18 303 274)"/><rect x="328" y="252" width="26" height="20" rx="6" transform="rotate(-18 341 262)" fill="#d4702c"/><rect x="366" y="240" width="26" height="20" rx="6" transform="rotate(-18 379 250)"/><rect x="254" y="302" width="26" height="20" rx="6" transform="rotate(-18 267 312)" fill="#a8461a"/><rect x="292" y="290" width="26" height="20" rx="6" transform="rotate(-18 305 300)" fill="#c75a22"/><rect x="330" y="278" width="26" height="20" rx="6" transform="rotate(-18 343 288)"/><rect x="368" y="266" width="26" height="20" rx="6" transform="rotate(-18 381 276)" fill="#d4702c"/></g>
+    <g><circle cx="420" cy="140" r="22" fill="#6fb13a"/><circle cx="446" cy="170" r="18" fill="#f3e27a"/><circle cx="446" cy="170" r="13" fill="#e6c94a"/></g>
+    <g><ellipse cx="420" cy="320" rx="34" ry="14" fill="#efe6d1"/><ellipse cx="420" cy="318" rx="26" ry="9" fill="#6b3416"/></g>
+    <rect x="60" y="28" width="150" height="44" rx="10" fill="#f2b33d"/>
+    <text x="135" y="57" text-anchor="middle" font-family="Outfit" font-weight="800" font-size="20" fill="#12301f" letter-spacing="2">PARTY TRAY</text>
+   </svg>
+  </div>
+ </div>
+</section>
+
+<section class="sec visit" id="visit">
+ <div class="wrap">
+  <div class="card">
+   <div class="eyebrow">Visit Us</div>
+   <h2 class="t" style="font-size:clamp(32px,3.6vw,44px)">Follow the <em>smoke.</em></h2>
+   <div class="map">
+    <svg viewBox="0 0 520 240" role="img" aria-label="Illustrated map">
+     <rect width="520" height="240" fill="#efe6cf"/>
+     <g fill="#e3d6b6"><rect x="20" y="20" width="120" height="70" rx="8"/><rect x="170" y="20" width="150" height="70" rx="8"/><rect x="350" y="20" width="150" height="70" rx="8"/><rect x="20" y="140" width="120" height="80" rx="8"/><rect x="350" y="140" width="150" height="80" rx="8"/></g>
+     <rect x="170" y="140" width="150" height="80" rx="8" fill="#cfe0b4"/>
+     <g fill="#8fb36a"><circle cx="192" cy="162" r="10"/><circle cx="222" cy="158" r="8"/><circle cx="298" cy="162" r="10"/></g>
+     <path d="M0 115h520" stroke="#fff" stroke-width="26"/><path d="M155 0v240M335 0v240" stroke="#fff" stroke-width="18"/>
+     <path d="M0 115h520" stroke="#e2d6bd" stroke-width="2" stroke-dasharray="10 10"/>
+     <circle cx="400" cy="115" r="30" fill="#e2582a" opacity=".2"/>
+     <path d="M400 70c-14 0-24 10-24 23 0 17 24 38 24 38s24-21 24-38c0-13-10-23-24-23z" fill="#e2582a"/><circle cx="400" cy="93" r="8" fill="#fff"/>
+     <text x="44" y="62" font-family="Outfit" font-size="24" font-weight="600" fill="#8a7d60">Market</text>
+     <text x="206" y="62" font-family="Outfit" font-size="24" font-weight="600" fill="#8a7d60">Plaza</text>
+     <text x="245" y="206" text-anchor="middle" font-family="Outfit" font-size="24" font-weight="600" fill="#5c7a3c">Park</text>
+    </svg>
+   </div>
+   <div class="hrs">
+    <div><b>Monday – Thursday</b><span>10:00 AM – 9:30 PM</span></div>
+    <div><b>Friday – Sunday</b><span>10:00 AM – 10:00 PM</span></div>
+    <div><b>Last grill order</b><span>30 min before close</span></div>
+   </div>
+   <div class="contact">
+    <span><svg viewBox="0 0 24 24"><path d="M12 21s-7-6.2-7-12a7 7 0 0 1 14 0c0 5.8-7 12-7 12z"/><circle cx="12" cy="9" r="2.5"/></svg>Unit 00, Sample Street, Your City</span>
+    <span><svg viewBox="0 0 24 24"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>0900-000-0000</span>
+    <span><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>hello@example.com</span>
+   </div>
+  </div>
+  <div class="card" id="reserve">
+   <div class="eyebrow">Reserve</div>
+   <h2 class="t" style="font-size:clamp(32px,3.6vw,44px)">Save a <em>table.</em></h2>
+   <form id="rf">
+    <div class="two">
+     <label>Name<input required placeholder="Juan Dela Cruz" autocomplete="off"></label>
+     <label>Mobile<input required placeholder="09XX XXX XXXX" inputmode="tel" autocomplete="off"></label>
+    </div>
+    <div class="two">
+     <label>Date<input type="date" required></label>
+     <label>Time<select><option>11:00 AM</option><option>12:30 PM</option><option>6:00 PM</option><option selected>7:00 PM</option><option>8:30 PM</option></select></label>
+    </div>
+    <label>Guests
+     <div class="seg">
+      <label><input type="radio" name="g" checked><span>1–2</span></label>
+      <label><input type="radio" name="g"><span>3–4</span></label>
+      <label><input type="radio" name="g"><span>5–8</span></label>
+      <label><input type="radio" name="g"><span>9+</span></label>
+     </div>
+    </label>
+    <label>Set or notes (optional)<textarea placeholder="Barkada Set, birthday, high chair..."></textarea></label>
+    <button class="btn fire" type="submit">Send reservation <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+   </form>
+   <div class="ok" role="status">
+    <svg viewBox="0 0 72 72"><circle cx="36" cy="36" r="34" fill="#1f5c3a"/><path d="m22 37 10 10 18-20" fill="none" stroke="#f2b33d" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    <h3>Request received</h3>
+    <p>We will confirm your table by text message shortly.<br>See you by the grill.</p>
+   </div>
+  </div>
+ </div>
+</section>
+
+<footer>
+ <div class="wrap">
+  <div>
+   <a class="logo" href="#top"><svg viewBox="0 0 48 48" width="42" height="42"><circle cx="24" cy="24" r="23" fill="#e2582a"/><path d="M24 9c5 7 9 10 9 17a9 9 0 0 1-18 0c0-4 2-6 4-9 1 3 2 4 4 5-1-5 0-9 1-13z" fill="#f2b33d"/><path d="M24 24c2 3 4 4 4 7a4 4 0 0 1-8 0c0-2 2-4 4-7z" fill="#fff4d8"/></svg><span><b>Uling</b><small>INASAL HOUSE</small></span></a>
+   <p>Charcoal-grilled Bacolod-style inasal, cooked slowly and served on banana leaf.</p>
+  </div>
+  <div class="fl">
+   <div><b>Eat</b><a href="#menu">Menu</a><a href="#sets">Sets</a><a href="#trays">Party Trays</a></div>
+   <div><b>Visit</b><a href="#visit">Hours</a><a href="#reserve">Reserve</a></div>
+  </div>
+  <div class="cp">© Uling Inasal House. All rights reserved.</div>
+ </div>
+</footer>
+<a class="btn fire fab" href="#reserve">Reserve a Table</a>
+<script>
+document.querySelectorAll('.tabs button').forEach(function(b){b.addEventListener('click',function(){
+ document.querySelectorAll('.tabs button').forEach(function(x){x.setAttribute('aria-selected',x===b)});
+ document.querySelectorAll('.item').forEach(function(i){i.hidden=i.dataset.k!==b.dataset.k});
+})});
+document.getElementById('rf').addEventListener('submit',function(e){e.preventDefault();document.getElementById('reserve').classList.add('done')});
+var fab=document.querySelector('.fab');addEventListener('scroll',function(){fab.classList.toggle('on',scrollY>innerHeight*.9)},{passive:true});
+document.querySelector('.burger').addEventListener('click',function(){location.hash='menu'});
+</script>
+</body>
+</html>

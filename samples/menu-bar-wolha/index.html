@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>바 월하 · 칵테일 바 메뉴판 디자인</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poiret+One&family=Gowun+Batang:wght@400;700&family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Noto Sans KR',sans-serif;background:#2a0914;color:#f3ece4;word-break:keep-all;-webkit-font-smoothing:antialiased;
+ background-image:radial-gradient(ellipse 70% 45% at 80% 0%,rgba(191,227,210,.14),transparent 70%)}
+.wrap{max-width:1180px;margin:0 auto;padding:44px 20px 120px}
+.hd{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:18px;margin-bottom:32px}
+.hd small{font-family:'Poiret One',sans-serif;font-size:15px;letter-spacing:.3em;color:#bfe3d2}
+.hd h1{font-family:'Gowun Batang',serif;font-weight:700;font-size:clamp(30px,4.2vw,44px);margin-top:8px;line-height:1.25}
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px}
+.chips span{font-size:13px;font-weight:500;border:1px solid rgba(191,227,210,.45);color:#e6dcd4;padding:5px 12px;border-radius:30px}
+.cta{display:inline-flex;align-items:center;gap:8px;height:52px;padding:0 26px;border-radius:30px;background:#bfe3d2;color:#2a0914;font-weight:700;font-size:15px;text-decoration:none;transition:.2s;white-space:nowrap}
+.cta:hover{background:#e9b7a8}
+.cta svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.view{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,.75fr);gap:28px;align-items:start}
+figure{background:#3a0c1b;padding:10px;border-radius:6px;box-shadow:0 30px 60px -26px rgba(0,0,0,.75);border:1px solid rgba(191,227,210,.18)}
+figure a{display:block}
+figure img{display:block;width:100%;height:auto;border-radius:2px}
+figcaption{font-size:13px;color:#c7b3b0;padding:10px 4px 2px;display:flex;flex-wrap:wrap;justify-content:space-between;gap:4px 10px}
+.side{display:grid;gap:16px;position:sticky;top:24px}
+.zoom{border-radius:6px;overflow:hidden;background:#3a0c1b;border:1px solid rgba(191,227,210,.18)}
+.zoom div{aspect-ratio:1/1;background:url(page1.png) no-repeat}
+.zoom p{font-size:13px;color:#c7b3b0;padding:10px 12px}
+.info{background:#f3ece4;color:#2a0914;border-radius:6px;padding:22px}
+.info h2{font-family:'Gowun Batang',serif;font-weight:700;font-size:21px;margin-bottom:10px}
+.info li{list-style:none;font-size:14px;line-height:1.9;display:flex;gap:10px}
+.info li:before{content:"";width:7px;height:7px;border:1.5px solid #8a2b45;margin-top:10px;flex:none;transform:rotate(45deg)}
+.bar{position:fixed;left:0;right:0;bottom:0;background:rgba(243,236,228,.97);color:#2a0914;padding:12px 20px;display:flex;justify-content:center;align-items:center;gap:18px;flex-wrap:wrap}
+.bar p{font-size:14px}
+.bar .cta{height:46px;background:#3a0c1b;color:#f3ece4}
+@media(max-width:860px){.view{grid-template-columns:1fr}.side{position:static;grid-template-columns:1fr 1fr}.info{grid-column:span 2}}
+@media(max-width:620px){.hd .cta{display:none}.bar p{display:none}.bar .cta{width:100%;justify-content:center}.side{grid-template-columns:1fr}.info{grid-column:auto}}
+</style>
+</head>
+<body>
+<div class="wrap">
+ <div class="hd">
+  <div>
+   <small>MENU DESIGN · SD-MN11</small>
+   <h1>바 월하 칵테일 메뉴판</h1>
+   <div class="chips"><span>A4 세로 · 1페이지</span><span>칵테일 바</span><span>아르데코</span><span>원화 가격</span><span>인쇄 · 웹 겸용</span></div>
+  </div>
+  <a class="cta" href="https://design.shoponph.online/#inquiry">이 디자인으로 상담하기 <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+ </div>
+ <div class="view">
+  <figure><a href="page1.png" target="_blank" rel="noopener"><img src="page1.png" alt="바 월하 칵테일 메뉴판" width="2480" height="3508"></a><figcaption><span>시그니처 · 클래식 · 잔술 · 무알코올 · 안주</span><span style="white-space:nowrap">눌러서 크게 보기</span></figcaption></figure>
+  <div class="side">
+   <div class="zoom"><img src="detail-logo.jpg" alt="바 월하 로고 부분 확대" width="1080" height="864" style="display:block;width:100%;height:auto"><p>달과 아치 로고 부분</p></div>
+   <div class="zoom"><div style="background-position:0% 45%;background-size:190%"></div><p>시그니처 칵테일 부분</p></div>
+   <div class="info"><h2>이 메뉴판의 구성</h2><ul><li>와인빛 바탕에 민트 선 장식</li><li>잔 모양 아이콘으로 칵테일 구분</li><li>한글 · 영문 메뉴명 함께 표기</li><li>시간대 할인 안내 칸 포함</li></ul></div>
+  </div>
+ </div>
+</div>
+<div class="bar"><p>우리 바 메뉴판도 이런 분위기로 만들어 보세요</p><a class="cta" href="https://design.shoponph.online/#inquiry">이 디자인으로 상담하기</a></div>
+</body>
+</html>

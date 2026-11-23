@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>시원공방 에어컨 청소 · 첫 방문 ₱500 할인</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Do+Hyeon&family=Noto+Sans+KR:wght@400;500;700;900&family=Montserrat:wght@600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--sky:#1a86e0;--sky2:#0f6cc0;--ice:#eef6fd;--ice2:#d9ebfa;--ink:#10243a;--mut:#53657a;--sun:#ffd23f;--line:#d6e4f1;--w:#fff}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Noto Sans KR',sans-serif;color:var(--ink);background:#fff;word-break:keep-all;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1160px;margin:0 auto;padding:0 28px}
+.dh{font-family:'Do Hyeon',sans-serif;font-weight:400}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;height:56px;padding:0 28px;border-radius:16px;font-weight:700;font-size:17px;border:0;cursor:pointer;font-family:inherit;transition:.2s;white-space:nowrap}
+.btn svg{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+.btn.sun{background:var(--sun);color:var(--ink);box-shadow:0 12px 24px -12px rgba(200,150,0,.7)}
+.btn.sun:hover{background:#ffc400}
+.btn.sky{background:var(--sky);color:#fff}
+.btn.sky:hover{background:var(--sky2)}
+.btn.out{background:#fff;color:var(--ink);border:2px solid var(--line)}
+.tag{display:inline-flex;align-items:center;gap:8px;font-size:14px;font-weight:700;color:var(--sky);background:var(--ice);border:1.5px solid var(--ice2);padding:7px 14px;border-radius:30px}
+h2.t{font-family:'Do Hyeon',sans-serif;font-weight:400;font-size:clamp(34px,4vw,50px);line-height:1.2;margin-top:16px;letter-spacing:-.01em}
+h2.t em{font-style:normal;color:var(--sky)}
+.lead{font-size:18px;line-height:1.7;color:var(--mut);margin-top:14px}
+.sec{padding:100px 0}
+
+/* top */
+.top{position:sticky;top:0;z-index:30;background:rgba(255,255,255,.94);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;height:70px;gap:16px}
+.logo{display:flex;align-items:center;gap:10px;font-family:'Do Hyeon';font-size:26px}
+.logo svg{width:38px;height:38px}
+.logo small{font-family:'Noto Sans KR';font-size:13px;font-weight:500;color:var(--mut);margin-left:4px}
+.top .btn{height:44px;font-size:15px;padding:0 18px;border-radius:12px}
+
+/* hero */
+.hero{background:linear-gradient(180deg,#e6f2fd 0%,#f6fbff 70%,#fff 100%);position:relative;overflow:hidden}
+.hero:before{content:"";position:absolute;right:-120px;top:-140px;width:640px;height:640px;border-radius:50%;background:radial-gradient(circle,rgba(26,134,224,.18),transparent 65%)}
+.hero .wrap{display:grid;grid-template-columns:1.05fr .95fr;gap:40px;align-items:center;padding-top:70px;padding-bottom:36px;position:relative}
+.hero h1{font-family:'Do Hyeon',sans-serif;font-weight:400;font-size:clamp(46px,5.6vw,74px);line-height:1.12;margin:20px 0 20px;letter-spacing:-.01em}
+.hero h1 em{font-style:normal;color:var(--sky);position:relative;white-space:nowrap}
+.hero h1 em:after{content:"";position:absolute;left:-2px;right:-2px;bottom:6px;height:16px;background:var(--sun);z-index:-1;border-radius:4px}
+.hero p.lead{font-size:19px;max-width:520px}
+.coupon{display:flex;align-items:stretch;margin-top:30px;max-width:520px;border-radius:18px;overflow:hidden;box-shadow:0 20px 40px -24px rgba(16,36,58,.45)}
+.coupon .l{background:var(--ink);color:#fff;padding:20px 24px;flex:1;position:relative}
+.coupon .l small{font-size:14px;color:#a9c3dd;font-weight:500}
+.coupon .l b{display:block;font-family:'Montserrat';font-weight:800;font-size:40px;line-height:1.1;margin-top:4px;color:var(--sun)}
+.coupon .l b span{font-family:'Noto Sans KR';font-size:20px;font-weight:700;color:#fff;margin-left:6px}
+.coupon .r{background:var(--sun);width:150px;display:grid;place-items:center;text-align:center;font-weight:900;font-size:16px;line-height:1.4;position:relative;border-left:3px dashed var(--ink)}
+.coupon .r:before,.coupon .r:after{content:"";position:absolute;left:-12px;width:20px;height:20px;border-radius:50%;background:#f3f9ff}
+.coupon .r:before{top:-10px}.coupon .r:after{bottom:-10px}
+.hero .acts{display:flex;gap:12px;margin-top:28px;flex-wrap:wrap}
+.hero .mini{display:flex;gap:22px;margin-top:26px;flex-wrap:wrap;font-size:15px;color:var(--mut);font-weight:500}
+.hero .mini span{display:flex;align-items:center;gap:8px}
+.hero .mini svg{width:20px;height:20px;stroke:var(--sky);fill:none;stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round}
+.hero .art svg{width:100%;height:auto;display:block}
+
+/* check */
+.check{background:#fff;padding-top:64px}
+.check .head{text-align:center;max-width:640px;margin:0 auto}
+.cgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:50px}
+.ci{background:var(--ice);border:1.5px solid var(--ice2);border-radius:22px;padding:28px 24px;position:relative}
+.ci .ic{width:64px;height:64px;border-radius:18px;background:#fff;display:grid;place-items:center;box-shadow:0 10px 20px -14px rgba(16,36,58,.5)}
+.ci .ic svg{width:40px;height:40px}
+.ci h3{font-size:19px;font-weight:700;margin:18px 0 6px}
+.ci p{font-size:15px;line-height:1.6;color:var(--mut)}
+.ci .no{position:absolute;right:20px;top:22px;font-family:'Montserrat';font-weight:800;font-size:15px;color:#9cc4ea}
+
+/* process */
+.proc{background:var(--ink);color:#fff;position:relative;overflow:hidden}
+.proc:after{content:"";position:absolute;left:-200px;bottom:-260px;width:620px;height:620px;border-radius:50%;background:radial-gradient(circle,rgba(26,134,224,.4),transparent 65%)}
+.proc .wrap{position:relative;z-index:1}
+.proc .tag{background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.16);color:var(--sun)}
+.proc h2.t em{color:var(--sun)}
+.proc .lead{color:#b5c8dc}
+.steps{display:grid;grid-template-columns:repeat(5,1fr);gap:16px;margin-top:54px;counter-reset:s}
+.st{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.12);border-radius:22px;padding:26px 22px;position:relative}
+.st:not(:last-child):after{content:"";position:absolute;right:-13px;top:52px;width:10px;height:10px;border-top:2.5px solid var(--sun);border-right:2.5px solid var(--sun);transform:rotate(45deg)}
+.st .n{font-family:'Montserrat';font-weight:800;font-size:14px;color:var(--sun);letter-spacing:.1em}
+.st svg{width:54px;height:54px;margin:14px 0 12px;display:block}
+.st h3{font-size:19px;font-weight:700}
+.st p{font-size:15px;line-height:1.6;color:#b5c8dc;margin-top:6px}
+.time{display:flex;gap:14px;align-items:center;margin-top:34px;background:rgba(255,210,63,.12);border:1px solid rgba(255,210,63,.35);border-radius:16px;padding:18px 22px;font-size:16px;color:#fbe7a6;max-width:720px}
+.time svg{width:26px;height:26px;stroke:var(--sun);fill:none;stroke-width:2.2;flex:none;stroke-linecap:round}
+
+/* price */
+.price .wrap{display:grid;grid-template-columns:.8fr 1.2fr;gap:56px;align-items:start}
+.ptable{border:1.5px solid var(--line);border-radius:24px;overflow:hidden}
+.prow{display:grid;grid-template-columns:70px 1fr 74px 104px;gap:18px;align-items:center;padding:22px 26px;border-bottom:1.5px solid var(--line)}
+.prow:last-child{border:0}
+.prow .pi{width:70px;height:52px;display:grid;place-items:center}
+.prow .pi svg{width:70px;height:52px}
+.prow h3{font-size:19px;font-weight:700}
+.prow h3 small{display:block;font-size:14px;font-weight:500;color:var(--mut);margin-top:3px}
+.prow s{text-align:right;font-size:15px;color:#98a7b8;font-family:'Montserrat';font-weight:600}
+.prow b{font-family:'Montserrat';font-weight:800;font-size:24px;color:var(--sky);min-width:96px;text-align:right}
+.prow.hd{background:var(--ice);padding:14px 26px;font-size:14px;font-weight:700;color:var(--mut)}
+.prow.hd span:nth-child(3),.prow.hd span:nth-child(4){text-align:right}
+.pnote{font-size:14px;color:var(--mut);margin-top:16px;line-height:1.7}
+.area{margin-top:30px;background:var(--ice);border-radius:22px;padding:26px}
+.area h3{font-size:18px;font-weight:700;display:flex;align-items:center;gap:8px}
+.area h3 svg{width:22px;height:22px;stroke:var(--sky);fill:none;stroke-width:2.2}
+.area .ch{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+.area .ch span{background:#fff;border:1.5px solid var(--ice2);border-radius:30px;padding:7px 14px;font-size:15px;font-weight:500}
+
+/* faq */
+.faq{background:var(--ice)}
+.faq .wrap{max-width:860px}
+.faq .head{text-align:center}
+.qs{margin-top:40px;display:grid;gap:12px}
+details{background:#fff;border:1.5px solid var(--ice2);border-radius:18px;padding:0 24px}
+summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:22px 0;font-size:18px;font-weight:700}
+summary::-webkit-details-marker{display:none}
+summary i{width:30px;height:30px;border-radius:50%;background:var(--ice);flex:none;position:relative}
+summary i:before,summary i:after{content:"";position:absolute;left:9px;right:9px;top:14px;height:2px;background:var(--sky)}
+summary i:after{transform:rotate(90deg);transition:.2s}
+details[open] summary i:after{transform:none}
+details p{font-size:16px;line-height:1.75;color:var(--mut);padding:0 0 22px}
+
+/* form */
+.apply{background:linear-gradient(160deg,#1a86e0,#0d5ea8);color:#fff;position:relative;overflow:hidden}
+.apply:before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(115deg,rgba(255,255,255,.05) 0 2px,transparent 2px 26px)}
+.apply .wrap{display:grid;grid-template-columns:.9fr 1.1fr;gap:56px;align-items:center;position:relative}
+.apply .tag{background:rgba(255,255,255,.14);border-color:rgba(255,255,255,.25);color:#fff}
+.apply h2.t em{color:var(--sun)}
+.apply .lead{color:#d6e9fb}
+.apply ul{list-style:none;margin-top:26px;display:grid;gap:12px}
+.apply li{display:flex;gap:12px;font-size:17px;align-items:center}
+.apply li svg{width:24px;height:24px;flex:none}
+.fcard{background:#fff;color:var(--ink);border-radius:26px;padding:36px;box-shadow:0 40px 70px -30px rgba(5,30,60,.6)}
+.fcard h3{font-family:'Do Hyeon';font-weight:400;font-size:30px}
+.fcard .sub{font-size:15px;color:var(--mut);margin-top:4px}
+form{display:grid;gap:16px;margin-top:22px}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+label{display:grid;gap:7px;font-size:14px;font-weight:700}
+input,select{font-family:inherit;font-size:16px;height:52px;border:1.5px solid var(--line);border-radius:14px;padding:0 16px;background:#f7fbff;color:var(--ink);width:100%}
+input:focus,select:focus{outline:none;border-color:var(--sky);background:#fff}
+.stepper{display:flex;align-items:center;border:1.5px solid var(--line);border-radius:14px;height:52px;overflow:hidden;background:#f7fbff}
+.stepper button{width:52px;height:100%;border:0;background:transparent;font-size:22px;font-weight:700;color:var(--sky);cursor:pointer}
+.stepper output{flex:1;text-align:center;font-weight:700;font-size:17px}
+.sum{display:flex;justify-content:space-between;align-items:center;background:var(--ice);border-radius:14px;padding:14px 18px;font-size:15px;font-weight:500}
+.sum b{font-family:'Montserrat';font-weight:800;font-size:22px;color:var(--sky)}
+.agree{display:flex;gap:10px;align-items:center;font-size:14px;font-weight:500;color:var(--mut)}
+.agree input{width:20px;height:20px;accent-color:var(--sky)}
+form .btn{width:100%;height:58px}
+.done{display:none;text-align:center;padding:30px 0}
+.done svg{width:76px;height:76px}
+.done h3{margin-top:14px}
+.done p{font-size:16px;color:var(--mut);line-height:1.7;margin-top:8px}
+.fcard.ok form{display:none}.fcard.ok .done{display:block}
+
+footer{background:#0a1828;color:#8ea3b8;padding:46px 0 40px;font-size:14px;line-height:1.9}
+footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+footer .logo{color:#fff}
+.mbar{display:none}
+@media(max-width:1000px){
+ .hero .wrap,.price .wrap,.apply .wrap{grid-template-columns:1fr}
+ .hero .art{max-width:520px;margin:0 auto;width:100%}
+ .cgrid{grid-template-columns:1fr 1fr}
+ .steps{grid-template-columns:1fr 1fr}
+ .st:after{display:none}
+}
+@media(max-width:620px){
+ .wrap{padding:0 18px}
+ .top .wrap{height:62px}.logo{font-size:22px}.logo small{display:none}.logo svg{width:32px;height:32px}
+ .hero .wrap{padding-top:40px;padding-bottom:24px}
+ .check{padding-top:48px}
+ .hero h1{font-size:44px}
+ .hero p.lead{font-size:17px}
+ .coupon .l{padding:16px 18px}.coupon .l b{font-size:32px}.coupon .r{width:108px;font-size:14px}
+ .hero .acts .btn{flex:1}
+ .sec{padding:72px 0}
+ .cgrid{grid-template-columns:1fr;gap:12px}
+ .ci{display:grid;grid-template-columns:56px 1fr;gap:4px 16px;padding:22px 20px}
+ .ci .ic{width:56px;height:56px;grid-row:span 2}.ci .ic svg{width:34px;height:34px}
+ .ci h3{margin:2px 0 0}
+ .steps{grid-template-columns:1fr}
+ .st{display:grid;grid-template-columns:54px 1fr;gap:2px 16px;padding:20px}
+ .st svg{grid-column:1;grid-row:1/4;margin:0}
+ .st .n,.st h3,.st p{grid-column:2}
+ .prow{grid-template-columns:52px 1fr 86px;padding:18px 16px;gap:12px}
+ .prow{grid-template-columns:44px 1fr 86px;row-gap:0}
+ .prow .pi{grid-row:1/3}.prow h3{grid-row:1/3}
+ .prow s{display:block;grid-column:3;grid-row:1;align-self:end;font-size:13px}
+ .prow b{grid-column:3;grid-row:2;align-self:start}
+ .prow.hd{grid-template-rows:auto}
+ .prow.hd span:nth-child(3){display:none}
+ .prow .pi,.prow .pi svg{width:52px;height:40px}
+ .prow b{font-size:20px;min-width:0}
+ .fcard{padding:26px 20px}
+ .two{grid-template-columns:1fr}
+ .mbar{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:40;padding:10px 14px;background:rgba(255,255,255,.96);border-top:1px solid var(--line);gap:10px;transform:translateY(100%);transition:.3s}
+ .mbar.on{transform:none}
+ .mbar .btn{flex:1;height:50px;font-size:16px}
+ footer{padding-bottom:100px}
+}
+</style>
+</head>
+<body>
+<div class="top">
+ <div class="wrap">
+  <a class="logo" href="#"><svg viewBox="0 0 40 40"><rect width="40" height="40" rx="12" fill="#1a86e0"/><path d="M20 8v24M9.6 14l20.8 12M9.6 26l20.8-12" stroke="#fff" stroke-width="2.6" stroke-linecap="round"/><circle cx="20" cy="20" r="4" fill="#ffd23f"/></svg>시원공방<small>에어컨 분해 세척</small></a>
+  <a class="btn sky" href="#apply">방문 예약하기</a>
+ </div>
+</div>
+
+<header class="hero">
+ <div class="wrap">
+  <div>
+   <span class="tag"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M12 2v20M3 7l18 10M3 17l18-10"/></svg>메트로 마닐라 한인 가정 · 매장</span>
+   <h1>더위에 지친 에어컨,<br><em>분해 세척</em>으로<br>다시 시원하게</h1>
+   <p class="lead">한국어로 상담하고, 약속한 시간에 방문합니다. 커버를 열고 냉각핀과 송풍팬까지 고압으로 씻어 냅니다.</p>
+   <div class="coupon">
+    <div class="l"><small>12월 첫 방문 고객</small><b>₱500<span>할인</span></b></div>
+    <div class="r">12.31<br>까지</div>
+   </div>
+   <div class="acts">
+    <a class="btn sun" href="#apply">첫 방문 할인 신청 <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+    <a class="btn out" href="#price">가격 보기</a>
+   </div>
+   <div class="mini">
+    <span><svg viewBox="0 0 24 24"><path d="m5 12 5 5 9-10"/></svg>한국어 상담</span>
+    <span><svg viewBox="0 0 24 24"><path d="m5 12 5 5 9-10"/></svg>바닥·가구 보양</span>
+    <span><svg viewBox="0 0 24 24"><path d="m5 12 5 5 9-10"/></svg>세척 전후 사진 전송</span>
+   </div>
+  </div>
+  <div class="art">
+   <svg viewBox="0 0 560 520" role="img" aria-label="분해 세척 중인 벽걸이 에어컨 일러스트">
+    <defs>
+     <linearGradient id="ac" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffffff"/><stop offset="1" stop-color="#e3edf6"/></linearGradient>
+     <linearGradient id="fin" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#b9cfe2"/><stop offset="1" stop-color="#8eacc6"/></linearGradient>
+     <linearGradient id="wall" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#d6e9fa"/><stop offset="1" stop-color="#bcd9f3"/></linearGradient>
+     <linearGradient id="wind" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#1a86e0" stop-opacity=".6"/><stop offset="1" stop-color="#1a86e0" stop-opacity="0"/></linearGradient>
+     <linearGradient id="bottle" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#ffe066"/><stop offset="1" stop-color="#f2b705"/></linearGradient>
+     <radialGradient id="shine" cx="50%" cy="50%" r="50%"><stop offset="0" stop-color="#fff"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></radialGradient>
+    </defs>
+    <rect x="20" y="20" width="520" height="480" rx="40" fill="url(#wall)"/>
+    <g opacity=".5" stroke="#fff" stroke-width="2"><path d="M20 120h520M20 220h520M20 320h520M20 420h520"/></g>
+    <!-- AC body -->
+    <rect x="70" y="90" width="420" height="150" rx="26" fill="#000" opacity=".08" transform="translate(6 10)"/>
+    <rect x="70" y="90" width="420" height="150" rx="26" fill="url(#ac)" stroke="#c9d9e8" stroke-width="2"/>
+    <!-- open front cover -->
+    <path d="M78 98h404l-30-60H108z" fill="#f5f9fd" stroke="#c9d9e8" stroke-width="2"/>
+    <path d="M118 48h324" stroke="#dbe7f2" stroke-width="3"/>
+    <!-- fins exposed -->
+    <rect x="96" y="110" width="368" height="78" rx="8" fill="url(#fin)"/>
+    <g stroke="#e9f2fa" stroke-width="2.4" opacity=".9"><path d="M108 112v74M122 112v74M136 112v74M150 112v74M164 112v74M178 112v74M192 112v74M206 112v74M220 112v74M234 112v74M248 112v74M262 112v74M276 112v74M290 112v74M304 112v74M318 112v74M332 112v74M346 112v74M360 112v74M374 112v74M388 112v74M402 112v74M416 112v74M430 112v74M444 112v74"/></g>
+    <rect x="96" y="110" width="160" height="78" rx="8" fill="#fff" opacity=".35"/>
+    <rect x="86" y="196" width="388" height="30" rx="10" fill="#dfe9f3"/>
+    <path d="M100 211h360" stroke="#b7c9da" stroke-width="3" stroke-linecap="round"/>
+    <circle cx="456" cy="104" r="4" fill="#3ccf7a"/>
+    <!-- airflow -->
+    <g fill="none" stroke="url(#wind)" stroke-width="6" stroke-linecap="round">
+     <path d="M140 250c10 30 0 60 20 90s50 40 60 70"/>
+     <path d="M230 250c6 34-6 64 14 94s40 40 46 66"/>
+     <path d="M320 250c4 34-10 64 8 92s34 42 38 66"/>
+     <path d="M410 250c0 30-14 60 0 86s28 40 30 62"/>
+    </g>
+    <!-- sparkles -->
+    <g fill="#fff"><path d="M180 140l6 14 14 6-14 6-6 14-6-14-14-6 14-6z"/><path d="M380 128l4 9 9 4-9 4-4 9-4-9-9-4 9-4z"/></g>
+    <circle cx="190" cy="150" r="40" fill="url(#shine)" opacity=".7"/>
+    <!-- spray gun -->
+    <g transform="translate(330 300) rotate(-28)">
+     <rect x="0" y="0" width="120" height="34" rx="12" fill="#10243a"/>
+     <rect x="-46" y="10" width="50" height="14" rx="5" fill="#53657a"/>
+     <rect x="70" y="30" width="30" height="70" rx="10" fill="#10243a"/>
+     <path d="M54 34c0 18 10 30 20 34" stroke="#ffd23f" stroke-width="7" fill="none" stroke-linecap="round"/>
+     <rect x="84" y="96" width="14" height="40" rx="6" fill="#53657a"/>
+    </g>
+    <g fill="#5fb3f3"><path d="M296 262c4 8 8 13 8 18a8 8 0 0 1-16 0c0-5 4-10 8-18z"/><path d="M268 244c3 6 6 10 6 14a6 6 0 0 1-12 0c0-4 3-8 6-14z"/><path d="M252 276c3 6 6 10 6 14a6 6 0 0 1-12 0c0-4 3-8 6-14z" opacity=".7"/></g>
+    <g stroke="#5fb3f3" stroke-width="3" stroke-linecap="round" opacity=".8"><path d="M300 296l-28-46M290 300l-46-34M306 290l-10-54"/></g>
+    <!-- bucket -->
+    <path d="M70 400h120l-14 84H84z" fill="#1a86e0"/>
+    <ellipse cx="130" cy="400" rx="60" ry="14" fill="#5fb3f3"/>
+    <ellipse cx="130" cy="400" rx="48" ry="9" fill="#9ed2f8"/>
+    <path d="M78 410c20 60 90 60 104 0" stroke="#0f6cc0" stroke-width="3" fill="none"/>
+    <!-- cleaner bottle -->
+    <rect x="430" y="400" width="54" height="84" rx="12" fill="url(#bottle)"/>
+    <rect x="442" y="380" width="30" height="24" rx="5" fill="#10243a"/>
+    <path d="M472 386h22l4 8h-26z" fill="#10243a"/>
+    <rect x="440" y="424" width="34" height="34" rx="6" fill="#fff" opacity=".7"/>
+    <path d="M448 441h18M457 432v18" stroke="#1a86e0" stroke-width="4" stroke-linecap="round"/>
+    <!-- temp chip -->
+    <g transform="translate(225 428)"><rect width="110" height="56" rx="16" fill="#10243a"/><text x="55" y="38" text-anchor="middle" font-family="Montserrat" font-weight="800" font-size="26" fill="#ffd23f">18°C</text></g>
+   </svg>
+  </div>
+ </div>
+</header>
+
+<section class="sec check">
+ <div class="wrap">
+  <div class="head">
+   <span class="tag">이런 신호가 보이면</span>
+   <h2 class="t">에어컨 <em>청소할 때</em>가 됐어요</h2>
+   <p class="lead">필리핀처럼 일 년 내내 켜 두는 환경에서는 3~6개월에 한 번 세척을 권해 드립니다.</p>
+  </div>
+  <div class="cgrid">
+   <div class="ci"><span class="no">01</span><div class="ic"><svg viewBox="0 0 40 40" fill="none" stroke-linecap="round" stroke-width="2.6"><path d="M10 30c0-6 6-6 6-12s-6-6-6-12" stroke="#9aa86a"/><path d="M20 32c0-6 6-6 6-12s-6-6-6-12" stroke="#7f8f4f"/><path d="M30 30c0-6 6-6 6-12" stroke="#9aa86a"/></svg></div><h3>켤 때 퀴퀴한 냄새</h3><p>송풍팬과 냉각핀에 쌓인 먼지가 습기를 머금고 있을 수 있어요.</p></div>
+   <div class="ci"><span class="no">02</span><div class="ic"><svg viewBox="0 0 40 40" fill="none"><rect x="6" y="8" width="28" height="10" rx="3" stroke="#1a86e0" stroke-width="2.6"/><path d="M14 24c2 4 4 6 4 8a3 3 0 0 1-6 0c0-2 1-4 2-8z" fill="#5fb3f3"/><path d="M26 22c2 4 3 5 3 7a3 3 0 0 1-6 0c0-2 1-3 3-7z" fill="#5fb3f3"/></svg></div><h3>실내기에서 물방울</h3><p>배수 라인이 막히면 벽이나 바닥으로 물이 떨어지기도 합니다.</p></div>
+   <div class="ci"><span class="no">03</span><div class="ic"><svg viewBox="0 0 40 40" fill="none" stroke-linecap="round" stroke-width="2.6"><path d="M6 14h18a4 4 0 1 0-4-4" stroke="#1a86e0"/><path d="M6 22h24a4 4 0 1 1-4 4" stroke="#9cc4ea"/><path d="M6 30h10" stroke="#9cc4ea"/></svg></div><h3>바람이 예전 같지 않을 때</h3><p>필터와 핀이 막히면 같은 온도에서도 바람이 약하게 느껴져요.</p></div>
+   <div class="ci"><span class="no">04</span><div class="ic"><svg viewBox="0 0 40 40" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.6"><path d="M8 26l6-6 6 6 12-12" stroke="#f2b705"/><path d="M24 14h8v8" stroke="#f2b705"/></svg></div><h3>소음이 커졌을 때</h3><p>팬에 붙은 먼지 덩어리 때문에 덜컹거리는 소리가 날 수 있어요.</p></div>
+  </div>
+ </div>
+</section>
+
+<section class="sec proc">
+ <div class="wrap">
+  <span class="tag">작업 순서</span>
+  <h2 class="t">커버만 닦지 않고,<br><em>속까지 분해</em>합니다</h2>
+  <p class="lead">한 대 기준 약 60~90분. 작업 전후 사진을 카카오톡으로 보내 드립니다.</p>
+  <div class="steps">
+   <div class="st"><span class="n">STEP 1</span><svg viewBox="0 0 54 54" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.4"><circle cx="24" cy="24" r="13" stroke="#fff"/><path d="m34 34 10 10" stroke="#ffd23f"/></svg><h3>점검 · 보양</h3><p>작동 상태 확인 후 벽과 바닥을 비닐로 덮어요.</p></div>
+   <div class="st"><span class="n">STEP 2</span><svg viewBox="0 0 54 54" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.4"><rect x="8" y="14" width="38" height="16" rx="4" stroke="#fff"/><path d="M14 38l8-8M40 38l-8-8" stroke="#ffd23f"/></svg><h3>커버 · 부품 분해</h3><p>전면 커버, 필터, 루버, 배수판을 떼어 냅니다.</p></div>
+   <div class="st"><span class="n">STEP 3</span><svg viewBox="0 0 54 54" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.4"><path d="M10 20h20v10H10z" stroke="#fff"/><path d="M30 25h6" stroke="#fff"/><path d="M38 18l8-4M38 25h9M38 32l8 4" stroke="#5fb3f3"/><path d="M16 30v10" stroke="#ffd23f"/></svg><h3>고압 세척</h3><p>세척 커버를 씌우고 냉각핀과 팬을 물로 씻어요.</p></div>
+   <div class="st"><span class="n">STEP 4</span><svg viewBox="0 0 54 54" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.4"><circle cx="27" cy="27" r="6" stroke="#ffd23f"/><path d="M27 21c0-8 8-10 10-6s-4 8-10 6M33 27c8 0 10 8 6 10s-8-4-6-10M27 33c0 8-8 10-10 6s4-8 10-6M21 27c-8 0-10-8-6-10s8 4 6 10" stroke="#fff"/></svg><h3>건조 · 조립</h3><p>물기를 말린 뒤 부품을 원래대로 조립합니다.</p></div>
+   <div class="st"><span class="n">STEP 5</span><svg viewBox="0 0 54 54" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.4"><circle cx="27" cy="27" r="17" stroke="#fff"/><path d="m19 27 6 6 11-12" stroke="#ffd23f"/></svg><h3>작동 확인</h3><p>냉방·배수를 함께 확인하고 정리 후 마무리해요.</p></div>
+  </div>
+  <div class="time"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>평일 · 토요일 오전 9시 ~ 오후 6시 방문, 일요일은 예약 상황에 따라 조율해 드려요.</div>
+ </div>
+</section>
+
+<section class="sec price" id="price">
+ <div class="wrap">
+  <div>
+   <span class="tag">가격 안내</span>
+   <h2 class="t">대수와 형태만<br>알려 주시면 <em>끝</em></h2>
+   <p class="lead">출장비는 받지 않아요. 같은 집 2대 이상은 대당 ₱100씩 추가로 빼 드립니다.</p>
+   <div class="area">
+    <h3><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.2-7-12a7 7 0 0 1 14 0c0 5.8-7 12-7 12z"/><circle cx="12" cy="9" r="2.5"/></svg>방문 지역</h3>
+    <div class="ch"><span>마카티</span><span>BGC · 타기그</span><span>파시그 · 오르티가스</span><span>퀘존시티</span><span>파라냐케</span><span>그 외 지역 문의</span></div>
+   </div>
+  </div>
+  <div>
+   <div class="ptable">
+    <div class="prow hd"><span></span><span>에어컨 형태</span><span>정상가</span><span>첫 방문가</span></div>
+    <div class="prow"><div class="pi"><svg viewBox="0 0 70 52"><rect x="8" y="8" width="54" height="36" rx="6" fill="#eef6fd" stroke="#1a86e0" stroke-width="2.4"/><path d="M16 16h38M16 22h38M16 28h38" stroke="#9cc4ea" stroke-width="2.4"/><circle cx="50" cy="37" r="3" fill="#1a86e0"/></svg></div><h3>윈도우형<small>창문 설치형</small></h3><s>₱1,200</s><b>₱700</b></div>
+    <div class="prow"><div class="pi"><svg viewBox="0 0 70 52"><rect x="4" y="14" width="62" height="22" rx="7" fill="#eef6fd" stroke="#1a86e0" stroke-width="2.4"/><path d="M12 30h46" stroke="#9cc4ea" stroke-width="2.4"/></svg></div><h3>스플릿형 1.0~1.5HP<small>벽걸이 · 방</small></h3><s>₱1,500</s><b>₱1,000</b></div>
+    <div class="prow"><div class="pi"><svg viewBox="0 0 70 52"><rect x="2" y="10" width="66" height="28" rx="8" fill="#eef6fd" stroke="#1a86e0" stroke-width="2.4"/><path d="M10 32h50M10 26h50" stroke="#9cc4ea" stroke-width="2.4"/></svg></div><h3>스플릿형 2.0~2.5HP<small>벽걸이 · 거실</small></h3><s>₱1,900</s><b>₱1,400</b></div>
+    <div class="prow"><div class="pi"><svg viewBox="0 0 70 52"><rect x="10" y="6" width="50" height="40" rx="6" fill="#eef6fd" stroke="#1a86e0" stroke-width="2.4"/><rect x="22" y="18" width="26" height="16" rx="3" fill="none" stroke="#9cc4ea" stroke-width="2.4"/><path d="M10 12h50" stroke="#9cc4ea" stroke-width="2"/></svg></div><h3>천장형(카세트)<small>매장 · 사무실</small></h3><s>₱2,800</s><b>₱2,300</b></div>
+   </div>
+   <p class="pnote">· 첫 방문가는 12월 31일까지 신청한 첫 방문 고객 1회에 적용돼요.<br>· 가스 충전·부품 교체가 필요하면 작업 전에 먼저 알려 드리고 진행합니다.</p>
+  </div>
+ </div>
+</section>
+
+<section class="sec faq">
+ <div class="wrap">
+  <div class="head"><span class="tag">자주 묻는 질문</span><h2 class="t">예약 전에 <em>궁금한 점</em></h2></div>
+  <div class="qs">
+   <details open><summary>집에 없어도 작업할 수 있나요?<i></i></summary><p>헬퍼나 관리실에 출입을 미리 알려 주시면 가능합니다. 작업 전후 사진과 영상을 카카오톡으로 보내 드려요.</p></details>
+   <details><summary>콘도 관리실 작업 허가가 필요한가요?<i></i></summary><p>콘도마다 규정이 달라요. 예약이 확정되면 작업자 명단을 보내 드리니 관리실에 제출만 해 주시면 됩니다.</p></details>
+   <details><summary>작업 중 물이나 먼지가 튀지 않나요?<i></i></summary><p>세척 커버와 비닐로 벽과 바닥을 먼저 덮고 시작합니다. 마무리 후 주변 정리까지 하고 나와요.</p></details>
+   <details><summary>결제는 어떻게 하나요?<i></i></summary><p>작업이 끝난 뒤 현금 또는 계좌 이체로 결제하실 수 있어요. 영수증이 필요하면 미리 말씀해 주세요.</p></details>
+  </div>
+ </div>
+</section>
+
+<section class="sec apply" id="apply">
+ <div class="wrap">
+  <div>
+   <span class="tag">첫 방문 할인 신청</span>
+   <h2 class="t">남겨 주시면<br><em>오늘 안에</em> 연락드려요</h2>
+   <p class="lead">원하는 날짜를 고르면 담당자가 카카오톡으로 시간을 확정해 드립니다.</p>
+   <ul>
+    <li><svg viewBox="0 0 24 24" fill="none" stroke="#ffd23f" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5 9-10"/></svg>12월 첫 방문 대당 ₱500 할인</li>
+    <li><svg viewBox="0 0 24 24" fill="none" stroke="#ffd23f" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5 9-10"/></svg>출장비 없음 · 2대부터 추가 할인</li>
+    <li><svg viewBox="0 0 24 24" fill="none" stroke="#ffd23f" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5 9-10"/></svg>카카오톡 ID: example</li>
+   </ul>
+  </div>
+  <div class="fcard" id="fcard">
+   <h3>방문 예약 신청</h3>
+   <p class="sub">1분이면 끝나요</p>
+   <form id="f">
+    <div class="two">
+     <label>이름<input required placeholder="홍길동" autocomplete="off"></label>
+     <label>연락처 또는 카카오톡 ID<input required placeholder="0900-000-0000" autocomplete="off"></label>
+    </div>
+    <div class="two">
+     <label>지역<select><option>마카티</option><option>BGC · 타기그</option><option>파시그 · 오르티가스</option><option>퀘존시티</option><option>파라냐케</option><option>그 외 지역</option></select></label>
+     <label>에어컨 형태<select id="type"><option value="1000">스플릿형 1.0~1.5HP</option><option value="1400">스플릿형 2.0~2.5HP</option><option value="700">윈도우형</option><option value="2300">천장형(카세트)</option></select></label>
+    </div>
+    <div class="two">
+     <label>대수<div class="stepper"><button type="button" id="minus" aria-label="줄이기">−</button><output id="cnt">1대</output><button type="button" id="plus" aria-label="늘리기">+</button></div></label>
+     <label>희망 날짜<input type="date" required></label>
+    </div>
+    <div class="sum"><span>예상 금액 (첫 방문가)</span><b id="total">₱1,000</b></div>
+    <label class="agree"><input type="checkbox" required checked>상담을 위한 연락처 수집에 동의합니다</label>
+    <button class="btn sun" type="submit">첫 방문 할인으로 신청하기</button>
+   </form>
+   <div class="done" role="status">
+    <svg viewBox="0 0 76 76"><circle cx="38" cy="38" r="36" fill="#1a86e0"/><path d="m24 39 10 10 18-20" fill="none" stroke="#ffd23f" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    <h3>신청이 접수됐어요</h3>
+    <p>담당자가 오늘 안에 카카오톡으로<br>방문 시간을 확정해 드릴게요.</p>
+   </div>
+  </div>
+ </div>
+</section>
+
+<footer>
+ <div class="wrap">
+  <div><a class="logo" href="#"><svg viewBox="0 0 40 40" width="32" height="32"><rect width="40" height="40" rx="12" fill="#1a86e0"/><path d="M20 8v24M9.6 14l20.8 12M9.6 26l20.8-12" stroke="#fff" stroke-width="2.6" stroke-linecap="round"/><circle cx="20" cy="20" r="4" fill="#ffd23f"/></svg>시원공방</a><p style="margin-top:10px">에어컨 분해 세척 · 메트로 마닐라 방문 서비스</p></div>
+  <div>상담 0900-000-0000 · 카카오톡 ID: example<br>© 시원공방</div>
+ </div>
+</footer>
+<div class="mbar" id="mbar"><a class="btn out" href="#price">가격</a><a class="btn sun" href="#apply" style="flex:2">₱500 할인 신청</a></div>
+<script>
+var n=1,cnt=document.getElementById('cnt'),type=document.getElementById('type'),total=document.getElementById('total');
+function calc(){var p=+type.value,d=n>=2?100:0;cnt.textContent=n+'대';total.textContent='₱'+((p-d)*n).toLocaleString()}
+document.getElementById('plus').onclick=function(){if(n<9){n++;calc()}};
+document.getElementById('minus').onclick=function(){if(n>1){n--;calc()}};
+type.onchange=calc;
+document.getElementById('f').addEventListener('submit',function(e){e.preventDefault();document.getElementById('fcard').classList.add('ok')});
+var mb=document.getElementById('mbar');addEventListener('scroll',function(){mb.classList.toggle('on',scrollY>500)},{passive:true});
+</script>
+</body>
+</html>
