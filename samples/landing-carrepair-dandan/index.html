@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>단단정비 · 겨울철 18가지 무료 점검 예약</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=IBM+Plex+Sans+KR:wght@400;500;600;700&family=Oswald:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#0f1f36;--navy2:#1a3150;--steel:#2c4566;--yel:#f6c414;--yel2:#ffd84a;--con:#ecebe6;--con2:#dddbd3;--ink:#121820;--mut:#5d6672;--red:#e2442f}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'IBM Plex Sans KR',sans-serif;background:var(--con);color:var(--ink);word-break:keep-all;-webkit-font-smoothing:antialiased;line-height:1.6;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1180px;margin:0 auto;padding:0 24px}
+.ico{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;flex:none}
+.hz{height:14px;background:repeating-linear-gradient(-45deg,var(--yel) 0 18px,var(--navy) 18px 36px)}
+.num{font-family:'Oswald',sans-serif}
+.h{font-family:'Black Han Sans',sans-serif;font-weight:400;letter-spacing:-.01em}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;height:56px;padding:0 28px;border-radius:6px;font-weight:700;font-size:16px;border:0;cursor:pointer;font-family:inherit;transition:.2s;white-space:nowrap}
+.btn.y{background:var(--yel);color:var(--navy);box-shadow:0 6px 0 #b48d00}
+.btn.y:hover{transform:translateY(2px);box-shadow:0 4px 0 #b48d00}
+.btn.o{border:2px solid rgba(255,255,255,.35);color:#fff;background:transparent}
+.btn.o:hover{border-color:#fff}
+/* top */
+.top{background:var(--navy);color:#fff}
+.top .wrap{display:flex;justify-content:space-between;align-items:center;height:68px;gap:16px}
+.logo{display:flex;align-items:center;gap:10px}
+.logo b{font-family:'Black Han Sans';font-weight:400;font-size:24px;letter-spacing:.02em}
+.logo small{font-family:'Oswald';font-size:12px;letter-spacing:.24em;color:var(--yel);display:block;line-height:1;margin-top:3px}
+.top .tel{display:flex;align-items:center;gap:8px;font-size:14px;color:#c8d3e2}
+.top .tel b{font-family:'Oswald';font-size:18px;color:#fff;letter-spacing:.04em}
+/* hero */
+.hero{background:var(--navy);color:#fff;position:relative;overflow:hidden;padding:56px 0 0}
+.hero:before{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.045) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.045) 1px,transparent 1px);background-size:40px 40px}
+.hero .wrap{position:relative;display:grid;grid-template-columns:1fr 1.05fr;gap:36px;align-items:end}
+.badge{display:inline-flex;align-items:center;gap:8px;background:var(--yel);color:var(--navy);font-weight:700;font-size:14px;padding:7px 14px;border-radius:4px}
+.badge .num{font-size:15px;letter-spacing:.06em}
+.hero h1{font-family:'Black Han Sans';font-weight:400;font-size:clamp(42px,5.6vw,76px);line-height:1.08;margin:22px 0 20px}
+.hero h1 span{color:var(--yel)}
+.hero .lead{font-size:18px;color:#c8d3e2;max-width:500px}
+.hero .acts{display:flex;gap:12px;flex-wrap:wrap;margin:32px 0 0}
+.hero .until{display:flex;align-items:flex-start;gap:10px;margin-top:22px;font-size:14px;color:#9fb0c6}
+.hero .until b{color:#fff;font-weight:600}
+.hero .left{padding-bottom:64px}
+.lift svg{width:100%;height:auto;display:block}
+/* gauge strip */
+.strip{background:var(--yel);color:var(--navy)}
+.strip .wrap{display:grid;grid-template-columns:repeat(4,1fr)}
+.strip div{padding:22px 20px;border-right:2px solid rgba(15,31,54,.15);display:flex;align-items:center;gap:14px}
+.strip div:last-child{border-right:0}
+.strip b{font-family:'Oswald';font-size:34px;font-weight:700;line-height:1}
+.strip span{font-size:14px;font-weight:600;line-height:1.35}
+/* sections */
+section{padding:96px 0}
+.sh{margin-bottom:44px;display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap}
+.sh small{font-family:'Oswald';font-size:14px;letter-spacing:.24em;color:var(--steel);font-weight:600;display:flex;align-items:center;gap:10px}
+.sh small:before{content:"";width:22px;height:10px;background:repeating-linear-gradient(-45deg,var(--yel) 0 4px,var(--navy) 4px 8px)}
+.sh h2{font-family:'Black Han Sans';font-weight:400;font-size:clamp(32px,3.8vw,48px);line-height:1.18;margin-top:12px;color:var(--navy)}
+.sh h2 span{background:linear-gradient(transparent 62%,var(--yel) 62%)}
+.sh p{max-width:380px;color:var(--mut);font-size:16px}
+/* checklist */
+.checks{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.chk{background:#fff;border-radius:10px;padding:26px;border:1px solid var(--con2);position:relative;overflow:hidden}
+.chk .ic{width:64px;height:64px;border-radius:12px;background:var(--navy);display:grid;place-items:center;margin-bottom:18px}
+.chk .ic svg{width:40px;height:40px}
+.chk h3{font-size:20px;font-weight:700;color:var(--navy)}
+.chk p{font-size:15px;color:var(--mut);margin-top:6px}
+.chk ul{list-style:none;margin-top:14px;display:flex;flex-wrap:wrap;gap:6px}
+.chk li{font-size:13px;font-weight:600;background:var(--con);color:var(--steel);padding:4px 10px;border-radius:4px}
+.chk .no{position:absolute;right:22px;top:18px;font-family:'Oswald';font-size:15px;color:#b7bdc6;letter-spacing:.08em}
+/* offer */
+.offer{background:var(--navy2);color:#fff;position:relative;overflow:hidden}
+.offer .wrap{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
+.offer .sh h2{color:#fff}
+.offer .sh small{color:var(--yel)}
+.offer .sh p{color:#b6c3d4}
+.ticket{background:var(--con);color:var(--ink);border-radius:14px;position:relative;box-shadow:0 30px 60px -20px rgba(0,0,0,.5)}
+.ticket .tt{background:var(--yel);border-radius:14px 14px 0 0;padding:22px 28px;display:flex;justify-content:space-between;align-items:center;color:var(--navy)}
+.ticket .tt b{font-family:'Black Han Sans';font-weight:400;font-size:24px}
+.ticket .tt span{font-family:'Oswald';font-size:14px;letter-spacing:.14em;font-weight:600}
+.ticket .row{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:20px 28px;border-bottom:1px dashed #c3c1b8}
+.ticket .row:last-of-type{border-bottom:0}
+.ticket .row h4{font-size:17px;font-weight:700;color:var(--navy)}
+.ticket .row p{font-size:14px;color:var(--mut)}
+.ticket .pr{text-align:right;white-space:nowrap}
+.ticket .pr s{display:block;font-size:14px;color:#8b929b}
+.ticket .pr b{font-family:'Oswald';font-size:28px;font-weight:700;color:var(--navy)}
+.ticket .pr b small{font-family:'IBM Plex Sans KR';font-size:15px;font-weight:600;margin-left:2px}
+.ticket .pr .free{font-family:'Black Han Sans';font-weight:400;font-size:26px;color:var(--red)}
+.ticket .cut{position:relative;height:0;border-top:2px dashed #b4b2a8;margin:0 20px}
+.ticket .cut:before,.ticket .cut:after{content:"";position:absolute;top:-14px;width:28px;height:28px;border-radius:50%;background:var(--navy2)}
+.ticket .cut:before{left:-34px}.ticket .cut:after{right:-34px}
+.ticket .ft{padding:18px 28px 22px;font-size:13.5px;color:var(--mut);display:flex;gap:8px;align-items:flex-start}
+/* steps */
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:0;position:relative}
+.step{padding:0 28px 0 0;position:relative}
+.step .n{width:72px;height:72px;border-radius:50%;background:var(--navy);color:var(--yel);display:grid;place-items:center;font-family:'Oswald';font-size:28px;font-weight:700;position:relative;z-index:1;border:6px solid var(--con)}
+.step:not(:last-child):after{content:"";position:absolute;left:72px;right:0;top:35px;height:3px;background:repeating-linear-gradient(90deg,var(--navy) 0 10px,transparent 10px 18px)}
+.step h3{font-size:21px;font-weight:700;color:var(--navy);margin:20px 0 6px}
+.step p{font-size:15px;color:var(--mut);max-width:300px}
+.step .t{display:inline-block;justify-self:start;margin-top:12px;font-family:'Oswald';font-size:14px;letter-spacing:.1em;color:var(--steel);background:#fff;border:1px solid var(--con2);padding:4px 10px;border-radius:4px}
+/* report */
+.rep-wrap{display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center}
+.report{background:#fff;border-radius:12px;box-shadow:0 30px 60px -30px rgba(15,31,54,.45);overflow:hidden;border:1px solid var(--con2)}
+.report .rh{background:var(--navy);color:#fff;padding:18px 24px;display:flex;justify-content:space-between;align-items:center;gap:12px}
+.report .rh b{font-size:17px}
+.report .rh span{font-family:'Oswald';font-size:14px;color:#9fb0c6;letter-spacing:.08em}
+.report table{width:100%;border-collapse:collapse;font-size:15px}
+.report td{padding:14px 24px;border-bottom:1px solid #eeede8}
+.report td:last-child{text-align:right}
+.pill{display:inline-flex;align-items:center;gap:6px;font-size:13px;font-weight:700;padding:4px 10px;border-radius:30px}
+.pill i{width:8px;height:8px;border-radius:50%}
+.pill.g{background:#e3f1e6;color:#2b7a44}.pill.g i{background:#2b7a44}
+.pill.a{background:#fff3cf;color:#9a6c00}.pill.a i{background:#e6a800}
+.pill.r{background:#fde4df;color:#b8321f}.pill.r i{background:#e2442f}
+.bar{height:8px;border-radius:8px;background:#eeede8;overflow:hidden;width:110px;display:inline-block;vertical-align:middle;margin-right:10px}
+.bar i{display:block;height:100%;border-radius:8px}
+.report .rf{padding:16px 24px;font-size:14px;color:var(--mut);background:#fafaf7;display:flex;gap:8px;align-items:center}
+.rep-pts{display:grid;gap:18px;margin-top:8px}
+.rep-pts>div{display:flex;gap:14px;align-items:flex-start}
+.rep-pts .ic{width:44px;height:44px;border-radius:10px;background:var(--yel);color:var(--navy);display:grid;place-items:center;flex:none}
+.rep-pts h4{font-size:17px;color:var(--navy)}
+.rep-pts p{font-size:15px;color:var(--mut)}
+/* form */
+.book{background:var(--navy);color:#fff;position:relative;overflow:hidden}
+.book .wrap{display:grid;grid-template-columns:.85fr 1.15fr;gap:48px;align-items:start}
+.book .sh h2{color:#fff}
+.book .sh small{color:var(--yel)}
+.book .sh p{color:#b6c3d4}
+.bk-info{display:grid;gap:12px;margin-top:6px}
+.bk-info div{display:flex;justify-content:space-between;gap:12px;border-bottom:1px solid rgba(255,255,255,.12);padding:12px 0;font-size:15px}
+.bk-info span{color:#9fb0c6}
+form{background:#fff;color:var(--ink);border-radius:14px;padding:32px;display:grid;grid-template-columns:1fr 1fr;gap:16px}
+label{display:grid;gap:6px;font-size:14px;font-weight:600;color:var(--navy)}
+input,select{font-family:inherit;font-size:16px;padding:13px 14px;border-radius:6px;border:1.5px solid #cfd3d9;background:#fbfbf9;width:100%;color:var(--ink)}
+input:focus,select:focus{outline:none;border-color:var(--navy);box-shadow:0 0 0 3px rgba(246,196,20,.5)}
+.full{grid-column:1/-1}
+.slots{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
+.slots button{font-family:'Oswald';font-size:16px;font-weight:600;letter-spacing:.04em;height:46px;border-radius:6px;border:1.5px solid #cfd3d9;background:#fbfbf9;color:var(--navy);cursor:pointer}
+.slots button.on{background:var(--navy);color:var(--yel);border-color:var(--navy)}
+.slots button:disabled{color:#b0b5bc;background:#f0f0ec;text-decoration:line-through;cursor:not-allowed}
+.agree{display:flex;gap:10px;align-items:center;font-size:14px;font-weight:500;color:var(--mut)}
+.agree input{width:18px;height:18px}
+form .btn{width:100%}
+.done{display:none;grid-column:1/-1;background:#fff8dc;border:2px solid var(--yel);border-radius:8px;padding:16px 18px;font-size:15px}
+.done.on{display:block}
+.err{border-color:var(--red)!important}
+/* faq */
+.faq{max-width:880px}
+details{background:#fff;border:1px solid var(--con2);border-radius:10px;margin-bottom:10px;padding:0 24px}
+summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:20px 0;font-size:17px;font-weight:700;color:var(--navy)}
+summary::-webkit-details-marker{display:none}
+summary .ico{transition:.2s}
+details[open] summary .ico{transform:rotate(180deg)}
+details p{padding:0 0 20px;color:var(--mut);font-size:15.5px}
+footer{background:var(--ink);color:#8d97a4;padding:40px 0 110px;font-size:14px}
+footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+footer b{color:#fff}
+.sticky{position:fixed;left:0;right:0;bottom:0;z-index:30;background:rgba(15,31,54,.97);border-top:3px solid var(--yel);padding:12px 20px;display:flex;justify-content:center;align-items:center;gap:20px}
+.sticky p{color:#c8d3e2;font-size:15px}
+.sticky p b{color:var(--yel)}
+.sticky .btn{height:48px}
+@media(max-width:980px){
+ .hero .wrap,.offer .wrap,.rep-wrap,.book .wrap{grid-template-columns:1fr}
+ .hero .left{padding-bottom:10px}
+ .strip .wrap{grid-template-columns:1fr 1fr}
+ .strip div:nth-child(2){border-right:0}
+ .strip div:nth-child(-n+2){border-bottom:2px solid rgba(15,31,54,.15)}
+ .checks{grid-template-columns:1fr 1fr}
+ .steps{grid-template-columns:1fr;gap:28px}
+ .step{display:grid;grid-template-columns:72px 1fr;gap:0 20px;padding:0}
+ .step .n{grid-row:span 3}
+ .step h3{margin-top:4px}
+ .step:not(:last-child):after{left:34px;top:72px;bottom:-28px;right:auto;width:3px;height:auto;background:repeating-linear-gradient(180deg,var(--navy) 0 10px,transparent 10px 18px)}
+}
+@media(max-width:640px){
+ .wrap{padding:0 18px}
+ .top .tel span{display:none}
+ .hero{padding-top:36px}
+ .hero .lead{font-size:16px}
+ .hero .acts .btn{width:100%}
+ section{padding:72px 0}
+ .strip div{padding:16px 12px;gap:10px}
+ .strip b{font-size:28px}
+ .strip span{font-size:13px}
+ .checks{grid-template-columns:1fr}
+ .ticket .row{padding:18px 20px}
+ .ticket .tt{padding:18px 20px}
+ .ticket .tt b{font-size:20px}
+ .ticket .pr b{font-size:24px}
+ .report td{padding:12px 16px;font-size:14px}
+ .bar{width:64px;margin-right:6px}
+ form{grid-template-columns:1fr;padding:22px}
+ .slots{grid-template-columns:repeat(4,1fr);gap:6px}
+ .slots button{font-size:15px}
+ .sticky p{display:none}
+ .sticky .btn{width:100%}
+}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+ <linearGradient id="body" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#e9edf2"/><stop offset=".55" stop-color="#b9c3cf"/><stop offset="1" stop-color="#8794a5"/></linearGradient>
+ <linearGradient id="glass" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#4c6a8f"/><stop offset="1" stop-color="#1c3150"/></linearGradient>
+ <linearGradient id="post" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#d4a90c"/><stop offset=".5" stop-color="#ffd84a"/><stop offset="1" stop-color="#c79c00"/></linearGradient>
+ <radialGradient id="tire" cx=".5" cy=".5" r=".5"><stop offset=".55" stop-color="#2c333d"/><stop offset=".56" stop-color="#151a20"/><stop offset="1" stop-color="#0b0e12"/></radialGradient>
+ <radialGradient id="rim" cx=".4" cy=".4" r=".7"><stop offset="0" stop-color="#f2f4f7"/><stop offset="1" stop-color="#8e99a8"/></radialGradient>
+ <radialGradient id="spot" cx=".5" cy="0" r="1"><stop offset="0" stop-color="#fff" stop-opacity=".22"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></radialGradient>
+</defs></svg>
+
+<div class="top"><div class="wrap">
+ <a class="logo" href="#"><svg width="36" height="36" viewBox="0 0 36 36" aria-hidden="true"><rect width="36" height="36" rx="6" fill="#f6c414"/><path d="M10 25l9-9m0 0a5 5 0 1 0 2-7l-2 2 1 3 3 1 2-2a5 5 0 0 1-7 2" fill="none" stroke="#0f1f36" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg><span><b>단단정비</b><small>AUTO SERVICE</small></span></a>
+ <div class="tel"><span>예약·문의</span><b>000-0000-0000</b></div>
+</div></div>
+
+<header class="hero">
+ <div class="wrap">
+  <div class="left">
+   <span class="badge"><svg class="ico" viewBox="0 0 24 24" style="width:16px;height:16px"><path d="M12 2v6M12 16v6M4.9 4.9l4.2 4.2M14.9 14.9l4.2 4.2M2 12h6M16 12h6M4.9 19.1l4.2-4.2M14.9 9.1l4.2-4.2"/></svg>겨울철 안심 점검 <span class="num">12.1 – 12.31</span></span>
+   <h1>추워지기 전에<br><span>18가지 무료 점검</span></h1>
+   <p class="lead">배터리 전압부터 부동액·타이어 마모까지 30분이면 끝납니다. 점검 결과는 사진과 함께 리포트로 보내 드려요.</p>
+   <div class="acts">
+    <a class="btn y" href="#book">무료 점검 예약하기 <svg class="ico" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+    <a class="btn o" href="#list">점검 항목 보기</a>
+   </div>
+   <p class="until"><svg class="ico" viewBox="0 0 24 24" style="width:18px;height:18px"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg><span>하루 <b>12대</b>까지만 예약을 받아요 · 엔진오일 교환 시 <b>20% 할인</b></span></p>
+  </div>
+  <div class="lift" aria-hidden="true">
+   <svg viewBox="0 0 640 470">
+    <path d="M60 0 L180 0 L250 470 L-10 470Z" fill="url(#spot)"/>
+    <path d="M400 0 L520 0 L640 470 L330 470Z" fill="url(#spot)"/>
+    <!-- floor -->
+    <rect x="0" y="440" width="640" height="30" fill="#0a1628"/>
+    <rect x="0" y="436" width="640" height="6" fill="#26405f"/>
+    <!-- posts -->
+    <rect x="58" y="110" width="44" height="330" rx="4" fill="url(#post)"/>
+    <rect x="538" y="110" width="44" height="330" rx="4" fill="url(#post)"/>
+    <rect x="50" y="96" width="60" height="18" rx="3" fill="#0f1f36" stroke="#f6c414" stroke-width="2"/>
+    <rect x="530" y="96" width="60" height="18" rx="3" fill="#0f1f36" stroke="#f6c414" stroke-width="2"/>
+    <rect x="48" y="424" width="64" height="16" rx="3" fill="#c79c00"/>
+    <rect x="528" y="424" width="64" height="16" rx="3" fill="#c79c00"/>
+    <g fill="#0f1f36" opacity=".55"><rect x="66" y="140" width="28" height="4"/><rect x="66" y="160" width="28" height="4"/><rect x="66" y="180" width="28" height="4"/><rect x="546" y="140" width="28" height="4"/><rect x="546" y="160" width="28" height="4"/><rect x="546" y="180" width="28" height="4"/></g>
+    <!-- arms -->
+    <rect x="100" y="282" width="120" height="12" rx="3" fill="#2c4566"/>
+    <rect x="420" y="282" width="120" height="12" rx="3" fill="#2c4566"/>
+    <rect x="196" y="270" width="26" height="14" rx="2" fill="#f6c414"/>
+    <rect x="418" y="270" width="26" height="14" rx="2" fill="#f6c414"/>
+    <!-- car -->
+    <g>
+     <ellipse cx="320" cy="284" rx="230" ry="8" fill="#000" opacity=".35"/>
+     <path d="M108 236 C110 208 140 196 176 192 L232 186 C258 160 300 136 352 134 C406 132 446 150 480 184 L520 192 C546 198 556 214 556 236 L556 252 C556 262 548 268 538 268 L120 268 C110 268 104 260 106 250Z" fill="url(#body)"/>
+     <path d="M248 186 C270 162 304 146 348 145 L352 186Z" fill="url(#glass)"/>
+     <path d="M364 145 C408 146 440 160 466 186 L364 186Z" fill="url(#glass)"/>
+     <path d="M262 176 C280 160 302 152 326 150" stroke="#9ab6d6" stroke-width="3" fill="none" opacity=".6"/>
+     <rect x="352" y="145" width="12" height="42" fill="#c5ced9"/>
+     <path d="M110 230 H556" stroke="#7c8899" stroke-width="2"/>
+     <path d="M240 196 V262 M368 192 V262" stroke="#8b97a7" stroke-width="2"/>
+     <rect x="290" y="204" width="26" height="5" rx="2.5" fill="#6f7c8e"/>
+     <rect x="404" y="204" width="26" height="5" rx="2.5" fill="#6f7c8e"/>
+     <path d="M536 206 C546 208 552 214 554 222 L532 222 Z" fill="#ffe9a8"/>
+     <path d="M110 214 C112 208 118 204 126 204 L136 204 L136 222 L108 222Z" fill="#e2442f"/>
+     <!-- wheels -->
+     <circle cx="196" cy="268" r="40" fill="url(#tire)"/>
+     <circle cx="196" cy="268" r="22" fill="url(#rim)"/>
+     <g stroke="#6f7c8e" stroke-width="3"><path d="M196 248v40M176 268h40M182 254l28 28M210 254l-28 28"/></g>
+     <circle cx="196" cy="268" r="6" fill="#4b5563"/>
+     <circle cx="462" cy="268" r="40" fill="url(#tire)"/>
+     <circle cx="462" cy="268" r="22" fill="url(#rim)"/>
+     <g stroke="#6f7c8e" stroke-width="3"><path d="M462 248v40M442 268h40M448 254l28 28M476 254l-28 28"/></g>
+     <circle cx="462" cy="268" r="6" fill="#4b5563"/>
+    </g>
+    <!-- mechanic tools / cart -->
+    <g transform="translate(250 360)">
+     <rect x="0" y="0" width="140" height="64" rx="6" fill="#e2442f"/>
+     <rect x="0" y="0" width="140" height="10" rx="4" fill="#ff6a52"/>
+     <rect x="10" y="20" width="120" height="14" rx="2" fill="#b8321f"/>
+     <rect x="10" y="40" width="120" height="14" rx="2" fill="#b8321f"/>
+     <rect x="60" y="25" width="20" height="4" rx="2" fill="#f1f1f1"/>
+     <rect x="60" y="45" width="20" height="4" rx="2" fill="#f1f1f1"/>
+     <circle cx="16" cy="72" r="8" fill="#151a20"/><circle cx="124" cy="72" r="8" fill="#151a20"/>
+     <path d="M20 -6 l30 -10 M56 -4 l24 -18" stroke="#c5ced9" stroke-width="6" stroke-linecap="round"/>
+     <circle cx="104" cy="-10" r="10" fill="none" stroke="#c5ced9" stroke-width="5"/>
+    </g>
+    <!-- tablet with gauge -->
+    <g transform="translate(436 330)">
+     <rect x="0" y="0" width="120" height="84" rx="8" fill="#0a1628" stroke="#2c4566" stroke-width="3"/>
+     <path d="M30 60 A30 30 0 0 1 90 60" fill="none" stroke="#26405f" stroke-width="8"/>
+     <path d="M30 60 A30 30 0 0 1 80 38" fill="none" stroke="#f6c414" stroke-width="8"/>
+     <path d="M60 60 L78 42" stroke="#fff" stroke-width="3" stroke-linecap="round"/>
+     <text x="60" y="78" text-anchor="middle" font-family="Oswald" font-size="13" fill="#9fb0c6">12.6V</text>
+    </g>
+    <!-- hanging lamp -->
+    <path d="M320 0 V40" stroke="#26405f" stroke-width="3"/>
+    <path d="M296 40 H344 L334 60 H306Z" fill="#26405f"/>
+   </svg>
+  </div>
+ </div>
+ <div class="hz"></div>
+</header>
+
+<div class="strip"><div class="wrap">
+ <div><b>18</b><span>가지 겨울철<br>점검 항목</span></div>
+ <div><b>30</b><span>분 안에<br>점검 완료</span></div>
+ <div><b>0</b><span>원 점검비<br>(12월 한정)</span></div>
+ <div><b>20%</b><span>엔진오일 교환<br>할인</span></div>
+</div></div>
+
+<section id="list">
+ <div class="wrap">
+  <div class="sh">
+   <div><small>CHECK LIST</small><h2>겨울에 꼭 봐야 할 곳만 <span>골라서 점검</span>합니다</h2></div>
+   <p>추운 아침 시동 불량, 언 와셔액, 미끄러운 타이어. 겨울철에 자주 생기는 불편을 미리 확인해요.</p>
+  </div>
+  <div class="checks">
+   <div class="chk"><span class="no">01–04</span><div class="ic"><svg viewBox="0 0 40 40"><rect x="6" y="12" width="28" height="20" rx="3" fill="#f6c414"/><rect x="10" y="8" width="6" height="5" rx="1" fill="#c5ced9"/><rect x="24" y="8" width="6" height="5" rx="1" fill="#c5ced9"/><path d="M11 22h6M27 19v6M24 22h6" stroke="#0f1f36" stroke-width="2.5" stroke-linecap="round"/></svg></div><h3>배터리·시동 계통</h3><p>추운 날 시동이 늦게 걸린다면 먼저 확인할 곳.</p><ul><li>전압</li><li>단자 부식</li><li>발전기 충전</li><li>시동 모터</li></ul></div>
+   <div class="chk"><span class="no">05–08</span><div class="ic"><svg viewBox="0 0 40 40"><circle cx="20" cy="20" r="14" fill="#2c333d"/><circle cx="20" cy="20" r="7" fill="#c5ced9"/><g stroke="#f6c414" stroke-width="2.5" stroke-linecap="round"><path d="M20 6v4M20 30v4M6 20h4M30 20h4"/></g></svg></div><h3>타이어·제동</h3><p>마모와 공기압은 눈길 제동 거리와 바로 이어져요.</p><ul><li>트레드 깊이</li><li>공기압</li><li>브레이크 패드</li><li>브레이크액</li></ul></div>
+   <div class="chk"><span class="no">09–11</span><div class="ic"><svg viewBox="0 0 40 40"><path d="M20 6c6 9 10 14 10 19a10 10 0 0 1-20 0c0-5 4-10 10-19z" fill="#4fb3d9"/><path d="M15 26a5 5 0 0 0 5 5" stroke="#fff" stroke-width="2.5" fill="none" stroke-linecap="round"/><path d="M28 10l4-4M30 14h5" stroke="#f6c414" stroke-width="2.5" stroke-linecap="round"/></svg></div><h3>냉각수·부동액</h3><p>농도가 낮으면 영하에서 얼 수 있어 비중을 측정합니다.</p><ul><li>부동액 농도</li><li>누수</li><li>호스 상태</li></ul></div>
+   <div class="chk"><span class="no">12–14</span><div class="ic"><svg viewBox="0 0 40 40"><path d="M6 30 C10 14 30 14 34 30" fill="none" stroke="#c5ced9" stroke-width="3"/><path d="M20 30 L32 14" stroke="#f6c414" stroke-width="4" stroke-linecap="round"/><circle cx="20" cy="30" r="3" fill="#fff"/></svg></div><h3>와이퍼·와셔액</h3><p>얼어붙지 않는 겨울용 와셔액인지 함께 확인해요.</p><ul><li>와이퍼 블레이드</li><li>분사 노즐</li><li>와셔액 종류</li></ul></div>
+   <div class="chk"><span class="no">15–16</span><div class="ic"><svg viewBox="0 0 40 40"><path d="M8 14h12a8 8 0 0 1 0 16H8z" fill="#ffe9a8"/><g stroke="#f6c414" stroke-width="2.5" stroke-linecap="round"><path d="M28 14l6-3M30 22h6M28 30l6 3"/></g></svg></div><h3>등화 장치</h3><p>해가 짧아지는 계절, 전조등과 브레이크등 밝기.</p><ul><li>전조등·안개등</li><li>브레이크등</li></ul></div>
+   <div class="chk"><span class="no">17–18</span><div class="ic"><svg viewBox="0 0 40 40"><rect x="8" y="10" width="24" height="20" rx="3" fill="#c5ced9"/><path d="M12 24c3-6 5 2 8-4s5 2 8-2" stroke="#0f1f36" stroke-width="2.5" fill="none" stroke-linecap="round"/><path d="M14 6v4M26 6v4" stroke="#f6c414" stroke-width="2.5" stroke-linecap="round"/></svg></div><h3>히터·엔진오일</h3><p>히터 바람과 엔진오일 양·색을 보고 교환 시기를 알려 드려요.</p><ul><li>히터·필터</li><li>엔진오일</li></ul></div>
+  </div>
+ </div>
+</section>
+
+<section class="offer">
+ <div class="wrap">
+  <div class="sh" style="margin:0">
+   <div><small>DECEMBER OFFER</small><h2>점검은 무료,<br>필요한 것만 할인가로</h2><p style="margin-top:16px">점검 후 교체가 필요한 부품이 있어도 강요하지 않아요. 견적을 먼저 보여 드리고, 원하실 때만 작업합니다.</p></div>
+  </div>
+  <div class="ticket">
+   <div class="tt"><b>겨울철 안심 점검권</b><span>NO. 1201</span></div>
+   <div class="row"><div><h4>18가지 겨울철 점검</h4><p>국산·수입 승용차, SUV</p></div><div class="pr"><s>30,000원</s><span class="free">무료</span></div></div>
+   <div class="row"><div><h4>엔진오일 + 필터 교환</h4><p>합성유 4L 기준</p></div><div class="pr"><s>72,000원</s><b>57,600<small>원</small></b></div></div>
+   <div class="row"><div><h4>겨울용 와셔액 보충</h4><p>점검 차량 전체</p></div><div class="pr"><span class="free" style="color:var(--navy)">서비스</span></div></div>
+   <div class="cut"></div>
+   <div class="ft"><svg class="ico" viewBox="0 0 24 24" style="width:18px;height:18px;margin-top:2px"><circle cx="12" cy="12" r="9"/><path d="M12 8h.01M11 12h1v5h1"/></svg>12월 31일 예약분까지 적용 · 차량 1대당 1회 · 다른 할인과 중복되지 않아요</div>
+  </div>
+ </div>
+</section>
+
+<section>
+ <div class="wrap">
+  <div class="sh"><div><small>HOW IT WORKS</small><h2>예약부터 리포트까지 <span>세 단계</span></h2></div></div>
+  <div class="steps">
+   <div class="step"><span class="n">1</span><h3>원하는 시간 예약</h3><p>아래 양식에서 날짜와 시간을 고르면 확인 문자를 보내 드려요.</p><span class="t">1 MIN</span></div>
+   <div class="step"><span class="n">2</span><h3>방문 후 30분 점검</h3><p>대기실에서 커피 한 잔 하시는 동안 리프트에 올려 하부까지 봅니다.</p><span class="t">30 MIN</span></div>
+   <div class="step"><span class="n">3</span><h3>사진 리포트 받기</h3><p>항목별 상태와 사진, 교체 권장 시기를 정리해 문자로 보내 드려요.</p><span class="t">SAME DAY</span></div>
+  </div>
+ </div>
+</section>
+
+<section style="padding-top:0">
+ <div class="wrap rep-wrap">
+  <div class="report">
+   <div class="rh"><b>점검 리포트 예시</b><span>REPORT · 12/05</span></div>
+   <table>
+    <tr><td>배터리 전압</td><td><span class="bar"><i style="width:82%;background:#2b7a44"></i></span><span class="pill g"><i></i>양호</span></td></tr>
+    <tr><td>타이어 트레드</td><td><span class="bar"><i style="width:46%;background:#e6a800"></i></span><span class="pill a"><i></i>주의</span></td></tr>
+    <tr><td>부동액 농도</td><td><span class="bar"><i style="width:74%;background:#2b7a44"></i></span><span class="pill g"><i></i>양호</span></td></tr>
+    <tr><td>와이퍼 블레이드</td><td><span class="bar"><i style="width:22%;background:#e2442f"></i></span><span class="pill r"><i></i>교체 권장</span></td></tr>
+    <tr><td>브레이크 패드</td><td><span class="bar"><i style="width:64%;background:#2b7a44"></i></span><span class="pill g"><i></i>양호</span></td></tr>
+   </table>
+   <div class="rf"><svg class="ico" viewBox="0 0 24 24" style="width:18px;height:18px"><rect x="3" y="6" width="18" height="14" rx="2"/><circle cx="12" cy="13" r="3.5"/><path d="M8 6l1.5-2h5L16 6"/></svg>항목마다 실제 차량 사진이 함께 첨부돼요</div>
+  </div>
+  <div>
+   <div class="sh" style="margin-bottom:24px"><div><small>REPORT</small><h2>말로만 듣던 상태를<br><span>눈으로 확인</span>하세요</h2></div></div>
+   <div class="rep-pts">
+    <div><span class="ic"><svg class="ico" viewBox="0 0 24 24"><path d="M4 12l5 5L20 6"/></svg></span><div><h4>양호 · 주의 · 교체 권장 3단계</h4><p>지금 바꿔야 하는 것과 다음 정비 때 봐도 되는 것을 구분해 드려요.</p></div></div>
+    <div><span class="ic"><svg class="ico" viewBox="0 0 24 24"><path d="M12 3v18M5 8h10a3 3 0 0 1 0 6H8a3 3 0 0 0 0 6h11"/></svg></span><div><h4>부품·공임 견적 미리 안내</h4><p>작업 전 금액을 먼저 알려 드리고, 동의하신 항목만 진행합니다.</p></div></div>
+    <div><span class="ic"><svg class="ico" viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M8 9h8M8 13h8M8 17h5"/></svg></span><div><h4>정비 이력 보관</h4><p>다음 방문 때 지난 리포트와 비교해서 바뀐 부분을 알려 드려요.</p></div></div>
+   </div>
+  </div>
+ </div>
+</section>
+
+<section class="book" id="book">
+ <div class="hz" style="position:absolute;top:0;left:0;right:0"></div>
+ <div class="wrap">
+  <div>
+   <div class="sh"><div><small>BOOKING</small><h2>무료 점검<br>예약하기</h2><p style="margin-top:14px">예약 후 확인 문자를 드려요. 일정 변경은 문자 답장으로 편하게 알려 주세요.</p></div></div>
+   <div class="bk-info">
+    <div><span>운영 시간</span><b>평일 09:00 – 19:00 · 토 09:00 – 15:00</b></div>
+    <div><span>휴무</span><b>일요일·공휴일</b></div>
+    <div><span>위치</span><b>매장 주소 자리</b></div>
+    <div><span>전화</span><b class="num" style="letter-spacing:.04em">000-0000-0000</b></div>
+   </div>
+  </div>
+  <form id="f" novalidate>
+   <label>이름<input name="name" placeholder="홍길동"></label>
+   <label>연락처<input name="tel" placeholder="010-0000-0000" inputmode="tel"></label>
+   <label>차종<input name="car" placeholder="예: 중형 세단, 2019년식"></label>
+   <label>희망 날짜<input name="date" type="date"></label>
+   <div class="full"><label style="margin-bottom:8px">희망 시간</label>
+    <div class="slots" id="slots"><button type="button">09:30</button><button type="button" disabled>10:30</button><button type="button" class="on">11:30</button><button type="button">13:30</button><button type="button">14:30</button><button type="button" disabled>15:30</button><button type="button">16:30</button><button type="button">17:30</button></div>
+   </div>
+   <label class="full">추가 요청<select name="add"><option>점검만 받을게요</option><option>점검 + 엔진오일 교환 (20% 할인)</option><option>점검 후 견적 상담 원해요</option></select></label>
+   <label class="agree full"><input type="checkbox" name="ok">예약 확인 문자 수신에 동의합니다</label>
+   <button class="btn y full" type="submit">무료 점검 예약 신청 <svg class="ico" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+   <div class="done" id="done"><b>예약 신청이 접수됐어요.</b> 선택하신 시간 확인 후 문자로 안내해 드릴게요.</div>
+  </form>
+ </div>
+</section>
+
+<section>
+ <div class="wrap">
+  <div class="sh"><div><small>FAQ</small><h2>자주 묻는 질문</h2></div></div>
+  <div class="faq">
+   <details open><summary>점검만 받고 가도 정말 괜찮나요?<svg class="ico" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg></summary><p>네. 12월 겨울철 점검은 비용 없이 진행되고, 교체가 필요한 항목이 있어도 견적만 안내해 드립니다.</p></details>
+   <details><summary>수입차도 점검이 되나요?<svg class="ico" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg></summary><p>승용차와 SUV는 국산·수입 모두 점검합니다. 일부 특수 차량은 예약 시 차종을 남겨 주시면 미리 확인해 드려요.</p></details>
+   <details><summary>점검 시간은 얼마나 걸리나요?<svg class="ico" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg></summary><p>18가지 점검은 30분 안팎입니다. 엔진오일 교환을 함께 하시면 20분 정도 더 걸려요.</p></details>
+   <details><summary>예약 없이 방문해도 되나요?<svg class="ico" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg></summary><p>하루 12대까지 예약 순서로 진행해서, 예약 없이 오시면 기다리실 수 있어요. 미리 예약을 권해 드립니다.</p></details>
+  </div>
+ </div>
+</section>
+
+<footer><div class="wrap"><span><b>단단정비</b> · 사업자 정보 자리 · 매장 주소 자리</span><span>© 단단정비</span></div></footer>
+
+<div class="sticky"><p>12월 한정 <b>18가지 무료 점검</b> · 하루 12대 예약제</p><a class="btn y" href="#book">무료 점검 예약하기</a></div>
+
+<script>
+var slots=document.querySelectorAll('#slots button:not([disabled])');
+slots.forEach(function(b){b.addEventListener('click',function(){slots.forEach(function(x){x.classList.remove('on')});b.classList.add('on')})});
+document.getElementById('f').addEventListener('submit',function(e){
+ e.preventDefault();var f=e.target,bad=false;
+ ['name','tel','date'].forEach(function(k){var i=f.elements[k];if(!i.value.trim()){i.classList.add('err');bad=true}else i.classList.remove('err')});
+ if(bad)return;
+ document.getElementById('done').classList.add('on');
+ var b=f.querySelector('button[type=submit]');b.disabled=true;b.style.opacity='.6';
+});
+</script>
+</body>
+</html>
