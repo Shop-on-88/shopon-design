@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>모아 래쉬 스튜디오 · 첫 방문 속눈썹 연장</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&family=Noto+Serif+KR:wght@500;700&family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{--blush:#f3e1d8;--blush2:#ead0c4;--nude:#d8ac98;--rose:#b86e5e;--esp:#3a2620;--esp2:#5a3f36;--milk:#fbf5f1;--mute:#8a6f66}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Noto Sans KR',sans-serif;background:var(--milk);color:var(--esp);word-break:keep-all;-webkit-font-smoothing:antialiased;line-height:1.6}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1180px;margin:0 auto;padding:0 32px}
+.en{font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:500}
+[class],b,strong{font-variant-numeric:lining-nums}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;height:56px;padding:0 30px;border-radius:2px;font-weight:500;font-size:16px;letter-spacing:.02em;transition:.2s;white-space:nowrap;cursor:pointer;border:0;font-family:inherit}
+.btn svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.btn-dark{background:var(--esp);color:var(--milk)}
+.btn-dark:hover{background:var(--esp2)}
+.btn-line{border:1px solid var(--esp);color:var(--esp);background:transparent}
+.top{position:sticky;top:0;z-index:20;background:rgba(251,245,241,.9);backdrop-filter:blur(10px);border-bottom:1px solid var(--blush2)}
+.top .wrap{display:flex;justify-content:space-between;align-items:center;height:72px}
+.logo{display:flex;align-items:baseline;gap:10px}
+.logo b{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:30px;letter-spacing:.06em}
+.logo span{font-size:13px;letter-spacing:.3em;color:var(--mute)}
+.top .btn{height:44px;padding:0 20px;font-size:14px}
+/* hero */
+.hero{position:relative;overflow:hidden;background:linear-gradient(180deg,var(--blush) 0%,var(--milk) 100%)}
+.hero .wrap{display:grid;grid-template-columns:1.05fr 1fr;gap:40px;align-items:center;min-height:760px;padding-top:40px;padding-bottom:60px}
+.kicker{display:inline-flex;align-items:center;gap:12px;font-size:14px;font-weight:500;letter-spacing:.18em;color:var(--rose)}
+.kicker i{width:40px;height:1px;background:var(--rose);display:block}
+.hero h1{font-family:'Noto Serif KR',serif;font-weight:700;font-size:clamp(40px,5vw,64px);line-height:1.28;letter-spacing:-.03em;margin:22px 0 22px}
+.hero h1 .en{font-size:1.12em;color:var(--rose);letter-spacing:0}
+.hero p.lead{font-size:18px;color:var(--esp2);max-width:470px;font-weight:300}
+.offer{display:flex;align-items:stretch;margin-top:34px;max-width:500px;background:#fff;border:1px solid var(--blush2)}
+.offer .l{padding:20px 24px;border-right:1px dashed var(--nude);flex:1}
+.offer .l small{display:block;font-size:13px;color:var(--mute);letter-spacing:.06em}
+.offer .l b{font-family:'Noto Serif KR',serif;font-size:20px;font-weight:700}
+.offer .r{padding:16px 26px;display:flex;flex-direction:column;justify-content:center;align-items:flex-end}
+.offer .r s{font-size:15px;color:var(--mute)}
+.offer .r strong{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:42px;line-height:1;color:var(--rose)}
+.hero .acts{display:flex;gap:10px;margin-top:22px;flex-wrap:wrap}
+.hero .art{position:relative;height:620px}
+.hero .art svg{position:absolute;inset:0;width:100%;height:100%}
+.chip{position:absolute;background:#fff;border:1px solid var(--blush2);padding:12px 18px;font-size:14px;box-shadow:0 20px 40px -28px rgba(58,38,32,.5)}
+.chip b{display:block;font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:600;color:var(--rose);line-height:1.1}
+.chip.c1{left:0;bottom:90px}.chip.c2{right:0;top:80px}
+/* band */
+.band{background:var(--esp);color:#ead8cf}
+.band .wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;padding-top:30px;padding-bottom:30px}
+.band div{display:flex;gap:14px;align-items:center;font-size:15px}
+.band svg{width:28px;height:28px;flex:none;fill:none;stroke:var(--nude);stroke-width:1.4;stroke-linecap:round;stroke-linejoin:round}
+section{padding:120px 0}
+.sh{text-align:center;margin-bottom:60px}
+.sh h2{font-family:'Noto Serif KR',serif;font-weight:700;font-size:clamp(30px,3.6vw,44px);letter-spacing:-.03em;line-height:1.3;margin-top:14px}
+.sh p{color:var(--mute);margin-top:14px;font-size:17px}
+/* styles */
+.styles{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
+.st{background:#fff;border:1px solid var(--blush2);display:flex;flex-direction:column;transition:.25s}
+.st:hover{transform:translateY(-6px);box-shadow:0 30px 60px -40px rgba(58,38,32,.5)}
+.st .pic{background:var(--blush);height:230px;display:grid;place-items:center;position:relative}
+.st .pic svg{width:86%;height:180px}
+.st .no{position:absolute;left:20px;top:16px;font-family:'Cormorant Garamond',serif;font-style:italic;font-size:26px;color:var(--rose)}
+.st .bd{padding:28px 28px 30px;display:flex;flex-direction:column;flex:1}
+.st h3{font-family:'Noto Serif KR',serif;font-size:24px;font-weight:700}
+.st h3 small{display:block;font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:500;font-size:19px;color:var(--rose);margin-bottom:2px}
+.st p{font-size:15px;color:var(--mute);margin-top:10px}
+.st dl{margin-top:20px;display:grid;gap:8px;font-size:14px;border-top:1px solid var(--blush2);padding-top:16px}
+.st dl div{display:flex;justify-content:space-between}
+.st dt{color:var(--mute)}
+.st .pr{margin-top:auto;padding-top:22px;display:flex;justify-content:space-between;align-items:flex-end}
+.st .pr s{font-size:14px;color:var(--mute);display:block}
+.st .pr b{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:36px;line-height:1}
+.st .pr em{font-style:normal;font-size:13px;font-weight:500;background:var(--blush);color:var(--rose);padding:4px 10px}
+/* steps */
+.steps{background:var(--blush)}
+.stepgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border-top:1px solid var(--nude)}
+.sp{padding:34px 28px 0 0}
+.sp .n{font-family:'Cormorant Garamond',serif;font-size:56px;line-height:1;color:var(--rose);font-weight:500}
+.sp h4{font-family:'Noto Serif KR',serif;font-size:21px;margin:14px 0 8px}
+.sp p{font-size:15px;color:var(--esp2)}
+.sp .tm{display:inline-block;margin-top:14px;font-size:13px;color:var(--mute);border:1px solid var(--nude);padding:3px 10px}
+/* care */
+.care{display:grid;grid-template-columns:1fr 1.1fr;gap:70px;align-items:center}
+.care .art{background:var(--esp);aspect-ratio:1/1;position:relative;overflow:hidden}
+.care .art svg{width:100%;height:100%;display:block}
+.care h2{font-family:'Noto Serif KR',serif;font-weight:700;font-size:clamp(30px,3.4vw,42px);letter-spacing:-.03em;line-height:1.3;margin:14px 0 30px}
+.tips{display:grid;gap:0}
+.tip{display:grid;grid-template-columns:56px 1fr;gap:18px;padding:22px 0;border-bottom:1px solid var(--blush2)}
+.tip .ic{width:56px;height:56px;border-radius:50%;background:var(--blush);display:grid;place-items:center}
+.tip svg{width:26px;height:26px;fill:none;stroke:var(--rose);stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
+.tip h4{font-size:18px;font-weight:500}
+.tip p{font-size:15px;color:var(--mute);margin-top:2px}
+/* form */
+.apply{background:var(--esp);color:#ead8cf}
+.applygrid{display:grid;grid-template-columns:.9fr 1.1fr;gap:70px;align-items:start}
+.apply .sh{text-align:left;margin:0}
+.apply .sh h2{color:#fff}
+.apply .sh p{color:#c9b0a6}
+.coupon{margin-top:36px;border:1px solid #6d5047;padding:28px;position:relative}
+
+.coupon small{font-size:13px;letter-spacing:.2em;color:var(--nude)}
+.coupon h3{font-family:'Noto Serif KR',serif;color:#fff;font-size:26px;margin:8px 0 6px}
+.coupon p{font-size:14px;color:#c9b0a6}
+.coupon strong{position:absolute;right:28px;top:26px;font-family:'Cormorant Garamond',serif;font-size:54px;font-weight:600;color:var(--nude);line-height:1}
+form{background:var(--milk);color:var(--esp);padding:40px;display:grid;gap:20px}
+form label{display:grid;gap:8px;font-size:14px;font-weight:500}
+form input,form select{font:400 16px 'Noto Sans KR',sans-serif;padding:14px 16px;border:1px solid var(--blush2);background:#fff;color:var(--esp);outline:none;border-radius:0}
+form input:focus,form select:focus{border-color:var(--rose)}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.opts{display:flex;flex-wrap:wrap;gap:8px}
+.opts button{all:unset;cursor:pointer;padding:10px 16px;border:1px solid var(--blush2);background:#fff;font-size:14px;transition:.15s}
+.opts button.on{background:var(--esp);color:#fff;border-color:var(--esp)}
+.agree{display:flex !important;grid-template-columns:none;align-items:center;gap:10px;font-weight:400 !important;color:var(--mute)}
+.agree input{width:18px;height:18px;accent-color:var(--rose);padding:0}
+.msg{display:none;background:var(--blush);padding:14px 16px;font-size:15px}
+.msg.show{display:block}
+/* faq */
+.faq{max-width:820px;margin:0 auto}
+.faq details{border-bottom:1px solid var(--blush2);padding:24px 0}
+.faq summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;gap:20px;font-size:18px;font-weight:500}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary:after{content:'+';font-family:'Cormorant Garamond',serif;font-size:30px;line-height:.8;color:var(--rose)}
+.faq details[open] summary:after{content:'−'}
+.faq p{margin-top:12px;color:var(--mute);font-size:16px}
+footer{border-top:1px solid var(--blush2);padding:46px 0;font-size:14px;color:var(--mute)}
+footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;align-items:center}
+.mbar{display:none}
+@media(max-width:1000px){.hero .wrap,.care,.applygrid{grid-template-columns:1fr}.hero .art{height:460px}.styles{grid-template-columns:1fr 1fr}.stepgrid{grid-template-columns:1fr 1fr;gap:20px}.band .wrap{grid-template-columns:1fr 1fr}}
+@media(max-width:640px){
+ .wrap{padding:0 20px}section{padding:84px 0}
+ .top .btn{display:none}
+ .hero .wrap{min-height:auto;padding-top:46px;gap:10px}
+ .hero h1{font-size:38px}.hero p.lead{font-size:16px}
+ .hero .art{height:360px;order:-1}
+ .chip{padding:9px 13px;font-size:13px}.chip b{font-size:19px}.chip.c2{top:20px}.chip.c1{bottom:20px}
+ .offer .r strong{font-size:34px}.offer .l b{font-size:17px}.offer .l{padding:16px 18px}.offer .r{padding:14px 18px}
+ .hero .acts .btn{flex:1;padding:0 14px}
+ .band .wrap{gap:16px}.band div{font-size:14px}
+ .styles{grid-template-columns:1fr}
+ .stepgrid{grid-template-columns:1fr}
+ form{padding:24px}.two{grid-template-columns:1fr}
+ .coupon strong{position:static;display:block;margin-top:12px}
+ body{padding-bottom:76px}
+ .mbar{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:30;background:rgba(251,245,241,.96);border-top:1px solid var(--blush2);padding:10px 16px;gap:10px;align-items:center}
+ .mbar span{font-size:13px;color:var(--mute);line-height:1.3}.mbar span b{display:block;font-size:16px;color:var(--esp)}
+ .mbar .btn{flex:1;height:50px}
+}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute"><defs>
+ <linearGradient id="skin" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f6e2d6"/><stop offset="1" stop-color="#e6bfac"/></linearGradient>
+ <linearGradient id="lid" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#d9a993" stop-opacity="0"/><stop offset="1" stop-color="#c88c75" stop-opacity=".55"/></linearGradient>
+</defs></svg>
+
+<header class="top"><div class="wrap">
+ <a class="logo" href="#"><b>MOA</b><span>LASH STUDIO</span></a>
+ <a class="btn btn-dark" href="#apply">첫 방문 예약</a>
+</div></header>
+
+<section class="hero" style="padding:0"><div class="wrap">
+ <div>
+  <span class="kicker"><i></i>FIRST VISIT · 12월 한정</span>
+  <h1>속눈썹 한 올까지,<br>나에게 맞춘<br><span class="en">first lash.</span></h1>
+  <p class="lead">눈매와 평소 메이크업을 먼저 상담하고 길이·컬·두께를 정합니다. 처음 오시는 분께 클래식 연장을 특별가로 안내해요.</p>
+  <div class="offer"><div class="l"><small>첫 방문 클래식 연장</small><b>상담 · 시술 · 케어 안내</b></div><div class="r"><s>₱1,600</s><strong>₱1,150</strong></div></div>
+  <div class="acts"><a class="btn btn-dark" href="#apply">예약 신청하기 <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a><a class="btn btn-line" href="#styles">스타일 보기</a></div>
+ </div>
+ <div class="art">
+  <svg viewBox="0 0 560 620" aria-hidden="true">
+   <defs>
+    <radialGradient id="hbg" cx=".5" cy=".45" r=".55"><stop offset="0" stop-color="#fbeee6"/><stop offset="1" stop-color="#ecd2c5"/></radialGradient>
+    <linearGradient id="arch" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#e9c9b9"/><stop offset="1" stop-color="#d8ac98"/></linearGradient>
+    <linearGradient id="face" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f8e6db"/><stop offset="1" stop-color="#e7c0ad"/></linearGradient>
+    <linearGradient id="hair" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#4a3029"/><stop offset="1" stop-color="#2d1c17"/></linearGradient>
+   </defs>
+   <path d="M80 620 V260 C80 140 170 60 280 60 C390 60 480 140 480 260 V620Z" fill="url(#arch)"/>
+   <path d="M100 620 V264 C100 156 180 84 280 84 C380 84 460 156 460 264 V620Z" fill="url(#hbg)"/>
+   <g transform="translate(280 330)">
+    <path d="M-150 -120 C-150 -220 -60 -270 20 -260 C110 -250 160 -180 156 -90 C170 -20 160 80 120 150 L-140 150 C-170 60 -160 -40 -150 -120Z" fill="url(#hair)"/>
+    <path d="M-110 -60 C-110 -170 -40 -210 20 -206 C90 -200 124 -140 120 -60 C118 30 90 110 10 140 C-60 130 -112 50 -110 -60Z" fill="url(#face)"/>
+    <path d="M-120 -90 C-100 -190 0 -230 70 -200 C120 -180 140 -130 130 -80 C110 -140 60 -170 0 -160 C-60 -150 -100 -120 -120 -90Z" fill="url(#hair)"/>
+    
+    <g fill="none" stroke-linecap="round">
+     <path d="M-78 -40 C-60 -50 -36 -50 -20 -42" stroke="#5a3a30" stroke-width="5"/>
+     <path d="M26 -42 C44 -50 70 -50 88 -38" stroke="#5a3a30" stroke-width="5"/>
+     <path d="M-82 -6 C-66 6 -36 8 -18 -4" stroke="#3a2620" stroke-width="3.5"/>
+     <path d="M24 -4 C42 8 72 6 88 -8" stroke="#3a2620" stroke-width="3.5"/>
+     <g stroke="#2b1a15" stroke-width="2"><path d="M-78 -2 l-10 8M-70 2 l-7 11M-60 5 l-5 12M-50 6 l-3 12M-40 6 l-1 12M-30 4 l1 12M-22 0 l3 11"/><path d="M28 0 l-3 11M36 4 l-1 12M46 6 l1 12M56 6 l3 12M66 4 l5 12M76 1 l7 11M84 -4 l10 8"/></g>
+    </g>
+    <path d="M0 0 C-6 24 -8 40 -2 50 C4 54 12 52 14 46" fill="none" stroke="#c88c75" stroke-width="3" stroke-linecap="round"/>
+    <path d="M-28 82 C-10 92 18 92 34 80 C20 98 -14 100 -28 82Z" fill="#c96f62"/>
+    <path d="M-28 82 C-10 78 18 76 34 80" stroke="#b25a4f" stroke-width="2" fill="none"/>
+    <ellipse cx="-66" cy="40" rx="20" ry="10" fill="#e8a596" opacity=".35"/><ellipse cx="74" cy="38" rx="20" ry="10" fill="#e8a596" opacity=".35"/>
+    <path d="M-60 140 C-50 190 -20 210 10 210 C40 210 70 190 76 140 C60 160 30 170 10 170 C-14 170 -44 160 -60 140Z" fill="#e7c0ad"/>
+    <path d="M-170 290 C-160 220 -100 196 -50 190 C-20 210 40 210 70 190 C120 196 180 220 190 290Z" fill="#f4ece6"/>
+    <path d="M-50 190 C-20 220 40 220 70 190" fill="none" stroke="#e0d3ca" stroke-width="3"/>
+   </g>
+   <g fill="none" stroke="#b86e5e" stroke-width="1.4" opacity=".7"><path d="M470 140 l10 -10 M488 156 l14 -4 M486 120 l4 -14"/><circle cx="120" cy="190" r="4"/><circle cx="452" cy="420" r="3"/></g>
+   <g transform="translate(470 470) rotate(-30)"><rect x="-4" y="-50" width="8" height="70" rx="3" fill="#3a2620"/><path d="M-4 20 l2 30 M4 20 l-2 30" stroke="#a88a7d" stroke-width="3"/></g>
+  </svg>
+  <div class="chip c1"><b>60–90분</b>시술 시간</div>
+  <div class="chip c2"><b>1:1 상담</b>눈매·생활 습관 체크</div>
+ </div>
+</div></section>
+
+<div class="band"><div class="wrap">
+ <div><svg viewBox="0 0 24 24"><path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg>눈매 맞춤 디자인 상담</div>
+ <div><svg viewBox="0 0 24 24"><path d="M12 3l2.5 5 5.5.8-4 3.9.9 5.5L12 15.6 7.1 18.2 8 12.7 4 8.8l5.5-.8z"/></svg>저자극 글루 사용</div>
+ <div><svg viewBox="0 0 24 24"><path d="M12 2l8 3v6c0 5-3.5 9-8 11-4.5-2-8-6-8-11V5z"/><path d="M8.5 12l2.5 2.5 4.5-5"/></svg>1인 1회용 도구</div>
+ <div><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>평일 저녁 9시까지</div>
+</div></div>
+
+<section id="styles"><div class="wrap">
+ <div class="sh"><span class="kicker" style="justify-content:center"><i></i>LASH STYLE<i></i></span><h2>세 가지 스타일 중에서 고르세요</h2><p>상담 후 길이·컬은 얼마든지 조정할 수 있어요.</p></div>
+ <div class="styles">
+  <article class="st">
+   <div class="pic"><span class="no">01</span><svg viewBox="0 0 300 180"><path d="M30 100 C80 40 220 40 270 100 C220 140 80 140 30 100Z" fill="url(#skin)"/><path d="M30 100 C80 40 220 40 270 100" fill="url(#lid)"/><path d="M70 100 C100 74 200 74 230 100 C200 124 100 124 70 100Z" fill="#fff"/><circle cx="150" cy="100" r="24" fill="#5a3a30"/><circle cx="150" cy="100" r="11" fill="#1f1310"/><circle cx="158" cy="92" r="5" fill="#fff" opacity=".85"/><path d="M30 100 C80 40 220 40 270 100" fill="none" stroke="#2b1a15" stroke-width="4" stroke-linecap="round"/><g stroke="#2b1a15" stroke-width="2.4" stroke-linecap="round"><path d="M50 82 l-14 -14M70 68 l-10 -18M92 59 l-6 -20M116 53 l-3 -21M140 51 l0 -22M164 51 l2 -22M188 53 l4 -21M210 59 l7 -20M232 68 l10 -18M252 82 l14 -14"/></g></svg></div>
+   <div class="bd"><h3><small>Classic</small>클래식 연장</h3><p>내 속눈썹 한 올에 한 가닥. 마스카라를 바른 듯 단정한 결.</p><dl><div><dt>소요 시간</dt><dd>약 70분</dd></div><div><dt>추천 리터치</dt><dd>3–4주</dd></div></dl><div class="pr"><div><s>₱1,600</s><b>₱1,150</b></div><em>첫 방문가</em></div></div>
+  </article>
+  <article class="st">
+   <div class="pic" style="background:#ecd2c5"><span class="no">02</span><svg viewBox="0 0 300 180"><path d="M30 100 C80 40 220 40 270 100 C220 140 80 140 30 100Z" fill="url(#skin)"/><path d="M30 100 C80 40 220 40 270 100" fill="url(#lid)"/><path d="M70 100 C100 74 200 74 230 100 C200 124 100 124 70 100Z" fill="#fff"/><circle cx="150" cy="100" r="24" fill="#5a3a30"/><circle cx="150" cy="100" r="11" fill="#1f1310"/><circle cx="158" cy="92" r="5" fill="#fff" opacity=".85"/><path d="M30 100 C80 40 220 40 270 100" fill="none" stroke="#2b1a15" stroke-width="6" stroke-linecap="round"/><g stroke="#2b1a15" stroke-width="2" stroke-linecap="round"><path d="M46 86 l-18 -12M50 82 l-16 -18M60 74 l-14 -20M66 70 l-10 -24M78 64 l-8 -24M86 60 l-6 -26M98 56 l-4 -26M106 55 l-3 -27M118 52 l-2 -28M128 51 l-1 -28M140 50 l0 -30M150 50 l0 -30M160 50 l1 -30M172 51 l2 -29M182 52 l3 -28M194 55 l4 -27M202 56 l6 -26M214 60 l8 -26M222 64 l10 -24M234 70 l12 -22M240 74 l16 -20M250 82 l18 -16M254 86 l20 -12"/></g></svg></div>
+   <div class="bd"><h3><small>Volume</small>볼륨 연장</h3><p>가늘고 가벼운 가닥을 부채꼴로 겹쳐 풍성하고 부드러운 결.</p><dl><div><dt>소요 시간</dt><dd>약 90분</dd></div><div><dt>추천 리터치</dt><dd>3주</dd></div></dl><div class="pr"><div><s>₱2,200</s><b>₱1,800</b></div><em>첫 방문가</em></div></div>
+  </article>
+  <article class="st">
+   <div class="pic"><span class="no">03</span><svg viewBox="0 0 300 180"><path d="M30 100 C80 40 220 40 270 100 C220 140 80 140 30 100Z" fill="url(#skin)"/><path d="M30 100 C80 40 220 40 270 100" fill="url(#lid)"/><path d="M70 100 C100 74 200 74 230 100 C200 124 100 124 70 100Z" fill="#fff"/><circle cx="150" cy="100" r="24" fill="#5a3a30"/><circle cx="150" cy="100" r="11" fill="#1f1310"/><circle cx="158" cy="92" r="5" fill="#fff" opacity=".85"/><path d="M30 100 C80 40 220 40 270 100" fill="none" stroke="#2b1a15" stroke-width="3" stroke-linecap="round"/><g stroke="#3a2620" stroke-width="2" fill="none" stroke-linecap="round"><path d="M56 80 c-6 -6 -8 -14 -4 -20M76 66 c-4 -8 -4 -16 2 -22M98 58 c-2 -8 0 -16 6 -20M122 53 c-1 -8 2 -15 8 -18M146 51 c0 -8 4 -14 10 -16M170 52 c2 -8 6 -13 12 -14M194 56 c4 -8 8 -12 14 -12M216 62 c5 -7 10 -10 16 -9M238 74 c6 -6 12 -8 18 -6"/></g></svg></div>
+   <div class="bd"><h3><small>Lash lift</small>내추럴 펌</h3><p>연장 없이 내 속눈썹을 위로 올려 정리하는 자연스러운 컬.</p><dl><div><dt>소요 시간</dt><dd>약 60분</dd></div><div><dt>컬 유지 안내</dt><dd>4–6주</dd></div></dl><div class="pr"><div><s>₱1,300</s><b>₱950</b></div><em>첫 방문가</em></div></div>
+  </article>
+ </div>
+</div></section>
+
+<section class="steps"><div class="wrap">
+ <div class="sh"><span class="kicker" style="justify-content:center"><i></i>PROCESS<i></i></span><h2>예약부터 리터치 안내까지</h2></div>
+ <div class="stepgrid">
+  <div class="sp"><div class="n">01</div><h4>예약 신청</h4><p>아래 양식으로 원하는 날짜와 시간을 남겨 주세요.</p><span class="tm">1분</span></div>
+  <div class="sp"><div class="n">02</div><h4>1:1 상담</h4><p>눈매, 렌즈 착용, 평소 메이크업을 함께 확인해요.</p><span class="tm">10분</span></div>
+  <div class="sp"><div class="n">03</div><h4>시술</h4><p>편하게 누워 눈을 감고 계시면 한 올씩 붙여 드려요.</p><span class="tm">60–90분</span></div>
+  <div class="sp"><div class="n">04</div><h4>관리 안내</h4><p>세안 방법과 다음 리터치 시기를 메시지로 보내 드려요.</p><span class="tm">5분</span></div>
+ </div>
+</div></section>
+
+<section><div class="wrap care">
+ <div class="art"><svg viewBox="0 0 400 400" preserveAspectRatio="xMidYMid slice"><defs><linearGradient id="cb" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#4a322b"/><stop offset="1" stop-color="#2e1d18"/></linearGradient><linearGradient id="bt" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#e7c3b2"/><stop offset=".5" stop-color="#f6e2d6"/><stop offset="1" stop-color="#d8ac98"/></linearGradient><linearGradient id="gl2" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#c7a08f"/><stop offset=".5" stop-color="#ead0c4"/><stop offset="1" stop-color="#b98c7a"/></linearGradient><linearGradient id="mir" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f3e1d8"/><stop offset="1" stop-color="#b98c7a"/></linearGradient><radialGradient id="spot" cx=".5" cy=".4" r=".6"><stop offset="0" stop-color="#7a5448" stop-opacity=".7"/><stop offset="1" stop-color="#7a5448" stop-opacity="0"/></radialGradient></defs>
+<rect width="400" height="400" fill="url(#cb)"/><ellipse cx="200" cy="170" rx="210" ry="170" fill="url(#spot)"/>
+<g transform="translate(250 50)"><circle cx="60" cy="80" r="74" fill="#2e1d18"/><circle cx="60" cy="80" r="66" fill="url(#mir)" opacity=".55"/><path d="M20 50 c20 -20 50 -26 74 -12" stroke="#fff" stroke-width="4" fill="none" opacity=".35" stroke-linecap="round"/><rect x="54" y="152" width="12" height="70" fill="#2e1d18"/></g>
+<rect x="0" y="300" width="400" height="100" fill="#24160f" opacity=".7"/><path d="M0 300 H400" stroke="#6d5047" stroke-width="2"/>
+<g transform="translate(78 132)"><rect x="0" y="50" width="88" height="120" rx="12" fill="url(#bt)"/><rect x="18" y="0" width="52" height="56" rx="8" fill="#3a2620"/><rect x="12" y="88" width="64" height="50" fill="#fbf5f1" opacity=".9"/><text x="44" y="120" text-anchor="middle" font-family="Cormorant Garamond" font-style="italic" font-size="22" fill="#3a2620">moa</text></g>
+<g transform="translate(182 172)"><rect x="0" y="22" width="96" height="108" rx="48" fill="url(#gl2)"/><rect x="32" y="0" width="32" height="28" rx="4" fill="#3a2620"/><circle cx="48" cy="80" r="20" fill="#fbf5f1" opacity=".85"/></g>
+<g transform="translate(290 270)"><ellipse cx="22" cy="26" rx="26" ry="8" fill="#f6e2d6"/><ellipse cx="22" cy="20" rx="26" ry="8" fill="#fbf5f1"/><ellipse cx="22" cy="14" rx="26" ry="8" fill="#fff"/></g>
+<g transform="translate(60 318) rotate(-8)"><rect x="0" y="0" width="190" height="10" rx="5" fill="#d8ac98"/><g stroke="#ead0c4" stroke-width="2"><path d="M176 0 v-16M180 0 v-18M184 0 v-16M172 0 v-14M188 0 v-12"/></g></g>
+<ellipse cx="200" cy="304" rx="160" ry="7" fill="#000" opacity=".3"/><g fill="#ead0c4" opacity=".6"><circle cx="50" cy="60" r="2"/><circle cx="360" cy="250" r="2"/><circle cx="110" cy="90" r="1.5"/></g></svg></div>
+ <div>
+  <span class="kicker"><i></i>AFTER CARE</span>
+  <h2>시술 후 이것만<br>지켜 주세요</h2>
+  <div class="tips">
+   <div class="tip"><span class="ic"><svg viewBox="0 0 24 24"><path d="M12 2c3 5 6 8 6 12a6 6 0 0 1-12 0c0-4 3-7 6-12z"/></svg></span><div><h4>6시간 동안 물 닿지 않기</h4><p>글루가 단단히 굳을 때까지 세안·사우나는 잠시 쉬어 주세요.</p></div></div>
+   <div class="tip"><span class="ic"><svg viewBox="0 0 24 24"><path d="M4 20l7-7M14 4l6 6-8 8-6-6z"/></svg></span><div><h4>오일 클렌저 피하기</h4><p>눈가는 오일 없는 클렌저로 가볍게 닦아 주세요.</p></div></div>
+   <div class="tip"><span class="ic"><svg viewBox="0 0 24 24"><path d="M5 3v18M9 3v18M13 3v18M17 3v18"/></svg></span><div><h4>매일 아침 빗질 한 번</h4><p>함께 드리는 전용 브러시로 결을 정리해 주세요.</p></div></div>
+   <div class="tip"><span class="ic"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg></span><div><h4>3–4주 뒤 리터치</h4><p>다음 방문 날짜는 시술 당일 미리 잡아 드려요.</p></div></div>
+  </div>
+ </div>
+</div></section>
+
+<section class="apply" id="apply"><div class="wrap applygrid">
+ <div>
+  <div class="sh"><span class="kicker"><i></i>BOOKING</span><h2>첫 방문 예약 신청</h2><p>남겨 주신 연락처로 가능한 시간을 확인해 드려요.<br>예약 확정 전에는 비용이 발생하지 않습니다.</p></div>
+  <div class="coupon"><small>FIRST VISIT</small><h3>첫 방문 특별가</h3><p>12월 31일까지 · 1인 1회 · 다른 할인과 중복 불가</p><strong>₱1,150</strong></div>
+ </div>
+ <form id="f" onsubmit="return false">
+  <label>원하는 스타일<div class="opts" data-g="style"><button type="button" class="on">클래식 연장</button><button type="button">볼륨 연장</button><button type="button">내추럴 펌</button><button type="button">상담 후 결정</button></div></label>
+  <div class="two"><label>이름<input type="text" placeholder="홍길동" required></label><label>연락처<input type="tel" placeholder="0900-000-0000" required></label></div>
+  <div class="two"><label>희망 날짜<input type="text" id="d" placeholder="예: 2026. 12. 3." required></label><label>희망 시간<select><option>오전 10:00 – 12:00</option><option>오후 1:00 – 4:00</option><option>오후 4:00 – 7:00</option><option>저녁 7:00 – 9:00</option></select></label></div>
+  <label>렌즈 착용<div class="opts" data-g="lens"><button type="button" class="on">안 함</button><button type="button">소프트 렌즈</button><button type="button">하드 렌즈</button></div></label>
+  <label class="agree"><input type="checkbox" checked> 예약 안내 연락을 위한 개인정보 이용에 동의합니다</label>
+  <button class="btn btn-dark" type="submit" id="sb">예약 신청 보내기</button>
+  <div class="msg" id="msg">신청이 접수되었어요. 확인 후 메시지로 연락드릴게요.</div>
+ </form>
+</div></section>
+
+<section><div class="wrap">
+ <div class="sh"><span class="kicker" style="justify-content:center"><i></i>FAQ<i></i></span><h2>자주 묻는 질문</h2></div>
+ <div class="faq">
+  <details open><summary>처음인데 어떤 스타일이 좋을지 모르겠어요.</summary><p>‘상담 후 결정’을 선택해 주세요. 눈매와 원하는 분위기를 듣고 두세 가지 길이를 직접 대어 보며 정해 드려요.</p></details>
+  <details><summary>시술 중에 눈이 따갑지 않나요?</summary><p>눈을 감은 상태로 진행하고, 아래 속눈썹은 패치로 보호합니다. 불편하면 언제든 말씀해 주세요.</p></details>
+  <details><summary>렌즈를 끼고 가도 되나요?</summary><p>시술 전에 빼 주시는 것이 편해요. 렌즈 케이스를 챙겨 오시면 좋습니다.</p></details>
+  <details><summary>예약 변경은 어떻게 하나요?</summary><p>방문 하루 전까지 메시지로 알려 주시면 다른 날짜로 바꿔 드려요.</p></details>
+ </div>
+</div></section>
+
+<footer><div class="wrap">
+ <a class="logo" href="#"><b>MOA</b><span>LASH STUDIO</span></a>
+ <span>예약 0900-000-0000 · 카카오톡 ID: example · 화–일 10:00–21:00</span>
+</div></footer>
+
+<div class="mbar"><span>첫 방문 클래식<b>₱1,150</b></span><a class="btn btn-dark" href="#apply">예약 신청</a></div>
+
+<script>
+(function(){
+ var d=new Date();d.setDate(d.getDate()+2);var w='일월화수목금토'[d.getDay()];document.getElementById('d').value=d.getFullYear()+'. '+(d.getMonth()+1)+'. '+d.getDate()+'. ('+w+')';
+ document.querySelectorAll('.opts').forEach(function(g){g.addEventListener('click',function(e){var b=e.target.closest('button');if(!b)return;g.querySelectorAll('button').forEach(function(x){x.classList.remove('on')});b.classList.add('on')})});
+ document.getElementById('f').addEventListener('submit',function(){document.getElementById('msg').classList.add('show');document.getElementById('sb').textContent='신청 완료'});
+})();
+</script>
+</body>
+</html>

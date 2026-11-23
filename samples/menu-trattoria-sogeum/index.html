@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>소금빛 트라토리아 · 메뉴판 디자인</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@900&family=Noto+Sans+KR:wght@400;500;700&family=Playfair+Display:ital@1&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Noto Sans KR',sans-serif;background:#efe3cf;color:#2f2116;word-break:keep-all;-webkit-font-smoothing:antialiased;
+ background-image:radial-gradient(ellipse 90% 60% at 50% 0%,rgba(255,250,240,.7),rgba(255,250,240,0) 70%)}
+.wrap{max-width:1240px;margin:0 auto;padding:44px 20px 120px}
+.hd{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:18px;margin-bottom:32px}
+.hd small{font-family:'Playfair Display',serif;font-style:italic;font-size:16px;letter-spacing:.06em;color:#4f5a2a}
+.hd h1{font-family:'Noto Serif KR',serif;font-weight:900;color:#b4492c;font-size:clamp(30px,4.2vw,44px);letter-spacing:-.01em;margin-top:6px}
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px}
+.chips span{font-size:13px;font-weight:500;background:#fbf6ec;border:1.5px solid #b4492c;color:#7a2e1a;padding:5px 12px;border-radius:30px}
+.cta{display:inline-flex;align-items:center;gap:8px;height:52px;padding:0 26px;border-radius:40px;background:#b4492c;color:#fbf6ec;font-weight:700;font-size:15px;text-decoration:none;transition:.2s;white-space:nowrap}
+.cta:hover{background:#963a21}
+.cta svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.pages{display:grid;grid-template-columns:1fr 1fr;gap:28px}
+.pages figure{background:#fbf6ec;padding:10px;border-radius:6px;box-shadow:0 26px 50px -22px rgba(120,50,25,.45)}
+.pages a{display:block}
+.pages img{display:block;width:100%;height:auto;border-radius:3px}
+.pages figcaption{font-size:13px;color:#7a6553;padding:10px 4px 2px;display:flex;justify-content:space-between;gap:10px}
+.bar{position:fixed;left:0;right:0;bottom:0;background:rgba(79,90,42,.97);color:#f7efe0;padding:12px 20px;display:flex;justify-content:center;align-items:center;gap:18px;flex-wrap:wrap}
+.bar p{font-size:14px;opacity:.85}
+.bar .cta{height:46px;background:#f7efe0;color:#4f5a2a}
+.bar .cta:hover{background:#fff}
+@media(max-width:760px){.pages{grid-template-columns:1fr}.hd .cta{display:none}.bar p{display:none}.bar .cta{width:100%;justify-content:center}}
+</style>
+</head>
+<body>
+<div class="wrap">
+ <div class="hd">
+  <div>
+   <small>Menu design · SD-MN07</small>
+   <h1>소금빛 트라토리아 메뉴판</h1>
+   <div class="chips"><span>A4 세로 · 2페이지</span><span>이탈리안 트라토리아</span><span>원화 가격</span><span>인쇄 · 웹 겸용</span></div>
+  </div>
+  <a class="cta" href="https://design.shoponph.online/#inquiry">이 디자인으로 상담하기 <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+ </div>
+ <div class="pages">
+  <figure><a href="page1.png" target="_blank" rel="noopener"><img src="page1.png" alt="소금빛 트라토리아 메뉴판 1페이지" width="2480" height="3508"></a><figcaption><span>1페이지 · 파스타·리조또</span><span style="white-space:nowrap">눌러서 크게 보기</span></figcaption></figure>
+  <figure><a href="page2.png" target="_blank" rel="noopener"><img src="page2.png" alt="소금빛 트라토리아 메뉴판 2페이지" width="2480" height="3508" loading="lazy"></a><figcaption><span>2페이지 · 피자·전채·디저트·음료·세트</span><span style="white-space:nowrap">눌러서 크게 보기</span></figcaption></figure>
+ </div>
+</div>
+<div class="bar"><p>우리 가게 메뉴판도 이런 느낌으로 만들어 보세요</p><a class="cta" href="https://design.shoponph.online/#inquiry">이 디자인으로 상담하기</a></div>
+</body>
+</html>
