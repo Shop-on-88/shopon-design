@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>비트숲 코딩교실 · 겨울방학 무료 체험 수업 신청</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Do+Hyeon&family=Noto+Sans+KR:wght@400;500;700;900&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<style>
+:root{--vi:#2a1a5e;--vi2:#3b2783;--vi3:#5b45c4;--lime:#c6f432;--lime2:#a8d61a;--paper:#f6f4ee;--ink:#1d1640;--mute:#5d5878;--pink:#ff7aa8;--sky:#6cc7ff}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Noto Sans KR',sans-serif;background:var(--paper);color:var(--ink);word-break:keep-all;overflow-wrap:break-word;line-height:1.7;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+svg{display:block;max-width:100%}
+.mono{font-family:'JetBrains Mono',monospace}
+.dh{font-family:'Do Hyeon',sans-serif;font-weight:400}
+.wrap{max-width:1160px;margin:0 auto;padding:0 28px}
+.grid-bg{background-image:linear-gradient(rgba(42,26,94,.07) 1px,transparent 1px),linear-gradient(90deg,rgba(42,26,94,.07) 1px,transparent 1px);background-size:28px 28px}
+.tag{display:inline-flex;align-items:center;gap:8px;font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:700;letter-spacing:.06em;color:var(--vi3);background:#ebe6ff;padding:6px 12px;border-radius:6px}
+h2.t{font-family:'Do Hyeon',sans-serif;font-weight:400;font-size:clamp(32px,4vw,48px);line-height:1.25;margin-top:16px}
+h2.t mark{background:linear-gradient(transparent 58%,var(--lime) 58%);color:inherit;padding:0 4px}
+.lead{font-size:17px;color:var(--mute);margin-top:14px;max-width:600px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;height:58px;padding:0 30px;border-radius:12px;font-weight:700;font-size:16px;border:0;cursor:pointer;font-family:inherit;transition:.2s}
+.btn svg{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+.btn-l{background:var(--lime);color:var(--vi);box-shadow:0 5px 0 var(--lime2)}
+.btn-l:hover{transform:translateY(-2px);box-shadow:0 7px 0 var(--lime2)}
+.btn-v{background:var(--vi);color:#fff;box-shadow:0 5px 0 #150c36}
+.btn-v:hover{transform:translateY(-2px)}
+section{padding:110px 0}
+
+/* top */
+.bar{position:sticky;top:0;z-index:30;background:rgba(42,26,94,.96);backdrop-filter:blur(8px)}
+.bar .wrap{display:flex;align-items:center;justify-content:space-between;height:70px}
+.logo{display:flex;align-items:center;gap:10px;color:#fff}
+.logo i{width:36px;height:36px;border-radius:9px;background:var(--lime);display:grid;place-items:center}
+.logo i svg{width:22px;height:22px}
+.logo b{font-family:'Do Hyeon';font-weight:400;font-size:24px;letter-spacing:.02em}
+.logo small{font-family:'JetBrains Mono';font-size:12px;color:#b9b0e6;margin-left:2px}
+.bar .btn{height:44px;padding:0 20px;font-size:14px;box-shadow:none;border-radius:10px}
+.bar .note{color:#d6d0f5;font-size:14px;margin-right:16px}
+.bar .r{display:flex;align-items:center}
+
+/* hero */
+.hero{background:var(--vi);color:#fff;padding:80px 0 120px;position:relative;overflow:hidden}
+.hero:before{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.06) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.06) 1px,transparent 1px);background-size:32px 32px;mask-image:radial-gradient(ellipse 80% 70% at 70% 40%,#000,transparent)}
+.hero .wrap{position:relative;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,540px);gap:48px;align-items:center}
+.hero .chip{display:inline-flex;align-items:center;gap:10px;background:rgba(198,244,50,.14);color:var(--lime);border:1px solid rgba(198,244,50,.4);padding:8px 16px;border-radius:999px;font-weight:700;font-size:14px}
+.hero .chip i{width:8px;height:8px;border-radius:50%;background:var(--lime);box-shadow:0 0 0 4px rgba(198,244,50,.25)}
+.hero h1{font-family:'Do Hyeon';font-weight:400;font-size:clamp(44px,5.6vw,76px);line-height:1.15;margin-top:22px;letter-spacing:-.01em}
+.hero h1 span{color:var(--lime)}
+.hero p.s{font-size:18px;color:#d6d0f5;margin-top:22px;max-width:500px}
+.hero .ctas{display:flex;gap:14px;margin-top:34px;flex-wrap:wrap;align-items:center}
+.hero .ctas small{color:#b9b0e6;font-size:14px}
+.hero .cmt{margin-top:40px;font-size:15.5px;color:#d6d0f5;border-top:1px dashed rgba(255,255,255,.25);padding-top:18px;max-width:520px}
+.hero .cmt span{font-family:'JetBrains Mono';color:var(--lime);font-weight:700;margin-right:8px}
+.hero .cmt .nw{white-space:nowrap;font-weight:400}
+.hero .cmt i{font-style:normal;color:#8a80c0;margin:0 4px}
+.hero .facts{display:flex;gap:12px;margin-top:40px;flex-wrap:wrap}
+.hero .facts div{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.14);border-radius:12px;padding:12px 16px}
+.hero .facts b{display:block;font-family:'JetBrains Mono';font-size:20px;color:#fff}
+.hero .facts span{font-size:13px;color:#b9b0e6}
+
+/* who */
+.who .chips{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:44px}
+.who .c{background:#fff;border:2px solid var(--ink);border-radius:18px;padding:26px;box-shadow:6px 6px 0 var(--ink)}
+.who .c .ic{width:52px;height:52px;border-radius:12px;display:grid;place-items:center}
+.who .c .ic svg{width:28px;height:28px;stroke:var(--ink);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.who .c h3{font-size:20px;font-weight:700;margin-top:16px}
+.who .c p{font-size:15px;color:var(--mute);margin-top:6px}
+
+/* tracks */
+.tracks{background:#fff}
+.tr{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:48px}
+.tc{border-radius:20px;overflow:hidden;border:2px solid var(--ink);display:flex;flex-direction:column;background:var(--paper)}
+.tc .top{height:170px;position:relative;display:grid;place-items:center;border-bottom:2px solid var(--ink)}
+.tc .top svg{width:220px;height:140px}
+.tc .bd{padding:24px 24px 26px;flex:1;display:flex;flex-direction:column}
+.tc .lv{font-family:'JetBrains Mono';font-size:13px;font-weight:700;color:var(--vi3)}
+.tc h3{font-family:'Do Hyeon';font-weight:400;font-size:28px;margin-top:4px;line-height:1.2}
+.tc p{font-size:15px;color:var(--mute);margin-top:8px}
+.tc ul{list-style:none;margin-top:14px;display:grid;gap:6px;flex:1;align-content:start}
+.tc li{font-size:14.5px;display:flex;gap:10px}
+.tc li:before{content:"›";font-family:'JetBrains Mono';font-weight:700;color:var(--vi3)}
+.tc .out{margin-top:18px;background:var(--ink);color:#fff;border-radius:12px;padding:12px 14px;font-size:14px}
+.tc .out b{color:var(--lime);font-weight:700;margin-right:6px}
+
+/* flow */
+.flow{background:var(--vi2);color:#fff;position:relative;overflow:hidden}
+.flow .lead{color:#d6d0f5}
+.flow .tag{background:rgba(198,244,50,.16);color:var(--lime)}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:52px;position:relative}
+.steps:before{content:"";position:absolute;left:4%;right:4%;top:34px;border-top:2px dashed rgba(198,244,50,.5)}
+.st{position:relative}
+.st .n{width:68px;height:68px;border-radius:18px;background:var(--lime);color:var(--vi);display:grid;place-items:center;font-family:'JetBrains Mono';font-weight:700;font-size:15px;line-height:1.1;text-align:center;box-shadow:0 0 0 6px var(--vi2)}
+.st h3{font-size:19px;font-weight:700;margin-top:20px}
+.st p{font-size:15px;color:#d6d0f5;margin-top:6px}
+.tw{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);gap:24px;margin-top:56px;align-items:stretch}
+.flow .term{background:#150c36;border-radius:16px;overflow:hidden;border:1px solid rgba(255,255,255,.12)}
+.prev{background:#150c36;border-radius:16px;border:1px solid rgba(255,255,255,.12);padding:14px;display:flex;flex-direction:column;gap:10px}
+.prev svg{width:100%;height:auto}
+.prev p{font-size:14px;color:#d6d0f5;text-align:center}
+.term .th{display:flex;gap:7px;padding:12px 16px;background:#1f1450}
+.term .th i{width:11px;height:11px;border-radius:50%;background:#ff6b6b}
+.term .th i:nth-child(2){background:#ffd166}.term .th i:nth-child(3){background:#7bd88f}
+.term pre{font-family:'JetBrains Mono';font-size:15px;line-height:1.8;padding:18px 22px;color:#e6e1ff;white-space:pre-wrap}
+.term .k{color:var(--pink)}.term .s{color:var(--lime)}.term .c{color:#8a80c0}.term .f{color:var(--sky)}
+
+/* price */
+.price .box{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:26px;margin-top:48px;align-items:stretch}
+table{width:100%;border-collapse:separate;border-spacing:0;background:#fff;border:2px solid var(--ink);border-radius:18px;overflow:hidden}
+.tbl{display:flex;flex-direction:column}
+.lg{display:flex;flex-wrap:wrap;gap:8px 18px;margin-top:18px;font-size:14px;color:var(--mute)}
+.lg i{display:inline-block;width:12px;height:12px;border-radius:3px;margin-right:6px;vertical-align:-1px;border:1.5px solid var(--ink)}
+.tn{margin-top:auto;padding-top:14px;font-size:14px;color:var(--mute);border-top:1px dashed #cfcae3}
+th,td{padding:16px 16px;text-align:left;font-size:15px;border-bottom:1px solid #e3e0ef}
+th{background:var(--ink);color:#fff;font-weight:700;font-size:14px}
+td.tm{font-family:'JetBrains Mono';font-weight:700;white-space:nowrap}
+tr:last-child td{border-bottom:0}
+.pill{display:inline-block;font-size:12.5px;font-weight:700;padding:3px 10px;border-radius:999px;background:#ebe6ff;color:var(--vi3)}
+.pill.g{background:#eefbc9;color:#4d6a00}
+.pill.p{background:#ffe4ee;color:#b32a5c}
+.pc{background:var(--lime);border:2px solid var(--ink);border-radius:18px;padding:30px;box-shadow:8px 8px 0 var(--ink);display:flex;flex-direction:column}
+.pc .free{display:flex;justify-content:space-between;align-items:center;padding-bottom:18px;border-bottom:2px dashed rgba(29,22,64,.35)}
+.pc .free b{font-family:'Do Hyeon';font-weight:400;font-size:26px}
+.pc .free span{font-family:'Do Hyeon';font-size:40px;color:var(--vi)}
+.pc .reg{margin-top:18px}
+.pc .reg small{font-size:14px;font-weight:700;color:#3a4a00}
+.pc .reg .n{font-family:'JetBrains Mono';font-size:40px;font-weight:700;line-height:1.2;margin-top:4px}
+.pc .reg .n em{font-style:normal;font-size:16px;font-family:'Noto Sans KR';font-weight:500}
+.pc ul{list-style:none;margin-top:14px;display:grid;gap:6px;flex:1;align-content:start}
+.pc li{font-size:15px;display:flex;gap:10px;align-items:flex-start}
+.pc li svg{width:18px;height:18px;flex:none;margin-top:4px;stroke:var(--ink);fill:none;stroke-width:2.6}
+.pc .btn{margin-top:20px;width:100%}
+
+/* env */
+.eg{display:grid;grid-template-columns:minmax(0,.7fr) minmax(0,1.3fr);gap:64px;align-items:center}
+.ph svg{width:100%;height:auto}
+.ph{width:100%;max-width:320px;margin:0 auto;filter:drop-shadow(14px 18px 0 rgba(198,244,50,.9))}
+.al{list-style:none;margin-top:30px;display:grid;gap:14px}
+.al li{display:grid;grid-template-columns:56px 1fr;gap:16px;align-items:start;background:#fff;border:2px solid var(--ink);border-radius:16px;padding:18px 20px}
+.al b{font-family:'JetBrains Mono';font-size:22px;color:var(--vi3);line-height:1.3}
+.al h3{font-size:17px}
+.al p{font-size:15px;color:var(--mute);margin-top:2px}
+
+/* faq */
+.faq{background:#fff}
+.qa{margin-top:36px;display:grid;gap:12px;max-width:860px}
+.q{border:2px solid var(--ink);border-radius:14px;overflow:hidden;background:var(--paper)}
+.q button{width:100%;background:none;border:0;font-family:inherit;text-align:left;font-size:17px;font-weight:700;color:var(--ink);padding:18px 22px;display:flex;justify-content:space-between;gap:14px;cursor:pointer;align-items:center}
+.q button i{flex:none;width:28px;height:28px;border-radius:8px;background:var(--ink);color:var(--lime);display:grid;place-items:center;font-style:normal;font-family:'JetBrains Mono';transition:.2s}
+.q .a{display:none;padding:0 22px 20px;font-size:15.5px;color:var(--mute)}
+.q.on .a{display:block}
+.q.on button i{transform:rotate(45deg)}
+
+/* apply */
+.apply{background:var(--vi);color:#fff;position:relative;overflow:hidden}
+.apply:before{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.05) 1px,transparent 1px);background-size:32px 32px}
+.apply .wrap{position:relative;display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:56px;align-items:start}
+.apply .lead{color:#d6d0f5}
+.apply .tag{background:rgba(198,244,50,.16);color:var(--lime)}
+.apply .seats{margin-top:30px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.16);border-radius:16px;padding:20px}
+.apply .seats h4{font-size:15px;color:#d6d0f5;font-weight:500}
+.sl{display:grid;gap:10px;margin-top:12px}
+.sl div{display:grid;grid-template-columns:96px 1fr 70px;gap:12px;align-items:center;font-size:14.5px}
+.sl .bb{height:10px;border-radius:6px;background:rgba(255,255,255,.14);overflow:hidden}
+.sl .bb i{display:block;height:100%;background:var(--lime);border-radius:6px}
+.sl em{font-style:normal;font-size:13px;font-weight:700;color:var(--lime);text-align:right}
+.fm{background:#fff;color:var(--ink);border-radius:22px;padding:34px;border:2px solid var(--ink);box-shadow:10px 10px 0 var(--lime)}
+.fm h3{font-family:'Do Hyeon';font-weight:400;font-size:30px}
+.fm .sub{font-size:14.5px;color:var(--mute)}
+.f2{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:16px}
+.fd label{display:block;font-size:13.5px;font-weight:700;margin-bottom:6px}
+.fd input,.fd select{width:100%;height:50px;border:2px solid #d9d5ea;border-radius:10px;padding:0 14px;font-family:inherit;font-size:15px;color:var(--ink);background:#fff}
+.fd input:focus,.fd select:focus{outline:none;border-color:var(--vi3)}
+.fd .err{display:none;font-size:13px;color:#c2265a;margin-top:4px}
+.fd.bad input,.fd.bad select{border-color:#e0457b}
+.fd.bad .err{display:block}
+.trk{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.trk button{font-family:inherit;border:2px solid #d9d5ea;background:#fff;border-radius:10px;padding:10px 8px;cursor:pointer;font-size:14px;font-weight:700;color:var(--ink);line-height:1.3}
+.trk button span{display:block;font-size:12px;font-weight:500;color:var(--mute)}
+.trk button.on{border-color:var(--vi);background:var(--vi);color:#fff}
+.trk button.on span{color:#d6d0f5}
+.agree{display:flex;gap:10px;align-items:flex-start;margin-top:18px;font-size:14px;color:var(--mute);cursor:pointer}
+.agree input{width:20px;height:20px;accent-color:var(--vi);flex:none;margin-top:2px}
+.fm .btn{width:100%;margin-top:18px}
+.ok{display:none;text-align:center;padding:20px 0}
+.ok .ck{width:78px;height:78px;border-radius:20px;background:var(--lime);display:grid;place-items:center;margin:0 auto 18px;border:2px solid var(--ink)}
+.ok .ck svg{width:38px;height:38px;stroke:var(--ink);fill:none;stroke-width:3}
+.ok h4{font-family:'Do Hyeon';font-weight:400;font-size:30px}
+.ok p{font-size:15.5px;color:var(--mute);margin-top:8px}
+.ok .code{margin-top:18px;font-family:'JetBrains Mono';background:var(--ink);color:var(--lime);border-radius:10px;padding:12px;font-size:15px}
+
+footer{background:#150c36;color:#9d95c8;font-size:13.5px;padding:40px 0 100px}
+footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.mcta{display:none}
+
+@media(max-width:1000px){
+ .hero .wrap,.apply .wrap,.price .box{grid-template-columns:1fr}
+ .hero .art{max-width:520px;width:100%;margin:0 auto}
+ .tr{grid-template-columns:1fr;max-width:560px}
+ .steps{grid-template-columns:1fr 1fr;row-gap:36px}
+ .steps:before{display:none}
+ .eg{grid-template-columns:1fr;gap:40px}
+ .eg .ph{order:2}
+ .tw{grid-template-columns:1fr}
+}
+@media(max-width:700px){
+ .wrap{padding:0 20px}
+ section{padding:80px 0}
+ .bar .note{display:none}
+ .who .chips{grid-template-columns:1fr}
+ .hero{padding:56px 0 80px}
+ .hero h1{font-size:46px}
+ .hero .ctas .btn{width:100%}
+ .steps{grid-template-columns:1fr}
+ .al li{grid-template-columns:44px 1fr;padding:16px}
+ .f2{grid-template-columns:1fr}
+ .fm{padding:24px 18px;box-shadow:6px 6px 0 var(--lime)}
+ th,td{padding:12px 10px;font-size:14px}
+ .tbl{overflow-x:auto;-webkit-overflow-scrolling:touch}
+ table{min-width:0}
+ .hide-m{display:none}
+ .mcta{display:flex;position:fixed;left:12px;right:12px;bottom:12px;z-index:40}
+ .mcta .btn{width:100%;height:54px}
+ .bar .btn{display:none}
+ .term pre{font-size:13px}
+}
+@media(max-width:420px){.trk{grid-template-columns:1fr}.trk button{display:flex;justify-content:space-between;align-items:center;text-align:left}}
+</style>
+</head>
+<body>
+<div class="bar">
+ <div class="wrap">
+  <a class="logo" href="#"><i><svg viewBox="0 0 24 24" fill="none" stroke="#2a1a5e" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l6 9h-4l4 6H6l4-6H6z"/><path d="M12 18v3"/></svg></i><b>비트숲 코딩교실</b><small class="hide-m">BITSUP</small></a>
+  <div class="r"><span class="note">겨울방학 체험 수업 · 12월 한정</span><a class="btn btn-l" href="#apply">무료 체험 신청</a></div>
+ </div>
+</div>
+
+<section class="hero">
+ <div class="wrap">
+  <div>
+   <span class="chip"><i></i>겨울방학 무료 체험 수업 · 60분</span>
+   <h1>별 모으기 게임,<br>이번 겨울엔<br><span>직접 만들어요</span></h1>
+   <p class="s">블록 코딩부터 파이썬까지, 아이 수준에 맞는 반에서 직접 움직이는 결과물을 만들어요. 첫 수업은 무료로 먼저 경험해 보세요.</p>
+   <div class="ctas"><a class="btn btn-l" href="#apply">무료 체험 신청하기 <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a><small>신청 후 하루 안에 시간 안내 문자</small></div>
+   <p class="cmt"><span>//</span> <b class="nw">한 반 6명</b> <i>·</i> <b class="nw">초1~중3 학년별 반</b> <i>·</i> <b class="nw">노트북 1인 1대</b></p>
+  </div>
+  <div class="art">
+   <svg viewBox="0 0 540 480" role="img" aria-label="블록 코드가 보이는 노트북과 작은 로봇 일러스트">
+    <defs>
+     <linearGradient id="lap" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#e9e6f5"/><stop offset="1" stop-color="#b9b3d6"/></linearGradient>
+     <linearGradient id="scr" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#1f1450"/><stop offset="1" stop-color="#150c36"/></linearGradient>
+     <linearGradient id="rb" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#e6ff8a"/><stop offset="1" stop-color="#a8d61a"/></linearGradient>
+     <radialGradient id="glo" cx="50%" cy="50%" r="50%"><stop offset="0" stop-color="#c6f432" stop-opacity=".35"/><stop offset="1" stop-color="#c6f432" stop-opacity="0"/></radialGradient>
+     <filter id="ds" x="-20%" y="-20%" width="140%" height="150%"><feGaussianBlur in="SourceAlpha" stdDeviation="10"/><feOffset dy="16"/><feComponentTransfer><feFuncA type="linear" slope=".45"/></feComponentTransfer><feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+    </defs>
+    <circle cx="300" cy="230" r="230" fill="url(#glo)"/>
+    <!-- laptop -->
+    <g filter="url(#ds)">
+     <rect x="70" y="60" width="400" height="260" rx="18" fill="#3b2783"/>
+     <rect x="86" y="76" width="368" height="228" rx="8" fill="url(#scr)"/>
+     <path d="M30 330 H510 L486 362 Q482 368 474 368 H66 Q58 368 54 362 Z" fill="url(#lap)"/>
+     <rect x="230" y="330" width="80" height="8" rx="4" fill="#9a93c0"/>
+    </g>
+    <!-- screen content: block code -->
+    <rect x="96" y="86" width="120" height="208" rx="6" fill="#241a5c"/>
+    <g font-family="Noto Sans KR" font-size="13" font-weight="700" fill="#1d1640">
+     <rect x="106" y="98" width="98" height="20" rx="5" fill="#c6f432"/><text x="113" y="113">시작하기</text>
+     <rect x="106" y="126" width="98" height="20" rx="5" fill="#6cc7ff"/><text x="113" y="141">10번 반복</text>
+     <rect x="106" y="154" width="98" height="20" rx="5" fill="#ff7aa8"/><text x="113" y="169">앞으로 이동</text>
+     <rect x="106" y="182" width="98" height="20" rx="5" fill="#ffd166"/><text x="113" y="197">점수 +1</text>
+     <rect x="106" y="210" width="98" height="20" rx="5" fill="#b9a6ff"/><text x="113" y="225">소리 재생</text>
+    </g>
+    <!-- assembled script -->
+    <g font-family="Noto Sans KR" font-size="14" font-weight="700" fill="#1d1640">
+     <path d="M232 100 h132 a6 6 0 0 1 6 6 v14 a6 6 0 0 1 -6 6 h-80 l-6 5 h-12 l-6 -5 h-16 a6 6 0 0 1 -6 -6 v-14 a6 6 0 0 1 6 -6z" fill="#c6f432" transform="translate(-6 0)"/><text x="238" y="118">깃발을 눌렀을 때</text>
+     <rect x="232" y="132" width="164" height="24" rx="6" fill="#6cc7ff"/><text x="242" y="149">계속 반복하기</text>
+     <rect x="250" y="160" width="164" height="24" rx="6" fill="#ff7aa8"/><text x="260" y="177">방향키로 움직이기</text>
+     <rect x="250" y="188" width="164" height="24" rx="6" fill="#ffd166"/><text x="260" y="205">별에 닿으면 +1</text>
+     <rect x="232" y="216" width="164" height="10" rx="4" fill="#6cc7ff"/>
+    </g>
+    <!-- mini game preview -->
+    <rect x="320" y="236" width="122" height="58" rx="6" fill="#2f2370"/>
+    <g fill="#ffd166"><path d="M352 252l3 6 7 1-5 5 1 7-6-3-6 3 1-7-5-5 7-1z"/><path d="M412 262l2 4 5 1-4 3 1 5-4-2-4 2 1-5-4-3 5-1z"/></g>
+    <rect x="384" y="246" width="16" height="16" rx="4" fill="#c6f432"/>
+    <text x="328" y="288" font-family="JetBrains Mono" font-size="13" font-weight="700" fill="#c6f432">SCORE 07</text>
+    <!-- robot -->
+    <g transform="translate(424 336) scale(.86)">
+     <ellipse cx="60" cy="150" rx="56" ry="10" fill="#000" opacity=".25"/>
+     <rect x="54" y="0" width="12" height="26" rx="6" fill="#c6f432"/><circle cx="60" cy="0" r="10" fill="#ff7aa8"/>
+     <rect x="8" y="24" width="104" height="80" rx="26" fill="url(#rb)" stroke="#1d1640" stroke-width="4"/>
+     <rect x="24" y="42" width="72" height="42" rx="16" fill="#1d1640"/>
+     <circle cx="46" cy="62" r="7" fill="#c6f432"/><circle cx="74" cy="62" r="7" fill="#c6f432"/>
+     <path d="M52 76 q8 6 16 0" stroke="#c6f432" stroke-width="3" fill="none" stroke-linecap="round"/>
+     <rect x="28" y="104" width="64" height="38" rx="12" fill="#6cc7ff" stroke="#1d1640" stroke-width="4"/>
+     <path d="M28 116 l-22 -14 M92 116 l20 -22" stroke="#1d1640" stroke-width="6" stroke-linecap="round"/>
+     <circle cx="6" cy="102" r="8" fill="#c6f432" stroke="#1d1640" stroke-width="3"/><circle cx="112" cy="94" r="8" fill="#c6f432" stroke="#1d1640" stroke-width="3"/>
+    </g>
+    <!-- floating code chips -->
+    <g font-family="JetBrains Mono" font-size="15" font-weight="700">
+     <g transform="translate(6 120) rotate(-8)"><rect width="104" height="38" rx="10" fill="#ff7aa8"/><text x="14" y="25" fill="#1d1640">if ★:</text></g>
+     <g transform="translate(470 34) rotate(8)"><rect width="66" height="38" rx="10" fill="#c6f432"/><text x="12" y="25" fill="#1d1640">{ }</text></g>
+     <g transform="translate(0 400) rotate(5)"><rect width="150" height="38" rx="10" fill="#6cc7ff"/><text x="14" y="25" fill="#1d1640">print("hi")</text></g>
+    </g>
+   </svg>
+  </div>
+ </div>
+</section>
+
+<section class="who grid-bg">
+ <div class="wrap">
+  <span class="tag">&gt; WHO</span>
+  <h2 class="t">이런 아이라면 <mark>체험부터</mark> 해 보세요</h2>
+  <div class="chips">
+   <div class="c"><span class="ic" style="background:#eefbc9"><svg viewBox="0 0 24 24"><rect x="3" y="6" width="18" height="12" rx="3"/><path d="M8 12h2M9 11v2M15 11.5h.01M17 13h.01"/></svg></span><h3>게임을 좋아하는 아이</h3><p>하는 것보다 만드는 재미를 처음 알게 됩니다.</p></div>
+   <div class="c"><span class="ic" style="background:#ffe4ee"><svg viewBox="0 0 24 24"><path d="M12 3v4M12 17v4M3 12h4M17 12h4M6 6l2.5 2.5M15.5 15.5L18 18M6 18l2.5-2.5M15.5 8.5L18 6"/></svg></span><h3>궁금한 게 많은 아이</h3><p>“왜 이렇게 될까?”를 직접 바꿔 보며 확인해요.</p></div>
+   <div class="c"><span class="ic" style="background:#e1f3ff"><svg viewBox="0 0 24 24"><path d="M4 19V5M4 19h16M8 15l3-4 3 2 4-6"/></svg></span><h3>방학을 알차게 쓰고 싶은 집</h3><p>4주 동안 완성작 하나를 남기는 구체적인 목표.</p></div>
+  </div>
+ </div>
+</section>
+
+<section class="tracks">
+ <div class="wrap">
+  <span class="tag">&gt; COURSES</span>
+  <h2 class="t">학년에 맞춰 <mark>세 가지 반</mark></h2>
+  <p class="lead">체험 수업 때 아이의 수준을 함께 보고, 맞는 반을 안내해 드려요.</p>
+  <div class="tr">
+   <div class="tc">
+    <div class="top" style="background:#eefbc9"><svg viewBox="0 0 220 140" aria-hidden="true"><g font-family="Noto Sans KR" font-size="12" font-weight="700" fill="#1d1640"><rect x="30" y="20" width="120" height="26" rx="7" fill="#c6f432" stroke="#1d1640" stroke-width="2"/><text x="42" y="38">시작하기</text><rect x="44" y="50" width="130" height="26" rx="7" fill="#6cc7ff" stroke="#1d1640" stroke-width="2"/><text x="56" y="68">고양이 움직이기</text><rect x="44" y="80" width="110" height="26" rx="7" fill="#ff7aa8" stroke="#1d1640" stroke-width="2"/><text x="56" y="98">야옹 소리</text></g><path d="M186 104 l10 -30 l10 30z" fill="#ffd166" stroke="#1d1640" stroke-width="2"/></svg></div>
+    <div class="bd"><span class="lv">초1~3 · LEVEL 1</span><h3>블록 코딩 놀이반</h3><p>블록을 끼워 맞추며 순서 · 반복 · 조건을 익혀요.</p><ul><li>캐릭터 움직이기와 대화 만들기</li><li>반복 · 조건 블록으로 미로 탈출</li><li>내 그림으로 짧은 애니메이션</li></ul><div class="out"><b>완성작</b>나만의 미로 탈출 게임</div></div>
+   </div>
+   <div class="tc">
+    <div class="top" style="background:#e1f3ff"><svg viewBox="0 0 220 140" aria-hidden="true"><rect x="20" y="16" width="180" height="108" rx="10" fill="#1d1640"/><g font-family="JetBrains Mono" font-size="12" font-weight="700"><text x="34" y="44" fill="#ff7aa8">for</text><text x="62" y="44" fill="#e6e1ff">i in range(3):</text><text x="48" y="66" fill="#6cc7ff">print</text><text x="88" y="66" fill="#c6f432">("별★")</text><text x="34" y="92" fill="#8a80c0"># 결과</text><text x="34" y="112" fill="#ffd166">별★ 별★ 별★</text></g></svg></div>
+    <div class="bd"><span class="lv">초4~6 · LEVEL 2</span><h3>첫 파이썬 반</h3><p>글자로 코드를 쓰는 첫걸음. 타자 연습부터 함께해요.</p><ul><li>변수 · 입력 · 출력 다루기</li><li>반복문으로 그림 그리기</li><li>퀴즈 프로그램 직접 만들기</li></ul><div class="out"><b>완성작</b>우리 반 상식 퀴즈 프로그램</div></div>
+   </div>
+   <div class="tc">
+    <div class="top" style="background:#ffe4ee"><svg viewBox="0 0 220 140" aria-hidden="true"><rect x="20" y="16" width="180" height="108" rx="10" fill="#2a1a5e"/><rect x="20" y="104" width="180" height="20" fill="#3b2783"/><rect x="60" y="80" width="22" height="24" rx="4" fill="#c6f432"/><circle cx="66" cy="88" r="2.5" fill="#1d1640"/><circle cx="76" cy="88" r="2.5" fill="#1d1640"/><rect x="120" y="86" width="26" height="18" fill="#ff7aa8"/><rect x="160" y="70" width="26" height="34" fill="#ff7aa8"/><g fill="#ffd166"><circle cx="134" cy="60" r="5"/><circle cx="173" cy="48" r="5"/></g><text x="30" y="38" font-family="JetBrains Mono" font-size="12" font-weight="700" fill="#c6f432">LV 3 · 0120</text></svg></div>
+    <div class="bd"><span class="lv">중1~3 · LEVEL 3</span><h3>게임 만들기 반</h3><p>파이썬 게임 도구로 점프 · 충돌 · 점수를 구현해요.</p><ul><li>좌표와 충돌 판정 이해</li><li>스테이지 · 점수판 만들기</li><li>친구와 서로 플레이해 보기</li></ul><div class="out"><b>완성작</b>3단계 횡스크롤 점프 게임</div></div>
+   </div>
+  </div>
+ </div>
+</section>
+
+<section class="flow">
+ <div class="wrap">
+  <span class="tag">&gt; FREE TRIAL</span>
+  <h2 class="t">무료 체험 수업 60분은 이렇게 진행돼요</h2>
+  <p class="lead">부담 없이 와서 직접 만들어 보고, 결과물은 집에서도 열어 볼 수 있게 보내 드려요.</p>
+  <div class="steps">
+   <div class="st"><div class="n">00<br>:10</div><h3>인사 · 수준 확인</h3><p>좋아하는 것과 해 본 경험을 가볍게 이야기해요.</p></div>
+   <div class="st"><div class="n">10<br>:40</div><h3>미니 게임 만들기</h3><p>별을 모으는 작은 게임을 처음부터 직접 만듭니다.</p></div>
+   <div class="st"><div class="n">40<br>:50</div><h3>발표 · 플레이</h3><p>만든 게임을 보호자와 함께 플레이해 봐요.</p></div>
+   <div class="st"><div class="n">50<br>:60</div><h3>반 안내 상담</h3><p>아이에게 맞는 반과 시간표를 안내해 드려요.</p></div>
+  </div>
+  <div class="tw">
+  <div class="term">
+   <div class="th"><i></i><i></i><i></i></div>
+<pre><span class="c"># 체험 수업에서 만드는 별 모으기 게임 (일부)</span>
+<span class="k">if</span> 플레이어.<span class="f">닿았나</span>(별):
+    점수 <span class="k">+=</span> <span class="s">1</span>
+    별.<span class="f">새_위치로</span>()
+<span class="f">화면에_쓰기</span>(<span class="s">"점수: "</span> + 점수)
+
+<span class="c"># 별을 7개 모으면 다음 단계로</span>
+<span class="k">if</span> 점수 <span class="k">>=</span> <span class="s">7</span>:
+    <span class="f">효과음</span>(<span class="s">"반짝"</span>)
+    단계 <span class="k">+=</span> <span class="s">1</span></pre>
+  </div>
+  <div class="prev">
+   <svg viewBox="0 0 420 260" role="img" aria-label="체험 수업 결과물 별 모으기 게임 화면 일러스트">
+    <defs><linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#3b2783"/><stop offset="1" stop-color="#5b45c4"/></linearGradient></defs>
+    <rect width="420" height="260" rx="14" fill="url(#sky)"/>
+    <g fill="#fff" opacity=".5"><circle cx="40" cy="40" r="1.6"/><circle cx="120" cy="24" r="1.2"/><circle cx="300" cy="50" r="1.6"/><circle cx="370" cy="30" r="1.2"/><circle cx="210" cy="70" r="1.2"/></g>
+    <rect x="0" y="210" width="420" height="50" fill="#2a1a5e"/><rect x="0" y="206" width="420" height="8" fill="#c6f432"/>
+    <rect x="70" y="150" width="90" height="16" rx="4" fill="#ff7aa8"/><rect x="250" y="120" width="100" height="16" rx="4" fill="#6cc7ff"/>
+    <g fill="#ffd166"><path d="M115 112l6 12 13 2-10 9 3 13-12-7-12 7 3-13-10-9 13-2z"/><path d="M300 80l5 10 11 1-8 8 2 11-10-6-10 6 2-11-8-8 11-1z"/><path d="M370 170l4 8 9 1-7 6 2 9-8-5-8 5 2-9-7-6 9-1z" opacity=".55"/></g>
+    <g transform="translate(196 170)"><rect width="34" height="36" rx="8" fill="#c6f432" stroke="#1d1640" stroke-width="3"/><circle cx="11" cy="14" r="3.5" fill="#1d1640"/><circle cx="23" cy="14" r="3.5" fill="#1d1640"/><path d="M11 24 q6 5 12 0" stroke="#1d1640" stroke-width="2.5" fill="none" stroke-linecap="round"/></g>
+    <rect x="16" y="14" width="138" height="34" rx="8" fill="#150c36"/><text x="30" y="37" font-family="JetBrains Mono" font-size="16" font-weight="700" fill="#c6f432">점수: 07</text>
+    <rect x="300" y="14" width="104" height="34" rx="8" fill="#150c36"/><text x="314" y="37" font-family="JetBrains Mono" font-size="16" font-weight="700" fill="#ffd166">★ ★ ☆</text>
+   </svg>
+   <p>60분 뒤, 아이가 직접 플레이해 보는 결과물</p>
+  </div>
+  </div>
+ </div>
+</section>
+
+<section class="price grid-bg">
+ <div class="wrap">
+  <span class="tag">&gt; WINTER CLASS</span>
+  <h2 class="t">겨울방학 특강 <mark>시간표와 수강료</mark></h2>
+  <p class="lead">12월 29일 개강 · 4주 과정 · 주 2회 90분 수업입니다.</p>
+  <div class="box">
+   <div class="tbl">
+    <table>
+     <thead><tr><th>시간</th><th>월 · 수</th><th>화 · 목</th></tr></thead>
+     <tbody>
+      <tr><td class="tm">10:00</td><td><span class="pill g">블록 놀이반</span></td><td><span class="pill g">블록 놀이반</span></td></tr>
+      <tr><td class="tm">13:00</td><td><span class="pill">첫 파이썬 반</span></td><td><span class="pill p">게임 만들기 반</span></td></tr>
+      <tr><td class="tm">15:00</td><td><span class="pill p">게임 만들기 반</span></td><td><span class="pill">첫 파이썬 반</span></td></tr>
+      <tr><td class="tm">17:00</td><td><span class="pill">첫 파이썬 반</span></td><td><span class="pill g">블록 놀이반</span></td></tr>
+     </tbody>
+    </table>
+    <div class="lg"><span><i style="background:#c6f432"></i>블록 놀이반 · 초1~3</span><span><i style="background:#b9a6ff"></i>첫 파이썬 반 · 초4~6</span><span><i style="background:#ff7aa8"></i>게임 만들기 반 · 중1~3</span></div>
+    <p class="tn">토요일 반은 신청 인원에 따라 열려요. 체험 수업 때 함께 안내해 드려요.</p>
+   </div>
+   <div class="pc">
+    <div class="free"><b>체험 수업 1회</b><span>무료</span></div>
+    <div class="reg"><small>겨울방학 특강 4주 (8회)</small><div class="n">240,000<em> 원</em></div></div>
+    <ul>
+     <li><svg viewBox="0 0 24 24"><path d="M5 12l5 5 9-10"/></svg>교재 · 노트북 사용료 포함</li>
+     <li><svg viewBox="0 0 24 24"><path d="M5 12l5 5 9-10"/></svg>매 수업 결과물 링크 문자 발송</li>
+     <li><svg viewBox="0 0 24 24"><path d="M5 12l5 5 9-10"/></svg>마지막 주 완성작 발표회</li>
+    </ul>
+    <a class="btn btn-v" href="#apply">체험 수업 먼저 신청</a>
+   </div>
+  </div>
+ </div>
+</section>
+
+<section class="env">
+ <div class="wrap">
+  <div class="eg">
+   <div class="ph">
+    <svg viewBox="0 0 320 560" role="img" aria-label="수업 후 보호자에게 보내는 결과물 안내 문자 화면 일러스트">
+     <defs><linearGradient id="phb" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#3b2783"/><stop offset="1" stop-color="#1d1640"/></linearGradient></defs>
+     <rect x="6" y="6" width="308" height="548" rx="42" fill="url(#phb)"/>
+     <rect x="20" y="20" width="280" height="520" rx="30" fill="#f6f4ee"/>
+     <rect x="120" y="30" width="80" height="18" rx="9" fill="#1d1640"/>
+     <text x="40" y="84" font-family="Noto Sans KR" font-size="15" font-weight="700" fill="#1d1640">비트숲 코딩교실</text>
+     <text x="40" y="104" font-family="Noto Sans KR" font-size="13" fill="#5d5878">오늘 18:42</text>
+     <rect x="36" y="122" width="236" height="118" rx="16" fill="#fff" stroke="#e3e0ef"/>
+     <text x="52" y="150" font-family="Noto Sans KR" font-size="14" font-weight="700" fill="#1d1640">오늘의 수업 · 3회차</text>
+     <text x="52" y="176" font-family="Noto Sans KR" font-size="13" fill="#5d5878">반복 블록으로 미로에</text>
+     <text x="52" y="196" font-family="Noto Sans KR" font-size="13" fill="#5d5878">함정 3개를 추가했어요.</text>
+     <text x="52" y="222" font-family="Noto Sans KR" font-size="13" fill="#5d5878">다음 시간: 점수판 만들기</text>
+     <rect x="36" y="252" width="236" height="140" rx="16" fill="#2a1a5e"/>
+     <rect x="50" y="266" width="208" height="88" rx="10" fill="#3b2783"/>
+     <rect x="50" y="338" width="208" height="16" fill="#c6f432"/>
+     <rect x="80" y="314" width="20" height="22" rx="5" fill="#c6f432"/><path d="M180 300l4 8 9 1-7 6 2 9-8-5-8 5 2-9-7-6 9-1z" fill="#ffd166"/><rect x="130" y="320" width="40" height="10" rx="3" fill="#ff7aa8"/>
+     <text x="54" y="380" font-family="JetBrains Mono" font-size="13" font-weight="700" fill="#c6f432">▶ 작품 열어 보기</text>
+     <rect x="36" y="404" width="180" height="44" rx="16" fill="#ebe6ff"/>
+     <text x="52" y="431" font-family="Noto Sans KR" font-size="13" fill="#3b2783">집에서 이어서 해 볼 과제</text>
+     <rect x="36" y="460" width="236" height="56" rx="16" fill="#eefbc9"/>
+     <text x="52" y="484" font-family="Noto Sans KR" font-size="13" font-weight="700" fill="#4d6a00">출석 ✓  과제 ✓</text>
+     <text x="52" y="504" font-family="Noto Sans KR" font-size="13" fill="#4d6a00">다음 수업 1월 5일 (월) 13:00</text>
+    </svg>
+   </div>
+   <div>
+    <span class="tag">&gt; AFTER CLASS</span>
+    <h2 class="t">수업이 끝나면<br><mark>보호자 폰으로</mark> 바로 보내 드려요</h2>
+    <p class="lead">아이가 오늘 무엇을 만들었는지 말로만 듣지 않도록, 매 수업 뒤 결과물과 진도를 문자로 정리해 드립니다.</p>
+    <ul class="al">
+     <li><b>01</b><div><h3>오늘 만든 작품 링크</h3><p>휴대폰이나 집 컴퓨터에서 바로 열어 플레이할 수 있어요.</p></div></li>
+     <li><b>02</b><div><h3>배운 개념 한 줄 정리</h3><p>반복, 조건, 변수처럼 오늘 다룬 개념을 쉬운 말로 적어요.</p></div></li>
+     <li><b>03</b><div><h3>다음 수업 · 집 과제 안내</h3><p>10분이면 끝나는 작은 과제로 배운 걸 이어 가요.</p></div></li>
+    </ul>
+   </div>
+  </div>
+ </div>
+</section>
+
+<section class="faq">
+ <div class="wrap">
+  <span class="tag">&gt; FAQ</span>
+  <h2 class="t">자주 묻는 질문</h2>
+  <div class="qa">
+   <div class="q on"><button type="button">코딩을 한 번도 안 해 봤어도 괜찮나요? <i>+</i></button><div class="a">네, 괜찮아요. 블록 놀이반은 마우스만 쓸 줄 알면 시작할 수 있고, 체험 수업에서 수준을 보고 반을 정해요.</div></div>
+   <div class="q"><button type="button">체험 수업 후에 꼭 등록해야 하나요? <i>+</i></button><div class="a">아니요. 체험만 하고 가셔도 됩니다. 등록 권유 전화는 따로 드리지 않아요.</div></div>
+   <div class="q"><button type="button">보호자가 함께 있어야 하나요? <i>+</i></button><div class="a">마지막 10분 상담 때만 함께해 주시면 돼요. 수업 중에는 대기 공간에서 기다리실 수 있어요.</div></div>
+   <div class="q"><button type="button">빠진 수업은 어떻게 하나요? <i>+</i></button><div class="a">같은 주 다른 요일 반에서 한 번 보강할 수 있어요. 하루 전까지 알려 주세요.</div></div>
+  </div>
+ </div>
+</section>
+
+<section class="apply" id="apply">
+ <div class="wrap">
+  <div>
+   <span class="tag">&gt; APPLY</span>
+   <h2 class="t">무료 체험 수업 신청</h2>
+   <p class="lead">신청서를 남겨 주시면 하루 안에 가능한 시간을 문자로 안내해 드려요. 전화 상담은 <span style="white-space:nowrap">000-0000-0000</span>.</p>
+   <div class="seats">
+    <h4>12월 체험 수업 신청 현황 (반별 12석)</h4>
+    <div class="sl">
+     <div><span>블록 놀이반</span><span class="bb"><i style="width:66%"></i></span><em>4석 남음</em></div>
+     <div><span>첫 파이썬 반</span><span class="bb"><i style="width:50%"></i></span><em>6석 남음</em></div>
+     <div><span>게임 만들기</span><span class="bb"><i style="width:75%"></i></span><em>3석 남음</em></div>
+    </div>
+   </div>
+  </div>
+  <div class="fm">
+   <div id="fb">
+    <h3>체험 신청서</h3>
+    <p class="sub">* 표시는 꼭 적어 주세요.</p>
+    <div class="fd" style="margin-top:18px"><label>희망 과정 *</label>
+     <div class="trk" id="trk"><button type="button" class="on">블록 놀이반<span>초1~3</span></button><button type="button">첫 파이썬 반<span>초4~6</span></button><button type="button">게임 만들기<span>중1~3</span></button></div>
+    </div>
+    <div class="f2">
+     <div class="fd" id="f-cn"><label for="cn">아이 이름 *</label><input id="cn" placeholder="예: 김비트"><p class="err">아이 이름을 적어 주세요.</p></div>
+     <div class="fd"><label for="gr">학년</label><select id="gr"><option>초1</option><option>초2</option><option selected>초3</option><option>초4</option><option>초5</option><option>초6</option><option>중1</option><option>중2</option><option>중3</option></select></div>
+    </div>
+    <div class="f2">
+     <div class="fd" id="f-ph"><label for="ph">보호자 연락처 *</label><input id="ph" inputmode="tel" placeholder="010-0000-0000"><p class="err">연락처를 정확히 적어 주세요.</p></div>
+     <div class="fd"><label for="dy">희망 요일</label><select id="dy"><option>평일 오전</option><option selected>평일 오후</option><option>토요일</option></select></div>
+    </div>
+    <label class="agree"><input type="checkbox" id="ag" checked>상담 안내를 위한 연락처 수집에 동의합니다. (체험 일정 안내 후 파기)</label>
+    <button class="btn btn-l" type="button" id="go">무료 체험 신청하기</button>
+   </div>
+   <div class="ok" id="ok"><div class="ck"><svg viewBox="0 0 24 24"><path d="M5 12l5 5 9-10"/></svg></div><h4>신청이 접수됐어요!</h4><p id="okm">하루 안에 체험 가능한 시간을 문자로 보내 드릴게요.</p><div class="code" id="okc">print("곧 만나요!")</div></div>
+  </div>
+ </div>
+</section>
+
+<footer><div class="wrap"><span>비트숲 코딩교실 · BITSUP Coding Class</span><span>상담 000-0000-0000 · 카카오톡 ID: example</span></div></footer>
+<div class="mcta"><a class="btn btn-l" href="#apply">무료 체험 신청하기</a></div>
+
+<script>
+(function(){
+ document.querySelectorAll('.q button').forEach(function(b){b.onclick=function(){b.parentNode.classList.toggle('on')}});
+ var tb=document.querySelectorAll('#trk button'),tk=0;
+ tb.forEach(function(b,i){b.onclick=function(){tb.forEach(function(x){x.classList.remove('on')});b.classList.add('on');tk=i}});
+ document.getElementById('go').onclick=function(){
+  var cn=document.getElementById('cn'),ph=document.getElementById('ph'),ok=true;
+  var a=document.getElementById('f-cn'),p=document.getElementById('f-ph');
+  a.classList.toggle('bad',!cn.value.trim());if(!cn.value.trim())ok=false;
+  var digits=ph.value.replace(/\D/g,'');p.classList.toggle('bad',digits.length<10);if(digits.length<10)ok=false;
+  if(!document.getElementById('ag').checked){alert('연락처 수집 동의가 필요해요.');return}
+  if(!ok)return;
+  var names=['블록 놀이반','첫 파이썬 반','게임 만들기 반'];
+  document.getElementById('okm').textContent=cn.value.trim()+' 학생의 '+names[tk]+' 체험 신청이 접수됐어요. 하루 안에 가능한 시간을 문자로 보내 드릴게요.';
+  document.getElementById('okc').textContent='print("'+cn.value.trim()+', 곧 만나요!")';
+  document.getElementById('fb').style.display='none';document.getElementById('ok').style.display='block';
+ };
+})();
+</script>
+</body>
+</html>
