@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>꼬리별 강아지 유치원 · 첫 등원 1일 체험 9,900원</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Do+Hyeon&family=Noto+Sans+KR:wght@400;500;700;900&family=Fredoka:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--cream:#fbf8f2;--lil:#c4b3f0;--lil2:#e9e1fb;--lilD:#6c55b8;--pis:#cfe3a6;--pis2:#eef5dc;--ch:#2b2833;--mute:#625d6e;--tan:#e9a35f}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;overflow-x:clip}
+body{font-family:'Noto Sans KR',sans-serif;background:var(--cream);color:var(--ch);word-break:keep-all;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+button,input,select{font:inherit;color:inherit}
+.in{max-width:1180px;margin:0 auto;padding:0 28px}
+.dh{font-family:'Do Hyeon',sans-serif;font-weight:400}
+.fr{font-family:'Fredoka',sans-serif}
+/* header */
+header{position:sticky;top:0;z-index:20;background:rgba(251,248,242,.92);backdrop-filter:blur(10px)}
+.hdr{display:flex;justify-content:space-between;align-items:center;height:76px}
+.logo{display:flex;align-items:center;gap:10px}
+.logo svg{width:44px;height:44px}
+.logo b{font-family:'Do Hyeon';font-weight:400;font-size:25px;line-height:1}
+.logo small{display:block;font-family:'Fredoka';font-weight:600;font-size:11px;letter-spacing:.2em;color:var(--lilD);margin-top:3px}
+.hbtn{display:inline-flex;align-items:center;gap:8px;height:46px;padding:0 22px;border-radius:30px;background:var(--ch);color:var(--cream);font-weight:700;font-size:15px}
+/* hero */
+.hero{padding:30px 0 80px}
+.hero .in{display:grid;grid-template-columns:1fr 1.05fr;gap:40px;align-items:center}
+.badge{display:inline-flex;align-items:center;gap:8px;background:var(--pis);padding:8px 16px;border-radius:30px;font-weight:700;font-size:14px}
+.badge i{width:8px;height:8px;border-radius:50%;background:var(--ch)}
+.hero h1{font-family:'Do Hyeon';font-weight:400;font-size:clamp(44px,5.6vw,74px);line-height:1.12;margin:22px 0 18px;letter-spacing:-.01em}
+.hero h1 span{color:var(--lilD);position:relative;display:inline-block}
+.hero h1 span svg{position:absolute;left:-2%;bottom:-.16em;width:104%;height:.36em}
+.hero p.lead{font-size:18px;line-height:1.75;color:var(--mute);max-width:470px}
+.offer{display:flex;align-items:center;gap:22px;margin-top:30px;background:#fff;border-radius:24px;padding:20px 24px;box-shadow:0 20px 40px -24px rgba(43,40,51,.35);max-width:520px;flex-wrap:wrap}
+.offer .pr small{display:block;font-size:13px;color:var(--mute);font-weight:500}
+.offer .pr s{font-size:16px;color:#9a94a6;margin-right:8px}
+.offer .pr b{font-family:'Fredoka';font-weight:700;font-size:44px;line-height:1;color:var(--ch)}
+.offer .pr b em{font-style:normal;font-family:'Noto Sans KR';font-size:20px;font-weight:700;margin-left:2px}
+.offer .cta{margin-left:auto}
+.cta{display:inline-flex;align-items:center;justify-content:center;gap:10px;height:58px;padding:0 30px;border-radius:30px;background:var(--lilD);color:#fff;font-weight:700;font-size:17px;border:0;cursor:pointer;transition:.2s;box-shadow:0 10px 24px -10px rgba(108,85,184,.7)}
+.cta:hover{transform:translateY(-2px);background:#5a44a6}
+.cta svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round}
+.chips{display:flex;gap:10px;margin-top:22px;flex-wrap:wrap}
+.chips span{display:inline-flex;align-items:center;gap:7px;font-size:14px;font-weight:500;color:var(--mute)}
+.chips svg{width:18px;height:18px;fill:none;stroke:var(--lilD);stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+.art{position:relative}
+.art svg.main{width:100%;height:auto;display:block}
+.note{position:absolute;background:#fff;border-radius:18px;padding:12px 16px;box-shadow:0 16px 30px -18px rgba(43,40,51,.45);font-size:14px;font-weight:700;display:flex;align-items:center;gap:10px}
+.note small{display:block;font-weight:500;font-size:12px;color:var(--mute)}
+.note .ic{width:38px;height:38px;border-radius:12px;display:grid;place-items:center}
+.note .ic svg{width:20px;height:20px;fill:none;stroke:var(--ch);stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+.note.a{left:-4%;top:14%}.note.b{right:0;bottom:8%}
+@keyframes bob{50%{transform:translateY(-8px)}}
+.note.a{animation:bob 4s ease-in-out infinite}.note.b{animation:bob 4.6s ease-in-out infinite .6s}
+/* sections */
+section{padding:96px 0}
+.sh{text-align:center;max-width:640px;margin:0 auto 48px}
+.sh small{font-family:'Fredoka';font-weight:600;font-size:14px;letter-spacing:.18em;color:var(--lilD)}
+.sh h2{font-family:'Do Hyeon';font-weight:400;font-size:clamp(34px,3.8vw,48px);line-height:1.2;margin:10px 0 12px}
+.sh p{font-size:16px;line-height:1.75;color:var(--mute)}
+/* day timeline */
+.day{background:var(--lil2);border-radius:48px;margin:0 20px}
+.tl{display:grid;grid-template-columns:repeat(6,1fr);gap:14px;position:relative}
+.tl:before{content:"";position:absolute;left:4%;right:4%;top:46px;height:4px;background:repeating-linear-gradient(90deg,var(--lil) 0 14px,transparent 14px 24px);border-radius:4px}
+.tk{text-align:center;position:relative}
+.tk .dot{width:92px;height:92px;border-radius:50%;background:#fff;margin:0 auto 16px;display:grid;place-items:center;box-shadow:0 14px 26px -16px rgba(108,85,184,.6);position:relative}
+.tk .dot svg{width:50px;height:50px}
+.tk time{font-family:'Fredoka';font-weight:700;font-size:20px;color:var(--lilD)}
+.tk b{display:block;font-size:17px;margin:4px 0 6px}
+.tk p{font-size:14px;line-height:1.6;color:var(--mute)}
+/* include */
+.inc{display:grid;grid-template-columns:1.1fr .9fr;gap:24px}
+.big{background:var(--ch);color:var(--cream);border-radius:32px;padding:40px;position:relative;overflow:hidden;min-height:420px}
+.big h3{font-family:'Do Hyeon';font-weight:400;font-size:36px;line-height:1.25}
+.big p{font-size:15px;line-height:1.7;color:#cfcad8;margin-top:12px;max-width:290px}
+.big .phone{position:absolute;right:30px;bottom:-30px;width:200px}
+.small{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.card{border-radius:28px;padding:26px;display:flex;flex-direction:column;gap:10px}
+.card svg{width:56px;height:56px}
+.card b{font-size:18px}
+.card p{font-size:14px;line-height:1.65;color:var(--mute)}
+/* space */
+.space{display:grid;grid-template-columns:1.15fr .85fr;gap:48px;align-items:center}
+.space svg{width:100%;height:auto;display:block}
+.rooms{display:grid;gap:14px}
+.room{display:flex;gap:16px;align-items:flex-start;background:#fff;border-radius:20px;padding:18px 20px;cursor:pointer;transition:.2s;border:2px solid transparent}
+.room.on{border-color:var(--lilD);box-shadow:0 14px 30px -20px rgba(108,85,184,.7)}
+.room .n{flex:none;width:40px;height:40px;border-radius:50%;display:grid;place-items:center;font-family:'Fredoka';font-weight:700;font-size:18px}
+.room b{font-size:17px;display:block}
+.room p{font-size:14px;color:var(--mute);line-height:1.6;margin-top:2px}
+.hot{transition:opacity .25s}
+.plan.dim .hot{opacity:.35}.plan.dim .hot.on{opacity:1}
+/* check */
+.check{background:var(--pis2);border-radius:48px;margin:0 20px}
+.ck{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.ck div{background:#fff;border-radius:24px;padding:24px}
+.ck i{display:grid;place-items:center;width:44px;height:44px;border-radius:14px;background:var(--pis);font-style:normal;margin-bottom:14px}
+.ck i svg{width:22px;height:22px;fill:none;stroke:var(--ch);stroke-width:2.3;stroke-linecap:round;stroke-linejoin:round}
+.ck b{font-size:17px;display:block;margin-bottom:6px}
+.ck p{font-size:14px;line-height:1.6;color:var(--mute)}
+/* form */
+.apply .in{display:grid;grid-template-columns:.85fr 1.15fr;gap:48px;align-items:start}
+.apply h2{font-family:'Do Hyeon';font-weight:400;font-size:clamp(34px,3.8vw,50px);line-height:1.18}
+.apply .lft p{font-size:16px;line-height:1.75;color:var(--mute);margin-top:14px}
+.sum{margin-top:28px;background:var(--lil2);border-radius:24px;padding:22px 24px}
+.sum li{list-style:none;display:flex;justify-content:space-between;font-size:15px;padding:8px 0;border-bottom:1px dashed rgba(108,85,184,.3)}
+.sum li:last-child{border:0;font-weight:700}
+.sum li b{font-family:'Fredoka';font-size:20px}
+form{background:#fff;border-radius:32px;padding:38px;box-shadow:0 30px 60px -36px rgba(43,40,51,.45)}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.f{margin-bottom:18px}
+.f label,.f .lb{display:block;font-weight:700;font-size:14px;margin-bottom:8px}
+.f input,.f select{width:100%;height:54px;border-radius:16px;border:2px solid #e7e3ee;background:var(--cream);padding:0 16px;font-size:16px;transition:.2s}
+.f input:focus,.f select:focus{outline:none;border-color:var(--lilD);background:#fff}
+.seg{display:flex;gap:8px;flex-wrap:wrap}
+.seg label{flex:1;min-width:110px;cursor:pointer;margin:0}
+.seg input{position:absolute;opacity:0;width:0;height:0}
+.seg span{display:flex;flex-direction:column;align-items:center;justify-content:center;height:62px;border-radius:16px;border:2px solid #e7e3ee;background:var(--cream);font-weight:700;font-size:15px;line-height:1.3;transition:.2s}
+.dates label{min-width:0;flex:1 1 calc(16.6% - 8px)}
+.dates span{height:68px}
+.dates span b{font-family:'Fredoka';font-size:20px;line-height:1.1}
+.seg span small{font-weight:500;font-size:12px;color:var(--mute)}
+.seg input:checked+span{border-color:var(--lilD);background:var(--lil2)}
+.agree{display:flex;gap:10px;align-items:flex-start;font-size:14px;color:var(--mute);line-height:1.6;margin:6px 0 22px;cursor:pointer}
+.agree input{width:20px;height:20px;accent-color:var(--lilD);margin-top:2px;flex:none}
+form .cta{width:100%}
+.done{display:none;text-align:center;padding:30px 10px}
+.done svg{width:120px;height:120px;margin:0 auto 10px;display:block}
+.done h3{font-family:'Do Hyeon';font-weight:400;font-size:32px}
+.done p{font-size:15px;line-height:1.75;color:var(--mute);margin-top:8px}
+.done .tk2{margin:18px auto 0;display:inline-block;background:var(--lil2);border-radius:16px;padding:14px 20px;font-size:15px;text-align:left;line-height:1.8}
+.flow{list-style:none;margin-top:22px;display:grid;gap:0;position:relative}
+.flow:before{content:"";position:absolute;left:19px;top:24px;bottom:24px;border-left:2px dashed var(--lil)}
+.flow li{display:flex;gap:16px;align-items:center;padding:12px 0;position:relative}
+.flow i{flex:none;width:40px;height:40px;border-radius:50%;background:#fff;border:2px solid var(--lilD);color:var(--lilD);font-style:normal;font-family:'Fredoka';font-weight:700;display:grid;place-items:center}
+.flow b{display:block;font-size:16px}
+.flow span{font-size:14px;color:var(--mute)}
+/* faq */
+.faq{max-width:820px;margin:0 auto}
+.q{background:#fff;border-radius:22px;margin-bottom:12px;overflow:hidden}
+.q button{width:100%;text-align:left;border:0;background:none;padding:22px 26px;font-weight:700;font-size:17px;display:flex;justify-content:space-between;gap:16px;align-items:center;cursor:pointer}
+.q button i{flex:none;width:32px;height:32px;border-radius:50%;background:var(--lil2);display:grid;place-items:center;transition:.25s;font-style:normal}
+.q button i svg{width:14px;height:14px;fill:none;stroke:var(--lilD);stroke-width:2.6;stroke-linecap:round}
+.q.open button i{transform:rotate(45deg);background:var(--lilD)}
+.q.open button i svg{stroke:#fff}
+.q .a{max-height:0;overflow:hidden;transition:max-height .3s}
+.q .a p{padding:0 26px 22px;font-size:15px;line-height:1.75;color:var(--mute)}
+footer{background:var(--ch);color:#bdb7c8;padding:52px 0 52px;margin-top:40px}
+.ft{display:flex;justify-content:space-between;gap:30px;flex-wrap:wrap;align-items:flex-start}
+footer .logo b{color:var(--cream)}
+footer p{font-size:14px;line-height:1.9}
+.mbar{display:none}
+@media(max-width:1000px){
+ .tl{grid-template-columns:repeat(3,1fr);row-gap:34px}.tl:before{display:none}
+ .ck{grid-template-columns:1fr 1fr}
+}
+@media(max-width:860px){
+ .hero .in,.inc,.space,.apply .in{grid-template-columns:1fr}
+ .art{max-width:560px;margin:0 auto;width:100%}
+ .hbtn{display:none}
+ footer{padding-bottom:110px}
+ .mbar{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:30;background:rgba(251,248,242,.96);backdrop-filter:blur(8px);padding:10px 16px;gap:12px;align-items:center;box-shadow:0 -10px 30px -20px rgba(43,40,51,.5)}
+ .mbar div{font-size:13px;color:var(--mute);line-height:1.3}
+ .mbar div b{display:block;font-family:'Fredoka';font-size:22px;color:var(--ch)}
+ .mbar .cta{flex:1;height:52px;font-size:16px}
+}
+@media(max-width:560px){
+ .in{padding:0 18px}
+ .hdr{height:64px}
+ .hero{padding:16px 0 56px}
+ .hero p.lead{font-size:16px}
+ .offer{padding:18px;gap:14px}
+ .offer .cta{width:100%;margin-left:0}
+ .offer .pr b{font-size:38px}
+ .note{font-size:13px;padding:10px 12px}
+ .note .ic{width:32px;height:32px}
+ .note.a{left:0;top:4%}
+ section{padding:68px 0}
+ .day,.check{margin:0 10px;border-radius:32px}
+ .tl{grid-template-columns:1fr 1fr}
+ .tk .dot{width:78px;height:78px}.tk .dot svg{width:42px;height:42px}
+ .big{padding:28px;min-height:400px}
+ .big h3{font-size:30px}
+ .big{min-height:0;padding-bottom:0}
+ .big .phone{position:relative;right:auto;bottom:auto;display:block;width:200px;margin:24px auto -6px}
+ .small{grid-template-columns:1fr 1fr;gap:12px}
+ .card{padding:18px;border-radius:22px}
+ .card b{font-size:16px}
+ .card svg{width:46px;height:46px}
+ .ck{grid-template-columns:1fr}
+ form{padding:24px 18px;border-radius:26px}
+ .row{grid-template-columns:1fr;gap:0}
+ .dates label{flex:1 1 calc(33.3% - 8px)}
+ .q button{padding:18px 20px;font-size:16px}
+ .q .a p{padding:0 20px 18px}
+}
+</style>
+</head>
+<body>
+<header><div class="in hdr">
+ <a href="#" class="logo"><svg viewBox="0 0 48 48"><circle cx="24" cy="24" r="22" fill="#c4b3f0"/><path d="M24 9l3.6 7.4 8.1 1.2-5.9 5.7 1.4 8.1L24 27.6l-7.2 3.8 1.4-8.1-5.9-5.7 8.1-1.2z" fill="#fbf8f2"/><path d="M14 36c6 5 14 5 20 0" stroke="#2b2833" stroke-width="2.6" fill="none" stroke-linecap="round"/><path d="M34 34c3-2 6-1 8 1" stroke="#2b2833" stroke-width="2.6" fill="none" stroke-linecap="round"/></svg><span><b>꼬리별</b><small>PUPPY DAYCARE</small></span></a>
+ <a href="#apply" class="hbtn">1일 체험 신청</a>
+</div></header>
+
+<section class="hero" style="padding-top:30px">
+ <div class="in">
+  <div>
+   <span class="badge"><i></i>처음 오는 친구만 · 1회 한정</span>
+   <h1>첫 등원,<br><span>하루만 먼저<svg viewBox="0 0 200 20" preserveAspectRatio="none"><path d="M3 14c40-10 90-12 194-4" stroke="#cfe3a6" stroke-width="9" fill="none" stroke-linecap="round"/></svg></span><br>와 볼래요?</h1>
+   <p class="lead">낯선 곳이 걱정된다면 하루 체험부터. 오전에 맡기고 저녁에 사진 알림장과 함께 데려가세요.</p>
+   <div class="offer">
+    <div class="pr"><small>첫 등원 1일 체험</small><s>35,000원</s><b>9,900<em>원</em></b></div>
+    <a href="#apply" class="cta">체험 날짜 고르기 <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+   </div>
+   <div class="chips">
+    <span><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>09:00 – 19:00</span>
+    <span><svg viewBox="0 0 24 24"><path d="M4 18h16M6 18V9l6-4 6 4v9"/><path d="M10 18v-5h4v5"/></svg>소형 · 중형견</span>
+    <span><svg viewBox="0 0 24 24"><path d="M3 16V8h11v8M14 11h4l3 3v2h-7"/><circle cx="7" cy="17" r="2"/><circle cx="17" cy="17" r="2"/></svg>등·하원 픽업 가능</span>
+   </div>
+  </div>
+  <div class="art">
+   <svg class="main" viewBox="0 0 560 500" aria-label="잔디밭에서 공놀이하는 강아지 두 마리 일러스트">
+    <defs>
+     <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#d8cbf7"/><stop offset="1" stop-color="#c4b3f0"/></linearGradient>
+     <linearGradient id="grass" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#cfe3a6"/><stop offset="1" stop-color="#a9cc78"/></linearGradient>
+     <linearGradient id="fur1" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f2b46e"/><stop offset="1" stop-color="#d98a43"/></linearGradient>
+     <linearGradient id="fur2" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fffdf8"/><stop offset="1" stop-color="#e9e2d6"/></linearGradient>
+     <radialGradient id="ball" cx=".35" cy=".3" r=".7"><stop offset="0" stop-color="#ffe98a"/><stop offset="1" stop-color="#e9b937"/></radialGradient>
+     <clipPath id="blob"><path d="M282 22c112-8 236 54 254 172 18 120-58 260-198 284-150 26-286-30-314-160C-4 196 112 34 282 22z"/></clipPath>
+     <filter id="soft" x="-20%" y="-20%" width="140%" height="150%"><feDropShadow dx="0" dy="10" stdDeviation="9" flood-color="#2b2833" flood-opacity=".18"/></filter>
+    </defs>
+    <g clip-path="url(#blob)">
+     <rect width="560" height="500" fill="url(#sky)"/>
+     <circle cx="430" cy="110" r="44" fill="#fbf8f2" opacity=".75"/>
+     <g fill="#fbf8f2" opacity=".85"><path d="M90 130c0-16 20-22 30-10 6-14 32-14 34 4 14-2 20 14 8 18H96c-6 0-8-6-6-12z"/><path d="M300 80c0-12 15-16 22-7 5-10 24-10 25 3 10-1 15 10 6 13h-48c-5 0-6-5-5-9z"/></g>
+     <path d="M0 330c90-40 200-50 300-30s180 10 260-20v220H0z" fill="#b8d58c"/>
+     <path d="M0 360c120-30 250-26 360-6 80 14 140 6 200-10v156H0z" fill="url(#grass)"/>
+     <g stroke="#8cb55a" stroke-width="3" stroke-linecap="round"><path d="M60 410l-4-14M66 410l2-12M420 440l-4-14M426 440l2-12M250 470l-3-12M256 470l3-10"/></g>
+     <!-- fence -->
+     <g fill="#fbf8f2" stroke="#d9cfee" stroke-width="2"><rect x="20" y="290" width="14" height="70" rx="4"/><rect x="60" y="284" width="14" height="70" rx="4"/><rect x="100" y="280" width="14" height="70" rx="4"/><rect x="10" y="306" width="120" height="10" rx="4"/></g>
+     <!-- dog 1 : tan, jumping -->
+     <g filter="url(#soft)" transform="translate(70 196)">
+      <path d="M60 150c-8 20-30 30-40 22s4-26 16-34z" fill="url(#fur1)"/>
+      <path d="M40 90c10-40 70-56 120-36 30 12 44 40 34 64-10 26-50 40-100 34-40-4-64-30-54-62z" fill="url(#fur1)"/>
+      <path d="M70 128c10 14 40 20 70 14" fill="none" stroke="#fffaf0" stroke-width="16" stroke-linecap="round" opacity=".7"/>
+      <path d="M180 120c14 10 22 32 14 44-6 8-18 2-20-10z" fill="#d98a43"/>
+      <path d="M150 140c4 16 0 34-10 38-8 2-12-10-8-22z" fill="#d98a43"/>
+      <path d="M44 100c-20-6-36 0-44-14 14-4 30-2 42 4z" fill="#d98a43"/>
+      <!-- head -->
+      <g transform="translate(150 -2)">
+       <path d="M0 40c0-32 22-52 52-52s52 20 52 50c0 26-22 44-52 44S0 66 0 40z" fill="url(#fur1)"/>
+       <path d="M8 6c-10-24-2-44 10-46 10 8 16 24 14 40z" fill="#c9773a"/>
+       <path d="M80 2c8-24 24-36 34-30 2 14-6 30-20 40z" fill="#c9773a"/>
+       <path d="M30 56c6 18 40 22 58 6 6-6 6-18-2-24-14-10-44-8-54 4-4 4-4 10-2 14z" fill="#fffaf0"/>
+       <ellipse cx="66" cy="42" rx="9" ry="7" fill="#2b2833"/>
+       <circle cx="36" cy="28" r="6" fill="#2b2833"/><circle cx="38" cy="26" r="2" fill="#fff"/>
+       <circle cx="78" cy="22" r="6" fill="#2b2833"/><circle cx="80" cy="20" r="2" fill="#fff"/>
+       <path d="M56 62c6 12 22 12 26-2" fill="#ff8f8f" stroke="#2b2833" stroke-width="2.6" stroke-linejoin="round"/>
+       <circle cx="24" cy="44" r="6" fill="#ffb7a8" opacity=".6"/>
+      </g>
+      <!-- bandana -->
+      <path d="M154 70c20 16 54 18 80 4l-8 22c-20 10-46 10-66-2z" fill="#6c55b8"/>
+      <circle cx="194" cy="86" r="3" fill="#fbf8f2"/><circle cx="210" cy="84" r="3" fill="#fbf8f2"/>
+     </g>
+     <!-- ball -->
+     <g transform="translate(330 128)"><circle r="24" fill="url(#ball)"/><path d="M-18 -14c10 10 10 30 0 36M18 -16c-10 10-10 32 0 38" stroke="#fbf8f2" stroke-width="3" fill="none"/><path d="M-40 10c-8-8-18-10-30-6M-36 24c-10-2-18 2-24 8" stroke="#2b2833" stroke-width="2.6" stroke-linecap="round" fill="none" opacity=".3"/></g>
+     <!-- dog 2 : white fluffy sitting -->
+     <g filter="url(#soft)" transform="translate(352 262)">
+      <path d="M20 160c-10-60 10-110 60-116 50-4 76 40 72 100-2 20-6 30-20 34H40c-14 0-18-8-20-18z" fill="url(#fur2)"/>
+      <g fill="#fffdf8"><circle cx="34" cy="120" r="16"/><circle cx="140" cy="118" r="16"/><circle cx="50" cy="80" r="18"/><circle cx="124" cy="78" r="18"/></g>
+      <ellipse cx="60" cy="176" rx="22" ry="12" fill="#fffdf8" stroke="#e2dacc" stroke-width="2"/>
+      <ellipse cx="116" cy="176" rx="22" ry="12" fill="#fffdf8" stroke="#e2dacc" stroke-width="2"/>
+      <path d="M150 140c24-6 36-28 30-44" fill="none" stroke="#fffdf8" stroke-width="18" stroke-linecap="round"/>
+      <g transform="translate(36 -38)">
+       <g fill="#fffdf8"><circle cx="12" cy="36" r="22"/><circle cx="92" cy="36" r="22"/><circle cx="52" cy="10" r="26"/><circle cx="26" cy="12" r="20"/><circle cx="78" cy="12" r="20"/></g>
+       <path d="M4 52c0-30 22-50 48-50s48 20 48 50c0 24-22 40-48 40S4 76 4 52z" fill="url(#fur2)"/>
+       <path d="M-6 30c-10 10-12 34-2 44 10-2 16-20 14-34z" fill="#efe6d8"/><path d="M110 30c10 10 12 34 2 44-10-2-16-20-14-34z" fill="#efe6d8"/>
+       <circle cx="34" cy="48" r="6" fill="#2b2833"/><circle cx="36" cy="46" r="2" fill="#fff"/>
+       <circle cx="70" cy="48" r="6" fill="#2b2833"/><circle cx="72" cy="46" r="2" fill="#fff"/>
+       <ellipse cx="52" cy="62" rx="7" ry="5" fill="#2b2833"/>
+       <path d="M44 70c4 6 12 6 16 0" stroke="#2b2833" stroke-width="2.6" fill="none" stroke-linecap="round"/>
+       <circle cx="22" cy="62" r="6" fill="#ffb7a8" opacity=".55"/><circle cx="82" cy="62" r="6" fill="#ffb7a8" opacity=".55"/>
+       <path d="M30 -2c8-6 16-6 22 0-6 6-14 6-22 0zM52 -2c8-6 16-6 22 0-6 6-14 6-22 0z" fill="#cfe3a6" stroke="#2b2833" stroke-width="2"/><circle cx="52" cy="-2" r="4" fill="#2b2833"/>
+      </g>
+     </g>
+     <!-- stars -->
+     <g fill="#fbf8f2"><path d="M250 150l4 10 10 4-10 4-4 10-4-10-10-4 10-4z"/><path d="M480 260l3 7 7 3-7 3-3 7-3-7-7-3 7-3z"/></g>
+    </g>
+    <path d="M282 22c112-8 236 54 254 172 18 120-58 260-198 284-150 26-286-30-314-160C-4 196 112 34 282 22z" fill="none" stroke="#2b2833" stroke-width="3" stroke-dasharray="2 10" stroke-linecap="round" opacity=".35" transform="translate(10 12)"/>
+   </svg>
+   <div class="note a"><span class="ic" style="background:#cfe3a6"><svg viewBox="0 0 24 24"><rect x="3" y="6" width="18" height="14" rx="3"/><circle cx="12" cy="13" r="3.5"/><path d="M8 6l2-3h4l2 3"/></svg></span><span>사진 알림장<small>하루 세 번 도착</small></span></div>
+   <div class="note b"><span class="ic" style="background:#e9e1fb"><svg viewBox="0 0 24 24"><path d="M12 21s-7-4.5-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 11c0 5.5-7 10-7 10z"/></svg></span><span>반 친구 4~6마리<small>크기·성향별 반 배정</small></span></div>
+  </div>
+ </div>
+</section>
+
+<section class="day">
+ <div class="in">
+  <div class="sh"><small>A DAY AT KKORIBYEOL</small><h2>체험하는 날, 이렇게 보내요</h2><p>정규 반과 똑같은 일과를 하루 동안 함께합니다. 처음이라 긴장하면 선생님 곁에서 천천히 적응해요.</p></div>
+  <div class="tl">
+   <div class="tk"><div class="dot"><svg viewBox="0 0 50 50"><path d="M10 40V22l15-12 15 12v18z" fill="#c4b3f0"/><path d="M20 40V28h10v12" fill="#fbf8f2"/><circle cx="25" cy="20" r="3" fill="#2b2833"/></svg></div><time>09:00</time><b>등원 · 컨디션 체크</b><p>체온, 식사 여부를 보호자와 함께 확인</p></div>
+   <div class="tk"><div class="dot"><svg viewBox="0 0 50 50"><path d="M8 38c8-14 26-20 34-6" stroke="#a9cc78" stroke-width="6" fill="none" stroke-linecap="round"/><circle cx="16" cy="18" r="6" fill="#e9a35f"/><path d="M20 22l10 10" stroke="#6c55b8" stroke-width="3" stroke-linecap="round"/><circle cx="34" cy="14" r="5" fill="#ffd95a"/></svg></div><time>10:30</time><b>동네 산책</b><p>2인 1조 선생님과 30분 산책</p></div>
+   <div class="tk"><div class="dot"><svg viewBox="0 0 50 50"><path d="M8 34c0-8 6-12 14-12h14c6 0 8 4 8 12v6H8z" fill="#c4b3f0"/><path d="M8 34h36" stroke="#6c55b8" stroke-width="2"/><path d="M30 10h8l-8 8h8M20 14h5l-5 5h5" stroke="#2b2833" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></div><time>12:30</time><b>점심 · 낮잠</b><p>각자 가져온 사료로 식사 후 조용한 낮잠방</p></div>
+   <div class="tk"><div class="dot"><svg viewBox="0 0 50 50"><rect x="8" y="30" width="12" height="12" rx="2" fill="#cfe3a6"/><rect x="20" y="22" width="12" height="20" rx="2" fill="#c4b3f0"/><rect x="32" y="14" width="12" height="28" rx="2" fill="#ffd95a"/><circle cx="38" cy="8" r="4" fill="#e9a35f"/></svg></div><time>14:00</time><b>놀이 수업</b><p>노즈워크, 터널, 기다려 놀이</p></div>
+   <div class="tk"><div class="dot"><svg viewBox="0 0 50 50"><path d="M12 22c0-6 6-8 9-4 2-5 10-5 11 0 3-4 9-2 9 4 0 4-4 6-8 6H20c-4 0-8-2-8-6z" fill="#e9a35f"/><path d="M14 30h24l-3 12H17z" fill="#c4b3f0"/></svg></div><time>16:00</time><b>간식 타임</b><p>보호자가 허락한 간식만 소량</p></div>
+   <div class="tk"><div class="dot"><svg viewBox="0 0 50 50"><rect x="13" y="7" width="24" height="36" rx="5" fill="#2b2833"/><rect x="16" y="12" width="18" height="24" rx="2" fill="#cfe3a6"/><path d="M19 30l5-6 4 4 3-3 3 5" stroke="#2b2833" stroke-width="2" fill="none" stroke-linejoin="round"/><circle cx="21" cy="18" r="2" fill="#fbf8f2"/></svg></div><time>18:00</time><b>하원 · 알림장</b><p>하루 사진과 선생님 메모를 전해 드려요</p></div>
+  </div>
+ </div>
+</section>
+
+<section>
+ <div class="in">
+  <div class="sh"><small>INCLUDED</small><h2>9,900원 체험에 모두 포함</h2><p>추가 요금 없이 정규 반 하루와 같은 서비스를 받아요.</p></div>
+  <div class="inc">
+   <div class="big">
+    <h3>하루 세 번,<br>사진 알림장</h3>
+    <p>산책, 놀이, 낮잠 시간마다 사진과 짧은 메모를 보내 드려요. 일하는 중에도 우리 아이가 어떻게 지내는지 바로 볼 수 있어요.</p>
+    <svg class="phone" viewBox="0 0 230 330" aria-hidden="true">
+     <rect x="10" y="0" width="210" height="340" rx="34" fill="#fbf8f2"/><rect x="22" y="14" width="186" height="320" rx="24" fill="#e9e1fb"/>
+     <rect x="88" y="22" width="54" height="8" rx="4" fill="#2b2833" opacity=".25"/>
+     <rect x="36" y="44" width="158" height="108" rx="14" fill="#cfe3a6"/>
+     <circle cx="160" cy="70" r="12" fill="#fbf8f2" opacity=".8"/>
+     <path d="M36 132c30-20 60-24 90-14s48 6 68-6v26c0 8-6 14-14 14H50c-8 0-14-6-14-14z" fill="#a9cc78"/>
+     <g transform="translate(78 82)"><path d="M0 26c0-16 12-26 26-26s26 10 26 26c0 12-12 22-26 22S0 38 0 26z" fill="#f2b46e"/><path d="M2 8c-6-10-2-20 4-20 6 4 8 12 6 20zM44 6c4-12 12-18 18-14 0 8-4 14-12 20z" fill="#c9773a"/><circle cx="17" cy="22" r="3.4" fill="#2b2833"/><circle cx="35" cy="22" r="3.4" fill="#2b2833"/><ellipse cx="26" cy="31" rx="4.4" ry="3.4" fill="#2b2833"/></g>
+     <rect x="36" y="166" width="120" height="12" rx="6" fill="#6c55b8" opacity=".6"/>
+     <rect x="36" y="186" width="158" height="10" rx="5" fill="#2b2833" opacity=".15"/><rect x="36" y="204" width="130" height="10" rx="5" fill="#2b2833" opacity=".15"/>
+     <rect x="36" y="232" width="74" height="60" rx="10" fill="#c4b3f0"/><rect x="120" y="232" width="74" height="60" rx="10" fill="#ffd95a" opacity=".8"/>
+    </svg>
+   </div>
+   <div class="small">
+    <div class="card" style="background:var(--pis2)"><svg viewBox="0 0 56 56"><circle cx="28" cy="28" r="26" fill="#cfe3a6"/><g fill="#fbf8f2" stroke="#2b2833" stroke-width="2"><circle cx="20" cy="32" r="8"/><path d="M13 28c-4 0-5-6-2-9 3 0 4 4 4 8zM27 28c4 0 5-6 2-9-3 0-4 4-4 8z"/><circle cx="38" cy="28" r="11"/><path d="M29 24c-6 0-7-9-3-12 4 0 6 5 6 11zM47 24c6 0 7-9 3-12-4 0-6 5-6 11z"/></g><g fill="#2b2833"><circle cx="17.5" cy="31" r="1.4"/><circle cx="22.5" cy="31" r="1.4"/><circle cx="34.5" cy="27" r="1.8"/><circle cx="41.5" cy="27" r="1.8"/><ellipse cx="38" cy="32" rx="2.4" ry="1.8"/><ellipse cx="20" cy="35" rx="1.8" ry="1.3"/></g></svg><b>크기 · 성향별 반</b><p>소형 · 중형, 활발 · 조용으로 나눠 4~6마리씩.</p></div>
+    <div class="card" style="background:var(--lil2)"><svg viewBox="0 0 56 56"><circle cx="28" cy="28" r="26" fill="#c4b3f0"/><path d="M14 18h22a4 4 0 0 1 4 4v10a4 4 0 0 1-4 4H24l-7 6v-6h-3a4 4 0 0 1-4-4V22a4 4 0 0 1 4-4z" fill="#fbf8f2" stroke="#2b2833" stroke-width="2.2" stroke-linejoin="round"/><path d="M42 24h2a4 4 0 0 1 4 4v8a4 4 0 0 1-4 4h-2v5l-6-5h-6" fill="none" stroke="#2b2833" stroke-width="2.2" stroke-linejoin="round" stroke-linecap="round"/><g fill="#6c55b8"><circle cx="18" cy="27" r="2"/><circle cx="25" cy="27" r="2"/><circle cx="32" cy="27" r="2"/></g></svg><b>적응 상담 15분</b><p>등원 전 성격 · 습관을 함께 이야기해요.</p></div>
+    <div class="card" style="background:#fff3e6"><svg viewBox="0 0 56 56"><circle cx="28" cy="28" r="26" fill="#f6cf9e"/><path d="M16 22c0-6 6-8 9-4 2-5 10-5 11 0 3-4 9-2 9 4 0 4-4 6-8 6H24c-4 0-8-2-8-6z" fill="#fbf8f2"/><path d="M18 32h20l-2 10H20z" fill="#e9a35f"/></svg><b>간식 한 번</b><p>알레르기 확인 후 보호자가 고른 간식만.</p></div>
+    <div class="card" style="background:#eef3fb"><svg viewBox="0 0 56 56"><circle cx="28" cy="28" r="26" fill="#bcd3f2"/><path d="M14 34h20l6-8h4v12H14z" fill="#fbf8f2"/><circle cx="20" cy="40" r="4" fill="#2b2833"/><circle cx="38" cy="40" r="4" fill="#2b2833"/><path d="M18 26h12" stroke="#2b2833" stroke-width="3" stroke-linecap="round"/></svg><b>픽업 1회 무료</b><p>유치원 반경 3km 안에서 등원 또는 하원 한 번.</p></div>
+   </div>
+  </div>
+ </div>
+</section>
+
+<section style="padding-top:20px">
+ <div class="in space">
+  <svg class="plan" id="plan" viewBox="0 0 560 420" aria-label="유치원 공간 안내도">
+   <defs>
+    <pattern id="wood" width="36" height="14" patternUnits="userSpaceOnUse"><rect width="36" height="14" fill="#f3e3cc"/><path d="M0 13.5h36M18 0v14" stroke="#e2cba9" stroke-width="1.2"/></pattern>
+    <linearGradient id="flr" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#000" stop-opacity=".0"/><stop offset="1" stop-color="#7a5a34" stop-opacity=".12"/></linearGradient>
+    <linearGradient id="tun" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#d8cbf7"/><stop offset="1" stop-color="#8f78d6"/></linearGradient>
+    <linearGradient id="blkT" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff2b8"/><stop offset="1" stop-color="#ffd95a"/></linearGradient>
+    <radialGradient id="lamp" cx=".7" cy=".2" r=".9"><stop offset="0" stop-color="#ffe7b0" stop-opacity=".95"/><stop offset=".5" stop-color="#b9a4ea" stop-opacity=".5"/><stop offset="1" stop-color="#4b3f7a" stop-opacity="0"/></radialGradient>
+    <linearGradient id="napbg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#5b4c94"/><stop offset="1" stop-color="#3b3166"/></linearGradient>
+    <radialGradient id="bed" cx=".5" cy=".35" r=".7"><stop offset="0" stop-color="#fbf8f2"/><stop offset="1" stop-color="#d9cdea"/></radialGradient>
+    <linearGradient id="lawn" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#bcd98f"/><stop offset="1" stop-color="#93bf5f"/></linearGradient>
+    <radialGradient id="pool" cx=".4" cy=".35" r=".7"><stop offset="0" stop-color="#bfe6f7"/><stop offset="1" stop-color="#5fb0dc"/></radialGradient>
+    <radialGradient id="furS" cx=".4" cy=".35" r=".7"><stop offset="0" stop-color="#f6c387"/><stop offset="1" stop-color="#d98a43"/></radialGradient>
+    <filter id="ds" x="-20%" y="-20%" width="140%" height="160%"><feDropShadow dx="0" dy="5" stdDeviation="4" flood-color="#2b2833" flood-opacity=".22"/></filter>
+    <clipPath id="c1"><rect x="30" y="30" width="300" height="220" rx="18"/></clipPath>
+    <clipPath id="c2"><rect x="350" y="30" width="180" height="220" rx="18"/></clipPath>
+    <clipPath id="c3"><rect x="30" y="270" width="500" height="120" rx="18"/></clipPath>
+   </defs>
+   <rect x="10" y="10" width="540" height="400" rx="28" fill="#fff"/>
+   <g class="hot on" data-r="1"><g clip-path="url(#c1)">
+    <rect x="30" y="30" width="300" height="220" fill="url(#wood)"/><rect x="30" y="30" width="300" height="220" fill="url(#flr)"/>
+    <rect x="30" y="30" width="300" height="46" fill="#efe4fb"/><path d="M30 76h300" stroke="#d8c9ee" stroke-width="4"/>
+    <g filter="url(#ds)"><path d="M58 186c0-50 30-80 70-80s70 30 70 80z" fill="url(#tun)"/><path d="M80 186c0-34 20-56 48-56s48 22 48 56z" fill="#3b3166"/><g stroke="#fbf8f2" stroke-opacity=".55" stroke-width="3" fill="none"><path d="M70 150c18-26 98-26 116 0"/><path d="M62 172c22-20 110-20 132 0"/></g></g>
+    <g filter="url(#ds)"><rect x="218" y="166" width="94" height="34" rx="6" fill="#e9b937"/><rect x="218" y="160" width="94" height="10" rx="5" fill="url(#blkT)"/><rect x="236" y="130" width="76" height="32" rx="6" fill="#a9cc78"/><rect x="236" y="124" width="76" height="10" rx="5" fill="#d8ecb6"/><rect x="256" y="96" width="56" height="30" rx="6" fill="#c4b3f0"/><rect x="256" y="90" width="56" height="10" rx="5" fill="#e9e1fb"/></g>
+    <g filter="url(#ds)"><rect x="54" y="204" width="110" height="34" rx="10" fill="#7fb35a"/><g fill="#a9d27c"><rect x="62" y="210" width="10" height="22" rx="4"/><rect x="78" y="210" width="10" height="22" rx="4"/><rect x="94" y="210" width="10" height="22" rx="4"/><rect x="110" y="210" width="10" height="22" rx="4"/><rect x="126" y="210" width="10" height="22" rx="4"/><rect x="142" y="210" width="10" height="22" rx="4"/></g></g>
+    <g filter="url(#ds)" transform="translate(190 196)"><ellipse cx="0" cy="26" rx="20" ry="8" fill="#000" opacity=".08"/><path d="M-16 24c-4-20 4-34 16-34s20 14 16 34z" fill="url(#furS)"/><circle cx="0" cy="-14" r="14" fill="url(#furS)"/><path d="M-12-22c-6-8-4-16 0-18 4 4 6 10 4 16zM12-22c6-8 4-16 0-18-4 4-6 10-4 16z" fill="#c9773a"/><circle cx="-5" cy="-15" r="2.2" fill="#2b2833"/><circle cx="5" cy="-15" r="2.2" fill="#2b2833"/><ellipse cx="0" cy="-8" rx="3.5" ry="2.6" fill="#2b2833"/><path d="M-10 0c6 4 14 4 20 0" stroke="#6c55b8" stroke-width="4" fill="none" stroke-linecap="round"/></g>
+   </g><rect x="30" y="30" width="300" height="220" rx="18" fill="none" stroke="#2b2833" stroke-width="3"/>
+    <circle cx="300" cy="54" r="16" fill="#6c55b8"/><text x="300" y="61" text-anchor="middle" font-family="Fredoka" font-weight="700" font-size="18" fill="#fff">1</text></g>
+   <g class="hot on" data-r="2"><g clip-path="url(#c2)">
+    <rect x="350" y="30" width="180" height="220" fill="url(#napbg)"/><rect x="350" y="30" width="180" height="220" fill="url(#lamp)"/>
+    <path d="M500 30v36" stroke="#fbf8f2" stroke-opacity=".6" stroke-width="2"/><path d="M486 66h28l-6 14h-16z" fill="#ffe7b0"/>
+    <path d="M350 180h180v70H350z" fill="#2f2754" opacity=".55"/>
+    <g filter="url(#ds)"><ellipse cx="410" cy="196" rx="44" ry="22" fill="url(#bed)"/><ellipse cx="410" cy="192" rx="32" ry="14" fill="#c4b3f0"/>
+     <path d="M384 192c0-14 14-22 28-20 16 2 26 10 24 20-2 8-14 12-28 12s-24-4-24-12z" fill="url(#furS)"/><path d="M420 176c6-6 14-4 16 2-6 2-10 2-16-2z" fill="#c9773a"/><path d="M396 188c3 2 7 2 10 0" stroke="#2b2833" stroke-width="2" fill="none" stroke-linecap="round"/><path d="M432 196c8 0 12 6 6 10" stroke="#d98a43" stroke-width="6" fill="none" stroke-linecap="round"/></g>
+    <g filter="url(#ds)"><ellipse cx="482" cy="140" rx="34" ry="17" fill="url(#bed)"/><ellipse cx="482" cy="137" rx="24" ry="10" fill="#cfe3a6"/></g>
+    <g fill="#fbf8f2" opacity=".8"><path d="M372 70h8l-8 8h8M386 56h6l-6 6h6" stroke="#fbf8f2" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/></g>
+   </g><rect x="350" y="30" width="180" height="220" rx="18" fill="none" stroke="#2b2833" stroke-width="3"/>
+    <circle cx="506" cy="226" r="16" fill="#6c55b8"/><text x="506" y="233" text-anchor="middle" font-family="Fredoka" font-weight="700" font-size="18" fill="#fff">2</text></g>
+   <g class="hot on" data-r="3"><g clip-path="url(#c3)">
+    <rect x="30" y="270" width="500" height="120" fill="#d8ecf6"/><rect x="30" y="304" width="500" height="86" fill="url(#lawn)"/>
+    <g fill="#fbf8f2" stroke="#cfc3ad" stroke-width="1.5"><rect x="40" y="282" width="8" height="34" rx="2"/><rect x="70" y="282" width="8" height="34" rx="2"/><rect x="100" y="282" width="8" height="34" rx="2"/><rect x="130" y="282" width="8" height="34" rx="2"/><rect x="160" y="282" width="8" height="34" rx="2"/><rect x="190" y="282" width="8" height="34" rx="2"/><rect x="220" y="282" width="8" height="34" rx="2"/><rect x="250" y="282" width="8" height="34" rx="2"/><rect x="280" y="282" width="8" height="34" rx="2"/><rect x="310" y="282" width="8" height="34" rx="2"/><rect x="340" y="282" width="8" height="34" rx="2"/><rect x="370" y="282" width="8" height="34" rx="2"/><rect x="400" y="282" width="8" height="34" rx="2"/><rect x="430" y="282" width="8" height="34" rx="2"/><rect x="460" y="282" width="8" height="34" rx="2"/><rect x="490" y="282" width="8" height="34" rx="2"/><rect x="30" y="292" width="500" height="6" rx="2"/></g>
+    <g filter="url(#ds)"><circle cx="76" cy="296" r="22" fill="#7fb35a"/><circle cx="98" cy="290" r="18" fill="#93c46a"/><rect x="84" y="308" width="6" height="16" fill="#9a6a3c"/></g>
+    <g stroke="#7aa94a" stroke-width="2.4" stroke-linecap="round"><path d="M150 360l-2-8M156 360l2-7M260 372l-2-8M266 372l2-7M480 370l-2-8M486 370l2-7"/></g>
+    <g filter="url(#ds)"><ellipse cx="400" cy="350" rx="80" ry="26" fill="#fbf8f2"/><ellipse cx="400" cy="348" rx="68" ry="19" fill="url(#pool)"/><path d="M360 346c10-4 20-4 30 0s20 4 30 0M380 356c8-3 16-3 24 0" stroke="#fff" stroke-width="2.4" fill="none" stroke-linecap="round" opacity=".8"/></g>
+    <g filter="url(#ds)"><circle cx="230" cy="350" r="11" fill="#ffd95a"/><path d="M222 344c5 4 5 12 0 16M238 344c-5 4-5 12 0 16" stroke="#fbf8f2" stroke-width="2" fill="none"/></g>
+    <path d="M120 372c40-30 90-30 130 0" stroke="#fbf8f2" stroke-width="5" fill="none" stroke-linecap="round" stroke-dasharray="1 12" opacity=".9"/>
+   </g><rect x="30" y="270" width="500" height="120" rx="18" fill="none" stroke="#2b2833" stroke-width="3"/>
+    <circle cx="506" cy="294" r="16" fill="#6c55b8"/><text x="506" y="301" text-anchor="middle" font-family="Fredoka" font-weight="700" font-size="18" fill="#fff">3</text></g>
+  </svg>
+  <div>
+   <div class="sh" style="text-align:left;margin:0 0 26px"><small>OUR SPACE</small><h2>미끄럽지 않은 바닥,<br>따로 쉬는 방</h2></div>
+   <div class="rooms" id="rooms">
+    <div class="room" data-r="1"><span class="n" style="background:#f3e6d3">1</span><div><b>실내 놀이방</b><p>쿠션 바닥재 위에 터널 · 계단 · 노즈워크 매트</p></div></div>
+    <div class="room" data-r="2"><span class="n" style="background:#e9e1fb">2</span><div><b>낮잠방</b><p>조명을 낮춘 조용한 방, 아이별 개인 방석</p></div></div>
+    <div class="room" data-r="3"><span class="n" style="background:#cfe3a6">3</span><div><b>옥상 잔디 마당</b><p>울타리 안 잔디밭과 여름 물놀이 풀</p></div></div>
+   </div>
+  </div>
+ </div>
+</section>
+
+<section class="check">
+ <div class="in">
+  <div class="sh"><small>BEFORE YOU COME</small><h2>체험 전에 확인해 주세요</h2></div>
+  <div class="ck">
+   <div><i><svg viewBox="0 0 24 24"><path d="M9 3h6v4H9zM6 5h3M15 5h3v16H6V5"/><path d="M9 13l2 2 4-4"/></svg></i><b>예방접종 수첩</b><p>종합백신 · 광견병 접종 기록을 사진으로 보내 주세요.</p></div>
+   <div><i><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></i><b>생후 5개월 이상</b><p>접종을 마친 5개월 이상 친구부터 함께할 수 있어요.</p></div>
+   <div><i><svg viewBox="0 0 24 24"><path d="M3 12h18l-2 7H5z"/><path d="M7 12c0-3 2-5 5-5s5 2 5 5"/><path d="M10 5l1 2M14 4l-1 3"/></svg></i><b>사료 · 간식 지참</b><p>평소 먹던 사료 한 끼와 간식을 지퍼백에 담아 주세요.</p></div>
+   <div><i><svg viewBox="0 0 24 24"><path d="M4 20c0-4 4-6 8-6s8 2 8 6"/><circle cx="12" cy="8" r="4"/></svg></i><b>성향 메모</b><p>무서워하는 소리, 좋아하는 놀이를 알려 주면 좋아요.</p></div>
+  </div>
+ </div>
+</section>
+
+<section class="apply" id="apply">
+ <div class="in">
+  <div class="lft">
+   <small class="fr" style="font-weight:600;font-size:14px;letter-spacing:.18em;color:var(--lilD)">BOOK A TRIAL DAY</small>
+   <h2 style="margin-top:10px">체험 날짜를<br>골라 주세요</h2>
+   <p>신청하시면 담당 선생님이 하루 안에 연락드려 날짜와 시간을 확정해요. 결제는 체험 당일 현장에서 합니다.</p>
+   <ul class="sum">
+    <li><span>정규 1일 등원</span><span>35,000원</span></li>
+    <li><span>첫 등원 체험 할인</span><span>− 25,100원</span></li>
+    <li><span>체험 당일 결제</span><b>9,900원</b></li>
+   </ul>
+   <ol class="flow"><li><i>1</i><div><b>신청서 보내기</b><span>1분이면 끝나요</span></div></li><li><i>2</i><div><b>선생님 연락</b><span>하루 안에 날짜 · 시간 확정</span></div></li><li><i>3</i><div><b>체험 당일 등원</b><span>현장에서 9,900원 결제</span></div></li></ol>
+  </div>
+  <form id="fm" novalidate>
+   <div class="fwrap">
+    <div class="row">
+     <div class="f"><label for="pn">보호자 이름</label><input id="pn" placeholder="홍길동" required></div>
+     <div class="f"><label for="ph">연락처</label><input id="ph" type="tel" placeholder="010-0000-0000" required></div>
+    </div>
+    <div class="row">
+     <div class="f"><label for="dn">반려견 이름</label><input id="dn" placeholder="예: 보리" required></div>
+     <div class="f"><label for="br">견종 · 크기</label><select id="br"><option>소형견 (7kg 미만)</option><option>중형견 (7~15kg)</option><option>잘 모르겠어요</option></select></div>
+    </div>
+    <div class="f"><span class="lb">희망 날짜</span><div class="seg dates" id="dates"></div><input type="hidden" id="dt"></div>
+    <div class="f"><span class="lb">희망 시간</span>
+     <div class="seg">
+      <label><input type="radio" name="tm" value="종일 09:00–19:00" checked><span>종일<small>09:00 – 19:00</small></span></label>
+      <label><input type="radio" name="tm" value="반일 09:00–14:00"><span>오전 반일<small>09:00 – 14:00</small></span></label>
+      <label><input type="radio" name="tm" value="반일 14:00–19:00"><span>오후 반일<small>14:00 – 19:00</small></span></label>
+     </div>
+    </div>
+    <label class="agree"><input type="checkbox" id="ag"><span>상담 연락을 위한 개인정보(이름 · 연락처) 수집에 동의합니다.</span></label>
+    <button class="cta" type="submit">1일 체험 신청하기</button>
+    <p id="err" style="color:#c2410c;font-size:14px;font-weight:700;margin-top:12px;min-height:20px;text-align:center"></p>
+   </div>
+   <div class="done" id="done">
+    <svg viewBox="0 0 120 120"><circle cx="60" cy="60" r="56" fill="#e9e1fb"/><path d="M60 22l9 18 20 3-14 14 3 20-18-9-18 9 3-20-14-14 20-3z" fill="#c4b3f0"/><path d="M42 62l12 12 24-26" stroke="#6c55b8" stroke-width="7" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    <h3>신청이 접수되었어요</h3>
+    <p>하루 안에 담당 선생님이 연락드릴게요.</p>
+    <div class="tk2" id="tk2"></div>
+   </div>
+  </form>
+ </div>
+</section>
+
+<section style="padding-top:20px">
+ <div class="in">
+  <div class="sh"><small>FAQ</small><h2>자주 묻는 질문</h2></div>
+  <div class="faq" id="faq">
+   <div class="q"><button>체험 중에 적응을 못 하면 어떻게 하나요?<i><svg viewBox="0 0 14 14"><path d="M7 1v12M1 7h12"/></svg></i></button><div class="a"><p>처음 한두 시간은 선생님 곁에서 따로 쉬며 천천히 적응해요. 계속 불안해하면 보호자께 연락드려 일찍 하원할 수 있고, 이 경우 체험비는 받지 않습니다.</p></div></div>
+   <div class="q"><button>중성화를 하지 않아도 등원할 수 있나요?<i><svg viewBox="0 0 14 14"><path d="M7 1v12M1 7h12"/></svg></i></button><div class="a"><p>네, 가능합니다. 다만 생리 중인 친구는 그 기간에 등원을 쉬어 주세요.</p></div></div>
+   <div class="q"><button>체험 후 정규 등원은 어떻게 신청하나요?<i><svg viewBox="0 0 14 14"><path d="M7 1v12M1 7h12"/></svg></i></button><div class="a"><p>하원할 때 선생님이 반 배정 의견을 알려 드려요. 주 2회 · 3회 · 5회 중에서 고르시면 됩니다.</p></div></div>
+   <div class="q"><button>픽업은 어디까지 가능한가요?<i><svg viewBox="0 0 14 14"><path d="M7 1v12M1 7h12"/></svg></i></button><div class="a"><p>유치원 반경 3km 안이면 체험 날 등원 또는 하원 중 한 번을 무료로 해 드려요. 그 외 지역은 상담 때 알려 주세요.</p></div></div>
+  </div>
+ </div>
+</section>
+
+<footer><div class="in ft">
+ <div><a href="#" class="logo"><svg viewBox="0 0 48 48"><circle cx="24" cy="24" r="22" fill="#c4b3f0"/><path d="M24 9l3.6 7.4 8.1 1.2-5.9 5.7 1.4 8.1L24 27.6l-7.2 3.8 1.4-8.1-5.9-5.7 8.1-1.2z" fill="#fbf8f2"/></svg><span><b>꼬리별</b><small>PUPPY DAYCARE</small></span></a><p style="margin-top:12px">강아지 유치원 · 데이케어</p></div>
+ <div><p>상담 000-0000-0000 · 카카오톡 ID: example<br>평일 09:00 – 19:00 · 토요일 10:00 – 17:00</p></div>
+</div></footer>
+
+<div class="mbar"><div>첫 등원 체험<b>9,900원</b></div><a href="#apply" class="cta">체험 신청</a></div>
+
+<script>
+(function(){
+ // rooms highlight
+ var plan=document.getElementById('plan'),rooms=document.querySelectorAll('.room');
+ function pick(r){plan.classList.add('dim');plan.querySelectorAll('.hot').forEach(function(g){g.classList.toggle('on',g.dataset.r===r)});rooms.forEach(function(x){x.classList.toggle('on',x.dataset.r===r)})}
+ rooms.forEach(function(x){x.addEventListener('click',function(){pick(x.dataset.r)});x.addEventListener('mouseenter',function(){pick(x.dataset.r)})});
+ document.getElementById('rooms').addEventListener('mouseleave',function(){plan.classList.remove('dim');rooms.forEach(function(x){x.classList.remove('on')})});
+ // faq
+ document.querySelectorAll('.q button').forEach(function(b){b.addEventListener('click',function(){var q=b.parentNode,a=q.querySelector('.a'),o=q.classList.toggle('open');a.style.maxHeight=o?a.scrollHeight+'px':'0'})});
+ // date min
+ var dt=document.getElementById('dt'),box=document.getElementById('dates'),W='일월화수목금토',h='',n=0,d=new Date();while(n<6){d.setDate(d.getDate()+1);if(d.getDay()===0)continue;var v=(d.getMonth()+1)+'월 '+d.getDate()+'일 ('+W[d.getDay()]+')';h+='<label><input type="radio" name="dd" value="'+v+'"'+(n===0?' checked':'')+'><span><small>'+(d.getMonth()+1)+'월 · '+W[d.getDay()]+'</small><b>'+d.getDate()+'</b></span></label>';if(n===0)dt.value=v;n++}box.innerHTML=h;box.addEventListener('change',function(e){dt.value=e.target.value});
+ // form
+ document.getElementById('fm').addEventListener('submit',function(e){e.preventDefault();var err=document.getElementById('err');
+  var pn=pn_.value.trim(),ph=ph_.value.trim(),dn=dn_.value.trim();
+  if(!pn||!ph||!dn||!dt.value){err.textContent='이름, 연락처, 반려견 이름을 입력해 주세요.';return}
+  if(!document.getElementById('ag').checked){err.textContent='개인정보 수집에 동의해 주세요.';return}
+  var tm=document.querySelector('input[name=tm]:checked').value;
+  document.getElementById('tk2').innerHTML='반려견 · <b>'+dn.replace(/</g,'')+'</b><br>날짜 · '+dt.value+'<br>시간 · '+tm+'<br>체험비 · 9,900원 (당일 결제)';
+  this.querySelector('.fwrap').style.display='none';document.getElementById('done').style.display='block'});
+ var pn_=document.getElementById('pn'),ph_=document.getElementById('ph'),dn_=document.getElementById('dn');
+})();
+</script>
+</body>
+</html>

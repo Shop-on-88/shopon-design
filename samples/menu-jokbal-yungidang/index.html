@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>윤기당 · 족발·보쌈 메뉴판 디자인</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600&family=Nanum+Myeongjo:wght@700;800&family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{--nacre:linear-gradient(100deg,#f3c8d6 0%,#c9e8e1 24%,#d9d1f4 46%,#f6e3b8 68%,#b9e1ef 100%)}
+body{font-family:'Noto Sans KR',sans-serif;background:#100c0b;color:#efe6d6;word-break:keep-all;-webkit-font-smoothing:antialiased;
+ background-image:radial-gradient(ellipse 70% 45% at 15% 0%,rgba(217,209,244,.10),transparent 70%),radial-gradient(ellipse 60% 40% at 90% 10%,rgba(201,232,225,.08),transparent 70%)}
+.wrap{max-width:1180px;margin:0 auto;padding:44px 20px 120px}
+.hd{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:18px;margin-bottom:32px}
+.hd small{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:15px;letter-spacing:.3em;background:var(--nacre);-webkit-background-clip:text;background-clip:text;color:transparent}
+.hd h1{font-family:'Nanum Myeongjo',serif;font-weight:800;font-size:clamp(30px,4.2vw,44px);margin-top:8px;line-height:1.25}
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px}
+.chips span{font-size:13px;font-weight:500;border:1px solid rgba(239,230,214,.3);color:#d8cdbb;padding:5px 12px;border-radius:2px}
+.cta{display:inline-flex;align-items:center;gap:8px;height:52px;padding:0 26px;border-radius:2px;background:var(--nacre);color:#100c0b;font-weight:700;font-size:15px;text-decoration:none;transition:.2s;white-space:nowrap}
+.cta:hover{filter:brightness(1.08)}
+.cta svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.view{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,.75fr);gap:28px;align-items:start}
+figure{background:#1c1412;padding:10px;border-radius:3px;box-shadow:0 30px 60px -26px rgba(0,0,0,.85);border:1px solid rgba(239,230,214,.14)}
+figure a{display:block}
+figure img{display:block;width:100%;height:auto}
+figcaption{font-size:13px;color:#b9ab98;padding:10px 4px 2px;display:flex;flex-wrap:wrap;justify-content:space-between;gap:4px 10px}
+.side{display:grid;gap:16px;position:sticky;top:24px}
+.zoom{border-radius:3px;overflow:hidden;background:#1c1412;border:1px solid rgba(239,230,214,.14)}
+.zoom div{aspect-ratio:1/1;background:url(page1.png) no-repeat}
+.zoom p{font-size:13px;color:#b9ab98;padding:10px 12px}
+.info{background:#efe6d6;color:#100c0b;border-radius:3px;padding:22px}
+.info h2{font-family:'Nanum Myeongjo',serif;font-weight:800;font-size:21px;margin-bottom:10px}
+.info li{list-style:none;font-size:14px;line-height:1.9;display:flex;gap:10px}
+.info li:before{content:"";width:8px;height:8px;background:linear-gradient(135deg,#e9a9bf,#8fcfc2,#b3a8e6);margin-top:9px;flex:none;transform:rotate(45deg)}
+.bar{position:fixed;left:0;right:0;bottom:0;background:rgba(16,12,11,.96);border-top:1px solid rgba(239,230,214,.18);padding:12px 20px;display:flex;justify-content:center;align-items:center;gap:18px;flex-wrap:wrap}
+.bar p{font-size:14px;color:#d8cdbb}
+.bar .cta{height:46px}
+@media(max-width:860px){.view{grid-template-columns:1fr}.side{position:static;grid-template-columns:1fr 1fr}.info{grid-column:span 2}}
+@media(max-width:620px){.hd .cta{display:none}.bar p{display:none}.bar .cta{width:100%;justify-content:center}.side{grid-template-columns:1fr}.info{grid-column:auto}}
+</style>
+</head>
+<body>
+<div class="wrap">
+ <div class="hd">
+  <div>
+   <small>MENU DESIGN · SD-MN13</small>
+   <h1>윤기당 족발·보쌈 메뉴판</h1>
+   <div class="chips"><span>A4 세로 · 1페이지</span><span>족발 · 보쌈</span><span>옻칠 블랙 & 자개</span><span>원화 가격</span><span>인쇄 · 웹 겸용</span></div>
+  </div>
+  <a class="cta" href="https://design.shoponph.online/#inquiry">이 디자인으로 상담하기 <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+ </div>
+ <div class="view">
+  <figure><a href="page1.png" target="_blank" rel="noopener"><img src="page1.png" alt="윤기당 족발·보쌈 메뉴판" width="2480" height="3508"></a><figcaption><span>족발 · 보쌈 · 반반 · 곁들임 · 주류</span><span style="white-space:nowrap">눌러서 크게 보기</span></figcaption></figure>
+  <div class="side">
+   <div class="zoom"><img src="detail-platter.jpg" alt="족발 한 상 일러스트 부분 확대" width="1080" height="864" style="display:block;width:100%;height:auto"><p>족발 한 판 일러스트 부분</p></div>
+   <div class="zoom"><div style="background-position:12% 62%;background-size:200%"></div><p>中 · 大 가격표 부분</p></div>
+   <div class="info"><h2>이 메뉴판의 구성</h2><ul><li>옻칠 같은 검정 바탕에 자개빛 선 장식</li><li>대표 메뉴를 그림과 함께 크게 소개</li><li>中 · 大 두 가지 가격을 한눈에</li><li>원산지 · 영업시간 · 포장 안내 칸 포함</li></ul></div>
+  </div>
+ </div>
+</div>
+<div class="bar"><p>우리 가게 메뉴판도 이런 고급스러운 분위기로 만들어 보세요</p><a class="cta" href="https://design.shoponph.online/#inquiry">이 디자인으로 상담하기</a></div>
+</body>
+</html>
