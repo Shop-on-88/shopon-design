@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>한끼곳간 · 마닐라 반찬 정기배송 첫 주 체험</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Gowun+Dodum&family=Noto+Sans+KR:wght@400;500;700;900&family=Outfit:wght@600;700&display=swap" rel="stylesheet">
+<style>
+:root{--sage:#3f6b4a;--sage2:#2d5237;--leaf:#dfe9d6;--leaf2:#eef3e8;--yolk:#f6bf3a;--yolk2:#ffe28a;--cream:#fdfaf3;--ink:#1f2b22;--mute:#66705f;--red:#d2482e;--line:#dfe3d4}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Noto Sans KR',sans-serif;background:var(--cream);color:var(--ink);word-break:keep-all;-webkit-font-smoothing:antialiased;line-height:1.6;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+.gd{font-family:'Gowun Dodum',sans-serif}
+.wrap{max-width:1160px;margin:0 auto;padding:0 28px}
+.ico{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;flex:none}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;height:56px;padding:0 30px;border-radius:16px;font-weight:700;font-size:16px;border:0;cursor:pointer;font-family:inherit;transition:.2s;white-space:nowrap}
+.btn-y{background:var(--yolk);color:var(--ink);box-shadow:0 6px 0 #d49b17}
+.btn-y:hover{transform:translateY(2px);box-shadow:0 4px 0 #d49b17}
+.btn-g{background:var(--sage);color:#fff}
+.btn-g:hover{background:var(--sage2)}
+
+.top{position:sticky;top:0;z-index:30;background:rgba(253,250,243,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.top .wrap{display:flex;justify-content:space-between;align-items:center;height:70px}
+.logo{display:flex;align-items:center;gap:10px;font-family:'Gowun Dodum';font-size:24px;font-weight:700;color:var(--sage2)}
+.logo small{font-family:'Noto Sans KR';font-size:12px;color:var(--mute);font-weight:500;margin-left:4px}
+.top .btn{height:44px;padding:0 20px;font-size:14.5px;border-radius:12px;box-shadow:none}
+
+.hero{background:var(--leaf2);position:relative;overflow:hidden}
+.hero:before{content:"";position:absolute;right:-200px;top:-200px;width:700px;height:700px;border-radius:50%;background:var(--leaf)}
+.hero .wrap{position:relative;display:grid;grid-template-columns:1fr 1.05fr;gap:30px;align-items:center;padding-top:64px;padding-bottom:70px}
+.pill{display:inline-flex;align-items:center;gap:8px;background:#fff;border:1.5px solid var(--sage);color:var(--sage2);font-size:14px;font-weight:700;padding:7px 16px;border-radius:30px}
+.pill i{width:8px;height:8px;border-radius:50%;background:var(--red)}
+.hero h1{font-family:'Gowun Dodum';font-weight:400;font-size:clamp(38px,5vw,62px);line-height:1.22;letter-spacing:-.02em;margin:22px 0 20px;color:var(--ink)}
+.hero h1 b{font-weight:400;color:var(--sage);background:linear-gradient(transparent 66%,var(--yolk2) 66%,var(--yolk2) 90%,transparent 90%)}
+.hero p.lead{font-size:18px;color:var(--mute);max-width:470px}
+.offer{display:flex;align-items:center;gap:20px;background:#fff;border-radius:22px;padding:18px 22px;margin:30px 0 26px;box-shadow:0 20px 40px -26px rgba(45,82,55,.45);max-width:480px}
+.offer .pct{width:84px;height:84px;border-radius:50%;background:var(--red);color:#fff;display:grid;place-items:center;text-align:center;font-family:'Outfit';font-weight:700;font-size:28px;line-height:1;flex:none}
+.offer .pct small{display:block;font-family:'Noto Sans KR';font-size:12px;font-weight:700;margin-top:3px}
+.offer .t{font-size:15px;color:var(--mute);line-height:1.45}
+.offer .t b{display:block;font-size:17px;color:var(--ink)}
+.offer .pr{margin-top:4px;display:flex;align-items:baseline;gap:10px;flex-wrap:wrap}
+.offer .pr s{color:#9aa292;font-size:16px}
+.offer .pr strong{font-family:'Outfit';font-size:30px;color:var(--sage2);line-height:1}
+.hero .sub{display:flex;gap:18px;margin-top:20px;font-size:14px;color:var(--mute);flex-wrap:wrap}
+.hero .sub span{display:inline-flex;align-items:center;gap:6px}
+.hero .sub .ico{width:17px;height:17px;color:var(--sage)}
+.hero-art svg{width:100%;height:auto;display:block}
+
+section.s{padding:100px 0}
+.st{text-align:center;max-width:640px;margin:0 auto 54px}
+.st small{font-family:'Outfit';font-weight:700;font-size:14px;letter-spacing:.2em;color:var(--red)}
+.st h2{font-family:'Gowun Dodum';font-weight:400;font-size:clamp(30px,3.6vw,44px);line-height:1.3;margin:10px 0 12px;letter-spacing:-.015em}
+.st p{color:var(--mute);font-size:16.5px}
+
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;counter-reset:s}
+.step{background:#fff;border:1px solid var(--line);border-radius:26px;padding:34px 30px;position:relative}
+.step .n{font-family:'Outfit';font-weight:700;font-size:15px;color:var(--sage);background:var(--leaf);display:inline-block;padding:4px 12px;border-radius:20px}
+.step svg.il{width:74px;height:74px;display:block;margin:20px 0 16px}
+.step h3{font-size:21px;font-weight:700;margin-bottom:6px}
+.step p{font-size:15px;color:var(--mute)}
+
+.week{background:var(--sage2);color:#fff}
+.week .st h2{color:#fff}.week .st p{color:#c9dbc9}.week .st small{color:var(--yolk)}
+.dishes{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.dish{background:#365e41;border-radius:24px;padding:22px;display:grid;grid-template-columns:110px 1fr;gap:18px;align-items:center}
+.dish svg{width:110px;height:110px}
+.dish h3{font-family:'Gowun Dodum';font-weight:400;font-size:22px;line-height:1.3}
+.dish p{font-size:14px;color:#c9dbc9;margin-top:4px;line-height:1.5}
+.dish .k{display:inline-block;font-size:12px;font-weight:700;background:var(--yolk);color:var(--ink);padding:2px 9px;border-radius:10px;margin-bottom:6px}
+.wk-note{text-align:center;margin-top:30px;font-size:15px;color:#c9dbc9}
+
+.plans{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;align-items:stretch}
+.plan{background:#fff;border:1.5px solid var(--line);border-radius:28px;padding:34px 30px 30px;display:flex;flex-direction:column}
+.plan.on{border:2.5px solid var(--sage);box-shadow:0 30px 50px -34px rgba(45,82,55,.6);position:relative}
+.plan.on:before{content:"첫 주 30% 할인 적용";position:absolute;top:-15px;left:30px;background:var(--red);color:#fff;font-size:13px;font-weight:700;padding:5px 14px;border-radius:20px}
+.plan h3{font-family:'Gowun Dodum';font-weight:400;font-size:26px}
+.plan .d{font-size:14.5px;color:var(--mute);margin-top:4px}
+.plan .p{margin:24px 0 6px;font-family:'Outfit';font-weight:700;font-size:40px;color:var(--sage2);line-height:1}
+.plan .p span{font-family:'Noto Sans KR';font-size:15px;font-weight:500;color:var(--mute);margin-left:4px}
+.plan .first{font-size:14px;color:var(--red);font-weight:700}
+.plan ul{list-style:none;margin:22px 0 26px;padding-top:20px;border-top:1px dashed var(--line);display:grid;gap:10px;flex:1}
+.plan li{display:flex;gap:10px;font-size:15px;color:var(--ink)}
+.plan li .ico{color:var(--sage);width:18px;height:18px;margin-top:3px}
+.plan .btn{width:100%;height:52px;border-radius:14px}
+.plan:not(.on) .btn{background:var(--leaf);color:var(--sage2)}
+
+.area{padding-top:0}
+.agrid{display:grid;grid-template-columns:1.1fr 1fr;gap:26px}
+.abox{background:var(--leaf2);border-radius:28px;padding:38px}
+.abox h3{font-family:'Gowun Dodum';font-weight:400;font-size:28px;margin-bottom:18px}
+.zones{display:flex;flex-wrap:wrap;gap:10px}
+.zones span{background:#fff;border:1px solid var(--line);border-radius:14px;padding:12px 16px;font-size:15px;font-weight:500}
+.zones span b{display:block;font-size:13px;color:var(--sage);font-weight:700}
+.abox .note{font-size:14.5px;color:var(--mute);margin-top:18px}
+.pack{display:grid;gap:14px}
+.pack div{display:flex;gap:16px;align-items:flex-start;background:#fff;border:1px solid var(--line);border-radius:20px;padding:22px 24px}
+.pack .ic{width:46px;height:46px;border-radius:14px;background:var(--yolk2);display:grid;place-items:center;flex:none}
+.pack .ic .ico{color:var(--sage2);width:22px;height:22px}
+.pack b{display:block;font-size:17px}
+.pack p{font-size:14.5px;color:var(--mute)}
+
+.faq{max-width:820px;margin:0 auto}
+details{background:#fff;border:1px solid var(--line);border-radius:18px;margin-bottom:12px;overflow:hidden}
+summary{list-style:none;cursor:pointer;padding:22px 26px;font-weight:700;font-size:17px;display:flex;justify-content:space-between;gap:16px;align-items:center}
+summary::-webkit-details-marker{display:none}
+summary:after{content:"+";font-family:'Outfit';font-size:26px;color:var(--sage);line-height:1;flex:none}
+details[open] summary:after{content:"–"}
+details p{padding:0 26px 22px;color:var(--mute);font-size:15.5px}
+
+.apply{background:var(--leaf);}
+.apply .wrap{display:grid;grid-template-columns:.9fr 1.1fr;gap:56px;align-items:center}
+.apply h2{font-family:'Gowun Dodum';font-weight:400;font-size:clamp(32px,4vw,48px);line-height:1.25;margin:12px 0 16px}
+.apply .lead{color:var(--mute);font-size:16.5px}
+.apply .big{margin-top:26px;display:flex;align-items:baseline;gap:12px;flex-wrap:wrap}
+.apply .big s{color:#8f9887;font-size:18px}
+.apply .big strong{font-family:'Outfit';font-size:54px;color:var(--sage2);line-height:1}
+.apply .big span{font-size:15px;color:var(--red);font-weight:700}
+form{background:#fff;border-radius:30px;padding:38px;box-shadow:0 34px 60px -40px rgba(45,82,55,.6)}
+.f{margin-bottom:18px}
+label.l{display:block;font-size:14px;font-weight:700;margin-bottom:7px}
+input[type=text],input[type=tel],select{width:100%;height:52px;border:1.5px solid var(--line);border-radius:14px;padding:0 16px;font:inherit;font-size:15px;background:var(--cream);color:var(--ink)}
+input:focus,select:focus{outline:none;border-color:var(--sage);background:#fff}
+.r2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.opts{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.opts input{position:absolute;opacity:0;width:1px;height:1px}
+.opts label{display:block;border:1.5px solid var(--line);border-radius:14px;padding:12px 10px;text-align:center;font-size:14px;font-weight:700;cursor:pointer;background:var(--cream);line-height:1.35}
+.opts label small{display:block;font-weight:500;color:var(--mute);font-size:12.5px}
+.opts input:checked+label{border-color:var(--sage);background:var(--leaf2);color:var(--sage2)}
+.agree{display:flex;gap:10px;align-items:flex-start;font-size:13.5px;color:var(--mute);margin:4px 0 20px}
+.agree input{width:18px;height:18px;margin-top:2px;accent-color:var(--sage)}
+form .btn{width:100%}
+.done{display:none;text-align:center;padding:36px 10px}
+.done svg{width:72px;height:72px;margin:0 auto}
+.done h3{font-family:'Gowun Dodum';font-weight:400;font-size:28px;margin:14px 0 8px}
+.done p{color:var(--mute)}
+form.sent .fields{display:none}form.sent .done{display:block}
+
+footer{background:var(--ink);color:#a8b3a4;font-size:14px;padding:44px 0}
+@media(max-width:640px){footer{padding-bottom:110px}}
+footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:20px}
+footer b{color:#fff;font-family:'Gowun Dodum';font-size:20px;font-weight:400}
+.mbar{display:none}
+
+@media(max-width:980px){
+ .hero .wrap,.apply .wrap,.agrid{grid-template-columns:1fr}
+ .hero .wrap{padding-top:44px}
+ .steps,.plans{grid-template-columns:1fr}
+ .dishes{grid-template-columns:1fr 1fr}
+ .plan.on{margin-top:10px}
+}
+@media(max-width:640px){
+ .wrap{padding:0 20px}
+ .top .btn{display:none}
+ section.s{padding:72px 0}
+ .st{margin-bottom:36px}
+ .hero p.lead{font-size:16px}
+ .offer{gap:14px;padding:16px}
+ .offer .pct{width:70px;height:70px;font-size:23px}
+ .offer .pr strong{font-size:26px}
+ .dishes{grid-template-columns:1fr}
+ .dish{grid-template-columns:90px 1fr}.dish svg{width:90px;height:90px}
+ .abox{padding:28px 22px}
+ form{padding:26px 20px}
+ .r2{grid-template-columns:1fr;gap:0}
+ .opts{grid-template-columns:1fr}
+ .opts label{text-align:left;padding:12px 16px}
+ .mbar{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:40;background:#fff;border-top:1px solid var(--line);padding:10px 16px;gap:12px;align-items:center}
+ .mbar div{font-size:13px;color:var(--mute);line-height:1.3}
+ .mbar div b{display:block;font-family:'Outfit';font-size:20px;color:var(--sage2)}
+ .mbar .btn{flex:1;height:50px;box-shadow:none}
+}
+</style>
+</head>
+<body>
+<header class="top"><div class="wrap">
+ <a class="logo" href="#"><svg width="38" height="38" viewBox="0 0 40 40"><rect x="2" y="8" width="36" height="28" rx="8" fill="#3f6b4a"/><rect x="6" y="12" width="13" height="9" rx="3" fill="#f6bf3a"/><rect x="21" y="12" width="13" height="9" rx="3" fill="#dfe9d6"/><rect x="6" y="23" width="28" height="9" rx="3" fill="#d2482e"/><path d="M14 8c0-4 3-6 6-6s6 2 6 6" stroke="#3f6b4a" stroke-width="2.5" fill="none"/></svg>한끼곳간<small>마닐라 반찬 정기배송</small></a>
+ <a class="btn btn-y" href="#apply">첫 주 체험 신청</a>
+</div></header>
+
+<section class="hero">
+ <div class="wrap">
+  <div>
+   <span class="pill"><i></i>마닐라 · 매주 수/토 배송</span>
+   <h1>타지에서도<br><b>집밥 반찬</b>이<br>매주 문 앞으로</h1>
+   <p class="lead">매일 아침 직접 무치고 조린 한식 반찬 6가지를 보냉 박스에 담아 보내 드려요. 장 보고 요리할 시간은 줄이고, 저녁은 든든하게.</p>
+   <div class="offer">
+    <div class="pct">30%<small>첫 주</small></div>
+    <div class="t"><b>첫 주 체험 할인</b>주 1회 · 반찬 6가지
+     <div class="pr"><s>₱1,190</s><strong>₱833</strong></div></div>
+   </div>
+   <a class="btn btn-y" href="#apply">첫 주 체험 신청하기 <svg class="ico" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+   <div class="sub"><span><svg class="ico" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>약정 없음</span><span><svg class="ico" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>주 단위 일시정지</span><span><svg class="ico" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>보냉 포장</span></div>
+  </div>
+  <div class="hero-art">
+   <svg viewBox="0 0 600 540" aria-label="반찬 6가지가 담긴 도시락 상자 일러스트">
+    <defs>
+     <linearGradient id="box" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffffff"/><stop offset="1" stop-color="#e9ecdf"/></linearGradient>
+     <linearGradient id="lid" x1="0" x2="1"><stop offset="0" stop-color="#3f6b4a"/><stop offset="1" stop-color="#2d5237"/></linearGradient>
+     <radialGradient id="kim" cx=".4" cy=".35"><stop offset="0" stop-color="#f06a4a"/><stop offset="1" stop-color="#b8321c"/></radialGradient>
+     <radialGradient id="jang" cx=".4" cy=".35"><stop offset="0" stop-color="#9a5a32"/><stop offset="1" stop-color="#5a2e14"/></radialGradient>
+     <radialGradient id="egg" cx=".4" cy=".35"><stop offset="0" stop-color="#ffe48a"/><stop offset="1" stop-color="#f1b532"/></radialGradient>
+     <filter id="s1" x="-20%" y="-20%" width="140%" height="150%"><feDropShadow dx="0" dy="18" stdDeviation="14" flood-color="#2d5237" flood-opacity=".28"/></filter>
+     <filter id="s2" x="-20%" y="-20%" width="140%" height="150%"><feDropShadow dx="0" dy="3" stdDeviation="2" flood-color="#000" flood-opacity=".18"/></filter>
+    </defs>
+    <!-- lid behind -->
+    <g transform="rotate(-8 420 120)" filter="url(#s1)"><rect x="300" y="40" width="270" height="170" rx="26" fill="url(#lid)"/><rect x="330" y="70" width="210" height="110" rx="16" fill="none" stroke="#5d8a66" stroke-width="2" stroke-dasharray="6 6"/>
+     <text x="435" y="134" text-anchor="middle" font-family="Gowun Dodum" font-size="30" fill="#fdfaf3">한끼곳간</text><text x="435" y="162" text-anchor="middle" font-family="Outfit" font-weight="700" font-size="13" letter-spacing="3" fill="#f6bf3a">WEEKLY BANCHAN</text></g>
+    <!-- box -->
+    <g filter="url(#s1)">
+     <rect x="40" y="170" width="500" height="330" rx="30" fill="url(#box)"/>
+     <rect x="58" y="188" width="464" height="294" rx="20" fill="#f3f1e7"/>
+    </g>
+    <!-- compartments 3x2 -->
+    <g>
+     <rect x="70" y="200" width="142" height="130" rx="16" fill="#fff" filter="url(#s2)"/>
+     <rect x="219" y="200" width="142" height="130" rx="16" fill="#fff" filter="url(#s2)"/>
+     <rect x="368" y="200" width="142" height="130" rx="16" fill="#fff" filter="url(#s2)"/>
+     <rect x="70" y="340" width="142" height="130" rx="16" fill="#fff" filter="url(#s2)"/>
+     <rect x="219" y="340" width="142" height="130" rx="16" fill="#fff" filter="url(#s2)"/>
+     <rect x="368" y="340" width="142" height="130" rx="16" fill="#fff" filter="url(#s2)"/>
+    </g>
+    <!-- kimchi -->
+    <g><path d="M90 300c-6-40 20-70 60-76 36-4 50 30 46 60-2 20-20 30-52 30s-50-4-54-14z" fill="url(#kim)"/>
+     <path d="M104 260c14-12 40-14 60-4M100 286c20-8 50-8 76 0" stroke="#ffd0c0" stroke-width="5" stroke-linecap="round" fill="none" opacity=".75"/>
+     <path d="M120 240c10 4 18 12 22 22" stroke="#fff3e0" stroke-width="7" stroke-linecap="round" fill="none"/></g>
+    <!-- spinach namul -->
+    <g stroke-linecap="round" stroke-width="7" fill="none"><path d="M236 300c20-30 40-40 70-44" stroke="#2f7a3a"/><path d="M244 280c26-20 60-22 92-10" stroke="#3f9a48"/><path d="M240 260c30-10 58-8 84 6" stroke="#2f7a3a"/><path d="M262 310c20-22 46-30 76-28" stroke="#4fae55"/><path d="M250 238c22 0 44 6 62 20" stroke="#4fae55"/></g>
+    <g fill="#f3e3b8"><circle cx="270" cy="270" r="3"/><circle cx="300" cy="290" r="3"/><circle cx="318" cy="262" r="3"/><circle cx="286" cy="250" r="2.5"/></g>
+    <!-- jangjorim -->
+    <g><ellipse cx="439" cy="292" rx="56" ry="18" fill="#6b3a1c" opacity=".55"/>
+     <g fill="url(#jang)"><rect x="396" y="236" width="40" height="22" rx="6" transform="rotate(-14 416 247)"/><rect x="434" y="230" width="44" height="22" rx="6" transform="rotate(10 456 241)"/><rect x="404" y="262" width="44" height="22" rx="6" transform="rotate(6 426 273)"/><rect x="448" y="262" width="40" height="22" rx="6" transform="rotate(-8 468 273)"/></g>
+     <circle cx="430" cy="252" r="12" fill="#fffef6"/><circle cx="430" cy="252" r="6" fill="#d89a2c"/><circle cx="478" cy="290" r="10" fill="#fffef6"/><circle cx="478" cy="290" r="5" fill="#d89a2c"/>
+     <path d="M400 290l8-6M488 248l8-4" stroke="#3f9a48" stroke-width="4" stroke-linecap="round"/></g>
+    <!-- rolled egg -->
+    <g><ellipse cx="141" cy="448" rx="58" ry="10" fill="#e8e1cc"/>
+     <g transform="translate(84 368)"><rect width="38" height="76" rx="9" fill="#f1b532"/><rect x="3" y="4" width="32" height="68" rx="7" fill="#ffd45e"/><path d="M8 38c0-12 6-20 11-20s11 8 11 20-6 20-11 20-11-8-11-20z" fill="none" stroke="#f1b532" stroke-width="3"/><path d="M13 38c0-6 3-10 6-10s6 4 6 10-3 10-6 10-6-4-6-10z" fill="none" stroke="#f1b532" stroke-width="2.5"/><circle cx="12" cy="20" r="2.6" fill="#e46a3c"/><circle cx="26" cy="58" r="2.6" fill="#3f9a48"/><circle cx="25" cy="16" r="2.2" fill="#3f9a48"/></g>
+     <g transform="translate(124 364)"><rect width="38" height="76" rx="9" fill="#f1b532"/><rect x="3" y="4" width="32" height="68" rx="7" fill="#ffd45e"/><path d="M8 38c0-12 6-20 11-20s11 8 11 20-6 20-11 20-11-8-11-20z" fill="none" stroke="#f1b532" stroke-width="3"/><path d="M13 38c0-6 3-10 6-10s6 4 6 10-3 10-6 10-6-4-6-10z" fill="none" stroke="#f1b532" stroke-width="2.5"/><circle cx="26" cy="22" r="2.6" fill="#e46a3c"/><circle cx="11" cy="56" r="2.6" fill="#e46a3c"/><circle cx="14" cy="64" r="2.2" fill="#3f9a48"/></g>
+     <g transform="translate(164 370)"><rect width="34" height="72" rx="9" fill="#e9a628"/><rect x="3" y="4" width="22" height="64" rx="7" fill="#f6c548"/></g>
+    </g>
+    <!-- bean sprouts -->
+    <g><ellipse cx="290" cy="420" rx="58" ry="40" fill="#efe6c8"/><ellipse cx="290" cy="424" rx="52" ry="33" fill="#e6dab4"/>
+     <g stroke="#c9b57a" stroke-width="7" stroke-linecap="round" fill="none"><path d="M248 432c14-22 34-36 62-40"/><path d="M256 444c20-20 44-30 74-30"/><path d="M246 412c26-10 52-8 78 4"/><path d="M262 400c18 2 40 10 56 22"/><path d="M270 448c16-14 36-20 58-18"/></g>
+     <g stroke="#fbf6e2" stroke-width="5" stroke-linecap="round" fill="none"><path d="M248 432c14-22 34-36 62-40"/><path d="M256 444c20-20 44-30 74-30"/><path d="M246 412c26-10 52-8 78 4"/><path d="M262 400c18 2 40 10 56 22"/><path d="M270 448c16-14 36-20 58-18"/></g>
+     <g fill="#f2c94c" stroke="#d9a72c" stroke-width="1.5"><ellipse cx="312" cy="391" rx="7" ry="5"/><ellipse cx="332" cy="413" rx="7" ry="5"/><ellipse cx="326" cy="417" rx="6" ry="4.5"/><ellipse cx="320" cy="423" rx="7" ry="5"/><ellipse cx="330" cy="430" rx="6" ry="4.5"/></g>
+     <g fill="#3f9a48"><rect x="266" y="418" width="9" height="4" rx="2"/><rect x="290" y="436" width="9" height="4" rx="2"/><rect x="282" y="404" width="8" height="4" rx="2"/></g>
+     <g fill="#d2482e"><circle cx="276" cy="432" r="2.5"/><circle cx="302" cy="412" r="2.5"/></g>
+     <g fill="#fff"><circle cx="270" cy="410" r="1.6"/><circle cx="296" cy="426" r="1.6"/></g></g>
+    <!-- myeolchi -->
+    <g><ellipse cx="439" cy="430" rx="56" ry="20" fill="#a8732c" opacity=".35"/>
+     <g fill="#c79a52" stroke="#8a5f22" stroke-width="1"><path d="M400 400c8-4 20-2 26 4-8 4-18 2-26-4z"/><path d="M430 386c8-4 20-2 26 4-8 4-18 2-26-4z"/><path d="M450 410c8-4 20-2 26 4-8 4-18 2-26-4z"/><path d="M410 426c8-4 20-2 26 4-8 4-18 2-26-4z"/><path d="M444 436c8-4 20-2 26 4-8 4-18 2-26-4z"/><path d="M470 392c8-4 20-2 26 4-8 4-18 2-26-4z"/><path d="M390 446c8-4 20-2 26 4-8 4-18 2-26-4z"/></g>
+     <g fill="#f3e8c6"><circle cx="424" cy="414" r="3"/><circle cx="462" cy="428" r="3"/><circle cx="448" cy="398" r="2.5"/><circle cx="480" cy="414" r="2.5"/></g>
+     <g fill="#3f9a48"><rect x="470" y="440" width="10" height="4" rx="2"/><rect x="404" y="416" width="10" height="4" rx="2"/></g></g>
+    <!-- tag -->
+    <g transform="rotate(6 140 120)" filter="url(#s1)"><rect x="40" y="70" width="200" height="86" rx="18" fill="#f6bf3a"/><text x="140" y="108" text-anchor="middle" font-family="Gowun Dodum" font-size="22" fill="#1f2b22">이번 주 반찬</text><text x="140" y="138" text-anchor="middle" font-family="Outfit" font-weight="700" font-size="20" fill="#2d5237">6 dishes</text></g>
+   </svg>
+  </div>
+ </div>
+</section>
+
+<section class="s">
+ <div class="wrap">
+  <div class="st"><small>HOW IT WORKS</small><h2>신청은 한 번, 반찬은 매주</h2><p>메뉴 고민 없이 받아 보세요. 못 받는 주는 미리 말씀만 주시면 쉬어 갑니다.</p></div>
+  <div class="steps">
+   <div class="step"><span class="n">STEP 1</span>
+    <svg class="il" viewBox="0 0 74 74"><rect x="8" y="10" width="46" height="56" rx="10" fill="#dfe9d6"/><rect x="16" y="22" width="30" height="5" rx="2.5" fill="#3f6b4a"/><rect x="16" y="33" width="22" height="5" rx="2.5" fill="#3f6b4a" opacity=".5"/><rect x="16" y="44" width="26" height="5" rx="2.5" fill="#3f6b4a" opacity=".5"/><circle cx="54" cy="52" r="15" fill="#f6bf3a"/><path d="M47 52l5 5 9-10" stroke="#1f2b22" stroke-width="3.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    <h3>플랜 고르고 신청</h3><p>주 1회·주 2회·가족 세트 중 선택하고 배송 주소를 남겨 주세요.</p></div>
+   <div class="step"><span class="n">STEP 2</span>
+    <svg class="il" viewBox="0 0 74 74"><rect x="6" y="14" width="62" height="50" rx="12" fill="#dfe9d6"/><rect x="6" y="14" width="62" height="14" rx="7" fill="#3f6b4a"/><g fill="#fff"><circle cx="20" cy="40" r="5"/><circle cx="37" cy="40" r="5"/><circle cx="54" cy="40" r="5"/><circle cx="20" cy="54" r="5"/></g><circle cx="37" cy="54" r="7" fill="#d2482e"/><rect x="18" y="8" width="5" height="12" rx="2.5" fill="#2d5237"/><rect x="51" y="8" width="5" height="12" rx="2.5" fill="#2d5237"/></svg>
+    <h3>월요일, 메뉴 안내</h3><p>매주 월요일 카카오톡으로 그 주 반찬 6가지를 미리 알려 드려요.</p></div>
+   <div class="step"><span class="n">STEP 3</span>
+    <svg class="il" viewBox="0 0 74 74"><rect x="4" y="24" width="40" height="30" rx="6" fill="#3f6b4a"/><path d="M44 32h14l10 12v10H44z" fill="#2d5237"/><path d="M50 36h7l6 8H50z" fill="#dfe9d6"/><circle cx="16" cy="56" r="7" fill="#1f2b22"/><circle cx="16" cy="56" r="3" fill="#f6bf3a"/><circle cx="56" cy="56" r="7" fill="#1f2b22"/><circle cx="56" cy="56" r="3" fill="#f6bf3a"/><rect x="12" y="32" width="22" height="12" rx="3" fill="#f6bf3a"/></svg>
+    <h3>수·토요일 배송</h3><p>오후 4시–8시 사이 보냉 박스로 문 앞까지 가져다 드립니다.</p></div>
+  </div>
+ </div>
+</section>
+
+<section class="s week">
+ <div class="wrap">
+  <div class="st"><small>THIS WEEK</small><h2>이번 주 곳간 반찬</h2><p>반찬은 매주 바뀌고, 맵지 않은 반찬을 2가지 이상 꼭 넣어요.</p></div>
+  <div class="dishes">
+   <div class="dish"><svg viewBox="0 0 110 110"><circle cx="55" cy="58" r="48" fill="#284a31"/><circle cx="55" cy="55" r="44" fill="#f7f4ea"/><path d="M28 66c-4-22 10-38 32-40 20-2 28 16 26 32-2 12-12 16-30 16s-26-2-28-8z" fill="#d0432a"/><path d="M38 46c8-6 22-8 34-2M34 60c12-4 28-4 42 0" stroke="#ffcab8" stroke-width="3.5" stroke-linecap="round" fill="none"/></svg><div><span class="k">조금 매워요</span><h3>배추 겉절이</h3><p>그날 버무린 아삭한 겉절이</p></div></div>
+   <div class="dish"><svg viewBox="0 0 110 110"><circle cx="55" cy="58" r="48" fill="#284a31"/><circle cx="55" cy="55" r="44" fill="#f7f4ea"/><g fill="#6b3a1c"><rect x="30" y="40" width="22" height="14" rx="4" transform="rotate(-10 41 47)"/><rect x="54" y="38" width="24" height="14" rx="4" transform="rotate(8 66 45)"/><rect x="34" y="58" width="24" height="14" rx="4"/><rect x="60" y="58" width="20" height="14" rx="4" transform="rotate(-6 70 65)"/></g><circle cx="48" cy="52" r="8" fill="#fffef6"/><circle cx="48" cy="52" r="4" fill="#d89a2c"/></svg><div><h3>소고기 메추리알 장조림</h3><p>짜지 않게 오래 조린 국민 반찬</p></div></div>
+   <div class="dish"><svg viewBox="0 0 110 110"><circle cx="55" cy="58" r="48" fill="#284a31"/><circle cx="55" cy="55" r="44" fill="#f7f4ea"/><g stroke-width="5" stroke-linecap="round" fill="none"><path d="M30 68c14-20 30-28 50-30" stroke="#2f7a3a"/><path d="M34 54c18-12 38-12 48-4" stroke="#4fae55"/><path d="M40 74c14-14 30-20 44-18" stroke="#3f9a48"/></g><g fill="#f3e3b8"><circle cx="50" cy="58" r="2.5"/><circle cx="66" cy="50" r="2.5"/><circle cx="60" cy="66" r="2.5"/></g></svg><div><h3>시금치 나물</h3><p>참기름과 깨로 고소하게</p></div></div>
+   <div class="dish"><svg viewBox="0 0 110 110"><circle cx="55" cy="58" r="48" fill="#284a31"/><circle cx="55" cy="55" r="44" fill="#f7f4ea"/><rect x="26" y="40" width="20" height="32" rx="6" fill="#f6c548"/><rect x="46" y="38" width="20" height="34" rx="6" fill="#f1b532"/><rect x="66" y="40" width="20" height="32" rx="6" fill="#f6c548"/><g fill="#e46a3c"><circle cx="36" cy="52" r="2.5"/><circle cx="76" cy="60" r="2.5"/></g><g fill="#3f9a48"><circle cx="56" cy="62" r="2.5"/><circle cx="58" cy="48" r="2"/></g></svg><div><span class="k" style="background:#dfe9d6">아이도 OK</span><h3>채소 계란말이</h3><p>당근·쪽파를 넣어 두툼하게</p></div></div>
+   <div class="dish"><svg viewBox="0 0 110 110"><circle cx="55" cy="58" r="48" fill="#284a31"/><circle cx="55" cy="55" r="44" fill="#f7f4ea"/><g fill="#c79a52" stroke="#8a5f22" stroke-width=".8"><path d="M30 50c6-3 14-2 18 3-6 3-12 2-18-3z"/><path d="M52 42c6-3 14-2 18 3-6 3-12 2-18-3z"/><path d="M60 60c6-3 14-2 18 3-6 3-12 2-18-3z"/><path d="M36 64c6-3 14-2 18 3-6 3-12 2-18-3z"/><path d="M48 54c6-3 14-2 18 3-6 3-12 2-18-3z"/><path d="M44 74c6-3 14-2 18 3-6 3-12 2-18-3z"/></g><g fill="#3f9a48"><rect x="66" y="48" width="8" height="3" rx="1.5"/><rect x="30" y="58" width="8" height="3" rx="1.5"/></g></svg><div><h3>견과 멸치볶음</h3><p>아몬드를 넣어 바삭하게</p></div></div>
+   <div class="dish"><svg viewBox="0 0 110 110"><circle cx="55" cy="58" r="48" fill="#284a31"/><circle cx="55" cy="55" r="44" fill="#f7f4ea"/><g fill="#8a4a22"><path d="M30 60c4-10 14-16 24-14l-4 20c-8 2-16 0-20-6z"/><path d="M56 44c10-2 22 4 24 14l-20 6z"/><path d="M50 70l22-6c2 10-6 18-16 18-4 0-6-6-6-12z"/></g><g stroke="#d9a86a" stroke-width="2" fill="none" opacity=".8"><path d="M36 58l12-6M62 50l12 6M56 74l12-4"/></g><g fill="#d2482e"><circle cx="46" cy="50" r="2.5"/><circle cx="70" cy="70" r="2.5"/></g></svg><div><span class="k">조금 매워요</span><h3>어묵 고추장 볶음</h3><p>달큰하게 볶은 도시락 반찬</p></div></div>
+  </div>
+  <p class="wk-note">반찬마다 2–3인 기준 한 끼 반 정도 분량이에요.</p>
+ </div>
+</section>
+
+<section class="s" id="plans" style="padding-bottom:30px">
+ <div class="wrap">
+  <div class="st"><small>PLANS</small><h2>우리 집에 맞는 양으로</h2><p>가격은 배송비 포함입니다. 언제든 플랜을 바꾸거나 일시정지할 수 있어요.</p></div>
+  <div class="plans">
+   <div class="plan on"><h3>주 1회</h3><p class="d">혼자·둘이 사는 집</p><div class="p">₱1,190<span>/ 주</span></div><p class="first">첫 주 ₱833</p>
+    <ul><li><svg class="ico" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>반찬 6가지</li><li><svg class="ico" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>수요일 또는 토요일 중 선택</li><li><svg class="ico" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>보냉 박스 회수</li></ul>
+    <a class="btn btn-y" href="#apply" data-plan="p1">이 플랜으로 체험</a></div>
+   <div class="plan"><h3>주 2회</h3><p class="d">매일 저녁을 집에서</p><div class="p">₱2,190<span>/ 주</span></div><p class="first">첫 주 ₱1,533</p>
+    <ul><li><svg class="ico" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>반찬 12가지 (6가지 × 2회)</li><li><svg class="ico" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>수요일 + 토요일 배송</li><li><svg class="ico" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>국 1가지 추가</li></ul>
+    <a class="btn btn-g" href="#apply" data-plan="p2">이 플랜으로 체험</a></div>
+   <div class="plan"><h3>가족 세트</h3><p class="d">4인 이상 · 아이 있는 집</p><div class="p">₱3,290<span>/ 주</span></div><p class="first">첫 주 ₱2,303</p>
+    <ul><li><svg class="ico" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>반찬 12가지 · 넉넉한 양</li><li><svg class="ico" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>안 매운 반찬 비중 높게</li><li><svg class="ico" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>국 2가지 추가</li></ul>
+    <a class="btn btn-g" href="#apply" data-plan="p3">이 플랜으로 체험</a></div>
+  </div>
+ </div>
+</section>
+
+<section class="s area">
+ <div class="wrap">
+  <div class="agrid">
+   <div class="abox">
+    <h3>배송 지역</h3>
+    <div class="zones"><span><b>Taguig</b>BGC · McKinley</span><span><b>Makati</b>Legaspi · Salcedo · Poblacion</span><span><b>Pasig</b>Ortigas · Kapitolyo</span><span><b>Mandaluyong</b>Shaw · Greenfield</span><span><b>Parañaque</b>BF Homes</span></div>
+    <p class="note">그 밖의 지역은 신청서에 주소를 남겨 주시면 가능 여부를 안내드려요.</p>
+   </div>
+   <div class="pack">
+    <div><span class="ic"><svg class="ico" viewBox="0 0 24 24"><path d="M3 8l9-5 9 5v8l-9 5-9-5z"/><path d="M3 8l9 5 9-5M12 13v8"/></svg></span><span><b>보냉 박스 + 아이스팩</b><p>더운 날씨에도 시원하게. 다음 배송 때 박스를 회수해 다시 씁니다.</p></span></div>
+    <div><span class="ic"><svg class="ico" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span><span><b>냉장 4–5일 보관</b><p>용기마다 만든 날짜를 적어 드려요.</p></span></div>
+    <div><span class="ic"><svg class="ico" viewBox="0 0 24 24"><path d="M4 12h16M12 4v16"/></svg></span><span><b>콘도 로비 맡김 가능</b><p>부재 시 경비실·리셉션에 맡기고 사진으로 알려 드려요.</p></span></div>
+   </div>
+  </div>
+ </div>
+</section>
+
+<section class="s" style="padding-top:0">
+ <div class="wrap">
+  <div class="st"><small>FAQ</small><h2>자주 묻는 질문</h2></div>
+  <div class="faq">
+   <details open><summary>첫 주 체험 후 자동으로 정기배송이 되나요?</summary><p>체험 후 카카오톡으로 계속 받으실지 여쭤봐요. 답을 주시기 전까지는 다음 주 배송이 진행되지 않습니다.</p></details>
+   <details><summary>못 먹는 재료가 있으면 빼 주실 수 있나요?</summary><p>신청서에 적어 주시면 해당 재료가 들어간 반찬은 다른 반찬으로 바꿔 보내 드려요.</p></details>
+   <details><summary>결제는 어떻게 하나요?</summary><p>배송 전날까지 계좌이체 또는 e-wallet 송금으로 결제하실 수 있어요. 자세한 안내는 신청 후 메시지로 드립니다.</p></details>
+   <details><summary>한 주 쉬고 싶을 땐요?</summary><p>배송 이틀 전까지 카카오톡으로 말씀 주시면 그 주는 쉬어 갑니다. 횟수 제한은 없어요.</p></details>
+  </div>
+ </div>
+</section>
+
+<section class="s apply" id="apply">
+ <div class="wrap">
+  <div>
+   <span class="pill"><i></i>첫 주 30% 할인</span>
+   <h2>이번 주 반찬,<br>먼저 맛보세요</h2>
+   <p class="lead">신청서를 남겨 주시면 하루 안에 카카오톡으로 배송일과 결제 방법을 안내드려요.</p>
+   <div class="big"><s>₱1,190</s><strong>₱833</strong><span>주 1회 플랜 첫 주</span></div>
+  </div>
+  <form id="af" novalidate>
+   <div class="fields">
+    <div class="r2">
+     <div class="f"><label class="l" for="nm">이름</label><input type="text" id="nm" placeholder="홍길동"></div>
+     <div class="f"><label class="l" for="ct">연락처 또는 카카오톡 ID</label><input type="text" id="ct" placeholder="0900-000-0000 / example"></div>
+    </div>
+    <div class="f"><label class="l" for="ar">배송 지역</label><select id="ar"><option>Taguig · BGC</option><option>Makati</option><option>Pasig · Ortigas</option><option>Mandaluyong</option><option>Parañaque · BF Homes</option><option>기타 지역</option></select></div>
+    <div class="f"><label class="l">플랜</label>
+     <div class="opts">
+      <input type="radio" name="pl" id="p1" checked><label for="p1">주 1회<small>첫 주 ₱833</small></label>
+      <input type="radio" name="pl" id="p2"><label for="p2">주 2회<small>첫 주 ₱1,533</small></label>
+      <input type="radio" name="pl" id="p3"><label for="p3">가족 세트<small>첫 주 ₱2,303</small></label>
+     </div>
+    </div>
+    <label class="agree"><input type="checkbox" id="ag" checked>상담 안내를 위한 연락처 수집에 동의합니다.</label>
+    <button class="btn btn-y" type="submit">첫 주 체험 신청하기</button>
+   </div>
+   <div class="done">
+    <svg viewBox="0 0 72 72"><circle cx="36" cy="36" r="34" fill="#dfe9d6"/><path d="M22 37l10 10 18-20" stroke="#2d5237" stroke-width="5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    <h3>신청이 접수되었어요</h3>
+    <p>하루 안에 카카오톡으로 연락드릴게요.</p>
+   </div>
+  </form>
+ </div>
+</section>
+
+<footer><div class="wrap"><div><b>한끼곳간</b><p style="margin-top:8px">마닐라 한식 반찬 정기배송 · <span style="white-space:nowrap">카카오톡 ID: example</span> · <span style="white-space:nowrap">0900-000-0000</span></p></div><p>© 한끼곳간</p></div></footer>
+
+<div class="mbar"><div>첫 주 체험<b>₱833</b></div><a class="btn btn-y" href="#apply">체험 신청하기</a></div>
+
+<script>
+document.querySelectorAll('[data-plan]').forEach(function(a){a.addEventListener('click',function(){var r=document.getElementById(a.dataset.plan);if(r)r.checked=true})});
+document.getElementById('af').addEventListener('submit',function(e){e.preventDefault();var n=document.getElementById('nm'),c=document.getElementById('ct');if(!n.value.trim()){n.focus();n.style.borderColor='#d2482e';return}if(!c.value.trim()){c.focus();c.style.borderColor='#d2482e';return}this.classList.add('sent')});
+</script>
+</body>
+</html>

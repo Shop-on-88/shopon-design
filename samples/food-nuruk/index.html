@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>누룩당 · 생막걸리와 계절 전</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@700;800&family=Noto+Sans+KR:wght@400;500;700&family=Cormorant+Garamond:ital,wght@1,600&display=swap" rel="stylesheet">
+<style>
+:root{--paper:#f3ebdc;--paper2:#ebe0cc;--ink:#221e1a;--ink2:#4a423a;--mute:#7a6e60;--persim:#2d4a7a;--persim2:#1e3459;--brass:#b3863a;--cream:#fbf7ee;--line:#d8cab2}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Noto Sans KR',sans-serif;background:var(--paper);color:var(--ink);word-break:keep-all;-webkit-font-smoothing:antialiased;line-height:1.65;overflow-x:hidden}
+body:before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.35;z-index:0;
+ background-image:radial-gradient(rgba(120,96,60,.18) 1px,transparent 1.2px),radial-gradient(rgba(120,96,60,.1) 1px,transparent 1.2px);background-size:7px 7px,13px 13px;background-position:0 0,3px 5px}
+a{color:inherit;text-decoration:none}
+.serif{font-family:'Nanum Myeongjo',serif}
+.it{font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:600}
+.wrap{max-width:1200px;margin:0 auto;padding:0 32px;position:relative;z-index:1}
+section{position:relative;z-index:1}
+.ico{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;flex:none}
+
+/* header */
+.hd{position:sticky;top:0;z-index:20;background:rgba(243,235,220,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.hd .wrap{display:flex;align-items:center;justify-content:space-between;height:74px;gap:20px}
+.logo{display:flex;align-items:center;gap:12px}
+.logo b{font-family:'Nanum Myeongjo',serif;font-weight:800;font-size:23px;letter-spacing:.04em}
+.logo small{display:block;font-size:11px;letter-spacing:.32em;color:var(--mute);margin-top:-2px}
+.nav{display:flex;gap:34px;font-size:15px;font-weight:500;color:var(--ink2)}
+.nav a:hover{color:var(--persim)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;height:48px;padding:0 24px;border-radius:2px;font-weight:700;font-size:15px;transition:.2s;cursor:pointer;border:0;font-family:inherit;white-space:nowrap}
+.btn-p{background:var(--persim);color:#fff8ef}
+.btn-p:hover{background:var(--persim2)}
+.btn-o{border:1.5px solid var(--ink);color:var(--ink);background:transparent}
+.btn-o:hover{background:var(--ink);color:var(--paper)}
+.hd .btn{height:42px;padding:0 18px;font-size:14px}
+
+/* hero */
+.hero{padding:70px 0 40px}
+.hero .wrap{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
+.hero .art{order:-1}
+.kicker{display:inline-flex;align-items:center;gap:10px;font-size:13px;font-weight:700;letter-spacing:.2em;color:var(--persim)}
+.kicker:before{content:"";width:28px;height:1.5px;background:currentColor}
+.hero h1{font-family:'Nanum Myeongjo',serif;font-weight:800;font-size:clamp(40px,5.6vw,76px);line-height:1.14;letter-spacing:-.02em;margin:22px 0 24px}
+.hero h1 em{font-style:normal;color:var(--persim);position:relative}
+.hero p.lead{font-size:18px;color:var(--ink2);max-width:500px}
+.hero .acts{display:flex;gap:12px;margin-top:32px;flex-wrap:wrap}
+.hero .facts{display:flex;gap:40px;margin-top:40px;padding-top:22px;border-top:1px solid var(--line);flex-wrap:wrap}
+.hero .facts div{font-size:13px;color:var(--mute)}
+.hero .facts b{display:block;font-family:'Nanum Myeongjo',serif;font-size:24px;color:var(--ink);font-weight:800;line-height:1.3}
+.art{position:relative}
+.art svg{width:100%;height:auto;display:block}
+.seal{position:absolute;top:6%;right:4%;width:96px;height:96px;border-radius:50%;background:var(--persim);color:#fff4e6;display:grid;place-items:center;text-align:center;font-family:'Nanum Myeongjo',serif;font-weight:800;font-size:15px;line-height:1.3;transform:rotate(-8deg);box-shadow:0 10px 24px -10px rgba(169,64,27,.6)}
+
+/* marquee */
+.strip{background:var(--ink);color:var(--paper);overflow:hidden;padding:16px 0;margin-top:30px}
+.strip .tr{display:flex;gap:46px;white-space:nowrap;animation:mq 34s linear infinite;width:max-content}
+.strip span{font-family:'Nanum Myeongjo',serif;font-size:19px;font-weight:700;display:inline-flex;align-items:center;gap:46px}
+.strip span:after{content:"";width:7px;height:7px;background:#d9a441;border-radius:50%}
+@keyframes mq{to{transform:translateX(-50%)}}
+
+/* section heads */
+.sec{padding:110px 0}
+.sh{display:flex;justify-content:space-between;align-items:flex-end;gap:30px;margin-bottom:50px;flex-wrap:wrap}
+.sh .no{font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:600;color:var(--persim);font-size:22px}
+.sh h2{font-family:'Nanum Myeongjo',serif;font-weight:800;font-size:clamp(32px,3.8vw,48px);line-height:1.25;letter-spacing:-.015em;margin-top:6px}
+.sh p{max-width:420px;color:var(--ink2);font-size:16px}
+
+/* story */
+.story .wrap{display:grid;grid-template-columns:.9fr 1.1fr;gap:70px;align-items:center}
+.story .frame{background:var(--cream);border:1px solid var(--line);padding:18px;box-shadow:0 30px 60px -40px rgba(60,40,20,.5)}
+.story .frame svg{display:block;width:100%;height:auto}
+.story .txt h2{font-family:'Nanum Myeongjo',serif;font-weight:800;font-size:clamp(30px,3.4vw,44px);line-height:1.3;margin:10px 0 22px}
+.story .txt p{color:var(--ink2);font-size:16.5px;margin-bottom:14px}
+.pts{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:34px}
+.pts div{border-top:2px solid var(--ink);padding-top:14px}
+.pts b{display:block;font-size:16px;margin-bottom:4px}
+.pts span{font-size:14px;color:var(--mute);line-height:1.55;display:block}
+
+/* drinks */
+.drinks{background:var(--paper2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.dgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.dcard{background:var(--cream);border:1px solid var(--line);padding:26px 26px 24px;display:grid;grid-template-columns:86px 1fr;gap:20px;align-items:center;transition:.25s}
+.dcard:hover{transform:translateY(-4px);box-shadow:0 22px 40px -28px rgba(60,40,20,.55)}
+.dcard svg{width:86px;height:150px}
+.dcard .tag{font-size:12px;font-weight:700;color:var(--persim);letter-spacing:.08em}
+.dcard h3{font-family:'Nanum Myeongjo',serif;font-weight:800;font-size:22px;margin:4px 0 6px;line-height:1.3}
+.dcard p{font-size:14px;color:var(--ink2);line-height:1.55}
+.dcard .meta{display:flex;justify-content:space-between;align-items:baseline;margin-top:14px;padding-top:12px;border-top:1px dashed var(--line);font-size:13px;color:var(--mute)}
+.dcard .meta b{font-family:'Nanum Myeongjo',serif;font-size:19px;color:var(--ink);font-weight:800}
+.taste{display:flex;gap:3px;margin-top:8px;align-items:center;font-size:12px;color:var(--mute)}
+.taste i{width:14px;height:5px;background:var(--line);border-radius:2px}
+.taste i.on{background:var(--brass)}
+.taste em{font-style:normal;margin-right:6px}
+
+/* food */
+.food .wrap{display:block}
+.mcols{display:grid;grid-template-columns:1fr 1fr;gap:0 56px;margin-top:50px}
+.feat{background:var(--ink);color:var(--paper);padding:34px 44px;overflow:hidden;display:grid;grid-template-columns:1.1fr 1fr;gap:44px;align-items:center}
+.feat svg{display:block;width:100%;height:auto;margin:-6px 0 6px}
+.feat .tag{font-size:12px;font-weight:700;letter-spacing:.2em;color:#9fb6e0}
+.feat h3{font-family:'Nanum Myeongjo',serif;font-weight:800;font-size:30px;margin:6px 0 8px}
+.feat p{font-size:15px;color:#cfc4b2}
+.feat .pr{display:flex;justify-content:space-between;align-items:center;margin-top:20px;padding-top:18px;border-top:1px solid #4a423a}
+.feat .pr b{font-family:'Nanum Myeongjo',serif;font-size:26px;font-weight:800}
+.feat .pr span{font-size:13px;background:#d9a441;color:#221e1a!important;padding:5px 12px;color:#fff;font-weight:700}
+.mgroup{margin-bottom:46px}
+.mgroup h3{display:flex;align-items:baseline;gap:12px;font-family:'Nanum Myeongjo',serif;font-weight:800;font-size:24px;padding-bottom:12px;border-bottom:2px solid var(--ink);margin-bottom:6px}
+.mgroup h3 small{font-family:'Noto Sans KR',sans-serif;font-size:13px;color:var(--mute);font-weight:500}
+.mi{display:flex;align-items:baseline;gap:12px;padding:15px 0;border-bottom:1px solid var(--line)}
+.mi .n{font-weight:700;font-size:16.5px}
+.mi .d{display:block;font-size:13.5px;color:var(--mute);font-weight:400;margin-top:2px}
+.mi .dots{flex:1;border-bottom:1.5px dotted #b9aa90;transform:translateY(-5px);min-width:20px}
+.mi .p{font-family:'Nanum Myeongjo',serif;font-weight:800;font-size:18px;white-space:nowrap}
+.mi .new{font-size:11px;font-weight:700;color:var(--persim);border:1px solid var(--persim);padding:1px 6px;margin-left:6px;vertical-align:2px;border-radius:2px}
+
+/* space */
+.space{background:var(--ink);color:var(--paper);overflow:hidden}
+.space .sh h2{color:var(--paper)}
+.space .sh p{color:#c7bba8}
+.sgrid{display:grid;grid-template-columns:1.6fr 1fr;gap:24px}
+.sgrid .big{border:1px solid #3b342d}
+.sgrid .big svg{display:block;width:100%;height:auto}
+.sinfo{display:grid;gap:16px}
+.sinfo div{border:1px solid #3b342d;padding:24px 26px;background:#2a2520}
+.sinfo b{font-family:'Nanum Myeongjo',serif;font-size:21px;font-weight:800;display:flex;justify-content:space-between;align-items:baseline}
+.sinfo b span{font-family:'Noto Sans KR';font-size:14px;color:#9fb6e0;font-weight:700}
+.sinfo p{font-size:14.5px;color:#c7bba8;margin-top:6px}
+
+/* reserve */
+.resv .wrap{display:grid;grid-template-columns:1fr 1.1fr;gap:60px;align-items:start}
+.resv h2{font-family:'Nanum Myeongjo',serif;font-weight:800;font-size:clamp(32px,3.8vw,48px);line-height:1.25;margin:8px 0 18px}
+.resv .note{color:var(--ink2);font-size:16px}
+.resv ul{list-style:none;margin-top:28px;display:grid;gap:12px}
+.resv li{display:flex;gap:12px;font-size:15px;color:var(--ink2);align-items:flex-start}
+.resv li .ico{color:var(--persim);margin-top:4px}
+form{background:var(--cream);border:1px solid var(--line);padding:36px;box-shadow:0 30px 60px -44px rgba(60,40,20,.6)}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+label{display:block;font-size:13px;font-weight:700;color:var(--ink2);margin-bottom:6px}
+.f{margin-bottom:18px}
+input,select{width:100%;height:50px;border:1px solid #cbbda5;background:#fff;padding:0 14px;font:inherit;font-size:15px;color:var(--ink);border-radius:2px}
+input:focus,select:focus{outline:2px solid var(--persim);outline-offset:-1px;border-color:transparent}
+.chipset{display:flex;flex-wrap:wrap;gap:8px}
+.chipset input{position:absolute;opacity:0;width:1px;height:1px}
+.chipset label{margin:0;font-weight:500;font-size:14px;border:1px solid #cbbda5;background:#fff;padding:9px 16px;cursor:pointer;border-radius:2px;color:var(--ink2)}
+.chipset input:checked+label{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+form .btn{width:100%;height:54px;margin-top:6px}
+.done{display:none;text-align:center;padding:30px 10px}
+.done svg{width:60px;height:60px;color:var(--persim);stroke-width:1.5}
+.done h3{font-family:'Nanum Myeongjo',serif;font-weight:800;font-size:26px;margin:14px 0 8px}
+.done p{color:var(--ink2);font-size:15px}
+form.sent .fields{display:none}
+form.sent .done{display:block}
+
+/* visit */
+.visit{padding-top:0}
+.vgrid{display:grid;grid-template-columns:1.25fr 1fr;border:1px solid var(--line);background:var(--cream)}
+.vgrid svg{display:block;width:100%;height:100%;min-height:340px;background:#efe5d2}
+@media(max-width:1000px){.vgrid svg{min-height:0;height:auto}}
+.vinfo{padding:44px 44px;border-left:1px solid var(--line)}
+.vinfo h3{font-family:'Nanum Myeongjo',serif;font-weight:800;font-size:30px;margin-bottom:24px}
+.vinfo dl{display:grid;grid-template-columns:76px 1fr;gap:14px 16px;font-size:15px}
+.vinfo dt{font-weight:700;color:var(--persim)}
+.vinfo dd{color:var(--ink2)}
+
+footer{background:#191613;color:#a99d8b;padding:56px 0 40px;font-size:14px;position:relative;z-index:1}
+footer .wrap{display:flex;justify-content:space-between;gap:30px;flex-wrap:wrap;align-items:flex-end}
+footer .logo b{color:var(--paper)}
+footer p{margin-top:14px}
+
+@media(max-width:1000px){
+ .nav{display:none}
+ .hero .art{order:0}
+ .hero .wrap,.story .wrap,.food .wrap,.resv .wrap{grid-template-columns:1fr;gap:44px}
+ .dgrid{grid-template-columns:1fr 1fr}
+ .sgrid{grid-template-columns:1fr}
+ .feat{grid-template-columns:1fr;gap:10px;padding:28px}
+ .mcols{grid-template-columns:1fr}
+ .vgrid{grid-template-columns:1fr}.vinfo{border-left:0;border-top:1px solid var(--line)}
+}
+@media(max-width:640px){
+ .wrap{padding:0 20px}
+ .hd .wrap{height:64px}
+ .logo b{font-size:20px}
+ .hero{padding:40px 0 20px}
+ .hero p.lead{font-size:16px}
+ .hero .facts{gap:22px}
+ .hero .facts b{font-size:20px}
+ .seal{width:76px;height:76px;font-size:12.5px}
+ .sec{padding:76px 0}
+ .sh{margin-bottom:34px}
+ .dgrid{grid-template-columns:1fr}
+ .pts{grid-template-columns:1fr;gap:12px}
+ .row{grid-template-columns:1fr;gap:0}
+ form{padding:24px 20px}
+ .feat{padding:24px}
+ .vinfo{padding:30px 22px}
+ .strip span{font-size:16px}
+}
+</style>
+</head>
+<body>
+
+<header class="hd">
+ <div class="wrap">
+  <a class="logo" href="#top">
+   <svg width="40" height="40" viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="20" r="19" fill="#221e1a"/><path d="M10 18h20c0 6-4.5 10.5-10 10.5S10 24 10 18z" fill="#f3ebdc"/><path d="M12.5 18c2-1.6 4.4-1.6 7.5 0s5.5 1.6 7.5 0" stroke="#2d4a7a" stroke-width="1.6" fill="none"/><circle cx="26" cy="11.5" r="3" fill="#d9a441"/></svg>
+   <span><b>누룩당</b><small>NURUKDANG</small></span>
+  </a>
+  <nav class="nav"><a href="#story">이야기</a><a href="#drinks">오늘의 술</a><a href="#food">안주</a><a href="#space">공간</a><a href="#visit">오시는 길</a></nav>
+  <a class="btn btn-p" href="#reserve">자리 예약</a>
+ </div>
+</header>
+
+<main id="top">
+<section class="hero">
+ <div class="wrap">
+  <div>
+   <span class="kicker">생막걸리 · 계절 전 · 솥밥</span>
+   <h1>오늘 저녁은<br><em>한 사발</em>의<br>느린 대화</h1>
+   <p class="lead">지역 양조장에서 받아 온 생막걸리와 주문 즉시 부치는 전. 퇴근길 골목 끝, 누룩 향이 나는 작은 술집입니다.</p>
+   <div class="acts"><a class="btn btn-p" href="#reserve">자리 예약하기 <svg class="ico" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a><a class="btn btn-o" href="#drinks">오늘의 술 보기</a></div>
+   <div class="facts"><div><b>12종</b>생막걸리 · 약주</div><div><b>18:00 – 01:00</b>매일 · 월요일 휴무</div><div><b>42석</b>좌식 룸 포함</div></div>
+  </div>
+  <div class="art">
+   <svg viewBox="0 0 560 520" aria-label="막걸리 사발과 주전자, 해물파전 일러스트">
+    <defs>
+     <radialGradient id="moon" cx=".4" cy=".35"><stop offset="0" stop-color="#f3d58e"/><stop offset="1" stop-color="#d9a441"/></radialGradient>
+     <linearGradient id="bowl" x1="0" x2="1"><stop offset="0" stop-color="#e9e1d1"/><stop offset=".45" stop-color="#fffdf8"/><stop offset="1" stop-color="#cfc4ae"/></linearGradient>
+     <radialGradient id="milk" cx=".5" cy=".4"><stop offset="0" stop-color="#fffef8"/><stop offset=".7" stop-color="#f2ead6"/><stop offset="1" stop-color="#ddd0b2"/></radialGradient>
+     <linearGradient id="brass" x1="0" x2="1"><stop offset="0" stop-color="#8a6324"/><stop offset=".35" stop-color="#e2bd72"/><stop offset=".6" stop-color="#c2913f"/><stop offset="1" stop-color="#6e4c18"/></linearGradient>
+     <linearGradient id="tray" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#5a3a24"/><stop offset="1" stop-color="#3a2416"/></linearGradient>
+     <radialGradient id="jeon" cx=".45" cy=".4"><stop offset="0" stop-color="#f1c46a"/><stop offset=".7" stop-color="#d89a3c"/><stop offset="1" stop-color="#a86a22"/></radialGradient>
+     <filter id="sh" x="-20%" y="-20%" width="140%" height="160%"><feDropShadow dx="0" dy="14" stdDeviation="12" flood-color="#3a2416" flood-opacity=".28"/></filter>
+    </defs>
+    <circle cx="390" cy="150" r="118" fill="url(#moon)"/>
+    <!-- brush stroke ground -->
+    <path d="M20 420c90-26 220-34 330-24 70 6 140 2 190-10l-6 34c-90 22-250 26-360 22-60-2-120 4-160 12z" fill="#221e1a" opacity=".9"/>
+    <!-- tray -->
+    <g filter="url(#sh)">
+     <path d="M60 392h440l-26 40H86z" fill="url(#tray)"/>
+     <rect x="60" y="384" width="440" height="12" rx="3" fill="#6d4a30"/>
+    </g>
+    <!-- kettle -->
+    <g filter="url(#sh)">
+     <path d="M118 250c-30 4-52 24-58 44l14 6c8-16 26-30 46-32z" fill="url(#brass)"/>
+     <path d="M262 268c22-6 34-24 36-46 2-18-12-26-22-20" stroke="url(#brass)" stroke-width="10" fill="none" stroke-linecap="round"/>
+     <path d="M112 262c0-24 30-40 76-40s76 16 76 40v96c0 18-34 30-76 30s-76-12-76-30z" fill="url(#brass)"/>
+     <ellipse cx="188" cy="262" rx="76" ry="18" fill="#a4772e"/>
+     <ellipse cx="188" cy="258" rx="60" ry="12" fill="#d9b166"/>
+     <path d="M168 238c0-10 9-16 20-16s20 6 20 16" fill="#8f6626"/>
+     <circle cx="188" cy="220" r="7" fill="#c99a48"/>
+     <path d="M120 300c40 10 96 10 136 0" stroke="#7a561c" stroke-width="2" fill="none" opacity=".5"/>
+     <path d="M134 280v80" stroke="#fff3cf" stroke-width="7" opacity=".28" stroke-linecap="round"/>
+    </g>
+    <!-- bowl -->
+    <g filter="url(#sh)">
+     <path d="M262 300h168c0 52-36 86-84 86s-84-34-84-86z" fill="url(#bowl)"/>
+     <ellipse cx="346" cy="300" rx="84" ry="20" fill="#d9cfbb"/>
+     <ellipse cx="346" cy="302" rx="74" ry="15" fill="url(#milk)"/>
+     <path d="M300 302c16 4 32 4 46 0s30-4 44 0" stroke="#e6dcc4" stroke-width="2" fill="none"/>
+     <path d="M276 322c8 30 30 52 58 58" stroke="#fff" stroke-width="6" fill="none" opacity=".55" stroke-linecap="round"/>
+     <path d="M262 310c40 8 128 8 168 0" stroke="#2d4a7a" stroke-width="2.4" fill="none" opacity=".75"/>
+     <rect x="318" y="382" width="56" height="8" rx="3" fill="#cdbfa6"/>
+    </g>
+    <!-- plate & jeon -->
+    <g filter="url(#sh)">
+     <ellipse cx="452" cy="392" rx="92" ry="22" fill="#1d1a17"/>
+     <ellipse cx="452" cy="386" rx="92" ry="22" fill="#2e2924"/>
+     <ellipse cx="452" cy="380" rx="70" ry="15" fill="url(#jeon)"/>
+     <path d="M402 378l18-4M430 384l14-6M462 376l20 3M488 382l12-5" stroke="#3f7a3a" stroke-width="4" stroke-linecap="round"/>
+     <circle cx="418" cy="384" r="5" fill="#e46a3c"/><circle cx="470" cy="386" r="4.5" fill="#e46a3c"/><circle cx="496" cy="376" r="4" fill="#f2e3c4"/><circle cx="446" cy="374" r="4" fill="#f2e3c4"/>
+    </g>
+    <!-- steam -->
+    <path d="M322 266c-10-16 10-24 0-40M352 260c-10-16 10-24 0-40" stroke="#221e1a" stroke-width="2" fill="none" opacity=".25" stroke-linecap="round"/>
+    <text x="48" y="482" font-family="Cormorant Garamond, serif" font-style="italic" font-size="22" fill="#221e1a" opacity=".55">fresh makgeolli · since tonight</text>
+   </svg>
+  </div>
+ </div>
+ <div class="strip" aria-hidden="true"><div class="tr">
+  <span>생막걸리 열두 가지</span><span>주문 즉시 부치는 전</span><span>무쇠솥 솥밥</span><span>늦은 밤 한 상</span><span>좌식 룸 단체 예약</span>
+  <span>생막걸리 열두 가지</span><span>주문 즉시 부치는 전</span><span>무쇠솥 솥밥</span><span>늦은 밤 한 상</span><span>좌식 룸 단체 예약</span>
+ </div></div>
+</section>
+
+<section class="sec story" id="story">
+ <div class="wrap">
+  <div class="frame">
+   <svg viewBox="0 0 480 400" aria-label="누룩을 띄우는 항아리 일러스트">
+    <defs>
+     <linearGradient id="onggi" x1="0" x2="1"><stop offset="0" stop-color="#4a2c1a"/><stop offset=".4" stop-color="#7a4a2c"/><stop offset=".7" stop-color="#5e3820"/><stop offset="1" stop-color="#341e12"/></linearGradient>
+     <linearGradient id="wall" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#efe5d2"/><stop offset="1" stop-color="#e2d4ba"/></linearGradient>
+    </defs>
+    <rect width="480" height="400" fill="url(#wall)"/>
+    <rect x="0" y="300" width="480" height="100" fill="#c9b694"/>
+    <path d="M0 300h480" stroke="#a8936e" stroke-width="2"/>
+    <!-- window lattice -->
+    <g transform="translate(300 40)"><rect width="140" height="150" fill="#f8f1e2" stroke="#6b4a2e" stroke-width="6"/>
+     <path d="M46 0v150M94 0v150M0 50h140M0 100h140" stroke="#6b4a2e" stroke-width="3"/>
+     <circle cx="70" cy="75" r="30" fill="#cf5427" opacity=".14"/></g>
+    <!-- big jar -->
+    <g>
+     <ellipse cx="160" cy="318" rx="104" ry="14" fill="#000" opacity=".18"/>
+     <path d="M100 120h120c4 10 4 18 0 24 34 26 52 70 46 112-6 40-40 62-106 62s-100-22-106-62c-6-42 12-86 46-112-4-6-4-14 0-24z" fill="url(#onggi)"/>
+     <ellipse cx="160" cy="120" rx="60" ry="10" fill="#2a170c"/>
+     <path d="M84 196c40 14 112 14 152 0" stroke="#2a170c" stroke-width="3" fill="none" opacity=".6"/>
+     <path d="M108 170c-16 30-18 70-6 104" stroke="#c89268" stroke-width="8" fill="none" opacity=".35" stroke-linecap="round"/>
+     <path d="M136 230c10-14 22-14 30 0s20 14 30 0" stroke="#e9c79b" stroke-width="2.5" fill="none" opacity=".7"/>
+    </g>
+    <!-- small jar -->
+    <g transform="translate(250 196)">
+     <ellipse cx="50" cy="122" rx="56" ry="9" fill="#000" opacity=".18"/>
+     <path d="M26 20h48c2 6 2 10 0 14 18 14 28 36 24 58-4 22-20 32-48 32s-44-10-48-32c-4-22 6-44 24-58-2-4-2-8 0-14z" fill="url(#onggi)"/>
+     <ellipse cx="50" cy="20" rx="24" ry="5" fill="#2a170c"/>
+     <path d="M30 56c-6 16-6 34 0 48" stroke="#c89268" stroke-width="5" fill="none" opacity=".35" stroke-linecap="round"/>
+    </g>
+    <!-- nuruk bricks -->
+    <g transform="translate(360 262)"><rect x="0" y="16" width="70" height="26" rx="4" fill="#d9b77c"/><rect x="0" y="16" width="70" height="8" rx="3" fill="#e9cc93"/><rect x="14" y="0" width="70" height="26" rx="4" fill="#cfa865"/><rect x="14" y="0" width="70" height="8" rx="3" fill="#e2bf7e"/>
+     <circle cx="30" cy="12" r="2" fill="#a07a3e"/><circle cx="52" cy="16" r="1.6" fill="#a07a3e"/><circle cx="20" cy="30" r="1.6" fill="#a07a3e"/></g>
+    <!-- straw rope -->
+    <path d="M96 140c40 10 88 10 128 0" stroke="#d6b26c" stroke-width="6" fill="none" stroke-dasharray="7 4"/>
+    <text x="24" y="372" font-family="Nanum Myeongjo, serif" font-weight="800" font-size="20" fill="#4a2c1a">누룩 · 쌀 · 물, 그리고 시간</text>
+   </svg>
+  </div>
+  <div class="txt">
+   <span class="kicker">우리 이야기</span>
+   <h2>좋은 술은 <br>천천히 익습니다</h2>
+   <p>누룩당은 막걸리를 좋아하는 두 사람이 연 동네 술집입니다. 매주 직접 맛을 보고 고른 지역 양조장의 생막걸리만 냉장 보관해 내어 드립니다.</p>
+   <p>전은 미리 부쳐 두지 않습니다. 주문이 들어오면 무쇠 팬에 들기름을 두르고 그때그때 부쳐 냅니다.</p>
+   <div class="pts">
+    <div><b>지역 양조장 술</b><span>계절마다 바뀌는 생막걸리 열두 가지</span></div>
+    <div><b>즉석에서 부친 전</b><span>들기름 무쇠 팬으로 한 장씩</span></div>
+    <div><b>늦은 밤까지</b><span>새벽 1시까지 주문 가능</span></div>
+   </div>
+  </div>
+ </div>
+</section>
+
+<section class="sec drinks" id="drinks">
+ <div class="wrap">
+  <div class="sh"><div><span class="no">No. 02</span><h2>이번 주 냉장고의 술</h2></div><p>생막걸리는 입고 날짜를 확인하고 내어 드립니다. 잔술(300ml)로도 주문하실 수 있어요.</p></div>
+  <div class="dgrid">
+   <article class="dcard">
+    <svg viewBox="0 0 86 150"><defs><linearGradient id="b1" x1="0" x2="1"><stop offset="0" stop-color="#d8d1c2"/><stop offset=".5" stop-color="#fffdf6"/><stop offset="1" stop-color="#c8bea9"/></linearGradient></defs><rect x="33" y="4" width="20" height="14" rx="2" fill="#cf5427"/><path d="M34 18h18v14c10 6 16 14 16 26v80c0 6-4 10-10 10H28c-6 0-10-4-10-10V58c0-12 6-20 16-26z" fill="url(#b1)"/><rect x="18" y="70" width="50" height="50" fill="#221e1a"/><text x="43" y="100" text-anchor="middle" font-family="Nanum Myeongjo" font-weight="800" font-size="15" fill="#f3ebdc">달빛</text><circle cx="43" cy="80" r="3" fill="#cf5427"/></svg>
+    <div><span class="tag">생막걸리 · 6%</span><h3>달빛 생탁주</h3><p>쌀 단맛이 부드럽고 탄산이 가벼운 첫 잔용 막걸리</p>
+     <div class="taste"><em>단맛</em><i class="on"></i><i class="on"></i><i class="on"></i><i></i><i></i></div>
+     <div class="meta"><span>750ml</span><b>12,000원</b></div></div>
+   </article>
+   <article class="dcard">
+    <svg viewBox="0 0 86 150"><defs><linearGradient id="b2" x1="0" x2="1"><stop offset="0" stop-color="#cdd5c3"/><stop offset=".5" stop-color="#f7fbf1"/><stop offset="1" stop-color="#b9c4ac"/></linearGradient></defs><rect x="33" y="4" width="20" height="14" rx="2" fill="#3e6a3c"/><path d="M34 18h18v14c10 6 16 14 16 26v80c0 6-4 10-10 10H28c-6 0-10-4-10-10V58c0-12 6-20 16-26z" fill="url(#b2)"/><rect x="18" y="66" width="50" height="58" fill="#f3ebdc" stroke="#3e6a3c" stroke-width="2"/><text x="43" y="98" text-anchor="middle" font-family="Nanum Myeongjo" font-weight="800" font-size="15" fill="#3e6a3c">솔잎</text><path d="M30 108h26" stroke="#3e6a3c" stroke-width="1.5"/></svg>
+    <div><span class="tag">생막걸리 · 8%</span><h3>솔잎 걸리</h3><p>은은한 솔향과 깔끔한 산미, 기름진 전과 잘 어울려요</p>
+     <div class="taste"><em>산미</em><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i></i></div>
+     <div class="meta"><span>750ml</span><b>14,000원</b></div></div>
+   </article>
+   <article class="dcard">
+    <svg viewBox="0 0 86 150"><defs><linearGradient id="b3" x1="0" x2="1"><stop offset="0" stop-color="#e6cfc2"/><stop offset=".5" stop-color="#fff6f0"/><stop offset="1" stop-color="#d6b8a6"/></linearGradient></defs><rect x="33" y="4" width="20" height="14" rx="2" fill="#b3863a"/><path d="M34 18h18v14c10 6 16 14 16 26v80c0 6-4 10-10 10H28c-6 0-10-4-10-10V58c0-12 6-20 16-26z" fill="url(#b3)"/><circle cx="43" cy="96" r="24" fill="#cf5427"/><text x="43" y="101" text-anchor="middle" font-family="Nanum Myeongjo" font-weight="800" font-size="14" fill="#fff4e6">홍시</text></svg>
+    <div><span class="tag">과실 막걸리 · 5%</span><h3>홍시 막걸리</h3><p>잘 익은 홍시를 넣어 빚은 계절 한정, 디저트처럼 한 잔</p>
+     <div class="taste"><em>단맛</em><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></div>
+     <div class="meta"><span>500ml</span><b>15,000원</b></div></div>
+   </article>
+   <article class="dcard">
+    <svg viewBox="0 0 86 150"><defs><linearGradient id="b4" x1="0" x2="1"><stop offset="0" stop-color="#2c2622"/><stop offset=".5" stop-color="#5a4f46"/><stop offset="1" stop-color="#1e1a17"/></linearGradient></defs><rect x="35" y="4" width="16" height="16" rx="2" fill="#b3863a"/><path d="M36 20h14v18c10 4 16 12 16 22v78c0 6-4 10-10 10H30c-6 0-10-4-10-10V60c0-10 6-18 16-22z" fill="url(#b4)"/><rect x="24" y="72" width="38" height="46" fill="#f3ebdc"/><text x="43" y="100" text-anchor="middle" font-family="Nanum Myeongjo" font-weight="800" font-size="14" fill="#221e1a">청명</text></svg>
+    <div><span class="tag">약주 · 13%</span><h3>청명 약주</h3><p>맑게 걸러 낸 쌀술. 은은한 꽃향, 차게 마시면 좋아요</p>
+     <div class="taste"><em>바디</em><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i></i></div>
+     <div class="meta"><span>375ml</span><b>22,000원</b></div></div>
+   </article>
+   <article class="dcard">
+    <svg viewBox="0 0 86 150"><defs><linearGradient id="b5" x1="0" x2="1"><stop offset="0" stop-color="#d9d4e0"/><stop offset=".5" stop-color="#faf8fc"/><stop offset="1" stop-color="#c3bccc"/></linearGradient></defs><rect x="33" y="4" width="20" height="14" rx="2" fill="#5b4a7a"/><path d="M34 18h18v14c10 6 16 14 16 26v80c0 6-4 10-10 10H28c-6 0-10-4-10-10V58c0-12 6-20 16-26z" fill="url(#b5)"/><rect x="18" y="70" width="50" height="50" fill="#5b4a7a"/><text x="43" y="100" text-anchor="middle" font-family="Nanum Myeongjo" font-weight="800" font-size="14" fill="#f3ebdc">흑미</text></svg>
+    <div><span class="tag">생막걸리 · 7%</span><h3>흑미 탁주</h3><p>고소한 흑미의 연보랏빛, 묵직하고 부드러운 질감</p>
+     <div class="taste"><em>바디</em><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></div>
+     <div class="meta"><span>750ml</span><b>13,000원</b></div></div>
+   </article>
+   <article class="dcard">
+    <svg viewBox="0 0 86 150"><defs><linearGradient id="b6" x1="0" x2="1"><stop offset="0" stop-color="#e3dcc4"/><stop offset=".5" stop-color="#fffbea"/><stop offset="1" stop-color="#cfc6a6"/></linearGradient></defs><rect x="33" y="4" width="20" height="14" rx="2" fill="#221e1a"/><path d="M34 18h18v14c10 6 16 14 16 26v80c0 6-4 10-10 10H28c-6 0-10-4-10-10V58c0-12 6-20 16-26z" fill="url(#b6)"/><path d="M18 76h50v40H18z" fill="#f3ebdc"/><path d="M18 76h50" stroke="#cf5427" stroke-width="4"/><text x="43" y="104" text-anchor="middle" font-family="Nanum Myeongjo" font-weight="800" font-size="14" fill="#221e1a">유자</text></svg>
+    <div><span class="tag">과실 막걸리 · 6%</span><h3>유자 스파클링</h3><p>상큼한 유자 향과 톡 쏘는 탄산, 처음 드시는 분께 추천</p>
+     <div class="taste"><em>산미</em><i class="on"></i><i class="on"></i><i class="on"></i><i></i><i></i></div>
+     <div class="meta"><span>500ml</span><b>14,000원</b></div></div>
+   </article>
+  </div>
+ </div>
+</section>
+
+<section class="sec food" id="food">
+ <div class="wrap">
+   <div class="sh" style="margin-bottom:34px"><div><span class="no">No. 03</span><h2>술이 당기는 안주</h2></div></div>
+  <div class="feat">
+   <svg viewBox="0 0 420 260" aria-label="해물파전 일러스트">
+    <defs>
+     <radialGradient id="pj" cx=".45" cy=".4"><stop offset="0" stop-color="#f4cf7a"/><stop offset=".65" stop-color="#dc9f42"/><stop offset="1" stop-color="#9f6420"/></radialGradient>
+     <radialGradient id="pl" cx=".5" cy=".4"><stop offset="0" stop-color="#3a342e"/><stop offset="1" stop-color="#14110f"/></radialGradient>
+    </defs>
+    <ellipse cx="210" cy="150" rx="186" ry="88" fill="url(#pl)"/>
+    <ellipse cx="210" cy="146" rx="168" ry="76" fill="none" stroke="#4d453d" stroke-width="2"/>
+    <ellipse cx="210" cy="142" rx="140" ry="60" fill="url(#pj)"/>
+    <path d="M100 140c30-10 60 8 90-2s60 6 92-4 50 8 60 4" stroke="#b5762a" stroke-width="3" fill="none" opacity=".55"/>
+    <g stroke-linecap="round" stroke-width="7"><path d="M110 128l40-10" stroke="#2f6b33"/><path d="M160 152l46-8" stroke="#3f8a41"/><path d="M226 122l44 4" stroke="#2f6b33"/><path d="M250 160l52-4" stroke="#3f8a41"/><path d="M180 112l30 6" stroke="#4e9c4c"/><path d="M290 132l30-8" stroke="#2f6b33"/></g>
+    <g><path d="M138 150c8-10 22-10 28 0-8 8-20 8-28 0z" fill="#ee7a4a"/><path d="M228 150c8-10 22-10 28 0-8 8-20 8-28 0z" fill="#ee7a4a"/><path d="M270 116c8-10 22-10 28 0-8 8-20 8-28 0z" fill="#ee7a4a"/><circle cx="196" cy="128" r="9" fill="#f6ecd8"/><circle cx="196" cy="128" r="4" fill="#e9d6b4"/><circle cx="312" cy="150" r="8" fill="#f6ecd8"/><circle cx="128" cy="168" r="7" fill="#f6ecd8"/><circle cx="216" cy="172" r="5" fill="#d23d2a"/><circle cx="168" cy="132" r="4" fill="#d23d2a"/><circle cx="282" cy="168" r="4" fill="#d23d2a"/></g>
+    <!-- dipping sauce -->
+    <ellipse cx="368" cy="70" rx="40" ry="16" fill="#e8dfcf"/><ellipse cx="368" cy="68" rx="30" ry="10" fill="#5a2a18"/><circle cx="360" cy="66" r="2.5" fill="#e9d6b4"/><circle cx="374" cy="70" r="2" fill="#3f8a41"/>
+    <!-- chopsticks -->
+    <path d="M30 60l170 44M40 46l168 52" stroke="#c9a46a" stroke-width="6" stroke-linecap="round"/>
+   </svg>
+   <div>
+   <span class="tag">SIGNATURE</span>
+   <h3>누룩당 해물파전</h3>
+   <p>쪽파를 한 단 가득 올리고 오징어·새우·홍합을 넉넉히. 가장자리까지 바삭하게 부쳐 냅니다.</p>
+   <div class="pr"><b>19,000원</b><span>막걸리와 함께</span></div>
+  </div>
+  </div>
+  <div class="mcols">
+   <div>
+   <div class="mgroup">
+    <h3>전 <small>주문 즉시 부칩니다</small></h3>
+    <div class="mi"><span class="n">해물파전<span class="d">쪽파 · 오징어 · 새우 · 홍합</span></span><i class="dots"></i><span class="p">19,000</span></div>
+    <div class="mi"><span class="n">감자채전<span class="new">NEW</span><span class="d">얇게 채 썬 감자, 겉바속촉</span></span><i class="dots"></i><span class="p">14,000</span></div>
+    <div class="mi"><span class="n">모둠전<span class="d">동그랑땡 · 깻잎전 · 호박전 · 동태전</span></span><i class="dots"></i><span class="p">23,000</span></div>
+    <div class="mi"><span class="n">김치전<span class="d">묵은지와 돼지고기, 매콤하게</span></span><i class="dots"></i><span class="p">15,000</span></div>
+   </div>
+   </div>
+   <div>
+   <div class="mgroup">
+    <h3>한 접시 <small>나눠 먹기 좋은</small></h3>
+    <div class="mi"><span class="n">수육 보쌈<span class="d">한 시간 삶은 앞다리살, 무김치</span></span><i class="dots"></i><span class="p">28,000</span></div>
+    <div class="mi"><span class="n">도토리묵 무침<span class="d">들기름 · 김 · 상추</span></span><i class="dots"></i><span class="p">13,000</span></div>
+    <div class="mi"><span class="n">골뱅이 소면<span class="d">새콤달콤 양념, 소면 사리</span></span><i class="dots"></i><span class="p">21,000</span></div>
+   </div>
+   <div class="mgroup" style="margin-bottom:0">
+    <h3>마무리 <small>속을 달래는</small></h3>
+    <div class="mi"><span class="n">무쇠솥 버섯 솥밥<span class="d">20분 소요 · 달래장</span></span><i class="dots"></i><span class="p">16,000</span></div>
+    <div class="mi"><span class="n">들깨 칼국수<span class="d">진한 들깨 국물</span></span><i class="dots"></i><span class="p">11,000</span></div>
+   </div>
+     </div>
+  </div>
+ </div>
+</section>
+
+<section class="sec space" id="space">
+ <div class="wrap">
+  <div class="sh"><div><span class="no" style="color:#9fb6e0">No. 04</span><h2>골목 끝, 따뜻한 불빛</h2></div><p>창가 2인석부터 열 명이 둘러앉는 좌식 룸까지. 오래된 나무와 한지 조명으로 꾸민 공간입니다.</p></div>
+  <div class="sgrid">
+   <div class="big">
+    <svg viewBox="0 0 720 420" aria-label="한지 조명이 걸린 실내 일러스트">
+     <defs>
+      <radialGradient id="glow" cx=".5" cy=".5"><stop offset="0" stop-color="#ffcf8a" stop-opacity=".55"/><stop offset="1" stop-color="#ffcf8a" stop-opacity="0"/></radialGradient>
+      <linearGradient id="lamp" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff2d6"/><stop offset="1" stop-color="#f1c27d"/></linearGradient>
+      <linearGradient id="floor" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#5a3b24"/><stop offset="1" stop-color="#2c1d12"/></linearGradient>
+      <linearGradient id="tbl" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#8e6038"/><stop offset="1" stop-color="#5b3a20"/></linearGradient>
+     </defs>
+     <rect width="720" height="420" fill="#2a2420"/>
+     <rect y="0" width="720" height="270" fill="#3a302a"/>
+     <!-- wall panels -->
+     <g stroke="#4b3f36" stroke-width="2"><path d="M120 0v270M300 0v270M480 0v270M600 0v270"/></g>
+     <!-- window -->
+     <g transform="translate(150 60)"><rect width="130" height="140" fill="#1b2a35"/><rect width="130" height="140" fill="none" stroke="#6b4a2e" stroke-width="6"/><path d="M43 0v140M87 0v140M0 47h130M0 93h130" stroke="#6b4a2e" stroke-width="3"/><circle cx="96" cy="30" r="12" fill="#f2d79a" opacity=".8"/></g>
+     <!-- shelf with bottles -->
+     <g transform="translate(500 80)"><rect x="0" y="62" width="200" height="8" fill="#6b4a2e"/><rect x="0" y="130" width="200" height="8" fill="#6b4a2e"/>
+      <g fill="#e9e1cf"><rect x="14" y="26" width="16" height="36" rx="4"/><rect x="40" y="20" width="16" height="42" rx="4"/><rect x="66" y="28" width="16" height="34" rx="4"/><rect x="120" y="22" width="16" height="40" rx="4"/><rect x="146" y="30" width="16" height="32" rx="4"/></g>
+      <g fill="#cf5427"><rect x="92" y="24" width="16" height="38" rx="4"/><rect x="172" y="26" width="16" height="36" rx="4"/></g>
+      <g><ellipse cx="30" cy="118" rx="22" ry="12" fill="#6e4528"/><path d="M8 118c0-20 10-30 22-30s22 10 22 30" fill="#7c4e2c"/><ellipse cx="90" cy="120" rx="18" ry="10" fill="#6e4528"/><path d="M72 120c0-16 8-24 18-24s18 8 18 24" fill="#7c4e2c"/><rect x="130" y="94" width="50" height="36" fill="#d9b77c"/></g></g>
+     <!-- lamps -->
+     <g><path d="M240 0v70M420 0v90M570 0v40" stroke="#1a1512" stroke-width="2"/>
+      <circle cx="240" cy="110" r="110" fill="url(#glow)"/><circle cx="420" cy="130" r="120" fill="url(#glow)"/>
+      <path d="M214 70h52l8 50h-68z" fill="url(#lamp)"/><path d="M394 90h52l8 56h-68z" fill="url(#lamp)"/>
+      <path d="M214 84h56M210 104h62M394 104h56M390 124h64" stroke="#d9a35c" stroke-width="1.5" opacity=".6"/></g>
+     <!-- floor -->
+     <rect y="270" width="720" height="150" fill="url(#floor)"/>
+     <g stroke="#2a1b10" stroke-width="2" opacity=".6"><path d="M0 300h720M0 340h720M0 388h720"/></g>
+     <!-- table 1 -->
+     <g><ellipse cx="250" cy="352" rx="150" ry="22" fill="#000" opacity=".35"/><rect x="110" y="290" width="280" height="22" rx="4" fill="url(#tbl)"/><rect x="130" y="312" width="16" height="44" fill="#4a2e18"/><rect x="354" y="312" width="16" height="44" fill="#4a2e18"/>
+      <ellipse cx="190" cy="286" rx="22" ry="7" fill="#f6efe0"/><path d="M168 286c0 10 10 16 22 16s22-6 22-16" fill="#e9e1cf"/>
+      <ellipse cx="280" cy="284" rx="40" ry="9" fill="#1a1512"/><ellipse cx="280" cy="281" rx="32" ry="6" fill="#dc9f42"/>
+      <path d="M330 262c-8 0-14 6-14 14v8h28v-8c0-8-6-14-14-14z" fill="#c2913f"/></g>
+     <!-- table 2 -->
+     <g><ellipse cx="560" cy="368" rx="120" ry="18" fill="#000" opacity=".35"/><rect x="450" y="316" width="220" height="20" rx="4" fill="url(#tbl)"/><rect x="466" y="336" width="14" height="36" fill="#4a2e18"/><rect x="640" y="336" width="14" height="36" fill="#4a2e18"/>
+      <ellipse cx="520" cy="312" rx="18" ry="6" fill="#f6efe0"/><ellipse cx="600" cy="312" rx="18" ry="6" fill="#f6efe0"/><rect x="552" y="286" width="14" height="28" rx="4" fill="#e9e1cf"/></g>
+     <!-- cushions -->
+     <g fill="#cf5427" opacity=".9"><rect x="140" y="370" width="60" height="14" rx="6"/><rect x="300" y="370" width="60" height="14" rx="6"/></g>
+    </svg>
+   </div>
+   <div class="sinfo">
+    <div><b>창가 테이블 <span>2–4인</span></b><p>골목이 내다보이는 자리. 둘이서 조용히 한잔하기 좋아요.</p></div>
+    <div><b>바 좌석 <span>1–2인</span></b><p>냉장고 앞 바 자리에서 술 설명을 들으며 잔술로 맛보세요.</p></div>
+    <div><b>좌식 룸 <span>8–12인</span></b><p>문을 닫을 수 있는 방. 회식·모임은 예약 시 코스 상담 가능.</p></div>
+   </div>
+  </div>
+ </div>
+</section>
+
+<section class="sec resv" id="reserve">
+ <div class="wrap">
+  <div>
+   <span class="kicker">자리 예약</span>
+   <h2>미리 말씀해 주시면<br>자리를 맡아 둘게요</h2>
+   <p class="note">예약 요청을 남겨 주시면 확인 후 문자로 안내드립니다. 당일 예약은 전화로 문의해 주세요.</p>
+   <ul>
+    <li><svg class="ico" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>예약 시간 기준 15분까지 자리를 맡아 둡니다.</li>
+    <li><svg class="ico" viewBox="0 0 24 24"><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/><circle cx="12" cy="7" r="4"/></svg>8인 이상 좌식 룸은 하루 전까지 예약해 주세요.</li>
+    <li><svg class="ico" viewBox="0 0 24 24"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>전화 000-0000-0000</li>
+   </ul>
+  </div>
+  <form id="rf" novalidate>
+   <div class="fields">
+    <div class="row">
+     <div class="f"><label for="d">날짜</label><input id="d" type="date" required></div>
+     <div class="f"><label for="t">시간</label><select id="t"><option>18:00</option><option>18:30</option><option selected>19:00</option><option>19:30</option><option>20:00</option><option>20:30</option><option>21:00</option><option>21:30</option></select></div>
+    </div>
+    <div class="f"><label>인원</label>
+     <div class="chipset"><input type="radio" name="p" id="p2" checked><label for="p2">2명</label><input type="radio" name="p" id="p3"><label for="p3">3–4명</label><input type="radio" name="p" id="p5"><label for="p5">5–7명</label><input type="radio" name="p" id="p8"><label for="p8">8명 이상</label></div>
+    </div>
+    <div class="row">
+     <div class="f"><label for="n">이름</label><input id="n" placeholder="예약자 이름" required></div>
+     <div class="f"><label for="ph">연락처</label><input id="ph" placeholder="000-0000-0000" required></div>
+    </div>
+    <button class="btn btn-p" type="submit">예약 요청 보내기</button>
+   </div>
+   <div class="done">
+    <svg class="ico" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="m7.5 12.5 3 3 6-6.5"/></svg>
+    <h3>예약 요청이 접수되었어요</h3>
+    <p>확인 후 문자로 안내드리겠습니다.</p>
+   </div>
+  </form>
+ </div>
+</section>
+
+<section class="sec visit" id="visit">
+ <div class="wrap">
+  <div class="vgrid">
+   <svg viewBox="0 0 640 380" preserveAspectRatio="xMidYMid meet" aria-label="약도 일러스트">
+    <rect width="640" height="380" fill="#efe5d2"/>
+    <g fill="#e2d4ba"><rect x="30" y="30" width="150" height="110" rx="4"/><rect x="220" y="30" width="170" height="110" rx="4"/><rect x="430" y="30" width="190" height="110" rx="4"/><rect x="30" y="200" width="150" height="150" rx="4"/><rect x="430" y="200" width="190" height="150" rx="4"/></g>
+    <rect x="220" y="200" width="170" height="150" rx="4" fill="#d6c6a6"/>
+    <g stroke="#fbf7ee" stroke-width="22"><path d="M0 170h640M200 0v380M410 0v380"/></g>
+    <path d="M0 170h640M200 0v380M410 0v380" stroke="#d8cab2" stroke-width="1" stroke-dasharray="6 6"/>
+    <circle cx="300" cy="170" r="11" fill="#221e1a" opacity=".85"/><text x="316" y="156" font-family="Noto Sans KR" font-size="21" font-weight="700" fill="#4a423a">○○역 2번 출구</text>
+    <path d="M300 170v40h40" stroke="#2d4a7a" stroke-width="3" stroke-dasharray="6 5" fill="none"/>
+    <g transform="translate(340 236)"><path d="M0-36c-14 0-24 10-24 24 0 18 24 40 24 40s24-22 24-40c0-14-10-24-24-24z" fill="#2d4a7a"/><circle cy="-12" r="9" fill="#fff4e6"/></g>
+    <text x="246" y="320" font-family="Nanum Myeongjo" font-size="24" font-weight="800" fill="#221e1a">누룩당</text>
+    <text x="44" y="94" font-family="Noto Sans KR" font-size="21" fill="#7a6e60">공영주차장</text>
+    <text x="470" y="282" font-family="Noto Sans KR" font-size="21" fill="#7a6e60">○○시장</text>
+   </svg>
+   <div class="vinfo">
+    <span class="kicker">오시는 길</span>
+    <h3 style="margin-top:10px">○○역에서 도보 3분</h3>
+    <dl>
+     <dt>주소</dt><dd>○○시 ○○구 ○○로 00길 00, 1층</dd>
+     <dt>영업</dt><dd>매일 18:00 – 01:00<br>(주문 마감 00:30 · 월요일 휴무)</dd>
+     <dt>전화</dt><dd>000-0000-0000</dd>
+     <dt>주차</dt><dd>건물 옆 공영주차장 이용</dd>
+    </dl>
+   </div>
+  </div>
+ </div>
+</section>
+</main>
+
+<footer>
+ <div class="wrap">
+  <div>
+   <a class="logo" href="#top"><svg width="36" height="36" viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="20" r="19" fill="#f3ebdc"/><path d="M10 18h20c0 6-4.5 10.5-10 10.5S10 24 10 18z" fill="#221e1a"/><circle cx="26" cy="11.5" r="3" fill="#cf5427"/></svg><span><b>누룩당</b></span></a>
+   <p>생막걸리와 계절 전 · 만 19세 미만 출입 및 주류 판매 불가</p>
+  </div>
+  <p>© 누룩당. All rights reserved.</p>
+ </div>
+</footer>
+
+<script>
+document.getElementById('d').valueAsDate=new Date(Date.now()+864e5);
+document.getElementById('rf').addEventListener('submit',function(e){e.preventDefault();var n=document.getElementById('n'),p=document.getElementById('ph');if(!n.value.trim()){n.focus();n.style.borderColor='#cf5427';return}if(!p.value.trim()){p.focus();p.style.borderColor='#cf5427';return}this.classList.add('sent')});
+</script>
+</body>
+</html>
