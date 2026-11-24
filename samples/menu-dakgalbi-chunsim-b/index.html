@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>춘심 닭갈비 · 철판 닭갈비 메뉴판 디자인</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Outfit:wght@600;700&family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Noto Sans KR',sans-serif;background:#23201e;color:#fbefd9;word-break:keep-all;-webkit-font-smoothing:antialiased;min-height:100vh;
+ background-image:radial-gradient(ellipse 60% 40% at 90% 0%,rgba(226,80,42,.3),transparent 70%),radial-gradient(rgba(251,239,217,.05) 1.4px,transparent 1.6px);background-size:auto,18px 18px}
+.top{height:14px;background:repeating-linear-gradient(90deg,#e2502a 0 40px,#fbefd9 40px 52px,#3f7a3a 52px 92px,#fbefd9 92px 104px)}
+.wrap{max-width:1180px;margin:0 auto;padding:48px 20px 120px}
+.hd{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:18px;margin-bottom:32px}
+.hd small{font-family:'Outfit',sans-serif;font-size:15px;font-weight:700;letter-spacing:.24em;color:#ff9a6c}
+.hd h1{font-family:'Black Han Sans',sans-serif;font-weight:400;font-size:clamp(34px,4.6vw,54px);margin-top:8px;line-height:1.15}
+.hd h1 em{font-style:normal;color:#ff7a4a}
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:14px}
+.chips span{font-size:13px;font-weight:500;padding:6px 12px;border-radius:20px;background:#34302d;color:#e9dcc6}
+.cta{display:inline-flex;align-items:center;gap:8px;height:52px;padding:0 26px;border-radius:40px;background:#e2502a;color:#fff;font-weight:700;font-size:15px;text-decoration:none;transition:.2s;white-space:nowrap;box-shadow:0 5px 0 #9e2c12}
+.cta:hover{transform:translateY(2px);box-shadow:0 3px 0 #9e2c12}
+.cta svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+.view{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,.75fr);gap:28px;align-items:start}
+figure{background:#fbefd9;padding:10px;border-radius:14px;box-shadow:0 30px 60px -30px rgba(0,0,0,.8)}
+figure a{display:block}
+figure img{display:block;width:100%;height:auto;border-radius:6px}
+figcaption{font-size:13px;color:#6b5f55;padding:10px 4px 2px;display:flex;flex-wrap:wrap;justify-content:space-between;gap:4px 10px}
+.side{display:flex;flex-direction:column;gap:18px;position:sticky;top:24px}
+.zoom{background:#34302d;border-radius:14px;padding:8px}
+.zoom img{display:block;width:100%;height:auto;border-radius:8px}
+.zoom p{font-size:13px;color:#d6c8b0;padding:8px 4px 2px}
+.info{background:#3f7a3a;border-radius:14px;padding:22px}
+.info h2{font-family:'Black Han Sans',sans-serif;font-weight:400;font-size:22px;color:#fbefd9;margin-bottom:10px}
+.info li{list-style:none;font-size:14px;color:#e8f1df;padding:6px 0 6px 18px;position:relative}
+.info li:before{content:"";position:absolute;left:2px;top:13px;width:8px;height:8px;border-radius:50%;background:#ffb27a}
+.bar{position:fixed;left:0;right:0;bottom:0;background:rgba(35,32,30,.97);border-top:3px solid #e2502a;padding:12px 20px;display:flex;justify-content:center;align-items:center;gap:18px;flex-wrap:wrap}
+.bar p{font-size:14px;color:#e9dcc6}
+.bar .cta{height:46px}
+@media(max-width:900px){.view{grid-template-columns:1fr}.side{position:static}}
+@media(max-width:620px){.hd .cta{display:none}.bar p{display:none}.bar .cta{width:100%;justify-content:center}}
+</style>
+</head>
+<body>
+<div class="top"></div>
+<div class="wrap">
+ <div class="hd">
+  <div>
+   <small>MENU DESIGN · SD-MN24</small>
+   <h1>춘심 닭갈비 <em>철판 메뉴판</em></h1>
+   <div class="chips"><span>A4 세로 · 1장</span><span>철판 닭갈비 · 막국수 · 사리 · 볶음밥 · 둘이 세트</span><span>고추장 오렌지 &amp; 주물 차콜 &amp; 깻잎 그린</span><span>원화 가격</span><span>인쇄 · 웹 겸용</span></div>
+  </div>
+  <a class="cta" href="https://design.shoponph.online/#inquiry">이 디자인으로 상담하기 <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+ </div>
+ <div class="view">
+  <figure><a href="page1.png" target="_blank" rel="noopener"><img src="page1.png" alt="춘심 닭갈비 메뉴판 전체" width="2480" height="3508"></a><figcaption><span>철판 닭갈비 · 막국수 · 사리 추가 · 마무리 · 음료</span><span style="white-space:nowrap">눌러서 크게 보기</span></figcaption></figure>
+  <div class="side">
+   <div class="zoom"><img src="detail-pan.jpg" alt="위에서 본 철판 닭갈비 일러스트와 안내 스탬프 확대" width="1140" height="528"><p>위에서 내려다본 철판 일러스트 · 양배추·떡·고구마·깻잎까지</p></div>
+   <div class="zoom"><img src="detail-set.jpg" alt="막국수 메뉴와 둘이 세트 강조 카드 확대" width="700" height="906"><p>막국수 메뉴와 둘이 세트 강조 카드</p></div>
+   <div class="info"><h2>이 메뉴판에 담긴 것</h2><ul><li>고추 아이콘 3단계 맵기 선택 안내</li><li>안 매운 간장 닭갈비 표시 태그</li><li>사리 · 볶음밥 · 음료를 한 줄에 정리</li><li>영업시간 · 포장 문의 하단 띠</li></ul></div>
+  </div>
+ </div>
+</div>
+<div class="bar"><p>우리 가게 메뉴판도 이런 분위기로 만들어 보세요</p><a class="cta" href="https://design.shoponph.online/#inquiry">이 디자인으로 상담하기</a></div>
+</body>
+</html>

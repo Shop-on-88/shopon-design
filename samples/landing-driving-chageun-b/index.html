@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>차근 운전연수 · 장롱면허 첫 2시간 체험</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--g:#1f2329;--g2:#111418;--mint:#c9f5d9;--mint2:#eef2f0;--cream:#f4f6f5;--ink:#17201c;--mute:#5a6660;--co:#1fbf6a;--road:#2c3431}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'IBM Plex Sans KR',sans-serif;color:var(--ink);background:var(--cream);word-break:keep-all;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+.num{font-family:'Space Grotesk',sans-serif}
+.in{max-width:1180px;margin:0 auto;padding:0 24px}
+/* nav */
+.nav{position:sticky;top:0;z-index:20;background:rgba(244,246,245,.92);backdrop-filter:blur(8px);border-bottom:1px solid rgba(31,35,41,.12)}
+.nav .in{display:flex;align-items:center;justify-content:space-between;height:68px}
+.logo{display:flex;align-items:center;gap:10px;font-weight:700;font-size:20px;letter-spacing:-.01em}
+.logo i{width:36px;height:36px;border-radius:10px;background:var(--g);display:grid;place-items:center}
+.logo i svg{width:22px;height:22px}
+.logo small{font-family:'Space Grotesk';font-size:12px;letter-spacing:.2em;color:var(--g);font-weight:600;display:block;line-height:1}
+.nav nav{display:flex;gap:28px;font-size:15px;font-weight:500;color:var(--mute)}
+.nav nav a:hover{color:var(--g)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;height:48px;padding:0 24px;border-radius:12px;background:var(--g);color:#fff;font-weight:700;font-size:15px;border:0;cursor:pointer;font-family:inherit;transition:.2s}
+.btn:hover{background:var(--g2)}
+.btn.co{background:var(--co);color:#0f1a14;box-shadow:0 6px 0 #128a4a}
+.btn.co:hover{transform:translateY(2px);box-shadow:0 4px 0 #128a4a}
+.btn svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+/* hero */
+.hero{position:relative;overflow:hidden;padding:56px 0 190px;background:radial-gradient(700px 400px at 85% 30%,#e6ece9,transparent 70%)}
+.hero .in{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center;position:relative;z-index:2}
+.badge{display:inline-flex;align-items:center;gap:8px;background:#fff;border:1.5px solid var(--g);color:var(--g);border-radius:40px;padding:7px 16px 7px 10px;font-size:14px;font-weight:600}
+.badge b{background:var(--co);color:#0f1a14;border-radius:30px;padding:2px 10px;font-size:13px}
+.hero h1{font-size:clamp(38px,5vw,62px);line-height:1.18;letter-spacing:-.03em;margin:20px 0 18px;font-weight:700}
+.hero h1 em{font-style:normal;color:#128a4a;position:relative;white-space:nowrap}
+.hero h1 em:after{content:"";position:absolute;left:0;right:0;bottom:.06em;height:.22em;background:var(--mint);z-index:-1;border-radius:4px}
+.hero p.lead{font-size:18px;line-height:1.7;color:var(--mute);max-width:520px}
+.hero .facts{display:flex;flex-wrap:wrap;gap:10px;margin-top:24px}
+.hero .facts span{display:flex;align-items:center;gap:8px;background:#fff;border-radius:10px;padding:10px 14px;font-size:14px;font-weight:600;box-shadow:0 1px 0 rgba(0,0,0,.05)}
+.hero .facts svg{width:18px;height:18px;fill:none;stroke:var(--g);stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.roadart{position:absolute;inset:0;z-index:0;pointer-events:none}
+.roadart svg{position:absolute;left:0;bottom:0;width:100%;height:150px}
+/* form card */
+.card{background:#fff;border-radius:22px;padding:28px;box-shadow:0 30px 60px -30px rgba(20,24,28,.45),0 0 0 1px rgba(31,35,41,.08);position:relative}
+.card .tick{position:absolute;top:-16px;right:24px;background:var(--co);color:#0f1a14;font-weight:700;font-size:14px;border-radius:30px;padding:8px 14px;box-shadow:0 8px 16px -6px rgba(31,191,106,.5)}
+.card h2{font-size:22px;letter-spacing:-.02em}
+.card .price{display:flex;align-items:baseline;gap:10px;margin:10px 0 18px;padding-bottom:16px;border-bottom:1.5px dashed #dfe6e2}
+.card .price s{color:#9aa5a0;font-size:16px}
+.card .price b{font-family:'Space Grotesk';font-size:40px;color:var(--g);letter-spacing:-.02em}
+.card .price b small{font-family:'IBM Plex Sans KR';font-size:18px;margin-left:2px}
+.card .price span{font-size:14px;color:var(--mute)}
+.f{display:grid;gap:12px}
+.f label{display:block;font-size:13px;font-weight:600;color:var(--mute);margin-bottom:6px}
+.f input,.f select{width:100%;height:48px;border:1.5px solid #d9e1dd;border-radius:12px;padding:0 14px;font-size:15px;font-family:inherit;background:#fbfcfb;color:var(--ink)}
+.f input:focus,.f select:focus{outline:none;border-color:var(--g);background:#fff}
+.f .two{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.chipset{display:flex;flex-wrap:wrap;gap:8px}
+.chipset button{height:40px;padding:0 14px;border-radius:10px;border:1.5px solid #d9e1dd;background:#fff;font-family:inherit;font-size:14px;font-weight:600;color:var(--mute);cursor:pointer}
+.chipset button.on{border-color:var(--g);background:var(--mint2);color:var(--g)}
+.f .btn{width:100%;height:54px;font-size:16px;margin-top:4px}
+.f .agree{display:flex;gap:8px;align-items:flex-start;font-size:13px;color:var(--mute)}
+.f .agree input{width:18px;height:18px;flex:none;margin-top:1px;accent-color:var(--g)}
+.done{display:none;text-align:center;padding:30px 6px}
+.done svg{width:64px;height:64px}
+.done h3{font-size:22px;margin:14px 0 8px}
+.done p{color:var(--mute);font-size:15px;line-height:1.6}
+.card.sent .f{display:none}.card.sent .done{display:block}
+/* strip */
+.strip{background:var(--g);color:#fff;overflow:hidden}
+.strip .in{display:grid;grid-template-columns:repeat(4,1fr);gap:0}
+.strip div{padding:26px 20px;border-left:1px solid rgba(255,255,255,.15);display:flex;gap:14px;align-items:center}
+.strip div:first-child{border-left:0}
+.strip svg{width:34px;height:34px;flex:none;fill:none;stroke:var(--mint);stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.strip b{display:block;font-size:16px}
+.strip span{font-size:13px;color:#b8c2bd}
+/* section */
+section.s{padding:96px 0}
+.eyebrow{font-family:'Space Grotesk';font-weight:600;letter-spacing:.22em;font-size:13px;color:#128a4a}
+.s h2.t{font-size:clamp(28px,3.4vw,42px);letter-spacing:-.03em;line-height:1.3;margin-top:10px}
+.s p.d{color:var(--mute);font-size:17px;line-height:1.7;margin-top:12px;max-width:620px}
+/* courses */
+.courses{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:40px}
+.co-card{background:#fff;border-radius:18px;padding:24px 22px;display:flex;flex-direction:column;border:1.5px solid transparent;transition:.2s;position:relative}
+.co-card:hover{border-color:var(--g);transform:translateY(-3px)}
+.co-card .ic{width:58px;height:58px;border-radius:14px;background:var(--mint2);display:grid;place-items:center;margin-bottom:16px}
+.co-card .ic svg{width:34px;height:34px}
+.co-card h3{font-size:19px;letter-spacing:-.02em}
+.co-card .hr{font-family:'Space Grotesk';font-size:14px;color:var(--g);font-weight:600;margin-top:4px}
+.co-card ul{list-style:none;margin:14px 0 18px;display:grid;gap:7px}
+.co-card li{font-size:14px;color:var(--mute);padding-left:16px;position:relative;line-height:1.5}
+.co-card li:before{content:"";position:absolute;left:0;top:8px;width:7px;height:7px;border-radius:2px;background:var(--mint);border:1.5px solid var(--g)}
+.co-card .p{margin-top:auto;padding-top:14px;border-top:1px solid #e9eeeb;font-family:'Space Grotesk';font-size:26px;font-weight:700;letter-spacing:-.02em}
+.co-card .p small{font-family:'IBM Plex Sans KR';font-size:14px;font-weight:600;color:var(--mute);margin-left:2px}
+.co-card.hot{background:var(--g);color:#fff}
+.co-card.hot .ic{background:rgba(255,255,255,.12)}
+.co-card.hot .hr{color:var(--mint)}
+.co-card.hot li{color:#d1d7d4}.co-card.hot li:before{background:var(--g);border-color:var(--mint)}
+.co-card.hot .p{border-color:rgba(255,255,255,.18)}.co-card.hot .p small{color:#b8c2bd}
+.co-card .flag{position:absolute;top:16px;right:16px;background:var(--co);color:#0f1a14;font-size:12px;font-weight:700;border-radius:20px;padding:4px 10px}
+/* steps road */
+.steps{position:relative;margin-top:50px}
+.steps svg.rd{position:absolute;left:0;right:0;top:34px;width:100%;height:60px}
+.steps ol{list-style:none;display:grid;grid-template-columns:repeat(4,1fr);gap:20px;position:relative}
+.steps li{text-align:center;padding:0 6px}
+.steps .pin{width:68px;height:68px;margin:0 auto 18px;border-radius:50%;background:#fff;border:3px solid var(--g);display:grid;place-items:center;font-family:'Space Grotesk';font-weight:700;font-size:24px;color:var(--g);box-shadow:0 10px 20px -10px rgba(31,35,41,.5)}
+.steps li:last-child .pin{background:var(--co);border-color:var(--co);color:#0f1a14}
+.steps h3{font-size:18px}
+.steps p{font-size:14px;color:var(--mute);line-height:1.6;margin-top:6px}
+/* car section */
+.dual{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:40px}
+.dual .box{border-radius:22px;padding:32px;position:relative;overflow:hidden;display:grid;grid-template-columns:1fr 1fr;gap:18px;align-items:center;min-height:320px}.dual .box .tx{display:flex;flex-direction:column}
+.dual .a{background:var(--road);color:#fff}
+.dual .b{background:var(--mint2)}
+.dual h3{font-size:22px;letter-spacing:-.02em}
+.dual p{font-size:15px;line-height:1.7;margin-top:10px}
+.dual .a p{color:#c9d3cf}.dual .b p{color:var(--mute)}
+.dual svg.il{width:100%;height:auto;display:block}
+.dual .tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px;max-width:340px}
+.dual .tags span{font-size:13px;font-weight:600;border-radius:8px;padding:6px 10px}
+.dual .a .tags span{background:rgba(255,255,255,.1);color:#e9f3ee}
+.dual .b .tags span{background:#fff;color:var(--g)}
+/* faq */
+.faq{margin-top:34px;display:grid;gap:12px;max-width:860px}
+.faq details{background:#fff;border-radius:16px;padding:0 24px;border:1.5px solid #e4ebe7}
+.faq details[open]{border-color:var(--g)}
+.faq summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:20px 0;font-weight:600;font-size:17px}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary i{width:28px;height:28px;border-radius:50%;background:var(--mint2);flex:none;position:relative}
+.faq summary i:before,.faq summary i:after{content:"";position:absolute;left:8px;right:8px;top:13px;height:2px;background:var(--g);border-radius:2px;transition:.2s}
+.faq summary i:after{transform:rotate(90deg)}
+.faq details[open] summary i:after{transform:rotate(0)}
+.faq details p{padding:0 0 20px;color:var(--mute);font-size:15px;line-height:1.7}
+/* final */
+.final{background:var(--g);color:#fff;border-radius:28px;padding:56px;display:grid;grid-template-columns:1.2fr .8fr;gap:30px;align-items:center;position:relative;overflow:hidden}
+.final h2{font-size:clamp(28px,3.4vw,40px);letter-spacing:-.03em;line-height:1.3;position:relative}
+.final p{color:#cdd4d0;font-size:16px;margin-top:12px;position:relative}
+.final .r{display:flex;flex-direction:column;gap:12px;align-items:flex-start;position:relative}
+.final .r .ph{font-family:'Space Grotesk';font-size:28px;font-weight:700}
+.final .r small{color:#b8c2bd;font-size:14px}
+.final svg.lane{position:absolute;left:0;right:0;bottom:0;width:100%;height:100%;opacity:.5}
+footer{padding:44px 0 110px;color:var(--mute);font-size:14px}
+footer .in{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
+.mbar{display:none}
+@media(max-width:1000px){
+ .hero .in{grid-template-columns:1fr}
+ .courses{grid-template-columns:1fr 1fr}.strip .in{grid-template-columns:1fr 1fr}.strip div:nth-child(3){border-left:0}
+ .strip div{border-top:1px solid rgba(255,255,255,.12)}
+ .final{grid-template-columns:1fr;padding:40px 28px}
+ .nav nav{display:none}
+}
+@media(max-width:640px){
+ .in{padding:0 18px}
+ .hero{padding:32px 0 170px}
+ .hero p.lead{font-size:16px}
+ .courses,.dual{grid-template-columns:1fr}
+ .steps svg.rd{display:none}
+ .steps p br{display:none}
+ .steps ol{grid-template-columns:1fr 1fr;gap:28px 14px}
+ .strip .in{grid-template-columns:1fr}.strip div{border-left:0;padding:16px 4px}
+ section.s{padding:68px 0}
+ .card{padding:24px 18px}
+ .f .two{grid-template-columns:1fr}
+ .nav .btn{height:40px;padding:0 14px;font-size:14px}
+ .dual .box{grid-template-columns:1fr}.dual svg.il{max-width:300px;margin:0 auto}
+ .mbar{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:30;padding:10px 14px;background:rgba(244,246,245,.96);border-top:1px solid rgba(31,35,41,.15)}
+ .mbar .btn{width:100%}
+}
+</style>
+</head>
+<body>
+<header class="nav"><div class="in">
+ <a class="logo" href="#top"><i><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5" fill="none" stroke="#c9f5d9" stroke-width="2"/><circle cx="12" cy="12" r="2.4" fill="#c9f5d9"/><path d="M12 14.4v6M9.6 12H3.6M14.4 12h6" stroke="#c9f5d9" stroke-width="2"/></svg></i><span>차근 운전연수<small>CHAGEUN DRIVING</small></span></a>
+ <nav><a href="#course">연수 과정</a><a href="#how">진행 순서</a><a href="#car">연수 차량</a><a href="#faq">자주 묻는 질문</a></nav>
+ <a class="btn" href="#apply">체험 신청</a>
+</div></header>
+
+<section class="hero" id="top">
+<div class="roadart"><svg viewBox="0 0 1440 150" preserveAspectRatio="xMinYMax slice" xmlns="http://www.w3.org/2000/svg">
+  <defs><linearGradient id="asph" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#3a4440"/><stop offset="1" stop-color="#232b28"/></linearGradient>
+  <linearGradient id="carb" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#5ee09a"/><stop offset="1" stop-color="#13a058"/></linearGradient>
+  <linearGradient id="glass" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#9fb3ad"/><stop offset="1" stop-color="#2a3236"/></linearGradient><filter id="csh" x="-40%" y="-40%" width="180%" height="180%"><feDropShadow dx="0" dy="6" stdDeviation="6" flood-color="#0b2a20" flood-opacity=".35"/></filter></defs>
+  <rect x="0" y="62" width="1440" height="88" fill="url(#asph)"/><rect x="0" y="56" width="1440" height="8" fill="#d9dfdc"/>
+  <path d="M0 108 H1440" stroke="#f4f6f5" stroke-width="4" stroke-dasharray="40 30" opacity=".85"/>
+  <g transform="translate(260,86)" filter="url(#csh)">
+   <rect x="-50" y="-27" width="18" height="8" rx="3" fill="#111418"/><rect x="30" y="-27" width="18" height="8" rx="3" fill="#111418"/><rect x="-50" y="25" width="18" height="8" rx="3" fill="#111418"/><rect x="30" y="25" width="18" height="8" rx="3" fill="#111418"/>
+   <path d="M-66 -10 C-66 -22 -58 -25 -44 -25 H44 C60 -25 70 -18 72 0 C70 18 60 25 44 25 H-44 C-58 25 -66 22 -66 10Z" fill="url(#carb)"/>
+   <path d="M-60 -6 C-60 -16 -54 -19 -44 -19 H40 C52 -19 60 -14 62 -4" fill="none" stroke="#fff" stroke-width="2" opacity=".35"/>
+   <path d="M14 -19 H30 C38 -19 42 -10 42 0 C42 10 38 19 30 19 H14 C18 8 18 -8 14 -19Z" fill="url(#glass)"/>
+   <path d="M-30 -18 H-42 C-48 -12 -48 12 -42 18 H-30 C-33 8 -33 -8 -30 -18Z" fill="url(#glass)" opacity=".85"/>
+   <rect x="-26" y="-18" width="38" height="36" rx="7" fill="#13a058"/><rect x="-22" y="-14" width="30" height="28" rx="5" fill="#5ee09a" opacity=".35"/>
+   <rect x="-12" y="-6" width="18" height="12" rx="2" fill="#1f2329"/><text x="-3" y="3" font-size="7" fill="#fff" text-anchor="middle" font-family="IBM Plex Sans KR" font-weight="700">연수</text>
+   <path d="M66 -18 l6 6 M66 18 l6 -6" stroke="#fff6c9" stroke-width="4" stroke-linecap="round"/>
+   <rect x="-68" y="-18" width="5" height="10" rx="2" fill="#b8331f"/><rect x="-68" y="8" width="5" height="10" rx="2" fill="#b8331f"/>
+   <rect x="-8" y="-31" width="10" height="6" rx="2" fill="#13a058"/><rect x="-8" y="25" width="10" height="6" rx="2" fill="#13a058"/>
+  </g>
+  <path d="M340 70 C420 70 440 86 520 86" stroke="#c9f5d9" stroke-width="3" stroke-dasharray="3 10" stroke-linecap="round" fill="none" opacity=".7"/>
+
+  
+
+  <g transform="translate(1180,0)"><rect x="-3" y="20" width="6" height="40" fill="#17201c"/><rect x="-36" y="-2" width="72" height="26" rx="10" fill="#17201c"/><circle cx="-20" cy="11" r="7" fill="#56635d"/><circle cy="11" r="7" fill="#56635d"/><circle cx="20" cy="11" r="7" fill="#3ee08f"/></g>
+  <g fill="#f4f6f5" opacity=".9"><rect x="880" y="66" width="10" height="80"/><rect x="900" y="66" width="10" height="80"/><rect x="920" y="66" width="10" height="80"/><rect x="940" y="66" width="10" height="80"/><rect x="960" y="66" width="10" height="80"/><rect x="980" y="66" width="10" height="80"/></g>
+ </svg></div>
+ <div class="in">
+  <div>
+   <span class="badge"><b>12월</b>장롱면허 첫 2시간 체험 20% 할인</span>
+   <h1>면허만 있고 무서웠다면,<br><em>내 동네 길부터</em> 차근차근</h1>
+   <p class="lead">강사가 집 앞으로 찾아가는 1:1 방문 운전연수. 출퇴근길, 아이 등원길, 마트 주차장까지 실제로 다닐 길에서 연습합니다.</p>
+   <div class="facts">
+    <span><svg viewBox="0 0 24 24"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>집 앞 출발</span>
+    <span><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg>여성 강사 선택 가능</span>
+    <span><svg viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="7" rx="2"/><path d="M5 11l2-5h10l2 5M7 18v2M17 18v2"/></svg>보조 브레이크 차량 · 내 차 연수</span>
+   </div>
+  </div>
+  <div class="card" id="apply">
+   <span class="tick">12월 31일 신청분까지</span>
+   <div class="f-wrap">
+   <h2>첫 2시간 체험 연수</h2>
+   <div class="price"><s>120,000원</s><b class="num">96,000<small>원</small></b><span>2시간 · 1:1</span></div>
+   <form class="f" id="form" novalidate>
+    <div class="two"><div><label for="nm">이름</label><input id="nm" placeholder="홍길동" autocomplete="off"></div><div><label for="ph">연락처</label><input id="ph" placeholder="010-0000-0000" inputmode="tel" autocomplete="off"></div></div>
+    <div><label for="ar">출발 동네</label><input id="ar" placeholder="예) 마포구 망원동"></div>
+    <div><label>지금 운전 실력</label><div class="chipset" id="lv"><button type="button" class="on">면허만 있어요</button><button type="button">가끔 운전해요</button><button type="button">주차가 어려워요</button></div></div>
+    <div class="two"><div><label for="car">연수 차량</label><select id="car"><option>연수 차량으로</option><option>내 차로</option></select></div><div><label for="tm">희망 시간대</label><select id="tm"><option>평일 오전</option><option>평일 오후</option><option>평일 저녁</option><option>주말</option></select></div></div>
+    <label class="agree"><input type="checkbox" id="ag" checked>상담을 위한 이름·연락처 수집에 동의합니다</label>
+    <button class="btn co" type="submit">체험 연수 신청하기 <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+   </form>
+   <div class="done"><svg viewBox="0 0 64 64"><circle cx="32" cy="32" r="30" fill="#eef2f0"/><path d="M20 33l8 8 16-18" fill="none" stroke="#1f2329" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/></svg><h3>신청이 접수됐어요</h3><p>담당 강사가 하루 안에 연락드려<br>첫 수업 날짜와 출발 장소를 정해 드립니다.</p></div>
+   </div>
+  </div>
+ </div>
+</section>
+
+<div class="strip"><div class="in">
+ <div><svg viewBox="0 0 24 24"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg><p><b>집 앞에서 출발</b><span>학원까지 가지 않아도 돼요</span></p></div>
+ <div><svg viewBox="0 0 24 24"><path d="M4 19l4-14h8l4 14"/><path d="M12 7v2M12 12v2M12 17v2"/></svg><p><b>내가 다닐 길로</b><span>출퇴근·등원 코스 맞춤</span></p></div>
+ <div><svg viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="3"/><path d="M9 16V8h4a2.5 2.5 0 0 1 0 5H9"/></svg><p><b>주차 집중 연습</b><span>후진·평행·기계식 주차</span></p></div>
+ <div><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><p><b>원하는 시간에</b><span>평일 저녁·주말 가능</span></p></div>
+</div></div>
+
+<section class="s" id="course"><div class="in">
+ <span class="eyebrow">COURSES</span>
+ <h2 class="t">지금 내 실력에 맞춰 고르세요</h2>
+ <p class="d">체험 2시간을 먼저 받아 보고, 강사와 상의해서 남은 과정을 정해도 됩니다. 체험 금액은 본 과정 결제 때 빼 드려요.</p>
+ <div class="courses">
+  <div class="co-card"><div class="ic"><svg viewBox="0 0 40 40"><circle cx="20" cy="20" r="13" fill="none" stroke="#1f2329" stroke-width="3"/><circle cx="20" cy="20" r="3.5" fill="#1fbf6a"/><path d="M20 23.5V33M16.5 20H7M23.5 20H33" stroke="#1f2329" stroke-width="3"/></svg></div><h3>첫 운전 기초</h3><div class="hr num">10 HOURS · 5회</div><ul><li>시동·차선 유지·신호 대기</li><li>동네 골목과 큰길 합류</li><li>마트·아파트 주차장 진입</li></ul><div class="p num">380,000<small>원</small></div></div>
+  <div class="co-card hot"><span class="flag">장롱면허 추천</span><div class="ic"><svg viewBox="0 0 40 40"><rect x="6" y="16" width="28" height="12" rx="4" fill="none" stroke="#c9f5d9" stroke-width="3"/><path d="M9 16l3-7h16l3 7" fill="none" stroke="#c9f5d9" stroke-width="3" stroke-linejoin="round"/><circle cx="13" cy="28" r="3" fill="#1fbf6a"/><circle cx="27" cy="28" r="3" fill="#1fbf6a"/></svg></div><h3>장롱면허 복귀</h3><div class="hr num">6 HOURS · 3회</div><ul><li>감 되찾기 · 차로 변경</li><li>출퇴근 코스 실제 주행</li><li>후진 주차 반복 연습</li></ul><div class="p num">240,000<small>원</small></div></div>
+  <div class="co-card"><div class="ic"><svg viewBox="0 0 40 40"><rect x="7" y="7" width="26" height="26" rx="5" fill="none" stroke="#1f2329" stroke-width="3"/><path d="M16 28V12h6a5 5 0 0 1 0 10h-6" fill="none" stroke="#1fbf6a" stroke-width="3.4" stroke-linejoin="round"/></svg></div><h3>주차 집중</h3><div class="hr num">3 HOURS · 1회</div><ul><li>후진·평행·T자 주차</li><li>좁은 지하주차장 회전</li><li>기계식 주차 진입</li></ul><div class="p num">130,000<small>원</small></div></div>
+  <div class="co-card"><div class="ic"><svg viewBox="0 0 40 40"><path d="M10 34L16 6M30 34L24 6" stroke="#1f2329" stroke-width="3" stroke-linecap="round"/><path d="M20 10v4M20 19v4M20 28v4" stroke="#1fbf6a" stroke-width="3" stroke-linecap="round"/></svg></div><h3>고속도로 · 장거리</h3><div class="hr num">4 HOURS · 1회</div><ul><li>합류·진출 타이밍</li><li>휴게소 진입과 주차</li><li>터널·야간 주행 감각</li></ul><div class="p num">170,000<small>원</small></div></div>
+ </div>
+</div></section>
+
+<section class="s" id="how" style="background:#fff"><div class="in">
+ <span class="eyebrow">HOW IT WORKS</span>
+ <h2 class="t">신청부터 혼자 운전까지,<br>네 정거장</h2>
+ <div class="steps">
+  <svg class="rd" viewBox="0 0 1000 60" preserveAspectRatio="none"><path d="M60 30 C200 -10 300 70 500 30 S800 -10 940 30" fill="none" stroke="#2c3431" stroke-width="22" stroke-linecap="round"/><path d="M60 30 C200 -10 300 70 500 30 S800 -10 940 30" fill="none" stroke="#f4f6f5" stroke-width="2.5" stroke-dasharray="14 12"/></svg>
+  <ol>
+   <li><div class="pin">01</div><h3>체험 신청</h3><p>이 페이지에서 신청하면 <br>하루 안에 연락드려요</p></li>
+   <li><div class="pin">02</div><h3>코스 정하기</h3><p>자주 갈 길과 어려운 점을 <br>강사와 미리 이야기해요</p></li>
+   <li><div class="pin">03</div><h3>집 앞 출발</h3><p>2시간 체험 후 필요한 과정을 <br>함께 골라요</p></li>
+   <li><div class="pin">04</div><h3>혼자 운전</h3><p>마지막 날은 강사가 옆에서 <br>지켜보기만 해요</p></li>
+  </ol>
+ </div>
+</div></section>
+
+<section class="s" id="car"><div class="in">
+ <span class="eyebrow">YOUR CAR OR OURS</span>
+ <h2 class="t">연수 차량도, 내 차도 괜찮아요</h2>
+ <div class="dual">
+  <div class="box a"><div class="tx"><h3>연수 차량으로</h3><p>조수석에 보조 브레이크가 달린 소형 차량으로 시작해요. 처음 핸들을 잡는 분께 맞습니다.</p><div class="tags"><span>보조 브레이크</span><span>보조 미러</span><span>연수 표지</span></div></div>
+   <svg class="il" viewBox="0 0 300 200"><defs><linearGradient id="cb2" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#e9f3ee"/><stop offset="1" stop-color="#a9c6b9"/></linearGradient></defs><ellipse cx="160" cy="176" rx="130" ry="12" fill="#000" opacity=".3"/><path d="M40 150 v-30 c0-12 8-20 20-22 l30-4 l30-34 c6-6 14-10 24-10 h60 c12 0 22 6 28 16 l20 30 c22 4 36 12 36 30 v24z" fill="url(#cb2)"/><path d="M128 92 l20-28 c4-4 8-6 14-6 h18 v34z M190 58 h12 c8 0 14 4 18 10 l16 24 h-46z" fill="#2c3431" opacity=".8"/><circle cx="96" cy="152" r="24" fill="#17201c"/><circle cx="96" cy="152" r="10" fill="#9aa5a0"/><circle cx="236" cy="152" r="24" fill="#17201c"/><circle cx="236" cy="152" r="10" fill="#9aa5a0"/><rect x="150" y="104" width="48" height="16" rx="4" fill="#1f2329"/><text x="174" y="116" font-size="11" fill="#fff" text-anchor="middle" font-family="IBM Plex Sans KR" font-weight="700">연수 중</text><rect x="270" y="122" width="16" height="8" rx="3" fill="#fff6c9"/></svg></div>
+  <div class="box b"><div class="tx"><h3>내 차로</h3><p>앞으로 매일 탈 차로 연습하면 차 폭과 사각지대를 바로 익힐 수 있어요. 탈부착 보조 브레이크를 가져갑니다.</p><div class="tags"><span>탈부착 보조 브레이크</span><span>차 폭 감각</span><span>내 집 주차장</span></div></div>
+   <svg class="il" viewBox="0 0 300 220"><defs><linearGradient id="pk" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#3a4440"/><stop offset="1" stop-color="#262d2a"/></linearGradient><linearGradient id="cg" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#5ee09a"/><stop offset="1" stop-color="#13a058"/></linearGradient><linearGradient id="cw" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#ffffff"/><stop offset="1" stop-color="#cfd6d2"/></linearGradient><filter id="pks" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="6" stdDeviation="6" flood-color="#000" flood-opacity=".3"/></filter></defs>
+<rect x="0" y="0" width="300" height="220" rx="16" fill="url(#pk)"/>
+<rect x="0" y="0" width="300" height="14" fill="#9aa5a0"/>
+<g stroke="#f4f6f5" stroke-width="3"><path d="M30 14v104M100 14v104M170 14v104M240 14v104"/></g>
+<g fill="#f2c94c"><rect x="46" y="22" width="38" height="6" rx="3"/><rect x="116" y="22" width="38" height="6" rx="3"/><rect x="186" y="22" width="38" height="6" rx="3"/><rect x="256" y="22" width="38" height="6" rx="3"/></g>
+<g filter="url(#pks)"><rect x="42" y="34" width="46" height="78" rx="14" fill="url(#cw)"/><rect x="48" y="44" width="34" height="16" rx="5" fill="#2c3431"/><rect x="48" y="90" width="34" height="12" rx="4" fill="#2c3431" opacity=".7"/></g>
+<g filter="url(#pks)"><rect x="252" y="34" width="46" height="78" rx="14" fill="#8f9b96"/><rect x="258" y="44" width="34" height="16" rx="5" fill="#2c3431"/></g>
+<path d="M135 196 C135 160 100 150 120 120 C130 104 135 96 135 70" stroke="#5ee09a" stroke-width="3" stroke-dasharray="6 7" fill="none" stroke-linecap="round"/>
+<path d="M128 80 l7 -12 l7 12" fill="none" stroke="#5ee09a" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+<g filter="url(#pks)" transform="translate(150,160) rotate(-28)"><rect x="-23" y="-40" width="46" height="80" rx="14" fill="url(#cg)"/><rect x="-17" y="18" width="34" height="14" rx="4" fill="#2c3431" opacity=".8"/><rect x="-17" y="-30" width="34" height="16" rx="5" fill="#2c3431" opacity=".85"/></g>
+<text x="205" y="80" font-size="22" fill="#f4f6f5" font-family="Space Grotesk" font-weight="700" text-anchor="middle" opacity=".9">P</text>
+<path d="M0 132 H300" stroke="#f4f6f5" stroke-width="2" stroke-dasharray="14 10" opacity=".5"/></svg></div>
+ </div>
+</div></section>
+
+<section class="s" id="faq" style="padding-top:20px"><div class="in">
+ <span class="eyebrow">FAQ</span>
+ <h2 class="t">자주 묻는 질문</h2>
+ <div class="faq">
+  <details open><summary>면허 딴 지 10년이 넘었는데 괜찮을까요?<i></i></summary><p>네, 장롱면허 복귀 과정이 이런 분들을 위한 과정이에요. 첫 체험 시간에 실력을 보고 필요한 시간만큼만 권해 드립니다.</p></details>
+  <details><summary>체험 할인은 언제까지인가요?<i></i></summary><p>12월 31일까지 이 페이지에서 신청하신 분께 첫 2시간 체험을 20% 할인된 96,000원으로 진행해요.</p></details>
+  <details><summary>비 오는 날이나 눈 오는 날에도 하나요?<i></i></summary><p>가벼운 비는 그대로 진행해 빗길 감각도 익혀요. 눈길이나 결빙 때는 날짜를 바꿔 드리고 추가 비용은 없습니다.</p></details>
+  <details><summary>수업 시간을 바꾸고 싶으면요?<i></i></summary><p>수업 전날 저녁까지 담당 강사에게 말씀하시면 무료로 바꿔 드려요.</p></details>
+ </div>
+</div></section>
+
+<section class="s" style="padding-top:20px"><div class="in">
+ <div class="final">
+  <svg class="lane" viewBox="0 0 1000 300" preserveAspectRatio="none"><path d="M0 300 C300 250 700 330 1000 250" fill="none" stroke="#111418" stroke-width="60"/><path d="M0 300 C300 250 700 330 1000 250" fill="none" stroke="#c9f5d9" stroke-width="2" stroke-dasharray="20 16"/></svg>
+  <div><h2>올해가 가기 전에,<br>운전석에 다시 앉아 보세요</h2><p>첫 2시간 체험 96,000원 · 12월 31일 신청분까지</p></div>
+  <div class="r"><a class="btn co" href="#apply">체험 연수 신청하기 <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a><span class="ph num">000-0000-0000</span><small>카카오톡 ID: example · 매일 09:00–21:00 상담</small></div>
+ </div>
+</div></section>
+
+<footer><div class="in"><span>© 차근 운전연수 · 방문 1:1 운전연수</span><span>사업자 정보 000-00-00000</span></div></footer>
+<div class="mbar"><a class="btn co" href="#apply">첫 2시간 체험 96,000원 신청</a></div>
+<script>
+document.querySelectorAll('#lv button').forEach(function(b){b.addEventListener('click',function(){document.querySelectorAll('#lv button').forEach(function(x){x.classList.remove('on')});b.classList.add('on')})});
+document.getElementById('form').addEventListener('submit',function(e){e.preventDefault();
+ var nm=document.getElementById('nm'),ph=document.getElementById('ph'),ok=true;
+ [nm,ph].forEach(function(i){if(!i.value.trim()){i.style.borderColor='#1fbf6a';ok=false}else{i.style.borderColor=''}});
+ if(!document.getElementById('ag').checked){ok=false}
+ if(ok){document.querySelector('.card').classList.add('sent')}
+});
+</script>
+</body>
+</html>
