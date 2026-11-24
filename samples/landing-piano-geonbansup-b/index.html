@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>건반숲 피아노 교습소 · 겨울방학 무료 체험 레슨</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@700;800&family=Noto+Sans+KR:wght@400;500;700&family=Playfair+Display:ital,wght@0,700;1,600;1,700&display=swap" rel="stylesheet">
+<style>
+:root{--cream:#f6efe0;--paper:#fbf6ea;--ink:#191611;--ink2:#3a342a;--mute:#6d6353;--mus:#d6a12a;--mus2:#b8861a;--musl:#f2d98c;--forest:#2f4b3c;--line:rgba(25,22,17,.14)}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Noto Sans KR',sans-serif;background:var(--cream);color:var(--ink);word-break:keep-all;-webkit-font-smoothing:antialiased;line-height:1.6;overflow-x:hidden}
+body:before{content:"";position:fixed;inset:0;pointer-events:none;z-index:0;opacity:.5;background-image:radial-gradient(rgba(120,90,40,.07) 1px,transparent 1.2px);background-size:5px 5px}
+main,header,footer{position:relative;z-index:1}
+a{color:inherit}
+.in{max-width:1180px;margin:0 auto;padding:0 24px}
+.serif{font-family:'Nanum Myeongjo',serif}
+.num{font-family:'Playfair Display',serif}
+.kicker{display:inline-flex;align-items:center;gap:10px;font-size:13px;font-weight:700;letter-spacing:.2em;color:var(--mus2)}
+.kicker:before{content:"";width:28px;height:2px;background:var(--mus)}
+h2.t{font-family:'Nanum Myeongjo',serif;font-weight:800;font-size:clamp(28px,3.4vw,42px);line-height:1.3;margin-top:12px}
+h2.t em{font-style:normal;color:var(--mus2)}
+.lead{color:var(--mute);font-size:16px;margin-top:12px;max-width:560px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;height:56px;padding:0 30px;border-radius:999px;background:var(--ink);color:var(--paper);font-weight:700;font-size:16px;text-decoration:none;border:0;cursor:pointer;transition:.2s;font-family:inherit}
+.btn:hover{background:var(--forest)}
+.btn svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+.btn.ghost{background:transparent;color:var(--ink);box-shadow:inset 0 0 0 1.6px var(--ink)}
+.btn.ghost:hover{background:var(--ink);color:var(--paper)}
+/* header */
+header{position:sticky;top:0;z-index:20;background:rgba(246,239,224,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:72px;gap:20px}
+.logo{display:flex;align-items:center;gap:12px;text-decoration:none}
+.logo svg{width:40px;height:40px}
+.logo b{font-family:'Nanum Myeongjo',serif;font-weight:800;font-size:21px;letter-spacing:-.01em;display:block;line-height:1.1}
+.logo small{font-size:11px;letter-spacing:.18em;color:var(--mute);display:block;font-weight:500}
+.nav ul{display:flex;gap:30px;list-style:none;font-size:15px;font-weight:500}
+.nav ul a{text-decoration:none;color:var(--ink2)}
+.nav ul a:hover{color:var(--mus2)}
+.nav .btn{height:44px;padding:0 20px;font-size:14px}
+/* hero */
+.hero{padding:56px 0 0;position:relative;overflow:hidden}
+.hero .in{display:grid;grid-template-columns:1.02fr .98fr;gap:40px;align-items:center}
+.badge{display:inline-flex;align-items:center;gap:10px;background:var(--ink);color:var(--paper);padding:8px 16px 8px 8px;border-radius:999px;font-size:14px;font-weight:500}
+.badge i{font-style:normal;background:var(--mus);color:var(--ink);font-weight:700;padding:3px 10px;border-radius:999px;font-size:13px}
+.hero h1{font-family:'Nanum Myeongjo',serif;font-weight:800;font-size:clamp(38px,5vw,64px);line-height:1.22;letter-spacing:-.02em;margin:22px 0 20px}
+.hero h1 .u{position:relative;white-space:nowrap}
+.hero h1 .u:after{content:"";position:absolute;left:-2%;right:-2%;bottom:.08em;height:.32em;background:var(--musl);z-index:-1;border-radius:3px}
+.hero p.d{font-size:18px;color:var(--ink2);max-width:500px}
+.offer{display:flex;gap:0;margin:30px 0 32px;border:1.6px solid var(--ink);border-radius:18px;overflow:hidden;max-width:520px;background:var(--paper)}
+.offer div{flex:1;padding:16px 18px;border-right:1.6px solid var(--ink)}
+.offer div:last-child{border-right:0}
+.offer small{display:block;font-size:12px;color:var(--mute);letter-spacing:.06em;font-weight:500}
+.offer b{display:block;font-size:20px;margin-top:2px}
+.offer b .num{font-size:24px}
+.offer div.hl{background:var(--mus)}
+.offer div.hl small{color:var(--ink2)}
+.acts{display:flex;gap:12px;flex-wrap:wrap}
+.note{font-size:13px;color:var(--mute);margin-top:16px}
+.art{position:relative}
+.art svg{width:100%;height:auto;display:block}
+#pend{transform-box:fill-box;transform-origin:50% 100%;animation:tick 1.2s ease-in-out infinite alternate}
+@keyframes tick{from{transform:rotate(-16deg)}to{transform:rotate(16deg)}}
+@media(prefers-reduced-motion:reduce){#pend{animation:none}}
+.keys{height:86px;margin-top:48px;background:
+ linear-gradient(90deg,transparent 0 100%),
+ repeating-linear-gradient(90deg,var(--paper) 0 58px,#cfc5b0 58px 60px);position:relative;border-top:3px solid var(--ink);box-shadow:inset 0 -8px 14px -8px rgba(0,0,0,.12)}
+.keys:before{content:"";position:absolute;left:0;right:0;top:0;height:52px;
+ background:
+ linear-gradient(90deg,transparent 40px,var(--ink) 40px 76px,transparent 76px 100px,var(--ink) 100px 136px,transparent 136px 220px,var(--ink) 220px 256px,transparent 256px 280px,var(--ink) 280px 316px,transparent 316px 340px,var(--ink) 340px 376px,transparent 376px);
+ background-size:420px 52px;background-repeat:repeat-x}
+/* who */
+section{padding:100px 0}
+.price{padding-bottom:20px}
+.room{padding-top:64px}
+.apply{padding-top:20px}
+.who .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:44px}
+.card{background:var(--paper);border:1px solid var(--line);border-radius:22px;padding:28px 26px 30px;position:relative;overflow:hidden}
+.card .ic{width:76px;height:76px;margin-bottom:18px}
+.card .age{position:absolute;top:24px;right:24px;font-size:13px;font-weight:700;background:var(--cream);border:1px solid var(--line);padding:4px 12px;border-radius:999px;color:var(--ink2)}
+.card h3{font-family:'Nanum Myeongjo',serif;font-weight:800;font-size:24px;margin-bottom:8px}
+.card p{color:var(--mute);font-size:15px}
+.card ul{list-style:none;margin-top:16px;display:grid;gap:8px;font-size:14px;color:var(--ink2)}
+.card li{display:flex;gap:10px}
+.card li:before{content:"";width:9px;height:9px;border-radius:50%;background:var(--mus);margin-top:7px;flex:none}
+.card.dark{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.card.dark p,.card.dark ul{color:#d7cfbf}
+.card.dark .age{background:#2b261e;border-color:#3d362b;color:var(--musl)}
+/* steps */
+.steps{background:var(--ink);color:var(--paper);position:relative;overflow:hidden}
+.steps .kicker{color:var(--mus)}
+.steps .lead{color:#c9c0ae}
+.staff{position:relative;margin-top:56px}
+.staff .lines{position:absolute;left:0;right:0;top:51px;height:67px;background:repeating-linear-gradient(180deg,rgba(246,239,224,.22) 0 1.5px,transparent 1.5px 16px)}
+.staff ol{list-style:none;display:grid;grid-template-columns:repeat(4,1fr);gap:24px;position:relative}
+.staff li{position:relative;padding-top:0}
+.staff .n{width:72px;height:150px;display:block;margin-bottom:12px}
+.staff h3{font-size:19px;font-weight:700;margin-bottom:6px;display:flex;align-items:baseline;gap:10px}
+.staff h3 span{font-family:'Playfair Display',serif;font-style:italic;color:var(--mus);font-size:16px}
+.staff p{font-size:15px;color:#c9c0ae}
+.staff .min{display:inline-block;margin-top:12px;font-size:13px;font-weight:700;border:1px solid rgba(214,161,42,.6);color:var(--musl);padding:3px 12px;border-radius:999px}
+/* price */
+.price .top{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap}
+.free{display:flex;align-items:center;gap:16px;background:var(--mus);border-radius:18px;padding:16px 22px;max-width:420px}
+.free svg{width:46px;height:46px;flex:none}
+.free b{display:block;font-size:17px}
+.free span{font-size:14px;color:var(--ink2)}
+.plans{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:44px}
+.plan{background:var(--paper);border:1.6px solid var(--ink);border-radius:24px;padding:30px 28px;position:relative;display:flex;flex-direction:column}
+.plan .tag{font-size:13px;font-weight:700;color:var(--forest);letter-spacing:.04em}
+.plan h3{font-family:'Nanum Myeongjo',serif;font-weight:800;font-size:25px;margin:6px 0 4px}
+.plan .sub{font-size:14px;color:var(--mute)}
+.plan .pr{margin:22px 0 4px;display:flex;align-items:baseline;gap:6px;border-top:1px dashed var(--line);padding-top:20px}
+.plan .pr b{font-family:'Playfair Display',serif;font-size:44px;line-height:1;letter-spacing:-.01em}
+.plan .pr span{font-size:16px;font-weight:700}
+.plan .per{font-size:13px;color:var(--mute)}
+.plan ul{list-style:none;margin:20px 0 24px;display:grid;gap:10px;font-size:15px;color:var(--ink2);flex:1}
+.plan li{display:flex;gap:10px}
+.plan li svg{width:18px;height:18px;flex:none;margin-top:4px;fill:none;stroke:var(--mus2);stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round}
+.plan .btn{height:50px;width:100%}
+.plan.pick{background:var(--ink);color:var(--paper)}
+.plan.pick .tag{color:var(--mus)}
+.plan.pick .sub,.plan.pick .per{color:#bdb4a2}
+.plan.pick ul{color:#e2dac9}
+.plan.pick .pr{border-top-color:rgba(246,239,224,.2)}
+.plan.pick .btn{background:var(--mus);color:var(--ink)}
+.plan.pick .btn:hover{background:var(--musl)}
+.plan .rib{position:absolute;top:-14px;left:28px;background:var(--mus);color:var(--ink);font-size:12px;font-weight:700;padding:5px 14px;border-radius:999px;border:1.6px solid var(--ink)}
+.pnote{font-size:13px;color:var(--mute);margin-top:18px}
+/* room */
+.room{background:linear-gradient(180deg,var(--cream),#efe4cd)}
+.room .in{display:grid;grid-template-columns:1.15fr .85fr;gap:56px;align-items:center}
+.frame{border-radius:28px;overflow:hidden;border:1.6px solid var(--ink);background:var(--paper);box-shadow:18px 18px 0 var(--ink)}
+.frame svg{display:block;width:100%;height:auto}
+.feats{display:grid;gap:14px;margin-top:30px}
+.feat{display:flex;gap:16px;align-items:flex-start;padding:16px 0;border-bottom:1px solid var(--line)}
+.feat:last-child{border-bottom:0}
+.feat .k{font-family:'Playfair Display',serif;font-style:italic;font-weight:700;font-size:22px;color:var(--mus2);width:36px;flex:none;line-height:1.2}
+.feat b{display:block;font-size:17px}
+.feat span{font-size:14px;color:var(--mute)}
+/* faq */
+.faq .in{display:grid;grid-template-columns:.8fr 1.2fr;gap:56px}
+.acc{border-top:1.6px solid var(--ink)}
+details{border-bottom:1px solid var(--line)}
+summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:22px 4px;font-size:17px;font-weight:700}
+summary::-webkit-details-marker{display:none}
+summary i{width:30px;height:30px;border-radius:50%;border:1.6px solid var(--ink);flex:none;position:relative;transition:.2s}
+summary i:before,summary i:after{content:"";position:absolute;left:50%;top:50%;width:12px;height:2px;background:var(--ink);transform:translate(-50%,-50%)}
+summary i:after{transform:translate(-50%,-50%) rotate(90deg);transition:.2s}
+details[open] summary i{background:var(--mus);border-color:var(--mus)}
+details[open] summary i:after{transform:translate(-50%,-50%) rotate(0)}
+details p{padding:0 4px 22px;color:var(--mute);font-size:15px;max-width:640px}
+/* form */
+.apply{padding-bottom:110px}
+.box{background:var(--ink);color:var(--paper);border-radius:32px;display:grid;grid-template-columns:.9fr 1.1fr;overflow:hidden;position:relative}
+.box .l{padding:52px 48px;position:relative;overflow:hidden}
+.box .l .kicker{color:var(--mus)}
+.box .l h2{color:var(--paper)}
+.box .l h2 em{color:var(--mus)}
+.box .l p{color:#c9c0ae;margin-top:14px;font-size:15px}
+.box .l .met{position:absolute;right:-10px;bottom:-14px;width:200px;opacity:.95}
+.box .l ul{list-style:none;margin-top:26px;display:grid;gap:10px;font-size:15px;color:#e2dac9;position:relative;z-index:1;max-width:280px}
+.box .l li{display:flex;gap:10px}
+.box .l li:before{content:"♪";color:var(--mus);font-size:15px}
+form{background:var(--paper);color:var(--ink);padding:44px 44px 40px;display:grid;grid-template-columns:1fr 1fr;gap:16px 18px;border-radius:24px;margin:16px}
+form .full{grid-column:1/-1}
+label{display:block;font-size:14px;font-weight:700;margin-bottom:7px}
+input,select{width:100%;height:52px;border-radius:12px;border:1.4px solid #cbbfa6;background:#fff;padding:0 16px;font:inherit;font-size:15px;color:var(--ink)}
+input:focus,select:focus{outline:2px solid var(--mus);border-color:var(--mus)}
+.chipsel{display:flex;flex-wrap:wrap;gap:8px}
+.chipsel label{margin:0;font-weight:500;font-size:14px}
+.chipsel input{position:absolute;opacity:0;width:1px;height:1px}
+.chipsel span{display:inline-block;padding:10px 16px;border-radius:999px;border:1.4px solid #cbbfa6;background:#fff;cursor:pointer;transition:.15s}
+.chipsel input:checked+span{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.chipsel input:focus-visible+span{outline:2px solid var(--mus)}
+.agree{display:flex;gap:10px;align-items:flex-start;font-size:13px;color:var(--mute);font-weight:400}
+.agree input{width:18px;height:18px;margin-top:2px;flex:none;accent-color:#191611}
+form .btn{width:100%}
+.ok{display:none;grid-column:1/-1;background:#eef3e9;border:1.4px solid var(--forest);color:var(--forest);border-radius:14px;padding:16px 18px;font-size:15px;font-weight:500}
+.ok.show{display:block}
+.err{display:none;grid-column:1/-1;color:#a33b1f;font-size:14px;font-weight:500}
+.err.show{display:block}
+/* footer */
+footer{background:#120f0b;color:#bdb4a2;padding:48px 0 40px;font-size:14px}
+footer .in{display:flex;justify-content:space-between;gap:30px;flex-wrap:wrap;align-items:flex-start}
+footer .logo b{color:var(--paper)}
+footer .logo small{color:#8f8676}
+footer p{margin-top:4px}
+footer .c{text-align:right}
+.mbar{display:none}
+@media(max-width:1020px){
+ .nav ul{display:none}
+ .hero .in{grid-template-columns:1fr;gap:20px}
+ .art{max-width:560px;margin:0 auto;width:100%}
+ .who .grid,.plans{grid-template-columns:1fr 1fr}
+ .staff ol{grid-template-columns:1fr 1fr;row-gap:40px}
+ .staff .lines{display:none}
+ .room .in,.faq .in{grid-template-columns:1fr;gap:36px}
+ .box{grid-template-columns:1fr}
+}
+@media(max-width:640px){
+ .in{padding:0 18px}
+ section{padding:72px 0}
+ .nav{height:64px}
+ .logo b{font-size:19px}
+ .nav .btn{height:40px;padding:0 16px;font-size:13px}
+ .hero{padding-top:36px}
+ .hero h1{font-size:36px}
+ .hero p.d{font-size:16px}
+ .offer div{padding:12px 12px}
+ .offer b{font-size:16px}
+ .offer b .num{font-size:20px}
+ .acts{flex-direction:column}
+ .acts .btn{width:100%}
+ .keys{height:62px;margin-top:32px}
+ .keys:before{height:38px;background-size:300px 38px;background-image:linear-gradient(90deg,transparent 28px,var(--ink) 28px 54px,transparent 54px 72px,var(--ink) 72px 98px,transparent 98px 158px,var(--ink) 158px 184px,transparent 184px 202px,var(--ink) 202px 228px,transparent 228px 246px,var(--ink) 246px 272px,transparent 272px)}
+ .keys{background:repeating-linear-gradient(90deg,var(--paper) 0 41px,#cfc5b0 41px 43px)}
+ .who .grid,.plans{grid-template-columns:1fr}
+ .staff ol{grid-template-columns:1fr;row-gap:28px}
+ .staff li{display:grid;grid-template-columns:64px 1fr;gap:16px;align-items:start}
+ .staff .n{width:56px;height:116px;margin:0}
+ .frame{box-shadow:10px 10px 0 var(--ink)}
+ .box{border-radius:24px}
+ .box .l{padding:40px 24px 150px}
+ .box .l .met{width:150px}
+ form{grid-template-columns:1fr;padding:28px 20px;margin:10px}
+ footer .c{text-align:left}
+ footer{padding-bottom:100px}
+ .mbar{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:30;padding:10px 14px;background:rgba(25,22,17,.96)}
+ .mbar .btn{width:100%;height:50px;background:var(--mus);color:var(--ink)}
+}
+</style>
+</head>
+<body>
+<header>
+ <div class="in nav">
+  <a class="logo" href="#top" aria-label="건반숲 피아노 교습소">
+   <svg viewBox="0 0 40 40" aria-hidden="true"><rect x="1" y="1" width="38" height="38" rx="11" fill="#191611"/><path d="M8 11h24v19a2 2 0 0 1-2 2H10a2 2 0 0 1-2-2z" fill="#fbf6ea"/><path d="M14 32V11M20 32V11M26 32V11" stroke="#bfb39a" stroke-width="1"/><rect x="12" y="11" width="4" height="12" rx="1" fill="#191611"/><rect x="18" y="11" width="4" height="12" rx="1" fill="#191611"/><rect x="24" y="11" width="4" height="12" rx="1" fill="#191611"/><path d="M27 4c3 2 5 5 5 8-3 0-6-2-7-5" fill="#d6a12a"/></svg>
+   <span><b>건반숲</b><small>PIANO STUDIO</small></span>
+  </a>
+  <ul>
+   <li><a href="#who">대상</a></li>
+   <li><a href="#steps">체험 순서</a></li>
+   <li><a href="#price">겨울 특강</a></li>
+   <li><a href="#room">교습 공간</a></li>
+   <li><a href="#faq">자주 묻는 질문</a></li>
+  </ul>
+  <a class="btn" href="#apply">체험 신청</a>
+ </div>
+</header>
+<main id="top">
+ <section class="hero" style="padding-bottom:0">
+  <div class="in">
+   <div>
+    <span class="badge"><i>겨울방학</i>12월 ~ 2월 무료 체험 레슨</span>
+    <h1>첫 건반을 눌러 보는<br><span class="u">30분</span>, 무료로<br>시작해 보세요</h1>
+    <p class="d">악보를 몰라도 괜찮아요. 손 모양부터 짧은 곡 한 소절까지, 1:1로 천천히 함께 쳐 봅니다.</p>
+    <div class="offer">
+     <div class="hl"><small>체험 레슨</small><b>1회 무료</b></div>
+     <div><small>수업 시간</small><b>30분</b></div>
+     <div><small>방식</small><b>1:1 개인</b></div>
+    </div>
+    <div class="acts">
+     <a class="btn" href="#apply">무료 체험 신청하기 <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+     <a class="btn ghost" href="#price">겨울 특강 보기</a>
+    </div>
+    <p class="note">* 체험 레슨은 1인 1회 · 사전 예약제로 진행됩니다.</p>
+   </div>
+   <div class="art">
+    <svg viewBox="0 0 560 500" role="img" aria-label="업라이트 피아노와 메트로놈, 오선 위 음표 일러스트">
+     <defs>
+      <linearGradient id="pw" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2a241c"/><stop offset="1" stop-color="#0f0d0a"/></linearGradient>
+      <linearGradient id="pnh" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#3a3226"/><stop offset=".5" stop-color="#4b4131"/><stop offset="1" stop-color="#2a241c"/></linearGradient>
+      <linearGradient id="mt" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#b8861a"/><stop offset=".45" stop-color="#e6b746"/><stop offset="1" stop-color="#a77713"/></linearGradient>
+      <linearGradient id="lp" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#2c251c"/><stop offset=".55" stop-color="#17130e"/><stop offset="1" stop-color="#0c0a08"/></linearGradient>
+      <linearGradient id="kw" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fffdf6"/><stop offset="1" stop-color="#e6dcc6"/></linearGradient>
+      <radialGradient id="glow" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#f2d98c" stop-opacity=".8"/><stop offset="1" stop-color="#f2d98c" stop-opacity="0"/></radialGradient>
+      <linearGradient id="lamp" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2f4b3c"/><stop offset="1" stop-color="#1e3227"/></linearGradient>
+     </defs>
+     <circle cx="250" cy="200" r="210" fill="url(#glow)"/>
+     <!-- staff -->
+     <g transform="translate(0 -22)"><g stroke="#191611" stroke-opacity=".28" stroke-width="1.6">
+      <path d="M0 58 C140 30 300 80 560 40"/><path d="M0 72 C140 44 300 94 560 54"/><path d="M0 86 C140 58 300 108 560 68"/><path d="M0 100 C140 72 300 122 560 82"/><path d="M0 114 C140 86 300 136 560 96"/>
+     </g>
+     <g fill="#191611">
+      <ellipse cx="80" cy="76" rx="9" ry="6.5" transform="rotate(-20 80 76)"/><path d="M88 74V36" stroke="#191611" stroke-width="2.4"/>
+      <ellipse cx="150" cy="66" rx="9" ry="6.5" transform="rotate(-20 150 66)"/><ellipse cx="190" cy="78" rx="9" ry="6.5" transform="rotate(-20 190 78)"/><path d="M158 64V26M198 76V38" stroke="#191611" stroke-width="2.4"/><path d="M158 26L198 38V46L158 34z"/>
+      <ellipse cx="420" cy="64" rx="9" ry="6.5" transform="rotate(-20 420 64)" fill="#d6a12a"/><path d="M428 62V24q12 6 10 20" stroke="#b8861a" stroke-width="2.4" fill="none"/>
+      <ellipse cx="490" cy="72" rx="9" ry="6.5" transform="rotate(-20 490 72)"/><path d="M498 70V32" stroke="#191611" stroke-width="2.4"/>
+     </g></g>
+     <!-- floor -->
+     <ellipse cx="270" cy="476" rx="250" ry="16" fill="#191611" opacity=".12"/>
+     <!-- piano body -->
+     <rect x="70" y="150" width="380" height="250" rx="10" fill="url(#pw)"/>
+     <rect x="70" y="150" width="380" height="18" rx="8" fill="#3b3326"/>
+     <rect x="92" y="180" width="336" height="96" rx="6" fill="url(#pnh)" opacity=".7"/>
+     <path d="M110 196h300M110 260h300" stroke="#d6a12a" stroke-opacity=".35"/>
+     <!-- music stand + sheet -->
+     <path d="M170 176l20-62h130l20 62z" fill="#fbf6ea" stroke="#191611" stroke-width="2"/>
+     <g stroke="#191611" stroke-opacity=".45" stroke-width="1.2"><path d="M188 132h134M185 140h140M182 148h146M179 156h152M176 164h158"/></g>
+     <g fill="#191611"><circle cx="210" cy="148" r="4"/><circle cx="240" cy="140" r="4"/><circle cx="270" cy="156" r="4"/><circle cx="300" cy="144" r="4"/></g>
+     <!-- keybed -->
+     <rect x="58" y="288" width="404" height="24" rx="5" fill="#2a241c"/>
+     <rect x="64" y="300" width="392" height="44" fill="url(#kw)"/>
+     <g stroke="#b9ad93" stroke-width="1.2">
+      <path d="M92 300v44M120 300v44M148 300v44M176 300v44M204 300v44M232 300v44M260 300v44M288 300v44M316 300v44M344 300v44M372 300v44M400 300v44M428 300v44"/>
+     </g>
+     <g fill="#14110d">
+      <rect x="84" y="300" width="15" height="26" rx="2"/><rect x="112" y="300" width="15" height="26" rx="2"/>
+      <rect x="168" y="300" width="15" height="26" rx="2"/><rect x="196" y="300" width="15" height="26" rx="2"/><rect x="224" y="300" width="15" height="26" rx="2"/>
+      <rect x="280" y="300" width="15" height="26" rx="2"/><rect x="308" y="300" width="15" height="26" rx="2"/>
+      <rect x="364" y="300" width="15" height="26" rx="2"/><rect x="392" y="300" width="15" height="26" rx="2"/><rect x="420" y="300" width="15" height="26" rx="2"/>
+     </g>
+     <rect x="58" y="344" width="404" height="14" rx="3" fill="#1f1a14"/>
+     <!-- legs & pedals -->
+     <rect x="84" y="358" width="22" height="100" rx="4" fill="#1a1611"/><rect x="414" y="358" width="22" height="100" rx="4" fill="#1a1611"/>
+     <rect x="106" y="370" width="308" height="82" fill="url(#lp)"/><rect x="122" y="380" width="276" height="54" rx="4" fill="none" stroke="#4b4131" stroke-width="1.6"/><rect x="128" y="386" width="264" height="42" rx="3" fill="#ffffff" fill-opacity=".03"/>
+     <g fill="#d6a12a"><rect x="226" y="440" width="18" height="8" rx="3"/><rect x="252" y="440" width="18" height="8" rx="3"/><rect x="278" y="440" width="18" height="8" rx="3"/></g>
+     <rect x="70" y="452" width="380" height="10" rx="4" fill="#0c0a08"/>
+     <!-- plant (forest touch) -->
+     <path d="M496 470h44l-6-56h-32z" fill="#c9b691"/><path d="M490 414h56" stroke="#a89770" stroke-width="5" stroke-linecap="round"/>
+     <g fill="url(#lamp)"><path d="M518 412c-28-20-36-60-20-90 10 26 22 54 20 90z"/><path d="M518 412c26-16 38-56 26-92-14 24-26 56-26 92z"/><path d="M518 412c-4-40 2-80 6-110 8 34 6 76-6 110z" fill="#3f6450"/></g>
+     <!-- metronome -->
+     <g transform="translate(232 -11) scale(.6)">
+      <path d="M248 268l26-108h12l26 108z" fill="url(#mt)" stroke="#191611" stroke-width="2.4" stroke-linejoin="round"/>
+      <path d="M258 268h44l-6-26h-32z" fill="#191611"/>
+      <path d="M272 178h16v54h-16z" fill="#fbf6ea" stroke="#191611" stroke-width="1.4"/>
+      <g stroke="#191611" stroke-width="1.2"><path d="M275 188h10M275 198h10M275 208h10M275 218h10"/></g>
+      <g id="pend"><path d="M280 254V168" stroke="#191611" stroke-width="3" stroke-linecap="round"/><path d="M272 196h16l-3 14h-10z" fill="#191611"/></g>
+      <circle cx="280" cy="254" r="5" fill="#d6a12a" stroke="#191611" stroke-width="2"/>
+     </g>
+    </svg>
+   </div>
+  </div>
+  <div class="keys" aria-hidden="true"></div>
+ </section>
+
+ <section class="who" id="who">
+  <div class="in">
+   <span class="kicker">WHO IT'S FOR</span>
+   <h2 class="t">누구든 <em>처음 30분</em>은<br>같은 자리에서 시작해요</h2>
+   <p class="lead">나이와 목표에 맞춰 체험 레슨의 곡과 진행 속도를 다르게 준비합니다.</p>
+   <div class="grid">
+    <article class="card">
+     <span class="age">5~7세</span>
+     <svg class="ic" viewBox="0 0 76 76" aria-hidden="true"><circle cx="38" cy="38" r="36" fill="#f2d98c"/><circle cx="30" cy="48" r="9" fill="#191611"/><circle cx="50" cy="44" r="9" fill="#191611"/><path d="M38 48V20M58 44V16" stroke="#191611" stroke-width="3.4"/><path d="M38 20l20-4v8l-20 4z" fill="#191611"/><circle cx="20" cy="22" r="4" fill="#2f4b3c"/></svg>
+     <h3>유아 리듬반</h3>
+     <p>노래하고 손뼉 치며 박자부터 몸으로 익혀요.</p>
+     <ul><li>그림 악보 · 색깔 건반 스티커</li><li>손가락 번호 놀이</li><li>보호자 참관 가능</li></ul>
+    </article>
+    <article class="card dark">
+     <span class="age">초등 1~6학년</span>
+     <svg class="ic" viewBox="0 0 76 76" aria-hidden="true"><circle cx="38" cy="38" r="36" fill="#d6a12a"/><rect x="16" y="22" width="44" height="32" rx="3" fill="#fbf6ea"/><path d="M27 22v32M38 22v32M49 22v32" stroke="#b9ad93" stroke-width="1.4"/><rect x="24" y="22" width="6" height="18" rx="1" fill="#191611"/><rect x="35" y="22" width="6" height="18" rx="1" fill="#191611"/><rect x="46" y="22" width="6" height="18" rx="1" fill="#191611"/></svg>
+     <h3>초등 기초반</h3>
+     <p>계이름 읽기와 양손 연주로 짧은 곡을 완주해요.</p>
+     <ul><li>바이엘·체르니 이전 단계 맞춤</li><li>방학 동안 한 곡 완성 목표</li><li>매 수업 연습 기록 카드</li></ul>
+    </article>
+    <article class="card">
+     <span class="age">성인 취미</span>
+     <svg class="ic" viewBox="0 0 76 76" aria-hidden="true"><circle cx="38" cy="38" r="36" fill="#2f4b3c"/><path d="M22 56V26l30-8v30" fill="none" stroke="#fbf6ea" stroke-width="3.4"/><circle cx="18" cy="56" r="6" fill="#f2d98c"/><circle cx="48" cy="50" r="6" fill="#f2d98c"/><path d="M22 34l30-8" stroke="#fbf6ea" stroke-width="3.4"/></svg>
+     <h3>성인 취미반</h3>
+     <p>좋아하는 곡 한 곡을 정해 코드 반주로 가볍게.</p>
+     <ul><li>퇴근 후 저녁 시간대 운영</li><li>코드 반주 · 쉬운 편곡 악보</li><li>개인 연습실 이용 안내</li></ul>
+    </article>
+   </div>
+  </div>
+ </section>
+
+ <section class="steps" id="steps">
+  <div class="in">
+   <span class="kicker">TRIAL LESSON</span>
+   <h2 class="t" style="color:var(--paper)">체험 레슨 <em style="color:var(--mus)">30분</em>은 이렇게 흘러가요</h2>
+   <p class="lead">네 마디로 나눈 시간표. 처음 오셔도 무엇을 하는지 미리 알 수 있어요.</p>
+   <div class="staff">
+    <div class="lines"></div>
+    <ol>
+     <li><svg class="n" viewBox="0 0 72 150" aria-hidden="true"><ellipse cx="30" cy="116" rx="22" ry="16" transform="rotate(-20 30 116)" fill="#d6a12a"/><path d="M50 110V14" stroke="#d6a12a" stroke-width="5"/><text x="30" y="123" text-anchor="middle" font-family="Playfair Display" font-weight="700" font-size="22" fill="#191611">1</text></svg>
+      <div><h3><span>i.</span>인사와 손 풀기</h3><p>의자 높이와 앉는 자세를 맞추고, 손가락 번호를 함께 익혀요.</p><span class="min">5분</span></div></li>
+     <li><svg class="n" viewBox="0 0 72 150" aria-hidden="true"><ellipse cx="30" cy="92" rx="22" ry="16" transform="rotate(-20 30 92)" fill="#fbf6ea"/><path d="M50 86V8" stroke="#fbf6ea" stroke-width="5"/><text x="30" y="99" text-anchor="middle" font-family="Playfair Display" font-weight="700" font-size="22" fill="#191611">2</text></svg>
+      <div><h3><span>ii.</span>건반과 소리 탐색</h3><p>높은 소리·낮은 소리, 세게·여리게를 직접 눌러 보며 구분해요.</p><span class="min">10분</span></div></li>
+     <li><svg class="n" viewBox="0 0 72 150" aria-hidden="true"><ellipse cx="30" cy="76" rx="22" ry="16" transform="rotate(-20 30 76)" fill="#d6a12a"/><path d="M50 70V4" stroke="#d6a12a" stroke-width="5"/><text x="30" y="83" text-anchor="middle" font-family="Playfair Display" font-weight="700" font-size="22" fill="#191611">3</text></svg>
+      <div><h3><span>iii.</span>한 소절 연주</h3><p>메트로놈에 맞춰 짧은 멜로디 한 소절을 끝까지 쳐 봐요.</p><span class="min">10분</span></div></li>
+     <li><svg class="n" viewBox="0 0 72 150" aria-hidden="true"><ellipse cx="30" cy="52" rx="22" ry="16" transform="rotate(-20 30 52)" fill="#fbf6ea"/><path d="M50 46V2" stroke="#fbf6ea" stroke-width="5"/><path d="M50 2q18 10 14 30" stroke="#fbf6ea" stroke-width="4" fill="none"/><text x="30" y="59" text-anchor="middle" font-family="Playfair Display" font-weight="700" font-size="22" fill="#191611">4</text></svg>
+      <div><h3><span>iv.</span>진도 상담</h3><p>오늘 연주를 바탕으로 맞는 반과 수업 횟수를 함께 정해요.</p><span class="min">5분</span></div></li>
+    </ol>
+   </div>
+  </div>
+ </section>
+
+ <section class="price" id="price">
+  <div class="in">
+   <div class="top">
+    <div>
+     <span class="kicker">WINTER CLASS</span>
+     <h2 class="t">겨울방학 <em>4주 특강</em> 수강료</h2>
+     <p class="lead">체험 레슨 후 원하시는 경우에만 등록하시면 됩니다. 교재비 별도.</p>
+    </div>
+    <div class="free">
+     <svg viewBox="0 0 46 46" aria-hidden="true"><circle cx="23" cy="23" r="22" fill="#191611"/><path d="M15 23l6 6 11-12" fill="none" stroke="#f2d98c" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+     <div><b>체험 레슨 30분 · 0원</b><span>등록 여부와 관계없이 무료로 진행돼요.</span></div>
+    </div>
+   </div>
+   <div class="plans">
+    <article class="plan">
+     <span class="tag">유아 · 초등</span>
+     <h3>주 1회반</h3>
+     <p class="sub">40분 수업 · 4주 4회</p>
+     <div class="pr"><b>120,000</b><span>원</span></div>
+     <p class="per">회당 30,000원</p>
+     <ul>
+      <li><svg viewBox="0 0 24 24"><path d="M5 12l5 5 9-10"/></svg>1:1 개인 레슨</li>
+      <li><svg viewBox="0 0 24 24"><path d="M5 12l5 5 9-10"/></svg>연습 기록 카드 제공</li>
+      <li><svg viewBox="0 0 24 24"><path d="M5 12l5 5 9-10"/></svg>보강 1회 가능</li>
+     </ul>
+     <a class="btn ghost" href="#apply">체험 먼저 해 보기</a>
+    </article>
+    <article class="plan pick">
+     <span class="rib">방학 집중</span>
+     <span class="tag">유아 · 초등</span>
+     <h3>주 2회반</h3>
+     <p class="sub">40분 수업 · 4주 8회</p>
+     <div class="pr"><b>210,000</b><span>원</span></div>
+     <p class="per">회당 26,250원</p>
+     <ul>
+      <li><svg viewBox="0 0 24 24"><path d="M5 12l5 5 9-10"/></svg>1:1 개인 레슨</li>
+      <li><svg viewBox="0 0 24 24"><path d="M5 12l5 5 9-10"/></svg>방학 마지막 주 작은 연주회</li>
+      <li><svg viewBox="0 0 24 24"><path d="M5 12l5 5 9-10"/></svg>개인 연습실 주 2시간</li>
+     </ul>
+     <a class="btn" href="#apply">체험 먼저 해 보기</a>
+    </article>
+    <article class="plan">
+     <span class="tag">성인</span>
+     <h3>취미 저녁반</h3>
+     <p class="sub">50분 수업 · 4주 4회</p>
+     <div class="pr"><b>160,000</b><span>원</span></div>
+     <p class="per">회당 40,000원</p>
+     <ul>
+      <li><svg viewBox="0 0 24 24"><path d="M5 12l5 5 9-10"/></svg>평일 저녁 7시 ~ 10시</li>
+      <li><svg viewBox="0 0 24 24"><path d="M5 12l5 5 9-10"/></svg>원하는 곡 쉬운 편곡</li>
+      <li><svg viewBox="0 0 24 24"><path d="M5 12l5 5 9-10"/></svg>개인 연습실 주 1시간</li>
+     </ul>
+     <a class="btn ghost" href="#apply">체험 먼저 해 보기</a>
+    </article>
+   </div>
+   <p class="pnote">* 수강료는 부가세 포함 금액입니다. 형제·자매 동시 등록 시 상담 후 조정됩니다.</p>
+  </div>
+ </section>
+
+ <section class="room" id="room">
+  <div class="in">
+   <div class="frame">
+    <svg viewBox="0 0 640 440" role="img" aria-label="창밖에 눈이 내리는 피아노 교습실 일러스트">
+     <defs>
+      <linearGradient id="wall" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f4ead4"/><stop offset="1" stop-color="#e9dcbf"/></linearGradient>
+      <linearGradient id="win" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2f4b3c"/><stop offset="1" stop-color="#4f6f5c"/></linearGradient>
+      <linearGradient id="flr" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#c79b5c"/><stop offset="1" stop-color="#9a7140"/></linearGradient>
+      <linearGradient id="gp" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#2e281f"/><stop offset="1" stop-color="#0d0b08"/></linearGradient>
+      <radialGradient id="lampg" cx=".5" cy="0" r="1"><stop offset="0" stop-color="#ffe7a3" stop-opacity=".75"/><stop offset="1" stop-color="#ffe7a3" stop-opacity="0"/></radialGradient>
+     </defs>
+     <rect width="640" height="440" fill="url(#wall)"/>
+     <rect y="0" width="640" height="300" fill="url(#wall)"/>
+     <!-- window -->
+     <rect x="60" y="48" width="200" height="170" rx="6" fill="url(#win)"/>
+     <g fill="#2a4234"><path d="M60 218l40-60 30 30 40-56 50 60 40-40v66z"/></g>
+     <g fill="#fbf6ea"><circle cx="90" cy="80" r="3"/><circle cx="130" cy="110" r="2.4"/><circle cx="170" cy="70" r="3"/><circle cx="220" cy="96" r="2.4"/><circle cx="110" cy="150" r="2.4"/><circle cx="200" cy="140" r="3"/><circle cx="240" cy="66" r="2"/><circle cx="76" cy="124" r="2"/><circle cx="150" cy="180" r="2.4"/><circle cx="232" cy="176" r="2"/></g>
+     <path d="M160 48v170M60 132h200" stroke="#fbf6ea" stroke-width="6"/>
+     <rect x="54" y="42" width="212" height="182" rx="8" fill="none" stroke="#191611" stroke-width="6"/>
+     <rect x="46" y="222" width="228" height="12" rx="3" fill="#191611"/>
+     <!-- shelf with scores -->
+     <rect x="420" y="70" width="170" height="10" rx="2" fill="#191611"/>
+     <g><rect x="430" y="28" width="14" height="42" fill="#d6a12a"/><rect x="446" y="22" width="12" height="48" fill="#191611"/><rect x="460" y="32" width="16" height="38" fill="#2f4b3c"/><rect x="478" y="26" width="10" height="44" fill="#fbf6ea" stroke="#191611" stroke-width="1.2"/><rect x="490" y="36" width="14" height="34" fill="#b8861a"/><path d="M508 70l10-40 12 3-10 40z" fill="#191611"/></g>
+     <circle cx="560" cy="48" r="16" fill="#fbf6ea" stroke="#191611" stroke-width="3"/><path d="M560 38v10l7 5" stroke="#191611" stroke-width="2.4" fill="none" stroke-linecap="round"/>
+     <!-- frame staff art -->
+     <rect x="440" y="110" width="130" height="90" fill="#fbf6ea" stroke="#191611" stroke-width="4"/>
+     <g stroke="#191611" stroke-opacity=".5"><path d="M452 140h106M452 148h106M452 156h106M452 164h106M452 172h106"/></g>
+     <g fill="#d6a12a"><circle cx="470" cy="164" r="5"/><circle cx="500" cy="152" r="5"/><circle cx="530" cy="144" r="5"/></g>
+     <!-- lamp light -->
+     <path d="M330 40h40l40 260H290z" fill="url(#lampg)"/>
+     <path d="M350 0v30" stroke="#191611" stroke-width="2"/><path d="M326 46q24-26 48 0z" fill="#d6a12a" stroke="#191611" stroke-width="2.4"/>
+     <!-- floor -->
+     <rect y="300" width="640" height="140" fill="url(#flr)"/>
+     <g stroke="#8a6334" stroke-opacity=".5"><path d="M0 330h640M0 366h640M0 404h640M120 300v30M300 330v36M480 300v30M200 366v38M420 366v38M560 404v36"/></g>
+     <!-- rug -->
+     <ellipse cx="340" cy="380" rx="230" ry="40" fill="#2f4b3c" opacity=".9"/>
+     <ellipse cx="340" cy="380" rx="210" ry="32" fill="none" stroke="#d6a12a" stroke-width="2" stroke-dasharray="6 6"/>
+     <!-- grand piano -->
+     <path d="M200 244 L440 230 C520 226 560 262 520 292 C490 312 430 300 380 310 L210 322 Z" fill="url(#gp)"/>
+     <path d="M210 230 L440 214 C510 210 550 240 520 262" fill="none" stroke="#4b4131" stroke-width="3"/>
+     <path d="M232 238 L420 152 L432 160 L262 240z" fill="#1d1813"/>
+     <rect x="196" y="300" width="160" height="22" rx="3" fill="#fbf6ea" stroke="#191611" stroke-width="2"/>
+     <g fill="#191611"><rect x="206" y="300" width="7" height="12"/><rect x="220" y="300" width="7" height="12"/><rect x="246" y="300" width="7" height="12"/><rect x="260" y="300" width="7" height="12"/><rect x="274" y="300" width="7" height="12"/><rect x="300" y="300" width="7" height="12"/><rect x="314" y="300" width="7" height="12"/><rect x="340" y="300" width="7" height="12"/></g>
+     <g fill="#14110d"><rect x="214" y="320" width="10" height="70" rx="3"/><rect x="340" y="320" width="10" height="64" rx="3"/><rect x="490" y="290" width="10" height="80" rx="3"/></g>
+     <!-- bench -->
+     <rect x="220" y="356" width="120" height="16" rx="4" fill="#191611"/>
+     <rect x="228" y="372" width="8" height="38" fill="#191611"/><rect x="324" y="372" width="8" height="38" fill="#191611"/>
+     <!-- metronome on piano -->
+     <path d="M452 232l10-38h6l10 38z" fill="#d6a12a" stroke="#191611" stroke-width="2"/><path d="M465 228l8-30" stroke="#191611" stroke-width="2"/>
+     <!-- second upright small -->
+     <rect x="546" y="226" width="74" height="104" rx="4" fill="#191611"/><rect x="542" y="222" width="82" height="8" rx="2" fill="#2e281f"/><rect x="546" y="266" width="74" height="14" fill="#fbf6ea"/><g fill="#191611"><rect x="552" y="266" width="5" height="8"/><rect x="562" y="266" width="5" height="8"/><rect x="578" y="266" width="5" height="8"/><rect x="588" y="266" width="5" height="8"/><rect x="598" y="266" width="5" height="8"/></g><rect x="552" y="330" width="6" height="20" fill="#191611"/><rect x="608" y="330" width="6" height="20" fill="#191611"/>
+     <!-- plant -->
+     <path d="M20 330h40l-5-44H25z" fill="#d6a12a"/>
+     <g fill="#2f4b3c"><path d="M40 288c-20-12-26-44-14-66 8 20 16 40 14 66z"/><path d="M40 288c18-12 26-42 18-66-10 18-18 42-18 66z"/></g>
+    </svg>
+   </div>
+   <div>
+    <span class="kicker">OUR ROOM</span>
+    <h2 class="t">창가 자리 그랜드 피아노,<br><em>방음 연습실</em>까지</h2>
+    <p class="lead">레슨실 하나, 연습실 셋. 수업이 끝난 뒤에도 조용히 남아서 쳐 볼 수 있어요.</p>
+    <div class="feats">
+     <div class="feat"><span class="k">01</span><div><b>그랜드 피아노 레슨실</b><span>체험 레슨은 창가 레슨실에서 1:1로 진행해요.</span></div></div>
+     <div class="feat"><span class="k">02</span><div><b>방음 개인 연습실 3실</b><span>업라이트 피아노 · 메트로놈 · 보면대 비치</span></div></div>
+     <div class="feat"><span class="k">03</span><div><b>보호자 대기 공간</b><span>유리창 너머로 수업 모습을 볼 수 있어요.</span></div></div>
+    </div>
+   </div>
+  </div>
+ </section>
+
+ <section class="faq" id="faq">
+  <div class="in">
+   <div>
+    <span class="kicker">FAQ</span>
+    <h2 class="t">신청 전에<br><em>자주 묻는 질문</em></h2>
+    <p class="lead">더 궁금한 점은 신청서에 남겨 주시면 전화로 안내드려요.</p>
+   </div>
+   <div class="acc">
+    <details open><summary>피아노가 집에 없어도 괜찮나요?<i></i></summary><p>네, 괜찮아요. 체험 레슨은 교습소 피아노로 진행하고, 등록 후에는 연습실 이용 시간을 안내해 드립니다.</p></details>
+    <details><summary>체험 후 꼭 등록해야 하나요?<i></i></summary><p>아니요. 체험 레슨은 등록과 관계없이 무료입니다. 진도 상담 내용만 참고로 가져가셔도 돼요.</p></details>
+    <details><summary>몇 살부터 수업할 수 있나요?<i></i></summary><p>만 5세부터 유아 리듬반으로 시작할 수 있어요. 아이의 집중 시간에 맞춰 수업 길이를 조절합니다.</p></details>
+    <details><summary>체험 레슨 날짜는 어떻게 정하나요?<i></i></summary><p>신청서에 희망 시간대를 남겨 주시면 하루 안에 연락드려 날짜를 확정해요.</p></details>
+    <details><summary>준비물이 있나요?<i></i></summary><p>따로 준비할 것은 없어요. 손톱이 너무 길면 건반을 누르기 불편하니 짧게 정리해 오시면 좋아요.</p></details>
+   </div>
+  </div>
+ </section>
+
+ <section class="apply" id="apply">
+  <div class="in">
+   <div class="box">
+    <div class="l">
+     <span class="kicker">APPLY</span>
+     <h2 class="t">무료 체험 레슨<br><em>30분</em> 신청하기</h2>
+     <p>희망 시간대를 남겨 주시면 확인 후 연락드려요.</p>
+     <ul><li>1인 1회 · 사전 예약제</li><li>12월 ~ 2월 겨울방학 기간</li><li>보호자 동반 체험 가능</li></ul>
+     <svg class="met" viewBox="0 0 200 220" aria-hidden="true"><path d="M40 216l48-196h24l48 196z" fill="#d6a12a" stroke="#fbf6ea" stroke-opacity=".2" stroke-width="2"/><path d="M58 216h84l-10-46H68z" fill="#120f0b"/><rect x="88" y="40" width="24" height="96" fill="#fbf6ea"/><g stroke="#191611" stroke-width="1.6"><path d="M92 56h16M92 72h16M92 88h16M92 104h16M92 120h16"/></g><path d="M100 190L132 40" stroke="#fbf6ea" stroke-width="4" stroke-linecap="round"/><path d="M114 110h18l-4 18h-12z" fill="#fbf6ea" transform="rotate(12 122 118)"/></svg>
+    </div>
+    <form id="f" novalidate>
+     <div><label for="nm">신청자 이름</label><input id="nm" name="nm" placeholder="예: 김건반" autocomplete="off"></div>
+     <div><label for="ph">연락처</label><input id="ph" name="ph" placeholder="000-0000-0000" inputmode="tel" autocomplete="off"></div>
+     <div class="full"><label>학생 연령</label>
+      <div class="chipsel" role="radiogroup">
+       <label><input type="radio" name="age" value="유아" checked><span>유아 (5~7세)</span></label>
+       <label><input type="radio" name="age" value="초등"><span>초등학생</span></label>
+       <label><input type="radio" name="age" value="중등 이상"><span>중학생 이상</span></label>
+       <label><input type="radio" name="age" value="성인"><span>성인</span></label>
+      </div>
+     </div>
+     <div class="full"><label for="tm">희망 시간</label>
+      <select id="tm" name="tm"><option>평일 오후 2시 ~ 5시</option><option>평일 저녁 6시 ~ 9시</option><option>토요일 오전 10시 ~ 1시</option><option>토요일 오후 2시 ~ 5시</option></select>
+     </div>
+     <label class="agree full"><input type="checkbox" id="ag" checked>상담 연락을 위한 이름·연락처 수집에 동의합니다. (체험 일정 안내 후 파기)</label>
+     <p class="err" id="er">이름과 연락처를 입력해 주세요.</p>
+     <div class="full"><button class="btn" type="submit">무료 체험 신청하기 <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button></div>
+     <p class="ok" id="ok" role="status"></p>
+    </form>
+   </div>
+  </div>
+ </section>
+</main>
+<footer>
+ <div class="in">
+  <div>
+   <a class="logo" href="#top"><svg viewBox="0 0 40 40" aria-hidden="true"><rect x="1" y="1" width="38" height="38" rx="11" fill="#d6a12a"/><path d="M8 11h24v19a2 2 0 0 1-2 2H10a2 2 0 0 1-2-2z" fill="#fbf6ea"/><rect x="12" y="11" width="4" height="12" rx="1" fill="#191611"/><rect x="18" y="11" width="4" height="12" rx="1" fill="#191611"/><rect x="24" y="11" width="4" height="12" rx="1" fill="#191611"/></svg><span><b>건반숲 피아노 교습소</b><small>PIANO STUDIO</small></span></a>
+   <p style="margin-top:14px">운영 평일 13:00 ~ 22:00 · 토 10:00 ~ 17:00 · 일요일 휴무</p>
+  </div>
+  <div class="c">
+   <p>전화 000-0000-0000</p>
+   <p>카카오톡 ID: example</p>
+   <p>주소 OO시 OO구 OO로 00, 2층</p>
+  </div>
+ </div>
+</footer>
+<div class="mbar"><a class="btn" href="#apply">무료 체험 레슨 신청하기</a></div>
+<script>
+document.getElementById('f').addEventListener('submit',function(e){
+ e.preventDefault();
+ var n=document.getElementById('nm').value.trim(),p=document.getElementById('ph').value.trim(),er=document.getElementById('er'),ok=document.getElementById('ok');
+ if(!n||!p||!document.getElementById('ag').checked){er.classList.add('show');ok.classList.remove('show');return}
+ er.classList.remove('show');
+ var a=document.querySelector('input[name=age]:checked').value,t=document.getElementById('tm').value;
+ ok.textContent=n+'님, '+a+' 체험 레슨 신청이 접수되었어요. 희망하신 '+t+' 중 가능한 날짜로 연락드릴게요.';
+ ok.classList.add('show');
+});
+</script>
+</body>
+</html>

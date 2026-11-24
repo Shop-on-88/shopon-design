@@ -1,0 +1,828 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Munting Ulap · Organic Cotton Clothes for Babies &amp; Kids</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;1,9..144,500&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--oat:#efe5d3;--linen:#f7f0e4;--cream:#fffaf1;--sand:#dccaa9;--olive:#343f24;--olive2:#5d6a3a;--sage:#a9b38a;--pers:#d8643a;--pers2:#b44c27;--ink:#2a3020;--mute:#6b6a58}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Outfit',sans-serif;background:var(--linen);color:var(--ink);-webkit-font-smoothing:antialiased;overflow-x:hidden;line-height:1.55}
+img,svg{display:block}
+a{color:inherit;text-decoration:none}
+button{font-family:inherit;cursor:pointer}
+.serif{font-family:'Fraunces',serif}
+.wrap{max-width:1240px;margin:0 auto;padding:0 32px}
+.ico{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+/* linen texture */
+.tex{background-image:radial-gradient(rgba(52,63,36,.05) 1px,transparent 1.2px),radial-gradient(rgba(180,76,39,.035) 1px,transparent 1.2px);background-size:7px 7px,11px 11px;background-position:0 0,3px 5px}
+/* announcement */
+.ann{background:var(--olive);color:#e9e3cf;font-size:13px;text-align:center;padding:9px 16px;letter-spacing:.02em}
+.ann b{color:#f4b38f;font-weight:600}
+/* header */
+header{position:sticky;top:0;z-index:30;background:rgba(247,240,228,.94);backdrop-filter:blur(8px);border-bottom:1px solid rgba(52,63,36,.12)}
+.hdr{display:flex;align-items:center;justify-content:space-between;height:74px;gap:20px}
+.logo{display:flex;align-items:center;gap:10px}
+.logo svg{width:46px;height:32px}
+.logo span{font-family:'Fraunces',serif;font-weight:600;font-size:24px;color:var(--olive);letter-spacing:-.01em;line-height:1}
+.logo small{display:block;font-family:'Outfit';font-size:11px;font-weight:500;letter-spacing:.22em;color:var(--pers2);margin-top:3px}
+nav ul{display:flex;gap:30px;list-style:none;font-size:15px;font-weight:500}
+nav a{position:relative;padding:6px 0}
+nav a:hover{color:var(--pers2)}
+.hact{display:flex;align-items:center;gap:8px}
+.ib{width:42px;height:42px;border-radius:50%;border:1px solid rgba(52,63,36,.18);background:var(--cream);display:grid;place-items:center;color:var(--olive);position:relative}
+.ib .cnt{position:absolute;top:-4px;right:-4px;min-width:19px;height:19px;border-radius:10px;background:var(--pers);color:#fff;font-size:11px;font-weight:700;display:grid;place-items:center;padding:0 5px;transform:scale(0);transition:.25s}
+.ib .cnt.on{transform:scale(1)}
+.menu-btn{display:none}
+/* hero */
+.hero{position:relative;overflow:hidden;background:var(--oat)}
+.hero-in{display:grid;grid-template-columns:1.02fr 1fr;align-items:center;gap:30px;min-height:620px;padding-top:40px;padding-bottom:40px}
+.eyebrow{display:inline-flex;align-items:center;gap:10px;font-size:13px;font-weight:600;letter-spacing:.2em;color:var(--pers2);text-transform:uppercase}
+.eyebrow i{width:26px;height:26px;border-radius:50%;background:var(--pers);position:relative;box-shadow:inset 0 -3px 0 rgba(0,0,0,.15)}
+.eyebrow i:before{content:"";position:absolute;inset:8px;background:radial-gradient(circle at 2px 2px,var(--oat) 1.6px,transparent 2px) 0 0/5px 5px}
+.hero h1{font-family:'Fraunces',serif;font-weight:500;font-size:clamp(44px,5.6vw,80px);line-height:1.02;letter-spacing:-.025em;color:var(--olive);margin:20px 0 22px}
+.hero h1 em{font-style:italic;color:var(--pers2)}
+.hero p.lead{font-size:18px;max-width:470px;color:#4a4c3a}
+.btns{display:flex;flex-wrap:wrap;gap:12px;margin-top:32px}
+.btn{display:inline-flex;align-items:center;gap:10px;height:54px;padding:0 28px;border-radius:40px;font-weight:600;font-size:15px;border:0;transition:.2s}
+.btn-p{background:var(--olive);color:var(--cream)}
+.btn-p:hover{background:var(--pers2)}
+.btn-o{background:transparent;color:var(--olive);border:1.5px solid var(--olive)}
+.btn-o:hover{background:var(--olive);color:var(--cream)}
+.hero-notes{display:flex;flex-wrap:wrap;gap:22px;margin-top:38px;font-size:14px;color:var(--olive2)}
+.hero-notes span{display:flex;align-items:center;gap:8px}
+.hero-art{position:relative;aspect-ratio:1/0.92;width:100%}
+.hero-art svg{width:100%;height:100%}
+.tag{position:absolute;background:var(--cream);border-radius:14px;padding:12px 16px;box-shadow:0 18px 34px -20px rgba(52,63,36,.5);font-size:13px;border:1px dashed rgba(180,76,39,.45)}
+.tag b{display:block;font-family:'Fraunces',serif;font-weight:600;font-size:18px;color:var(--olive)}
+.tag.t1{left:0;top:6%}
+.tag.t2{right:3%;bottom:4%}
+/* section common */
+section{padding:100px 0}
+.sh{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;margin-bottom:44px;flex-wrap:wrap}
+.sh h2{font-family:'Fraunces',serif;font-weight:500;font-size:clamp(32px,3.6vw,50px);line-height:1.08;letter-spacing:-.02em;color:var(--olive)}
+.sh h2 em{font-style:italic;color:var(--pers2)}
+.sh p{max-width:420px;color:var(--mute);font-size:16px}
+.kick{font-size:13px;font-weight:600;letter-spacing:.2em;color:var(--pers2);text-transform:uppercase;margin-bottom:12px;display:block}
+/* stitched divider */
+.stitch{height:16px;background:linear-gradient(90deg,var(--pers) 50%,transparent 50%) 0 50%/18px 2px repeat-x}
+/* ages */
+.ages{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.age{border-radius:28px;padding:28px;position:relative;overflow:hidden;min-height:380px;display:flex;flex-direction:column;justify-content:space-between;transition:.3s}
+.age:hover{transform:translateY(-6px)}
+.age:nth-child(1){background:#e6d7bd}
+.age:nth-child(2){background:#cfd3b2}
+.age:nth-child(3){background:#ecc3a6}
+.age .num{font-family:'Fraunces',serif;font-size:15px;font-weight:600;color:var(--olive);display:flex;justify-content:space-between;align-items:center}
+.age .num span{background:rgba(255,250,241,.7);padding:5px 12px;border-radius:20px;font-family:'Outfit';font-size:13px;font-weight:600}
+.age svg.art{width:76%;height:200px;margin:8px auto}
+.age h3{font-family:'Fraunces',serif;font-weight:500;font-size:30px;color:var(--olive);line-height:1.1}
+.age p{font-size:15px;color:#4a4c3a;margin-top:6px}
+.age .go{position:absolute;right:24px;bottom:28px;width:46px;height:46px;border-radius:50%;background:var(--olive);color:var(--cream);display:grid;place-items:center}
+/* products */
+.filters{display:flex;gap:8px;flex-wrap:wrap}
+.chip{height:40px;padding:0 18px;border-radius:30px;border:1.5px solid rgba(52,63,36,.25);background:transparent;font-size:14px;font-weight:500;color:var(--olive)}
+.chip.on{background:var(--olive);color:var(--cream);border-color:var(--olive)}
+.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
+.card{background:var(--cream);border-radius:22px;overflow:hidden;border:1px solid rgba(52,63,36,.08);transition:.3s;display:flex;flex-direction:column}
+.card:hover{box-shadow:0 26px 40px -28px rgba(52,63,36,.55)}
+.card .pic{aspect-ratio:1/1.02;position:relative;display:grid;place-items:center}
+.card .pic svg{width:74%;height:74%}
+.card .lbl{position:absolute;top:14px;left:14px;background:var(--cream);color:var(--pers2);font-size:11px;font-weight:700;letter-spacing:.12em;padding:5px 10px;border-radius:20px;text-transform:uppercase}
+.card .body{padding:16px 18px 18px;display:flex;flex-direction:column;gap:8px;flex:1}
+.card h3{font-size:16px;font-weight:600;color:var(--olive);line-height:1.3}
+.card .meta{font-size:13px;color:var(--mute)}
+.card .row{display:flex;justify-content:space-between;align-items:center;margin-top:auto;padding-top:6px}
+.price{font-family:'Fraunces',serif;font-weight:600;font-size:20px;color:var(--olive)}
+.sw{display:flex;gap:6px}
+.sw i{width:16px;height:16px;border-radius:50%;border:2px solid var(--cream);box-shadow:0 0 0 1px rgba(52,63,36,.25)}
+.add{height:40px;border-radius:30px;border:1.5px solid var(--olive);background:transparent;color:var(--olive);font-weight:600;font-size:14px;display:flex;align-items:center;justify-content:center;gap:8px;transition:.2s}
+.add:hover,.add.done{background:var(--olive);color:var(--cream)}
+.card[hidden]{display:none}
+/* fabric */
+.fabric{background:var(--olive);color:#e9e3cf;position:relative;overflow:hidden}
+.fabric .sh h2{color:var(--cream)}
+.fabric .sh h2 em{color:#f4a77f}
+.fabric .sh p{color:#c9c6ad}
+.fab-grid{display:grid;grid-template-columns:1.1fr 1fr;gap:56px;align-items:center}
+.swatch-art{position:relative;border-radius:30px;overflow:hidden;aspect-ratio:1/0.86}
+.swatch-art svg{width:100%;height:100%}
+.feats{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.feat{background:rgba(255,250,241,.06);border:1px solid rgba(255,250,241,.14);border-radius:20px;padding:22px}
+.feat .bt{width:44px;height:44px;border-radius:50%;background:var(--pers);display:grid;place-items:center;margin-bottom:14px;color:#fff;box-shadow:inset 0 -4px 0 rgba(0,0,0,.18)}
+.feat h3{font-family:'Fraunces',serif;font-weight:500;font-size:21px;color:var(--cream);margin-bottom:6px}
+.feat p{font-size:14px;color:#c9c6ad}
+/* size guide */
+.size-box{display:grid;grid-template-columns:.9fr 1.1fr;gap:28px;background:var(--cream);border-radius:30px;padding:36px;border:1px solid rgba(52,63,36,.1)}
+.calc h3{font-family:'Fraunces',serif;font-weight:500;font-size:26px;color:var(--olive);margin-bottom:8px}
+.calc>p{font-size:15px;color:var(--mute);margin-bottom:22px}
+.field{margin-bottom:20px}
+.field label{display:flex;justify-content:space-between;font-size:14px;font-weight:600;color:var(--olive);margin-bottom:10px}
+.field label output{font-family:'Fraunces',serif;font-size:18px;color:var(--pers2)}
+input[type=range]{width:100%;accent-color:var(--pers)}
+.result{margin-top:8px;border-radius:22px;background:var(--oat);padding:22px;display:flex;align-items:center;gap:20px}
+.result .big{width:96px;height:96px;flex:none;border-radius:50%;background:var(--pers);color:#fff;display:grid;place-items:center;text-align:center;font-family:'Fraunces',serif;font-size:24px;font-weight:600;line-height:1;box-shadow:inset 0 -6px 0 rgba(0,0,0,.15)}
+.result .big small{display:block;font-family:'Outfit';font-size:11px;letter-spacing:.14em;font-weight:600;margin-top:4px}
+.result p{font-size:14px;color:#4a4c3a}
+.result p b{color:var(--olive)}
+table{width:100%;border-collapse:collapse;font-size:14px}
+th,td{text-align:left;padding:13px 12px;border-bottom:1px dashed rgba(52,63,36,.22)}
+th{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--olive2);font-weight:600}
+td:first-child{font-family:'Fraunces',serif;font-weight:600;color:var(--olive);font-size:16px}
+tr.hl td{background:#f6dccb}
+tr.hl td:first-child{border-radius:10px 0 0 10px}
+tr.hl td:last-child{border-radius:0 10px 10px 0}
+.tbl-note{font-size:13px;color:var(--mute);margin-top:12px}
+/* gift */
+.gift{background:var(--oat)}
+.gift-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start}
+.steps{display:grid;gap:22px}
+.step h4{font-size:14px;font-weight:600;color:var(--olive);margin-bottom:12px;display:flex;align-items:center;gap:10px}
+.step h4 i{font-style:normal;width:26px;height:26px;border-radius:50%;background:var(--olive);color:var(--cream);display:grid;place-items:center;font-size:13px}
+.opts{display:flex;flex-wrap:wrap;gap:10px}
+.opt{border:1.5px solid rgba(52,63,36,.22);background:var(--cream);border-radius:16px;padding:12px 16px;font-size:14px;font-weight:500;color:var(--olive);text-align:left;transition:.2s}
+.opt small{display:block;color:var(--mute);font-size:12px;font-weight:400}
+.opt.on{border-color:var(--pers);background:#fbe6d9;box-shadow:inset 0 0 0 1px var(--pers)}
+.rib{width:44px;height:44px;border-radius:50%;border:3px solid var(--cream);box-shadow:0 0 0 1.5px rgba(52,63,36,.25)}
+.rib.on{box-shadow:0 0 0 3px var(--olive)}
+.note-in{width:100%;height:50px;border-radius:14px;border:1.5px solid rgba(52,63,36,.22);background:var(--cream);padding:0 16px;font:inherit;font-size:15px;color:var(--ink)}
+.boxprev{background:var(--cream);border-radius:30px;padding:30px;position:sticky;top:100px;border:1px solid rgba(52,63,36,.1)}
+.boxprev svg{width:100%;height:auto;max-height:300px}
+.boxprev .card-msg{font-family:'Fraunces',serif;font-style:italic;font-size:19px;color:var(--olive);text-align:center;margin:14px 0 18px;min-height:30px;word-break:break-word}
+.sum{border-top:1px dashed rgba(52,63,36,.3);padding-top:16px;display:grid;gap:8px;font-size:14px}
+.sum div{display:flex;justify-content:space-between;gap:10px}
+.sum .tot{font-family:'Fraunces',serif;font-size:24px;font-weight:600;color:var(--olive);margin-top:4px}
+.boxprev .btn{width:100%;justify-content:center;margin-top:18px}
+/* shipping */
+.ship{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.sp{padding:28px 24px;border-radius:24px;background:var(--cream);border:1px solid rgba(52,63,36,.1)}
+.sp svg.ico{width:34px;height:34px;color:var(--pers2);stroke-width:1.5;margin-bottom:18px}
+.sp h3{font-family:'Fraunces',serif;font-weight:500;font-size:21px;color:var(--olive);margin-bottom:6px}
+.sp p{font-size:14px;color:var(--mute)}
+.sp b{color:var(--olive)}
+/* journal / care */
+.care{display:grid;grid-template-columns:1fr 1.2fr;gap:50px;align-items:center}
+.care-art{border-radius:30px;overflow:hidden;background:#e7d8bf}
+.care-art svg{width:100%;height:auto}
+.care ol{list-style:none;display:grid;gap:16px;margin-top:26px;counter-reset:c}
+.care li{display:flex;gap:16px;align-items:flex-start;counter-increment:c;padding-bottom:16px;border-bottom:1px dashed rgba(52,63,36,.2)}
+.care li:before{content:counter(c,decimal-leading-zero);font-family:'Fraunces',serif;font-size:22px;color:var(--pers2);font-weight:600;min-width:36px}
+.care li b{display:block;color:var(--olive);font-size:16px}
+.care li span{font-size:14px;color:var(--mute)}
+/* newsletter */
+.news{background:var(--pers);color:#fff3ea;border-radius:36px;padding:60px;display:grid;grid-template-columns:1.1fr 1fr;gap:40px;align-items:center;position:relative;overflow:hidden}
+.news h2{font-family:'Fraunces',serif;font-weight:500;font-size:clamp(32px,3.4vw,46px);line-height:1.08;color:#fff}
+.news h2 em{color:var(--olive);font-style:italic}
+.news p{margin-top:12px;font-size:16px;color:#ffe3d3}
+.nform{display:flex;gap:10px;background:#fff6ef;border-radius:40px;padding:6px;position:relative;z-index:1}
+.nform input{flex:1;min-width:0;border:0;background:transparent;padding:0 18px;font:inherit;font-size:15px;color:var(--ink);outline:none}
+.nform button{height:50px;padding:0 24px;border-radius:30px;border:0;background:var(--olive);color:var(--cream);font-weight:600;font-size:15px;white-space:nowrap}
+.nmsg{font-size:14px;margin-top:12px;min-height:22px;color:#fff;position:relative;z-index:1}
+.contact{display:flex;flex-wrap:wrap;gap:12px 26px;margin-top:22px;font-size:14px;position:relative;z-index:1}
+.contact span{display:flex;align-items:center;gap:8px}
+.news .cl{position:absolute;right:-30px;bottom:-40px;width:230px;opacity:.13}
+/* footer */
+footer{background:#2b341d;color:#c9c6ad;margin-top:100px;padding:70px 0 30px}
+.fgrid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:30px}
+footer .logo span{color:var(--cream)}
+footer h5{font-size:13px;letter-spacing:.18em;text-transform:uppercase;color:#f4a77f;margin-bottom:14px;font-weight:600}
+footer ul{list-style:none;display:grid;gap:9px;font-size:14px}
+footer p.d{font-size:14px;margin-top:14px;max-width:300px}
+.fbot{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;border-top:1px solid rgba(255,250,241,.12);margin-top:50px;padding-top:22px;font-size:13px}
+.toast{position:fixed;left:50%;bottom:26px;transform:translate(-50%,30px);opacity:0;visibility:hidden;pointer-events:none;background:var(--olive);color:var(--cream);padding:14px 22px;border-radius:40px;font-size:14px;font-weight:500;z-index:60;transition:.35s;display:flex;align-items:center;gap:10px;box-shadow:0 20px 40px -20px rgba(0,0,0,.5);max-width:calc(100% - 32px)}
+.toast.on{transform:translate(-50%,0);opacity:1;visibility:visible}
+.toast i{width:10px;height:10px;border-radius:50%;background:var(--pers);flex:none}
+.mnav{display:none}
+/* responsive */
+@media(max-width:1100px){
+ .grid{grid-template-columns:repeat(3,1fr)}
+ .ship{grid-template-columns:1fr 1fr}
+ .fab-grid{gap:36px}
+}
+@media(max-width:900px){
+ nav{display:none}
+ .menu-btn{display:grid}
+ .hero-in{grid-template-columns:1fr;min-height:0;padding-top:46px;gap:10px}
+ .hero-art{max-width:560px;margin:0 auto}
+ .ages{grid-template-columns:1fr 1fr}
+ .ages .age:last-child{grid-column:span 2}
+ .fab-grid,.size-box,.gift-grid,.care,.news{grid-template-columns:1fr}
+ .boxprev{position:static}
+ .fgrid{grid-template-columns:1fr 1fr}
+ .mnav.open{display:block;position:fixed;inset:0;top:0;background:var(--linen);z-index:50;padding:90px 32px 32px}
+ .mnav ul{list-style:none;display:grid;gap:6px}
+ .mnav a{font-family:'Fraunces',serif;font-size:34px;color:var(--olive);display:block;padding:8px 0;border-bottom:1px dashed rgba(52,63,36,.2)}
+ .mnav .x{position:absolute;top:22px;right:24px}
+}
+@media(max-width:620px){
+ .wrap{padding:0 18px}
+ section{padding:70px 0}
+ .hdr{height:64px}
+ .logo span{font-size:21px}
+ .logo svg{width:40px}
+ .hact .ib.hide-m{display:none}
+ .hero h1{font-size:44px}
+ .hero p.lead{font-size:16px}
+ .btn{height:50px;padding:0 22px}
+ .hero-notes{gap:12px 18px;margin-top:28px}
+ .tag{padding:9px 12px}
+ .tag b{font-size:15px}
+ .ages{grid-template-columns:1fr}
+ .ages .age:last-child{grid-column:auto}
+ .age{min-height:330px}
+ .grid{grid-template-columns:1fr 1fr;gap:12px}
+ .card .body{padding:12px 12px 14px}
+ .card h3{font-size:14px}
+ .card .meta{font-size:12px}
+ .price{font-size:17px}
+ .sw i{width:13px;height:13px}
+ .add{height:38px;font-size:13px}
+ .feats{grid-template-columns:1fr;gap:12px}
+ .feat{padding:18px;display:grid;grid-template-columns:44px 1fr;gap:2px 14px;align-items:start}
+ .feat .bt{margin:0;grid-row:span 2}
+ .feat h3{font-size:19px;margin:0}
+ .size-box{padding:22px}
+ th,td{padding:11px 7px}
+ td:first-child{font-size:14px}
+ table{font-size:13px}
+ .ship{grid-template-columns:1fr}
+ .news{padding:36px 24px;border-radius:28px}
+ .nform{flex-direction:column;border-radius:24px;padding:8px}
+ .nform input{height:46px}
+ .fgrid{grid-template-columns:1fr 1fr;gap:28px 18px}
+ .fgrid>div:first-child{grid-column:span 2}
+ .boxprev{padding:22px}
+ .hero-in{padding-top:40px;padding-bottom:34px}
+ .ship{grid-template-columns:1fr 1fr;gap:12px}
+ .sp{padding:20px 16px}
+ .sp h3{font-size:18px}
+ .sp p{font-size:13px}
+ .sp svg.ico{width:28px;height:28px;margin-bottom:12px}
+}
+</style>
+</head>
+<body>
+<!-- shared defs -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+ <defs>
+  <pattern id="knit" width="8" height="8" patternUnits="userSpaceOnUse"><path d="M0 4 Q2 0 4 4 T8 4" fill="none" stroke="rgba(0,0,0,.08)" stroke-width="1"/></pattern>
+  <pattern id="dots" width="12" height="12" patternUnits="userSpaceOnUse"><circle cx="3" cy="3" r="1.6" fill="rgba(255,250,241,.8)"/><circle cx="9" cy="9" r="1.6" fill="rgba(255,250,241,.8)"/></pattern>
+  <pattern id="stripe" width="14" height="14" patternUnits="userSpaceOnUse"><rect width="14" height="7" fill="rgba(255,250,241,.55)"/></pattern>
+  <pattern id="ging" width="16" height="16" patternUnits="userSpaceOnUse"><rect width="8" height="16" fill="rgba(93,106,58,.22)"/><rect width="16" height="8" fill="rgba(93,106,58,.22)"/></pattern>
+  <pattern id="rib" width="6" height="6" patternUnits="userSpaceOnUse"><rect width="2" height="6" fill="rgba(0,0,0,.07)"/></pattern>
+  <pattern id="leaf" width="28" height="28" patternUnits="userSpaceOnUse"><path d="M7 14c3-6 9-6 10-6-1 6-6 9-10 6z" fill="rgba(52,63,36,.28)"/><path d="M21 26c2-4 6-4 7-4-1 4-4 6-7 4z" fill="rgba(52,63,36,.2)"/></pattern>
+  <linearGradient id="gOat" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f6ecda"/><stop offset="1" stop-color="#dcc8a4"/></linearGradient>
+  <linearGradient id="gOlive" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#7d8a52"/><stop offset="1" stop-color="#4d5930"/></linearGradient>
+  <linearGradient id="gPers" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ec8a5d"/><stop offset="1" stop-color="#c3532a"/></linearGradient>
+  <linearGradient id="gSage" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#c8cfa8"/><stop offset="1" stop-color="#97a276"/></linearGradient>
+  <linearGradient id="gCream" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fffaf1"/><stop offset="1" stop-color="#eadcc4"/></linearGradient>
+  <linearGradient id="gClay" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#e9b796"/><stop offset="1" stop-color="#c98b65"/></linearGradient>
+  <linearGradient id="gMoss" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#5f6c3c"/><stop offset="1" stop-color="#343f24"/></linearGradient>
+  <filter id="soft" x="-20%" y="-20%" width="140%" height="150%"><feDropShadow dx="0" dy="10" stdDeviation="10" flood-color="#343f24" flood-opacity=".22"/></filter>
+  <g id="btn4"><circle r="7" fill="#fffaf1" stroke="rgba(0,0,0,.18)"/><circle cx="-2.2" cy="-2.2" r="1.2" fill="#8a7a60"/><circle cx="2.2" cy="-2.2" r="1.2" fill="#8a7a60"/><circle cx="-2.2" cy="2.2" r="1.2" fill="#8a7a60"/><circle cx="2.2" cy="2.2" r="1.2" fill="#8a7a60"/></g>
+  <g id="cloudMark"><path d="M14 30h30a10 10 0 0 0 0-20 13 13 0 0 0-24-3A9 9 0 0 0 14 30z" fill="#fffaf1" stroke="#343f24" stroke-width="2.2"/><path d="M17 26h26a6 6 0 0 0 0-12" fill="none" stroke="#d8643a" stroke-width="1.6" stroke-dasharray="3 3" stroke-linecap="round"/></g>
+ </defs>
+</svg>
+
+<div class="ann">Free delivery within Metro Manila on orders over <b>₱2,500</b> · Gift wrapping on every order</div>
+
+<header>
+ <div class="wrap hdr">
+  <a class="logo" href="#top" aria-label="Munting Ulap home">
+   <svg viewBox="0 0 58 36"><use href="#cloudMark"/></svg>
+   <div><span>Munting Ulap</span><small>ORGANIC COTTON KIDS</small></div>
+  </a>
+  <nav><ul>
+   <li><a href="#ages">Shop by age</a></li>
+   <li><a href="#new">New in</a></li>
+   <li><a href="#fabric">Our cotton</a></li>
+   <li><a href="#size">Size guide</a></li>
+   <li><a href="#gift">Gift box</a></li>
+  </ul></nav>
+  <div class="hact">
+   <button class="ib hide-m" aria-label="Search"><svg class="ico" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg></button>
+   <button class="ib" aria-label="Bag" id="bagBtn"><svg class="ico" viewBox="0 0 24 24"><path d="M5 8h14l-1 12H6L5 8z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/></svg><span class="cnt" id="cnt">0</span></button>
+   <button class="ib menu-btn" aria-label="Menu" id="mOpen"><svg class="ico" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h10"/></svg></button>
+  </div>
+ </div>
+</header>
+<div class="mnav" id="mnav">
+ <button class="ib x" id="mClose" aria-label="Close"><svg class="ico" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+ <ul>
+  <li><a href="#ages">Shop by age</a></li><li><a href="#new">New in</a></li><li><a href="#fabric">Our cotton</a></li><li><a href="#size">Size guide</a></li><li><a href="#gift">Gift box</a></li><li><a href="#ship">Delivery</a></li>
+ </ul>
+</div>
+
+<main id="top">
+<!-- HERO -->
+<section class="hero tex" style="padding:0">
+ <div class="wrap hero-in">
+  <div>
+   <span class="eyebrow"><i></i>The Rainy-Day Collection</span>
+   <h1>Soft clothes for <em>little clouds.</em></h1>
+   <p class="lead">Breathable organic cotton basics for babies and kids up to 7 — sewn in small batches, garment-washed for that broken-in feel, and cut roomy so they last a little longer.</p>
+   <div class="btns">
+    <a class="btn btn-p" href="#new">Shop new arrivals <svg class="ico" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+    <a class="btn btn-o" href="#gift">Build a gift box</a>
+   </div>
+   <div class="hero-notes">
+    <span><svg class="ico" viewBox="0 0 24 24"><path d="M3 7h11v9H3zM14 10h4l3 3v3h-7"/><circle cx="7" cy="18" r="2"/><circle cx="17" cy="18" r="2"/></svg>1–3 day Metro Manila delivery</span>
+    <span><svg class="ico" viewBox="0 0 24 24"><path d="M4 12a8 8 0 1 0 3-6.2"/><path d="M4 4v4h4"/></svg>14-day size exchange</span>
+   </div>
+  </div>
+  <div class="hero-art">
+   <svg viewBox="0 0 600 550" role="img" aria-label="Baby clothes hanging on a line under a stitched cloud">
+    <!-- big stitched cloud -->
+    <g filter="url(#soft)">
+     <path d="M120 250h330a70 70 0 0 0 0-140 95 95 0 0 0-176-26 70 70 0 0 0-104 45A60 60 0 0 0 120 250z" fill="#fffaf1"/>
+    </g>
+    <path d="M128 236h322a56 56 0 0 0 0-112" fill="none" stroke="#d8643a" stroke-width="3" stroke-dasharray="9 8" stroke-linecap="round"/>
+    <path d="M150 220a46 46 0 0 1 30-80" fill="none" stroke="#d8643a" stroke-width="3" stroke-dasharray="9 8" stroke-linecap="round"/>
+    <text x="300" y="196" text-anchor="middle" font-family="Fraunces" font-style="italic" font-size="34" fill="#343f24">rain or shine</text>
+    <!-- sun button -->
+    <g transform="translate(486 72)">
+     <circle r="44" fill="url(#gPers)"/>
+     <circle r="34" fill="none" stroke="rgba(255,250,241,.45)" stroke-width="2" stroke-dasharray="4 5"/>
+     <circle cx="-10" cy="-10" r="6" fill="#a8441f"/><circle cx="10" cy="-10" r="6" fill="#a8441f"/><circle cx="-10" cy="10" r="6" fill="#a8441f"/><circle cx="10" cy="10" r="6" fill="#a8441f"/>
+     <path d="M-10 -10L10 10M10 -10L-10 10" stroke="#f3d3bd" stroke-width="2.2"/>
+    </g>
+    <!-- rain stitches -->
+    <g stroke="#a9b38a" stroke-width="3" stroke-linecap="round">
+     <path d="M200 278v16M260 290v16M330 280v16M400 292v16"/>
+    </g>
+    <!-- line -->
+    <path d="M10 318 Q300 378 590 318" fill="none" stroke="#6b5a40" stroke-width="2.5"/>
+    <!-- onesie -->
+    <g transform="translate(70 322) rotate(5)" filter="url(#soft)">
+     <path d="M0 6 L30 0 Q50 14 70 0 L100 6 L118 46 L94 56 L88 42 L88 130 Q88 150 70 152 L62 152 Q50 140 38 152 L30 152 Q12 150 12 130 L12 42 L6 56 L-18 46 Z" fill="url(#gOat)"/>
+     <path d="M0 6 L30 0 Q50 14 70 0 L100 6 L118 46 L94 56 L88 42 L88 130 Q88 150 70 152 L62 152 Q50 140 38 152 L30 152 Q12 150 12 130 L12 42 L6 56 L-18 46 Z" fill="url(#rib)"/>
+     <path d="M30 0 Q50 22 70 0" fill="none" stroke="#c98b65" stroke-width="5"/>
+     <use href="#btn4" x="40" y="146" transform="scale(.7)" />
+     <g transform="translate(50 82)"><path d="M-18 6h36a10 10 0 0 0 0-20 13 13 0 0 0-24-4A9 9 0 0 0-18 6z" fill="#fffaf1" stroke="#d8643a" stroke-width="1.8" stroke-dasharray="3 3"/></g>
+     <rect x="26" y="-8" width="8" height="18" rx="2" fill="#b98f5c"/><rect x="66" y="-8" width="8" height="18" rx="2" fill="#b98f5c"/>
+    </g>
+    <!-- dress -->
+    <g transform="translate(232 352) rotate(-2)" filter="url(#soft)">
+     <path d="M20 0 L44 0 Q56 12 68 0 L92 0 L100 34 L86 40 L96 168 L16 168 L26 40 L12 34 Z" fill="url(#gPers)"/>
+     <path d="M20 0 L44 0 Q56 12 68 0 L92 0 L100 34 L86 40 L96 168 L16 168 L26 40 L12 34 Z" fill="url(#dots)" opacity=".55"/>
+     <path d="M26 54 Q56 64 86 54" fill="none" stroke="#fffaf1" stroke-width="2" stroke-dasharray="4 4"/>
+     <use href="#btn4" x="56" y="24"/>
+     <rect x="30" y="-10" width="8" height="18" rx="2" fill="#b98f5c"/><rect x="74" y="-10" width="8" height="18" rx="2" fill="#b98f5c"/>
+    </g>
+    <!-- shorts + socks -->
+    <g transform="translate(396 346) rotate(-6)" filter="url(#soft)">
+     <path d="M0 0 H100 L108 92 H62 L50 40 L38 92 H-8 Z" fill="url(#gOlive)"/>
+     <path d="M0 0 H100 V14 H0 Z" fill="#3f4a2b"/>
+     <path d="M4 7 H96" stroke="#a9b38a" stroke-width="1.6" stroke-dasharray="4 4"/>
+     <path d="M-2 82 H40 M60 82 H104" stroke="rgba(255,250,241,.35)" stroke-width="1.5" stroke-dasharray="3 3"/>
+     <rect x="14" y="-10" width="8" height="18" rx="2" fill="#b98f5c"/><rect x="78" y="-10" width="8" height="18" rx="2" fill="#b98f5c"/>
+    </g>
+    <g transform="translate(526 334) rotate(-10)">
+     <path d="M0 0h20v46q0 12 12 14v14H6Q-2 74 0 60z" fill="#fffaf1" stroke="#dccaa9" stroke-width="1.5"/>
+     <path d="M0 8h20M0 14h20" stroke="#d8643a" stroke-width="2.5"/>
+     <rect x="6" y="-10" width="7" height="16" rx="2" fill="#b98f5c"/>
+    </g>
+    <!-- floor buttons -->
+    <use href="#btn4" transform="translate(60 520) scale(1.6)"/>
+   </svg>
+   <div class="tag t1"><b>₱690</b>Cloud-stitch bodysuit</div>
+   <div class="tag t2"><b>0–7 yrs</b>Sizes for every stage</div>
+  </div>
+ </div>
+</section>
+<div class="stitch" aria-hidden="true"></div>
+
+<!-- AGES -->
+<section id="ages">
+ <div class="wrap">
+  <div class="sh">
+   <div><span class="kick">Shop by age</span><h2>Dressed for <em>every</em> little stage.</h2></div>
+   <p>From the first wobbly weeks to the climb-everything years — pick an age and we'll show what fits that season of life.</p>
+  </div>
+  <div class="ages">
+   <a class="age" href="#new" data-age="baby">
+    <div class="num">01<span>0–12 months</span></div>
+    <svg class="art" viewBox="0 0 220 200"><g filter="url(#soft)"><path d="M60 40 Q85 30 110 52 Q135 30 160 40 L190 78 L166 92 L160 84 L160 150 Q110 176 60 150 L60 84 L54 92 L30 78Z" fill="url(#gCream)"/><path d="M60 40 Q85 30 110 52 Q135 30 160 40" fill="none" stroke="#a9b38a" stroke-width="5"/><path d="M92 46 Q110 72 128 46" fill="none" stroke="#d8643a" stroke-width="2" stroke-dasharray="4 4"/><use href="#btn4" x="110" y="96"/><use href="#btn4" x="110" y="122"/></g><circle cx="190" cy="160" r="14" fill="#d8643a" opacity=".85"/></svg>
+    <div><h3>Baby</h3><p>Kimono wraps, bodysuits &amp; swaddles</p></div>
+    <span class="go"><svg class="ico" viewBox="0 0 24 24"><path d="M7 17L17 7M9 7h8v8"/></svg></span>
+   </a>
+   <a class="age" href="#new" data-age="toddler">
+    <div class="num">02<span>1–3 years</span></div>
+    <svg class="art" viewBox="0 0 220 200"><g filter="url(#soft)"><path d="M70 30 H92 V60 H128 V30 H150 V70 L162 76 V176 H118 L110 130 L102 176 H58 V76 L70 70Z" fill="url(#gOlive)"/><path d="M70 30 H92 V60 H128 V30 H150 V70 L162 76 V176 H118 L110 130 L102 176 H58 V76 L70 70Z" fill="url(#knit)"/><rect x="88" y="90" width="44" height="30" rx="6" fill="#5d6a3a" stroke="#c8cfa8" stroke-width="1.5" stroke-dasharray="3 3"/><use href="#btn4" x="81" y="72"/><use href="#btn4" x="139" y="72"/></g><path d="M20 170h180" stroke="#5d6a3a" stroke-width="2" stroke-dasharray="6 6"/></svg>
+    <div><h3>Toddler</h3><p>Overalls, rompers &amp; play sets</p></div>
+    <span class="go"><svg class="ico" viewBox="0 0 24 24"><path d="M7 17L17 7M9 7h8v8"/></svg></span>
+   </a>
+   <a class="age" href="#new" data-age="kids">
+    <div class="num">03<span>4–7 years</span></div>
+    <svg class="art" viewBox="0 0 220 200"><g filter="url(#soft)"><path d="M62 30 L96 22 Q110 34 124 22 L158 30 L190 70 L166 86 L156 72 L156 176 H64 L64 72 L54 86 L30 70Z" fill="url(#gClay)"/><path d="M62 30 L96 22 Q110 34 124 22 L158 30 L190 70 L166 86 L156 72 L156 176 H64 L64 72 L54 86 L30 70Z" fill="url(#stripe)" opacity=".7"/><path d="M96 22 Q110 40 124 22" fill="none" stroke="#fffaf1" stroke-width="4"/><rect x="118" y="110" width="26" height="26" rx="4" fill="#d8643a"/></g><circle cx="34" cy="160" r="10" fill="#343f24" opacity=".7"/></svg>
+    <div><h3>Kids</h3><p>Tees, shorts, dresses &amp; sleepwear</p></div>
+    <span class="go"><svg class="ico" viewBox="0 0 24 24"><path d="M7 17L17 7M9 7h8v8"/></svg></span>
+   </a>
+  </div>
+ </div>
+</section>
+
+<!-- NEW ARRIVALS -->
+<section id="new" style="padding-top:0">
+ <div class="wrap">
+  <div class="sh">
+   <div><span class="kick">New in · Rainy-Day Collection</span><h2>Fresh off the <em>clothesline.</em></h2></div>
+   <div class="filters" role="tablist">
+    <button class="chip on" data-f="all">All</button>
+    <button class="chip" data-f="baby">Baby</button>
+    <button class="chip" data-f="toddler">Toddler</button>
+    <button class="chip" data-f="kids">Kids</button>
+   </div>
+  </div>
+  <div class="grid" id="grid">
+   <!-- 1 kimono bodysuit -->
+   <article class="card" data-c="baby">
+    <div class="pic" style="background:#eadcc4"><span class="lbl">New</span>
+     <svg viewBox="0 0 200 200"><g filter="url(#soft)"><path d="M54 40 L84 30 L116 30 L146 40 L176 80 L152 94 L144 84 L144 150 Q144 176 120 176 L80 176 Q56 176 56 150 L56 84 L48 94 L24 80Z" fill="url(#gCream)"/><path d="M84 30 L130 120 L144 120" fill="none" stroke="#c98b65" stroke-width="4"/><path d="M116 30 L92 70" fill="none" stroke="#c98b65" stroke-width="4"/><circle cx="133" cy="98" r="5" fill="#d8643a"/><circle cx="104" cy="72" r="4" fill="#d8643a"/><path d="M70 160 Q100 150 130 160" stroke="#dccaa9" stroke-width="2" fill="none" stroke-dasharray="4 4"/></g></svg></div>
+    <div class="body"><h3>Kimono Wrap Bodysuit</h3><span class="meta">0–3m · 3–6m · 6–12m</span>
+     <div class="row"><span class="price">₱690</span><span class="sw"><i style="background:#f2e7d3"></i><i style="background:#c98b65"></i><i style="background:#a9b38a"></i></span></div>
+     <button class="add" data-n="Kimono Wrap Bodysuit">Add to bag</button></div>
+   </article>
+   <!-- 2 gingham romper -->
+   <article class="card" data-c="toddler">
+    <div class="pic" style="background:#dfe2c8">
+     <svg viewBox="0 0 200 200"><g filter="url(#soft)"><path d="M62 34 H84 L100 58 L116 34 H138 L146 80 L140 84 L150 150 L112 156 L100 128 L88 156 L50 150 L60 84 L54 80Z" fill="#f4eedd"/><path d="M62 34 H84 L100 58 L116 34 H138 L146 80 L140 84 L150 150 L112 156 L100 128 L88 156 L50 150 L60 84 L54 80Z" fill="url(#ging)"/><path d="M58 84 H142" stroke="#5d6a3a" stroke-width="3"/><path d="M52 146 L88 152 M112 152 L148 146" stroke="#5d6a3a" stroke-width="5" stroke-linecap="round"/><use href="#btn4" x="72" y="44"/><use href="#btn4" x="128" y="44"/></g></svg></div>
+    <div class="body"><h3>Gingham Bubble Romper</h3><span class="meta">12–18m · 18–24m · 2–3y</span>
+     <div class="row"><span class="price">₱890</span><span class="sw"><i style="background:#a9b38a"></i><i style="background:#ecc3a6"></i></span></div>
+     <button class="add" data-n="Gingham Bubble Romper">Add to bag</button></div>
+   </article>
+   <!-- 3 persimmon dress -->
+   <article class="card" data-c="kids">
+    <div class="pic" style="background:#f2d4bf"><span class="lbl">New</span>
+     <svg viewBox="0 0 200 200"><g filter="url(#soft)"><path d="M74 26 H90 Q100 36 110 26 H126 L132 64 L124 68 L158 176 H42 L76 68 L68 64Z" fill="url(#gPers)"/><path d="M74 26 H90 Q100 36 110 26 H126 L132 64 L124 68 L158 176 H42 L76 68 L68 64Z" fill="url(#dots)" opacity=".5"/><path d="M76 68 Q100 76 124 68" stroke="#fffaf1" stroke-width="3" fill="none"/><path d="M46 164 Q100 176 154 164" stroke="#fffaf1" stroke-width="2" fill="none" stroke-dasharray="5 4"/><path d="M60 26 Q76 6 90 26" fill="#fffaf1" opacity=".8"/><path d="M110 26 Q124 6 140 26" fill="#fffaf1" opacity=".8"/></g></svg></div>
+    <div class="body"><h3>Persimmon Twirl Dress</h3><span class="meta">4y · 5y · 6y · 7y</span>
+     <div class="row"><span class="price">₱1,190</span><span class="sw"><i style="background:#d8643a"></i><i style="background:#343f24"></i></span></div>
+     <button class="add" data-n="Persimmon Twirl Dress">Add to bag</button></div>
+   </article>
+   <!-- 4 cardigan -->
+   <article class="card" data-c="toddler">
+    <div class="pic" style="background:#e5d9c2">
+     <svg viewBox="0 0 200 200"><g filter="url(#soft)"><path d="M70 30 L92 26 L100 40 L108 26 L130 30 L170 70 L178 150 L156 154 L150 92 L148 172 H52 L50 92 L44 154 L22 150 L30 70Z" fill="url(#gSage)"/><path d="M70 30 L92 26 L100 40 L108 26 L130 30 L170 70 L178 150 L156 154 L150 92 L148 172 H52 L50 92 L44 154 L22 150 L30 70Z" fill="url(#knit)"/><path d="M92 26 L100 40 V172" stroke="#7d8a52" stroke-width="4" fill="none"/><path d="M52 160 H148" stroke="#7d8a52" stroke-width="10" stroke-dasharray="2 3"/><use href="#btn4" x="108" y="70"/><use href="#btn4" x="108" y="100"/><use href="#btn4" x="108" y="130"/><rect x="60" y="112" width="26" height="22" rx="4" fill="#7d8a52" opacity=".6"/></g></svg></div>
+    <div class="body"><h3>Button Knit Cardigan</h3><span class="meta">1y · 2y · 3y</span>
+     <div class="row"><span class="price">₱1,290</span><span class="sw"><i style="background:#a9b38a"></i><i style="background:#f2e7d3"></i></span></div>
+     <button class="add" data-n="Button Knit Cardigan">Add to bag</button></div>
+   </article>
+   <!-- 5 bucket hat -->
+   <article class="card" data-c="kids">
+    <div class="pic" style="background:#d7dcbd">
+     <svg viewBox="0 0 200 200"><g filter="url(#soft)"><ellipse cx="100" cy="136" rx="80" ry="24" fill="url(#gMoss)"/><path d="M52 132 Q50 62 100 58 Q150 62 148 132Z" fill="url(#gOlive)"/><path d="M52 132 Q50 62 100 58 Q150 62 148 132Z" fill="url(#leaf)"/><path d="M52 118 Q100 130 148 118" stroke="#d8643a" stroke-width="7" fill="none"/><path d="M30 142 Q100 168 170 142" stroke="#c8cfa8" stroke-width="2" fill="none" stroke-dasharray="5 5"/></g></svg></div>
+    <div class="body"><h3>Leaf-Print Bucket Hat</h3><span class="meta">S (2–4y) · M (4–7y)</span>
+     <div class="row"><span class="price">₱590</span><span class="sw"><i style="background:#5d6a3a"></i><i style="background:#e6d7bd"></i></span></div>
+     <button class="add" data-n="Leaf-Print Bucket Hat">Add to bag</button></div>
+   </article>
+   <!-- 6 sleep set -->
+   <article class="card" data-c="kids">
+    <div class="pic" style="background:#ede3d1"><span class="lbl">New</span>
+     <svg viewBox="0 0 200 200"><g filter="url(#soft)"><path d="M40 30 L66 24 Q78 34 90 24 L116 30 L136 62 L120 72 L114 62 L114 112 H42 L42 62 L36 72 L20 62Z" fill="#f6efe2"/><path d="M40 30 L66 24 Q78 34 90 24 L116 30 L136 62 L120 72 L114 62 L114 112 H42 L42 62 L36 72 L20 62Z" fill="url(#stripe)" style="fill:url(#stripe)" opacity="1"/><path d="M40 30 L66 24 Q78 34 90 24 L116 30 L136 62 L120 72 L114 62 L114 112 H42 L42 62 L36 72 L20 62Z" fill="none" stroke="#c98b65" stroke-width="1.5"/><g transform="translate(78 70)"><path d="M-12 4h24a7 7 0 0 0 0-14 9 9 0 0 0-17-3A6 6 0 0 0-12 4z" fill="#d8643a"/></g><path d="M104 96 H172 L178 182 H148 L138 128 L128 182 H98Z" fill="url(#gClay)"/><path d="M104 96 H172 V108 H104Z" fill="#b44c27"/><path d="M108 102 H168" stroke="#fffaf1" stroke-width="1.5" stroke-dasharray="3 3"/></g></svg></div>
+    <div class="body"><h3>Cloud Stripe Sleep Set</h3><span class="meta">3y · 4y · 5y · 6y · 7y</span>
+     <div class="row"><span class="price">₱1,090</span><span class="sw"><i style="background:#e9b796"></i><i style="background:#c8cfa8"></i></span></div>
+     <button class="add" data-n="Cloud Stripe Sleep Set">Add to bag</button></div>
+   </article>
+   <!-- 7 swaddle -->
+   <article class="card" data-c="baby">
+    <div class="pic" style="background:#f0dcc8">
+     <svg viewBox="0 0 200 200"><g filter="url(#soft)"><rect x="34" y="56" width="132" height="104" rx="10" fill="url(#gCream)" transform="rotate(-8 100 108)"/><rect x="48" y="44" width="132" height="104" rx="10" fill="#e9b796" transform="rotate(6 114 96)"/><rect x="48" y="44" width="132" height="104" rx="10" fill="url(#leaf)" transform="rotate(6 114 96)"/><rect x="56" y="52" width="116" height="88" rx="6" fill="none" stroke="#fffaf1" stroke-width="2" stroke-dasharray="5 4" transform="rotate(6 114 96)"/></g><path d="M40 168 q20 -10 40 0 t40 0 t40 0" stroke="#c98b65" stroke-width="2" fill="none"/></svg></div>
+    <div class="body"><h3>Muslin Swaddle, Set of 2</h3><span class="meta">110 × 110 cm</span>
+     <div class="row"><span class="price">₱980</span><span class="sw"><i style="background:#e9b796"></i><i style="background:#f2e7d3"></i></span></div>
+     <button class="add" data-n="Muslin Swaddle, Set of 2">Add to bag</button></div>
+   </article>
+   <!-- 8 pocket shorts -->
+   <article class="card" data-c="toddler">
+    <div class="pic" style="background:#e3d2b6">
+     <svg viewBox="0 0 200 200"><g filter="url(#soft)"><path d="M44 50 H156 L166 160 H112 L100 96 L88 160 H34Z" fill="url(#gOat)"/><path d="M44 50 H156 L166 160 H112 L100 96 L88 160 H34Z" fill="url(#rib)"/><path d="M44 50 H156 V68 H44Z" fill="#c98b65"/><path d="M90 60 q10 14 20 0" stroke="#fffaf1" stroke-width="2" fill="none"/><path d="M48 76 Q66 96 70 76 M152 76 Q134 96 130 76" stroke="#a88b62" stroke-width="2.5" fill="none"/><rect x="128" y="104" width="24" height="24" rx="4" fill="#d8643a"/><path d="M40 148 H86 M114 148 H160" stroke="#a88b62" stroke-width="2" stroke-dasharray="4 4"/></g></svg></div>
+    <div class="body"><h3>Patch-Pocket Play Shorts</h3><span class="meta">1y · 2y · 3y</span>
+     <div class="row"><span class="price">₱650</span><span class="sw"><i style="background:#dcc8a4"></i><i style="background:#5d6a3a"></i><i style="background:#d8643a"></i></span></div>
+     <button class="add" data-n="Patch-Pocket Play Shorts">Add to bag</button></div>
+   </article>
+  </div>
+ </div>
+</section>
+
+<!-- FABRIC -->
+<section class="fabric" id="fabric">
+ <div class="wrap">
+  <div class="sh">
+   <div><span class="kick" style="color:#f4a77f">Our cotton</span><h2>Made the <em>slow</em> way,<br>washed until soft.</h2></div>
+   <p>We keep our range small so every piece gets the same care: one fabric family, simple shapes, and details made for busy little bodies and the grown-ups dressing them.</p>
+  </div>
+  <div class="fab-grid">
+   <div class="swatch-art">
+    <svg viewBox="0 0 560 480" role="img" aria-label="Fabric swatches with buttons and a spool of thread">
+     <rect width="560" height="480" fill="#46522f"/>
+     <rect width="560" height="480" fill="url(#knit)"/>
+     <g filter="url(#soft)">
+      <rect x="60" y="70" width="230" height="290" rx="6" fill="url(#gOat)" transform="rotate(-7 175 215)"/>
+      <rect x="60" y="70" width="230" height="290" rx="6" fill="url(#rib)" transform="rotate(-7 175 215)"/>
+      <rect x="200" y="110" width="230" height="290" rx="6" fill="url(#gPers)" transform="rotate(5 315 255)"/>
+      <rect x="200" y="110" width="230" height="290" rx="6" fill="url(#dots)" opacity=".45" transform="rotate(5 315 255)"/>
+      <rect x="300" y="60" width="190" height="200" rx="6" fill="#f4eedd" transform="rotate(12 395 160)"/>
+      <rect x="300" y="60" width="190" height="200" rx="6" fill="url(#ging)" transform="rotate(12 395 160)"/>
+     </g>
+     <path d="M80 380 C160 340 260 430 360 380 S500 360 520 420" fill="none" stroke="#f2e7d3" stroke-width="2.5" stroke-dasharray="8 7"/>
+     <!-- spool -->
+     <g transform="translate(110 390)" filter="url(#soft)">
+      <rect x="-34" y="-12" width="68" height="14" rx="4" fill="#b98f5c"/>
+      <rect x="-26" y="2" width="52" height="54" fill="#d8643a"/>
+      <path d="M-26 10h52M-26 20h52M-26 30h52M-26 40h52M-26 50h52" stroke="#b44c27" stroke-width="1.5"/>
+      <rect x="-34" y="56" width="68" height="14" rx="4" fill="#b98f5c"/>
+     </g>
+     <use href="#btn4" transform="translate(470 400) scale(3)"/>
+     <use href="#btn4" transform="translate(420 440) scale(2)"/>
+     <g transform="translate(240 430) scale(2.4)"><circle r="7" fill="#d8643a" stroke="rgba(0,0,0,.2)"/><circle cx="-2" cy="0" r="1.3" fill="#7a2f12"/><circle cx="2" cy="0" r="1.3" fill="#7a2f12"/></g>
+     <!-- tag -->
+     <g transform="translate(150 140) rotate(-7)">
+      <rect x="-20" y="0" width="170" height="52" rx="4" fill="#fffaf1"/>
+      <path d="M-12 8h154M-12 44h154" stroke="#d8643a" stroke-width="1.5" stroke-dasharray="4 4"/>
+      <text x="65" y="34" text-anchor="middle" font-family="Fraunces" font-size="24" fill="#343f24">Munting Ulap</text>
+     </g>
+    </svg>
+   </div>
+   <div class="feats">
+    <div class="feat"><div class="bt"><svg class="ico" viewBox="0 0 24 24"><path d="M12 3c4 4 6 7 6 10a6 6 0 0 1-12 0c0-3 2-6 6-10z"/></svg></div><h3>Garment-washed</h3><p>Every piece is pre-washed after sewing, so it feels soft from the very first wear and shrinks less at home.</p></div>
+    <div class="feat"><div class="bt"><svg class="ico" viewBox="0 0 24 24"><path d="M3 12h18M3 12l3-3M3 12l3 3M21 12l-3-3M21 12l-3 3"/></svg></div><h3>Flat seams</h3><p>Seams are flat-locked and labels are printed on, so there's nothing scratchy at the neck.</p></div>
+    <div class="feat"><div class="bt"><svg class="ico" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/><circle cx="10" cy="10" r="1"/><circle cx="14" cy="10" r="1"/><circle cx="10" cy="14" r="1"/><circle cx="14" cy="14" r="1"/></svg></div><h3>Easy snaps</h3><p>Bottom snaps on every bodysuit and romper for quicker diaper changes, day or night.</p></div>
+    <div class="feat"><div class="bt"><svg class="ico" viewBox="0 0 24 24"><path d="M12 4v16M6 10l6-6 6 6"/></svg></div><h3>Room to grow</h3><p>Fold-back cuffs and a roomy cut let most pieces stretch across two sizes.</p></div>
+   </div>
+  </div>
+ </div>
+</section>
+
+<!-- SIZE GUIDE -->
+<section id="size">
+ <div class="wrap">
+  <div class="sh">
+   <div><span class="kick">Size guide</span><h2>Find the <em>right fit</em> in seconds.</h2></div>
+   <p>Slide to your child's height and weight. When they're between sizes, we suggest the bigger one — the cuffs fold back.</p>
+  </div>
+  <div class="size-box">
+   <div class="calc">
+    <h3>Size finder</h3>
+    <p>A quick guide for our cuts — every child grows differently.</p>
+    <div class="field"><label for="h">Height <output id="ho">92 cm</output></label><input type="range" id="h" min="50" max="130" value="92"></div>
+    <div class="field"><label for="w">Weight <output id="wo">13 kg</output></label><input type="range" id="w" min="3" max="28" value="13"></div>
+    <div class="result"><div class="big" id="sz">2Y<small>OUR SIZE</small></div><p id="szt">Try <b>2Y</b> — usually fits <b>86–95 cm</b> height. Great for the Gingham Romper and Knit Cardigan.</p></div>
+   </div>
+   <div style="overflow-x:auto">
+    <table id="tbl">
+     <thead><tr><th>Size</th><th>Age</th><th>Height</th><th>Weight</th></tr></thead>
+     <tbody>
+      <tr data-max="61"><td>0–3M</td><td>0–3 mos</td><td>50–61 cm</td><td>3–6 kg</td></tr>
+      <tr data-max="68"><td>3–6M</td><td>3–6 mos</td><td>62–68 cm</td><td>6–8 kg</td></tr>
+      <tr data-max="76"><td>6–12M</td><td>6–12 mos</td><td>69–76 cm</td><td>8–10 kg</td></tr>
+      <tr data-max="85"><td>1Y</td><td>12–24 mos</td><td>77–85 cm</td><td>10–12 kg</td></tr>
+      <tr data-max="95" class="hl"><td>2Y</td><td>2 yrs</td><td>86–95 cm</td><td>12–14 kg</td></tr>
+      <tr data-max="102"><td>3Y</td><td>3 yrs</td><td>96–102 cm</td><td>14–16 kg</td></tr>
+      <tr data-max="110"><td>4–5Y</td><td>4–5 yrs</td><td>103–110 cm</td><td>16–19 kg</td></tr>
+      <tr data-max="130"><td>6–7Y</td><td>6–7 yrs</td><td>111–130 cm</td><td>19–26 kg</td></tr>
+     </tbody>
+    </table>
+    <p class="tbl-note">Measurements are a guide for our patterns only. Not sure? Message us with your child's height and we'll help.</p>
+   </div>
+  </div>
+ </div>
+</section>
+
+<!-- GIFT -->
+<section class="gift tex" id="gift">
+ <div class="wrap">
+  <div class="sh">
+   <div><span class="kick">Gift box builder</span><h2>A baby-shower gift, <em>ready</em> to ribbon.</h2></div>
+   <p>Choose three pieces, a ribbon colour and a note. We wrap it in a reusable cotton pouch inside a kraft box.</p>
+  </div>
+  <div class="gift-grid">
+   <div class="steps">
+    <div class="step"><h4><i>1</i>Pick a size</h4>
+     <div class="opts" data-g="size">
+      <button class="opt on" data-v="0–3M">0–3 months</button><button class="opt" data-v="3–6M">3–6 months</button><button class="opt" data-v="6–12M">6–12 months</button><button class="opt" data-v="1Y">1 year</button>
+     </div></div>
+    <div class="step"><h4><i>2</i>Choose 3 pieces</h4>
+     <div class="opts" data-g="items" data-multi="3">
+      <button class="opt on" data-v="Kimono Bodysuit" data-p="690">Kimono Bodysuit<small>₱690</small></button>
+      <button class="opt on" data-v="Muslin Swaddle" data-p="490">Muslin Swaddle<small>₱490</small></button>
+      <button class="opt on" data-v="Knot Hat" data-p="390">Knot Hat<small>₱390</small></button>
+      <button class="opt" data-v="Footed Pants" data-p="550">Footed Pants<small>₱550</small></button>
+      <button class="opt" data-v="Mitten Set" data-p="290">Mitten Set<small>₱290</small></button>
+      <button class="opt" data-v="Bib & Burp Cloth" data-p="420">Bib &amp; Burp Cloth<small>₱420</small></button>
+     </div></div>
+    <div class="step"><h4><i>3</i>Ribbon colour</h4>
+     <div class="opts" data-g="rib">
+      <button class="rib on" style="background:#d8643a" data-v="#d8643a" aria-label="Persimmon"></button>
+      <button class="rib" style="background:#5d6a3a" data-v="#5d6a3a" aria-label="Olive"></button>
+      <button class="rib" style="background:#e9b796" data-v="#e9b796" aria-label="Clay"></button>
+      <button class="rib" style="background:#f2e7d3" data-v="#f2e7d3" aria-label="Oat"></button>
+     </div></div>
+    <div class="step"><h4><i>4</i>Gift note</h4>
+     <input class="note-in" id="note" maxlength="40" placeholder="Welcome to the world, little one!" value="Welcome to the world, little one!">
+    </div>
+   </div>
+   <div class="boxprev">
+    <svg viewBox="0 0 400 290" aria-hidden="true">
+     <ellipse cx="200" cy="272" rx="170" ry="12" fill="rgba(52,63,36,.14)"/>
+     <path d="M84 120 L316 120 L304 104 L96 104Z" fill="#8f6d40"/>
+     <!-- tissue -->
+     <path d="M96 122 Q120 70 150 104 Q170 60 200 100 Q232 58 252 104 Q282 68 304 122Z" fill="#fffaf1"/>
+     <path d="M150 104 Q170 60 200 100" fill="none" stroke="#eadcc4" stroke-width="2"/>
+     <!-- items peeking -->
+     <g transform="translate(118 74) rotate(-8)"><path d="M0 8 L16 2 Q24 9 32 2 L48 8 L54 26 L44 30 L44 54 H4 V30 L-6 26Z" fill="#f2e7d3" stroke="#dccaa9" stroke-width="1.5"/><path d="M16 2 L34 40" stroke="#c98b65" stroke-width="3"/></g>
+     <g transform="translate(214 76) rotate(9)"><path d="M0 40 Q0 0 30 0 Q60 0 60 40Z" fill="#a9b38a"/><path d="M26 0 q4 -16 10 -2" fill="#a9b38a" stroke="#7d8a52" stroke-width="1.5"/><path d="M0 34 H60" stroke="#7d8a52" stroke-width="2" stroke-dasharray="3 3"/></g>
+     <!-- box front -->
+     <path d="M84 120 L316 120 L304 262 L96 262Z" fill="#c9a777"/>
+     <path d="M84 120 L316 120 L304 262 L96 262Z" fill="url(#rib)"/>
+     <path d="M84 120 L316 120 L315 132 L85 132Z" fill="#b8925e"/>
+     <!-- ribbon -->
+     <path d="M188 120 H212 L211 262 H189Z" class="ribc" fill="#d8643a"/>
+     <path d="M90 180 H310 L308 200 H92Z" class="ribc" fill="#d8643a"/>
+     <path d="M200 190 C150 150 132 186 196 194 C150 210 166 236 200 196 C234 236 250 210 204 194 C268 186 250 150 200 190Z" class="ribc" fill="#d8643a"/>
+     <path d="M200 190 C150 150 132 186 196 194 C150 210 166 236 200 196 C234 236 250 210 204 194 C268 186 250 150 200 190Z" fill="rgba(0,0,0,.12)"/>
+     <circle cx="200" cy="193" r="10" class="ribc" fill="#d8643a" stroke="rgba(0,0,0,.2)" stroke-width="2"/>
+     <!-- stitched cloud stamp on box -->
+     <g transform="translate(130 236)"><path d="M-22 6h44a11 11 0 0 0 0-22 15 15 0 0 0-28-4A10 10 0 0 0-22 6z" fill="none" stroke="#7a5c33" stroke-width="2" stroke-dasharray="3 3"/></g>
+     <!-- tag -->
+     <g transform="translate(244 214) rotate(-6)"><path d="M0 0 h76 l14 16 l-14 16 h-76z" fill="#fffaf1" stroke="#dccaa9"/><circle cx="76" cy="16" r="3" fill="#dccaa9"/><path d="M10 11h50M10 21h36" stroke="#dccaa9" stroke-width="2"/></g>
+    </svg>
+    <p class="card-msg" id="msg">“Welcome to the world, little one!”</p>
+    <div class="sum">
+     <div><span>Size</span><b id="sSize">0–3M</b></div>
+     <div><span>Pieces</span><b id="sItems" style="text-align:right">Kimono Bodysuit, Muslin Swaddle, Knot Hat</b></div>
+     <div><span>Box, pouch &amp; ribbon</span><b>Free</b></div>
+     <div class="tot"><span>Total</span><span id="sTot">₱1,570</span></div>
+    </div>
+    <button class="btn btn-p" id="addBox">Add gift box to bag</button>
+   </div>
+  </div>
+ </div>
+</section>
+
+<!-- SHIPPING -->
+<section id="ship">
+ <div class="wrap">
+  <div class="sh">
+   <div><span class="kick">Delivery &amp; exchanges</span><h2>From our studio <em>to your door.</em></h2></div>
+   <p>Orders placed before 2 PM ship the same day, Monday to Saturday.</p>
+  </div>
+  <div class="ship">
+   <div class="sp"><svg class="ico" viewBox="0 0 24 24"><path d="M3 7h11v9H3zM14 10h4l3 3v3h-7"/><circle cx="7" cy="18" r="2"/><circle cx="17" cy="18" r="2"/></svg><h3>Metro Manila</h3><p><b>1–3 days</b> · ₱120 flat, free over ₱2,500</p></div>
+   <div class="sp"><svg class="ico" viewBox="0 0 24 24"><path d="M12 21s-7-6.5-7-12a7 7 0 0 1 14 0c0 5.5-7 12-7 12z"/><circle cx="12" cy="9" r="2.5"/></svg><h3>Provincial</h3><p><b>3–7 days</b> · ₱220 Luzon, ₱280 Visayas &amp; Mindanao</p></div>
+   <div class="sp"><svg class="ico" viewBox="0 0 24 24"><rect x="3" y="6" width="18" height="13" rx="2"/><path d="M3 10h18M7 15h4"/></svg><h3>Easy payment</h3><p>Card, bank transfer, e-wallet or cash on delivery in Metro Manila</p></div>
+   <div class="sp"><svg class="ico" viewBox="0 0 24 24"><path d="M4 12a8 8 0 1 0 3-6.2"/><path d="M4 4v4h4"/></svg><h3>Size exchange</h3><p><b>14 days</b> for unworn pieces with tags — we'll send the next size up</p></div>
+  </div>
+ </div>
+</section>
+
+<!-- CARE -->
+<section style="padding-top:0">
+ <div class="wrap care">
+  <div class="care-art">
+   <svg viewBox="0 0 520 420" role="img" aria-label="Folded clothes stacked beside a laundry basket">
+    <rect width="520" height="420" fill="#e7d8bf"/>
+    <rect y="330" width="520" height="90" fill="#d6c19c"/>
+    <path d="M0 330h520" stroke="#c4ab80" stroke-width="2"/>
+    <!-- window -->
+    <rect x="320" y="40" width="150" height="180" rx="75" fill="#cfd8d8"/>
+    <rect x="320" y="40" width="150" height="180" rx="75" fill="none" stroke="#fffaf1" stroke-width="8"/>
+    <path d="M395 40v180M320 140h150" stroke="#fffaf1" stroke-width="6"/>
+    <g transform="translate(360 90) scale(.9)"><path d="M0 30h50a14 14 0 0 0 0-28 18 18 0 0 0-34-4A12 12 0 0 0 0 30z" fill="#fffaf1"/></g>
+    <!-- stack -->
+    <g filter="url(#soft)">
+     <rect x="70" y="290" width="190" height="42" rx="10" fill="url(#gOlive)"/>
+     <rect x="80" y="252" width="174" height="40" rx="10" fill="url(#gOat)"/>
+     <rect x="80" y="252" width="174" height="40" rx="10" fill="url(#rib)"/>
+     <rect x="76" y="212" width="182" height="42" rx="10" fill="url(#gPers)"/>
+     <rect x="76" y="212" width="182" height="42" rx="10" fill="url(#dots)" opacity=".5"/>
+     <rect x="88" y="176" width="160" height="38" rx="10" fill="#f4eedd"/>
+     <rect x="88" y="176" width="160" height="38" rx="10" fill="url(#ging)"/>
+    </g>
+    <path d="M90 196h150" stroke="#fffaf1" stroke-width="2" stroke-dasharray="5 4"/>
+    <!-- basket -->
+    <g transform="translate(300 250)" filter="url(#soft)">
+     <path d="M0 10 H170 L156 92 H14Z" fill="#c9a777"/>
+     <path d="M10 30H162M14 52H158M18 74H154" stroke="#a88757" stroke-width="3"/>
+     <path d="M30 10V92M60 10V92M90 10V92M120 10V92M150 10V92" stroke="#b8975f" stroke-width="2"/>
+     <path d="M20 10 Q60 -26 100 6 Q130 -18 160 10Z" fill="#a9b38a"/>
+     <rect x="-4" y="2" width="178" height="12" rx="6" fill="#b8975f"/>
+    </g>
+    <use href="#btn4" transform="translate(290 370) scale(2)"/>
+   </svg>
+  </div>
+  <div>
+   <span class="kick">Care notes</span>
+   <h2 class="serif" style="font-weight:500;font-size:clamp(30px,3.2vw,44px);line-height:1.1;color:var(--olive);letter-spacing:-.02em">Keep them soft,<br>wash after wash.</h2>
+   <ol>
+    <li><div><b>Cool wash, inside out</b><span>Gentle cycle with mild detergent keeps colours calm and seams neat.</span></div></li>
+    <li><div><b>Skip the bleach and softener</b><span>Garment-washed cotton is already soft — softener only coats the fibres.</span></div></li>
+    <li><div><b>Dry in the shade</b><span>Line-dry away from strong afternoon sun so persimmon stays persimmon.</span></div></li>
+    <li><div><b>Pass it on</b><span>Outgrown but still lovely? Send it back and get ₱150 off your next order.</span></div></li>
+   </ol>
+  </div>
+ </div>
+</section>
+
+<!-- NEWSLETTER -->
+<section style="padding:0">
+ <div class="wrap">
+  <div class="news">
+   <svg class="cl" viewBox="0 0 58 36" aria-hidden="true"><use href="#cloudMark"/></svg>
+   <div>
+    <h2>Join the <em>Cloud Club</em><br>for first dibs on new drops.</h2>
+    <p>One short letter a month — new colours, restocks, and care tips. ₱200 off your first order.</p>
+   </div>
+   <div>
+    <form class="nform" id="nform" onsubmit="return false"><input type="email" id="em" placeholder="your@email.com" aria-label="Email"><button type="submit">Join the club</button></form>
+    <p class="nmsg" id="nmsg"></p>
+    <div class="contact">
+     <span><svg class="ico" viewBox="0 0 24 24"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg>0000-000-0000</span>
+     <span><svg class="ico" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>hello@example.com</span>
+     <span><svg class="ico" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>Mon–Sat, 9 AM – 6 PM</span>
+    </div>
+   </div>
+  </div>
+ </div>
+</section>
+</main>
+
+<footer>
+ <div class="wrap">
+  <div class="fgrid">
+   <div>
+    <a class="logo" href="#top"><svg viewBox="0 0 58 36"><use href="#cloudMark"/></svg><div><span>Munting Ulap</span><small style="color:#f4a77f">ORGANIC COTTON KIDS</small></div></a>
+    <p class="d">Small-batch cotton clothes for babies and kids, packed with care in Metro Manila.</p>
+   </div>
+   <div><h5>Shop</h5><ul><li><a href="#ages">Baby 0–12m</a></li><li><a href="#ages">Toddler 1–3y</a></li><li><a href="#ages">Kids 4–7y</a></li><li><a href="#gift">Gift boxes</a></li></ul></div>
+   <div><h5>Help</h5><ul><li><a href="#size">Size guide</a></li><li><a href="#ship">Delivery</a></li><li><a href="#ship">Exchanges</a></li><li><a href="#top">Care notes</a></li></ul></div>
+   <div><h5>Studio</h5><ul><li>Unit 0, Sample Street</li><li>Metro Manila</li><li>0000-000-0000</li><li>hello@example.com</li></ul></div>
+  </div>
+  <div class="fbot"><span>© 2026 Munting Ulap. All rights reserved.</span><span>Prices in Philippine peso (₱), VAT included.</span></div>
+ </div>
+</footer>
+
+<div class="toast" id="toast"><i></i><span id="tt">Added to bag</span></div>
+
+<script>
+(function(){
+ var count=0,toast=document.getElementById('toast'),tt=document.getElementById('tt'),cnt=document.getElementById('cnt'),tm;
+ function show(m){tt.textContent=m;toast.classList.add('on');clearTimeout(tm);tm=setTimeout(function(){toast.classList.remove('on')},2200)}
+ function bump(n){count+=n;cnt.textContent=count;cnt.classList.add('on')}
+ document.querySelectorAll('.add').forEach(function(b){b.addEventListener('click',function(){bump(1);b.classList.add('done');b.textContent='Added ✓';show(b.dataset.n+' added to bag');setTimeout(function(){b.classList.remove('done');b.textContent='Add to bag'},1800)})});
+ document.getElementById('bagBtn').addEventListener('click',function(){show(count?count+' item'+(count>1?'s':'')+' in your bag':'Your bag is empty — for now')});
+ // filters
+ var chips=document.querySelectorAll('.chip');
+ function filt(f){chips.forEach(function(c){c.classList.toggle('on',c.dataset.f===f)});document.querySelectorAll('#grid .card').forEach(function(c){c.hidden=!(f==='all'||c.dataset.c===f)})}
+ chips.forEach(function(c){c.addEventListener('click',function(){filt(c.dataset.f)})});
+ document.querySelectorAll('.age').forEach(function(a){a.addEventListener('click',function(){filt(a.dataset.age)})});
+ // menu
+ var mn=document.getElementById('mnav');
+ document.getElementById('mOpen').onclick=function(){mn.classList.add('open')};
+ document.getElementById('mClose').onclick=function(){mn.classList.remove('open')};
+ mn.querySelectorAll('a').forEach(function(a){a.onclick=function(){mn.classList.remove('open')}});
+ // size
+ var h=document.getElementById('h'),w=document.getElementById('w'),rows=document.querySelectorAll('#tbl tbody tr');
+ var ranges=['50–61 cm','62–68 cm','69–76 cm','77–85 cm','86–95 cm','96–102 cm','103–110 cm','111–130 cm'];
+ var tips=['the Kimono Bodysuit and Muslin Swaddle','the Kimono Bodysuit and Muslin Swaddle','the Kimono Bodysuit','the Gingham Romper and Play Shorts','the Gingham Romper and Knit Cardigan','the Knit Cardigan and Play Shorts','the Twirl Dress and Sleep Set','the Twirl Dress and Bucket Hat'];
+ var wmax=[6,8,10,12,14,16,19,28];
+ function calc(){
+  var hv=+h.value,wv=+w.value;document.getElementById('ho').textContent=hv+' cm';document.getElementById('wo').textContent=wv+' kg';
+  var i=0;for(;i<rows.length;i++){if(hv<=+rows[i].dataset.max)break}if(i>=rows.length)i=rows.length-1;
+  var j=0;for(;j<wmax.length;j++){if(wv<=wmax[j])break}if(j>=wmax.length)j=wmax.length-1;
+  var k=Math.max(i,j);
+  rows.forEach(function(r,n){r.classList.toggle('hl',n===k)});
+  var s=rows[k].children[0].textContent;
+  document.getElementById('sz').innerHTML=s+'<small>OUR SIZE</small>';
+  document.getElementById('szt').innerHTML='Try <b>'+s+'</b> — usually fits <b>'+ranges[k]+'</b> height. Great for '+tips[k]+'.';
+ }
+ h.oninput=w.oninput=calc;calc();
+ // gift
+ var state={size:'0–3M',items:['Kimono Bodysuit','Muslin Swaddle','Knot Hat'],rib:'#d8643a'};
+ function fmt(n){return '₱'+n.toLocaleString('en-US')}
+ function upd(){
+  document.getElementById('sSize').textContent=state.size;
+  var on=[].slice.call(document.querySelectorAll('[data-g=items] .opt.on'));
+  document.getElementById('sItems').textContent=on.length?on.map(function(o){return o.dataset.v}).join(', '):'Choose up to 3';
+  document.getElementById('sTot').textContent=fmt(on.reduce(function(a,o){return a+ +o.dataset.p},0));
+  document.querySelectorAll('.ribc').forEach(function(e){e.setAttribute('fill',state.rib)});
+  var v=document.getElementById('note').value.trim();document.getElementById('msg').textContent=v?'“'+v+'”':'';
+ }
+ document.querySelectorAll('.opts').forEach(function(g){
+  var key=g.dataset.g,multi=+g.dataset.multi||0;
+  g.querySelectorAll('button').forEach(function(b){b.addEventListener('click',function(){
+   if(multi){if(b.classList.contains('on')){b.classList.remove('on')}else{if(g.querySelectorAll('.on').length>=multi){show('Pick up to 3 pieces — tap one to remove it');return}b.classList.add('on')}}
+   else{g.querySelectorAll('button').forEach(function(x){x.classList.remove('on')});b.classList.add('on');state[key]=b.dataset.v}
+   upd()})})
+ });
+ document.getElementById('note').addEventListener('input',upd);
+ document.getElementById('addBox').onclick=function(){var n=document.querySelectorAll('[data-g=items] .opt.on').length;if(n<3){show('Choose 3 pieces to complete the box');return}bump(1);show('Gift box ('+state.size+') added to bag')};
+ upd();
+ // newsletter
+ document.getElementById('nform').addEventListener('submit',function(){var e=document.getElementById('em').value.trim(),m=document.getElementById('nmsg');m.textContent=/.+@.+\..+/.test(e)?'Welcome to the Cloud Club! Your ₱200 code is on its way.':'Please enter a valid email address.'});
+})();
+</script>
+</body>
+</html>
