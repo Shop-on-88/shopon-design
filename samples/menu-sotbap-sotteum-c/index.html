@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>솥뜸 · 무쇠 솥밥 메뉴판 디자인</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@800&family=Outfit:wght@600;700&family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Noto Sans KR',sans-serif;background:#f1e6d0;color:#1d1b19;word-break:keep-all;-webkit-font-smoothing:antialiased;min-height:100vh;
+ background-image:radial-gradient(900px 480px at 92% -8%,rgba(200,144,47,.25),transparent 65%),url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cg fill='%236b4a2b' fill-opacity='.08'%3E%3Cellipse cx='20' cy='30' rx='4' ry='2' transform='rotate(30 20 30)'/%3E%3Cellipse cx='90' cy='20' rx='4' ry='2' transform='rotate(-20 90 20)'/%3E%3Cellipse cx='60' cy='80' rx='4' ry='2' transform='rotate(70 60 80)'/%3E%3C/g%3E%3C/svg%3E")}
+.top{height:14px;background:linear-gradient(90deg,#1d1b19 0 62%,#c8902f 62% 86%,#6b4a2b 86%)}
+.wrap{max-width:1180px;margin:0 auto;padding:44px 20px 120px}
+.hd{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:18px;margin-bottom:32px}
+.hd small{font-family:'Outfit',sans-serif;font-weight:700;font-size:14px;letter-spacing:.24em;color:#a8741f}
+.hd h1{font-family:'Nanum Myeongjo',serif;font-weight:800;font-size:clamp(32px,4.6vw,54px);margin-top:8px;line-height:1.2}
+.hd h1 em{font-style:normal;color:#a8741f}
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:14px}
+.chips span{font-size:13px;font-weight:500;padding:6px 12px;border-radius:999px;background:#fffaf0;color:#1d1b19;border:1.5px solid rgba(29,27,25,.25)}
+.chips span.g{background:#1d1b19;color:#e6b75c;border-color:#1d1b19}
+.cta{display:inline-flex;align-items:center;gap:8px;height:52px;padding:0 26px;border-radius:999px;background:#1d1b19;color:#f1e6d0;font-weight:700;font-size:15px;text-decoration:none;transition:.2s;white-space:nowrap}
+.cta:hover{background:#c8902f;color:#1d1b19}
+.cta svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round}
+.view{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,.75fr);gap:28px;align-items:start}
+figure{background:#1d1b19;padding:10px;border-radius:14px;box-shadow:0 30px 60px -30px rgba(29,27,25,.7)}
+figure a{display:block}
+figure img{display:block;width:100%;height:auto;border-radius:6px}
+figcaption{font-size:13px;color:#d9ccb2;padding:10px 4px 2px;display:flex;flex-wrap:wrap;justify-content:space-between;gap:4px 10px}
+.side{display:flex;flex-direction:column;gap:18px;position:sticky;top:24px}
+.zoom{background:#fffaf0;border-radius:14px;padding:8px;border:1.5px solid rgba(29,27,25,.15)}
+.zoom img{display:block;width:100%;height:auto;border-radius:8px}
+.zoom p{font-size:13px;color:#4a3d30;padding:8px 4px 2px;line-height:1.55}
+.info{background:#1d1b19;color:#efe4cf;border-radius:14px;padding:22px}
+.info h2{font-family:'Nanum Myeongjo',serif;font-weight:800;font-size:22px;color:#e6b75c;margin-bottom:8px}
+.info li{list-style:none;font-size:14px;padding:6px 0 6px 18px;position:relative;line-height:1.55}
+.info li:before{content:"";position:absolute;left:2px;top:13px;width:8px;height:8px;border-radius:50%;background:#c8902f}
+.bar{position:fixed;left:0;right:0;bottom:0;background:rgba(29,27,25,.97);border-top:3px solid #c8902f;padding:12px 20px;display:flex;justify-content:center;align-items:center;gap:18px;flex-wrap:wrap}
+.bar p{font-size:14px;color:#d9ccb2}
+.bar .cta{height:46px;background:#e6b75c;color:#1d1b19}
+@media(max-width:900px){.view{grid-template-columns:1fr}.side{position:static}}
+@media(max-width:620px){.hd h1 em{display:block}.hd .cta{display:none}.bar p{display:none}.bar .cta{width:100%;justify-content:center}}
+</style>
+</head>
+<body>
+<div class="top"></div>
+<div class="wrap">
+ <div class="hd">
+  <div>
+   <small>MENU DESIGN · SD-MN34</small>
+   <h1>솥뜸 <em>무쇠 솥밥 메뉴판</em></h1>
+   <div class="chips"><span class="g">A4 세로 · 1장</span><span>대표 솥밥 · 솥밥 · 곁들임 · 주류 · 먹는 법</span><span>무쇠 블랙 &amp; 누룽지 골드 &amp; 현미 베이지</span><span>원화 가격</span><span>인쇄 · 웹 겸용</span></div>
+  </div>
+  <a class="cta" href="https://design.shoponph.online/#inquiry">이 디자인으로 상담하기 <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+ </div>
+ <div class="view">
+  <figure><a href="page1.png" target="_blank" rel="noopener"><img src="page1.png" alt="솥뜸 솥밥 메뉴판 전체" width="2480" height="3508"></a><figcaption><span>대표 솥밥 · 솥밥 · 곁들임 · 음료 · 먹는 법 · 원산지</span><span style="white-space:nowrap">눌러서 크게 보기</span></figcaption></figure>
+  <div class="side">
+   <div class="zoom"><img src="detail-pot.jpg" alt="무쇠솥 전복 솥밥 일러스트 확대" width="1000" height="1082"><p>위에서 내려다본 무쇠솥과 나무 받침, 김이 오르는 솥밥을 큰 일러스트로 배치했습니다</p></div>
+   <div class="zoom"><img src="detail-sig.jpg" alt="대표 솥밥 세 가지 영역 확대" width="1000" height="355"><p>대표 메뉴 세 가지는 먹색 판 위에 솥 그림과 금색 가격으로 따로 강조</p></div>
+   <div class="info"><h2>이 메뉴판의 포인트</h2><ul><li>상호 '솥뜸'을 큰 명조체로 써서 한식 솥밥집 분위기를 바로 전달</li><li>조리 시간 20분을 미리 알려 주문 대기 문의를 줄이는 구성</li><li>밥 덜기 → 비비기 → 숭늉, 먹는 법 3단계 안내</li><li>원산지 표시 영역을 하단에 기본 배치</li></ul></div>
+  </div>
+ </div>
+</div>
+<div class="bar"><p>우리 가게 메뉴판도 이렇게 만들고 싶다면</p><a class="cta" href="https://design.shoponph.online/#inquiry">이 디자인으로 상담하기</a></div>
+</body>
+</html>

@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>아침볕 브런치 & 커피 · 마카티 올데이 브런치</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,800&family=Gowun+Batang:wght@700&family=Outfit:wght@500;600;700&family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#1f2a55;--navy2:#2c3a72;--yolk:#f29a1f;--yolk2:#ffc45a;--cream:#fbf4e6;--linen:#f3e7cf;--sage:#8fa37a;--ink:#1b1f33;--muted:#5d6077}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;overflow-x:clip}
+body{font-family:'Noto Sans KR',sans-serif;background:var(--cream);color:var(--ink);word-break:keep-all;-webkit-font-smoothing:antialiased;overflow-x:clip;line-height:1.6}
+a{color:inherit;text-decoration:none}
+img,svg{display:block;max-width:100%}
+.wrap{max-width:1200px;margin:0 auto;padding:0 24px}
+.eyebrow{font-family:'Outfit',sans-serif;font-weight:600;font-size:13px;letter-spacing:.24em;text-transform:uppercase;color:var(--yolk)}
+h2.t{font-family:'Gowun Batang',serif;font-size:clamp(28px,3.6vw,44px);line-height:1.3;color:var(--navy);margin-top:10px}
+h2.t em{font-style:normal;color:var(--yolk)}
+.lead{font-size:16px;color:var(--muted);max-width:560px;margin-top:14px}
+.btn{display:inline-flex;align-items:center;gap:10px;height:54px;padding:0 28px;border-radius:999px;font-weight:700;font-size:15px;transition:.2s;border:2px solid var(--navy);white-space:nowrap}
+.btn.p{background:var(--navy);color:var(--cream)}
+.btn.p:hover{background:var(--yolk);border-color:var(--yolk);color:var(--navy)}
+.btn.g{color:var(--navy)}
+.btn.g:hover{background:var(--navy);color:var(--cream)}
+.btn svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round}
+/* nav */
+header{position:sticky;top:0;z-index:50;background:rgba(251,244,230,.92);backdrop-filter:blur(10px);border-bottom:1px solid rgba(31,42,85,.12)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:76px}
+.logo{display:flex;align-items:center;gap:12px}
+.logo svg{width:44px;height:44px}
+.logo b{font-family:'Gowun Batang',serif;font-size:22px;color:var(--navy);line-height:1.1;display:block}
+.logo small{font-family:'Outfit',sans-serif;font-size:11px;letter-spacing:.26em;color:var(--muted);display:block;font-weight:600}
+.menu{display:flex;gap:30px;font-size:15px;font-weight:500;color:var(--navy)}
+.menu a:hover{color:var(--yolk)}
+.nav .btn{height:44px;padding:0 20px;font-size:14px}
+.burger{display:none;width:44px;height:44px;border-radius:12px;border:2px solid var(--navy);background:none;align-items:center;justify-content:center;cursor:pointer}
+.burger svg{width:22px;height:22px;stroke:var(--navy);stroke-width:2.4;fill:none;stroke-linecap:round}
+/* hero */
+.hero{position:relative;padding:64px 0 90px;overflow:hidden}
+.hero:before{content:"";position:absolute;right:-180px;top:-220px;width:760px;height:760px;border-radius:50%;background:radial-gradient(circle at 50% 50%,#ffd98a 0,#ffc45a 34%,rgba(255,196,90,0) 70%);opacity:.6}
+.hgrid{position:relative;display:grid;grid-template-columns:1.02fr 1fr;gap:40px;align-items:center}
+.tag{display:inline-flex;align-items:center;gap:10px;padding:8px 16px;border-radius:999px;background:#fff;border:1.5px solid rgba(31,42,85,.18);font-size:14px;font-weight:500;color:var(--navy)}
+.tag i{width:10px;height:10px;border-radius:50%;background:var(--sage);box-shadow:0 0 0 4px rgba(143,163,122,.25)}
+.hero h1{font-family:'Gowun Batang',serif;font-size:clamp(40px,5.4vw,70px);line-height:1.2;color:var(--navy);margin:22px 0 18px;letter-spacing:-.01em}
+.hero h1 span{position:relative;display:inline-block;z-index:0}
+.hero h1 span:after{content:"";position:absolute;left:-4px;right:-4px;bottom:8px;height:.32em;background:var(--yolk2);z-index:-1;border-radius:6px}
+.hero p.d{font-size:17px;color:var(--muted);max-width:480px}
+.hero .cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
+.hfacts{display:flex;flex-wrap:wrap;gap:28px;margin-top:40px;padding-top:26px;border-top:1.5px dashed rgba(31,42,85,.25)}
+.hfacts div b{display:block;font-family:'Fraunces',serif;font-size:28px;color:var(--navy);font-weight:800;line-height:1.1}
+.hfacts div span{font-size:13px;color:var(--muted)}
+.hart{position:relative}
+.hart svg{width:100%;height:auto;filter:drop-shadow(0 30px 40px rgba(31,42,85,.18))}
+.stamp{position:absolute;left:-10px;bottom:40px;width:128px;height:128px;border-radius:50%;background:var(--navy);color:var(--cream);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;transform:rotate(-10deg);box-shadow:0 14px 30px rgba(31,42,85,.3)}
+.stamp b{font-family:'Fraunces',serif;font-size:30px;color:var(--yolk2);line-height:1}
+.stamp span{font-size:12px;font-weight:500;margin-top:4px;line-height:1.35}
+/* marquee */
+.rbw{overflow:hidden;padding:24px 0;margin:-24px 0;position:relative;z-index:2}
+.ribbon{background:var(--navy);color:var(--cream);overflow:hidden;white-space:nowrap;padding:16px 0;transform:rotate(-1.2deg);margin:-20px -20px 0;position:relative;z-index:2}
+.ribbon div{display:inline-flex;gap:44px;animation:mq 36s linear infinite;font-family:'Outfit',sans-serif;font-weight:600;font-size:18px;letter-spacing:.08em}
+.ribbon div span{display:inline-flex;align-items:center;gap:44px}
+.ribbon div span:after{content:"";width:12px;height:12px;border-radius:50%;background:var(--yolk2)}
+@keyframes mq{to{transform:translateX(-50%)}}
+/* about */
+section{padding:110px 0}
+.about .grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:70px;align-items:center}
+.about .pic{position:relative;border-radius:28px;overflow:hidden;background:var(--linen)}
+.vals{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:34px}
+.val{background:#fff;border-radius:20px;padding:22px 20px;border:1.5px solid rgba(31,42,85,.1)}
+.val svg{width:40px;height:40px;margin-bottom:12px}
+.val b{display:block;font-size:16px;color:var(--navy);margin-bottom:4px}
+.val p{font-size:14px;color:var(--muted);line-height:1.55}
+/* signature */
+.sig{background:var(--navy);color:var(--cream);position:relative;overflow:hidden}
+.sig:before{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.04) 1px,transparent 1px);background-size:44px 44px}
+.sig .wrap{position:relative}
+.sig h2.t{color:var(--cream)}
+.sig .lead{color:#c5c9e0}
+.shead{display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:20px}
+.cards{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-top:48px}
+.card{background:var(--cream);color:var(--ink);border-radius:24px;overflow:hidden;display:flex;flex-direction:column;transition:.25s}
+.card:hover{transform:translateY(-6px)}
+.card .im{background:var(--linen);aspect-ratio:1/1;position:relative}
+.card .im svg{width:100%;height:100%}
+.card .no{position:absolute;left:14px;top:14px;font-family:'Fraunces',serif;font-weight:800;font-size:15px;color:var(--navy);background:#fff;border-radius:999px;padding:4px 12px}
+.card .bd{padding:20px 20px 22px;display:flex;flex-direction:column;flex:1}
+.card h3{font-size:18px;color:var(--navy);line-height:1.4}
+.card p{font-size:14px;color:var(--muted);margin:6px 0 16px;flex:1}
+.card .pr{display:flex;justify-content:space-between;align-items:center;border-top:1.5px dashed rgba(31,42,85,.2);padding-top:14px}
+.card .pr b{font-family:'Fraunces',serif;font-size:22px;color:var(--navy)}
+.card .pr span{font-size:12px;font-weight:700;color:var(--yolk);background:rgba(242,154,31,.12);padding:4px 10px;border-radius:999px}
+/* full menu */
+.tabs{display:flex;gap:8px;flex-wrap:wrap;margin-top:34px}
+.tabs button{font-family:inherit;font-size:15px;font-weight:700;padding:12px 22px;border-radius:999px;border:2px solid var(--navy);background:none;color:var(--navy);cursor:pointer;transition:.2s}
+.tabs button.on{background:var(--navy);color:var(--cream)}
+.mlist{display:none;grid-template-columns:1fr 1fr;gap:4px 60px;margin-top:34px}
+.mlist.on{display:grid}
+.mi{display:flex;align-items:baseline;gap:12px;padding:18px 0;border-bottom:1.5px solid rgba(31,42,85,.12)}
+.mi div{flex:1;min-width:0}
+.mi b{font-size:17px;color:var(--navy)}
+.mi small{display:block;font-size:13px;color:var(--muted);margin-top:2px}
+.mi i{flex:0 0 auto;font-style:normal;font-family:'Fraunces',serif;font-weight:800;font-size:19px;color:var(--navy)}
+.mi em{font-style:normal;font-size:11px;font-weight:700;color:#fff;background:var(--sage);padding:2px 8px;border-radius:999px;margin-left:6px;vertical-align:2px}
+.mnote{margin-top:22px;font-size:13px;color:var(--muted)}
+.fmgrid{display:grid;grid-template-columns:1.6fr 1fr;gap:56px;align-items:start}
+.setbox{background:var(--yolk2);border-radius:28px;padding:32px;position:sticky;top:110px;overflow:hidden}
+.setbox:after{content:"";position:absolute;right:-60px;bottom:-60px;width:200px;height:200px;border-radius:50%;background:rgba(255,255,255,.35)}
+.setbox .eyebrow{color:var(--navy)}
+.setbox h3{font-family:'Gowun Batang',serif;font-size:28px;color:var(--navy);line-height:1.3;margin:10px 0 12px}
+.setbox ul{list-style:none;position:relative;z-index:1}
+.setbox li{display:flex;gap:10px;align-items:flex-start;font-size:15px;color:var(--navy);padding:6px 0}
+.setbox li svg{flex:0 0 20px;width:20px;height:20px;margin-top:2px;stroke:var(--navy);fill:none;stroke-width:2.6;stroke-linecap:round;stroke-linejoin:round}
+.setbox .price{position:relative;z-index:1;display:flex;align-items:baseline;gap:10px;margin:22px 0 18px}
+.setbox .price b{font-family:'Fraunces',serif;font-size:46px;color:var(--navy);line-height:1}
+.setbox .price span{font-size:14px;color:var(--navy)}
+.setbox .btn{position:relative;z-index:1}
+/* space */
+.space{background:var(--linen)}
+.sgrid{display:grid;grid-template-columns:1.25fr 1fr;gap:24px;margin-top:46px}
+.sgrid .big{grid-row:span 2;border-radius:28px;overflow:hidden;background:#fff}
+.sgrid .sm{border-radius:28px;overflow:hidden;background:#fff;position:relative}
+.sgrid svg{width:100%;height:100%}
+.sgrid .big svg{position:absolute;inset:0}
+.sgrid .big{min-height:420px}
+.cap{position:absolute;left:18px;bottom:18px;background:rgba(31,42,85,.92);color:var(--cream);font-size:13px;font-weight:500;padding:8px 14px;border-radius:999px}
+.big{position:relative}
+/* reserve */
+.rgrid{display:grid;grid-template-columns:1fr 1.05fr;gap:60px;align-items:start}
+.steps{margin-top:30px;display:flex;flex-direction:column;gap:14px}
+.step{display:flex;gap:16px;align-items:flex-start;background:#fff;border-radius:18px;padding:18px 20px;border:1.5px solid rgba(31,42,85,.1)}
+.step b{flex:0 0 36px;height:36px;border-radius:50%;background:var(--navy);color:var(--yolk2);font-family:'Fraunces',serif;display:flex;align-items:center;justify-content:center;font-size:16px}
+.step p{font-size:15px;color:var(--ink)}
+.step small{display:block;font-size:13px;color:var(--muted)}
+form.rv{background:#fff;border-radius:28px;padding:34px;border:2px solid var(--navy);box-shadow:10px 10px 0 var(--yolk2)}
+form.rv h3{font-family:'Gowun Batang',serif;font-size:26px;color:var(--navy);margin-bottom:20px}
+.fr{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+label{display:block;font-size:13px;font-weight:700;color:var(--navy);margin-bottom:14px}
+input,select,textarea{display:block;width:100%;margin-top:6px;font-family:inherit;font-size:15px;padding:13px 14px;border-radius:12px;border:1.5px solid rgba(31,42,85,.25);background:var(--cream);color:var(--ink)}
+input:focus,select:focus,textarea:focus{outline:none;border-color:var(--yolk);box-shadow:0 0 0 3px rgba(242,154,31,.2)}
+textarea{resize:vertical;min-height:84px}
+.slots{display:flex;flex-wrap:wrap;gap:8px;margin:6px 0 16px}
+.slots button{font-family:'Outfit',sans-serif;font-size:14px;font-weight:600;padding:10px 14px;border-radius:10px;border:1.5px solid rgba(31,42,85,.25);background:#fff;color:var(--navy);cursor:pointer}
+.slots button.on{background:var(--navy);color:var(--cream);border-color:var(--navy)}
+.slots button:disabled{opacity:.35;text-decoration:line-through;cursor:not-allowed}
+form.rv .btn{width:100%;justify-content:center;margin-top:6px}
+.ok{display:none;margin-top:16px;padding:16px;border-radius:14px;background:rgba(143,163,122,.18);color:#3e5330;font-size:14px;font-weight:500}
+.ok.on{display:block}
+.slbl{font-size:13px;font-weight:700;color:var(--navy)}
+/* catering */
+.cater{padding:0 0 110px}
+.cbox{background:var(--navy);border-radius:36px;color:var(--cream);display:grid;grid-template-columns:1fr 1fr;gap:30px;align-items:center;overflow:hidden;position:relative}
+.cbox .tx{padding:56px}
+.cbox h2.t{color:var(--cream)}
+.cbox .lead{color:#c5c9e0}
+.cbox .opts{display:flex;flex-wrap:wrap;gap:8px;margin:24px 0 28px}
+.cbox .opts span{font-size:14px;padding:8px 14px;border-radius:999px;border:1.5px solid rgba(255,255,255,.3)}
+.cbox .btn.p{background:var(--yolk2);color:var(--navy);border-color:var(--yolk2)}
+.cbox .btn.p:hover{background:#fff;border-color:#fff}
+.cbox svg{width:100%;height:100%}
+/* visit */
+.visit{background:#fff;border-top:1px solid rgba(31,42,85,.1)}
+.vgrid{display:grid;grid-template-columns:1fr 1.2fr;gap:56px;align-items:center}
+.hours{margin-top:28px;border-radius:20px;overflow:hidden;border:1.5px solid rgba(31,42,85,.14)}
+.hours div{display:flex;justify-content:space-between;gap:16px;padding:16px 20px;font-size:15px;border-bottom:1.5px solid rgba(31,42,85,.1)}
+.hours div:last-child{border-bottom:none}
+.hours div b{color:var(--navy)}
+.hours div.hl{background:rgba(255,196,90,.25)}
+.contact{display:flex;flex-direction:column;gap:10px;margin-top:22px;font-size:15px}
+.contact span{display:flex;align-items:center;gap:10px}
+.contact svg{width:20px;height:20px;stroke:var(--navy);fill:none;stroke-width:2;flex:0 0 20px}
+.map{border-radius:28px;overflow:hidden;border:2px solid var(--navy)}
+footer{background:var(--ink);color:#b8bbd0;padding:50px 0 36px;font-size:14px}
+.fgrid{display:flex;justify-content:space-between;flex-wrap:wrap;gap:24px;align-items:center}
+footer .logo b{color:var(--cream)}
+footer .logo small{color:#8a8ea8}
+.fl{display:flex;gap:22px;flex-wrap:wrap}
+.copy{margin-top:28px;padding-top:20px;border-top:1px solid rgba(255,255,255,.1);font-size:13px;color:#8a8ea8}
+.fab{position:fixed;right:20px;bottom:20px;z-index:60;display:none}
+@media(max-width:1080px){.cards{grid-template-columns:repeat(2,1fr)}.fmgrid{grid-template-columns:1fr}.setbox{position:relative;top:0}}
+@media(max-width:900px){
+ .menu,.nav>.btn{display:none}.burger{display:flex}
+ .hgrid,.about .grid,.rgrid,.vgrid,.cbox{grid-template-columns:1fr}
+ .hero{padding:40px 0 70px}
+ .hart{width:100%;max-width:560px;margin:0 auto}
+ .sgrid{grid-template-columns:1fr}.sgrid .big{grid-row:auto}
+ .cbox .tx{padding:40px 28px 0}
+ section{padding:80px 0}
+ .menu.open{display:flex;position:absolute;top:76px;left:0;right:0;flex-direction:column;gap:0;background:var(--cream);border-bottom:1px solid rgba(31,42,85,.12);padding:8px 24px 16px}
+ .menu.open a{padding:12px 0;border-bottom:1px solid rgba(31,42,85,.08)}
+ .fab{display:inline-flex}
+}
+@media(max-width:620px){
+ .wrap{padding:0 18px}
+ .cards{grid-template-columns:1fr 1fr;gap:12px}
+ .card .bd{padding:14px}
+ .card h3{font-size:15px}
+ .card p{font-size:13px}
+ .card .pr{flex-direction:column;align-items:flex-start;gap:6px}
+ .card .pr b{font-size:19px}
+ .vals{grid-template-columns:1fr}
+ .mlist{grid-template-columns:1fr}
+ .fr{grid-template-columns:1fr}
+ form.rv{padding:24px 20px;box-shadow:6px 6px 0 var(--yolk2)}
+ .stamp{width:104px;height:104px;left:0;bottom:10px}.stamp b{font-size:24px}.stamp span{font-size:11px}
+ .hfacts{gap:20px}
+ .hfacts div b{font-size:24px}
+ .hero .cta .btn{flex:1;justify-content:center;padding:0 18px}
+ .setbox{padding:26px 22px}
+ .cbox{border-radius:26px}
+ .logo b{font-size:19px}
+}
+</style>
+</head>
+<body>
+<header>
+ <div class="wrap nav">
+  <a class="logo" href="#top" aria-label="아침볕 브런치 홈">
+   <svg viewBox="0 0 44 44"><circle cx="22" cy="22" r="21" fill="#1f2a55"/><path d="M8 27h28" stroke="#fbf4e6" stroke-width="2.2" stroke-linecap="round"/><path d="M12 27a10 10 0 0 1 20 0" fill="#ffc45a"/><g stroke="#ffc45a" stroke-width="2.2" stroke-linecap="round"><path d="M22 10v3"/><path d="M11 15l2 2"/><path d="M33 15l-2 2"/></g><path d="M14 32h16" stroke="#fbf4e6" stroke-width="2.2" stroke-linecap="round" opacity=".6"/></svg>
+   <span><b>아침볕</b><small>BRUNCH &amp; COFFEE</small></span>
+  </a>
+  <nav class="menu" id="menu"><a href="#about">소개</a><a href="#signature">시그니처</a><a href="#fullmenu">메뉴</a><a href="#space">공간</a><a href="#visit">오시는 길</a></nav>
+  <a class="btn p" href="#reserve">주말 예약하기</a>
+  <button class="burger" type="button" aria-label="메뉴 열기" onclick="document.getElementById('menu').classList.toggle('open')"><svg viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+ </div>
+</header>
+
+<main id="top">
+<section class="hero">
+ <div class="wrap hgrid">
+  <div>
+   <span class="tag"><i></i>매일 아침 7시 30분, 첫 커피를 내립니다</span>
+   <h1>마카티의 아침을<br><span>천천히</span> 굽는 집</h1>
+   <p class="d">버터에 노릇하게 구운 사워도우, 반숙 달걀, 한국식 반찬 한 접시까지. 출근 전 한 잔부터 주말의 늦은 브런치까지, 아침볕이 드는 창가 자리에서 하루를 시작해 보세요.</p>
+   <div class="cta"><a class="btn p" href="#reserve">주말 브런치 예약 <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a><a class="btn g" href="#fullmenu">메뉴 보기</a></div>
+   <div class="hfacts"><div><b>07:30</b><span>평일 오픈</span></div><div><b>16</b><span>올데이 메뉴</span></div><div><b>₱180~</b><span>핸드드립 커피</span></div></div>
+  </div>
+  <div class="hart">
+   <svg viewBox="0 0 600 560" role="img" aria-label="반숙 달걀 토스트와 커피, 오렌지 주스가 놓인 브런치 테이블 일러스트">
+    <defs>
+     <pattern id="hchk" width="36" height="36" patternUnits="userSpaceOnUse"><rect width="36" height="36" fill="#fbf4e6"/><rect width="18" height="36" fill="#2c3a72" opacity=".16"/><rect width="36" height="18" fill="#2c3a72" opacity=".16"/></pattern>
+     <radialGradient id="hplate" cx=".45" cy=".4" r=".6"><stop offset="0" stop-color="#ffffff"/><stop offset=".75" stop-color="#f4efe6"/><stop offset="1" stop-color="#ddd3c2"/></radialGradient>
+     <linearGradient id="htoast" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#e8b46a"/><stop offset=".6" stop-color="#c98a3e"/><stop offset="1" stop-color="#9d6424"/></linearGradient>
+     <radialGradient id="hcrumb" cx=".5" cy=".45" r=".6"><stop offset="0" stop-color="#f7dca6"/><stop offset="1" stop-color="#e5b871"/></radialGradient>
+     <radialGradient id="hyolk" cx=".38" cy=".35" r=".7"><stop offset="0" stop-color="#ffd76a"/><stop offset=".55" stop-color="#f6a821"/><stop offset="1" stop-color="#d9800d"/></radialGradient>
+     <radialGradient id="hwhite" cx=".45" cy=".4" r=".7"><stop offset="0" stop-color="#fff"/><stop offset="1" stop-color="#f1ebe0"/></radialGradient>
+     <linearGradient id="hcup" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#2c3a72"/><stop offset=".5" stop-color="#3b4b8c"/><stop offset="1" stop-color="#1f2a55"/></linearGradient>
+     <radialGradient id="hcoffee" cx=".4" cy=".4" r=".7"><stop offset="0" stop-color="#a46a3d"/><stop offset=".6" stop-color="#6b3f1f"/><stop offset="1" stop-color="#3f2410"/></radialGradient>
+     <radialGradient id="hjuice" cx=".4" cy=".35" r=".7"><stop offset="0" stop-color="#ffcf6b"/><stop offset="1" stop-color="#f28a12"/></radialGradient>
+     <linearGradient id="havo" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#d5e3a0"/><stop offset="1" stop-color="#8fa84f"/></linearGradient>
+     <filter id="hsh" x="-20%" y="-20%" width="140%" height="150%"><feDropShadow dx="6" dy="14" stdDeviation="10" flood-color="#1f2a55" flood-opacity=".22"/></filter>
+    </defs>
+    <path d="M60 40h460c30 0 50 20 50 50v400c0 30-20 50-50 50H60c-30 0-50-20-50-50V90c0-30 20-50 50-50z" fill="#f3e7cf"/>
+    <g transform="rotate(-8 170 420)"><rect x="40" y="300" width="260" height="230" rx="10" fill="url(#hchk)" filter="url(#hsh)"/><path d="M40 330h260" stroke="#fbf4e6" stroke-width="3" stroke-dasharray="6 6" opacity=".7"/></g>
+    <!-- fork & knife -->
+    <g filter="url(#hsh)"><rect x="96" y="340" width="12" height="170" rx="6" fill="#c9c4bc" transform="rotate(-8 102 425)"/><rect x="128" y="330" width="14" height="180" rx="7" fill="#d8d3cb" transform="rotate(-8 135 420)"/></g>
+    <!-- plate -->
+    <g filter="url(#hsh)"><circle cx="330" cy="300" r="190" fill="url(#hplate)"/><circle cx="330" cy="300" r="150" fill="none" stroke="#e3dacb" stroke-width="3"/></g>
+    <!-- toast -->
+    <g transform="rotate(-12 300 290)">
+     <path d="M200 220c0-40 40-62 100-62s100 22 100 62v130c0 12-8 20-20 20H220c-12 0-20-8-20-20z" fill="url(#htoast)"/>
+     <path d="M214 230c0-30 34-50 86-50s86 20 86 50v112c0 8-6 14-14 14H228c-8 0-14-6-14-14z" fill="url(#hcrumb)"/>
+     <g fill="#d9a45a" opacity=".55"><circle cx="240" cy="250" r="5"/><circle cx="270" cy="320" r="4"/><circle cx="350" cy="236" r="4"/><circle cx="366" cy="330" r="5"/><circle cx="320" cy="340" r="3"/><circle cx="236" cy="300" r="3"/></g>
+     <!-- egg -->
+     <path d="M226 262c10-40 70-56 118-40 42 14 44 66 18 92-30 30-104 36-128 6-14-18-14-40-8-58z" fill="url(#hwhite)"/>
+     <circle cx="296" cy="276" r="36" fill="url(#hyolk)"/>
+     <ellipse cx="284" cy="262" rx="12" ry="7" fill="#fff" opacity=".55"/>
+    </g>
+    <!-- avocado slices -->
+    <g transform="translate(408 312) rotate(18)">
+     <path d="M0 0c26-30 72-30 90 0-20 30-66 34-90 0z" fill="#4f6b2a"/><path d="M6 0c22-22 60-22 76 0-18 22-56 24-76 0z" fill="url(#havo)"/>
+     <path d="M12 26c26-30 72-30 90 0-20 30-66 34-90 0z" fill="#4f6b2a"/><path d="M18 26c22-22 60-22 76 0-18 22-56 24-76 0z" fill="url(#havo)"/>
+    </g>
+    <!-- cherry tomatoes -->
+    <g><circle cx="248" cy="420" r="20" fill="#d9442b"/><circle cx="242" cy="413" r="6" fill="#fff" opacity=".4"/><path d="M248 400l-6-6m6 6l6-6m-6 6v-8" stroke="#4f6b2a" stroke-width="3" stroke-linecap="round"/>
+    <circle cx="288" cy="438" r="16" fill="#e2552f"/><circle cx="283" cy="433" r="5" fill="#fff" opacity=".4"/></g>
+    <!-- greens -->
+    <g fill="#8fa37a"><path d="M380 420c20-22 50-18 60 2-22 16-44 16-60-2z"/><path d="M400 440c18-30 50-30 62-10-22 22-46 24-62 10z" fill="#6f8758"/></g>
+    <!-- coffee -->
+    <g filter="url(#hsh)"><circle cx="490" cy="130" r="74" fill="#fbf4e6"/><circle cx="490" cy="130" r="74" fill="none" stroke="#e3dacb" stroke-width="2"/>
+     <path d="M552 112c26-4 34 32 8 36" fill="none" stroke="#2c3a72" stroke-width="12" stroke-linecap="round"/>
+     <circle cx="490" cy="130" r="54" fill="url(#hcup)"/><circle cx="490" cy="130" r="44" fill="url(#hcoffee)"/>
+     <path d="M470 124c10-14 30-14 40 0-10 6-14 18-20 26-6-8-10-20-20-26z" fill="#f2dcc0" opacity=".85"/></g>
+    <!-- juice -->
+    <g filter="url(#hsh)"><circle cx="128" cy="168" r="58" fill="#fff" opacity=".55"/><circle cx="128" cy="168" r="50" fill="url(#hjuice)"/><circle cx="128" cy="168" r="50" fill="none" stroke="#fff" stroke-width="6" opacity=".7"/>
+     <g transform="translate(150 132) rotate(20)"><circle r="22" fill="#ffe08a"/><circle r="18" fill="#ffc94a"/><path d="M0 -18V18M-18 0H18M-13 -13L13 13M13 -13L-13 13" stroke="#fff3c4" stroke-width="2"/></g>
+     <path d="M112 160L70 108" stroke="#1f2a55" stroke-width="7" stroke-linecap="round"/><path d="M70 108l-8-10" stroke="#f29a1f" stroke-width="7" stroke-linecap="round"/></g>
+    <!-- little banchan dish -->
+    <g filter="url(#hsh)"><ellipse cx="500" cy="470" rx="64" ry="52" fill="#fbf4e6"/><ellipse cx="500" cy="466" rx="48" ry="38" fill="#c43c24"/><g fill="#e8653f"><rect x="474" y="446" width="18" height="12" rx="3" transform="rotate(20 480 452)"/><rect x="500" y="456" width="20" height="12" rx="3" transform="rotate(-15 510 462)"/><rect x="486" y="474" width="18" height="11" rx="3"/></g><g fill="#f6efe0" opacity=".8"><rect x="510" y="440" width="12" height="8" rx="2"/><rect x="470" y="470" width="10" height="7" rx="2"/></g></g>
+    <!-- sunlight beams -->
+    <g fill="#fff" opacity=".22"><path d="M600 0L380 560h70L600 120z"/><path d="M600 160L470 560h40L600 260z"/></g>
+   </svg>
+   <div class="stamp"><b>₱390</b><span>주말 브런치<br>플레이트부터</span></div>
+  </div>
+ </div>
+</section>
+<div class="rbw"><div class="ribbon" aria-hidden="true"><div><span>SOURDOUGH</span><span>SOFT EGGS</span><span>HAND DRIP</span><span>KIMCHI CROQUE</span><span>UBE FRENCH TOAST</span><span>CALAMANSI SODA</span><span>SOURDOUGH</span><span>SOFT EGGS</span><span>HAND DRIP</span><span>KIMCHI CROQUE</span><span>UBE FRENCH TOAST</span><span>CALAMANSI SODA</span></div></div></div>
+
+<section class="about" id="about">
+ <div class="wrap grid">
+  <div class="pic">
+   <svg viewBox="0 0 520 600" role="img" aria-label="창가로 아침 햇살이 드는 브런치 카페 카운터 일러스트">
+    <defs>
+     <linearGradient id="awall" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fbf4e6"/><stop offset="1" stop-color="#f0e1c3"/></linearGradient>
+     <linearGradient id="asky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffe3a3"/><stop offset="1" stop-color="#ffc45a"/></linearGradient>
+     <linearGradient id="actr" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2c3a72"/><stop offset="1" stop-color="#1b244a"/></linearGradient>
+     <linearGradient id="awood" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#c8935a"/><stop offset="1" stop-color="#a87340"/></linearGradient>
+     <linearGradient id="abeam" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fff2c9" stop-opacity=".9"/><stop offset="1" stop-color="#fff2c9" stop-opacity="0"/></linearGradient>
+    </defs>
+    <rect width="520" height="600" fill="url(#awall)"/>
+    <path d="M70 60h200v260H70z" fill="url(#asky)"/>
+    <circle cx="200" cy="150" r="44" fill="#fff3c9"/>
+    <path d="M70 250c40-30 80-20 110 0s70 20 90-10v80H70z" fill="#8fa37a" opacity=".7"/>
+    <path d="M70 60h200v260H70z" fill="none" stroke="#1f2a55" stroke-width="10"/>
+    <path d="M170 60v260M70 190h200" stroke="#1f2a55" stroke-width="6"/>
+    <path d="M70 320L520 520V600H300L70 330z" fill="url(#abeam)" opacity=".7"/>
+    <!-- shelf -->
+    <rect x="310" y="120" width="170" height="10" rx="4" fill="url(#awood)"/>
+    <rect x="310" y="220" width="170" height="10" rx="4" fill="url(#awood)"/>
+    <g><rect x="324" y="80" width="30" height="40" rx="6" fill="#1f2a55"/><rect x="362" y="70" width="26" height="50" rx="5" fill="#f29a1f"/><rect x="396" y="86" width="34" height="34" rx="17" fill="#fbf4e6" stroke="#1f2a55" stroke-width="3"/><path d="M440 120c0-30 30-30 30 0z" fill="#8fa37a"/></g>
+    <g><rect x="320" y="176" width="44" height="44" rx="8" fill="#e8b46a"/><path d="M326 188c10-6 22-6 32 0" stroke="#9d6424" stroke-width="3" fill="none"/><rect x="372" y="186" width="40" height="34" rx="6" fill="#d9442b" opacity=".85"/><rect x="420" y="170" width="18" height="50" rx="4" fill="#2c3a72"/><rect x="444" y="178" width="18" height="42" rx="4" fill="#ffc45a"/></g>
+    <!-- plant -->
+    <g><path d="M60 500h70l-10 70H70z" fill="#c8935a"/><g fill="#6f8758"><path d="M95 500c-40-40-40-100 0-130 10 50 10 90 0 130z"/><path d="M95 500c10-60 50-90 90-90-20 50-50 80-90 90z" fill="#8fa37a"/><path d="M95 500c-20-50-60-70-90-60 10 40 50 60 90 60z" fill="#8fa37a"/></g></g>
+    <!-- counter -->
+    <rect x="150" y="390" width="370" height="210" fill="url(#actr)"/>
+    <rect x="140" y="376" width="380" height="22" rx="6" fill="url(#awood)"/>
+    <g stroke="#3b4b8c" stroke-width="3" opacity=".6"><path d="M190 420v170M240 420v170M290 420v170M340 420v170M390 420v170M440 420v170M490 420v170"/></g>
+    <!-- espresso machine -->
+    <g><rect x="360" y="296" width="120" height="80" rx="10" fill="#e9e4dc"/><rect x="360" y="296" width="120" height="18" rx="8" fill="#c9c2b6"/><rect x="378" y="330" width="22" height="16" rx="3" fill="#1f2a55"/><rect x="440" y="330" width="22" height="16" rx="3" fill="#1f2a55"/><circle cx="420" cy="324" r="9" fill="#f29a1f"/><rect x="384" y="356" width="12" height="14" rx="2" fill="#fbf4e6" stroke="#1f2a55" stroke-width="2"/></g>
+    <!-- cake dome -->
+    <g><path d="M190 376a50 50 0 0 1 100 0z" fill="#fff" opacity=".55" stroke="#c9c2b6" stroke-width="2"/><rect x="206" y="350" width="68" height="26" rx="4" fill="#f6d27a"/><rect x="206" y="350" width="68" height="8" rx="3" fill="#fbf4e6"/><circle cx="240" cy="322" r="5" fill="#c9c2b6"/></g>
+    <!-- pendant lamps -->
+    <g><path d="M330 0v40" stroke="#1f2a55" stroke-width="3"/><path d="M306 64a24 24 0 0 1 48 0z" fill="#1f2a55"/><ellipse cx="330" cy="66" rx="12" ry="5" fill="#ffd98a"/><path d="M450 0v26" stroke="#1f2a55" stroke-width="3"/><path d="M426 50a24 24 0 0 1 48 0z" fill="#f29a1f"/><ellipse cx="450" cy="52" rx="12" ry="5" fill="#fff3c9"/></g>
+   </svg>
+  </div>
+  <div>
+   <span class="eyebrow">Our Morning</span>
+   <h2 class="t">빵은 새벽에 굽고,<br>달걀은 <em>주문 후에</em> 익힙니다</h2>
+   <p class="lead">아침볕은 마카티 골목 2층에 자리한 작은 브런치 카페입니다. 한국에서 먹던 든든한 아침과 필리핀의 열대 과일, 매일 굽는 사워도우를 한 접시에 담았습니다. 혼자 노트북을 펴도, 가족과 늦은 아침을 먹어도 편안한 자리를 준비했어요.</p>
+   <div class="vals">
+    <div class="val"><svg viewBox="0 0 40 40"><circle cx="20" cy="20" r="19" fill="#ffc45a"/><path d="M11 24c0-8 4-13 9-13s9 5 9 13c0 4-4 6-9 6s-9-2-9-6z" fill="#fbf4e6" stroke="#1f2a55" stroke-width="2"/><path d="M15 18c2 2 8 2 10 0" stroke="#1f2a55" stroke-width="2" fill="none" stroke-linecap="round"/></svg><b>매일 굽는 빵</b><p>사워도우·브리오슈를 새벽 5시부터 직접 굽습니다</p></div>
+    <div class="val"><svg viewBox="0 0 40 40"><circle cx="20" cy="20" r="19" fill="#1f2a55"/><ellipse cx="20" cy="22" rx="11" ry="9" fill="#fbf4e6"/><circle cx="20" cy="21" r="5" fill="#f29a1f"/></svg><b>주문 후 조리</b><p>달걀·팬케이크는 주문이 들어온 뒤 바로 만듭니다</p></div>
+    <div class="val"><svg viewBox="0 0 40 40"><circle cx="20" cy="20" r="19" fill="#8fa37a"/><path d="M12 28h16l-2-12H14z" fill="#fbf4e6" stroke="#1f2a55" stroke-width="2" stroke-linejoin="round"/><path d="M16 16c0-4 8-4 8 0" stroke="#1f2a55" stroke-width="2" fill="none"/></svg><b>한국식 한 접시</b><p>계란말이·김치·장아찌를 곁들인 한식 브런치</p></div>
+   </div>
+  </div>
+ </div>
+</section>
+
+<section class="sig" id="signature">
+ <div class="wrap">
+  <div class="shead">
+   <div><span class="eyebrow">Signature Plates</span><h2 class="t">아침볕에서 꼭 맛봐야 할<br>네 접시</h2></div>
+   <p class="lead">모든 플레이트는 오전 7시 30분부터 오후 3시까지 주문할 수 있습니다.</p>
+  </div>
+  <div class="cards">
+   <article class="card">
+    <div class="im"><span class="no">01</span>
+     <svg viewBox="0 0 300 300" role="img" aria-label="수란을 올린 에그 베네딕트 일러스트">
+      <defs><radialGradient id="c1p" cx=".45" cy=".4" r=".6"><stop offset="0" stop-color="#fff"/><stop offset="1" stop-color="#e4dccd"/></radialGradient><radialGradient id="c1m" cx=".5" cy=".35" r=".6"><stop offset="0" stop-color="#f3cf8e"/><stop offset="1" stop-color="#c98a3e"/></radialGradient><radialGradient id="c1h" cx=".4" cy=".3" r=".7"><stop offset="0" stop-color="#fff0b8"/><stop offset="1" stop-color="#f4c24a"/></radialGradient></defs>
+      <rect width="300" height="300" fill="#f3e7cf"/><circle cx="150" cy="156" r="118" fill="#1f2a55" opacity=".08"/>
+      <circle cx="150" cy="150" r="112" fill="url(#c1p)"/>
+      <g><ellipse cx="112" cy="168" rx="52" ry="20" fill="#a86d2e"/><ellipse cx="112" cy="160" rx="52" ry="22" fill="url(#c1m)"/><ellipse cx="112" cy="150" rx="46" ry="12" fill="#d47a6a"/><path d="M72 144c14-26 66-28 80 0 4 12-8 22-40 22s-44-10-40-22z" fill="#fffaf0"/><path d="M68 146c10 6 18 18 16 30 8-8 14-6 20 4 4-10 14-12 22-4 2-10 12-14 24-6 0-12 6-20 8-26-20 10-70 12-90 2z" fill="url(#c1h)"/></g>
+      <g><ellipse cx="192" cy="128" rx="50" ry="19" fill="#a86d2e"/><ellipse cx="192" cy="120" rx="50" ry="21" fill="url(#c1m)"/><ellipse cx="192" cy="110" rx="44" ry="11" fill="#d47a6a"/><path d="M154 104c14-26 62-28 76 0 4 12-8 20-38 20s-42-8-38-20z" fill="#fffaf0"/><path d="M150 106c10 6 18 18 16 30 8-8 14-6 20 4 4-10 14-12 22-4 2-10 12-14 22-6 0-12 6-20 8-26-20 10-68 12-88 2z" fill="url(#c1h)"/></g>
+      <g fill="#6f8758"><circle cx="100" cy="146" r="3"/><circle cx="120" cy="150" r="2.5"/><circle cx="186" cy="106" r="3"/><circle cx="204" cy="110" r="2.5"/></g>
+      <g fill="#d9442b"><circle cx="96" cy="222" r="10"/><circle cx="118" cy="232" r="9"/></g>
+      <path d="M190 210c20-16 46-12 52 6-18 12-38 12-52-6z" fill="#8fa37a"/><path d="M200 228c16-20 42-18 50-2-18 14-36 14-50 2z" fill="#6f8758"/>
+     </svg>
+    </div>
+    <div class="bd"><h3>사워도우 에그 베네딕트</h3><p>수란 두 개와 칼라만시 홀랜다이즈, 훈제 햄</p><div class="pr"><b>₱420</b><span>주문 후 조리</span></div></div>
+   </article>
+   <article class="card">
+    <div class="im"><span class="no">02</span>
+     <svg viewBox="0 0 300 300" role="img" aria-label="우베 크림을 올린 프렌치토스트 일러스트">
+      <defs><linearGradient id="c2t" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f0c07a"/><stop offset="1" stop-color="#b9762f"/></linearGradient><radialGradient id="c2u" cx=".4" cy=".35" r=".7"><stop offset="0" stop-color="#c9a6e8"/><stop offset="1" stop-color="#7a4fa8"/></radialGradient><radialGradient id="c2p" cx=".45" cy=".4" r=".6"><stop offset="0" stop-color="#2f3e7a"/><stop offset="1" stop-color="#1b244a"/></radialGradient></defs>
+      <rect width="300" height="300" fill="#ece3f4"/>
+      <circle cx="150" cy="150" r="112" fill="url(#c2p)"/>
+      <g transform="rotate(-14 150 150)"><rect x="76" y="118" width="118" height="92" rx="18" fill="#9d6424"/><rect x="80" y="112" width="110" height="88" rx="16" fill="url(#c2t)"/><rect x="120" y="92" width="118" height="92" rx="18" fill="#9d6424"/><rect x="124" y="86" width="110" height="88" rx="16" fill="url(#c2t)"/></g>
+      <path d="M150 84c22-8 46 6 42 26-2 14-22 22-42 20-22-2-36-14-32-28 4-12 18-14 32-18z" fill="url(#c2u)"/>
+      <path d="M140 92c8-4 20-2 24 4" stroke="#fff" stroke-width="4" stroke-linecap="round" opacity=".5"/>
+      <g fill="#fff" opacity=".9"><circle cx="110" cy="190" r="3"/><circle cx="196" cy="186" r="2.5"/><circle cx="150" cy="210" r="2"/><circle cx="90" cy="150" r="2"/></g>
+      <path d="M112 196c30 14 70 14 100-6" stroke="#f6a821" stroke-width="7" fill="none" stroke-linecap="round" opacity=".85"/>
+      <g><circle cx="212" cy="214" r="12" fill="#ffe08a"/><circle cx="230" cy="200" r="10" fill="#ffc94a"/><path d="M80 214c6-10 18-12 26-4-6 10-18 12-26 4z" fill="#8fa37a"/></g>
+     </svg>
+    </div>
+    <div class="bd"><h3>우베 크림 프렌치토스트</h3><p>브리오슈에 우베 할라야 크림과 코코넛 시럽</p><div class="pr"><b>₱390</b><span>단맛 담백</span></div></div>
+   </article>
+   <article class="card">
+    <div class="im"><span class="no">03</span>
+     <svg viewBox="0 0 300 300" role="img" aria-label="김치 치즈 크로크무슈 단면 일러스트">
+      <defs><linearGradient id="c3b" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f4cf8a"/><stop offset="1" stop-color="#c98a3e"/></linearGradient><linearGradient id="c3c" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffd76a"/><stop offset="1" stop-color="#f29a1f"/></linearGradient></defs>
+      <rect width="300" height="300" fill="#fbe3d3"/>
+      <rect x="40" y="200" width="220" height="50" rx="10" fill="#c8935a"/><rect x="40" y="200" width="220" height="10" rx="5" fill="#a87340"/><g stroke="#a87340" stroke-width="2" opacity=".5"><path d="M60 222h180M70 236h150"/></g>
+      <g transform="translate(150 150)">
+       <path d="M-92 40h184l-6 22h-172z" fill="#b9762f"/>
+       <rect x="-92" y="22" width="184" height="22" rx="6" fill="url(#c3b)"/>
+       <path d="M-96 16h192v10c-20 6-30-2-44 6-14-8-30 4-48-2-18 6-32-6-50 2-16-6-30 2-50-6z" fill="#d9442b"/>
+       <path d="M-94 0h188v18H-94z" fill="#f4a3a3"/>
+       <path d="M-96 -6h192c-4 10-22 16-34 8-10 12-28 12-40 4-14 10-30 10-44 0-12 8-28 8-40-2-14 8-28 4-34-10z" fill="url(#c3c)"/>
+       <path d="M-90 -50c0-14 10-22 24-22h132c14 0 24 8 24 22v44H-90z" fill="url(#c3b)"/>
+       <path d="M-86 -40c20-16 50-8 70-14s40 8 64 0 30 2 42 12v-6c0-10-8-18-20-18H-66c-12 0-20 8-20 18z" fill="#f29a1f" opacity=".9"/>
+       <g fill="#9d6424" opacity=".6"><rect x="-60" y="-34" width="18" height="5" rx="2"/><rect x="-10" y="-26" width="20" height="5" rx="2"/><rect x="40" y="-34" width="16" height="5" rx="2"/></g>
+       <path d="M-30 -6c0 10 4 18 8 22 2-8 2-16 0-22zM34 -6c-2 12 2 20 6 24 2-10 0-18-2-24z" fill="#f6a821"/>
+      </g>
+      <g fill="#8fa37a"><path d="M210 80c10-20 30-24 40-12-12 16-28 18-40 12z"/></g>
+      <path d="M60 70c10-20 34-24 46-10-12 16-34 20-46 10z" fill="#d9442b" opacity=".7"/>
+     </svg>
+    </div>
+    <div class="bd"><h3>김치 치즈 크로크무슈</h3><p>볶음김치와 그뤼에르 치즈, 베샤멜 소스</p><div class="pr"><b>₱360</b><span>매콤 고소</span></div></div>
+   </article>
+   <article class="card">
+    <div class="im"><span class="no">04</span>
+     <svg viewBox="0 0 300 300" role="img" aria-label="계란말이와 밥, 국, 반찬이 담긴 한식 브런치 트레이 일러스트">
+      <defs><linearGradient id="c4t" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#c8935a"/><stop offset="1" stop-color="#8f5d2e"/></linearGradient><linearGradient id="c4e" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffe08a"/><stop offset="1" stop-color="#f2b13a"/></linearGradient><radialGradient id="c4s" cx=".45" cy=".4" r=".7"><stop offset="0" stop-color="#f6d6a6"/><stop offset="1" stop-color="#c98a3e"/></radialGradient></defs>
+      <rect width="300" height="300" fill="#e4ead8"/>
+      <rect x="28" y="40" width="244" height="220" rx="22" fill="url(#c4t)"/><rect x="38" y="50" width="224" height="200" rx="16" fill="#e9c391" opacity=".35"/>
+      <circle cx="96" cy="196" r="44" fill="#fbf4e6"/><circle cx="96" cy="194" r="34" fill="#fff"/><g fill="#f4efe6"><circle cx="86" cy="186" r="4"/><circle cx="100" cy="182" r="4"/><circle cx="108" cy="196" r="4"/><circle cx="90" cy="202" r="4"/></g><rect x="80" y="166" width="30" height="10" rx="3" fill="#2a3326"/>
+      <circle cx="204" cy="196" r="44" fill="#1f2a55"/><circle cx="204" cy="194" r="34" fill="url(#c4s)"/><g fill="#6f8758"><circle cx="196" cy="186" r="4"/><circle cx="214" cy="198" r="3"/></g><g fill="#fbf4e6"><rect x="194" y="196" width="12" height="10" rx="2"/><rect x="210" y="182" width="10" height="9" rx="2"/></g>
+      <g><rect x="56" y="70" width="110" height="60" rx="12" fill="#fbf4e6"/><g transform="translate(72 82)"><rect width="78" height="36" rx="10" fill="url(#c4e)"/><path d="M14 0v36M30 0v36M46 0v36M62 0v36" stroke="#e39a24" stroke-width="2"/><g fill="#6f8758"><circle cx="8" cy="12" r="2"/><circle cx="24" cy="24" r="2"/><circle cx="40" cy="10" r="2"/><circle cx="56" cy="26" r="2"/><circle cx="70" cy="14" r="2"/></g><g fill="#d9442b"><circle cx="20" cy="10" r="1.6"/><circle cx="52" cy="16" r="1.6"/></g></g></g>
+      <g><circle cx="206" cy="98" r="30" fill="#fbf4e6"/><circle cx="206" cy="98" r="22" fill="#c43c24"/><g fill="#e8653f"><rect x="194" y="88" width="12" height="9" rx="2" transform="rotate(20 200 92)"/><rect x="208" y="96" width="12" height="9" rx="2"/></g></g>
+      <g><circle cx="250" cy="128" r="16" fill="#fbf4e6"/><circle cx="250" cy="128" r="11" fill="#6f8758"/></g>
+     </svg>
+    </div>
+    <div class="bd"><h3>아침볕 한식 브런치 트레이</h3><p>계란말이·흰쌀밥·된장국·김치와 장아찌</p><div class="pr"><b>₱450</b><span>든든한 한 끼</span></div></div>
+   </article>
+  </div>
+ </div>
+</section>
+
+<section id="fullmenu">
+ <div class="wrap fmgrid">
+  <div>
+   <span class="eyebrow">All-day Menu</span>
+   <h2 class="t">오늘은 <em>무엇으로</em> 시작할까요</h2>
+   <div class="tabs" role="tablist">
+    <button type="button" class="on" data-t="m1">브런치</button><button type="button" data-t="m2">커피</button><button type="button" data-t="m3">음료 · 디저트</button>
+   </div>
+   <div class="mlist on" id="m1">
+    <div class="mi"><div><b>사워도우 에그 베네딕트</b><small>수란 2개 · 칼라만시 홀랜다이즈</small></div><i>₱420</i></div>
+    <div class="mi"><div><b>아보카도 스매시 토스트<em>채식</em></b><small>반숙 달걀 · 방울토마토 · 시드 믹스</small></div><i>₱380</i></div>
+    <div class="mi"><div><b>우베 크림 프렌치토스트</b><small>브리오슈 · 코코넛 시럽</small></div><i>₱390</i></div>
+    <div class="mi"><div><b>김치 치즈 크로크무슈</b><small>볶음김치 · 그뤼에르 · 베샤멜</small></div><i>₱360</i></div>
+    <div class="mi"><div><b>한식 브런치 트레이</b><small>계란말이 · 밥 · 된장국 · 반찬 3종</small></div><i>₱450</i></div>
+    <div class="mi"><div><b>망고 리코타 팬케이크</b><small>3단 팬케이크 · 카라바오 망고</small></div><i>₱370</i></div>
+   </div>
+   <div class="mlist" id="m2">
+    <div class="mi"><div><b>오늘의 핸드드립</b><small>원두 2종 중 선택</small></div><i>₱180</i></div>
+    <div class="mi"><div><b>아메리카노</b><small>HOT · ICED</small></div><i>₱150</i></div>
+    <div class="mi"><div><b>플랫화이트</b><small>진한 더블 샷</small></div><i>₱190</i></div>
+    <div class="mi"><div><b>흑당 오트 라테</b><small>오트 밀크 · 흑당 시럽</small></div><i>₱220</i></div>
+    <div class="mi"><div><b>미숫가루 라테</b><small>국산 곡물 · 꿀</small></div><i>₱210</i></div>
+    <div class="mi"><div><b>바닐라빈 라테</b><small>직접 끓인 바닐라 시럽</small></div><i>₱200</i></div>
+   </div>
+   <div class="mlist" id="m3">
+    <div class="mi"><div><b>칼라만시 허니 소다</b><small>탄산 · 꿀 · 민트</small></div><i>₱160</i></div>
+    <div class="mi"><div><b>생 망고 주스</b><small>얼음 없이도 주문 가능</small></div><i>₱180</i></div>
+    <div class="mi"><div><b>유자차</b><small>HOT · ICED</small></div><i>₱150</i></div>
+    <div class="mi"><div><b>바스크 치즈케이크</b><small>조각</small></div><i>₱210</i></div>
+    <div class="mi"><div><b>약과 쿠키 2개</b><small>조청 · 참깨</small></div><i>₱120</i></div>
+    <div class="mi"><div><b>오늘의 스콘</b><small>클로티드 크림 · 잼</small></div><i>₱140</i></div>
+   </div>
+   <p class="mnote">가격은 부가세 포함입니다. 알레르기 재료는 주문 시 말씀해 주세요.</p>
+  </div>
+  <aside class="setbox">
+   <span class="eyebrow">Weekend Set</span>
+   <h3>주말 2인<br>브런치 세트</h3>
+   <ul>
+    <li><svg viewBox="0 0 24 24"><path d="M5 12l5 5 9-10"/></svg>브런치 플레이트 2가지 선택</li>
+    <li><svg viewBox="0 0 24 24"><path d="M5 12l5 5 9-10"/></svg>커피 또는 주스 2잔</li>
+    <li><svg viewBox="0 0 24 24"><path d="M5 12l5 5 9-10"/></svg>오늘의 스콘 1개</li>
+    <li><svg viewBox="0 0 24 24"><path d="M5 12l5 5 9-10"/></svg>토·일 오전 9시~오후 2시</li>
+   </ul>
+   <div class="price"><b>₱1,050</b><span>2인 기준</span></div>
+   <a class="btn p" href="#reserve">세트로 예약하기</a>
+  </aside>
+ </div>
+</section>
+
+<section class="space" id="space">
+ <div class="wrap">
+  <span class="eyebrow">The Space</span>
+  <h2 class="t">창가 바 좌석부터<br>8인 단체석까지</h2>
+  <p class="lead">총 34석. 오전에는 창가 바 좌석에 햇살이 길게 들고, 안쪽 큰 테이블은 가족 모임이나 작은 미팅에 알맞습니다.</p>
+  <div class="sgrid">
+   <div class="big">
+    <svg viewBox="0 0 700 560" preserveAspectRatio="xMidYMid slice" role="img" aria-label="큰 창과 원목 테이블이 있는 카페 내부 일러스트">
+     <defs><linearGradient id="sw" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fbf4e6"/><stop offset="1" stop-color="#efdfbf"/></linearGradient><linearGradient id="sf" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#c8935a"/><stop offset="1" stop-color="#9a6a3a"/></linearGradient><linearGradient id="sg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffe7b0"/><stop offset="1" stop-color="#ffc45a"/></linearGradient><linearGradient id="sl" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fff4cf" stop-opacity=".85"/><stop offset="1" stop-color="#fff4cf" stop-opacity="0"/></linearGradient></defs>
+     <rect width="700" height="560" fill="url(#sw)"/>
+     <g><rect x="60" y="50" width="580" height="250" rx="6" fill="url(#sg)"/><g fill="#8fa37a" opacity=".55"><path d="M60 250c50-40 110-30 150 0s100 30 150-10 120-20 160 10 60 20 120-10v60H60z"/></g><g fill="#2c3a72" opacity=".25"><rect x="120" y="140" width="60" height="110"/><rect x="200" y="110" width="50" height="140"/><rect x="420" y="130" width="70" height="120"/><rect x="510" y="160" width="50" height="90"/></g><path d="M60 50h580v250H60z" fill="none" stroke="#1f2a55" stroke-width="10"/><path d="M253 50v250M446 50v250" stroke="#1f2a55" stroke-width="8"/></g>
+     <path d="M60 300L700 520V560H360L60 310z" fill="url(#sl)"/>
+     <rect x="0" y="420" width="700" height="140" fill="url(#sf)"/>
+     <g stroke="#8a5c30" stroke-width="2" opacity=".35"><path d="M0 460h700M0 500h700M0 540h700"/></g>
+     <rect x="60" y="300" width="580" height="16" fill="#c8935a"/><rect x="60" y="314" width="580" height="8" fill="#9a6a3a"/>
+     <!-- bar stools -->
+     <g fill="#1f2a55"><g><ellipse cx="140" cy="364" rx="30" ry="9"/><rect x="136" y="364" width="8" height="70"/><rect x="118" y="430" width="44" height="6" rx="3"/></g><g><ellipse cx="290" cy="364" rx="30" ry="9"/><rect x="286" y="364" width="8" height="70"/><rect x="268" y="430" width="44" height="6" rx="3"/></g><g><ellipse cx="440" cy="364" rx="30" ry="9"/><rect x="436" y="364" width="8" height="70"/><rect x="418" y="430" width="44" height="6" rx="3"/></g><g><ellipse cx="590" cy="364" rx="30" ry="9"/><rect x="586" y="364" width="8" height="70"/><rect x="568" y="430" width="44" height="6" rx="3"/></g></g>
+     <!-- items on bar -->
+     <g><rect x="160" y="282" width="22" height="20" rx="4" fill="#fbf4e6" stroke="#1f2a55" stroke-width="2"/><rect x="310" y="286" width="40" height="16" rx="3" fill="#1f2a55"/><rect x="316" y="282" width="28" height="4" rx="2" fill="#2c3a72"/><circle cx="470" cy="290" r="12" fill="#f29a1f"/><path d="M560 302c0-20 20-20 20 0z" fill="#8fa37a"/><rect x="566" y="278" width="8" height="10" fill="#8fa37a"/></g>
+     <!-- pendant lights -->
+     <g><path d="M200 0v30M500 0v30" stroke="#1f2a55" stroke-width="3"/><circle cx="200" cy="44" r="16" fill="#fff3c9" stroke="#1f2a55" stroke-width="3"/><circle cx="500" cy="44" r="16" fill="#fff3c9" stroke="#1f2a55" stroke-width="3"/></g>
+    </svg>
+    <span class="cap">창가 바 좌석 · 10석</span>
+   </div>
+   <div class="sm">
+    <svg viewBox="0 0 520 300" role="img" aria-label="8인 원목 단체 테이블 일러스트">
+     <defs><linearGradient id="tw" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#e4ead8"/><stop offset="1" stop-color="#cfd8bd"/></linearGradient><linearGradient id="tt" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#c8935a"/><stop offset="1" stop-color="#a87340"/></linearGradient></defs>
+     <rect width="520" height="300" fill="url(#tw)"/>
+     <g fill="#fbf4e6" stroke="#1f2a55" stroke-width="3"><rect x="70" y="40" width="90" height="120" rx="45"/><rect x="215" y="40" width="90" height="120" rx="45"/><rect x="360" y="40" width="90" height="120" rx="45"/></g>
+     <g fill="#ffc45a" opacity=".7"><rect x="82" y="52" width="66" height="96" rx="33"/><rect x="227" y="52" width="66" height="96" rx="33"/><rect x="372" y="52" width="66" height="96" rx="33"/></g>
+     <rect x="0" y="240" width="520" height="60" fill="#b5885a"/>
+     <g fill="#1f2a55"><rect x="78" y="176" width="40" height="56" rx="8"/><rect x="150" y="176" width="40" height="56" rx="8"/><rect x="330" y="176" width="40" height="56" rx="8"/><rect x="402" y="176" width="40" height="56" rx="8"/></g>
+     <rect x="50" y="196" width="420" height="18" rx="6" fill="url(#tt)"/>
+     <g fill="#8a5c30"><rect x="70" y="212" width="10" height="56"/><rect x="440" y="212" width="10" height="56"/></g>
+     <g><circle cx="140" cy="190" r="10" fill="#fbf4e6" stroke="#1f2a55" stroke-width="2"/><circle cx="260" cy="190" r="12" fill="#f29a1f"/><rect x="300" y="182" width="30" height="14" rx="3" fill="#fbf4e6"/><circle cx="380" cy="190" r="10" fill="#fbf4e6" stroke="#1f2a55" stroke-width="2"/></g>
+    </svg>
+    <span class="cap">단체석 · 최대 8인</span>
+   </div>
+   <div class="sm">
+    <svg viewBox="0 0 520 300" role="img" aria-label="새벽에 빵을 굽는 오븐과 바구니 일러스트">
+     <defs><linearGradient id="ow" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2c3a72"/><stop offset="1" stop-color="#1b244a"/></linearGradient><radialGradient id="og" cx=".5" cy=".5" r=".6"><stop offset="0" stop-color="#ffd98a"/><stop offset="1" stop-color="#f29a1f"/></radialGradient><linearGradient id="ob" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#e8b46a"/><stop offset="1" stop-color="#9d6424"/></linearGradient></defs>
+     <rect width="520" height="300" fill="url(#ow)"/>
+     <rect x="60" y="40" width="220" height="200" rx="14" fill="#3b4b8c"/><rect x="80" y="70" width="180" height="120" rx="10" fill="#1b244a"/><rect x="92" y="82" width="156" height="96" rx="6" fill="url(#og)" opacity=".9"/>
+     <g fill="url(#ob)"><ellipse cx="130" cy="150" rx="28" ry="16"/><ellipse cx="200" cy="150" rx="28" ry="16"/></g><g stroke="#f7dca6" stroke-width="3" stroke-linecap="round"><path d="M116 146l10-8M134 152l10-8M186 146l10-8M204 152l10-8"/></g>
+     <rect x="110" y="204" width="120" height="12" rx="6" fill="#c9c2b6"/>
+     <g><path d="M320 240h150l-14-70H334z" fill="#c8935a"/><path d="M330 180h140" stroke="#8a5c30" stroke-width="4"/><g stroke="#8a5c30" stroke-width="2" opacity=".6"><path d="M336 200h130M340 220h122"/></g><ellipse cx="370" cy="170" rx="30" ry="18" fill="url(#ob)"/><ellipse cx="420" cy="164" rx="34" ry="20" fill="url(#ob)"/><path d="M356 164c8-6 22-6 30 0M404 158c10-6 24-6 32 0" stroke="#f7dca6" stroke-width="3" fill="none" stroke-linecap="round"/></g>
+     <rect x="0" y="240" width="520" height="60" fill="#151c3a"/>
+     <g fill="#fff3c9" opacity=".8"><circle cx="460" cy="50" r="3"/><circle cx="420" cy="80" r="2"/><circle cx="490" cy="100" r="2"/></g>
+    </svg>
+    <span class="cap">새벽 5시, 오늘의 빵</span>
+   </div>
+  </div>
+ </div>
+</section>
+
+<section id="reserve">
+ <div class="wrap rgrid">
+  <div>
+   <span class="eyebrow">Weekend Booking</span>
+   <h2 class="t">주말 브런치는<br><em>미리 자리를</em> 잡아 두세요</h2>
+   <p class="lead">평일은 예약 없이 방문하셔도 됩니다. 토·일요일은 오전 9시부터 30분 단위로 예약을 받아요.</p>
+   <div class="steps">
+    <div class="step"><b>1</b><p>날짜와 시간, 인원을 고르세요<small>최대 8인까지 한 번에 예약</small></p></div>
+    <div class="step"><b>2</b><p>확인 메시지를 받으세요<small>카카오톡 또는 문자로 예약 확정 안내</small></p></div>
+    <div class="step"><b>3</b><p>예약 시간 15분 전까지 도착<small>15분이 지나면 자리가 다음 손님께 안내될 수 있어요</small></p></div>
+   </div>
+  </div>
+  <form class="rv" id="rv" novalidate>
+   <h3>브런치 예약 신청</h3>
+   <div class="fr">
+    <label>날짜<select id="rvd"><option>11월 28일 (토)</option><option>11월 29일 (일)</option><option>12월 5일 (토)</option><option>12월 6일 (일)</option></select></label>
+    <label>인원<select id="rvp"><option>2명</option><option>3명</option><option>4명</option><option>5~6명</option><option>7~8명</option></select></label>
+   </div>
+   <span class="slbl">시간</span>
+   <div class="slots" id="slots"><button type="button">09:00</button><button type="button" disabled>09:30</button><button type="button" class="on">10:00</button><button type="button">10:30</button><button type="button" disabled>11:00</button><button type="button">11:30</button><button type="button">12:30</button><button type="button">13:30</button></div>
+   <div class="fr">
+    <label>이름<input id="rvn" placeholder="예약자 이름" autocomplete="off"></label>
+    <label>연락처<input id="rvt" placeholder="000-0000-0000" inputmode="tel" autocomplete="off"></label>
+   </div>
+   <label>요청 사항<textarea placeholder="유아 의자, 창가 자리 희망 등"></textarea></label>
+   <button class="btn p" type="submit">예약 신청하기</button>
+   <div class="ok" id="ok"></div>
+  </form>
+ </div>
+</section>
+
+<div class="cater">
+ <div class="wrap">
+  <div class="cbox">
+   <div class="tx">
+    <span class="eyebrow">Office &amp; Party Box</span>
+    <h2 class="t">회의실로 배달되는<br>아침 도시락 박스</h2>
+    <p class="lead">10인 이상 오전 미팅, 교회·동호회 모임에 알맞은 샌드위치·미니 크루아상·과일 박스를 하루 전까지 주문받습니다.</p>
+    <div class="opts"><span>샌드위치 박스 ₱320 / 1인</span><span>미니 페이스트리 ₱1,800 / 12개</span><span>커피 서버 ₱1,500 / 10잔</span></div>
+    <a class="btn p" href="#visit">단체 주문 문의</a>
+   </div>
+   <svg viewBox="0 0 560 420" role="img" aria-label="샌드위치와 크루아상이 담긴 도시락 박스 일러스트">
+    <defs><linearGradient id="bx" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#e2c79c"/><stop offset="1" stop-color="#c39f6c"/></linearGradient><linearGradient id="cr" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f3c47c"/><stop offset="1" stop-color="#b8742c"/></linearGradient><linearGradient id="sb" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f7e1b4"/><stop offset="1" stop-color="#e3bf80"/></linearGradient><filter id="bsh" x="-20%" y="-20%" width="140%" height="150%"><feDropShadow dx="0" dy="18" stdDeviation="14" flood-color="#0b1030" flood-opacity=".45"/></filter></defs>
+    <g filter="url(#bsh)"><path d="M70 150h420l-20 230H90z" fill="url(#bx)"/><path d="M70 150h420v20H70z" fill="#b48e5a"/></g>
+    <path d="M40 150l30-80h420l30 80z" fill="#d9bb8a"/><path d="M200 70l-10 80M360 70l10 80" stroke="#b48e5a" stroke-width="3"/>
+    <g transform="translate(110 180)"><path d="M0 70L70 0l70 70z" fill="url(#sb)"/><path d="M8 66l62-56 62 56" fill="none" stroke="#8fa37a" stroke-width="8"/><path d="M14 66l56-48 56 48" fill="none" stroke="#f4a3a3" stroke-width="6"/><path d="M20 70l50-42 50 42" fill="none" stroke="#ffd76a" stroke-width="5"/><path d="M0 70h140v40H0z" fill="url(#sb)"/></g>
+    <g transform="translate(270 190)"><path d="M0 60c10-50 60-70 100-60 40 10 60 50 50 80-30-10-70-10-100 0-30-6-50-6-50-20z" fill="url(#cr)"/><path d="M30 30c10 20 10 40 0 60M60 14c10 26 10 56 0 82M95 12c8 28 8 58-4 86M124 30c4 20 2 40-8 56" stroke="#9d6424" stroke-width="4" fill="none" opacity=".6"/></g>
+    <g><circle cx="430" cy="300" r="26" fill="#f29a1f"/><circle cx="420" cy="292" r="7" fill="#fff" opacity=".4"/><circle cx="160" cy="320" r="18" fill="#d9442b"/><circle cx="196" cy="330" r="16" fill="#e2552f"/><path d="M330 300c20-20 60-20 76 0-20 20-56 20-76 0z" fill="#ffd76a"/></g>
+    <g fill="#ffc45a" opacity=".9"><circle cx="500" cy="60" r="5"/><circle cx="60" cy="40" r="4"/><circle cx="520" cy="200" r="3"/></g>
+   </svg>
+  </div>
+ </div>
+</div>
+
+<section class="visit" id="visit">
+ <div class="wrap vgrid">
+  <div>
+   <span class="eyebrow">Visit Us</span>
+   <h2 class="t">아침볕 찾아오는 길</h2>
+   <div class="hours">
+    <div><b>월 – 금</b><span>07:30 – 17:00</span></div>
+    <div class="hl"><b>토 – 일</b><span>09:00 – 18:00 (예약 우선)</span></div>
+    <div><b>브런치 주문</b><span>오후 3시까지</span></div>
+   </div>
+   <div class="contact">
+    <span><svg viewBox="0 0 24 24"><path d="M12 21s-7-6.5-7-12a7 7 0 0 1 14 0c0 5.5-7 12-7 12z"/><circle cx="12" cy="9" r="2.5"/></svg>마카티 ○○로 00, 2층 (건물 정문 옆 계단)</span>
+    <span><svg viewBox="0 0 24 24"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg>000-0000-0000</span>
+    <span><svg viewBox="0 0 24 24"><path d="M4 5h16v11H8l-4 4z"/></svg>카카오톡 ID: example</span>
+   </div>
+  </div>
+  <div class="map">
+   <svg viewBox="0 0 640 420" role="img" aria-label="카페 위치를 표시한 약도">
+    <rect width="640" height="420" fill="#f3e7cf"/>
+    <g fill="#e6d6b4"><rect x="30" y="30" width="170" height="110" rx="10"/><rect x="250" y="30" width="150" height="110" rx="10"/><rect x="450" y="30" width="160" height="110" rx="10"/><rect x="30" y="200" width="170" height="190" rx="10"/><rect x="450" y="200" width="160" height="190" rx="10"/></g>
+    <rect x="250" y="200" width="150" height="190" rx="10" fill="#cfd8bd"/><g fill="#8fa37a"><circle cx="290" cy="250" r="16"/><circle cx="350" cy="300" r="20"/><circle cx="300" cy="340" r="14"/></g>
+    <g stroke="#fff" stroke-width="22"><path d="M0 170h640M225 0v420M425 0v420"/></g>
+    <g stroke="#e6d6b4" stroke-width="2" stroke-dasharray="10 10"><path d="M0 170h640M225 0v420M425 0v420"/></g>
+    <g font-family="Noto Sans KR, sans-serif" font-size="22" fill="#5d6077" font-weight="500"><text x="40" y="160">○○로</text><text x="436" y="406">△△길</text><text x="300" y="232">공원</text></g>
+    <g transform="translate(525 140)"><path d="M0 0c-22-24-30-38-30-52a30 30 0 0 1 60 0c0 14-8 28-30 52z" fill="#1f2a55"/><circle cy="-52" r="12" fill="#ffc45a"/></g>
+    <rect x="436" y="8" width="180" height="46" rx="23" fill="#fff" stroke="#1f2a55" stroke-width="2.5"/><text x="526" y="39" text-anchor="middle" font-family="Noto Sans KR, sans-serif" font-size="22" font-weight="700" fill="#1f2a55">아침볕 2층</text>
+   </svg>
+  </div>
+ </div>
+</section>
+</main>
+
+<footer>
+ <div class="wrap">
+  <div class="fgrid">
+   <a class="logo" href="#top"><svg viewBox="0 0 44 44"><circle cx="22" cy="22" r="21" fill="#2c3a72"/><path d="M8 27h28" stroke="#fbf4e6" stroke-width="2.2" stroke-linecap="round"/><path d="M12 27a10 10 0 0 1 20 0" fill="#ffc45a"/><g stroke="#ffc45a" stroke-width="2.2" stroke-linecap="round"><path d="M22 10v3"/><path d="M11 15l2 2"/><path d="M33 15l-2 2"/></g></svg><span><b>아침볕</b><small>BRUNCH &amp; COFFEE</small></span></a>
+   <div class="fl"><a href="#signature">시그니처</a><a href="#fullmenu">메뉴</a><a href="#reserve">예약</a><a href="#visit">오시는 길</a></div>
+  </div>
+  <p class="copy">© 아침볕 브런치 &amp; 커피</p>
+ </div>
+</footer>
+<a class="btn p fab" href="#reserve">주말 예약</a>
+
+<script>
+document.querySelectorAll('.tabs button').forEach(function(b){b.addEventListener('click',function(){document.querySelectorAll('.tabs button').forEach(function(x){x.classList.remove('on')});document.querySelectorAll('.mlist').forEach(function(x){x.classList.remove('on')});b.classList.add('on');document.getElementById(b.dataset.t).classList.add('on')})});
+document.querySelectorAll('#slots button').forEach(function(b){b.addEventListener('click',function(){if(b.disabled)return;document.querySelectorAll('#slots button').forEach(function(x){x.classList.remove('on')});b.classList.add('on')})});
+document.querySelectorAll('#menu a').forEach(function(a){a.addEventListener('click',function(){document.getElementById('menu').classList.remove('open')})});
+document.getElementById('rv').addEventListener('submit',function(e){e.preventDefault();var n=document.getElementById('rvn').value.trim()||'고객';var s=document.querySelector('#slots .on');var ok=document.getElementById('ok');ok.textContent=n+'님, '+document.getElementById('rvd').value+' '+(s?s.textContent:'')+' '+document.getElementById('rvp').value+' 예약 신청이 접수되었습니다. 확정 안내를 보내 드릴게요.';ok.classList.add('on')});
+</script>
+</body>
+</html>

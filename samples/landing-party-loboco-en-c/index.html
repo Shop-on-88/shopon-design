@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lobo &amp; Co. Party Styling · Free mood board + 10% off December parties</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#2b2230;--ink2:#4a3f50;--pearl:#fbf3ec;--peach:#f3b49b;--sage:#a9b89a;--champ:#e9cf9f;--coral:#e0674f;--line:rgba(43,34,48,.14);
+ --b1:#f6c1aa;--b1d:#d9876a;--b2:#c3d0b4;--b2d:#7f9470;--b3:#f1dcb2;--b3d:#c49a55;--b4:#fff8f0;--b4d:#d8c7b6}
+body.p-berry{--b1:#e7a1b0;--b1d:#a64a64;--b2:#7d3550;--b2d:#3f1426;--b3:#f1dcb2;--b3d:#c49a55;--b4:#f7e6ea;--b4d:#c9a3ad}
+body.p-pine{--b1:#9fbfae;--b1d:#3f6b56;--b2:#2f4f45;--b2d:#14271f;--b3:#e7c27a;--b3d:#a77a2a;--b4:#fbf6ea;--b4d:#d8ccb2}
+body.p-frost{--b1:#c6d6ea;--b1d:#6f8fb8;--b2:#e6e9f0;--b2d:#a5adbf;--b3:#d9d2ea;--b3d:#8f80b8;--b4:#ffffff;--b4d:#c9cfdc}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;overflow-x:clip}
+body{font-family:'Manrope',sans-serif;background:var(--pearl);color:var(--ink);-webkit-font-smoothing:antialiased;overflow-x:clip;line-height:1.6}
+a{color:inherit;text-decoration:none}
+svg{display:block;max-width:100%}
+.wrap{max-width:1200px;margin:0 auto;padding:0 24px}
+.ey{font-size:13px;font-weight:800;letter-spacing:.2em;text-transform:uppercase;color:var(--coral)}
+h2.t{font-family:'DM Serif Display',serif;font-weight:400;font-size:clamp(32px,4vw,52px);line-height:1.12;margin-top:10px;letter-spacing:-.01em}
+h2.t i{color:var(--coral)}
+.lead{font-size:17px;color:var(--ink2);max-width:560px;margin-top:14px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;height:56px;padding:0 30px;border-radius:999px;font-weight:800;font-size:16px;transition:.2s;white-space:nowrap;border:2px solid var(--ink);cursor:pointer;font-family:inherit}
+.btn.p{background:var(--ink);color:var(--pearl)}
+.btn.p:hover{background:var(--coral);border-color:var(--coral)}
+.btn.o{background:transparent;color:var(--ink)}
+.btn.o:hover{background:var(--ink);color:var(--pearl)}
+.btn svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:2.6;stroke-linecap:round;stroke-linejoin:round}
+/* top strip */
+.strip{background:var(--ink);color:var(--pearl);font-size:14px;font-weight:600;text-align:center;padding:10px 16px}
+.strip b{color:var(--champ)}
+header .nav{display:flex;justify-content:space-between;align-items:center;height:84px}
+.logo{display:flex;align-items:center;gap:12px}
+.logo svg{width:46px;height:46px}
+.logo b{font-family:'DM Serif Display',serif;font-weight:400;font-size:26px;line-height:1;display:block}
+.logo small{display:block;font-size:11px;font-weight:800;letter-spacing:.26em;color:var(--ink2);margin-top:3px}
+.nav .btn{height:46px;padding:0 22px;font-size:15px}
+/* hero */
+.hero{position:relative;padding:20px 0 90px}
+.hgrid{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}
+.offer{display:inline-flex;align-items:center;gap:10px;background:#fff;border:1.5px solid var(--line);border-radius:999px;padding:7px 16px 7px 8px;font-size:14px;font-weight:700}
+.offer span{background:var(--coral);color:#fff;border-radius:999px;padding:4px 10px;font-size:12px;letter-spacing:.06em}
+.hero h1{font-family:'DM Serif Display',serif;font-weight:400;font-size:clamp(44px,5.6vw,76px);line-height:1.04;letter-spacing:-.02em;margin:22px 0 20px}
+.hero h1 i{color:var(--coral)}
+.hero p.d{font-size:18px;color:var(--ink2);max-width:500px}
+.hcta{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
+.perks{display:flex;flex-wrap:wrap;gap:10px 22px;margin-top:30px;font-size:15px;font-weight:600}
+.perks span{display:flex;align-items:center;gap:8px}
+.perks svg{width:22px;height:22px;flex:0 0 22px}
+.hart{position:relative}
+.hart .tag{position:absolute;right:6%;top:8%;width:150px;height:150px;border-radius:50%;background:var(--coral);color:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;transform:rotate(10deg);box-shadow:0 18px 40px rgba(224,103,79,.35)}
+.hart .tag b{font-family:'DM Serif Display',serif;font-weight:400;font-size:46px;line-height:1}
+.hart .tag span{font-size:13px;font-weight:700;line-height:1.3;margin-top:4px}
+/* palette */
+.pal{background:#fff;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.pal .wrap{display:grid;grid-template-columns:1fr 1.1fr;gap:56px;align-items:center;padding-top:90px;padding-bottom:90px}
+.swatches{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:28px}
+.sw{display:flex;align-items:center;gap:14px;padding:14px 16px;border-radius:18px;border:2px solid var(--line);background:var(--pearl);cursor:pointer;font-family:inherit;text-align:left;transition:.2s}
+.sw:hover{border-color:var(--ink2)}
+.sw.on{border-color:var(--ink);background:#fff;box-shadow:5px 5px 0 var(--ink)}
+.sw .dots{display:flex}
+.sw .dots i{width:24px;height:24px;border-radius:50%;margin-right:-6px;border:2px solid #fff}
+.sw b{display:block;font-size:15px;color:var(--ink)}
+.sw small{display:block;font-size:13px;color:var(--ink2)}
+.prev{border-radius:30px;background:linear-gradient(180deg,#f6ece2,#efe1d3);overflow:hidden;position:relative}
+.prev .lbl{position:absolute;left:18px;bottom:18px;background:var(--ink);color:var(--pearl);font-size:13px;font-weight:700;padding:8px 14px;border-radius:999px}
+/* steps */
+section{padding:100px 0}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:46px}
+.step{background:#fff;border:1.5px solid var(--line);border-radius:26px;padding:30px 28px;position:relative}
+.step .n{font-family:'DM Serif Display',serif;font-size:56px;line-height:1;color:var(--peach)}
+.step h3{font-size:20px;font-weight:800;margin:14px 0 6px}
+.step p{font-size:15px;color:var(--ink2)}
+.step svg.ic{position:absolute;right:24px;top:28px;width:56px;height:56px}
+/* packages */
+.pk{background:var(--ink);color:var(--pearl);border-radius:40px;margin:0 16px}
+.pk h2.t i{color:var(--peach)}
+.pk .lead{color:#d8cfd9}
+.pgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:48px}
+.pc{background:var(--pearl);color:var(--ink);border-radius:28px;overflow:hidden;display:flex;flex-direction:column}
+.pc.feat{outline:4px solid var(--champ);outline-offset:-4px}
+.pc .im{height:200px;position:relative}
+.pc .im svg{width:100%;height:100%}
+.pc .chip{position:absolute;left:16px;top:16px;background:var(--ink);color:var(--champ);font-size:12px;font-weight:800;letter-spacing:.06em;padding:5px 12px;border-radius:999px}
+.pc .bd{padding:24px 26px 28px;display:flex;flex-direction:column;flex:1}
+.pc h3{font-family:'DM Serif Display',serif;font-weight:400;font-size:30px;line-height:1.1}
+.pc .sz{font-size:14px;color:var(--ink2);margin-top:4px}
+.pc ul{list-style:none;margin:18px 0 22px;flex:1}
+.pc li{display:flex;gap:10px;font-size:15px;padding:5px 0}
+.pc li svg{flex:0 0 18px;width:18px;height:18px;margin-top:3px;fill:none;stroke:var(--coral);stroke-width:3;stroke-linecap:round;stroke-linejoin:round}
+.price{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;border-top:1.5px dashed var(--line);padding-top:16px;margin-bottom:16px}
+.price s{font-size:16px;color:#8a7f8d;font-weight:600}
+.price b{font-size:32px;font-weight:800;letter-spacing:-.01em}
+.price span{font-size:13px;font-weight:700;color:var(--coral)}
+.pc .btn{width:100%;height:50px;font-size:15px}
+.pnote{margin-top:26px;font-size:14px;color:#d8cfd9}
+/* included */
+.inc{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:40px}
+.inc div{border-radius:22px;padding:24px;background:#fff;border:1.5px solid var(--line)}
+.inc svg{width:44px;height:44px;margin-bottom:14px}
+.inc b{display:block;font-size:16px;margin-bottom:4px}
+.inc p{font-size:14px;color:var(--ink2)}
+/* book */
+.book{background:linear-gradient(180deg,var(--pearl),#f4e4d6)}
+.bgrid{display:grid;grid-template-columns:1fr 1.05fr;gap:56px;align-items:start}
+.terms{margin-top:28px;border-radius:22px;background:#fff;border:1.5px solid var(--line);padding:22px 24px}
+.terms h3{font-size:16px;font-weight:800;margin-bottom:8px}
+.terms li{font-size:14px;color:var(--ink2);list-style:none;padding:5px 0 5px 20px;position:relative}
+.terms li:before{content:"";position:absolute;left:2px;top:12px;width:8px;height:8px;border-radius:50%;background:var(--peach)}
+.count{display:flex;gap:10px;margin-top:22px}
+.count div{background:var(--ink);color:var(--pearl);border-radius:16px;padding:12px 0;width:84px;text-align:center}
+.count b{display:block;font-size:28px;font-weight:800;line-height:1.1}
+.count span{font-size:12px;font-weight:700;color:var(--champ);letter-spacing:.08em}
+form.bk{background:#fff;border-radius:30px;padding:34px;border:2px solid var(--ink);box-shadow:12px 12px 0 var(--peach)}
+form.bk h3{font-family:'DM Serif Display',serif;font-weight:400;font-size:32px;line-height:1.1}
+form.bk p.s{font-size:14px;color:var(--ink2);margin:6px 0 22px}
+.fr{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+label{display:block;font-size:13px;font-weight:800;margin-bottom:14px}
+input,select,textarea{display:block;width:100%;margin-top:6px;font-family:inherit;font-size:15px;padding:13px 14px;border-radius:12px;border:1.5px solid rgba(43,34,48,.25);background:var(--pearl);color:var(--ink)}
+input:focus,select:focus,textarea:focus{outline:none;border-color:var(--coral);box-shadow:0 0 0 3px rgba(224,103,79,.18)}
+.occ{display:flex;flex-wrap:wrap;gap:8px;margin:6px 0 16px}
+.occ button{font-family:inherit;font-size:14px;font-weight:700;padding:10px 14px;border-radius:999px;border:1.5px solid rgba(43,34,48,.25);background:#fff;color:var(--ink);cursor:pointer}
+.occ button.on{background:var(--ink);color:var(--pearl);border-color:var(--ink)}
+.olbl{font-size:13px;font-weight:800}
+form.bk .btn{width:100%}
+.ok{display:none;margin-top:16px;padding:16px;border-radius:14px;background:rgba(169,184,154,.25);color:#3f5234;font-size:15px;font-weight:600}
+.ok.on{display:block}
+/* faq */
+.faq{max-width:860px;margin:40px auto 0}
+details{border-bottom:1.5px solid var(--line);padding:20px 4px}
+summary{font-size:18px;font-weight:800;cursor:pointer;list-style:none;display:flex;justify-content:space-between;gap:16px}
+summary::-webkit-details-marker{display:none}
+summary:after{content:"+";font-size:26px;font-weight:500;line-height:1;color:var(--coral)}
+details[open] summary:after{content:"–"}
+details p{font-size:15px;color:var(--ink2);margin-top:10px;max-width:720px}
+footer{background:var(--ink);color:#cfc5d1;padding:46px 0;font-size:14px}
+footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:20px;align-items:center}
+footer .logo b{color:var(--pearl)}
+footer .logo small{color:#a99fad}
+.mbar{display:none}
+@media(max-width:980px){.pgrid{grid-template-columns:1fr;max-width:520px;margin-left:auto;margin-right:auto}.inc{grid-template-columns:1fr 1fr}}
+@media(max-width:900px){
+ .hgrid,.pal .wrap,.bgrid{grid-template-columns:1fr}
+ .steps{grid-template-columns:1fr}
+ .hart{width:100%;max-width:560px;margin:0 auto}
+ section{padding:76px 0}
+ .pal .wrap{padding-top:70px;padding-bottom:70px}
+ .nav .btn{display:none}
+ .mbar{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:40;padding:10px 16px;background:rgba(251,243,236,.96);border-top:1px solid var(--line)}
+ .mbar .btn{width:100%;height:50px}
+ footer{padding-bottom:100px}
+}
+@media(max-width:620px){
+ .wrap{padding:0 18px}
+ .strip{font-size:13px}
+ .hero h1{font-size:44px}
+ .hcta .btn{flex:1;padding:0 16px}
+ .hart .tag{width:112px;height:112px;right:2%;top:2%}.hart .tag b{font-size:34px}.hart .tag span{font-size:12px}
+ .swatches{grid-template-columns:1fr}
+ .pk{border-radius:28px;margin:0 8px}
+ .inc{grid-template-columns:1fr}
+ .fr{grid-template-columns:1fr}
+ form.bk{padding:26px 20px;box-shadow:6px 6px 0 var(--peach)}
+ .count div{width:72px}
+ summary{font-size:16px}
+}
+</style>
+</head>
+<body>
+<div class="strip">December parties: <b>free mood board</b> + <b>10% off</b> any styling package booked by Dec 15</div>
+<header><div class="wrap nav">
+ <a class="logo" href="#top"><svg viewBox="0 0 46 46"><circle cx="23" cy="23" r="22" fill="#2b2230"/><circle cx="18" cy="19" r="8" fill="#f3b49b"/><circle cx="28" cy="17" r="7" fill="#e9cf9f"/><circle cx="24" cy="26" r="7.5" fill="#a9b89a"/><path d="M24 34c-1 3 1 4 0 7" stroke="#fbf3ec" stroke-width="1.6" fill="none" stroke-linecap="round"/></svg><span><b>Lobo &amp; Co.</b><small>PARTY STYLING · MANILA</small></span></a>
+ <a class="btn p" href="#book">Get my free mood board</a>
+</div></header>
+
+<main id="top">
+<section class="hero">
+ <div class="wrap hgrid">
+  <div>
+   <span class="offer"><span>DEC OFFER</span>Free mood board + 10% off</span>
+   <h1>Your December party, <i>styled</i> before you lift a finger.</h1>
+   <p class="d">Balloon arches, backdrops and dessert tables for home Noche Buena dinners, office year-end parties and kids’ birthdays. Tell us the vibe — we send a mood board within 48 hours, free.</p>
+   <div class="hcta"><a class="btn p" href="#book">Claim the offer <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a><a class="btn o" href="#packages">See packages</a></div>
+   <div class="perks">
+    <span><svg viewBox="0 0 22 22"><circle cx="11" cy="11" r="10" fill="#a9b89a"/><path d="M6.5 11.5l3 3 6-7" stroke="#fff" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>Setup &amp; pull-out included</span>
+    <span><svg viewBox="0 0 22 22"><circle cx="11" cy="11" r="10" fill="#a9b89a"/><path d="M6.5 11.5l3 3 6-7" stroke="#fff" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>Metro Manila delivery</span>
+   </div>
+  </div>
+  <div class="hart">
+   <svg viewBox="0 0 720 640" role="img" aria-label="Balloon arch around a round backdrop with a dessert table and gifts">
+    <defs>
+     <radialGradient id="g1" cx=".35" cy=".3" r=".75"><stop offset="0" style="stop-color:#fff"/><stop offset=".18" style="stop-color:var(--b1)"/><stop offset="1" style="stop-color:var(--b1d)"/></radialGradient>
+     <radialGradient id="g2" cx=".35" cy=".3" r=".75"><stop offset="0" style="stop-color:#fff"/><stop offset=".18" style="stop-color:var(--b2)"/><stop offset="1" style="stop-color:var(--b2d)"/></radialGradient>
+     <radialGradient id="g3" cx=".35" cy=".3" r=".75"><stop offset="0" style="stop-color:#fff"/><stop offset=".2" style="stop-color:var(--b3)"/><stop offset="1" style="stop-color:var(--b3d)"/></radialGradient>
+     <radialGradient id="g4" cx=".35" cy=".3" r=".75"><stop offset="0" style="stop-color:#fff"/><stop offset=".3" style="stop-color:var(--b4)"/><stop offset="1" style="stop-color:var(--b4d)"/></radialGradient>
+     <linearGradient id="hbd" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f7e9d8"/><stop offset="1" stop-color="#ead2b8"/></linearGradient>
+     <linearGradient id="htb" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fffaf4"/><stop offset="1" stop-color="#e9dccd"/></linearGradient>
+     <linearGradient id="hck" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff6ee"/><stop offset="1" stop-color="#f0d9c6"/></linearGradient>
+     <pattern id="hrib" width="16" height="16" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect width="16" height="16" fill="#e9cf9f"/><rect width="6" height="16" fill="#d9b97f"/></pattern>
+     <filter id="hs" x="-20%" y="-20%" width="140%" height="150%"><feDropShadow dx="0" dy="16" stdDeviation="14" flood-color="#5a3f35" flood-opacity=".22"/></filter>
+    </defs>
+    <ellipse cx="360" cy="612" rx="320" ry="24" fill="#5a3f35" opacity=".12"/>
+    <!-- backdrop -->
+    <g filter="url(#hs)"><circle cx="360" cy="380" r="210" fill="url(#hbd)"/></g>
+    <circle cx="360" cy="380" r="188" fill="none" stroke="#fff" stroke-width="3" opacity=".7"/>
+    <text x="360" y="326" text-anchor="middle" font-family="DM Serif Display, serif" font-style="italic" font-size="56" fill="#2b2230">Merry</text>
+    <text x="360" y="378" text-anchor="middle" font-family="DM Serif Display, serif" font-style="italic" font-size="56" fill="#2b2230">&amp; Bright</text>
+    <g fill="#e0674f" transform="translate(0 -196)"><path d="M360 430l5 10 11 2-8 8 2 11-10-5-10 5 2-11-8-8 11-2z"/></g>
+    <!-- arch -->
+    <g filter="url(#hs)">
+<circle cx="146.6" cy="565.4" r="35.2" fill="url(#g1)"/>
+<circle cx="125.2" cy="574.0" r="32.6" fill="url(#g3)"/>
+<circle cx="104.8" cy="585.4" r="25.7" fill="url(#g1)"/>
+<circle cx="83.8" cy="601.3" r="10.8" fill="url(#g4)"/>
+<circle cx="138.2" cy="492.8" r="35.9" fill="url(#g4)"/>
+<circle cx="113.9" cy="504.5" r="32.2" fill="url(#g3)"/>
+<circle cx="115.8" cy="476.1" r="13.5" fill="url(#g4)"/>
+<circle cx="83.0" cy="501.2" r="24.9" fill="url(#g1)"/>
+<circle cx="134.8" cy="439.4" r="30.6" fill="url(#g2)"/>
+<circle cx="112.1" cy="433.4" r="36.4" fill="url(#g2)"/>
+<circle cx="148.4" cy="469.5" r="15.3" fill="url(#g1)"/>
+<circle cx="94.0" cy="431.0" r="28.2" fill="url(#g4)"/>
+<circle cx="82.1" cy="406.8" r="11.9" fill="url(#g3)"/>
+<circle cx="153.4" cy="368.3" r="34.3" fill="url(#g3)"/>
+<circle cx="134.3" cy="366.8" r="30.0" fill="url(#g1)"/>
+<circle cx="158.9" cy="365.0" r="12.6" fill="url(#g3)"/>
+<circle cx="112.5" cy="351.0" r="25.4" fill="url(#g2)"/>
+<circle cx="179.1" cy="307.9" r="25.6" fill="url(#g3)"/>
+<circle cx="202.8" cy="321.1" r="10.8" fill="url(#g3)"/>
+<circle cx="149.2" cy="293.9" r="31.4" fill="url(#g1)"/>
+<circle cx="167.8" cy="273.7" r="13.2" fill="url(#g2)"/>
+<circle cx="136.7" cy="283.5" r="26.8" fill="url(#g3)"/>
+<circle cx="205.0" cy="264.6" r="25.9" fill="url(#g2)"/>
+<circle cx="190.6" cy="240.8" r="43.6" fill="url(#g4)"/>
+<circle cx="176.4" cy="232.7" r="27.0" fill="url(#g3)"/>
+<circle cx="261.1" cy="227.2" r="25.8" fill="url(#g1)"/>
+<circle cx="240.0" cy="200.1" r="40.8" fill="url(#g2)"/>
+<circle cx="223.4" cy="165.2" r="17.1" fill="url(#g2)"/>
+<circle cx="227.1" cy="184.1" r="27.4" fill="url(#g2)"/>
+<circle cx="304.2" cy="200.9" r="35.6" fill="url(#g1)"/>
+<circle cx="301.8" cy="184.4" r="32.6" fill="url(#g3)"/>
+<circle cx="328.4" cy="205.1" r="13.7" fill="url(#g3)"/>
+<circle cx="291.0" cy="150.6" r="33.1" fill="url(#g1)"/>
+<circle cx="355.2" cy="200.9" r="34.7" fill="url(#g4)"/>
+<circle cx="358.8" cy="163.7" r="30.5" fill="url(#g3)"/>
+<circle cx="355.9" cy="149.5" r="27.6" fill="url(#g1)"/>
+<circle cx="415.3" cy="198.4" r="26.6" fill="url(#g2)"/>
+<circle cx="412.6" cy="174.3" r="37.8" fill="url(#g2)"/>
+<circle cx="426.9" cy="152.0" r="35.1" fill="url(#g4)"/>
+<circle cx="392.9" cy="135.8" r="14.8" fill="url(#g3)"/>
+<circle cx="463.6" cy="218.0" r="26.6" fill="url(#g3)"/>
+<circle cx="476.6" cy="198.1" r="35.1" fill="url(#g1)"/>
+<circle cx="494.0" cy="185.3" r="32.5" fill="url(#g2)"/>
+<circle cx="503.5" cy="254.9" r="24.8" fill="url(#g3)"/>
+<circle cx="528.0" cy="251.8" r="30.3" fill="url(#g1)"/>
+<circle cx="540.2" cy="230.2" r="28.3" fill="url(#g3)"/>
+<circle cx="538.6" cy="312.3" r="33.1" fill="url(#g2)"/>
+<circle cx="568.5" cy="301.2" r="41.1" fill="url(#g4)"/>
+<circle cx="581.9" cy="287.2" r="34.9" fill="url(#g3)"/>
+<circle cx="569.5" cy="374.5" r="34.5" fill="url(#g1)"/>
+<circle cx="595.0" cy="359.4" r="38.2" fill="url(#g2)"/>
+<circle cx="608.5" cy="354.9" r="36.0" fill="url(#g2)"/>
+<circle cx="587.9" cy="432.2" r="33.0" fill="url(#g1)"/>
+<circle cx="606.9" cy="436.2" r="31.2" fill="url(#g3)"/>
+<circle cx="624.0" cy="429.3" r="30.1" fill="url(#g1)"/>
+<circle cx="635.9" cy="429.2" r="12.7" fill="url(#g4)"/>
+<circle cx="586.7" cy="506.7" r="27.5" fill="url(#g4)"/>
+<circle cx="575.8" cy="516.5" r="11.6" fill="url(#g3)"/>
+<circle cx="603.8" cy="497.4" r="42.7" fill="url(#g3)"/>
+<circle cx="631.2" cy="511.5" r="28.4" fill="url(#g1)"/>
+<circle cx="567.8" cy="563.4" r="33.9" fill="url(#g2)"/>
+<circle cx="600.9" cy="570.8" r="38.2" fill="url(#g2)"/>
+<circle cx="573.2" cy="570.5" r="16.0" fill="url(#g1)"/>
+<circle cx="622.6" cy="586.3" r="32.8" fill="url(#g4)"/>
+    </g>
+    <!-- greenery tucks -->
+    <g fill="#7f9470"><path d="M118 520c-30-10-44-36-34-60 26 10 40 34 34 60z"/><path d="M600 520c30-10 44-36 34-60-26 10-40 34-34 60z"/><path d="M140 300c-28 4-50-12-54-36 26-2 48 14 54 36z" opacity=".8"/></g>
+    <!-- table -->
+    <g filter="url(#hs)"><rect x="210" y="500" width="300" height="110" rx="10" fill="url(#htb)"/><rect x="200" y="490" width="320" height="18" rx="9" fill="#2b2230"/></g>
+    <path d="M220 508c30 30 60 30 90 0s60 30 90 0 60 30 90 0" fill="none" stroke="#e9cf9f" stroke-width="5"/>
+    <!-- cake -->
+    <g filter="url(#hs)"><rect x="318" y="404" width="84" height="86" rx="8" fill="url(#hck)"/><rect x="306" y="440" width="108" height="50" rx="8" fill="url(#hck)"/><path d="M318 418c10 8 18 8 28 0s18 8 28 0 18 8 28 0" stroke="#f3b49b" stroke-width="6" fill="none" stroke-linecap="round"/><circle cx="360" cy="398" r="9" fill="#e0674f"/><path d="M360 389c-2-6 4-8 2-14" stroke="#7f9470" stroke-width="3" fill="none"/></g>
+    <!-- cupcake stand -->
+    <g filter="url(#hs)"><rect x="236" y="468" width="56" height="6" rx="3" fill="#c49a55"/><rect x="261" y="474" width="6" height="16" fill="#c49a55"/><path d="M244 466l4-16h32l4 16z" fill="#f3b49b"/><circle cx="264" cy="446" r="14" fill="#fff8f0"/><circle cx="264" cy="436" r="5" fill="#e0674f"/></g>
+    <!-- gifts -->
+    <g filter="url(#hs)"><rect x="440" y="440" width="64" height="50" rx="6" fill="#a9b89a"/><rect x="466" y="440" width="12" height="50" fill="#fbf3ec"/><path d="M472 440c-14-18-30-6-18 0M472 440c14-18 30-6 18 0" stroke="#fbf3ec" stroke-width="5" fill="none"/>
+     <rect x="560" y="530" width="80" height="70" rx="8" fill="url(#hrib)"/><rect x="594" y="530" width="12" height="70" fill="#2b2230"/><rect x="560" y="556" width="80" height="12" fill="#2b2230"/>
+     <rect x="80" y="548" width="70" height="56" rx="8" fill="#e0674f"/><rect x="109" y="548" width="12" height="56" fill="#fbf3ec"/></g>
+   </svg>
+   <div class="tag"><b>10%</b><span>off December<br>packages</span></div>
+  </div>
+ </div>
+</section>
+
+<div class="pal" id="palette">
+ <div class="wrap">
+  <div>
+   <span class="ey">Pick a palette</span>
+   <h2 class="t">See your party <i>in color</i> before you book</h2>
+   <p class="lead">Tap a palette and the balloon garland changes. Your free mood board starts from the one you like — we can always mix.</p>
+   <div class="swatches">
+    <button type="button" class="sw on" data-p=""><span class="dots"><i style="background:#f6c1aa"></i><i style="background:#c3d0b4"></i><i style="background:#f1dcb2"></i></span><span><b>Peach Garden</b><small>soft &amp; airy, all ages</small></span></button>
+    <button type="button" class="sw" data-p="p-berry"><span class="dots"><i style="background:#e7a1b0"></i><i style="background:#7d3550"></i><i style="background:#f1dcb2"></i></span><span><b>Berry Noel</b><small>rich holiday dinner</small></span></button>
+    <button type="button" class="sw" data-p="p-pine"><span class="dots"><i style="background:#9fbfae"></i><i style="background:#2f4f45"></i><i style="background:#e7c27a"></i></span><span><b>Pine &amp; Gold</b><small>classic office party</small></span></button>
+    <button type="button" class="sw" data-p="p-frost"><span class="dots"><i style="background:#c6d6ea"></i><i style="background:#e6e9f0"></i><i style="background:#d9d2ea"></i></span><span><b>Frost Pearl</b><small>cool, wintry, elegant</small></span></button>
+   </div>
+  </div>
+  <div class="prev">
+   <svg viewBox="0 0 640 440" role="img" aria-label="Balloon garland over a dessert table in the selected palette">
+    <rect x="0" y="330" width="640" height="110" fill="#e7d4c2"/>
+    <rect x="120" y="60" width="400" height="270" rx="16" fill="#fbf3ec"/>
+    <g stroke="#e9cf9f" stroke-width="2" opacity=".8"><path d="M150 60v270M180 60v270M210 60v270M240 60v270M270 60v270M300 60v270M330 60v270M360 60v270M390 60v270M420 60v270M450 60v270M480 60v270"/></g>
+    <g>
+<circle cx="100.1" cy="78.2" r="22.8" fill="url(#g1)"/>
+<circle cx="101.4" cy="76.9" r="22.8" fill="url(#g2)"/>
+<circle cx="132.5" cy="114.6" r="24.9" fill="url(#g3)"/>
+<circle cx="136.6" cy="87.1" r="29.8" fill="url(#g4)"/>
+<circle cx="160.4" cy="74.9" r="9.0" fill="url(#g1)"/>
+<circle cx="168.1" cy="114.7" r="27.1" fill="url(#g1)"/>
+<circle cx="151.6" cy="108.5" r="27.9" fill="url(#g3)"/>
+<circle cx="137.5" cy="141.4" r="9.0" fill="url(#g3)"/>
+<circle cx="183.2" cy="121.3" r="22.4" fill="url(#g2)"/>
+<circle cx="192.4" cy="142.3" r="26.3" fill="url(#g1)"/>
+<circle cx="235.8" cy="157.0" r="28.1" fill="url(#g2)"/>
+<circle cx="221.3" cy="138.8" r="22.0" fill="url(#g3)"/>
+<circle cx="220.3" cy="163.3" r="9.0" fill="url(#g1)"/>
+<circle cx="243.2" cy="154.4" r="21.8" fill="url(#g4)"/>
+<circle cx="250.6" cy="164.1" r="27.0" fill="url(#g1)"/>
+<circle cx="286.8" cy="181.0" r="23.9" fill="url(#g3)"/>
+<circle cx="291.0" cy="174.4" r="20.9" fill="url(#g2)"/>
+<circle cx="275.2" cy="173.9" r="9.0" fill="url(#g3)"/>
+<circle cx="302.3" cy="172.1" r="29.1" fill="url(#g1)"/>
+<circle cx="314.9" cy="185.6" r="28.8" fill="url(#g2)"/>
+<circle cx="315.1" cy="151.9" r="9.0" fill="url(#g4)"/>
+<circle cx="343.6" cy="174.7" r="27.2" fill="url(#g3)"/>
+<circle cx="325.4" cy="184.0" r="27.2" fill="url(#g4)"/>
+<circle cx="363.1" cy="176.9" r="29.8" fill="url(#g1)"/>
+<circle cx="374.3" cy="179.2" r="23.2" fill="url(#g3)"/>
+<circle cx="337.0" cy="162.9" r="9.0" fill="url(#g3)"/>
+<circle cx="398.0" cy="159.5" r="25.5" fill="url(#g2)"/>
+<circle cx="399.3" cy="144.3" r="20.3" fill="url(#g1)"/>
+<circle cx="413.1" cy="160.8" r="21.7" fill="url(#g2)"/>
+<circle cx="407.5" cy="151.0" r="21.4" fill="url(#g3)"/>
+<circle cx="451.7" cy="153.6" r="28.4" fill="url(#g4)"/>
+<circle cx="459.5" cy="122.7" r="24.9" fill="url(#g1)"/>
+<circle cx="447.6" cy="125.0" r="9.0" fill="url(#g2)"/>
+<circle cx="478.2" cy="122.4" r="27.3" fill="url(#g3)"/>
+<circle cx="475.8" cy="114.8" r="28.4" fill="url(#g2)"/>
+<circle cx="494.7" cy="145.6" r="9.0" fill="url(#g3)"/>
+<circle cx="512.5" cy="119.3" r="22.1" fill="url(#g1)"/>
+<circle cx="504.2" cy="91.6" r="25.2" fill="url(#g2)"/>
+<circle cx="533.2" cy="63.0" r="25.0" fill="url(#g3)"/>
+<circle cx="530.5" cy="76.4" r="29.7" fill="url(#g4)"/>
+    </g>
+    <rect x="170" y="270" width="300" height="80" rx="8" fill="#2b2230"/><rect x="160" y="262" width="320" height="14" rx="7" fill="#c49a55"/>
+    <g><rect x="200" y="226" width="60" height="36" rx="6" fill="url(#g3)"/><rect x="290" y="200" width="60" height="62" rx="6" fill="#fff8f0"/><rect x="282" y="230" width="76" height="32" rx="6" fill="#fff8f0"/><circle cx="320" cy="196" r="7" fill="url(#g1)"/><rect x="380" y="232" width="56" height="30" rx="15" fill="url(#g2)"/></g>
+   </svg>
+   <span class="lbl" id="plbl">Peach Garden</span>
+  </div>
+ </div>
+</div>
+
+<section id="how">
+ <div class="wrap">
+  <span class="ey">How it works</span>
+  <h2 class="t">Three messages, <i>one styled party</i></h2>
+  <div class="steps">
+   <div class="step"><svg class="ic" viewBox="0 0 56 56"><circle cx="28" cy="28" r="27" fill="#f3b49b" opacity=".35"/><rect x="14" y="16" width="28" height="22" rx="6" fill="#2b2230"/><path d="M20 38l-4 8 10-8" fill="#2b2230"/><g fill="#f3b49b"><circle cx="22" cy="27" r="2.5"/><circle cx="28" cy="27" r="2.5"/><circle cx="34" cy="27" r="2.5"/></g></svg><div class="n">01</div><h3>Tell us the vibe</h3><p>Date, venue, guest count and a few colors or photos you like. Two minutes on the form below.</p></div>
+   <div class="step"><svg class="ic" viewBox="0 0 56 56"><circle cx="28" cy="28" r="27" fill="#a9b89a" opacity=".35"/><rect x="12" y="14" width="32" height="28" rx="4" fill="#fff" stroke="#2b2230" stroke-width="2.5"/><circle cx="22" cy="24" r="5" fill="#f3b49b"/><circle cx="33" cy="24" r="5" fill="#a9b89a"/><rect x="17" y="33" width="22" height="4" rx="2" fill="#e9cf9f"/></svg><div class="n">02</div><h3>Get a free mood board</h3><p>Within 48 hours: palette, layout sketch and an exact quote. No payment needed to see it.</p></div>
+   <div class="step"><svg class="ic" viewBox="0 0 56 56"><circle cx="28" cy="28" r="27" fill="#e9cf9f" opacity=".5"/><circle cx="22" cy="22" r="8" fill="#e0674f"/><circle cx="34" cy="20" r="7" fill="#f3b49b"/><circle cx="29" cy="31" r="7" fill="#a9b89a"/><path d="M29 38c-1 4 1 6 0 9" stroke="#2b2230" stroke-width="2" fill="none" stroke-linecap="round"/></svg><div class="n">03</div><h3>We set up, you host</h3><p>Our team arrives 3 hours early, styles everything, and comes back for pull-out after the party.</p></div>
+  </div>
+ </div>
+</section>
+
+<section class="pk" id="packages">
+ <div class="wrap">
+  <span class="ey" style="color:var(--champ)">December packages</span>
+  <h2 class="t">Three sizes, <i>10% off</i> until Dec 15</h2>
+  <p class="lead">Prices include design, balloons and props, setup and pull-out within Metro Manila.</p>
+  <div class="pgrid">
+   <article class="pc">
+    <div class="im"><svg viewBox="0 0 400 200" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><rect width="400" height="200" fill="#f6ece2"/><path d="M60 40c60 50 220 50 280 0" fill="none" stroke="#c49a55" stroke-width="2"/>
+<circle cx="49.8" cy="45.0" r="18.5" fill="url(#g1)"/>
+<circle cx="50.9" cy="37.7" r="14.5" fill="url(#g2)"/>
+<circle cx="72.2" cy="62.4" r="21.4" fill="url(#g3)"/>
+<circle cx="75.8" cy="71.5" r="15.0" fill="url(#g4)"/>
+<circle cx="100.5" cy="73.5" r="17.8" fill="url(#g1)"/>
+<circle cx="113.9" cy="71.9" r="18.9" fill="url(#g3)"/>
+<circle cx="125.1" cy="88.3" r="14.2" fill="url(#g2)"/>
+<circle cx="127.9" cy="91.7" r="19.5" fill="url(#g1)"/>
+<circle cx="164.2" cy="94.8" r="14.8" fill="url(#g2)"/>
+<circle cx="153.6" cy="96.8" r="18.1" fill="url(#g3)"/>
+<circle cx="183.6" cy="107.1" r="17.5" fill="url(#g4)"/>
+<circle cx="178.9" cy="101.6" r="18.2" fill="url(#g1)"/>
+<circle cx="214.3" cy="118.7" r="19.1" fill="url(#g3)"/>
+<circle cx="221.5" cy="102.4" r="18.9" fill="url(#g2)"/>
+<circle cx="249.8" cy="99.9" r="20.5" fill="url(#g1)"/>
+<circle cx="250.2" cy="97.4" r="16.5" fill="url(#g2)"/>
+<circle cx="260.1" cy="88.7" r="21.1" fill="url(#g3)"/>
+<circle cx="262.9" cy="84.9" r="19.8" fill="url(#g4)"/>
+<circle cx="301.8" cy="71.8" r="17.4" fill="url(#g1)"/>
+<circle cx="299.5" cy="68.9" r="17.2" fill="url(#g3)"/>
+<circle cx="303.5" cy="99.8" r="6.3" fill="url(#g3)"/>
+<circle cx="314.3" cy="63.3" r="21.7" fill="url(#g2)"/>
+<circle cx="322.8" cy="68.0" r="20.1" fill="url(#g1)"/>
+<circle cx="303.8" cy="45.8" r="6.3" fill="url(#g2)"/>
+<circle cx="351.1" cy="40.4" r="14.3" fill="url(#g2)"/>
+<circle cx="342.2" cy="31.7" r="18.5" fill="url(#g3)"/>
+<circle cx="365.0" cy="61.6" r="6.3" fill="url(#g1)"/>
+     <rect x="110" y="150" width="180" height="60" rx="6" fill="#fff8f0"/></svg><span class="chip">MINI</span></div>
+    <div class="bd"><h3>Garland Corner</h3><p class="sz">For home dinners · up to 20 guests</p>
+     <ul><li><svg viewBox="0 0 24 24"><path d="M5 12l5 5 9-10"/></svg>2.5m organic balloon garland</li><li><svg viewBox="0 0 24 24"><path d="M5 12l5 5 9-10"/></svg>Table runner &amp; 3 accent props</li><li><svg viewBox="0 0 24 24"><path d="M5 12l5 5 9-10"/></svg>Setup &amp; pull-out</li></ul>
+     <div class="price"><s>₱5,000</s><b>₱4,500</b><span>with Dec offer</span></div><a class="btn o" href="#book" data-pkg="Garland Corner">Choose Mini</a></div>
+   </article>
+   <article class="pc feat">
+    <div class="im"><svg viewBox="0 0 400 200" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><rect width="400" height="200" fill="#efe1d3"/><circle cx="200" cy="140" r="90" fill="#f7e9d8"/>
+<circle cx="95.4" cy="229.7" r="11.8" fill="url(#g1)"/>
+<circle cx="81.9" cy="238.2" r="16.0" fill="url(#g3)"/>
+<circle cx="85.5" cy="189.5" r="14.4" fill="url(#g4)"/>
+<circle cx="91.3" cy="199.4" r="6.1" fill="url(#g3)"/>
+<circle cx="72.3" cy="189.7" r="18.4" fill="url(#g3)"/>
+<circle cx="90.1" cy="145.0" r="14.0" fill="url(#g2)"/>
+<circle cx="101.1" cy="153.4" r="5.9" fill="url(#g4)"/>
+<circle cx="83.6" cy="146.3" r="17.8" fill="url(#g2)"/>
+<circle cx="112.9" cy="109.9" r="16.3" fill="url(#g3)"/>
+<circle cx="102.2" cy="105.9" r="18.5" fill="url(#g1)"/>
+<circle cx="145.0" cy="81.4" r="15.9" fill="url(#g3)"/>
+<circle cx="138.7" cy="74.7" r="18.6" fill="url(#g1)"/>
+<circle cx="181.7" cy="64.2" r="13.2" fill="url(#g2)"/>
+<circle cx="174.7" cy="55.6" r="17.8" fill="url(#g4)"/>
+<circle cx="218.0" cy="70.5" r="14.8" fill="url(#g1)"/>
+<circle cx="222.7" cy="72.5" r="6.2" fill="url(#g1)"/>
+<circle cx="222.0" cy="55.9" r="20.0" fill="url(#g2)"/>
+<circle cx="258.7" cy="84.0" r="16.3" fill="url(#g1)"/>
+<circle cx="262.5" cy="91.8" r="6.8" fill="url(#g2)"/>
+<circle cx="260.9" cy="72.0" r="14.3" fill="url(#g3)"/>
+<circle cx="257.4" cy="60.5" r="6.0" fill="url(#g3)"/>
+<circle cx="286.0" cy="112.8" r="14.2" fill="url(#g4)"/>
+<circle cx="299.4" cy="103.5" r="20.0" fill="url(#g3)"/>
+<circle cx="309.9" cy="144.3" r="14.4" fill="url(#g2)"/>
+<circle cx="314.6" cy="146.8" r="15.0" fill="url(#g2)"/>
+<circle cx="312.2" cy="190.0" r="14.5" fill="url(#g3)"/>
+<circle cx="325.1" cy="187.7" r="6.1" fill="url(#g1)"/>
+<circle cx="325.6" cy="190.7" r="16.2" fill="url(#g1)"/>
+<circle cx="330.6" cy="192.7" r="6.8" fill="url(#g3)"/>
+<circle cx="306.1" cy="234.2" r="12.9" fill="url(#g3)"/>
+<circle cx="299.5" cy="222.3" r="5.4" fill="url(#g3)"/>
+<circle cx="315.4" cy="238.1" r="16.3" fill="url(#g1)"/>
+     </svg><span class="chip">MID</span></div>
+    <div class="bd"><h3>Arch &amp; Backdrop</h3><p class="sz">For office parties · up to 60 guests</p>
+     <ul><li><svg viewBox="0 0 24 24"><path d="M5 12l5 5 9-10"/></svg>Full balloon arch on frame</li><li><svg viewBox="0 0 24 24"><path d="M5 12l5 5 9-10"/></svg>Round backdrop with custom text</li><li><svg viewBox="0 0 24 24"><path d="M5 12l5 5 9-10"/></svg>Dessert table styling</li><li><svg viewBox="0 0 24 24"><path d="M5 12l5 5 9-10"/></svg>Setup &amp; pull-out</li></ul>
+     <div class="price"><s>₱10,900</s><b>₱9,800</b><span>with Dec offer</span></div><a class="btn p" href="#book" data-pkg="Arch &amp; Backdrop">Choose Arch</a></div>
+   </article>
+   <article class="pc">
+    <div class="im"><svg viewBox="0 0 400 200" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><rect width="400" height="200" fill="#2b2230"/><rect x="60" y="30" width="280" height="170" rx="10" fill="#3a2f40"/><g stroke="#e9cf9f" stroke-width="1.5" opacity=".35"><path d="M90 30v170M120 30v170M150 30v170M180 30v170M210 30v170M240 30v170M270 30v170M300 30v170"/></g>
+<circle cx="46.2" cy="61.5" r="19.7" fill="url(#g1)"/>
+<circle cx="47.5" cy="57.8" r="21.5" fill="url(#g2)"/>
+<circle cx="68.8" cy="60.8" r="16.9" fill="url(#g3)"/>
+<circle cx="71.2" cy="59.2" r="15.2" fill="url(#g4)"/>
+<circle cx="68.3" cy="61.1" r="19.5" fill="url(#g1)"/>
+<circle cx="75.5" cy="23.1" r="20.4" fill="url(#g3)"/>
+<circle cx="67.7" cy="27.0" r="18.6" fill="url(#g2)"/>
+<circle cx="151.5" cy="13.5" r="13.5" fill="url(#g4)"/>
+<circle cx="158.9" cy="28.0" r="17.0" fill="url(#g1)"/>
+<circle cx="154.3" cy="26.5" r="15.4" fill="url(#g3)"/>
+<circle cx="151.6" cy="51.9" r="20.0" fill="url(#g2)"/>
+<circle cx="162.4" cy="18.5" r="21.6" fill="url(#g1)"/>
+<circle cx="170.7" cy="42.5" r="14.0" fill="url(#g2)"/>
+<circle cx="142.6" cy="19.9" r="18.6" fill="url(#g3)"/>
+<circle cx="253.4" cy="34.0" r="19.2" fill="url(#g3)"/>
+<circle cx="263.4" cy="16.4" r="18.7" fill="url(#g2)"/>
+<circle cx="275.3" cy="48.3" r="15.2" fill="url(#g1)"/>
+<circle cx="225.7" cy="10.7" r="20.9" fill="url(#g2)"/>
+<circle cx="246.1" cy="35.4" r="15.4" fill="url(#g3)"/>
+<circle cx="252.2" cy="11.2" r="13.9" fill="url(#g4)"/>
+<circle cx="259.3" cy="32.2" r="13.8" fill="url(#g1)"/>
+<circle cx="323.3" cy="39.1" r="18.7" fill="url(#g2)"/>
+<circle cx="321.7" cy="50.8" r="14.9" fill="url(#g3)"/>
+<circle cx="307.5" cy="23.3" r="20.5" fill="url(#g4)"/>
+<circle cx="336.5" cy="51.8" r="20.3" fill="url(#g1)"/>
+<circle cx="326.0" cy="29.4" r="14.9" fill="url(#g3)"/>
+<circle cx="323.1" cy="46.8" r="20.3" fill="url(#g2)"/>
+<circle cx="320.8" cy="42.1" r="21.9" fill="url(#g1)"/>
+<circle cx="82.2" cy="116.8" r="19.7" fill="url(#g1)"/>
+<circle cx="38.7" cy="136.5" r="16.3" fill="url(#g3)"/>
+<circle cx="38.0" cy="122.8" r="13.7" fill="url(#g2)"/>
+<circle cx="69.8" cy="111.2" r="17.4" fill="url(#g1)"/>
+<circle cx="37.6" cy="107.4" r="20.0" fill="url(#g2)"/>
+<circle cx="37.9" cy="111.4" r="19.0" fill="url(#g3)"/>
+<circle cx="70.2" cy="110.4" r="19.5" fill="url(#g4)"/>
+<circle cx="332.5" cy="139.9" r="14.3" fill="url(#g1)"/>
+<circle cx="319.8" cy="139.2" r="16.3" fill="url(#g3)"/>
+<circle cx="362.1" cy="149.4" r="18.1" fill="url(#g2)"/>
+<circle cx="336.7" cy="143.3" r="21.2" fill="url(#g1)"/>
+<circle cx="330.4" cy="125.6" r="15.7" fill="url(#g2)"/>
+<circle cx="360.8" cy="118.9" r="21.4" fill="url(#g3)"/>
+<circle cx="332.9" cy="124.0" r="16.3" fill="url(#g4)"/>
+<circle cx="194.1" cy="176.6" r="16.6" fill="url(#g1)"/>
+<circle cx="215.7" cy="191.8" r="18.1" fill="url(#g3)"/>
+<circle cx="203.3" cy="175.8" r="20.5" fill="url(#g2)"/>
+<circle cx="220.1" cy="180.4" r="19.8" fill="url(#g1)"/>
+<circle cx="200.8" cy="191.9" r="13.2" fill="url(#g2)"/>
+<circle cx="224.6" cy="196.7" r="18.1" fill="url(#g3)"/>
+<circle cx="177.0" cy="192.1" r="20.2" fill="url(#g4)"/>
+<circle cx="88.0" cy="181.6" r="20.1" fill="url(#g3)"/>
+<circle cx="131.1" cy="181.7" r="19.6" fill="url(#g2)"/>
+<circle cx="91.2" cy="210.8" r="18.7" fill="url(#g1)"/>
+<circle cx="96.6" cy="187.7" r="18.8" fill="url(#g2)"/>
+<circle cx="111.1" cy="211.6" r="19.9" fill="url(#g3)"/>
+<circle cx="101.4" cy="220.6" r="16.5" fill="url(#g4)"/>
+<circle cx="109.7" cy="201.6" r="19.1" fill="url(#g1)"/>
+<circle cx="301.0" cy="218.3" r="19.5" fill="url(#g4)"/>
+<circle cx="307.2" cy="207.3" r="16.7" fill="url(#g1)"/>
+<circle cx="306.2" cy="214.7" r="20.7" fill="url(#g3)"/>
+<circle cx="314.2" cy="206.2" r="21.0" fill="url(#g2)"/>
+<circle cx="301.1" cy="213.3" r="17.7" fill="url(#g1)"/>
+<circle cx="285.8" cy="184.4" r="16.8" fill="url(#g2)"/>
+<circle cx="315.9" cy="194.5" r="19.7" fill="url(#g3)"/>
+     <g fill="#e9cf9f"><circle cx="120" cy="60" r="3"/><circle cx="280" cy="50" r="3"/><circle cx="200" cy="40" r="2.5"/></g></svg><span class="chip">FULL</span></div>
+    <div class="bd"><h3>Grand Venue</h3><p class="sz">For events &amp; debuts · 60+ guests</p>
+     <ul><li><svg viewBox="0 0 24 24"><path d="M5 12l5 5 9-10"/></svg>Stage backdrop up to 6m wide</li><li><svg viewBox="0 0 24 24"><path d="M5 12l5 5 9-10"/></svg>Entrance arch + ceiling clusters</li><li><svg viewBox="0 0 24 24"><path d="M5 12l5 5 9-10"/></svg>Two styled tables</li><li><svg viewBox="0 0 24 24"><path d="M5 12l5 5 9-10"/></svg>On-site stylist for 2 hours</li></ul>
+     <div class="price"><s>₱20,500</s><b>₱18,500</b><span>with Dec offer</span></div><a class="btn o" href="#book" data-pkg="Grand Venue">Choose Full</a></div>
+   </article>
+  </div>
+  <p class="pnote">Outside Metro Manila? Add a transport fee from ₱1,200 — we’ll quote it on your mood board.</p>
+ </div>
+</section>
+
+<section id="included">
+ <div class="wrap">
+  <span class="ey">Every package includes</span>
+  <h2 class="t">No hidden add-ons</h2>
+  <div class="inc">
+   <div><svg viewBox="0 0 44 44"><circle cx="22" cy="22" r="21" fill="#f3b49b" opacity=".4"/><rect x="12" y="12" width="20" height="20" rx="3" fill="#fff" stroke="#2b2230" stroke-width="2.2"/><path d="M16 26l4-5 3 3 3-4 3 6" stroke="#e0674f" stroke-width="2.2" fill="none" stroke-linejoin="round"/></svg><b>Mood board</b><p>Palette, layout sketch and final quote</p></div>
+   <div><svg viewBox="0 0 44 44"><circle cx="22" cy="22" r="21" fill="#a9b89a" opacity=".4"/><rect x="10" y="18" width="18" height="12" rx="2" fill="#2b2230"/><path d="M28 21h4l3 4v5h-7z" fill="#2b2230"/><circle cx="15" cy="31" r="3" fill="#fff" stroke="#2b2230" stroke-width="2"/><circle cx="31" cy="31" r="3" fill="#fff" stroke="#2b2230" stroke-width="2"/></svg><b>Delivery</b><p>Free within Metro Manila</p></div>
+   <div><svg viewBox="0 0 44 44"><circle cx="22" cy="22" r="21" fill="#e9cf9f" opacity=".6"/><circle cx="22" cy="22" r="10" fill="#fff" stroke="#2b2230" stroke-width="2.2"/><path d="M22 16v6l4 3" stroke="#e0674f" stroke-width="2.2" fill="none" stroke-linecap="round"/></svg><b>Early setup</b><p>Ready 1 hour before guests arrive</p></div>
+   <div><svg viewBox="0 0 44 44"><circle cx="22" cy="22" r="21" fill="#2b2230" opacity=".12"/><path d="M14 16h16l-2 16H16z" fill="#fff" stroke="#2b2230" stroke-width="2.2" stroke-linejoin="round"/><path d="M12 16h20M19 12h6" stroke="#2b2230" stroke-width="2.2" stroke-linecap="round"/></svg><b>Pull-out &amp; cleanup</b><p>We take everything home after</p></div>
+  </div>
+ </div>
+</section>
+
+<section class="book" id="book">
+ <div class="wrap bgrid">
+  <div>
+   <span class="ey">Claim the December offer</span>
+   <h2 class="t">Free mood board,<br><i>10% off</i> your package</h2>
+   <p class="lead">Send your details and we’ll reply on Viber or email within 48 hours. We confirm December dates in the order requests arrive.</p>
+   <div class="count" aria-label="Offer ends December 15"><div><b id="cd">21</b><span>DAYS</span></div><div><b>DEC</b><span>15</span></div></div>
+   <div class="terms"><h3>Offer details</h3><ul><li>10% off applies to package price, not transport fees</li><li>Book and pay a 30% deposit by December 15</li><li>Party date between December 1 and January 6</li><li>Mood board is free even if you don’t book</li></ul></div>
+  </div>
+  <form class="bk" id="bk" novalidate>
+   <h3>Get my free mood board</h3>
+   <p class="s">Takes about 2 minutes. We never share your number.</p>
+   <span class="olbl">Occasion</span>
+   <div class="occ" id="occ"><button type="button" class="on">Noche Buena dinner</button><button type="button">Office party</button><button type="button">Kids’ birthday</button><button type="button">Other</button></div>
+   <div class="fr">
+    <label>Party date<input type="text" placeholder="e.g. Dec 20" id="dt"></label>
+    <label>Guests<select><option>Up to 20</option><option>21–60</option><option>60+</option></select></label>
+   </div>
+   <label>Package<select id="pkg"><option>Not sure yet</option><option>Garland Corner</option><option>Arch &amp; Backdrop</option><option>Grand Venue</option></select></label>
+   <div class="fr">
+    <label>Your name<input id="nm" placeholder="Full name" autocomplete="off"></label>
+    <label>Viber / mobile<input placeholder="0900-000-0000" inputmode="tel" autocomplete="off"></label>
+   </div>
+   <label>City / venue<input placeholder="e.g. Quezon City, home"></label>
+   <button class="btn p" type="submit">Send my request</button>
+   <div class="ok" id="ok"></div>
+  </form>
+ </div>
+</section>
+
+<section id="faq" style="padding-top:90px">
+ <div class="wrap">
+  <div style="text-align:center"><span class="ey">Questions</span><h2 class="t">Before you book</h2></div>
+  <div class="faq">
+   <details open><summary>Is the mood board really free?</summary><p>Yes. You get a palette, a layout sketch and an exact quote at no cost, and there’s no obligation to book.</p></details>
+   <details><summary>How early do I need to book for December?</summary><p>For weekend parties, we suggest at least 7 days ahead. Weekday dates can often be arranged with 3 days’ notice.</p></details>
+   <details><summary>Do you work in condos and offices?</summary><p>Yes. We coordinate with your building admin for move-in permits and use freestanding frames, so nothing is attached to walls.</p></details>
+   <details><summary>Can I use my own theme or colors?</summary><p>Of course. Send any reference photos with your request and we’ll build the mood board around them.</p></details>
+  </div>
+ </div>
+</section>
+</main>
+<footer><div class="wrap"><a class="logo" href="#top"><svg viewBox="0 0 46 46"><circle cx="23" cy="23" r="22" fill="#4a3f50"/><circle cx="18" cy="19" r="8" fill="#f3b49b"/><circle cx="28" cy="17" r="7" fill="#e9cf9f"/><circle cx="24" cy="26" r="7.5" fill="#a9b89a"/></svg><span><b>Lobo &amp; Co.</b><small>PARTY STYLING · MANILA</small></span></a><span>Viber 0900-000-0000 · hello@example.com</span></div></footer>
+<div class="mbar"><a class="btn p" href="#book">Get my free mood board</a></div>
+<script>
+var names={'':'Peach Garden','p-berry':'Berry Noel','p-pine':'Pine & Gold','p-frost':'Frost Pearl'};
+document.querySelectorAll('.sw').forEach(function(b){b.addEventListener('click',function(){document.querySelectorAll('.sw').forEach(function(x){x.classList.remove('on')});b.classList.add('on');document.body.className=b.dataset.p;document.getElementById('plbl').textContent=names[b.dataset.p]})});
+document.querySelectorAll('#occ button').forEach(function(b){b.addEventListener('click',function(){document.querySelectorAll('#occ button').forEach(function(x){x.classList.remove('on')});b.classList.add('on')})});
+document.querySelectorAll('[data-pkg]').forEach(function(a){a.addEventListener('click',function(){var s=document.getElementById('pkg');for(var i=0;i<s.options.length;i++){if(s.options[i].text===a.dataset.pkg.replace('&amp;','&'))s.selectedIndex=i}})});
+(function(){var end=new Date(new Date().getFullYear(),11,15,23,59);var d=Math.floor((end-new Date())/864e5);if(d>=0&&d<40)document.getElementById('cd').textContent=d})();
+document.getElementById('bk').addEventListener('submit',function(e){e.preventDefault();var n=document.getElementById('nm').value.trim()||'there';var o=document.querySelector('#occ .on').textContent;var ok=document.getElementById('ok');ok.textContent='Thanks, '+n+'! Your '+o.toLowerCase()+' request is in. Expect your free mood board within 48 hours.';ok.classList.add('on')});
+</script>
+</body>
+</html>
