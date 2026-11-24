@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>조간식당 브런치 &amp; 커피 · 메뉴판 디자인</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@600;900&family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Noto Sans KR',sans-serif;background:#efe8da;color:#1b1a17;word-break:keep-all;-webkit-font-smoothing:antialiased;min-height:100vh;
+ background-image:radial-gradient(rgba(60,40,10,.08) 1px,transparent 1.3px);background-size:6px 6px}
+.top{height:10px;border-bottom:4px double #1b1a17;background:#f2b632}
+.wrap{max-width:1180px;margin:0 auto;padding:44px 20px 120px}
+.hd{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:18px;margin-bottom:32px;border-bottom:2px solid #1b1a17;padding-bottom:24px}
+.hd small{font-weight:700;font-size:14px;letter-spacing:.2em}
+.hd h1{font-family:'Noto Serif KR',serif;font-weight:900;font-size:clamp(30px,4.4vw,52px);margin-top:8px;line-height:1.2}
+.hd h1 em{font-style:normal;background:linear-gradient(transparent 60%,#f2b632 60%,#f2b632 92%,transparent 92%)}
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:14px}
+.chips span{font-size:13px;font-weight:500;padding:6px 12px;border:1.5px solid #1b1a17;background:rgba(255,255,255,.35)}
+.chips span.g{background:#1b1a17;color:#f2b632}
+.cta{display:inline-flex;align-items:center;gap:8px;height:52px;padding:0 26px;background:#1b1a17;color:#efe8da;font-weight:700;font-size:15px;text-decoration:none;transition:.2s;white-space:nowrap;box-shadow:5px 5px 0 #f2b632}
+.cta:hover{transform:translate(-2px,-2px);box-shadow:7px 7px 0 #f2b632}
+.cta svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round}
+.view{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,.75fr);gap:28px;align-items:start}
+figure{background:#fff;padding:10px;border:2px solid #1b1a17;box-shadow:10px 10px 0 rgba(27,26,23,.15)}
+figure a{display:block}
+figure img{display:block;width:100%;height:auto}
+figcaption{font-size:13px;color:#4a463d;padding:10px 4px 2px;display:flex;flex-wrap:wrap;justify-content:space-between;gap:4px 10px}
+.side{display:flex;flex-direction:column;gap:18px;position:sticky;top:24px}
+.zoom{background:#fff;border:2px solid #1b1a17;padding:8px}
+.zoom img{display:block;width:100%;height:auto}
+.zoom p{font-size:14px;color:#3a362e;padding:8px 4px 2px;line-height:1.55}
+.info{background:#1b1a17;color:#e9e1cf;padding:22px}
+.info h2{font-family:'Noto Serif KR',serif;font-weight:900;font-size:21px;color:#fff;margin-bottom:8px}
+.info li{list-style:none;font-size:14px;padding:6px 0 6px 18px;position:relative;line-height:1.55}
+.info li:before{content:"";position:absolute;left:2px;top:13px;width:8px;height:8px;background:#f2b632}
+.bar{position:fixed;left:0;right:0;bottom:0;background:rgba(239,232,218,.97);border-top:3px solid #1b1a17;padding:12px 20px;display:flex;justify-content:center;align-items:center;gap:18px;flex-wrap:wrap}
+.bar p{font-size:14px;color:#3a362e}
+.bar .cta{height:46px;box-shadow:4px 4px 0 #f2b632}
+@media(max-width:900px){.view{grid-template-columns:1fr}.side{position:static}}
+@media(max-width:620px){.hd .cta{display:none}.bar p{display:none}.bar .cta{width:100%;justify-content:center}}
+</style>
+</head>
+<body>
+<div class="top"></div>
+<div class="wrap">
+ <div class="hd">
+  <div>
+   <small>MENU DESIGN · SD-MN32</small>
+   <h1>조간식당 <em>브런치 &amp; 커피</em> 메뉴판</h1>
+   <div class="chips"><span class="g">A4 세로 · 1장</span><span>아침 신문 레이아웃</span><span>뉴스프린트 & 먹색 & 노른자 옐로</span><span>원화 가격</span><span>인쇄 · 웹 겸용</span></div>
+  </div>
+  <a class="cta" href="https://design.shoponph.online/#inquiry">이 디자인으로 상담하기 <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+ </div>
+ <div class="view">
+  <figure><a href="page1.png" target="_blank" rel="noopener"><img src="page1.png" alt="조간식당 브런치 메뉴판 전체, 신문 1면처럼 제호와 머리기사, 에그 베네딕트 그림, 3단 메뉴 구성" width="2480" height="3508"></a><figcaption><span>브런치 플레이트 · 팬케이크 &amp; 토스트 · 볼 · 커피 · 논커피</span><span style="white-space:nowrap">눌러서 크게 보기</span></figcaption></figure>
+  <div class="side">
+   <div class="zoom"><img src="detail-lead.jpg" alt="에그 베네딕트 판화풍 그림 확대" width="1000" height="800"><p>대표 메뉴를 신문 머리기사처럼 크게 — 사진 없이도 눈길이 먼저 가는 판화풍 그림</p></div>
+   <div class="zoom"><img src="detail-ad.jpg" alt="신문 광고 박스 형식의 세트 안내 확대" width="710" height="380"><p>세트 안내는 신문 광고 박스처럼 검게 처리해 추가 주문을 자연스럽게 유도</p></div>
+   <div class="info"><h2>이 메뉴판에 담긴 것</h2><ul><li>지면 이름(1면·2면·경제면)으로 나눈 메뉴 구역</li><li>오늘의 원두 · 아침 날씨 귀퉁이 박스로 매일 바꿔 쓰는 정보 칸</li><li>채식 · 맵기 표시와 곁들임 추가 표</li><li>영업시간 · 휴무 · 연락처를 하단 한 줄에 정리</li></ul></div>
+  </div>
+ </div>
+</div>
+<div class="bar"><p>우리 가게 메뉴판도 이렇게 만들어 보세요</p><a class="cta" href="https://design.shoponph.online/#inquiry">이 디자인으로 상담하기</a></div>
+</body>
+</html>
