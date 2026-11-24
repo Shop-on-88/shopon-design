@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Baga Lechon House · Charcoal-Roasted Lechon, Cebu-Style</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--char:#1c110d;--mahog:#5b1d0c;--crack:#c8661b;--amber:#eaa13a;--ember:#d8452b;--cream:#f6ead2;--banig:#e8d3a8;--bamboo:#a89348;--leaf:#3f6b33;--ink:#2a1a12}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Outfit',sans-serif;background:var(--cream);color:var(--ink);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img,svg{display:block;max-width:100%}
+a{color:inherit}
+.serif{font-family:'DM Serif Display',serif;font-weight:400}
+.wrap{max-width:1200px;margin:0 auto;padding:0 28px}
+/* banderitas */
+.flags{height:26px;background:var(--char);overflow:hidden}
+.flags svg{width:100%;height:26px}
+/* nav */
+nav{position:sticky;top:0;z-index:20;background:rgba(28,17,13,.96);backdrop-filter:blur(6px);color:var(--cream);border-bottom:1px solid rgba(234,161,58,.25)}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;height:72px;gap:20px}
+.logo{display:flex;align-items:center;gap:12px;text-decoration:none}
+.logo svg{width:44px;height:44px}
+.logo b{font-family:'DM Serif Display',serif;font-weight:400;font-size:25px;letter-spacing:.01em;line-height:1;white-space:nowrap}
+.logo b i{color:var(--amber)}
+.logo small{display:block;font-size:11px;letter-spacing:.28em;color:var(--amber);margin-top:4px;font-weight:600}
+nav ul{display:flex;gap:28px;list-style:none;font-size:15px;font-weight:500}
+nav ul a{text-decoration:none;opacity:.86}
+nav ul a:hover{opacity:1;color:var(--amber)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;height:48px;padding:0 24px;border-radius:999px;font-weight:600;font-size:15px;text-decoration:none;border:0;cursor:pointer;font-family:inherit;transition:.2s;white-space:nowrap}
+.btn-fire{background:linear-gradient(160deg,#f0a540,#d8452b);color:#1c110d;box-shadow:0 10px 26px -8px rgba(216,69,43,.6)}
+.btn-fire:hover{transform:translateY(-2px);filter:brightness(1.06)}
+.btn-line{border:1.5px solid rgba(246,234,210,.5);color:var(--cream);background:transparent}
+.btn-line:hover{border-color:var(--amber);color:var(--amber)}
+.menu-t{display:none;background:none;border:0;color:var(--cream);width:44px;height:44px;cursor:pointer}
+/* hero */
+.hero{position:relative;background:radial-gradient(900px 520px at 70% 70%,rgba(216,69,43,.35),transparent 60%),radial-gradient(700px 400px at 20% 0%,rgba(234,161,58,.12),transparent 60%),linear-gradient(180deg,#22140f,#140b08);color:var(--cream);overflow:hidden}
+.hero-tx{text-align:center;padding-top:64px;padding-bottom:0;position:relative;z-index:2}
+.eyebrow{display:inline-flex;align-items:center;gap:10px;font-size:13px;letter-spacing:.26em;font-weight:600;color:var(--amber);text-transform:uppercase}
+.eyebrow:before,.eyebrow:after{content:"";width:30px;height:2px;background:var(--amber)}
+.hero h1{font-family:'DM Serif Display',serif;font-weight:400;font-size:clamp(44px,5.7vw,84px);line-height:1.04;margin:18px auto 18px;letter-spacing:-.01em}
+.hero h1 i{color:var(--amber)}
+.hero p.lead{font-size:18px;line-height:1.65;color:#e8d8bd;max-width:640px;margin:0 auto}
+.hero .ctas{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px;justify-content:center}
+.scene{margin-top:-10px;line-height:0}
+.scene svg{width:100%;height:auto;min-height:220px;display:block}
+.ribbon{background:var(--amber);color:var(--char);position:relative;z-index:2}
+.ribbon .wrap{display:grid;grid-template-columns:repeat(4,1fr)}
+.ribbon .wrap>div{padding:18px 18px;font-size:14px;font-weight:500;border-right:1.5px dashed rgba(28,17,13,.35);display:flex;align-items:baseline;gap:10px}
+.ribbon .wrap>div:last-child{border-right:0}
+.ribbon b{font-family:'DM Serif Display',serif;font-weight:400;font-size:24px;white-space:nowrap}
+/* section base */
+section{padding:100px 0}
+.sec-h{display:flex;justify-content:space-between;align-items:flex-end;gap:30px;margin-bottom:46px;flex-wrap:wrap}
+.sec-h h2{font-family:'DM Serif Display',serif;font-weight:400;font-size:clamp(34px,4vw,54px);line-height:1.08;max-width:620px}
+.sec-h h2 i{color:var(--crack)}
+.sec-h p{max-width:420px;font-size:16px;line-height:1.7;color:#5b4637}
+.kick{font-size:13px;letter-spacing:.26em;font-weight:600;color:var(--ember);text-transform:uppercase;margin-bottom:14px}
+/* story strip */
+.story{background:var(--cream);padding:0}
+.story .wrap{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-bottom:1px solid rgba(42,26,18,.14)}
+.story article{padding:40px 30px 44px;border-right:1px solid rgba(42,26,18,.14)}
+.story article:last-child{border-right:0}
+.story svg{width:54px;height:54px;margin-bottom:18px}
+.story h3{font-family:'DM Serif Display',serif;font-weight:400;font-size:25px;margin-bottom:8px}
+.story p{font-size:15px;line-height:1.7;color:#5b4637}
+/* signature */
+.sig{background:var(--cream)}
+.sig-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
+.dish{background:#fffaf0;border-radius:22px;overflow:hidden;border:1px solid rgba(42,26,18,.1);display:flex;flex-direction:column;transition:.25s}
+.dish:hover{transform:translateY(-4px);box-shadow:0 24px 40px -24px rgba(91,29,12,.5)}
+.dish .pic{aspect-ratio:1/0.82;background:radial-gradient(circle at 50% 60%,#f3d9ab,#e3c18a);display:flex;align-items:center;justify-content:center}
+.dish:nth-child(2) .pic{background:radial-gradient(circle at 50% 60%,#e9dcb7,#cdbb85)}
+.dish:nth-child(3) .pic{background:radial-gradient(circle at 50% 60%,#f0cfb0,#d9a47c)}
+.dish:nth-child(4) .pic{background:radial-gradient(circle at 50% 60%,#dfe3c0,#b9c28e)}
+.dish .pic svg{width:86%;height:auto}
+.dish .tx{padding:20px 22px 24px;display:flex;flex-direction:column;flex:1}
+.dish h3{font-family:'DM Serif Display',serif;font-weight:400;font-size:23px;margin-bottom:6px}
+.dish p{font-size:14px;line-height:1.6;color:#6a5444;flex:1}
+.dish .pr{display:flex;justify-content:space-between;align-items:baseline;margin-top:16px;padding-top:14px;border-top:1px dashed rgba(42,26,18,.25)}
+.dish .pr span{font-size:13px;color:#7a6250}
+.dish .pr b{font-family:'DM Serif Display',serif;font-weight:400;font-size:24px;color:var(--mahog)}
+/* whole lechon sizes */
+.whole{background:var(--mahog);color:var(--cream);position:relative;overflow:hidden}
+.whole:before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(45deg,rgba(255,255,255,.025) 0 12px,transparent 12px 24px),repeating-linear-gradient(-45deg,rgba(0,0,0,.08) 0 12px,transparent 12px 24px)}
+.whole .wrap{position:relative}
+.whole .sec-h p{color:#e3c9a8}
+.whole .kick{color:var(--amber)}
+.whole .sec-h h2 i{color:var(--amber)}
+.sizes{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.size{background:rgba(28,17,13,.5);border:1px solid rgba(234,161,58,.3);border-radius:24px;padding:30px 28px 28px;position:relative}
+.size.mid{background:linear-gradient(170deg,#f6ead2,#ead3a6);color:var(--ink);border-color:transparent;transform:translateY(-14px);box-shadow:0 30px 60px -30px rgba(0,0,0,.6)}
+.size .tag{position:absolute;top:-13px;left:28px;background:var(--ember);color:#fff3e2;font-size:12px;font-weight:600;letter-spacing:.12em;padding:6px 12px;border-radius:999px;text-transform:uppercase}
+.pigbox{height:110px;display:flex;align-items:flex-end;justify-content:center;margin-bottom:18px}
+.pigbox svg{height:auto;max-height:110px}
+.size h3{font-family:'DM Serif Display',serif;font-weight:400;font-size:30px}
+.size .kg{font-size:14px;color:#d4b991;margin-top:4px}
+.size.mid .kg{color:#7a5a3a}
+.size ul{list-style:none;margin:20px 0 24px;font-size:15px;line-height:1.5}
+.size li{padding:8px 0 8px 24px;border-top:1px solid rgba(246,234,210,.13);position:relative}
+.size.mid li{border-color:rgba(42,26,18,.12)}
+.size li:before{content:"";position:absolute;left:2px;top:15px;width:9px;height:9px;border-radius:50%;background:var(--amber)}
+.size.mid li:before{background:var(--ember)}
+.size .price{display:flex;align-items:baseline;gap:8px}
+.size .price b{font-family:'DM Serif Display',serif;font-weight:400;font-size:42px;color:var(--amber)}
+.size.mid .price b{color:var(--mahog)}
+.size .price span{font-size:14px;color:#d4b991}
+.size.mid .price span{color:#7a5a3a}
+.note{margin-top:34px;font-size:14px;color:#e3c9a8;display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+.note svg{width:20px;height:20px;flex:none}
+/* trays */
+.trays{background:#efe0c2;position:relative}
+.trays .wrap{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+.tray-art svg{width:100%;height:auto}
+.tray-list{margin-top:8px}
+.tray-row{display:grid;grid-template-columns:1fr auto;gap:6px 20px;padding:20px 0;border-bottom:1px solid rgba(42,26,18,.16)}
+.tray-row h3{font-family:'DM Serif Display',serif;font-weight:400;font-size:24px}
+.tray-row p{grid-column:1;font-size:14px;color:#6a5444;line-height:1.6}
+.tray-row b{grid-row:1/span 2;grid-column:2;align-self:center;font-family:'DM Serif Display',serif;font-weight:400;font-size:28px;color:var(--mahog);white-space:nowrap}
+.tray-row b small{display:block;font-family:'Outfit',sans-serif;font-size:12px;color:#7a6250;text-align:right;letter-spacing:.06em}
+/* steps */
+.steps{background:var(--cream)}
+.step-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:0;counter-reset:s;border-top:2px solid var(--ink)}
+.step{padding:30px 26px 10px 0;position:relative}
+.step:not(:last-child){border-right:1px solid rgba(42,26,18,.14);margin-right:26px}
+.step .n{font-family:'DM Serif Display',serif;font-size:60px;line-height:1;color:var(--crack)}
+.step h3{font-size:19px;font-weight:600;margin:14px 0 8px}
+.step p{font-size:15px;line-height:1.65;color:#5b4637}
+/* pit */
+.pit{background:var(--char);color:var(--cream);overflow:hidden}
+.pit .wrap{display:grid;grid-template-columns:1.05fr 1fr;gap:60px;align-items:center}
+.pit .kick{color:var(--amber)}
+.pit h2{font-family:'DM Serif Display',serif;font-weight:400;font-size:clamp(34px,4vw,52px);line-height:1.1;margin-bottom:22px}
+.pit h2 i{color:var(--amber)}
+.pit p{font-size:16px;line-height:1.8;color:#d9c6a6;margin-bottom:16px}
+.stuff{display:flex;flex-wrap:wrap;gap:8px;margin-top:26px}
+.stuff span{border:1px solid rgba(234,161,58,.4);border-radius:999px;padding:8px 14px;font-size:14px;color:#f0dcb8}
+.timeline{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:30px}
+.timeline div{border:1px solid rgba(234,161,58,.3);border-radius:16px;padding:16px}
+.timeline b{display:block;font-family:'DM Serif Display',serif;font-weight:400;font-size:26px;color:var(--amber)}
+.timeline span{font-size:13px;color:#cbb898;line-height:1.5;display:block;margin-top:4px}
+.pit-art svg{width:100%;height:auto}
+/* order form */
+.order{background:linear-gradient(180deg,#efe0c2,#f6ead2)}
+.order .wrap{display:grid;grid-template-columns:.9fr 1.1fr;gap:50px;align-items:start}
+.order h2{font-family:'DM Serif Display',serif;font-weight:400;font-size:clamp(34px,4vw,52px);line-height:1.08;margin-bottom:16px}
+.order h2 i{color:var(--crack)}
+.order .side p{font-size:16px;line-height:1.7;color:#5b4637}
+.info-list{list-style:none;margin-top:28px;display:grid;gap:12px}
+.info-list li{display:flex;gap:14px;align-items:flex-start;background:#fffaf0;border-radius:16px;padding:16px 18px;border:1px solid rgba(42,26,18,.08)}
+.info-list svg{width:24px;height:24px;flex:none;margin-top:2px}
+.info-list b{display:block;font-size:15px}
+.info-list span{font-size:14px;color:#6a5444;line-height:1.55}
+form{background:#fffaf0;border-radius:28px;padding:34px;border:1px solid rgba(42,26,18,.1);box-shadow:0 30px 60px -40px rgba(91,29,12,.6)}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+label{display:block;font-size:13px;font-weight:600;letter-spacing:.04em;margin-bottom:16px;color:#4a3426}
+input,select,textarea{display:block;width:100%;margin-top:7px;height:50px;border-radius:14px;border:1.5px solid #dcc9a6;background:#fff;padding:0 14px;font:inherit;font-size:15px;color:var(--ink)}
+textarea{height:90px;padding:12px 14px;resize:vertical}
+input:focus,select:focus,textarea:focus{outline:none;border-color:var(--crack);box-shadow:0 0 0 3px rgba(200,102,27,.16)}
+.chooser{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:4px 0 18px}
+.chooser label{margin:0;position:relative}
+.chooser input{position:absolute;opacity:0;pointer-events:none;width:1px;height:1px;left:0;top:0;margin:0}
+.chooser span{display:block;text-align:center;border:1.5px solid #dcc9a6;border-radius:14px;padding:12px 6px;font-size:14px;font-weight:600;cursor:pointer;background:#fff;transition:.15s}
+.chooser span small{display:block;font-weight:500;font-size:12px;color:#7a6250;margin-top:2px}
+.chooser input:checked+span{background:var(--mahog);border-color:var(--mahog);color:var(--cream)}
+.chooser input:checked+span small{color:#e8cfa8}
+.sum{display:flex;justify-content:space-between;align-items:center;margin:6px 0 20px;padding:14px 18px;border-radius:14px;background:#f4e4c4;font-size:15px}
+.sum b{font-family:'DM Serif Display',serif;font-weight:400;font-size:26px;color:var(--mahog)}
+form .btn{width:100%;height:54px;font-size:16px}
+.done{display:none;text-align:center;padding:30px 10px}
+.done svg{width:70px;height:70px;margin:0 auto 16px}
+.done h3{font-family:'DM Serif Display',serif;font-weight:400;font-size:30px;margin-bottom:8px}
+.done p{color:#5b4637;font-size:15px;line-height:1.7}
+/* visit */
+.visit{background:var(--char);color:var(--cream);padding:80px 0 0}
+.visit>.wrap{display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:40px;padding-bottom:60px}
+.visit h3{font-size:13px;letter-spacing:.24em;color:var(--amber);text-transform:uppercase;margin-bottom:16px;font-weight:600}
+.visit .big{font-family:'DM Serif Display',serif;font-size:40px;line-height:1.1;margin-bottom:16px}
+.visit p,.visit li{font-size:15px;line-height:1.8;color:#d9c6a6;list-style:none}
+.visit li{display:flex;justify-content:space-between;border-bottom:1px solid rgba(246,234,210,.1);padding:6px 0}
+.map{border-radius:18px;overflow:hidden;border:1px solid rgba(234,161,58,.25)}
+footer{border-top:1px solid rgba(246,234,210,.1);padding:24px 0;font-size:13px;color:#a8957a}
+footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;padding-bottom:0}
+.mbar{display:none}
+@media(max-width:1080px){
+ .sig-grid{grid-template-columns:repeat(2,1fr)}
+ .trays .wrap,.pit .wrap,.order .wrap{grid-template-columns:1fr;gap:40px}
+ .step-grid{grid-template-columns:repeat(2,1fr)}
+ .step:nth-child(2){border-right:0;margin-right:0}
+ .visit>.wrap{grid-template-columns:1fr 1fr}
+ .visit>.wrap>div:first-child{grid-column:span 2}
+ .ribbon .wrap{grid-template-columns:1fr 1fr}
+ .ribbon .wrap>div:nth-child(2){border-right:0}
+ .ribbon .wrap>div:nth-child(-n+2){border-bottom:1.5px dashed rgba(28,17,13,.35)}
+}
+@media(max-width:760px){
+ .wrap{padding:0 18px}
+ nav ul,nav .btn{display:none}
+ .menu-t{display:block}
+ nav.open ul{display:flex;flex-direction:column;position:absolute;top:72px;left:0;right:0;background:var(--char);padding:18px 22px 24px;gap:16px;border-bottom:1px solid rgba(234,161,58,.3)}
+ section{padding:72px 0}
+ .hero-tx{padding-top:44px}
+ .hero h1{font-size:44px}
+ .eyebrow{letter-spacing:.16em;font-size:12px}
+ .eyebrow:before,.eyebrow:after{width:16px}
+ .hero p.lead{font-size:16px}
+ .scene svg{min-height:200px}
+ .ribbon .wrap>div{flex-direction:column;gap:2px;padding:14px 10px}
+ .ribbon b{font-size:21px}
+ .logo b{font-size:21px}
+ .story .wrap{grid-template-columns:1fr}
+ .story article{border-right:0;border-bottom:1px solid rgba(42,26,18,.14);padding:30px 0}
+ .story article:last-child{border-bottom:0}
+ .sig-grid{grid-template-columns:1fr}
+ .sizes{grid-template-columns:1fr;gap:28px}
+ .size.mid{transform:none}
+ .step-grid{grid-template-columns:1fr}
+ .step{border-right:0!important;margin-right:0!important;border-bottom:1px solid rgba(42,26,18,.14);padding:24px 0}
+ .timeline{grid-template-columns:1fr}
+ .row{grid-template-columns:1fr;gap:0}
+ form{padding:24px 18px}
+ .chooser span{font-size:13px;padding:10px 4px}
+ .visit>.wrap{grid-template-columns:1fr}
+ .visit>.wrap>div:first-child{grid-column:auto}
+ .tray-row h3{font-size:21px}
+ .tray-row b{font-size:23px}
+ .mbar{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:30;gap:10px;padding:10px 14px;background:rgba(28,17,13,.97);border-top:1px solid rgba(234,161,58,.3)}
+ .mbar .btn{flex:1;height:46px;font-size:14px;padding:0 10px}
+ footer{padding-bottom:84px}
+}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+ <linearGradient id="pskin" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f0a447"/><stop offset=".3" stop-color="#cf6c22"/><stop offset=".7" stop-color="#9a3c12"/><stop offset="1" stop-color="#5e1e0b"/></linearGradient>
+ <linearGradient id="phead" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#e4913a"/><stop offset=".6" stop-color="#b0501a"/><stop offset="1" stop-color="#6e260d"/></linearGradient>
+ <linearGradient id="pshine" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#fff3cf" stop-opacity="0"/><stop offset=".45" stop-color="#fff3cf" stop-opacity=".9"/><stop offset="1" stop-color="#fff3cf" stop-opacity="0"/></linearGradient>
+ <linearGradient id="pleg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#b85a1c"/><stop offset="1" stop-color="#6e260d"/></linearGradient>
+ <pattern id="blis" width="26" height="18" patternUnits="userSpaceOnUse"><circle cx="4" cy="5" r="1.5" fill="#ffd68e" opacity=".16"/><circle cx="16" cy="12" r="1.1" fill="#ffd68e" opacity=".13"/><circle cx="22" cy="3" r="1" fill="#5e1e0b" opacity=".16"/><circle cx="10" cy="15" r=".9" fill="#5e1e0b" opacity=".14"/></pattern>
+ <linearGradient id="leafb" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#7fb055"/><stop offset="1" stop-color="#2f5326"/></linearGradient>
+ <symbol id="pig" viewBox="0 0 640 240">
+  <path d="M150 170 C120 182 80 188 42 188 L28 196 C66 204 120 200 162 188Z" fill="url(#pleg)"/>
+  <path d="M30 186 l-10 3 l2 10 l14 -2Z" fill="#3e1407"/>
+  <path d="M70 112 C80 78 120 58 170 50 C250 38 380 36 460 50 C490 56 506 66 514 80 L520 150 C500 170 460 180 400 184 C320 190 220 188 150 176 C110 168 78 146 70 112Z" fill="url(#pskin)"/>
+  <path d="M70 112 C80 78 120 58 170 50 C250 38 380 36 460 50 C490 56 506 66 514 80 L520 150 C500 170 460 180 400 184 C320 190 220 188 150 176 C110 168 78 146 70 112Z" fill="url(#blis)"/>
+  <path d="M470 166 C500 176 540 182 592 182 L604 192 C560 200 506 196 462 186Z" fill="url(#pleg)"/>
+  <path d="M592 180 l16 2 l0 12 l-16 -2Z" fill="#3e1407"/>
+  <path d="M496 64 C520 54 552 58 574 74 C592 86 604 96 618 100 C626 108 626 128 618 136 C600 146 576 150 552 152 C532 154 516 152 506 146Z" fill="url(#phead)"/>
+  <path d="M496 64 C520 54 552 58 574 74 C592 86 604 96 618 100 C626 108 626 128 618 136 C600 146 576 150 552 152 C532 154 516 152 506 146Z" fill="url(#blis)"/>
+  <ellipse cx="619" cy="118" rx="7" ry="17" fill="#8a3412"/><ellipse cx="620" cy="112" rx="2.4" ry="3.6" fill="#3e1407"/><ellipse cx="620" cy="125" rx="2.4" ry="3.6" fill="#3e1407"/>
+  <path d="M530 68 C536 40 558 30 576 34 C574 54 562 70 546 80Z" fill="#8f3812"/><path d="M538 66 C544 48 558 40 568 40 C566 54 558 64 548 72Z" fill="#c2631f" opacity=".7"/>
+  <path d="M556 98 q10 7 21 0" stroke="#3e1407" stroke-width="3.4" fill="none" stroke-linecap="round"/>
+  <path d="M588 140 q15 -1 28 -7" stroke="#5e1e0b" stroke-width="3" fill="none" stroke-linecap="round"/>
+  <path d="M506 72 C500 100 502 128 510 148" stroke="#6e260d" stroke-width="3" fill="none" opacity=".5"/>
+  <path d="M70 108 C56 106 50 94 60 88 C68 84 72 96 62 98" stroke="#9a3c12" stroke-width="5" fill="none" stroke-linecap="round"/>
+  <g stroke="#7a2c0e" stroke-width="1.6" opacity=".35" fill="none"><path d="M180 70 l-14 96 M230 62 l-12 112 M280 58 l-10 120 M330 56 l-8 124 M380 58 l-6 122 M430 64 l-4 112"/></g>
+  <path d="M150 66 C250 44 390 42 476 62" stroke="url(#pshine)" stroke-width="14" fill="none" stroke-linecap="round"/>
+  <path d="M190 92 C270 80 380 80 450 92" stroke="url(#pshine)" stroke-width="5" fill="none" stroke-linecap="round" opacity=".6"/>
+  <path d="M520 78 C548 70 572 80 590 94" stroke="url(#pshine)" stroke-width="6" fill="none" stroke-linecap="round" opacity=".8"/>
+  <path d="M170 176 C260 188 380 188 470 172" stroke="#e8d3a8" stroke-width="2.4" fill="none" stroke-dasharray="3 9" stroke-linecap="round"/>
+  <path d="M230 182 l-6 16 M300 186 l-2 18 M370 185 l3 17 M430 178 l7 15" stroke="#6c9a4a" stroke-width="3.4" stroke-linecap="round"/>
+ </symbol>
+ <symbol id="board" viewBox="0 0 640 120">
+  <path d="M20 60 C120 6 520 6 620 60 C520 114 120 114 20 60Z" fill="url(#leafb)"/>
+  <path d="M30 60 H610" stroke="#a8cc7e" stroke-width="2" opacity=".6"/>
+  <g stroke="#a8cc7e" stroke-width="1.4" opacity=".4"><path d="M100 60 l40 -34 M180 60 l40 -42 M260 60 l40 -46 M340 60 l40 -46 M420 60 l40 -42 M500 60 l40 -34 M100 60 l40 34 M180 60 l40 42 M260 60 l40 46 M340 60 l40 46 M420 60 l40 42 M500 60 l40 34"/></g>
+ </symbol>
+ <symbol id="mark" viewBox="0 0 48 48"><rect width="48" height="48" rx="12" fill="#d8452b"/><rect x="3" y="3" width="42" height="42" rx="9" fill="none" stroke="#f6ead2" stroke-opacity=".5" stroke-dasharray="2 3"/><path d="M8 27 C9 20 15 17 22 17 C29 17 33 18 35 21 C37 19 41 20 42 23 C42 26 40 28 37 28 C35 31 30 32 22 32 C15 32 9 31 8 27Z" fill="#f6ead2"/><circle cx="37" cy="23" r="1.1" fill="#d8452b"/><path d="M6 25 H44" stroke="#eaa13a" stroke-width="2"/><path d="M14 35 q8 3 18 0" stroke="#f6ead2" stroke-width="2" fill="none" stroke-linecap="round"/></symbol>
+</defs></svg>
+<div class="flags" aria-hidden="true"><svg viewBox="0 0 1440 26" preserveAspectRatio="none"><path d="M0 2 Q720 10 1440 2" stroke="#a89348" stroke-width="1.5" fill="none"/><g id="fl"></g></svg></div>
+<nav id="nav"><div class="wrap">
+ <a class="logo" href="#top"><svg viewBox="0 0 48 48"><use href="#mark"/></svg><b>Baga <i>Lechon House</i></b></a>
+ <ul><li><a href="#signature">Menu</a></li><li><a href="#whole">Whole Lechon</a></li><li><a href="#trays">Party Trays</a></li><li><a href="#pit">Our Pit</a></li><li><a href="#visit">Visit</a></li></ul>
+ <a class="btn btn-fire" href="#order">Reserve a Lechon</a>
+ <button class="menu-t" aria-label="Open menu" onclick="document.getElementById('nav').classList.toggle('open')"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+</div></nav>
+
+<header class="hero" id="top">
+ <div class="wrap hero-tx">
+  <span class="eyebrow">Charcoal-roasted · Cebu-style</span>
+  <h1 class="serif">Crackling skin, <i>slow embers.</i></h1>
+  <p class="lead">Whole lechon turned by hand over coconut-husk charcoal for five hours, stuffed with lemongrass, garlic and native onion. Order by the kilo, by the tray, or whole for your next handaan.</p>
+  <div class="ctas"><a class="btn btn-fire" href="#order">Reserve a Whole Lechon</a><a class="btn btn-line" href="#signature">See Today's Menu</a></div>
+ </div>
+ <div class="scene"><svg viewBox="0 0 1440 400" preserveAspectRatio="xMidYMax slice" role="img" aria-label="Whole roasted lechon turning on a bamboo spit over glowing coconut charcoal">
+  <defs>
+   <radialGradient id="glow" cx="50%" cy="85%" r="55%"><stop offset="0" stop-color="#ff8a3a" stop-opacity=".8"/><stop offset=".5" stop-color="#d8452b" stop-opacity=".25"/><stop offset="1" stop-color="#d8452b" stop-opacity="0"/></radialGradient>
+   <radialGradient id="coal" cx="50%" cy="40%" r="60%"><stop offset="0" stop-color="#ffd27a"/><stop offset=".35" stop-color="#ff7a2a"/><stop offset=".8" stop-color="#8e1f10"/><stop offset="1" stop-color="#2a0c06"/></radialGradient>
+   <linearGradient id="bam" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#d9c27a"/><stop offset=".5" stop-color="#a89348"/><stop offset="1" stop-color="#6e5e28"/></linearGradient>
+  </defs>
+  <ellipse cx="720" cy="390" rx="620" ry="150" fill="url(#glow)"/>
+  
+  <path d="M380 150 L350 400 M380 150 L414 400 M1060 150 L1026 400 M1060 150 L1094 400" stroke="#3a2418" stroke-width="14" stroke-linecap="round"/>
+  <path d="M330 360 Q720 318 1110 360 L1110 400 L330 400Z" fill="#1a0c08"/>
+  <g id="coals"></g>
+  <g fill="#ffb347"><circle cx="600" cy="300" r="2.4"/><circle cx="720" cy="280" r="2"/><circle cx="840" cy="296" r="2.6"/><circle cx="660" cy="262" r="1.6"/><circle cx="790" cy="250" r="1.8"/><circle cx="900" cy="270" r="1.6"/></g>
+  <rect x="300" y="136" width="840" height="14" rx="7" fill="url(#bam)"/>
+  <ellipse cx="720" cy="246" rx="290" ry="18" fill="#000" opacity=".35"/>
+  <use href="#pig" x="420" y="40" width="600" height="225"/>
+   </svg></div>
+ <div class="ribbon"><div class="wrap"><div><b>4:30 AM</b>Coals lit</div><div><b>9:30 AM</b>First chop at the counter</div><div><b>2:00 PM</b>Last call, same-day trays</div><div><b>₱780</b>per kilo, chopped</div></div></div>
+</header>
+
+<section class="story"><div class="wrap">
+ <article><svg viewBox="0 0 54 54"><circle cx="27" cy="27" r="26" fill="#f0ddb6"/><path d="M27 12c-2 8-10 10-10 20a10 10 0 0 0 20 0c0-10-8-12-10-20z" fill="#3f6b33"/><path d="M27 20v26" stroke="#f6ead2" stroke-width="2"/></svg><h3>Lemongrass inside</h3><p>Every pig is stuffed with tanglad, garlic, native onion and bay leaf, so the meat is fragrant all the way through — no sauce needed.</p></article>
+ <article><svg viewBox="0 0 54 54"><circle cx="27" cy="27" r="26" fill="#f0ddb6"/><path d="M14 36h26" stroke="#5b1d0c" stroke-width="3" stroke-linecap="round"/><path d="M18 34c2-8 6-8 9-16 3 8 7 8 9 16" fill="#d8452b"/><path d="M23 34c1-4 2-5 4-9 2 4 3 5 4 9" fill="#ffd27a"/></svg><h3>Coconut-husk charcoal</h3><p>A slow, even heat from bao charcoal gives that glassy, crackling skin — basted by hand every twenty minutes.</p></article>
+ <article><svg viewBox="0 0 54 54"><circle cx="27" cy="27" r="26" fill="#f0ddb6"/><rect x="14" y="16" width="26" height="24" rx="4" fill="none" stroke="#5b1d0c" stroke-width="2.5"/><path d="M14 23h26M21 12v7M33 12v7" stroke="#5b1d0c" stroke-width="2.5" stroke-linecap="round"/><path d="M21 31l4 4 8-8" stroke="#d8452b" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg><h3>Roasted to your hour</h3><p>Tell us when your party starts. We time the roast so the skin is still crackling when it reaches your table.</p></article>
+</div></section>
+
+<section class="sig" id="signature"><div class="wrap">
+ <div class="sec-h"><div><div class="kick">Today at the counter</div><h2>Signature plates, <i>chopped to order</i></h2></div><p>Walk in, point, and we chop it right on the block. Every plate comes with liver sauce, spiced vinegar and puso rice on the side.</p></div>
+ <div class="sig-grid">
+  <article class="dish"><div class="pic"><svg viewBox="0 0 220 180"><defs><linearGradient id="d1" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#e79a3c"/><stop offset="1" stop-color="#7a2c0e"/></linearGradient></defs><ellipse cx="110" cy="120" rx="96" ry="42" fill="#fffaf0"/><ellipse cx="110" cy="116" rx="80" ry="32" fill="#f1e3c6"/><g><path d="M52 112 l28 -18 l20 12 l-28 18z" fill="url(#d1)"/><path d="M52 112 l28 -18 l2 6 l-28 18z" fill="#fff1d6"/><path d="M92 120 l30 -16 l22 12 l-30 16z" fill="url(#d1)"/><path d="M92 120 l30 -16 l2 6 l-30 16z" fill="#fff1d6"/><path d="M80 96 l26 -16 l22 10 l-26 16z" fill="url(#d1)"/><path d="M120 98 l26 -14 l20 12 l-26 14z" fill="url(#d1)"/><path d="M120 98 l26 -14 l2 6 l-26 14z" fill="#fff1d6"/></g><path d="M70 92 q20 -12 50 -10" stroke="#fff1c8" stroke-width="3" opacity=".6" fill="none" stroke-linecap="round"/><circle cx="172" cy="128" r="12" fill="#6b3a1e"/><circle cx="172" cy="128" r="8" fill="#8a4a24"/></svg></div><div class="tx"><h3>Lechon Chopped</h3><p>Skin-on, bone-in pieces from the whole roast. Our everyday plate.</p><div class="pr"><span>¼ kilo</span><b>₱195</b></div></div></article>
+  <article class="dish"><div class="pic"><svg viewBox="0 0 220 180"><defs><linearGradient id="d2" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#e3913a"/><stop offset="1" stop-color="#8a3510"/></linearGradient></defs><rect x="20" y="118" width="180" height="22" rx="6" fill="#7a5530"/><rect x="20" y="114" width="180" height="10" rx="5" fill="#a07848"/><g><circle cx="66" cy="96" r="30" fill="url(#d2)"/><circle cx="66" cy="96" r="22" fill="#f4d9b4"/><path d="M66 96 m-14 0 a14 14 0 1 0 28 0 a10 10 0 1 0 -20 0 a6 6 0 1 0 12 0" stroke="#d29a6a" stroke-width="3" fill="none"/><circle cx="66" cy="96" r="5" fill="#3f6b33"/></g><g><circle cx="134" cy="98" r="28" fill="url(#d2)"/><circle cx="134" cy="98" r="20" fill="#f4d9b4"/><path d="M134 98 m-12 0 a12 12 0 1 0 24 0 a8 8 0 1 0 -16 0" stroke="#d29a6a" stroke-width="3" fill="none"/><circle cx="134" cy="98" r="4" fill="#3f6b33"/></g><path d="M164 82 c20 4 30 20 26 36 c-10 -2 -22 -10 -26 -36z" fill="url(#d2)"/></svg></div><div class="tx"><h3>Lechon Belly Roll</h3><p>Boneless liempo rolled around tanglad and garlic, sliced into rounds.</p><div class="pr"><span>per 500 g</span><b>₱450</b></div></div></article>
+  <article class="dish"><div class="pic"><svg viewBox="0 0 220 180"><ellipse cx="110" cy="124" rx="92" ry="40" fill="#2a1a12"/><ellipse cx="110" cy="120" rx="80" ry="32" fill="#3d2418"/><g fill="#c55a1c"><path d="M60 118 q8 -14 22 -6 q-4 14 -22 6z"/><path d="M86 108 q10 -12 22 -2 q-6 12 -22 2z"/><path d="M112 118 q8 -14 24 -6 q-6 14 -24 6z"/><path d="M136 106 q10 -10 20 0 q-6 12 -20 0z"/><path d="M98 128 q10 -10 22 0 q-8 10 -22 0z"/></g><g fill="#fff0cf" opacity=".7"><circle cx="72" cy="112" r="2"/><circle cx="98" cy="104" r="2"/><circle cx="124" cy="112" r="2"/><circle cx="146" cy="102" r="2"/></g><g fill="#6c9a4a"><circle cx="80" cy="124" r="3"/><circle cx="132" cy="126" r="3"/><circle cx="150" cy="116" r="3"/></g><g fill="#d8452b"><circle cx="92" cy="120" r="2.6"/><circle cx="120" cy="104" r="2.6"/><circle cx="160" cy="124" r="2.6"/></g><path d="M40 96 q10 -10 22 -2" stroke="#f6ead2" stroke-width="5" opacity=".18" fill="none" stroke-linecap="round"/></svg></div><div class="tx"><h3>Lechon Paksiw</h3><p>Yesterday's crackling simmered in vinegar, sugar and liver sauce. Sizzled on cast iron.</p><div class="pr"><span>good for 2</span><b>₱280</b></div></div></article>
+  <article class="dish"><div class="pic"><svg viewBox="0 0 220 180"><g><path d="M40 70 l40 -10 l40 10 l-20 70 h-40z" fill="#8ba35a"/><path d="M40 70 l40 -10 l40 10" fill="none" stroke="#5c7a32" stroke-width="3"/><path d="M50 80 l60 60 M70 70 l40 40 M60 100 l30 30" stroke="#5c7a32" stroke-width="2" opacity=".6"/><path d="M60 140 h40 l-4 -14 h-32z" fill="#6b8a3e"/></g><g><path d="M120 76 l36 -8 l36 8 l-18 62 h-36z" fill="#9db466"/><path d="M128 84 l54 54 M144 76 l34 34" stroke="#6b8a3e" stroke-width="2" opacity=".6"/></g><g transform="translate(150 132)"><ellipse rx="38" ry="12" fill="#fffaf0"/><ellipse rx="30" ry="8" fill="#eadcbf"/></g><circle cx="138" cy="128" r="6" fill="#f6ead2"/><circle cx="154" cy="126" r="6" fill="#f6ead2"/><circle cx="166" cy="130" r="6" fill="#f6ead2"/></svg></div><div class="tx"><h3>Puso Rice</h3><p>Rice steamed in woven coconut-leaf pouches, the way it's served at the carenderia.</p><div class="pr"><span>3 pieces</span><b>₱45</b></div></div></article>
+ </div>
+</div></section>
+
+<section class="whole" id="whole"><div class="wrap">
+ <div class="sec-h"><div><div class="kick">Whole lechon · order 48 hrs ahead</div><h2>One pig, roasted <i>for your table</i></h2></div><p>Delivered whole on a banana-leaf board with chopping service on request. Sauces, vinegar and puso are included for every guest count.</p></div>
+ <div class="sizes">
+  <article class="size"><div class="pigbox"><svg viewBox="0 0 640 300" style="width:62%"><use href="#board" x="0" y="190" width="640" height="110"/><use href="#pig" x="0" y="20" width="640" height="240"/></svg></div><h3>De Leche</h3><div class="kg">10–12 kg · good for 20–25 guests</div><ul><li>Young pig, extra-thin crackling</li><li>Liver sauce &amp; spiced vinegar set</li><li>30 pcs puso rice</li></ul><div class="price"><b>₱7,500</b><span>whole</span></div></article>
+  <article class="size mid"><span class="tag">For big family gatherings</span><div class="pigbox"><svg viewBox="0 0 640 300" style="width:80%"><use href="#board" x="0" y="190" width="640" height="110"/><use href="#pig" x="0" y="20" width="640" height="240"/></svg></div><h3>Handaan</h3><div class="kg">18–20 kg · good for 40–50 guests</div><ul><li>Whole lechon, chopped on site on request</li><li>Large sauce &amp; vinegar set</li><li>60 pcs puso rice + pickled papaya</li></ul><div class="price"><b>₱11,800</b><span>whole</span></div></article>
+  <article class="size"><div class="pigbox"><svg viewBox="0 0 640 300" style="width:100%"><use href="#board" x="0" y="190" width="640" height="110"/><use href="#pig" x="0" y="20" width="640" height="240"/></svg></div><h3>Fiesta</h3><div class="kg">28–30 kg · good for 70–80 guests</div><ul><li>Largest roast, two pit masters</li><li>Event delivery &amp; chopping crew</li><li>100 pcs puso rice + paksiw tray</li></ul><div class="price"><b>₱16,500</b><span>whole</span></div></article>
+ </div>
+ <p class="note"><svg viewBox="0 0 24 24" fill="none" stroke="#eaa13a" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>Delivery within Metro Cebu is computed by distance. A 50% deposit confirms your roast slot.</p>
+</div></section>
+
+<section class="trays" id="trays"><div class="wrap">
+ <div class="tray-art"><svg viewBox="0 0 560 480" role="img" aria-label="Woven bilao tray with lechon, belly roll slices and puso rice on banana leaf">
+  <defs>
+   <radialGradient id="bil" cx="50%" cy="45%" r="60%"><stop offset="0" stop-color="#e8cf96"/><stop offset="1" stop-color="#b58e4e"/></radialGradient>
+   <pattern id="weave" width="16" height="16" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect width="16" height="16" fill="none"/><path d="M0 4h16M0 12h16" stroke="#9a7438" stroke-width="3" opacity=".35"/><path d="M4 0v8M12 8v8" stroke="#f3dfad" stroke-width="3" opacity=".35"/></pattern>
+   <linearGradient id="lf" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#6c9a4a"/><stop offset="1" stop-color="#2f5326"/></linearGradient>
+   <linearGradient id="pc" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#e79a3c"/><stop offset="1" stop-color="#7a2c0e"/></linearGradient>
+  </defs>
+  <ellipse cx="280" cy="270" rx="250" ry="200" fill="#000" opacity=".12"/>
+  <ellipse cx="280" cy="250" rx="250" ry="200" fill="url(#bil)"/>
+  <ellipse cx="280" cy="250" rx="250" ry="200" fill="url(#weave)"/>
+  <ellipse cx="280" cy="250" rx="238" ry="188" fill="none" stroke="#8a6630" stroke-width="5"/>
+  <ellipse cx="280" cy="250" rx="210" ry="164" fill="url(#lf)"/>
+  <path d="M90 250 C150 230 410 230 470 250" stroke="#a8cc7e" stroke-width="2" opacity=".5" fill="none"/>
+  <g stroke="#a8cc7e" stroke-width="1.5" opacity=".35"><path d="M130 180 l40 70 M190 140 l40 110 M270 120 l20 130 M350 130 l-10 120 M420 160 l-40 90"/></g>
+  <!-- chopped lechon pile -->
+  <g>
+   <path d="M150 250 l40 -26 l34 18 l-40 26z" fill="url(#pc)"/><path d="M150 250 l40 -26 l3 7 l-40 26z" fill="#fff1d6"/>
+   <path d="M196 270 l42 -22 l34 18 l-42 22z" fill="url(#pc)"/><path d="M196 270 l42 -22 l3 7 l-42 22z" fill="#fff1d6"/>
+   <path d="M176 220 l38 -22 l32 16 l-38 22z" fill="url(#pc)"/><path d="M176 220 l38 -22 l3 7 l-38 22z" fill="#fff1d6"/>
+   <path d="M226 236 l40 -20 l30 16 l-40 20z" fill="url(#pc)"/>
+   <path d="M140 286 l40 -18 l28 16 l-40 18z" fill="url(#pc)"/><path d="M140 286 l40 -18 l3 6 l-40 18z" fill="#fff1d6"/>
+   <path d="M168 214 q40 -18 80 -6" stroke="#fff1c8" stroke-width="4" opacity=".5" fill="none" stroke-linecap="round"/>
+  </g>
+  <!-- belly roll slices -->
+  <g>
+   <g transform="translate(350 200)"><circle r="34" fill="#a8481a"/><circle r="26" fill="#f4d9b4"/><path d="M-16 0a16 16 0 1 0 32 0a11 11 0 1 0-22 0a6 6 0 1 0 12 0" stroke="#d29a6a" stroke-width="3" fill="none"/><circle r="5" fill="#3f6b33"/></g>
+   <g transform="translate(408 238)"><circle r="32" fill="#a8481a"/><circle r="24" fill="#f4d9b4"/><path d="M-14 0a14 14 0 1 0 28 0a10 10 0 1 0-20 0a5 5 0 1 0 10 0" stroke="#d29a6a" stroke-width="3" fill="none"/><circle r="4.5" fill="#3f6b33"/></g>
+   <g transform="translate(356 270)"><circle r="30" fill="#a8481a"/><circle r="22" fill="#f4d9b4"/><path d="M-13 0a13 13 0 1 0 26 0a9 9 0 1 0-18 0a5 5 0 1 0 10 0" stroke="#d29a6a" stroke-width="3" fill="none"/><circle r="4" fill="#3f6b33"/></g>
+  </g>
+  <!-- puso rice -->
+  <g>
+   <g transform="translate(250 340) rotate(-18)"><path d="M-22 -18 l22 -6 l22 6 l-10 40 h-24z" fill="#9db466"/><path d="M-16 -10 l30 30 M-4 -20 l20 20" stroke="#6b8a3e" stroke-width="2"/></g>
+   <g transform="translate(300 352) rotate(8)"><path d="M-22 -18 l22 -6 l22 6 l-10 40 h-24z" fill="#8ba35a"/><path d="M-16 -10 l30 30 M-4 -20 l20 20" stroke="#5c7a32" stroke-width="2"/></g>
+   <g transform="translate(206 324) rotate(-34)"><path d="M-20 -16 l20 -6 l20 6 l-9 36 h-22z" fill="#a6bd70"/><path d="M-14 -8 l26 26" stroke="#6b8a3e" stroke-width="2"/></g>
+  </g>
+  <!-- sauce cups -->
+  <g transform="translate(400 330)"><ellipse rx="34" ry="14" fill="#fffaf0"/><ellipse rx="28" ry="10" fill="#6b3a1e"/><ellipse cx="-6" cy="-3" rx="8" ry="3" fill="#a0683e" opacity=".7"/></g>
+  <g transform="translate(150 350)"><ellipse rx="30" ry="12" fill="#fffaf0"/><ellipse rx="24" ry="8" fill="#e6d7a6"/><g fill="#d8452b"><circle cx="-6" cy="-1" r="2.4"/><circle cx="6" cy="1" r="2.4"/></g><circle cx="0" cy="-3" r="2" fill="#f6ead2"/></g>
+  <!-- pickled papaya -->
+  <g transform="translate(330 140)"><ellipse rx="40" ry="16" fill="#fffaf0"/><ellipse rx="33" ry="11" fill="#f3d27a"/><g stroke="#e8a63a" stroke-width="2"><path d="M-20 -2 l14 4 M-8 -6 l14 6 M4 -4 l14 4 M-14 4 l12 2"/></g><circle cx="10" cy="2" r="2.4" fill="#d8452b"/></g>
+ </svg></div>
+ <div>
+  <div class="kick">Bilao party trays</div>
+  <div class="sec-h" style="margin-bottom:10px"><h2>Trays for the <i>office, barkada</i> &amp; birthdays</h2></div>
+  <div class="tray-list">
+   <div class="tray-row"><h3>Barkada Bilao</h3><p>1 kg chopped lechon, 15 puso, sauces and pickled papaya.</p><b>₱1,250<small>8–10 pax</small></b></div>
+   <div class="tray-row"><h3>Belly Roll Bilao</h3><p>1.5 kg sliced belly roll on banana leaf, 20 puso, sauce set.</p><b>₱1,690<small>12–15 pax</small></b></div>
+   <div class="tray-row"><h3>Fiesta Combo Bilao</h3><p>Chopped lechon, belly roll, paksiw and 30 puso on one big tray.</p><b>₱2,950<small>20–25 pax</small></b></div>
+   <div class="tray-row"><h3>Add a Paksiw Tray</h3><p>Slow-braised in vinegar and liver sauce — travels well for long parties.</p><b>₱650<small>8–10 pax</small></b></div>
+  </div>
+ </div>
+</div></section>
+
+<section class="steps"><div class="wrap">
+ <div class="sec-h"><div><div class="kick">How ordering works</div><h2>Four steps to a <i>crackling</i> centrepiece</h2></div><p>Same-day trays are available until 2 PM. Whole lechon needs at least two days so we can source and marinate your pig.</p></div>
+ <div class="step-grid">
+  <div class="step"><div class="n">01</div><h3>Pick a size</h3><p>Choose a tray or a whole lechon based on your guest count.</p></div>
+  <div class="step"><div class="n">02</div><h3>Send your date</h3><p>Fill the form below with the party date and time you want to serve.</p></div>
+  <div class="step"><div class="n">03</div><h3>Confirm the slot</h3><p>We reply with the final price and reserve your roast with a 50% deposit.</p></div>
+  <div class="step"><div class="n">04</div><h3>Pick up or deliver</h3><p>Fresh off the spit, wrapped in banana leaf and ready to chop.</p></div>
+ </div>
+</div></section>
+
+<section class="pit" id="pit"><div class="wrap">
+ <div>
+  <div class="kick">The pit at the back</div>
+  <h2>We start the coals <i>before sunrise</i></h2>
+  <p>Our pit sits behind the shop, under a tin roof and a row of banderitas. The first pig goes on the spit at 4:30 in the morning, and the turning doesn't stop until the skin rings like glass when you tap it.</p>
+  <p>It's the slow way. It's also the only way we know.</p>
+  <div class="stuff"><span>Tanglad</span><span>Garlic</span><span>Native onion</span><span>Bay leaf</span><span>Rock salt</span><span>Black pepper</span></div>
+ </div>
+ <div class="pit-art"><svg viewBox="0 0 520 440" role="img" aria-label="Night pit with tin roof, banderitas and a lechon turning over charcoal">
+  <defs>
+   <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2d1b2a"/><stop offset=".6" stop-color="#4a2418"/><stop offset="1" stop-color="#8e3a18"/></linearGradient>
+   <radialGradient id="pg" cx="50%" cy="85%" r="55%"><stop offset="0" stop-color="#ffb04a" stop-opacity=".9"/><stop offset="1" stop-color="#ff7a2a" stop-opacity="0"/></radialGradient>
+   <linearGradient id="tin" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#6d6a64"/><stop offset=".5" stop-color="#9a958c"/><stop offset="1" stop-color="#5a5650"/></linearGradient>
+   <linearGradient id="sk2" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#eda04a"/><stop offset="1" stop-color="#6e2810"/></linearGradient>
+  </defs>
+  <rect width="520" height="440" rx="28" fill="url(#sky)"/>
+  <g fill="#f6ead2" opacity=".6"><circle cx="60" cy="40" r="1.6"/><circle cx="140" cy="70" r="1.2"/><circle cx="420" cy="36" r="1.6"/><circle cx="470" cy="90" r="1.2"/><circle cx="300" cy="28" r="1.2"/></g>
+  <circle cx="430" cy="62" r="22" fill="#f6ead2" opacity=".85"/><circle cx="440" cy="56" r="20" fill="#2d1b2a"/>
+  <path d="M30 130 L260 96 L490 130 L490 146 L30 146Z" fill="url(#tin)"/>
+  <g stroke="#4a4640" stroke-width="2" opacity=".6"><path d="M60 126v20M100 120v26M140 114v32M180 108v38M220 102v44M260 98v48M300 102v44M340 108v38M380 114v32M420 120v26M460 126v20"/></g>
+  <rect x="52" y="146" width="10" height="250" fill="#2a1a12"/><rect x="458" y="146" width="10" height="250" fill="#2a1a12"/>
+  <path d="M62 170 Q260 214 458 170" stroke="#a89348" stroke-width="1.5" fill="none"/>
+  <g id="bnd"></g>
+  <rect x="0" y="380" width="520" height="60" fill="#1a0c08"/>
+  <ellipse cx="260" cy="380" rx="220" ry="60" fill="url(#pg)"/>
+  <path d="M100 382 Q260 350 420 382 L420 396 Q260 410 100 396Z" fill="#2a0e06"/>
+  <g><ellipse cx="140" cy="380" rx="20" ry="8" fill="#ff8a3a"/><ellipse cx="190" cy="374" rx="24" ry="9" fill="#ffb04a"/><ellipse cx="240" cy="372" rx="22" ry="8" fill="#ff7a2a"/><ellipse cx="290" cy="372" rx="24" ry="9" fill="#ffc46a"/><ellipse cx="340" cy="375" rx="22" ry="8" fill="#ff8a3a"/><ellipse cx="386" cy="380" rx="20" ry="8" fill="#ff7a2a"/></g>
+  <path d="M94 270 L84 384 M94 270 L108 384 M426 270 L414 384 M426 270 L440 384" stroke="#3a2418" stroke-width="7" stroke-linecap="round"/>
+  <rect x="70" y="264" width="380" height="10" rx="5" fill="#a89348"/>
+  <use href="#pig" x="112" y="190" width="300" height="113"/>
+  <!-- pit master silhouette (generic) -->
+  <g fill="#140805"><circle cx="436" cy="300" r="13"/><path d="M420 316 h32 l8 66 h-48z"/><path d="M452 324 l-36 -40" stroke="#140805" stroke-width="7" stroke-linecap="round"/></g>
+  <g fill="none" stroke="#f6ead2" stroke-opacity=".1" stroke-width="12" stroke-linecap="round"><path d="M220 210 C200 180 240 166 220 140"/><path d="M300 210 C320 180 280 164 304 136"/></g>
+ </svg></div>
+</div></section>
+
+<section class="order" id="order"><div class="wrap">
+ <div class="side">
+  <div class="kick">Reserve your roast</div>
+  <h2>Tell us the date. <i>We'll light the coals.</i></h2>
+  <p>Send this form and we'll reply with the final quote and deposit details. Nothing is charged until you confirm.</p>
+  <ul class="info-list">
+   <li><svg viewBox="0 0 24 24" fill="none" stroke="#c8661b" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><div><b>Open daily, 9:30 AM – 8 PM</b><span>Counter closes when the last pig is chopped.</span></div></li>
+   <li><svg viewBox="0 0 24 24" fill="none" stroke="#c8661b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h16v11H8l-4 4z"/></svg><div><b>Messenger: @example</b><span>Fastest for tray orders and photos of the roast.</span></div></li>
+   <li><svg viewBox="0 0 24 24" fill="none" stroke="#c8661b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg><div><b>0900-000-0000</b><span>Call for same-day pick-up before 2 PM.</span></div></li>
+  </ul>
+ </div>
+ <form id="f" onsubmit="return sendForm(event)">
+  <div id="fbody">
+   <label style="margin-bottom:8px">What are you ordering?</label>
+   <div class="chooser">
+    <label><input type="radio" name="sz" value="7500" checked><span>De Leche<small>₱7,500</small></span></label>
+    <label><input type="radio" name="sz" value="11800"><span>Handaan<small>₱11,800</small></span></label>
+    <label><input type="radio" name="sz" value="16500"><span>Fiesta<small>₱16,500</small></span></label>
+   </div>
+   <div class="row"><label>Your name<input required placeholder="Juan Dela Cruz"></label><label>Mobile number<input required placeholder="09XX XXX XXXX"></label></div>
+   <div class="row"><label>Party date<input type="date" required></label><label>Serving time<select><option>11:00 AM</option><option>12:00 NN</option><option>3:00 PM</option><option>6:00 PM</option></select></label></div>
+   <div class="row"><label>Pick-up or delivery<select><option>Pick-up at the shop</option><option>Delivery (Metro Cebu)</option></select></label><label>Chopping service<select><option>Whole, uncut</option><option>Chopped on site</option></select></label></div>
+   <label>Notes<textarea placeholder="Venue, guest count, extra puso…"></textarea></label>
+   <div class="sum"><span>Estimated total</span><b id="tot">₱7,500</b></div>
+   <button class="btn btn-fire" type="submit">Send Reservation Request</button>
+  </div>
+  <div class="done" id="done"><svg viewBox="0 0 70 70"><circle cx="35" cy="35" r="33" fill="#5b1d0c"/><path d="M22 36l9 9 17-18" stroke="#eaa13a" stroke-width="5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg><h3>Salamat! Request received.</h3><p>We'll message you with your final quote and roast slot.</p></div>
+ </form>
+</div></section>
+
+<section class="visit" id="visit">
+ <div class="wrap">
+  <div><h3>Visit the shop</h3><div class="big serif">Find the smoke,<br>you'll find us.</div><p>Sample Street, Barangay Example, Cebu City<br>Parking for 6 cars · Look for the red-and-yellow banderitas</p></div>
+  <div><h3>Hours</h3><ul><li><span>Mon – Fri</span><span>9:30 AM – 8 PM</span></li><li><span>Sat – Sun</span><span>9:00 AM – 9 PM</span></li><li><span>Whole lechon pick-up</span><span>From 7 AM</span></li></ul></div>
+  <div class="map"><svg viewBox="0 0 300 200" role="img" aria-label="Simplified area map"><rect width="300" height="200" fill="#2a1a12"/><g stroke="#4a3426" stroke-width="10"><path d="M0 70 H300"/><path d="M0 150 H300"/><path d="M90 0 V200"/><path d="M220 0 V200"/></g><g stroke="#6a4a36" stroke-width="3" stroke-dasharray="6 6"><path d="M0 70 H300"/></g><path d="M0 110 Q150 96 300 120" stroke="#3a5a6a" stroke-width="14" fill="none" opacity=".6"/><g transform="translate(158 66)"><path d="M0 -34 c-14 0 -22 10 -22 22 c0 16 22 34 22 34 s22 -18 22 -34 c0 -12 -8 -22 -22 -22z" fill="#d8452b"/><circle cy="-12" r="8" fill="#f6ead2"/></g></svg></div>
+ </div>
+ <footer><div class="wrap"><span>© 2026 Baga Lechon House</span><span>Messenger @example · 0900-000-0000</span></div></footer>
+</section>
+<div class="mbar"><a class="btn btn-line" href="#signature">Menu</a><a class="btn btn-fire" href="#order">Reserve a Lechon</a></div>
+<script>
+(function(){
+ var cols=['#d8452b','#eaa13a','#3f6b33','#f6ead2','#3a6ea5'];
+ function flags(id,x0,x1,y0,sag,n,w,h){var g=document.getElementById(id);if(!g)return;var s='';for(var i=0;i<n;i++){var t=(i+.5)/n,x=x0+(x1-x0)*t,y=y0+4*sag*t*(1-t);s+='<path d="M'+(x-w/2)+' '+y+' L'+(x+w/2)+' '+y+' L'+x+' '+(y+h)+'Z" fill="'+cols[i%cols.length]+'"/>';}g.innerHTML=s;}
+ flags('fl',0,1440,2,8,60,16,18);
+ flags('bnd',62,458,170,44,13,22,26);
+ var cg=document.getElementById('coals'),h='';for(var i=0;i<14;i++){var x=360+i*52+(i%2)*10,y=352-(i%3)*6;h+='<ellipse cx="'+x+'" cy="'+y+'" rx="'+(22+(i%4)*4)+'" ry="'+(10+(i%3)*2)+'" fill="url(#coal)"/>';}for(i=0;i<10;i++){h+='<ellipse cx="'+(390+i*68)+'" cy="370" rx="22" ry="9" fill="url(#coal)" opacity=".8"/>';}cg.innerHTML=h;
+ var f=document.getElementById('f');
+ f.addEventListener('change',function(){var v=f.querySelector('input[name=sz]:checked').value;document.getElementById('tot').textContent='₱'+Number(v).toLocaleString('en-US');});
+})();
+function sendForm(e){e.preventDefault();document.getElementById('fbody').style.display='none';document.getElementById('done').style.display='block';return false;}
+</script>
+</body>
+</html>

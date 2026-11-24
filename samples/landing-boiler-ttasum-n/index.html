@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>따숨보일러 · 12월 겨울 점검 출장비 0원</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--enamel:#f3f0e8;--paper:#fbfaf6;--slate:#1d2430;--slate2:#2b3442;--flame:#2d5bd6;--flame2:#6f9bff;--copper:#c46d36;--red:#e2462f;--mute:#5d6676;--line:rgba(29,36,48,.12)}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Noto Sans KR',sans-serif;background:var(--enamel);color:var(--slate);word-break:keep-all;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+.ot{font-family:'Outfit',sans-serif}
+.wrap{max-width:1180px;margin:0 auto;padding:0 28px}
+a{color:inherit}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;height:54px;padding:0 26px;border-radius:12px;font-weight:700;font-size:16px;text-decoration:none;border:0;cursor:pointer;font-family:inherit;transition:.2s;white-space:nowrap}
+.btn-flame{background:var(--flame);color:#fff;box-shadow:0 12px 26px -10px rgba(45,91,214,.7)}
+.btn-flame:hover{background:#2149b8;transform:translateY(-2px)}
+.btn-ghost{background:transparent;border:1.5px solid rgba(29,36,48,.3);color:var(--slate)}
+.btn-ghost:hover{border-color:var(--slate)}
+.btn svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+/* top notice */
+.notice{background:var(--slate);color:#e7ebf2;font-size:14px;text-align:center;padding:9px 16px}
+.notice b{color:#ffcf8a}
+header.nav{background:var(--enamel);border-bottom:1px solid var(--line)}
+header.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:70px}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none;font-weight:900;font-size:21px;letter-spacing:-.01em}
+.logo svg{width:36px;height:36px}
+.logo small{display:block;font-family:'Outfit';font-weight:600;font-size:11px;letter-spacing:.24em;color:var(--copper)}
+.nav .call{display:flex;align-items:center;gap:10px;font-family:'Outfit';font-weight:700;font-size:20px;text-decoration:none}
+.nav .call span{font-family:'Noto Sans KR';font-size:13px;font-weight:500;color:var(--mute)}
+/* hero */
+.hero{position:relative;overflow:hidden;background:radial-gradient(700px 500px at 82% 40%,rgba(111,155,255,.22),transparent 60%),var(--enamel)}
+.hero .wrap{display:grid;grid-template-columns:.92fr 1.08fr;align-items:center;gap:48px;padding-top:56px;padding-bottom:70px}
+.hero .art{order:-1}
+.zero{display:flex;align-items:center;gap:20px;margin:22px 0 6px}
+.zero .big{font-family:'Outfit';font-weight:800;font-size:150px;line-height:.8;color:var(--flame);letter-spacing:-.04em}
+.zero .big small{font-family:'Noto Sans KR';font-size:44px;font-weight:900;letter-spacing:0;margin-left:4px;color:var(--slate)}
+.zero .lbl{font-size:16px;line-height:1.5;color:var(--mute);border-left:3px solid var(--copper);padding-left:14px}
+.zero .lbl b{display:block;font-size:20px;color:var(--slate)}
+.zero .lbl s{color:#9aa2b0}
+.badge{display:inline-flex;align-items:center;gap:8px;background:#fff;border:1.5px solid var(--line);border-radius:999px;padding:7px 14px 7px 8px;font-size:14px;font-weight:700}
+.badge i{display:inline-flex;align-items:center;justify-content:center;width:24px;height:24px;border-radius:50%;background:var(--red);color:#fff;font-style:normal;font-size:12px;font-family:'Outfit'}
+.hero h1{font-size:clamp(34px,3.8vw,50px);font-weight:900;line-height:1.2;letter-spacing:-.025em;margin:18px 0 16px}
+.hero h1 em{font-style:normal;color:var(--flame);position:relative}
+.hero h1 em:after{content:"";position:absolute;left:0;right:0;bottom:4px;height:12px;background:rgba(111,155,255,.25);z-index:-1}
+.hero p.lead{font-size:18px;line-height:1.7;color:var(--mute);max-width:500px}
+.offer{display:flex;gap:14px;margin-top:28px;flex-wrap:wrap}
+.offer div{background:#fff;border-radius:16px;padding:16px 20px;border:1.5px solid var(--line);min-width:180px}
+.offer small{display:block;font-size:13px;color:var(--mute);font-weight:500}
+.offer b{display:flex;align-items:baseline;gap:6px;margin-top:4px;font-size:15px}
+.offer b s{font-family:'Outfit';font-weight:600;color:#9aa2b0;font-size:16px}
+.offer b strong{font-family:'Outfit';font-weight:800;font-size:32px;color:var(--flame);line-height:1}
+.offer div.c strong{color:var(--copper)}
+.hero .ctas{display:flex;gap:12px;margin-top:28px;flex-wrap:wrap}
+.hero .until{margin-top:16px;font-size:14px;color:var(--mute);display:flex;align-items:center;gap:8px}
+.hero .until svg{width:16px;height:16px}
+.art svg{width:100%;height:auto;display:block}
+/* symptoms */
+section{padding:96px 0}
+.sh{text-align:center;margin-bottom:48px}
+.sh .k{font-family:'Outfit';font-weight:700;font-size:14px;letter-spacing:.24em;color:var(--copper)}
+.sh h2{font-size:clamp(30px,3.4vw,44px);font-weight:900;letter-spacing:-.02em;line-height:1.3;margin-top:10px}
+.sh h2 em{font-style:normal;color:var(--flame)}
+.sh p{font-size:17px;color:var(--mute);margin-top:12px;line-height:1.7}
+.sym{background:var(--paper)}
+.sym-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.sym-card{background:#fff;border:1.5px solid var(--line);border-radius:20px;padding:26px 24px;display:flex;gap:16px;align-items:flex-start}
+.sym-card .ic{flex:none;width:52px;height:52px;border-radius:14px;background:var(--enamel);display:flex;align-items:center;justify-content:center}
+.sym-card .ic svg{width:28px;height:28px;fill:none;stroke:var(--slate);stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.sym-card h3{font-size:18px;font-weight:700;margin-bottom:6px}
+.sym-card p{font-size:15px;line-height:1.6;color:var(--mute)}
+/* checklist */
+.check{background:var(--slate);color:#eef1f6;position:relative;overflow:hidden}
+.check:before{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.04) 1px,transparent 1px);background-size:32px 32px}
+.check .wrap{position:relative;display:grid;grid-template-columns:.9fr 1.1fr;gap:60px;align-items:center}
+.check .sh{text-align:left;margin-bottom:0}
+.check .sh p{color:#b5bdcb}
+.check .sh h2 em{color:var(--flame2)}
+.gauge{margin-top:30px;display:flex;gap:20px;align-items:center}
+.gauge svg{width:150px;height:150px;flex:none}
+.gauge p{font-size:15px;line-height:1.7;color:#b5bdcb}
+.gauge b{color:#fff}
+.groups{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.grp{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.12);border-radius:18px;padding:20px 22px}
+.grp.wide{grid-column:span 2}
+.grp.wide ul{grid-template-columns:1fr 1fr}
+.grp h3{display:flex;align-items:center;gap:10px;font-size:19px;font-weight:900;margin-bottom:10px}
+.grp h3 span{font-family:'Outfit';font-size:14px;font-weight:700;color:#1d2430;background:var(--flame2);border-radius:6px;padding:2px 7px}
+.grp ul{list-style:none;display:grid;gap:2px 16px}
+.grp li{font-size:15px;color:#dfe4ec;padding:6px 0 6px 18px;position:relative}
+.grp li:before{content:"";position:absolute;left:2px;top:14px;width:7px;height:7px;border-radius:50%;background:#ffcf8a}
+.items{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.items li{list-style:none;display:flex;align-items:center;gap:12px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:12px;padding:14px 16px;font-size:15px}
+.items li .n{font-family:'Outfit';font-weight:700;font-size:14px;color:var(--flame2);width:24px;flex:none}
+/* price */
+.price{background:var(--enamel)}
+.ptable{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.pcard{background:#fff;border-radius:22px;border:1.5px solid var(--line);padding:30px 28px;display:flex;flex-direction:column}
+.pcard.hot{border:2px solid var(--flame);box-shadow:0 26px 50px -30px rgba(45,91,214,.6);position:relative}
+.pcard.hot .flag{position:absolute;top:-14px;left:28px;background:var(--flame);color:#fff;font-size:13px;font-weight:700;padding:5px 12px;border-radius:999px}
+.pcard h3{font-size:21px;font-weight:900}
+.pcard .d{font-size:14px;color:var(--mute);margin-top:6px;line-height:1.55}
+.pcard .amt{display:flex;align-items:baseline;gap:6px;margin:22px 0 4px}
+.pcard .amt strong{font-family:'Outfit';font-weight:800;font-size:42px;line-height:1}
+.pcard .amt span{font-size:15px;font-weight:700}
+.pcard .amt s{font-family:'Outfit';color:#9aa2b0;font-size:17px;margin-left:4px}
+.pcard ul{list-style:none;margin:18px 0 0;border-top:1px dashed var(--line);padding-top:14px;flex:1}
+.pcard li{font-size:15px;padding:6px 0 6px 26px;position:relative;line-height:1.5}
+.pcard li:before{content:"";position:absolute;left:2px;top:11px;width:13px;height:8px;border-left:2.4px solid var(--flame);border-bottom:2.4px solid var(--flame);transform:rotate(-45deg)}
+.pnote{text-align:center;font-size:14px;color:var(--mute);margin-top:22px}
+/* steps */
+.steps{background:var(--paper)}
+.flow{display:grid;grid-template-columns:repeat(4,1fr);gap:0;position:relative}
+.flow:before{content:"";position:absolute;left:12%;right:12%;top:36px;height:2px;background:repeating-linear-gradient(90deg,var(--copper) 0 8px,transparent 8px 14px)}
+.st{text-align:center;padding:0 16px;position:relative}
+.st .dot{width:72px;height:72px;margin:0 auto 18px;border-radius:50%;background:#fff;border:2px solid var(--copper);display:flex;align-items:center;justify-content:center;font-family:'Outfit';font-weight:800;font-size:24px;color:var(--copper)}
+.st h3{font-size:18px;font-weight:700}
+.st p{font-size:15px;color:var(--mute);line-height:1.6;margin-top:6px}
+/* area + faq */
+.faq{background:var(--enamel)}
+.faq .wrap{display:grid;grid-template-columns:.85fr 1.15fr;gap:56px}
+.area{background:#fff;border-radius:22px;border:1.5px solid var(--line);padding:28px}
+.area h3{font-size:20px;font-weight:900;margin-bottom:6px}
+.area p{font-size:15px;color:var(--mute);line-height:1.6}
+.area svg{width:100%;height:auto;margin:18px 0 14px;display:block}
+.tags{display:flex;flex-wrap:wrap;gap:6px}
+.tags span{font-size:14px;padding:6px 12px;border-radius:999px;background:var(--enamel);font-weight:500}
+details{border-bottom:1px solid var(--line);padding:20px 0}
+details:first-of-type{border-top:2px solid var(--slate)}
+summary{list-style:none;cursor:pointer;font-size:18px;font-weight:700;display:flex;justify-content:space-between;gap:16px;align-items:center}
+summary::-webkit-details-marker{display:none}
+summary:after{content:"+";font-family:'Outfit';font-size:26px;color:var(--flame);font-weight:500;flex:none}
+details[open] summary:after{content:"–"}
+details p{font-size:16px;color:var(--mute);line-height:1.75;margin-top:12px}
+/* form */
+.apply{background:linear-gradient(160deg,#1d2430,#26334a);color:#eef1f6}
+.apply .wrap{display:grid;grid-template-columns:.9fr 1.1fr;gap:56px;align-items:center}
+.apply h2{font-size:clamp(32px,3.6vw,46px);font-weight:900;line-height:1.25;letter-spacing:-.02em}
+.apply h2 em{font-style:normal;color:#ffcf8a}
+.apply .side p{font-size:17px;line-height:1.7;color:#b5bdcb;margin-top:16px}
+.apply .side ul{list-style:none;margin-top:24px;display:grid;gap:10px}
+.apply .side li{display:flex;gap:10px;align-items:center;font-size:15px;color:#dfe4ec}
+.apply .side li svg{width:20px;height:20px;flex:none;fill:none;stroke:#ffcf8a;stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round}
+form{background:var(--paper);color:var(--slate);border-radius:24px;padding:32px;box-shadow:0 40px 70px -40px rgba(0,0,0,.7)}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+label{display:block;font-size:14px;font-weight:700;margin-bottom:16px}
+input,select,textarea{display:block;width:100%;margin-top:7px;height:50px;border-radius:12px;border:1.5px solid #d6d9e0;background:#fff;padding:0 14px;font:inherit;font-size:16px;font-weight:400;color:var(--slate)}
+textarea{height:84px;padding:12px 14px;resize:vertical}
+input:focus,select:focus,textarea:focus{outline:none;border-color:var(--flame);box-shadow:0 0 0 3px rgba(45,91,214,.15)}
+.seg{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:4px 0 18px}
+.seg label{margin:0;position:relative}
+.seg input{position:absolute;opacity:0;width:1px;height:1px;margin:0;left:0;top:0}
+.seg span{display:block;text-align:center;padding:12px 4px;border-radius:12px;border:1.5px solid #d6d9e0;background:#fff;font-size:15px;font-weight:700;cursor:pointer}
+.seg input:checked+span{background:var(--slate);border-color:var(--slate);color:#fff}
+.agree{display:flex;gap:8px;align-items:center;font-size:14px;font-weight:500;color:var(--mute)}
+.agree input{width:18px;height:18px;margin:0;flex:none}
+form .btn{width:100%;margin-top:6px}
+.ok{display:none;text-align:center;padding:36px 8px}
+.ok svg{width:68px;height:68px;margin:0 auto 14px;display:block}
+.ok h3{font-size:24px;font-weight:900}
+.ok p{font-size:16px;color:var(--mute);margin-top:8px;line-height:1.7}
+footer{background:#151b25;color:#9aa3b2;font-size:14px;padding:30px 0}
+footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.mcta{display:none}
+@media(max-width:980px){
+ .hero .wrap,.check .wrap,.faq .wrap,.apply .wrap{grid-template-columns:1fr}
+ .art{max-width:520px;margin:0 auto;width:100%}
+ .sym-grid,.ptable{grid-template-columns:1fr 1fr}
+}
+@media(max-width:680px){
+ .wrap{padding:0 18px}
+ .nav .call span{display:none}
+ .nav .call{font-size:16px}
+ .hero .wrap{padding-top:36px;padding-bottom:56px;gap:28px}
+ .hero h1{font-size:32px}
+ .zero .big{font-size:110px}
+ .zero .big small{font-size:34px}
+ .hero .art{order:0}
+ .hero p.lead{font-size:16px}
+ .offer div{flex:1;min-width:0}
+ .offer b strong{font-size:28px}
+ .hero .ctas .btn{flex:1}
+ section{padding:70px 0}
+ .sym-grid,.ptable{grid-template-columns:1fr}
+ .groups{grid-template-columns:1fr}
+ .grp.wide{grid-column:auto}
+ .grp.wide ul{grid-template-columns:1fr}
+ .gauge{flex-direction:column;align-items:flex-start}
+ .flow{grid-template-columns:1fr;gap:26px}
+ .flow:before{left:35px;right:auto;top:20px;bottom:20px;width:2px;height:auto;background:repeating-linear-gradient(180deg,var(--copper) 0 8px,transparent 8px 14px)}
+ .st{display:grid;grid-template-columns:72px 1fr;gap:4px 16px;text-align:left;padding:0}
+ .st .dot{grid-row:span 2;margin:0}
+ .st h3{align-self:end}
+ .row{grid-template-columns:1fr;gap:0}
+ form{padding:24px 18px}
+ summary{font-size:16px}
+ .mcta{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:40;padding:10px 14px;background:rgba(29,36,48,.97);gap:10px}
+ .mcta .btn{flex:1;height:48px;font-size:15px}
+ .mcta .btn-ghost{color:#fff;border-color:rgba(255,255,255,.35)}
+ footer{padding-bottom:90px}
+}
+</style>
+</head>
+<body>
+<div class="notice">12월 31일 신청분까지 <b>겨울 점검 출장비 0원</b> · 동파 예방 보온 점검 포함</div>
+<header class="nav"><div class="wrap">
+ <a class="logo" href="#top"><svg viewBox="0 0 40 40"><rect width="40" height="40" rx="11" fill="#1d2430"/><path d="M20 8c-4 6-8 9-8 15a8 8 0 0 0 16 0c0-6-4-9-8-15z" fill="#2d5bd6"/><path d="M20 17c-2 3-4 5-4 8a4 4 0 0 0 8 0c0-3-2-5-4-8z" fill="#9fc0ff"/><path d="M11 33h18" stroke="#c46d36" stroke-width="2.4" stroke-linecap="round"/></svg><span>따숨보일러<small>HEATING CARE</small></span></a>
+ <a class="call" href="#apply"><span>상담 09:00–19:00</span>000-0000-0000</a>
+</div></header>
+
+<section class="hero" id="top" style="padding:0"><div class="wrap">
+ <div>
+  <span class="badge"><i>12</i>12월 겨울맞이 보일러 점검</span>
+  <div class="zero"><div class="big">0<small>원</small></div><div class="lbl"><b>점검 출장비</b><s>평소 20,000원</s><br>12월 31일 신청분까지</div></div>
+  <h1>한겨울 밤에도<br>온수가 <em>끊기지 않게</em></h1>
+  <p class="lead">동파로 배관이 터지기 전에, 가스비가 새기 전에. 안전 · 동파 · 가스비 세 갈래로 보일러를 살피고, 수리·교체는 견적을 보고 결정하세요.</p>
+  <div class="offer">
+   <div class="c"><small>교체 시 난방 배관 세척</small><b><s>80,000원</s><strong>0</strong>원</b></div>
+  </div>
+  <div class="ctas"><a class="btn btn-flame" href="#apply">무료 점검 신청하기 <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a><a class="btn btn-ghost" href="#check">점검 항목 보기</a></div>
+  <p class="until"><svg viewBox="0 0 24 24" fill="none" stroke="#5d6676" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>신청 후 영업일 2일 이내 방문 · 점검 소요 약 40분</p>
+ </div>
+ <div class="art"><svg viewBox="0 0 520 520" role="img" aria-label="벽에 걸린 보일러와 온도조절기, 파란 불꽃 일러스트">
+  <defs>
+   <linearGradient id="body" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#e8e5dc"/><stop offset=".45" stop-color="#ffffff"/><stop offset="1" stop-color="#d7d3c8"/></linearGradient>
+   <linearGradient id="cu" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#8a4520"/><stop offset=".5" stop-color="#e09a62"/><stop offset="1" stop-color="#8a4520"/></linearGradient>
+   <radialGradient id="fl" cx="50%" cy="80%" r="70%"><stop offset="0" stop-color="#d6e4ff"/><stop offset=".4" stop-color="#6f9bff"/><stop offset="1" stop-color="#2d5bd6"/></radialGradient>
+   <radialGradient id="halo" cx="50%" cy="50%" r="50%"><stop offset="0" stop-color="#6f9bff" stop-opacity=".35"/><stop offset="1" stop-color="#6f9bff" stop-opacity="0"/></radialGradient>
+   <linearGradient id="wall" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#e7e2d6"/><stop offset="1" stop-color="#d9d3c4"/></linearGradient>
+   <filter id="sh" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="18" stdDeviation="16" flood-color="#1d2430" flood-opacity=".22"/></filter>
+  </defs>
+  <rect x="20" y="20" width="480" height="480" rx="36" fill="url(#wall)"/>
+  <g stroke="#cfc8b8" stroke-width="2"><path d="M20 140h480M20 260h480M20 380h480"/><path d="M180 20v120M340 140v120M120 260v120M400 260v120M260 380v120"/></g>
+  <circle cx="230" cy="230" r="200" fill="url(#halo)"/>
+  <!-- pipes -->
+  <g stroke-linecap="round" fill="none">
+   <path d="M170 380 V450 H60" stroke="url(#cu)" stroke-width="14"/>
+   <path d="M210 380 V470" stroke="url(#cu)" stroke-width="14"/>
+   <path d="M250 380 V470" stroke="#9aa2b0" stroke-width="14"/>
+   <path d="M290 380 V440 H380" stroke="url(#cu)" stroke-width="14"/>
+  </g>
+  <g fill="#e2462f"><rect x="193" y="410" width="34" height="14" rx="4"/></g><g fill="#2d5bd6"><rect x="273" y="406" width="34" height="14" rx="4"/></g>
+  <!-- flue -->
+  <rect x="210" y="40" width="40" height="70" fill="#c7c2b6"/><rect x="204" y="64" width="52" height="10" fill="#b5afa2"/>
+  <!-- boiler body -->
+  <g filter="url(#sh)"><rect x="120" y="100" width="220" height="290" rx="22" fill="url(#body)"/></g>
+  <rect x="120" y="100" width="220" height="290" rx="22" fill="none" stroke="#cbc6ba" stroke-width="2"/>
+  <rect x="140" y="124" width="180" height="150" rx="14" fill="#1d2430"/>
+  <!-- flame window -->
+  <rect x="162" y="146" width="136" height="88" rx="10" fill="#0f1520"/>
+  <g transform="translate(230 228)">
+   <path d="M-46 0 C-46 -20 -36 -26 -32 -44 C-26 -30 -20 -28 -20 -14 C-18 -30 -8 -40 -6 -60 C4 -42 14 -34 14 -14 C18 -26 26 -30 30 -44 C36 -28 46 -20 46 0Z" fill="url(#fl)"/>
+   <path d="M-30 0 C-30 -12 -22 -16 -20 -26 C-14 -16 -10 -14 -8 -4 C-6 -16 0 -24 2 -36 C8 -24 12 -16 12 -4 C16 -14 20 -18 22 -26 C26 -16 30 -10 30 0Z" fill="#e7f0ff" opacity=".85"/>
+  </g>
+  <rect x="162" y="244" width="136" height="16" rx="8" fill="#2b3442"/>
+  <rect x="164" y="246" width="96" height="12" rx="6" fill="#6f9bff"/>
+  <!-- controls -->
+  <circle cx="176" cy="318" r="22" fill="#fff" stroke="#cbc6ba" stroke-width="2"/><path d="M176 318 l10 -12" stroke="#1d2430" stroke-width="4" stroke-linecap="round"/>
+  <circle cx="230" cy="318" r="22" fill="#fff" stroke="#cbc6ba" stroke-width="2"/><path d="M230 318 l-12 -8" stroke="#1d2430" stroke-width="4" stroke-linecap="round"/>
+  <rect x="268" y="302" width="52" height="32" rx="8" fill="#1d2430"/><text x="294" y="325" text-anchor="middle" font-family="Outfit" font-weight="700" font-size="19" fill="#9fc0ff">1.4</text>
+  <circle cx="146" cy="364" r="5" fill="#3fbf6f"/>
+  <!-- thermostat card -->
+  <g filter="url(#sh)"><rect x="350" y="250" width="130" height="170" rx="20" fill="#1d2430"/></g>
+  <circle cx="415" cy="322" r="44" fill="#2b3442"/>
+  <circle cx="415" cy="322" r="44" fill="none" stroke="#e2462f" stroke-width="6" stroke-dasharray="190 400" transform="rotate(130 415 322)" stroke-linecap="round"/>
+  <text x="415" y="332" text-anchor="middle" font-family="Outfit" font-weight="800" font-size="30" fill="#fff">23°</text>
+  <text x="415" y="398" text-anchor="middle" font-family="Noto Sans KR" font-weight="700" font-size="20" fill="#b5bdcb">실내 온도</text>
+  <!-- tag -->
+  <g transform="translate(318 120) rotate(10)"><rect x="0" y="0" width="170" height="72" rx="14" fill="#c46d36"/><circle cx="20" cy="36" r="7" fill="#f3f0e8"/><text x="38" y="32" font-family="Noto Sans KR" font-weight="900" font-size="19" fill="#fff">점검 완료</text><text x="38" y="56" font-family="Outfit" font-weight="700" font-size="20" fill="#ffe2c8">ALL CHECK</text></g>
+  <!-- warm waves -->
+  <g fill="none" stroke="#e2462f" stroke-width="4" stroke-linecap="round" opacity=".55"><path d="M60 200 q10 -14 0 -28 q-10 -14 0 -28"/><path d="M84 214 q10 -14 0 -28 q-10 -14 0 -28"/></g>
+ </svg></div>
+</div></section>
+
+<section class="sym"><div class="wrap">
+ <div class="sh"><div class="k">CHECK YOUR BOILER</div><h2>이런 증상이 있다면 <em>겨울 전에</em> 꼭 점검하세요</h2><p>작은 신호를 놓치면 한겨울 한밤중에 온수가 끊길 수 있습니다.</p></div>
+ <div class="sym-grid">
+  <div class="sym-card"><div class="ic"><svg viewBox="0 0 24 24"><path d="M12 3v10"/><circle cx="12" cy="17" r="4"/><path d="M9 6h6"/></svg></div><div><h3>방이 데워지는 데 오래 걸려요</h3><p>배관 속 슬러지가 쌓이면 순환이 느려집니다.</p></div></div>
+  <div class="sym-card"><div class="ic"><svg viewBox="0 0 24 24"><path d="M4 12h3l2-5 4 10 2-5h5"/></svg></div><div><h3>딱딱, 웅 하는 소음이 나요</h3><p>펌프나 팬 모터의 마모를 의심해 볼 수 있습니다.</p></div></div>
+  <div class="sym-card"><div class="ic"><svg viewBox="0 0 24 24"><path d="M12 3c-3 5-6 7-6 11a6 6 0 0 0 12 0c0-4-3-6-6-11z"/></svg></div><div><h3>바닥에 물이 고여요</h3><p>배관 연결부나 안전밸브 누수일 수 있습니다.</p></div></div>
+  <div class="sym-card"><div class="ic"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/><path d="M12 8v5M12 16h.01"/></svg></div><div><h3>에러 코드가 자주 떠요</h3><p>점화·센서 계통을 확인해야 하는 신호입니다.</p></div></div>
+  <div class="sym-card"><div class="ic"><svg viewBox="0 0 24 24"><path d="M5 20V9l7-5 7 5v11"/><path d="M9 20v-6h6v6"/></svg></div><div><h3>온수 온도가 오락가락해요</h3><p>열교환기 상태와 수압을 함께 봐야 합니다.</p></div></div>
+  <div class="sym-card"><div class="ic"><svg viewBox="0 0 24 24"><rect x="5" y="4" width="14" height="16" rx="2"/><path d="M9 8h6M9 12h6M9 16h3"/></svg></div><div><h3>설치한 지 8년이 넘었어요</h3><p>교체 시기를 미리 알면 급한 비용을 줄일 수 있습니다.</p></div></div>
+ </div>
+</div></section>
+
+<section class="check" id="check"><div class="wrap">
+ <div class="sh">
+  <div class="k">SAFETY · FREEZE · GAS BILL</div>
+  <h2>안전, 동파, 가스비<br><em>세 갈래</em>로 살핍니다</h2>
+  <p>점검이 끝나면 항목별 결과를 사진과 함께 문자로 보내 드립니다. 고칠 곳이 없으면 비용은 0원입니다.</p>
+  <div class="gauge"><svg viewBox="0 0 150 150"><circle cx="75" cy="75" r="62" fill="none" stroke="rgba(255,255,255,.1)" stroke-width="12"/><circle cx="75" cy="75" r="62" fill="none" stroke="#6f9bff" stroke-width="12" stroke-dasharray="300 400" stroke-linecap="round" transform="rotate(-210 75 75)"/><circle cx="75" cy="75" r="62" fill="none" stroke="#e2462f" stroke-width="12" stroke-dasharray="40 400" stroke-dashoffset="-300" stroke-linecap="round" transform="rotate(-210 75 75)"/><text x="75" y="80" text-anchor="middle" font-family="Outfit" font-weight="800" font-size="34" fill="#fff">40′</text><text x="75" y="104" text-anchor="middle" font-family="Noto Sans KR" font-weight="500" font-size="14" fill="#b5bdcb">평균 점검</text></svg><p><b>점검 결과 리포트</b>에는 수압, 배기 상태, 부품 마모 정도와 함께 교체 권장 시기가 적혀 있습니다.</p></div>
+ </div>
+ <div class="groups">
+  <div class="grp"><h3><span>01</span>안전</h3><ul><li>가스 누출 여부</li><li>점화 · 연소 상태</li><li>배기 연통 연결</li><li>전원 · 배선 상태</li></ul></div>
+  <div class="grp"><h3><span>02</span>동파 예방</h3><ul><li>외부 배관 보온 상태</li><li>배관 연결부 누수</li><li>응축수 배수 · 동결</li><li>분배기 밸브</li></ul></div>
+  <div class="grp wide"><h3><span>03</span>가스비 새는 곳</h3><ul><li>열교환기 오염</li><li>난방 수압 · 팽창탱크</li><li>순환 펌프 소음</li><li>온도조절기 설정</li><li>온수 온도 편차</li><li>에러 이력 확인</li></ul></div>
+ </div>
+</div></section>
+
+<section class="price" id="price"><div class="wrap">
+ <div class="sh"><div class="k">PRICE</div><h2>점검은 무료, <em>필요한 만큼만</em> 결정하세요</h2><p>방문 전 대략적인 비용을 알려 드리고, 현장에서 최종 견적을 확인한 뒤 진행합니다.</p></div>
+ <div class="ptable">
+  <div class="pcard hot"><span class="flag">12월 이벤트</span><h3>겨울 점검</h3><p class="d">안전 · 동파 · 가스비 점검 + 결과 리포트</p><div class="amt"><strong class="ot">0</strong><span>원</span><s>20,000원</s></div><ul><li>출장비 · 점검비 없음</li><li>사진 첨부 결과 문자 발송</li><li>간단한 수압 보충 포함</li></ul></div>
+  <div class="pcard"><h3>부품 수리</h3><p class="d">점검 후 필요한 부품만 교체</p><div class="amt"><strong class="ot">35,000</strong><span>원~</span></div><ul><li>순환 펌프 · 점화 센서 · 밸브 등</li><li>교체 부품 6개월 무상 A/S</li><li>현장 견적 확인 후 진행</li></ul></div>
+  <div class="pcard"><h3>보일러 교체</h3><p class="d">콘덴싱 보일러 기본 설치 기준</p><div class="amt"><strong class="ot">690,000</strong><span>원~</span></div><ul><li>난방 배관 세척 무료 (80,000원 상당)</li><li>기존 보일러 수거 포함</li><li>설치 후 1년 무상 점검</li></ul></div>
+ </div>
+ <p class="pnote">표시 가격은 부가세 포함 예시이며, 설치 환경에 따라 달라질 수 있습니다.</p>
+</div></section>
+
+<section class="steps"><div class="wrap">
+ <div class="sh"><div class="k">HOW IT WORKS</div><h2>신청부터 점검까지 <em>4단계</em></h2></div>
+ <div class="flow">
+  <div class="st"><div class="dot">1</div><h3>온라인 신청</h3><p>아래 양식에 주소와 희망 날짜를 남겨 주세요.</p></div>
+  <div class="st"><div class="dot">2</div><h3>방문 일정 확정</h3><p>담당 기사가 전화로 시간을 맞춥니다.</p></div>
+  <div class="st"><div class="dot">3</div><h3>현장 점검</h3><p>안전 · 동파 · 가스비 항목을 확인하고 바로 설명해 드립니다.</p></div>
+  <div class="st"><div class="dot">4</div><h3>리포트 발송</h3><p>결과와 필요한 조치를 문자로 정리해 보내 드립니다.</p></div>
+ </div>
+</div></section>
+
+<section class="faq"><div class="wrap">
+ <div class="area">
+  <h3>방문 가능 지역</h3>
+  <p>서울 서남권과 경기 서부 일부 지역에 방문합니다.</p>
+  <svg viewBox="0 0 320 200" role="img" aria-label="방문 가능 지역 약도"><rect width="320" height="200" rx="16" fill="#f3f0e8"/><path d="M0 120 C60 100 110 130 170 112 C230 94 270 110 320 96" stroke="#b9cdf5" stroke-width="16" fill="none"/><path d="M40 40 L120 30 L190 60 L250 50 L280 90 L240 150 L160 170 L80 160 L36 110Z" fill="rgba(45,91,214,.14)" stroke="#2d5bd6" stroke-width="2" stroke-dasharray="6 5"/><g fill="#2d5bd6"><circle cx="100" cy="80" r="5"/><circle cx="170" cy="96" r="5"/><circle cx="220" cy="80" r="5"/><circle cx="130" cy="136" r="5"/><circle cx="200" cy="140" r="5"/></g><g transform="translate(160 70)"><path d="M0 -26 c-11 0 -17 8 -17 17 c0 12 17 26 17 26 s17 -14 17 -26 c0 -9 -6 -17 -17 -17z" fill="#c46d36"/><circle cy="-9" r="6" fill="#fff"/></g></svg>
+  <div class="tags"><span>강서구</span><span>양천구</span><span>구로구</span><span>영등포구</span><span>금천구</span><span>부천시</span><span>광명시</span></div>
+ </div>
+ <div>
+  <div class="sh" style="text-align:left;margin-bottom:24px"><div class="k">FAQ</div><h2>자주 묻는 질문</h2></div>
+  <details open><summary>점검만 받고 수리는 안 해도 되나요?</summary><p>네. 12월 겨울 점검은 출장비와 점검비가 모두 0원이며, 수리나 교체는 견적을 보고 원하실 때만 진행합니다.</p></details>
+  <details><summary>어떤 보일러든 점검할 수 있나요?</summary><p>가정용 가스 보일러(일반형 · 콘덴싱)라면 제조사와 관계없이 점검합니다. 기름 보일러는 상담 후 안내해 드립니다.</p></details>
+  <details><summary>집에 사람이 꼭 있어야 하나요?</summary><p>안전을 위해 점검 시간 동안 성인 1명이 함께 계셔야 합니다. 약 40분 정도 걸립니다.</p></details>
+  <details><summary>12월이 지나면 출장비가 생기나요?</summary><p>이벤트 기간이 끝나면 점검 출장비 20,000원이 적용됩니다. 12월 31일까지 신청하신 건은 1월 방문이어도 무료로 진행합니다.</p></details>
+ </div>
+</div></section>
+
+<section class="apply" id="apply"><div class="wrap">
+ <div class="side">
+  <h2>한파 오기 전에,<br><em>무료 점검</em> 예약하세요</h2>
+  <p>기온이 영하로 떨어지면 수리 요청이 몰려요. 날씨가 풀려 있을 때 미리 받아 두세요.</p>
+  <ul>
+   <li><svg viewBox="0 0 24 24"><path d="M5 12l5 5 9-10"/></svg>출장비 · 점검비 0원 (12월 31일 신청분까지)</li>
+   <li><svg viewBox="0 0 24 24"><path d="M5 12l5 5 9-10"/></svg>교체 시 난방 배관 세척 무료</li>
+   <li><svg viewBox="0 0 24 24"><path d="M5 12l5 5 9-10"/></svg>점검 결과 사진 리포트 문자 발송</li>
+  </ul>
+ </div>
+ <form id="f" onsubmit="return go(event)">
+  <div id="fb">
+   <label style="margin-bottom:6px">신청 내용</label>
+   <div class="seg">
+    <label><input type="radio" name="t" checked><span>겨울 점검</span></label>
+    <label><input type="radio" name="t"><span>고장 수리</span></label>
+    <label><input type="radio" name="t"><span>교체 견적</span></label>
+   </div>
+   <div class="row"><label>이름<input required placeholder="홍길동"></label><label>연락처<input required placeholder="010-0000-0000"></label></div>
+   <label>주소 (동까지)<input required placeholder="예) 서울시 강서구 ○○동"></label>
+   <div class="row"><label>희망 날짜<input type="date"></label><label>희망 시간<select><option>오전 (09–12시)</option><option>오후 (13–16시)</option><option>저녁 (16–19시)</option></select></label></div>
+   <label>보일러 상태 (선택)<textarea placeholder="사용 연수, 증상, 에러 코드 등을 적어 주세요"></textarea></label>
+   <label class="agree"><input type="checkbox" required>개인정보 수집 · 이용에 동의합니다</label>
+   <button class="btn btn-flame" type="submit">무료 점검 신청하기</button>
+  </div>
+  <div class="ok" id="ok"><svg viewBox="0 0 68 68"><circle cx="34" cy="34" r="32" fill="#2d5bd6"/><path d="M21 35l9 9 17-18" stroke="#fff" stroke-width="5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg><h3>신청이 접수되었습니다</h3><p>담당 기사가 영업일 하루 안에 전화드려<br>방문 시간을 확정해 드릴게요.</p></div>
+ </form>
+</div></section>
+
+<footer><div class="wrap"><span>따숨보일러 · 상담 000-0000-0000 · 카카오톡 ID: example</span><span>© 2026 따숨보일러</span></div></footer>
+<div class="mcta"><a class="btn btn-ghost" href="#price">가격 보기</a><a class="btn btn-flame" href="#apply">무료 점검 신청</a></div>
+<script>function go(e){e.preventDefault();document.getElementById('fb').style.display='none';document.getElementById('ok').style.display='block';return false}</script>
+</body>
+</html>

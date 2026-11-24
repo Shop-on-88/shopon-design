@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>막곱당 · 참숯 곱창·막창 메뉴판 디자인</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Do+Hyeon&family=Outfit:wght@600;700&family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Noto Sans KR',sans-serif;background:#111214;color:#f1e9dc;word-break:keep-all;-webkit-font-smoothing:antialiased;min-height:100vh;
+ background-image:radial-gradient(900px 480px at 92% -8%,rgba(255,79,154,.18),transparent 65%),radial-gradient(700px 500px at 0% 100%,rgba(154,212,106,.07),transparent 60%)}
+.top{height:8px;background:linear-gradient(90deg,#ff4f9a,#ff8cc0 50%,#9ad46a);box-shadow:0 0 18px rgba(255,79,154,.6)}
+.wrap{max-width:1180px;margin:0 auto;padding:44px 20px 120px}
+.hd{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:18px;margin-bottom:32px}
+.hd small{font-family:'Outfit',sans-serif;font-weight:700;font-size:14px;letter-spacing:.24em;color:#9ad46a}
+.hd h1{font-family:'Do Hyeon',sans-serif;font-weight:400;font-size:clamp(36px,5vw,60px);margin-top:8px;line-height:1.15}
+.hd h1 em{font-style:normal;color:#ff4f9a;text-shadow:0 0 14px rgba(255,79,154,.55)}
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:14px}
+.chips span{font-size:13px;font-weight:500;padding:6px 12px;border-radius:999px;background:rgba(255,255,255,.04);color:#e4dacb;border:1.5px solid rgba(241,233,220,.22)}
+.chips span.g{background:#ff4f9a;color:#16171a;border-color:#ff4f9a;font-weight:700}
+.cta{display:inline-flex;align-items:center;gap:8px;height:52px;padding:0 26px;border-radius:999px;background:#ff4f9a;color:#16171a;font-weight:700;font-size:15px;text-decoration:none;transition:.2s;white-space:nowrap;box-shadow:0 0 22px rgba(255,79,154,.4)}
+.cta:hover{background:#9ad46a;box-shadow:0 0 22px rgba(154,212,106,.4)}
+.cta svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round}
+.view{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,.75fr);gap:28px;align-items:start}
+figure{background:#2a2b30;padding:10px;border-radius:14px;box-shadow:0 30px 60px -30px rgba(0,0,0,.8);border:1px solid rgba(255,79,154,.25)}
+figure a{display:block}
+figure img{display:block;width:100%;height:auto;border-radius:6px}
+figcaption{font-size:13px;color:#c9bfb0;padding:10px 4px 2px;display:flex;flex-wrap:wrap;justify-content:space-between;gap:4px 10px}
+.side{display:flex;flex-direction:column;gap:18px;position:sticky;top:24px}
+.zoom{background:#1c1d21;border-radius:14px;padding:8px;border:1px solid rgba(241,233,220,.12)}
+.zoom img{display:block;width:100%;height:auto;border-radius:8px}
+.zoom p{font-size:13px;color:#c9bfb0;padding:8px 4px 2px;line-height:1.55}
+.info{background:#1c1d21;border-radius:14px;padding:22px;border:2px solid #9ad46a}
+.info h2{font-family:'Do Hyeon',sans-serif;font-weight:400;font-size:26px;color:#9ad46a;margin-bottom:8px}
+.info li{list-style:none;font-size:14px;padding:6px 0 6px 18px;position:relative;line-height:1.55;color:#e4dacb}
+.info li:before{content:"";position:absolute;left:2px;top:13px;width:8px;height:8px;border-radius:50%;background:#ff4f9a;box-shadow:0 0 8px #ff4f9a}
+.bar{position:fixed;left:0;right:0;bottom:0;background:rgba(17,18,20,.97);border-top:2px solid #ff4f9a;padding:12px 20px;display:flex;justify-content:center;align-items:center;gap:18px;flex-wrap:wrap}
+.bar p{font-size:14px;color:#c9bfb0}
+.bar .cta{height:46px}
+@media(max-width:900px){.view{grid-template-columns:1fr}.side{position:static}}
+@media(max-width:620px){.hd h1 em{display:block}.hd .cta{display:none}.bar p{display:none}.bar .cta{width:100%;justify-content:center}}
+</style>
+</head>
+<body>
+<div class="top"></div>
+<div class="wrap">
+ <div class="hd">
+  <div>
+   <small>MENU DESIGN · SD-MN38</small>
+   <h1>막곱당 <em>참숯 곱창·막창 메뉴판</em></h1>
+   <div class="chips"><span class="g">A4 세로 · 1장</span><span>구이 · 모둠 · 전골 · 마무리</span><span>밤골목 차콜 &amp; 네온 핑크 &amp; 부추 그린</span><span>원화 가격</span><span>인쇄 · 웹 겸용</span></div>
+  </div>
+  <a class="cta" href="https://design.shoponph.online/#inquiry">이 디자인으로 상담하기 <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+ </div>
+ <div class="view">
+  <figure><a href="page1.png" target="_blank" rel="noopener"><img src="page1.png" alt="막곱당 곱창 막창 메뉴판 전체" width="2480" height="3508"></a><figcaption><span>구이 · 전골 · 모둠 · 맵기 선택 · 굽는 순서 · 원산지</span><span style="white-space:nowrap">눌러서 크게 보기</span></figcaption></figure>
+  <div class="side">
+   <div class="zoom"><img src="detail-header.jpg" alt="네온 간판 상호와 곱창 철판 일러스트 영역 확대" width="1000" height="476"><p>네온 간판처럼 빛나는 상호와 부추를 올린 곱창 철판 그림으로 밤 골목 곱창집 분위기를 한눈에 보여 줍니다</p></div>
+   <div class="zoom"><img src="detail-combo.jpg" alt="모둠 세트와 맵기 선택 영역 확대" width="1000" height="717"><p>2인·3인 모둠은 네온 테두리 카드로 따로 강조하고, 양념 맵기 4단계를 칩으로 정리</p></div>
+   <div class="info"><h2>이 메뉴판의 포인트</h2><ul><li>어두운 매장 조명에서도 잘 읽히는 크림색 글자와 노란 가격</li><li>부위별 한 줄 설명으로 처음 온 손님도 고르기 쉬운 구성</li><li>“1 · 2 · 3 · 4” 굽는 순서 띠로 볶음밥 추가 주문 유도</li><li>원산지 표시 · 예약 전화 영역을 하단에 기본 배치</li></ul></div>
+  </div>
+ </div>
+</div>
+<div class="bar"><p>우리 가게 메뉴판도 이렇게 만들고 싶다면</p><a class="cta" href="https://design.shoponph.online/#inquiry">이 디자인으로 상담하기</a></div>
+</body>
+</html>
