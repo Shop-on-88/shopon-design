@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kalderong Ilaw Lugawan · Lugaw Menu Design</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,700;0,9..144,900;1,9..144,500&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'DM Sans',sans-serif;background:#f4eddc;color:#2a221c;-webkit-font-smoothing:antialiased;min-height:100vh;
+ background-image:radial-gradient(900px 480px at 92% -8%,rgba(201,143,44,.22),transparent 65%),url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cg fill='%233a2e24' fill-opacity='.18'%3E%3Ccircle cx='14' cy='20' r='1.2'/%3E%3Ccircle cx='70' cy='12' r='.9'/%3E%3Ccircle cx='100' cy='60' r='1.3'/%3E%3Ccircle cx='38' cy='88' r='1'/%3E%3Ccircle cx='86' cy='104' r='.8'/%3E%3C/g%3E%3C/svg%3E")}
+.top{height:14px;background:linear-gradient(90deg,#a8322a 0 62%,#c98f2c 62% 82%,#4f7d35 82%)}
+.wrap{max-width:1180px;margin:0 auto;padding:44px 20px 120px}
+.hd{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:18px;margin-bottom:32px}
+.hd small{font-weight:700;font-size:14px;letter-spacing:.24em;color:#a8322a}
+.hd h1{font-family:'Fraunces',serif;font-weight:900;font-size:clamp(32px,4.6vw,54px);margin-top:8px;line-height:1.1;letter-spacing:-.02em;color:#7f221c}
+.hd h1 em{font-style:italic;font-weight:500;color:#2a221c}
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:14px}
+.chips span{font-size:13px;font-weight:500;padding:6px 12px;border-radius:999px;background:#fbf7ec;color:#2a221c;border:1.5px solid rgba(42,34,28,.22)}
+.chips span.g{background:#a8322a;color:#fbf3e0;border-color:#a8322a}
+.cta{display:inline-flex;align-items:center;gap:8px;height:52px;padding:0 26px;border-radius:999px;background:#2a221c;color:#fbf3e0;font-weight:700;font-size:15px;text-decoration:none;transition:.2s;white-space:nowrap}
+.cta:hover{background:#a8322a}
+.cta svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round}
+.view{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,.75fr);gap:28px;align-items:start}
+figure{background:#a8322a;padding:10px;border-radius:18px;box-shadow:0 0 0 3px #f8f1e1,0 30px 60px -30px rgba(127,34,28,.7)}
+figure a{display:block}
+figure img{display:block;width:100%;height:auto;border-radius:10px}
+figcaption{font-size:13px;color:#f6dccb;padding:10px 4px 2px;display:flex;flex-wrap:wrap;justify-content:space-between;gap:4px 10px}
+.side{display:flex;flex-direction:column;gap:18px;position:sticky;top:24px}
+.zoom{background:#fbf7ec;border-radius:16px;padding:8px;border:1.5px solid rgba(42,34,28,.14)}
+.zoom img{display:block;width:100%;height:auto;border-radius:10px}
+.zoom p{font-size:13px;color:#5d4f40;padding:8px 4px 2px;line-height:1.5}
+.info{background:#2a221c;color:#efe5d0;border-radius:16px;padding:22px}
+.info h2{font-family:'Fraunces',serif;font-weight:700;font-size:23px;color:#e9b25a;margin-bottom:8px}
+.info li{list-style:none;font-size:14px;padding:6px 0 6px 18px;position:relative;line-height:1.55}
+.info li:before{content:"";position:absolute;left:2px;top:13px;width:8px;height:8px;border-radius:50%;background:#7fa35c}
+.bar{position:fixed;left:0;right:0;bottom:0;background:rgba(42,34,28,.97);border-top:3px solid #a8322a;padding:12px 20px;display:flex;justify-content:center;align-items:center;gap:18px;flex-wrap:wrap}
+.bar p{font-size:14px;color:#e2d6bc}
+.bar .cta{height:46px;background:#a8322a;color:#fbf3e0}
+.bar .cta:hover{background:#c98f2c;color:#2a221c}
+@media(min-width:901px){.hd{flex-wrap:nowrap}.hd>div{flex:1;min-width:0}.hd h1{font-size:clamp(32px,3.9vw,50px)}}
+@media(max-width:900px){.view{grid-template-columns:1fr}.side{position:static}}
+@media(max-width:620px){.hd h1 em{display:block}.hd .cta{display:none}.bar p{display:none}.bar .cta{width:100%;justify-content:center}}
+</style>
+</head>
+<body>
+<div class="top"></div>
+<div class="wrap">
+ <div class="hd">
+  <div>
+   <small>MENU DESIGN · SD-MN35</small>
+   <h1>Kalderong Ilaw <em>Lugawan Menu</em></h1>
+   <div class="chips"><span class="g">A4 portrait · 1 page</span><span>Lugaw bowls · sides · toppings · drinks · set meal</span><span>Enamelware cream &amp; red rim &amp; ginger gold</span><span>Peso prices</span><span>Print &amp; web ready</span></div>
+  </div>
+  <a class="cta" href="https://design.shoponph.online/#inquiry">Consult on this design <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+ </div>
+ <div class="view">
+  <figure><a href="page1.png" target="_blank" rel="noopener"><img src="page1.png" alt="Kalderong Ilaw Lugawan full menu page" width="2480" height="3508"></a><figcaption><span>Bowls · On the side · Toppings board · Drinks · Set meal</span><span style="white-space:nowrap">Tap to view full size</span></figcaption></figure>
+  <div class="side">
+   <div class="zoom"><img src="detail-bowl.jpg" alt="Close-up of the goto and arroz caldo bowl cards" width="1000" height="629"><p>Each bowl gets its own enamelware illustration, so customers can see the toppings before they order.</p></div>
+   <div class="zoom"><img src="detail-list.jpg" alt="Close-up of the side dishes list and toppings board" width="1000" height="315"><p>Side dishes on a clean price list, and a dark toppings board that makes add-ons easy to spot.</p></div>
+   <div class="info"><h2>Design highlights</h2><ul><li>Red-rimmed enamel tray frame with speckles and small chipped-enamel details</li><li>Regular and large prices side by side on every bowl</li><li>Set meal panel to lift the average order</li><li>Easy to update prices or swap dishes each season</li></ul></div>
+  </div>
+ </div>
+</div>
+<div class="bar"><p>Want a menu like this for your shop?</p><a class="cta" href="https://design.shoponph.online/#inquiry">Consult on this design</a></div>
+</body>
+</html>
