@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>겹겹 제과점 · 동네 베이커리</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&family=Noto+Sans+KR:wght@400;500;700&family=Outfit:wght@300;500;700&display=swap" rel="stylesheet">
+<style>
+:root{--cream:#f8f0e4;--paper:#fffaf2;--choco:#3a2217;--choco2:#5a3626;--rasp:#c13a5c;--rasp2:#e7a2b2;--pist:#8fa75e;--crust:#c9873f;--ink:#2b1a12;--mute:#7a6253}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Noto Sans KR',sans-serif;background:var(--cream);color:var(--ink);word-break:keep-all;-webkit-font-smoothing:antialiased;line-height:1.65;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+img,svg{display:block}
+.serif{font-family:'Gowun Batang',serif}
+.en{font-family:'Outfit',sans-serif}
+.wrap{max-width:1240px;margin:0 auto;padding:0 32px}
+/* nav */
+.nav{position:sticky;top:0;z-index:20;background:rgba(248,240,228,.92);backdrop-filter:blur(8px);border-bottom:1px solid rgba(58,34,23,.12)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:74px}
+.logo{display:flex;align-items:center;gap:12px}
+.logo .mk{width:42px;height:42px}
+.logo b{font-family:'Gowun Batang',serif;font-size:23px;font-weight:700;letter-spacing:.02em}
+.logo small{display:block;font-family:'Outfit',sans-serif;font-size:11px;letter-spacing:.3em;color:var(--mute);margin-top:-4px}
+.nav ul{display:flex;gap:34px;list-style:none;font-size:15px;font-weight:500}
+.nav ul a:hover{color:var(--rasp)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;height:48px;padding:0 24px;border-radius:999px;font-weight:700;font-size:15px;transition:.2s;border:0;cursor:pointer;font-family:inherit}
+.btn-r{background:var(--rasp);color:#fff}
+.btn-r:hover{background:var(--choco)}
+.btn-o{border:1.5px solid var(--choco);color:var(--choco)}
+.btn-o:hover{background:var(--choco);color:var(--cream)}
+.btn svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+/* hero */
+.hero{position:relative;padding:64px 0 90px;overflow:hidden}
+.hero .wrap{display:grid;grid-template-columns:1.02fr 1fr;gap:40px;align-items:center}
+.eyebrow{display:inline-flex;align-items:center;gap:10px;font-family:'Outfit',sans-serif;font-size:13px;letter-spacing:.28em;color:var(--rasp);font-weight:500}
+.eyebrow:before{content:"";width:34px;height:1.5px;background:var(--rasp)}
+.hero h1{font-family:'Gowun Batang',serif;font-size:clamp(40px,5.2vw,72px);line-height:1.18;font-weight:700;margin:20px 0 22px;color:var(--choco)}
+.hero h1 em{font-style:normal;color:var(--rasp);position:relative}
+.hero p.lead{font-size:18px;color:var(--mute);max-width:470px}
+.hero .acts{display:flex;gap:12px;margin-top:34px;flex-wrap:wrap}
+.oven-now{margin-top:40px;display:flex;align-items:center;gap:16px;background:var(--paper);border:1px solid rgba(58,34,23,.12);border-radius:18px;padding:14px 20px;max-width:440px;box-shadow:0 14px 30px -22px rgba(58,34,23,.5)}
+.oven-now .dot{width:12px;height:12px;border-radius:50%;background:var(--rasp);box-shadow:0 0 0 6px rgba(193,58,92,.16);animation:pulse 1.8s infinite}
+@keyframes pulse{50%{box-shadow:0 0 0 11px rgba(193,58,92,0)}}
+.oven-now b{font-size:15px}
+.oven-now span{display:block;font-size:13px;color:var(--mute)}
+.stage{position:relative;aspect-ratio:1/1;max-width:600px;justify-self:end;width:100%}
+.stage .disc{position:absolute;inset:4% 2% 6% 6%;border-radius:46% 54% 50% 50%/52% 46% 54% 48%;background:radial-gradient(circle at 35% 30%,#6b4130,var(--choco) 70%);box-shadow:0 50px 80px -40px rgba(58,34,23,.8)}
+.stage svg{position:absolute;inset:0;width:100%;height:100%}
+.tag{position:absolute;background:var(--paper);border-radius:14px;padding:10px 16px;box-shadow:0 16px 30px -18px rgba(0,0,0,.5);font-size:14px;line-height:1.4}
+.tag b{display:block;font-family:'Gowun Batang',serif;font-size:17px;color:var(--choco)}
+.tag span{color:var(--rasp);font-weight:700;font-family:'Outfit',sans-serif}
+.t1{left:-2%;top:62%}.t2{right:0;top:6%}
+/* marquee */
+.ribbon{background:var(--choco);color:var(--cream);overflow:hidden;white-space:nowrap;padding:16px 0}
+.ribbon div{display:inline-flex;gap:46px;animation:mq 36s linear infinite;font-family:'Gowun Batang',serif;font-size:20px}
+.ribbon i{font-style:normal;color:var(--rasp2)}
+@keyframes mq{to{transform:translateX(-50%)}}
+/* sections */
+section{padding:110px 0}
+.sh{display:flex;justify-content:space-between;align-items:flex-end;gap:30px;margin-bottom:52px;flex-wrap:wrap}
+.sh h2{font-family:'Gowun Batang',serif;font-size:clamp(30px,3.4vw,46px);line-height:1.25;color:var(--choco);margin-top:14px}
+.sh p{max-width:420px;color:var(--mute)}
+/* signature */
+.sig{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
+.item{background:var(--paper);border-radius:28px;overflow:hidden;border:1px solid rgba(58,34,23,.08);transition:.3s}
+.item:hover{transform:translateY(-6px);box-shadow:0 30px 50px -30px rgba(58,34,23,.45)}
+.item .ill{aspect-ratio:4/3;position:relative}
+.item .ill svg{width:100%;height:100%}
+.item .bd{padding:24px 26px 28px}
+.item .row{display:flex;justify-content:space-between;align-items:baseline;gap:10px}
+.item h3{font-family:'Gowun Batang',serif;font-size:22px;color:var(--choco)}
+.item .pr{font-family:'Outfit',sans-serif;font-weight:700;font-size:19px;color:var(--rasp);white-space:nowrap}
+.item p{font-size:15px;color:var(--mute);margin-top:8px}
+.item .chip{display:inline-block;margin-top:14px;font-size:12px;font-weight:700;padding:4px 11px;border-radius:999px;background:#f1e3cf;color:var(--choco2)}
+/* timetable */
+.ovens{background:var(--choco);color:var(--cream);position:relative;overflow:hidden}
+.ovens .sh h2{color:var(--cream)}
+.ovens .sh p{color:#cdb7a6}
+.ovens .eyebrow{color:var(--rasp2)}.ovens .eyebrow:before{background:var(--rasp2)}
+.line{position:relative;display:grid;grid-template-columns:repeat(6,1fr);gap:0}
+.line:before{content:"";position:absolute;left:0;right:0;top:64px;height:2px;background:repeating-linear-gradient(90deg,#8b6450 0 8px,transparent 8px 16px)}
+.slot{position:relative;padding:0 14px;text-align:left}
+.slot .time{font-family:'Outfit',sans-serif;font-weight:300;font-size:40px;letter-spacing:-.02em;line-height:1}
+.slot .pin{width:18px;height:18px;border-radius:50%;background:var(--choco);border:3px solid var(--crust);margin:18px 0 22px;position:relative;z-index:1}
+.slot.hot .pin{background:var(--rasp);border-color:var(--rasp2)}
+.slot h4{font-family:'Gowun Batang',serif;font-size:19px;font-weight:700}
+.slot p{font-size:14px;color:#cdb7a6;margin-top:6px}
+.ovens .note{margin-top:56px;display:flex;align-items:center;gap:14px;font-size:15px;color:#e8d8c9;border-top:1px solid rgba(248,240,228,.15);padding-top:26px}
+.ovens .note svg{flex:none;width:22px;height:22px;stroke:var(--rasp2);fill:none;stroke-width:1.8}
+/* story */
+.story .wrap{display:grid;grid-template-columns:.95fr 1.05fr;gap:70px;align-items:center}
+.story .art{border-radius:34px;overflow:hidden;aspect-ratio:5/6;background:#e9d6bd;position:relative}
+.story .art svg{width:100%;height:100%}
+.story h2{font-family:'Gowun Batang',serif;font-size:clamp(30px,3.4vw,44px);line-height:1.3;color:var(--choco);margin:14px 0 22px}
+.story p{color:var(--mute);margin-bottom:16px;font-size:16.5px}
+.facts{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:34px}
+.facts div{background:var(--paper);border-radius:18px;padding:18px 18px 16px;border:1px solid rgba(58,34,23,.08)}
+.facts b{font-family:'Outfit',sans-serif;font-size:30px;font-weight:500;color:var(--rasp);display:block;line-height:1.1}
+.facts span{font-size:13px;color:var(--mute)}
+/* cake */
+.cake{background:linear-gradient(180deg,#f3dfe2,#f8f0e4)}
+.cake .wrap{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start}
+.sizes{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:26px 0 30px}
+.size{background:var(--paper);border-radius:20px;padding:18px 12px 16px;text-align:center;border:1.5px solid transparent;cursor:pointer;transition:.2s}
+.size svg{width:100%;height:74px;margin-bottom:10px}
+.size b{display:block;font-family:'Gowun Batang',serif;font-size:18px}
+.size span{font-size:14px;color:var(--rasp);font-weight:700;font-family:'Outfit',sans-serif}
+.size small{display:block;font-size:12px;color:var(--mute)}
+.size.on{border-color:var(--rasp);box-shadow:0 14px 30px -20px rgba(193,58,92,.6)}
+.form{background:var(--paper);border-radius:30px;padding:36px;box-shadow:0 40px 70px -46px rgba(58,34,23,.6)}
+.form h3{font-family:'Gowun Batang',serif;font-size:26px;color:var(--choco)}
+.form .sub{font-size:14px;color:var(--mute);margin:6px 0 22px}
+.fld{margin-bottom:16px}
+.fld label{display:block;font-size:13px;font-weight:700;margin-bottom:6px;color:var(--choco2)}
+.fld input,.fld select,.fld textarea{width:100%;height:50px;border-radius:14px;border:1.5px solid #e4d4c0;background:#fff;padding:0 16px;font-size:15px;font-family:inherit;color:var(--ink)}
+.fld textarea{height:88px;padding:12px 16px;resize:none}
+.fld input:focus,.fld select:focus,.fld textarea:focus{outline:none;border-color:var(--rasp)}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.form .btn{width:100%;height:54px;margin-top:6px}
+.sum{display:flex;justify-content:space-between;align-items:center;margin:4px 0 16px;font-size:14px;color:var(--mute)}
+.sum b{font-family:'Outfit',sans-serif;font-size:22px;color:var(--choco)}
+.done{display:none;text-align:center;padding:40px 10px}
+.done svg{width:64px;height:64px;margin:0 auto 18px}
+.done h3{margin-bottom:8px}
+.done p{color:var(--mute);font-size:15px}
+.cake ul.rules{list-style:none;margin-top:8px}
+.cake ul.rules li{display:flex;gap:12px;font-size:15px;color:var(--choco2);padding:10px 0;border-bottom:1px dashed rgba(58,34,23,.18)}
+.cake ul.rules li b{font-family:'Outfit',sans-serif;color:var(--rasp);min-width:22px}
+/* visit */
+.visit .grid{display:grid;grid-template-columns:1.2fr .8fr;gap:26px}
+.map{border-radius:30px;overflow:hidden;background:#efe2cf;min-height:380px;position:relative}
+.map svg{width:100%;height:100%;position:absolute;inset:0}
+.info{background:var(--choco);color:var(--cream);border-radius:30px;padding:38px}
+.info h3{font-family:'Gowun Batang',serif;font-size:26px;margin-bottom:20px}
+.info dl{display:grid;grid-template-columns:auto 1fr;gap:14px 20px;font-size:15px}
+.info dt{color:var(--rasp2);font-weight:700}
+.info dd{color:#ecdccd}
+.info .btn{margin-top:30px;width:100%}
+/* footer */
+footer{padding:46px 0 40px;font-size:13px;color:var(--mute);border-top:1px solid rgba(58,34,23,.12)}
+footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+footer .logo b{font-size:19px}
+.mtab{display:none}
+@media(max-width:1020px){
+ .hero .wrap,.story .wrap,.cake .wrap,.visit .grid{grid-template-columns:1fr}
+ .stage{justify-self:center;max-width:520px}
+ .sig{grid-template-columns:1fr 1fr}
+ .line{grid-template-columns:repeat(3,1fr);row-gap:40px}
+ .line:before{display:none}
+}
+@media(max-width:720px){
+ .wrap{padding:0 20px}
+ .nav ul,.nav .btn{display:none}
+ .nav .wrap{height:64px}
+ section{padding:76px 0}
+ .hero{padding:36px 0 64px}
+ .hero p.lead{font-size:16px}
+ .sig{grid-template-columns:1fr}
+ .line{grid-template-columns:1fr 1fr}
+ .slot .time{font-size:32px}
+ .facts{grid-template-columns:1fr 1fr 1fr;gap:8px}
+ .facts div{padding:14px 12px}
+ .facts b{font-size:24px}
+ .form{padding:26px 20px}
+ .two{grid-template-columns:1fr}
+ .tag{font-size:12px;padding:8px 12px}.tag b{font-size:15px}
+ .t1{left:0;top:70%}
+ .info{padding:30px 24px}
+ .map{min-height:0;aspect-ratio:7/5}
+ .map text{font-size:25px}
+ .map text.pl{font-size:23px}
+ .mtab{display:flex;position:fixed;left:12px;right:12px;bottom:12px;z-index:30;gap:8px}
+ .mtab a{flex:1;height:52px;border-radius:999px;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:15px;box-shadow:0 14px 30px -12px rgba(0,0,0,.45)}
+ .mtab a:first-child{background:var(--paper);color:var(--choco)}
+ .mtab a:last-child{background:var(--rasp);color:#fff}
+ footer{padding-bottom:90px}
+}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+ <defs>
+  <linearGradient id="gCrust" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#e9a95a"/><stop offset=".55" stop-color="#c47a35"/><stop offset="1" stop-color="#8d4f22"/></linearGradient>
+  <linearGradient id="gCrustL" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f4c983"/><stop offset="1" stop-color="#cf8a42"/></linearGradient>
+  <linearGradient id="gLoaf" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#b8692c"/><stop offset=".35" stop-color="#d59650"/><stop offset="1" stop-color="#f3d9a6"/></linearGradient>
+  <linearGradient id="gCrumb" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff6e1"/><stop offset="1" stop-color="#f1dcb2"/></linearGradient>
+  <radialGradient id="gRasp" cx=".35" cy=".3" r=".7"><stop offset="0" stop-color="#f17a97"/><stop offset=".6" stop-color="#c13a5c"/><stop offset="1" stop-color="#7d1f3a"/></radialGradient>
+  <linearGradient id="gCanele" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#4a1f0e"/><stop offset=".45" stop-color="#9a4a1d"/><stop offset=".7" stop-color="#6d3014"/><stop offset="1" stop-color="#3a160a"/></linearGradient>
+  <linearGradient id="gPlate" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fffdf8"/><stop offset="1" stop-color="#e8dccb"/></linearGradient>
+  <linearGradient id="gCream" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fffaf3"/><stop offset="1" stop-color="#f0e1cf"/></linearGradient>
+  <linearGradient id="gPist" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#b8c97f"/><stop offset="1" stop-color="#7f9550"/></linearGradient>
+  <filter id="soft" x="-20%" y="-20%" width="140%" height="150%"><feDropShadow dx="0" dy="14" stdDeviation="12" flood-color="#2b1208" flood-opacity=".35"/></filter>
+  <filter id="soft2" x="-20%" y="-20%" width="140%" height="150%"><feDropShadow dx="0" dy="8" stdDeviation="7" flood-color="#2b1208" flood-opacity=".25"/></filter>
+  <pattern id="flour" width="18" height="18" patternUnits="userSpaceOnUse"><circle cx="3" cy="4" r="1" fill="#fff" opacity=".5"/><circle cx="12" cy="13" r=".8" fill="#fff" opacity=".35"/></pattern>
+ </defs>
+</svg>
+
+<header class="nav">
+ <div class="wrap">
+  <a class="logo" href="#top">
+   <svg class="mk" viewBox="0 0 42 42"><circle cx="21" cy="21" r="20" fill="#3a2217"/><path d="M9 25c3-8 9-12 12-12s9 4 12 12c-4 2-8 3-12 3s-8-1-12-3z" fill="url(#gCrustL)"/><path d="M15 24c1.5-5 4-8 6-8M27 24c-1.5-5-4-8-6-8M21 16v11" stroke="#8d4f22" stroke-width="1.3" fill="none" stroke-linecap="round"/></svg>
+   <div><b>겹겹 제과점</b><small>LAYERS BAKEHOUSE</small></div>
+  </a>
+  <ul><li><a href="#signature">오늘의 빵</a></li><li><a href="#oven">오븐 시간표</a></li><li><a href="#story">우리 이야기</a></li><li><a href="#cake">케이크 예약</a></li><li><a href="#visit">오시는 길</a></li></ul>
+  <a class="btn btn-r" href="#cake">케이크 예약하기</a>
+ </div>
+</header>
+
+<main id="top">
+<section class="hero">
+ <div class="wrap">
+  <div>
+   <span class="eyebrow">BAKED IN 27 LAYERS</span>
+   <h1>버터를 스물일곱 번<br>접어 <em>겹겹이</em><br>구운 아침</h1>
+   <p class="lead">매일 새벽 네 시에 반죽을 펴고, 하루 여섯 번 오븐 문을 엽니다. 갓 구운 크루아상부터 계절 과일 타르트까지, 동네 골목의 작은 제과점입니다.</p>
+   <div class="acts">
+    <a class="btn btn-r" href="#oven">오늘 나오는 빵 보기 <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+    <a class="btn btn-o" href="#cake">홀케이크 예약</a>
+   </div>
+   <div class="oven-now"><span class="dot"></span><div><b id="nowTxt">다음 오븐 · 오후 3:00 소금빵</b><span>매장 진열은 오븐에서 나온 뒤 약 15분 후</span></div></div>
+  </div>
+  <div class="stage">
+   <div class="disc"></div>
+   <svg viewBox="0 0 600 600" aria-label="크루아상과 식빵 일러스트">
+    <rect x="40" y="30" width="520" height="520" fill="url(#flour)" opacity=".6" rx="250"/>
+    <!-- board -->
+    <g filter="url(#soft)">
+     <path d="M90 360 Q100 330 140 326 L470 318 Q512 320 516 352 L520 430 Q518 462 478 466 L140 474 Q98 472 94 440z" fill="#b98a5c"/>
+     <path d="M96 352 Q104 336 140 334 L470 326 Q506 328 510 352" fill="none" stroke="#d8ac7c" stroke-width="3"/>
+     <g stroke="#a27449" stroke-width="1.6" opacity=".6" fill="none"><path d="M120 380 Q300 372 495 368"/><path d="M118 410 Q300 402 498 398"/><path d="M122 440 Q300 434 496 430"/></g>
+    </g>
+    <!-- loaf -->
+    <g filter="url(#soft2)">
+     <path d="M300 352 L300 230 Q300 176 352 176 Q382 150 416 172 Q450 150 478 176 Q522 178 520 230 L520 352 Q520 368 504 368 L316 368 Q300 368 300 352z" fill="url(#gLoaf)"/>
+     <path d="M312 230 Q312 190 352 188 Q384 166 416 186 Q448 166 476 188 Q508 190 508 230" fill="none" stroke="#f6d49a" stroke-width="5" stroke-linecap="round" opacity=".7"/>
+     <path d="M352 188 Q360 230 356 360M416 186 Q420 240 416 362M476 188 Q470 240 474 360" stroke="#a65a22" stroke-width="2" opacity=".35" fill="none"/>
+    </g>
+    <!-- slice -->
+    <g transform="rotate(-8 230 330)" filter="url(#soft2)">
+     <path d="M168 360 L168 270 Q168 236 202 234 Q222 214 246 230 Q280 232 280 270 L280 360z" fill="#c47a35"/>
+     <path d="M176 356 L176 272 Q176 244 204 242 Q222 226 244 238 Q272 242 272 272 L272 356z" fill="url(#gCrumb)"/>
+     <g fill="#e6cc9c" opacity=".8"><circle cx="200" cy="280" r="3"/><circle cx="236" cy="300" r="2.4"/><circle cx="214" cy="326" r="3.2"/><circle cx="252" cy="270" r="2"/><circle cx="246" cy="338" r="2.6"/><circle cx="196" cy="312" r="2"/></g>
+    </g>
+    <!-- croissant -->
+    <g filter="url(#soft)" transform="translate(0 6)">
+     <path d="M110 420 Q120 360 190 340 Q260 320 320 352 Q372 380 392 430 Q350 452 300 446 Q250 470 200 450 Q150 458 110 420z" fill="url(#gCrust)"/>
+     <path d="M110 420 Q96 400 84 406 Q72 416 94 432 Q104 436 116 430z" fill="#b8692c"/>
+     <path d="M392 430 Q410 412 422 418 Q432 430 410 444 Q400 446 388 440z" fill="#b8692c"/>
+     <g fill="none" stroke-linecap="round">
+      <path d="M150 430 Q168 372 214 352" stroke="#8d4f22" stroke-width="3" opacity=".55"/>
+      <path d="M214 446 Q226 380 262 350" stroke="#8d4f22" stroke-width="3" opacity=".55"/>
+      <path d="M290 444 Q298 388 318 356" stroke="#8d4f22" stroke-width="3" opacity=".55"/>
+      <path d="M348 440 Q350 404 362 380" stroke="#8d4f22" stroke-width="3" opacity=".5"/>
+      <path d="M170 420 Q186 380 222 360" stroke="#ffd896" stroke-width="5" opacity=".55"/>
+      <path d="M236 432 Q246 384 272 360" stroke="#ffd896" stroke-width="5" opacity=".5"/>
+      <path d="M306 432 Q312 396 328 370" stroke="#ffd896" stroke-width="4" opacity=".45"/>
+     </g>
+     <ellipse cx="250" cy="372" rx="60" ry="10" fill="#fff3d0" opacity=".35"/>
+    </g>
+    <!-- raspberries -->
+    <g filter="url(#soft2)">
+     <g transform="translate(430 432)"><circle r="17" fill="url(#gRasp)"/><g fill="#f6a3b6" opacity=".7"><circle cx="-6" cy="-6" r="3"/><circle cx="4" cy="-8" r="2.6"/><circle cx="8" cy="2" r="2.6"/><circle cx="-2" cy="4" r="2.8"/><circle cx="-9" cy="4" r="2.4"/></g></g>
+     <g transform="translate(468 446)"><circle r="14" fill="url(#gRasp)"/><g fill="#f6a3b6" opacity=".7"><circle cx="-5" cy="-5" r="2.6"/><circle cx="4" cy="-6" r="2.2"/><circle cx="6" cy="3" r="2.2"/><circle cx="-3" cy="4" r="2.4"/></g></g>
+     <path d="M452 420 q6 -14 18 -10" stroke="#6f8a3e" stroke-width="3" fill="none" stroke-linecap="round"/>
+     <path d="M468 412 q14 -10 22 2 q-14 6 -22 -2z" fill="url(#gPist)"/>
+    </g>
+    <!-- wheat sprig -->
+    <g transform="translate(470 120) rotate(24)" fill="#e3b46b" opacity=".9">
+     <path d="M0 0 L0 120" stroke="#e3b46b" stroke-width="2.4"/>
+     <ellipse cx="-7" cy="14" rx="5" ry="11" transform="rotate(-24 -7 14)"/><ellipse cx="7" cy="14" rx="5" ry="11" transform="rotate(24 7 14)"/>
+     <ellipse cx="-7" cy="36" rx="5" ry="11" transform="rotate(-24 -7 36)"/><ellipse cx="7" cy="36" rx="5" ry="11" transform="rotate(24 7 36)"/>
+     <ellipse cx="-7" cy="58" rx="5" ry="11" transform="rotate(-24 -7 58)"/><ellipse cx="7" cy="58" rx="5" ry="11" transform="rotate(24 7 58)"/>
+     <ellipse cx="0" cy="-4" rx="4.5" ry="10"/>
+    </g>
+    <!-- steam -->
+    <g fill="none" stroke="#f8f0e4" stroke-width="3" stroke-linecap="round" opacity=".45">
+     <path d="M380 150 q-14 -22 0 -40 q14 -18 0 -40"/><path d="M420 140 q-12 -18 0 -34 q12 -16 0 -32"/>
+    </g>
+   </svg>
+   <div class="tag t1"><b>버터 크루아상</b><span>4,200원</span> · 오전 7시 첫 판</div>
+   <div class="tag t2"><b>우유 식빵</b><span>6,800원</span> · 하루 두 번</div>
+  </div>
+ </div>
+</section>
+
+<div class="ribbon" aria-hidden="true"><div>
+ <span>버터 크루아상</span><i>✦</i><span>바질 소금빵</span><i>✦</i><span>라즈베리 피스타치오 타르트</span><i>✦</i><span>럼 카눌레</span><i>✦</i><span>호밀 깜빠뉴</span><i>✦</i><span>우유 식빵</span><i>✦</i>
+ <span>버터 크루아상</span><i>✦</i><span>바질 소금빵</span><i>✦</i><span>라즈베리 피스타치오 타르트</span><i>✦</i><span>럼 카눌레</span><i>✦</i><span>호밀 깜빠뉴</span><i>✦</i><span>우유 식빵</span><i>✦</i>
+</div></div>
+
+<section id="signature">
+ <div class="wrap">
+  <div class="sh">
+   <div><span class="eyebrow">SIGNATURE</span><h2>오늘 진열대에<br>오르는 여섯 가지</h2></div>
+   <p>반죽은 전날 저녁 냉장 숙성을 거쳐 아침에 굽습니다. 그날 구운 빵은 그날 진열대에서 내립니다.</p>
+  </div>
+  <div class="sig">
+   <article class="item">
+    <div class="ill"><svg viewBox="0 0 400 300"><rect width="400" height="300" fill="#f1e1c9"/><circle cx="200" cy="160" r="112" fill="#e8d2b2"/>
+     <ellipse cx="200" cy="232" rx="140" ry="18" fill="#c9a77d" opacity=".45"/>
+     <g filter="url(#soft2)"><ellipse cx="200" cy="200" rx="128" ry="34" fill="url(#gPlate)"/></g>
+     <g transform="translate(0 -10)" filter="url(#soft2)">
+      <path d="M96 200 Q110 140 180 124 Q240 112 286 140 Q318 162 320 202 Q284 218 250 212 Q210 232 170 216 Q130 222 96 200z" fill="url(#gCrust)"/>
+      <path d="M96 200 Q82 190 74 196 Q70 208 92 212z M320 202 Q336 192 342 198 Q344 212 322 212z" fill="#a95f26"/>
+      <g fill="none" stroke-linecap="round"><path d="M136 206 Q150 160 188 136" stroke="#8d4f22" stroke-width="2.6" opacity=".5"/><path d="M196 214 Q206 162 236 136" stroke="#8d4f22" stroke-width="2.6" opacity=".5"/><path d="M258 208 Q266 172 286 148" stroke="#8d4f22" stroke-width="2.6" opacity=".5"/><path d="M152 198 Q164 164 196 144" stroke="#ffd896" stroke-width="4" opacity=".55"/><path d="M212 204 Q220 166 244 146" stroke="#ffd896" stroke-width="4" opacity=".5"/></g>
+     </g>
+     <g fill="#f3c47a" opacity=".8"><circle cx="300" cy="230" r="3"/><circle cx="112" cy="226" r="2.4"/><circle cx="276" cy="240" r="2"/></g>
+    </svg></div>
+    <div class="bd"><div class="row"><h3>버터 크루아상</h3><span class="pr">4,200원</span></div><p>프랑스산 발효 버터를 27겹으로 접어 바깥은 바삭, 속은 결대로 찢어집니다.</p><span class="chip">07:00 · 10:30</span></div>
+   </article>
+   <article class="item">
+    <div class="ill"><svg viewBox="0 0 400 300"><rect width="400" height="300" fill="#dfe6cc"/><path d="M0 220 Q200 190 400 220 L400 300 L0 300z" fill="#c9d3ae"/>
+     <g filter="url(#soft2)">
+      <g transform="translate(120 176)"><path d="M-70 20 Q-74 -30 -20 -44 Q30 -54 66 -26 Q86 -8 72 22 Q0 42 -70 20z" fill="url(#gCrustL)"/><path d="M-50 10 Q-40 -26 0 -34 M-10 20 Q0 -20 34 -30 M30 18 Q40 -6 60 -14" stroke="#b9772f" stroke-width="2.4" fill="none" opacity=".6" stroke-linecap="round"/><g fill="#fff"><rect x="-30" y="-30" width="4" height="4" rx="1" transform="rotate(20)"/><rect x="10" y="-36" width="4" height="4" rx="1"/><rect x="36" y="-20" width="3.4" height="3.4" rx="1" transform="rotate(30 36 -20)"/><rect x="-12" y="-14" width="3.6" height="3.6" rx="1"/></g></g>
+      <g transform="translate(270 190)"><path d="M-70 20 Q-74 -30 -20 -44 Q30 -54 66 -26 Q86 -8 72 22 Q0 42 -70 20z" fill="url(#gCrustL)"/><path d="M-50 10 Q-40 -26 0 -34 M-10 20 Q0 -20 34 -30 M30 18 Q40 -6 60 -14" stroke="#b9772f" stroke-width="2.4" fill="none" opacity=".6" stroke-linecap="round"/><g fill="#5e7a35"><ellipse cx="-20" cy="-28" rx="6" ry="3.4" transform="rotate(-20 -20 -28)"/><ellipse cx="14" cy="-34" rx="5" ry="3" transform="rotate(14 14 -34)"/><ellipse cx="40" cy="-16" rx="5" ry="3" transform="rotate(40 40 -16)"/></g><g fill="#fff"><rect x="-2" y="-22" width="4" height="4" rx="1"/><rect x="24" y="-28" width="3.6" height="3.6" rx="1"/></g></g>
+     </g>
+     <g transform="translate(330 70) rotate(30)"><ellipse rx="22" ry="11" fill="#6f8a3e"/><path d="M-20 0 H20" stroke="#4d6628" stroke-width="1.6"/></g>
+     <g transform="translate(70 70) rotate(-24)"><ellipse rx="18" ry="9" fill="#7f9a48"/><path d="M-16 0 H16" stroke="#4d6628" stroke-width="1.6"/></g>
+    </svg></div>
+    <div class="bd"><div class="row"><h3>바질 소금빵</h3><span class="pr">3,500원</span></div><p>버터 심을 넣어 바닥이 바삭하게 튀겨지듯 구워지고, 생바질 향이 은은하게 남습니다.</p><span class="chip">11:30 · 15:00</span></div>
+   </article>
+   <article class="item">
+    <div class="ill"><svg viewBox="0 0 400 300"><rect width="400" height="300" fill="#f3d9de"/><circle cx="320" cy="60" r="90" fill="#efc6cf"/>
+     <g filter="url(#soft)">
+      <ellipse cx="200" cy="200" rx="122" ry="40" fill="#b9772f"/>
+      <path d="M78 196 L78 176 Q200 130 322 176 L322 196 Q200 244 78 196z" fill="url(#gCrustL)"/>
+      <g fill="#cf8a42" opacity=".6"><path d="M90 188 v-10M110 194 v-12M130 198 v-12M150 202 v-12M170 204 v-12M190 205 v-12M210 205 v-12M230 204 v-12M250 202 v-12M270 198 v-12M290 194 v-12M310 188 v-10" stroke="#a2602a" stroke-width="2"/></g>
+      <ellipse cx="200" cy="176" rx="116" ry="34" fill="url(#gPist)"/>
+      <ellipse cx="200" cy="172" rx="102" ry="27" fill="#c7d590" opacity=".6"/>
+     </g>
+     <g>
+      <g transform="translate(150 162)"><circle r="15" fill="url(#gRasp)"/><g fill="#f6a3b6" opacity=".7"><circle cx="-5" cy="-5" r="2.6"/><circle cx="4" cy="-7" r="2.2"/><circle cx="6" cy="3" r="2.2"/><circle cx="-3" cy="4" r="2.4"/></g></g>
+      <g transform="translate(186 150)"><circle r="15" fill="url(#gRasp)"/><g fill="#f6a3b6" opacity=".7"><circle cx="-5" cy="-5" r="2.6"/><circle cx="4" cy="-7" r="2.2"/><circle cx="6" cy="3" r="2.2"/></g></g>
+      <g transform="translate(222 158)"><circle r="15" fill="url(#gRasp)"/><g fill="#f6a3b6" opacity=".7"><circle cx="-5" cy="-5" r="2.6"/><circle cx="4" cy="-7" r="2.2"/><circle cx="-3" cy="4" r="2.4"/></g></g>
+      <g transform="translate(256 170)"><circle r="14" fill="url(#gRasp)"/><g fill="#f6a3b6" opacity=".7"><circle cx="-5" cy="-5" r="2.6"/><circle cx="6" cy="3" r="2.2"/></g></g>
+      <g transform="translate(200 180)"><circle r="14" fill="url(#gRasp)"/><g fill="#f6a3b6" opacity=".7"><circle cx="-4" cy="-5" r="2.6"/><circle cx="5" cy="2" r="2.2"/></g></g>
+      <g transform="translate(166 186)"><circle r="12" fill="url(#gRasp)"/></g>
+      <g fill="#6f8a3e"><path d="M120 176 l8 -4 l-2 8z"/><path d="M276 150 l8 -2 l-4 7z"/><path d="M240 188 l7 -3 l-2 7z"/></g>
+      <path d="M204 134 q10 -18 26 -14 q-8 16 -26 14z" fill="#7f9a48"/>
+     </g>
+    </svg></div>
+    <div class="bd"><div class="row"><h3>라즈베리 피스타치오 타르트</h3><span class="pr">7,800원</span></div><p>고소한 피스타치오 크림 위에 새콤한 라즈베리를 수북이 올린 계절 타르트입니다.</p><span class="chip">13:00 한정 수량</span></div>
+   </article>
+   <article class="item">
+    <div class="ill"><svg viewBox="0 0 400 300"><rect width="400" height="300" fill="#2f1c14"/><circle cx="200" cy="150" r="120" fill="#432a1f"/>
+     <ellipse cx="200" cy="236" rx="130" ry="14" fill="#1c0f09" opacity=".6"/>
+     <g filter="url(#soft)">
+      <g transform="translate(150 150)"><path d="M-38 80 L-44 -18 Q-40 -46 0 -48 Q40 -46 44 -18 L38 80 Q0 90 -38 80z" fill="url(#gCanele)"/><path d="M-26 82 L-30 -30M-12 86 L-14 -40M4 86 L4 -42M20 84 L22 -38M34 80 L36 -26" stroke="#2a1006" stroke-width="2.6" opacity=".5"/><ellipse cx="0" cy="-40" rx="38" ry="10" fill="#5b2611"/><ellipse cx="0" cy="-42" rx="16" ry="5" fill="#2c1208"/><path d="M-30 -20 Q-26 20 -28 70" stroke="#d5884a" stroke-width="3" opacity=".45" fill="none"/></g>
+      <g transform="translate(262 168) scale(.8)"><path d="M-38 80 L-44 -18 Q-40 -46 0 -48 Q40 -46 44 -18 L38 80 Q0 90 -38 80z" fill="url(#gCanele)"/><path d="M-26 82 L-30 -30M-12 86 L-14 -40M4 86 L4 -42M20 84 L22 -38M34 80 L36 -26" stroke="#2a1006" stroke-width="2.6" opacity=".5"/><ellipse cx="0" cy="-40" rx="38" ry="10" fill="#5b2611"/><ellipse cx="0" cy="-42" rx="16" ry="5" fill="#2c1208"/><path d="M-30 -20 Q-26 20 -28 70" stroke="#d5884a" stroke-width="3" opacity=".45" fill="none"/></g>
+     </g>
+     <g fill="#e7a2b2" opacity=".9"><path d="M310 70 l3 8 8 3 -8 3 -3 8 -3 -8 -8 -3 8 -3z"/><path d="M90 90 l2 6 6 2 -6 2 -2 6 -2 -6 -6 -2 6 -2z"/></g>
+    </svg></div>
+    <div class="bd"><div class="row"><h3>럼 카눌레</h3><span class="pr">3,300원</span></div><p>구리 틀에 밀랍을 입혀 겉은 캐러멜처럼 단단하고, 속은 커스터드처럼 촉촉합니다.</p><span class="chip">10:30 · 16:30</span></div>
+   </article>
+   <article class="item">
+    <div class="ill"><svg viewBox="0 0 400 300"><rect width="400" height="300" fill="#e9dcc8"/><rect y="210" width="400" height="90" fill="#cdb393"/><g stroke="#b99c78" stroke-width="2" opacity=".6"><path d="M0 236 H400M0 266 H400"/></g>
+     <g filter="url(#soft)">
+      <ellipse cx="200" cy="170" rx="132" ry="74" fill="#8a4c1f"/>
+      <ellipse cx="200" cy="160" rx="126" ry="66" fill="url(#gLoaf)"/>
+      <g fill="url(#flour)"><ellipse cx="200" cy="150" rx="118" ry="56"/></g>
+      <ellipse cx="200" cy="150" rx="110" ry="50" fill="#f8ecd8" opacity=".25"/>
+      <path d="M120 126 Q200 100 280 126" stroke="#7a3f15" stroke-width="6" fill="none" stroke-linecap="round"/>
+      <path d="M116 156 Q200 132 284 156" stroke="#7a3f15" stroke-width="6" fill="none" stroke-linecap="round"/>
+      <path d="M126 186 Q200 166 274 186" stroke="#7a3f15" stroke-width="6" fill="none" stroke-linecap="round"/>
+      <path d="M122 122 Q200 98 278 122" stroke="#f2c98b" stroke-width="2" fill="none"/>
+     </g>
+     <g fill="#fff" opacity=".7"><circle cx="160" cy="140" r="2"/><circle cx="230" cy="170" r="1.6"/><circle cx="250" cy="134" r="1.8"/><circle cx="180" cy="178" r="1.6"/></g>
+    </svg></div>
+    <div class="bd"><div class="row"><h3>호밀 깜빠뉴</h3><span class="pr">8,500원</span></div><p>천연 발효종으로 하루를 기다린 반죽. 두툼하게 썰어 수프나 치즈와 곁들이기 좋습니다.</p><span class="chip">09:00 · 반 덩이 4,500원</span></div>
+   </article>
+   <article class="item">
+    <div class="ill"><svg viewBox="0 0 400 300"><rect width="400" height="300" fill="#f6eadb"/><path d="M0 0 H400 V90 Q200 130 0 90z" fill="#efdcc4"/>
+     <g filter="url(#soft)">
+      <path d="M96 236 L96 140 Q96 96 140 96 Q170 70 200 92 Q230 70 260 96 Q304 96 304 140 L304 236 Q304 248 292 248 L108 248 Q96 248 96 236z" fill="url(#gLoaf)"/>
+      <path d="M140 96 Q148 150 144 244M200 92 Q204 160 200 246M260 96 Q254 150 258 244" stroke="#a65a22" stroke-width="2" opacity=".3" fill="none"/>
+      <path d="M108 140 Q108 106 140 106 Q170 84 200 102 Q230 84 260 106 Q292 106 292 140" stroke="#f9dfa9" stroke-width="5" fill="none" opacity=".7" stroke-linecap="round"/>
+     </g>
+     <g transform="translate(318 210)" filter="url(#soft2)"><rect x="-26" y="-50" width="40" height="70" rx="6" fill="#fff"/><rect x="-26" y="-50" width="40" height="18" rx="6" fill="#c13a5c"/><text x="-6" y="0" text-anchor="middle" font-family="Outfit" font-size="14" font-weight="700" fill="#3a2217">MILK</text></g>
+    </svg></div>
+    <div class="bd"><div class="row"><h3>우유 식빵</h3><span class="pr">6,800원</span></div><p>탕종 반죽에 우유를 넉넉히 넣어 결대로 길게 찢어지는 부드러운 식빵입니다.</p><span class="chip">08:00 · 14:00</span></div>
+   </article>
+  </div>
+ </div>
+</section>
+
+<section class="ovens" id="oven">
+ <div class="wrap">
+  <div class="sh">
+   <div><span class="eyebrow">OVEN TIMETABLE</span><h2>오늘의 오븐 시간표</h2></div>
+   <p>시간에 맞춰 오시면 가장 따뜻한 빵을 고르실 수 있어요. 시간은 반죽 상태에 따라 10분 안팎 달라질 수 있습니다.</p>
+  </div>
+  <div class="line">
+   <div class="slot"><div class="time en">07:00</div><div class="pin"></div><h4>크루아상 첫 판</h4><p>버터 · 아몬드 · 뺑오쇼콜라</p></div>
+   <div class="slot"><div class="time en">08:00</div><div class="pin"></div><h4>우유 식빵</h4><p>탕종 식빵 · 밤 식빵</p></div>
+   <div class="slot"><div class="time en">09:00</div><div class="pin"></div><h4>깜빠뉴 · 바게트</h4><p>호밀 · 무화과 · 올리브</p></div>
+   <div class="slot"><div class="time en">11:30</div><div class="pin"></div><h4>소금빵</h4><p>플레인 · 바질 · 명란</p></div>
+   <div class="slot"><div class="time en">13:00</div><div class="pin"></div><h4>타르트 · 케이크</h4><p>라즈베리 · 레몬 · 무화과</p></div>
+   <div class="slot hot" id="hotSlot"><div class="time en">15:00</div><div class="pin"></div><h4>오후 소금빵</h4><p>퇴근길 두 번째 판</p></div>
+  </div>
+  <div class="note"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>월요일은 반죽을 쉬어 가는 날입니다. 화–일 오전 7시부터 오후 8시까지, 빵이 모두 나가면 일찍 닫을 수 있어요.</div>
+ </div>
+</section>
+
+<section class="story" id="story">
+ <div class="wrap">
+  <div class="art">
+   <svg viewBox="0 0 500 600" aria-label="제과점 작업대 일러스트">
+    <defs><linearGradient id="wall" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f1dfc5"/><stop offset="1" stop-color="#e2c9a6"/></linearGradient>
+    <linearGradient id="win" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffe9c4"/><stop offset="1" stop-color="#f6c88f"/></linearGradient></defs>
+    <rect width="500" height="600" fill="url(#wall)"/>
+    <g><rect x="70" y="60" width="200" height="250" rx="100" fill="url(#win)"/><path d="M170 60 V310 M70 190 H270" stroke="#c49866" stroke-width="6"/><rect x="70" y="60" width="200" height="250" rx="100" fill="none" stroke="#b88a5a" stroke-width="10"/></g>
+    <g fill="#ffffff" opacity=".35"><path d="M100 120 L140 90 L150 100 L110 134z"/></g>
+    <!-- shelf -->
+    <rect x="300" y="130" width="170" height="10" rx="4" fill="#8a5a36"/>
+    <rect x="300" y="230" width="170" height="10" rx="4" fill="#8a5a36"/>
+    <g filter="url(#soft2)">
+     <rect x="312" y="84" width="40" height="46" rx="6" fill="#fffaf2"/><rect x="312" y="84" width="40" height="12" rx="4" fill="#8fa75e"/>
+     <rect x="362" y="96" width="30" height="34" rx="5" fill="#fffaf2"/><rect x="362" y="96" width="30" height="10" rx="4" fill="#c13a5c"/>
+     <ellipse cx="430" cy="118" rx="30" ry="13" fill="url(#gLoaf)"/>
+     <path d="M314 230 L314 196 Q314 178 334 178 Q348 168 362 178 Q380 178 380 196 L380 230z" fill="url(#gLoaf)"/>
+     <ellipse cx="428" cy="214" rx="34" ry="16" fill="#8a4c1f"/><ellipse cx="428" cy="210" rx="32" ry="13" fill="url(#gLoaf)"/>
+    </g>
+    <!-- table -->
+    <rect x="0" y="390" width="500" height="210" fill="#b98a5c"/>
+    <rect x="0" y="390" width="500" height="16" fill="#d3a676"/>
+    <g stroke="#a27449" stroke-width="2" opacity=".5"><path d="M0 450 Q250 440 500 452M0 510 Q250 500 500 512M0 566 Q250 558 500 568"/></g>
+    <!-- flour cloud -->
+    <ellipse cx="250" cy="470" rx="170" ry="44" fill="#fffaf0" opacity=".65"/>
+    <g fill="#fff" opacity=".8"><circle cx="140" cy="452" r="3"/><circle cx="370" cy="490" r="2.4"/><circle cx="300" cy="446" r="2"/><circle cx="190" cy="500" r="2.6"/></g>
+    <!-- dough sheet folded -->
+    <g filter="url(#soft2)">
+     <path d="M150 470 L330 452 L352 486 L172 504z" fill="#f7e3bf"/>
+     <path d="M150 470 L330 452 L334 460 L154 478z" fill="#fbd98f"/>
+     <path d="M154 478 L334 460 L338 468 L158 486z" fill="#f7e3bf"/>
+     <path d="M158 486 L338 468 L342 476 L162 494z" fill="#fbd98f"/>
+     <path d="M162 494 L342 476 L346 484 L166 502z" fill="#f7e3bf"/>
+    </g>
+    <!-- rolling pin -->
+    <g filter="url(#soft)" transform="rotate(-12 260 420)"><rect x="110" y="408" width="300" height="34" rx="17" fill="#d8a874"/><rect x="110" y="408" width="300" height="12" rx="6" fill="#ebc596" opacity=".8"/><rect x="60" y="417" width="56" height="16" rx="8" fill="#8a5a36"/><rect x="404" y="417" width="56" height="16" rx="8" fill="#8a5a36"/></g>
+    <!-- butter block -->
+    <g filter="url(#soft2)" transform="translate(380 520)"><path d="M-40 0 L20 -16 L52 0 L-8 16z" fill="#fff2a8"/><path d="M-40 0 L-8 16 L-8 34 L-40 18z" fill="#f2d25e"/><path d="M-8 16 L52 0 L52 18 L-8 34z" fill="#e8c445"/></g>
+    <!-- whisk -->
+    <g transform="translate(90 540) rotate(-30)" stroke="#9c8a7c" stroke-width="2.4" fill="none"><path d="M0 0 C-14 -40 -10 -70 0 -76 C10 -70 14 -40 0 0"/><path d="M0 0 C-6 -40 -4 -70 0 -76 C4 -70 6 -40 0 0"/><rect x="-5" y="0" width="10" height="44" rx="5" fill="#3a2217" stroke="none"/></g>
+   </svg>
+  </div>
+  <div>
+   <span class="eyebrow">OUR STORY</span>
+   <h2>버터 한 장, 밀가루 한 줌.<br>매일 같은 손으로 접습니다</h2>
+   <p>겹겹 제과점은 오븐 두 대와 작업대 하나로 시작한 골목 빵집입니다. 크루아상 반죽은 세 번 접고 쉬게 하고, 다시 세 번 접습니다. 그렇게 생긴 스물일곱 겹이 이 가게의 이름이 되었습니다.</p>
+   <p>재료는 단순하게, 굽는 시간은 정직하게. 첨가물로 부풀리지 않고 반죽이 스스로 자랄 시간을 기다립니다.</p>
+   <div class="facts">
+    <div><b>27</b><span>크루아상의 결</span></div>
+    <div><b>18h</b><span>저온 숙성 시간</span></div>
+    <div><b>6회</b><span>하루 오븐 타임</span></div>
+   </div>
+  </div>
+ </div>
+</section>
+
+<section class="cake" id="cake">
+ <div class="wrap">
+  <div>
+   <span class="eyebrow">WHOLE CAKE ORDER</span>
+   <div class="sh" style="margin-bottom:0"><div><h2>생일, 기념일에는<br>홀케이크를 미리 예약하세요</h2></div></div>
+   <div class="sizes" id="sizes">
+    <button type="button" class="size" data-size="미니 (12cm)" data-price="26000"><svg viewBox="0 0 120 74"><ellipse cx="60" cy="64" rx="34" ry="7" fill="#e3c9c0"/><rect x="36" y="34" width="48" height="30" rx="4" fill="url(#gCream)"/><ellipse cx="60" cy="34" rx="24" ry="6" fill="#fff"/><circle cx="52" cy="30" r="5" fill="url(#gRasp)"/><circle cx="66" cy="30" r="5" fill="url(#gRasp)"/></svg><b>미니</b><span>26,000원</span><small>12cm · 1–2인</small></button>
+    <button type="button" class="size on" data-size="1호 (15cm)" data-price="36000"><svg viewBox="0 0 120 74"><ellipse cx="60" cy="66" rx="42" ry="7" fill="#e3c9c0"/><rect x="28" y="28" width="64" height="38" rx="5" fill="url(#gCream)"/><rect x="28" y="44" width="64" height="5" fill="#e7a2b2"/><ellipse cx="60" cy="28" rx="32" ry="7" fill="#fff"/><circle cx="46" cy="24" r="5" fill="url(#gRasp)"/><circle cx="60" cy="22" r="5" fill="url(#gRasp)"/><circle cx="74" cy="24" r="5" fill="url(#gRasp)"/></svg><b>1호</b><span>36,000원</span><small>15cm · 3–4인</small></button>
+    <button type="button" class="size" data-size="2호 (18cm)" data-price="46000"><svg viewBox="0 0 120 74"><ellipse cx="60" cy="68" rx="50" ry="6" fill="#e3c9c0"/><rect x="18" y="22" width="84" height="46" rx="6" fill="url(#gCream)"/><rect x="18" y="38" width="84" height="5" fill="#e7a2b2"/><rect x="18" y="52" width="84" height="5" fill="#c7d590"/><ellipse cx="60" cy="22" rx="42" ry="8" fill="#fff"/><circle cx="38" cy="18" r="5" fill="url(#gRasp)"/><circle cx="52" cy="16" r="5" fill="url(#gRasp)"/><circle cx="68" cy="16" r="5" fill="url(#gRasp)"/><circle cx="82" cy="18" r="5" fill="url(#gRasp)"/></svg><b>2호</b><span>46,000원</span><small>18cm · 5–6인</small></button>
+   </div>
+   <ul class="rules">
+    <li><b>01</b>픽업 3일 전까지 예약해 주세요. 주말은 일찍 마감될 수 있어요.</li>
+    <li><b>02</b>맛은 라즈베리 생크림 · 얼그레이 · 피스타치오 세 가지 중에서 고릅니다.</li>
+    <li><b>03</b>레터링은 초콜릿 판에 15자까지 써 드립니다.</li>
+   </ul>
+  </div>
+  <div class="form" id="formBox">
+   <form id="cakeForm" novalidate>
+    <h3>케이크 예약 신청</h3>
+    <p class="sub">신청을 남기시면 영업시간 안에 확인 연락을 드립니다.</p>
+    <div class="two">
+     <div class="fld"><label for="nm">이름</label><input id="nm" required placeholder="홍길동"></div>
+     <div class="fld"><label for="ph">연락처</label><input id="ph" required placeholder="000-0000-0000" inputmode="tel"></div>
+    </div>
+    <div class="two">
+     <div class="fld"><label for="flv">맛</label><select id="flv"><option>라즈베리 생크림</option><option>얼그레이</option><option>피스타치오</option></select></div>
+     <div class="fld"><label for="dt">픽업 날짜</label><input id="dt" required placeholder="예) 12월 24일"></div>
+    </div>
+    <div class="fld"><label for="msg">레터링 문구 (15자 이내)</label><textarea id="msg" maxlength="15" placeholder="예) 생일 축하해"></textarea></div>
+    <div class="sum"><span>선택한 크기 · <b id="selSize" style="font-family:'Noto Sans KR';font-size:15px">1호 (15cm)</b></span><b id="selPrice">36,000원</b></div>
+    <button class="btn btn-r" type="submit">예약 신청 보내기</button>
+   </form>
+   <div class="done" id="done">
+    <svg viewBox="0 0 64 64"><circle cx="32" cy="32" r="30" fill="#c13a5c"/><path d="M20 33l8 8 16-17" stroke="#fff" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    <h3 class="serif">예약 신청이 접수되었어요</h3>
+    <p id="doneTxt">확인 후 연락드리겠습니다.</p>
+   </div>
+  </div>
+ </div>
+</section>
+
+<section class="visit" id="visit">
+ <div class="wrap">
+  <div class="sh"><div><span class="eyebrow">VISIT</span><h2>골목 모퉁이,<br>빵 냄새를 따라 오세요</h2></div></div>
+  <div class="grid">
+   <div class="map">
+    <svg viewBox="0 0 700 420" preserveAspectRatio="xMidYMid slice" aria-label="약도 일러스트">
+     <rect width="700" height="420" fill="#efe2cf"/>
+     <g fill="#e4d3bb"><rect x="30" y="30" width="180" height="120" rx="14"/><rect x="250" y="30" width="200" height="120" rx="14"/><rect x="490" y="30" width="180" height="120" rx="14"/><rect x="30" y="200" width="180" height="190" rx="14"/><rect x="490" y="200" width="180" height="190" rx="14"/></g>
+     <g fill="#cfd8b3"><rect x="250" y="270" width="200" height="120" rx="14"/></g>
+     <g fill="#b6c48c"><circle cx="290" cy="306" r="18"/><circle cx="345" cy="318" r="22"/><circle cx="404" cy="300" r="16"/></g>
+     <path d="M0 175 H700 M230 0 V420 M470 0 V420" stroke="#fffaf2" stroke-width="30"/>
+     <path d="M0 175 H700 M230 0 V420 M470 0 V420" stroke="#e6d6bf" stroke-width="2" stroke-dasharray="10 12"/>
+     <path d="M350 175 V250" stroke="#fffaf2" stroke-width="18"/>
+     <path d="M163 348 C 196 290 230 230 350 232" stroke="#c13a5c" stroke-width="4" fill="none" stroke-dasharray="2 10" stroke-linecap="round"/>
+     <g transform="translate(350 222)" filter="url(#soft2)"><path d="M0 0 C-22 -22 -26 -36 -26 -48 A26 26 0 0 1 26 -48 C26 -36 22 -22 0 0z" fill="#3a2217"/><circle cy="-48" r="11" fill="#c13a5c"/></g>
+     <g filter="url(#soft2)"><rect x="376" y="182" width="176" height="46" rx="23" fill="#fffaf2"/><text x="464" y="212" text-anchor="middle" class="pl" font-family="Gowun Batang" font-size="20" font-weight="700" fill="#3a2217">겹겹 제과점</text></g>
+     <g filter="url(#soft2)"><rect x="84" y="348" width="158" height="42" rx="21" fill="#3a2217"/><text class="pl" x="163" y="376" text-anchor="middle" font-family="Noto Sans KR" font-size="17" font-weight="700" fill="#f8f0e4">버스 정류장</text></g>
+     <text x="120" y="98" text-anchor="middle" font-family="Noto Sans KR" font-size="18" fill="#a28c74">주택가</text>
+     <text x="350" y="98" text-anchor="middle" font-family="Noto Sans KR" font-size="18" fill="#a28c74">상가</text>
+     <text x="580" y="300" text-anchor="middle" font-family="Noto Sans KR" font-size="18" fill="#a28c74">학교</text><text x="580" y="98" text-anchor="middle" font-family="Noto Sans KR" font-size="18" fill="#a28c74">도서관</text>
+     <text x="350" y="374" text-anchor="middle" font-family="Noto Sans KR" font-size="18" fill="#7f8f5a">작은 공원</text>
+    </svg>
+   </div>
+   <div class="info">
+    <h3>매장 안내</h3>
+    <dl>
+     <dt>주소</dt><dd>서울시 ○○구 ○○로 00, 1층</dd>
+     <dt>영업</dt><dd>화–일 07:00 – 20:00<br>월요일 정기 휴무</dd>
+     <dt>전화</dt><dd>000-0000-0000</dd>
+     <dt>주차</dt><dd>매장 앞 2대 (10분 이내)</dd>
+     <dt>좌석</dt><dd>창가 바 테이블 6석</dd>
+    </dl>
+    <a class="btn btn-r" href="#cake">케이크 예약하기</a>
+   </div>
+  </div>
+ </div>
+</section>
+</main>
+
+<footer>
+ <div class="wrap">
+  <div class="logo"><svg class="mk" viewBox="0 0 42 42"><circle cx="21" cy="21" r="20" fill="#3a2217"/><path d="M9 25c3-8 9-12 12-12s9 4 12 12c-4 2-8 3-12 3s-8-1-12-3z" fill="url(#gCrustL)"/></svg><div><b>겹겹 제과점</b><small>LAYERS BAKEHOUSE</small></div></div>
+  <div>상호 겹겹 제과점 · 대표 000 · 사업자등록번호 000-00-00000<br>© 겹겹 제과점. 매일 굽는 골목 빵집.</div>
+ </div>
+</footer>
+
+<div class="mtab"><a href="#oven">오븐 시간표</a><a href="#cake">케이크 예약</a></div>
+
+<script>
+(function(){
+ var sizes=document.querySelectorAll('.size'),selSize=document.getElementById('selSize'),selPrice=document.getElementById('selPrice');
+ sizes.forEach(function(b){b.addEventListener('click',function(){sizes.forEach(function(x){x.classList.remove('on')});b.classList.add('on');selSize.textContent=b.dataset.size;selPrice.textContent=(+b.dataset.price).toLocaleString('ko-KR')+'원';});});
+ var d=document.getElementById('dt');
+ document.getElementById('cakeForm').addEventListener('submit',function(e){e.preventDefault();
+  var nm=document.getElementById('nm'),ph=document.getElementById('ph');var ok=true;
+  [nm,ph,d].forEach(function(f){if(!f.value.trim()){f.style.borderColor='#c13a5c';ok=false}else f.style.borderColor=''});
+  if(!ok)return;
+  document.getElementById('doneTxt').textContent=nm.value+'님, '+selSize.textContent+' '+document.getElementById('flv').value+' 케이크 예약 신청을 받았습니다. 확인 후 연락드리겠습니다.';
+  this.style.display='none';document.getElementById('done').style.display='block';});
+ // next oven time
+ var slots=[[7,0,'크루아상 첫 판'],[8,0,'우유 식빵'],[9,0,'깜빠뉴 · 바게트'],[11,30,'소금빵'],[13,0,'타르트 · 케이크'],[15,0,'오후 소금빵']];
+ var n=new Date(),m=n.getHours()*60+n.getMinutes(),nx=null,idx=-1;
+ slots.forEach(function(s,i){if(nx===null&&s[0]*60+s[1]>m){nx=s;idx=i}});
+ var els=document.querySelectorAll('.slot');els.forEach(function(e){e.classList.remove('hot')});
+ if(nx){var h=nx[0],ap=h<12?'오전':'오후',hh=h>12?h-12:h;document.getElementById('nowTxt').textContent='다음 오븐 · '+ap+' '+hh+':'+(nx[1]<10?'0':'')+nx[1]+' '+nx[2];els[idx].classList.add('hot');}
+ else{document.getElementById('nowTxt').textContent='오늘 오븐은 마감 · 내일 오전 7:00 크루아상';els[0].classList.add('hot');}
+})();
+</script>
+</body>
+</html>
