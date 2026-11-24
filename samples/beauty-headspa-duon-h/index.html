@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>두온 헤드스파 · DUON HEAD SPA</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700;800&family=Noto+Sans+KR:wght@300;400;500;700&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--moss:#25302a;--moss2:#33433a;--stone:#efe9df;--sand:#dccdb4;--clay:#a8693f;--mist:#a9bcae;--ink:#1b211d;--line:rgba(37,48,42,.16)}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Noto Sans KR',sans-serif;background:var(--stone);color:var(--ink);word-break:keep-all;-webkit-font-smoothing:antialiased;line-height:1.7;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+.serif{font-family:'Nanum Myeongjo',serif}
+.en{font-family:'Outfit',sans-serif}
+.wrap{max-width:1200px;margin:0 auto;padding:0 32px}
+/* nav */
+nav{position:absolute;top:0;left:0;right:0;z-index:20}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;height:88px}
+.logo{display:flex;align-items:center;gap:12px;color:#f2ece2}
+.logo svg{width:38px;height:38px}
+.logo b{font-family:'Nanum Myeongjo',serif;font-size:21px;font-weight:800;letter-spacing:.06em;display:block;line-height:1.1}
+.logo small{font-family:'Outfit',sans-serif;font-size:11px;letter-spacing:.34em;opacity:.75}
+nav ul{display:flex;gap:34px;list-style:none}
+nav ul a{color:#e3dccf;font-size:14.5px;letter-spacing:.04em;transition:.2s}
+nav ul a:hover{color:#fff}
+.nbtn{height:44px;padding:0 22px;border-radius:999px;border:1px solid rgba(242,236,226,.5);color:#f2ece2;display:inline-flex;align-items:center;font-size:14px;transition:.2s}
+.nbtn:hover{background:#f2ece2;color:var(--moss)}
+/* hero */
+.hero{position:relative;background:var(--moss);color:#f2ece2;min-height:900px;overflow:hidden}
+.hero .bg{position:absolute;inset:0}
+.hero .bg svg{width:100%;height:100%;display:block}
+.hero .wrap{position:relative;z-index:2;display:grid;grid-template-columns:1.05fr .95fr;align-items:center;min-height:900px;gap:40px;padding-top:88px}
+.eyebrow{font-family:'Outfit',sans-serif;font-size:13px;letter-spacing:.38em;color:var(--mist);display:flex;align-items:center;gap:14px}
+.eyebrow:before{content:"";width:40px;height:1px;background:var(--mist)}
+.hero h1{font-family:'Nanum Myeongjo',serif;font-weight:800;font-size:66px;line-height:1.28;margin:26px 0 26px;letter-spacing:-.01em}
+.hero h1 em{font-style:normal;color:#e2b48d}
+.hero p.lead{font-size:17.5px;color:#cfd6cd;font-weight:300;max-width:470px;line-height:1.9}
+.hbtns{display:flex;gap:12px;margin-top:40px;flex-wrap:wrap}
+.btn{height:56px;padding:0 30px;border-radius:999px;display:inline-flex;align-items:center;gap:10px;font-size:15.5px;font-weight:500;transition:.25s;cursor:pointer;border:0;font-family:inherit}
+.btn svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.btn.p{background:#e2b48d;color:var(--moss)}
+.btn.p:hover{background:#efc6a2}
+.btn.g{border:1px solid rgba(242,236,226,.4);color:#f2ece2;background:transparent}
+.btn.g:hover{background:rgba(242,236,226,.08)}
+.hmeta{display:flex;gap:40px;margin-top:56px;padding-top:28px;border-top:1px solid rgba(242,236,226,.15);max-width:480px}
+.hmeta div b{display:block;font-family:'Outfit',sans-serif;font-weight:300;font-size:30px;color:#f2ece2;line-height:1.2}
+.hmeta div span{font-size:13px;color:#a9b5ab}
+.hart{position:relative;height:640px}
+.hart svg{width:100%;height:100%;overflow:visible}
+/* sections */
+section{padding:130px 0}
+.sh{display:flex;justify-content:space-between;align-items:flex-end;gap:30px;margin-bottom:64px;flex-wrap:wrap}
+.sh .k{font-family:'Outfit',sans-serif;font-size:13px;letter-spacing:.34em;color:var(--clay);margin-bottom:16px;display:block}
+.sh h2{font-family:'Nanum Myeongjo',serif;font-size:44px;font-weight:800;line-height:1.35;color:var(--moss)}
+.sh p{max-width:420px;color:#5b625c;font-size:16px}
+/* philosophy */
+.phil{background:var(--stone)}
+.pgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-top:1px solid var(--line)}
+.pgrid > div{padding:44px 40px 10px 0;border-right:1px solid var(--line)}
+.pgrid > div + div{padding-left:40px}
+.pgrid > div:last-child{border-right:0}
+.pgrid .n{font-family:'Outfit',sans-serif;font-weight:300;font-size:15px;color:var(--clay);letter-spacing:.2em}
+.pgrid svg{width:72px;height:72px;margin:26px 0 22px;display:block}
+.pgrid h3{font-family:'Nanum Myeongjo',serif;font-size:25px;font-weight:800;color:var(--moss);margin-bottom:12px}
+.pgrid p{color:#5b625c;font-size:15.5px}
+/* courses */
+.courses{background:#e6dfd2;position:relative}
+.cgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.card{background:var(--stone);border-radius:22px;overflow:hidden;display:flex;flex-direction:column;border:1px solid rgba(37,48,42,.08);transition:.3s}
+.card:hover{transform:translateY(-6px);box-shadow:0 30px 50px -30px rgba(37,48,42,.45)}
+.card .im{height:200px;position:relative}
+.card .im svg{width:100%;height:100%;display:block}
+.card .bd{padding:26px 26px 28px;display:flex;flex-direction:column;flex:1}
+.card .tm{font-family:'Outfit',sans-serif;font-size:13px;color:var(--clay);letter-spacing:.12em}
+.card h3{font-family:'Nanum Myeongjo',serif;font-size:22px;font-weight:800;color:var(--moss);margin:8px 0 10px}
+.card p{font-size:14.5px;color:#5b625c;flex:1}
+.card ul{list-style:none;margin:16px 0 20px;font-size:13.5px;color:#454c46}
+.card li{padding:5px 0 5px 16px;position:relative;border-top:1px dashed rgba(37,48,42,.15)}
+.card li:before{content:"";position:absolute;left:0;top:14px;width:6px;height:6px;border-radius:50%;background:var(--mist)}
+.card .pr{display:flex;align-items:baseline;justify-content:space-between;padding-top:16px;border-top:1px solid var(--line)}
+.card .pr b{font-family:'Outfit',sans-serif;font-weight:500;font-size:26px;color:var(--moss)}
+.card .pr b small{font-family:'Noto Sans KR';font-size:14px;font-weight:400;margin-left:2px}
+.card .pr button{background:none;border:0;font-family:inherit;font-size:13.5px;color:var(--clay);cursor:pointer;font-weight:500;border-bottom:1px solid var(--clay);padding-bottom:1px}
+.card.feat{background:var(--moss);color:#f2ece2}
+.card.feat h3,.card.feat .pr b{color:#f2ece2}
+.card.feat p,.card.feat ul{color:#c8d0c8}
+.card.feat .pr{border-color:rgba(242,236,226,.18)}
+.card.feat li{border-color:rgba(242,236,226,.14)}
+.card.feat .tm,.card.feat .pr button{color:#e2b48d;border-color:#e2b48d}
+.tag{position:absolute;top:16px;left:16px;background:#e2b48d;color:var(--moss);font-size:12px;font-weight:700;padding:5px 12px;border-radius:999px}
+.note{margin-top:28px;font-size:13.5px;color:#6b716c}
+/* flow */
+.flow{background:var(--moss);color:#f2ece2;overflow:hidden;position:relative}
+.flow .sh h2{color:#f2ece2}
+.flow .sh p{color:#b9c3ba}
+.steps{display:grid;grid-template-columns:repeat(5,1fr);gap:0;position:relative}
+.steps:before{content:"";position:absolute;left:0;right:0;top:46px;height:1px;background:linear-gradient(90deg,transparent,rgba(226,180,141,.6) 10%,rgba(226,180,141,.6) 90%,transparent)}
+.step{padding:0 22px 0 0;position:relative}
+.step .dot{width:92px;height:92px;border-radius:50%;background:var(--moss2);border:1px solid rgba(226,180,141,.5);display:flex;align-items:center;justify-content:center;position:relative;z-index:1}
+.step .dot svg{width:44px;height:44px;fill:none;stroke:#e2b48d;stroke-width:1.4;stroke-linecap:round;stroke-linejoin:round}
+.step .n{font-family:'Outfit',sans-serif;font-size:13px;letter-spacing:.24em;color:var(--mist);margin:26px 0 6px;display:block}
+.step h3{font-family:'Nanum Myeongjo',serif;font-size:21px;font-weight:800;margin-bottom:8px}
+.step p{font-size:14.5px;color:#b9c3ba}
+.step .m{display:inline-block;margin-top:12px;font-family:'Outfit',sans-serif;font-size:13px;color:#e2b48d;border:1px solid rgba(226,180,141,.4);padding:3px 10px;border-radius:999px}
+/* space */
+.space{background:var(--stone)}
+.sgrid{display:grid;grid-template-columns:1.3fr 1fr;gap:24px}
+.sgrid .big{border-radius:26px;overflow:hidden;height:560px;position:relative}
+.sgrid .big svg,.sgrid .sm svg{width:100%;height:100%;display:block}
+.sgrid .col{display:grid;grid-template-rows:1fr auto;gap:24px}
+.sgrid .sm{border-radius:26px;overflow:hidden;min-height:300px}
+.slist{background:#e6dfd2;border-radius:26px;padding:34px 36px;display:grid;grid-template-columns:1fr 1fr;gap:22px 26px}
+.slist div b{font-family:'Nanum Myeongjo',serif;font-size:18px;color:var(--moss);display:block;margin-bottom:4px}
+.slist div span{font-size:14px;color:#5b625c}
+.cap{position:absolute;left:28px;bottom:26px;background:rgba(239,233,223,.92);backdrop-filter:blur(6px);padding:14px 20px;border-radius:14px;font-size:14px;color:var(--moss)}
+.cap b{font-family:'Nanum Myeongjo',serif;font-size:17px;display:block}
+/* care */
+.care{background:#e6dfd2}
+.cwrap{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:center}
+.cwrap .art{border-radius:28px;overflow:hidden;height:520px;background:var(--moss)}
+.cwrap .art svg{width:100%;height:100%;display:block}
+.tips{list-style:none;margin-top:10px}
+.tips li{display:grid;grid-template-columns:56px 1fr;gap:18px;padding:24px 0;border-top:1px solid var(--line)}
+.tips li:last-child{border-bottom:1px solid var(--line)}
+.tips .i{font-family:'Outfit',sans-serif;font-weight:300;font-size:34px;color:var(--clay);line-height:1}
+.tips h3{font-family:'Nanum Myeongjo',serif;font-size:20px;font-weight:800;color:var(--moss);margin-bottom:4px}
+.tips p{font-size:15px;color:#5b625c}
+/* reserve */
+.reserve{background:var(--moss2);color:#f2ece2;position:relative;overflow:hidden}
+.reserve .sh h2{color:#f2ece2}
+.reserve .sh p{color:#b9c3ba}
+.rbox{display:grid;grid-template-columns:1.25fr .75fr;gap:24px}
+.rpanel{background:rgba(242,236,226,.06);border:1px solid rgba(242,236,226,.14);border-radius:24px;padding:34px}
+.rpanel h4{font-size:14px;font-weight:500;color:#e2b48d;letter-spacing:.08em;margin-bottom:14px;display:flex;justify-content:space-between}
+.rpanel h4 span{color:#a9b5ab;font-weight:400}
+.opts{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:30px}
+.opt{border:1px solid rgba(242,236,226,.22);background:transparent;color:#e3dccf;border-radius:12px;padding:11px 16px;font-family:inherit;font-size:14.5px;cursor:pointer;transition:.2s;text-align:left}
+.opt small{display:block;font-family:'Outfit',sans-serif;font-size:12px;color:#a9b5ab}
+.opt:hover{border-color:#e2b48d}
+.opt.on{background:#e2b48d;color:var(--moss);border-color:#e2b48d}
+.opt.on small{color:#5a4733}
+.opt.dis{opacity:.32;cursor:not-allowed;text-decoration:line-through}
+.days{display:grid;grid-template-columns:repeat(7,1fr);gap:8px;margin-bottom:30px}
+.day{border:1px solid rgba(242,236,226,.22);border-radius:12px;padding:10px 0;text-align:center;background:transparent;color:#e3dccf;cursor:pointer;font-family:inherit;transition:.2s}
+.day small{display:block;font-size:12px;color:#a9b5ab}
+.day b{font-family:'Outfit',sans-serif;font-weight:500;font-size:20px}
+.day.on{background:#e2b48d;color:var(--moss);border-color:#e2b48d}
+.day.on small{color:#5a4733}
+.day.off{opacity:.3;cursor:not-allowed}
+.sum{background:var(--stone);color:var(--ink);border-radius:24px;padding:34px;display:flex;flex-direction:column}
+.sum h4{font-family:'Nanum Myeongjo',serif;font-size:22px;color:var(--moss);margin-bottom:20px}
+.sum dl{display:grid;grid-template-columns:70px 1fr;gap:12px 10px;font-size:15px;padding-bottom:20px;border-bottom:1px solid var(--line)}
+.sum dt{color:#7a807a}
+.sum dd{font-weight:500;color:var(--moss)}
+.sum .tot{display:flex;justify-content:space-between;align-items:baseline;padding:20px 0}
+.sum .tot b{font-family:'Outfit',sans-serif;font-size:32px;font-weight:500;color:var(--moss)}
+.sum input{width:100%;height:50px;border-radius:12px;border:1px solid var(--line);background:#fff;padding:0 16px;font-family:inherit;font-size:15px;margin-bottom:10px}
+.sum .btn{width:100%;justify-content:center;background:var(--moss);color:#f2ece2;margin-top:6px}
+.sum .btn:hover{background:var(--clay)}
+.sum .msg{font-size:14px;margin-top:14px;color:var(--clay);min-height:22px;text-align:center}
+.sum .ok{display:none;text-align:center;padding:30px 0}
+.sum .ok svg{width:64px;height:64px;margin:0 auto 14px;display:block}
+.sum .ok b{font-family:'Nanum Myeongjo',serif;font-size:22px;color:var(--moss);display:block;margin-bottom:6px}
+.sum.done .form{display:none}
+.sum.done .ok{display:block}
+/* faq */
+.faq{background:var(--stone)}
+.fwrap{display:grid;grid-template-columns:.8fr 1.2fr;gap:70px}
+details{border-top:1px solid var(--line);padding:24px 0}
+details:last-child{border-bottom:1px solid var(--line)}
+summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;gap:20px;font-family:'Nanum Myeongjo',serif;font-size:19px;font-weight:800;color:var(--moss)}
+summary::-webkit-details-marker{display:none}
+summary i{width:28px;height:28px;flex:none;border-radius:50%;border:1px solid var(--line);position:relative}
+summary i:before,summary i:after{content:"";position:absolute;left:8px;right:8px;top:13px;height:1px;background:var(--moss)}
+summary i:after{transform:rotate(90deg);transition:.25s}
+details[open] summary i:after{transform:rotate(0)}
+details p{margin-top:12px;color:#5b625c;font-size:15.5px;max-width:620px}
+/* visit */
+.visit{background:#e6dfd2;padding-bottom:110px}
+.vgrid{display:grid;grid-template-columns:1.2fr .8fr;gap:24px}
+.map{border-radius:26px;overflow:hidden;height:420px;background:#d9cfbd}
+.map svg{width:100%;height:100%;display:block}
+.vinfo{background:var(--stone);border-radius:26px;padding:38px}
+.vinfo dl{display:grid;grid-template-columns:80px 1fr;gap:16px 12px;font-size:15px}
+.vinfo dt{color:var(--clay);font-weight:500}
+.vinfo dd{color:#3a413b}
+.vinfo .btn{margin-top:30px;background:var(--moss);color:#f2ece2}
+footer{background:var(--ink);color:#8f998f;padding:46px 0;font-size:13px}
+footer .wrap{display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap}
+footer .logo{color:#e3dccf}
+.mbar{display:none}
+@media(max-width:1100px){
+ .cgrid{grid-template-columns:repeat(2,1fr)}
+ .steps{grid-template-columns:repeat(3,1fr);row-gap:50px}
+ .steps:before{display:none}
+}
+@media(max-width:900px){
+ .wrap{padding:0 20px}
+ nav ul{display:none}
+ .hero{min-height:auto}
+ .hero .wrap{grid-template-columns:1fr;min-height:auto;padding-top:120px;padding-bottom:40px;gap:10px}
+ .hero h1{font-size:40px;margin:20px 0}
+ .hero p.lead{font-size:16px}
+ .hart{height:380px;order:2}
+ .hmeta{gap:26px}
+ .hmeta div b{font-size:24px}
+ section{padding:84px 0}
+ .sh{margin-bottom:40px}
+ .sh h2{font-size:30px}
+ .pgrid{grid-template-columns:1fr}
+ .pgrid > div,.pgrid > div + div{padding:30px 0;border-right:0;border-bottom:1px solid var(--line)}
+ .pgrid svg{margin:16px 0}
+ .sgrid,.cwrap,.rbox,.fwrap,.vgrid{grid-template-columns:1fr}
+ .cwrap{gap:36px}
+ .fwrap{gap:20px}
+ .sgrid .big{height:380px}
+ .cwrap .art{height:360px}
+ .map{height:300px}
+}
+@media(max-width:620px){
+ .map{height:240px}
+}
+@media(max-width:620px){
+ .nbtn{display:none}
+ .cgrid{grid-template-columns:1fr}
+ .steps{grid-template-columns:1fr;row-gap:34px}
+ .step{display:grid;grid-template-columns:72px 1fr;column-gap:18px;padding:0}
+ .step .dot{width:72px;height:72px;grid-row:span 4}
+ .step .dot svg{width:34px;height:34px}
+ .step .n{margin:4px 0 2px}
+ .step .m{justify-self:start}
+ .slist{grid-template-columns:1fr;padding:28px}
+ .rpanel,.sum,.vinfo{padding:24px}
+ .days{gap:4px}
+ .day b{font-size:17px}
+ .opt{flex:1 1 calc(50% - 8px)}
+ .hart{height:320px}
+ .mbar{display:flex;transform:translateY(200%);opacity:0;visibility:hidden;transition:.3s;position:fixed;left:0;right:0;bottom:0;z-index:30;background:rgba(37,48,42,.96);padding:10px 16px;gap:10px}
+ .mbar a{flex:1;height:48px;border-radius:999px;display:flex;align-items:center;justify-content:center;font-size:15px;font-weight:500}
+ .mbar a.a{border:1px solid rgba(242,236,226,.35);color:#f2ece2}
+ .mbar a.b{background:#e2b48d;color:var(--moss)}
+ footer{padding-bottom:100px}
+ .mbar.show{transform:none;opacity:1;visibility:visible}
+}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute">
+ <defs>
+  <linearGradient id="gBasin" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f4eee4"/><stop offset="1" stop-color="#c9bba3"/></linearGradient>
+  <linearGradient id="gWater" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#9fb8ad"/><stop offset="1" stop-color="#5f7c70"/></linearGradient>
+  <radialGradient id="gGlow" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#f6d2ad" stop-opacity=".85"/><stop offset="1" stop-color="#f6d2ad" stop-opacity="0"/></radialGradient>
+  <linearGradient id="gLeaf" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#8fa594"/><stop offset="1" stop-color="#46594c"/></linearGradient>
+  <linearGradient id="gStone" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#5a6159"/><stop offset="1" stop-color="#2c322d"/></linearGradient>
+  <linearGradient id="gWood" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#9c7556"/><stop offset=".5" stop-color="#b48b68"/><stop offset="1" stop-color="#8a6448"/></linearGradient>
+ </defs>
+</svg>
+
+<nav>
+ <div class="wrap">
+  <a class="logo" href="#top"><svg viewBox="0 0 40 40" fill="none"><circle cx="20" cy="20" r="18.5" stroke="#e2b48d"/><path d="M9 22c4-3 7-3 11 0s7 3 11 0" stroke="#e2b48d" stroke-width="1.4"/><path d="M11 27c3-2 6-2 9 0s6 2 9 0" stroke="#a9bcae" stroke-width="1.2"/><path d="M20 8c-3 4-3 7 0 10 3-3 3-6 0-10z" fill="#e2b48d"/></svg><span><b>두온 헤드스파</b><small>DUON HEAD SPA</small></span></a>
+  <ul><li><a href="#about">소개</a></li><li><a href="#course">코스</a></li><li><a href="#flow">진행 순서</a></li><li><a href="#space">공간</a></li><li><a href="#faq">자주 묻는 질문</a></li><li><a href="#visit">오시는 길</a></li></ul>
+  <a class="nbtn" href="#reserve">예약하기</a>
+ </div>
+</nav>
+
+<header class="hero" id="top">
+ <div class="bg"><svg viewBox="0 0 1440 900" preserveAspectRatio="xMidYMid slice">
+  <defs><radialGradient id="hb" cx=".78" cy=".45" r=".6"><stop offset="0" stop-color="#3b4b41"/><stop offset="1" stop-color="#1f2823"/></radialGradient>
+  <pattern id="grain" width="6" height="6" patternUnits="userSpaceOnUse"><circle cx="1" cy="1" r=".6" fill="#fff" opacity=".035"/><circle cx="4" cy="4" r=".5" fill="#000" opacity=".08"/></pattern></defs>
+  <rect width="1440" height="900" fill="url(#hb)"/>
+  <g fill="none" stroke="#a9bcae" stroke-opacity=".08">
+   <circle cx="1060" cy="420" r="300"/><circle cx="1060" cy="420" r="360"/><circle cx="1060" cy="420" r="430"/><circle cx="1060" cy="420" r="510"/><circle cx="1060" cy="420" r="600"/>
+  </g>
+  <rect width="1440" height="900" fill="url(#grain)"/>
+ </svg></div>
+ <div class="wrap">
+  <div>
+   <span class="eyebrow">QUIET HEAD SPA · SEOUL</span>
+   <h1>머리를 내려놓는<br><em>90분</em>의 고요</h1>
+   <p class="lead">따뜻한 물소리와 낮은 조명 아래, 두피를 천천히 씻고 풀어 드립니다. 하루 여섯 분만, 한 분씩 조용히 모십니다.</p>
+   <div class="hbtns"><a class="btn p" href="#reserve">빈 시간 확인하기 <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a><a class="btn g" href="#course">코스 보기</a></div>
+   <div class="hmeta"><div><b>1:1</b><span>한 공간 한 분</span></div><div><b>6 <small style="font-size:16px">회</small></b><span>하루 예약 수</span></div><div><b>38℃</b><span>물 온도 기본</span></div></div>
+  </div>
+  <div class="hart">
+   <svg viewBox="0 0 560 640">
+    <defs>
+     <linearGradient id="hbowl" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f1e9dc"/><stop offset=".55" stop-color="#d9cab2"/><stop offset="1" stop-color="#a8977c"/></linearGradient>
+     <radialGradient id="hwat" cx=".5" cy=".4" r=".6"><stop offset="0" stop-color="#bcd0c5"/><stop offset=".7" stop-color="#7d998c"/><stop offset="1" stop-color="#55706a"/></radialGradient>
+     <radialGradient id="hlamp" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#ffdcb4" stop-opacity=".9"/><stop offset=".4" stop-color="#e9b48a" stop-opacity=".35"/><stop offset="1" stop-color="#e9b48a" stop-opacity="0"/></radialGradient>
+     <linearGradient id="steam" x1="0" y1="1" x2="0" y2="0"><stop offset="0" stop-color="#fff" stop-opacity=".5"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient>
+     <filter id="blur8"><feGaussianBlur stdDeviation="8"/></filter>
+     <filter id="sh"><feDropShadow dx="0" dy="24" stdDeviation="22" flood-color="#0b100d" flood-opacity=".55"/></filter>
+    </defs>
+    <circle cx="400" cy="120" r="200" fill="url(#hlamp)"/>
+    <!-- lamp -->
+    <line x1="400" y1="0" x2="400" y2="96" stroke="#c9a07c" stroke-width="1.5"/>
+    <path d="M362 96h76l-10 34h-56z" fill="#c9965f"/><path d="M372 130h56" stroke="#ffe7c9" stroke-width="3"/>
+    <ellipse cx="400" cy="134" rx="22" ry="5" fill="#fff3df"/>
+    <!-- stone plinth -->
+    <path d="M60 470h440l-24 150H84z" fill="url(#gStone)" filter="url(#sh)"/>
+    <path d="M60 470h440" stroke="#7d857c" stroke-width="2"/>
+    <g stroke="#ffffff" stroke-opacity=".05"><path d="M90 500h380M96 540h368M102 580h356"/></g>
+    <!-- basin -->
+    <g filter="url(#sh)">
+     <path d="M100 360c0 90 80 120 180 120s180-30 180-120z" fill="url(#hbowl)"/>
+     <ellipse cx="280" cy="360" rx="180" ry="48" fill="#e9dfcf"/>
+     <ellipse cx="280" cy="362" rx="160" ry="38" fill="url(#hwat)"/>
+    </g>
+    <g fill="none" stroke="#e8f1ec" stroke-opacity=".55">
+     <ellipse cx="300" cy="364" rx="40" ry="9"/><ellipse cx="300" cy="364" rx="78" ry="18" stroke-opacity=".35"/><ellipse cx="300" cy="364" rx="118" ry="27" stroke-opacity=".18"/>
+    </g>
+    <!-- water drop -->
+    <path d="M300 250c-8 14-12 22-12 28a12 12 0 0024 0c0-6-4-14-12-28z" fill="#cfe0d6" opacity=".9"/>
+    <line x1="300" y1="196" x2="300" y2="236" stroke="#cfe0d6" stroke-width="2" stroke-dasharray="2 8" opacity=".7"/>
+    <!-- steam -->
+    <g fill="none" stroke="url(#steam)" stroke-width="10" stroke-linecap="round" filter="url(#blur8)" opacity=".7">
+     <path d="M210 340c-20-40 20-60 0-110s20-70 0-110"/><path d="M360 340c-16-30 18-50 0-90s16-60 0-100"/>
+    </g>
+    <!-- eucalyptus branch -->
+    <g transform="translate(430 300) rotate(18)">
+     <path d="M0 0C10 60 4 130-6 200" stroke="#6b7f70" stroke-width="2.4" fill="none"/>
+     <g fill="url(#gLeaf)">
+      <ellipse cx="-14" cy="20" rx="18" ry="12" transform="rotate(-30 -14 20)"/>
+      <ellipse cx="18" cy="48" rx="19" ry="12" transform="rotate(25 18 48)"/>
+      <ellipse cx="-12" cy="82" rx="20" ry="13" transform="rotate(-20 -12 82)"/>
+      <ellipse cx="16" cy="114" rx="18" ry="12" transform="rotate(30 16 114)"/>
+      <ellipse cx="-14" cy="148" rx="17" ry="11" transform="rotate(-25 -14 148)"/>
+     </g>
+    </g>
+    <!-- folded towel -->
+    <g transform="translate(96 430)">
+     <rect x="0" y="0" width="150" height="40" rx="12" fill="#efe7da"/>
+     <rect x="0" y="0" width="150" height="20" rx="10" fill="#f8f2e8"/>
+     <path d="M10 30h130" stroke="#d6c7ae" stroke-width="2"/>
+    </g>
+    <!-- small stones -->
+    <ellipse cx="380" cy="460" rx="40" ry="14" fill="#4d554d"/><ellipse cx="372" cy="452" rx="30" ry="10" fill="#6c746b"/>
+    <ellipse cx="440" cy="462" rx="22" ry="9" fill="#3f463f"/>
+    <!-- ceramic bottle -->
+    <g transform="translate(300 400)">
+     <path d="M20 0h20v10c14 6 20 16 20 30v26H0V40c0-14 6-24 20-30z" fill="#a8693f"/>
+     <path d="M8 40h44" stroke="#d6996a" stroke-width="2" opacity=".6"/>
+     <rect x="18" y="-8" width="24" height="10" rx="3" fill="#2c322d"/>
+    </g>
+   </svg>
+  </div>
+ </div>
+</header>
+
+<section class="phil" id="about">
+ <div class="wrap">
+  <div class="sh"><div><span class="k">ABOUT DUON</span><h2>서두르지 않는 손,<br>소리 없는 공간</h2></div><p>두온(頭溫)은 '머리를 데운다'는 뜻입니다. 예약은 시간 간격을 넉넉히 두고 받아, 앞뒤 손님과 마주치지 않도록 준비합니다.</p></div>
+  <div class="pgrid">
+   <div><span class="n">01</span>
+    <svg viewBox="0 0 72 72" fill="none" stroke="#a8693f" stroke-width="1.5" stroke-linecap="round"><circle cx="36" cy="36" r="30" stroke="#d9cbb5"/><path d="M14 40c7-6 14-6 22 0s15 6 22 0"/><path d="M18 48c6-4 12-4 18 0s12 4 18 0" stroke="#7f9b8c"/><path d="M36 14c-5 7-5 12 0 17 5-5 5-10 0-17z" fill="#a8693f" stroke="none"/></svg>
+    <h3>물 온도부터 맞춥니다</h3><p>시작 전 손목으로 온도를 먼저 확인해 드리고, 원하시는 정도로 조절해 씻어 드립니다.</p></div>
+   <div><span class="n">02</span>
+    <svg viewBox="0 0 72 72" fill="none" stroke="#a8693f" stroke-width="1.5" stroke-linecap="round"><circle cx="36" cy="36" r="30" stroke="#d9cbb5"/><rect x="22" y="22" width="28" height="30" rx="4"/><path d="M28 30h16M28 37h16M28 44h10" stroke="#7f9b8c"/></svg>
+    <h3>두피 상태를 함께 봅니다</h3><p>확대 카메라로 두피 사진을 찍어 화면으로 같이 보고, 그날 쓸 오일과 손 압을 정합니다.</p></div>
+   <div><span class="n">03</span>
+    <svg viewBox="0 0 72 72" fill="none" stroke="#a8693f" stroke-width="1.5" stroke-linecap="round"><circle cx="36" cy="36" r="30" stroke="#d9cbb5"/><path d="M24 46V30a12 12 0 0124 0v16"/><path d="M20 46h32" stroke="#7f9b8c"/><circle cx="36" cy="30" r="3" fill="#a8693f" stroke="none"/></svg>
+    <h3>말 없이 쉬셔도 됩니다</h3><p>대화를 원하지 않으시면 예약 때 '조용히'를 고르세요. 안내 외에는 말을 걸지 않습니다.</p></div>
+  </div>
+ </div>
+</section>
+
+<section class="courses" id="course">
+ <div class="wrap">
+  <div class="sh"><div><span class="k">COURSE</span><h2>오늘의 컨디션에 맞춘<br>네 가지 코스</h2></div><p>모든 코스에 두피 사진 확인, 따뜻한 차, 드라이 마무리가 포함됩니다. 가격은 부가세 포함입니다.</p></div>
+  <div class="cgrid">
+   <div class="card">
+    <div class="im"><svg viewBox="0 0 300 200" preserveAspectRatio="xMidYMid slice"><rect width="300" height="200" fill="#cfd9d0"/><circle cx="230" cy="40" r="70" fill="#e8efe8" opacity=".7"/><g fill="none" stroke="#7f9b8c" stroke-width="2"><path d="M30 130c30-20 60-20 90 0s60 20 90 0 50-20 70-8"/><path d="M30 150c30-16 60-16 90 0s60 16 90 0 50-16 70-6" opacity=".6"/></g><path d="M150 50c-12 20-18 32-18 42a18 18 0 0036 0c0-10-6-22-18-42z" fill="#8fb0a2"/><path d="M144 88a8 8 0 006 8" stroke="#fff" stroke-width="3" fill="none" stroke-linecap="round" opacity=".7"/></svg></div>
+    <div class="bd"><span class="tm">50 MIN</span><h3>맑은 물 클렌징</h3><p>처음 오시는 분께 맞는 기본 코스. 두피 사진 확인 후 두 번 씻고 가볍게 풀어 드립니다.</p>
+    <ul><li>두피 사진 확인</li><li>탄산수 클렌징 2회</li><li>목·어깨 10분</li></ul>
+    <div class="pr"><b>68,000<small>원</small></b><button data-c="0">이 코스 예약</button></div></div>
+   </div>
+   <div class="card feat">
+    <div class="im"><span class="tag">처음 오시면 추천</span><svg viewBox="0 0 300 200" preserveAspectRatio="xMidYMid slice"><rect width="300" height="200" fill="#33433a"/><circle cx="150" cy="96" r="84" fill="#e2b48d" opacity=".1"/><defs><linearGradient id="sbw" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f2ece2"/><stop offset="1" stop-color="#bba98c"/></linearGradient><linearGradient id="stw" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fbf7f0"/><stop offset="1" stop-color="#d8cbb6"/></linearGradient></defs><ellipse cx="150" cy="170" rx="110" ry="12" fill="#1f2823"/><path d="M70 110c0 40 36 58 80 58s80-18 80-58z" fill="url(#sbw)"/><ellipse cx="150" cy="110" rx="80" ry="20" fill="#e9dfcf"/><ellipse cx="150" cy="111" rx="68" ry="14" fill="#7d998c"/><path d="M118 108a30 8 0 0060 0" stroke="#cfe0d6" stroke-width="2" fill="none" opacity=".7"/><g transform="translate(150 150)"><rect x="-62" y="-14" width="124" height="30" rx="15" fill="url(#stw)"/><g fill="none" stroke="#c9b9a0" stroke-width="1.6"><ellipse cx="-48" cy="1" rx="8" ry="13"/><ellipse cx="-48" cy="1" rx="4" ry="7"/></g><path d="M-36 -6h90" stroke="#e2d6c2" stroke-width="2"/></g><g stroke="#e2b48d" stroke-width="2.4" fill="none" stroke-linecap="round" opacity=".85"><path d="M120 86c-7-10 7-16 0-28"/><path d="M150 80c-7-10 7-16 0-28"/><path d="M180 86c-7-10 7-16 0-28"/></g></svg></div>
+    <div class="bd"><span class="tm">90 MIN</span><h3>깊은 온기 시그니처</h3><p>따뜻한 오일로 두피를 충분히 적신 뒤, 손으로 천천히 풀고 스팀 타월로 감쌉니다.</p>
+    <ul><li>두피 사진 전·후 비교</li><li>오일 + 스팀 타월</li><li>얼굴·목·어깨 20분</li></ul>
+    <div class="pr"><b>118,000<small>원</small></b><button data-c="1">이 코스 예약</button></div></div>
+   </div>
+   <div class="card">
+    <div class="im"><svg viewBox="0 0 300 200" preserveAspectRatio="xMidYMid slice"><rect width="300" height="200" fill="#e3d3bc"/><g transform="translate(150 104)"><g fill="#a8693f" opacity=".9"><ellipse rx="10" ry="40" transform="rotate(0)"/><ellipse rx="10" ry="40" transform="rotate(45)"/><ellipse rx="10" ry="40" transform="rotate(90)"/><ellipse rx="10" ry="40" transform="rotate(135)"/></g><circle r="14" fill="#f2ece2"/></g><g fill="#7f9b8c"><circle cx="60" cy="50" r="6"/><circle cx="240" cy="160" r="8"/><circle cx="250" cy="40" r="4"/></g></svg></div>
+    <div class="bd"><span class="tm">70 MIN</span><h3>아로마 릴리프</h3><p>향을 세 가지 중에서 고르시고, 눈 위에 따뜻한 팩을 올린 채 쉬시는 코스입니다.</p>
+    <ul><li>향 3종 중 선택</li><li>아이 온팩</li><li>손·팔 10분</li></ul>
+    <div class="pr"><b>89,000<small>원</small></b><button data-c="2">이 코스 예약</button></div></div>
+   </div>
+   <div class="card">
+    <div class="im"><svg viewBox="0 0 300 200" preserveAspectRatio="xMidYMid slice"><rect width="300" height="200" fill="#d6dccf"/><g transform="translate(110 100)"><circle r="44" fill="#f2ece2"/><circle r="44" fill="none" stroke="#7f9b8c" stroke-width="2"/></g><g transform="translate(190 100)"><circle r="44" fill="#e2b48d" opacity=".85"/><circle r="44" fill="none" stroke="#a8693f" stroke-width="2"/></g><path d="M150 72v56" stroke="#25302a" stroke-width="1.5" stroke-dasharray="3 5"/></svg></div>
+    <div class="bd"><span class="tm">90 MIN · 2인</span><h3>둘이 나란히</h3><p>두 자리가 놓인 별실에서 나란히 받으시는 코스. 친구·가족·연인과 함께 오세요.</p>
+    <ul><li>2인 별실</li><li>각자 코스 50분</li><li>차와 다과</li></ul>
+    <div class="pr"><b>196,000<small>원</small></b><button data-c="3">이 코스 예약</button></div></div>
+   </div>
+  </div>
+  <p class="note">* 시술 범위와 시간은 두피 상태와 요청에 따라 조금 달라질 수 있습니다. 피부·두피 질환이 있으시면 예약 전에 꼭 알려 주세요.</p>
+ </div>
+</section>
+
+<section class="flow" id="flow">
+ <div class="wrap">
+  <div class="sh"><div><span class="k" style="color:#e2b48d">FLOW</span><h2>도착부터 나서실 때까지</h2></div><p>시그니처 90분 기준의 순서입니다. 각 단계마다 압과 온도를 여쭤보고 맞춥니다.</p></div>
+  <div class="steps">
+   <div class="step"><div class="dot"><svg viewBox="0 0 48 48"><path d="M14 30h20v6a6 6 0 01-6 6h-8a6 6 0 01-6-6z"/><path d="M34 32h3a4 4 0 010 8h-3"/><path d="M20 24c-2-4 2-6 0-10M28 24c-2-4 2-6 0-10"/></svg></div><span class="n">STEP 01</span><h3>차 한 잔과 문진</h3><p>오늘 컨디션과 원하시는 압을 여쭙니다.</p><span class="m">10분</span></div>
+   <div class="step"><div class="dot"><svg viewBox="0 0 48 48"><rect x="10" y="12" width="28" height="22" rx="3"/><circle cx="24" cy="23" r="6"/><path d="M18 40h12M24 34v6"/></svg></div><span class="n">STEP 02</span><h3>두피 사진 확인</h3><p>화면으로 함께 보며 오일을 고릅니다.</p><span class="m">5분</span></div>
+   <div class="step"><div class="dot"><svg viewBox="0 0 48 48"><path d="M8 26c5-4 10-4 16 0s11 4 16 0"/><path d="M8 34c5-4 10-4 16 0s11 4 16 0"/><path d="M24 8c-4 6-6 9-6 12a6 6 0 0012 0c0-3-2-6-6-12z"/></svg></div><span class="n">STEP 03</span><h3>클렌징</h3><p>따뜻한 물로 두 번, 천천히 씻습니다.</p><span class="m">25분</span></div>
+   <div class="step"><div class="dot"><svg viewBox="0 0 48 48"><path d="M16 36c-4-6-4-14 2-20 4-4 10-4 14 0"/><path d="M32 16c6 6 6 14 2 20"/><path d="M20 26h8M24 22v8"/></svg></div><span class="n">STEP 04</span><h3>오일 · 손 풀기</h3><p>두피, 얼굴, 목, 어깨 순서로 풀어 드립니다.</p><span class="m">40분</span></div>
+   <div class="step"><div class="dot"><svg viewBox="0 0 48 48"><path d="M12 30a12 12 0 0124 0z"/><path d="M24 18v-6M14 20l-3-4M34 20l3-4"/><path d="M8 36h32"/></svg></div><span class="n">STEP 05</span><h3>드라이 · 휴식</h3><p>머리를 말리고 따뜻한 차로 마무리합니다.</p><span class="m">10분</span></div>
+  </div>
+ </div>
+</section>
+
+<section class="space" id="space">
+ <div class="wrap">
+  <div class="sh"><div><span class="k">SPACE</span><h2>한 분만을 위한<br>조용한 방</h2></div><p>방은 모두 문이 따로 있고, 샤워실과 파우더룸이 붙어 있습니다. 머리 끈과 빗, 기초 화장품을 준비해 둡니다.</p></div>
+  <div class="sgrid">
+   <div class="big">
+    <svg viewBox="0 0 700 560" preserveAspectRatio="xMidYMid slice">
+     <defs><linearGradient id="wall" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#d9cdb9"/><stop offset="1" stop-color="#c3b49b"/></linearGradient><radialGradient id="lg" cx=".72" cy=".2" r=".55"><stop offset="0" stop-color="#ffe3c2" stop-opacity=".8"/><stop offset="1" stop-color="#ffe3c2" stop-opacity="0"/></radialGradient><linearGradient id="flr" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#8f7a62"/><stop offset="1" stop-color="#6c5947"/></linearGradient><linearGradient id="bed" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f4eee5"/><stop offset="1" stop-color="#d8cdbd"/></linearGradient></defs>
+     <rect width="700" height="560" fill="url(#wall)"/>
+     <rect width="700" height="560" fill="url(#lg)"/>
+     <!-- arched niche -->
+     <path d="M80 380V170a90 90 0 01180 0v210z" fill="#b8a78c"/>
+     <path d="M96 380V176a74 74 0 01148 0v204z" fill="#a49376"/>
+     <g transform="translate(170 300)"><path d="M-18 0h36l-6 60h-24z" fill="#5d6a5f"/><path d="M0 0C-6-40-30-60-40-90M0 0c4-46 20-70 36-96M0 0c-2-30 2-60 6-80" stroke="#46594c" stroke-width="2" fill="none"/><g fill="url(#gLeaf)"><ellipse cx="-38" cy="-86" rx="12" ry="7" transform="rotate(-40 -38 -86)"/><ellipse cx="-24" cy="-58" rx="12" ry="7" transform="rotate(-30 -24 -58)"/><ellipse cx="32" cy="-92" rx="12" ry="7" transform="rotate(30 32 -92)"/><ellipse cx="20" cy="-62" rx="12" ry="7" transform="rotate(40 20 -62)"/><ellipse cx="6" cy="-82" rx="10" ry="6" transform="rotate(80 6 -82)"/></g></g>
+     <!-- pendant -->
+     <line x1="500" y1="0" x2="500" y2="110" stroke="#7a6550" stroke-width="2"/>
+     <ellipse cx="500" cy="124" rx="34" ry="18" fill="#e9b48a"/><ellipse cx="500" cy="134" rx="22" ry="6" fill="#fff1dc"/>
+     <!-- floor -->
+     <rect y="420" width="700" height="140" fill="url(#flr)"/>
+     <g stroke="#5e4c3c" stroke-opacity=".4"><path d="M0 450h700M0 490h700M0 530h700"/></g>
+     <!-- shampoo bed -->
+     <ellipse cx="420" cy="472" rx="250" ry="18" fill="#3b2f25" opacity=".35"/>
+     <path d="M230 360h300a26 26 0 0126 26v48H204v-48a26 26 0 0126-26z" fill="url(#bed)"/>
+     <rect x="204" y="420" width="352" height="20" fill="#bcae98"/>
+     <rect x="230" y="440" width="16" height="30" fill="#5e4c3c"/><rect x="514" y="440" width="16" height="30" fill="#5e4c3c"/>
+     <path d="M556 386v-6c0-30 30-46 60-46s56 14 56 40v50h-116z" fill="#e8ded0"/>
+     <ellipse cx="614" cy="352" rx="40" ry="10" fill="#6f8a7d"/>
+     <!-- folded blanket -->
+     <path d="M250 352h170a12 12 0 0112 12v8H238v-8a12 12 0 0112-12z" fill="#7f9b8c"/>
+     <path d="M244 366h184" stroke="#a9bcae" stroke-width="2"/>
+     <!-- side table -->
+     <rect x="40" y="420" width="120" height="10" fill="#4a3c30"/><rect x="50" y="430" width="8" height="60" fill="#4a3c30"/><rect x="142" y="430" width="8" height="60" fill="#4a3c30"/>
+     <g transform="translate(70 386)"><path d="M0 34h26V8a13 8 0 00-26 0z" fill="#a8693f"/><path d="M40 34h22V14H40z" fill="#efe7da"/><path d="M44 18h14" stroke="#c9b9a0"/></g>
+    </svg>
+    <div class="cap"><b>숲방</b>샴푸 베드 · 개별 샤워실</div>
+   </div>
+   <div class="col">
+    <div class="sm" style="position:relative"><div class="cap" style="left:22px;bottom:20px"><b>파우더룸</b>드라이 · 기초 화장품</div><svg viewBox="0 0 480 300" preserveAspectRatio="xMidYMid slice"><rect width="480" height="300" fill="#2f3b34"/><circle cx="380" cy="60" r="140" fill="#e9b48a" opacity=".12"/><rect x="60" y="70" width="170" height="170" rx="85" fill="#3f4d44"/><rect x="76" y="86" width="138" height="138" rx="69" fill="#d8ccb7" opacity=".9"/><path d="M76 160h138" stroke="#b8a78c" stroke-width="2"/><g transform="translate(300 120)"><rect x="0" y="40" width="120" height="10" rx="3" fill="#a8693f"/><rect x="10" y="0" width="22" height="40" rx="6" fill="#efe7da"/><rect x="40" y="10" width="18" height="30" rx="5" fill="#a9bcae"/><rect x="66" y="-6" width="26" height="46" rx="7" fill="#7f9b8c"/><rect x="98" y="14" width="16" height="26" rx="4" fill="#e9b48a"/></g><g transform="translate(300 210)"><rect width="140" height="28" rx="8" fill="#efe7da"/><rect width="140" height="14" rx="7" fill="#f8f2e8"/></g></svg></div>
+    <div class="slist"><div><b>개별 샤워실</b><span>방마다 붙어 있어요</span></div><div><b>파우더룸</b><span>드라이기·고데기 준비</span></div><div><b>소지품 보관</b><span>방 안 잠금 서랍</span></div><div><b>주차 1대</b><span>예약 시 미리 알려 주세요</span></div></div>
+   </div>
+  </div>
+ </div>
+</section>
+
+<section class="care">
+ <div class="wrap">
+  <div class="cwrap">
+   <div class="art"><svg viewBox="0 0 560 520" preserveAspectRatio="xMidYMid slice">
+    <defs><radialGradient id="cg" cx=".5" cy=".55" r=".55"><stop offset="0" stop-color="#3f5046"/><stop offset="1" stop-color="#1f2823"/></radialGradient><linearGradient id="bt1" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#8a5532"/><stop offset=".45" stop-color="#c68655"/><stop offset="1" stop-color="#7a4a2b"/></linearGradient><linearGradient id="bt2" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#cbbfa9"/><stop offset=".45" stop-color="#f4eee4"/><stop offset="1" stop-color="#bcae96"/></linearGradient><linearGradient id="bt3" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#556d61"/><stop offset=".45" stop-color="#8fab9d"/><stop offset="1" stop-color="#4a5f54"/></linearGradient></defs>
+    <rect width="560" height="520" fill="url(#cg)"/>
+    <ellipse cx="280" cy="420" rx="230" ry="30" fill="#141a16" opacity=".6"/>
+    <rect x="40" y="400" width="480" height="16" rx="4" fill="#6c5947"/>
+    <g transform="translate(120 230)"><rect x="0" y="40" width="80" height="130" rx="16" fill="url(#bt1)"/><rect x="24" y="0" width="32" height="44" rx="6" fill="#2c322d"/><rect x="14" y="80" width="52" height="56" rx="4" fill="#f2ece2" opacity=".92"/><path d="M22 96h36M22 106h28M22 116h32" stroke="#a8693f" stroke-width="2"/></g>
+    <g transform="translate(240 190)"><rect x="0" y="50" width="90" height="160" rx="44" fill="url(#bt2)"/><rect x="30" y="14" width="30" height="40" rx="6" fill="#a8693f"/><path d="M45 14V0h16" stroke="#a8693f" stroke-width="6" fill="none" stroke-linecap="round"/><circle cx="45" cy="130" r="22" fill="none" stroke="#7f9b8c" stroke-width="2"/><path d="M34 132c4-4 8-4 11 0s7 4 11 0" stroke="#7f9b8c" stroke-width="2" fill="none"/></g>
+    <g transform="translate(360 270)"><rect x="0" y="20" width="70" height="110" rx="10" fill="url(#bt3)"/><rect x="10" y="0" width="50" height="24" rx="6" fill="#efe7da"/><path d="M14 60h42M14 70h30" stroke="#e8f1ec" stroke-width="2" opacity=".8"/></g>
+    <g transform="translate(450 330) rotate(-12)"><rect width="22" height="74" rx="10" fill="#efe7da"/><g fill="#c9b9a0"><rect x="-10" y="70" width="42" height="6" rx="3"/></g></g>
+   </svg></div>
+   <div>
+    <div class="sh" style="margin-bottom:24px"><div><span class="k">HOME CARE</span><h2>집에서 이어 가는<br>작은 습관</h2></div></div>
+    <p style="color:#5b625c;font-size:16px;max-width:460px">관리 후에는 그날 사용한 오일과 손 압을 카드에 적어 드립니다. 제품 구매는 필수가 아니며, 원하실 때만 안내합니다.</p>
+    <ul class="tips">
+     <li><span class="i">01</span><div><h3>미지근한 물로 헹구기</h3><p>뜨거운 물보다 체온에 가까운 물이 두피에 편안합니다.</p></div></li>
+     <li><span class="i">02</span><div><h3>손끝으로 3분</h3><p>손톱이 아닌 손끝 지문 쪽으로 정수리부터 천천히 눌러 주세요.</p></div></li>
+     <li><span class="i">03</span><div><h3>뿌리부터 말리기</h3><p>젖은 채로 눕지 않도록, 두피 쪽부터 먼저 말려 주세요.</p></div></li>
+    </ul>
+   </div>
+  </div>
+ </div>
+</section>
+
+<section class="reserve" id="reserve">
+ <div class="wrap">
+  <div class="sh"><div><span class="k" style="color:#e2b48d">RESERVATION</span><h2>빈 시간을 고르고<br>바로 예약하세요</h2></div><p>예약 요청을 남기시면 확인 후 문자로 확정 안내를 드립니다. 변경은 방문 전날 저녁까지 가능합니다.</p></div>
+  <div class="rbox">
+   <div class="rpanel">
+    <h4>1. 코스 <span id="cdesc">선택해 주세요</span></h4>
+    <div class="opts" id="copts">
+     <button class="opt" data-p="68000" data-n="맑은 물 클렌징">맑은 물 클렌징<small>50 MIN · 68,000</small></button>
+     <button class="opt" data-p="118000" data-n="깊은 온기 시그니처">깊은 온기 시그니처<small>90 MIN · 118,000</small></button>
+     <button class="opt" data-p="89000" data-n="아로마 릴리프">아로마 릴리프<small>70 MIN · 89,000</small></button>
+     <button class="opt" data-p="196000" data-n="둘이 나란히">둘이 나란히<small>90 MIN · 2인 · 196,000</small></button>
+    </div>
+    <h4>2. 날짜 <span>월요일 휴무</span></h4>
+    <div class="days" id="days"></div>
+    <h4>3. 시간</h4>
+    <div class="opts" id="times" style="margin-bottom:22px"></div>
+    <h4>4. 요청</h4>
+    <div class="opts" id="reqs" style="margin-bottom:0">
+     <button class="opt" data-r="조용히">조용히 쉬고 싶어요</button>
+     <button class="opt" data-r="약한 압">압은 약하게</button>
+     <button class="opt" data-r="향 없이">향 없이</button>
+    </div>
+   </div>
+   <div class="sum" id="sum">
+    <div class="form">
+     <h4>예약 요약</h4>
+     <dl><dt>코스</dt><dd id="sc">-</dd><dt>날짜</dt><dd id="sd">-</dd><dt>시간</dt><dd id="st">-</dd><dt>요청</dt><dd id="sr">없음</dd></dl>
+     <div class="tot"><span>결제 예정 금액</span><b id="sp">0원</b></div>
+     <input id="nm" placeholder="이름">
+     <input id="ph" placeholder="연락처 (000-0000-0000)" inputmode="tel">
+     <button class="btn" id="go">예약 요청 보내기</button>
+     <p class="msg" id="msg"></p>
+    </div>
+    <div class="ok">
+     <svg viewBox="0 0 64 64" fill="none"><circle cx="32" cy="32" r="30" stroke="#a8693f" stroke-width="1.5"/><path d="M20 33l8 8 16-17" stroke="#25302a" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+     <b>예약 요청을 받았습니다</b>
+     <p id="okt" style="color:#5b625c;font-size:15px"></p>
+     <button class="btn" id="again" style="margin-top:22px;background:transparent;color:#25302a;border:1px solid rgba(37,48,42,.3)">다시 고르기</button>
+    </div>
+   </div>
+  </div>
+ </div>
+</section>
+
+<section class="faq" id="faq">
+ <div class="wrap">
+  <div class="fwrap">
+   <div class="sh" style="margin:0;align-items:flex-start"><div><span class="k">FAQ</span><h2>자주 묻는 질문</h2></div></div>
+   <div>
+    <details open><summary>머리를 감고 가야 하나요?<i></i></summary><p>감지 않고 오셔도 됩니다. 스타일링 제품을 바르셨다면 클렌징을 한 번 더 해 드립니다.</p></details>
+    <details><summary>관리 후 바로 출근할 수 있나요?<i></i></summary><p>드라이와 간단한 스타일링까지 마무리해 드립니다. 파우더룸에 고데기와 기초 화장품이 있습니다.</p></details>
+    <details><summary>예약 변경·취소는 언제까지 되나요?<i></i></summary><p>방문 하루 전 저녁 8시까지 문자로 알려 주시면 변경·취소 모두 가능합니다.</p></details>
+    <details><summary>임신 중이거나 두피 질환이 있어도 되나요?<i></i></summary><p>예약 전에 먼저 알려 주세요. 오일과 압을 조절하거나, 상황에 따라 관리를 미루시도록 안내드립니다.</p></details>
+   </div>
+  </div>
+ </div>
+</section>
+
+<section class="visit" id="visit">
+ <div class="wrap">
+  <div class="sh"><div><span class="k">VISIT</span><h2>오시는 길</h2></div></div>
+  <div class="vgrid">
+   <div class="map"><svg viewBox="0 0 700 420" preserveAspectRatio="xMidYMid slice">
+    <rect width="700" height="420" fill="#e3d9c8"/>
+    <g fill="#d6cab5"><rect x="30" y="30" width="180" height="110" rx="8"/><rect x="250" y="30" width="200" height="110" rx="8"/><rect x="490" y="30" width="180" height="110" rx="8"/><rect x="30" y="200" width="180" height="190" rx="8"/><rect x="490" y="200" width="180" height="190" rx="8"/></g>
+    <rect x="250" y="200" width="200" height="190" rx="8" fill="#c7d3c6"/>
+    <g fill="#b0c2b2"><circle cx="290" cy="250" r="16"/><circle cx="330" cy="330" r="22"/><circle cx="410" cy="260" r="18"/><circle cx="400" cy="350" r="12"/></g>
+    <g stroke="#f4eee4" stroke-width="22"><path d="M0 170h700"/><path d="M230 0v420"/><path d="M470 0v420"/></g>
+    <path d="M0 170h700" stroke="#cfc3ad" stroke-width="2" stroke-dasharray="10 10"/>
+    <g transform="translate(470 170)"><circle r="34" fill="#25302a" opacity=".15"/><path d="M0 -12c-16 0-26 12-26 24 0 18 26 40 26 40s26-22 26-40c0-12-10-24-26-24z" transform="translate(0 -36)" fill="#25302a"/><circle cy="-24" r="8" fill="#e2b48d"/></g>
+    <g font-family="Noto Sans KR"><rect x="500" y="200" width="140" height="62" rx="10" fill="#f4eee4"/><text x="570" y="227" text-anchor="middle" font-size="20" font-weight="700" fill="#25302a">두온 헤드스파</text><text x="570" y="252" text-anchor="middle" font-size="20" fill="#a8693f">2층</text><text x="350" y="380" text-anchor="middle" font-size="20" fill="#5b625c">작은 공원</text></g>
+    <g transform="translate(330 157)"><rect x="-84" y="-5" width="168" height="36" rx="18" fill="#a8693f"/><text x="0" y="20" text-anchor="middle" font-family="Noto Sans KR" font-size="20" font-weight="700" fill="#fff">○○역 2번 출구</text></g>
+   </svg></div>
+   <div class="vinfo">
+    <dl><dt>주소</dt><dd>서울시 ○○구 ○○로 00, 2층</dd><dt>영업</dt><dd>화–일 10:00 – 21:00<br>마지막 예약 19:30 · 월요일 휴무</dd><dt>교통</dt><dd>○○역 2번 출구에서 도보 4분</dd><dt>문의</dt><dd>000-0000-0000<br>카카오톡 ID: example</dd></dl>
+    <a class="btn" href="#reserve">예약하러 가기 <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+   </div>
+  </div>
+ </div>
+</section>
+
+<footer><div class="wrap"><a class="logo" href="#top"><svg viewBox="0 0 40 40" fill="none"><circle cx="20" cy="20" r="18.5" stroke="#e2b48d"/><path d="M9 22c4-3 7-3 11 0s7 3 11 0" stroke="#e2b48d" stroke-width="1.4"/><path d="M20 8c-3 4-3 7 0 10 3-3 3-6 0-10z" fill="#e2b48d"/></svg><span><b>두온 헤드스파</b><small>DUON HEAD SPA</small></span></a><p>© DUON HEAD SPA · 화–일 10:00 – 21:00</p></div></footer>
+<div class="mbar"><a class="a" href="#course">코스</a><a class="b" href="#reserve">예약하기</a></div>
+
+<script>
+(function(){
+ var mb=document.querySelector('.mbar');window.addEventListener('scroll',function(){mb.classList.toggle('show',scrollY>500)},{passive:true});
+ var st={c:null,p:0,d:null,t:null,r:[]};
+ var won=function(n){return n.toLocaleString('ko-KR')+'원'};
+ var copts=document.querySelectorAll('#copts .opt');
+ function pickCourse(i){copts.forEach(function(b,j){b.classList.toggle('on',i===j)});var b=copts[i];st.c=b.dataset.n;st.p=+b.dataset.p;document.getElementById('cdesc').textContent=b.dataset.n;upd()}
+ copts.forEach(function(b,i){b.addEventListener('click',function(){pickCourse(i)})});
+ document.querySelectorAll('.card .pr button').forEach(function(b){b.addEventListener('click',function(){pickCourse(+b.dataset.c);document.getElementById('reserve').scrollIntoView({behavior:'smooth'})})});
+ var dn=['일','월','화','수','목','금','토'],days=document.getElementById('days'),base=new Date();
+ for(var i=1;i<=7;i++){var d=new Date(base);d.setDate(base.getDate()+i);var el=document.createElement('button');el.className='day'+(d.getDay()===1?' off':'');el.innerHTML='<small>'+dn[d.getDay()]+'</small><b>'+d.getDate()+'</b>';el.dataset.l=(d.getMonth()+1)+'월 '+d.getDate()+'일 ('+dn[d.getDay()]+')';el.dataset.s=i;days.appendChild(el)}
+ var times=document.getElementById('times'),slots=['10:00','11:40','13:20','15:40','17:20','19:30'];
+ function drawTimes(seed){times.innerHTML='';slots.forEach(function(s,k){var b=document.createElement('button');var full=((seed*3+k*5)%7)<2;b.className='opt'+(full?' dis':'');b.textContent=s;b.disabled=full;b.addEventListener('click',function(){times.querySelectorAll('.opt').forEach(function(x){x.classList.remove('on')});b.classList.add('on');st.t=s;upd()});times.appendChild(b)})}
+ drawTimes(0);
+ days.querySelectorAll('.day').forEach(function(el){el.addEventListener('click',function(){if(el.classList.contains('off'))return;days.querySelectorAll('.day').forEach(function(x){x.classList.remove('on')});el.classList.add('on');st.d=el.dataset.l;st.t=null;drawTimes(+el.dataset.s);upd()})});
+ document.querySelectorAll('#reqs .opt').forEach(function(b){b.addEventListener('click',function(){b.classList.toggle('on');st.r=[].map.call(document.querySelectorAll('#reqs .opt.on'),function(x){return x.dataset.r});upd()})});
+ function upd(){document.getElementById('sc').textContent=st.c||'-';document.getElementById('sd').textContent=st.d||'-';document.getElementById('st').textContent=st.t||'-';document.getElementById('sr').textContent=st.r.length?st.r.join(', '):'없음';document.getElementById('sp').textContent=won(st.p)}
+ document.getElementById('go').addEventListener('click',function(){var m=document.getElementById('msg');if(!st.c){m.textContent='코스를 먼저 골라 주세요.';return}if(!st.d){m.textContent='날짜를 골라 주세요.';return}if(!st.t){m.textContent='시간을 골라 주세요.';return}if(!document.getElementById('nm').value.trim()){m.textContent='이름을 적어 주세요.';return}m.textContent='';document.getElementById('okt').textContent=st.d+' '+st.t+' · '+st.c+'. 확인 후 문자로 확정 안내를 드릴게요.';document.getElementById('sum').classList.add('done')});
+ document.getElementById('again').addEventListener('click',function(){document.getElementById('sum').classList.remove('done')});
+})();
+</script>
+</body>
+</html>
