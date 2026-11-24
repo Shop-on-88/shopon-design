@@ -1,0 +1,794 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>밤불 캔들 하우스 · 손으로 붓는 캔들과 집 향기</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700;800&family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#17120f;--smoke:#221a15;--smoke2:#2c231c;--amber:#c98a3a;--amber2:#e3a955;--honey:#f2c77a;--wax:#f3eadb;--wax2:#e6d9c3;--ash:#9b8d7d;--line:rgba(243,234,219,.14);--wick:#0e0b09}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Noto Sans KR',sans-serif;background:var(--ink);color:var(--wax);word-break:keep-all;-webkit-font-smoothing:antialiased;line-height:1.65;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+button{font-family:inherit;cursor:pointer}
+.nw{white-space:nowrap}
+.serif{font-family:'Nanum Myeongjo',serif}
+.wrap{max-width:1240px;margin:0 auto;padding:0 32px}
+.eyebrow{display:inline-flex;align-items:center;gap:10px;font-size:13px;letter-spacing:.28em;color:var(--amber2);font-weight:500}
+.eyebrow:before{content:"";width:28px;height:1px;background:var(--amber2)}
+h2.title{font-family:'Nanum Myeongjo',serif;font-weight:800;font-size:clamp(30px,3.6vw,46px);line-height:1.3;margin-top:14px;letter-spacing:-.01em}
+h2.title em{font-style:normal;color:var(--honey)}
+.lead{color:#cfc2ae;font-size:16px;max-width:560px;margin-top:14px}
+section{position:relative}
+/* header */
+header{position:sticky;top:0;z-index:50;background:rgba(23,18,15,.86);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:72px;gap:20px}
+.logo{display:flex;align-items:center;gap:12px}
+.logo svg{width:34px;height:34px}
+.logo b{font-family:'Nanum Myeongjo',serif;font-weight:800;font-size:21px;letter-spacing:.02em}
+.logo small{display:block;font-size:11px;letter-spacing:.3em;color:var(--ash);margin-top:-2px}
+.menu{display:flex;gap:30px;font-size:14px;color:#d8ccb9}
+.menu a:hover{color:var(--honey)}
+.cartbtn{display:flex;align-items:center;gap:8px;height:42px;padding:0 16px;border-radius:30px;border:1px solid rgba(227,169,85,.5);background:transparent;color:var(--wax);font-size:14px}
+.cartbtn svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:1.7}
+.cartbtn i{font-style:normal;min-width:22px;height:22px;border-radius:11px;background:var(--amber);color:var(--ink);font-size:12px;font-weight:700;display:grid;place-items:center;padding:0 6px}
+/* hero */
+.hero{overflow:hidden;background:radial-gradient(1000px 520px at 50% 80%,rgba(201,138,58,.26),transparent 64%),radial-gradient(600px 400px at 0% 0%,rgba(80,58,40,.45),transparent 70%),var(--ink);text-align:center;padding-top:60px}
+.hcopy{display:flex;flex-direction:column;align-items:center}
+.hcopy .eyebrow:after{content:"";width:28px;height:1px;background:var(--amber2)}
+.hero h1{font-family:'Nanum Myeongjo',serif;font-weight:800;font-size:clamp(34px,4.2vw,60px);line-height:1.28;letter-spacing:-.02em;margin-top:18px;max-width:860px}
+.hero h1 em{font-style:normal;color:var(--honey)}
+.hero p.sub{font-size:17px;color:#d2c5b1;margin-top:16px;max-width:560px}
+.hero .ctas{display:flex;gap:12px;margin-top:26px;flex-wrap:wrap;justify-content:center}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;height:54px;padding:0 28px;border-radius:40px;font-size:15px;font-weight:700;border:0;transition:.2s}
+.btn.pri{background:linear-gradient(180deg,var(--amber2),var(--amber));color:var(--ink);box-shadow:0 10px 30px -10px rgba(227,169,85,.7)}
+.btn.pri:hover{transform:translateY(-2px)}
+.btn.ghost{border:1px solid rgba(243,234,219,.35);color:var(--wax);background:transparent}
+.btn.ghost:hover{border-color:var(--honey);color:var(--honey)}
+.stage{position:relative;margin-top:14px;overflow:hidden}
+.stage svg{display:block;width:100%;max-width:1360px;height:auto;margin:0 auto;-webkit-mask-image:linear-gradient(90deg,transparent,#000 14%,#000 86%,transparent),linear-gradient(180deg,transparent,#000 9%);-webkit-mask-composite:source-in;mask-image:linear-gradient(90deg,transparent,#000 14%,#000 86%,transparent),linear-gradient(180deg,transparent,#000 9%);mask-composite:intersect}
+.htag{position:absolute;left:50%;bottom:20px;transform:translateX(-50%);font-size:13px;color:#d9ccb7;padding:7px 16px;border:1px solid rgba(227,169,85,.35);border-radius:30px;background:rgba(23,18,15,.65);white-space:nowrap}
+.flick{animation:fl 2.6s ease-in-out infinite;transform-origin:center bottom;transform-box:fill-box}
+.flick.d2{animation-duration:3.1s;animation-delay:.4s}
+@keyframes fl{0%,100%{transform:scaleY(1) skewX(0)}30%{transform:scaleY(1.06) skewX(-2deg)}60%{transform:scaleY(.96) skewX(2deg)}}
+.glow{animation:gl 3s ease-in-out infinite}
+@keyframes gl{0%,100%{opacity:.85}50%{opacity:1}}
+/* scent icon row */
+.srow{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--smoke)}
+.srow .wrap{display:flex;justify-content:center;gap:56px;padding-top:16px;padding-bottom:16px}
+.srow a{display:flex;align-items:center;gap:10px;font-size:14px;color:#d7c9b3;transition:.2s;white-space:nowrap}
+.srow a:hover{color:var(--honey)}
+.srow svg{width:26px;height:26px;flex:none;fill:none;stroke:var(--amber2);stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
+/* scent families */
+.scents{padding:120px 0 110px;background:linear-gradient(180deg,var(--ink),var(--smoke))}
+.shead{display:flex;justify-content:space-between;align-items:flex-end;gap:30px;flex-wrap:wrap}
+.sgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-top:54px}
+.scard{border:1px solid var(--line);border-radius:20px;padding:28px 24px 26px;background:linear-gradient(170deg,rgba(255,255,255,.04),rgba(255,255,255,0));transition:.25s;position:relative;overflow:hidden}
+.scard:hover{border-color:rgba(227,169,85,.55);transform:translateY(-4px)}
+.scard svg{width:84px;height:84px;display:block}
+.scard h3{font-family:'Nanum Myeongjo',serif;font-size:22px;font-weight:800;margin-top:20px}
+.scard .en{font-size:12px;letter-spacing:.24em;color:var(--amber2);margin-top:2px}
+.scard p{font-size:14px;color:#c5b8a4;margin-top:12px;min-height:calc(14px*1.65*3)}
+.notes{display:flex;flex-wrap:wrap;gap:6px;margin-top:18px}
+.notes span{font-size:12px;padding:4px 10px;border-radius:20px;background:rgba(243,234,219,.07);color:#dccfba}
+/* products */
+.shop{padding:110px 0;background:var(--wax);color:var(--ink)}
+.shop .eyebrow{color:#9a5f1e}.shop .eyebrow:before{background:#9a5f1e}
+.shop h2.title em{color:#9a5f1e}
+.shop .lead{color:#5c4e40}
+.tabs{display:flex;gap:8px;flex-wrap:wrap}
+.tabs button{height:40px;padding:0 18px;border-radius:30px;border:1px solid #cbb999;background:transparent;font-size:14px;color:#4a3d31}
+.tabs button.on{background:var(--ink);color:var(--wax);border-color:var(--ink)}
+.pgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;margin-top:44px}
+.pcard{background:#fbf6ec;border-radius:22px;overflow:hidden;border:1px solid #e4d6bd;display:flex;flex-direction:column;transition:.25s}
+.pcard:hover{box-shadow:0 26px 50px -30px rgba(60,35,10,.5);transform:translateY(-3px)}
+.pimg{aspect-ratio:5/4;position:relative;overflow:hidden}
+.pimg svg{width:100%;height:100%;display:block}
+.tag{position:absolute;top:14px;left:14px;font-size:12px;font-weight:700;padding:5px 11px;border-radius:20px;background:rgba(23,18,15,.82);color:var(--honey)}
+.pbody{padding:20px 22px 22px;display:flex;flex-direction:column;flex:1}
+.pbody .k{font-size:12px;color:#8a6a45;letter-spacing:.08em}
+.pbody h3{font-family:'Nanum Myeongjo',serif;font-size:21px;font-weight:800;margin-top:4px}
+.pbody p{font-size:14px;color:#6a5b4b;margin-top:6px;flex:1}
+.prow{display:flex;justify-content:space-between;align-items:center;margin-top:18px;gap:10px}
+.price{font-family:'Nanum Myeongjo',serif;font-size:22px;font-weight:800}
+.price small{font-family:'Noto Sans KR',sans-serif;font-size:13px;color:#7b6b59;font-weight:500;margin-left:6px}
+.add{height:42px;padding:0 16px;border-radius:30px;border:0;background:var(--ink);color:var(--wax);font-size:14px;font-weight:500;display:flex;align-items:center;gap:6px;transition:.2s;white-space:nowrap}
+.add svg{width:16px;height:16px;stroke:currentColor;fill:none;stroke-width:2}
+.add:hover{background:#9a5f1e}
+.add.done{background:#9a5f1e}
+.pcard.hide{display:none}
+/* gift */
+.gift{padding:120px 0;background:radial-gradient(700px 500px at 25% 50%,rgba(201,138,58,.22),transparent 65%),var(--smoke)}
+.gift .wrap{display:grid;grid-template-columns:1.05fr 1fr;gap:60px;align-items:center}
+.gift svg.box{width:100%;height:auto;display:block}
+.opts{margin-top:30px;display:grid;gap:12px}
+.opt{display:flex;align-items:center;gap:16px;padding:18px 20px;border-radius:16px;border:1px solid var(--line);background:rgba(255,255,255,.03);cursor:pointer;transition:.2s}
+.opt input{accent-color:var(--amber);width:18px;height:18px}
+.opt.on{border-color:var(--amber2);background:rgba(201,138,58,.12)}
+.opt div{flex:1}
+.opt b{font-size:16px;font-weight:700}
+.opt small{display:block;font-size:13px;color:#bfb19c}
+.opt .oprice{font-family:'Nanum Myeongjo',serif;font-size:20px;font-weight:800;color:var(--honey);white-space:nowrap}
+.msg{margin-top:16px}
+.msg label{font-size:13px;color:#cbbda8}
+.msg input{width:100%;margin-top:8px;height:50px;border-radius:12px;border:1px solid var(--line);background:rgba(0,0,0,.25);color:var(--wax);padding:0 16px;font-size:15px;font-family:inherit}
+.msg input::placeholder{color:#8f8170}
+.giftrow{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-top:22px;flex-wrap:wrap}
+.giftrow p{font-size:14px;color:#cbbda8}
+.giftrow p b{font-family:'Nanum Myeongjo',serif;font-size:24px;color:var(--wax);margin-left:6px}
+/* guide */
+.guide{padding:120px 0;background:var(--ink)}
+.ggrid{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:56px;border-top:1px solid var(--line)}
+.gstep{padding:34px 26px 10px 0;border-right:1px solid var(--line);margin-right:26px}
+.gstep:last-child{border-right:0;margin-right:0}
+.gstep .no{font-family:'Nanum Myeongjo',serif;font-size:15px;color:var(--amber2);letter-spacing:.1em}
+.gstep svg{width:100px;height:100px;display:block;margin:18px 0 8px}
+.gstep h3{font-family:'Nanum Myeongjo',serif;font-size:21px;font-weight:800}
+.gstep p{font-size:14px;color:#c0b29e;margin-top:10px}
+.gstep b.k{color:var(--honey);font-weight:700}
+/* workshop */
+.class{padding:120px 0;background:linear-gradient(180deg,var(--smoke2),var(--smoke))}
+.class .wrap{display:grid;grid-template-columns:.95fr 1.05fr;gap:56px;align-items:start}
+.cinfo ul{list-style:none;margin-top:30px;display:grid;gap:14px}
+.cinfo li{display:flex;gap:14px;font-size:15px;color:#d6c9b5;align-items:flex-start}
+.cinfo li svg{flex:none;width:22px;height:22px;stroke:var(--honey);fill:none;stroke-width:1.6;margin-top:2px}
+.cinfo .scene{margin-top:34px;border-radius:22px;overflow:hidden;border:1px solid var(--line)}
+.cinfo .scene svg{width:100%;height:auto;display:block}
+.form{background:var(--wax);color:var(--ink);border-radius:26px;padding:36px;box-shadow:0 40px 80px -40px rgba(0,0,0,.8)}
+.form h3{font-family:'Nanum Myeongjo',serif;font-size:26px;font-weight:800}
+.form .fs{font-size:14px;color:#6c5c4b;margin-top:6px}
+.flabel{font-size:13px;font-weight:700;color:#4a3c30;margin:22px 0 10px;display:block}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chips button{min-width:76px;height:58px;border-radius:14px;border:1px solid #d6c5a6;background:#fbf6ec;color:var(--ink);font-size:13px;line-height:1.3;padding:0 12px}
+.chips button b{display:block;font-size:16px;font-family:'Nanum Myeongjo',serif}
+.chips button.on{background:var(--ink);color:var(--wax);border-color:var(--ink)}
+.chips button:disabled{opacity:.45;cursor:not-allowed;text-decoration:line-through}
+.chips.t button{height:44px;min-width:0}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.fin{width:100%;height:50px;border-radius:12px;border:1px solid #d6c5a6;background:#fffaf1;padding:0 14px;font-size:15px;font-family:inherit;color:var(--ink)}
+.stepper{display:flex;align-items:center;height:50px;border:1px solid #d6c5a6;border-radius:12px;background:#fffaf1;overflow:hidden}
+.stepper button{width:50px;height:100%;border:0;background:transparent;font-size:20px;color:var(--ink)}
+.stepper output{flex:1;text-align:center;font-weight:700;font-size:16px}
+.sum{display:flex;justify-content:space-between;align-items:center;margin-top:24px;padding-top:20px;border-top:1px dashed #cdb998;gap:12px;flex-wrap:wrap}
+.sum p{font-size:14px;color:#5c4d3f}
+.sum b{font-family:'Nanum Myeongjo',serif;font-size:26px;color:var(--ink);margin-left:6px}
+.form .btn.pri{width:100%;margin-top:18px;background:var(--ink);color:var(--wax);box-shadow:none}
+.form .btn.pri:hover{background:#9a5f1e}
+.ok{display:none;margin-top:16px;padding:16px 18px;border-radius:14px;background:#efe1c4;font-size:14px;color:#4a3a2a}
+.ok.show{display:block}
+.err{color:#a3361c;font-size:13px;margin-top:8px;min-height:18px}
+/* story */
+.story{padding:130px 0;background:var(--ink);overflow:hidden}
+.story .wrap{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:center}
+.story svg{width:100%;height:auto;display:block;border-radius:24px}
+.quote{font-family:'Nanum Myeongjo',serif;font-size:clamp(24px,2.6vw,34px);line-height:1.55;font-weight:700;margin-top:20px}
+.quote em{font-style:normal;color:var(--honey)}
+.story p.body{color:#c8bba7;font-size:16px;margin-top:22px}
+.facts{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:36px}
+.facts div{border-top:1px solid rgba(227,169,85,.5);padding-top:14px}
+.facts b{font-family:'Nanum Myeongjo',serif;font-size:26px;display:block}
+.facts span{font-size:13px;color:var(--ash)}
+/* faq */
+.faq{padding:110px 0;background:var(--smoke)}
+.faq .wrap{display:grid;grid-template-columns:.8fr 1.2fr;gap:60px}
+details{border-bottom:1px solid var(--line);padding:22px 0}
+details:first-child{border-top:1px solid var(--line)}
+summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:20px;font-size:17px;font-weight:500}
+summary::-webkit-details-marker{display:none}
+summary:after{content:"+";font-family:'Nanum Myeongjo',serif;font-size:26px;color:var(--amber2);transition:.2s;line-height:1}
+details[open] summary:after{transform:rotate(45deg)}
+details p{font-size:15px;color:#c5b8a4;margin-top:12px;padding-right:30px}
+/* news */
+.news{padding:90px 0;background:linear-gradient(120deg,#3a2614,#1c140f 60%);border-top:1px solid var(--line)}
+.news .wrap{display:flex;justify-content:space-between;align-items:center;gap:40px;flex-wrap:wrap}
+.news h2{font-family:'Nanum Myeongjo',serif;font-weight:800;font-size:clamp(26px,3vw,36px);line-height:1.35}
+.news p{color:#cdbfa9;margin-top:8px;font-size:15px}
+.nform{display:flex;gap:10px;flex:1;max-width:520px;min-width:280px}
+.nform input{flex:1;min-width:0;height:54px;border-radius:30px;border:1px solid rgba(243,234,219,.25);background:rgba(0,0,0,.3);color:var(--wax);padding:0 22px;font-size:15px;font-family:inherit}
+.nform input::placeholder{color:#8f8170}
+/* footer */
+footer{background:#0f0b09;padding:70px 0 40px;color:#a89a88;font-size:14px}
+.fgrid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:40px}
+footer h4{color:var(--wax);font-size:14px;margin-bottom:14px;font-weight:700}
+footer li{list-style:none;margin:6px 0}
+footer .copy{margin-top:50px;padding-top:24px;border-top:1px solid rgba(243,234,219,.1);font-size:12px;display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+.toast{position:fixed;left:50%;bottom:28px;transform:translate(-50%,30px);opacity:0;background:var(--wax);color:var(--ink);padding:14px 22px;border-radius:40px;font-size:14px;font-weight:500;box-shadow:0 20px 40px -10px rgba(0,0,0,.6);transition:.3s;z-index:100;pointer-events:none;white-space:nowrap}
+.toast.show{opacity:1;transform:translate(-50%,0)}
+.burger{display:none;width:42px;height:42px;border-radius:50%;border:1px solid var(--line);background:transparent;color:var(--wax)}
+.burger svg{width:20px;height:20px;stroke:currentColor;fill:none;stroke-width:1.8}
+@media(max-width:1080px){
+ .sgrid{grid-template-columns:repeat(2,1fr)}
+ .pgrid{grid-template-columns:repeat(2,1fr)}
+ .ggrid{grid-template-columns:repeat(2,1fr)}
+ .gstep:nth-child(2){border-right:0;margin-right:0}
+ .gstep{border-bottom:1px solid var(--line);padding-bottom:30px}
+ .class .wrap,.gift .wrap,.story .wrap,.faq .wrap{grid-template-columns:1fr;gap:44px}
+ .fgrid{grid-template-columns:1fr 1fr}
+}
+@media(max-width:860px){
+ .menu{display:none}
+ .burger{display:grid;place-items:center}
+ .srow .wrap{gap:28px}
+}
+@media(max-width:620px){
+ .wrap{padding:0 20px}
+ .nav{height:64px}
+ .logo small{display:none}
+ .cartbtn span{display:none}
+ .hero{padding-top:40px}
+ .hero h1{font-size:33px}
+ .stage svg{width:200%;max-width:none;margin-left:-50%;-webkit-mask-image:linear-gradient(180deg,transparent,#000 9%);mask-image:linear-gradient(180deg,transparent,#000 9%)}
+ .stage{margin-top:4px}
+ .htag{font-size:12px;bottom:14px}
+ .srow .wrap{display:grid;grid-template-columns:1fr 1fr;gap:12px 10px;padding-top:14px;padding-bottom:14px}
+ .srow a{font-size:13px;justify-content:flex-start}
+ .srow svg{width:22px;height:22px}
+ .hero p.sub{font-size:16px}
+ .hero .ctas{width:100%}
+ .hero .ctas .btn{flex:1;padding:0 14px}
+ .scents,.shop,.gift,.guide,.class,.story,.faq{padding:80px 0}
+ .sgrid{grid-template-columns:1fr;gap:14px;margin-top:36px}
+ .scard{display:grid;grid-template-columns:64px 1fr;gap:0 18px;padding:22px 20px}
+ .scard svg{width:64px;height:64px;grid-row:span 3}
+ .scard h3{margin-top:0;font-size:20px}
+ .scard p,.notes{grid-column:1/-1}
+ .scard p{min-height:0}
+ .pgrid{grid-template-columns:1fr 1fr;gap:12px;margin-top:30px}
+ .pimg{aspect-ratio:1/1}
+ .tag{top:8px;left:8px;font-size:11px;padding:3px 8px}
+ .pbody{padding:12px 12px 14px}
+ .pbody .k{font-size:11px;letter-spacing:0}
+ .pbody h3{font-size:16px;line-height:1.35}
+ .hcopy .eyebrow{letter-spacing:.12em;font-size:12px;gap:8px}
+ .hcopy .eyebrow:before,.hcopy .eyebrow:after{width:14px}
+ .pbody p{flex:none;max-height:calc(12px*1.55*2);font-size:12px;line-height:1.55;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+ .prow{flex-direction:column;align-items:stretch;gap:8px;margin-top:auto;padding-top:10px}
+ .price{font-size:18px}
+ .add{height:38px;justify-content:center;font-size:13px}
+ .ggrid{grid-template-columns:1fr}
+ .gstep{border-right:0;margin-right:0;display:grid;grid-template-columns:76px 1fr;gap:0 16px;padding:26px 0}
+ .gstep svg{width:76px;height:76px;margin:0;grid-row:span 3}
+ .gstep .no{grid-column:2}
+ .form{padding:26px 20px;border-radius:20px}
+ .two{grid-template-columns:1fr}
+ .facts{grid-template-columns:repeat(3,1fr);gap:10px}
+ .facts b{font-size:21px}
+ .nform{flex-direction:column;min-width:0;width:100%}
+ .nform .btn{width:100%}
+ .nform input{flex:none;width:100%}
+ .fgrid{grid-template-columns:1fr 1fr;gap:28px}
+ .fgrid>div:first-child{grid-column:1/-1}
+ .opt{padding:16px}
+ .opt .oprice{font-size:18px}
+ .toast{white-space:normal;width:calc(100% - 40px);text-align:center}
+}
+</style>
+</head>
+<body>
+<header>
+ <div class="wrap nav">
+  <a href="#top" class="logo" aria-label="밤불 캔들 하우스">
+   <svg viewBox="0 0 40 40"><defs><radialGradient id="lg" cx="50%" cy="60%" r="50%"><stop offset="0" stop-color="#ffe3a3"/><stop offset=".6" stop-color="#e3a955"/><stop offset="1" stop-color="#c98a3a" stop-opacity="0"/></radialGradient></defs><circle cx="20" cy="14" r="12" fill="url(#lg)" opacity=".5"/><path d="M20 4c3 5 5 7 5 11a5 5 0 0 1-10 0c0-4 2-6 5-11z" fill="#f2c77a"/><path d="M20 10c1.4 2.4 2.2 3.4 2.2 5.2a2.2 2.2 0 0 1-4.4 0c0-1.8.8-2.8 2.2-5.2z" fill="#fff4d6"/><rect x="9" y="22" width="22" height="14" rx="3" fill="none" stroke="#f3eadb" stroke-width="1.6"/><line x1="20" y1="19" x2="20" y2="22" stroke="#f3eadb" stroke-width="1.6"/></svg>
+   <div><b>밤불</b><small>CANDLE HOUSE</small></div>
+  </a>
+  <nav class="menu"><a href="#scents">향 계열</a><a href="#shop">캔들</a><a href="#gift">선물 세트</a><a href="#guide">태우는 법</a><a href="#class">클래스</a><a href="#faq">문의</a></nav>
+  <div style="display:flex;gap:10px;align-items:center">
+   <button class="cartbtn" id="cartBtn" aria-label="장바구니"><svg viewBox="0 0 24 24"><path d="M5 8h14l-1.2 11a2 2 0 0 1-2 1.8H8.2a2 2 0 0 1-2-1.8L5 8z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/></svg><span>장바구니</span><i id="cartN">0</i></button>
+   <button class="burger" aria-label="메뉴 열기"><svg viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h10"/></svg></button>
+  </div>
+ </div>
+</header>
+
+<section class="hero" id="top">
+ <div class="hcopy wrap">
+  <span class="eyebrow">SMALL BATCH · 소량으로 붓는 캔들</span>
+  <h1>하루의 끝에 <em>작은&nbsp;불</em> 하나를 켜&nbsp;두는&nbsp;집</h1>
+  <p class="sub">콩 왁스와 면 심지, 호박빛 유리병. 일주일에 정해진 양만 손으로 부어 이틀 동안 천천히 굳혀 보냅니다.</p>
+  <div class="ctas"><a class="btn pri" href="#shop">캔들 둘러보기</a><a class="btn ghost" href="#class">원데이 클래스 예약</a></div>
+ </div>
+ <div class="stage" aria-hidden="true">
+  <svg viewBox="-360 118 1380 452" preserveAspectRatio="xMidYMax meet">
+    <defs>
+     <radialGradient id="hg1" cx="50%" cy="50%" r="50%"><stop offset="0" stop-color="#ffd58a" stop-opacity=".75"/><stop offset=".35" stop-color="#e3a955" stop-opacity=".28"/><stop offset="1" stop-color="#c98a3a" stop-opacity="0"/></radialGradient>
+     <linearGradient id="amberGlass" x1="0" x2="1"><stop offset="0" stop-color="#3d200b"/><stop offset=".18" stop-color="#8a4c17"/><stop offset=".42" stop-color="#c47a2a"/><stop offset=".6" stop-color="#a5601f"/><stop offset=".85" stop-color="#5a3010"/><stop offset="1" stop-color="#2e1707"/></linearGradient>
+     <linearGradient id="smokeGlass" x1="0" x2="1"><stop offset="0" stop-color="#1b1714"/><stop offset=".25" stop-color="#4a423b"/><stop offset=".5" stop-color="#6b6159"/><stop offset=".75" stop-color="#3d3530"/><stop offset="1" stop-color="#15110f"/></linearGradient>
+     <linearGradient id="waxTop" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff6e3"/><stop offset="1" stop-color="#e8d6b3"/></linearGradient>
+     <linearGradient id="pillar" x1="0" x2="1"><stop offset="0" stop-color="#cdbb9c"/><stop offset=".35" stop-color="#f6ecd8"/><stop offset=".7" stop-color="#e9dbc0"/><stop offset="1" stop-color="#b9a582"/></linearGradient>
+     <linearGradient id="flameG" x1="0" y1="1" x2="0" y2="0"><stop offset="0" stop-color="#ff9a2e"/><stop offset=".45" stop-color="#ffc861"/><stop offset="1" stop-color="#fff1c4"/></linearGradient>
+     <linearGradient id="table" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#3b2a1d"/><stop offset="1" stop-color="#17120f" stop-opacity="0"/></linearGradient>
+     <linearGradient id="hl" x1="0" x2="1"><stop offset="0" stop-color="#fff" stop-opacity="0"/><stop offset=".5" stop-color="#fff" stop-opacity=".35"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient>
+     <filter id="blur8" x="-60%" y="-60%" width="220%" height="220%"><feGaussianBlur stdDeviation="8"/></filter>
+     <filter id="blur2" x="-60%" y="-20%" width="220%" height="140%"><feGaussianBlur stdDeviation="1.6"/></filter>
+     <filter id="grain"><feTurbulence type="fractalNoise" baseFrequency=".9" numOctaves="2" seed="3"/><feColorMatrix values="0 0 0 0 1 0 0 0 0 .9 0 0 0 0 .7 0 0 0 .06 0"/></filter>
+         <linearGradient id="reflFade" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff" stop-opacity=".5"/><stop offset=".55" stop-color="#fff" stop-opacity="0"/></linearGradient>
+     <mask id="reflMask" maskUnits="userSpaceOnUse" x="-300" y="474" width="1300" height="300"><rect x="-300" y="474" width="1300" height="300" fill="url(#reflFade)"/></mask>
+     <linearGradient id="tableTop" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#4a3424"/><stop offset=".25" stop-color="#2e2018"/><stop offset="1" stop-color="#17120f"/></linearGradient>
+     <linearGradient id="tableEdge" x1="0" x2="1"><stop offset="0" stop-color="#e3a955" stop-opacity="0"/><stop offset=".5" stop-color="#e3a955" stop-opacity=".55"/><stop offset="1" stop-color="#e3a955" stop-opacity="0"/></linearGradient>
+    </defs>
+    <circle class="glow" cx="330" cy="390" r="262" fill="url(#hg1)"/>
+    <path d="M-420 474 L1080 474 L1080 600 L-420 600Z" fill="url(#tableTop)"/>
+    <rect x="-420" y="472" width="1500" height="3" fill="url(#tableEdge)"/>
+    <ellipse cx="330" cy="480" rx="420" ry="26" fill="#e3a955" opacity=".14" filter="url(#blur8)"/>
+    <g id="trio">
+    <!-- smoke wisp from left -->
+    <path d="M170 232 C154 206 186 190 172 164 C164 146 178 138 175 126" stroke="#e6d9c3" stroke-opacity=".18" stroke-width="3" fill="none" filter="url(#blur2)"/>
+    <!-- left: smoked glass tumbler (snuffed) -->
+    <g>
+     <ellipse cx="170" cy="462" rx="74" ry="14" fill="#000" opacity=".5" filter="url(#blur8)"/>
+     <path d="M100 250 L106 450 Q170 470 234 450 L240 250 Z" fill="url(#smokeGlass)"/>
+     <ellipse cx="170" cy="250" rx="70" ry="14" fill="#2a2420" stroke="#7b7068" stroke-width="1.5"/>
+     <ellipse cx="170" cy="266" rx="64" ry="11" fill="url(#waxTop)" opacity=".92"/>
+     <path d="M108 266 L112 446 Q170 462 228 446 L232 266 Q170 282 108 266Z" fill="#efe2c8" opacity=".14"/>
+     <path d="M170 262 q-3 -14 2 -24" stroke="#120e0b" stroke-width="3" fill="none" stroke-linecap="round"/>
+     <rect x="118" y="262" width="10" height="180" fill="url(#hl)" opacity=".6"/>
+     <rect x="112" y="332" width="116" height="62" rx="4" fill="#efe4d0"/>
+     <text x="170" y="370" text-anchor="middle" font-family="Nanum Myeongjo" font-weight="800" font-size="21" fill="#1f1813">숯과 삼나무</text>
+     <line x1="146" y1="382" x2="194" y2="382" stroke="#9a5f1e" stroke-width="1"/>
+    </g>
+    <!-- right: tall pillar candle -->
+    <g>
+     <ellipse cx="500" cy="464" rx="62" ry="12" fill="#000" opacity=".5" filter="url(#blur8)"/>
+     <path d="M448 470 L552 470 L560 478 L440 478Z" fill="#6e4a2a"/>
+     <ellipse cx="500" cy="470" rx="58" ry="8" fill="#8a5d33"/>
+     <path d="M462 200 L462 462 Q500 474 538 462 L538 200Z" fill="url(#pillar)"/>
+     <path d="M462 200 Q470 214 476 206 Q486 222 500 212 Q514 226 526 208 Q532 218 538 200 Q500 186 462 200Z" fill="#fff8ea"/>
+     <ellipse cx="500" cy="201" rx="38" ry="8" fill="#f7e9cf"/>
+     <path d="M476 207 q-2 26 1 34 q3 -6 2 -30z" fill="#efdfc2"/>
+     <path d="M524 208 q3 40 -1 52 q-4 -10 -3 -50z" fill="#efdfc2"/>
+     <path d="M500 198 v-14" stroke="#120e0b" stroke-width="3" stroke-linecap="round"/>
+     <ellipse cx="500" cy="160" rx="34" ry="46" fill="#ffd58a" opacity=".35" filter="url(#blur8)"/>
+     <path class="flick d2" d="M500 132 C510 152 516 162 514 174 C512 186 506 190 500 190 C494 190 488 186 486 174 C484 162 490 152 500 132Z" fill="url(#flameG)"/>
+     <path class="flick d2" d="M500 158 C504 166 506 172 505 178 C504 183 502 185 500 185 C498 185 496 183 495 178 C494 172 496 166 500 158Z" fill="#fff8e6"/>
+     <g opacity=".22" stroke="#8d7653" stroke-width="1">
+      <path d="M470 300 q30 6 60 0"/><path d="M468 360 q32 8 64 0"/><path d="M470 420 q30 6 60 0"/>
+     </g>
+    </g>
+    <!-- center: big amber jar, lit -->
+    <g>
+     <ellipse cx="330" cy="474" rx="110" ry="16" fill="#000" opacity=".55" filter="url(#blur8)"/>
+     <!-- lid leaning -->
+     <g transform="rotate(-8 250 452)">
+      <rect x="218" y="430" width="86" height="22" rx="6" fill="#2a1f18"/>
+      <rect x="218" y="430" width="86" height="6" rx="3" fill="#5c4634"/>
+     </g>
+     <path d="M232 230 Q226 236 226 252 L230 440 Q232 466 262 470 L398 470 Q428 466 430 440 L434 252 Q434 236 428 230Z" fill="url(#amberGlass)"/>
+     <rect x="238" y="214" width="184" height="22" rx="6" fill="#7a4418"/>
+     <rect x="238" y="214" width="184" height="6" rx="3" fill="#b9732c" opacity=".8"/>
+     <!-- wax inside -->
+     <path d="M236 262 Q330 286 424 262 L424 280 Q330 300 236 280Z" fill="#f6dfaa" opacity=".55"/>
+     <ellipse cx="330" cy="262" rx="94" ry="16" fill="#ffe8b8" opacity=".9"/>
+     <ellipse cx="330" cy="262" rx="40" ry="7" fill="#fff6dc"/>
+     <!-- inner glow through glass -->
+     <ellipse cx="330" cy="300" rx="80" ry="40" fill="#ffc861" opacity=".35" filter="url(#blur8)"/>
+     <rect x="246" y="246" width="14" height="210" rx="7" fill="url(#hl)" opacity=".7"/>
+     <rect x="404" y="250" width="6" height="200" rx="3" fill="url(#hl)" opacity=".4"/>
+     <!-- label -->
+     <rect x="262" y="320" width="136" height="104" rx="6" fill="#f3eadb"/>
+     <rect x="268" y="326" width="124" height="92" rx="4" fill="none" stroke="#9a5f1e" stroke-width="1"/>
+     <path d="M330 342 c3 5 5 7 5 10 a5 5 0 0 1 -10 0 c0 -3 2 -5 5 -10z" fill="#c98a3a"/>
+     <text x="330" y="388" text-anchor="middle" font-family="Nanum Myeongjo" font-weight="800" font-size="24" fill="#1f1813">늦가을 귤피</text>
+     <line x1="300" y1="404" x2="360" y2="404" stroke="#9a5f1e" stroke-width="1"/>
+     <!-- wick & flame -->
+     <path d="M330 262 v-16" stroke="#120e0b" stroke-width="3.2" stroke-linecap="round"/>
+     <ellipse cx="330" cy="210" rx="44" ry="60" fill="#ffd58a" opacity=".4" filter="url(#blur8)"/>
+     <path class="flick" d="M330 168 C344 194 352 208 349 224 C346 240 338 248 330 248 C322 248 314 240 311 224 C308 208 316 194 330 168Z" fill="url(#flameG)"/>
+     <path class="flick" d="M330 202 C335 212 338 220 337 228 C336 235 333 238 330 238 C327 238 324 235 323 228 C322 220 325 212 330 202Z" fill="#fff9ea"/>
+     <ellipse cx="330" cy="244" rx="4" ry="5" fill="#3a6bc4" opacity=".55"/>
+    </g>
+    </g>
+    <use href="#trio" transform="translate(0 948) scale(1 -1)" mask="url(#reflMask)" opacity=".75"/>
+    <g transform="translate(650 512) rotate(-10)"><rect x="-50" y="-14" width="96" height="30" rx="3" fill="#2b201a"/><rect x="-50" y="-14" width="96" height="9" fill="#9a5f1e"/><rect x="-46" y="2" width="88" height="10" fill="#3c2d23"/></g>
+    <g transform="translate(-170 474)"><ellipse cx="0" cy="4" rx="96" ry="12" fill="#000" opacity=".45" filter="url(#blur8)"/><ellipse cx="0" cy="-2" rx="92" ry="12" fill="#5b4433"/><ellipse cx="0" cy="-6" rx="88" ry="10" fill="#7a5c44"/><g><path d="M-58 -10 v-22 q22 6 44 0 v22 q-22 6 -44 0z" fill="#d8c7a8"/><ellipse cx="-36" cy="-32" rx="22" ry="4" fill="#f3e6cc"/><path d="M-36 -32 v-7" stroke="#120e0b" stroke-width="2"/></g><g><path d="M14 -10 v-18 q22 6 44 0 v18 q-22 6 -44 0z" fill="#b9a789"/><ellipse cx="36" cy="-28" rx="22" ry="4" fill="#efe1c4"/><path d="M36 -28 v-6" stroke="#120e0b" stroke-width="2"/></g></g>
+    <g transform="translate(830 474)"><path d="M0 0 L-6 -150" stroke="#8a6a45" stroke-width="4" stroke-linecap="round"/><path d="M-24 -150 q18 -34 36 0z" fill="#9a5f1e"/><path d="M-24 -150 h36" stroke="#c98a3a" stroke-width="2"/><ellipse cx="0" cy="2" rx="40" ry="6" fill="#000" opacity=".4" filter="url(#blur8)"/></g>
+    <g transform="translate(-30 522) rotate(6)"><rect x="0" y="0" width="90" height="4" rx="2" fill="#d9c09a"/><ellipse cx="90" cy="2" rx="6" ry="4.5" fill="#1a110c"/></g>
+  </svg>
+  <span class="htag">이번 시즌 14가지 향 · 5만 원 이상 무료 배송</span>
+ </div>
+</section>
+
+<div class="srow"><div class="wrap">
+ <a href="#scents"><svg viewBox="0 0 32 32"><path d="M16 4 L24 17 H20 L26 26 H6 L12 17 H8Z"/><path d="M16 26 v3"/></svg>숲과 나무</a>
+ <a href="#scents"><svg viewBox="0 0 32 32"><circle cx="16" cy="17" r="10"/><path d="M16 7 v20 M7.3 12 l17.4 10 M7.3 22 l17.4 -10"/><path d="M18 6 q4 -4 8 -2"/></svg>과일과 껍질</a>
+ <a href="#scents"><svg viewBox="0 0 32 32"><path d="M16 14 c-6 -4 -6 -10 0 -10 c6 0 6 6 0 10z"/><path d="M16 14 c4 -6 11 -5 10 1 c-1 5 -7 3 -10 -1z"/><path d="M16 14 c-4 -6 -11 -5 -10 1 c1 5 7 3 10 -1z"/><path d="M16 14 v14"/></svg>꽃과 풀</a>
+ <a href="#scents"><svg viewBox="0 0 32 32"><path d="M6 14 h18 v4 a9 9 0 0 1 -18 0z"/><path d="M24 15 a4 4 0 0 1 0 7"/><path d="M12 10 q-2 -3 1 -6 M17 10 q-2 -3 1 -6"/><path d="M5 28 h22"/></svg>차와 연기</a>
+</div></div>
+
+<section class="scents" id="scents">
+ <div class="wrap">
+  <div class="shead">
+   <div><span class="eyebrow">SCENT FAMILY</span><h2 class="title">오늘 밤의 기분에 맞춰<br><em>네 가지 향 계열</em>에서 고르세요</h2></div>
+   <p class="lead">향을 고르기 어렵다면, 방의 쓰임부터 떠올려 보세요. 거실엔 나무, 부엌엔 시트러스, 침실엔 꽃과 차가 잘 어울립니다.</p>
+  </div>
+  <div class="sgrid">
+   <div class="scard">
+    <svg viewBox="0 0 84 84"><defs><linearGradient id="s1" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#7a5636"/><stop offset="1" stop-color="#3a2717"/></linearGradient></defs><circle cx="42" cy="42" r="40" fill="#2f241b"/><path d="M42 14 L60 46 H50 L64 66 H20 L34 46 H24Z" fill="url(#s1)"/><path d="M42 14 L60 46 H50 L64 66 H42Z" fill="#a37548" opacity=".5"/><rect x="38" y="66" width="8" height="8" fill="#5a3d24"/><circle cx="62" cy="22" r="4" fill="#e3a955" opacity=".8"/></svg>
+    <h3>숲과 나무</h3><div class="en">WOODY</div>
+    <p>비 온 뒤 삼나무 숲, 오래된 책장의 나무 냄새처럼 묵직하고 차분한 계열.</p>
+    <div class="notes"><span>삼나무</span><span>베티버</span><span>숯</span></div>
+   </div>
+   <div class="scard">
+    <svg viewBox="0 0 84 84"><defs><radialGradient id="s2" cx="40%" cy="35%" r="70%"><stop offset="0" stop-color="#ffcf7a"/><stop offset="1" stop-color="#d1771f"/></radialGradient></defs><circle cx="42" cy="42" r="40" fill="#2f241b"/><circle cx="42" cy="46" r="22" fill="url(#s2)"/><g stroke="#fff1cf" stroke-width="1.4" opacity=".7"><path d="M42 46 L42 26"/><path d="M42 46 L59 37"/><path d="M42 46 L59 56"/><path d="M42 46 L42 66"/><path d="M42 46 L25 56"/><path d="M42 46 L25 37"/></g><circle cx="42" cy="46" r="22" fill="none" stroke="#f6ead0" stroke-width="2.5"/><path d="M46 22 q8 -10 16 -6 q-6 8 -16 6z" fill="#6e8a4a"/></svg>
+    <h3>과일과 껍질</h3><div class="en">CITRUS</div>
+    <p>막 깐 귤껍질, 자몽 한 조각. 밝고 가벼워서 낮 시간 부엌에 두기 좋은 계열.</p>
+    <div class="notes"><span>귤피</span><span>자몽</span><span>생강</span></div>
+   </div>
+   <div class="scard">
+    <svg viewBox="0 0 84 84"><defs><radialGradient id="s3" cx="50%" cy="50%" r="60%"><stop offset="0" stop-color="#f6d6c4"/><stop offset="1" stop-color="#c98370"/></radialGradient></defs><circle cx="42" cy="42" r="40" fill="#2f241b"/><g transform="translate(42 40)"><ellipse rx="9" ry="17" cy="-12" fill="url(#s3)"/><ellipse rx="9" ry="17" cy="-12" fill="url(#s3)" transform="rotate(72)"/><ellipse rx="9" ry="17" cy="-12" fill="url(#s3)" transform="rotate(144)"/><ellipse rx="9" ry="17" cy="-12" fill="url(#s3)" transform="rotate(216)"/><ellipse rx="9" ry="17" cy="-12" fill="url(#s3)" transform="rotate(288)"/><circle r="6" fill="#e3a955"/></g><path d="M42 58 q-4 10 -2 20" stroke="#6e8a4a" stroke-width="2" fill="none"/></svg>
+    <h3>꽃과 풀</h3><div class="en">FLORAL</div>
+    <p>무화과 잎, 마른 장미 꽃잎. 달지 않게 다듬어 은은하게 퍼지는 계열.</p>
+    <div class="notes"><span>무화과 잎</span><span>장미</span><span>제라늄</span></div>
+   </div>
+   <div class="scard">
+    <svg viewBox="0 0 84 84"><defs><linearGradient id="s4" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#e9dcc2"/><stop offset="1" stop-color="#b59f7c"/></linearGradient></defs><circle cx="42" cy="42" r="40" fill="#2f241b"/><path d="M22 40 h36 v8 a18 18 0 0 1 -36 0z" fill="url(#s4)"/><path d="M58 44 a7 7 0 0 1 0 12" stroke="#b59f7c" stroke-width="3" fill="none"/><ellipse cx="40" cy="40" rx="18" ry="4" fill="#8a5d2a"/><path d="M34 34 q-4 -8 2 -14 M44 34 q-4 -8 2 -16" stroke="#e6d9c3" stroke-width="1.6" fill="none" opacity=".6" stroke-linecap="round"/><ellipse cx="40" cy="68" rx="24" ry="3.5" fill="#57412c"/></svg>
+    <h3>차와 연기</h3><div class="en">TEA &amp; SMOKE</div>
+    <p>볶은 호지차와 장작 연기. 해가 진 뒤 조명을 낮추고 켜 두기 좋은 계열.</p>
+    <div class="notes"><span>호지차</span><span>장작</span><span>바닐라</span></div>
+   </div>
+  </div>
+ </div>
+</section>
+
+<section class="shop" id="shop">
+ <div class="wrap">
+  <div class="shead">
+   <div><span class="eyebrow">SHOP</span><h2 class="title">이번 주에 부은<br><em>캔들과 집 향기</em></h2></div>
+   <div class="tabs" role="tablist">
+    <button class="on" data-f="all">전체</button><button data-f="jar">유리병 캔들</button><button data-f="obj">오브제 캔들</button><button data-f="home">집 향기</button>
+   </div>
+  </div>
+  <div class="pgrid">
+   <article class="pcard" data-c="jar">
+    <div class="pimg"><span class="tag">No.03</span>
+     <svg viewBox="0 0 400 320" preserveAspectRatio="xMidYMid slice"><defs><linearGradient id="p1bg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#e8c38d"/><stop offset="1" stop-color="#c58f4f"/></linearGradient><linearGradient id="p1g" x1="0" x2="1"><stop offset="0" stop-color="#4a250b"/><stop offset=".35" stop-color="#b46c22"/><stop offset=".6" stop-color="#9a581a"/><stop offset="1" stop-color="#3a1c07"/></linearGradient><filter id="p1b"><feGaussianBlur stdDeviation="6"/></filter></defs><rect width="400" height="320" fill="url(#p1bg)"/><circle cx="300" cy="70" r="90" fill="#fff1d2" opacity=".35"/><ellipse cx="200" cy="268" rx="90" ry="14" fill="#5a3410" opacity=".4" filter="url(#p1b)"/><path d="M128 110 L132 256 Q134 272 156 272 L244 272 Q266 272 268 256 L272 110Z" fill="url(#p1g)"/><rect x="130" y="100" width="140" height="16" rx="5" fill="#6d3b12"/><ellipse cx="200" cy="128" rx="66" ry="10" fill="#ffe7b3"/><rect x="158" y="166" width="84" height="64" rx="4" fill="#f3eadb"/><text x="200" y="207" text-anchor="middle" font-family="Nanum Myeongjo" font-weight="800" font-size="24" fill="#1f1813">귤피</text><path d="M200 128v-12" stroke="#120e0b" stroke-width="2.6"/><ellipse cx="200" cy="96" rx="20" ry="26" fill="#ffd58a" opacity=".6" filter="url(#p1b)"/><path d="M200 78 C207 92 210 100 208 108 C206 114 203 116 200 116 C197 116 194 114 192 108 C190 100 193 92 200 78Z" fill="#ffc861"/><path d="M200 94 C202 100 203 104 202.5 108 C202 111 201 112 200 112 C199 112 198 111 197.5 108 C197 104 198 100 200 94Z" fill="#fff7e0"/><g transform="translate(290 240)"><circle r="16" fill="#e98b2a"/><circle r="16" fill="none" stroke="#f7c486" stroke-width="2"/><path d="M-2 -16 q6 -10 14 -8" stroke="#5d7a3a" stroke-width="3" fill="none"/></g><path d="M80 262 q18 -6 30 4 q-14 8 -30 -4z" fill="#f0a64a"/></svg>
+    </div>
+    <div class="pbody"><span class="k">유리병 캔들 · 약 55시간</span><h3>늦가을 귤피</h3><p>귤껍질과 생강을 겹쳐 밝게 시작하고, 바닐라로 부드럽게 마무리합니다.</p>
+     <div class="prow"><span class="price">32,000<small>원</small></span><button class="add" data-n="늦가을 귤피"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg>담기</button></div></div>
+   </article>
+   <article class="pcard" data-c="jar">
+    <div class="pimg"><span class="tag">No.07</span>
+     <svg viewBox="0 0 400 320" preserveAspectRatio="xMidYMid slice"><defs><linearGradient id="p2bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#3a3632"/><stop offset="1" stop-color="#1b1816"/></linearGradient><linearGradient id="p2g" x1="0" x2="1"><stop offset="0" stop-color="#1e1a17"/><stop offset=".4" stop-color="#5f5650"/><stop offset=".7" stop-color="#3f3833"/><stop offset="1" stop-color="#161210"/></linearGradient><filter id="p2b"><feGaussianBlur stdDeviation="5"/></filter></defs><rect width="400" height="320" fill="url(#p2bg)"/><path d="M0 250 H400 V320 H0Z" fill="#2b2420"/><g opacity=".5"><rect x="40" y="210" width="80" height="40" rx="6" fill="#141110"/><rect x="290" y="226" width="70" height="24" rx="6" fill="#141110"/></g><ellipse cx="200" cy="254" rx="70" ry="10" fill="#000" opacity=".6" filter="url(#p2b)"/><path d="M146 130 L150 246 Q200 262 250 246 L254 130Z" fill="url(#p2g)"/><ellipse cx="200" cy="130" rx="54" ry="10" fill="#26201c" stroke="#7b7068"/><ellipse cx="200" cy="142" rx="48" ry="8" fill="#e8dcc4" opacity=".9"/><path d="M200 140 q-2 -10 2 -16" stroke="#0e0b09" stroke-width="2.6" fill="none"/><path d="M202 124 C190 100 214 86 198 62 C190 48 204 36 200 24" stroke="#d8cbb3" stroke-opacity=".35" stroke-width="2.4" fill="none"/><rect x="158" y="176" width="84" height="44" rx="3" fill="#efe4d0"/><text x="200" y="206" text-anchor="middle" font-family="Nanum Myeongjo" font-weight="800" font-size="23" fill="#1f1813">삼나무</text><g transform="translate(300 214)"><path d="M0 0 l14 -40 l14 40z" fill="#5a3d24"/><path d="M8 -10 l10 -30 l10 30z" fill="#7b5634" transform="translate(16 10)"/></g><g fill="#0e0b09"><ellipse cx="80" cy="244" rx="20" ry="7"/><ellipse cx="104" cy="248" rx="14" ry="5"/></g></svg>
+    </div>
+    <div class="pbody"><span class="k">유리병 캔들 · 약 40시간</span><h3>숯과 삼나무</h3><p>젖은 삼나무와 꺼진 장작의 그을음. 낮은 조도의 거실과 서재에 어울립니다.</p>
+     <div class="prow"><span class="price">26,000<small>원</small></span><button class="add" data-n="숯과 삼나무"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg>담기</button></div></div>
+   </article>
+   <article class="pcard" data-c="obj">
+    <div class="pimg"><span class="tag">No.11</span>
+     <svg viewBox="0 0 400 320" preserveAspectRatio="xMidYMid slice"><defs><linearGradient id="p3bg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#d9cbb5"/><stop offset="1" stop-color="#b6a283"/></linearGradient><linearGradient id="p3w" x1="0" x2="1"><stop offset="0" stop-color="#c4ae8c"/><stop offset=".4" stop-color="#f7eedd"/><stop offset="1" stop-color="#bfa987"/></linearGradient><filter id="p3b"><feGaussianBlur stdDeviation="5"/></filter></defs><rect width="400" height="320" fill="url(#p3bg)"/><rect x="0" y="0" width="140" height="320" fill="#cdbca2" opacity=".5"/><ellipse cx="200" cy="266" rx="110" ry="12" fill="#6e5636" opacity=".4" filter="url(#p3b)"/><ellipse cx="200" cy="264" rx="96" ry="10" fill="#8f7452"/><ellipse cx="200" cy="260" rx="96" ry="10" fill="#a88b65"/><g><path d="M140 140 q-8 0 -8 10 v104 q0 8 10 8 h28 q10 0 10 -8 v-104 q0 -10 -8 -10z" fill="url(#p3w)"/><g transform="translate(156 140)"><path d="M0 0 c-14 -14 -12 -30 0 -38 c12 8 14 24 0 38z" fill="url(#p3w)"/></g></g><g><path d="M200 96 q-12 0 -12 14 v144 q0 10 14 10 h24 q14 0 14 -10 v-144 q0 -14 -12 -14z" fill="url(#p3w)"/><g opacity=".3" stroke="#9b8462"><path d="M190 140 h50"/><path d="M190 180 h50"/><path d="M190 220 h50"/></g><path d="M214 96 v-12" stroke="#120e0b" stroke-width="2.6"/></g><g><circle cx="282" cy="226" r="34" fill="url(#p3w)"/><path d="M262 210 q20 -12 40 0" stroke="#bda886" fill="none" stroke-width="1.4"/><path d="M258 228 q24 -12 48 0" stroke="#bda886" fill="none" stroke-width="1.4"/><path d="M282 192 v-10" stroke="#120e0b" stroke-width="2.4"/></g></svg>
+    </div>
+    <div class="pbody"><span class="k">오브제 캔들 · 3개 한 벌</span><h3>왁스 정물 세트</h3><p>새싹·기둥·구슬 모양 무향 캔들. 켜지 않고 장식으로만 두어도 좋아요.</p>
+     <div class="prow"><span class="price">29,000<small>원</small></span><button class="add" data-n="왁스 정물 세트"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg>담기</button></div></div>
+   </article>
+   <article class="pcard" data-c="obj">
+    <div class="pimg"><span class="tag">No.12</span>
+     <svg viewBox="0 0 400 320" preserveAspectRatio="xMidYMid slice"><defs><linearGradient id="p4bg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#4a3424"/><stop offset="1" stop-color="#22170f"/></linearGradient><radialGradient id="p4c" cx="35%" cy="35%" r="70%"><stop offset="0" stop-color="#7c6d60"/><stop offset="1" stop-color="#2d2620"/></radialGradient><filter id="p4b"><feGaussianBlur stdDeviation="7"/></filter></defs><rect width="400" height="320" fill="url(#p4bg)"/><circle cx="200" cy="150" r="120" fill="#e3a955" opacity=".18" filter="url(#p4b)"/><ellipse cx="200" cy="262" rx="120" ry="14" fill="#000" opacity=".5" filter="url(#p4b)"/><path d="M110 170 Q110 266 200 266 Q290 266 290 170Z" fill="url(#p4c)"/><path d="M110 170 Q110 266 200 266 Q290 266 290 170Z" fill="none" stroke="#a89584" stroke-width="1.2" opacity=".6"/><g fill="#d9c7b2" opacity=".16"><circle cx="150" cy="200" r="2"/><circle cx="240" cy="220" r="1.6"/><circle cx="190" cy="240" r="2.2"/><circle cx="260" cy="190" r="1.4"/><circle cx="170" cy="230" r="1.4"/></g><ellipse cx="200" cy="170" rx="90" ry="16" fill="#3c332c"/><ellipse cx="200" cy="172" rx="82" ry="13" fill="#f2dcae"/><path d="M200 172 v-12" stroke="#120e0b" stroke-width="2.6"/><ellipse cx="200" cy="132" rx="22" ry="30" fill="#ffd58a" opacity=".55" filter="url(#p4b)"/><path d="M200 112 C208 128 211 136 209 144 C207 152 203 154 200 154 C197 154 193 152 191 144 C189 136 192 128 200 112Z" fill="#ffc861"/><path d="M200 130 C203 136 204 140 203.5 144 C203 148 201.5 149 200 149 C198.5 149 197 148 196.5 144 C196 140 197 136 200 130Z" fill="#fff7e0"/></svg>
+    </div>
+    <div class="pbody"><span class="k">오브제 캔들 · 약 30시간</span><h3>먹빛 도자 볼</h3><p>손으로 빚은 낮은 흙 그릇에 호지차 향 왁스를. <span class="nw">다 태운 뒤엔</span> 작은 그릇으로 쓰세요.</p>
+     <div class="prow"><span class="price">38,000<small>원</small></span><button class="add" data-n="먹빛 도자 볼"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg>담기</button></div></div>
+   </article>
+   <article class="pcard" data-c="home">
+    <div class="pimg"><span class="tag">No.15</span>
+     <svg viewBox="0 0 400 320" preserveAspectRatio="xMidYMid slice"><defs><linearGradient id="p5bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#eadfcb"/><stop offset="1" stop-color="#cdb894"/></linearGradient><linearGradient id="p5g" x1="0" x2="1"><stop offset="0" stop-color="#5c2f0c"/><stop offset=".4" stop-color="#c07524"/><stop offset=".7" stop-color="#8c4d16"/><stop offset="1" stop-color="#4a2608"/></linearGradient><filter id="p5b"><feGaussianBlur stdDeviation="5"/></filter></defs><rect width="400" height="320" fill="url(#p5bg)"/><rect x="250" y="0" width="150" height="320" fill="#fff" opacity=".18"/><ellipse cx="200" cy="270" rx="70" ry="10" fill="#6b4a20" opacity=".45" filter="url(#p5b)"/><g stroke="#3a2617" stroke-width="2.6" stroke-linecap="round"><path d="M196 140 L170 34"/><path d="M200 140 L196 26"/><path d="M204 140 L232 40"/><path d="M198 140 L150 60"/><path d="M202 140 L252 66"/></g><path d="M176 148 Q160 160 158 190 Q156 250 170 264 Q200 274 230 264 Q244 250 242 190 Q240 160 224 148Z" fill="url(#p5g)"/><rect x="184" y="132" width="32" height="20" rx="3" fill="#2a1d14"/><rect x="160" y="196" width="80" height="40" rx="3" fill="#f3eadb"/><text x="200" y="224" text-anchor="middle" font-family="Nanum Myeongjo" font-weight="800" font-size="23" fill="#1f1813">무화과</text><rect x="170" y="170" width="8" height="80" rx="4" fill="#fff" opacity=".25"/><g transform="translate(300 230)"><path d="M0 30 C-30 10 -24 -26 0 -30 C24 -26 30 10 0 30Z" fill="#7d8f57"/><path d="M0 30 V-28" stroke="#5c6c3d" stroke-width="2"/></g></svg>
+    </div>
+    <div class="pbody"><span class="k">디퓨저 · 약 8주</span><h3>무화과 잎 디퓨저</h3><p>불을 쓰기 어려운 공간에. 나무 리드 다섯 개로 시작해 향이 옅어지면 하나씩 더하세요.</p>
+     <div class="prow"><span class="price">34,000<small>원</small></span><button class="add" data-n="무화과 잎 디퓨저"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg>담기</button></div></div>
+   </article>
+   <article class="pcard" data-c="home">
+    <div class="pimg"><span class="tag">No.18</span>
+     <svg viewBox="0 0 400 320" preserveAspectRatio="xMidYMid slice"><defs><linearGradient id="p6bg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#7a5a3c"/><stop offset="1" stop-color="#4b3422"/></linearGradient><linearGradient id="p6w" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fbf1dd"/><stop offset="1" stop-color="#dcc7a2"/></linearGradient><filter id="p6b"><feGaussianBlur stdDeviation="4"/></filter></defs><rect width="400" height="320" fill="url(#p6bg)"/><g opacity=".14" stroke="#f3eadb"><path d="M0 40 q200 20 400 0"/><path d="M0 120 q200 24 400 0"/><path d="M0 200 q200 18 400 0"/><path d="M0 280 q200 22 400 0"/></g><g transform="translate(200 160) rotate(-8)"><rect x="-96" y="-84" width="150" height="190" rx="10" fill="#000" opacity=".35" filter="url(#p6b)" transform="translate(6 10)"/><rect x="-96" y="-84" width="150" height="190" rx="10" fill="url(#p6w)"/><circle cx="-21" cy="-64" r="7" fill="#4b3422"/><path d="M-21 -64 q-30 -40 -60 -30" stroke="#c9a86e" stroke-width="2" fill="none"/><g fill="#a35a3c" opacity=".85"><path d="M-50 -10 q10 -18 22 -4 q-10 14 -22 4z"/><path d="M-10 20 q12 -16 22 0 q-12 12 -22 0z"/><path d="M-60 40 q14 -10 20 6 q-14 8 -20 -6z"/></g><g fill="#7d8f57"><path d="M-30 -20 q-4 -16 10 -18 q2 14 -10 18z"/><path d="M14 0 q4 -16 16 -10 q-4 12 -16 10z"/><path d="M-40 70 q-2 -14 12 -14 q0 12 -12 14z"/></g><text x="-21" y="92" text-anchor="middle" font-family="Nanum Myeongjo" font-weight="800" font-size="23" fill="#5a3d24">마른 장미</text></g><g transform="translate(312 250) rotate(12)"><rect x="-40" y="-50" width="80" height="100" rx="8" fill="url(#p6w)" opacity=".85"/><g fill="#d1a64a" opacity=".85"><circle cx="-10" cy="-14" r="6"/><circle cx="12" cy="6" r="5"/><circle cx="-14" cy="20" r="4"/></g></g></svg>
+    </div>
+    <div class="pbody"><span class="k">왁스 태블릿 · 2장</span><h3>마른 장미 왁스 태블릿</h3><p>말린 꽃잎을 눌러 굳힌 향 왁스판. 옷장이나 신발장 고리에 걸어 두세요.</p>
+     <div class="prow"><span class="price">18,000<small>원</small></span><button class="add" data-n="마른 장미 왁스 태블릿"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg>담기</button></div></div>
+   </article>
+  </div>
+ </div>
+</section>
+
+<section class="gift" id="gift">
+ <div class="wrap">
+  <div>
+   <svg class="box" viewBox="0 0 560 460" aria-hidden="true">
+    <defs>
+     <linearGradient id="gb1" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2f2520"/><stop offset="1" stop-color="#17110d"/></linearGradient>
+     <linearGradient id="gb2" x1="0" x2="1"><stop offset="0" stop-color="#3b2e26"/><stop offset="1" stop-color="#221a15"/></linearGradient>
+     <linearGradient id="gtis" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f6ecd8"/><stop offset="1" stop-color="#d8c5a4"/></linearGradient>
+     <linearGradient id="gj" x1="0" x2="1"><stop offset="0" stop-color="#4a250b"/><stop offset=".4" stop-color="#b46c22"/><stop offset="1" stop-color="#3a1c07"/></linearGradient>
+     <linearGradient id="gribbon" x1="0" x2="1"><stop offset="0" stop-color="#9a5f1e"/><stop offset=".5" stop-color="#e3a955"/><stop offset="1" stop-color="#9a5f1e"/></linearGradient>
+     <filter id="gbl"><feGaussianBlur stdDeviation="10"/></filter>
+    </defs>
+    <ellipse cx="280" cy="400" rx="230" ry="26" fill="#000" opacity=".55" filter="url(#gbl)"/>
+    <!-- lid leaning back -->
+    <g transform="rotate(-6 420 120)">
+     <rect x="250" y="40" width="260" height="190" rx="8" fill="url(#gb2)"/>
+     <rect x="250" y="40" width="260" height="190" rx="8" fill="none" stroke="#5a4636"/>
+     <rect x="366" y="40" width="28" height="190" fill="url(#gribbon)" opacity=".9"/>
+     <path d="M300 90 c4 7 7 10 7 14 a7 7 0 0 1 -14 0 c0 -4 3 -7 7 -14z" fill="#e3a955" opacity=".9"/>
+    </g>
+    <!-- box body -->
+    <path d="M60 220 L500 220 L486 392 L74 392Z" fill="url(#gb1)"/>
+    <path d="M60 220 L500 220 L496 240 L64 240Z" fill="#3e3029"/>
+    <!-- tissue -->
+    <path d="M70 230 Q120 200 170 228 Q220 196 280 226 Q340 196 390 226 Q440 198 492 230 L490 250 L70 250Z" fill="url(#gtis)"/>
+    <!-- jars -->
+    <g>
+     <path d="M100 160 L104 262 Q140 276 176 262 L180 160Z" fill="url(#gj)"/>
+     <rect x="96" y="150" width="88" height="16" rx="5" fill="#2a1f18"/>
+     <rect x="116" y="196" width="48" height="36" rx="2" fill="#f3eadb"/>
+     <path d="M140 204 c3 5 5 7 5 10 a5 5 0 0 1 -10 0 c0 -3 2 -5 5 -10z" fill="#c98a3a"/>
+    </g>
+    <g>
+     <path d="M204 150 L206 262 Q246 276 286 262 L288 150Z" fill="#cbb999"/>
+     <path d="M204 150 L206 262 Q246 276 286 262 L288 150Z" fill="url(#gtis)" opacity=".6"/>
+     <rect x="200" y="140" width="92" height="16" rx="5" fill="#9a5f1e"/>
+     <circle cx="246" cy="208" r="22" fill="none" stroke="#9a5f1e" stroke-width="1.4"/>
+     <circle cx="246" cy="208" r="6" fill="#9a5f1e"/>
+    </g>
+    <g>
+     <path d="M310 170 L312 262 Q350 276 388 262 L390 170Z" fill="#3c3530"/>
+     <path d="M310 170 L312 262 Q350 276 388 262 L390 170Z" fill="#6b6159" opacity=".4"/>
+     <ellipse cx="350" cy="170" rx="40" ry="8" fill="#e8dcc4"/>
+     <path d="M350 168 v-10" stroke="#0e0b09" stroke-width="2.4"/>
+     <rect x="326" y="206" width="48" height="36" rx="2" fill="#efe4d0"/>
+     <path d="M336 220 h28 M340 228 h20" stroke="#5a4636" stroke-width="2"/>
+    </g>
+    <!-- matches & card -->
+    <g transform="translate(410 230) rotate(8)"><rect x="0" y="0" width="64" height="26" rx="3" fill="#9a5f1e"/><rect x="0" y="14" width="64" height="12" fill="#2b201a"/></g>
+    <!-- front tissue fold -->
+    <path d="M64 252 L496 252 L494 268 Q280 286 66 268Z" fill="#e7d8bd" opacity=".9"/>
+    <!-- ribbon front -->
+    <rect x="266" y="250" width="30" height="142" fill="url(#gribbon)"/>
+    <!-- tag -->
+    <g transform="translate(110 300) rotate(-6)">
+     <rect x="0" y="0" width="210" height="64" rx="6" fill="#f3eadb"/>
+     <circle cx="16" cy="31" r="5" fill="#1b1410"/>
+     <path d="M16 31 q-40 -10 -60 -40" stroke="#e3a955" stroke-width="1.6" fill="none"/>
+     <text x="116" y="39" text-anchor="middle" font-family="Nanum Myeongjo" font-weight="800" font-size="19" fill="#1f1813">따뜻한 겨울 보내</text>
+    </g>
+   </svg>
+  </div>
+  <div>
+   <span class="eyebrow">GIFT SET</span>
+   <h2 class="title">상자를 여는 순간까지<br><em>따뜻하게</em> 포장해 드려요</h2>
+   <p class="lead">무광 먹빛 상자, 한지 완충지, 호박색 리본, <span class="nw">성냥 한 갑</span>. 원하시는 문구는 직접 손글씨 카드로 넣어 드립니다.</p>
+   <div class="opts" id="opts">
+    <label class="opt on"><input type="radio" name="g" value="39000" checked><div><b>작은 불 세트</b><small>220g 캔들 1개 · 성냥 · 손글씨 카드</small></div><span class="oprice">39,000원</span></label>
+    <label class="opt"><input type="radio" name="g" value="68000"><div><b>두 개의 밤 세트</b><small>220g 캔들 2개 · 왁스 태블릿 1장 · 카드</small></div><span class="oprice">68,000원</span></label>
+    <label class="opt"><input type="radio" name="g" value="96000"><div><b>세 가지 계절 세트</b><small>340g 캔들 1개 · 220g 2개 · <span class="nw">심지 가위</span> · 카드</small></div><span class="oprice">96,000원</span></label>
+   </div>
+   <div class="msg"><label for="gm">카드 문구 (최대 40자)</label><input id="gm" maxlength="40" placeholder="예) 올해도 고생 많았어, 따뜻한 겨울 보내"></div>
+   <div class="giftrow"><p>선택한 세트<b id="gsum">39,000원</b></p><button class="btn pri" id="gadd">선물 세트 담기</button></div>
+  </div>
+ </div>
+</section>
+
+<section class="guide" id="guide">
+ <div class="wrap">
+  <div class="shead">
+   <div><span class="eyebrow">BURNING GUIDE</span><h2 class="title">캔들을 끝까지 고르게<br><em>태우는 네 가지 방법</em></h2></div>
+   <p class="lead">처음 켤 때의 습관이 캔들의 마지막까지 결정합니다. 상자 안 안내 카드에도 같은 내용을 담았어요.</p>
+  </div>
+  <div class="ggrid">
+   <div class="gstep"><span class="no">STEP 01</span>
+    <svg viewBox="0 0 100 100"><defs><linearGradient id="g1" x1="0" x2="1"><stop offset="0" stop-color="#5a3010"/><stop offset=".5" stop-color="#c47a2a"/><stop offset="1" stop-color="#5a3010"/></linearGradient></defs><path d="M24 40 L26 86 Q50 94 74 86 L76 40Z" fill="url(#g1)"/><ellipse cx="50" cy="40" rx="26" ry="6" fill="#f6dfaa"/><ellipse cx="50" cy="40" rx="26" ry="6" fill="none" stroke="#e3a955" stroke-width="1.5" stroke-dasharray="3 3"/><path d="M50 40 v-8" stroke="#120e0b" stroke-width="2"/><path d="M50 16 C55 24 57 28 56 32 C55 36 52 37 50 37 C48 37 45 36 44 32 C43 28 45 24 50 16Z" fill="#ffc861"/><path d="M80 30 l8 -4 M80 40 h9 M80 50 l8 4" stroke="#e3a955" stroke-width="1.6" stroke-linecap="round"/></svg>
+    <h3>첫 불은 끝까지 녹이기</h3><p>처음엔 표면 전체가 가장자리까지 녹을 때까지 <b class="k">2~3시간</b> 켜 두세요. 가운데만 파이는 것을 막아 줍니다.</p></div>
+   <div class="gstep"><span class="no">STEP 02</span>
+    <svg viewBox="0 0 100 100"><path d="M30 70 L60 30" stroke="#d8cbb3" stroke-width="3" stroke-linecap="round"/><path d="M34 76 L64 36" stroke="#d8cbb3" stroke-width="3" stroke-linecap="round"/><circle cx="26" cy="78" r="8" fill="none" stroke="#e3a955" stroke-width="2.4"/><circle cx="38" cy="84" r="8" fill="none" stroke="#e3a955" stroke-width="2.4"/><path d="M60 30 l10 -6 l-4 10z" fill="#d8cbb3"/><path d="M76 40 v30" stroke="#120e0b" stroke-width="3"/><path d="M76 40 v-6" stroke="#5a4636" stroke-width="3" stroke-dasharray="2 2"/><path d="M70 40 h12" stroke="#e3a955" stroke-width="1.6" stroke-dasharray="2 2"/></svg>
+    <h3>심지는 5mm로 자르기</h3><p>켜기 전마다 심지를 <b class="k">5mm</b> 정도로 다듬으면 그을음과 유리병 검댕이 줄어듭니다.</p></div>
+   <div class="gstep"><span class="no">STEP 03</span>
+    <svg viewBox="0 0 100 100"><circle cx="50" cy="54" r="32" fill="none" stroke="#d8cbb3" stroke-width="2.4"/><path d="M50 54 L50 32" stroke="#e3a955" stroke-width="3" stroke-linecap="round"/><path d="M50 54 L66 62" stroke="#e3a955" stroke-width="3" stroke-linecap="round"/><path d="M50 22 A32 32 0 0 1 82 54" stroke="#c98a3a" stroke-width="6" fill="none" opacity=".45"/><circle cx="50" cy="54" r="3" fill="#f3eadb"/><rect x="44" y="12" width="12" height="6" rx="2" fill="#d8cbb3"/></svg>
+    <h3>한 번에 4시간까지만</h3><p>오래 켜면 심지가 버섯처럼 뭉치고 병이 뜨거워져요. <b class="k">4시간</b>이 지나면 끄고 식혀 주세요.</p></div>
+   <div class="gstep"><span class="no">STEP 04</span>
+    <svg viewBox="0 0 100 100"><defs><linearGradient id="g4" x1="0" x2="1"><stop offset="0" stop-color="#2c2420"/><stop offset=".5" stop-color="#5c524b"/><stop offset="1" stop-color="#2c2420"/></linearGradient></defs><path d="M26 50 L28 88 Q50 96 72 88 L74 50Z" fill="url(#g4)"/><g transform="translate(0 -6)"><rect x="22" y="30" width="56" height="12" rx="4" fill="#9a5f1e"/><rect x="40" y="24" width="20" height="8" rx="3" fill="#c98a3a"/></g><path d="M50 50 v-6" stroke="#120e0b" stroke-width="2"/><path d="M84 40 q-6 -8 0 -14 q6 -6 0 -14" stroke="#d8cbb3" stroke-opacity=".5" stroke-width="2" fill="none"/></svg>
+    <h3>뚜껑을 덮어 끄기</h3><p>입으로 불면 연기와 왁스가 튈 수 있어요. 뚜껑을 덮거나 <b class="k">심지 누르개</b>로 눌러 끄세요.</p></div>
+  </div>
+ </div>
+</section>
+
+<section class="class" id="class">
+ <div class="wrap">
+  <div class="cinfo">
+   <span class="eyebrow">ONE-DAY CLASS</span>
+   <h2 class="title">내 향을 직접 섞어<br><em>나만의 캔들</em> 붓기</h2>
+   <p class="lead">공방 작업대에서 향 오일 열두 가지를 맡아 보고, 두세 가지를 섞어 내 캔들 한 병을 붓습니다. 처음이어도 괜찮아요.</p>
+   <ul>
+    <li><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>약 2시간 · 토요일 · 일요일 오후</li>
+    <li><svg viewBox="0 0 24 24"><path d="M4 20c0-4 3.6-6 8-6s8 2 8 6"/><circle cx="12" cy="8" r="4"/></svg>한 타임 최대 6명, 1인 1자리 작업대</li>
+    <li><svg viewBox="0 0 24 24"><path d="M6 8h12l-1 12H7z"/><path d="M9 8V5h6v3"/></svg>완성품 220g 캔들 1개와 포장 상자를 가져가요</li>
+    <li><svg viewBox="0 0 24 24"><path d="M4 12h16M12 4v16"/></svg>재료비 포함 1인 55,000원</li>
+   </ul>
+   <div class="scene" aria-hidden="true">
+    <svg viewBox="0 0 560 280">
+     <defs>
+      <linearGradient id="wb" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#6e4a2e"/><stop offset="1" stop-color="#3f2918"/></linearGradient>
+      <linearGradient id="wall" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2d231c"/><stop offset="1" stop-color="#3c2e24"/></linearGradient>
+      <radialGradient id="lamp" cx="50%" cy="0%" r="80%"><stop offset="0" stop-color="#ffd58a" stop-opacity=".55"/><stop offset="1" stop-color="#ffd58a" stop-opacity="0"/></radialGradient>
+      <linearGradient id="pot" x1="0" x2="1"><stop offset="0" stop-color="#8d8a86"/><stop offset=".5" stop-color="#d8d5d0"/><stop offset="1" stop-color="#7b7874"/></linearGradient>
+     </defs>
+     <rect width="560" height="280" fill="url(#wall)"/>
+     <path d="M140 0 L120 40 H220 L200 0Z" fill="#1b1410"/>
+     <path d="M120 40 L40 280 H300 L220 40Z" fill="url(#lamp)"/>
+     <!-- shelf with bottles -->
+     <rect x="330" y="70" width="210" height="6" fill="#5a3d26"/>
+     <g>
+      <rect x="344" y="38" width="16" height="32" rx="3" fill="#8a4c17"/><rect x="348" y="30" width="8" height="10" fill="#1b1410"/>
+      <rect x="370" y="44" width="16" height="26" rx="3" fill="#5f5650"/><rect x="374" y="36" width="8" height="10" fill="#1b1410"/>
+      <rect x="396" y="36" width="16" height="34" rx="3" fill="#b46c22"/><rect x="400" y="28" width="8" height="10" fill="#1b1410"/>
+      <rect x="422" y="46" width="16" height="24" rx="3" fill="#7d8f57"/><rect x="426" y="38" width="8" height="10" fill="#1b1410"/>
+      <rect x="448" y="40" width="16" height="30" rx="3" fill="#a35a3c"/><rect x="452" y="32" width="8" height="10" fill="#1b1410"/>
+      <rect x="474" y="42" width="16" height="28" rx="3" fill="#c98a3a"/><rect x="478" y="34" width="8" height="10" fill="#1b1410"/>
+      <rect x="500" y="38" width="16" height="32" rx="3" fill="#5a3010"/><rect x="504" y="30" width="8" height="10" fill="#1b1410"/>
+     </g>
+     <!-- workbench -->
+     <rect x="0" y="200" width="560" height="80" fill="url(#wb)"/>
+     <rect x="0" y="200" width="560" height="8" fill="#8a603c"/>
+     <g opacity=".2" stroke="#1b1410"><path d="M0 230 q140 10 280 0 t280 0"/><path d="M0 256 q140 8 280 0 t280 0"/></g>
+     <!-- pouring pitcher -->
+     <g transform="translate(130 80) rotate(-35)">
+      <path d="M0 0 h60 l-6 70 h-48z" fill="url(#pot)"/>
+      <path d="M60 10 q22 6 18 30 q-4 14 -16 14" stroke="#9a9792" stroke-width="6" fill="none"/>
+      <path d="M0 0 l-14 -6 l14 14z" fill="#b6b3ae"/>
+     </g>
+     <path d="M116 84 Q112 124 116 170" stroke="#f6e2b5" stroke-width="5" fill="none" stroke-linecap="round"/>
+     <!-- jar being filled -->
+     <path d="M88 160 L90 206 Q116 214 142 206 L144 160Z" fill="#b46c22" opacity=".95"/>
+     <ellipse cx="116" cy="174" rx="27" ry="5" fill="#f6dfaa"/>
+     <!-- scent strips -->
+     <g transform="translate(220 178)">
+      <rect x="0" y="-2" width="120" height="26" rx="4" fill="#efe4d0" opacity=".95"/>
+      <g fill="#e3a955"><rect x="10" y="-30" width="6" height="34" rx="2"/><rect x="26" y="-34" width="6" height="38" rx="2"/><rect x="42" y="-28" width="6" height="32" rx="2"/></g>
+     </g>
+     <!-- notebook with recipe -->
+     <g transform="translate(372 160) rotate(-4)">
+      <rect x="0" y="0" width="140" height="50" rx="3" fill="#f3eadb"/>
+      <line x1="70" y1="0" x2="70" y2="50" stroke="#d1bd99"/>
+      <g stroke="#9a8462" stroke-width="1.4"><path d="M10 14 h48"/><path d="M10 26 h38"/><path d="M10 38 h44"/><path d="M80 14 h48"/><path d="M80 26 h30"/></g>
+     </g>
+     <!-- thermometer -->
+     <rect x="520" y="140" width="6" height="64" rx="3" fill="#d8cbb3"/><circle cx="523" cy="206" r="7" fill="#c84a2a"/>
+    </svg>
+   </div>
+  </div>
+  <form class="form" id="bform" novalidate>
+   <h3>클래스 예약하기</h3>
+   <p class="fs">12월 일정 · 날짜와 시간을 고른 뒤 연락처를 남겨 주세요.</p>
+   <span class="flabel">날짜</span>
+   <div class="chips" id="dates">
+    <button type="button" data-d="12월 5일 (토)"><b>5</b>토</button>
+    <button type="button" data-d="12월 6일 (일)"><b>6</b>일</button>
+    <button type="button" data-d="12월 12일 (토)" disabled><b>12</b>마감</button>
+    <button type="button" data-d="12월 13일 (일)"><b>13</b>일</button>
+    <button type="button" data-d="12월 19일 (토)"><b>19</b>토</button>
+    <button type="button" data-d="12월 20일 (일)"><b>20</b>일</button>
+   </div>
+   <span class="flabel">시간</span>
+   <div class="chips t" id="times">
+    <button type="button" data-t="오후 1시">오후 1시</button>
+    <button type="button" data-t="오후 4시">오후 4시</button>
+   </div>
+   <div class="two" style="margin-top:6px">
+    <div><span class="flabel">인원</span><div class="stepper"><button type="button" id="minus" aria-label="인원 줄이기">−</button><output id="cnt">1</output><button type="button" id="plus" aria-label="인원 늘리기">+</button></div></div>
+    <div><span class="flabel">원하는 향 계열</span><select class="fin" id="fam"><option>숲과 나무</option><option>과일과 껍질</option><option>꽃과 풀</option><option>차와 연기</option><option>공방에서 정할게요</option></select></div>
+   </div>
+   <div class="two">
+    <div><label class="flabel" for="nm">이름</label><input class="fin" id="nm" placeholder="홍길동"></div>
+    <div><label class="flabel" for="ph">연락처</label><input class="fin" id="ph" inputmode="tel" placeholder="000-0000-0000"></div>
+   </div>
+   <p class="err" id="err"></p>
+   <div class="sum"><p>예상 금액<b id="total">55,000원</b></p><p style="font-size:13px">현장 결제 · 예약금 없음</p></div>
+   <button class="btn pri" type="submit">예약 요청 보내기</button>
+   <div class="ok" id="ok"></div>
+  </form>
+ </div>
+</section>
+
+<section class="story" id="story">
+ <div class="wrap">
+  <svg viewBox="0 0 560 520" aria-hidden="true">
+   <defs>
+    <linearGradient id="st1" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0f1a2e"/><stop offset=".6" stop-color="#2a2232"/><stop offset="1" stop-color="#4a2e1c"/></linearGradient>
+    <radialGradient id="win" cx="50%" cy="60%" r="60%"><stop offset="0" stop-color="#ffcf7a"/><stop offset="1" stop-color="#c47a2a"/></radialGradient>
+    <radialGradient id="halo" cx="50%" cy="50%" r="50%"><stop offset="0" stop-color="#ffd58a" stop-opacity=".6"/><stop offset="1" stop-color="#ffd58a" stop-opacity="0"/></radialGradient>
+    <filter id="sbl"><feGaussianBlur stdDeviation="12"/></filter>
+   </defs>
+   <rect width="560" height="520" fill="url(#st1)"/>
+   <g fill="#f3eadb"><circle cx="70" cy="60" r="1.6"/><circle cx="140" cy="110" r="1.2"/><circle cx="420" cy="50" r="1.8"/><circle cx="500" cy="120" r="1.2"/><circle cx="330" cy="90" r="1"/><circle cx="240" cy="40" r="1.4"/></g>
+   <circle cx="460" cy="90" r="30" fill="#f3e6c8"/><circle cx="474" cy="82" r="26" fill="#1b1d2e"/>
+   <!-- hill & alley -->
+   <path d="M0 330 Q140 290 280 320 T560 300 V520 H0Z" fill="#1a1512"/>
+   <!-- workshop house -->
+   <g>
+    <path d="M140 250 L280 170 L420 250Z" fill="#2b201a"/>
+    <path d="M140 250 L280 170 L420 250" fill="none" stroke="#5a4636" stroke-width="3"/>
+    <rect x="160" y="248" width="240" height="190" fill="#3a2d24"/>
+    <g opacity=".25" stroke="#1b1410"><path d="M160 280 h240"/><path d="M160 310 h240"/><path d="M160 340 h240"/><path d="M160 370 h240"/><path d="M160 400 h240"/></g>
+    <circle cx="280" cy="340" r="120" fill="url(#halo)" filter="url(#sbl)"/>
+    <rect x="186" y="290" width="96" height="86" rx="4" fill="url(#win)"/>
+    <path d="M234 290 v86 M186 333 h96" stroke="#3a2d24" stroke-width="4"/>
+    <g><rect x="198" y="350" width="14" height="22" rx="2" fill="#7a4418"/><rect x="252" y="344" width="14" height="28" rx="2" fill="#f3eadb"/><path d="M205 350 v-6 M259 344 v-6" stroke="#1b1410" stroke-width="1.6"/></g>
+    <rect x="306" y="300" width="64" height="138" rx="3" fill="#1e1612"/>
+    <rect x="312" y="306" width="52" height="60" rx="2" fill="url(#win)" opacity=".85"/>
+    <circle cx="356" cy="390" r="3" fill="#e3a955"/>
+    <!-- hanging sign -->
+    <path d="M384 268 h40" stroke="#5a4636" stroke-width="3"/>
+    <path d="M396 268 v10 M418 268 v10" stroke="#5a4636" stroke-width="1.5"/>
+    <rect x="388" y="278" width="40" height="30" rx="3" fill="#f3eadb"/>
+    <path d="M408 284 c3 5 5 7 5 10 a5 5 0 0 1 -10 0 c0 -3 2 -5 5 -10z" fill="#c98a3a"/>
+    <!-- chimney smoke -->
+    <rect x="340" y="190" width="22" height="40" fill="#2b201a"/>
+    <path d="M351 186 C340 160 364 150 350 124 C342 108 358 96 352 80" stroke="#cdbfa9" stroke-opacity=".25" stroke-width="5" fill="none" stroke-linecap="round"/>
+   </g>
+   <!-- path light -->
+   <path d="M280 440 L200 520 H380 Z" fill="#e3a955" opacity=".12"/>
+   <g fill="#e3a955"><circle cx="120" cy="430" r="3"/><circle cx="450" cy="420" r="3"/></g>
+   <g fill="#3c2f22"><path d="M60 440 q16 -40 30 0z"/><path d="M480 436 q14 -34 26 0z"/></g>
+  </svg>
+  <div>
+   <span class="eyebrow">OUR STORY</span>
+   <p class="quote">골목 끝 작은 공방에서<br><em>저녁 여섯 시</em>에 불을 켭니다</p>
+   <p class="body">밤불은 오래된 단층집을 고쳐 만든 두 사람의 작업실입니다. 한 번에 많이 붓지 않고, 매주 정한 양만 만들어 이틀 동안 천천히 굳힌 뒤에 보냅니다. <span class="nw">다 쓴 유리병</span>을 돌려주시면 깨끗이 씻어 다시 채워 드려요.</p>
+   <div class="facts"><div><b>2인</b><span>작업자</span></div><div><b>주 1회</b><span>붓는 날</span></div><div><b>리필</b><span>유리병 재사용</span></div></div>
+  </div>
+ </div>
+</section>
+
+<section class="faq" id="faq">
+ <div class="wrap">
+  <div><span class="eyebrow">FAQ</span><h2 class="title">자주 묻는<br><em>질문</em></h2><p class="lead">더 궁금한 점은 카카오톡 ID: example 로 남겨 주세요. 공방 운영 시간에 답해 드립니다.</p></div>
+  <div>
+   <details open><summary>주문하면 언제 받을 수 있나요?</summary><p>매주 화요일에 붓고 목요일까지 굳힌 뒤 금요일에 발송합니다. 목요일 낮 12시까지 주문하시면 그 주에 출발해요.</p></details>
+   <details><summary>유리병 리필은 어떻게 하나요?</summary><p>다 쓴 병에 남은 왁스를 뜨거운 물로 녹여 비운 뒤 보내 주세요. 같은 크기 캔들을 정가보다 6,000원 낮은 리필 가격으로 다시 채워 드립니다.</p></details>
+   <details><summary>향이 너무 강하지 않을까요?</summary><p>향 오일은 왁스 무게의 8% 안쪽으로 맞춥니다. 처음이라면 상품 페이지의 ‘은은함’ 표시가 있는 향부터 시작해 보세요.</p></details>
+   <details><summary>클래스 예약을 바꾸거나 취소하고 싶어요.</summary><p>클래스 이틀 전까지는 연락 주시면 날짜를 옮기거나 취소해 드려요. 예약금이 없으니 부담 없이 알려 주세요.</p></details>
+   <details><summary>단체 선물이나 행사용 주문도 되나요?</summary><p>20개 이상은 라벨 문구와 리본 색을 고를 수 있습니다. 필요한 날짜보다 3주 전에 문의해 주시면 일정을 맞춰 드려요.</p></details>
+  </div>
+ </div>
+</section>
+
+<section class="news">
+ <div class="wrap">
+  <div><h2>새 향이 나오는 날,<br>먼저 알려 드릴게요</h2><p>한 달에 한 번, 새로 부은 향과 클래스 일정만 짧게 보냅니다.</p></div>
+  <form class="nform" id="nform"><input type="email" placeholder="이메일 주소" aria-label="이메일 주소" required><button class="btn pri" type="submit">소식 받기</button></form>
+ </div>
+</section>
+
+<footer>
+ <div class="wrap">
+  <div class="fgrid">
+   <div><div class="logo" style="margin-bottom:16px"><svg viewBox="0 0 40 40" width="34" height="34"><path d="M20 4c3 5 5 7 5 11a5 5 0 0 1-10 0c0-4 2-6 5-11z" fill="#f2c77a"/><rect x="9" y="22" width="22" height="14" rx="3" fill="none" stroke="#f3eadb" stroke-width="1.6"/><line x1="20" y1="19" x2="20" y2="22" stroke="#f3eadb" stroke-width="1.6"/></svg><div><b style="color:#f3eadb">밤불 캔들 하우스</b></div></div><p>손으로 붓는 캔들과 집 향기.<br>공방 방문은 클래스 예약 손님만 받고 있어요.</p></div>
+   <div><h4>쇼핑</h4><ul><li>유리병 캔들</li><li>오브제 캔들</li><li>집 향기</li><li>선물 세트</li></ul></div>
+   <div><h4>공방</h4><ul><li>원데이 클래스</li><li>유리병 리필</li><li>단체 주문</li></ul></div>
+   <div><h4>연락처</h4><ul><li>전화 000-0000-0000</li><li>카카오톡 ID: example</li><li>화–토 11:00 – 19:00</li></ul></div>
+  </div>
+  <div class="copy"><span>© 밤불 캔들 하우스</span><span>개인정보처리방침 · 이용약관</span></div>
+ </div>
+</footer>
+
+<div class="toast" id="toast"></div>
+
+<script>
+(function(){
+ var n=0,toast=document.getElementById('toast'),tm;
+ function show(t){toast.textContent=t;toast.classList.add('show');clearTimeout(tm);tm=setTimeout(function(){toast.classList.remove('show')},2200)}
+ function bump(k){n+=k;document.getElementById('cartN').textContent=n}
+ document.querySelectorAll('.add').forEach(function(b){b.addEventListener('click',function(){bump(1);b.classList.add('done');b.lastChild.textContent='담았어요';show('‘'+b.dataset.n+'’을 장바구니에 담았어요');setTimeout(function(){b.classList.remove('done');b.lastChild.textContent='담기'},1600)})});
+ document.getElementById('cartBtn').addEventListener('click',function(){show(n?'장바구니에 '+n+'개가 담겨 있어요':'장바구니가 비어 있어요')});
+ document.querySelectorAll('.tabs button').forEach(function(b){b.addEventListener('click',function(){document.querySelectorAll('.tabs button').forEach(function(x){x.classList.remove('on')});b.classList.add('on');var f=b.dataset.f;document.querySelectorAll('.pcard').forEach(function(c){c.classList.toggle('hide',f!=='all'&&c.dataset.c!==f)})})});
+ var opts=document.querySelectorAll('.opt');
+ opts.forEach(function(o){o.addEventListener('change',function(){opts.forEach(function(x){x.classList.remove('on')});o.classList.add('on');document.getElementById('gsum').textContent=Number(o.querySelector('input').value).toLocaleString('ko-KR')+'원'})});
+ document.getElementById('gadd').addEventListener('click',function(){var o=document.querySelector('.opt.on b').textContent;bump(1);show('‘'+o+'’를 담았어요. 카드 문구도 함께 저장했어요')});
+ var sel={d:'',t:''},cnt=1;
+ function pick(id,key,attr){document.querySelectorAll('#'+id+' button').forEach(function(b){b.addEventListener('click',function(){if(b.disabled)return;document.querySelectorAll('#'+id+' button').forEach(function(x){x.classList.remove('on')});b.classList.add('on');sel[key]=b.dataset[attr]})})}
+ pick('dates','d','d');pick('times','t','t');
+ function tot(){document.getElementById('cnt').textContent=cnt;document.getElementById('total').textContent=(cnt*55000).toLocaleString('ko-KR')+'원'}
+ document.getElementById('minus').onclick=function(){if(cnt>1){cnt--;tot()}};
+ document.getElementById('plus').onclick=function(){if(cnt<6){cnt++;tot()}};
+ document.getElementById('bform').addEventListener('submit',function(e){e.preventDefault();var err=document.getElementById('err'),nm=document.getElementById('nm').value.trim(),ph=document.getElementById('ph').value.trim();
+  if(!sel.d){err.textContent='날짜를 골라 주세요.';return}if(!sel.t){err.textContent='시간을 골라 주세요.';return}if(!nm||!ph){err.textContent='이름과 연락처를 적어 주세요.';return}
+  err.textContent='';var ok=document.getElementById('ok');ok.innerHTML='<b>'+nm+'</b>님, '+sel.d+' '+sel.t+' · '+cnt+'명 예약 요청을 받았어요. 공방에서 확인 후 연락드릴게요.';ok.classList.add('show')});
+ document.getElementById('nform').addEventListener('submit',function(e){e.preventDefault();show('소식 받기 신청이 완료됐어요');this.reset()});
+})();
+</script>
+</body>
+</html>

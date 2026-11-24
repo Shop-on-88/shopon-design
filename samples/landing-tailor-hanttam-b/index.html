@@ -1,0 +1,765 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>한땀 수선실 · 겨울 코트·정장 수선 첫 이용 20% 할인</title>
+<meta name="description" content="한땀 수선실 겨울 시즌 첫 이용 20% 할인. 코트 소매·기장, 정장 품, 바지 기장, 지퍼 교체까지 무료 핏 상담 후 수선합니다.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&family=Noto+Sans+KR:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+:root{--wool:#4a4e53;--wool2:#33363a;--wool3:#24272a;--chalk:#f3efe6;--chalk2:#e9e3d6;--mus:#d9a62e;--mus2:#b9871a;--red:#b8322c;--red2:#8f2420;--ink:#222427;--mute:#62666b;--line:rgba(34,36,39,.14)}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Noto Sans KR',sans-serif;color:var(--ink);background:var(--chalk);word-break:keep-all;overflow-wrap:break-word;-webkit-font-smoothing:antialiased;overflow-x:hidden;line-height:1.6}
+a{color:inherit;text-decoration:none}
+.serif{font-family:'Gowun Batang',serif}
+.in{max-width:1180px;margin:0 auto;padding:0 24px}
+.wool{background-color:var(--wool2);background-image:
+ repeating-linear-gradient(45deg,rgba(255,255,255,.045) 0 2px,transparent 2px 7px),
+ repeating-linear-gradient(-45deg,rgba(0,0,0,.12) 0 2px,transparent 2px 7px);
+ background-size:28px 28px,28px 28px;background-position:0 0,14px 0}
+.wool-hb{background-color:var(--wool2);background-image:
+ linear-gradient(90deg,transparent 0 50%,rgba(0,0,0,.0) 50%),
+ repeating-linear-gradient(60deg,rgba(255,255,255,.05) 0 3px,transparent 3px 9px),
+ repeating-linear-gradient(-60deg,rgba(0,0,0,.14) 0 3px,transparent 3px 9px);
+ background-size:auto,36px 36px,36px 36px;background-position:0 0,0 0,18px 0}
+/* nav */
+.nav{position:sticky;top:0;z-index:30;background:rgba(36,39,42,.95);backdrop-filter:blur(8px);border-bottom:2px dashed rgba(243,239,230,.25);color:var(--chalk)}
+.nav .in{display:flex;align-items:center;justify-content:space-between;height:70px;gap:20px}
+.logo{display:flex;align-items:center;gap:12px}
+.logo i{width:42px;height:42px;border-radius:50%;background:var(--red);display:grid;place-items:center;box-shadow:inset 0 -3px 0 rgba(0,0,0,.25)}
+.logo i svg{width:26px;height:26px}
+.logo b{font-family:'Gowun Batang',serif;font-size:22px;font-weight:700;letter-spacing:-.01em;display:block;line-height:1.1}
+.logo small{font-size:11px;letter-spacing:.26em;color:var(--mus);font-weight:700;display:block}
+.nav nav{display:flex;gap:28px;font-size:15px;font-weight:500;color:#cfcac0}
+.nav nav a:hover{color:#fff}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;height:50px;padding:0 24px;border-radius:6px;background:var(--red);color:#fff;font-weight:700;font-size:15px;border:0;cursor:pointer;font-family:inherit;transition:.2s;box-shadow:0 5px 0 var(--red2);white-space:nowrap}
+.btn:hover{transform:translateY(2px);box-shadow:0 3px 0 var(--red2)}
+.btn.ghost{background:transparent;color:var(--chalk);box-shadow:none;border:1.5px dashed rgba(243,239,230,.6)}
+.btn.ghost:hover{border-color:var(--mus);color:var(--mus);transform:none}
+.btn.mus{background:var(--mus);color:var(--ink);box-shadow:0 5px 0 var(--mus2)}
+.btn svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+.nav .btn{height:42px;padding:0 18px;font-size:14px;box-shadow:0 4px 0 var(--red2)}
+/* hero */
+.hero{position:relative;color:var(--chalk);overflow:hidden;padding:64px 0 72px}
+.hero:before{content:"";position:absolute;inset:0;background:radial-gradient(640px 520px at 30% 46%,rgba(243,239,230,.12),transparent 70%),radial-gradient(520px 420px at 96% 100%,rgba(184,50,44,.22),transparent 70%);pointer-events:none}
+.vtape{position:absolute;left:0;top:0;bottom:0;width:48px;z-index:3;background:linear-gradient(90deg,#b98a1c,#e4b23c 45%,#d4a02a);border-right:2px solid #8f6a12;box-shadow:6px 0 18px rgba(0,0,0,.35)}
+.vtape:before{content:"";position:absolute;right:0;top:0;bottom:0;width:12px;background:repeating-linear-gradient(180deg,#3a2c0c 0 1.5px,transparent 1.5px 10px);opacity:.75}
+.vtape:after{content:"";position:absolute;right:0;top:0;bottom:0;width:22px;background:repeating-linear-gradient(180deg,#3a2c0c 0 2px,transparent 2px 50px);opacity:.85}
+.vtape span{position:absolute;left:4px;font-weight:900;font-size:12px;color:#3a2c0c;transform:rotate(-90deg);transform-origin:left top;letter-spacing:.04em}
+.vtape span:nth-child(5n){color:var(--red2)}
+.hero .in{display:grid;grid-template-columns:.94fr 1.06fr;gap:44px;align-items:center;position:relative;z-index:2;padding-left:72px}
+.hero .copy{order:2}
+.kicker{display:flex;align-items:center;gap:12px;font-size:14px;font-weight:700;letter-spacing:.08em;color:#e9e3d6}
+.kicker svg{width:64px;height:14px;flex:0 0 64px}
+.kicker b{color:#ff8c80;font-weight:700}
+.hero h1{font-family:'Gowun Batang',serif;font-weight:700;font-size:clamp(38px,4.2vw,60px);line-height:1.2;letter-spacing:-.03em;margin:22px 0 6px;color:#fff}
+.hero h1 em{font-style:normal;color:#ff8c80}
+.thread{display:block;width:min(100%,420px);height:34px;margin:0 0 18px}
+.hero .lead{font-size:18px;color:#d8d3c9;max-width:470px}
+.nwm{white-space:nowrap}
+.hero .lead b{color:#fff;font-weight:700;white-space:nowrap;border-bottom:2px dashed #ff8c80}
+.acts{display:flex;flex-wrap:wrap;align-items:center;gap:22px;margin:32px 0 0}
+.tlink{font-size:15px;font-weight:700;color:var(--chalk);display:inline-flex;align-items:center;gap:6px;border-bottom:1.5px solid rgba(243,239,230,.5);padding-bottom:3px}
+.tlink:hover{color:#fff;border-color:#ff8c80}
+.tlink svg{width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+.art{position:relative;order:1}
+.art svg.scene{width:100%;height:auto;display:block;max-width:440px}
+.mtag{position:absolute;right:-24px;top:110px;width:200px;z-index:4;transform:rotate(5deg);transform-origin:50% -60px;filter:drop-shadow(0 18px 18px rgba(0,0,0,.45))}
+.mtag .str{position:absolute;left:50%;top:-74px;width:120px;height:84px;transform:translateX(-50%);overflow:visible}
+.mtag .card{position:relative;background:linear-gradient(180deg,#f6f2ea,#ebe4d6);color:var(--ink);padding:40px 20px 18px;clip-path:polygon(24% 0,76% 0,100% 13%,100% 100%,0 100%,0 13%)}
+.mtag .card:before{content:"";position:absolute;left:50%;top:14px;width:14px;height:14px;margin-left:-7px;border-radius:50%;background:#3a3d41;box-shadow:inset 0 2px 2px rgba(0,0,0,.5),0 0 0 3px #d9a62e}
+.mtag .card:after{content:"";position:absolute;inset:6px;border:1.5px dashed rgba(184,50,44,.4);clip-path:polygon(24% 0,76% 0,100% 13%,100% 100%,0 100%,0 13%);pointer-events:none}
+.mtag small{display:block;text-align:center;font-size:11px;font-weight:700;letter-spacing:.24em;color:var(--mute)}
+.mtag .big{display:block;text-align:center;font-family:'Gowun Batang',serif;font-weight:700;font-size:58px;line-height:1;color:var(--red);margin:4px 0 2px}
+.mtag .big em{font-style:normal;font-size:28px}
+.mtag .bs{display:block;text-align:center;font-size:13px;font-weight:700;color:var(--ink);padding-bottom:12px;border-bottom:1.5px dashed rgba(34,36,39,.3);margin-bottom:8px}
+.mtag dl{display:grid;grid-template-columns:1fr auto;gap:6px 8px;font-size:13px}
+.mtag dt{color:var(--mute)}
+.mtag dd{font-weight:900;text-align:right}
+/* section base */
+.s{padding:100px 0}
+.eyebrow{display:inline-flex;align-items:center;gap:10px;font-size:13px;font-weight:700;letter-spacing:.2em;color:var(--red)}
+.eyebrow:before{content:"";width:28px;height:0;border-top:2px dashed currentColor}
+.h2{font-family:'Gowun Batang',serif;font-weight:700;font-size:clamp(28px,3.4vw,44px);line-height:1.3;letter-spacing:-.02em;margin:14px 0 14px}
+.sub{font-size:17px;color:var(--mute);max-width:640px}
+.head{margin-bottom:48px}
+.head.c{text-align:center}.head.c .sub{margin:0 auto}
+/* offer */
+.offer{background:var(--chalk);position:relative;overflow:hidden}
+.offer .grid{display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center}
+.coupon{position:relative;background:var(--wool3);color:var(--chalk);border-radius:14px;padding:12px;box-shadow:0 30px 60px -28px rgba(36,39,42,.8);transform:rotate(-1.2deg)}
+.coupon .cin{border:2px dashed rgba(243,239,230,.55);border-radius:9px;padding:36px 36px 32px;display:grid;grid-template-columns:1fr auto;gap:20px;align-items:center;position:relative;overflow:hidden}
+.coupon .cin:before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(45deg,rgba(255,255,255,.035) 0 2px,transparent 2px 7px);pointer-events:none}
+.coupon:before,.coupon:after{content:"";position:absolute;top:50%;width:34px;height:34px;border-radius:50%;background:var(--chalk);transform:translateY(-50%)}
+.coupon:before{left:-17px}.coupon:after{right:-17px}
+.coupon small{font-size:13px;letter-spacing:.2em;color:var(--mus);font-weight:700}
+.coupon h3{font-family:'Gowun Batang',serif;font-size:30px;line-height:1.3;margin:8px 0 12px}
+.coupon p{font-size:14px;color:#cfcac0}
+.pct{position:relative;text-align:center;width:168px;height:168px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#d2443c,var(--red) 55%,var(--red2));display:grid;place-content:center;box-shadow:inset 0 -6px 0 rgba(0,0,0,.2),0 0 0 6px rgba(243,239,230,.12)}
+.pct:before{content:"";position:absolute;inset:9px;border-radius:50%;border:2px dashed rgba(255,255,255,.55)}
+.pct b{font-family:'Gowun Batang',serif;font-size:64px;line-height:1;color:#fff}
+.pct b em{font-style:normal;font-size:30px}
+.pct span{font-size:14px;font-weight:700;color:#ffe9c4;margin-top:4px}
+.ccode{grid-column:1/-1;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:10px;border-top:1.5px dashed rgba(243,239,230,.3);padding-top:16px;font-size:13px;color:#bdb8ae}
+.ccode b{font-family:'Gowun Batang',serif;font-size:18px;letter-spacing:.14em;color:var(--mus)}
+.olist{list-style:none;display:grid;gap:18px}
+.olist li{display:grid;grid-template-columns:52px 1fr;gap:16px;align-items:start}
+.olist .ic{width:52px;height:52px;border-radius:50%;background:#fff;border:1.5px solid var(--line);display:grid;place-items:center}
+.olist .ic svg{width:26px;height:26px;fill:none;stroke:var(--red);stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.olist h4{font-size:18px;font-weight:700;margin-bottom:2px}
+.olist p{font-size:15px;color:var(--mute)}
+.fine{margin-top:26px;font-size:13px;color:var(--mute);background:#fff;border-left:4px solid var(--mus);padding:12px 16px;border-radius:0 6px 6px 0}
+/* price */
+.price{background:#fff;position:relative}
+.price:before{content:"";position:absolute;left:0;right:0;top:0;height:0;border-top:2px dashed var(--line)}
+.tabs{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-bottom:28px}
+.tabs button{font-family:inherit;font-size:15px;font-weight:700;height:44px;padding:0 20px;border-radius:40px;border:1.5px solid var(--ink);background:#fff;color:var(--ink);cursor:pointer;transition:.15s}
+.tabs button[aria-selected="true"]{background:var(--ink);color:var(--chalk)}
+.ptable{max-width:900px;margin:0 auto;background:var(--chalk);border-radius:14px;padding:10px 30px 24px;position:relative;box-shadow:0 1px 0 var(--line)}
+.ptable:before{content:"";position:absolute;inset:8px;border:1.5px dashed rgba(34,36,39,.18);border-radius:10px;pointer-events:none}
+.phead{display:grid;grid-template-columns:1fr 120px 130px;gap:14px;padding:18px 0 10px;font-size:13px;font-weight:700;color:var(--mute);letter-spacing:.06em;border-bottom:2px solid var(--ink)}
+.phead span:nth-child(n+2){text-align:right}
+.prow{display:grid;grid-template-columns:1fr 120px 130px;gap:14px;align-items:center;padding:16px 0;border-bottom:1px dashed rgba(34,36,39,.22)}
+.prow:last-child{border-bottom:0}
+.prow h5{font-size:17px;font-weight:700}
+.prow p{font-size:14px;color:var(--mute)}
+.prow s{text-align:right;color:#8c8f93;font-size:15px}
+.prow b{text-align:right;font-family:'Gowun Batang',serif;font-size:21px;color:var(--red)}
+.prow b small{font-family:'Noto Sans KR';font-size:12px;color:var(--mute);font-weight:500;margin-left:2px}
+.pgroup{display:none}.pgroup.on{display:block}
+.pnote{max-width:900px;margin:18px auto 0;font-size:13px;color:var(--mute);text-align:center}
+/* services */
+.svc{background:var(--chalk)}
+.sgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.scard{background:#fff;border-radius:12px;padding:28px 26px 26px;position:relative;border:1px solid var(--line);transition:.2s}
+.scard:hover{transform:translateY(-4px);box-shadow:0 20px 40px -24px rgba(36,39,42,.45)}
+.scard svg{width:96px;height:96px;margin-bottom:12px}
+.scard h4{font-family:'Gowun Batang',serif;font-size:21px;margin-bottom:6px}
+.scard p{font-size:15px;color:var(--mute)}
+/* fit */
+.fit{color:var(--chalk);position:relative;overflow:hidden}
+.fit .grid{display:grid;grid-template-columns:.95fr 1.05fr;gap:60px;align-items:center}
+.fit .eyebrow{color:var(--mus)}
+.fit .sub{color:#cfcac0}
+.board{background:#2b2e31;border-radius:14px;padding:22px;border:8px solid #6b4a2c;box-shadow:inset 0 0 60px rgba(0,0,0,.45),0 30px 60px -30px rgba(0,0,0,.8);position:relative}
+.board svg{width:100%;height:auto;display:block}
+.pts{list-style:none;margin-top:28px;display:grid;gap:12px}
+.pts li{display:grid;grid-template-columns:36px 1fr;gap:14px;align-items:start;padding:14px 16px;background:rgba(243,239,230,.06);border-radius:8px;border:1px dashed rgba(243,239,230,.22)}
+.pts li i{font-style:normal;width:36px;height:36px;border-radius:50%;background:var(--mus);color:var(--ink);display:grid;place-items:center;font-weight:900;font-size:15px}
+.pts li b{display:block;font-size:16px;color:#fff}
+.pts li span{font-size:14px;color:#c6c1b7}
+/* steps */
+.steps{background:#fff}
+.sline{display:grid;grid-template-columns:repeat(4,1fr);gap:22px;position:relative}
+.sline:before{content:"";position:absolute;left:12%;right:12%;top:46px;border-top:2.5px dashed var(--red);opacity:.5}
+.step{text-align:center;position:relative}
+.step .no{width:92px;height:92px;border-radius:50%;margin:0 auto 18px;background:var(--chalk);border:2px solid var(--ink);display:grid;place-items:center;position:relative}
+.step .no svg{width:44px;height:44px;fill:none;stroke:var(--ink);stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.step .no em{position:absolute;top:-6px;right:-6px;width:32px;height:32px;border-radius:50%;background:var(--red);color:#fff;font-style:normal;font-weight:900;font-size:14px;display:grid;place-items:center}
+.step h4{font-family:'Gowun Batang',serif;font-size:20px;margin-bottom:6px}
+.step p{font-size:15px;color:var(--mute);max-width:230px;margin:0 auto}
+.step small{display:inline-block;margin-top:10px;font-size:12px;font-weight:700;color:var(--mus2);background:#fbf3dc;padding:3px 10px;border-radius:20px}
+/* faq */
+.faq{background:var(--chalk)}
+.fwrap{max-width:860px;margin:0 auto}
+details{background:#fff;border-radius:10px;margin-bottom:12px;border:1px solid var(--line);overflow:hidden}
+summary{list-style:none;cursor:pointer;display:flex;align-items:baseline;gap:10px;padding:20px 60px 20px 24px;font-weight:700;font-size:17px;position:relative}
+summary::-webkit-details-marker{display:none}
+summary:before{content:"Q";font-family:'Gowun Batang',serif;color:var(--red);font-size:19px;flex:0 0 auto}
+summary:after{content:"";position:absolute;right:24px;top:50%;width:12px;height:12px;border-right:2px solid var(--ink);border-bottom:2px solid var(--ink);transform:translateY(-70%) rotate(45deg);transition:.2s}
+details[open] summary:after{transform:translateY(-30%) rotate(-135deg)}
+details p{padding:0 24px 22px 50px;color:var(--mute);font-size:15px}
+/* form */
+.apply{color:var(--chalk);position:relative}
+.apply .grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:56px;align-items:start}
+.apply .eyebrow{color:var(--mus)}
+.apply .sub{color:#cfcac0}
+.contact{margin-top:30px;display:grid;gap:12px}
+.contact div{display:flex;align-items:center;gap:14px;padding:14px 18px;border-radius:8px;background:rgba(243,239,230,.07);border:1px dashed rgba(243,239,230,.25);font-size:15px}
+.contact svg{width:22px;height:22px;flex:0 0 22px;fill:none;stroke:var(--mus);stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.contact b{color:#fff;margin-left:auto;font-weight:700;text-align:right}
+.contact .cl{white-space:nowrap}
+.visit{margin-top:22px;display:grid;grid-template-columns:150px 1fr;gap:20px;align-items:center;padding:20px;border-radius:10px;background:rgba(243,239,230,.07);border:1px dashed rgba(243,239,230,.25)}
+.visit svg{width:100%;height:auto;display:block}
+.visit b{display:block;font-family:'Gowun Batang',serif;font-size:19px;color:#fff;margin-bottom:4px}
+.visit p{font-size:14px;color:#cfcac0}
+.visit .cp{display:inline-block;margin-top:10px;font-size:13px;color:#e9e3d6;background:rgba(184,50,44,.35);border:1px dashed rgba(255,140,128,.7);padding:4px 10px;border-radius:4px}
+.visit .cp em{font-style:normal;font-weight:900;letter-spacing:.08em;color:#fff}
+form{background:var(--chalk);color:var(--ink);border-radius:14px;padding:36px;position:relative;box-shadow:0 30px 60px -30px rgba(0,0,0,.8)}
+form:before{content:"";position:absolute;inset:8px;border:1.5px dashed rgba(34,36,39,.2);border-radius:10px;pointer-events:none}
+.ftitle{font-family:'Gowun Batang',serif;font-size:24px;font-weight:700;margin-bottom:4px}
+.fdesc{font-size:14px;color:var(--mute);margin-bottom:22px}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.fld{margin-bottom:16px;position:relative}
+.fld label,.fld .lb{display:block;font-size:14px;font-weight:700;margin-bottom:6px}
+.fld label i,.fld .lb i{font-style:normal;color:var(--red)}
+.fld input,.fld select,.fld textarea{width:100%;font-family:inherit;font-size:16px;height:50px;padding:0 14px;border-radius:6px;border:1.5px solid #c9c3b6;background:#fff;color:var(--ink);transition:.15s}
+.fld textarea{height:88px;padding:12px 14px;resize:vertical}
+.fld input:focus,.fld select:focus,.fld textarea:focus{outline:none;border-color:var(--ink);box-shadow:0 0 0 3px rgba(217,166,46,.35)}
+.fld.err input,.fld.err select{border-color:var(--red)}
+.fld .em{display:none;font-size:13px;color:var(--red);margin-top:4px;font-weight:500}
+.fld.err .em{display:block}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chips label{margin:0;font-weight:500;font-size:14px;cursor:pointer}
+.chips input{position:absolute;opacity:0;width:1px;height:1px}
+.chips span{display:inline-flex;align-items:center;height:40px;padding:0 14px;border-radius:30px;border:1.5px solid #c9c3b6;background:#fff;transition:.15s}
+.chips input:checked+span{background:var(--ink);color:var(--chalk);border-color:var(--ink)}
+.chips input:focus-visible+span{box-shadow:0 0 0 3px rgba(217,166,46,.5)}
+.agree{display:flex;gap:10px;align-items:flex-start;font-size:14px;color:var(--mute);margin:4px 0 20px}
+.agree input{width:20px;height:20px;margin-top:2px;accent-color:var(--red);flex:0 0 20px}
+.agree.err{color:var(--red)}
+form .btn{width:100%;height:56px;font-size:17px}
+.done{display:none;text-align:center;padding:30px 10px}
+.done.on{display:block}
+.done svg{width:92px;height:92px;margin-bottom:12px}
+.done h3{font-family:'Gowun Batang',serif;font-size:26px;margin-bottom:8px}
+.done p{font-size:15px;color:var(--mute)}
+.done .tk{display:inline-block;margin-top:16px;padding:10px 18px;border-radius:6px;background:#fff;border:1.5px dashed var(--mus2);font-size:14px}
+.done .tk b{font-family:'Gowun Batang',serif;letter-spacing:.1em;color:var(--red);font-size:17px}
+/* footer */
+footer{background:var(--wool3);color:#aaa59b;padding:40px 0;font-size:13px;border-top:2px dashed rgba(243,239,230,.18)}
+footer .in{display:flex;flex-wrap:wrap;justify-content:space-between;gap:16px;align-items:center}
+footer b{font-family:'Gowun Batang',serif;color:var(--chalk);font-size:18px}
+.mcta{display:none}
+@media(max-width:1020px){
+ .hero .in,.offer .grid,.fit .grid,.apply .grid{grid-template-columns:1fr}
+ .hero .copy{order:1}.hero .art{order:2;max-width:560px;margin:0 auto;width:100%}
+ .sgrid{grid-template-columns:1fr 1fr}
+ .sline{grid-template-columns:1fr 1fr;row-gap:40px}.sline:before{display:none}
+ .nav nav{display:none}
+}
+@media(max-width:640px){
+ .in{padding:0 18px}
+ .s{padding:72px 0}
+ .hero{padding-top:40px}
+ .hero .lead{font-size:16px}
+ .hero .in{padding-left:44px}
+ .vtape{width:28px}
+ .vtape:after{width:14px}.vtape:before{width:8px}
+ .vtape span{display:none}
+ .hero h1{font-size:40px}
+ .acts{gap:16px}
+ .nwm{white-space:normal}
+ .mtag{display:none}
+ .hero .art{margin-top:8px}
+ .mtag .str{top:-60px;height:70px}
+ .acts .btn{flex:1 1 100%}
+ .hero{padding:40px 0 48px}
+ .nav .btn{display:none}
+ .logo b{font-size:20px}
+ .coupon .cin{grid-template-columns:1fr;padding:28px 22px;text-align:left}
+ .pct{width:136px;height:136px;margin:0 auto}
+ .pct b{font-size:52px}
+ .coupon h3{font-size:25px}
+ .sgrid{grid-template-columns:1fr;gap:12px}
+ .scard{display:grid;grid-template-columns:72px 1fr;gap:2px 16px;align-items:center;padding:18px}
+ .scard svg{width:72px;height:72px;margin:0;grid-row:1/3;align-self:start}
+ .scard h4{font-size:19px;margin:0;align-self:end}
+ .scard p{font-size:14px;align-self:start}
+ .sline{grid-template-columns:1fr;row-gap:26px}
+ .sline:before{display:block;left:36px;right:auto;top:20px;bottom:90px;border-top:0;border-left:2.5px dashed var(--red)}
+ .step{display:grid;grid-template-columns:72px 1fr;gap:2px 18px;text-align:left;align-items:start}
+ .step .no{width:72px;height:72px;margin:0;grid-row:1/4}
+ .step .no svg{width:34px;height:34px}
+ .step .no em{width:28px;height:28px;font-size:13px}
+ .step h4{margin:6px 0 2px}
+ .step p{margin:0;max-width:none}
+ .step small{justify-self:start;margin-top:6px}
+ .ptable{padding:6px 18px 18px}
+ .phead{display:none}
+ .prow{grid-template-columns:1fr auto;gap:2px 12px;padding:14px 0}
+ .prow>div{grid-column:1/-1}
+ .prow s{text-align:left;font-size:14px}
+ .prow b{font-size:20px}
+ .row2{grid-template-columns:1fr}
+ .visit{grid-template-columns:1fr;text-align:left}
+ .visit svg{max-width:200px}
+ form{padding:26px 20px}
+ .board{padding:12px;border-width:6px}
+ footer{padding-bottom:100px}
+ .mcta{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:40;gap:10px;padding:10px 14px calc(10px + env(safe-area-inset-bottom));background:rgba(36,39,42,.97);border-top:2px dashed rgba(217,166,46,.6)}
+ .mcta .btn{flex:1;height:50px;padding:0 10px;font-size:15px}
+ .mcta .btn.ghost{flex:0 0 auto;padding:0 16px}
+}
+</style>
+</head>
+<body>
+<header class="nav">
+ <div class="in">
+  <a class="logo" href="#top" aria-label="한땀 수선실 처음으로">
+   <i><svg viewBox="0 0 32 32" fill="none"><path d="M22 4 9 27" stroke="#f3efe6" stroke-width="2.2" stroke-linecap="round"/><ellipse cx="21" cy="6.3" rx="1.2" ry="2.4" transform="rotate(30 21 6.3)" stroke="#f3efe6" stroke-width="1.4"/><path d="M21 7c4 3 5 9-1 12s-10 4-9 9" stroke="#d9a62e" stroke-width="1.6" stroke-linecap="round" stroke-dasharray="2.6 2.2"/></svg></i>
+   <span><small>HANTTAM ALTERATIONS</small><b>한땀 수선실</b></span>
+  </a>
+  <nav><a href="#offer">첫 이용 혜택</a><a href="#price">수선 요금</a><a href="#fit">핏 상담</a><a href="#steps">진행 순서</a><a href="#faq">자주 묻는 질문</a></nav>
+  <a class="btn" href="#apply">무료 핏 상담 예약</a>
+ </div>
+</header>
+
+<section class="hero wool-hb" id="top">
+ <div class="vtape" aria-hidden="true"></div>
+ <div class="in">
+  <div class="copy">
+   <p class="kicker"><svg viewBox="0 0 64 14" aria-hidden="true"><path d="M2 7h60" stroke="#ff8c80" stroke-width="2.4" stroke-dasharray="6 5" stroke-linecap="round"/></svg>겨울 시즌 · 코트 · 정장 <b>첫 이용 20%</b></p>
+   <h1>아끼던 겨울 코트,<br>몸에 맞게 <em>한 땀</em>.</h1>
+   <svg class="thread" viewBox="0 0 420 34" aria-hidden="true" preserveAspectRatio="xMinYMid meet"><path d="M4 20c40-14 70 10 110 0s70-14 110 0 70 10 110 0" fill="none" stroke="#e2574e" stroke-width="2.6" stroke-dasharray="10 7" stroke-linecap="round"/><path d="M334 20c20-5 40-8 70-14" fill="none" stroke="#e2574e" stroke-width="1.6"/><path d="M372 14 416 2" stroke="#e9edf0" stroke-width="2.6" stroke-linecap="round"/><ellipse cx="410" cy="3.6" rx="3.4" ry="1.4" fill="none" stroke="#e9edf0" stroke-width="1.2" transform="rotate(-15 410 3.6)"/></svg>
+   <p class="lead">소매가 길어 손등을 덮는 코트도, 품이 남는 정장 자켓도 <b>무료 핏 상담</b>으로 줄일 곳부터 함께 정해요. 처음 맡기시면 <span class="nwm">수선비를 <b>20%</b> 빼 드립니다.</span></p>
+   <div class="acts">
+    <a class="btn" href="#apply">첫 이용 20% 받고 예약하기 <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+    <a class="tlink" href="#price">수선 요금 먼저 보기 <svg viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg></a>
+   </div>
+  </div>
+  <div class="art">
+   <div class="mtag">
+    <svg class="str" viewBox="0 0 120 84" aria-hidden="true"><path d="M60 82C58 50 30 30 6 2" fill="none" stroke="#e2574e" stroke-width="2.4"/><path d="M60 82C62 50 86 34 112 6" fill="none" stroke="#b8322c" stroke-width="2.4"/></svg>
+    <div class="card">
+     <small>FIRST VISIT</small>
+     <span class="big">20<em>%</em></span>
+     <span class="bs">겨울 첫 이용 수선비 할인</span>
+     <dl><dt>핏 상담 · 초크 표시</dt><dd>0원</dd><dt>코트 수선</dt><dd>3~5일</dd><dt>바지 기장</dt><dd>당일</dd></dl>
+    </div>
+   </div>
+   <div aria-hidden="true"><svg class="scene" viewBox="0 0 600 680" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+     <pattern id="hbp" width="16" height="16" patternUnits="userSpaceOnUse" patternTransform="rotate(0)">
+      <rect width="16" height="16" fill="#5a5e63"/>
+      <path d="M0 8 8 0M8 16 16 8" stroke="#6c7075" stroke-width="2.4"/>
+      <path d="M8 0 16 8M0 8 8 16" stroke="#46494d" stroke-width="2.4" transform="translate(0 0)"/>
+      <path d="M0 0v16M8 0v16" stroke="#3e4145" stroke-width=".6" opacity=".6"/>
+     </pattern>
+     <linearGradient id="coatSh" x1="0" x2="1">
+      <stop offset="0" stop-color="#000" stop-opacity=".38"/><stop offset=".35" stop-color="#000" stop-opacity="0"/><stop offset=".7" stop-color="#fff" stop-opacity=".07"/><stop offset="1" stop-color="#000" stop-opacity=".42"/>
+     </linearGradient>
+     <linearGradient id="coatV" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff" stop-opacity=".1"/><stop offset="1" stop-color="#000" stop-opacity=".25"/></linearGradient>
+     <linearGradient id="form" x1="0" x2="1"><stop offset="0" stop-color="#8f7454"/><stop offset=".5" stop-color="#c7a77c"/><stop offset="1" stop-color="#7d6347"/></linearGradient>
+     <linearGradient id="wood" x1="0" x2="1"><stop offset="0" stop-color="#4b3220"/><stop offset=".5" stop-color="#8a5f3a"/><stop offset="1" stop-color="#3e2919"/></linearGradient>
+     <linearGradient id="brass" x1="0" x2="1"><stop offset="0" stop-color="#8a6a22"/><stop offset=".45" stop-color="#f0d27a"/><stop offset="1" stop-color="#7a5b18"/></linearGradient>
+     <linearGradient id="tapeG" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f2c85a"/><stop offset="1" stop-color="#c8951f"/></linearGradient>
+     <radialGradient id="pin" cx=".35" cy=".3" r=".8"><stop offset="0" stop-color="#e0574e"/><stop offset=".6" stop-color="#b8322c"/><stop offset="1" stop-color="#7e1d19"/></radialGradient>
+     <linearGradient id="spool" x1="0" x2="1"><stop offset="0" stop-color="#7e1d19"/><stop offset=".45" stop-color="#d9463e"/><stop offset="1" stop-color="#7e1d19"/></linearGradient>
+     <linearGradient id="steel" x1="0" x2="1"><stop offset="0" stop-color="#8d949a"/><stop offset=".5" stop-color="#eef1f3"/><stop offset="1" stop-color="#7b8288"/></linearGradient>
+     <radialGradient id="glow" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#f3d58a" stop-opacity=".35"/><stop offset="1" stop-color="#f3d58a" stop-opacity="0"/></radialGradient>
+     <filter id="ds" x="-20%" y="-20%" width="140%" height="150%"><feDropShadow dx="0" dy="14" stdDeviation="14" flood-color="#000" flood-opacity=".45"/></filter>
+     <filter id="ds2" x="-30%" y="-30%" width="160%" height="170%"><feDropShadow dx="0" dy="6" stdDeviation="5" flood-color="#000" flood-opacity=".45"/></filter>
+     <filter id="rough"><feTurbulence type="fractalNoise" baseFrequency=".9" numOctaves="2" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="2.2"/></filter>
+    <linearGradient id="table" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#7a5434"/><stop offset="1" stop-color="#4e3320"/></linearGradient>
+     <pattern id="grain" width="120" height="14" patternUnits="userSpaceOnUse"><path d="M0 4c30-3 60 3 120 0M0 10c40 2 80-3 120 1" stroke="#3e2818" stroke-width="1" fill="none" opacity=".45"/></pattern>
+     <linearGradient id="tmg" x1="0" x2="1"><stop offset="0" stop-color="#fff" stop-opacity="0"/><stop offset=".14" stop-color="#fff"/><stop offset=".86" stop-color="#fff"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient><mask id="tmask"><rect x="-10" y="500" width="620" height="200" fill="url(#tmg)"/></mask>
+     <filter id="ts" x="-30%" y="-30%" width="160%" height="180%"><feDropShadow dx="7" dy="8" stdDeviation="4" flood-color="#1a0f08" flood-opacity=".55"/></filter>
+     <linearGradient id="hand" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#d9463e"/><stop offset=".55" stop-color="#a92a24"/><stop offset="1" stop-color="#6e1915"/></linearGradient>
+    </defs>
+    <ellipse cx="300" cy="300" rx="280" ry="290" fill="url(#glow)"/>
+    <!-- worktable -->
+    <g mask="url(#tmask)"><path d="M-10 548 610 530 610 664 -10 680z" fill="url(#table)"/>
+    <path d="M-10 548 610 530 610 664 -10 680z" fill="url(#grain)"/>
+    <path d="M-10 548 610 530" stroke="#a37a52" stroke-width="3"/></g>
+    <!-- tabletop stand -->
+    <ellipse cx="300" cy="566" rx="70" ry="12" fill="#1a0f08" opacity=".5"/>
+    <ellipse cx="292" cy="558" rx="62" ry="13" fill="url(#brass)"/>
+    <ellipse cx="292" cy="554" rx="62" ry="13" fill="#e9c871"/>
+    <rect x="283" y="476" width="18" height="80" rx="4" fill="url(#brass)"/>
+    <circle cx="292" cy="478" r="15" fill="url(#brass)"/>
+    <!-- form neck -->
+    <path d="M268 78h44v38h-44z" fill="url(#form)"/>
+    <ellipse cx="290" cy="78" rx="24" ry="8" fill="#d6b88d"/>
+    <circle cx="290" cy="66" r="9" fill="url(#brass)"/>
+    <!-- coat body -->
+    <g filter="url(#ds)">
+     <path d="M196 132c28-14 58-20 94-20s66 6 94 20l34 40c10 48 6 120-4 200l-6 106c-60 14-176 14-236 0l-6-106c-10-80-14-152-4-200z" fill="url(#hbp)"/>
+     <path d="M196 132c28-14 58-20 94-20s66 6 94 20l34 40c10 48 6 120-4 200l-6 106c-60 14-176 14-236 0l-6-106c-10-80-14-152-4-200z" fill="url(#coatSh)"/>
+     <path d="M196 132c28-14 58-20 94-20s66 6 94 20l34 40c10 48 6 120-4 200l-6 106c-60 14-176 14-236 0l-6-106c-10-80-14-152-4-200z" fill="url(#coatV)"/>
+     <!-- sleeves -->
+     <path d="M168 168c-18 36-30 110-34 190-2 40 0 70 6 92l40 4c2-44 8-120 18-180l-4-118z" fill="url(#hbp)"/>
+     <path d="M168 168c-18 36-30 110-34 190-2 40 0 70 6 92l40 4c2-44 8-120 18-180l-4-118z" fill="#000" opacity=".28"/>
+     <path d="M412 168c18 36 30 110 34 190 2 40 0 70-6 92l-40 4c-2-44-8-120-18-180l4-118z" fill="url(#hbp)"/>
+     <path d="M412 168c18 36 30 110 34 190 2 40 0 70-6 92l-40 4c-2-44-8-120-18-180l4-118z" fill="#000" opacity=".3"/>
+     <path d="M140 450l40 4M440 450l-40 4" stroke="#2e3134" stroke-width="10" stroke-linecap="round"/>
+    </g>
+    <!-- inner shirt v -->
+    <path d="M262 116 290 196 318 116c-8-3-18-4-28-4s-20 1-28 4z" fill="#efe9dc"/>
+    <path d="M276 118 290 160 304 118" fill="none" stroke="#c9c0ae" stroke-width="2"/>
+    <!-- lapels -->
+    <path d="M262 116c-22 8-42 18-52 30l32 30-18 10 64 104 2-94z" fill="url(#hbp)"/>
+    <path d="M262 116c-22 8-42 18-52 30l32 30-18 10 64 104 2-94z" fill="#fff" opacity=".07"/>
+    <path d="M318 116c22 8 42 18 52 30l-32 30 18 10-64 104-2-94z" fill="url(#hbp)"/>
+    <path d="M318 116c22 8 42 18 52 30l-32 30 18 10-64 104-2-94z" fill="#000" opacity=".16"/>
+    <path d="M242 176l-18 10 64 104M338 176l18 10-64 104" fill="none" stroke="#2a2d30" stroke-width="2" opacity=".7"/>
+    <!-- front edge + buttons -->
+    <path d="M290 290v198" stroke="#2a2d30" stroke-width="2.2"/>
+    <g fill="#2b2420" stroke="#120f0d" stroke-width="1.5">
+     <circle cx="276" cy="316" r="9"/><circle cx="276" cy="372" r="9"/><circle cx="276" cy="428" r="9"/>
+    </g>
+    <g fill="#5b4c43"><circle cx="273" cy="313" r="2.4"/><circle cx="273" cy="369" r="2.4"/><circle cx="273" cy="425" r="2.4"/></g>
+    <!-- pockets -->
+    <path d="M206 380h56M322 380h56" stroke="#2a2d30" stroke-width="3" stroke-linecap="round"/>
+    <path d="M206 376h56l-2 12h-52zM322 376h56l-2 12h-52z" fill="#000" opacity=".2"/>
+    <!-- chalk marks -->
+    <g filter="url(#rough)" stroke="#f6f2ea" stroke-linecap="round" fill="none" opacity=".92">
+     <path d="M146 404c10 3 22 4 34 4" stroke-width="3.2" stroke-dasharray="7 6"/>
+     <path d="M444 404c-10 3-22 4-34 4" stroke-width="3.2" stroke-dasharray="7 6"/>
+     <path d="M150 396l8 16M158 396l-8 16" stroke-width="2.6"/>
+     <path d="M374 220c6 40 8 90 4 150" stroke-width="3" stroke-dasharray="9 7"/>
+     <path d="M206 470c56 10 112 12 168 0" stroke-width="3" stroke-dasharray="9 7"/>
+     <path d="M182 148c-6 6-12 14-14 20" stroke-width="3"/>
+     <path d="M178 140l-6 14M172 146l12 4" stroke-width="2.4"/>
+    </g>
+    <!-- pins on shoulder -->
+    <g>
+     <path d="M392 150l18-22" stroke="url(#steel)" stroke-width="2"/><circle cx="410" cy="128" r="5" fill="#d9a62e"/>
+     <path d="M400 164l22-16" stroke="url(#steel)" stroke-width="2"/><circle cx="422" cy="148" r="5" fill="#b8322c"/>
+     <path d="M384 420l20-14" stroke="url(#steel)" stroke-width="2"/><circle cx="404" cy="406" r="5" fill="#f3efe6"/>
+    </g>
+    <!-- tape measure draped -->
+    <g filter="url(#ds2)">
+     <path d="M262 108c-22 6-30 40-30 90 0 70 8 150 30 214" fill="none" stroke="url(#tapeG)" stroke-width="20" stroke-linecap="butt"/>
+     <path d="M318 108c22 6 34 40 38 84 4 50 0 100-8 138" fill="none" stroke="url(#tapeG)" stroke-width="20"/>
+     <path d="M262 108c10-6 46-6 56 0" fill="none" stroke="url(#tapeG)" stroke-width="20"/>
+     <path d="M262 108c-22 6-30 40-30 90 0 70 8 150 30 214" fill="none" stroke="#3a2c0c" stroke-width="7" stroke-dasharray="1.6 5.4" transform="translate(-5 0)" opacity=".85"/>
+     <path d="M318 108c22 6 34 40 38 84 4 50 0 100-8 138" fill="none" stroke="#3a2c0c" stroke-width="7" stroke-dasharray="1.6 5.4" transform="translate(5 0)" opacity=".85"/>
+     <path d="M262 108c-22 6-30 40-30 90 0 70 8 150 30 214" fill="none" stroke="#b8322c" stroke-width="5" stroke-dasharray="2 52" transform="translate(3 0)"/>
+     <rect x="250" y="404" width="26" height="14" rx="2" fill="url(#brass)" transform="rotate(-18 263 411)"/>
+     <rect x="336" y="324" width="24" height="12" rx="2" fill="url(#brass)" transform="rotate(12 348 330)"/>
+    </g>
+    
+    <!-- tape end falling to table and coiled -->
+    <path d="M348 330c10 60 30 120 70 190 10 18 24 24 40 24" fill="none" stroke="url(#tapeG)" stroke-width="18"/>
+    <path d="M348 330c10 60 30 120 70 190 10 18 24 24 40 24" fill="none" stroke="#3a2c0c" stroke-width="6" stroke-dasharray="1.6 5.4" transform="translate(4 0)" opacity=".8"/>
+    <g filter="url(#ts)"><ellipse cx="478" cy="560" rx="40" ry="16" fill="url(#tapeG)"/><ellipse cx="478" cy="556" rx="40" ry="16" fill="#f2c85a"/><ellipse cx="478" cy="556" rx="28" ry="10" fill="none" stroke="#c8951f" stroke-width="2"/><ellipse cx="478" cy="556" rx="16" ry="6" fill="none" stroke="#c8951f" stroke-width="2"/><ellipse cx="478" cy="556" rx="6" ry="2.4" fill="#a87a14"/></g>
+    <!-- pincushion on table -->
+    <g filter="url(#ts)">
+     <ellipse cx="96" cy="584" rx="50" ry="14" fill="#3a2c1c"/>
+     <path d="M52 580c0-34 20-56 44-56s44 22 44 56c-10 9-28 13-44 13s-34-4-44-13z" fill="url(#pin)"/>
+     <path d="M96 526v62M68 538c8 16 12 34 12 50M124 538c-8 16-12 34-12 50" stroke="#7e1d19" stroke-width="1.6" fill="none" opacity=".7"/>
+     <g stroke="url(#steel)" stroke-width="2"><path d="M84 540l-12-34"/><path d="M104 534l10-36"/><path d="M120 552l24-22"/><path d="M74 556l-30-10"/></g>
+    </g>
+    <circle cx="72" cy="506" r="6" fill="#f3efe6"/><circle cx="114" cy="498" r="6" fill="#b8322c" stroke="#7e1d19"/><circle cx="144" cy="530" r="6" fill="#f3efe6"/><circle cx="44" cy="546" r="6" fill="#d9a62e"/>
+    <!-- spool on table -->
+    <g filter="url(#ts)" transform="translate(196 520)">
+     <ellipse cx="0" cy="62" rx="28" ry="7" fill="#3e2919"/>
+     <rect x="-28" y="54" width="56" height="10" fill="url(#wood)"/>
+     <rect x="-21" y="6" width="42" height="50" fill="url(#spool)"/>
+     <g stroke="#6e1915" stroke-width="1.1" opacity=".6"><path d="M-21 14h42M-21 22h42M-21 30h42M-21 38h42M-21 46h42"/></g>
+     <rect x="-28" y="-2" width="56" height="10" fill="url(#wood)"/>
+     <ellipse cx="0" cy="-2" rx="28" ry="6" fill="#a8774a"/><ellipse cx="0" cy="-2" rx="5" ry="2" fill="#3a2516"/>
+    </g>
+    <path d="M217 548c20 6 30 22 22 40s-30 24-24 40" fill="none" stroke="#c43a33" stroke-width="2.2"/>
+    <!-- scissors flat on table -->
+    <g filter="url(#ts)" transform="translate(300 620) rotate(-6)">
+     <path d="M0-4 186-16 188-9 4 8z" fill="url(#steel)"/>
+     <path d="M0 4 184 24 182 31 0 14z" fill="url(#steel)"/>
+     <path d="M2 4 186-12" stroke="#5d646a" stroke-width="1" opacity=".6"/>
+     <path d="M-4-6-30-14M-4 10-26 22" stroke="#7b8288" stroke-width="7" stroke-linecap="round"/>
+     <path fill="url(#hand)" fill-rule="evenodd" d="M-28-14a30 18 0 1 0-60 0a30 18 0 1 0 60 0zM-38-14a20 10 0 1 1-40 0a20 10 0 1 1 40 0z"/>
+     <path fill="url(#hand)" fill-rule="evenodd" d="M-24 24a26 16 0 1 0-52 0a26 16 0 1 0 52 0zM-33 24a17 8.5 0 1 1-34 0a17 8.5 0 1 1 34 0z"/>
+     <path d="M-82-20c6-6 18-10 30-9" stroke="#f07a70" stroke-width="2" fill="none" stroke-linecap="round" opacity=".8"/>
+     <path d="M-72 18c6-5 14-7 24-6" stroke="#f07a70" stroke-width="2" fill="none" stroke-linecap="round" opacity=".8"/>
+     <circle cx="6" cy="3" r="5.5" fill="#3b3f43"/><circle cx="6" cy="3" r="2" fill="#c9cdd1"/>
+    </g>
+    <!-- tailor chalk -->
+    <g filter="url(#ts)" transform="translate(132 640) rotate(12)">
+     <path d="M-30-11h60l-6 22h-48z" fill="#f3efe6"/><path d="M-30-11h60l-2 6h-56z" fill="#fff"/>
+    </g>
+   </svg></div>
+  </div>
+ </div>
+</section>
+
+<section class="s offer" id="offer">
+ <div class="in grid">
+  <div>
+   <div class="coupon">
+    <div class="cin">
+     <div>
+      <small>FIRST VISIT · WINTER</small>
+      <h3>겨울 코트 · 정장<br>첫 이용 수선비 할인</h3>
+      <p>처음 맡기시는 모든 수선 품목에 적용됩니다. 상담 예약 후 매장에서 신청 번호만 말씀해 주세요.</p>
+     </div>
+     <div class="pct"><b>20<em>%</em></b><span>첫 이용 할인</span></div>
+     <div class="ccode"><span>12월 1일 ~ 2월 28일 접수분</span><span>쿠폰 코드 <b>HANTTAM20</b></span></div>
+    </div>
+   </div>
+  </div>
+  <div>
+   <span class="eyebrow">첫 이용 혜택</span>
+   <h2 class="h2">처음 오시는 분께<br>세 가지를 챙겨 드려요</h2>
+   <ul class="olist">
+    <li><span class="ic"><svg viewBox="0 0 24 24"><path d="M3 17 17 3l4 4L7 21H3z"/><path d="M6 14l2 2M9 11l2 2M12 8l2 2"/></svg></span><div><h4>수선비 20% 할인</h4><p>코트, 정장, 바지까지 처음 맡기시는 품목 전부에 적용돼요.</p></div></li>
+    <li><span class="ic"><svg viewBox="0 0 24 24"><path d="M12 3v3M12 18v3M4.5 7.5l2 1.2M17.5 15.3l2 1.2M4.5 16.5l2-1.2M17.5 8.7l2-1.2"/><circle cx="12" cy="12" r="4"/></svg></span><div><h4>무료 핏 상담 · 초크 표시</h4><p>입어 보신 상태에서 줄일 길이를 초크로 표시하고, 수선 전 비용을 먼저 알려 드려요.</p></div></li>
+    <li><span class="ic"><svg viewBox="0 0 24 24"><path d="M4 7h16v12H4z"/><path d="M8 7V5h8v2M4 11h16"/></svg></span><div><h4>보관 커버 1장</h4><p>코트 수선을 맡기시면 찾아가실 때 부직포 의류 커버에 담아 드려요.</p></div></li>
+   </ul>
+   <p class="fine">다른 할인과 함께 쓰실 수 없고, 1인 1회 적용됩니다. 가죽·모피 품목은 상담 후 별도 안내해 드려요.</p>
+  </div>
+ </div>
+</section>
+
+<section class="s price" id="price">
+ <div class="in">
+  <div class="head c">
+   <span class="eyebrow">수선 요금</span>
+   <h2 class="h2">맡기기 전에 미리 보는 요금표</h2>
+   <p class="sub">가장 많이 맡기시는 겨울 품목 기준입니다. 원단과 안감 구조에 따라 상담 때 정확한 금액을 알려 드려요.</p>
+  </div>
+  <div class="tabs" role="tablist">
+   <button role="tab" aria-selected="true" data-g="coat">코트 · 점퍼</button>
+   <button role="tab" aria-selected="false" data-g="suit">정장 · 자켓</button>
+   <button role="tab" aria-selected="false" data-g="pants">바지 · 스커트</button>
+   <button role="tab" aria-selected="false" data-g="etc">지퍼 · 단추 · 안감</button>
+  </div>
+  <div class="ptable">
+   <div class="phead"><span>수선 항목</span><span>기본 요금</span><span>첫 이용가</span></div>
+   <div class="pgroup on" data-g="coat">
+    <div class="prow"><div><h5>소매 기장 줄임</h5><p>안감 포함, 단추 위치 그대로 옮겨 달기</p></div><s>28,000원</s><b>22,400<small>원</small></b></div>
+    <div class="prow"><div><h5>총기장 줄임</h5><p>트임과 안감 길이까지 함께 정리</p></div><s>45,000원</s><b>36,000<small>원</small></b></div>
+    <div class="prow"><div><h5>어깨 줄임</h5><p>어깨선을 다시 잡아 소매를 새로 달기</p></div><s>60,000원</s><b>48,000<small>원</small></b></div>
+    <div class="prow"><div><h5>품 줄임 (옆선)</h5><p>양쪽 옆선을 고르게 나누어 줄임</p></div><s>40,000원</s><b>32,000<small>원</small></b></div>
+   </div>
+   <div class="pgroup" data-g="suit">
+    <div class="prow"><div><h5>자켓 소매 기장</h5><p>장식 단추 트임이 있으면 단추 쪽에서 조정</p></div><s>22,000원</s><b>17,600<small>원</small></b></div>
+    <div class="prow"><div><h5>자켓 품 줄임</h5><p>뒤 중심선과 옆선을 함께 조정</p></div><s>38,000원</s><b>30,400<small>원</small></b></div>
+    <div class="prow"><div><h5>자켓 총기장</h5><p>주머니 위치와 비율을 고려해 줄임</p></div><s>35,000원</s><b>28,000<small>원</small></b></div>
+    <div class="prow"><div><h5>정장 한 벌 세트</h5><p>자켓 소매 + 바지 기장 + 허리 함께</p></div><s>48,000원</s><b>38,400<small>원</small></b></div>
+   </div>
+   <div class="pgroup" data-g="pants">
+    <div class="prow"><div><h5>바지 기장 (기본 단)</h5><p>당일 완성 가능</p></div><s>9,000원</s><b>7,200<small>원</small></b></div>
+    <div class="prow"><div><h5>바지 기장 (접는 단)</h5><p>정장 바지 밑단을 접어 올리는 마감</p></div><s>13,000원</s><b>10,400<small>원</small></b></div>
+    <div class="prow"><div><h5>허리 줄임 · 늘림</h5><p>뒤 중심에서 최대 4cm까지</p></div><s>15,000원</s><b>12,000<small>원</small></b></div>
+    <div class="prow"><div><h5>스커트 기장</h5><p>안감·트임 있는 겨울 울 스커트 포함</p></div><s>16,000원</s><b>12,800<small>원</small></b></div>
+   </div>
+   <div class="pgroup" data-g="etc">
+    <div class="prow"><div><h5>바지 지퍼 교체</h5><p>원단색에 맞춘 지퍼로 교체</p></div><s>12,000원</s><b>9,600<small>원</small></b></div>
+    <div class="prow"><div><h5>코트 · 점퍼 지퍼 교체</h5><p>양방향 지퍼 포함</p></div><s>25,000원</s><b>20,000<small>원</small></b></div>
+    <div class="prow"><div><h5>코트 안감 전체 교체</h5><p>안감 원단 선택 가능, 기장에 따라 달라요</p></div><s>70,000원~</s><b>56,000<small>원~</small></b></div>
+    <div class="prow"><div><h5>단추 교체 · 달기</h5><p>개당, 단추 가져오시면 다는 비용만</p></div><s>2,000원</s><b>1,600<small>원</small></b></div>
+   </div>
+  </div>
+  <p class="pnote">표시된 요금은 예시이며 부가세 포함입니다. 첫 이용가는 수선비 20% 할인이 적용된 금액이에요.</p>
+ </div>
+</section>
+
+<section class="s svc">
+ <div class="in">
+  <div class="head">
+   <span class="eyebrow">이런 옷, 맡겨 주세요</span>
+   <h2 class="h2">겨울마다 옷장에서<br>망설이던 그 옷</h2>
+   <p class="sub">사이즈가 조금 안 맞아 손이 덜 가던 옷도, 몇 군데만 손보면 다시 자주 입게 됩니다.</p>
+  </div>
+  <div class="sgrid">
+   <div class="scard">
+    <svg viewBox="0 0 84 84" aria-hidden="true"><circle cx="42" cy="42" r="40" fill="#f3efe6"/><circle cx="42" cy="42" r="40" fill="none" stroke="#d9a62e" stroke-width="1.5" stroke-dasharray="3 4"/><path d="M28 18c4-2 9-3 14-3s10 1 14 3l9 9c2 10 1 22-1 34l-1 9c-12 3-30 3-42 0l-1-9c-2-12-3-24-1-34z" fill="url(#hbp)"/><path d="M19 27c-4 10-6 24-6 36l9 1c1-10 2-22 5-32z" fill="url(#hbp)"/><path d="M19 27c-4 10-6 24-6 36l9 1c1-10 2-22 5-32z" fill="#000" opacity=".25"/><path d="M65 27c4 10 6 24 6 36l-9 1c-1-10-2-22-5-32z" fill="url(#hbp)"/><path d="M65 27c4 10 6 24 6 36l-9 1c-1-10-2-22-5-32z" fill="#000" opacity=".3"/><path d="M36 16l6 16 6-16z" fill="#efe9dc"/><path d="M42 32v40" stroke="#2a2d30" stroke-width="1.2"/><circle cx="39" cy="44" r="2" fill="#2b2420"/><circle cx="39" cy="54" r="2" fill="#2b2420"/><path d="M60 58l12-2" stroke="url(#tapeG)" stroke-width="6"/><path d="M60 58l12-2" stroke="#3a2c0c" stroke-width="6" stroke-dasharray=".8 2.2"/><path d="M11 58h12" stroke="#fff" stroke-width="2" stroke-dasharray="2.5 2" stroke-linecap="round"/></svg>
+    <h4>소매가 긴 코트</h4><p>손등을 덮는 소매를 손목뼈 기준으로 맞추면 훨씬 단정해 보여요.</p>
+   </div>
+   <div class="scard">
+    <svg viewBox="0 0 84 84" aria-hidden="true"><circle cx="42" cy="42" r="40" fill="#f3efe6"/><circle cx="42" cy="42" r="40" fill="none" stroke="#d9a62e" stroke-width="1.5" stroke-dasharray="3 4"/><path d="M24 20c6-3 12-4 18-4s12 1 18 4l6 8-2 40H20l-2-40z" fill="#33363a"/><path d="M24 20c6-3 12-4 18-4s12 1 18 4l6 8-2 40H20l-2-40z" fill="url(#hbp)" opacity=".55"/><path d="M34 17l8 26 8-26c-3-1-5-1-8-1s-5 0-8 1z" fill="#f6f2ea"/><path d="M40 22h4l1 4-3 16-3-16z" fill="url(#pin)"/><path d="M34 17l-6 6 6 4-4 3 12 13M50 17l6 6-6 4 4 3-12 13" fill="none" stroke="#1e2023" stroke-width="1.4"/><path d="M27 34v30M57 34v30" stroke="#fff" stroke-width="2" stroke-dasharray="2.5 2.5" stroke-linecap="round"/><path d="M16 46l-4-2M68 46l4-2" stroke="#b8322c" stroke-width="2" stroke-linecap="round"/><path d="M12 46l6 0M66 46l6 0" stroke="#b8322c" stroke-width="2" stroke-linecap="round"/></svg>
+    <h4>품이 남는 정장</h4><p>옆선과 등선을 나눠 줄여 어깨 모양은 그대로, 몸통만 맞춰요.</p>
+   </div>
+   <div class="scard">
+    <svg viewBox="0 0 84 84" aria-hidden="true"><circle cx="42" cy="42" r="40" fill="#f3efe6"/><circle cx="42" cy="42" r="40" fill="none" stroke="#d9a62e" stroke-width="1.5" stroke-dasharray="3 4"/><path d="M28 14h28l3 52H46l-4-34-4 34H25z" fill="url(#hbp)"/><path d="M42 32v-14M28 20h28" stroke="#2a2d30" stroke-width="1.4"/><path d="M28 14h28v6H28z" fill="#000" opacity=".25"/><path d="M42 32l4 34" stroke="#000" stroke-width="2" opacity=".2"/><path d="M18 62h48" stroke="url(#tapeG)" stroke-width="8"/><path d="M18 62h48" stroke="#3a2c0c" stroke-width="8" stroke-dasharray=".9 3.1"/><path d="M18 62h48" stroke="#b8322c" stroke-width="4" stroke-dasharray="1 15" transform="translate(0 -1)"/><path d="M24 70h14M46 70h14" stroke="#fff" stroke-width="2" stroke-dasharray="2.5 2" opacity=".0"/></svg>
+    <h4>기장이 긴 바지</h4><p>구두를 신고 서 보신 상태로 길이를 잡아 당일 완성해 드려요.</p>
+   </div>
+   <div class="scard">
+    <svg viewBox="0 0 84 84" aria-hidden="true"><circle cx="42" cy="42" r="40" fill="#f3efe6"/><circle cx="42" cy="42" r="40" fill="none" stroke="#d9a62e" stroke-width="1.5" stroke-dasharray="3 4"/><path d="M26 12h32v60H26z" fill="url(#hbp)"/><path d="M38 14h8v56h-8z" fill="#2a2c2f"/><path d="M38 16v52M46 16v52" stroke="url(#steel)" stroke-width="3" stroke-dasharray="2 2"/><path d="M42 16v14" stroke="#1d1f21" stroke-width="2"/><rect x="36" y="30" width="12" height="14" rx="3" fill="url(#brass)"/><path d="M42 44v14" stroke="url(#brass)" stroke-width="4" stroke-linecap="round"/><rect x="38.5" y="55" width="7" height="9" rx="3.5" fill="url(#brass)"/></svg>
+    <h4>고장 난 지퍼</h4><p>원단색에 맞는 지퍼로 바꿔 드려요. 점퍼 양방향 지퍼도 가능해요.</p>
+   </div>
+   <div class="scard">
+    <svg viewBox="0 0 84 84" aria-hidden="true"><circle cx="42" cy="42" r="40" fill="#f3efe6"/><circle cx="42" cy="42" r="40" fill="none" stroke="#d9a62e" stroke-width="1.5" stroke-dasharray="3 4"/><path d="M22 16h40l4 52H18z" fill="url(#spool)"/><path d="M28 22c4 14 4 30 0 44M42 20v48M56 22c-4 14-4 30 0 44" stroke="#f08a80" stroke-width="1.4" fill="none" opacity=".55"/><path d="M22 16h12l-4 52H18z" fill="url(#hbp)"/><path d="M50 16h12l4 52H54z" fill="url(#hbp)"/><path d="M50 16h12l4 52H54z" fill="#000" opacity=".22"/><path d="M34 18c2 18 2 34-4 50M50 18c-2 18-2 34 4 50" stroke="#fff" stroke-width="1.8" stroke-dasharray="2.5 2.5" fill="none"/></svg>
+    <h4>해진 코트 안감</h4><p>겉감이 멀쩡하다면 안감만 새로 갈아 한 시즌 더 따뜻하게 입어요.</p>
+   </div>
+   <div class="scard">
+    <svg viewBox="0 0 84 84" aria-hidden="true"><circle cx="42" cy="42" r="40" fill="#f3efe6"/><circle cx="42" cy="42" r="40" fill="none" stroke="#d9a62e" stroke-width="1.5" stroke-dasharray="3 4"/><path d="M20 22h34v50H20z" fill="url(#hbp)"/><path d="M48 22v50" stroke="#2a2d30" stroke-width="1.4"/><g><circle cx="38" cy="32" r="6" fill="#2b2420"/><circle cx="38" cy="48" r="6" fill="#2b2420"/><circle cx="38" cy="64" r="6" fill="#2b2420" opacity=".25"/></g><g fill="#6b5a4f"><circle cx="36.5" cy="30.5" r="1.3"/><circle cx="39.5" cy="33.5" r="1.3"/><circle cx="36.5" cy="46.5" r="1.3"/><circle cx="39.5" cy="49.5" r="1.3"/></g><circle cx="38" cy="64" r="6" fill="none" stroke="#fff" stroke-width="1.6" stroke-dasharray="2 2"/><path d="M58 12l12 28" stroke="url(#steel)" stroke-width="2.2" stroke-linecap="round"/><path d="M59 14c-6 10-10 22-6 32s14 10 18 18" stroke="#b8322c" stroke-width="1.8" fill="none"/></svg>
+    <h4>떨어진 단추</h4><p>여벌 단추가 없으면 비슷한 색과 크기로 골라 한 벌을 맞춰 달아요.</p>
+   </div>
+  </div>
+ </div>
+</section>
+
+<section class="s fit wool" id="fit">
+ <div class="in grid">
+  <div class="board" aria-hidden="true">
+   <svg viewBox="0 0 520 460" xmlns="http://www.w3.org/2000/svg">
+    <g fill="none" stroke="#f3efe6" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" opacity=".95">
+     <g id="halfL">
+       <path d="M232 50 172 76 164 112 166 220 162 404"/>
+       <path d="M172 76c-18 10-28 34-32 62l-16 192h32l12-160"/>
+       <path d="M232 50 212 72 234 100 220 110 260 192"/>
+       <path d="M186 322h40"/>
+       <path d="M124 318h32" stroke-width="1.6"/>
+     </g>
+     <g transform="translate(520 0) scale(-1 1)">
+       <path d="M232 50 172 76 164 112 166 220 162 404"/>
+       <path d="M172 76c-18 10-28 34-32 62l-16 192h32l12-160"/>
+       <path d="M232 50 212 72 234 100 220 110 260 192"/>
+       <path d="M186 322h40"/>
+       <path d="M124 318h32" stroke-width="1.6"/>
+     </g>
+     <path d="M232 50c8-6 18-8 28-8s20 2 28 8"/>
+     <path d="M162 404c30 8 64 12 98 12s68-4 98-12"/>
+     <path d="M260 192v224"/>
+     <circle cx="244" cy="244" r="5"/><circle cx="244" cy="300" r="5"/><circle cx="244" cy="356" r="5"/>
+    </g>
+    <g fill="none" stroke-linecap="round" stroke-width="3">
+     <!-- 1 shoulder seam highlight -->
+     <path d="M206 61 172 76" stroke="#d9a62e" stroke-width="5"/>
+     <path d="M174 72 146 52" stroke="#d9a62e" stroke-dasharray="2 5"/>
+     <!-- 2 cuff -->
+     <path d="M124 330h32" stroke="#d9a62e" stroke-width="5"/>
+     <path d="M122 330H100" stroke="#d9a62e" stroke-dasharray="2 5"/>
+     <!-- 3 chest -->
+     <path d="M168 230h184" stroke="#d9a62e" stroke-dasharray="10 8"/>
+     <!-- 4 arm length (right sleeve) -->
+     <path d="M418 80v250" stroke="#d9a62e" stroke-dasharray="2 7"/>
+     <path d="M410 80h16M410 330h16" stroke="#d9a62e"/>
+     <!-- 5 total length -->
+     <path d="M478 50v366" stroke="#e86a60" stroke-dasharray="2 7"/>
+     <path d="M470 50h16M470 416h16" stroke="#e86a60"/>
+     <path d="M162 404c30 8 64 12 98 12s68-4 98-12" stroke="#e86a60" stroke-width="4" stroke-dasharray="10 8"/>
+    </g>
+    <g font-family="Noto Sans KR" font-weight="900" font-size="20" text-anchor="middle">
+     <circle cx="134" cy="44" r="16" fill="#d9a62e"/><text x="134" y="51" fill="#24272a">1</text>
+     <circle cx="84" cy="330" r="16" fill="#d9a62e"/><text x="84" y="337" fill="#24272a">2</text>
+     <circle cx="300" cy="230" r="16" fill="#d9a62e" stroke="#2b2e31" stroke-width="4"/><text x="300" y="237" fill="#24272a">3</text>
+     <circle cx="418" cy="205" r="16" fill="#d9a62e" stroke="#2b2e31" stroke-width="4"/><text x="418" y="212" fill="#24272a">4</text>
+     <circle cx="478" cy="233" r="16" fill="#e86a60" stroke="#2b2e31" stroke-width="4"/><text x="478" y="240" fill="#fff">5</text>
+    </g>
+   </svg>
+  </div>
+  <div>
+   <span class="eyebrow">무료 핏 상담</span>
+   <h2 class="h2">자르기 전에,<br>입어 보고 다섯 곳을 봅니다</h2>
+   <p class="sub">수선은 한 번 자르면 되돌리기 어렵습니다. 그래서 거울 앞에서 같이 보고, 초크로 표시한 뒤 비용을 먼저 말씀드려요.</p>
+   <ul class="pts">
+    <li><i>1</i><div><b>어깨선</b><span>어깨 끝점이 맞는지 보고, 줄일지 그대로 둘지 정해요.</span></div></li>
+    <li><i>2</i><div><b>소매 기장</b><span>팔을 내렸을 때 손목뼈가 살짝 덮이는 길이로 맞춰요.</span></div></li>
+    <li><i>3</i><div><b>가슴 · 허리 품</b><span>니트를 입은 상태를 생각해 여유분을 남겨요.</span></div></li>
+    <li><i>4</i><div><b>팔 길이 좌우 차이</b><span>양팔 길이가 다르면 소매를 각각 따로 표시해요.</span></div></li>
+    <li><i>5</i><div><b>총기장 비율</b><span>키와 바지 길이에 맞는 코트 끝선을 함께 골라요.</span></div></li>
+   </ul>
+  </div>
+ </div>
+</section>
+
+<section class="s steps" id="steps">
+ <div class="in">
+  <div class="head c">
+   <span class="eyebrow">진행 순서</span>
+   <h2 class="h2">진행은 네 단계로 끝나요</h2>
+  </div>
+  <div class="sline">
+   <div class="step"><div class="no"><em>1</em><svg viewBox="0 0 24 24"><rect x="4" y="5" width="16" height="15" rx="2"/><path d="M4 10h16M9 3v4M15 3v4"/></svg></div><h4>상담 예약</h4><p>아래 양식이나 전화로 방문하실 날짜를 남겨 주세요.</p><small>1분</small></div>
+   <div class="step"><div class="no"><em>2</em><svg viewBox="0 0 24 24"><path d="M3 17 17 3l4 4L7 21H3z"/><path d="M13 7l4 4"/></svg></div><h4>핏 상담 · 초크 표시</h4><p>옷을 입어 보고 줄일 곳을 표시한 뒤 비용을 안내해요.</p><small>15분 내외</small></div>
+   <div class="step"><div class="no"><em>3</em><svg viewBox="0 0 24 24"><circle cx="6" cy="7" r="3"/><circle cx="6" cy="17" r="3"/><path d="M8.5 8.5 20 18M8.5 15.5 20 6"/></svg></div><h4>수선 작업</h4><p>작업이 끝나면 문자로 완성 소식을 보내 드려요.</p><small>코트 3~5일</small></div>
+   <div class="step"><div class="no"><em>4</em><svg viewBox="0 0 24 24"><path d="M12 3a2 2 0 0 1 2 2c0 1.5-2 2-2 3.5V9l8 7H4l8-7"/><path d="M4 16v3h16v-3"/></svg></div><h4>입어 보고 찾아가기</h4><p>한 번 더 입어 보시고, 아쉬운 곳이 있으면 바로 다시 잡아요.</p><small>재조정 무료</small></div>
+  </div>
+ </div>
+</section>
+
+<section class="s faq" id="faq">
+ <div class="in">
+  <div class="head c">
+   <span class="eyebrow">자주 묻는 질문</span>
+   <h2 class="h2">맡기기 전에 궁금한 것들</h2>
+  </div>
+  <div class="fwrap">
+   <details open><summary>예약 없이 가도 되나요?</summary><p>방문은 언제든 가능하지만, 겨울에는 코트 접수가 몰려 기다리실 수 있어요. 예약하시면 핏 상담을 바로 도와 드리고 첫 이용 20% 할인도 함께 적용됩니다.</p></details>
+   <details><summary>핏 상담만 받고 수선은 안 해도 되나요?</summary><p>네, 상담과 초크 표시는 무료입니다. 비용을 들어 보시고 천천히 결정하셔도 괜찮아요.</p></details>
+   <details><summary>택배로도 맡길 수 있나요?</summary><p>바지 기장이나 지퍼 교체처럼 길이가 정해진 수선은 택배 접수가 가능해요. 코트 어깨·품 수선은 입어 보고 표시해야 해서 방문을 권해 드립니다.</p></details>
+   <details><summary>할인은 어떤 품목까지 적용되나요?</summary><p>처음 맡기시는 날 접수한 모든 품목에 적용돼요. 가죽·모피·웨딩 의류는 상담 후 별도 요금으로 안내해 드립니다.</p></details>
+   <details><summary>완성된 옷이 마음에 안 들면요?</summary><p>찾아가실 때 꼭 입어 보세요. 표시한 길이와 다르거나 아쉬운 부분은 그 자리에서 무료로 다시 잡아 드려요.</p></details>
+  </div>
+ </div>
+</section>
+
+<section class="s apply wool-hb" id="apply">
+ <div class="in grid">
+  <div>
+   <span class="eyebrow">무료 핏 상담 예약</span>
+   <h2 class="h2">원하시는 날짜만<br>남겨 주세요</h2>
+   <p class="sub">예약 확인 문자를 보내 드리고, 방문하신 날 첫 이용 20% 할인을 바로 적용해 드려요.</p>
+   <div class="contact">
+    <div><svg viewBox="0 0 24 24"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg><span class="cl">전화 예약</span><b>000-0000-0000</b></div>
+    <div><svg viewBox="0 0 24 24"><path d="M4 5h16v11H8l-4 4z"/></svg><span class="cl">메신저 상담</span><b>카카오톡 ID: example</b></div>
+    <div><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><span class="cl">영업 시간</span><b>평일 10–20시 · 토 11–17시</b></div>
+   </div>
+   <div class="visit">
+    <svg viewBox="0 0 220 150" aria-hidden="true"><defs><linearGradient id="awn" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#c9413a"/><stop offset="1" stop-color="#8f2420"/></linearGradient></defs><rect x="22" y="40" width="176" height="104" rx="4" fill="#3a3d41"/><rect x="22" y="40" width="176" height="104" rx="4" fill="url(#hbp)" opacity=".5"/><path d="M14 28h192l-8 24H22z" fill="url(#awn)"/><path d="M14 28h192" stroke="#f3efe6" stroke-width="3" stroke-dasharray="10 8"/><g fill="#f3efe6" opacity=".18"><path d="M38 52h12l-4 0zM62 52h14M92 52h14M122 52h14M152 52h14"/></g><rect x="38" y="64" width="84" height="66" rx="3" fill="#f3e3b8" opacity=".9"/><rect x="38" y="64" width="84" height="66" rx="3" fill="none" stroke="#6b4a2c" stroke-width="4"/><path d="M60 76v32M60 76c-8 2-12 10-12 18l12 4 12-4c0-8-4-16-12-18z" fill="#5a5e63"/><path d="M80 120h30" stroke="#b8322c" stroke-width="3" stroke-dasharray="4 3"/><rect x="134" y="64" width="50" height="80" rx="3" fill="#24272a"/><circle cx="174" cy="104" r="3" fill="#d9a62e"/><path d="M134 64h50" stroke="#6b4a2c" stroke-width="4"/></svg>
+    <div><b>찾아오시는 길</b><p>○○역 2번 출구에서 걸어서 3분, 상가 1층 빨간 차양 아래입니다. 건물 뒤편에 잠시 정차할 자리가 있어요.</p><span class="cp">신청 후 매장에서 <em>HANTTAM20</em></span></div>
+   </div>
+  </div>
+  <form id="f" novalidate>
+   <div id="fbody">
+    <p class="ftitle">핏 상담 예약 신청</p>
+    <p class="fdesc">표시(<span style="color:var(--red)">*</span>)된 항목만 적어 주셔도 됩니다.</p>
+    <div class="row2">
+     <div class="fld" id="fn"><label for="nm">이름 <i>*</i></label><input id="nm" autocomplete="name" placeholder="홍길동"><span class="em">이름을 적어 주세요.</span></div>
+     <div class="fld" id="fp"><label for="ph">연락처 <i>*</i></label><input id="ph" inputmode="tel" autocomplete="tel" placeholder="010-0000-0000"><span class="em">연락 가능한 번호를 정확히 적어 주세요.</span></div>
+    </div>
+    <div class="fld" id="fi"><span class="lb">맡기실 옷 <i>*</i></span>
+     <div class="chips">
+      <label><input type="checkbox" name="it" value="코트"><span>코트 · 점퍼</span></label>
+      <label><input type="checkbox" name="it" value="정장"><span>정장 · 자켓</span></label>
+      <label><input type="checkbox" name="it" value="바지"><span>바지 · 스커트</span></label>
+      <label><input type="checkbox" name="it" value="지퍼"><span>지퍼 · 단추</span></label>
+      <label><input type="checkbox" name="it" value="기타"><span>기타 · 리폼</span></label>
+     </div>
+     <span class="em">한 가지 이상 골라 주세요.</span>
+    </div>
+    <div class="row2">
+     <div class="fld" id="fd"><label for="dt">방문 희망일 <i>*</i></label><input id="dt" type="date"><span class="em">방문하실 날짜를 골라 주세요.</span></div>
+     <div class="fld"><label for="tm">희망 시간</label><select id="tm"><option>오전 (10–12시)</option><option>오후 (12–17시)</option><option>저녁 (17–20시)</option></select></div>
+    </div>
+    <div class="fld"><label for="mm">요청 사항</label><textarea id="mm" placeholder="예) 코트 소매를 2cm 정도 줄이고 싶어요"></textarea></div>
+    <label class="agree" id="fa"><input type="checkbox" id="ag"><span>예약 안내를 위한 이름·연락처 수집에 동의합니다. (상담 후 삭제)</span></label>
+    <button class="btn" type="submit">첫 이용 20% 받고 예약 신청</button>
+   </div>
+   <div class="done" id="done" role="status" aria-live="polite">
+    <svg viewBox="0 0 92 92" aria-hidden="true"><circle cx="46" cy="46" r="42" fill="#b8322c"/><circle cx="46" cy="46" r="34" fill="none" stroke="#fff" stroke-width="2" stroke-dasharray="5 5" opacity=".6"/><path d="M30 47l11 11 22-24" fill="none" stroke="#fff" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    <h3>예약 신청이 접수되었어요</h3>
+    <p id="dmsg">확인 문자를 곧 보내 드릴게요.</p>
+    <div class="tk">방문하실 때 신청 번호 <b id="tk">HT-0000</b></div>
+   </div>
+  </form>
+ </div>
+</section>
+
+<footer>
+ <div class="in">
+  <div><b>한땀 수선실</b><br>옷 수선 · 리폼 · 정장 맞춤 수선</div>
+  <div>전화 000-0000-0000 · 카카오톡 ID: example</div>
+ </div>
+</footer>
+
+<div class="mcta"><a class="btn ghost" href="#price">요금표</a><a class="btn" href="#apply">첫 이용 20% 예약하기</a></div>
+
+<script>
+(function(){
+ // tape numbers
+ var vt=document.querySelector('.vtape'),h='';for(var i=1;i<=30;i++){h+='<span style="top:'+(i*50+20)+'px">'+(i*10)+'</span>'}vt.innerHTML=h;
+ // tabs
+ var tabs=document.querySelectorAll('.tabs button'),gs=document.querySelectorAll('.pgroup');
+ tabs.forEach(function(b){b.addEventListener('click',function(){tabs.forEach(function(x){x.setAttribute('aria-selected',x===b)});gs.forEach(function(g){g.classList.toggle('on',g.dataset.g===b.dataset.g)})})});
+ // date min
+ var dt=document.getElementById('dt'),d=new Date();d.setDate(d.getDate()+1);dt.min=d.toISOString().slice(0,10);
+ // form
+ var f=document.getElementById('f');
+ function bad(id,on){document.getElementById(id).classList.toggle('err',on);return on}
+ f.addEventListener('submit',function(e){e.preventDefault();
+  var nm=document.getElementById('nm').value.trim(),ph=document.getElementById('ph').value.replace(/[^0-9]/g,''),its=f.querySelectorAll('input[name=it]:checked'),ok=true;
+  if(bad('fn',!nm))ok=false;
+  if(bad('fp',ph.length<9||ph.length>11))ok=false;
+  if(bad('fi',!its.length))ok=false;
+  if(bad('fd',!dt.value))ok=false;
+  var ag=document.getElementById('ag').checked;document.getElementById('fa').classList.toggle('err',!ag);if(!ag)ok=false;
+  if(!ok){var first=f.querySelector('.err');if(first)first.scrollIntoView({behavior:'smooth',block:'center'});return}
+  var names=[].map.call(its,function(x){return x.value}).join(', ');
+  var dd=dt.value.split('-');
+  var esc=function(t){return t.replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})};document.getElementById('dmsg').innerHTML=esc(nm)+'님, '+(+dd[1])+'월 '+(+dd[2])+'일 '+esc(document.getElementById('tm').value)+' 방문으로<br>'+esc(names)+' 핏 상담을 잡아 두었어요.<br><span style="white-space:nowrap">확인 문자를 곧 보내 드릴게요.</span>';
+  document.getElementById('tk').textContent='HT-'+String(Math.floor(1000+Math.random()*9000));
+  document.getElementById('fbody').style.display='none';document.getElementById('done').classList.add('on');
+  f.scrollIntoView({behavior:'smooth',block:'center'});
+ });
+ f.querySelectorAll('input').forEach(function(i){i.addEventListener('input',function(){var p=i.closest('.fld');if(p)p.classList.remove('err')});i.addEventListener('change',function(){var p=i.closest('.fld');if(p)p.classList.remove('err');if(i.id==='ag')document.getElementById('fa').classList.remove('err')})});
+})();
+</script>
+</body>
+</html>
