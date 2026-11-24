@@ -1,0 +1,767 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>소반담 · 계절 한정식 코스</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700;800&family=Noto+Serif+KR:wght@400;500;600&family=Noto+Sans+KR:wght@400;500;700&family=Playfair+Display:ital,wght@0,500;1,500&display=swap" rel="stylesheet">
+<style>
+:root{--ja:#3a1630;--ja2:#4f1f42;--ja3:#7a3a62;--iv:#f6f1e7;--iv2:#ece4d4;--si:#b9b6bd;--si2:#dcdae0;--ink:#241820;--mut:#6f5f69}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Noto Sans KR',sans-serif;color:var(--ink);background:var(--iv);word-break:keep-all;-webkit-font-smoothing:antialiased;overflow-x:hidden;line-height:1.7}
+a{color:inherit;text-decoration:none}
+svg{display:block;width:100%;height:auto}
+.serif{font-family:'Nanum Myeongjo',serif}
+.wrap{max-width:1200px;margin:0 auto;padding:0 32px}
+.eyebrow:after{content:"";display:block;width:96px;height:10px;margin-top:12px;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='96' height='10'%3E%3Cpath d='M0 5H40M56 5H96' stroke='%23a9a5b0' stroke-width='1'/%3E%3Cpath d='M48 1L52 5L48 9L44 5Z' fill='none' stroke='%23a9a5b0' stroke-width='1.2'/%3E%3C/svg%3E") no-repeat}
+.hero .eyebrow:after,.flow .eyebrow:after{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='96' height='10'%3E%3Cpath d='M0 5H40M56 5H96' stroke='%23cfc9d4' stroke-width='1'/%3E%3Cpath d='M48 1L52 5L48 9L44 5Z' fill='none' stroke='%23cfc9d4' stroke-width='1.2'/%3E%3C/svg%3E")}
+.rooms .head .eyebrow:after{margin-left:auto;margin-right:auto}
+.hero .eyebrow{color:#d6b5ca}
+.eyebrow{font-family:'Playfair Display',serif;font-style:italic;font-size:16px;letter-spacing:.08em;color:var(--ja3)}
+.sec-title{font-family:'Nanum Myeongjo',serif;font-weight:800;font-size:clamp(30px,3.6vw,46px);line-height:1.35;color:var(--ja);margin-top:10px}
+.lead{font-family:'Noto Serif KR',serif;font-size:17px;color:var(--mut);margin-top:18px;max-width:560px;line-height:1.9}
+.rule{display:flex;align-items:center;gap:14px;color:var(--si)}
+.rule:before,.rule:after{content:"";height:1px;flex:1;background:currentColor;opacity:.7}
+.rule i{width:7px;height:7px;transform:rotate(45deg);border:1px solid currentColor}
+
+/* header */
+header{position:absolute;top:0;left:0;right:0;z-index:20}
+.nav{display:flex;align-items:center;justify-content:space-between;height:88px;border-bottom:1px solid rgba(220,218,224,.22)}
+.logo{display:flex;align-items:center;gap:12px;color:var(--iv)}
+.logo b{font-family:'Nanum Myeongjo',serif;font-weight:800;font-size:26px;letter-spacing:.12em}
+.logo small{font-family:'Playfair Display',serif;font-style:italic;font-size:13px;color:var(--si);letter-spacing:.1em}
+.logo .seal{width:38px;height:38px;border:1px solid var(--si);display:grid;place-items:center;font-family:'Nanum Myeongjo',serif;font-weight:800;font-size:15px;color:var(--si2)}
+.menu{display:flex;gap:34px;font-size:15px;color:#e6dde6}
+.menu a:hover{color:#fff}
+.nav .btn{height:44px;padding:0 22px;font-size:14px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;height:54px;padding:0 30px;border:1px solid var(--si);color:var(--iv);font-size:15px;font-weight:500;letter-spacing:.04em;transition:.25s;cursor:pointer;background:transparent;font-family:inherit}
+.btn:hover{background:var(--iv);color:var(--ja)}
+.btn.fill{background:var(--iv);color:var(--ja);border-color:var(--iv)}
+.btn.fill:hover{background:var(--si2)}
+.btn.dark{background:var(--ja);color:var(--iv);border-color:var(--ja)}
+.btn.dark:hover{background:var(--ja3);border-color:var(--ja3)}
+
+/* hero */
+.hero{position:relative;background:var(--ja);color:var(--iv);overflow:hidden;
+ background-image:radial-gradient(900px 600px at 78% 45%,rgba(122,58,98,.55),transparent 65%),radial-gradient(600px 400px at 0% 100%,rgba(15,4,12,.6),transparent 70%)}
+.hero:after{content:"";position:absolute;inset:0;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='64' height='64'%3E%3Cpath d='M32 4 L60 32 L32 60 L4 32Z' fill='none' stroke='%23dcdae0' stroke-opacity='.05'/%3E%3C/svg%3E");pointer-events:none}
+.hero .wrap{position:relative;z-index:2;display:grid;grid-template-columns:1.02fr 1fr;align-items:center;gap:40px;min-height:900px;padding-top:110px;padding-bottom:70px}
+.hero-txt{position:relative;padding-left:76px}
+.vert{position:absolute;left:0;top:6px;writing-mode:vertical-rl;font-family:'Nanum Myeongjo',serif;font-weight:700;font-size:15px;letter-spacing:.5em;color:var(--si);border-left:1px solid rgba(185,182,189,.5);padding-left:14px;height:300px}
+.hero h1{font-family:'Nanum Myeongjo',serif;font-weight:800;font-size:clamp(46px,5.6vw,80px);line-height:1.28;letter-spacing:-.01em}
+.hero h1 em{font-style:normal;color:#e9d9e4;display:block}
+.hero p{font-family:'Noto Serif KR',serif;font-size:18px;color:#ddd0d9;margin-top:26px;max-width:460px;line-height:1.9}
+.hero .cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:38px}
+.hero-meta{display:flex;gap:34px;margin-top:52px;padding-top:24px;border-top:1px solid rgba(185,182,189,.3);max-width:520px}
+.hero-meta div{font-size:13px;color:var(--si);letter-spacing:.04em}
+.hero-meta b{display:block;font-family:'Nanum Myeongjo',serif;font-size:22px;color:var(--iv);font-weight:700;margin-top:4px;letter-spacing:0}
+.hero-art{position:relative}
+.hero-art .ring{position:absolute;inset:-4% -4%;border:1.5px solid rgba(201,198,206,.7);border-radius:50%}
+.hero-art .ring2{position:absolute;inset:4%;border:1px dashed rgba(201,198,206,.5);border-radius:50%}
+.hero-art .ring3{position:absolute;inset:-9%;border:1px solid rgba(201,198,206,.3);border-radius:50%}
+.hero-art .tag{position:absolute;right:0;bottom:6%;background:var(--iv);color:var(--ja);padding:14px 18px;font-size:13px;line-height:1.5;box-shadow:0 20px 40px -10px rgba(0,0,0,.4)}
+.hero-art .tag b{font-family:'Nanum Myeongjo',serif;font-size:17px;display:block}
+
+/* intro */
+.intro{padding:140px 0 120px}
+.intro .wrap{display:grid;grid-template-columns:1fr 1.05fr;gap:80px;align-items:center}
+.intro-art{position:relative;background:linear-gradient(160deg,#efe7d8,#e2d7c4);padding:40px 40px 30px}
+.intro-art:before{content:"";position:absolute;inset:14px;border:1px solid var(--si)}
+.intro-art figcaption{text-align:center;font-size:13px;color:var(--mut);margin-top:10px;position:relative}
+.intro-body{position:relative}
+.intro-body .vt{position:absolute;right:0;top:0;writing-mode:vertical-rl;font-family:'Nanum Myeongjo',serif;font-weight:800;font-size:54px;color:var(--ja);opacity:.08;letter-spacing:.2em}
+.pillars{display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin-top:44px;border-top:1px solid var(--si);border-bottom:1px solid var(--si)}
+.pillars div{padding:24px 18px 22px;border-right:1px solid var(--si2)}
+.pillars div:last-child{border-right:0}
+.pillars span{font-family:'Playfair Display',serif;font-style:italic;font-size:14px;color:var(--ja3)}
+.pillars h3{font-family:'Nanum Myeongjo',serif;font-size:20px;font-weight:800;color:var(--ja);margin:6px 0 6px}
+.pillars p{font-size:14px;color:var(--mut);line-height:1.7}
+
+/* courses */
+.courses{background:var(--iv2);padding:120px 0;position:relative}
+.courses .head{display:flex;justify-content:space-between;align-items:flex-end;gap:30px;flex-wrap:wrap;margin-bottom:54px}
+.season{display:flex;gap:8px;flex-wrap:wrap}
+.season button{font-family:inherit;font-size:14px;padding:9px 18px;border:1px solid var(--si);background:transparent;color:var(--ja2);cursor:pointer;transition:.2s}
+.season button:hover{border-color:var(--ja3)}
+.season button[aria-selected=true]{background:var(--ja);border-color:var(--ja);color:var(--iv)}
+.season-note{font-size:13px;color:var(--ja3);margin-top:8px}
+.cgrid .card ul,.cgrid .price{transition:opacity .25s}
+.cgrid.fade .card ul,.cgrid.fade .price{opacity:.15}
+.cgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.card{background:var(--iv);padding:38px 32px 32px;position:relative;border:1px solid #ddd3c2;display:flex;flex-direction:column}
+.card .no{font-family:'Playfair Display',serif;font-size:14px;letter-spacing:.2em;color:var(--ja3)}
+.card.main .no{color:#d8c7d3}
+.card.main{outline:1px solid rgba(201,198,206,.75);outline-offset:-10px}
+.card h3{font-family:'Nanum Myeongjo',serif;font-weight:800;font-size:32px;color:var(--ja);margin-top:8px;display:flex;align-items:baseline;gap:12px}
+.card h3 small{font-family:'Noto Sans KR';font-size:14px;font-weight:500;color:var(--mut)}
+.card .when{font-size:14px;color:var(--ja3);margin-top:4px}
+.card ul{list-style:none;margin:24px 0 26px;border-top:1px solid var(--si2)}
+.card li{font-size:15px;padding:11px 0;border-bottom:1px solid var(--si2);display:flex;justify-content:space-between;gap:10px}
+.card li span{color:var(--mut);font-size:13px;white-space:nowrap}
+.price{margin-top:auto;display:flex;align-items:baseline;justify-content:space-between;gap:8px}
+.price b{font-family:'Nanum Myeongjo',serif;font-size:30px;font-weight:800;color:var(--ja)}
+.price small{font-size:13px;color:var(--mut)}
+.card.main{background:var(--ja);color:var(--iv);border-color:var(--ja);transform:translateY(-18px);box-shadow:0 30px 60px -28px rgba(58,22,48,.7)}
+.card.main h3,.card.main .price b{color:var(--iv)}
+.card.main .when{color:#e2c8d8}
+.card.main li{border-color:rgba(220,218,224,.18)}
+.card.main ul{border-color:rgba(220,218,224,.25)}
+.card.main li span,.card.main h3 small,.card.main .price small{color:#cbbfc8}
+.card.main .badge{position:absolute;top:-1px;right:28px;background:var(--si2);color:var(--ja);font-size:12px;font-weight:700;padding:8px 12px;letter-spacing:.08em}
+.note{font-size:13px;color:var(--mut);margin-top:30px;text-align:center}
+
+/* flow */
+.flow{background:var(--ja);color:var(--iv);padding:130px 0;position:relative;overflow:hidden}
+.flow .wrap{display:grid;grid-template-columns:.9fr 1.1fr;gap:80px;align-items:center}
+.flow .sec-title{color:var(--iv)}
+.flow .eyebrow{color:#d6b5ca}
+.flow .lead{color:#d9ccd5}
+.flow-art{margin-top:40px;max-width:420px}
+.steps{list-style:none;counter-reset:s;border-top:1px solid rgba(220,218,224,.25)}
+.steps li{display:grid;grid-template-columns:64px 1fr auto;gap:18px;align-items:baseline;padding:20px 0;border-bottom:1px solid rgba(220,218,224,.18)}
+.steps .n{font-family:'Playfair Display',serif;font-size:22px;color:var(--si)}
+.steps h4{font-family:'Nanum Myeongjo',serif;font-size:21px;font-weight:700}
+.steps p{font-size:14px;color:#cdbfc8;margin-top:2px}
+.steps em{font-style:normal;font-size:12px;color:#e9d9e4;border:1px solid rgba(220,218,224,.35);padding:4px 10px;white-space:nowrap}
+
+/* rooms */
+.rooms{padding:130px 0}
+.rooms .head{text-align:center;margin-bottom:56px}
+.rooms .head .lead{margin:16px auto 0}
+.rgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
+.room{background:#fff;border:1px solid var(--si);position:relative}
+.room:after{content:"";position:absolute;inset:6px;border:1px solid var(--si2);pointer-events:none}
+.room .img{margin:0}
+.room .img{border-bottom:1px solid var(--si);overflow:hidden}
+.room .b{padding:24px 26px 28px}
+.room h3{font-family:'Nanum Myeongjo',serif;font-size:24px;font-weight:800;color:var(--ja);display:flex;justify-content:space-between;align-items:baseline}
+.room h3 small{font-family:'Noto Sans KR';font-size:13px;font-weight:500;color:var(--ja3)}
+.room p{font-size:14px;color:var(--mut);margin-top:8px}
+.room .tags{display:flex;gap:6px;flex-wrap:wrap;margin-top:14px}
+.room .tags span{font-size:12px;padding:4px 10px;background:var(--iv);color:var(--ja2)}
+
+/* info strip */
+.strip{background:var(--iv2);border-top:1px solid var(--si2);border-bottom:1px solid var(--si2)}
+.strip .wrap{display:grid;grid-template-columns:repeat(4,1fr)}
+.strip .wrap>div{padding:34px 24px;border-right:1px solid var(--si2)}
+.strip .wrap>div:last-child{border-right:0}
+.strip small{font-size:13px;color:var(--ja3);letter-spacing:.06em}
+.strip b{display:block;font-family:'Nanum Myeongjo',serif;font-size:19px;color:var(--ja);margin-top:6px}
+.strip p{font-size:13px;color:var(--mut);margin-top:2px}
+
+/* reserve */
+.reserve{padding:130px 0;background:linear-gradient(180deg,var(--iv),#efe7d9)}
+.reserve .wrap{display:grid;grid-template-columns:.85fr 1.15fr;gap:70px;align-items:start}
+.policy{margin-top:34px;list-style:none}
+.policy li{font-size:15px;padding:14px 0 14px 28px;border-bottom:1px solid var(--si2);position:relative}
+.policy li:before{content:"";position:absolute;left:4px;top:23px;width:8px;height:8px;transform:rotate(45deg);background:var(--ja3)}
+form{background:#fff;border:1px solid #e1d8c8;padding:44px;position:relative}
+form:before{content:"";position:absolute;inset:8px;border:1px solid var(--si2);pointer-events:none}
+.frow{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-bottom:18px;position:relative}
+label{display:block;font-size:13px;font-weight:700;color:var(--ja2);margin-bottom:8px;letter-spacing:.04em}
+input,select,textarea{width:100%;height:52px;border:1px solid #d8cfc0;background:var(--iv);padding:0 16px;font-size:15px;font-family:inherit;color:var(--ink);border-radius:0;appearance:none}
+textarea{height:96px;padding:14px 16px;resize:none}
+input:focus,select:focus,textarea:focus{outline:none;border-color:var(--ja3);background:#fff}
+.chips{display:flex;gap:8px;flex-wrap:wrap}
+.chips label{margin:0;font-weight:500;font-size:14px;color:var(--ink);letter-spacing:0;cursor:pointer}
+.chips input{display:none}
+.chips span{display:inline-block;padding:11px 16px;border:1px solid #d8cfc0;background:var(--iv);transition:.2s}
+.chips input:checked+span{background:var(--ja);border-color:var(--ja);color:var(--iv)}
+.full{grid-column:1/-1}
+form .btn{width:100%;margin-top:8px;position:relative}
+.done{display:none;text-align:center;padding:40px 10px;position:relative}
+.done .mk{width:72px;height:72px;margin:0 auto 18px;border:1px solid var(--ja3);border-radius:50%;display:grid;place-items:center}
+.done h3{font-family:'Nanum Myeongjo',serif;font-size:26px;color:var(--ja)}
+.done p{font-size:15px;color:var(--mut);margin-top:10px}
+form.sent .fields{display:none}
+form.sent .done{display:block}
+.err{font-size:13px;color:#a3263a;margin-top:10px;min-height:18px;position:relative}
+
+/* map */
+.loc{padding:120px 0 130px}
+.loc .wrap{display:grid;grid-template-columns:1.2fr .8fr;gap:60px;align-items:center}
+.map{border:1px solid var(--si);padding:10px;background:#fff}
+.mapin{position:relative}
+.mapin span{position:absolute;font-size:13px;font-weight:500;color:#5b4a55;background:rgba(243,236,223,.85);padding:1px 6px;white-space:nowrap;transform:translate(-50%,-50%)}
+.mapin span.me{font-weight:700;color:#fff;background:var(--ja);padding:3px 10px;font-size:14px}
+.addr{list-style:none;margin-top:28px}
+.addr li{display:grid;grid-template-columns:88px 1fr;gap:12px;padding:14px 0;border-bottom:1px solid var(--si2);font-size:15px}
+.addr li b{font-size:13px;color:var(--ja3);font-weight:700;letter-spacing:.06em;padding-top:2px}
+
+footer{background:#1e0a19;color:#cbbfc8;padding:70px 0 40px}
+footer .top{display:flex;justify-content:space-between;align-items:flex-start;gap:30px;flex-wrap:wrap;padding-bottom:36px;border-bottom:1px solid rgba(220,218,224,.15)}
+footer .logo b{font-size:30px}
+footer .fm{display:flex;gap:28px;font-size:14px;flex-wrap:wrap}
+footer .bot{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;padding-top:26px;font-size:13px;color:#9d8f99}
+
+.mbar{display:none}
+
+@media(max-width:1080px){
+ .menu{display:none}
+ .hero .wrap{grid-template-columns:1fr;min-height:auto;padding-top:130px}
+ .hero-art{max-width:560px;margin:0 auto;width:100%}
+ .intro .wrap,.flow .wrap,.reserve .wrap,.loc .wrap{grid-template-columns:1fr;gap:50px}
+ .cgrid,.rgrid{grid-template-columns:1fr;max-width:560px;margin:0 auto}
+ .card.main{transform:none}
+ .strip .wrap{grid-template-columns:1fr 1fr}
+ .strip .wrap>div:nth-child(2){border-right:0}
+ .strip .wrap>div:nth-child(-n+2){border-bottom:1px solid var(--si2)}
+}
+@media(max-width:620px){
+ .wrap{padding:0 20px}
+ .nav{height:72px}
+ .nav .btn{display:none}
+ .logo b{font-size:22px}
+ .logo small{display:none}
+ .hero .wrap{padding-top:108px;padding-bottom:56px;gap:30px}
+ .hero-txt{padding-left:44px}
+ .vert{font-size:13px;letter-spacing:.4em;padding-left:10px;height:220px}
+ .hero h1{font-size:40px}
+ .hero p{font-size:16px}
+ .hero .cta .btn{flex:1;padding:0 14px}
+ .hero-meta{flex-direction:column;gap:0;margin-top:40px;padding-top:6px}
+ .hero-meta div{display:flex;justify-content:space-between;align-items:baseline;padding:10px 0;border-bottom:1px solid rgba(185,182,189,.18)}
+ .hero-meta b{font-size:18px;margin-top:0}
+ .intro-body .vt{display:none}
+ .hero-art .tag{right:4px;bottom:0;padding:10px 14px}
+ .intro,.courses,.flow,.rooms,.reserve,.loc{padding:84px 0}
+ .intro-art{padding:26px}
+ .pillars{grid-template-columns:1fr}
+ .pillars div{border-right:0;border-bottom:1px solid var(--si2)}
+ .pillars div:last-child{border-bottom:0}
+ .card{padding:30px 22px 26px}
+ .steps li{grid-template-columns:44px 1fr;row-gap:6px}
+ .steps em{grid-column:2;justify-self:start}
+ .strip .wrap{grid-template-columns:1fr}
+ .strip .wrap>div{border-right:0!important;border-bottom:1px solid var(--si2);padding:22px 0}
+ .strip .wrap>div:last-child{border-bottom:0}
+ form{padding:28px 20px}
+ .frow{grid-template-columns:1fr}
+ .addr li{grid-template-columns:72px 1fr}
+ footer{padding-bottom:110px}
+ .mbar{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:30;background:var(--ja);border-top:1px solid var(--ja3);padding:10px 12px;gap:8px}
+ .mbar a{flex:1;height:48px;display:flex;align-items:center;justify-content:center;font-size:15px;font-weight:700;color:var(--iv);border:1px solid rgba(220,218,224,.4)}
+ .mbar a.p{background:var(--iv);color:var(--ja);border-color:var(--iv)}
+}
+</style>
+</head>
+<body>
+
+<header>
+ <div class="wrap nav">
+  <a class="logo" href="#top"><span class="seal">담</span><b>소반담</b><small>Sobandam</small></a>
+  <nav class="menu"><a href="#intro">소개</a><a href="#course">계절 코스</a><a href="#flow">코스 구성</a><a href="#rooms">공간</a><a href="#loc">오시는 길</a></nav>
+  <a class="btn nav-btn" href="#reserve">예약하기</a>
+ </div>
+</header>
+
+<section class="hero" id="top">
+ <div class="wrap">
+  <div class="hero-txt">
+   <div class="vert">계절 한정식 · 종로</div>
+   <div class="eyebrow">Seasonal Korean Course</div>
+   <h1 style="margin-top:14px">한 상에 담은<em>사계의 결</em></h1>
+   <p>제철 재료로 지은 아홉 가지 찬과 신선로, 갓 지은 솥밥까지. 작은 소반 위에 계절 한 철을 천천히 차려 냅니다.</p>
+   <div class="cta"><a class="btn fill" href="#reserve">코스 예약하기</a><a class="btn" href="#course">계절 코스 보기</a></div>
+   <div class="hero-meta">
+    <div>점심<b>12:00 – 15:00</b></div>
+    <div>저녁<b>17:30 – 22:00</b></div>
+    <div>휴무<b>매주 월요일</b></div>
+   </div>
+  </div>
+  <div class="hero-art">
+   <div class="ring3"></div><div class="ring"></div><div class="ring2"></div>
+   <svg viewBox="0 0 600 600" role="img" aria-label="위에서 내려다본 소반 한 상 일러스트">
+<defs>
+<radialGradient id="sbWood" cx="45%" cy="40%" r="65%"><stop offset="0" stop-color="#8a5634"/><stop offset=".6" stop-color="#5e3520"/><stop offset="1" stop-color="#3b1f12"/></radialGradient>
+<radialGradient id="sbPor" cx="40%" cy="35%" r="70%"><stop offset="0" stop-color="#ffffff"/><stop offset=".7" stop-color="#eee8dc"/><stop offset="1" stop-color="#cfc6b6"/></radialGradient>
+<radialGradient id="sbSil" cx="38%" cy="32%" r="75%"><stop offset="0" stop-color="#f4f3f6"/><stop offset=".55" stop-color="#b9b6bf"/><stop offset="1" stop-color="#77737e"/></radialGradient>
+<radialGradient id="sbRice" cx="45%" cy="40%" r="60%"><stop offset="0" stop-color="#fffdf6"/><stop offset="1" stop-color="#e9e0cc"/></radialGradient>
+<radialGradient id="sbSoup" cx="45%" cy="40%" r="60%"><stop offset="0" stop-color="#e2b77a"/><stop offset="1" stop-color="#a8682e"/></radialGradient>
+<radialGradient id="sbJang" cx="45%" cy="40%" r="60%"><stop offset="0" stop-color="#5a2a1a"/><stop offset="1" stop-color="#1f0d08"/></radialGradient>
+<filter id="sbSh" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="6" dy="10" stdDeviation="8" flood-color="#12060e" flood-opacity=".45"/></filter>
+<filter id="sbSh2" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="3" dy="5" stdDeviation="4" flood-color="#2a1208" flood-opacity=".45"/></filter>
+</defs>
+<polygon points="562.7,370.4 492.3,492.3 370.4,562.7 229.6,562.7 107.7,492.3 37.3,370.4 37.3,229.6 107.7,107.7 229.6,37.3 370.4,37.3 492.3,107.7 562.7,229.6" fill="url(#sbWood)" filter="url(#sbSh)"/>
+<polygon points="537.6,363.7 473.9,473.9 363.7,537.6 236.3,537.6 126.1,473.9 62.4,363.7 62.4,236.3 126.1,126.1 236.3,62.4 363.7,62.4 473.9,126.1 537.6,236.3" fill="none" stroke="#c9a27c" stroke-opacity=".35" stroke-width="2"/>
+<path d="M80 90 q110 0 220 -4 t220 4" fill="none" stroke="#2c140a" stroke-opacity=".14" stroke-width="2"/>
+<path d="M80 120 q110 10 220 -6 t220 -6" fill="none" stroke="#2c140a" stroke-opacity=".14" stroke-width="2"/>
+<path d="M80 150 q110 7 220 -5 t220 3" fill="none" stroke="#2c140a" stroke-opacity=".14" stroke-width="2"/>
+<path d="M80 180 q110 8 220 -6 t220 8" fill="none" stroke="#2c140a" stroke-opacity=".14" stroke-width="2"/>
+<path d="M80 210 q110 -4 220 -6 t220 -6" fill="none" stroke="#2c140a" stroke-opacity=".14" stroke-width="2"/>
+<path d="M80 240 q110 3 220 0 t220 -6" fill="none" stroke="#2c140a" stroke-opacity=".14" stroke-width="2"/>
+<path d="M80 270 q110 -3 220 -5 t220 5" fill="none" stroke="#2c140a" stroke-opacity=".14" stroke-width="2"/>
+<path d="M80 300 q110 -9 220 3 t220 -5" fill="none" stroke="#2c140a" stroke-opacity=".14" stroke-width="2"/>
+<path d="M80 330 q110 -3 220 4 t220 -7" fill="none" stroke="#2c140a" stroke-opacity=".14" stroke-width="2"/>
+<path d="M80 360 q110 8 220 3 t220 4" fill="none" stroke="#2c140a" stroke-opacity=".14" stroke-width="2"/>
+<path d="M80 390 q110 -9 220 -3 t220 -7" fill="none" stroke="#2c140a" stroke-opacity=".14" stroke-width="2"/>
+<path d="M80 420 q110 7 220 -4 t220 1" fill="none" stroke="#2c140a" stroke-opacity=".14" stroke-width="2"/>
+<path d="M80 450 q110 3 220 -4 t220 -5" fill="none" stroke="#2c140a" stroke-opacity=".14" stroke-width="2"/>
+<path d="M80 480 q110 8 220 -2 t220 -3" fill="none" stroke="#2c140a" stroke-opacity=".14" stroke-width="2"/>
+<g filter="url(#sbSh2)"><circle cx="205" cy="365" r="58" fill="url(#sbPor)"/><circle cx="205" cy="365" r="51" fill="url(#sbRice)"/><ellipse cx="179.6" cy="369.6" rx="3.2" ry="1.6" fill="#fff" transform="rotate(48 205 365)" opacity=".9"/><ellipse cx="196.8" cy="368.1" rx="3.2" ry="1.6" fill="#fff" transform="rotate(16 205 365)" opacity=".9"/><ellipse cx="209.1" cy="372.6" rx="3.2" ry="1.6" fill="#fff" transform="rotate(127 205 365)" opacity=".9"/><ellipse cx="216.5" cy="360.4" rx="3.2" ry="1.6" fill="#fff" transform="rotate(80 205 365)" opacity=".9"/><ellipse cx="202.8" cy="392.1" rx="3.2" ry="1.6" fill="#fff" transform="rotate(92 205 365)" opacity=".9"/><ellipse cx="192.2" cy="383.8" rx="3.2" ry="1.6" fill="#fff" transform="rotate(178 205 365)" opacity=".9"/><ellipse cx="222.9" cy="338.2" rx="3.2" ry="1.6" fill="#fff" transform="rotate(76 205 365)" opacity=".9"/><ellipse cx="206.6" cy="389.0" rx="3.2" ry="1.6" fill="#fff" transform="rotate(114 205 365)" opacity=".9"/><ellipse cx="191.4" cy="395.7" rx="3.2" ry="1.6" fill="#fff" transform="rotate(30 205 365)" opacity=".9"/><ellipse cx="205.8" cy="343.6" rx="3.2" ry="1.6" fill="#fff" transform="rotate(87 205 365)" opacity=".9"/><ellipse cx="182.7" cy="364.3" rx="3.2" ry="1.6" fill="#fff" transform="rotate(10 205 365)" opacity=".9"/><ellipse cx="234.6" cy="338.0" rx="3.2" ry="1.6" fill="#fff" transform="rotate(142 205 365)" opacity=".9"/><ellipse cx="209.7" cy="389.0" rx="3.2" ry="1.6" fill="#fff" transform="rotate(80 205 365)" opacity=".9"/><ellipse cx="194.8" cy="355.4" rx="3.2" ry="1.6" fill="#fff" transform="rotate(127 205 365)" opacity=".9"/><ellipse cx="210.1" cy="362.2" rx="3.2" ry="1.6" fill="#fff" transform="rotate(23 205 365)" opacity=".9"/><ellipse cx="233.5" cy="363.3" rx="3.2" ry="1.6" fill="#fff" transform="rotate(170 205 365)" opacity=".9"/><ellipse cx="177.2" cy="379.8" rx="3.2" ry="1.6" fill="#fff" transform="rotate(79 205 365)" opacity=".9"/><ellipse cx="214.4" cy="396.6" rx="3.2" ry="1.6" fill="#fff" transform="rotate(114 205 365)" opacity=".9"/><ellipse cx="191.2" cy="357.7" rx="3.2" ry="1.6" fill="#fff" transform="rotate(171 205 365)" opacity=".9"/><ellipse cx="195.2" cy="393.2" rx="3.2" ry="1.6" fill="#fff" transform="rotate(90 205 365)" opacity=".9"/><ellipse cx="183.8" cy="340.5" rx="3.2" ry="1.6" fill="#fff" transform="rotate(15 205 365)" opacity=".9"/><ellipse cx="187.0" cy="351.4" rx="3.2" ry="1.6" fill="#fff" transform="rotate(63 205 365)" opacity=".9"/><ellipse cx="198.5" cy="391.7" rx="3.2" ry="1.6" fill="#fff" transform="rotate(127 205 365)" opacity=".9"/><ellipse cx="178.2" cy="361.7" rx="3.2" ry="1.6" fill="#fff" transform="rotate(140 205 365)" opacity=".9"/><ellipse cx="190.8" cy="341.8" rx="3.2" ry="1.6" fill="#fff" transform="rotate(110 205 365)" opacity=".9"/><ellipse cx="228.3" cy="350.8" rx="3.2" ry="1.6" fill="#fff" transform="rotate(106 205 365)" opacity=".9"/><ellipse cx="236.1" cy="376.7" rx="3.2" ry="1.6" fill="#fff" transform="rotate(97 205 365)" opacity=".9"/><ellipse cx="234.3" cy="342.7" rx="3.2" ry="1.6" fill="#fff" transform="rotate(45 205 365)" opacity=".9"/><ellipse cx="182.7" cy="375.1" rx="3.2" ry="1.6" fill="#fff" transform="rotate(3 205 365)" opacity=".9"/><ellipse cx="204.0" cy="370.7" rx="3.2" ry="1.6" fill="#fff" transform="rotate(67 205 365)" opacity=".9"/><ellipse cx="191.0" cy="342.3" rx="3.2" ry="1.6" fill="#fff" transform="rotate(136 205 365)" opacity=".9"/><ellipse cx="196.6" cy="369.2" rx="3.2" ry="1.6" fill="#fff" transform="rotate(32 205 365)" opacity=".9"/><ellipse cx="217.2" cy="366.0" rx="3.2" ry="1.6" fill="#fff" transform="rotate(158 205 365)" opacity=".9"/><ellipse cx="214.9" cy="380.3" rx="3.2" ry="1.6" fill="#fff" transform="rotate(116 205 365)" opacity=".9"/><ellipse cx="230.6" cy="382.9" rx="3.2" ry="1.6" fill="#fff" transform="rotate(174 205 365)" opacity=".9"/><ellipse cx="224.1" cy="358.1" rx="3.2" ry="1.6" fill="#fff" transform="rotate(102 205 365)" opacity=".9"/><ellipse cx="198.2" cy="363.8" rx="3.2" ry="1.6" fill="#fff" transform="rotate(102 205 365)" opacity=".9"/><ellipse cx="177.0" cy="337.3" rx="3.2" ry="1.6" fill="#fff" transform="rotate(53 205 365)" opacity=".9"/><ellipse cx="201.2" cy="340.0" rx="3.2" ry="1.6" fill="#fff" transform="rotate(153 205 365)" opacity=".9"/><ellipse cx="176.4" cy="333.0" rx="3.2" ry="1.6" fill="#fff" transform="rotate(38 205 365)" opacity=".9"/><ellipse cx="207.3" cy="393.7" rx="3.2" ry="1.6" fill="#fff" transform="rotate(157 205 365)" opacity=".9"/><ellipse cx="174.6" cy="389.0" rx="3.2" ry="1.6" fill="#fff" transform="rotate(157 205 365)" opacity=".9"/><ellipse cx="197.1" cy="373.6" rx="3.2" ry="1.6" fill="#fff" transform="rotate(88 205 365)" opacity=".9"/><ellipse cx="211.5" cy="363.3" rx="3.2" ry="1.6" fill="#fff" transform="rotate(29 205 365)" opacity=".9"/><ellipse cx="227.3" cy="396.6" rx="3.2" ry="1.6" fill="#fff" transform="rotate(119 205 365)" opacity=".9"/><ellipse cx="203.7" cy="353.0" rx="3.2" ry="1.6" fill="#fff" transform="rotate(36 205 365)" opacity=".9"/><ellipse cx="179.5" cy="354.9" rx="3.2" ry="1.6" fill="#fff" transform="rotate(67 205 365)" opacity=".9"/><ellipse cx="203.6" cy="377.3" rx="3.2" ry="1.6" fill="#fff" transform="rotate(132 205 365)" opacity=".9"/><ellipse cx="174.5" cy="393.9" rx="3.2" ry="1.6" fill="#fff" transform="rotate(135 205 365)" opacity=".9"/><ellipse cx="196.2" cy="377.2" rx="3.2" ry="1.6" fill="#fff" transform="rotate(6 205 365)" opacity=".9"/><ellipse cx="221.5" cy="352.1" rx="3.2" ry="1.6" fill="#fff" transform="rotate(164 205 365)" opacity=".9"/><ellipse cx="228.3" cy="377.6" rx="3.2" ry="1.6" fill="#fff" transform="rotate(66 205 365)" opacity=".9"/><ellipse cx="206.2" cy="391.1" rx="3.2" ry="1.6" fill="#fff" transform="rotate(91 205 365)" opacity=".9"/><ellipse cx="222.4" cy="367.1" rx="3.2" ry="1.6" fill="#fff" transform="rotate(128 205 365)" opacity=".9"/><ellipse cx="194.1" cy="347.3" rx="3.2" ry="1.6" fill="#fff" transform="rotate(49 205 365)" opacity=".9"/><ellipse cx="224.6" cy="385.4" rx="3.2" ry="1.6" fill="#fff" transform="rotate(58 205 365)" opacity=".9"/><ellipse cx="185.8" cy="364.5" rx="3.2" ry="1.6" fill="#fff" transform="rotate(7 205 365)" opacity=".9"/><ellipse cx="236.3" cy="383.6" rx="3.2" ry="1.6" fill="#fff" transform="rotate(120 205 365)" opacity=".9"/><ellipse cx="189.6" cy="377.3" rx="3.2" ry="1.6" fill="#fff" transform="rotate(88 205 365)" opacity=".9"/><ellipse cx="201.6" cy="393.0" rx="3.2" ry="1.6" fill="#fff" transform="rotate(89 205 365)" opacity=".9"/><circle cx="205" cy="365" r="58" fill="none" stroke="#fff" stroke-opacity=".7" stroke-width="1.5"/></g>
+<g filter="url(#sbSh2)"><circle cx="372" cy="380" r="62" fill="url(#sbSil)"/><circle cx="372" cy="380" r="53" fill="url(#sbSoup)"/><path d="M345 370 q12 -10 26 -2 q12 8 26 -2" fill="none" stroke="#3d6b2c" stroke-width="6" stroke-linecap="round"/><ellipse cx="385" cy="395" rx="14" ry="9" fill="#f4ecd8"/><ellipse cx="356" cy="398" rx="10" ry="7" fill="#f4ecd8"/><circle cx="372" cy="380" r="62" fill="none" stroke="#fff" stroke-opacity=".6" stroke-width="1.5"/></g>
+<g filter="url(#sbSh2)"><circle cx="150" cy="215" r="44" fill="url(#sbPor)"/><circle cx="150" cy="215" r="39" fill="#f6f1e6"/><path d="M166 200 l10 -5 l-2 12 z" fill="#d0492a"/><path d="M149 222 l13 -10 l5 12 z" fill="#9e2716"/><path d="M161 190 l13 8 l4 12 z" fill="#d0492a"/><path d="M149 193 l14 -3 l4 12 z" fill="#e8d6b0"/><path d="M149 214 l9 -7 l6 12 z" fill="#b8321f"/><path d="M137 220 l14 -7 l4 12 z" fill="#e8d6b0"/><path d="M156 200 l12 -7 l-4 12 z" fill="#b8321f"/><path d="M151 221 l11 7 l4 12 z" fill="#d0492a"/><path d="M133 195 l12 5 l-1 12 z" fill="#e8d6b0"/><path d="M162 189 l14 8 l3 12 z" fill="#e8d6b0"/><path d="M162 219 l9 -7 l1 12 z" fill="#e8d6b0"/><path d="M160 209 l14 -7 l-3 12 z" fill="#b8321f"/><path d="M152 199 l12 1 l4 12 z" fill="#b8321f"/><path d="M164 189 l10 -9 l-3 12 z" fill="#e8d6b0"/><path d="M152 214 l15 -1 l2 12 z" fill="#d0492a"/><path d="M157 203 l12 -0 l5 12 z" fill="#9e2716"/><path d="M165 219 l10 -1 l0 12 z" fill="#e8d6b0"/><path d="M148 190 l10 -9 l3 12 z" fill="#b8321f"/><path d="M164 193 l14 3 l-3 12 z" fill="#d0492a"/><path d="M167 195 l16 -2 l1 12 z" fill="#d0492a"/><path d="M138 203 l12 -3 l-2 12 z" fill="#9e2716"/><path d="M135 200 l11 -1 l3 12 z" fill="#e8d6b0"/><path d="M144 209 l12 -9 l6 12 z" fill="#d0492a"/><path d="M167 191 l10 -9 l4 12 z" fill="#9e2716"/><path d="M159 217 l15 4 l5 12 z" fill="#e8d6b0"/><path d="M137 220 l13 4 l-3 12 z" fill="#b8321f"/></g>
+<g filter="url(#sbSh2)"><circle cx="262" cy="160" r="42" fill="url(#sbPor)"/><circle cx="262" cy="160" r="37" fill="#f6f1e6"/><path d="M275 145 q8 -6 16 5" stroke="#6b9a35" stroke-width="4" fill="none" stroke-linecap="round"/><path d="M281 163 q8 -6 16 4" stroke="#4f7a2a" stroke-width="4" fill="none" stroke-linecap="round"/><path d="M267 147 q8 -6 16 -1" stroke="#4f7a2a" stroke-width="4" fill="none" stroke-linecap="round"/><path d="M260 152 q8 -6 16 2" stroke="#6b9a35" stroke-width="4" fill="none" stroke-linecap="round"/><path d="M267 140 q8 -6 16 3" stroke="#4f7a2a" stroke-width="4" fill="none" stroke-linecap="round"/><path d="M283 148 q8 -6 16 -2" stroke="#6b9a35" stroke-width="4" fill="none" stroke-linecap="round"/><path d="M268 159 q8 -6 16 -2" stroke="#6b9a35" stroke-width="4" fill="none" stroke-linecap="round"/><path d="M262 145 q8 -6 16 -1" stroke="#4f7a2a" stroke-width="4" fill="none" stroke-linecap="round"/><path d="M284 139 q8 -6 16 -4" stroke="#3b5f1f" stroke-width="4" fill="none" stroke-linecap="round"/><path d="M264 146 q8 -6 16 1" stroke="#6b9a35" stroke-width="4" fill="none" stroke-linecap="round"/><path d="M245 171 q8 -6 16 0" stroke="#6b9a35" stroke-width="4" fill="none" stroke-linecap="round"/><path d="M264 174 q8 -6 16 6" stroke="#6b9a35" stroke-width="4" fill="none" stroke-linecap="round"/><path d="M270 177 q8 -6 16 -1" stroke="#3b5f1f" stroke-width="4" fill="none" stroke-linecap="round"/><path d="M272 144 q8 -6 16 6" stroke="#4f7a2a" stroke-width="4" fill="none" stroke-linecap="round"/><path d="M277 139 q8 -6 16 2" stroke="#6b9a35" stroke-width="4" fill="none" stroke-linecap="round"/><path d="M259 140 q8 -6 16 3" stroke="#6b9a35" stroke-width="4" fill="none" stroke-linecap="round"/><path d="M278 165 q8 -6 16 -1" stroke="#4f7a2a" stroke-width="4" fill="none" stroke-linecap="round"/><path d="M270 140 q8 -6 16 -2" stroke="#6b9a35" stroke-width="4" fill="none" stroke-linecap="round"/><path d="M260 149 q8 -6 16 6" stroke="#3b5f1f" stroke-width="4" fill="none" stroke-linecap="round"/><path d="M254 139 q8 -6 16 5" stroke="#4f7a2a" stroke-width="4" fill="none" stroke-linecap="round"/><path d="M256 138 q8 -6 16 -0" stroke="#6b9a35" stroke-width="4" fill="none" stroke-linecap="round"/><path d="M252 164 q8 -6 16 -2" stroke="#4f7a2a" stroke-width="4" fill="none" stroke-linecap="round"/><path d="M244 171 q8 -6 16 -3" stroke="#3b5f1f" stroke-width="4" fill="none" stroke-linecap="round"/><path d="M242 139 q8 -6 16 -1" stroke="#4f7a2a" stroke-width="4" fill="none" stroke-linecap="round"/><path d="M244 176 q8 -6 16 5" stroke="#4f7a2a" stroke-width="4" fill="none" stroke-linecap="round"/><path d="M269 167 q8 -6 16 5" stroke="#6b9a35" stroke-width="4" fill="none" stroke-linecap="round"/><path d="M274 167 q8 -6 16 1" stroke="#6b9a35" stroke-width="4" fill="none" stroke-linecap="round"/><path d="M272 164 q8 -6 16 -4" stroke="#3b5f1f" stroke-width="4" fill="none" stroke-linecap="round"/><path d="M279 163 q8 -6 16 3" stroke="#3b5f1f" stroke-width="4" fill="none" stroke-linecap="round"/><path d="M246 159 q8 -6 16 1" stroke="#4f7a2a" stroke-width="4" fill="none" stroke-linecap="round"/><path d="M276 161 q8 -6 16 5" stroke="#3b5f1f" stroke-width="4" fill="none" stroke-linecap="round"/><path d="M282 164 q8 -6 16 -3" stroke="#4f7a2a" stroke-width="4" fill="none" stroke-linecap="round"/><path d="M246 152 q8 -6 16 -3" stroke="#6b9a35" stroke-width="4" fill="none" stroke-linecap="round"/><path d="M265 163 q8 -6 16 2" stroke="#3b5f1f" stroke-width="4" fill="none" stroke-linecap="round"/></g>
+<g filter="url(#sbSh2)"><circle cx="380" cy="182" r="48" fill="url(#sbPor)"/><circle cx="380" cy="182" r="43" fill="#f6f1e6"/><ellipse cx="374" cy="170" rx="18" ry="13" fill="#e0a64a" stroke="#b9772a" stroke-width="2"/><circle cx="370" cy="168" r="3" fill="#b8321f"/><circle cx="379" cy="173" r="2.5" fill="#4f7a2a"/><ellipse cx="396" cy="186" rx="18" ry="13" fill="#e0a64a" stroke="#b9772a" stroke-width="2"/><circle cx="392" cy="184" r="3" fill="#b8321f"/><circle cx="401" cy="189" r="2.5" fill="#4f7a2a"/><ellipse cx="368" cy="196" rx="18" ry="13" fill="#e0a64a" stroke="#b9772a" stroke-width="2"/><circle cx="364" cy="194" r="3" fill="#b8321f"/><circle cx="373" cy="199" r="2.5" fill="#4f7a2a"/></g>
+<g filter="url(#sbSh2)"><rect x="420" y="250" width="110" height="64" rx="14" fill="url(#sbPor)"/><path d="M436 282 q30 -24 66 -6 l18 -12 v36 l-18 -12 q-36 18 -66 -6z" fill="#b3743a"/><path d="M452 276 l6 12 M466 272 l6 14 M480 272 l6 14" stroke="#6a3a17" stroke-width="2.4"/><circle cx="446" cy="280" r="2.5" fill="#2a1208"/></g>
+<g filter="url(#sbSh2)"><circle cx="112" cy="312" r="26" fill="url(#sbPor)"/><circle cx="112" cy="312" r="19" fill="url(#sbJang)"/><ellipse cx="106" cy="306" rx="6" ry="3" fill="#fff" opacity=".25"/><circle cx="112" cy="312" r="26" fill="none" stroke="#fff" stroke-opacity=".7" stroke-width="1.5"/></g>
+<g filter="url(#sbSh2)"><circle cx="462" cy="412" r="44" fill="url(#sbPor)"/><circle cx="462" cy="412" r="39" fill="#f6f1e6"/><path d="M443 402 q10 6 20 -0" stroke="#6c4128" stroke-width="3" fill="none" stroke-linecap="round"/><path d="M460 410 q10 6 20 0" stroke="#c2421f" stroke-width="3" fill="none" stroke-linecap="round"/><path d="M437 418 q10 6 20 -2" stroke="#6c4128" stroke-width="3" fill="none" stroke-linecap="round"/><path d="M464 402 q10 6 20 2" stroke="#8b5a3a" stroke-width="3" fill="none" stroke-linecap="round"/><path d="M460 425 q10 6 20 -0" stroke="#ffffff" stroke-width="3" fill="none" stroke-linecap="round"/><path d="M438 423 q10 6 20 -2" stroke="#6c4128" stroke-width="3" fill="none" stroke-linecap="round"/><path d="M456 415 q10 6 20 -3" stroke="#8b5a3a" stroke-width="3" fill="none" stroke-linecap="round"/><path d="M446 415 q10 6 20 2" stroke="#c2421f" stroke-width="3" fill="none" stroke-linecap="round"/><path d="M454 394 q10 6 20 -4" stroke="#e9b23b" stroke-width="3" fill="none" stroke-linecap="round"/><path d="M468 397 q10 6 20 -2" stroke="#ffffff" stroke-width="3" fill="none" stroke-linecap="round"/><path d="M445 411 q10 6 20 -0" stroke="#ffffff" stroke-width="3" fill="none" stroke-linecap="round"/><path d="M461 426 q10 6 20 0" stroke="#e9b23b" stroke-width="3" fill="none" stroke-linecap="round"/><path d="M468 424 q10 6 20 -4" stroke="#ffffff" stroke-width="3" fill="none" stroke-linecap="round"/><path d="M438 410 q10 6 20 4" stroke="#e9b23b" stroke-width="3" fill="none" stroke-linecap="round"/><path d="M448 423 q10 6 20 3" stroke="#6c4128" stroke-width="3" fill="none" stroke-linecap="round"/><path d="M455 399 q10 6 20 0" stroke="#e9b23b" stroke-width="3" fill="none" stroke-linecap="round"/><path d="M440 420 q10 6 20 0" stroke="#6c4128" stroke-width="3" fill="none" stroke-linecap="round"/><path d="M459 401 q10 6 20 3" stroke="#ffffff" stroke-width="3" fill="none" stroke-linecap="round"/><path d="M448 399 q10 6 20 4" stroke="#ffffff" stroke-width="3" fill="none" stroke-linecap="round"/><path d="M449 417 q10 6 20 -1" stroke="#ffffff" stroke-width="3" fill="none" stroke-linecap="round"/><path d="M446 421 q10 6 20 -4" stroke="#e9b23b" stroke-width="3" fill="none" stroke-linecap="round"/><path d="M464 398 q10 6 20 3" stroke="#6c4128" stroke-width="3" fill="none" stroke-linecap="round"/><path d="M466 403 q10 6 20 -1" stroke="#ffffff" stroke-width="3" fill="none" stroke-linecap="round"/><path d="M448 422 q10 6 20 -3" stroke="#ffffff" stroke-width="3" fill="none" stroke-linecap="round"/><path d="M461 421 q10 6 20 -2" stroke="#6c4128" stroke-width="3" fill="none" stroke-linecap="round"/><path d="M463 403 q10 6 20 3" stroke="#8b5a3a" stroke-width="3" fill="none" stroke-linecap="round"/><path d="M468 408 q10 6 20 -1" stroke="#e9b23b" stroke-width="3" fill="none" stroke-linecap="round"/><path d="M462 408 q10 6 20 -4" stroke="#ffffff" stroke-width="3" fill="none" stroke-linecap="round"/><path d="M466 424 q10 6 20 0" stroke="#6c4128" stroke-width="3" fill="none" stroke-linecap="round"/><path d="M437 417 q10 6 20 -0" stroke="#8b5a3a" stroke-width="3" fill="none" stroke-linecap="round"/><path d="M457 403 q10 6 20 -4" stroke="#c2421f" stroke-width="3" fill="none" stroke-linecap="round"/><path d="M439 409 q10 6 20 -1" stroke="#e9b23b" stroke-width="3" fill="none" stroke-linecap="round"/><path d="M444 418 q10 6 20 1" stroke="#ffffff" stroke-width="3" fill="none" stroke-linecap="round"/><path d="M457 404 q10 6 20 0" stroke="#ffffff" stroke-width="3" fill="none" stroke-linecap="round"/><path d="M439 415 q10 6 20 -3" stroke="#c2421f" stroke-width="3" fill="none" stroke-linecap="round"/><path d="M466 410 q10 6 20 -2" stroke="#e9b23b" stroke-width="3" fill="none" stroke-linecap="round"/><path d="M469 408 q10 6 20 -3" stroke="#8b5a3a" stroke-width="3" fill="none" stroke-linecap="round"/><path d="M443 400 q10 6 20 0" stroke="#e9b23b" stroke-width="3" fill="none" stroke-linecap="round"/><path d="M443 402 q10 6 20 1" stroke="#6c4128" stroke-width="3" fill="none" stroke-linecap="round"/><path d="M460 407 q10 6 20 -1" stroke="#c2421f" stroke-width="3" fill="none" stroke-linecap="round"/></g>
+<g filter="url(#sbSh2)"><circle cx="262" cy="470" r="36" fill="url(#sbPor)"/><circle cx="262" cy="470" r="31" fill="#f6f1e6"/><circle cx="262" cy="470" r="26" fill="#f2e2be"/><path d="M248 462 q14 -6 28 4 q-12 14 -28 -4z" fill="#f8f1dc" stroke="#d6c08f"/><circle cx="270" cy="478" r="3" fill="#c2421f"/></g>
+<g filter="url(#sbSh2)"><path d="M140 452 L250 548" stroke="url(#sbSil)" stroke-width="6" stroke-linecap="round"/><ellipse cx="128" cy="440" rx="20" ry="13" transform="rotate(42 128 440)" fill="url(#sbSil)"/><path d="M120 480 L230 568" stroke="#c8c5cc" stroke-width="4" stroke-linecap="round"/><path d="M110 490 L222 576" stroke="#a9a6ae" stroke-width="4" stroke-linecap="round"/></g>
+</svg>
+   <div class="tag"><b>겨울 소반</b>12월 – 2월 계절 코스</div>
+  </div>
+ </div>
+</section>
+
+<section class="intro" id="intro">
+ <div class="wrap">
+  <figure class="intro-art">
+   <svg viewBox="0 0 520 540" role="img" aria-label="팔각 구절판 일러스트">
+<defs>
+<linearGradient id="gjLac" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#6a2a52"/><stop offset=".5" stop-color="#3d1631"/><stop offset="1" stop-color="#22091b"/></linearGradient>
+<radialGradient id="gjPearl" cx="40%" cy="35%" r="70%"><stop offset="0" stop-color="#ffffff"/><stop offset=".4" stop-color="#dfe8f0"/><stop offset=".7" stop-color="#e8dcef"/><stop offset="1" stop-color="#b9c7cf"/></radialGradient>
+<radialGradient id="gjCrepe" cx="45%" cy="40%" r="60%"><stop offset="0" stop-color="#fffbef"/><stop offset="1" stop-color="#e8dcc0"/></radialGradient>
+<filter id="gjSh" x="-20%" y="-20%" width="140%" height="150%"><feDropShadow dx="0" dy="14" stdDeviation="12" flood-color="#0c0309" flood-opacity=".55"/></filter>
+</defs>
+<polygon points="454.0,340.4 340.4,454.0 179.6,454.0 66.0,340.4 66.0,179.6 179.6,66.0 340.4,66.0 454.0,179.6" fill="url(#gjLac)" filter="url(#gjSh)"/>
+<polygon points="439.2,334.2 334.2,439.2 185.8,439.2 80.8,334.2 80.8,185.8 185.8,80.8 334.2,80.8 439.2,185.8" fill="#1c0716"/>
+<polygon points="330.1,294.1 431.5,337.1 337.1,431.5 294.1,330.1" fill="#d9762f"/>
+<line x1="337.8" y1="312.3" x2="312.3" y2="337.8" stroke="#000" stroke-opacity=".13" stroke-width="2"/>
+<line x1="346.3" y1="320.8" x2="320.8" y2="346.3" stroke="#000" stroke-opacity=".13" stroke-width="2"/>
+<line x1="354.8" y1="329.3" x2="329.3" y2="354.8" stroke="#000" stroke-opacity=".13" stroke-width="2"/>
+<line x1="363.2" y1="337.8" x2="337.8" y2="363.2" stroke="#000" stroke-opacity=".13" stroke-width="2"/>
+<line x1="371.7" y1="346.3" x2="346.3" y2="371.7" stroke="#000" stroke-opacity=".13" stroke-width="2"/>
+<line x1="380.2" y1="354.8" x2="354.8" y2="380.2" stroke="#000" stroke-opacity=".13" stroke-width="2"/>
+<line x1="388.7" y1="363.2" x2="363.2" y2="388.7" stroke="#000" stroke-opacity=".13" stroke-width="2"/>
+<line x1="397.2" y1="371.7" x2="371.7" y2="397.2" stroke="#000" stroke-opacity=".13" stroke-width="2"/>
+<line x1="405.7" y1="380.2" x2="380.2" y2="405.7" stroke="#000" stroke-opacity=".13" stroke-width="2"/>
+<polygon points="285.5,333.7 326.7,435.8 193.3,435.8 234.5,333.7" fill="#5e8f3a"/>
+<line x1="278.0" y1="352.0" x2="242.0" y2="352.0" stroke="#000" stroke-opacity=".13" stroke-width="2"/>
+<line x1="278.0" y1="364.0" x2="242.0" y2="364.0" stroke="#000" stroke-opacity=".13" stroke-width="2"/>
+<line x1="278.0" y1="376.0" x2="242.0" y2="376.0" stroke="#000" stroke-opacity=".13" stroke-width="2"/>
+<line x1="278.0" y1="388.0" x2="242.0" y2="388.0" stroke="#000" stroke-opacity=".13" stroke-width="2"/>
+<line x1="278.0" y1="400.0" x2="242.0" y2="400.0" stroke="#000" stroke-opacity=".13" stroke-width="2"/>
+<line x1="278.0" y1="412.0" x2="242.0" y2="412.0" stroke="#000" stroke-opacity=".13" stroke-width="2"/>
+<line x1="278.0" y1="424.0" x2="242.0" y2="424.0" stroke="#000" stroke-opacity=".13" stroke-width="2"/>
+<line x1="278.0" y1="436.0" x2="242.0" y2="436.0" stroke="#000" stroke-opacity=".13" stroke-width="2"/>
+<line x1="278.0" y1="448.0" x2="242.0" y2="448.0" stroke="#000" stroke-opacity=".13" stroke-width="2"/>
+<polygon points="225.9,330.1 182.9,431.5 88.5,337.1 189.9,294.1" fill="#6b4128"/>
+<line x1="207.7" y1="337.8" x2="182.2" y2="312.3" stroke="#000" stroke-opacity=".13" stroke-width="2"/>
+<line x1="199.2" y1="346.3" x2="173.7" y2="320.8" stroke="#000" stroke-opacity=".13" stroke-width="2"/>
+<line x1="190.7" y1="354.8" x2="165.2" y2="329.3" stroke="#000" stroke-opacity=".13" stroke-width="2"/>
+<line x1="182.2" y1="363.2" x2="156.8" y2="337.8" stroke="#000" stroke-opacity=".13" stroke-width="2"/>
+<line x1="173.7" y1="371.7" x2="148.3" y2="346.3" stroke="#000" stroke-opacity=".13" stroke-width="2"/>
+<line x1="165.2" y1="380.2" x2="139.8" y2="354.8" stroke="#000" stroke-opacity=".13" stroke-width="2"/>
+<line x1="156.8" y1="388.7" x2="131.3" y2="363.2" stroke="#000" stroke-opacity=".13" stroke-width="2"/>
+<line x1="148.3" y1="397.2" x2="122.8" y2="371.7" stroke="#000" stroke-opacity=".13" stroke-width="2"/>
+<line x1="139.8" y1="405.7" x2="114.3" y2="380.2" stroke="#000" stroke-opacity=".13" stroke-width="2"/>
+<polygon points="186.3,285.5 84.2,326.7 84.2,193.3 186.3,234.5" fill="#f0c43a"/>
+<line x1="168.0" y1="278.0" x2="168.0" y2="242.0" stroke="#000" stroke-opacity=".13" stroke-width="2"/>
+<line x1="156.0" y1="278.0" x2="156.0" y2="242.0" stroke="#000" stroke-opacity=".13" stroke-width="2"/>
+<line x1="144.0" y1="278.0" x2="144.0" y2="242.0" stroke="#000" stroke-opacity=".13" stroke-width="2"/>
+<line x1="132.0" y1="278.0" x2="132.0" y2="242.0" stroke="#000" stroke-opacity=".13" stroke-width="2"/>
+<line x1="120.0" y1="278.0" x2="120.0" y2="242.0" stroke="#000" stroke-opacity=".13" stroke-width="2"/>
+<line x1="108.0" y1="278.0" x2="108.0" y2="242.0" stroke="#000" stroke-opacity=".13" stroke-width="2"/>
+<line x1="96.0" y1="278.0" x2="96.0" y2="242.0" stroke="#000" stroke-opacity=".13" stroke-width="2"/>
+<line x1="84.0" y1="278.0" x2="84.0" y2="242.0" stroke="#000" stroke-opacity=".13" stroke-width="2"/>
+<line x1="72.0" y1="278.0" x2="72.0" y2="242.0" stroke="#000" stroke-opacity=".13" stroke-width="2"/>
+<polygon points="189.9,225.9 88.5,182.9 182.9,88.5 225.9,189.9" fill="#f7f2e2"/>
+<line x1="182.2" y1="207.7" x2="207.7" y2="182.2" stroke="#000" stroke-opacity=".13" stroke-width="2"/>
+<line x1="173.7" y1="199.2" x2="199.2" y2="173.7" stroke="#000" stroke-opacity=".13" stroke-width="2"/>
+<line x1="165.2" y1="190.7" x2="190.7" y2="165.2" stroke="#000" stroke-opacity=".13" stroke-width="2"/>
+<line x1="156.8" y1="182.2" x2="182.2" y2="156.8" stroke="#000" stroke-opacity=".13" stroke-width="2"/>
+<line x1="148.3" y1="173.7" x2="173.7" y2="148.3" stroke="#000" stroke-opacity=".13" stroke-width="2"/>
+<line x1="139.8" y1="165.2" x2="165.2" y2="139.8" stroke="#000" stroke-opacity=".13" stroke-width="2"/>
+<line x1="131.3" y1="156.8" x2="156.8" y2="131.3" stroke="#000" stroke-opacity=".13" stroke-width="2"/>
+<line x1="122.8" y1="148.3" x2="148.3" y2="122.8" stroke="#000" stroke-opacity=".13" stroke-width="2"/>
+<line x1="114.3" y1="139.8" x2="139.8" y2="114.3" stroke="#000" stroke-opacity=".13" stroke-width="2"/>
+<polygon points="234.5,186.3 193.3,84.2 326.7,84.2 285.5,186.3" fill="#8a4a2a"/>
+<line x1="242.0" y1="168.0" x2="278.0" y2="168.0" stroke="#000" stroke-opacity=".13" stroke-width="2"/>
+<line x1="242.0" y1="156.0" x2="278.0" y2="156.0" stroke="#000" stroke-opacity=".13" stroke-width="2"/>
+<line x1="242.0" y1="144.0" x2="278.0" y2="144.0" stroke="#000" stroke-opacity=".13" stroke-width="2"/>
+<line x1="242.0" y1="132.0" x2="278.0" y2="132.0" stroke="#000" stroke-opacity=".13" stroke-width="2"/>
+<line x1="242.0" y1="120.0" x2="278.0" y2="120.0" stroke="#000" stroke-opacity=".13" stroke-width="2"/>
+<line x1="242.0" y1="108.0" x2="278.0" y2="108.0" stroke="#000" stroke-opacity=".13" stroke-width="2"/>
+<line x1="242.0" y1="96.0" x2="278.0" y2="96.0" stroke="#000" stroke-opacity=".13" stroke-width="2"/>
+<line x1="242.0" y1="84.0" x2="278.0" y2="84.0" stroke="#000" stroke-opacity=".13" stroke-width="2"/>
+<line x1="242.0" y1="72.0" x2="278.0" y2="72.0" stroke="#000" stroke-opacity=".13" stroke-width="2"/>
+<polygon points="294.1,189.9 337.1,88.5 431.5,182.9 330.1,225.9" fill="#2a2324"/>
+<line x1="312.3" y1="182.2" x2="337.8" y2="207.7" stroke="#fff" stroke-opacity=".13" stroke-width="2"/>
+<line x1="320.8" y1="173.7" x2="346.3" y2="199.2" stroke="#fff" stroke-opacity=".13" stroke-width="2"/>
+<line x1="329.3" y1="165.2" x2="354.8" y2="190.7" stroke="#fff" stroke-opacity=".13" stroke-width="2"/>
+<line x1="337.8" y1="156.8" x2="363.2" y2="182.2" stroke="#fff" stroke-opacity=".13" stroke-width="2"/>
+<line x1="346.3" y1="148.3" x2="371.7" y2="173.7" stroke="#fff" stroke-opacity=".13" stroke-width="2"/>
+<line x1="354.8" y1="139.8" x2="380.2" y2="165.2" stroke="#fff" stroke-opacity=".13" stroke-width="2"/>
+<line x1="363.2" y1="131.3" x2="388.7" y2="156.8" stroke="#fff" stroke-opacity=".13" stroke-width="2"/>
+<line x1="371.7" y1="122.8" x2="397.2" y2="148.3" stroke="#fff" stroke-opacity=".13" stroke-width="2"/>
+<line x1="380.2" y1="114.3" x2="405.7" y2="139.8" stroke="#fff" stroke-opacity=".13" stroke-width="2"/>
+<polygon points="333.7,234.5 435.8,193.3 435.8,326.7 333.7,285.5" fill="#efe6cc"/>
+<line x1="352.0" y1="242.0" x2="352.0" y2="278.0" stroke="#000" stroke-opacity=".13" stroke-width="2"/>
+<line x1="364.0" y1="242.0" x2="364.0" y2="278.0" stroke="#000" stroke-opacity=".13" stroke-width="2"/>
+<line x1="376.0" y1="242.0" x2="376.0" y2="278.0" stroke="#000" stroke-opacity=".13" stroke-width="2"/>
+<line x1="388.0" y1="242.0" x2="388.0" y2="278.0" stroke="#000" stroke-opacity=".13" stroke-width="2"/>
+<line x1="400.0" y1="242.0" x2="400.0" y2="278.0" stroke="#000" stroke-opacity=".13" stroke-width="2"/>
+<line x1="412.0" y1="242.0" x2="412.0" y2="278.0" stroke="#000" stroke-opacity=".13" stroke-width="2"/>
+<line x1="424.0" y1="242.0" x2="424.0" y2="278.0" stroke="#000" stroke-opacity=".13" stroke-width="2"/>
+<line x1="436.0" y1="242.0" x2="436.0" y2="278.0" stroke="#000" stroke-opacity=".13" stroke-width="2"/>
+<line x1="448.0" y1="242.0" x2="448.0" y2="278.0" stroke="#000" stroke-opacity=".13" stroke-width="2"/>
+<line x1="326.5" y1="287.6" x2="437.4" y2="333.5" stroke="url(#gjPearl)" stroke-width="5"/>
+<line x1="287.6" y1="326.5" x2="333.5" y2="437.4" stroke="url(#gjPearl)" stroke-width="5"/>
+<line x1="232.4" y1="326.5" x2="186.5" y2="437.4" stroke="url(#gjPearl)" stroke-width="5"/>
+<line x1="193.5" y1="287.6" x2="82.6" y2="333.5" stroke="url(#gjPearl)" stroke-width="5"/>
+<line x1="193.5" y1="232.4" x2="82.6" y2="186.5" stroke="url(#gjPearl)" stroke-width="5"/>
+<line x1="232.4" y1="193.5" x2="186.5" y2="82.6" stroke="url(#gjPearl)" stroke-width="5"/>
+<line x1="287.6" y1="193.5" x2="333.5" y2="82.6" stroke="url(#gjPearl)" stroke-width="5"/>
+<line x1="326.5" y1="232.4" x2="437.4" y2="186.5" stroke="url(#gjPearl)" stroke-width="5"/>
+<circle cx="260" cy="260" r="72" fill="none" stroke="url(#gjPearl)" stroke-width="5"/>
+<circle cx="260" cy="260" r="66" fill="#1c0716"/>
+<circle cx="260.0" cy="260" r="58" fill="url(#gjCrepe)" stroke="#d6c39b" stroke-width="1.5"/>
+<circle cx="261.2" cy="257" r="58" fill="url(#gjCrepe)" stroke="#d6c39b" stroke-width="1.5"/>
+<circle cx="262.4" cy="254" r="58" fill="url(#gjCrepe)" stroke="#d6c39b" stroke-width="1.5"/>
+<circle cx="263.6" cy="251" r="58" fill="url(#gjCrepe)" stroke="#d6c39b" stroke-width="1.5"/>
+<circle cx="264.8" cy="248" r="58" fill="url(#gjCrepe)" stroke="#d6c39b" stroke-width="1.5"/>
+<circle cx="463.0" cy="260.0" r="3.5" fill="url(#gjPearl)"/>
+<circle cx="403.5" cy="403.5" r="3.5" fill="url(#gjPearl)"/>
+<circle cx="260.0" cy="463.0" r="3.5" fill="url(#gjPearl)"/>
+<circle cx="116.5" cy="403.5" r="3.5" fill="url(#gjPearl)"/>
+<circle cx="57.0" cy="260.0" r="3.5" fill="url(#gjPearl)"/>
+<circle cx="116.5" cy="116.5" r="3.5" fill="url(#gjPearl)"/>
+<circle cx="260.0" cy="57.0" r="3.5" fill="url(#gjPearl)"/>
+<circle cx="403.5" cy="116.5" r="3.5" fill="url(#gjPearl)"/>
+</svg>
+   <figcaption>아홉 칸에 담는 구절판, 코스의 첫 접시</figcaption>
+  </figure>
+  <div class="intro-body">
+   <div class="vt">소반담</div>
+   <div class="eyebrow">About</div>
+   <h2 class="sec-title">작은 상 하나에<br>정성을 오래 담습니다</h2>
+   <p class="lead">소반담은 한 사람 앞에 한 상씩 차려 내는 한정식 코스 집입니다. 장은 직접 담그고, 찬은 그날 아침 손질한 재료로만 만들어 계절마다 차림을 바꿉니다.</p>
+   <div class="pillars">
+    <div><span>01</span><h3>제철 재료</h3><p>계절이 바뀔 때마다 코스 구성을 새로 짭니다</p></div>
+    <div><span>02</span><h3>직접 담근 장</h3><p>간장·된장·고추장을 가게에서 직접 담급니다</p></div>
+    <div><span>03</span><h3>한 사람 한 상</h3><p>덜어 먹지 않도록 개인 소반으로 차려 냅니다</p></div>
+   </div>
+  </div>
+ </div>
+</section>
+
+<section class="courses" id="course">
+ <div class="wrap">
+  <div class="head">
+   <div><div class="eyebrow">Seasonal Course</div><h2 class="sec-title" id="stitle">겨울 계절 코스</h2></div>
+   <div><div class="season" role="tablist" aria-label="계절 선택"><button role="tab" data-s="spring" aria-selected="false">봄</button><button role="tab" data-s="summer" aria-selected="false">여름</button><button role="tab" data-s="autumn" aria-selected="false">가을</button><button role="tab" data-s="winter" aria-selected="true">겨울</button></div><p class="season-note" id="snote">12월 – 2월 · 지금 차리는 코스</p></div>
+  </div>
+  <div class="cgrid" id="cgrid" role="tabpanel">
+   <article class="card">
+    <div class="no">COURSE · I</div>
+    <h3>담 <small>점심 코스</small></h3>
+    <div class="when">평일·주말 점심 · 7가지</div>
+    <ul>
+     <li>구절판과 겨자채<span>전채</span></li>
+     <li>들깨 버섯죽<span>죽</span></li>
+     <li>모둠전 세 가지<span>전</span></li>
+     <li>떡갈비 구이<span>구이</span></li>
+     <li>무쇠 솥밥과 반상<span>식사</span></li>
+    </ul>
+    <div class="price"><b>68,000원</b><small>1인 기준</small></div>
+   </article>
+   <article class="card main">
+    <span class="badge">저녁 대표 코스</span>
+    <div class="no">COURSE · II</div>
+    <h3>결 <small>저녁 코스</small></h3>
+    <div class="when">저녁 · 9가지</div>
+    <ul>
+     <li>구절판과 대하 겨자채<span>전채</span></li>
+     <li>전복 잣죽<span>죽</span></li>
+     <li>겨울 신선로<span>탕</span></li>
+     <li>한우 너비아니<span>구이</span></li>
+     <li>굴 솥밥과 반상<span>식사</span></li>
+    </ul>
+    <div class="price"><b>128,000원</b><small>1인 기준</small></div>
+   </article>
+   <article class="card">
+    <div class="no">COURSE · III</div>
+    <h3>소반담 <small>계절 특선</small></h3>
+    <div class="when">저녁 · 사흘 전 예약 · 11가지</div>
+    <ul>
+     <li>대게 구절판<span>전채</span></li>
+     <li>송이 맑은 국<span>국</span></li>
+     <li>민어 찜과 신선로<span>찜·탕</span></li>
+     <li>한우 갈비 구이<span>구이</span></li>
+     <li>계절 솥밥과 다과상<span>식사</span></li>
+    </ul>
+    <div class="price"><b>188,000원</b><small>1인 기준</small></div>
+   </article>
+  </div>
+  <p class="note">코스 구성은 그날 들어온 재료에 따라 일부 바뀔 수 있습니다 · 못 드시는 재료는 예약 때 알려 주세요</p>
+ </div>
+</section>
+
+<section class="flow" id="flow">
+ <div class="wrap">
+  <div>
+   <div class="eyebrow">Course Flow</div>
+   <h2 class="sec-title">'결' 코스는<br>이렇게 이어집니다</h2>
+   <p class="lead">가벼운 전채에서 시작해 따뜻한 신선로로 몸을 데우고, 갓 지은 솥밥과 다과로 마무리합니다. 두 시간 남짓 천천히 즐기시도록 차례를 나눕니다.</p>
+   <div class="flow-art"><svg viewBox="0 0 460 460" role="img" aria-label="김이 오르는 신선로 일러스트">
+<defs>
+<linearGradient id="ssBody" x1="0" x2="1"><stop offset="0" stop-color="#6e6a74"/><stop offset=".3" stop-color="#e9e7ee"/><stop offset=".55" stop-color="#b3afba"/><stop offset="1" stop-color="#5a5660"/></linearGradient>
+<linearGradient id="ssStem" x1="0" x2="1"><stop offset="0" stop-color="#57535d"/><stop offset=".4" stop-color="#d9d6de"/><stop offset="1" stop-color="#4b4851"/></linearGradient>
+<radialGradient id="ssCoal" cx="50%" cy="50%" r="50%"><stop offset="0" stop-color="#ffb45a"/><stop offset=".6" stop-color="#d0461d"/><stop offset="1" stop-color="#5a1408"/></radialGradient>
+<linearGradient id="ssSteam" x1="0" y1="1" x2="0" y2="0"><stop offset="0" stop-color="#fff" stop-opacity=".55"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient>
+<filter id="ssSh"><feDropShadow dx="0" dy="12" stdDeviation="10" flood-color="#0c0309" flood-opacity=".5"/></filter>
+</defs>
+<ellipse cx="230" cy="420" rx="170" ry="22" fill="#0c0309" opacity=".35"/>
+<g filter="url(#ssSh)">
+<path d="M170 330 h120 l20 80 h-160z" fill="url(#ssBody)"/>
+<ellipse cx="230" cy="410" rx="80" ry="12" fill="#4b4851"/>
+<rect x="196" y="350" width="68" height="30" rx="6" fill="#1a0b12"/>
+<ellipse cx="230" cy="366" rx="24" ry="9" fill="url(#ssCoal)"/>
+<path d="M70 250 q0 92 160 92 q160 0 160 -92z" fill="url(#ssBody)"/>
+<ellipse cx="230" cy="250" rx="160" ry="38" fill="#3a2a2c"/>
+<ellipse cx="230" cy="250" rx="148" ry="32" fill="#8f3a1f"/>
+<path d="M98 248 q30 -18 60 -6 l-10 16 q-26 6 -50 -10z" fill="#e0a64a"/>
+<path d="M300 240 q34 -10 58 8 q-24 16 -60 4z" fill="#f3e6c4"/>
+<path d="M150 262 q30 12 58 6 l-6 -14 q-28 -6 -52 8z" fill="#5e8f3a"/>
+<path d="M254 266 q34 10 66 -2 l-8 -12 q-30 2 -58 14z" fill="#6b4128"/>
+<circle cx="132" cy="236" r="7" fill="#c2421f"/><circle cx="330" cy="262" r="6" fill="#c2421f"/>
+<circle cx="182" cy="234" r="8" fill="#f0c43a"/><circle cx="286" cy="234" r="7" fill="#6b4128"/>
+<ellipse cx="350" cy="252" rx="10" ry="6" fill="#f7f2e2"/>
+<path d="M200 120 h60 l8 140 h-76z" fill="url(#ssStem)"/>
+<ellipse cx="230" cy="120" rx="34" ry="10" fill="#9f9ba6"/>
+<ellipse cx="230" cy="120" rx="22" ry="6" fill="#2a1d22"/>
+<path d="M70 250 q0 -10 20 -14" stroke="#efeef2" stroke-width="3" fill="none" opacity=".6"/>
+<rect x="56" y="262" width="26" height="12" rx="6" fill="url(#ssStem)"/><rect x="378" y="262" width="26" height="12" rx="6" fill="url(#ssStem)"/>
+</g>
+<path d="M222 110 q-26 -30 0 -56 q24 -26 -2 -52" stroke="url(#ssSteam)" stroke-width="10" fill="none" stroke-linecap="round"/>
+<path d="M246 108 q22 -26 0 -50 q-20 -22 4 -46" stroke="url(#ssSteam)" stroke-width="7" fill="none" stroke-linecap="round"/>
+<path d="M150 220 q-18 -24 2 -46" stroke="url(#ssSteam)" stroke-width="6" fill="none" stroke-linecap="round"/>
+<path d="M320 222 q18 -22 -2 -44" stroke="url(#ssSteam)" stroke-width="6" fill="none" stroke-linecap="round"/>
+</svg></div>
+  </div>
+  <ol class="steps">
+   <li><span class="n">01</span><div><h4>구절판과 겨자채</h4><p>여덟 가지 채소·고기를 밀전병에 싸서</p></div><em>전채</em></li>
+   <li><span class="n">02</span><div><h4>전복 잣죽</h4><p>잣을 곱게 갈아 부드럽게 끓인 죽</p></div><em>죽</em></li>
+   <li><span class="n">03</span><div><h4>모둠전과 편육</h4><p>육전·대구전·표고전과 양지 편육</p></div><em>전</em></li>
+   <li><span class="n">04</span><div><h4>겨울 신선로</h4><p>숯불 위에서 끓여 내는 맑은 전골</p></div><em>탕</em></li>
+   <li><span class="n">05</span><div><h4>한우 너비아니</h4><p>배즙에 재워 석쇠에 구운 등심</p></div><em>구이</em></li>
+   <li><span class="n">06</span><div><h4>굴 솥밥과 반상</h4><p>무쇠솥 밥, 된장국, 계절 찬 다섯 가지</p></div><em>식사</em></li>
+   <li><span class="n">07</span><div><h4>다과와 차</h4><p>약과·정과와 따뜻한 대추차</p></div><em>후식</em></li>
+  </ol>
+ </div>
+</section>
+
+<section class="rooms" id="rooms">
+ <div class="wrap">
+  <div class="head">
+   <div class="eyebrow">Rooms</div>
+   <h2 class="sec-title">모든 자리가 방으로 나뉩니다</h2>
+   <p class="lead">상견례, 가족 모임, 손님 접대까지. 인원에 맞는 방을 예약 때 함께 정해 드립니다.</p>
+  </div>
+  <div class="rgrid">
+   <article class="room"><div class="img"><svg viewBox="0 0 360 260" role="img" aria-label="창호 너머 달빛이 드는 방 일러스트">
+<defs><linearGradient id="rdW" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#3c1c33"/><stop offset="1" stop-color="#1f0b1b"/></linearGradient>
+<radialGradient id="rdM" cx="65%" cy="35%" r="60%"><stop offset="0" stop-color="#fff9ea"/><stop offset=".6" stop-color="#efe2c6"/><stop offset="1" stop-color="#cdb895"/></radialGradient>
+<linearGradient id="rdF" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#b9875a"/><stop offset="1" stop-color="#7d5233"/></linearGradient></defs>
+<rect width="360" height="260" fill="url(#rdW)"/>
+<rect x="56" y="36" width="248" height="168" fill="url(#rdM)"/>
+<circle cx="230" cy="96" r="34" fill="#fffdf6" opacity=".8"/>
+<line x1="84" y1="40" x2="84" y2="200" stroke="#5a3a28" stroke-width="3"/><line x1="108" y1="40" x2="108" y2="200" stroke="#5a3a28" stroke-width="3"/><line x1="132" y1="40" x2="132" y2="200" stroke="#5a3a28" stroke-width="3"/><line x1="156" y1="40" x2="156" y2="200" stroke="#5a3a28" stroke-width="3"/><line x1="180" y1="40" x2="180" y2="200" stroke="#5a3a28" stroke-width="3"/><line x1="204" y1="40" x2="204" y2="200" stroke="#5a3a28" stroke-width="3"/><line x1="228" y1="40" x2="228" y2="200" stroke="#5a3a28" stroke-width="3"/><line x1="252" y1="40" x2="252" y2="200" stroke="#5a3a28" stroke-width="3"/><line x1="276" y1="40" x2="276" y2="200" stroke="#5a3a28" stroke-width="3"/><line x1="60" y1="66" x2="300" y2="66" stroke="#5a3a28" stroke-width="3"/><line x1="60" y1="92" x2="300" y2="92" stroke="#5a3a28" stroke-width="3"/><line x1="60" y1="118" x2="300" y2="118" stroke="#5a3a28" stroke-width="3"/><line x1="60" y1="144" x2="300" y2="144" stroke="#5a3a28" stroke-width="3"/><line x1="60" y1="170" x2="300" y2="170" stroke="#5a3a28" stroke-width="3"/><line x1="60" y1="196" x2="300" y2="196" stroke="#5a3a28" stroke-width="3"/>
+<rect x="56" y="36" width="248" height="168" fill="none" stroke="#5a3a28" stroke-width="7"/>
+<rect x="0" y="204" width="360" height="56" fill="url(#rdF)"/>
+<path d="M0 214 h360" stroke="#6a4024" stroke-opacity=".5"/>
+<ellipse cx="180" cy="236" rx="110" ry="10" fill="#000" opacity=".3"/>
+<rect x="80" y="206" width="200" height="16" rx="3" fill="#4a1d3a"/><rect x="92" y="222" width="10" height="16" fill="#3a1630"/><rect x="258" y="222" width="10" height="16" fill="#3a1630"/>
+<circle cx="140" cy="204" r="9" fill="#f6f1e7"/><circle cx="180" cy="203" r="10" fill="#c8c5cc"/><circle cx="220" cy="204" r="9" fill="#f6f1e7"/>
+<rect x="30" y="226" width="48" height="22" rx="6" fill="#7a3a62"/><rect x="282" y="226" width="48" height="22" rx="6" fill="#7a3a62"/>
+</svg></div><div class="b"><h3>달방 <small>2 – 4인</small></h3><p>창호 너머로 은은한 빛이 드는 작은 방. 두 분, 네 분 식사에 알맞습니다.</p><div class="tags"><span>창호 좌식</span><span>의자 변경 가능</span></div></div></article>
+   <article class="room"><div class="img"><svg viewBox="0 0 360 260" role="img" aria-label="병풍과 긴 상이 놓인 대청 룸 일러스트">
+<defs><linearGradient id="dcW" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#efe7d8"/><stop offset="1" stop-color="#d9cdb6"/></linearGradient>
+<linearGradient id="dcT" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#5e2648"/><stop offset="1" stop-color="#2e0f25"/></linearGradient>
+<linearGradient id="dcF" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#a57650"/><stop offset="1" stop-color="#6a4328"/></linearGradient></defs>
+<rect width="360" height="260" fill="url(#dcW)"/>
+<rect x="0" y="0" width="360" height="22" fill="#3a1630"/>
+<rect x="40" y="40" width="44" height="130" fill="#f3ecdd" stroke="#b9b6bd" stroke-width="2"/><path d="M48 150 q10 -30 26 -40 q6 18 -2 40z" fill="#6f8f5a" opacity=".85"/><rect x="87" y="40" width="44" height="130" fill="#f3ecdd" stroke="#b9b6bd" stroke-width="2"/><path d="M95 136 q10 -30 26 -40 q6 18 -2 40z" fill="#6f8f5a" opacity=".85"/><rect x="134" y="40" width="44" height="130" fill="#f3ecdd" stroke="#b9b6bd" stroke-width="2"/><path d="M142 122 q10 -30 26 -40 q6 18 -2 40z" fill="#6f8f5a" opacity=".85"/><rect x="181" y="40" width="44" height="130" fill="#f3ecdd" stroke="#b9b6bd" stroke-width="2"/><path d="M189 150 q10 -30 26 -40 q6 18 -2 40z" fill="#6f8f5a" opacity=".85"/><rect x="228" y="40" width="44" height="130" fill="#f3ecdd" stroke="#b9b6bd" stroke-width="2"/><path d="M236 136 q10 -30 26 -40 q6 18 -2 40z" fill="#6f8f5a" opacity=".85"/><rect x="275" y="40" width="44" height="130" fill="#f3ecdd" stroke="#b9b6bd" stroke-width="2"/><path d="M283 122 q10 -30 26 -40 q6 18 -2 40z" fill="#6f8f5a" opacity=".85"/>
+<path d="M40 60 q60 -20 120 10 t140 -6" stroke="#c49a5a" stroke-width="2" fill="none" opacity=".7"/>
+<circle cx="250" cy="70" r="14" fill="#c2421f" opacity=".75"/>
+<rect x="0" y="176" width="360" height="84" fill="url(#dcF)"/>
+<g stroke="#5a3620" stroke-opacity=".35"><line x1="40" y1="176" x2="10" y2="260"/><line x1="80" y1="176" x2="50" y2="260"/><line x1="120" y1="176" x2="90" y2="260"/><line x1="160" y1="176" x2="130" y2="260"/><line x1="200" y1="176" x2="170" y2="260"/><line x1="240" y1="176" x2="210" y2="260"/><line x1="280" y1="176" x2="250" y2="260"/><line x1="320" y1="176" x2="290" y2="260"/><line x1="360" y1="176" x2="330" y2="260"/><line x1="400" y1="176" x2="370" y2="260"/></g>
+<ellipse cx="180" cy="226" rx="150" ry="12" fill="#000" opacity=".25"/>
+<path d="M40 196 h280 l-12 14 h-256z" fill="url(#dcT)"/>
+<rect x="56" y="210" width="10" height="22" fill="#2a0b22"/><rect x="294" y="210" width="10" height="22" fill="#2a0b22"/>
+<ellipse cx="70" cy="194" rx="14" ry="5" fill="#f6f1e7"/><ellipse cx="114" cy="194" rx="14" ry="5" fill="#f6f1e7"/><ellipse cx="158" cy="194" rx="14" ry="5" fill="#f6f1e7"/><ellipse cx="202" cy="194" rx="14" ry="5" fill="#f6f1e7"/><ellipse cx="246" cy="194" rx="14" ry="5" fill="#f6f1e7"/><ellipse cx="290" cy="194" rx="14" ry="5" fill="#f6f1e7"/>
+</svg></div><div class="b"><h3>대청 <small>8 – 12인</small></h3><p>병풍을 두른 긴 상 방. 상견례와 가족 행사에 가장 많이 쓰이는 방입니다.</p><div class="tags"><span>입식 테이블</span><span>상견례 차림</span></div></div></article>
+   <article class="room"><div class="img"><svg viewBox="0 0 360 260" role="img" aria-label="정원이 보이는 뜰방 일러스트">
+<defs><linearGradient id="tlS" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#cfd8d2"/><stop offset="1" stop-color="#eef0e6"/></linearGradient>
+<linearGradient id="tlP" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#3f5a3a"/><stop offset="1" stop-color="#22351f"/></linearGradient>
+<linearGradient id="tlR" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#9a6d4b"/><stop offset="1" stop-color="#5c3a24"/></linearGradient></defs>
+<rect width="360" height="260" fill="#2a0f22"/>
+<rect x="24" y="24" width="312" height="170" fill="url(#tlS)"/>
+<path d="M24 160 q80 -20 160 0 t152 -6 v40 h-312z" fill="#9fb08f"/>
+<ellipse cx="96" cy="168" rx="38" ry="14" fill="#8a8a86"/><ellipse cx="96" cy="162" rx="30" ry="10" fill="#b3b2ab"/>
+<path d="M250 190 v-76" stroke="#4a3022" stroke-width="7"/>
+<path d="M250 120 q-40 -6 -60 10 q34 6 60 -2z M250 104 q36 -12 62 4 q-34 10 -62 2z M252 86 q-30 -16 -52 -4 q26 10 52 6z M252 72 q24 -18 46 -6 q-22 12 -46 8z" fill="url(#tlP)"/>
+<path d="M150 194 q10 -24 30 -24 q20 0 30 24z" fill="#6f7f62"/>
+<rect x="24" y="24" width="312" height="170" fill="none" stroke="#5a3a28" stroke-width="8"/>
+<line x1="180" y1="24" x2="180" y2="194" stroke="#5a3a28" stroke-width="5"/>
+<rect x="0" y="194" width="360" height="66" fill="url(#tlR)"/>
+<rect x="110" y="206" width="140" height="14" rx="3" fill="#c8c5cc"/><rect x="122" y="220" width="8" height="18" fill="#8d8994"/><rect x="230" y="220" width="8" height="18" fill="#8d8994"/>
+<circle cx="160" cy="203" r="7" fill="#f6f1e7"/><circle cx="200" cy="203" r="7" fill="#f6f1e7"/>
+</svg></div><div class="b"><h3>뜰방 <small>4 – 6인</small></h3><p>작은 안뜰과 소나무가 보이는 방. 조용한 접대 자리로 추천합니다.</p><div class="tags"><span>정원 전망</span><span>입식 테이블</span></div></div></article>
+  </div>
+ </div>
+</section>
+
+<section class="strip">
+ <div class="wrap">
+  <div><small>예약</small><b>전화·온라인 예약</b><p>당일 예약은 전화로만 받습니다</p></div>
+  <div><small>주차</small><b>건물 뒤 전용 주차</b><p>코스 이용 시 2시간 무료</p></div>
+  <div><small>단체</small><b>최대 12인 한 방</b><p>상견례 차림 별도 준비</p></div>
+  <div><small>선물</small><b>장·다과 선물 상자</b><p>명절 전 사전 주문</p></div>
+ </div>
+</section>
+
+<section class="reserve" id="reserve">
+ <div class="wrap">
+  <div>
+   <div class="eyebrow">Reservation</div>
+   <h2 class="sec-title">예약 문의</h2>
+   <p class="lead">원하시는 날짜와 코스를 남겨 주시면 확인 후 연락드립니다. 계절 특선은 재료 준비로 사흘 전까지 예약해 주세요.</p>
+   <ul class="policy">
+    <li>예약 시간 10분 전까지 방을 준비해 둡니다</li>
+    <li>방문 하루 전까지 변경·취소 가능합니다</li>
+    <li>못 드시는 재료는 메모에 적어 주세요</li>
+    <li>전화 문의 000-0000-0000</li>
+   </ul>
+  </div>
+  <form id="rf" novalidate>
+   <div class="fields">
+    <div class="frow">
+     <div><label for="nm">예약자 이름</label><input id="nm" placeholder="이름을 입력해 주세요"></div>
+     <div><label for="ph">연락처</label><input id="ph" placeholder="000-0000-0000" inputmode="tel"></div>
+    </div>
+    <div class="frow">
+     <div><label for="dt">방문 날짜</label><input id="dt" type="date"></div>
+     <div><label for="tm">시간</label><select id="tm"><option>12:00 점심</option><option>13:00 점심</option><option>17:30 저녁</option><option>18:30 저녁</option><option>19:30 저녁</option></select></div>
+    </div>
+    <div class="frow">
+     <div class="full"><label>코스 선택</label>
+      <div class="chips">
+       <label><input type="radio" name="c" value="담" checked><span>담 · 68,000원</span></label>
+       <label><input type="radio" name="c" value="결"><span>결 · 128,000원</span></label>
+       <label><input type="radio" name="c" value="소반담"><span>소반담 · 188,000원</span></label>
+      </div>
+     </div>
+    </div>
+    <div class="frow">
+     <div><label for="pp">인원</label><select id="pp"><option>2명</option><option>3명</option><option>4명</option><option>5 – 6명</option><option>7 – 12명</option></select></div>
+     <div><label for="rm">희망하는 방</label><select id="rm"><option>상관없음</option><option>달방</option><option>대청</option><option>뜰방</option></select></div>
+    </div>
+    <div class="frow"><div class="full"><label for="mm">메모</label><textarea id="mm" placeholder="모임 성격, 못 드시는 재료 등을 적어 주세요"></textarea></div></div>
+    <button class="btn dark" type="submit">예약 문의 남기기</button>
+    <p class="err" id="er"></p>
+   </div>
+   <div class="done">
+    <div class="mk"><svg viewBox="0 0 24 24" width="30" height="30" style="width:30px" fill="none" stroke="#7a3a62" stroke-width="1.6"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></div>
+    <h3>예약 문의가 접수되었습니다</h3>
+    <p id="dmsg">확인 후 남겨 주신 연락처로 안내드리겠습니다.</p>
+    <button class="btn dark" type="button" id="again" style="width:auto;margin-top:24px">다시 작성하기</button>
+   </div>
+  </form>
+ </div>
+</section>
+
+<section class="loc" id="loc">
+ <div class="wrap">
+  <div class="map"><div class="mapin"><svg viewBox="0 0 560 380" role="img" aria-label="오시는 길 약도 일러스트">
+<defs><pattern id="mpG" width="20" height="20" patternUnits="userSpaceOnUse"><path d="M20 0H0V20" fill="none" stroke="#3a1630" stroke-opacity=".06"/></pattern></defs>
+<rect width="560" height="380" fill="#f3ecdf"/><rect width="560" height="380" fill="url(#mpG)"/>
+<path d="M-10 300 q140 -40 280 -10 t300 -30" stroke="#c9d6dc" stroke-width="26" fill="none"/>
+<path d="M-10 300 q140 -40 280 -10 t300 -30" stroke="#a9bfc9" stroke-width="2" fill="none" stroke-dasharray="6 8"/>
+<path d="M0 150 H560" stroke="#fff" stroke-width="22"/><path d="M0 150 H560" stroke="#d8cdbb" stroke-width="1"/>
+<path d="M200 0 V380" stroke="#fff" stroke-width="18"/><path d="M400 0 V380" stroke="#fff" stroke-width="14"/>
+<path d="M200 150 L330 60" stroke="#fff" stroke-width="10"/>
+<rect x="230" y="176" width="70" height="44" rx="4" fill="#e3d8c6"/><rect x="420" y="60" width="90" height="60" rx="4" fill="#e3d8c6"/>
+<rect x="60" y="60" width="110" height="64" rx="4" fill="#dfe3d4"/><circle cx="96" cy="92" r="14" fill="#b7c4a6"/><circle cx="130" cy="96" r="18" fill="#a5b593"/>
+<rect x="420" y="176" width="100" height="70" rx="4" fill="#e3d8c6"/>
+<g transform="translate(346 210)"><circle r="44" fill="#4a1d3a" opacity=".12"/><path d="M0 -62 c-22 0 -36 16 -36 34 c0 26 36 58 36 58 s36 -32 36 -58 c0 -18 -14 -34 -36 -34z" fill="#4a1d3a"/><circle cy="-28" r="12" fill="#f6f1e7"/></g>
+<g transform="translate(470 330)"><circle r="16" fill="#fff" stroke="#3a1630" stroke-opacity=".3"/><path d="M0 -10 L5 6 L0 2 L-5 6Z" fill="#4a1d3a"/></g>
+</svg><span style="left:43%;top:8%">돌담길</span><span style="left:15%;top:32%">한옥마을 큰길</span><span style="left:85%;top:32%">전통시장 방면</span><span style="left:12%;top:86%">개천 산책로</span><span class="me" style="left:62%;top:73%">소반담</span></div></div>
+  <div>
+   <div class="eyebrow">Location</div>
+   <h2 class="sec-title">오시는 길</h2>
+   <ul class="addr">
+    <li><b>주소</b><span>서울 종로구 ○○길 00, 소반담</span></li>
+    <li><b>지하철</b><span>○○역 2번 출구에서 걸어서 5분</span></li>
+    <li><b>주차</b><span>건물 뒤 전용 주차장 6대</span></li>
+    <li><b>전화</b><span>000-0000-0000</span></li>
+   </ul>
+  </div>
+ </div>
+</section>
+
+<footer>
+ <div class="wrap">
+  <div class="top">
+   <a class="logo" href="#top"><span class="seal">담</span><b>소반담</b></a>
+   <div class="fm"><a href="#intro">소개</a><a href="#course">계절 코스</a><a href="#rooms">공간</a><a href="#reserve">예약</a><a href="#loc">오시는 길</a></div>
+  </div>
+  <div class="bot"><span>소반담 · 계절 한정식 코스 · 서울 종로</span><span>점심 12:00 – 15:00 · 저녁 17:30 – 22:00 · 월요일 휴무</span></div>
+ </div>
+</footer>
+
+<div class="mbar"><a href="tel:000-0000-0000">전화 문의</a><a class="p" href="#reserve">코스 예약</a></div>
+
+<script>
+(function(){
+ var SE={
+  spring:{t:'봄 계절 코스',n:'3월 – 5월 · 계절이 바뀌면 차림이 바뀝니다',c:[
+   [['봄나물 구절판','전채'],['쑥 들깨죽','죽'],['두릅전과 표고전','전'],['더덕 구이','구이'],['도다리 솥밥과 반상','식사'],'64,000원'],
+   [['구절판과 달래 겨자채','전채'],['전복 잣죽','죽'],['봄 신선로','탕'],['한우 너비아니','구이'],['주꾸미 솥밥과 반상','식사'],'124,000원'],
+   [['대게 구절판','전채'],['도다리 쑥국','국'],['도미 찜과 신선로','찜·탕'],['한우 갈비 구이','구이'],['죽순 솥밥과 다과상','식사'],'184,000원']]},
+  summer:{t:'여름 계절 코스',n:'6월 – 8월 · 계절이 바뀌면 차림이 바뀝니다',c:[
+   [['오이 구절판','전채'],['흑임자죽','죽'],['애호박전과 육전','전'],['민어 구이','구이'],['옥수수 솥밥과 반상','식사'],'66,000원'],
+   [['구절판과 해파리 냉채','전채'],['잣죽','죽'],['임자수탕','탕'],['한우 너비아니','구이'],['장어 솥밥과 반상','식사'],'126,000원'],
+   [['대게 구절판','전채'],['초계 냉국','국'],['민어 찜과 임자수탕','찜·탕'],['한우 갈비 구이','구이'],['전복 솥밥과 다과상','식사'],'186,000원']]},
+  autumn:{t:'가을 계절 코스',n:'9월 – 11월 · 계절이 바뀌면 차림이 바뀝니다',c:[
+   [['버섯 구절판','전채'],['단호박죽','죽'],['송이전과 새우전','전'],['떡갈비 구이','구이'],['밤 솥밥과 반상','식사'],'68,000원'],
+   [['구절판과 배 겨자채','전채'],['전복 잣죽','죽'],['가을 신선로','탕'],['한우 너비아니','구이'],['송이 솥밥과 반상','식사'],'128,000원'],
+   [['대게 구절판','전채'],['송이 맑은 국','국'],['갈비찜과 신선로','찜·탕'],['한우 갈비 구이','구이'],['은행 솥밥과 다과상','식사'],'188,000원']]},
+  winter:null
+ };
+ var g=document.getElementById('cgrid'),cards=g.querySelectorAll('.card');
+ function snap(){return [].map.call(cards,function(c){var r=[].map.call(c.querySelectorAll('li'),function(li){return [li.firstChild.textContent,li.querySelector('span').textContent]});r.push(c.querySelector('.price b').textContent);return r})}
+ SE.winter={t:'겨울 계절 코스',n:'12월 – 2월 · 지금 차리는 코스',c:snap()};
+ var tabs=document.querySelectorAll('.season button');
+ [].forEach.call(tabs,function(b){b.addEventListener('click',function(){
+  var d=SE[b.dataset.s];
+  [].forEach.call(tabs,function(x){x.setAttribute('aria-selected',x===b?'true':'false')});
+  g.classList.add('fade');
+  setTimeout(function(){
+   document.getElementById('stitle').textContent=d.t;document.getElementById('snote').textContent=d.n;
+   [].forEach.call(cards,function(c,i){var set=d.c[i];c.querySelector('ul').innerHTML=set.slice(0,5).map(function(r){return '<li>'+r[0]+'<span>'+r[1]+'</span></li>'}).join('');c.querySelector('.price b').textContent=set[5]});
+   g.classList.remove('fade');
+  },200);
+ })});
+
+ var f=document.getElementById('rf'),er=document.getElementById('er');
+ var d=document.getElementById('dt');
+ var t=new Date();t.setDate(t.getDate()+3);d.value=t.toISOString().slice(0,10);
+ f.addEventListener('submit',function(e){
+  e.preventDefault();
+  var n=document.getElementById('nm').value.trim(),p=document.getElementById('ph').value.trim();
+  if(!n||!p){er.textContent='이름과 연락처를 입력해 주세요.';return;}
+  er.textContent='';
+  var c=f.querySelector('input[name=c]:checked').value;
+  document.getElementById('dmsg').textContent=n+'님, '+d.value+' '+document.getElementById('tm').value+' · '+c+' 코스 '+document.getElementById('pp').value+' 문의를 받았습니다. 확인 후 연락드리겠습니다.';
+  f.classList.add('sent');
+ });
+ document.getElementById('again').addEventListener('click',function(){f.classList.remove('sent')});
+})();
+</script>
+</body>
+</html>

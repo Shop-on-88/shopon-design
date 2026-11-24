@@ -1,0 +1,690 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bukal Water Refilling Station · Weekly Delivery, First Refill Free</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&display=swap" rel="stylesheet">
+<style>
+:root{--cob:#1435c4;--cob2:#0b1f7a;--ink:#071447;--lime:#c8f03c;--lime2:#a6d40f;--sky:#e9efff;--wh:#fff;--mut:#55608c}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'DM Sans',sans-serif;color:var(--ink);background:#fff;-webkit-font-smoothing:antialiased;overflow-x:hidden;line-height:1.55}
+h1,h2,h3,h4,.o{font-family:'Outfit',sans-serif}
+a{color:inherit}
+.w{max-width:1200px;margin:0 auto;padding:0 28px}
+svg{display:block}
+/* nav */
+nav{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.92);backdrop-filter:blur(10px);border-bottom:1px solid #e3e8fb}
+nav .w{display:flex;align-items:center;justify-content:space-between;height:70px;gap:16px}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none}
+.logo b{font-family:'Outfit';font-weight:800;font-size:22px;letter-spacing:-.02em;color:var(--cob2)}
+.logo span{display:block;font-size:11px;font-weight:700;letter-spacing:.16em;color:var(--cob);margin-top:-3px}
+.nl{display:flex;gap:28px;font-weight:500;font-size:15px}
+.nl a{text-decoration:none;color:#2b3570}
+.nl a:hover{color:var(--cob)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;height:52px;padding:0 26px;border-radius:999px;font-family:'Outfit';font-weight:700;font-size:16px;text-decoration:none;border:0;cursor:pointer;transition:.2s;white-space:nowrap}
+.btn-l{background:var(--lime);color:var(--ink);box-shadow:0 10px 24px -8px rgba(166,212,15,.8)}
+.btn-l:hover{transform:translateY(-2px);background:#d6f75f}
+.btn-c{background:var(--cob);color:#fff}
+.btn-c:hover{background:var(--cob2)}
+.btn-o{background:transparent;color:#fff;border:2px solid rgba(255,255,255,.5)}
+.btn-o:hover{border-color:#fff}
+nav .btn{height:44px;padding:0 20px;font-size:15px}
+nav .short{display:none}
+/* hero */
+.hero{position:relative;overflow:hidden;background:radial-gradient(900px 600px at 78% 40%,#2c57ff 0%,var(--cob) 38%,var(--cob2) 78%,#06114a 100%);color:#fff}
+.hero .w{display:grid;grid-template-columns:1.05fr .95fr;gap:30px;align-items:center;min-height:640px;padding-top:56px;padding-bottom:70px;position:relative;z-index:2}
+.tag{display:inline-flex;align-items:center;gap:8px;background:rgba(200,240,60,.14);border:1.5px solid rgba(200,240,60,.55);color:var(--lime);font-weight:700;font-size:13px;letter-spacing:.12em;padding:7px 14px;border-radius:999px}
+.tag i{width:8px;height:8px;border-radius:50%;background:var(--lime);box-shadow:0 0 0 4px rgba(200,240,60,.25)}
+.hero h1{font-weight:800;font-size:clamp(40px,5.6vw,76px);line-height:1.02;letter-spacing:-.035em;margin:22px 0 20px}
+.hero h1 em{font-style:normal;color:var(--lime)}
+.hero p.lead{font-size:19px;color:#d6defe;max-width:520px}
+.offer{margin:28px 0 30px;display:flex;flex-wrap:wrap;gap:12px}
+.offer>div{background:#fff;color:var(--ink);border-radius:16px;padding:14px 18px 14px 14px;display:flex;gap:12px;align-items:center;box-shadow:0 18px 30px -14px rgba(0,0,0,.45)}
+.offer>div .ic{width:44px;height:44px;border-radius:12px;background:var(--lime);display:grid;place-items:center;flex:none}
+.offer>div b{font-family:'Outfit';font-size:18px;display:block;line-height:1.15}
+.offer>div small{font-size:13px;color:var(--mut)}
+.hero .acts{display:flex;flex-wrap:wrap;gap:12px;align-items:center}
+.hero .fine{font-size:13px;color:#aebcf5;margin-top:16px}
+.art{position:relative;height:560px}
+.art svg{position:absolute;inset:0;width:100%;height:100%}
+.stage{position:relative;height:100%;aspect-ratio:1/1;max-width:100%;margin:0 auto}
+.bd{position:absolute;border-radius:18px;padding:12px 18px;box-shadow:0 18px 30px -14px rgba(0,0,0,.5)}
+.bd small{display:block;font-size:12px;font-weight:700;letter-spacing:.1em}
+.bd b{display:block;font-family:'Outfit';font-weight:800;font-size:28px;line-height:1.1;margin-top:2px}
+.bd i{font-style:normal;font-family:'DM Sans';font-weight:500;font-size:14px;color:var(--mut)}
+.b1{left:4%;top:73%;background:#fff;color:var(--cob2)}
+.b1 small{color:var(--mut)}
+.b2{right:2%;top:66%;background:var(--lime);color:var(--ink)}
+.hero .wave{position:absolute;left:0;right:0;bottom:-1px;z-index:3}
+/* price strip */
+.strip{background:#fff;position:relative;z-index:4}
+.strip .w{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border:1.5px solid #e1e7fb;border-radius:22px;margin-top:-58px;background:#fff;box-shadow:0 26px 50px -28px rgba(11,31,122,.45);padding:0}
+.strip .c{padding:24px 26px;border-right:1.5px solid #e9edfb}
+.strip .c:last-child{border-right:0}
+.strip small{font-size:12px;font-weight:700;letter-spacing:.14em;color:var(--cob);text-transform:uppercase}
+.strip b{display:block;font-family:'Outfit';font-weight:800;font-size:34px;letter-spacing:-.02em;margin-top:4px}
+.strip b sub{font-size:15px;font-weight:600;color:var(--mut);vertical-align:baseline;margin-left:4px}
+.strip p{font-size:14px;color:var(--mut)}
+section{padding:110px 0}
+.plans-s{padding-bottom:70px}
+section.refill{padding-top:60px}
+section.fin{padding-bottom:90px}
+.kick{font-size:13px;font-weight:700;letter-spacing:.18em;color:var(--cob);text-transform:uppercase;display:flex;align-items:center;gap:10px}
+.kick:before{content:"";width:26px;height:3px;border-radius:3px;background:var(--lime2)}
+h2{font-weight:800;font-size:clamp(32px,3.8vw,50px);letter-spacing:-.03em;line-height:1.06;margin:14px 0 16px}
+.sub{font-size:18px;color:var(--mut);max-width:620px}
+/* steps */
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:54px;counter-reset:s}
+.step{background:var(--sky);border-radius:26px;padding:30px;position:relative;overflow:hidden}
+.step .n{font-family:'Outfit';font-weight:800;font-size:15px;color:var(--cob);background:#fff;width:40px;height:40px;border-radius:50%;display:grid;place-items:center;position:absolute;left:24px;top:24px;box-shadow:0 6px 14px -6px rgba(11,31,122,.35)}
+.step .pic{height:150px;margin:-6px 0 18px}
+.step h3{font-size:23px;font-weight:700;margin-bottom:8px;position:relative}
+.step p{color:#3f4a7a;font-size:16px}
+/* plans */
+.plans-s{background:linear-gradient(180deg,#f5f7ff,#fff)}
+.plans{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:54px;align-items:stretch}
+.plan{background:#fff;border:1.5px solid #dfe5fb;border-radius:28px;padding:32px 30px;display:flex;flex-direction:column}
+.plan.hi{background:linear-gradient(160deg,#1d43e0,var(--cob2));color:#fff;border-color:transparent;box-shadow:0 30px 60px -30px rgba(11,31,122,.8);transform:translateY(-12px)}
+.plan .pt{display:flex;justify-content:space-between;align-items:center;margin-bottom:18px}
+.plan .pt span{font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--cob)}
+.plan.hi .pt span{color:var(--lime)}
+.plan .pill{background:var(--lime);color:var(--ink);font-size:12px;font-weight:700;padding:5px 10px;border-radius:999px}
+.plan h3{font-size:28px;font-weight:800;letter-spacing:-.02em}
+.plan .pr{font-family:'Outfit';font-weight:800;font-size:54px;letter-spacing:-.03em;margin:14px 0 2px;line-height:1}
+.plan .pr small{font-size:17px;font-weight:600;color:var(--mut);letter-spacing:0}
+.plan.hi .pr small,.plan.hi .note{color:#bfcafb}
+.plan .note{font-size:14px;color:var(--mut)}
+.plan ul{list-style:none;margin:22px 0 28px;display:grid;gap:11px;flex:1;align-content:start}
+.plan li{display:flex;gap:10px;font-size:15.5px;align-items:flex-start}
+.plan li:before{content:"";flex:none;width:20px;height:20px;border-radius:50%;margin-top:2px;background:#e6ecff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath d='M5.5 10.5l3 3 6-7' fill='none' stroke='%231435c4' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/20px no-repeat}
+.plan.hi li:before{background-color:var(--lime);background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath d='M5.5 10.5l3 3 6-7' fill='none' stroke='%23071447' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E")}
+.plan .btn{width:100%}
+.plan:not(.hi) .btn{background:var(--sky);color:var(--cob2)}
+.plan:not(.hi) .btn:hover{background:var(--cob);color:#fff}
+/* process */
+.proc{display:grid;grid-template-columns:.9fr 1.1fr;gap:60px;align-items:center}
+.station{border-radius:32px;background:radial-gradient(500px 400px at 50% 30%,#2d58ff,var(--cob2));padding:20px;box-shadow:0 40px 70px -40px rgba(11,31,122,.9)}
+.plist{display:grid;gap:14px;margin-top:34px}
+.pi{display:grid;grid-template-columns:56px 1fr;gap:18px;align-items:start;padding:18px 20px;border-radius:20px;border:1.5px solid #e3e8fb;background:#fff}
+.pi .num{width:56px;height:56px;border-radius:16px;background:var(--sky);display:grid;place-items:center;font-family:'Outfit';font-weight:800;font-size:20px;color:var(--cob)}
+.pi:nth-child(odd) .num{background:var(--lime);color:var(--ink)}
+.pi h4{font-size:19px;font-weight:700}
+.pi p{font-size:15px;color:var(--mut)}
+/* coverage */
+.cov{background:var(--ink);color:#fff;position:relative;overflow:hidden}
+.cov .w{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center;position:relative;z-index:2}
+.cov .kick{color:var(--lime)}
+.cov .sub{color:#b9c4f2}
+.zones{display:grid;gap:12px;margin-top:30px}
+.zone{display:grid;grid-template-columns:auto 1fr auto;gap:16px;align-items:center;padding:16px 20px;border-radius:18px;background:rgba(255,255,255,.06);border:1.5px solid rgba(255,255,255,.12)}
+.zone .zb{width:46px;height:46px;border-radius:14px;display:grid;place-items:center;font-family:'Outfit';font-weight:800;font-size:20px;color:var(--ink)}
+.zone h4{font-size:18px}
+.zone p{font-size:14px;color:#aab6ea}
+.zone .d{font-size:13px;font-weight:700;color:var(--lime);text-align:right;white-space:nowrap}
+.map{border-radius:30px;overflow:hidden;background:#0c1d66;border:1.5px solid rgba(255,255,255,.12)}
+/* form */
+.signup .w{display:grid;grid-template-columns:.85fr 1.15fr;gap:40px 48px;align-items:stretch}
+form{scroll-margin-top:96px;display:flex;flex-direction:column;justify-content:center}
+.shead{grid-column:1/-1;margin-bottom:-10px}
+.shead h2{margin-bottom:10px}
+.recap{background:var(--sky);border-radius:28px;padding:32px;display:flex;flex-direction:column}
+.rart{flex:1;display:flex;align-items:center;justify-content:center;padding:10px 0 22px}
+.recap h3{font-size:24px;font-weight:800;margin-bottom:12px}
+.recap ul{list-style:none;display:grid;gap:10px;margin:14px 0 22px}
+.recap li{display:flex;justify-content:space-between;gap:14px;font-size:15.5px;border-bottom:1px dashed #b9c6f5;padding-bottom:10px}
+.recap li b{font-family:'Outfit';white-space:nowrap}
+.recap .free{background:var(--ink);color:#fff;border-radius:18px;padding:18px;display:flex;gap:14px;align-items:center}
+.recap .free b{color:var(--lime);font-family:'Outfit';font-size:18px;display:block}
+.recap .free small{font-size:13px;color:#c4cdf5}
+form{background:#fff;border:1.5px solid #dfe5fb;border-radius:28px;padding:36px;box-shadow:0 30px 60px -40px rgba(11,31,122,.5)}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+label.f{display:block;margin-bottom:18px}
+label.f span,.lab{display:block;font-size:14px;font-weight:700;margin-bottom:7px;color:#24306b}
+input,select{width:100%;height:52px;border-radius:14px;border:1.5px solid #d3dbf6;padding:0 16px;font:inherit;font-size:16px;color:var(--ink);background:#fbfcff;outline:none;transition:.15s}
+input:focus,select:focus{border-color:var(--cob);box-shadow:0 0 0 4px rgba(20,53,196,.12)}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:20px}
+.chips label{cursor:pointer}
+.chips input{position:absolute;opacity:0;width:0;height:0;left:0;top:0}
+.chips span{display:inline-flex;align-items:center;height:44px;padding:0 16px;border-radius:12px;border:1.5px solid #d3dbf6;font-weight:600;font-size:15px;color:#2b3570;transition:.15s;background:#fff}
+.chips input:checked+span{background:var(--cob);border-color:var(--cob);color:#fff}
+.chips input:focus-visible+span{outline:3px solid var(--lime2)}
+.jug-pick{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:20px}
+.jug-pick label{cursor:pointer}
+.jug-pick label,.chips label{position:relative}
+.jug-pick input{position:absolute;opacity:0;width:0;height:0;left:0;top:0}
+.jug-pick .card{display:flex;gap:12px;align-items:center;border:1.5px solid #d3dbf6;border-radius:16px;padding:12px 14px;transition:.15s}
+.jug-pick .card b{display:block;font-family:'Outfit';font-size:16px}
+.jug-pick .card small{font-size:13px;color:var(--mut)}
+.jug-pick input:checked+.card{border-color:var(--cob);background:#f0f4ff;box-shadow:inset 0 0 0 1.5px var(--cob)}
+form .btn{width:100%;height:58px;font-size:17px}
+.legal{font-size:13px;color:var(--mut);margin-top:12px;text-align:center}
+.done{display:none;text-align:center;padding:30px 10px}
+.done.on{display:block}
+.done h3{font-size:30px;font-weight:800;margin:16px 0 8px}
+.done p{color:var(--mut);font-size:16px}
+.done .ref{display:inline-block;margin-top:18px;background:var(--lime);font-family:'Outfit';font-weight:800;padding:10px 18px;border-radius:12px}
+/* faq */
+.faq{background:#f5f7ff}
+.faq .w{display:grid;grid-template-columns:.8fr 1.2fr;gap:56px}
+details{background:#fff;border:1.5px solid #dfe5fb;border-radius:18px;margin-bottom:12px;overflow:hidden}
+summary{list-style:none;cursor:pointer;padding:20px 24px;font-family:'Outfit';font-weight:700;font-size:18px;display:flex;justify-content:space-between;gap:16px;align-items:center}
+summary::-webkit-details-marker{display:none}
+summary:after{content:"+";flex:none;width:32px;height:32px;border-radius:50%;background:var(--sky);color:var(--cob);display:grid;place-items:center;font-size:22px;font-weight:600;line-height:1}
+details[open] summary:after{content:"–";background:var(--lime);color:var(--ink)}
+details p{padding:0 24px 22px;color:#3f4a7a;font-size:16px}
+/* final */
+.final{background:radial-gradient(700px 400px at 20% 0%,#2c57ff,var(--cob) 50%,var(--cob2));color:#fff;border-radius:36px;padding:64px;display:grid;grid-template-columns:1.2fr .8fr;gap:30px;align-items:center;overflow:hidden;position:relative}
+.final h2{color:#fff}
+.final h2 em{font-style:normal;color:var(--lime)}
+.final p{color:#cdd6fb;font-size:18px}
+.final .acts{display:flex;gap:12px;flex-wrap:wrap;margin-top:26px}
+footer{background:var(--ink);color:#b9c4f2;font-size:15px;padding:64px 0 28px}
+footer .w{display:flex;justify-content:space-between;gap:40px;flex-wrap:wrap}
+.fbrand{max-width:340px}
+.fbrand p{margin-top:16px}
+footer .logo b{color:#fff}
+footer .logo span{color:var(--lime)}
+footer .cols{display:flex;gap:56px;flex-wrap:wrap}
+footer .cols a:not(.btn){display:block;text-decoration:none;color:#dfe5ff;padding:3px 0}
+footer .cols a:not(.btn):hover{color:var(--lime)}
+footer .cols p{padding:3px 0}
+footer h5{font-family:'Outfit';font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--lime);margin-bottom:10px}
+.fcta{height:44px;font-size:15px;margin-top:16px}
+.fbot{gap:6px 24px!important;border-top:1px solid rgba(255,255,255,.12);margin-top:44px;padding-top:22px;font-size:13px;color:#8e9ad0}
+.mbar{display:none}
+@media(max-width:1020px){
+ .nl{display:none}
+ .hero .w{grid-template-columns:1fr;min-height:0;padding-top:40px;padding-bottom:90px}
+ .art{height:420px;order:-1;margin:0 -10px}
+ .strip .w{grid-template-columns:1fr 1fr}
+ .strip .c:nth-child(2){border-right:0}
+ .strip .c:nth-child(-n+2){border-bottom:1.5px solid #e9edfb}
+ .steps,.plans{grid-template-columns:1fr}
+ .plan.hi{transform:none}
+ .proc,.cov .w,.signup .w,.faq .w,.final{grid-template-columns:1fr}
+ .recap{position:static}
+ .final{padding:44px 30px}
+}
+@media(max-width:620px){
+ .w{padding:0 18px}
+ nav .w{height:62px}
+ nav .btn{height:38px;padding:0 18px;font-size:14px}
+ nav .full{display:none}
+ nav .short{display:inline}
+ .hero h1{font-size:44px}
+ .hero p.lead{font-size:17px}
+ .art{height:330px}
+ .bd{padding:9px 13px;border-radius:14px}
+ .bd small{font-size:11px}
+ .bd b{font-size:20px}
+ .bd i{font-size:12px}
+ .offer>div{width:100%}
+ .hero .acts .btn{flex:1}
+ .strip .w{margin-top:-46px;border-radius:18px}
+ .strip .c{padding:18px 16px}
+ .strip b{font-size:28px}
+ section{padding:80px 0}
+ .plans-s{padding-bottom:40px}
+ section.refill{padding-top:40px}
+ section.fin{padding-bottom:56px}
+ .row,.jug-pick{grid-template-columns:1fr}
+ form{padding:24px 18px}
+ .recap{padding:24px}
+ .zone{grid-template-columns:auto 1fr;}
+ .zone .d{grid-column:2;text-align:left}
+ .final{padding:36px 22px;border-radius:26px}
+ .plan .pr{font-size:46px}
+ .mbar{display:flex;transform:translateY(140%);transition:transform .3s;position:fixed;left:12px;right:12px;bottom:12px;z-index:30;gap:10px;background:var(--ink);padding:8px;border-radius:999px;box-shadow:0 14px 30px -10px rgba(0,0,0,.5);align-items:center}
+ .mbar.on{transform:none}
+ .mbar p{color:#fff;font-size:13px;line-height:1.25;padding-left:12px;flex:1}
+ .mbar p b{color:var(--lime);font-family:'Outfit';font-size:15px}
+ .mbar .btn{height:44px;padding:0 18px;font-size:15px}
+ footer{padding-bottom:100px}
+ footer .cols{gap:30px 40px}
+}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+ <defs>
+  <linearGradient id="jugBody" x1="0" x2="1" y1="0" y2="0">
+   <stop offset="0" stop-color="#5f86ff" stop-opacity=".85"/>
+   <stop offset=".18" stop-color="#bcd0ff" stop-opacity=".9"/>
+   <stop offset=".34" stop-color="#7c9dff" stop-opacity=".55"/>
+   <stop offset=".62" stop-color="#3d68ff" stop-opacity=".55"/>
+   <stop offset=".86" stop-color="#1d43e0" stop-opacity=".8"/>
+   <stop offset="1" stop-color="#0d2aa8" stop-opacity=".95"/>
+  </linearGradient>
+  <linearGradient id="waterIn" x1="0" x2="0" y1="0" y2="1">
+   <stop offset="0" stop-color="#9fc0ff" stop-opacity=".7"/>
+   <stop offset="1" stop-color="#2148e8" stop-opacity=".9"/>
+  </linearGradient>
+  <linearGradient id="capG" x1="0" x2="1">
+   <stop offset="0" stop-color="#7fa810"/><stop offset=".4" stop-color="#dcff6a"/><stop offset="1" stop-color="#8fbf0c"/>
+  </linearGradient>
+  <linearGradient id="metal" x1="0" x2="1">
+   <stop offset="0" stop-color="#8d97b8"/><stop offset=".45" stop-color="#f4f6ff"/><stop offset="1" stop-color="#7a84a6"/>
+  </linearGradient>
+  <radialGradient id="glow" cx=".5" cy=".5" r=".5">
+   <stop offset="0" stop-color="#9fbaff" stop-opacity=".55"/><stop offset="1" stop-color="#9fbaff" stop-opacity="0"/>
+  </radialGradient>
+  <symbol id="jug" viewBox="0 0 200 300">
+   <path d="M76 8h48v16H76z" fill="url(#capG)"/>
+   <rect x="72" y="22" width="56" height="14" rx="4" fill="#b7e324"/>
+   <path d="M80 36h40l4 22c26 6 48 18 54 34 6 16 6 40 6 70v84c0 22-8 34-24 38-20 5-52 6-72 6s-52-1-72-6c-16-4-24-16-24-38v-84c0-30 0-54 6-70 6-16 28-28 54-34z" fill="url(#jugBody)" transform="translate(0 0)"/>
+   <path d="M14 140h172v104c0 22-8 34-24 38-20 5-52 6-62 6s-42-1-62-6c-16-4-24-16-24-38z" fill="url(#waterIn)" opacity=".75"/>
+   <path d="M14 140c30 8 60-8 86 0s56 8 86 0" fill="none" stroke="#e8efff" stroke-width="3" opacity=".8"/>
+   <g fill="none" stroke="#fff" stroke-opacity=".35" stroke-width="2"><path d="M16 176h168"/><path d="M16 230h168"/></g>
+   <path d="M38 100c-6 30-6 120 2 168" stroke="#fff" stroke-width="10" stroke-linecap="round" opacity=".55" fill="none"/>
+   <path d="M58 92c-3 20-3 40 0 50" stroke="#fff" stroke-width="5" stroke-linecap="round" opacity=".6" fill="none"/>
+   <path d="M160 110c4 40 4 110-2 150" stroke="#06115a" stroke-width="6" stroke-linecap="round" opacity=".3" fill="none"/>
+   <circle cx="120" cy="200" r="5" fill="#fff" opacity=".5"/><circle cx="96" cy="250" r="3.5" fill="#fff" opacity=".45"/><circle cx="140" cy="168" r="3" fill="#fff" opacity=".5"/><circle cx="70" cy="214" r="2.5" fill="#fff" opacity=".5"/>
+  </symbol>
+ </defs>
+</svg>
+
+<nav>
+ <div class="w">
+  <a class="logo" href="#top" aria-label="Bukal Water home">
+   <svg width="40" height="40" viewBox="0 0 40 40"><rect width="40" height="40" rx="12" fill="#1435c4"/><path d="M20 8c5 7 9 11.5 9 16.5a9 9 0 0 1-18 0C11 19.5 15 15 20 8z" fill="#c8f03c"/><path d="M16 25.5a4.5 4.5 0 0 0 4 4" stroke="#1435c4" stroke-width="2.2" fill="none" stroke-linecap="round"/></svg>
+   <div><b>Bukal</b><span>WATER REFILLING</span></div>
+  </a>
+  <div class="nl"><a href="#how">How it works</a><a href="#plans">Plans</a><a href="#refill">Every refill</a><a href="#zones">Delivery zones</a><a href="#faq">FAQ</a></div>
+  <a class="btn btn-c" href="#signup"><span class="full">Start weekly delivery</span><span class="short">Start</span></a>
+ </div>
+</nav>
+
+<header class="hero" id="top">
+ <div class="w">
+  <div>
+   <span class="tag"><i></i>DECEMBER SIGN-UP OFFER</span>
+   <h1>Fresh refills at your door, <em>every week.</em></h1>
+   <p class="lead">Pick a delivery day once. Our rider brings your 5-gallon jugs on schedule and takes the empties back. No more running out on a Sunday.</p>
+   <div class="offer">
+    <div><span class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#071447" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3c3.5 4.8 6 7.8 6 11a6 6 0 0 1-12 0c0-3.2 2.5-6.2 6-11z"/></svg></span><div><b>First refill FREE</b><small>on any weekly plan</small></div></div>
+    <div><span class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#071447" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3h8M9 3v3h6V3M7 6h10l1 15H6z"/><path d="M9.5 13l2 2 3.5-4"/></svg></span><div><b>Free jug wash + new seal</b><small>for every jug you sign up</small></div></div>
+   </div>
+   <div class="acts"><a class="btn btn-l" href="#signup">Claim my free refill <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a><a class="btn btn-o" href="#plans">See weekly plans</a></div>
+   <p class="fine">Offer for new subscribers who sign up Dec 1–31, 2026.</p>
+  </div>
+  <div class="art" aria-hidden="true">
+   <div class="stage">
+   <svg viewBox="0 0 560 560" preserveAspectRatio="xMidYMid meet">
+    <defs>
+     <radialGradient id="sun" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#c8f03c" stop-opacity=".9"/><stop offset=".6" stop-color="#c8f03c" stop-opacity=".25"/><stop offset="1" stop-color="#c8f03c" stop-opacity="0"/></radialGradient>
+     <linearGradient id="floor" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#0a1c78" stop-opacity="0"/><stop offset="1" stop-color="#061150" stop-opacity=".9"/></linearGradient>
+    </defs>
+    <circle cx="300" cy="230" r="230" fill="url(#glow)"/>
+    <circle cx="420" cy="120" r="70" fill="url(#sun)" opacity=".45"/>
+    <g fill="none" stroke="#bcd0ff" stroke-opacity=".35" stroke-width="2">
+     <ellipse cx="290" cy="486" rx="240" ry="44"/><ellipse cx="290" cy="486" rx="180" ry="32"/><ellipse cx="290" cy="486" rx="120" ry="21"/>
+    </g>
+    <ellipse cx="290" cy="488" rx="150" ry="22" fill="#030a3a" opacity=".55"/>
+    <!-- back jug -->
+    <use href="#jug" x="70" y="150" width="200" height="300" opacity=".55" transform="rotate(-8 170 300)"/>
+    <!-- main jug -->
+    <use href="#jug" x="175" y="70" width="260" height="400"/>
+    <!-- label on main jug -->
+    <g transform="translate(250 312)">
+     <rect width="110" height="58" rx="12" fill="#fff" opacity=".95"/>
+     <text x="55" y="38" text-anchor="middle" font-family="Outfit" font-weight="800" font-size="26" fill="#0b1f7a">BUKAL</text>
+    </g>
+    <!-- droplets -->
+    <path d="M118 120c8 11 13 17 13 24a13 13 0 0 1-26 0c0-7 5-13 13-24z" fill="#c8f03c"/>
+    <path d="M470 300c6 8 10 13 10 18a10 10 0 0 1-20 0c0-5 4-10 10-18z" fill="#fff" opacity=".85"/>
+    <path d="M90 360c4 6 7 9 7 13a7 7 0 0 1-14 0c0-4 3-7 7-13z" fill="#bcd0ff"/>
+   </svg>
+   <div class="bd b1"><small>ROUND 5-GAL</small><b>₱35 <i>/ refill</i></b></div>
+   <div class="bd b2"><small>EVERY WEEK</small><b>Same day</b></div>
+   </div>
+  </div>
+ </div>
+ <svg class="wave" viewBox="0 0 1440 90" preserveAspectRatio="none" height="70" width="100%"><path d="M0 50c120-30 240-30 360 0s240 30 360 0 240-30 360 0 240 30 360 0V90H0z" fill="#fff"/><path d="M0 60c120-26 240-26 360 0s240 26 360 0 240-26 360 0 240 26 360 0" fill="none" stroke="#c8f03c" stroke-width="3" opacity=".8"/></svg>
+</header>
+
+<div class="strip">
+ <div class="w">
+  <div class="c"><small>Round 5-gallon</small><b>₱35<sub>/ refill</sub></b><p>Standard round jug</p></div>
+  <div class="c"><small>Slim 5-gallon</small><b>₱40<sub>/ refill</sub></b><p>With faucet, fits tight spaces</p></div>
+  <div class="c"><small>Delivery</small><b>₱0<sub>in zones</sub></b><p>Zones A, B and C</p></div>
+  <div class="c"><small>Weekly plan</small><b>₱130<sub>/ month</sub></b><p>4 round refills, 1 a week</p></div>
+ </div>
+</div>
+
+<section id="how">
+ <div class="w">
+  <span class="kick">How it works</span>
+  <h2>Three steps, then you never think about water again.</h2>
+  <p class="sub">Set it up once. Change the day, skip a week or pause any time with a message.</p>
+  <div class="steps">
+   <div class="step">
+    <span class="n o">1</span>
+    <div class="pic"><svg viewBox="0 0 300 150" width="100%" height="150">
+     <rect x="40" y="20" width="130" height="120" rx="16" fill="#fff"/>
+     <rect x="40" y="20" width="130" height="30" rx="16" fill="#1435c4"/><rect x="40" y="36" width="130" height="14" fill="#1435c4"/>
+     <circle cx="70" cy="35" r="5" fill="#c8f03c"/><circle cx="140" cy="35" r="5" fill="#c8f03c"/>
+     <g fill="#e9efff"><rect x="54" y="62" width="22" height="18" rx="4"/><rect x="82" y="62" width="22" height="18" rx="4"/><rect x="138" y="62" width="22" height="18" rx="4"/><rect x="54" y="86" width="22" height="18" rx="4"/><rect x="110" y="86" width="22" height="18" rx="4"/><rect x="138" y="86" width="22" height="18" rx="4"/><rect x="54" y="110" width="22" height="18" rx="4"/><rect x="82" y="110" width="22" height="18" rx="4"/></g>
+     <rect x="110" y="62" width="22" height="18" rx="4" fill="#c8f03c"/><rect x="82" y="86" width="22" height="18" rx="4" fill="#1435c4"/><rect x="110" y="110" width="22" height="18" rx="4" fill="#1435c4"/>
+     <use href="#jug" x="190" y="30" width="74" height="112"/>
+    </svg></div>
+    <h3>Pick your plan &amp; day</h3>
+    <p>Choose how many jugs a week and a delivery day that fits your zone.</p>
+   </div>
+   <div class="step">
+    <span class="n o">2</span>
+    <div class="pic"><svg viewBox="0 0 300 150" width="100%" height="150">
+     <ellipse cx="150" cy="138" rx="120" ry="8" fill="#0b1f7a" opacity=".12"/>
+     <!-- tricycle -->
+     <rect x="128" y="58" width="128" height="58" rx="10" fill="#1435c4"/>
+     <rect x="128" y="58" width="128" height="10" rx="5" fill="#c8f03c"/>
+     <use href="#jug" x="136" y="22" width="34" height="50"/><use href="#jug" x="172" y="22" width="34" height="50"/><use href="#jug" x="208" y="22" width="34" height="50"/>
+     <text x="192" y="100" text-anchor="middle" font-family="Outfit" font-weight="800" font-size="16" fill="#fff">BUKAL</text>
+     <path d="M128 100H78l-14-36h-12" stroke="#071447" stroke-width="6" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+     <path d="M66 64l26-6" stroke="#071447" stroke-width="5" stroke-linecap="round"/>
+     <circle cx="64" cy="118" r="18" fill="#071447"/><circle cx="64" cy="118" r="8" fill="url(#metal)"/>
+     <circle cx="226" cy="122" r="16" fill="#071447"/><circle cx="226" cy="122" r="7" fill="url(#metal)"/>
+     <circle cx="150" cy="122" r="16" fill="#071447"/><circle cx="150" cy="122" r="7" fill="url(#metal)"/>
+     <path d="M98 100a16 16 0 0 1 32 0" fill="#1435c4"/>
+     <g stroke="#1435c4" stroke-width="4" stroke-linecap="round" opacity=".45"><path d="M10 80h30"/><path d="M18 96h22"/><path d="M4 112h26"/></g>
+    </svg></div>
+    <h3>We deliver on schedule</h3>
+    <p>Your rider texts on the way, drops off full jugs and collects the empties.</p>
+   </div>
+   <div class="step">
+    <span class="n o">3</span>
+    <div class="pic"><svg viewBox="0 0 300 150" width="100%" height="150">
+     <rect x="60" y="20" width="180" height="120" rx="18" fill="#fff"/>
+     <text x="78" y="48" font-family="DM Sans" font-weight="700" font-size="12" fill="#55608c" letter-spacing="1">DECEMBER BILL</text>
+     <text x="78" y="72" font-family="Outfit" font-weight="800" font-size="15" fill="#071447">Weekly 1</text>
+     <text x="222" y="72" text-anchor="end" font-family="Outfit" font-weight="800" font-size="15" fill="#1435c4">₱130/mo</text>
+     <path d="M78 82h144" stroke="#d3dbf6" stroke-width="1.5" stroke-dasharray="4 4"/>
+     <text x="78" y="102" font-family="DM Sans" font-weight="500" font-size="13" fill="#3f4a7a">First refill</text>
+     <rect x="176" y="90" width="46" height="17" rx="8.5" fill="#c8f03c"/><text x="199" y="103" text-anchor="middle" font-family="DM Sans" font-weight="700" font-size="12" fill="#071447">FREE</text>
+     <text x="78" y="126" font-family="DM Sans" font-weight="500" font-size="13" fill="#3f4a7a">Delivery</text>
+     <text x="222" y="126" text-anchor="end" font-family="DM Sans" font-weight="700" font-size="13" fill="#071447">₱0</text>
+     <circle cx="246" cy="30" r="24" fill="#1435c4"/><path d="M235 30l8 8 14-16" stroke="#c8f03c" stroke-width="4.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg></div>
+    <h3>One simple monthly bill</h3>
+    <p>Pay in cash to your rider or by e-wallet. Your first refill on the plan is on us.</p>
+   </div>
+  </div>
+ </div>
+</section>
+
+<section class="plans-s" id="plans">
+ <div class="w">
+  <span class="kick">Weekly plans</span>
+  <h2>Choose how much water your home goes through.</h2>
+  <p class="sub">Prices are per month for round 5-gallon jugs. Slim jugs add ₱5 per refill. Pause or change any time.</p>
+  <div class="plans">
+   <div class="plan">
+    <div class="pt"><span>Solo / couple</span></div>
+    <h3>Weekly 1</h3>
+    <div class="pr">₱130<small> / month</small></div>
+    <p class="note">4 refills · 1 jug every week</p>
+    <ul><li>1 round jug delivered weekly</li><li>First refill free on sign-up</li><li>Free jug wash + new seal</li><li>Skip a week with one message</li></ul>
+    <a class="btn" href="#signup" data-plan="Weekly 1">Choose Weekly 1</a>
+   </div>
+   <div class="plan hi">
+    <div class="pt"><span>Family home</span><b class="pill">Free dispenser stand</b></div>
+    <h3>Weekly 2</h3>
+    <div class="pr">₱250<small> / month</small></div>
+    <p class="note">8 refills · 2 jugs every week</p>
+    <ul><li>2 round jugs delivered weekly</li><li>First refill free on sign-up</li><li>Free wash + new seal for both jugs</li><li>Free dispenser stand while subscribed</li><li>Change day any time</li></ul>
+    <a class="btn btn-l" href="#signup" data-plan="Weekly 2">Choose Weekly 2</a>
+   </div>
+   <div class="plan">
+    <div class="pt"><span>Shop / office</span></div>
+    <h3>Office 5</h3>
+    <div class="pr">₱600<small> / month</small></div>
+    <p class="note">20 refills · 5 jugs every week</p>
+    <ul><li>5 jugs, round or slim mix</li><li>First refill free on sign-up</li><li>Free wash + new seal for all jugs</li><li>Extra drop-off on request</li><li>Monthly receipt for your records</li></ul>
+    <a class="btn" href="#signup" data-plan="Office 5">Choose Office 5</a>
+   </div>
+  </div>
+ </div>
+</section>
+
+<section id="refill" class="refill">
+ <div class="w proc">
+  <div class="station" aria-hidden="true">
+   <svg viewBox="0 0 480 520" width="100%">
+    <defs>
+     <linearGradient id="tank" x1="0" x2="1"><stop offset="0" stop-color="#cfd8f5"/><stop offset=".35" stop-color="#ffffff"/><stop offset=".7" stop-color="#dfe6fb"/><stop offset="1" stop-color="#a6b3df"/></linearGradient>
+     <linearGradient id="stream" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#e9f0ff"/><stop offset="1" stop-color="#8fb0ff" stop-opacity=".6"/></linearGradient>
+    </defs>
+    <circle cx="240" cy="200" r="200" fill="url(#glow)"/>
+    <!-- wall panel -->
+    <rect x="40" y="40" width="400" height="300" rx="26" fill="#0b1f7a" opacity=".55"/>
+    <!-- tanks -->
+    <g>
+     <rect x="70" y="70" width="66" height="210" rx="33" fill="url(#tank)"/>
+     <rect x="154" y="70" width="66" height="210" rx="33" fill="url(#tank)"/>
+     <rect x="238" y="70" width="66" height="210" rx="33" fill="url(#tank)"/>
+     <g font-family="Outfit" font-weight="800" font-size="20" fill="#1435c4" text-anchor="middle"><text x="103" y="180">1</text><text x="187" y="180">2</text><text x="271" y="180">3</text></g>
+     <g fill="#c8f03c"><rect x="80" y="100" width="46" height="8" rx="4"/><rect x="164" y="100" width="46" height="8" rx="4"/><rect x="248" y="100" width="46" height="8" rx="4"/></g>
+    </g>
+    <!-- pipes -->
+    <path d="M136 250h18M220 250h18M304 250h46v70" stroke="url(#metal)" stroke-width="12" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+    <!-- faucet -->
+    <rect x="320" y="300" width="70" height="26" rx="10" fill="url(#metal)"/>
+    <rect x="340" y="322" width="22" height="22" rx="4" fill="url(#metal)"/>
+    <rect x="336" y="290" width="30" height="14" rx="5" fill="#c8f03c"/>
+    <!-- stream -->
+    <rect x="345" y="344" width="12" height="70" rx="6" fill="url(#stream)"/>
+    <!-- jug being filled -->
+    <use href="#jug" x="290" y="350" width="122" height="170" />
+    <!-- side jugs on rack -->
+    <rect x="40" y="470" width="230" height="12" rx="6" fill="#071447" opacity=".5"/>
+    <use href="#jug" x="52" y="380" width="70" height="98" opacity=".9"/>
+    <use href="#jug" x="126" y="380" width="70" height="98" opacity=".9"/>
+    <use href="#jug" x="200" y="380" width="70" height="98" opacity=".9"/>
+    <!-- date label -->
+    <g transform="translate(56 292)"><rect width="250" height="76" rx="16" fill="#fff"/><text x="20" y="31" font-family="DM Sans" font-weight="700" font-size="17" fill="#55608c" letter-spacing="1">FILLED ON</text><text x="20" y="60" font-family="Outfit" font-weight="800" font-size="25" fill="#0b1f7a">DEC 07 · 08:40</text><circle cx="222" cy="38" r="13" fill="#c8f03c"/></g>
+   </svg>
+  </div>
+  <div>
+   <span class="kick">Every refill</span>
+   <h2>What happens to your jug before it reaches you.</h2>
+   <p class="sub">The same routine for every jug, every time, done at our station.</p>
+   <div class="plist">
+    <div class="pi"><span class="num">01</span><div><h4>Jug wash, inside and out</h4><p>Each returned jug is rinsed and brushed before it goes near the filler.</p></div></div>
+    <div class="pi"><span class="num">02</span><div><h4>Multi-stage filter line</h4><p>Water runs through the filters at our station right before it’s filled.</p></div></div>
+    <div class="pi"><span class="num">03</span><div><h4>New cap and seal</h4><p>Every jug leaves with a fresh cap and a shrink seal you can see.</p></div></div>
+    <div class="pi"><span class="num">04</span><div><h4>Date &amp; time label</h4><p>A sticker shows exactly when your jug was filled.</p></div></div>
+   </div>
+  </div>
+ </div>
+</section>
+
+<section class="cov" id="zones">
+ <svg style="position:absolute;inset:auto 0 0 0;width:100%;height:240px;opacity:.22" viewBox="0 0 1440 240" preserveAspectRatio="none" aria-hidden="true"><g fill="none" stroke="#5f86ff" stroke-width="2"><path d="M0 120c160-40 320-40 480 0s320 40 480 0 320-40 480 0"/><path d="M0 160c160-40 320-40 480 0s320 40 480 0 320-40 480 0"/><path d="M0 200c160-40 320-40 480 0s320 40 480 0 320-40 480 0"/></g></svg>
+ <div class="w">
+  <div>
+   <span class="kick">Delivery zones</span>
+   <h2>Free delivery inside our three zones.</h2>
+   <p class="sub">Each zone has its own delivery days. Outside the zones? Ask us — a small fee may apply.</p>
+   <div class="zones">
+    <div class="zone"><span class="zb" style="background:#c8f03c">A</span><div><h4>Zone A · near the station</h4><p>Within walking distance of the shop</p></div><span class="d">Mon · Wed · Fri</span></div>
+    <div class="zone"><span class="zb" style="background:#9fbaff">B</span><div><h4>Zone B · subdivision area</h4><p>Gated villages east of the main road</p></div><span class="d">Tue · Thu · Sat</span></div>
+    <div class="zone"><span class="zb" style="background:#fff">C</span><div><h4>Zone C · market &amp; offices</h4><p>Shops and offices along the highway</p></div><span class="d">Mon – Sat</span></div>
+   </div>
+  </div>
+  <div class="map" aria-hidden="true">
+   <svg viewBox="0 0 520 460" width="100%">
+    <defs><pattern id="grid" width="26" height="26" patternUnits="userSpaceOnUse"><path d="M26 0H0V26" fill="none" stroke="#2747b8" stroke-width="1" opacity=".5"/></pattern></defs>
+    <rect width="520" height="460" fill="url(#grid)"/>
+    <path d="M-10 300C120 260 180 330 300 290S460 200 540 230" stroke="#1d3fbf" stroke-width="34" fill="none" opacity=".8"/>
+    <path d="M-10 300C120 260 180 330 300 290S460 200 540 230" stroke="#3d68ff" stroke-width="3" fill="none" stroke-dasharray="10 10"/>
+    <path d="M200 -10C210 120 190 260 230 470" stroke="#22389a" stroke-width="16" fill="none"/>
+    <circle cx="230" cy="230" r="80" fill="#c8f03c" opacity=".18" stroke="#c8f03c" stroke-width="2.5"/>
+    <path d="M300 90c70-10 150 20 170 80s-30 90-90 90-120-40-110-100z" fill="#9fbaff" opacity=".18" stroke="#9fbaff" stroke-width="2.5"/>
+    <path d="M40 330c60-20 170-10 220 10s30 90-30 100-180 0-200-40 0-60 10-70z" fill="#fff" opacity=".12" stroke="#fff" stroke-width="2.5"/>
+    <g font-family="Outfit" font-weight="800" font-size="26"><text x="250" y="176" fill="#c8f03c">A</text><text x="400" y="160" fill="#9fbaff">B</text><text x="120" y="390" fill="#fff">C</text></g>
+    <!-- station pin -->
+    <g transform="translate(230 230)"><circle r="30" fill="#c8f03c" opacity=".3"/><path d="M0-34c13 0 22 9 22 22 0 17-22 36-22 36s-22-19-22-36c0-13 9-22 22-22z" fill="#c8f03c"/><path d="M0-24c5 7 8 10 8 14a8 8 0 0 1-16 0c0-4 3-7 8-14z" fill="#071447"/></g>
+    <g transform="translate(250 256)"><rect width="150" height="40" rx="12" fill="#fff"/><text x="75" y="27" text-anchor="middle" font-family="DM Sans" font-weight="700" font-size="18" fill="#071447">Bukal Station</text></g>
+    <!-- rider route -->
+    <path d="M230 230C300 200 340 140 410 130" stroke="#c8f03c" stroke-width="3" fill="none" stroke-dasharray="4 8" stroke-linecap="round"/>
+    <circle cx="410" cy="130" r="8" fill="#c8f03c"/>
+   </svg>
+  </div>
+ </div>
+</section>
+
+<section class="signup" id="signup">
+ <div class="w">
+  <div class="shead">
+   <span class="kick">Sign up</span>
+   <h2>Set up your weekly delivery</h2>
+   <p class="sub">Takes about a minute. We'll text you to confirm your first free refill.</p>
+  </div>
+  <div class="recap">
+   <h3 class="o">Your December welcome</h3>
+   <ul>
+    <li><span>First refill on your plan</span><b>FREE</b></li>
+    <li><span>Jug wash, every jug you sign up</span><b>FREE</b></li>
+    <li><span>New cap &amp; seal on sign-up</span><b>FREE</b></li>
+    <li><span>Delivery inside zones A–C</span><b>₱0</b></li>
+   </ul>
+   <div class="rart" aria-hidden="true"><svg viewBox="0 0 300 170" width="100%" style="max-width:300px;margin:0 auto">
+     <ellipse cx="150" cy="156" rx="130" ry="9" fill="#0b1f7a" opacity=".12"/>
+     <g fill="none" stroke="#1435c4" stroke-opacity=".25" stroke-width="2"><ellipse cx="150" cy="156" rx="110" ry="12"/></g>
+     <use href="#jug" x="58" y="34" width="84" height="126"/>
+     <use href="#jug" x="132" y="56" width="70" height="104" opacity=".85"/>
+     <use href="#jug" x="194" y="74" width="58" height="86" opacity=".7"/>
+     <path d="M40 40c6 8 10 12 10 17a10 10 0 0 1-20 0c0-5 4-9 10-17z" fill="#c8f03c"/>
+     <path d="M262 30c4 6 7 9 7 13a7 7 0 0 1-14 0c0-4 3-7 7-13z" fill="#1435c4" opacity=".5"/>
+    </svg></div>
+   <div class="free">
+    <svg width="48" height="48" viewBox="0 0 48 48" style="flex:none"><circle cx="24" cy="24" r="24" fill="#c8f03c"/><path d="M24 11c6 8 10 12.5 10 18a10 10 0 0 1-20 0c0-5.5 4-10 10-18z" fill="#071447"/></svg>
+    <div><b>No contract</b><small>Pause, skip or cancel any time by message.</small></div>
+   </div>
+  </div>
+  <form id="f" novalidate>
+   <div id="fields">
+    <div class="row">
+     <label class="f"><span>Your name</span><input name="name" required placeholder="Juan dela Cruz" autocomplete="name"></label>
+     <label class="f"><span>Mobile number</span><input name="phone" required inputmode="tel" placeholder="0900-000-0000" autocomplete="tel"></label>
+    </div>
+    <div class="row">
+     <label class="f"><span>Delivery zone</span>
+      <select name="zone"><option>Zone A · near the station</option><option>Zone B · subdivision area</option><option>Zone C · market &amp; offices</option><option>Not sure — please check</option></select></label>
+     <label class="f"><span>Plan</span>
+      <select name="plan" id="plan"><option>Weekly 1 · ₱130/month</option><option selected>Weekly 2 · ₱250/month</option><option>Office 5 · ₱600/month</option></select></label>
+    </div>
+    <span class="lab">Jug type</span>
+    <div class="jug-pick">
+     <label><input type="radio" name="jug" value="Round" checked><span class="card"><svg width="34" height="46" viewBox="0 0 200 300"><use href="#jug"/></svg><span><b>Round 5-gal</b><small>₱35 per refill</small></span></span></label>
+     <label><input type="radio" name="jug" value="Slim"><span class="card"><svg width="30" height="46" viewBox="0 0 120 200"><rect x="40" y="4" width="40" height="14" rx="3" fill="#b7e324"/><rect x="14" y="18" width="92" height="178" rx="16" fill="url(#jugBody)"/><rect x="14" y="80" width="92" height="116" rx="0" fill="url(#waterIn)" opacity=".7"/><rect x="50" y="150" width="20" height="14" rx="3" fill="#0b1f7a"/></svg><span><b>Slim with faucet</b><small>₱40 per refill</small></span></span></label>
+    </div>
+    <span class="lab">Preferred delivery day</span>
+    <div class="chips" id="days">
+     <label><input type="radio" name="day" value="Monday" checked><span>Mon</span></label>
+     <label><input type="radio" name="day" value="Tuesday"><span>Tue</span></label>
+     <label><input type="radio" name="day" value="Wednesday"><span>Wed</span></label>
+     <label><input type="radio" name="day" value="Thursday"><span>Thu</span></label>
+     <label><input type="radio" name="day" value="Friday"><span>Fri</span></label>
+     <label><input type="radio" name="day" value="Saturday"><span>Sat</span></label>
+    </div>
+    <span class="lab">Time window</span>
+    <div class="chips">
+     <label><input type="radio" name="time" value="8–11 AM" checked><span>8–11 AM</span></label>
+     <label><input type="radio" name="time" value="1–4 PM"><span>1–4 PM</span></label>
+     <label><input type="radio" name="time" value="4–7 PM"><span>4–7 PM</span></label>
+    </div>
+    <button class="btn btn-c" type="submit">Start my weekly delivery</button>
+    <p class="legal">We'll text you to confirm your first delivery date. Sample page — no data is sent.</p>
+   </div>
+   <div class="done" id="done" role="status">
+    <svg width="84" height="84" viewBox="0 0 84 84" style="margin:0 auto"><circle cx="42" cy="42" r="42" fill="#c8f03c"/><path d="M26 43l11 11 21-24" stroke="#071447" stroke-width="6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    <h3>You're on the route!</h3>
+    <p id="msg">We'll text you to confirm your first free refill.</p>
+    <span class="ref" id="ref">BKL-0000</span>
+   </div>
+  </form>
+ </div>
+</section>
+
+<section class="faq" id="faq">
+ <div class="w">
+  <div>
+   <span class="kick">FAQ</span>
+   <h2>Questions before you sign up</h2>
+   <p class="sub">Still unsure? Send us a message and we'll answer the same day.</p>
+  </div>
+  <div>
+   <details open><summary>Do I need to buy new jugs?</summary><p>No. Use your own round or slim 5-gallon jugs. We wash them and fit a new cap and seal for free when you sign up.</p></details>
+   <details><summary>When is my free refill?</summary><p>It's the first delivery on your plan. Your monthly bill starts from the second delivery.</p></details>
+   <details><summary>Can I skip a week if I'm away?</summary><p>Yes. Message us by the evening before your delivery day and we'll skip it — no charge for that week.</p></details>
+   <details><summary>What if I run out before my day?</summary><p>Message us for an extra drop-off. Inside the zones it's the normal refill price, no delivery fee.</p></details>
+   <details><summary>How do I pay?</summary><p>Monthly, in cash to your rider or by e-wallet / bank transfer. We send a simple receipt each month.</p></details>
+  </div>
+ </div>
+</section>
+
+<section class="fin" style="padding-top:30px">
+ <div class="w">
+  <div class="final">
+   <div>
+    <h2>Your first refill is <em>on us</em> this December.</h2>
+    <p>Sign up for any weekly plan and get your jugs washed and sealed for free.</p>
+    <div class="acts"><a class="btn btn-l" href="#signup">Claim my free refill</a><a class="btn btn-o" href="#plans">Compare plans</a></div>
+   </div>
+   <svg viewBox="0 0 300 260" width="100%" aria-hidden="true" style="max-height:260px">
+    <circle cx="150" cy="130" r="120" fill="url(#glow)"/>
+    <g fill="none" stroke="#c8f03c" stroke-width="2" opacity=".6"><ellipse cx="150" cy="236" rx="120" ry="18"/><ellipse cx="150" cy="236" rx="80" ry="12"/></g>
+    <use href="#jug" x="66" y="40" width="130" height="196" transform="rotate(-6 130 140)"/>
+    <use href="#jug" x="150" y="70" width="110" height="166" opacity=".75"/>
+   </svg>
+  </div>
+ </div>
+</section>
+
+<footer>
+ <div class="w">
+  <div class="fbrand">
+   <a class="logo" href="#top" aria-label="Bukal Water home">
+    <svg width="40" height="40" viewBox="0 0 40 40"><rect width="40" height="40" rx="12" fill="#c8f03c"/><path d="M20 8c5 7 9 11.5 9 16.5a9 9 0 0 1-18 0C11 19.5 15 15 20 8z" fill="#071447"/><path d="M16 25.5a4.5 4.5 0 0 0 4 4" stroke="#c8f03c" stroke-width="2.2" fill="none" stroke-linecap="round"/></svg>
+    <div><b>Bukal</b><span>WATER REFILLING</span></div>
+   </a>
+   <p>Weekly 5-gallon refill delivery for homes, shops and offices.</p>
+  </div>
+  <div class="cols">
+   <div><h5>Explore</h5><a href="#how">How it works</a><a href="#plans">Plans</a><a href="#refill">Every refill</a><a href="#zones">Delivery zones</a><a href="#faq">FAQ</a></div>
+   <div><h5>Contact</h5><p>0000-000-0000</p><p>hello@example.com</p><p>Street address, Barangay</p><p>City, Philippines</p></div>
+   <div><h5>Station hours</h5><p>Mon – Sat · 7 AM – 7 PM</p><p>Sun · 8 AM – 12 NN</p><a class="btn btn-l fcta" href="#signup">Start weekly delivery</a></div>
+  </div>
+ </div>
+ <div class="w fbot"><span>© 2026 Bukal Water Refilling Station</span><span>Prices in Philippine pesos (₱)</span></div>
+</footer>
+
+<div class="mbar"><p><b>First refill FREE</b><br>on weekly plans</p><a class="btn btn-l" href="#signup">Sign up</a></div>
+
+<script>
+(function(){var m=document.querySelector('.mbar'),s=document.getElementById('signup');function u(){var r=s.getBoundingClientRect();m.classList.toggle('on',window.scrollY>560&&!(r.top<window.innerHeight&&r.bottom>0))}window.addEventListener('scroll',u,{passive:true});u()})();
+document.querySelectorAll('[data-plan]').forEach(function(a){
+ a.addEventListener('click',function(){
+  var p=a.getAttribute('data-plan'),s=document.getElementById('plan');
+  for(var i=0;i<s.options.length;i++){if(s.options[i].text.indexOf(p)===0){s.selectedIndex=i}}
+ });
+});
+document.getElementById('f').addEventListener('submit',function(e){
+ e.preventDefault();
+ var f=e.target,ok=true;
+ ['name','phone'].forEach(function(n){var el=f.elements[n];if(!el.value.trim()){el.style.borderColor='#e0452b';ok=false}else{el.style.borderColor=''}});
+ if(!ok){f.elements.name.value.trim()?f.elements.phone.focus():f.elements.name.focus();return}
+ var day=f.querySelector('input[name=day]:checked').value,time=f.querySelector('input[name=time]:checked').value,jug=f.querySelector('input[name=jug]:checked').value;
+ document.getElementById('msg').textContent='Thanks, '+f.elements.name.value.trim().split(' ')[0]+'! '+f.elements.plan.value.split(' · ')[0]+' with '+jug.toLowerCase()+' jugs, every '+day+', '+time+'. We’ll text you to confirm your first free refill.';
+ document.getElementById('ref').textContent='BKL-'+String(Math.floor(1000+Math.random()*9000));
+ document.getElementById('fields').style.display='none';
+ document.getElementById('done').classList.add('on');
+ var hh=document.querySelector('nav').offsetHeight+24;window.scrollTo({top:f.getBoundingClientRect().top+window.scrollY-hh,behavior:'smooth'});
+});
+</script>
+</body>
+</html>
