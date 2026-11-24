@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>눈썹달 브로우 &amp; 래쉬 · BGC 속눈썹·눈썹 스튜디오</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700;800&family=Noto+Sans+KR:wght@400;500;700&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&display=swap" rel="stylesheet">
+<style>
+:root{--em:#0f3b34;--em2:#174b42;--em3:#1f5c51;--cream:#f5efe4;--silk:#ebe1d0;--gold:#c9a45c;--gold2:#e2c88e;--ink:#1d2622;--mut:#5f6b65}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Noto Sans KR',sans-serif;color:var(--ink);background:var(--cream);word-break:keep-all;-webkit-font-smoothing:antialiased;line-height:1.6;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+.serif{font-family:'Nanum Myeongjo',serif}
+.en{font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:500}
+.wrap{max-width:1200px;margin:0 auto;padding:0 32px}
+.btn{display:inline-flex;align-items:center;gap:10px;height:52px;padding:0 28px;border-radius:999px;font-weight:700;font-size:15px;transition:.25s;cursor:pointer;border:0;font-family:inherit}
+.btn-gold{background:var(--gold);color:#13241f}
+.btn-gold:hover{background:var(--gold2)}
+.btn-line{border:1.5px solid rgba(245,239,228,.5);color:var(--cream);background:transparent}
+.btn-line:hover{background:rgba(245,239,228,.08)}
+.btn svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+/* header */
+header{position:absolute;left:0;right:0;top:0;z-index:20}
+.nav{display:flex;align-items:center;justify-content:space-between;height:88px}
+.logo{display:flex;align-items:center;gap:12px;color:var(--cream)}
+.logo svg{width:40px;height:40px}
+.logo b{font-family:'Nanum Myeongjo',serif;font-weight:800;font-size:21px;letter-spacing:.02em}
+.logo small{display:block;font-family:'Cormorant Garamond',serif;font-style:italic;font-size:14px;color:var(--gold2);letter-spacing:.06em;margin-top:-2px}
+.menu{display:flex;gap:34px;color:rgba(245,239,228,.82);font-size:15px}
+.menu a:hover{color:var(--gold2)}
+.nav .btn{height:44px;padding:0 22px;font-size:14px}
+.burger{display:none;width:44px;height:44px;border-radius:50%;border:1.5px solid rgba(245,239,228,.4);background:none;color:var(--cream);align-items:center;justify-content:center}
+.burger svg{width:20px;height:20px;stroke:currentColor;stroke-width:2;fill:none}
+/* hero */
+.hero{background:radial-gradient(900px 600px at 78% 40%,#1f5c51 0%,#123f37 45%,#0b2c26 100%);color:var(--cream);position:relative;overflow:hidden;padding:150px 0 0}
+.hero::before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(115deg,rgba(255,255,255,.018) 0 2px,transparent 2px 9px);pointer-events:none}
+.hero .wrap{display:grid;grid-template-columns:1.05fr .95fr;gap:40px;align-items:center;position:relative}
+.kicker{display:inline-flex;align-items:center;gap:12px;font-size:14px;letter-spacing:.18em;color:var(--gold2);font-weight:500}
+.kicker::before{content:"";width:34px;height:1px;background:var(--gold)}
+.hero h1{font-family:'Nanum Myeongjo',serif;font-weight:800;font-size:clamp(40px,5.4vw,70px);line-height:1.22;letter-spacing:-.02em;margin-top:22px}
+.hero h1 em{font-style:normal;color:var(--gold2)}
+.hero p.lead{font-size:18px;color:rgba(245,239,228,.78);margin-top:24px;max-width:470px}
+.hero .acts{display:flex;gap:12px;margin-top:36px;flex-wrap:wrap}
+.hero .meta{display:flex;gap:36px;margin-top:56px;padding:26px 0 70px;border-top:1px solid rgba(201,164,92,.3);max-width:520px}
+.hero .meta div{font-size:13px;color:rgba(245,239,228,.6);letter-spacing:.06em}
+.hero .meta b{display:block;font-family:'Nanum Myeongjo',serif;font-size:22px;color:var(--cream);letter-spacing:0;font-weight:700;margin-bottom:2px}
+.art{position:relative;align-self:center;padding-bottom:40px}
+.art svg{width:100%;height:auto;display:block}
+/* ribbon */
+.ribbon{background:var(--gold);color:#13241f;overflow:hidden;white-space:nowrap}
+.ribbon div{display:inline-flex;gap:46px;padding:14px 0;font-family:'Cormorant Garamond',serif;font-style:italic;font-size:20px;animation:mq 34s linear infinite}
+.ribbon span::after{content:"✦";margin-left:46px;font-style:normal;font-size:13px;vertical-align:3px}
+@keyframes mq{to{transform:translateX(-50%)}}
+section{padding:110px 0}
+.head{display:flex;justify-content:space-between;align-items:flex-end;gap:30px;margin-bottom:54px;flex-wrap:wrap}
+.head .en{font-size:22px;color:var(--gold);display:block}
+.head h2{font-family:'Nanum Myeongjo',serif;font-size:clamp(30px,3.6vw,44px);font-weight:800;line-height:1.3;letter-spacing:-.02em;margin-top:6px}
+.head p{color:var(--mut);max-width:420px;font-size:16px}
+/* promise */
+.promise{background:var(--cream)}
+.pgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.pcard{background:#fffaf2;border:1px solid #e3d7c1;border-radius:22px;padding:34px 30px;position:relative}
+.pcard .no{font-family:'Cormorant Garamond',serif;font-size:46px;color:var(--gold);line-height:1;font-weight:500}
+.pcard svg{position:absolute;right:28px;top:30px;width:46px;height:46px;stroke:var(--em3);fill:none;stroke-width:1.4;stroke-linecap:round;stroke-linejoin:round}
+.pcard h3{font-family:'Nanum Myeongjo',serif;font-size:22px;font-weight:800;margin:22px 0 10px}
+.pcard p{color:var(--mut);font-size:15.5px}
+/* services */
+.svc{background:var(--em);color:var(--cream);position:relative;overflow:hidden}
+.svc .head p{color:rgba(245,239,228,.7)}
+.tabs{display:inline-flex;background:rgba(0,0,0,.2);border:1px solid rgba(201,164,92,.35);border-radius:999px;padding:5px;margin-bottom:34px}
+.tabs button{background:none;border:0;color:rgba(245,239,228,.75);font-family:inherit;font-size:15px;font-weight:700;height:44px;padding:0 26px;border-radius:999px;cursor:pointer}
+.tabs button.on{background:var(--gold);color:#13241f}
+.list{display:none;grid-template-columns:1fr 1fr;gap:0 60px}
+.list.on{display:grid}
+.row{display:grid;grid-template-columns:1fr auto;gap:6px 20px;padding:24px 0;border-bottom:1px solid rgba(201,164,92,.25)}
+.row b{font-family:'Nanum Myeongjo',serif;font-size:21px;font-weight:700}
+.row b small{font-family:'Noto Sans KR';font-size:12px;font-weight:700;color:#13241f;background:var(--gold2);border-radius:4px;padding:2px 8px;margin-left:8px;vertical-align:3px}
+.row .pr{font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:600;color:var(--gold2);white-space:nowrap}
+.row p{grid-column:1/-1;font-size:14.5px;color:rgba(245,239,228,.66)}
+.row .tm{font-size:13px;color:var(--gold2);opacity:.85}
+.note{margin-top:28px;font-size:14px;color:rgba(245,239,228,.6)}
+/* curls */
+.curls{background:var(--silk)}
+.cgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.curl{background:#fffaf2;border-radius:200px 200px 22px 22px;padding:36px 24px 30px;text-align:center;border:1px solid #e0d2b8;transition:.3s}
+.curl:hover{transform:translateY(-6px);box-shadow:0 30px 50px -30px rgba(15,59,52,.45)}
+.curl svg{width:100%;max-width:170px;height:auto;margin:0 auto 14px;display:block}
+.curl .en{font-size:30px;color:var(--em3);display:block;line-height:1}
+.curl h3{font-family:'Nanum Myeongjo',serif;font-size:19px;font-weight:800;margin:8px 0 6px}
+.curl p{font-size:14.5px;color:var(--mut)}
+/* process */
+.proc{background:var(--cream)}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:0;counter-reset:s;position:relative}
+.steps::before{content:"";position:absolute;left:12%;right:12%;top:38px;height:1px;background:repeating-linear-gradient(90deg,var(--gold) 0 6px,transparent 6px 12px)}
+.step{text-align:center;padding:0 16px;position:relative}
+.step i{display:flex;width:76px;height:76px;border-radius:50%;background:var(--em);color:var(--gold2);align-items:center;justify-content:center;margin:0 auto 22px;font-style:normal;font-family:'Cormorant Garamond',serif;font-size:30px;box-shadow:0 0 0 8px var(--cream)}
+.step h3{font-family:'Nanum Myeongjo',serif;font-size:20px;font-weight:800;margin-bottom:8px}
+.step p{font-size:15px;color:var(--mut)}
+.step small{display:inline-block;margin-top:10px;font-size:13px;color:var(--em3);background:#e7efe9;border-radius:999px;padding:3px 12px;font-weight:500}
+/* space */
+.space{background:var(--em2);color:var(--cream);padding:0}
+.space .wrap{display:grid;grid-template-columns:1fr 1fr;gap:0;align-items:stretch}
+.space .txt{padding:110px 60px 110px 0}
+.space .txt h2{font-family:'Nanum Myeongjo',serif;font-size:clamp(30px,3.4vw,42px);font-weight:800;line-height:1.35;margin-top:8px}
+.space .txt p{color:rgba(245,239,228,.72);margin-top:20px;font-size:16px}
+.space ul{list-style:none;margin-top:30px;display:grid;gap:14px}
+.space li{display:flex;gap:14px;align-items:flex-start;font-size:15.5px;color:rgba(245,239,228,.88)}
+.space li svg{flex:none;width:22px;height:22px;stroke:var(--gold2);fill:none;stroke-width:1.8;margin-top:2px}
+.space .pic{position:relative;min-height:520px}
+.space .pic svg{position:absolute;inset:0;width:100%;height:100%}
+/* booking */
+.book{background:var(--cream)}
+.bgrid{display:grid;grid-template-columns:.9fr 1.1fr;gap:50px;align-items:start}
+.binfo{background:var(--em);color:var(--cream);border-radius:28px;padding:44px 40px;position:relative;overflow:hidden}
+.binfo::after{content:"";position:absolute;right:-80px;bottom:-80px;width:260px;height:260px;border-radius:50%;border:1px solid rgba(201,164,92,.35);box-shadow:0 0 0 30px rgba(201,164,92,.06);opacity:.6}
+.binfo h3{font-family:'Nanum Myeongjo',serif;font-size:28px;font-weight:800;line-height:1.35}
+.binfo dl{margin-top:30px;display:grid;gap:18px;position:relative;z-index:1}
+.binfo dt{font-size:13px;letter-spacing:.14em;color:var(--gold2)}
+.binfo dd{font-size:16px;color:rgba(245,239,228,.9);margin-top:2px}
+form{background:#fffaf2;border:1px solid #e3d7c1;border-radius:28px;padding:40px}
+.f2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+label{display:block;font-size:14px;font-weight:700;margin-bottom:8px;color:var(--ink)}
+.fld{margin-bottom:20px}
+input,select{width:100%;height:52px;border:1.5px solid #ddd0b8;border-radius:14px;background:#fff;padding:0 16px;font-family:inherit;font-size:15px;color:var(--ink)}
+input:focus,select:focus{outline:0;border-color:var(--em3);box-shadow:0 0 0 4px rgba(31,92,81,.12)}
+.slots{display:flex;flex-wrap:wrap;gap:8px}
+.slots button{height:44px;padding:0 18px;border-radius:12px;border:1.5px solid #ddd0b8;background:#fff;font-family:inherit;font-size:14px;font-weight:500;cursor:pointer;color:var(--ink)}
+.slots button.on{background:var(--em);border-color:var(--em);color:var(--cream)}
+.slots button:disabled{opacity:.4;text-decoration:line-through;cursor:not-allowed}
+form .btn{width:100%;justify-content:center;background:var(--em);color:var(--cream);margin-top:8px;height:56px;font-size:16px}
+form .btn:hover{background:var(--em3)}
+.done{display:none;text-align:center;padding:30px 10px}
+.done.on{display:block}
+.done svg{width:64px;height:64px;stroke:var(--em3);fill:none;stroke-width:1.6}
+.done h3{font-family:'Nanum Myeongjo',serif;font-size:26px;font-weight:800;margin:14px 0 8px}
+.done p{color:var(--mut)}
+.err{color:#b4472f;font-size:13.5px;margin-top:8px;min-height:20px}
+/* faq */
+.faq{background:var(--silk)}
+.qa{max-width:860px}
+details{border-bottom:1px solid #d6c7aa;padding:22px 0}
+summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;gap:20px;font-family:'Nanum Myeongjo',serif;font-weight:800;font-size:19px}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";font-family:'Cormorant Garamond',serif;font-size:30px;line-height:.8;color:var(--gold);transition:.2s}
+details[open] summary::after{transform:rotate(45deg)}
+details p{color:var(--mut);margin-top:12px;font-size:15.5px;max-width:720px}
+footer{background:#0b2c26;color:rgba(245,239,228,.65);padding:64px 0 40px;font-size:14px}
+.fgrid{display:flex;justify-content:space-between;gap:40px;flex-wrap:wrap}
+footer .logo{margin-bottom:14px}
+footer h4{color:var(--gold2);font-size:13px;letter-spacing:.14em;font-weight:500;margin-bottom:10px}
+.copy{margin-top:44px;padding-top:24px;border-top:1px solid rgba(201,164,92,.2);font-size:13px}
+@media(min-width:1001px){.space .wrap{max-width:none;padding-right:0;padding-left:max(32px,calc((100vw - 1200px)/2 + 32px))}}
+.fab{position:fixed;right:22px;bottom:22px;z-index:30;display:none}
+@media(max-width:1000px){
+ .menu,.nav .btn{display:none}.burger{display:flex}
+ .hero .wrap{grid-template-columns:1fr}.art{max-width:520px;margin:0 auto;width:100%}
+ .hero .meta{padding-bottom:30px}
+ .pgrid{grid-template-columns:1fr}
+ .cgrid{grid-template-columns:1fr 1fr}
+ .list{grid-template-columns:1fr}
+ .steps{grid-template-columns:1fr 1fr;gap:44px 0}.steps::before{display:none}
+ .space .wrap{grid-template-columns:1fr}.space .txt{padding:80px 0 40px}.space .pic{min-height:400px;margin:0 -32px}
+ .bgrid{grid-template-columns:1fr}
+}
+@media(max-width:600px){
+ .wrap{padding:0 20px}
+ section{padding:80px 0}
+ .hero{padding-top:120px}
+ .hero .meta{gap:22px}
+ .hero .meta b{font-size:19px}
+ .cgrid{grid-template-columns:1fr 1fr;gap:12px}
+ .curl{padding:26px 14px 22px}
+ .curl .en{font-size:24px}
+ .curl h3{font-size:17px}
+ .curl p{font-size:13.5px}
+ .f2{grid-template-columns:1fr}
+ form{padding:28px 22px}
+ .binfo{padding:34px 26px}
+ .tabs button{padding:0 18px}
+ .space .pic{margin:0 -20px;min-height:320px}
+ .fab{display:inline-flex}
+ .fab.btn{height:50px;box-shadow:0 14px 30px -10px rgba(0,0,0,.4)}
+}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute">
+ <symbol id="mark" viewBox="0 0 40 40"><circle cx="20" cy="20" r="19" fill="none" stroke="#c9a45c" stroke-width="1.2"/><path d="M11 22 C16 13 26 13 31 20" fill="none" stroke="#e2c88e" stroke-width="2.4" stroke-linecap="round"/><path d="M27 12 a9 9 0 1 0 6 13 a7 7 0 1 1 -6 -13z" fill="#c9a45c" transform="translate(-6,8) scale(.7)"/></symbol>
+</svg>
+
+<header>
+ <div class="wrap nav">
+  <a class="logo" href="#"><svg><use href="#mark"/></svg><div><b>눈썹달</b><small>brow &amp; lash studio</small></div></a>
+  <nav class="menu"><a href="#svc">시술 안내</a><a href="#curl">컬 가이드</a><a href="#proc">진행 과정</a><a href="#space">스튜디오</a><a href="#faq">자주 묻는 질문</a></nav>
+  <a class="btn btn-gold" href="#book">예약하기</a>
+  <button class="burger" aria-label="메뉴"><svg viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+ </div>
+</header>
+
+<section class="hero">
+ <div class="wrap">
+  <div>
+   <div class="kicker">BGC · 1:1 PRIVATE STUDIO</div>
+   <h1>눈매에 맞춘 결,<br><em>한 올</em>씩 단정하게.</h1>
+   <p class="lead">래쉬 리프트부터 브로우 라미네이션까지, 기다리는 손님 없이 한&nbsp;분씩 모시는 BGC의 작은 스튜디오.</p>
+   <div class="acts">
+    <a class="btn btn-gold" href="#book">원하는 시간 예약 <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+    <a class="btn btn-line" href="#svc">시술·가격 보기</a>
+   </div>
+   <div class="meta">
+    <div><b>무료</b>하루 전 패치 테스트</div>
+    <div><b>3주 이내</b>리터치 가능</div>
+    <div><b>단독 룸</b>대기 없는 1인실</div>
+   </div>
+  </div>
+  <div class="art">
+   <svg viewBox="-16 70 620 520" aria-hidden="true">
+    <defs>
+     <linearGradient id="arch" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f3e7d2"/><stop offset="1" stop-color="#dcc9a8"/></linearGradient>
+     <radialGradient id="skin" cx="45%" cy="40%" r="70%"><stop offset="0" stop-color="#f6dcc6"/><stop offset=".7" stop-color="#e9c2a4"/><stop offset="1" stop-color="#d7a889"/></radialGradient>
+     <linearGradient id="goldL" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f0d9a2"/><stop offset=".5" stop-color="#c9a45c"/><stop offset="1" stop-color="#9c7a3a"/></linearGradient>
+     <linearGradient id="silkG" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#e9dcc5"/><stop offset=".5" stop-color="#fbf4e8"/><stop offset="1" stop-color="#dccbb0"/></linearGradient>
+     <clipPath id="ac"><ellipse cx="290" cy="330" rx="262" ry="212"/></clipPath>
+    </defs>
+    <ellipse cx="290" cy="330" rx="280" ry="230" fill="none" stroke="url(#goldL)" stroke-width="2"/>
+    <ellipse cx="290" cy="330" rx="292" ry="242" fill="none" stroke="#c9a45c" stroke-width="1" opacity=".35" stroke-dasharray="2 6"/>
+    <ellipse cx="290" cy="330" rx="262" ry="212" fill="url(#arch)"/>
+    <g clip-path="url(#ac)">
+     <!-- face close-up: cheek & closed eye -->
+     <path d="M0 140 C160 90 360 80 600 150 V620 H0Z" fill="url(#skin)"/>
+     <ellipse cx="380" cy="470" rx="140" ry="70" fill="#f2b8a0" opacity=".35"/>
+     <!-- brow -->
+     <g stroke="#3b2a22" stroke-linecap="round" opacity=".9">
+      <path d="M126 238 C170 204 250 184 330 186 C360 187 386 194 406 206 C380 204 350 200 320 202 C250 206 180 222 126 238Z" fill="#4a3328" stroke="none" opacity=".72"/><path d="M140 232 C190 206 260 192 330 192" fill="none" stroke="#6b4a3a" stroke-width="6" opacity=".35"/>
+      <g stroke-width="2" stroke="#2e1f18">
+       <path d="M132 232 l14 -14"/><path d="M146 226 l15 -14"/><path d="M160 218 l17 -12"/><path d="M176 211 l18 -11"/><path d="M193 205 l19 -9"/><path d="M211 200 l20 -8"/><path d="M230 196 l21 -6"/><path d="M250 193 l22 -5"/><path d="M270 191 l22 -3"/><path d="M290 190 l22 -2"/><path d="M310 190 l22 0"/><path d="M330 192 l21 2"/><path d="M350 195 l20 4"/><path d="M369 199 l18 5"/><path d="M386 204 l14 5"/>
+       <path d="M140 228 l16 -12"/><path d="M168 214 l18 -10"/><path d="M202 202 l20 -8"/><path d="M240 194 l22 -5"/><path d="M280 190 l22 -2"/><path d="M320 191 l22 1"/><path d="M360 197 l19 4"/>
+      </g>
+     </g>
+     <!-- lid crease -->
+     <path d="M150 330 C210 278 330 272 410 318" fill="none" stroke="#c99377" stroke-width="3" opacity=".7"/>
+     <!-- lid -->
+     <path d="M140 352 C200 300 340 296 420 344 C360 364 220 372 140 352Z" fill="#efcfb6"/>
+     <!-- closed lash line -->
+     <path d="M140 352 C220 376 340 372 420 344" fill="none" stroke="#2a1d18" stroke-width="5" stroke-linecap="round"/>
+     <!-- lashes -->
+     <g fill="none" stroke="#2a1d18" stroke-linecap="round" stroke-width="2.4">
+      <path d="M152 357 c-6 14 -16 22 -30 26"/><path d="M168 362 c-4 16 -12 26 -26 32"/><path d="M186 366 c-3 18 -10 30 -22 38"/><path d="M205 369 c-2 20 -7 33 -18 43"/><path d="M225 371 c-1 22 -4 36 -12 47"/><path d="M246 372 c0 23 -1 38 -6 50"/><path d="M267 372 c1 23 2 38 0 51"/><path d="M288 371 c3 22 6 37 6 50"/><path d="M309 369 c4 21 10 35 12 47"/><path d="M330 365 c5 20 13 32 18 43"/><path d="M350 360 c6 18 15 28 22 38"/><path d="M369 354 c7 15 16 24 25 31"/><path d="M387 348 c7 12 16 19 26 24"/><path d="M403 342 c7 9 15 14 24 17"/>
+      <path d="M176 364 c-3 14 -9 22 -18 28" stroke-width="1.6"/><path d="M215 370 c-1 16 -5 26 -12 34" stroke-width="1.6"/><path d="M256 372 c1 17 1 28 -2 38" stroke-width="1.6"/><path d="M298 370 c3 16 6 27 8 37" stroke-width="1.6"/><path d="M340 363 c5 15 11 23 16 31" stroke-width="1.6"/><path d="M378 351 c6 11 13 18 20 22" stroke-width="1.6"/>
+     </g>
+     <!-- silk band -->
+     <path d="M0 530 C180 470 360 560 600 500 V620 H0Z" fill="url(#silkG)"/>
+     <path d="M40 520 C180 470 360 560 560 500" fill="none" stroke="#c9a45c" stroke-width="1.5" opacity=".7"/>
+     <path d="M40 548 C200 504 360 586 560 530" fill="none" stroke="#fff" stroke-width="1" opacity=".6"/>
+    </g>
+    <!-- moon motif -->
+    <g transform="translate(70,150)"><circle r="44" fill="#0f3b34"/><path d="M8 -36 a36 36 0 1 0 22 58 a28 28 0 1 1 -22 -58z" fill="url(#goldL)"/></g>
+    <g fill="#e2c88e"><circle cx="520" cy="120" r="2.4"/><circle cx="560" cy="200" r="2"/><circle cx="140" cy="560" r="1.6"/></g>
+   </svg>
+  </div>
+ </div>
+</section>
+
+<div class="ribbon" aria-hidden="true"><div>
+ <span>Lash Lift</span><span>Lash Extension</span><span>Brow Lamination</span><span>Brow Shaping</span><span>Tinting</span><span>Lash Lift</span><span>Lash Extension</span><span>Brow Lamination</span><span>Brow Shaping</span><span>Tinting</span>
+</div></div>
+
+<section class="promise">
+ <div class="wrap">
+  <div class="head"><div><span class="en">Our way</span><h2>시술보다 먼저,<br>눈매를 봅니다</h2></div><p>같은 컬이라도 눈두덩 모양과 속눈썹 결에 따라 전혀 다르게 보여요. 그래서 상담에 시간을 씁니다.</p></div>
+  <div class="pgrid">
+   <div class="pcard"><div class="no">01</div><svg viewBox="0 0 48 48"><circle cx="24" cy="24" r="18"/><path d="M12 26c4-6 20-6 24 0M18 20h.01M30 20h.01"/></svg><h3>눈매 맞춤 상담</h3><p>정면·측면 눈매와 평소 화장 습관을 보고 <span style="white-space:nowrap">컬·길이·두께</span>를 함께 고릅니다.</p></div>
+   <div class="pcard"><div class="no">02</div><svg viewBox="0 0 48 48"><rect x="10" y="12" width="28" height="26" rx="4"/><path d="M18 12V8h12v4M17 24h14M24 17v14"/></svg><h3>1인 1키트</h3><p>브러시·패치·일회용 도구는 고객님마다 새로 개봉해 사용합니다.</p></div>
+   <div class="pcard"><div class="no">03</div><svg viewBox="0 0 48 48"><path d="M10 34V14a4 4 0 0 1 4-4h20a4 4 0 0 1 4 4v14a4 4 0 0 1-4 4H18l-8 6z"/><path d="M17 19h14M17 25h9"/></svg><h3>시술 후 관리 안내</h3><p>세안·수면 습관에 맞춘 관리법을 카드로 드리고, 궁금한 점은 메시지로 답해 드려요.</p></div>
+  </div>
+ </div>
+</section>
+
+<section class="svc" id="svc">
+ <div class="wrap">
+  <div class="head"><div><span class="en">Menu &amp; price</span><h2>시술 안내</h2></div><p>모든 시술은 상담 포함 가격이며, 리터치는 시술일로부터 3주 안에 가능합니다.</p></div>
+  <div class="tabs" role="tablist"><button class="on" data-t="lash">속눈썹 Lash</button><button data-t="brow">눈썹 Brow</button></div>
+  <div class="list on" id="t-lash">
+   <div class="row"><b>래쉬 리프트 <small>추천</small></b><span class="pr">₱1,800</span><p>내 속눈썹을 뿌리부터 들어 올리는 펌. 영양 코팅 포함</p><span class="tm">약 60분</span></div>
+   <div class="row"><b>클래식 연장</b><span class="pr">₱2,400</span><p>한 올에 한 가닥씩, 자연스러운 데일리 연장</p><span class="tm">약 90분</span></div>
+   <div class="row"><b>볼륨 연장</b><span class="pr">₱3,200</span><p>가는 모를 부채꼴로 모아 풍성하고 부드러운 결</p><span class="tm">약 110분</span></div>
+   <div class="row"><b>하속눈썹 연장</b><span class="pr">₱900</span><p>아래 라인을 또렷하게, 단독 또는 추가 시술</p><span class="tm">약 30분</span></div>
+   <div class="row"><b>리터치 (3주 이내)</b><span class="pr">₱1,400</span><p>빠진 부분만 채워 처음 모양으로</p><span class="tm">약 60분</span></div>
+   <div class="row"><b>연장 제거</b><span class="pr">₱400</span><p>전용 리무버로 속눈썹에 무리 없이 정리</p><span class="tm">약 20분</span></div>
+  </div>
+  <div class="list" id="t-brow">
+   <div class="row"><b>브로우 라미네이션 <small>추천</small></b><span class="pr">₱1,900</span><p>눈썹 결을 한 방향으로 정돈해 붓으로 빗은 듯한 결</p><span class="tm">약 60분</span></div>
+   <div class="row"><b>눈썹 정리 (왁싱+트리밍)</b><span class="pr">₱800</span><p>얼굴형에 맞춰 디자인하고 잔털을 정리</p><span class="tm">약 30분</span></div>
+   <div class="row"><b>브로우 틴팅</b><span class="pr">₱700</span><p>모발 색에 맞춘 컬러로 은은하게 채움</p><span class="tm">약 30분</span></div>
+   <div class="row"><b>라미네이션 + 틴팅</b><span class="pr">₱2,400</span><p>결 정돈과 컬러를 한 번에</p><span class="tm">약 80분</span></div>
+   <div class="row"><b>래쉬 리프트 + 눈썹 정리</b><span class="pr">₱2,400</span><p>눈매 전체를 한 번에 정돈하는 세트</p><span class="tm">약 90분</span></div>
+   <div class="row"><b>남성 눈썹 정리</b><span class="pr">₱700</span><p>각을 살리되 티 나지 않게, 자연스러운 정리</p><span class="tm">약 25분</span></div>
+  </div>
+  <p class="note">* 패치 테스트를 원하시면 시술 하루 전 무료로 진행해 드립니다.</p>
+ </div>
+</section>
+
+<section class="curls" id="curl">
+ <div class="wrap">
+  <div class="head"><div><span class="en">Curl guide</span><h2>어떤 컬이<br>내 눈매에 맞을까요</h2></div><p>상담 때 실제 모형으로 보여 드려요. 미리 살펴보시면 고르기가 훨씬 쉬워집니다.</p></div>
+  <div class="cgrid">
+   <div class="curl"><svg viewBox="0 0 170 120"><path d="M20 100 H150" stroke="#c9a45c" stroke-width="2"/><path d="M85 100 C85 70 90 40 110 22" fill="none" stroke="#1d2622" stroke-width="4" stroke-linecap="round"/><path d="M60 100 C60 74 64 48 80 32" fill="none" stroke="#1d2622" stroke-width="3" stroke-linecap="round" opacity=".5"/></svg><span class="en">J curl</span><h3>J컬 · 내추럴</h3><p>맨눈처럼 자연스러운 결</p></div>
+   <div class="curl"><svg viewBox="0 0 170 120"><path d="M20 100 H150" stroke="#c9a45c" stroke-width="2"/><path d="M85 100 C82 60 96 30 124 26" fill="none" stroke="#1d2622" stroke-width="4" stroke-linecap="round"/><path d="M60 100 C58 66 70 42 94 38" fill="none" stroke="#1d2622" stroke-width="3" stroke-linecap="round" opacity=".5"/></svg><span class="en">C curl</span><h3>C컬 · 데일리</h3><p>또렷하되 과하지 않게</p></div>
+   <div class="curl"><svg viewBox="0 0 170 120"><path d="M20 100 H150" stroke="#c9a45c" stroke-width="2"/><path d="M85 100 C78 54 98 22 132 30" fill="none" stroke="#1d2622" stroke-width="4" stroke-linecap="round"/><path d="M60 100 C54 62 70 36 100 42" fill="none" stroke="#1d2622" stroke-width="3" stroke-linecap="round" opacity=".5"/></svg><span class="en">D curl</span><h3>D컬 · 선명</h3><p>깊은 컬로 동그랗고 또렷하게</p></div>
+   <div class="curl"><svg viewBox="0 0 170 120"><path d="M20 100 H150" stroke="#c9a45c" stroke-width="2"/><path d="M85 100 C85 82 86 64 98 52 C108 42 120 32 134 22" fill="none" stroke="#1d2622" stroke-width="4" stroke-linecap="round"/><path d="M60 100 C60 84 61 70 71 60 C80 52 90 46 102 40" fill="none" stroke="#1d2622" stroke-width="3" stroke-linecap="round" opacity=".5"/></svg><span class="en">L curl</span><h3>L컬 · 홑꺼풀</h3><p>홑꺼풀에도 컬이 보이게</p></div>
+  </div>
+ </div>
+</section>
+
+<section class="proc" id="proc">
+ <div class="wrap">
+  <div class="head"><div><span class="en">How it goes</span><h2>방문부터 마무리까지</h2></div><p>처음 오셔도 순서를 미리 아시면 편안하게 누워 계실 수 있어요.</p></div>
+  <div class="steps">
+   <div class="step"><i>1</i><h3>예약 · 사전 문진</h3><p>원하는 시간 선택 후 간단한 문진 작성</p><small>2분</small></div>
+   <div class="step"><i>2</i><h3>눈매 상담</h3><p>거울 앞에서 컬·길이·디자인 결정</p><small>10분</small></div>
+   <div class="step"><i>3</i><h3>편안한 시술</h3><p>따뜻한 담요와 조용한 음악 속에서</p><small>40–100분</small></div>
+   <div class="step"><i>4</i><h3>마무리 · 관리 카드</h3><p>결과 확인과 홈케어 방법 안내</p><small>5분</small></div>
+  </div>
+ </div>
+</section>
+
+<section class="space" id="space">
+ <div class="wrap">
+  <div class="txt">
+   <span class="en" style="font-size:22px;color:var(--gold2)">The studio</span>
+   <h2>한 분만을 위한<br>조용한 방 하나</h2>
+   <p>BGC 주거 단지 안, 소음 없는 방에서 1:1로만 시술합니다. 기다리는 손님이 없어 상담도 넉넉하게.</p>
+   <ul>
+    <li><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>온열 베드와 개별 담요, 눈 보호 패치</li>
+    <li><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>밝은 조명과 원형 거울로 전·후 확인</li>
+    <li><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>건물 방문자 주차 가능 (사전 등록)</li>
+   </ul>
+  </div>
+  <div class="pic">
+   <svg viewBox="0 0 600 560" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+    <defs>
+     <linearGradient id="wall" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#e9dcc6"/><stop offset="1" stop-color="#d9c7a8"/></linearGradient>
+     <linearGradient id="floor" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#b89670"/><stop offset="1" stop-color="#8d6c4a"/></linearGradient>
+     <radialGradient id="ring" cx="50%" cy="50%" r="50%"><stop offset=".78" stop-color="#fff6de" stop-opacity="0"/><stop offset=".86" stop-color="#fff6de"/><stop offset="1" stop-color="#fff6de" stop-opacity="0"/></radialGradient>
+     <radialGradient id="lglow" cx="50%" cy="50%" r="50%"><stop offset="0" stop-color="#fff3d1" stop-opacity=".7"/><stop offset="1" stop-color="#fff3d1" stop-opacity="0"/></radialGradient>
+     <linearGradient id="bed" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2a6b5e"/><stop offset="1" stop-color="#174b42"/></linearGradient>
+     <linearGradient id="blank" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#efe3cd"/><stop offset=".5" stop-color="#fbf4e7"/><stop offset="1" stop-color="#e3d3b8"/></linearGradient>
+    </defs>
+    <rect width="600" height="560" fill="url(#wall)"/>
+    <path d="M0 0 H600 V40 H0Z" fill="#000" opacity=".04"/>
+    <!-- window with drapes -->
+    <rect x="70" y="70" width="220" height="280" rx="6" fill="#c9dcd5"/>
+    <rect x="70" y="70" width="220" height="280" rx="6" fill="none" stroke="#f5efe4" stroke-width="10"/>
+    <path d="M180 70 V350 M70 210 H290" stroke="#f5efe4" stroke-width="6"/>
+    <path d="M90 90 L150 90 L100 200Z" fill="#fff" opacity=".25"/>
+    <rect x="50" y="56" width="260" height="10" rx="5" fill="#c9a45c"/>
+    <path d="M56 66 C70 160 52 260 74 360 L104 360 C96 260 110 160 100 66Z" fill="#0f3b34"/>
+    <path d="M304 66 C290 160 308 260 286 360 L256 360 C264 260 250 160 260 66Z" fill="#0f3b34"/>
+    <path d="M70 70 C76 160 64 260 84 360 M290 70 C284 160 296 260 276 360" stroke="#1f5c51" stroke-width="4" fill="none"/>
+    <!-- round mirror -->
+    <circle cx="450" cy="200" r="96" fill="#c9a45c"/>
+    <circle cx="450" cy="200" r="84" fill="#b9cfc8"/>
+    <path d="M390 150 A84 84 0 0 1 470 118 L420 270 A84 84 0 0 1 390 150Z" fill="#fff" opacity=".2"/>
+    <circle cx="450" cy="200" r="104" fill="none" stroke="#c9a45c" stroke-width="1.5" opacity=".5"/>
+    <!-- sconce glow -->
+    <circle cx="560" cy="110" r="70" fill="url(#lglow)"/>
+    <path d="M560 96 v20" stroke="#c9a45c" stroke-width="4"/><path d="M546 96 h28 l-6 -18 h-16z" fill="#fbf4e7"/>
+    <!-- plant -->
+    <g transform="translate(300,300)"><path d="M40 120 c-30 -40 -40 -90 -10 -120 c10 30 20 60 10 120z" fill="#3c7a5c"/><path d="M50 120 c10 -50 40 -80 70 -86 c-10 34 -30 64 -70 86z" fill="#2f6a4e"/><path d="M44 120 c-20 -20 -50 -30 -70 -24 c14 20 40 28 70 24z" fill="#4c8a6a"/><path d="M14 120 h64 l-8 70 h-48z" fill="#c97a54"/></g>
+    <!-- floor -->
+    <rect y="430" width="600" height="130" fill="url(#floor)"/>
+    <path d="M0 430 H600" stroke="#7a5a3a" stroke-width="2"/>
+    <!-- bed -->
+    <ellipse cx="320" cy="520" rx="240" ry="16" fill="#000" opacity=".18"/>
+    <rect x="110" y="420" width="420" height="60" rx="26" fill="url(#bed)"/>
+    <rect x="130" y="478" width="16" height="44" fill="#2a2a2a"/><rect x="494" y="478" width="16" height="44" fill="#2a2a2a"/>
+    <path d="M420 420 c0 -30 30 -40 60 -40 h30 c16 0 20 14 20 24 v16z" fill="#2a6b5e"/>
+    <ellipse cx="480" cy="404" rx="46" ry="16" fill="#fbf4e7"/>
+    <!-- folded blanket -->
+    <rect x="150" y="396" width="200" height="30" rx="12" fill="url(#blank)"/>
+    <path d="M150 410 H350" stroke="#c9a45c" stroke-width="2" opacity=".6"/>
+    <!-- side cart -->
+    <g transform="translate(40,370)"><rect x="0" y="0" width="80" height="8" rx="3" fill="#c9a45c"/><rect x="0" y="50" width="80" height="8" rx="3" fill="#c9a45c"/><path d="M6 8 V120 M74 8 V120" stroke="#c9a45c" stroke-width="4"/><rect x="10" y="-18" width="14" height="18" rx="3" fill="#fbf4e7"/><rect x="30" y="-26" width="10" height="26" rx="3" fill="#174b42"/><circle cx="58" cy="-8" r="9" fill="#e9c2a4"/></g>
+   </svg>
+  </div>
+ </div>
+</section>
+
+<section class="book" id="book">
+ <div class="wrap">
+  <div class="head"><div><span class="en">Reservation</span><h2>원하는 시간을 골라 주세요</h2></div><p>예약 요청을 남겨 주시면 확인 후 메시지로 확정 안내를 드립니다.</p></div>
+  <div class="bgrid">
+   <div class="binfo">
+    <h3>예약 전에<br>알아 두시면 좋아요</h3>
+    <dl>
+     <div><dt>운영 시간</dt><dd>화 – 일 10:00 – 20:00 · 월요일 휴무</dd></div>
+     <div><dt>위치</dt><dd>Taguig, BGC 인근 주거 단지 (예약 확정 시 상세 안내)</dd></div>
+     <div><dt>문의</dt><dd>0000-000-0000 · 카카오톡 ID: example</dd></div>
+     <div><dt>변경 · 취소</dt><dd>방문 24시간 전까지 메시지로 알려 주세요</dd></div>
+    </dl>
+   </div>
+   <form id="bf" novalidate>
+    <div id="fbody">
+     <div class="f2">
+      <div class="fld"><label for="nm">이름</label><input id="nm" placeholder="홍길동"></div>
+      <div class="fld"><label for="ph">연락처</label><input id="ph" placeholder="0000-000-0000"></div>
+     </div>
+     <div class="f2">
+      <div class="fld"><label for="sv">시술</label><select id="sv"><option>래쉬 리프트 · ₱1,800</option><option>클래식 연장 · ₱2,400</option><option>볼륨 연장 · ₱3,200</option><option>브로우 라미네이션 · ₱1,900</option><option>눈썹 정리 · ₱800</option><option>래쉬 리프트 + 눈썹 정리 · ₱2,400</option></select></div>
+      <div class="fld"><label for="dt">날짜</label><input id="dt" type="date"></div>
+     </div>
+     <div class="fld"><label>시간</label>
+      <div class="slots" id="slots"><button type="button">10:00</button><button type="button" disabled>11:30</button><button type="button">13:00</button><button type="button">14:30</button><button type="button" disabled>16:00</button><button type="button">17:30</button><button type="button">19:00</button></div>
+     </div>
+     <button class="btn" type="submit">예약 요청 보내기</button>
+     <div class="err" id="er"></div>
+    </div>
+    <div class="done" id="done"><svg viewBox="0 0 64 64"><circle cx="32" cy="32" r="28"/><path d="M20 33l8 8 16-17"/></svg><h3>예약 요청을 받았어요</h3><p id="dmsg">확인 후 메시지로 확정 안내를 드릴게요.</p></div>
+   </form>
+  </div>
+ </div>
+</section>
+
+<section class="faq" id="faq">
+ <div class="wrap">
+  <div class="head"><div><span class="en">FAQ</span><h2>자주 묻는 질문</h2></div></div>
+  <div class="qa">
+   <details open><summary>렌즈를 끼고 가도 되나요?</summary><p>시술 중에는 눈을 감고 계셔야 해서 렌즈는 빼 두시는 편이 편안합니다. 렌즈 케이스를 챙겨 오시면 보관해 드려요.</p></details>
+   <details><summary>래쉬 리프트와 연장, 어떤 게 좋을까요?</summary><p>내 속눈썹 길이가 어느 정도 있고 자연스러운 결을 원하시면 리프트, 길이와 풍성함을 더하고 싶으시면 연장을 권해 드려요. 상담 때 함께 정해도 됩니다.</p></details>
+   <details><summary>시술 당일 세안은 언제부터 가능한가요?</summary><p>시술 후 약 24시간은 물 세안과 사우나를 피해 주세요. 자세한 관리법은 관리 카드로 드립니다.</p></details>
+   <details><summary>동행인과 함께 방문해도 되나요?</summary><p>1인 스튜디오라 대기 공간이 작아요. 두 분이 함께 시술받으시려면 연속 시간으로 예약해 주세요.</p></details>
+  </div>
+ </div>
+</section>
+
+<footer>
+ <div class="wrap">
+  <div class="fgrid">
+   <div><a class="logo" href="#"><svg><use href="#mark"/></svg><div><b>눈썹달</b><small>brow &amp; lash studio</small></div></a><p>눈매에 맞춘 결, 한 올씩 단정하게.</p></div>
+   <div><h4>HOURS</h4><p>화 – 일 10:00 – 20:00<br>월요일 휴무</p></div>
+   <div><h4>CONTACT</h4><p>0000-000-0000<br>카카오톡 ID: example</p></div>
+  </div>
+  <div class="copy">© 눈썹달 브로우 &amp; 래쉬</div>
+ </div>
+</footer>
+<a class="btn btn-gold fab" href="#book">예약하기</a>
+
+<script>
+document.querySelectorAll('.tabs button').forEach(b=>b.addEventListener('click',()=>{
+ document.querySelectorAll('.tabs button').forEach(x=>x.classList.toggle('on',x===b));
+ document.querySelectorAll('.list').forEach(l=>l.classList.toggle('on',l.id==='t-'+b.dataset.t));
+}));
+let slot='';
+document.querySelectorAll('#slots button').forEach(b=>b.addEventListener('click',()=>{
+ if(b.disabled)return;document.querySelectorAll('#slots button').forEach(x=>x.classList.remove('on'));b.classList.add('on');slot=b.textContent;
+}));
+const dt=document.getElementById('dt');const t=new Date();t.setDate(t.getDate()+1);dt.min=t.toISOString().slice(0,10);
+document.getElementById('bf').addEventListener('submit',e=>{
+ e.preventDefault();const er=document.getElementById('er');
+ const nm=document.getElementById('nm').value.trim(),ph=document.getElementById('ph').value.trim();
+ if(!nm||!ph){er.textContent='이름과 연락처를 입력해 주세요.';return}
+ if(!dt.value){er.textContent='방문 날짜를 골라 주세요.';return}
+ if(!slot){er.textContent='시간을 하나 골라 주세요.';return}
+ document.getElementById('fbody').style.display='none';
+ document.getElementById('dmsg').textContent=nm+'님, '+dt.value+' '+slot+' · '+document.getElementById('sv').value.split(' · ')[0]+' 요청을 받았어요. 확인 후 메시지로 확정 안내를 드릴게요.';
+ document.getElementById('done').classList.add('on');
+});
+document.querySelector('.burger').addEventListener('click',()=>location.hash='#svc');
+</script>
+</body>
+</html>
