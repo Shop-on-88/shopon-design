@@ -1,0 +1,765 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>청파 다이브 · 모알보알 스쿠버 다이빙</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Noto+Sans+KR:wght@400;500;700;900&family=Outfit:wght@500;700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{--y:#ffd23f;--y2:#ffb81c;--ink:#06233a;--paper:#f4efe0;--line:rgba(255,255,255,.16);--mono:'Space Mono',monospace;--num:'Outfit',sans-serif}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{font-family:'Noto Sans KR',sans-serif;color:#eaf6fa;word-break:keep-all;-webkit-font-smoothing:antialiased;overflow-x:hidden;
+ background:#031628 linear-gradient(180deg,#c9f1f1 0,#8fdbe1 5%,#3fb0c6 12%,#1a86a6 20%,#0d6488 30%,#0a4b6f 42%,#073757 56%,#052841 70%,#041c31 84%,#02101f 100%)}
+a{color:inherit}
+img,svg{display:block}
+.wrap{max-width:1180px;margin:0 auto;padding:0 24px}
+.mono{font-family:var(--mono);letter-spacing:.08em}
+.p{font-family:var(--num);font-weight:800}
+/* header */
+.hd{position:absolute;top:0;left:0;right:0;z-index:20}
+.hd .wrap{display:flex;align-items:center;justify-content:space-between;height:78px}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--ink)}
+.logo b{font-family:'Black Han Sans',sans-serif;font-weight:400;font-size:26px;letter-spacing:.02em}
+.logo small{display:block;font-family:var(--mono);font-size:11px;letter-spacing:.2em;color:#145a78}
+.nav{display:flex;gap:28px}
+.nav a{font-size:15px;font-weight:500;text-decoration:none;color:#0b3550}
+.nav a:hover{color:#000}
+.hbtn{height:44px;padding:0 20px;border-radius:30px;background:var(--ink);color:var(--y);font-weight:700;font-size:14px;text-decoration:none;display:inline-flex;align-items:center}
+/* depth rail */
+.rail{position:fixed;left:22px;top:50%;transform:translateY(-50%);height:62vh;width:64px;z-index:15;pointer-events:none;display:none}
+.rail .ln{position:absolute;left:8px;top:0;bottom:0;width:2px;background:linear-gradient(#0b3550,rgba(255,255,255,.5))}
+.rail .tk{position:absolute;left:8px;font-family:var(--mono);font-size:11px;padding-left:12px;transform:translateY(-50%);color:#06233a;white-space:nowrap}
+.rail .tk span{background:rgba(255,255,255,.82);padding:1px 5px;border-radius:3px}
+.rail .tk:before{content:"";position:absolute;left:0;top:50%;width:8px;height:2px;background:currentColor}
+.rail .ind{position:absolute;left:0;width:18px;height:18px;border-radius:50%;background:var(--y);box-shadow:0 0 0 5px rgba(255,210,63,.25);transform:translateY(-50%);transition:top .15s linear}
+.rail .rd{position:absolute;left:24px;font-family:var(--mono);font-weight:700;font-size:12px;background:var(--y);color:var(--ink);padding:3px 7px;border-radius:4px;transform:translateY(-50%);transition:top .15s linear;white-space:nowrap}
+@media(min-width:1320px){.rail{display:block}}
+/* section head */
+section{position:relative}
+.sh{display:flex;align-items:flex-end;justify-content:space-between;gap:24px;flex-wrap:wrap;margin-bottom:40px}
+.dep{display:inline-flex;align-items:center;gap:10px;font-family:var(--mono);font-size:13px;font-weight:700;color:var(--y);letter-spacing:.14em}
+.dep:before{content:"";width:34px;height:2px;background:var(--y)}
+.sh h2{font-family:'Black Han Sans',sans-serif;font-weight:400;font-size:clamp(32px,4.2vw,50px);line-height:1.18;margin-top:14px;color:#fff}
+.sh p{max-width:430px;font-size:16px;line-height:1.75;color:#cfe6ee}
+/* hero */
+.hero{padding:150px 0 90px;overflow:hidden;color:var(--ink)}
+.hero:before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(100deg,transparent 0 60px,rgba(255,255,255,.18) 60px 90px,transparent 90px 170px);-webkit-mask:linear-gradient(#000,transparent 75%);mask:linear-gradient(#000,transparent 75%);pointer-events:none}
+.hero .wrap{display:grid;grid-template-columns:1.05fr .95fr;gap:40px;align-items:center;position:relative}
+.tagline{display:inline-flex;align-items:center;gap:10px;font-family:var(--mono);font-size:13px;font-weight:700;letter-spacing:.14em;background:var(--ink);color:var(--y);padding:8px 14px;border-radius:4px}
+.tagline i{width:8px;height:8px;border-radius:50%;background:var(--y);box-shadow:0 0 0 4px rgba(255,210,63,.3)}
+.hero h1{font-family:'Black Han Sans',sans-serif;font-weight:400;font-size:clamp(46px,6.4vw,86px);line-height:1.08;margin:26px 0 24px;letter-spacing:-.01em}
+.hero h1 em{font-style:normal;color:#fff;-webkit-text-stroke:0;background:linear-gradient(transparent 62%,var(--y) 62% 92%,transparent 92%);color:var(--ink)}
+.hero .lead{font-size:18px;line-height:1.75;color:#0d3b57;max-width:520px}
+.btns{display:flex;gap:12px;flex-wrap:wrap;margin-top:34px}
+.btn{height:56px;padding:0 28px;border-radius:40px;display:inline-flex;align-items:center;gap:10px;font-weight:700;font-size:16px;text-decoration:none;transition:.2s}
+.btn svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+.btn.pri{background:var(--y);color:var(--ink);box-shadow:0 14px 30px -14px rgba(120,80,0,.6)}
+.btn.pri:hover{background:var(--y2)}
+.btn.sec{border:2px solid var(--ink);color:var(--ink)}
+.btn.sec:hover{background:var(--ink);color:#fff}
+.stats{display:flex;gap:0;margin-top:44px;border-top:2px solid var(--ink);max-width:540px}
+.stats div{flex:1;padding:16px 14px 0 0}
+.stats div+div{padding-left:16px;border-left:1px solid rgba(6,35,58,.25)}
+.stats b{font-family:var(--num);font-weight:800;font-size:30px;display:block;line-height:1.1}
+.stats b small{font-size:16px;margin-left:2px}
+.stats span{font-size:13px;color:#174b67;font-weight:500}
+.hart{position:relative}
+.hart svg{width:100%;height:auto;filter:drop-shadow(0 30px 40px rgba(3,30,50,.35))}
+.ticker{background:var(--ink);color:#cfe9f1;overflow:hidden;white-space:nowrap;border-top:3px solid var(--y)}
+.ticker div{display:inline-flex;gap:46px;padding:15px 0;animation:tk 40s linear infinite;font-family:var(--mono);font-size:13px;letter-spacing:.12em}
+.ticker span{display:inline-flex;align-items:center;gap:12px}
+.ticker span:before{content:"";width:7px;height:7px;background:var(--y);border-radius:50%}
+@keyframes tk{to{transform:translateX(-50%)}}
+/* points */
+.points{padding:110px 0 90px}
+.pgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.pt{border-radius:22px;overflow:hidden;background:rgba(3,35,58,.42);border:1px solid var(--line);backdrop-filter:blur(4px);display:flex;flex-direction:column}
+.pt .art{aspect-ratio:4/3;position:relative}
+.pt .art svg{width:100%;height:100%}
+.pt .bd{padding:24px 24px 26px;display:flex;flex-direction:column;flex:1}
+.pt .meta{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px}
+.pt .meta span{font-family:var(--mono);font-size:12px;border:1px solid rgba(255,210,63,.55);color:var(--y);padding:4px 9px;border-radius:4px}
+.pt h3{font-size:23px;font-weight:900;color:#fff;margin-bottom:8px}
+.pt p{font-size:15px;line-height:1.7;color:#c4dde7}
+/* courses */
+.courses{padding:90px 0}
+.cgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.log{background:var(--paper);color:var(--ink);border-radius:6px 6px 18px 6px;padding:28px 26px 26px;position:relative;
+ background-image:linear-gradient(rgba(10,75,111,.09) 1px,transparent 1px),linear-gradient(90deg,rgba(10,75,111,.09) 1px,transparent 1px);background-size:22px 22px;box-shadow:0 30px 50px -30px rgba(0,0,0,.65)}
+.log:before{content:"";position:absolute;left:0;top:0;bottom:0;width:8px;background:repeating-linear-gradient(#0a4b6f 0 10px,transparent 10px 20px);opacity:.25;border-radius:6px 0 0 6px}
+.log .no{font-family:var(--mono);font-size:12px;color:#3d6a80;display:flex;justify-content:space-between;border-bottom:1.5px dashed rgba(6,35,58,.3);padding-bottom:12px;margin-bottom:18px}
+.log h3{font-size:22px;font-weight:900;line-height:1.35}
+.log .pr{display:flex;align-items:baseline;gap:6px;margin:12px 0 16px}
+.log .pr b{font-family:var(--num);font-weight:800;font-size:40px;letter-spacing:-.01em}
+.log .pr span{font-size:14px;color:#3d6a80}
+.log ul{list-style:none;display:grid;gap:8px;margin-bottom:6px}
+.log li{font-size:14.5px;line-height:1.55;padding-left:22px;position:relative}
+.log li:before{content:"";position:absolute;left:2px;top:7px;width:10px;height:10px;border:2px solid #0a4b6f;border-radius:50%}
+.log .row{display:grid;grid-template-columns:repeat(3,1fr);margin-top:18px;border:1.5px solid rgba(6,35,58,.35);border-radius:6px;background:rgba(255,255,255,.55)}
+.log .row div{padding:9px 10px;font-family:var(--mono);font-size:11px;color:#3d6a80;line-height:1.5}
+.log .row div+div{border-left:1.5px solid rgba(6,35,58,.2)}
+.log .row b{display:block;font-family:'Noto Sans KR',sans-serif;font-size:15px;color:var(--ink)}
+.stamp{position:absolute;right:20px;top:46px;width:86px;height:86px;border-radius:50%;border:3px double #c2410c;color:#c2410c;display:grid;place-items:center;text-align:center;font-family:var(--mono);font-size:11px;font-weight:700;line-height:1.3;transform:rotate(-14deg);opacity:.8}
+.log.feat{background-color:#fff6d1}
+.log.feat .stamp{border-color:#0a4b6f;color:#0a4b6f}
+.extras{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:22px}
+.ex{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:20px 24px;border-radius:14px;border:1px solid var(--line);background:rgba(3,30,50,.45)}
+.ex b{font-size:17px;font-weight:700;color:#fff;display:block}
+.ex small{font-size:13px;color:#a9c8d4}
+.ex .p{font-size:26px;color:var(--y);white-space:nowrap}
+.note{margin-top:22px;font-size:13px;color:#a9c8d4}
+/* day */
+.day{padding:90px 0}
+.tl{display:grid;grid-template-columns:repeat(6,1fr);gap:0;position:relative;margin-top:10px}
+.tl:before{content:"";position:absolute;left:28px;right:calc(100% / 6 - 28px);top:27px;height:2px;background:repeating-linear-gradient(90deg,var(--y) 0 10px,transparent 10px 18px)}
+.st{padding-right:14px;position:relative}
+.nw{white-space:nowrap}
+.st .dot{width:56px;height:56px;border-radius:50%;background:#062a45;border:2px solid var(--y);display:grid;place-items:center;position:relative;z-index:1}
+.st .dot svg{width:26px;height:26px;fill:none;stroke:var(--y);stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.st time{display:block;font-family:var(--mono);font-weight:700;font-size:15px;color:var(--y);margin:18px 0 6px}
+.st h3{font-size:18px;font-weight:700;color:#fff;margin-bottom:6px}
+.st p{font-size:14px;line-height:1.65;color:#b9d4df}
+/* stay */
+.stay{padding:90px 0}
+.sgrid{display:grid;grid-template-columns:1.1fr .9fr;gap:26px}
+.card{border-radius:22px;border:1px solid var(--line);background:rgba(2,25,43,.5);padding:34px}
+.card h3{font-size:24px;font-weight:900;color:#fff;margin-bottom:6px}
+.card>p{font-size:15px;color:#b9d4df;line-height:1.7}
+.route{margin-top:26px;display:grid;gap:0}
+.rt{display:grid;grid-template-columns:150px 1fr auto;gap:16px;align-items:center;padding:16px 0;border-top:1px dashed rgba(255,255,255,.2)}
+.rt .mono{font-size:12px;color:var(--y);white-space:nowrap}
+.rt b{font-size:16px;color:#fff;font-weight:700}
+.rt small{display:block;font-size:13px;color:#a9c8d4;margin-top:2px}
+.rt .p{font-size:20px;color:#fff;white-space:nowrap}
+.rooms{display:grid;gap:14px;margin-top:22px}
+.room{display:grid;grid-template-columns:88px 1fr auto;gap:16px;align-items:center;background:rgba(255,255,255,.06);border-radius:14px;padding:12px 16px 12px 12px}
+.room svg{width:88px;height:66px;border-radius:10px}
+.room b{color:#fff;font-size:16px}
+.room small{display:block;color:#a9c8d4;font-size:13px;margin-top:3px}
+.room .p{color:var(--y);font-size:19px;white-space:nowrap}
+.room .p small{display:inline;color:#a9c8d4;font-family:'Noto Sans KR';font-weight:400;font-size:12px;margin-left:2px}
+/* gear */
+.gear{padding:90px 0}
+.ggrid{display:grid;grid-template-columns:1fr 1fr;gap:26px}
+.gbox h3{display:flex;align-items:center;gap:12px;font-size:20px;font-weight:900;color:#fff;margin-bottom:18px}
+.gbox h3 span{font-family:var(--mono);font-size:12px;font-weight:700;background:var(--y);color:var(--ink);padding:3px 8px;border-radius:4px}
+.gbox h3 span.o{background:transparent;color:var(--y);border:1.5px solid var(--y)}
+.gl{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.gi{border-radius:14px;border:1px solid var(--line);background:rgba(2,22,40,.45);padding:18px 14px;text-align:center}
+.gi svg{width:44px;height:44px;margin:0 auto 10px;fill:none;stroke:#bfe8f2;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+.gi b{display:block;font-size:15px;color:#fff;font-weight:700}
+.gi small{display:block;font-size:12px;color:#9dbfcc;margin-top:3px;line-height:1.5}
+.gbox.bring .gi svg{stroke:var(--y)}
+/* reserve */
+.reserve{padding:90px 0}
+.rgrid{display:grid;grid-template-columns:.85fr 1.15fr;gap:30px;align-items:start}
+.rinfo{background:var(--paper);color:var(--ink);border-radius:20px;padding:34px;background-image:linear-gradient(rgba(10,75,111,.08) 1px,transparent 1px),linear-gradient(90deg,rgba(10,75,111,.08) 1px,transparent 1px);background-size:22px 22px}
+.rinfo h3{font-family:'Black Han Sans';font-weight:400;font-size:30px;line-height:1.25}
+.rinfo p{font-size:15px;line-height:1.75;color:#24506a;margin-top:12px}
+.rinfo dl{margin-top:22px;display:grid;gap:0}
+.rinfo dl div{display:flex;justify-content:space-between;gap:12px;padding:12px 0;border-top:1.5px dashed rgba(6,35,58,.25);font-size:15px}
+.rinfo dt{font-family:var(--mono);font-size:12px;color:#3d6a80;padding-top:3px}
+.rinfo dd{font-weight:700;text-align:right}
+.rinfo{position:sticky;top:24px}
+.rnote{margin-top:22px;display:grid;grid-template-columns:64px 1fr;gap:16px;align-items:center;background:rgba(255,255,255,.7);border:1.5px solid rgba(6,35,58,.2);border-radius:14px;padding:16px}
+.rnote svg{width:64px;height:64px}
+.rnote b{display:block;font-size:15px}
+.rnote span{display:block;font-size:13.5px;color:#24506a;line-height:1.6;margin-top:3px}
+.rsteps{margin-top:18px;display:grid;gap:10px;counter-reset:rs}
+.rsteps li{list-style:none;counter-increment:rs;display:flex;gap:12px;font-size:14.5px;line-height:1.55;align-items:flex-start}
+.rsteps li:before{content:counter(rs);flex:none;width:24px;height:24px;border-radius:50%;background:var(--ink);color:var(--y);font-family:var(--mono);font-size:12px;font-weight:700;display:grid;place-items:center;margin-top:1px}
+.tip{margin-top:22px;display:flex;gap:14px;align-items:flex-start;background:rgba(255,210,63,.1);border:1px dashed rgba(255,210,63,.5);border-radius:14px;padding:16px 18px}
+.tip svg{flex:none;width:28px;height:28px;fill:none;stroke:var(--y);stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.tip b{display:block;color:#fff;font-size:15px}
+.tip span{display:block;color:#b9d4df;font-size:13.5px;line-height:1.6;margin-top:3px}
+@media(max-width:1080px){.rinfo{position:static}}
+form{background:rgba(2,22,40,.6);border:1px solid var(--line);border-radius:20px;padding:32px}
+.fl{display:block;font-size:14px;font-weight:700;color:#fff;margin:0 0 10px}
+.fl small{font-weight:400;color:#9dbfcc;margin-left:6px}
+.fg{margin-bottom:22px}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{position:relative}
+.chip input{position:absolute;opacity:0;pointer-events:none}
+.chip span{display:inline-flex;align-items:center;height:42px;padding:0 15px;border-radius:30px;border:1.5px solid rgba(255,255,255,.28);font-size:14px;color:#dceef4;cursor:pointer;transition:.15s;white-space:nowrap}
+.chip input:checked+span{background:var(--y);border-color:var(--y);color:var(--ink);font-weight:700}
+.chip input:focus-visible+span{outline:2px solid #fff;outline-offset:2px}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+select,input[type=text],textarea{width:100%;height:50px;border-radius:12px;border:1.5px solid rgba(255,255,255,.22);background:rgba(255,255,255,.06);color:#fff;font:inherit;font-size:15px;padding:0 16px}
+select option{color:#000}
+textarea{height:90px;padding:14px 16px;resize:vertical}
+input::placeholder,textarea::placeholder{color:#89aebc}
+.step{display:flex;align-items:center;height:50px;border-radius:12px;border:1.5px solid rgba(255,255,255,.22);overflow:hidden}
+.step button{width:50px;height:100%;background:rgba(255,255,255,.08);border:0;color:#fff;font-size:22px;cursor:pointer}
+.step output{flex:1;text-align:center;font-family:var(--num);font-weight:700;font-size:18px}
+.submit{width:100%;height:58px;border:0;border-radius:40px;background:var(--y);color:var(--ink);font:inherit;font-size:17px;font-weight:900;cursor:pointer;margin-top:4px}
+.submit:hover{background:var(--y2)}
+.fnote{font-size:12px;color:#9dbfcc;margin-top:12px;text-align:center}
+.done{display:none;text-align:center;padding:30px 10px}
+.done .ck{width:72px;height:72px;border-radius:50%;background:var(--y);display:grid;place-items:center;margin:0 auto 18px}
+.done .ck svg{width:34px;height:34px;fill:none;stroke:var(--ink);stroke-width:3;stroke-linecap:round;stroke-linejoin:round}
+.done h3{font-size:24px;color:#fff;font-weight:900}
+.done p{font-size:15px;color:#c4dde7;line-height:1.7;margin-top:10px}
+.done .sum{display:inline-grid;gap:6px;text-align:left;margin-top:18px;background:rgba(255,255,255,.06);border-radius:12px;padding:16px 22px;font-size:14px}
+.done .sum b{color:var(--y);font-family:var(--mono);font-size:12px;margin-right:10px}
+form.sent .fields{display:none}
+form.sent .done{display:block}
+.err{color:#ffb4a2;font-size:13px;margin-top:8px;display:none}
+/* faq */
+.faq{padding:90px 0}
+.fgrid{display:grid;grid-template-columns:.8fr 1.2fr;gap:40px}
+details{border-top:1px solid var(--line)}
+details:last-child{border-bottom:1px solid var(--line)}
+summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:18px;padding:22px 0;font-size:17px;font-weight:700;color:#fff}
+summary::-webkit-details-marker{display:none}
+summary i{flex:none;width:30px;height:30px;border-radius:50%;border:1.5px solid var(--y);position:relative}
+summary i:before,summary i:after{content:"";position:absolute;left:50%;top:50%;width:12px;height:2px;background:var(--y);transform:translate(-50%,-50%)}
+summary i:after{transform:translate(-50%,-50%) rotate(90deg);transition:.2s}
+details[open] summary i:after{transform:translate(-50%,-50%) rotate(0)}
+details p{font-size:15px;line-height:1.8;color:#b9d4df;padding:0 50px 24px 0}
+/* visit */
+.visit{padding:90px 0 70px}
+.vgrid{display:grid;grid-template-columns:1.2fr .8fr;gap:26px;align-items:start}
+.map{border-radius:22px;overflow:hidden;border:1px solid var(--line);background:#062a45}
+.map svg{width:100%;height:auto;aspect-ratio:640/380}
+.vinfo{display:grid;gap:14px;align-content:start}
+.vi{border-radius:16px;border:1px solid var(--line);padding:20px 22px;background:rgba(2,22,40,.5)}
+.vi .mono{font-size:12px;color:var(--y)}
+.vi b{display:block;font-size:17px;color:#fff;margin-top:6px;line-height:1.5}
+.vi small{display:block;font-size:13px;color:#9dbfcc;margin-top:4px}
+footer{border-top:1px solid var(--line);padding:34px 0 40px;color:#7f9fae;font-size:13px}
+footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;align-items:center}
+footer .logo{color:#fff}
+footer .logo small{color:#7fb6c9}
+.mbar{position:fixed;left:0;right:0;bottom:0;z-index:30;padding:10px 16px calc(10px + env(safe-area-inset-bottom));background:rgba(2,16,31,.94);border-top:2px solid var(--y);display:none;gap:10px;transform:translateY(110%);transition:transform .3s}
+.mbar.on{transform:none}
+.mbar a{flex:1;height:48px;border-radius:30px;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:15px;text-decoration:none}
+.mbar a.k{border:1.5px solid rgba(255,255,255,.4);color:#fff;flex:.8}
+.mbar a.r{background:var(--y);color:var(--ink)}
+.bub{position:absolute;border-radius:50%;border:1.5px solid rgba(255,255,255,.35);animation:up 9s linear infinite;pointer-events:none}
+@keyframes up{0%{transform:translateY(0);opacity:0}10%{opacity:1}100%{transform:translateY(-420px);opacity:0}}
+@media(max-width:1080px){
+ .nav{display:none}
+ .hero .wrap{grid-template-columns:1fr}
+ .hart{max-width:560px;margin:0 auto;width:100%}
+ .pgrid,.cgrid,.extras{grid-template-columns:1fr 1fr}
+ .tl{grid-template-columns:repeat(3,1fr);row-gap:34px}
+ .tl:before{display:none}
+ .sgrid,.ggrid,.rgrid,.fgrid,.vgrid{grid-template-columns:1fr}
+}
+@media(max-width:640px){
+ .wrap{padding:0 18px}
+ .hd .wrap{height:66px}
+ .hbtn{height:40px;padding:0 16px;font-size:13px}
+ .hero{padding:110px 0 60px}
+ .hero h1{font-size:46px}
+ .hero .lead{font-size:16px}
+ .btn{height:52px;padding:0 22px;font-size:15px}
+ .stats b{font-size:24px}
+ .stats div+div{padding-left:10px}
+ .stats span{font-size:12px}
+ .points,.courses,.day,.stay,.gear,.reserve,.faq{padding:64px 0}
+ .visit{padding:80px 0 50px}
+ .sh{margin-bottom:30px}
+ .pgrid,.cgrid,.extras{grid-template-columns:1fr}
+ .tl{grid-template-columns:1fr;row-gap:0}
+ .st{display:grid;grid-template-columns:56px 1fr;column-gap:18px;padding:0 0 26px;position:relative}
+ .st:not(:last-child):after{content:"";position:absolute;left:27px;top:56px;bottom:0;width:2px;background:repeating-linear-gradient(var(--y) 0 8px,transparent 8px 14px)}
+ .st .dot{grid-row:span 3}
+ .st time{margin:4px 0 4px}
+ .card,.rinfo,form{padding:24px 20px}
+ .rt{grid-template-columns:1fr auto;gap:4px 12px}
+ .rt .mono{grid-column:1/-1}
+ .room{grid-template-columns:72px 1fr;gap:12px}
+ .room svg{width:72px;height:56px}
+ .room .p{grid-column:2}
+ .gl{grid-template-columns:1fr 1fr}
+ .two{grid-template-columns:1fr}
+ .chip span{height:40px;padding:0 13px;font-size:13.5px}
+ .dates .chip{flex:0 0 calc((100% - 16px)/3)}
+ .dates .chip span{width:100%;justify-content:center;padding:0 6px}
+ details p{padding-right:0}
+ .mbar{display:flex}
+ footer{padding-bottom:100px}
+}
+</style>
+</head>
+<body>
+
+<div class="rail" aria-hidden="true">
+ <div class="ln"></div>
+ <div class="tk" style="top:0%"><span>0m</span></div><div class="tk" style="top:20%"><span>8m</span></div><div class="tk" style="top:40%"><span>16m</span></div><div class="tk" style="top:60%"><span>24m</span></div><div class="tk" style="top:80%"><span>32m</span></div><div class="tk" style="top:100%"><span>40m</span></div>
+ <div class="ind" id="ind" style="top:0%"></div><div class="rd" id="rd" style="top:0%">0.0m</div>
+</div>
+
+<header class="hd">
+ <div class="wrap">
+  <a class="logo" href="#top" aria-label="청파 다이브">
+   <svg width="40" height="40" viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="20" r="19" fill="#06233a"/><path d="M8 18c4-3 8 3 12 0s8 3 12 0" fill="none" stroke="#ffd23f" stroke-width="2.4" stroke-linecap="round"/><path d="M11 25c3-2 6 2 9 0s6 2 9 0" fill="none" stroke="#7fd6e0" stroke-width="2" stroke-linecap="round"/><circle cx="26" cy="11" r="2.2" fill="none" stroke="#fff" stroke-width="1.4"/><circle cx="30" cy="7" r="1.4" fill="none" stroke="#fff" stroke-width="1.2"/></svg>
+   <span><b>청파 다이브</b><small>MOALBOAL · CEBU</small></span>
+  </a>
+  <nav class="nav"><a href="#points">다이빙 포인트</a><a href="#courses">코스·가격</a><a href="#day">하루 일정</a><a href="#stay">숙소·픽업</a><a href="#faq">자주 묻는 질문</a></nav>
+  <a class="hbtn" href="#reserve">예약·상담</a>
+ </div>
+</header>
+
+<main id="top">
+<section class="hero">
+ <div class="wrap">
+  <div>
+   <span class="tagline"><i></i>SURFACE · 00M · 한국인 강사 상주</span>
+   <h1>한 번의 입수로,<br><em>정어리 떼</em> 속으로</h1>
+   <p class="lead">세부 모알보알 바다에서 한국어로 배우는 스쿠버 다이빙. 처음이라면 얕은 바다에서 호흡부터 천천히, 자격증이 있다면 정어리 떼와 바다거북을 만나러 함께 내려갑니다.</p>
+   <div class="btns">
+    <a class="btn pri" href="#reserve">다이빙 예약하기 <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+    <a class="btn sec" href="#courses">코스·가격 보기</a>
+   </div>
+   <div class="stats">
+    <div><b class="mono" style="font-family:var(--num)">5<small>분</small></b><span>포인트까지 보트</span></div>
+    <div><b style="font-family:var(--num)">2<small>명</small></b><span>강사 1명당 인원</span></div>
+    <div><b style="font-family:var(--num)"><small style="margin:0 4px 0 0">약</small>27<small>°C</small></b><span>연중 평균 수온</span></div>
+   </div>
+  </div>
+  <div class="hart">
+   <svg viewBox="0 0 600 640" role="img" aria-label="수면의 방카 보트 아래로 내려가는 다이버와 정어리 떼 일러스트">
+    <defs>
+     <linearGradient id="hw" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#6fd0dc"/><stop offset=".35" stop-color="#1c8fb0"/><stop offset="1" stop-color="#073a5e"/></linearGradient>
+     <linearGradient id="hs" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#e9fbfb"/><stop offset="1" stop-color="#a7e6ea"/></linearGradient>
+     <linearGradient id="ray" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff" stop-opacity=".55"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient>
+     <linearGradient id="hull" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffffff"/><stop offset="1" stop-color="#cfdde4"/></linearGradient>
+     <linearGradient id="tank" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#ffb81c"/><stop offset=".5" stop-color="#ffe27a"/><stop offset="1" stop-color="#e09a00"/></linearGradient>
+     <linearGradient id="suit" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#1a2a3a"/><stop offset="1" stop-color="#05121e"/></linearGradient>
+     <radialGradient id="fishg" cx=".3" cy=".4" r=".8"><stop offset="0" stop-color="#f2fbff"/><stop offset="1" stop-color="#7fa9bd"/></radialGradient>
+     <clipPath id="hc"><rect x="0" y="0" width="600" height="640" rx="300" ry="300"/></clipPath>
+     <clipPath id="hc2"><path d="M40 0h520a40 40 0 0 1 40 40v560a40 40 0 0 1-40 40H40a40 40 0 0 1-40-40V40A40 40 0 0 1 40 0z"/></clipPath>
+    </defs>
+    <g clip-path="url(#hc2)">
+     <rect width="600" height="640" fill="url(#hw)"/>
+     <rect width="600" height="120" fill="url(#hs)"/>
+     <path d="M0 118q30-10 60 0t60 0 60 0 60 0 60 0 60 0 60 0 60 0 60 0 60 0v14H0z" fill="#8fdbe1"/>
+     <g opacity=".9"><path d="M120 130l-70 510h70l60-510z" fill="url(#ray)" opacity=".5"/><path d="M290 130l-30 510h60l10-510z" fill="url(#ray)" opacity=".45"/><path d="M430 130l40 510h70l-70-510z" fill="url(#ray)" opacity=".4"/></g>
+     <!-- banca boat -->
+     <g transform="translate(330 64)">
+      <path d="M-160 34h330" stroke="#1b4a63" stroke-width="4"/>
+      <path d="M-150 34q-6 14 2 16M160 34q6 14-2 16" stroke="#1b4a63" stroke-width="3" fill="none"/>
+      <path d="M-172 46q0 6 10 6h330q10 0 10-6" fill="none" stroke="#e7f3f6" stroke-width="6" stroke-linecap="round"/>
+      <path d="M-110 30h220l-24 30h-172z" fill="url(#hull)"/>
+      <path d="M-110 30h220l-4 6h-212z" fill="#ffd23f"/>
+      <path d="M-86 60h172" stroke="#1b4a63" stroke-width="2" opacity=".4"/>
+      <path d="M-70 30v-26h120v26" fill="#f6f6f0" stroke="#1b4a63" stroke-width="3"/>
+      <path d="M-80 4h140l-10-12h-120z" fill="#0d3b57"/>
+      <path d="M110 30l26-20" stroke="#1b4a63" stroke-width="3"/>
+     </g>
+     <!-- anchor line -->
+     <path d="M230 122q-6 130 18 250" stroke="#ffd23f" stroke-width="2" stroke-dasharray="6 7" fill="none" opacity=".8"/>
+     <!-- sardine swirl -->
+     <g id="swirl" fill="url(#fishg)" opacity=".95">
+     </g>
+     <!-- diver -->
+     <g transform="translate(330 330) rotate(-28)">
+      <path d="M-60 0l-120 -14q-14 0-12 10l4 4 128 22z" fill="#05121e"/>
+      <path d="M-62 18l-112 26q-12 4-6 12l6 2 116-20z" fill="#0a1a28"/>
+      <path d="M-178 -22L-240 -44q-10 16 -2 34L-176 -2z" fill="#ffd23f"/><path d="M-240 -44q-10 16 -2 34" stroke="#e09a00" stroke-width="3" fill="none"/><path d="M-170 36L-228 62q2 18 14 26L-164 58z" fill="#ffd23f"/><path d="M-228 62q2 18 14 26" stroke="#e09a00" stroke-width="3" fill="none"/>
+      <rect x="-40" y="-36" width="78" height="26" rx="13" fill="url(#tank)"/>
+      <rect x="34" y="-32" width="10" height="18" rx="3" fill="#2a3946"/>
+      <path d="M-70 -6q0-18 22-18h70q30 0 40 20q6 14-4 26l-30 6h-76q-22 0-22-20z" fill="url(#suit)"/>
+      <path d="M-20 -8h40" stroke="#ffd23f" stroke-width="5" stroke-linecap="round"/>
+      <path d="M28 16q20 14 30 34" stroke="#0a1a28" stroke-width="13" stroke-linecap="round" fill="none"/>
+      <circle cx="98" cy="2" r="22" fill="#0a1a28"/>
+      <path d="M86 -12h28q6 0 6 6v12q0 6-6 6h-28q-6 0-6-6v-12q0-6 6-6z" fill="#7fd6e0" opacity=".85" stroke="#ffd23f" stroke-width="3"/>
+      <path d="M90 -6q8-3 18 0" stroke="#fff" stroke-width="2" opacity=".7" fill="none"/>
+      <path d="M82 18q-10 10-18 4" stroke="#ffd23f" stroke-width="4" fill="none" stroke-linecap="round"/>
+      <circle cx="60" cy="48" r="7" fill="#ffd23f"/>
+     </g>
+     <!-- bubbles -->
+     <g fill="none" stroke="#e8fbff" stroke-width="2" opacity=".85"><circle cx="452" cy="260" r="7"/><circle cx="462" cy="230" r="5"/><circle cx="455" cy="204" r="9"/><circle cx="470" cy="172" r="4"/><circle cx="460" cy="150" r="6"/></g>
+     <!-- reef silhouette bottom -->
+     <path d="M0 640V560q30-30 60-10t50-30 50 10 40 0 60 20 60-10 60 20 50-20 60 10 60-20 50 20v110z" fill="#04223a"/>
+     <path d="M70 600q-6-40 8-60M78 560q14-16 22-36M500 600q4-44 22-66M520 560q-18-14-26-34" stroke="#ff8a5b" stroke-width="7" stroke-linecap="round" fill="none" opacity=".9"/>
+     <!-- depth labels -->
+     <g font-family="Space Mono, monospace" font-weight="700" font-size="22">
+      <rect x="22" y="146" width="132" height="38" rx="6" fill="#06233a"/><text x="38" y="172" fill="#ffd23f">-05 M</text>
+      <rect x="436" y="500" width="142" height="38" rx="6" fill="#ffd23f"/><text x="452" y="526" fill="#06233a">-18 M</text>
+     </g>
+    </g>
+   </svg>
+  </div>
+ </div>
+</section>
+
+<div class="ticker" aria-hidden="true"><div>
+ <span>체험 다이빙 ₱3,500부터</span><span>국제 다이빙 자격 코스 3~4일</span><span>펀 다이빙 2회 ₱3,000</span><span>세부 공항·시내 픽업</span><span>한국어 브리핑</span><span>장비 대여 가능</span>
+ <span>체험 다이빙 ₱3,500부터</span><span>국제 다이빙 자격 코스 3~4일</span><span>펀 다이빙 2회 ₱3,000</span><span>세부 공항·시내 픽업</span><span>한국어 브리핑</span><span>장비 대여 가능</span>
+</div></div>
+
+<section class="points" id="points">
+ <div class="wrap">
+  <div class="sh">
+   <div><span class="dep">DEPTH 05M · POINTS</span><h2>보트로 5분, 바로 앞이<br>다이빙 포인트입니다</h2></div>
+   <p>모알보알은 해변에서 가까운 곳에 볼거리가 모여 있어요. 그날 바다 상태와 경험에 맞춰 강사가 포인트를 고릅니다.</p>
+  </div>
+  <div class="pgrid">
+   <article class="pt">
+    <div class="art">
+     <svg viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+      <defs><radialGradient id="pa" cx=".5" cy=".3" r=".9"><stop offset="0" stop-color="#2aa5c3"/><stop offset="1" stop-color="#06304f"/></radialGradient><linearGradient id="sf" x1="0" x2="1"><stop offset="0" stop-color="#e7f6fb"/><stop offset="1" stop-color="#8db8ca"/></linearGradient></defs>
+      <rect width="400" height="300" fill="url(#pa)"/>
+      <g id="sardines" fill="url(#sf)"></g>
+      <path d="M0 300v-30q60-20 120 0t140-6 140 10v26z" fill="#042238" opacity=".7"/>
+     </svg>
+    </div>
+    <div class="bd"><div class="meta"><span>5–20M</span><span>펀 다이빙</span></div><h3>정어리 떼 포인트</h3><p>해변 가까이에 정어리 떼가 머무는 날이 많아요. 수만 마리가 한 몸처럼 방향을 바꾸는 모습을 아래에서 올려다봅니다.</p></div>
+   </article>
+   <article class="pt">
+    <div class="art">
+     <svg viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+      <defs><linearGradient id="pb" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#5cc6d4"/><stop offset="1" stop-color="#0b5a7d"/></linearGradient><radialGradient id="shell" cx=".4" cy=".35" r=".8"><stop offset="0" stop-color="#c9a15a"/><stop offset=".6" stop-color="#7a5a2a"/><stop offset="1" stop-color="#3f2d14"/></radialGradient><linearGradient id="skin" x1="0" x2="1"><stop offset="0" stop-color="#b7c78a"/><stop offset="1" stop-color="#6f8048"/></linearGradient></defs>
+      <rect width="400" height="300" fill="url(#pb)"/>
+      <path d="M60 0l-30 300h40l30-300zM250 0l10 300h40l-20-300z" fill="#fff" opacity=".1"/>
+      <g transform="translate(205 150) rotate(-12)">
+       <path d="M-70-30q-50-30-70-10q30 10 60 30z" fill="url(#skin)"/>
+       <path d="M-60 34q-50 20-66 4q28-14 58-20z" fill="url(#skin)"/>
+       <path d="M60-30q40-26 60-14q-24 14-52 28z" fill="url(#skin)"/>
+       <path d="M56 36q30 18 44 10q-16-14-38-20z" fill="url(#skin)"/>
+       <ellipse cx="0" cy="2" rx="86" ry="56" fill="url(#shell)"/>
+       <g fill="none" stroke="#2f2110" stroke-width="2.4" opacity=".7"><path d="M-28-36l-20 26 18 30h34l18-30-20-26z"/><path d="M-48-10h-34M14-10l40-14M14 20l36 14M-30 20l-30 18M-28-36l-12-14M6-36l12-16"/></g>
+       <ellipse cx="0" cy="-6" rx="70" ry="38" fill="#fff" opacity=".07"/>
+       <path d="M84-6q34-10 44 6q4 14-14 18q-20 2-30-6z" fill="url(#skin)"/>
+       <circle cx="114" cy="0" r="3.4" fill="#1d2410"/>
+      </g>
+      <g fill="none" stroke="#e8fbff" stroke-width="2" opacity=".7"><circle cx="330" cy="90" r="5"/><circle cx="338" cy="66" r="3.5"/><circle cx="332" cy="46" r="6"/></g>
+      <path d="M0 300v-24q50-18 100 0t110-8 190 8v24z" fill="#e8d8a8" opacity=".55"/>
+     </svg>
+    </div>
+    <div class="bd"><div class="meta"><span>8–15M</span><span>체험·펀 다이빙</span></div><h3>바다거북 산책길</h3><p>잔잔한 모래 바닥과 산호 사이로 바다거북이 지나가는 길목이에요. 거리를 두고 천천히 따라가며 바라봅니다.</p></div>
+   </article>
+   <article class="pt">
+    <div class="art">
+     <svg viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+      <defs>
+       <linearGradient id="pc" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2b8fb5"/><stop offset=".55" stop-color="#0b4a70"/><stop offset="1" stop-color="#041d36"/></linearGradient>
+       <linearGradient id="wall" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#2a3344"/><stop offset=".7" stop-color="#4b5870"/><stop offset="1" stop-color="#5f6f88"/></linearGradient>
+       <linearGradient id="wsh" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#9fd8e6" stop-opacity=".22"/><stop offset=".5" stop-color="#000" stop-opacity="0"/><stop offset="1" stop-color="#01101e" stop-opacity=".7"/></linearGradient>
+       <linearGradient id="fan" x1="0" y1="1" x2="1" y2="0"><stop offset="0" stop-color="#b8264f"/><stop offset="1" stop-color="#ff8a5b"/></linearGradient>
+       <radialGradient id="sponge" cx=".4" cy=".3" r=".8"><stop offset="0" stop-color="#ffb35c"/><stop offset="1" stop-color="#b8571c"/></radialGradient>
+      </defs>
+      <rect width="400" height="300" fill="url(#pc)"/>
+      <path d="M250 0l-20 300h46l14-300zM350 0l20 300h30V0z" fill="#fff" opacity=".07"/>
+      <path d="M0 0H136L148 26L126 42L162 66L152 90L182 114L166 138L196 166L176 194L204 222L188 248L214 300H0Z" fill="url(#wall)"/>
+      <path d="M0 0H136L148 26L126 42L162 66L152 90L182 114L166 138L196 166L176 194L204 222L188 248L214 300H0Z" fill="url(#wsh)"/>
+      <g fill="none" stroke="#8a9bb4" stroke-width="3" stroke-linecap="round" opacity=".8"><path d="M126 42L162 66"/><path d="M152 90L182 114"/><path d="M166 138L196 166"/><path d="M176 194L204 222"/></g>
+      <g fill="none" stroke="#1b2230" stroke-width="2.4" opacity=".55"><path d="M40 30q20 10 50 4M20 120q30 14 70 2M30 210q40 12 90-2M90 60l18 22-6 20M60 160l24 16M110 250l20-16"/></g>
+      <g fill="#7d8ca3" opacity=".35"><ellipse cx="70" cy="80" rx="22" ry="6"/><ellipse cx="100" cy="186" rx="26" ry="7"/><ellipse cx="60" cy="262" rx="30" ry="7"/></g>
+      <g fill="#ff8a5b"><circle cx="196" cy="252" r="5"/><circle cx="203" cy="247" r="4"/><circle cx="190" cy="246" r="3.5"/></g>
+      <g stroke="#ffd23f" stroke-width="3" stroke-linecap="round" fill="none"><path d="M186 248q-6-12 0-22M186 248q6-14 16-16"/></g>
+      <g stroke="url(#fan)" stroke-width="3.2" fill="none" stroke-linecap="round">
+       <g transform="translate(160 66)"><path d="M0 0q16-26 40-34M0 0q26-10 46-2M0 0q10-30 14-50M14-18q12-6 22-2M8-30q10-8 18-8M24-8q10 2 16 10"/></g>
+       <g transform="translate(194 166) scale(.85)"><path d="M0 0q16-26 40-34M0 0q26-10 46-2M0 0q10-30 14-50M14-18q12-6 22-2M8-30q10-8 18-8M24-8q10 2 16 10"/></g>
+      </g>
+      <g fill="#a46ad8"><circle cx="150" cy="86" r="7"/><circle cx="160" cy="82" r="5"/><circle cx="142" cy="84" r="5"/><circle cx="178" cy="190" r="6"/><circle cx="187" cy="186" r="4.5"/></g>
+      <g fill="#6fd0a4"><path d="M170 136q-6-18 4-30q8 14-4 30z"/><path d="M178 138q2-14 12-20q2 14-12 20z"/></g>
+      <path d="M200 222q-4-22 6-34h14q8 14 2 34z" fill="url(#sponge)"/><ellipse cx="213" cy="189" rx="7" ry="3" fill="#7a3a12"/>
+      <g fill="#ffd23f"><path d="M232 96q10-6 20 0q-10 6-20 0z"/><path d="M230 96l-6-4v8z"/><path d="M250 112q8-5 16 0q-8 5-16 0z"/><path d="M248 112l-5-3.5v7z"/><path d="M226 128q8-5 16 0q-8 5-16 0z"/><path d="M224 128l-5-3.5v7z"/></g>
+      <g transform="translate(318 186) rotate(-18) scale(.55)">
+       <path d="M-60 0l-62-10" stroke="#06121e" stroke-width="14" stroke-linecap="round"/><path d="M-118 -10l-32-16q-8 14 0 26z" fill="#ffd23f"/><path d="M-58 14l-58 14" stroke="#0a1a28" stroke-width="13" stroke-linecap="round"/><path d="M-112 28l-30 4q0 16 10 22z" fill="#f2b632"/>
+       <rect x="-40" y="-30" width="62" height="20" rx="10" fill="#ffd23f"/>
+       <path d="M-64 -4q0-16 20-16h64q26 0 34 18q4 12-6 20l-26 4h-66q-20 0-20-26z" fill="#0a1a28"/>
+       <circle cx="58" cy="0" r="18" fill="#0a1a28"/><rect x="50" y="-10" width="22" height="14" rx="4" fill="#7fd6e0" opacity=".85"/>
+      </g>
+      <g fill="none" stroke="#e8fbff" stroke-width="1.6" opacity=".8"><circle cx="350" cy="160" r="4"/><circle cx="356" cy="138" r="3"/><circle cx="352" cy="116" r="5"/><circle cx="360" cy="92" r="3"/></g>
+     </svg>
+    </div>
+    <div class="bd"><div class="meta"><span>10–30M</span><span>자격증 소지자</span></div><h3>산호 절벽 월 다이빙</h3><p>수직으로 떨어지는 절벽을 따라 부채 산호와 작은 열대어를 만나는 코스. 중성 부력에 익숙한 분께 맞춰 진행합니다.</p></div>
+   </article>
+  </div>
+ </div>
+</section>
+
+<section class="courses" id="courses">
+ <div class="wrap">
+  <div class="sh">
+   <div><span class="dep">DEPTH 12M · COURSES</span><h2>처음부터 자격증까지,<br>로그북처럼 정리했어요</h2></div>
+   <p>모든 가격은 1인 기준이며 보트·공기통·웨이트가 포함됩니다. 장비가 없다면 대여를 추가해 주세요.</p>
+  </div>
+  <div class="cgrid">
+   <article class="log">
+    <div class="no"><span>LOG NO. 01</span><span>처음이라면</span></div>
+    <div class="stamp">FIRST<br>DIVE<br>OK</div>
+    <h3>체험 다이빙</h3>
+    <div class="pr"><b class="p">₱3,500</b><span>/ 1인</span></div>
+    <ul><li>수영장 연습 후 바다 1회</li><li>강사 1명이 2명까지 함께</li><li>수중 사진 촬영 포함</li></ul>
+    <div class="row"><div>TIME<b>반나절</b></div><div>MAX<b>12m</b></div><div>AGE<b>10세+</b></div></div>
+   </article>
+   <article class="log feat">
+    <div class="no"><span>LOG NO. 02</span><span>자격증 과정</span></div>
+    <div class="stamp">OPEN<br>WATER<br>3–4D</div>
+    <h3>오픈워터 자격 코스</h3>
+    <div class="pr"><b class="p">₱21,000</b><span>/ 1인</span></div>
+    <ul><li>국제 다이빙 자격 코스 이론·실습</li><li>한국어 교재와 영상 강의</li><li>바다 실습 4회·장비 포함</li></ul>
+    <div class="row"><div>TIME<b>3~4일</b></div><div>MAX<b>18m</b></div><div>AGE<b>12세+</b></div></div>
+   </article>
+   <article class="log">
+    <div class="no"><span>LOG NO. 03</span><span>자격증 소지자</span></div>
+    <div class="stamp">FUN<br>DIVE<br>×2</div>
+    <h3>펀 다이빙 2회</h3>
+    <div class="pr"><b class="p">₱3,000</b><span>/ 1인</span></div>
+    <ul><li>오전 보트 다이빙 2회</li><li>정어리 떼·거북이 포인트</li><li>가이드 1명당 최대 4명</li></ul>
+    <div class="row"><div>TIME<b>오전</b></div><div>MAX<b>30m</b></div><div>LEVEL<b>자격증</b></div></div>
+   </article>
+  </div>
+  <div class="extras">
+   <div class="ex"><div><b>어드밴스드 자격 코스</b><small>2일 · 딥·나이트 다이빙 포함</small></div><span class="p">₱18,500</span></div>
+   <div class="ex"><div><b>풀 장비 대여</b><small>BCD·호흡기·수트·핀 / 1일</small></div><span class="p">₱800</span></div>
+   <div class="ex"><div><b>수중 사진·영상</b><small>펀 다이빙 2회 동행 촬영</small></div><span class="p">₱1,500</span></div>
+  </div>
+  <p class="note">※ 해양보호구역 입장료(현장 결제)는 별도입니다. 바다 상황에 따라 일정이 바뀔 수 있어요.</p>
+ </div>
+</section>
+
+<section class="day" id="day">
+ <div class="wrap">
+  <div class="sh">
+   <div><span class="dep">DEPTH 18M · ONE DAY</span><h2>다이빙 하루는<br>이렇게 흘러갑니다</h2></div>
+   <p>펀 다이빙 기준 일정입니다. 오후에는 쉬거나 캐녀닝·섬 투어 같은 다른 일정을 넣기 좋아요.</p>
+  </div>
+  <div class="tl">
+   <div class="st"><div class="dot"><svg viewBox="0 0 24 24"><path d="M3 15V10l3-3h8v8"/><path d="M14 10h4l3 3v2"/><path d="M3 15h18"/><circle cx="7" cy="17" r="2"/><circle cx="17" cy="17" r="2"/></svg></div><time>07:30</time><h3>숙소 픽업</h3><p><span class="nw">시내 숙소 앞으로</span> <span class="nw">트라이시클이 와요.</span></p></div>
+   <div class="st"><div class="dot"><svg viewBox="0 0 24 24"><path d="M4 5h16v11H8l-4 4z"/><path d="M8 10h8M8 13h5"/></svg></div><time>08:00</time><h3>한국어 브리핑</h3><p><span class="nw">포인트 지도와</span> <span class="nw">수신호를 익혀요.</span></p></div>
+   <div class="st"><div class="dot"><svg viewBox="0 0 24 24"><path d="M3 17q4 3 9 0t9 0M6 14l2-6h8l2 6"/><path d="M12 8V4"/></svg></div><time>08:30</time><h3>출항·1차 다이빙</h3><p><span class="nw">정어리 떼 포인트,</span> <span class="nw">약 45분</span></p></div>
+   <div class="st"><div class="dot"><svg viewBox="0 0 24 24"><path d="M5 10h12v4a5 5 0 0 1-5 5h-2a5 5 0 0 1-5-5z"/><path d="M17 11h2a2 2 0 0 1 0 4h-2M9 4v3M13 4v3"/></svg></div><time>09:40</time><h3>수면 휴식</h3><p><span class="nw">보트 위에서</span> <span class="nw">과일과 차 한 잔</span></p></div>
+   <div class="st"><div class="dot"><svg viewBox="0 0 24 24"><path d="M4 12q4-6 8-6t8 6q-4 6-8 6t-8-6z"/><circle cx="12" cy="12" r="2.5"/></svg></div><time>10:30</time><h3>2차 다이빙</h3><p><span class="nw">거북이 포인트</span> <span class="nw">또는 월 다이빙</span></p></div>
+   <div class="st"><div class="dot"><svg viewBox="0 0 24 24"><path d="M4 4h12l4 4v12H4z"/><path d="M8 10h8M8 14h8M8 18h5"/></svg></div><time>11:50</time><h3>로그 기록</h3><p><span class="nw">사진을 받고</span> <span class="nw">로그북에 도장</span></p></div>
+  </div>
+ </div>
+</section>
+
+<section class="stay" id="stay">
+ <div class="wrap">
+  <div class="sh">
+   <div><span class="dep">DEPTH 22M · STAY &amp; PICKUP</span><h2>공항에서 숙소까지,<br>한 번에 연결해요</h2></div>
+   <p>모알보알은 세부 공항에서 차로 약 3시간. 일정에 맞춰 차량과 숙소를 함께 안내해 드립니다.</p>
+  </div>
+  <div class="sgrid">
+   <div class="card">
+    <h3>픽업·이동</h3><p>항공편 시간을 알려 주시면 기사님이 이름표를 들고 기다립니다.</p>
+    <div class="route">
+     <div class="rt"><span class="mono">CEB → MOALBOAL</span><div><b>세부 공항 단독 차량</b><small>최대 4인 · 약 3시간</small></div><span class="p">₱4,500</span></div>
+     <div class="rt"><span class="mono">CITY → MOALBOAL</span><div><b>세부 시내 숙소 출발</b><small>최대 4인 · 약 2시간 30분</small></div><span class="p">₱4,000</span></div>
+     <div class="rt"><span class="mono">LOCAL</span><div><b>시내 숙소 ↔ 다이브 센터</b><small>다이빙 예약 시</small></div><span class="p">무료</span></div>
+    </div>
+    <div class="tip"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 11v6M12 7.5v.5"/></svg><div><b>도착 전에 알려 주세요</b><span>항공편 번호와 짐 개수를 남겨 주시면 차량 크기를 맞춰 드려요. 공항에서 유심·환전을 마친 뒤 출구에서 만나요.</span></div></div>
+   </div>
+   <div class="card">
+    <h3>함께 쓰는 숙소</h3><p>다이브 센터에서 걸어서 5분 안쪽의 숙소예요.</p>
+    <div class="rooms">
+     <div class="room">
+      <svg viewBox="0 0 88 66" aria-hidden="true"><defs><linearGradient id="r1" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#8fdbe1"/><stop offset="1" stop-color="#2a8fae"/></linearGradient></defs><rect width="88" height="66" fill="url(#r1)"/><path d="M10 40l22-16 22 16z" fill="#c98b4a"/><rect x="16" y="40" width="32" height="20" fill="#f4efe0"/><rect x="28" y="46" width="8" height="14" fill="#7a5a2a"/><path d="M58 60V34q6-10 12 0" stroke="#3f6b2a" stroke-width="3" fill="none"/><path d="M70 30q-10-6-16 2M70 30q10-6 14 4M70 30q-2-10 6-14" stroke="#4f8a34" stroke-width="3" fill="none" stroke-linecap="round"/><rect y="58" width="88" height="8" fill="#e8d8a8"/></svg>
+      <div><b>가든 방갈로</b><small>2인 · 조식 포함</small></div><span class="p">₱2,200<small>/박</small></span>
+     </div>
+     <div class="room">
+      <svg viewBox="0 0 88 66" aria-hidden="true"><defs><linearGradient id="r2" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffcf8a"/><stop offset="1" stop-color="#f08a5d"/></linearGradient></defs><rect width="88" height="66" fill="url(#r2)"/><circle cx="64" cy="26" r="10" fill="#ffe9b0"/><rect x="0" y="40" width="88" height="26" fill="#1c6f8f"/><path d="M0 44q11-4 22 0t22 0 22 0 22 0" stroke="#bfeef0" stroke-width="2" fill="none"/><rect x="10" y="18" width="30" height="24" fill="#f4efe0"/><rect x="14" y="22" width="10" height="8" fill="#8fdbe1"/><rect x="27" y="22" width="9" height="8" fill="#8fdbe1"/><path d="M6 18l19-10 19 10z" fill="#5a3d22"/></svg>
+      <div><b>오션뷰 더블룸</b><small>2인 · 발코니</small></div><span class="p">₱3,400<small>/박</small></span>
+     </div>
+     <div class="room">
+      <svg viewBox="0 0 88 66" aria-hidden="true"><defs><linearGradient id="r3" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0d3b57"/><stop offset="1" stop-color="#06233a"/></linearGradient></defs><rect width="88" height="66" fill="url(#r3)"/><g fill="#ffd23f"><circle cx="20" cy="14" r="1.5"/><circle cx="50" cy="10" r="1.2"/><circle cx="72" cy="18" r="1.5"/></g><rect x="14" y="30" width="60" height="30" rx="3" fill="#f4efe0"/><rect x="20" y="36" width="20" height="14" fill="#ffd23f" opacity=".85"/><rect x="46" y="36" width="20" height="14" fill="#ffd23f" opacity=".85"/><path d="M10 30h68l-6-8H16z" fill="#2a3946"/></svg>
+      <div><b>다이버 도미토리</b><small>4인실 침대 1개</small></div><span class="p">₱750<small>/박</small></span>
+     </div>
+    </div>
+   </div>
+  </div>
+ </div>
+</section>
+
+<section class="gear" id="gear">
+ <div class="wrap">
+  <div class="sh">
+   <div><span class="dep">DEPTH 26M · GEAR</span><h2>몸만 오셔도 됩니다</h2></div>
+   <p>체험 다이빙과 자격 코스는 기본 장비가 포함돼요. 개인 장비가 있다면 가져오셔도 좋습니다.</p>
+  </div>
+  <div class="ggrid">
+   <div class="gbox">
+    <h3><span>INCLUDED</span>센터에서 준비해요</h3>
+    <div class="gl">
+     <div class="gi"><svg viewBox="0 0 48 48"><path d="M6 20h30v8a6 6 0 0 1-6 6h-4l-4-4-4 4h-4a6 6 0 0 1-6-6z"/><path d="M14 24h6M24 24h6"/><path d="M40 34V12a4 4 0 0 0-8 0v4"/></svg><b>마스크·스노클</b><small>도수 마스크 일부</small></div>
+     <div class="gi"><svg viewBox="0 0 48 48"><path d="M11 5h8v10l4 24q.5 4-3 4h-10q-3.5 0-3-4l4-24z"/><path d="M11 15h8M12 22l-2 16M18 22l2 16"/><path d="M29 5h8v10l4 24q.5 4-3 4h-10q-3.5 0-3-4l4-24z"/><path d="M29 15h8M30 22l-2 16M36 22l2 16"/></svg><b>오리발</b><small>사이즈별 준비</small></div>
+     <div class="gi"><svg viewBox="0 0 48 48"><rect x="16" y="6" width="16" height="34" rx="8"/><path d="M20 6V3h8v3M16 18h16"/></svg><b>공기통·웨이트</b><small>모든 코스 포함</small></div>
+     <div class="gi"><svg viewBox="0 0 48 48"><path d="M19 4h10l9 7-3 14-4-2v21h-6l-1-13-1 13h-6V23l-4 2-3-14z"/><path d="M24 4v16"/></svg><b>웻수트</b><small>3mm · 5mm</small></div>
+     <div class="gi"><svg viewBox="0 0 48 48"><path d="M19 4h10v8M19 44h10v-8"/><rect x="13" y="12" width="22" height="24" rx="5"/><rect x="17" y="17" width="14" height="9" rx="1.5"/><path d="M18 30h6M28 30h2"/></svg><b>다이브 컴퓨터</b><small>코스 중 대여</small></div>
+     <div class="gi"><svg viewBox="0 0 48 48"><rect x="6" y="14" width="36" height="24" rx="4"/><circle cx="24" cy="26" r="7"/><path d="M16 14l3-5h10l3 5"/></svg><b>수중 카메라</b><small>체험 다이빙 촬영</small></div>
+    </div>
+   </div>
+   <div class="gbox bring">
+    <h3><span class="o">BRING</span>챙겨 오세요</h3>
+    <div class="gl">
+     <div class="gi"><svg viewBox="0 0 48 48"><path d="M17 5v9M31 5v9"/><path d="M17 14q7 7 14 0l3 12q-3 6-3 16q-7-6-14 0q0-10-3-16z"/></svg><b>수영복</b><small>수트 안에 입어요</small></div>
+     <div class="gi"><svg viewBox="0 0 48 48"><rect x="16" y="12" width="16" height="30" rx="4"/><path d="M20 12V6h8v6M20 24h8"/></svg><b>선크림</b><small>산호에 덜 해로운 제품</small></div>
+     <div class="gi"><svg viewBox="0 0 48 48"><path d="M8 15h26a9 9 0 0 1 0 18H8z"/><circle cx="34" cy="24" r="9"/><path d="M34 24a3 3 0 1 1 3 3"/><path d="M15 15v18M21 15v18"/></svg><b>비치 타월</b><small>보트 위에서 사용</small></div>
+     <div class="gi"><svg viewBox="0 0 48 48"><path d="M18 6l-10 6-3 26h6l3-18v24h20V20l3 18h6l-3-26-10-6q-6 6-12 0z"/></svg><b>래시가드</b><small>햇볕 가리개</small></div>
+     <div class="gi"><svg viewBox="0 0 48 48"><rect x="12" y="8" width="24" height="32" rx="3"/><path d="M18 16h12M18 22h12M18 28h7"/></svg><b>자격증·로그북</b><small>펀 다이빙 시</small></div>
+     <div class="gi"><svg viewBox="0 0 48 48"><path d="M20 4h8v6l4 6v26a2 2 0 0 1-2 2H18a2 2 0 0 1-2-2V16l4-6z"/><path d="M16 24h16M16 34h16"/></svg><b>물병</b><small>리필 가능</small></div>
+    </div>
+   </div>
+  </div>
+ </div>
+</section>
+
+<section class="reserve" id="reserve">
+ <div class="wrap">
+  <div class="sh">
+   <div><span class="dep">DEPTH 30M · RESERVE</span><h2>날짜를 고르고<br>편하게 물어보세요</h2></div>
+   <p>예약 신청을 남기시면 카카오톡으로 바다 상황과 일정을 확인해 드려요.</p>
+  </div>
+  <div class="rgrid">
+   <div class="rinfo">
+    <h3>청파 다이브<br>예약 안내</h3>
+    <p>체험 다이빙은 전날 저녁까지, 자격 코스는 3일 전까지 신청해 주세요. 날씨로 바다에 나가기 어려운 날은 일정을 옮기거나 전액 돌려드립니다.</p>
+    <dl>
+     <div><dt>OPEN</dt><dd>매일 07:00 – 18:00</dd></div>
+     <div><dt>KAKAO</dt><dd>카카오톡 ID: example</dd></div>
+     <div><dt>TEL</dt><dd>000-0000-0000</dd></div>
+     <div><dt>PAY</dt><dd>현장 결제 · 페소 / 원화 송금</dd></div>
+    </dl>
+    <ol class="rsteps"><li>날짜·코스를 골라 신청을 남겨요</li><li>카카오톡으로 바다 상황과 일정을 확인해요</li><li>확인 메시지를 받으면 예약 확정</li></ol>
+    <div class="rnote">
+     <svg viewBox="0 0 64 64" aria-hidden="true"><path d="M14 6v54" stroke="#06233a" stroke-width="3" stroke-linecap="round"/><path d="M15 8h38l-6 14 6 14H15z" fill="#d93a3a"/><path d="M15 8l38 28" stroke="#fff" stroke-width="6"/><path d="M15 8h38l-6 14 6 14H15z" fill="none" stroke="#06233a" stroke-width="2"/></svg>
+     <div><b>날씨로 못 나가는 날은</b><span>전날 저녁 카카오톡으로 알려 드리고, 다른 날로 옮기거나 전액 돌려드려요.</span></div>
+    </div>
+   </div>
+   <form id="rf" novalidate>
+    <div class="fields">
+     <div class="fg"><span class="fl">날짜 <small>바다 상황에 따라 조정될 수 있어요</small></span><div class="chips dates" id="dates"></div></div>
+     <div class="fg"><span class="fl">시간</span><div class="chips" id="times"></div></div>
+     <div class="two fg">
+      <div><label class="fl" for="course">코스</label><select id="course"><option>체험 다이빙 (₱3,500)</option><option>오픈워터 자격 코스 (₱21,000)</option><option>펀 다이빙 2회 (₱3,000)</option><option>어드밴스드 자격 코스 (₱18,500)</option></select></div>
+      <div><span class="fl">인원</span><div class="step"><button type="button" id="minus" aria-label="인원 줄이기">−</button><output id="cnt">2명</output><button type="button" id="plus" aria-label="인원 늘리기">+</button></div></div>
+     </div>
+     <div class="two fg">
+      <div><label class="fl" for="nm">이름</label><input type="text" id="nm" placeholder="홍길동"></div>
+      <div><label class="fl" for="kk">카카오톡 ID</label><input type="text" id="kk" placeholder="example"></div>
+     </div>
+     <div class="fg"><label class="fl" for="memo">요청 사항 <small>선택</small></label><textarea id="memo" placeholder="수영 경험, 픽업 필요 여부 등을 적어 주세요"></textarea></div>
+     <button class="submit" type="submit">예약 신청하기</button>
+     <p class="err" id="err">이름과 카카오톡 ID를 입력해 주세요.</p>
+     <p class="fnote">신청 후 확인 연락을 드리면 예약이 확정됩니다.</p>
+    </div>
+    <div class="done" aria-live="polite">
+     <div class="ck"><svg viewBox="0 0 24 24"><path d="M5 12l5 5 9-10"/></svg></div>
+     <h3>신청이 접수되었어요</h3>
+     <p>카카오톡으로 바다 상황과 일정을 확인해 드릴게요.</p>
+     <div class="sum" id="sum"></div>
+    </div>
+   </form>
+  </div>
+ </div>
+</section>
+
+<section class="faq" id="faq">
+ <div class="wrap">
+  <div class="fgrid">
+   <div class="sh" style="display:block"><span class="dep">DEPTH 34M · FAQ</span><h2>자주 묻는 질문</h2><p style="margin-top:16px">더 궁금한 점은 카카오톡으로 편하게 물어보세요.</p></div>
+   <div>
+    <details open><summary>수영을 못해도 체험 다이빙을 할 수 있나요?<i></i></summary><p>네, 수영장에서 호흡과 장비 사용을 먼저 연습한 뒤 얕은 바다로 나갑니다. 강사가 바로 옆에서 함께하고, 불편하면 언제든 수면으로 올라올 수 있어요.</p></details>
+    <details><summary>자격 코스는 며칠이 필요한가요?<i></i></summary><p>오픈워터 자격 코스는 보통 3~4일이에요. 출국 전 온라인 이론을 미리 들으면 현장 일정이 짧아집니다.</p></details>
+    <details><summary>다이빙 후 비행기를 바로 타도 되나요?<i></i></summary><p>다이빙 후에는 비행 전 충분히 쉬는 시간이 필요해요. 귀국 일정에 맞춰 마지막 다이빙 날짜를 함께 정해 드립니다.</p></details>
+    <details><summary>건강 문제로 걱정되는 점이 있어요.<i></i></summary><p>예약 전 간단한 건강 확인서를 작성해요. 해당 항목이 있다면 출발 전에 의사 상담을 받고 오시길 권합니다.</p></details>
+    <details><summary>날씨가 나쁘면 어떻게 되나요?<i></i></summary><p>바다에 나가기 어려운 날은 다른 날로 옮기거나 결제 금액을 전액 돌려드립니다.</p></details>
+   </div>
+  </div>
+ </div>
+</section>
+
+<section class="visit" id="visit">
+ <div class="wrap">
+  <div class="sh"><div><span class="dep">DEPTH 40M · BOTTOM</span><h2>오시는 길</h2></div></div>
+  <div class="vgrid">
+   <div class="map">
+    <svg viewBox="0 0 640 380" preserveAspectRatio="xMidYMid meet" role="img" aria-label="다이브 센터 위치 약도">
+     <defs><linearGradient id="sea" x1="0" x2="1"><stop offset="0" stop-color="#0d6488"/><stop offset="1" stop-color="#06304f"/></linearGradient><pattern id="dots" width="16" height="16" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="1.4" fill="#fff" opacity=".18"/></pattern></defs>
+     <rect width="640" height="380" fill="url(#sea)"/>
+     <rect width="640" height="380" fill="url(#dots)"/>
+     <path d="M0 0h300q-30 60 0 110t-10 120 30 150H0z" fill="#e8dcb8"/>
+     <path d="M0 0h276q-30 60 0 110t-10 120 30 150H0z" fill="#cfd8b0"/>
+     <path d="M180 0v380" stroke="#fff" stroke-width="14"/><path d="M180 0v380" stroke="#ffd23f" stroke-width="2" stroke-dasharray="10 10"/>
+     <path d="M180 190h96" stroke="#fff" stroke-width="10"/>
+     <text x="196" y="40" font-family="Noto Sans KR" font-weight="700" font-size="22" fill="#3d5a3a">해변 도로</text>
+     <text x="430" y="60" font-family="Space Mono, monospace" font-weight="700" font-size="22" fill="#bfeef0">WEST COAST</text>
+     <g transform="translate(420 200)" fill="none" stroke="#bfeef0" stroke-width="2" opacity=".55"><ellipse rx="70" ry="44"/><ellipse rx="44" ry="26"/></g>
+     <text x="380" y="282" font-family="Noto Sans KR" font-weight="700" font-size="22" fill="#fff">정어리 떼 포인트</text>
+     <path d="M288 190l132 10" stroke="#ffd23f" stroke-width="3" stroke-dasharray="6 8"/>
+     <g transform="translate(276 190)"><circle r="30" fill="#ffd23f" opacity=".25"/><circle r="16" fill="#ffd23f"/><circle r="6" fill="#06233a"/></g>
+     <rect x="44" y="164" width="190" height="52" rx="10" fill="#06233a"/>
+     <text x="62" y="198" font-family="Noto Sans KR" font-weight="900" font-size="22" fill="#fff">청파 다이브</text>
+     <text x="36" y="318" font-family="Noto Sans KR" font-weight="700" font-size="22" fill="#3d5a3a">모알보알 시내</text><path d="M150 332v30M142 354l8 8 8-8" stroke="#3d5a3a" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+   </div>
+   <div class="vinfo">
+    <div class="vi"><span class="mono">ADDRESS</span><b>Moalboal, Cebu<br>○○ Beach Rd. 00</b><small>해변 도로 끝, 노란 깃발이 있는 건물</small></div>
+    <div class="vi"><span class="mono">CONTACT</span><b>000-0000-0000</b><small>카카오톡 ID: example</small></div>
+    <div class="vi"><span class="mono">HOURS</span><b>매일 07:00 – 18:00</b><small>첫 보트 출발 08:30</small></div>
+   </div>
+  </div>
+ </div>
+</section>
+</main>
+
+<footer>
+ <div class="wrap">
+  <a class="logo" href="#top"><span><b>청파 다이브</b><small>CHEONGPA DIVE · MOALBOAL</small></span></a>
+  <span>© 청파 다이브. 바다를 아끼는 다이빙을 합니다.</span>
+ </div>
+</footer>
+
+<div class="mbar" id="mbar"><a class="k" href="#faq">자주 묻는 질문</a><a class="r" href="#reserve">다이빙 예약</a></div>
+
+<script>
+(function(){
+ // sardine swirls (generated, varied)
+ function fish(g,cx,cy,rx,ry,n,s,rot){
+  var ns='http://www.w3.org/2000/svg';
+  for(var i=0;i<n;i++){
+   var t=i/n*Math.PI*2*1.6+ (i%3)*.15, r=1-(i%7)/14;
+   var x=cx+Math.cos(t)*rx*r+(Math.sin(i*12.9)*8), y=cy+Math.sin(t)*ry*r+(Math.cos(i*7.3)*6);
+   var a=t*180/Math.PI+90+rot;
+   var p=document.createElementNS(ns,'path');
+   var k=s*(.75+((i*37)%10)/25);
+   p.setAttribute('d','M0 0q'+(9*k)+' '+(-4*k)+' '+(18*k)+' 0q'+(-9*k)+' '+(4*k)+' '+(-18*k)+' 0zM0 0l'+(-6*k)+' '+(-4*k)+'v'+(8*k)+'z');
+   p.setAttribute('transform','translate('+x.toFixed(1)+' '+y.toFixed(1)+') rotate('+a.toFixed(1)+')');
+   p.setAttribute('opacity',(.55+((i*13)%10)/22).toFixed(2));
+   g.appendChild(p);
+  }
+ }
+ var sw=document.getElementById('swirl'); if(sw) fish(sw,170,420,120,60,70,1.1,0);
+ var sd=document.getElementById('sardines'); if(sd){fish(sd,200,140,150,80,120,1.15,0);fish(sd,200,140,80,40,50,1,10)}
+ // depth rail
+ var ind=document.getElementById('ind'),rd=document.getElementById('rd'),mbar=document.getElementById('mbar');
+ function onS(){
+  var h=document.documentElement.scrollHeight-innerHeight, f=h>0?Math.min(1,scrollY/h):0;
+  ind.style.top=rd.style.top=(f*100)+'%'; rd.textContent=(f*40).toFixed(1)+'m';
+  mbar.classList.toggle('on',scrollY>600);
+ }
+ addEventListener('scroll',onS,{passive:true});onS();
+ // date chips
+ var days=['일','월','화','수','목','금','토'],dz=document.getElementById('dates'),d=new Date();
+ for(var i=1;i<=9;i++){var x=new Date(d.getTime()+i*864e5);var lb=(x.getMonth()+1)+'. '+x.getDate()+' ('+days[x.getDay()]+')';
+  dz.insertAdjacentHTML('beforeend','<label class="chip"><input type="radio" name="dt" value="'+lb+'"'+(i===2?' checked':'')+'><span>'+lb+'</span></label>')}
+ var tz=document.getElementById('times');['08:30 오전 보트','13:30 오후 보트','17:00 선셋 다이빙'].forEach(function(t,i){
+  tz.insertAdjacentHTML('beforeend','<label class="chip"><input type="radio" name="tm" value="'+t+'"'+(i===0?' checked':'')+'><span>'+t+'</span></label>')});
+ var c=2,cnt=document.getElementById('cnt');
+ document.getElementById('minus').onclick=function(){c=Math.max(1,c-1);cnt.textContent=c+'명'};
+ document.getElementById('plus').onclick=function(){c=Math.min(8,c+1);cnt.textContent=c+'명'};
+ var f=document.getElementById('rf');
+ f.addEventListener('submit',function(e){e.preventDefault();
+  var nm=document.getElementById('nm').value.trim(),kk=document.getElementById('kk').value.trim(),err=document.getElementById('err');
+  if(!nm||!kk){err.style.display='block';return}err.style.display='none';
+  function esc(s){return s.replace(/[&<>"]/g,function(m){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[m]})}
+  var dt=f.querySelector('[name=dt]:checked').value,tm=f.querySelector('[name=tm]:checked').value,co=document.getElementById('course').value;
+  document.getElementById('sum').innerHTML='<div><b>DATE</b>'+esc(dt)+' · '+esc(tm)+'</div><div><b>COURSE</b>'+esc(co)+'</div><div><b>GUEST</b>'+esc(nm)+(c>1?' 외 '+(c-1)+'명':' (1명)')+'</div>';
+  f.classList.add('sent');f.scrollIntoView({behavior:'smooth',block:'center'});
+ });
+})();
+</script>
+</body>
+</html>
