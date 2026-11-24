@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Danjeong Gimbap · Korean Gimbap Menu Design</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;900&family=Playfair+Display:ital,wght@1,700&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Montserrat',sans-serif;background:#16231c;color:#f7f3e8;-webkit-font-smoothing:antialiased;min-height:100vh;
+ background-image:radial-gradient(800px 420px at 95% -5%,rgba(79,143,62,.35),transparent 65%),repeating-linear-gradient(115deg,rgba(255,255,255,.025) 0 2px,transparent 2px 8px)}
+.top{height:14px;background:repeating-linear-gradient(90deg,#f2c230 0 48px,#ef7d33 48px 96px,#4f8f3e 96px 144px,#ef8fa6 144px 192px,#f7f3e8 192px 240px)}
+.wrap{max-width:1180px;margin:0 auto;padding:48px 20px 120px}
+.hd{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:18px;margin-bottom:32px}
+.hd small{font-size:14px;font-weight:700;letter-spacing:.24em;color:#f2c230}
+.hd h1{font-weight:900;font-size:clamp(32px,4.6vw,54px);margin-top:8px;line-height:1.12;letter-spacing:-.01em}
+.hd h1 em{font-family:'Playfair Display',serif;font-style:italic;font-weight:700;color:#f2c230}
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:14px}
+.chips span{font-size:13px;font-weight:600;padding:6px 12px;border-radius:20px;background:#22342a;color:#dfe3d4;border:1px solid rgba(242,194,48,.25)}
+.cta{display:inline-flex;align-items:center;gap:8px;height:52px;padding:0 26px;border-radius:40px;background:#f2c230;color:#16231c;font-weight:800;font-size:15px;text-decoration:none;transition:.2s;white-space:nowrap;box-shadow:0 5px 0 #a8830f}
+.cta:hover{transform:translateY(2px);box-shadow:0 3px 0 #a8830f}
+.cta svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round}
+.view{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,.75fr);gap:28px;align-items:start}
+figure{background:#f7f3e8;padding:10px;border-radius:14px;box-shadow:0 30px 60px -30px rgba(0,0,0,.8)}
+figure a{display:block}
+figure img{display:block;width:100%;height:auto;border-radius:6px}
+figcaption{font-size:13px;color:#5f6758;padding:10px 4px 2px;display:flex;flex-wrap:wrap;justify-content:space-between;gap:4px 10px}
+.side{display:flex;flex-direction:column;gap:18px;position:sticky;top:24px}
+.zoom{background:#22342a;border-radius:14px;padding:8px}
+.zoom img{display:block;width:100%;height:auto;border-radius:8px}
+.zoom p{font-size:13px;color:#cfd5c4;padding:8px 4px 2px}
+.info{background:#f2c230;color:#16231c;border-radius:14px;padding:22px}
+.info h2{font-weight:900;font-size:20px;margin-bottom:10px}
+.info li{list-style:none;font-size:14px;font-weight:500;padding:6px 0 6px 18px;position:relative}
+.info li:before{content:"";position:absolute;left:2px;top:13px;width:8px;height:8px;border-radius:50%;background:#16231c}
+.bar{position:fixed;left:0;right:0;bottom:0;background:rgba(22,35,28,.97);border-top:3px solid #f2c230;padding:12px 20px;display:flex;justify-content:center;align-items:center;gap:18px;flex-wrap:wrap}
+.bar p{font-size:14px;color:#dfe3d4}
+.bar .cta{height:46px}
+@media(max-width:900px){.view{grid-template-columns:1fr}.side{position:static}}
+@media(max-width:620px){.hd .cta{display:none}.bar p{display:none}.bar .cta{width:100%;justify-content:center}}
+</style>
+</head>
+<body>
+<div class="top"></div>
+<div class="wrap">
+ <div class="hd">
+  <div>
+   <small>MENU DESIGN · SD-MN26</small>
+   <h1>Danjeong Gimbap <em>rolled-to-order menu</em></h1>
+   <div class="chips"><span>A4 portrait · 1 page</span><span>Gimbap rolls · hot bowls · lunch combos · drinks</span><span>Nori green, rice white &amp; radish yellow</span><span>Peso pricing</span><span>Print &amp; web ready</span></div>
+  </div>
+  <a class="cta" href="https://design.shoponph.online/#inquiry">Ask about this design <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+ </div>
+ <div class="view">
+  <figure><a href="page1.png" target="_blank" rel="noopener"><img src="page1.png" alt="Danjeong Gimbap full menu" width="2480" height="3508"></a><figcaption><span>Classic rolls · hot bowls · lunch combos · add-ons · drinks</span><span style="white-space:nowrap">Tap to view full size</span></figcaption></figure>
+  <div class="side">
+   <div class="zoom"><img src="detail-board.jpg" alt="Close-up of gimbap slices on a wooden board illustration" width="1120" height="940"><p>Each roll gets its own cross-section illustration</p></div>
+   <div class="zoom"><img src="detail-combo.jpg" alt="Close-up of the lunch combo box" width="1090" height="580"><p>Lunch combo box for the 11AM–3PM crowd</p></div>
+   <div class="info"><h2>What this menu includes</h2><ul><li>Filling list under every roll</li><li>Spicy and veggie tags</li><li>Add-on grid for easy upselling</li><li>Three-step how-to-order strip</li></ul></div>
+  </div>
+ </div>
+</div>
+<div class="bar"><p>Want a menu like this for your shop?</p><a class="cta" href="https://design.shoponph.online/#inquiry">Ask about this design</a></div>
+</body>
+</html>
