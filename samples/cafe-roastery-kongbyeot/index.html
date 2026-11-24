@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>콩볕 로스터리 세부 · 스페셜티 로스터리 카페</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Hahmlet:wght@500;700;800&family=Gothic+A1:wght@400;500;700;800&family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&display=swap" rel="stylesheet">
+<style>
+:root{--stone:#efe9e0;--stone2:#e4dccf;--paper:#f8f4ee;--ink:#24170f;--roast:#5b321b;--roast2:#7a4526;--cherry:#b3263a;--cherry2:#d23f52;--sage:#7f9a82;--sage2:#c9d6c6;--mut:#6d6058;--line:#d6cbbb}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Gothic A1',sans-serif;color:var(--ink);background:var(--stone);word-break:keep-all;-webkit-font-smoothing:antialiased;line-height:1.65;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+button,input,select,textarea{font:inherit;color:inherit}
+.hm{font-family:'Hahmlet',serif}
+.gr{font-family:'Bricolage Grotesque',sans-serif}
+.in{max-width:1200px;margin:0 auto;padding:0 28px}
+.terr{background-color:#ebe3d6;background-image:url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20width='320'%20height='320'%3E%3Crect%20width='320'%20height='320'%20fill='%23ebe3d6'/%3E%3Cpolygon%20points='298.0,123.3%20299.8,130.1%20296.2,131.9%20292.7,126.5'%20fill='%238f2030'%20opacity='0.6'/%3E%3Cpolygon%20points='41.9,77.3%2055.6,72.4%2061.2,85.2%2044.5,89.6'%20fill='%23ffffff'%20opacity='0.75'/%3E%3Cpolygon%20points='183.8,203.1%20184.4,201.0%20186.7,201.8%20187.4,203.9%20186.3,205.6%20183.9,204.3'%20fill='%238f2030'%20opacity='0.9'/%3E%3Cpolygon%20points='150.5,110.0%20157.1,105.9%20166.2,110.4%20164.2,116.8%20162.6,123.2%20153.8,119.9%20150.2,116.3'%20fill='%237f9a82'%20opacity='1'/%3E%3Cpolygon%20points='267.4,299.3%20266.3,300.7%20264.3,300.3%20263.8,297.9%20264.9,296.5%20266.3,296.2%20267.2,297.1'%20fill='%236d6058'%20opacity='0.75'/%3E%3Cpolygon%20points='120.6,274.8%20126.0,266.5%20131.3,270.7%20129.4,278.9'%20fill='%235b321b'%20opacity='0.75'/%3E%3Cpolygon%20points='28.5,52.0%2029.1,50.0%2032.6,49.9%2032.8,54.0%2030.1,54.6'%20fill='%23b3263a'%20opacity='0.6'/%3E%3Cpolygon%20points='275.0,249.8%20274.8,244.0%20276.8,239.4%20281.8,239.3%20284.7,241.4%20285.6,246.9%20282.0,252.4'%20fill='%23c9a56f'%20opacity='1'/%3E%3Cpolygon%20points='203.6,304.1%20201.1,303.7%20200.0,302.2%20199.9,299.8%20202.6,299.3%20204.5,299.4'%20fill='%23a89c8e'%20opacity='0.9'/%3E%3Cpolygon%20points='220.6,286.9%20221.0,288.6%20219.4,291.0%20217.1,289.9%20215.8,288.3%20218.8,285.2'%20fill='%236d6058'%20opacity='0.75'/%3E%3Cpolygon%20points='234.0,70.8%20235.8,73.9%20237.6,77.7%20235.2,82.5%20231.3,83.6%20229.7,79.1%20228.9,74.5'%20fill='%239fb09d'%20opacity='1'/%3E%3Cpolygon%20points='310.5,184.3%20303.9,200.0%20290.4,199.7%20291.0,181.7'%20fill='%23a89c8e'%20opacity='1'/%3E%3Cpolygon%20points='28.9,298.3%2030.2,296.3%2030.4,292.0%2035.7,293.9%2039.2,296.7%2036.2,299.4%2033.3,299.9'%20fill='%23a89c8e'%20opacity='0.6'/%3E%3Cpolygon%20points='168.8,293.1%20170.0,294.3%20169.6,296.1%20168.3,296.5%20166.4,295.6%20166.0,294.3%20167.9,292.8'%20fill='%237a4526'%20opacity='0.75'/%3E%3Cpolygon%20points='52.4,158.0%2055.0,153.9%2060.9,158.2%2065.3,166.1%2061.4,172.4%2052.9,168.0%2051.2,165.6'%20fill='%235b321b'%20opacity='0.6'/%3E%3Cpolygon%20points='139.4,27.0%20138.6,18.1%20150.7,11.0%20152.4,23.6'%20fill='%23a89c8e'%20opacity='0.9'/%3E%3Cpolygon%20points='269.8,76.3%20268.8,68.1%20272.8,65.1%20280.0,62.4%20285.6,73.7%20281.7,77.0%20276.9,80.5'%20fill='%235b321b'%20opacity='0.6'/%3E%3Cpolygon%20points='277.1,52.6%20280.9,54.6%20281.4,59.5%20275.7,62.4%20272.2,56.7'%20fill='%235b321b'%20opacity='0.9'/%3E%3Cpolygon%20points='306.5,49.6%20296.2,55.6%20285.8,44.4%20293.0,34.7%20302.7,39.1'%20fill='%238f2030'%20opacity='1'/%3E%3Cpolygon%20points='36.5,22.4%2037.9,25.9%2033.1,28.0%2031.1,25.2%2031.0,20.0'%20fill='%23c9a56f'%20opacity='1'/%3E%3Cpolygon%20points='200.1,18.4%20198.4,23.0%20195.5,21.4%20193.9,17.8%20197.4,15.1'%20fill='%238f2030'%20opacity='0.9'/%3E%3Cpolygon%20points='7.5,232.6%208.3,231.1%2010.3,231.2%2010.4,233.4%208.2,234.9'%20fill='%23d9cfc1'%20opacity='0.9'/%3E%3Cpolygon%20points='266.3,224.7%20264.7,226.5%20260.1,225.2%20259.4,222.9%20263.2,220.9'%20fill='%23c9a56f'%20opacity='0.9'/%3E%3Cpolygon%20points='90.8,107.9%2077.0,112.2%2076.2,103.1%2078.4,92.7%2083.5,92.4%2092.4,91.4%2094.4,100.8'%20fill='%235b321b'%20opacity='0.6'/%3E%3Cpolygon%20points='88.6,32.4%2087.9,34.4%2085.4,34.6%2084.2,32.6%2085.5,30.8%2086.5,29.6%2088.3,30.5'%20fill='%23ffffff'%20opacity='0.75'/%3E%3Cpolygon%20points='262.5,228.4%20260.5,229.0%20259.6,227.6%20259.8,225.9%20261.2,225.6%20261.8,225.8%20262.7,226.9'%20fill='%23d9cfc1'%20opacity='1'/%3E%3Cpolygon%20points='26.6,24.0%2016.1,17.2%2020.7,11.3%2033.6,12.0%2035.9,23.5'%20fill='%23a89c8e'%20opacity='0.75'/%3E%3Cpolygon%20points='78.1,202.7%2078.9,205.9%2078.3,208.3%2076.2,209.0%2073.7,207.8%2074.7,205.3%2075.9,203.4'%20fill='%23a89c8e'%20opacity='0.6'/%3E%3Cpolygon%20points='210.3,95.6%20212.5,93.3%20214.5,92.4%20216.4,94.6%20217.0,98.4%20212.7,97.7'%20fill='%23a89c8e'%20opacity='0.75'/%3E%3Cpolygon%20points='186.5,50.5%20184.1,50.7%20182.8,49.6%20184.3,47.5%20185.4,46.4%20187.2,48.1'%20fill='%239fb09d'%20opacity='0.75'/%3E%3Cpolygon%20points='110.8,108.7%20108.4,103.2%20107.9,100.2%20113.8,100.5%20119.0,103.3%20117.5,108.6'%20fill='%23b3263a'%20opacity='0.9'/%3E%3Cpolygon%20points='92.8,19.3%2092.7,21.0%2091.5,22.4%2089.5,20.5%2089.9,18.7%2092.2,18.4'%20fill='%236d6058'%20opacity='0.6'/%3E%3Cpolygon%20points='296.7,130.6%20296.5,132.8%20295.1,133.7%20293.3,132.9%20294.6,130.7'%20fill='%236d6058'%20opacity='0.75'/%3E%3Cpolygon%20points='152.0,209.9%20158.0,210.3%20156.8,214.4%20151.9,213.7'%20fill='%235b321b'%20opacity='0.75'/%3E%3Cpolygon%20points='34.2,114.3%2030.0,110.6%2033.2,108.3%2036.4,111.0'%20fill='%239fb09d'%20opacity='0.9'/%3E%3Cpolygon%20points='158.7,181.3%20160.4,182.3%20160.9,183.8%20159.9,184.8%20158.4,185.0%20158.2,182.6'%20fill='%235b321b'%20opacity='1'/%3E%3Cpolygon%20points='307.5,155.6%20303.5,163.0%20294.9,158.5%20295.0,149.7'%20fill='%23c9a56f'%20opacity='0.6'/%3E%3Cpolygon%20points='34.4,250.6%2030.3,244.3%2033.6,235.7%2040.8,243.1'%20fill='%235b321b'%20opacity='0.6'/%3E%3Cpolygon%20points='167.8,187.9%20165.6,188.3%20163.9,184.3%20166.2,182.3%20167.9,182.6%20171.5,185.1%20169.8,186.5'%20fill='%237f9a82'%20opacity='1'/%3E%3Cpolygon%20points='34.6,81.6%2028.9,81.7%2026.5,77.9%2030.4,72.5%2033.5,70.5%2038.2,74.3%2036.7,78.8'%20fill='%239fb09d'%20opacity='0.9'/%3E%3Cpolygon%20points='299.0,158.4%20299.6,156.1%20301.4,157.4%20302.3,159.8%20300.0,160.3'%20fill='%237a4526'%20opacity='1'/%3E%3Cpolygon%20points='232.4,316.5%20228.3,314.7%20227.2,308.8%20233.4,308.6%20234.3,311.3'%20fill='%239fb09d'%20opacity='0.6'/%3E%3Cpolygon%20points='131.6,281.3%20132.6,276.9%20135.7,273.8%20139.1,277.8%20139.0,282.2'%20fill='%23c9a56f'%20opacity='0.6'/%3E%3Cpolygon%20points='79.1,202.6%2079.2,198.8%2079.3,194.3%2084.6,193.6%2087.1,197.9%2087.8,202.0%2082.7,202.7'%20fill='%23b3263a'%20opacity='0.6'/%3E%3Cpolygon%20points='262.7,35.6%20263.1,36.4%20263.9,37.9%20262.3,39.3%20261.0,38.8%20260.1,37.1%20260.9,35.8'%20fill='%23c9a56f'%20opacity='0.75'/%3E%3Cpolygon%20points='241.4,84.3%20233.7,88.9%20233.0,81.0%20236.7,79.3'%20fill='%236d6058'%20opacity='1'/%3E%3Cpolygon%20points='66.7,44.5%2069.5,52.9%2063.7,55.7%2060.2,55.6%2056.4,52.1%2057.4,46.6%2060.9,43.9'%20fill='%23ffffff'%20opacity='0.75'/%3E%3Cpolygon%20points='23.7,83.2%2026.3,81.0%2030.8,80.3%2030.2,86.5%2024.7,89.0'%20fill='%23d9cfc1'%20opacity='0.75'/%3E%3Cpolygon%20points='18.4,192.4%2017.7,190.5%2020.8,189.7%2022.5,191.0%2021.4,192.8'%20fill='%238f2030'%20opacity='0.75'/%3E%3Cpolygon%20points='68.2,82.0%2068.9,83.8%2068.4,85.1%2066.2,84.4%2066.5,82.0'%20fill='%23b3263a'%20opacity='0.75'/%3E%3Cpolygon%20points='47.3,60.6%2046.7,67.0%2033.8,66.9%2029.4,64.1%2035.1,51.7%2042.0,52.8'%20fill='%23c9a56f'%20opacity='0.6'/%3E%3Cpolygon%20points='276.4,134.4%20283.1,133.2%20288.1,138.5%20279.8,141.8'%20fill='%23c9a56f'%20opacity='0.9'/%3E%3Cpolygon%20points='68.4,120.9%2054.6,121.3%2056.6,110.5%2064.9,109.1%2070.5,115.5'%20fill='%23d9cfc1'%20opacity='1'/%3E%3Cpolygon%20points='285.8,195.4%20288.3,197.7%20286.7,198.9%20284.1,199.0%20284.2,196.7'%20fill='%236d6058'%20opacity='0.75'/%3E%3Cpolygon%20points='19.2,176.2%2021.0,181.1%2017.0,181.9%2015.8,177.6'%20fill='%236d6058'%20opacity='0.9'/%3E%3Cpolygon%20points='167.8,62.9%20161.2,72.0%20152.8,62.7%20160.3,58.6'%20fill='%23ffffff'%20opacity='0.9'/%3E%3Cpolygon%20points='114.1,248.5%20123.6,249.1%20123.4,254.8%20114.3,256.7'%20fill='%23b3263a'%20opacity='0.75'/%3E%3Cpolygon%20points='272.2,316.1%20269.6,315.9%20270.2,313.2%20272.7,313.1'%20fill='%237a4526'%20opacity='0.9'/%3E%3Cpolygon%20points='104.6,197.7%20103.1,196.8%20103.0,195.0%20104.0,193.2%20106.6,193.3%20107.7,194.5%20106.8,196.9'%20fill='%235b321b'%20opacity='0.6'/%3E%3Cpolygon%20points='306.7,145.8%20302.2,149.3%20298.2,144.5%20302.0,140.6'%20fill='%237f9a82'%20opacity='1'/%3E%3Cpolygon%20points='61.1,232.1%2062.5,237.4%2058.7,237.6%2058.0,235.0'%20fill='%237f9a82'%20opacity='0.75'/%3E%3Cpolygon%20points='198.8,141.5%20195.7,141.5%20193.2,139.9%20193.6,137.2%20197.0,135.7%20199.2,137.7'%20fill='%23b3263a'%20opacity='1'/%3E%3Cpolygon%20points='45.1,296.4%2045.6,293.4%2049.3,293.0%2049.9,295.5%2046.1,298.0'%20fill='%235b321b'%20opacity='1'/%3E%3Cpolygon%20points='294.1,218.8%20294.7,233.0%20285.9,241.1%20275.5,230.9%20286.5,218.9'%20fill='%235b321b'%20opacity='0.75'/%3E%3Cpolygon%20points='196.2,168.4%20190.3,172.8%20182.1,162.8%20182.0,158.4%20193.0,153.6%20199.2,157.6%20198.6,162.3'%20fill='%23ffffff'%20opacity='0.75'/%3E%3Cpolygon%20points='42.2,283.7%2040.7,282.5%2040.8,281.2%2043.0,280.7%2043.7,281.8%2043.8,282.8'%20fill='%23b3263a'%20opacity='0.75'/%3E%3Cpolygon%20points='233.6,104.6%20237.0,103.0%20238.7,105.0%20238.9,106.8%20237.6,107.6%20234.9,108.0%20233.2,106.4'%20fill='%239fb09d'%20opacity='1'/%3E%3Cpolygon%20points='197.0,178.6%20189.3,193.0%20177.1,181.3%20174.6,171.7%20186.8,170.9'%20fill='%235b321b'%20opacity='0.6'/%3E%3Cpolygon%20points='272.4,239.2%20272.8,243.5%20270.8,243.2%20269.4,241.9%20270.4,238.8'%20fill='%23d9cfc1'%20opacity='0.6'/%3E%3Cpolygon%20points='152.0,49.1%20149.9,46.9%20152.7,43.7%20156.6,44.2%20156.1,49.8'%20fill='%237f9a82'%20opacity='0.6'/%3E%3Cpolygon%20points='12.6,168.1%2017.1,159.3%2022.0,165.0%2018.7,170.8'%20fill='%239fb09d'%20opacity='0.9'/%3E%3Cpolygon%20points='7.6,156.8%206.8,158.3%205.8,159.2%204.0,157.7%203.1,157.1%204.9,155.5%206.6,155.8'%20fill='%235b321b'%20opacity='0.6'/%3E%3Cpolygon%20points='112.1,131.4%20111.8,128.6%20115.0,126.4%20119.6,126.9%20119.1,130.5%20118.8,133.7%20115.1,132.8'%20fill='%238f2030'%20opacity='0.9'/%3E%3Cpolygon%20points='50.6,262.4%2051.8,256.8%2061.6,252.4%2065.3,259.9%2064.0,270.2%2054.5,270.9'%20fill='%235b321b'%20opacity='0.75'/%3E%3Cpolygon%20points='196.6,111.4%20192.5,117.0%20189.1,116.3%20188.1,113.2%20191.2,109.9'%20fill='%239fb09d'%20opacity='0.9'/%3E%3Cpolygon%20points='40.8,285.7%2041.8,288.6%2040.7,290.8%2037.8,288.7%2035.8,286.5%2038.0,284.9'%20fill='%237a4526'%20opacity='1'/%3E%3Cpolygon%20points='186.0,189.4%20198.3,197.7%20193.3,212.2%20181.2,211.8%20177.0,200.9'%20fill='%236d6058'%20opacity='1'/%3E%3Cpolygon%20points='248.5,224.1%20249.9,227.4%20246.9,229.6%20244.5,226.1%20244.3,223.6'%20fill='%237f9a82'%20opacity='0.6'/%3E%3Cpolygon%20points='81.1,73.1%2080.7,71.8%2081.8,70.0%2083.8,71.4%2083.2,73.5'%20fill='%23d9cfc1'%20opacity='0.75'/%3E%3Cpolygon%20points='169.0,292.6%20166.4,296.0%20159.8,295.5%20159.9,290.4%20162.2,285.8%20169.1,289.3'%20fill='%236d6058'%20opacity='0.75'/%3E%3Cpolygon%20points='150.1,63.8%20144.5,58.7%20146.9,51.9%20153.4,57.1'%20fill='%236d6058'%20opacity='0.9'/%3E%3Cpolygon%20points='204.7,233.0%20215.0,238.9%20211.7,247.3%20204.9,253.2%20199.1,250.9%20195.7,243.9%20200.6,237.6'%20fill='%239fb09d'%20opacity='0.9'/%3E%3Cpolygon%20points='295.0,267.6%20296.0,270.7%20291.9,271.4%20289.6,269.2'%20fill='%238f2030'%20opacity='0.9'/%3E%3Cpolygon%20points='193.5,181.4%20197.5,184.6%20196.0,187.6%20190.2,186.9%20189.7,181.8'%20fill='%235b321b'%20opacity='0.9'/%3E%3Cpolygon%20points='156.7,69.6%20161.4,69.4%20159.8,74.1%20154.9,73.2'%20fill='%23a89c8e'%20opacity='1'/%3E%3Cpolygon%20points='161.1,169.5%20162.4,174.5%20158.1,174.8%20157.9,170.5'%20fill='%235b321b'%20opacity='0.9'/%3E%3Cpolygon%20points='8.2,18.2%209.1,16.8%2011.4,17.1%2012.0,18.8%2011.2,19.9%209.4,19.4'%20fill='%238f2030'%20opacity='1'/%3E%3Cpolygon%20points='133.9,179.6%20131.3,174.3%20134.6,173.4%20138.3,173.9%20141.2,176.3%20139.5,181.2'%20fill='%237f9a82'%20opacity='0.6'/%3E%3Cpolygon%20points='127.2,176.4%20127.5,175.1%20129.7,175.3%20130.1,176.5%20129.4,178.2%20128.4,178.9%20126.4,177.6'%20fill='%23d9cfc1'%20opacity='0.6'/%3E%3Cpolygon%20points='16.8,198.5%2019.5,197.8%2021.5,201.7%2018.1,204.0%2014.0,201.7'%20fill='%238f2030'%20opacity='0.75'/%3E%3Cpolygon%20points='14.5,13.6%2021.6,9.7%2022.4,17.4%2017.8,19.0'%20fill='%23a89c8e'%20opacity='0.75'/%3E%3Cpolygon%20points='233.4,174.2%20239.9,169.9%20250.1,174.0%20240.7,180.4'%20fill='%236d6058'%20opacity='0.6'/%3E%3Cpolygon%20points='150.9,88.6%20154.3,89.6%20152.9,93.0%20150.7,93.1%20149.0,89.5'%20fill='%23a89c8e'%20opacity='0.9'/%3E%3Cpolygon%20points='227.2,6.0%20229.4,6.6%20228.0,9.7%20226.3,8.1'%20fill='%236d6058'%20opacity='1'/%3E%3Cpolygon%20points='220.4,49.5%20215.5,61.3%20207.4,55.4%20212.2,47.3'%20fill='%239fb09d'%20opacity='0.9'/%3E%3Cpolygon%20points='197.4,205.9%20199.7,206.2%20199.2,208.0%20198.4,208.7%20196.7,207.8%20196.2,206.4'%20fill='%23ffffff'%20opacity='0.9'/%3E%3Cpolygon%20points='91.4,51.2%2091.1,56.0%2085.8,57.6%2085.0,51.8'%20fill='%237f9a82'%20opacity='0.9'/%3E%3Cpolygon%20points='41.3,165.2%2042.6,172.6%2046.3,179.7%2036.8,185.1%2034.1,183.4%2028.2,175.6%2032.9,171.2'%20fill='%237a4526'%20opacity='1'/%3E%3Cpolygon%20points='156.9,91.6%20157.0,80.2%20171.1,79.4%20179.5,89.6%20168.7,99.5%20157.9,98.0'%20fill='%23a89c8e'%20opacity='0.6'/%3E%3Cpolygon%20points='196.8,245.7%20200.6,244.8%20205.8,249.4%20202.1,252.2%20197.0,251.6'%20fill='%239fb09d'%20opacity='1'/%3E%3Cpolygon%20points='300.2,240.6%20300.4,243.4%20299.5,245.0%20296.8,243.6%20297.6,240.7'%20fill='%237f9a82'%20opacity='1'/%3E%3Cpolygon%20points='225.1,35.1%20222.8,33.5%20222.6,31.3%20223.5,30.1%20226.1,30.4%20225.4,33.5'%20fill='%23ffffff'%20opacity='0.6'/%3E%3Cpolygon%20points='85.5,164.8%2084.9,166.1%2083.1,165.2%2082.8,163.7%2083.6,162.8%2085.0,162.6%2086.5,163.5'%20fill='%23b3263a'%20opacity='0.6'/%3E%3Cpolygon%20points='232.4,63.3%20227.2,77.0%20219.9,72.8%20219.4,61.7'%20fill='%235b321b'%20opacity='0.6'/%3E%3Cpolygon%20points='146.7,111.3%20144.3,111.7%20142.5,110.0%20144.7,108.5%20146.7,109.2'%20fill='%23a89c8e'%20opacity='0.6'/%3E%3Cpolygon%20points='177.5,98.1%20179.3,93.6%20184.4,93.8%20184.1,99.1%20181.1,100.3'%20fill='%237f9a82'%20opacity='0.9'/%3E%3Cpolygon%20points='307.5,137.3%20307.0,140.6%20305.0,141.6%20303.4,139.4%20303.4,137.1%20305.1,136.9'%20fill='%237a4526'%20opacity='0.9'/%3E%3Cpolygon%20points='116.7,20.8%20114.7,18.6%20113.9,17.0%20116.4,14.3%20118.7,15.3%20118.6,17.1%20118.3,19.9'%20fill='%237a4526'%20opacity='0.75'/%3E%3Cpolygon%20points='94.5,17.7%2097.7,5.0%20105.3,7.2%20112.9,16.4%20111.9,23.8%20105.4,32.7%2098.1,29.1'%20fill='%23b3263a'%20opacity='0.6'/%3E%3Cpolygon%20points='163.5,148.0%20162.9,139.3%20169.6,140.5%20168.4,146.4'%20fill='%238f2030'%20opacity='0.6'/%3E%3Cpolygon%20points='146.1,24.9%20138.7,20.9%20138.6,10.5%20146.5,9.2%20149.4,20.1'%20fill='%23b3263a'%20opacity='1'/%3E%3Cpolygon%20points='79.5,137.6%2089.0,137.6%2089.1,144.7%2084.3,150.0%2074.2,150.2%2073.5,142.5'%20fill='%238f2030'%20opacity='1'/%3E%3Cpolygon%20points='297.5,9.6%20299.3,8.9%20300.6,8.9%20301.7,11.8%20299.8,13.3%20297.5,12.6%20296.4,11.7'%20fill='%23c9a56f'%20opacity='0.9'/%3E%3Cpolygon%20points='60.0,209.3%2062.4,213.3%2058.2,219.9%2049.9,218.1%2047.4,211.8%2055.5,204.8'%20fill='%237a4526'%20opacity='0.6'/%3E%3Cpolygon%20points='13.3,202.6%2014.7,202.9%2015.8,203.6%2015.7,204.9%2014.7,205.8%2013.6,204.7'%20fill='%236d6058'%20opacity='0.9'/%3E%3Cpolygon%20points='151.2,171.5%20148.8,172.3%20147.9,170.5%20149.2,167.9%20151.6,169.6'%20fill='%23a89c8e'%20opacity='1'/%3E%3Cpolygon%20points='172.9,118.7%20173.3,117.1%20176.6,115.2%20178.8,118.1%20178.0,121.4%20174.3,121.5'%20fill='%23ffffff'%20opacity='0.9'/%3E%3Cpolygon%20points='279.7,75.5%20274.5,74.0%20274.5,69.9%20278.9,71.5'%20fill='%23b3263a'%20opacity='0.75'/%3E%3Cpolygon%20points='134.7,214.4%20132.4,212.9%20132.0,209.6%20135.5,210.3%20137.0,212.4'%20fill='%236d6058'%20opacity='0.75'/%3E%3Cpolygon%20points='268.9,10.7%20270.8,5.2%20276.1,7.2%20275.2,14.7'%20fill='%23a89c8e'%20opacity='0.9'/%3E%3Cpolygon%20points='93.5,130.9%2092.5,127.5%2093.2,124.8%2095.7,122.1%2099.3,124.7%20100.1,128.3%2097.9,131.7'%20fill='%236d6058'%20opacity='0.9'/%3E%3Cpolygon%20points='308.8,281.9%20304.0,284.0%20302.1,279.6%20306.8,277.9'%20fill='%23b3263a'%20opacity='1'/%3E%3Cpolygon%20points='154.3,19.2%20153.4,22.6%20148.4,25.8%20142.9,22.2%20146.3,16.0%20150.0,14.8'%20fill='%23a89c8e'%20opacity='0.9'/%3E%3Cpolygon%20points='229.4,46.2%20223.3,39.2%20229.6,32.2%20240.3,34.5%20241.3,43.8%20236.1,49.3'%20fill='%239fb09d'%20opacity='0.75'/%3E%3Cpolygon%20points='267.4,132.5%20281.0,125.2%20281.6,137.0%20275.3,143.9'%20fill='%236d6058'%20opacity='0.6'/%3E%3Cpolygon%20points='132.5,36.3%20127.5,40.5%20125.2,34.9%20128.4,33.5'%20fill='%236d6058'%20opacity='0.6'/%3E%3Cpolygon%20points='56.0,241.6%2051.5,242.4%2052.3,239.1%2054.6,237.5'%20fill='%23b3263a'%20opacity='0.9'/%3E%3Cpolygon%20points='227.2,118.0%20224.4,115.1%20225.5,112.6%20228.3,111.8%20229.8,116.2'%20fill='%23b3263a'%20opacity='1'/%3E%3Cpolygon%20points='199.0,81.4%20197.9,83.8%20195.9,82.8%20197.2,80.1'%20fill='%235b321b'%20opacity='0.6'/%3E%3Cpolygon%20points='213.1,216.6%20212.3,213.5%20213.6,211.5%20217.7,211.3%20217.5,215.7'%20fill='%23c9a56f'%20opacity='0.6'/%3E%3C/svg%3E");background-size:320px 320px}
+.mottle{background:radial-gradient(900px 500px at 15% 0%,#f6f1ea,transparent 60%),radial-gradient(700px 500px at 100% 30%,#e7ddcf,transparent 60%),var(--stone)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;height:54px;padding:0 28px;border-radius:999px;font-weight:800;font-size:15.5px;border:2px solid var(--ink);cursor:pointer;transition:.2s;white-space:nowrap}
+.btn svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:2.3;stroke-linecap:round;stroke-linejoin:round}
+.btn.c{background:var(--cherry);border-color:var(--cherry);color:#fff;box-shadow:0 16px 30px -16px rgba(179,38,58,.9)}
+.btn.c:hover{background:#9b1d30}
+.btn.o{background:transparent}
+.btn.o:hover{background:var(--ink);color:var(--paper)}
+.btn.sm{height:44px;padding:0 20px;font-size:14.5px}
+/* header */
+header{position:sticky;top:0;z-index:40;background:rgba(248,244,238,.93);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+header .in{display:flex;align-items:center;justify-content:space-between;height:74px;gap:18px}
+.logo{display:flex;align-items:center;gap:12px}
+.logo svg{width:44px;height:44px;flex:none}
+.logo b{display:block;font-family:'Hahmlet',serif;font-weight:800;font-size:21px;letter-spacing:-.02em;line-height:1.1}
+.logo small{display:block;font-family:'Bricolage Grotesque';font-weight:600;font-size:11.5px;letter-spacing:.2em;color:var(--cherry)}
+nav{display:flex;gap:28px;font-weight:700;font-size:15px}
+nav a{position:relative;padding:4px 0}
+nav a:after{content:"";position:absolute;left:0;right:0;bottom:-2px;height:2px;background:var(--cherry);transform:scaleX(0);transition:.2s}
+nav a:hover:after{transform:scaleX(1)}
+.mbtn{display:none;width:44px;height:44px;border-radius:12px;border:1.5px solid var(--ink);background:none;align-items:center;justify-content:center;cursor:pointer}
+.mbtn svg{width:22px;height:22px;stroke:var(--ink);stroke-width:2.2;fill:none;stroke-linecap:round}
+/* hero */
+.hero{position:relative;overflow:hidden}
+.hcopy{text-align:center;padding:64px 0 40px;display:flex;flex-direction:column;align-items:center}
+.kick{display:inline-flex;align-items:center;gap:10px;background:var(--paper);border:1.5px solid var(--line);border-radius:999px;padding:7px 16px 7px 8px;font-weight:700;font-size:14px;white-space:nowrap}
+.kick i{font-style:normal;background:var(--cherry);color:#fff;border-radius:999px;padding:3px 11px;font-family:'Bricolage Grotesque';font-size:12.5px;letter-spacing:.12em}
+.hero h1{font-family:'Hahmlet',serif;font-weight:800;font-size:clamp(38px,5.4vw,72px);line-height:1.14;letter-spacing:-.045em;margin:22px 0 20px}
+.hero h1 em{font-style:normal;color:var(--cherry)}
+.lead{font-size:18px;color:#4d4038;max-width:600px}
+.acts{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px;justify-content:center}
+.slab{position:relative;display:grid;grid-template-columns:1fr minmax(0,560px) 1fr;align-items:end;gap:24px;border-radius:40px 40px 0 0;padding:30px 40px 0;box-shadow:inset 0 2px 0 rgba(255,255,255,.6);border:1.5px solid #d6cbbb;border-bottom:0}
+.slab:before{content:"";position:absolute;inset:0;border-radius:inherit;background:linear-gradient(180deg,rgba(255,255,255,.25),rgba(255,255,255,0) 40%);pointer-events:none}
+.art{position:relative}
+.art svg{display:block;width:100%;height:auto;filter:drop-shadow(0 30px 40px rgba(36,23,15,.25))}
+.call{position:relative;display:grid;gap:14px;padding-bottom:70px}
+.call div{background:#f8f4ee;border-radius:16px;padding:14px 18px;border:1px solid #d6cbbb;box-shadow:0 10px 24px -16px rgba(36,23,15,.45)}
+.call small{display:block;font-size:12.5px;font-weight:700;color:var(--mut);letter-spacing:.04em}
+.call b{display:block;font-size:18px;font-weight:800;letter-spacing:-.02em;margin-top:2px}
+.call.l{text-align:right}
+/* week strip */
+.week{background:var(--ink);color:var(--paper)}
+.week .in{display:grid;grid-template-columns:repeat(7,1fr)}
+.wk{padding:16px 10px 18px;border-left:1px solid rgba(248,244,238,.12);text-align:center}
+.wk:last-child{border-right:1px solid rgba(248,244,238,.12)}
+.wk span{display:block;font-family:'Hahmlet';font-weight:800;font-size:20px}
+.wk p{font-size:13px;color:#cbb9a9;font-weight:700;margin-top:2px;line-height:1.35}
+.wk p b{display:block;font-family:'Bricolage Grotesque';font-size:12px;letter-spacing:.14em;color:#fff}
+.wk.on{background:var(--cherry)}
+.wk.on p{color:#ffe1e5}
+.wk.sat{background:#3a2a20}
+.wk.sat p b{color:var(--sage2)}
+/* section */
+section{padding:100px 0}
+.sh{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap;margin-bottom:46px}
+.sh .k{font-family:'Bricolage Grotesque';font-weight:600;font-size:13.5px;letter-spacing:.22em;color:var(--cherry)}
+.sh h2{font-family:'Hahmlet',serif;font-weight:800;font-size:clamp(32px,3.9vw,48px);line-height:1.22;letter-spacing:-.04em;margin-top:8px}
+.sh p{font-size:16.5px;color:var(--mut);max-width:440px}
+/* beans */
+.beans{background:var(--paper);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.bgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.bean{background:#fff;border:1.5px solid var(--ink);border-radius:22px;overflow:hidden;display:flex;flex-direction:column;transition:.25s}
+.bean:hover{transform:translateY(-6px);box-shadow:0 26px 40px -26px rgba(36,23,15,.6)}
+.bean .ph{aspect-ratio:1/1;position:relative;display:flex;align-items:center;justify-content:center}
+.bean .ph svg{width:74%;height:auto}
+.bean .ph .no{position:absolute;left:14px;top:12px;font-family:'Bricolage Grotesque';font-weight:800;font-size:14px;letter-spacing:.1em}
+.bean .bd{padding:18px 20px 20px;border-top:1.5px solid var(--ink);display:flex;flex-direction:column;flex:1}
+.bean .org{font-size:12.5px;font-weight:700;color:var(--mut);letter-spacing:.04em}
+.bean h3{font-family:'Hahmlet',serif;font-weight:700;font-size:21px;letter-spacing:-.03em;margin:4px 0 8px;line-height:1.3}
+.notes{display:flex;flex-wrap:wrap;gap:5px;margin-bottom:14px}
+.notes span{font-size:12.5px;font-weight:700;padding:3px 10px;border-radius:999px;background:var(--stone)}
+.lvl{display:flex;align-items:center;gap:10px;font-size:12.5px;font-weight:700;color:var(--mut);margin-top:auto}
+.lvl i{flex:1;height:8px;border-radius:9px;background:linear-gradient(90deg,#d9b98a,#a8683c,#5b321b,#2a170c);position:relative}
+.lvl i:after{content:"";position:absolute;top:-4px;width:16px;height:16px;border-radius:50%;background:#fff;border:3px solid var(--ink);left:var(--p);transform:translateX(-50%)}
+.price{display:flex;justify-content:space-between;align-items:baseline;margin-top:16px;padding-top:14px;border-top:1px dashed var(--line)}
+.price small{font-size:13px;color:var(--mut);font-weight:700}
+.price b{font-family:'Bricolage Grotesque';font-weight:800;font-size:23px;letter-spacing:-.02em}
+/* roast */
+.roast .in{display:grid;grid-template-columns:1.1fr .9fr;gap:56px;align-items:center}
+.roast{background:var(--stone2)}
+.cst{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:14px;padding-top:16px;border-top:1px solid #4b382c}
+.cst small{display:block;font-size:12.5px;color:#bfae9f;font-weight:700}
+.cst b{display:block;font-family:"Bricolage Grotesque";font-weight:800;font-size:22px;color:var(--paper)}
+.chart{background:var(--ink);border-radius:26px;padding:26px 26px 18px;color:var(--paper);box-shadow:0 40px 60px -40px rgba(36,23,15,.8)}
+.chart .ct{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;gap:10px;flex-wrap:wrap}
+.chart .ct b{font-family:'Bricolage Grotesque';font-weight:800;font-size:18px;letter-spacing:.02em}
+.chart .ct span{font-size:13px;color:#cdbfb3;font-weight:500}
+.chart svg{display:block;width:100%;height:auto}
+.steps{display:flex;flex-direction:column;gap:14px}
+.step{display:grid;grid-template-columns:64px 1fr;gap:18px;align-items:start;padding:20px 22px;background:var(--paper);border:1.5px solid var(--ink);border-radius:18px}
+.step .n{width:64px;height:64px;border-radius:50%;background:var(--stone2);display:flex;align-items:center;justify-content:center;font-family:'Bricolage Grotesque';font-weight:800;font-size:22px;color:var(--roast);border:1.5px solid var(--ink)}
+.step:nth-child(2) .n{background:var(--cherry);color:#fff}
+.step h3{font-weight:800;font-size:18px;letter-spacing:-.02em}
+.step p{font-size:15px;color:var(--mut);margin-top:3px}
+/* menu */
+.menu{background:var(--roast);color:var(--paper);position:relative;overflow:hidden}
+.menu .sh .k{color:#f2b0b9}
+.menu .sh p{color:#dcc9ba}
+.tabs{display:inline-flex;background:rgba(0,0,0,.25);border-radius:999px;padding:5px;gap:4px;flex-wrap:wrap}
+.tabs button{border:0;background:none;color:#e7d6c6;font-weight:800;font-size:15px;padding:11px 22px;border-radius:999px;cursor:pointer}
+.tabs button.on{background:var(--paper);color:var(--ink)}
+.mlist{display:none;grid-template-columns:1fr 1fr;gap:0 56px}
+.mlist.on{display:grid}
+.mi{display:grid;grid-template-columns:1fr auto;gap:4px 18px;padding:20px 0;border-bottom:1px solid rgba(248,244,238,.18)}
+.mi h4{font-weight:800;font-size:18.5px;letter-spacing:-.02em;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.mi h4 i{font-style:normal;font-size:11.5px;font-weight:800;padding:2px 8px;border-radius:6px;background:var(--cherry2);color:#fff;letter-spacing:.04em}
+.mi h4 i.ic{background:var(--sage2);color:var(--ink)}
+.mi p{grid-column:1;font-size:14.5px;color:#d9c6b6}
+.mi b{grid-row:1/3;grid-column:2;font-family:'Bricolage Grotesque';font-weight:800;font-size:21px;align-self:center;white-space:nowrap}
+.menu .note{margin-top:26px;font-size:14px;color:#cdb8a6}
+/* plans */
+.pgrid{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.plan{border-radius:26px;padding:36px;border:1.5px solid var(--ink);position:relative;overflow:hidden;display:flex;flex-direction:column}
+.plan.a{background:var(--paper)}
+.plan.b{background:var(--sage2)}
+.plan .lb{font-family:'Bricolage Grotesque';font-weight:600;font-size:13px;letter-spacing:.2em;color:var(--cherry)}
+.plan h3{font-family:'Hahmlet',serif;font-weight:800;font-size:30px;letter-spacing:-.04em;margin:8px 0 10px;line-height:1.25}
+.plan>p{color:#4d4038;font-size:16px;max-width:420px}
+.plan ul{list-style:none;margin:22px 0 26px;display:grid;gap:10px}
+.plan li{display:flex;gap:10px;font-size:15.5px;font-weight:500}
+.plan li svg{width:22px;height:22px;flex:none;margin-top:1px}
+.plan .pr{display:flex;align-items:baseline;gap:8px;margin-top:auto;margin-bottom:20px}
+.plan .pr b{font-family:'Bricolage Grotesque';font-weight:800;font-size:40px;letter-spacing:-.03em}
+.plan .pr span{font-size:14.5px;color:var(--mut);font-weight:700}
+.plan .deco{position:absolute;right:28px;top:28px;width:104px}
+.plan h3{padding-right:120px}
+/* class */
+.klass{background:var(--paper);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.kgrid{display:grid;grid-template-columns:.9fr 1.1fr;gap:48px;align-items:start}
+.cup{background:var(--ink);border-radius:26px;padding:20px}
+.cup svg{display:block;width:100%;height:auto}
+.sched{border:1.5px solid var(--ink);border-radius:22px;overflow:hidden;background:#fff}
+.srow{display:grid;grid-template-columns:110px 1fr auto;gap:18px;align-items:center;padding:20px 24px;border-bottom:1px solid var(--line)}
+.srow:last-child{border-bottom:0}
+.srow .d{font-family:'Bricolage Grotesque';font-weight:800;font-size:20px;line-height:1.15}
+.srow .d small{display:block;font-family:'Gothic A1';font-size:13px;color:var(--mut);font-weight:700}
+.srow h4{font-weight:800;font-size:17px;letter-spacing:-.02em}
+.srow p{font-size:14px;color:var(--mut)}
+.seat{display:flex;align-items:center;gap:8px}
+.seat button{width:36px;height:36px;border-radius:50%;border:1.5px solid var(--ink);background:#fff;font-weight:800;font-size:18px;cursor:pointer;line-height:1}
+.seat output{min-width:40px;text-align:center;font-weight:800;font-size:15px}
+.ktot{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;margin-top:18px;padding:18px 24px;background:var(--stone);border-radius:18px;border:1.5px dashed var(--ink)}
+.ktot b{font-family:'Bricolage Grotesque';font-size:24px;font-weight:800}
+.ktot span{font-size:14.5px;font-weight:700;color:var(--mut)}
+/* space */
+.space .in{display:grid;grid-template-columns:1.15fr .85fr;gap:52px;align-items:center}
+.scene{border-radius:30px;overflow:hidden;border:1.5px solid var(--ink)}
+.scene svg{display:block;width:100%;height:auto}
+.feat{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:28px}
+.feat div{background:var(--paper);border:1.5px solid var(--ink);border-radius:16px;padding:16px 18px}
+.feat b{display:block;font-family:'Bricolage Grotesque';font-weight:800;font-size:26px;color:var(--cherry);letter-spacing:-.02em}
+.feat span{font-size:14.5px;font-weight:700}
+/* contact */
+.contact{background:var(--ink);color:var(--paper)}
+.contact .sh .k{color:#f2b0b9}
+.contact .sh p{color:#cfbfb1}
+.cgrid{display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:start}
+.map{background:#33231a;border-radius:26px;overflow:hidden;border:1.5px solid #4a362a}
+.map svg{display:block;width:100%;height:auto}
+.minfo{padding:22px 26px;display:grid;gap:10px}
+.minfo div{display:grid;grid-template-columns:92px 1fr;gap:14px;font-size:15px}
+.minfo small{color:#bca998;font-weight:700}
+form{background:var(--paper);color:var(--ink);border-radius:26px;padding:34px}
+form h3{font-family:'Hahmlet',serif;font-weight:800;font-size:26px;letter-spacing:-.03em;margin-bottom:6px}
+form>p{font-size:14.5px;color:var(--mut);margin-bottom:22px}
+.seg{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:16px}
+.seg label{cursor:pointer}
+.seg input{position:absolute;opacity:0;pointer-events:none}
+.seg span{display:flex;align-items:center;justify-content:center;text-align:center;height:50px;border-radius:14px;border:1.5px solid var(--ink);font-weight:800;font-size:14.5px;background:#fff;transition:.15s;padding:0 6px}
+.seg input:checked+span{background:var(--cherry);border-color:var(--cherry);color:#fff}
+.fl{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.f{display:flex;flex-direction:column;gap:6px;margin-bottom:14px}
+.f label{font-size:13.5px;font-weight:800}
+.f input,.f select,.f textarea{min-width:0;width:100%;height:50px;border-radius:12px;border:1.5px solid var(--line);background:#fff;padding:0 14px;font-size:15px;outline:none}
+.f textarea{height:96px;padding:12px 14px;resize:vertical}
+.f input:focus,.f select:focus,.f textarea:focus{border-color:var(--ink)}
+form .btn{width:100%;margin-top:4px}
+.ok{display:none;text-align:center;padding:30px 10px}
+.ok svg{width:64px;height:64px;margin:0 auto 14px;display:block}
+.ok h3{margin-bottom:8px}
+.ok p{color:var(--mut);font-size:15px}
+form.done .fb{display:none}
+form.done .ok{display:block}
+footer{background:#1a100a;color:#b9a797;padding:46px 0 40px;font-size:14px}
+footer .in{display:flex;justify-content:space-between;gap:28px;flex-wrap:wrap;align-items:flex-start}
+footer .logo b{color:var(--paper)}
+footer p{line-height:1.8}
+@media(max-width:1080px){.bgrid{grid-template-columns:repeat(2,1fr)}.roast .in,.kgrid,.space .in{grid-template-columns:1fr}.cup{max-width:560px}}
+@media(max-width:900px){nav,.hbtn{display:none}.mbtn{display:inline-flex}.slab{grid-template-columns:1fr 1fr;padding:24px 22px 22px;gap:12px;border-radius:30px 30px 0 0}.slab .art{grid-column:1/3;grid-row:1;max-width:460px;width:100%;justify-self:center}.call{padding-bottom:0;align-self:start}.call.l{text-align:left}.mlist.on{grid-template-columns:1fr}.pgrid,.cgrid{grid-template-columns:minmax(0,1fr)}}
+@media(max-width:560px){.in{padding:0 18px}section{padding:72px 0}.hero h1{font-size:38px}.lead{font-size:16.5px}.hcopy{padding:40px 0 28px}.kick{font-size:13px}.call div{padding:12px 14px}.call b{font-size:16px}.week .in{padding:0}.wk{padding:12px 2px 14px}.wk span{font-size:17px}.wk p{font-size:0;min-height:16px;margin-top:4px}.wk p b{font-size:11px;letter-spacing:.02em}.plan h3{padding-right:84px}.plan .deco{width:76px;right:18px;top:18px}.bgrid{grid-template-columns:1fr}.plan{padding:28px 22px}.plan h3{font-size:26px}.srow{grid-template-columns:1fr;gap:8px}.feat{grid-template-columns:1fr 1fr}.fl{grid-template-columns:1fr}form{padding:26px 20px}.seg span{font-size:13.5px;height:54px}.acts .btn{flex:1}.minfo div{grid-template-columns:80px 1fr}.tabs button{padding:10px 16px}.kick{font-size:13px}.chart{padding:20px 14px 12px}.chart svg text{font-size:24px}.chart .yl{display:none}.cup svg .t1{font-size:40px}.cup svg .t2{font-size:24px}.cup svg .lt{font-size:24px}}
+</style>
+</head>
+<body>
+<header>
+ <div class="in">
+  <a class="logo" href="#top">
+   <svg viewBox="0 0 48 48"><circle cx="24" cy="24" r="22" fill="#b3263a"/><g stroke="#f8f4ee" stroke-width="2" stroke-linecap="round"><path d="M24 3v4M24 41v4M3 24h4M41 24h4M9 9l3 3M36 36l3 3M39 9l-3 3M12 36l-3 3"/></g><ellipse cx="24" cy="24" rx="9.5" ry="13" fill="#5b321b" transform="rotate(28 24 24)"/><path d="M19 14c6 4 4 16 10 20" stroke="#f8f4ee" stroke-width="2" fill="none" stroke-linecap="round"/></svg>
+   <span><b>콩볕 로스터리</b><small>KONGBYEOT · CEBU</small></span>
+  </a>
+  <nav><a href="#beans">이번 주 원두</a><a href="#roast">로스팅</a><a href="#menu">메뉴</a><a href="#plans">구독·납품</a><a href="#class">커핑 클래스</a><a href="#visit">오시는 길</a></nav>
+  <a class="btn c sm hbtn" href="#visit">원두 주문·예약</a>
+  <button class="mbtn" aria-label="메뉴 열기"><svg viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+ </div>
+</header>
+
+<main id="top">
+<section class="hero mottle" style="padding:0">
+ <div class="in">
+  <div class="hcopy">
+   <span class="kick"><i>ROAST DAY</i>매주 화·금 오전, 매장 로스터로 볶아요</span>
+   <h1>세부에서 볶은 원두,<br><em>그 주 안에</em> 내립니다</h1>
+   <p class="lead">생두를 직접 고르고 소량씩 볶는 교민 로스터리 카페입니다. 오늘 마실 한 잔도, 집에서 내릴 200g 원두도 같은 날 볶은 콩으로 준비해요.</p>
+   <div class="acts"><a class="btn c" href="#beans">이번 주 원두 보기 <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a><a class="btn o" href="#class">커핑 클래스 예약</a></div>
+  </div>
+ </div>
+ <div class="in">
+  <div class="slab terr">
+   <div class="call l"><div><small>매일 영업</small><b>08:00 – 20:00</b></div><div><small>로스팅</small><b>화 · 금 오전</b></div></div>
+   <div class="art">
+   <svg viewBox="0 70 560 520" role="img" aria-label="아치형 테라조 벽 앞의 드럼 로스터와 쏟아지는 원두, 커피 체리 일러스트">
+    <defs>
+     <linearGradient id="hArch" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f3d9c9"/><stop offset="1" stop-color="#e7c3ae"/></linearGradient>
+     <linearGradient id="hDrum" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#3a2216"/><stop offset=".5" stop-color="#6b3c22"/><stop offset="1" stop-color="#2a170c"/></linearGradient>
+     <linearGradient id="hSteel" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#8f8a86"/><stop offset=".45" stop-color="#e9e6e2"/><stop offset="1" stop-color="#77716c"/></linearGradient>
+     <linearGradient id="hHop" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#dcd7d1"/><stop offset="1" stop-color="#9c958f"/></linearGradient>
+     <radialGradient id="hGlow" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#ffb36b"/><stop offset=".6" stop-color="#e85c2b"/><stop offset="1" stop-color="#7a1b10"/></radialGradient>
+     <radialGradient id="hCh" cx=".35" cy=".3" r=".7"><stop offset="0" stop-color="#ff6a78"/><stop offset=".55" stop-color="#c3243a"/><stop offset="1" stop-color="#6e0f1f"/></radialGradient>
+     <radialGradient id="hBn" cx=".35" cy=".3" r=".75"><stop offset="0" stop-color="#9a5a32"/><stop offset=".6" stop-color="#5b321b"/><stop offset="1" stop-color="#2a150a"/></radialGradient>
+     <linearGradient id="hTray" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#cfcac4"/><stop offset="1" stop-color="#8a847e"/></linearGradient>
+     <clipPath id="hClip"><path d="M60 600V250a220 220 0 0 1 440 0v350z"/></clipPath>
+    </defs>
+    
+    
+    <radialGradient id="hSoft" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#fff" stop-opacity=".75"/><stop offset=".6" stop-color="#fff" stop-opacity=".35"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></radialGradient><ellipse cx="280" cy="330" rx="280" ry="250" fill="url(#hSoft)"/>
+    <!-- steam -->
+    <g fill="none" stroke="#fff" stroke-width="7" stroke-linecap="round" opacity=".7"><path d="M232 108c-16-22 14-34 0-58"/><path d="M262 100c-14-20 12-30 0-52" opacity=".7"/></g>
+    <!-- chimney & hopper -->
+    <rect x="236" y="110" width="26" height="80" rx="4" fill="url(#hSteel)"/>
+    <path d="M318 142h88l-22 58h-44z" fill="url(#hHop)" stroke="#5c5650" stroke-width="2"/>
+    <ellipse cx="362" cy="142" rx="44" ry="9" fill="#4a2a17"/>
+    <g fill="url(#hBn)"><ellipse cx="350" cy="140" rx="7" ry="5"/><ellipse cx="366" cy="138" rx="7" ry="5"/><ellipse cx="378" cy="141" rx="6" ry="4.5"/></g>
+    <!-- body -->
+    <rect x="120" y="196" width="330" height="200" rx="34" fill="#b3263a"/>
+    <rect x="120" y="196" width="330" height="200" rx="34" fill="url(#hDrum)" opacity=".0"/>
+    <path d="M154 196h262a34 34 0 0 1 34 34v18H120v-18a34 34 0 0 1 34-34z" fill="#d23f52"/>
+    <rect x="120" y="376" width="330" height="20" rx="6" fill="#7e1626"/>
+    <!-- drum face -->
+    <circle cx="232" cy="296" r="78" fill="url(#hSteel)"/>
+    <circle cx="232" cy="296" r="62" fill="url(#hDrum)"/>
+    <circle cx="232" cy="296" r="30" fill="#1b0f08" stroke="#c5bfb9" stroke-width="5"/>
+    <circle cx="232" cy="296" r="18" fill="url(#hGlow)"/>
+    <path d="M232 266v-14M262 296h14M232 326v14M202 296h-14" stroke="#c5bfb9" stroke-width="5" stroke-linecap="round"/>
+    <!-- gauges -->
+    <circle cx="372" cy="262" r="26" fill="#f8f4ee" stroke="#5c5650" stroke-width="4"/>
+    <path d="M372 262l14-12" stroke="#b3263a" stroke-width="4" stroke-linecap="round"/>
+    <circle cx="372" cy="262" r="4" fill="#24170f"/>
+    <g stroke="#24170f" stroke-width="2"><path d="M354 262h5M372 244v5M390 262h-5"/></g>
+    <rect x="346" y="304" width="52" height="16" rx="8" fill="#24170f"/>
+    <rect x="346" y="330" width="52" height="16" rx="8" fill="#24170f" opacity=".5"/>
+    <!-- legs -->
+    <rect x="140" y="396" width="18" height="70" fill="#3b2a20"/><rect x="412" y="396" width="18" height="70" fill="#3b2a20"/>
+    <!-- cooling tray -->
+    <ellipse cx="270" cy="470" rx="200" ry="40" fill="#3b2a20" opacity=".25"/>
+    <ellipse cx="270" cy="456" rx="190" ry="36" fill="url(#hTray)"/>
+    <ellipse cx="270" cy="450" rx="172" ry="28" fill="#4a2a17"/>
+    <path d="M232 374c4 30 0 52-6 70" stroke="#d8d2cc" stroke-width="22" stroke-linecap="round" fill="none"/>
+    <g fill="url(#hBn)">
+     <ellipse cx="160" cy="446" rx="11" ry="7.5" transform="rotate(-20 160 446)"/><ellipse cx="186" cy="456" rx="11" ry="7.5" transform="rotate(30 186 456)"/><ellipse cx="214" cy="440" rx="11" ry="7.5" transform="rotate(10 214 440)"/><ellipse cx="244" cy="458" rx="11" ry="7.5" transform="rotate(-35 244 458)"/><ellipse cx="270" cy="444" rx="11" ry="7.5" transform="rotate(50 270 444)"/><ellipse cx="300" cy="456" rx="11" ry="7.5" transform="rotate(-10 300 456)"/><ellipse cx="328" cy="442" rx="11" ry="7.5" transform="rotate(25 328 442)"/><ellipse cx="356" cy="454" rx="11" ry="7.5" transform="rotate(-40 356 454)"/><ellipse cx="382" cy="444" rx="11" ry="7.5" transform="rotate(15 382 444)"/><ellipse cx="228" cy="452" rx="10" ry="7" transform="rotate(70 228 452)"/><ellipse cx="342" cy="460" rx="10" ry="7" transform="rotate(-60 342 460)"/><ellipse cx="198" cy="436" rx="10" ry="7"/>
+    </g>
+    <g stroke="#2a150a" stroke-width="1.6" stroke-linecap="round" opacity=".7"><path d="M154 444q6 2 12 2"/><path d="M208 438q6 3 12 3"/><path d="M264 442q6 3 12 3"/><path d="M322 440q6 3 12 2"/><path d="M376 442q6 3 12 3"/></g>
+    <!-- cherries branch -->
+    <path d="M420 560c10-50 40-80 96-96" stroke="#3f5a44" stroke-width="7" fill="none" stroke-linecap="round"/>
+    <path d="M468 486c-30-20-60-14-70 6 26 14 52 10 70-6z" fill="#5d7f61"/>
+    <path d="M500 470c10-30 34-44 54-38-6 28-30 42-54 38z" fill="#7f9a82"/>
+    <circle cx="436" cy="544" r="17" fill="url(#hCh)"/><circle cx="458" cy="528" r="15" fill="url(#hCh)"/><circle cx="430" cy="516" r="14" fill="url(#hCh)"/><circle cx="482" cy="510" r="13" fill="url(#hCh)"/>
+    <g fill="#fff" opacity=".6"><circle cx="430" cy="538" r="4"/><circle cx="453" cy="522" r="3.5"/><circle cx="426" cy="511" r="3"/><circle cx="478" cy="505" r="3"/></g>
+    <!-- cup -->
+    <ellipse cx="110" cy="566" rx="70" ry="14" fill="#3b2a20" opacity=".25"/>
+    <path d="M58 506h104l-10 54a10 10 0 0 1-10 8H78a10 10 0 0 1-10-8z" fill="#f8f4ee" stroke="#24170f" stroke-width="3"/>
+    <path d="M160 520c22 0 22 30-4 30" stroke="#24170f" stroke-width="5" fill="none"/>
+    <ellipse cx="110" cy="506" rx="52" ry="9" fill="#6b3c22" stroke="#24170f" stroke-width="3"/>
+    <path d="M96 504c8-6 20-6 28 0-8 5-20 5-28 0z" fill="#e8c49e"/>
+    <rect x="70" y="528" width="80" height="12" fill="#b3263a"/>
+   </svg>
+   </div>
+   <div class="call r"><div><small>배치 크기</small><b>한 번에 5kg</b></div><div><small>원두 배송</small><b>메트로 세부</b></div></div>
+  </div>
+ </div>
+</section>
+<div class="week">
+ <div class="in">
+  <div class="wk"><span>월</span><p>바 영업</p></div>
+  <div class="wk on"><span>화</span><p><b>ROAST</b>싱글 오리진</p></div>
+  <div class="wk"><span>수</span><p>원두 발송</p></div>
+  <div class="wk"><span>목</span><p>바 영업</p></div>
+  <div class="wk on"><span>금</span><p><b>ROAST</b>블렌드</p></div>
+  <div class="wk sat"><span>토</span><p><b>CLASS</b>커핑 14시</p></div>
+  <div class="wk"><span>일</span><p>바 영업</p></div>
+ </div>
+</div>
+
+<section class="beans" id="beans">
+ <div class="in">
+  <div class="sh"><div><span class="k">THIS WEEK'S BEANS</span><h2>이번 주에 볶은 원두 네 가지</h2></div><p>원두는 산지와 볶음 정도에 따라 맛이 크게 달라요. 처음이라면 바에서 한 잔씩 맛보고 고르셔도 됩니다.</p></div>
+  <div class="bgrid">
+   <article class="bean"><div class="ph" style="background:#f6dcd6"><span class="no">No.01</span>
+    <svg viewBox="0 0 160 190"><defs><linearGradient id="b1" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#e3ddd4"/><stop offset=".5" stop-color="#fbf8f3"/><stop offset="1" stop-color="#d8d1c6"/></linearGradient></defs><ellipse cx="80" cy="180" rx="58" ry="8" fill="#000" opacity=".12"/><path d="M30 30h100l8 146H22z" fill="url(#b1)" stroke="#24170f" stroke-width="2.5"/><path d="M30 30l10-18h80l10 18" fill="#cfc7bb" stroke="#24170f" stroke-width="2.5"/><rect x="46" y="70" width="68" height="74" rx="8" fill="#b3263a"/><circle cx="80" cy="98" r="16" fill="#f8f4ee"/><ellipse cx="80" cy="98" rx="6" ry="9" fill="#5b321b" transform="rotate(25 80 98)"/><rect x="56" y="124" width="48" height="5" rx="2" fill="#f8f4ee"/><rect x="62" y="133" width="36" height="4" rx="2" fill="#f8f4ee" opacity=".6"/><circle cx="80" cy="50" r="5" fill="#24170f"/></svg></div>
+    <div class="bd"><span class="org">에티오피아 · 워시드</span><h3>예가체프 꽃밭</h3><div class="notes"><span>자스민</span><span>레몬 껍질</span><span>홍차</span></div><div class="lvl">약배전<i style="--p:16%"></i>강배전</div><div class="price"><small>200g</small><b>₱680</b></div></div></article>
+   <article class="bean"><div class="ph" style="background:#e7d8c8"><span class="no">No.02</span>
+    <svg viewBox="0 0 160 190"><defs><linearGradient id="b2" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#b98d62"/><stop offset=".5" stop-color="#d9b48b"/><stop offset="1" stop-color="#a77c53"/></linearGradient></defs><ellipse cx="80" cy="180" rx="58" ry="8" fill="#000" opacity=".12"/><path d="M34 26h92l12 150H22z" fill="url(#b2)" stroke="#24170f" stroke-width="2.5"/><path d="M34 26h92v14H34z" fill="#8f6741" stroke="#24170f" stroke-width="2.5"/><rect x="44" y="66" width="72" height="80" rx="36" fill="#f8f4ee"/><path d="M58 120c10-30 34-30 44 0" stroke="#5b321b" stroke-width="5" fill="none" stroke-linecap="round"/><circle cx="80" cy="92" r="9" fill="#d23f52"/><rect x="60" y="130" width="40" height="5" rx="2" fill="#5b321b"/></svg></div>
+    <div class="bd"><span class="org">콜롬비아 · 우일라</span><h3>캐러멜 사과</h3><div class="notes"><span>구운 사과</span><span>캐러멜</span><span>밀크초콜릿</span></div><div class="lvl">약배전<i style="--p:44%"></i>강배전</div><div class="price"><small>200g</small><b>₱620</b></div></div></article>
+   <article class="bean"><div class="ph" style="background:#d6e1d3"><span class="no">No.03</span>
+    <svg viewBox="0 0 160 190"><defs><linearGradient id="b3" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#3e5a46"/><stop offset=".5" stop-color="#5f8067"/><stop offset="1" stop-color="#344d3b"/></linearGradient></defs><ellipse cx="80" cy="180" rx="58" ry="8" fill="#000" opacity=".12"/><path d="M28 34h104l6 142H22z" fill="url(#b3)" stroke="#24170f" stroke-width="2.5"/><path d="M28 34l14-20h76l14 20" fill="#2c4233" stroke="#24170f" stroke-width="2.5"/><path d="M46 80l34-22 34 22-34 22z" fill="#efe9e0"/><path d="M62 92l18 30 18-30" fill="none" stroke="#efe9e0" stroke-width="5" stroke-linejoin="round"/><circle cx="80" cy="80" r="6" fill="#b3263a"/><rect x="54" y="138" width="52" height="5" rx="2" fill="#efe9e0"/><rect x="62" y="148" width="36" height="4" rx="2" fill="#efe9e0" opacity=".6"/></svg></div>
+    <div class="bd"><span class="org">필리핀 · 벵겟 고원</span><h3>코르디예라 아침</h3><div class="notes"><span>흑설탕</span><span>오렌지</span><span>헤이즐넛</span></div><div class="lvl">약배전<i style="--p:56%"></i>강배전</div><div class="price"><small>200g</small><b>₱560</b></div></div></article>
+   <article class="bean"><div class="ph" style="background:#3a2418"><span class="no" style="color:#f8f4ee">No.04</span>
+    <svg viewBox="0 0 160 190"><defs><linearGradient id="b4" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#1c120c"/><stop offset=".5" stop-color="#3e2a1e"/><stop offset="1" stop-color="#160e09"/></linearGradient></defs><ellipse cx="80" cy="180" rx="58" ry="8" fill="#000" opacity=".3"/><path d="M30 30h100l8 146H22z" fill="url(#b4)" stroke="#c9a56f" stroke-width="2.5"/><path d="M30 30l10-18h80l10 18" fill="#2a1c14" stroke="#c9a56f" stroke-width="2.5"/><circle cx="80" cy="104" r="34" fill="none" stroke="#c9a56f" stroke-width="3"/><circle cx="80" cy="104" r="24" fill="#b3263a"/><ellipse cx="80" cy="104" rx="8" ry="12" fill="#1c120c" transform="rotate(25 80 104)"/><rect x="56" y="150" width="48" height="5" rx="2" fill="#c9a56f"/></svg></div>
+    <div class="bd"><span class="org">하우스 블렌드 · 브라질+과테말라</span><h3>볕 블렌드</h3><div class="notes"><span>다크초콜릿</span><span>볶은 견과</span><span>묵직한 바디</span></div><div class="lvl">약배전<i style="--p:80%"></i>강배전</div><div class="price"><small>200g</small><b>₱520</b></div></div></article>
+  </div>
+ </div>
+</section>
+
+<section class="roast" id="roast">
+ <div class="in">
+  <div class="chart">
+   <div class="ct"><b>ROAST CURVE · No.02</b><span>원두 온도 변화 (예시)</span></div>
+   <svg viewBox="0 0 560 330" role="img" aria-label="로스팅 시간에 따른 원두 온도 곡선 예시 그래프">
+    <defs><linearGradient id="cv" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#d9b98a"/><stop offset=".55" stop-color="#e85c2b"/><stop offset="1" stop-color="#d23f52"/></linearGradient><linearGradient id="cvf" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#d23f52" stop-opacity=".35"/><stop offset="1" stop-color="#d23f52" stop-opacity="0"/></linearGradient></defs>
+    <g stroke="#4b382c" stroke-width="1"><path d="M50 40H540M50 100H540M50 160H540M50 220H540M50 280H540"/></g>
+    <g fill="#bfae9f" font-size="13" font-family="Gothic A1" font-weight="700"><g class="yl"><text x="10" y="45">220°</text><text x="10" y="105">180°</text><text x="10" y="165">140°</text><text x="10" y="225">100°</text><text x="18" y="285">60°</text></g><text x="50" y="312">0분</text><text x="190" y="312">3분</text><text x="330" y="312">6분</text><text x="470" y="312">9분</text></g>
+    <path d="M50 70C70 210 100 250 130 250S220 190 280 150 400 92 470 70 520 60 540 58V280H50z" fill="url(#cvf)"/>
+    <path d="M50 70C70 210 100 250 130 250S220 190 280 150 400 92 470 70 520 60 540 58" fill="none" stroke="url(#cv)" stroke-width="5" stroke-linecap="round"/>
+    <g font-family="Gothic A1" font-weight="800" font-size="13.5">
+     <circle cx="130" cy="250" r="8" fill="#f8f4ee"/><text x="146" y="270" fill="#f8f4ee">터닝 포인트</text>
+     <circle cx="300" cy="140" r="8" fill="#e85c2b"/><text x="232" y="122" fill="#f8f4ee">옐로잉 · 갈변</text>
+     <circle cx="440" cy="78" r="8" fill="#d23f52"/><text x="380" y="58" fill="#f8f4ee">1차 크랙</text>
+     <circle cx="540" cy="58" r="8" fill="#f8f4ee" stroke="#d23f52" stroke-width="4"/>
+    </g>
+   </svg>
+   <div class="cst"><div><small>총 로스팅 시간</small><b>9분 40초</b></div><div><small>1차 크랙</small><b>7분 50초</b></div><div><small>배출 온도</small><b>214°</b></div></div>
+  </div>
+  <div>
+   <div class="sh" style="margin-bottom:28px"><div><span class="k">HOW WE ROAST</span><h2>볶는 날부터 컵까지,<br>네 단계로 관리해요</h2></div></div>
+   <div class="steps">
+    <div class="step"><span class="n">01</span><div><h3>생두 고르기</h3><p>결점두를 손으로 골라내고, 산지마다 수분을 재서 기록해요.</p></div></div>
+    <div class="step"><span class="n">02</span><div><h3>소량 로스팅</h3><p>5kg 로스터로 원두마다 곡선을 따로 잡아 볶습니다.</p></div></div>
+    <div class="step"><span class="n">03</span><div><h3>3일 숙성</h3><p>가스가 빠지도록 밸브 봉투에서 쉬게 한 뒤 판매해요.</p></div></div>
+    <div class="step"><span class="n">04</span><div><h3>컵핑 확인</h3><p>배치마다 직접 맛을 보고, 메모를 원두 카드에 적어 드려요.</p></div></div>
+   </div>
+  </div>
+ </div>
+</section>
+
+<section class="menu" id="menu">
+ <div class="in">
+  <div class="sh"><div><span class="k">CAFE MENU</span><h2>바에서 내리는 메뉴</h2></div><div class="tabs" role="tablist"><button class="on" data-t="m1">커피</button><button data-t="m2">논커피</button><button data-t="m3">디저트</button></div></div>
+  <div class="mlist on" id="m1">
+   <div class="mi"><h4>핸드드립 <i>원두 선택</i></h4><p>이번 주 원두 네 가지 중 골라 한 잔씩 내려 드려요</p><b>₱190</b></div>
+   <div class="mi"><h4>아메리카노 <i class="ic">ICE</i></h4><p>볕 블렌드 기본, 산미 원두로 바꿀 수 있어요</p><b>₱150</b></div>
+   <div class="mi"><h4>카페라떼</h4><p>우유와 잘 어울리는 볕 블렌드로 만들어요</p><b>₱170</b></div>
+   <div class="mi"><h4>흑당 크림 라떼 <i>시그니처</i></h4><p>필리핀 흑설탕 시럽과 진한 크림을 올린 라떼</p><b>₱210</b></div>
+   <div class="mi"><h4>콜드브루 <i class="ic">ICE</i></h4><p>14시간 동안 천천히 우려낸 코르디예라 원두</p><b>₱180</b></div>
+   <div class="mi"><h4>아인슈페너</h4><p>쌉쌀한 커피 위에 달콤한 크림을 두껍게</p><b>₱200</b></div>
+  </div>
+  <div class="mlist" id="m2">
+   <div class="mi"><h4>칼라만시 에이드 <i class="ic">ICE</i></h4><p>직접 만든 칼라만시 청과 탄산수</p><b>₱160</b></div>
+   <div class="mi"><h4>커피 체리 티 <i>카스카라</i></h4><p>말린 커피 체리 껍질을 우린 달큰한 차</p><b>₱170</b></div>
+   <div class="mi"><h4>미숫가루 라떼</h4><p>고소한 곡물과 우유, 꿀을 조금</p><b>₱180</b></div>
+   <div class="mi"><h4>망고 우유 <i class="ic">ICE</i></h4><p>잘 익은 망고를 갈아 넣은 생과일 우유</p><b>₱190</b></div>
+  </div>
+  <div class="mlist" id="m3">
+   <div class="mi"><h4>바스크 치즈케이크</h4><p>겉은 진하게 굽고 속은 부드럽게</p><b>₱220</b></div>
+   <div class="mi"><h4>흑임자 휘낭시에</h4><p>버터 향 가득한 작은 구움과자</p><b>₱120</b></div>
+   <div class="mi"><h4>우베 롤케이크</h4><p>보랏빛 우베 크림을 돌돌 말았어요</p><b>₱180</b></div>
+   <div class="mi"><h4>약과 쿠키</h4><p>조청을 바른 쫀득한 쿠키 두 개</p><b>₱130</b></div>
+  </div>
+  <p class="note">가격은 예시이며, 우유는 귀리 우유로 바꿀 수 있어요 (+₱30).</p>
+ </div>
+</section>
+
+<section id="plans">
+ <div class="in">
+  <div class="sh"><div><span class="k">SUBSCRIBE · WHOLESALE</span><h2>집에서도, 우리 가게에서도</h2></div><p>집에서 내려 마실 원두 정기 구독과 카페·식당·사무실 원두 납품을 함께 운영합니다.</p></div>
+  <div class="pgrid">
+   <div class="plan a">
+    <svg class="deco" viewBox="0 0 104 104"><circle cx="52" cy="52" r="50" fill="#f6dcd6"/><ellipse cx="52" cy="52" rx="17" ry="25" fill="#b3263a" transform="rotate(28 52 52)"/><path d="M43 31c11 8 7 31 18 40" stroke="#f6dcd6" stroke-width="4" fill="none" stroke-linecap="round"/></svg>
+    <span class="lb">HOME SUBSCRIPTION</span><h3>2주마다 오는<br>홈 원두 구독</h3><p>로스팅한 다음 날 문 앞으로 보내 드려요. 원두는 매번 바꿀 수 있어요.</p>
+    <ul><li><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="11" fill="#b3263a"/><path d="M7 12.5l3 3 7-7" stroke="#fff" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>200g × 2봉, 원두 종류 자유 선택</li><li><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="11" fill="#b3263a"/><path d="M7 12.5l3 3 7-7" stroke="#fff" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>홀빈 또는 드립·모카포트 분쇄</li><li><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="11" fill="#b3263a"/><path d="M7 12.5l3 3 7-7" stroke="#fff" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>메트로 세부 배송비 포함</li></ul>
+    <div class="pr"><b>₱1,150</b><span>/ 2주 1회</span></div>
+    <a class="btn c" href="#visit">구독 신청하기</a>
+   </div>
+   <div class="plan b">
+    <svg class="deco" viewBox="0 0 104 104"><defs><linearGradient id="kb1" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#2a1c14"/><stop offset=".5" stop-color="#4a3226"/><stop offset="1" stop-color="#22160f"/></linearGradient></defs><circle cx="52" cy="52" r="50" fill="#a9bea8"/><ellipse cx="52" cy="92" rx="30" ry="5" fill="#000" opacity=".15"/><path d="M28 24h48l6 66H22z" fill="url(#kb1)"/><path d="M28 24l6-10h36l6 10" fill="#3a281e"/><rect x="34" y="44" width="36" height="28" rx="4" fill="#efe9e0"/><text x="52" y="64" text-anchor="middle" font-family="Bricolage Grotesque" font-weight="800" font-size="15" fill="#24170f">1kg</text><circle cx="52" cy="34" r="3" fill="#c9a56f"/></svg>
+    <span class="lb">CAFE · OFFICE</span><h3>카페 · 식당 · 사무실<br>원두 납품</h3><p>가게 메뉴와 추출 장비에 맞춰 블렌드를 함께 정하고, 주 1~2회 정해진 요일에 납품해요.</p>
+    <ul><li><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="11" fill="#24170f"/><path d="M7 12.5l3 3 7-7" stroke="#fff" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>1kg 단위, 월 사용량에 맞춰 조절</li><li><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="11" fill="#24170f"/><path d="M7 12.5l3 3 7-7" stroke="#fff" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>첫 납품 전 샘플 원두 3종 시음</li><li><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="11" fill="#24170f"/><path d="M7 12.5l3 3 7-7" stroke="#fff" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>추출 레시피 카드 함께 제공</li></ul>
+    <div class="pr"><b>₱2,100~</b><span>/ 1kg</span></div>
+    <a class="btn o" href="#visit">납품 상담하기</a>
+   </div>
+  </div>
+ </div>
+</section>
+
+<section class="klass" id="class">
+ <div class="in">
+  <div class="sh"><div><span class="k">CUPPING CLASS</span><h2>토요일 오후, 커핑 클래스</h2></div><p>원두 다섯 가지를 나란히 놓고 향과 맛을 비교해 봐요. 처음이어도 괜찮아요.</p></div>
+  <div class="kgrid">
+   <div class="cup">
+    <svg viewBox="0 0 520 380" role="img" aria-label="커핑 테이블 위에 놓인 다섯 개의 커핑 볼과 스푼, 원두 접시 일러스트">
+     <defs><linearGradient id="ktb" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#8a5a37"/><stop offset="1" stop-color="#5b321b"/></linearGradient><radialGradient id="kc" cx=".5" cy=".4" r=".6"><stop offset="0" stop-color="#7a4526"/><stop offset="1" stop-color="#2a150a"/></radialGradient><linearGradient id="kb" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#e3ddd4"/><stop offset=".5" stop-color="#fff"/><stop offset="1" stop-color="#d1c9bd"/></linearGradient></defs>
+     <rect width="520" height="380" rx="16" fill="#2e1e15"/>
+     <path d="M0 210h520v170H0z" fill="url(#ktb)"/>
+     <g opacity=".25" stroke="#2a150a" stroke-width="2"><path d="M0 240c120 8 260-6 520 4"/><path d="M0 290c160 10 300-8 520 2"/><path d="M0 340c140 6 320-4 520 4"/></g>
+     <g fill="#c9a56f" opacity=".5"><circle cx="440" cy="60" r="4"/><circle cx="462" cy="60" r="4"/><circle cx="484" cy="60" r="4"/></g>
+     <g>
+      <g transform="translate(70 200)"><ellipse cx="0" cy="40" rx="42" ry="10" fill="#000" opacity=".25"/><path d="M-38 0h76l-8 38a8 8 0 0 1-8 6h-44a8 8 0 0 1-8-6z" fill="url(#kb)"/><ellipse cx="0" cy="0" rx="38" ry="9" fill="url(#kc)"/></g>
+      <g transform="translate(165 214)"><ellipse cx="0" cy="40" rx="42" ry="10" fill="#000" opacity=".25"/><path d="M-38 0h76l-8 38a8 8 0 0 1-8 6h-44a8 8 0 0 1-8-6z" fill="url(#kb)"/><ellipse cx="0" cy="0" rx="38" ry="9" fill="url(#kc)"/><path d="M-12-2c6-3 18-3 24 0" stroke="#c9a56f" stroke-width="2" fill="none"/></g>
+      <g transform="translate(260 222)"><ellipse cx="0" cy="40" rx="42" ry="10" fill="#000" opacity=".25"/><path d="M-38 0h76l-8 38a8 8 0 0 1-8 6h-44a8 8 0 0 1-8-6z" fill="url(#kb)"/><ellipse cx="0" cy="0" rx="38" ry="9" fill="url(#kc)"/></g>
+      <g transform="translate(355 214)"><ellipse cx="0" cy="40" rx="42" ry="10" fill="#000" opacity=".25"/><path d="M-38 0h76l-8 38a8 8 0 0 1-8 6h-44a8 8 0 0 1-8-6z" fill="url(#kb)"/><ellipse cx="0" cy="0" rx="38" ry="9" fill="url(#kc)"/></g>
+      <g transform="translate(450 200)"><ellipse cx="0" cy="40" rx="42" ry="10" fill="#000" opacity=".25"/><path d="M-38 0h76l-8 38a8 8 0 0 1-8 6h-44a8 8 0 0 1-8-6z" fill="url(#kb)"/><ellipse cx="0" cy="0" rx="38" ry="9" fill="url(#kc)"/></g>
+     </g>
+     <g fill="none" stroke="#fff" stroke-width="4" stroke-linecap="round" opacity=".5"><path d="M165 196c-8-14 8-22 0-36"/><path d="M355 196c-8-14 8-22 0-36"/></g>
+     <g transform="translate(260 320) rotate(-8)"><ellipse cx="-70" cy="0" rx="22" ry="13" fill="#d8d2cc" stroke="#8f8a86" stroke-width="2"/><rect x="-50" y="-4" width="140" height="8" rx="4" fill="#d8d2cc" stroke="#8f8a86" stroke-width="2"/></g>
+     <g transform="translate(80 320)"><ellipse cx="0" cy="8" rx="50" ry="14" fill="#000" opacity=".2"/><ellipse cx="0" cy="0" rx="48" ry="14" fill="#efe9e0"/><g fill="#5b321b"><ellipse cx="-16" cy="-2" rx="8" ry="5"/><ellipse cx="0" cy="2" rx="8" ry="5" transform="rotate(30 0 2)"/><ellipse cx="16" cy="-2" rx="8" ry="5" transform="rotate(-20 16 -2)"/><ellipse cx="6" cy="-6" rx="7" ry="4.5"/></g></g>
+     <g transform="translate(440 322)"><ellipse cx="0" cy="8" rx="50" ry="14" fill="#000" opacity=".2"/><ellipse cx="0" cy="0" rx="48" ry="14" fill="#efe9e0"/><g fill="#d4c29a"><ellipse cx="-16" cy="-2" rx="8" ry="5"/><ellipse cx="0" cy="2" rx="8" ry="5" transform="rotate(30 0 2)"/><ellipse cx="16" cy="-2" rx="8" ry="5" transform="rotate(-20 16 -2)"/></g></g>
+     <g class="lt" font-family="Bricolage Grotesque" font-weight="800" font-size="16" fill="#f8f4ee" text-anchor="middle"><text x="70" y="270">A</text><text x="165" y="284">B</text><text x="260" y="292">C</text><text x="355" y="284">D</text><text x="450" y="270">E</text></g>
+     <text class="t1" x="34" y="62" font-family="Hahmlet" font-weight="800" font-size="26" fill="#f8f4ee">SAT · CUPPING</text>
+     <text class="t2" x="34" y="98" font-family="Gothic A1" font-weight="700" font-size="15" fill="#d9c6b6">5종 원두 비교 · 90분 · 정원 6명</text>
+    </svg>
+   </div>
+   <div>
+    <div class="sched">
+     <div class="srow"><div class="d">12.05<small>토 14:00</small></div><div><h4>처음 만나는 커핑</h4><p>산미·단맛·바디를 나눠서 맛보는 법</p></div><div class="seat"><button data-d="-1" aria-label="인원 줄이기">−</button><output data-p="900">0명</output><button data-d="1" aria-label="인원 늘리기">+</button></div></div>
+     <div class="srow"><div class="d">12.12<small>토 14:00</small></div><div><h4>필리핀 원두 비교</h4><p>벵겟·사가다·민다나오 원두 나란히 맛보기</p></div><div class="seat"><button data-d="-1" aria-label="인원 줄이기">−</button><output data-p="1100">0명</output><button data-d="1" aria-label="인원 늘리기">+</button></div></div>
+     <div class="srow"><div class="d">12.19<small>토 14:00</small></div><div><h4>집에서 하는 핸드드립</h4><p>분쇄도와 물 온도만 바꿔 보는 실습</p></div><div class="seat"><button data-d="-1" aria-label="인원 줄이기">−</button><output data-p="1000">0명</output><button data-d="1" aria-label="인원 늘리기">+</button></div></div>
+    </div>
+    <div class="ktot"><span>선택한 인원 기준 예상 금액 (원두 100g 포함)</span><b id="ktot">₱0</b></div>
+   </div>
+  </div>
+ </div>
+</section>
+
+<section class="space mottle">
+ <div class="in">
+  <div class="scene">
+   <svg viewBox="0 0 640 440" role="img" aria-label="큰 창과 테라조 바 카운터, 펜던트 조명이 있는 카페 내부 일러스트">
+    <defs><linearGradient id="sw" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#bfe0e6"/><stop offset="1" stop-color="#f4e2c2"/></linearGradient><linearGradient id="sfl" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#cbb79f"/><stop offset="1" stop-color="#a68c72"/></linearGradient><linearGradient id="sc" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#efe9e0"/><stop offset="1" stop-color="#d9cfc1"/></linearGradient><radialGradient id="sl" cx=".5" cy="0" r="1"><stop offset="0" stop-color="#ffe3a8" stop-opacity=".8"/><stop offset="1" stop-color="#ffe3a8" stop-opacity="0"/></radialGradient></defs>
+    <rect width="640" height="440" fill="#e7d5c4"/>
+    <rect x="0" y="330" width="640" height="110" fill="url(#sfl)"/>
+    <!-- window -->
+    <rect x="40" y="40" width="260" height="250" rx="8" fill="#5b321b"/>
+    <rect x="52" y="52" width="236" height="226" fill="url(#sw)"/>
+    <g fill="#5d7f61"><path d="M52 278c20-60 40-80 60-70s10 70 0 70z"/><path d="M92 278c14-90 50-120 70-104s-8 104-14 104z" fill="#7f9a82"/><path d="M200 278c10-40 40-60 60-50 10 20 0 50 0 50z"/></g>
+    <path d="M200 160c40-10 70 0 88 20" stroke="#fff" stroke-width="6" fill="none" opacity=".6" stroke-linecap="round"/>
+    <circle cx="240" cy="96" r="22" fill="#ffd27a"/>
+    <path d="M170 52v226M52 165h236" stroke="#5b321b" stroke-width="8"/>
+    <!-- shelf -->
+    <rect x="350" y="70" width="250" height="10" rx="3" fill="#5b321b"/><rect x="350" y="150" width="250" height="10" rx="3" fill="#5b321b"/>
+    <g><rect x="362" y="34" width="30" height="36" rx="4" fill="#b3263a"/><rect x="398" y="40" width="26" height="30" rx="4" fill="#efe9e0" stroke="#5b321b" stroke-width="2"/><rect x="430" y="30" width="32" height="40" rx="4" fill="#3e5a46"/><rect x="470" y="40" width="26" height="30" rx="4" fill="#c9a56f"/><rect x="504" y="34" width="30" height="36" rx="4" fill="#2a1c14"/><rect x="542" y="42" width="44" height="28" rx="6" fill="#d8d2cc"/></g>
+    <g><circle cx="380" cy="132" r="16" fill="#efe9e0" stroke="#5b321b" stroke-width="2"/><rect x="408" y="110" width="40" height="40" rx="6" fill="#7f9a82"/><path d="M462 150v-30a14 14 0 0 1 28 0v30z" fill="#b3263a"/><rect x="502" y="116" width="22" height="34" rx="4" fill="#f8f4ee" stroke="#5b321b" stroke-width="2"/><rect x="532" y="120" width="56" height="30" rx="4" fill="#5b321b"/></g>
+    <!-- pendants -->
+    <g><path d="M380 0v190M470 0v170M560 0v190" stroke="#24170f" stroke-width="2"/><path d="M360 190h40l-6-22h-28z" fill="#b3263a"/><path d="M450 170h40l-6-22h-28z" fill="#24170f"/><path d="M540 190h40l-6-22h-28z" fill="#b3263a"/><path d="M340 192h80l60 150H280z" fill="url(#sl)" opacity=".45"/><path d="M520 192h80l60 150H460z" fill="url(#sl)" opacity=".45"/></g>
+    <!-- counter terrazzo -->
+    <rect x="320" y="240" width="320" height="24" rx="4" fill="#d6cbbb"/>
+    <rect x="330" y="264" width="300" height="110" fill="url(#sc)"/>
+    <g opacity=".8"><path d="M350 290l8-3 3 6-7 4z" fill="#b3263a"/><path d="M400 330l6 1 0 6-7 0z" fill="#5b321b"/><path d="M460 290l9 2-2 8-8-3z" fill="#7f9a82"/><path d="M520 340l6-4 6 4-5 6z" fill="#b3263a"/><path d="M580 300l6 0 1 6-6 1z" fill="#5b321b"/><path d="M430 360l5 1 0 5-6 0z" fill="#c9a56f"/><path d="M600 352l6 2-2 6-6-2z" fill="#7f9a82"/><path d="M370 352l4-2 3 4-4 2z" fill="#c9a56f"/></g>
+    <!-- espresso machine -->
+    <rect x="420" y="190" width="120" height="52" rx="8" fill="#d8d2cc" stroke="#8f8a86" stroke-width="2"/><rect x="440" y="202" width="30" height="18" rx="3" fill="#24170f"/><rect x="488" y="202" width="30" height="18" rx="3" fill="#24170f"/><rect x="432" y="176" width="96" height="14" rx="4" fill="#b3263a"/>
+    <!-- drip station -->
+    <path d="M356 214h34l-10 22h-14z" fill="#f8f4ee" stroke="#24170f" stroke-width="2"/><rect x="362" y="236" width="22" height="6" fill="#24170f"/><path d="M590 210c0-12 18-12 18 0v30h-18z" fill="#24170f"/><path d="M608 216c10 0 10 14 0 14" stroke="#24170f" stroke-width="3" fill="none"/>
+    <!-- table and chairs -->
+    <ellipse cx="160" cy="410" rx="110" ry="14" fill="#000" opacity=".12"/>
+    <rect x="80" y="330" width="160" height="12" rx="4" fill="#5b321b"/><rect x="154" y="342" width="12" height="64" fill="#3b2a20"/><rect x="120" y="402" width="80" height="8" rx="3" fill="#3b2a20"/>
+    <g><path d="M118 330c0-14 22-14 22 0" stroke="#24170f" stroke-width="2" fill="#f8f4ee"/><rect x="174" y="318" width="20" height="12" rx="3" fill="#b3263a"/></g>
+    <g><rect x="30" y="300" width="40" height="8" rx="3" fill="#b3263a"/><path d="M34 308l-6 100M66 308l6 100" stroke="#24170f" stroke-width="5"/><path d="M34 300V230" stroke="#24170f" stroke-width="5"/></g>
+    <g><rect x="260" y="300" width="40" height="8" rx="3" fill="#7f9a82"/><path d="M264 308l-6 100M296 308l6 100" stroke="#24170f" stroke-width="5"/><path d="M296 300V230" stroke="#24170f" stroke-width="5"/></g>
+    <!-- plant -->
+    <path d="M600 440v-40h30v40z" fill="#b3263a"/><g fill="#5d7f61"><path d="M614 400c-30-30-40-70-20-90 20 20 26 60 20 90z"/><path d="M618 400c10-40 30-60 22-90-22 16-28 60-22 90z" fill="#7f9a82"/></g>
+   </svg>
+  </div>
+  <div>
+   <div class="sh" style="margin-bottom:0"><div><span class="k">THE SPACE</span><h2>창이 큰 2층 바,<br>오래 머물러도 좋아요</h2></div></div>
+   <p style="font-size:16.5px;color:var(--mut);margin-top:16px;max-width:460px">오전엔 창으로 볕이 길게 들어오고, 오후엔 로스터 옆 바 자리에서 원두 볶는 모습을 볼 수 있어요. 노트북 작업 손님을 위해 자리마다 콘센트를 두었습니다.</p>
+   <div class="feat"><div><b>28석</b><span>바 8석 · 테이블 20석</span></div><div><b>Wi-Fi</b><span>자리마다 콘센트</span></div><div><b>P</b><span>건물 뒤 주차 6대</span></div><div><b>KR · EN</b><span>한국어·영어 주문</span></div></div>
+  </div>
+ </div>
+</section>
+
+<section class="contact" id="visit">
+ <div class="in">
+  <div class="sh"><div><span class="k">VISIT · ORDER</span><h2>오시는 길과 주문·예약</h2></div><p>원두 주문, 커핑 클래스 예약, 납품 상담을 한 번에 남겨 주세요. 영업시간 안에 답장 드려요.</p></div>
+  <div class="cgrid">
+   <div class="map">
+    <svg viewBox="0 0 560 330" role="img" aria-label="매장 위치를 표시한 간단한 지도 그림">
+     <rect width="560" height="330" fill="#3a281e"/>
+     <g fill="#463227"><rect x="20" y="20" width="150" height="90" rx="8"/><rect x="200" y="20" width="120" height="90" rx="8"/><rect x="350" y="20" width="190" height="90" rx="8"/><rect x="20" y="150" width="110" height="160" rx="8"/><rect x="160" y="150" width="180" height="70" rx="8"/><rect x="160" y="246" width="180" height="64" rx="8"/><rect x="370" y="150" width="170" height="160" rx="8"/></g>
+     <path d="M0 130h560M145 0v330M350 130v200M0 232h560" stroke="#6a5345" stroke-width="14"/>
+     <path d="M0 130h560M145 0v330" stroke="#c9b39c" stroke-width="2" stroke-dasharray="10 10"/>
+     <path d="M380 170c40 20 120 10 150 60" stroke="#5d7f61" stroke-width="22" stroke-linecap="round" fill="none" opacity=".6"/>
+     <g transform="translate(250 196)"><circle r="40" fill="#b3263a" opacity=".22"/><path d="M0 18c-16-18-24-28-24-40a24 24 0 0 1 48 0c0 12-8 22-24 40z" fill="#b3263a" stroke="#f8f4ee" stroke-width="3"/><circle cy="-22" r="8" fill="#f8f4ee"/></g>
+     <g font-family="Gothic A1" font-weight="800" font-size="20" fill="#f3e6d8"><text x="24" y="118">메인 로드</text><text x="156" y="318">2번 골목</text></g><g><rect x="282" y="144" width="148" height="34" rx="17" fill="#b3263a"/><text x="356" y="168" text-anchor="middle" font-family="Gothic A1" font-weight="800" font-size="18" fill="#fff">콩볕 로스터리</text></g>
+    </svg>
+    <div class="minfo">
+     <div><small>주소</small><span>세부시 OO로 00, 1~2층 (예시 주소)</span></div>
+     <div><small>영업</small><span>매일 08:00 – 20:00 · 로스팅 화·금 오전</span></div>
+     <div><small>연락</small><span>000-0000-0000 · 카카오톡 ID: example</span></div>
+    </div>
+   </div>
+   <form id="f" novalidate>
+    <div class="fb">
+     <h3>주문 · 예약 남기기</h3>
+     <p>실제 접수는 되지 않는 샘플 화면입니다.</p>
+     <div class="seg"><label><input type="radio" name="k" checked><span>원두 주문</span></label><label><input type="radio" name="k"><span>클래스 예약</span></label><label><input type="radio" name="k"><span>납품 상담</span></label></div>
+     <div class="fl"><div class="f"><label for="n">이름</label><input id="n" placeholder="홍길동"></div><div class="f"><label for="p">연락처</label><input id="p" placeholder="000-0000-0000"></div></div>
+     <div class="f"><label for="b">원두 / 클래스</label><select id="b"><option>예가체프 꽃밭 200g</option><option>캐러멜 사과 200g</option><option>코르디예라 아침 200g</option><option>볕 블렌드 200g</option><option>토요일 커핑 클래스</option></select></div>
+     <div class="f"><label for="m">요청 사항</label><textarea id="m" placeholder="분쇄 방식, 받는 날짜 등을 적어 주세요"></textarea></div>
+     <button class="btn c" type="submit">보내기 <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+    </div>
+    <div class="ok"><svg viewBox="0 0 64 64"><circle cx="32" cy="32" r="30" fill="#b3263a"/><path d="M19 33l9 9 17-18" stroke="#fff" stroke-width="5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg><h3>잘 받았어요</h3><p>영업시간 안에 남겨 주신 연락처로 답장 드릴게요.</p></div>
+   </form>
+  </div>
+ </div>
+</section>
+</main>
+<footer>
+ <div class="in">
+  <div><a class="logo" href="#top"><svg viewBox="0 0 48 48"><circle cx="24" cy="24" r="22" fill="#b3263a"/><ellipse cx="24" cy="24" rx="9.5" ry="13" fill="#5b321b" transform="rotate(28 24 24)"/><path d="M19 14c6 4 4 16 10 20" stroke="#f8f4ee" stroke-width="2" fill="none" stroke-linecap="round"/></svg><span><b>콩볕 로스터리</b><small>KONGBYEOT · CEBU</small></span></a></div>
+  <p>세부시 OO로 00 (예시 주소)<br>000-0000-0000 · 카카오톡 ID: example</p>
+  <p>매일 08:00 – 20:00<br>© 콩볕 로스터리</p>
+ </div>
+</footer>
+<script>
+document.querySelectorAll('.tabs button').forEach(function(b){b.addEventListener('click',function(){document.querySelectorAll('.tabs button').forEach(function(x){x.classList.remove('on')});document.querySelectorAll('.mlist').forEach(function(x){x.classList.remove('on')});b.classList.add('on');document.getElementById(b.dataset.t).classList.add('on')})});
+function tot(){var s=0;document.querySelectorAll('.seat output').forEach(function(o){s+=parseInt(o.value||o.textContent)*parseInt(o.dataset.p)});document.getElementById('ktot').textContent='₱'+s.toLocaleString('en-US')}
+document.querySelectorAll('.seat button').forEach(function(b){b.addEventListener('click',function(){var o=b.parentNode.querySelector('output');var v=parseInt(o.textContent)+parseInt(b.dataset.d);v=Math.max(0,Math.min(6,v));o.textContent=v+'명';tot()})});
+document.getElementById('f').addEventListener('submit',function(e){e.preventDefault();this.classList.add('done')});
+document.querySelector('.mbtn').addEventListener('click',function(){document.getElementById('beans').scrollIntoView({behavior:'smooth'})});
+</script>
+</body>
+</html>

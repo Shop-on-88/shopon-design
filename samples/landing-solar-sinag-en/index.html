@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sinag Solar Co. · Free Rooftop Solar Assessment in Metro Cebu</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#0d2140;--navy2:#163256;--cell:#1f4f8f;--cell2:#2d6bc0;--amber:#f5a524;--amber2:#ffc95c;--sun:#ff7a3d;--cloud:#f7f5ef;--sky:#e3edf7;--ink:#0f1a2b;--mut:#5a6578;--line:#d8dee8}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Manrope',sans-serif;color:var(--ink);background:var(--cloud);-webkit-font-smoothing:antialiased;line-height:1.6;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+button,input,select{font:inherit;color:inherit}
+.sr{font-family:'Sora',sans-serif}
+.in{max-width:1200px;margin:0 auto;padding:0 28px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;height:56px;padding:0 28px;border-radius:12px;font-weight:800;font-size:16px;cursor:pointer;border:0;transition:.2s;white-space:nowrap}
+.btn svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round}
+.btn.a{background:var(--amber);color:var(--navy);box-shadow:0 14px 28px -14px rgba(245,165,36,.9)}
+.btn.a:hover{background:var(--amber2)}
+.btn.g{background:transparent;color:#fff;border:1.5px solid rgba(255,255,255,.45)}
+.btn.g:hover{background:rgba(255,255,255,.08)}
+.btn.n{background:var(--navy);color:#fff}
+.btn.sm{height:44px;padding:0 18px;font-size:14.5px}
+/* header */
+header{position:absolute;left:0;right:0;top:0;z-index:30}
+header .in{display:flex;align-items:center;justify-content:space-between;height:84px;gap:20px}
+.logo{display:flex;align-items:center;gap:12px;color:#fff}
+.logo svg{width:42px;height:42px;flex:none}
+.logo b{font-family:'Sora';font-weight:800;font-size:21px;letter-spacing:-.02em;line-height:1}
+.logo small{display:block;font-size:11.5px;font-weight:700;letter-spacing:.2em;color:var(--amber2);margin-top:3px}
+nav{display:flex;gap:30px;color:#d5e0ef;font-weight:700;font-size:15px}
+nav a:hover{color:#fff}
+/* hero */
+.hero{position:relative;background:linear-gradient(180deg,#0b1c37 0%,#12305a 62%,#2a4f80 100%);color:#fff;overflow:hidden}
+.hero:before{content:"";position:absolute;inset:0;background:radial-gradient(640px 420px at 78% 30%,rgba(255,170,70,.35),transparent 70%)}
+.hero .in{position:relative;display:grid;grid-template-columns:1.02fr .98fr;gap:40px;align-items:center;padding-top:150px;padding-bottom:0}
+.pill{display:inline-flex;align-items:center;gap:10px;border:1.5px solid rgba(255,201,92,.5);border-radius:999px;padding:7px 16px 7px 8px;font-size:14px;font-weight:700;color:#ffe2a6}
+.pill i{font-style:normal;background:var(--amber);color:var(--navy);border-radius:999px;padding:3px 11px;font-size:12.5px;font-weight:800;letter-spacing:.08em}
+.hero h1{font-family:'Sora';font-weight:800;font-size:clamp(40px,5.1vw,66px);line-height:1.06;letter-spacing:-.04em;margin:24px 0 22px}
+.hero h1 em{font-style:normal;background:linear-gradient(90deg,#ffc95c,#ff7a3d);-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero .lead{font-size:18.5px;color:#cbd8ea;max-width:530px}
+.hero .acts{display:flex;gap:12px;flex-wrap:wrap;margin-top:32px}
+.ticks{display:flex;flex-wrap:wrap;gap:10px 24px;margin-top:30px;padding-bottom:84px}
+.ticks span{display:flex;align-items:center;gap:8px;font-weight:700;font-size:15px;color:#e3ebf6}
+.ticks svg{width:22px;height:22px;flex:none}
+.hart{position:relative;align-self:end}
+.hart svg{display:block;width:100%;height:auto;overflow:visible}
+/* strip */
+.strip{background:var(--amber);color:var(--navy)}
+.strip .in{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;padding-top:18px;padding-bottom:18px;font-weight:800;font-size:16px}
+.strip .in span{display:flex;align-items:center;gap:10px}
+.strip svg{width:22px;height:22px;fill:none;stroke:var(--navy);stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+section{padding:100px 0}
+.sh{max-width:680px;margin-bottom:48px}
+.sh .k{font-weight:800;font-size:13.5px;letter-spacing:.2em;color:var(--sun)}
+.sh h2{font-family:'Sora';font-weight:800;font-size:clamp(30px,3.8vw,46px);line-height:1.12;letter-spacing:-.035em;margin-top:10px}
+.sh p{font-size:17px;color:var(--mut);margin-top:14px}
+/* steps */
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;position:relative}
+.steps:before{content:"";position:absolute;left:8%;right:8%;top:44px;border-top:2px dashed #c4cfdf}
+.st{position:relative;background:#fff;border:1px solid var(--line);border-radius:20px;padding:26px 22px 24px}
+.st .ic{width:64px;height:64px;border-radius:18px;background:var(--navy);display:flex;align-items:center;justify-content:center;margin-bottom:18px;position:relative}
+.st .ic svg{width:32px;height:32px;fill:none;stroke:var(--amber2);stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.st .ic b{position:absolute;right:-10px;top:-10px;width:28px;height:28px;border-radius:50%;background:var(--amber);color:var(--navy);font-family:'Sora';font-size:13px;font-weight:800;display:flex;align-items:center;justify-content:center;border:3px solid var(--cloud)}
+.st h3{font-family:'Sora';font-weight:700;font-size:19px;letter-spacing:-.02em;margin-bottom:6px}
+.st p{font-size:15px;color:var(--mut)}
+/* calc */
+.calc{background:var(--navy);color:#fff;position:relative;overflow:hidden}
+.calc:before{content:"";position:absolute;right:-120px;top:-120px;width:520px;height:520px;border-radius:50%;background:radial-gradient(circle,rgba(245,165,36,.28),transparent 70%)}
+.calc .sh p{color:#b7c6dc}
+.cgrid{position:relative;display:grid;grid-template-columns:1fr 1fr;gap:32px;align-items:stretch}
+.cbox{background:var(--navy2);border:1px solid rgba(255,255,255,.12);border-radius:24px;padding:34px}
+.cbox label{display:block;font-weight:700;font-size:15px;color:#cbd8ea;margin-bottom:6px}
+.bill{font-family:'Sora';font-weight:800;font-size:54px;letter-spacing:-.03em;line-height:1.1}
+.bill small{font-size:18px;color:#9fb2cc;font-weight:600;margin-left:6px;letter-spacing:0}
+input[type=range]{-webkit-appearance:none;appearance:none;width:100%;height:10px;border-radius:9px;background:linear-gradient(90deg,var(--amber) var(--v,30%),rgba(255,255,255,.15) var(--v,30%));margin:26px 0 10px;outline:none}
+input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:30px;height:30px;border-radius:50%;background:#fff;border:6px solid var(--amber);cursor:pointer;box-shadow:0 4px 12px rgba(0,0,0,.35)}
+input[type=range]::-moz-range-thumb{width:20px;height:20px;border-radius:50%;background:#fff;border:6px solid var(--amber);cursor:pointer}
+.rng{display:flex;justify-content:space-between;font-size:13.5px;color:#9fb2cc;font-weight:700}
+.roof{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:26px}
+.roof label{margin:0;cursor:pointer}
+.roof input{position:absolute;opacity:0;pointer-events:none}
+.roof span{display:flex;align-items:center;justify-content:center;height:48px;border-radius:12px;border:1.5px solid rgba(255,255,255,.22);font-weight:700;font-size:14.5px;color:#dbe5f2;text-align:center}
+.roof input:checked+span{background:#fff;color:var(--navy);border-color:#fff}
+.est{margin-top:26px;padding-top:22px;border-top:1px dashed rgba(255,255,255,.22);display:grid;grid-template-columns:auto 1fr;gap:18px;align-items:center}.est small{display:block;font-size:13px;font-weight:700;color:#9fb2cc;letter-spacing:.04em}.est b{display:block;font-family:Sora;font-weight:800;font-size:28px;color:var(--amber2);white-space:nowrap}.est p{font-size:14px;color:#b7c6dc;line-height:1.5}
+.res{background:linear-gradient(160deg,#fff7e6,#ffe7b8);color:var(--navy);border-radius:24px;padding:34px;display:flex;flex-direction:column}
+.res small{font-weight:800;font-size:13px;letter-spacing:.16em;color:#a5661a}
+.kw{display:flex;align-items:baseline;gap:10px;margin:8px 0 4px}
+.kw b{font-family:'Sora';font-weight:800;font-size:76px;line-height:1;letter-spacing:-.04em}
+.kw span{font-family:'Sora';font-weight:700;font-size:24px}
+.panels{display:flex;flex-wrap:wrap;gap:5px;margin:18px 0 22px;min-height:40px}
+.panels i{width:30px;height:40px;border-radius:4px;background:linear-gradient(135deg,#2d6bc0,#163256);position:relative;box-shadow:inset 0 0 0 2px #c9d6e8}
+.panels i:after{content:"";position:absolute;inset:4px;background:linear-gradient(90deg,transparent 46%,rgba(255,255,255,.35) 46% 54%,transparent 54%),linear-gradient(0deg,transparent 30%,rgba(255,255,255,.3) 30% 36%,transparent 36% 64%,rgba(255,255,255,.3) 64% 70%,transparent 70%)}
+.rrow{display:flex;justify-content:space-between;gap:12px;padding:12px 0;border-top:1px solid rgba(13,33,64,.14);font-size:15.5px}
+.rrow span{color:#4a5568;font-weight:600}
+.rrow b{font-weight:800;text-align:right}
+.res p{font-size:13.5px;color:#6b5a3a;margin-top:auto;padding-top:16px;line-height:1.5}
+/* packages */
+.pk{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;align-items:stretch}
+.card{background:#fff;border:1px solid var(--line);border-radius:24px;padding:30px 28px;display:flex;flex-direction:column;position:relative}
+.card.f{background:var(--navy);color:#fff;border-color:var(--navy);transform:translateY(-12px);box-shadow:0 36px 50px -30px rgba(13,33,64,.7)}
+.card .tg{position:absolute;top:-14px;left:28px;background:var(--amber);color:var(--navy);font-weight:800;font-size:12.5px;letter-spacing:.08em;padding:5px 12px;border-radius:999px}
+.card .vis{height:96px;margin-bottom:18px}
+.card .vis svg{height:100%;width:auto}
+.card h3{font-family:'Sora';font-weight:800;font-size:23px;letter-spacing:-.02em}
+.card .for{font-size:14.5px;color:var(--mut);margin-top:2px}
+.card.f .for{color:#a9bbd4}
+.card .pr{margin:20px 0 4px;font-family:'Sora';font-weight:800;font-size:36px;letter-spacing:-.03em}
+.card .pr small{font-family:'Manrope';font-size:14px;font-weight:700;color:var(--mut);margin-left:4px;letter-spacing:0}
+.card.f .pr small{color:#a9bbd4}
+.card ul{list-style:none;display:grid;gap:9px;margin:18px 0 26px}
+.card li{display:flex;gap:10px;font-size:15px;font-weight:600}
+.card li svg{width:20px;height:20px;flex:none;margin-top:2px}
+.card .btn{margin-top:auto}
+.pnote{text-align:center;font-size:14px;color:var(--mut);margin-top:30px}
+/* included */
+.inc{background:var(--sky)}
+.igrid{display:grid;grid-template-columns:1.05fr .95fr;gap:48px;align-items:center}
+.iart{background:linear-gradient(180deg,#cfe0f1,#eef4fa);border-radius:28px;overflow:hidden}
+.iart svg{display:block;width:100%;height:auto}
+.ilist{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.ii{background:#fff;border-radius:18px;padding:20px;border:1px solid #cddbeb}
+.ii svg{width:34px;height:34px;fill:none;stroke:var(--cell);stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round;margin-bottom:10px}
+.ii h4{font-family:'Sora';font-weight:700;font-size:16.5px;letter-spacing:-.01em}
+.ii p{font-size:14px;color:var(--mut);margin-top:3px}
+/* faq */
+.fgrid{display:grid;grid-template-columns:.8fr 1.2fr;gap:56px}
+details{border-bottom:1px solid var(--line);padding:4px 0}
+summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:18px;padding:20px 0;font-family:'Sora';font-weight:700;font-size:18px;letter-spacing:-.02em}
+summary::-webkit-details-marker{display:none}
+summary i{flex:none;width:34px;height:34px;border-radius:50%;background:var(--navy);position:relative;transition:.2s}
+summary i:before,summary i:after{content:"";position:absolute;left:50%;top:50%;width:14px;height:2.5px;background:var(--amber2);transform:translate(-50%,-50%)}
+summary i:after{transform:translate(-50%,-50%) rotate(90deg);transition:.2s}
+details[open] summary i:after{transform:translate(-50%,-50%) rotate(0)}
+details p{font-size:16px;color:var(--mut);padding:0 50px 22px 0}
+.ask{background:var(--navy);color:#fff;border-radius:24px;padding:30px;margin-top:28px}
+.ask h4{font-family:'Sora';font-size:20px;font-weight:700;margin-bottom:6px}
+.ask p{font-size:15px;color:#b7c6dc;margin-bottom:18px}
+/* form */
+.book{background:linear-gradient(180deg,var(--cloud) 0%,var(--cloud) 30%,#0d2140 30%,#0d2140 100%);padding-top:0;padding-bottom:70px}
+.fwrap{display:grid;grid-template-columns:.9fr 1.1fr;background:#fff;border-radius:30px;overflow:hidden;box-shadow:0 50px 80px -40px rgba(13,33,64,.6)}
+.fl{background:linear-gradient(160deg,#ff9a4a,#f5a524);padding:44px 40px;color:var(--navy);position:relative;overflow:hidden}
+.fl h2{font-family:'Sora';font-weight:800;font-size:36px;line-height:1.12;letter-spacing:-.035em}
+.fl p{font-size:16.5px;margin-top:14px;font-weight:600;color:#3b2a10}
+.fl ul{list-style:none;margin-top:26px;display:grid;gap:12px}
+.fl li{display:flex;gap:12px;font-weight:700;font-size:15.5px}
+.fl li b{flex:none;width:28px;height:28px;border-radius:50%;background:var(--navy);color:var(--amber2);display:flex;align-items:center;justify-content:center;font-family:'Sora';font-size:13px}
+.fl svg.sun{position:absolute;right:-70px;bottom:-70px;width:260px;opacity:.35}
+form{padding:44px 40px}
+.frow{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.f{display:flex;flex-direction:column;gap:6px;margin-bottom:16px;min-width:0}
+.f label{font-weight:800;font-size:13.5px}
+.f input,.f select{width:100%;min-width:0;height:52px;border-radius:12px;border:1.5px solid var(--line);background:#fbfcfe;padding:0 14px;font-size:15.5px;outline:none}
+.f input:focus,.f select:focus{border-color:var(--cell2);background:#fff}
+.chk{display:flex;gap:10px;align-items:flex-start;font-size:14px;color:var(--mut);margin:6px 0 20px}
+.chk input{width:18px;height:18px;margin-top:3px;accent-color:var(--navy);flex:none}
+form .btn{width:100%}
+.ok{display:none;text-align:center;padding:40px 10px}
+.ok svg{width:72px;height:72px;margin:0 auto 18px;display:block}
+.ok h3{font-family:'Sora';font-size:26px;font-weight:800;margin-bottom:8px}
+.ok p{color:var(--mut)}
+form.done .fb{display:none}
+form.done .ok{display:block}
+footer{background:#0d2140;color:#9fb2cc;padding:30px 0 60px;font-size:14.5px}
+footer .in{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap;border-top:1px solid rgba(255,255,255,.12);padding-top:30px}
+.mcta{display:none}
+@media(max-width:1040px){.steps{grid-template-columns:1fr 1fr}.steps:before{display:none}.igrid,.fgrid{grid-template-columns:1fr}}
+@media(max-width:900px){nav{display:none}.hero .in{grid-template-columns:1fr;padding-top:120px}.ticks{padding-bottom:10px}.hart{max-width:560px;justify-self:center;width:100%}.cgrid{grid-template-columns:minmax(0,1fr)}.pk{grid-template-columns:minmax(0,1fr);max-width:480px;margin:0 auto}.card.f{transform:none}.fwrap{grid-template-columns:minmax(0,1fr)}}
+@media(max-width:560px){.est{grid-template-columns:1fr;gap:8px}.in{padding:0 18px}section{padding:72px 0}.hdr-b{display:none}.hero h1{font-size:40px}.hero .lead{font-size:16.5px}.hero .acts .btn{width:100%}.steps{grid-template-columns:1fr}.cbox,.res{padding:26px 22px}.bill{font-size:44px}.kw b{font-size:62px}.ilist{grid-template-columns:1fr}.frow{grid-template-columns:1fr}.fl,form{padding:32px 22px}.fl h2{font-size:30px}.fl svg.sun{display:none}details p{padding-right:0}summary{font-size:16.5px}.strip .in{font-size:14.5px}.mcta{display:flex;position:fixed;left:12px;right:12px;bottom:12px;z-index:50}.mcta .btn{width:100%}footer{padding-bottom:96px}}
+</style>
+</head>
+<body>
+<header>
+ <div class="in">
+  <a class="logo" href="#top"><svg viewBox="0 0 44 44"><circle cx="22" cy="22" r="9" fill="#f5a524"/><g stroke="#f5a524" stroke-width="3" stroke-linecap="round"><path d="M22 3v5M22 36v5M3 22h5M36 22h5M8.6 8.6l3.5 3.5M31.9 31.9l3.5 3.5M35.4 8.6l-3.5 3.5M12.1 31.9l-3.5 3.5"/></g><path d="M12 30h20l-3-7H15z" fill="#2d6bc0" stroke="#fff" stroke-width="1.5"/></svg><span><b>Sinag Solar</b><small>METRO CEBU</small></span></a>
+  <nav><a href="#how">How it works</a><a href="#size">Size guide</a><a href="#packages">Packages</a><a href="#faq">FAQ</a></nav>
+  <a class="btn a sm hdr-b" href="#book">Book free visit</a>
+ </div>
+</header>
+
+<main id="top">
+<section class="hero" style="padding:0">
+ <div class="in">
+  <div>
+   <span class="pill"><i>FREE</i>On-site roof assessment · homes &amp; small shops</span>
+   <h1>Your roof already gets the sun. <em>Let's put it to work.</em></h1>
+   <p class="lead">We visit, check your roof, your electric bill and your wiring, then hand you a clear written quote. No hard selling, no obligation to sign.</p>
+   <div class="acts"><a class="btn a" href="#book">Book my free assessment <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a><a class="btn g" href="#size">Try the size guide</a></div>
+   <div class="ticks">
+    <span><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="11" fill="#f5a524"/><path d="M7 12.5l3 3 7-7" stroke="#0d2140" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>Visit within the week</span>
+    <span><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="11" fill="#f5a524"/><path d="M7 12.5l3 3 7-7" stroke="#0d2140" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>Written quote in 3 days</span>
+    <span><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="11" fill="#f5a524"/><path d="M7 12.5l3 3 7-7" stroke="#0d2140" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>Net-metering paperwork help</span>
+   </div>
+  </div>
+  <div class="hart">
+   <svg viewBox="0 0 600 520" role="img" aria-label="Illustration of a two-storey house with solar panels on the roof under a rising sun, with palm trees">
+    <defs>
+     <radialGradient id="sunG" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#fff1c9"/><stop offset=".45" stop-color="#ffc95c"/><stop offset="1" stop-color="#ff7a3d"/></radialGradient>
+     <radialGradient id="halo" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#ffb347" stop-opacity=".55"/><stop offset="1" stop-color="#ffb347" stop-opacity="0"/></radialGradient>
+     <linearGradient id="pv" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#3a7bd5"/><stop offset=".5" stop-color="#1f4f8f"/><stop offset="1" stop-color="#0f2a52"/></linearGradient>
+     <linearGradient id="wall" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f7f2e6"/><stop offset="1" stop-color="#e2d8c4"/></linearGradient>
+     <linearGradient id="wall2" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#e4d9c3"/><stop offset="1" stop-color="#c9bba0"/></linearGradient>
+     <linearGradient id="roofG" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#a8462a"/><stop offset="1" stop-color="#7d2f1a"/></linearGradient>
+     <linearGradient id="win" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffd98a"/><stop offset="1" stop-color="#f5a524"/></linearGradient>
+     <linearGradient id="grass" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#3f7a4e"/><stop offset="1" stop-color="#24523a"/></linearGradient>
+     <linearGradient id="shine" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#fff" stop-opacity="0"/><stop offset=".5" stop-color="#fff" stop-opacity=".45"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient>
+     <pattern id="cells" width="22" height="16" patternUnits="userSpaceOnUse"><rect width="22" height="16" fill="url(#pv)"/><path d="M0 0H22M0 0V16" stroke="#cfe0f5" stroke-width="1.4" opacity=".6"/></pattern>
+    </defs>
+    <circle cx="430" cy="136" r="118" fill="url(#halo)"/>
+    <circle cx="430" cy="130" r="62" fill="url(#sunG)"/>
+    <g stroke="#ffc95c" stroke-width="5" stroke-linecap="round" opacity=".8"><path d="M430 34v-20M430 246v-20M334 130h-20M546 130h-20M362 62l-14-14M512 212l-14-14M498 62l14-14M348 212l14-14"/></g>
+    <g fill="#fff" opacity=".18"><ellipse cx="140" cy="90" rx="70" ry="16"/><ellipse cx="190" cy="76" rx="44" ry="14"/></g>
+    <!-- palms -->
+    <g><path d="M70 470c10-80 6-150-14-210" stroke="#5a3d24" stroke-width="12" fill="none" stroke-linecap="round"/><g fill="#2f6b45"><path d="M56 260c-40-20-70-6-86 18 30-6 56-4 86-18z"/><path d="M56 260c-10-40 6-64 34-76-8 30-14 52-34 76z"/><path d="M56 260c30-26 64-26 86-8-30 2-56 4-86 8z"/><path d="M56 260c-34-4-56 18-62 46 22-20 40-30 62-46z"/><path d="M56 260c24 4 46 26 50 54-18-20-34-34-50-54z"/></g></g>
+    <g><path d="M560 470c-6-60-2-110 12-150" stroke="#5a3d24" stroke-width="10" fill="none" stroke-linecap="round"/><g fill="#3f7a4e"><path d="M572 320c30-20 56-10 68 10-24-2-44-2-68-10z"/><path d="M572 320c-30-14-54-4-64 16 22-4 40-6 64-16z"/><path d="M572 320c4-30 22-46 44-50-10 22-22 36-44 50z"/><path d="M572 320c-8-28-30-40-52-40 14 18 30 30 52 40z"/></g></g>
+    <!-- ground -->
+    <path d="M0 470c150-20 450-20 600 0v50H0z" fill="url(#grass)"/>
+    <!-- house: side garage -->
+    <rect x="388" y="350" width="130" height="122" fill="url(#wall2)"/>
+    <path d="M378 352l75-52 75 52z" fill="url(#roofG)"/>
+    <rect x="408" y="390" width="90" height="82" rx="4" fill="#8a96a8"/><g stroke="#6c7889" stroke-width="2"><path d="M408 410h90M408 430h90M408 450h90"/></g>
+    <!-- main house -->
+    <rect x="130" y="290" width="260" height="182" fill="url(#wall)"/>
+    <path d="M118 298L182 198H398L422 298z" fill="url(#roofG)"/>
+    <path d="M182 198H398" stroke="#5e2212" stroke-width="6" stroke-linecap="round"/>
+    <path d="M114 298H426" stroke="#5e2212" stroke-width="8" stroke-linecap="round"/>
+    <polygon points="189.2,214 384.9,214 399.5,284 145.5,284" fill="url(#cells)" stroke="#dbe7f6" stroke-width="3"/>
+    <g stroke="#dbe7f6" stroke-width="3"><path d="M167.4 249.0H392.2"/><path d="M228.4 214L196.3 284"/><path d="M267.5 214L247.1 284"/><path d="M306.6 214L297.9 284"/><path d="M345.8 214L348.7 284"/></g>
+    <polygon points="189.2,214 384.9,214 399.5,284 145.5,284" fill="url(#shine)" opacity=".45"/>
+    <polygon points="189.2,214 384.9,214 399.5,284 145.5,284" fill="none" stroke="#0d2140" stroke-width="1" opacity=".4" transform="translate(0 4)"/>
+    <!-- windows -->
+    <g><rect x="160" y="320" width="64" height="56" rx="4" fill="url(#win)"/><path d="M192 320v56M160 348h64" stroke="#fff" stroke-width="4"/><rect x="156" y="376" width="72" height="8" rx="2" fill="#c9bba0"/></g>
+    <g><rect x="296" y="320" width="64" height="56" rx="4" fill="url(#win)"/><path d="M328 320v56M296 348h64" stroke="#fff" stroke-width="4"/><rect x="292" y="376" width="72" height="8" rx="2" fill="#c9bba0"/></g>
+    <rect x="236" y="396" width="52" height="76" rx="4" fill="#1f4f8f"/><circle cx="278" cy="436" r="3.5" fill="#ffc95c"/>
+    <rect x="226" y="390" width="72" height="8" rx="2" fill="#7d2f1a"/>
+    <!-- inverter + flow -->
+    <rect x="364" y="404" width="20" height="30" rx="3" fill="#f7f5ef" stroke="#163256" stroke-width="2"/><circle cx="374" cy="415" r="3" fill="#3fb37f"/>
+    <path d="M372 300v104" stroke="#163256" stroke-width="2.5" stroke-dasharray="5 5"/>
+    <!-- sun rays to panels -->
+    <g stroke="#ffc95c" stroke-width="3" stroke-dasharray="4 10" opacity=".9" stroke-linecap="round"><path d="M384 172L250 230"/><path d="M398 190L330 226"/></g>
+    <!-- bushes -->
+    <g fill="#2f6b45"><circle cx="140" cy="470" r="22"/><circle cx="168" cy="474" r="16"/><circle cx="360" cy="472" r="18"/></g>
+    <g fill="#f5a524"><circle cx="136" cy="462" r="4"/><circle cx="170" cy="468" r="3.5"/><circle cx="356" cy="466" r="3.5"/></g>
+   </svg>
+  </div>
+ </div>
+</section>
+<div class="strip"><div class="in"><span><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>Now booking site visits for December – January</span><span><svg viewBox="0 0 24 24"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>Cebu City · Mandaue · Lapu-Lapu · Talisay · Consolacion</span></div></div>
+
+<section id="how">
+ <div class="in">
+  <div class="sh"><span class="k">HOW IT WORKS</span><h2>From first message to switched-on panels</h2><p>Four simple steps. You only pay once you have read and agreed to the written quote.</p></div>
+  <div class="steps">
+   <div class="st"><div class="ic"><b>1</b><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4M8 14h3"/></svg></div><h3>Book a visit</h3><p>Pick a morning or afternoon slot. Send a photo of your latest electric bill if you have it.</p></div>
+   <div class="st"><div class="ic"><b>2</b><svg viewBox="0 0 24 24"><path d="M3 11l9-7 9 7"/><path d="M5 10v10h14V10"/><path d="M10 20v-5h4v5"/></svg></div><h3>Roof &amp; bill check</h3><p>We measure your roof, look at shading and check your main panel and wiring.</p></div>
+   <div class="st"><div class="ic"><b>3</b><svg viewBox="0 0 24 24"><path d="M6 3h9l4 4v14H6z"/><path d="M14 3v5h5M9 13h7M9 17h5"/></svg></div><h3>Written quote</h3><p>Within 3 working days: system size, parts list, timeline and the full price in pesos.</p></div>
+   <div class="st"><div class="ic"><b>4</b><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M5 5l2 2M17 17l2 2M19 5l-2 2M7 17l-2 2"/></svg></div><h3>Install &amp; switch on</h3><p>Most homes take 1–3 days. We help you file the net-metering application too.</p></div>
+  </div>
+ </div>
+</section>
+
+<section class="calc" id="size">
+ <div class="in">
+  <div class="sh"><span class="k">SIZE GUIDE</span><h2>What size might fit your home?</h2><p>Slide to your usual monthly electric bill. This gives a rough starting point only. Your actual quote depends on the roof visit.</p></div>
+  <div class="cgrid">
+   <div class="cbox">
+    <label for="r">My average monthly bill</label>
+    <div class="bill" id="billv">₱6,000<small>/ month</small></div>
+    <input type="range" id="r" min="2000" max="20000" step="500" value="6000" aria-label="Monthly electric bill in pesos">
+    <div class="rng"><span>₱2,000</span><span>₱20,000</span></div>
+    <label style="margin-top:26px">Roof type</label>
+    <div class="roof">
+     <label><input type="radio" name="rt" checked><span>Metal / GI</span></label>
+     <label><input type="radio" name="rt"><span>Concrete deck</span></label>
+     <label><input type="radio" name="rt"><span>Clay / tile</span></label>
+    </div>
+    <div class="est"><div><small>Rough monthly output</small><b id="kwh">≈ 480 kWh</b></div><p>Shade, roof angle and wiring are checked during the visit, so the final figure may differ.</p></div>
+   </div>
+   <div class="res" aria-live="polite">
+    <small>SUGGESTED STARTING SIZE</small>
+    <div class="kw"><b id="kw">4.0</b><span>kWp</span></div>
+    <div class="panels" id="pn"></div>
+    <div class="rrow"><span>Approx. number of panels</span><b id="np">7 panels</b></div>
+    <div class="rrow"><span>Roof space needed</span><b id="sp">about 18 m²</b></div>
+    <div class="rrow"><span>Typical package range</span><b id="pr">₱220,000 – ₱260,000</b></div>
+    <p>Rough guide for grid-tied systems without battery. Final size and price are set in your written quote after the site visit.</p>
+   </div>
+  </div>
+ </div>
+</section>
+
+<section id="packages">
+ <div class="in">
+  <div class="sh"><span class="k">PACKAGES</span><h2>Three starting points, fitted to your roof</h2><p>Every package is adjusted after the visit. Battery backup can be added to any of them.</p></div>
+  <div class="pk">
+   <div class="card">
+    <div class="vis"><svg viewBox="0 0 160 96"><g fill="url(#cells)" stroke="#9fb6d6" stroke-width="2"><rect x="10" y="20" width="44" height="60" rx="3"/><rect x="58" y="20" width="44" height="60" rx="3"/><rect x="106" y="20" width="44" height="60" rx="3"/></g></svg></div>
+    <h3>Home Starter · 3 kWp</h3><p class="for">For bills around ₱3,000 – ₱5,000</p>
+    <div class="pr">₱165,000<small>starting</small></div>
+    <ul><li><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="11" fill="#e3edf7"/><path d="M7 12.5l3 3 7-7" stroke="#1f4f8f" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>About 5–6 panels</li><li><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="11" fill="#e3edf7"/><path d="M7 12.5l3 3 7-7" stroke="#1f4f8f" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>Grid-tied inverter</li><li><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="11" fill="#e3edf7"/><path d="M7 12.5l3 3 7-7" stroke="#1f4f8f" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>Phone app monitoring setup</li></ul>
+    <a class="btn n" href="#book">Ask about this size</a>
+   </div>
+   <div class="card f"><span class="tg">FOR MOST FAMILIES</span>
+    <div class="vis"><svg viewBox="0 0 220 96"><g fill="url(#cells)" stroke="#cfe0f5" stroke-width="2"><rect x="6" y="4" width="40" height="42" rx="3"/><rect x="50" y="4" width="40" height="42" rx="3"/><rect x="94" y="4" width="40" height="42" rx="3"/><rect x="138" y="4" width="40" height="42" rx="3"/><rect x="6" y="50" width="40" height="42" rx="3"/><rect x="50" y="50" width="40" height="42" rx="3"/><rect x="94" y="50" width="40" height="42" rx="3"/><rect x="138" y="50" width="40" height="42" rx="3"/></g><circle cx="200" cy="20" r="12" fill="#f5a524"/></svg></div>
+    <h3>Family · 5 kWp</h3><p class="for">For bills around ₱6,000 – ₱9,000</p>
+    <div class="pr">₱265,000<small>starting</small></div>
+    <ul><li><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="11" fill="#f5a524"/><path d="M7 12.5l3 3 7-7" stroke="#0d2140" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>About 8–9 panels</li><li><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="11" fill="#f5a524"/><path d="M7 12.5l3 3 7-7" stroke="#0d2140" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>Hybrid-ready inverter</li><li><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="11" fill="#f5a524"/><path d="M7 12.5l3 3 7-7" stroke="#0d2140" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>One free panel-cleaning visit</li><li><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="11" fill="#f5a524"/><path d="M7 12.5l3 3 7-7" stroke="#0d2140" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>Net-metering filing help</li></ul>
+    <a class="btn a" href="#book">Ask about this size</a>
+   </div>
+   <div class="card">
+    <div class="vis"><svg viewBox="0 0 220 96"><g fill="url(#cells)" stroke="#9fb6d6" stroke-width="2"><rect x="4" y="8" width="32" height="38" rx="3"/><rect x="40" y="8" width="32" height="38" rx="3"/><rect x="76" y="8" width="32" height="38" rx="3"/><rect x="112" y="8" width="32" height="38" rx="3"/><rect x="148" y="8" width="32" height="38" rx="3"/><rect x="184" y="8" width="32" height="38" rx="3"/><rect x="4" y="50" width="32" height="38" rx="3"/><rect x="40" y="50" width="32" height="38" rx="3"/><rect x="76" y="50" width="32" height="38" rx="3"/><rect x="112" y="50" width="32" height="38" rx="3"/><rect x="148" y="50" width="32" height="38" rx="3"/><rect x="184" y="50" width="32" height="38" rx="3"/></g></svg></div>
+    <h3>Shop &amp; Office · 8 kWp</h3><p class="for">For bills around ₱10,000 – ₱16,000</p>
+    <div class="pr">₱410,000<small>starting</small></div>
+    <ul><li><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="11" fill="#e3edf7"/><path d="M7 12.5l3 3 7-7" stroke="#1f4f8f" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>About 13–14 panels</li><li><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="11" fill="#e3edf7"/><path d="M7 12.5l3 3 7-7" stroke="#1f4f8f" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>Daytime-load planning for shops</li><li><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="11" fill="#e3edf7"/><path d="M7 12.5l3 3 7-7" stroke="#1f4f8f" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>Staggered payment options</li></ul>
+    <a class="btn n" href="#book">Ask about this size</a>
+   </div>
+  </div>
+  <p class="pnote">Starting prices. Your final price is set in the written quote, and battery backup is quoted separately.</p>
+ </div>
+</section>
+
+<section class="inc">
+ <div class="in igrid">
+  <div class="iart">
+   <svg viewBox="0 0 560 420" role="img" aria-label="Illustration of the installation kit: a solar panel on mounting rails, an inverter, a phone showing the monitoring app and a permit clipboard">
+    <defs>
+     <radialGradient id="ih" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#fff4d6"/><stop offset=".35" stop-color="#ffd27a" stop-opacity=".8"/><stop offset="1" stop-color="#ffc95c" stop-opacity="0"/></radialGradient>
+     <linearGradient id="ifl" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#e8f0f8"/><stop offset="1" stop-color="#d3e1ef"/></linearGradient>
+     <linearGradient id="ibx" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#f4f6f9"/><stop offset="1" stop-color="#d9dfe7"/></linearGradient>
+     <linearGradient id="ibs" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#b9c3d0"/><stop offset="1" stop-color="#9aa6b5"/></linearGradient>
+     <linearGradient id="irl" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#8d99a8"/><stop offset=".5" stop-color="#e3e8ee"/><stop offset="1" stop-color="#7f8b9a"/></linearGradient>
+     <linearGradient id="iph" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1a2b47"/><stop offset="1" stop-color="#0d2140"/></linearGradient>
+     <linearGradient id="icb" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#c98a4b"/><stop offset="1" stop-color="#a86a32"/></linearGradient>
+    </defs>
+    <rect width="560" height="420" fill="url(#ifl)"/>
+    <circle cx="474" cy="86" r="66" fill="url(#ih)"/><circle cx="474" cy="86" r="26" fill="#ffc95c"/><circle cx="466" cy="78" r="9" fill="#fff4d6" opacity=".7"/>
+    <path d="M0 330c140-26 420-26 560 0v90H0z" fill="#c4d6e9"/>
+    <g fill="#0d2140" opacity=".14"><ellipse cx="240" cy="350" rx="190" ry="20"/><ellipse cx="456" cy="296" rx="70" ry="12"/><ellipse cx="478" cy="398" rx="46" ry="8"/><ellipse cx="96" cy="402" rx="64" ry="10"/></g>
+    <!-- rear legs & rail -->
+    <g stroke="url(#irl)" stroke-width="9" stroke-linecap="round"><path d="M112 196L118 346"/><path d="M290 142L300 318"/></g>
+    <path d="M100 348L330 312" stroke="#7f8b9a" stroke-width="8" stroke-linecap="round"/>
+    <!-- panel -->
+    <polygon points="80.0,200.0 320.0,130.0 370.0,242.0 130.0,312.0" fill="url(#cells)"/>
+    <g stroke="#dbe7f6" stroke-width="2.5"><path d="M120.0,188.3L170.0,300.3"/><path d="M160.0,176.7L210.0,288.7"/><path d="M200.0,165.0L250.0,277.0"/><path d="M240.0,153.3L290.0,265.3"/><path d="M280.0,141.7L330.0,253.7"/><path d="M96.7,237.3L336.7,167.3"/><path d="M113.3,274.7L353.3,204.7"/></g>
+    <polygon points="80.0,200.0 320.0,130.0 370.0,242.0 130.0,312.0" fill="none" stroke="#c9d6e8" stroke-width="6" stroke-linejoin="round"/>
+    <polygon points="94.5,202.1 178.5,177.6 170.0,249.7 114.8,265.8" fill="#fff" opacity=".18"/>
+    <!-- front legs -->
+    <g stroke="url(#irl)" stroke-width="9" stroke-linecap="round"><path d="M142 306L144 346"/><path d="M356 240L360 306"/></g>
+    <g fill="#5a6578"><circle cx="118" cy="346" r="6"/><circle cx="144" cy="346" r="6"/><circle cx="300" cy="318" r="6"/><circle cx="360" cy="306" r="6"/></g>
+    <!-- cable -->
+    <path d="M362 262C392 320 396 300 412 270" stroke="#0d2140" stroke-width="5" fill="none" stroke-linecap="round"/>
+    <path d="M370 262C404 330 412 300 420 278" stroke="#ff7a3d" stroke-width="5" fill="none" stroke-linecap="round"/>
+    <!-- inverter -->
+    <polygon points="404,168 430,154 512,154 486,168" fill="#ffffff"/>
+    <polygon points="486,168 512,154 512,274 486,288" fill="url(#ibs)"/>
+    <rect x="404" y="168" width="82" height="120" rx="4" fill="url(#ibx)"/>
+    <rect x="418" y="184" width="54" height="30" rx="4" fill="#0d2140"/>
+    <path d="M424 204l8-6 8 4 8-9 8 5 8-6" stroke="#3fd28f" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+    <circle cx="426" cy="230" r="4.5" fill="#3fb37f"/><circle cx="442" cy="230" r="4.5" fill="#f5a524"/>
+    <g stroke="#b9c3d0" stroke-width="3" stroke-linecap="round"><path d="M420 250h50M420 260h50M420 270h50"/></g>
+    <!-- phone -->
+    <g transform="translate(452 292) rotate(10) scale(.78)">
+     <rect x="0" y="0" width="74" height="132" rx="14" fill="url(#iph)"/>
+     <rect x="6" y="12" width="62" height="108" rx="8" fill="#f7f5ef"/>
+     <rect x="14" y="22" width="30" height="5" rx="2" fill="#0d2140"/>
+     <text x="14" y="46" font-family="Sora" font-weight="800" font-size="13" fill="#0d2140">4.2 kW</text>
+     <g fill="#f5a524"><rect x="14" y="88" width="7" height="20" rx="2"/><rect x="25" y="78" width="7" height="30" rx="2"/><rect x="36" y="70" width="7" height="38" rx="2"/><rect x="47" y="80" width="7" height="28" rx="2" fill="#ffc95c"/></g>
+     <path d="M14 64h40" stroke="#d8dee8" stroke-width="2"/>
+    </g>
+    <!-- clipboard -->
+    <g transform="translate(40 318) rotate(-8)">
+     <rect x="0" y="0" width="104" height="96" rx="8" fill="url(#icb)"/>
+     <rect x="8" y="12" width="88" height="80" rx="3" fill="#ffffff"/>
+     <rect x="34" y="-6" width="36" height="16" rx="4" fill="#5a6578"/>
+     <g stroke="#1f4f8f" stroke-width="2.5" stroke-linecap="round" fill="none"><path d="M18 30l4 4 7-7M18 50l4 4 7-7M18 70l4 4 7-7"/></g>
+     <g stroke="#c4cfdf" stroke-width="4" stroke-linecap="round"><path d="M38 31h46M38 51h40M38 71h44"/></g>
+    </g>
+   </svg>
+  </div>
+  <div>
+   <div class="sh" style="margin-bottom:30px"><span class="k">WHAT'S INCLUDED</span><h2>One crew, from roof to paperwork</h2></div>
+   <div class="ilist">
+    <div class="ii"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="12" rx="1"/><path d="M3 10h18M9 4v12M15 4v12M8 20h8M12 16v4"/></svg><h4>Panels &amp; mounting</h4><p>Rails and clamps matched to metal, concrete or tile roofs.</p></div>
+    <div class="ii"><svg viewBox="0 0 24 24"><rect x="5" y="3" width="14" height="18" rx="2"/><path d="M9 8h6M9 12h6"/><circle cx="12" cy="17" r="1.5"/></svg><h4>Inverter &amp; wiring</h4><p>Neat conduit runs, breakers and labelling at your main panel.</p></div>
+    <div class="ii"><svg viewBox="0 0 24 24"><rect x="7" y="2" width="10" height="20" rx="2"/><path d="M10 18h4M9.5 9.5l2 2 3-4"/></svg><h4>App monitoring</h4><p>We set it up on your phone and show you how to read it.</p></div>
+    <div class="ii"><svg viewBox="0 0 24 24"><path d="M6 3h9l4 4v14H6z"/><path d="M14 3v5h5M9 13l2 2 4-4"/></svg><h4>Permit &amp; net-metering</h4><p>We prepare the forms and drawings your utility asks for.</p></div>
+    <div class="ii"><svg viewBox="0 0 24 24"><path d="M4 20c4-1 6-4 6-8M14 4c3 3 6 3 6 3s0 3-3 6-6 3-6 3"/><path d="M10 12l4-4"/></svg><h4>First cleaning visit</h4><p>Included with Family and Shop packages, about six months in.</p></div>
+    <div class="ii"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><h4>Clear timeline</h4><p>Install dates in writing, with a text update the day before.</p></div>
+   </div>
+  </div>
+ </div>
+</section>
+
+<section id="faq">
+ <div class="in fgrid">
+  <div>
+   <div class="sh" style="margin-bottom:0"><span class="k">FAQ</span><h2>Questions we hear on every visit</h2></div>
+   <div class="ask"><h4>Still unsure?</h4><p>Send us a photo of your roof and bill. We'll reply with what we can already tell.</p><a class="btn a sm" href="#book">Message the team</a></div>
+  </div>
+  <div>
+   <details open><summary>Will the panels work during a brownout?<i></i></summary><p>A grid-tied system switches off during a brownout for safety. If you want power during outages, we can quote a hybrid inverter with battery backup.</p></details>
+   <details><summary>What happens in the rainy season?<i></i></summary><p>Panels still produce on cloudy days, just less. Your quote shows a simple month-by-month estimate so you know what to expect.</p></details>
+   <details><summary>Is my roof strong enough?<i></i></summary><p>That's exactly what the free visit checks. If a part of the roof needs repair first, we'll tell you before you spend anything.</p></details>
+   <details><summary>Do you offer installment payments?<i></i></summary><p>Yes, staggered payments are available on most packages. We explain the options together with your written quote.</p></details>
+   <details><summary>How long does installation take?<i></i></summary><p>Most homes take 1–3 days on the roof. Net-metering approval by the utility can take longer, and we follow it up for you.</p></details>
+  </div>
+ </div>
+</section>
+
+<section class="book" id="book">
+ <div class="in">
+  <div class="fwrap">
+   <div class="fl">
+    <h2>Book your free roof assessment</h2>
+    <p>Takes one minute. We'll text you to confirm a visit time.</p>
+    <ul><li><b>1</b>Fill in the form</li><li><b>2</b>We text to confirm a date</li><li><b>3</b>A 45-minute visit at your home or shop</li><li><b>4</b>Written quote within 3 working days</li></ul>
+    <svg class="sun" viewBox="0 0 260 260"><circle cx="130" cy="130" r="60" fill="#fff"/><g stroke="#fff" stroke-width="12" stroke-linecap="round"><path d="M130 10v30M130 220v30M10 130h30M220 130h30M45 45l21 21M194 194l21 21M215 45l-21 21M66 194l-21 21"/></g></svg>
+   </div>
+   <form id="f" novalidate>
+    <div class="fb">
+     <div class="frow"><div class="f"><label for="n">Full name</label><input id="n" placeholder="Juan dela Cruz"></div><div class="f"><label for="m">Mobile number</label><input id="m" placeholder="0900 000 0000"></div></div>
+     <div class="frow"><div class="f"><label for="c">City</label><select id="c"><option>Cebu City</option><option>Mandaue</option><option>Lapu-Lapu</option><option>Talisay</option><option>Consolacion</option></select></div><div class="f"><label for="t">Property</label><select id="t"><option>House</option><option>Shop / store</option><option>Small office</option><option>Apartment building</option></select></div></div>
+     <div class="frow"><div class="f"><label for="b">Monthly electric bill</label><select id="b"><option>Below ₱3,000</option><option selected>₱3,000 – ₱6,000</option><option>₱6,000 – ₱10,000</option><option>₱10,000 – ₱16,000</option><option>Above ₱16,000</option></select></div><div class="f"><label for="d">Preferred visit</label><select id="d"><option>Weekday morning</option><option>Weekday afternoon</option><option>Saturday morning</option></select></div></div>
+     <label class="chk"><input type="checkbox" checked>I'm interested in battery backup for brownouts too</label>
+     <button class="btn a" type="submit">Book my free assessment <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+     <p style="font-size:13.5px;color:var(--mut);margin-top:12px;text-align:center">We only use your number to confirm your visit.</p>
+    </div>
+    <div class="ok"><svg viewBox="0 0 72 72"><circle cx="36" cy="36" r="34" fill="#f5a524"/><path d="M22 37l10 10 18-20" stroke="#0d2140" stroke-width="5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg><h3>Request received</h3><p>We'll text you within the day to confirm your visit time.</p></div>
+   </form>
+  </div>
+ </div>
+</section>
+</main>
+<footer><div class="in"><span>© Sinag Solar Co. · Metro Cebu</span><span>0900-000-0000 · hello@example.com</span><span>Mon – Sat · 8:00 AM – 6:00 PM</span></div></footer>
+<div class="mcta"><a class="btn a" href="#book">Book free assessment</a></div>
+<script>
+var r=document.getElementById('r');
+function upd(){var b=+r.value;var kwh=b/12.5;var kw=Math.max(2,Math.round(kwh/120*2)/2);var n=Math.ceil(kw*1000/580);var lo=Math.round(kw*52000/5000)*5000,hi=Math.round(kw*62000/5000)*5000;
+document.getElementById('billv').innerHTML='₱'+b.toLocaleString('en-US')+'<small>/ month</small>';
+document.getElementById('kw').textContent=kw.toFixed(1);
+document.getElementById('np').textContent=n+' panels';document.getElementById('kwh').textContent='≈ '+Math.round(kw*120)+' kWh';
+document.getElementById('sp').textContent='about '+Math.round(n*2.6)+' m²';
+document.getElementById('pr').textContent='₱'+lo.toLocaleString('en-US')+' – ₱'+hi.toLocaleString('en-US');
+document.getElementById('pn').innerHTML=Array(n+1).join('<i></i>');
+r.style.setProperty('--v',((b-2000)/18000*100)+'%')}
+r.addEventListener('input',upd);upd();
+document.getElementById('f').addEventListener('submit',function(e){e.preventDefault();this.classList.add('done')});
+</script>
+</body>
+</html>
