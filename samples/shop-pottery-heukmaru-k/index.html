@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>흙마루 도예공방 · 손으로 빚은 생활 그릇과 물레 클래스</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Hahmlet:wght@300;500;700;800&family=IBM+Plex+Sans+KR:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--clay:#ece3d3;--clay2:#e2d6c1;--paper:#f6f1e7;--iron:#3a2820;--iron2:#5a4034;--ash:#7b7a45;--ash2:#a3a26a;--rust:#b0583a;--line:rgba(58,40,32,.18)}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'IBM Plex Sans KR',sans-serif;background:var(--clay);color:var(--iron);word-break:keep-all;-webkit-font-smoothing:antialiased;line-height:1.7;overflow-x:hidden;
+ background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .23 0 0 0 0 .16 0 0 0 0 .12 0 0 0 .07 0'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)'/%3E%3C/svg%3E")}
+a{color:inherit;text-decoration:none}
+img,svg{display:block}
+.serif{font-family:'Hahmlet',serif}
+.in{max-width:1240px;margin:0 auto;padding:0 32px}
+/* header */
+.hd{position:sticky;top:0;z-index:30;background:rgba(236,227,211,.9);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.hd .in{display:flex;align-items:center;justify-content:space-between;height:76px;gap:20px}
+.logo{display:flex;align-items:center;gap:12px}
+.logo svg{width:40px;height:40px}
+.logo b{font-family:'Hahmlet',serif;font-weight:800;font-size:23px;letter-spacing:-.01em}
+.logo span{display:block;font-size:11px;letter-spacing:.28em;color:var(--iron2);line-height:1}
+.nav{display:flex;gap:34px;font-size:15px;font-weight:500}
+.nav a{position:relative;padding:4px 0}
+.nav a:after{content:'';position:absolute;left:0;right:100%;bottom:-2px;height:2px;background:var(--rust);transition:.25s}
+.nav a:hover:after{right:0}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;height:50px;padding:0 24px;border-radius:999px;background:var(--iron);color:var(--paper);font-weight:600;font-size:15px;border:0;cursor:pointer;transition:.2s;font-family:inherit}
+.btn:hover{background:var(--rust)}
+.btn.ghost{background:transparent;color:var(--iron);border:1.5px solid var(--iron)}
+.btn.ghost:hover{background:var(--iron);color:var(--paper)}
+.btn svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.hd .btn{height:44px;font-size:14px}
+.menu-t{display:none;background:none;border:0;width:44px;height:44px;cursor:pointer}
+.menu-t svg{width:26px;height:26px;stroke:var(--iron);stroke-width:2;fill:none}
+/* hero */
+.hero{position:relative;padding:64px 0 90px;overflow:hidden}
+.hero .in{display:grid;grid-template-columns:1.02fr 1fr;gap:40px;align-items:center}
+.kick{display:inline-flex;align-items:center;gap:10px;font-size:13px;font-weight:600;letter-spacing:.2em;color:var(--rust)}
+.kick:before{content:'';width:34px;height:1.5px;background:var(--rust)}
+.hero h1{font-family:'Hahmlet',serif;font-weight:800;font-size:clamp(44px,6.1vw,88px);line-height:1.12;letter-spacing:-.035em;margin:22px 0 26px}
+.hero h1 em{font-style:normal;font-weight:300;color:var(--ash)}
+.hero p.lead{font-size:18px;color:var(--iron2);max-width:500px}
+.hero .acts{display:flex;gap:12px;margin-top:36px;flex-wrap:wrap}
+.facts{display:flex;gap:0;margin-top:52px;border-top:1px solid var(--line);max-width:540px}
+.facts div{flex:1;padding:18px 0 0}
+.facts div+div{padding-left:22px;border-left:1px solid var(--line);margin-left:22px}
+.facts b{font-family:'Hahmlet',serif;font-size:30px;font-weight:700;display:block;line-height:1.1}
+.facts span{font-size:13px;color:var(--iron2)}
+.hero-art{position:relative}
+.hero-art svg{width:100%;height:auto}
+.tag{position:absolute;background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:12px 16px;font-size:13px;box-shadow:0 14px 30px rgba(58,40,32,.12)}
+.tag b{display:block;font-family:'Hahmlet',serif;font-size:16px}
+.tag.t1{left:-3%;bottom:-4%}
+.tag.t2{right:2%;top:8%}
+.vert{position:absolute;right:-4px;top:110px;writing-mode:vertical-rl;font-family:'Hahmlet',serif;font-size:13px;letter-spacing:.5em;color:var(--iron2);opacity:.7}
+/* sections */
+section{padding:110px 0}
+.sh{display:flex;justify-content:space-between;align-items:flex-end;gap:30px;margin-bottom:50px;flex-wrap:wrap}
+.sh h2{font-family:'Hahmlet',serif;font-weight:700;font-size:clamp(32px,3.8vw,50px);line-height:1.22;letter-spacing:-.025em;margin-top:14px}
+.sh p{max-width:420px;color:var(--iron2);font-size:16px}
+/* process */
+.proc{background:var(--iron);color:var(--clay)}
+.proc .kick{color:var(--ash2)}.proc .kick:before{background:var(--ash2)}
+.proc .sh p{color:#cdbfaa}
+.steps{display:grid;grid-template-columns:repeat(5,1fr);gap:0;border-top:1px solid rgba(236,227,211,.2)}
+.step{padding:30px 22px 10px;border-right:1px solid rgba(236,227,211,.2);position:relative}
+.step:last-child{border-right:0}
+.step i{font-style:normal;font-family:'Hahmlet',serif;font-size:14px;color:var(--ash2);letter-spacing:.1em}
+.step svg{width:76px;height:76px;margin:18px 0 20px}
+.step h3{font-family:'Hahmlet',serif;font-size:22px;font-weight:700;margin-bottom:6px}
+.step p{font-size:14px;color:#cdbfaa}
+.step small{display:inline-block;margin-top:14px;font-size:12px;padding:4px 10px;border:1px solid rgba(236,227,211,.3);border-radius:999px;color:#e5d9c6}
+/* shop */
+.filters{display:flex;gap:8px;flex-wrap:wrap}
+.filters button{height:40px;padding:0 18px;border-radius:999px;border:1.5px solid var(--line);background:transparent;font-family:inherit;font-size:14px;font-weight:500;color:var(--iron);cursor:pointer;transition:.2s}
+.filters button[aria-pressed=true]{background:var(--iron);color:var(--paper);border-color:var(--iron)}
+.goods{display:grid;grid-template-columns:repeat(4,1fr);gap:26px}
+.good{background:var(--paper);border-radius:20px;overflow:hidden;border:1px solid var(--line);transition:.3s}
+.good:hover{transform:translateY(-6px);box-shadow:0 22px 40px rgba(58,40,32,.13)}
+.good .ph{aspect-ratio:1/1;position:relative}
+.good .ph svg{width:100%;height:100%}
+.good .ph .lbl{position:absolute;left:14px;top:14px;font-size:12px;font-weight:600;padding:4px 10px;border-radius:999px;background:rgba(246,241,231,.92);color:var(--iron)}
+.good .bd{padding:18px 20px 20px}
+.good h3{font-family:'Hahmlet',serif;font-size:19px;font-weight:700}
+.good .meta{font-size:13px;color:var(--iron2);margin:2px 0 12px}
+.good .row{display:flex;justify-content:space-between;align-items:center}
+.good .pr{font-family:'Hahmlet',serif;font-size:20px;font-weight:700}
+.add{width:40px;height:40px;border-radius:50%;border:1.5px solid var(--iron);background:transparent;cursor:pointer;display:grid;place-items:center;transition:.2s}
+.add svg{width:18px;height:18px;stroke:var(--iron);stroke-width:2;fill:none}
+.add.on{background:var(--ash);border-color:var(--ash)}
+.add.on svg{stroke:#fff}
+.good.hide{display:none}
+.cartbar{margin-top:34px;display:flex;justify-content:space-between;align-items:center;gap:20px;padding:18px 24px;border-radius:16px;background:var(--clay2);font-size:15px;flex-wrap:wrap}
+.cartbar b{font-family:'Hahmlet',serif;font-size:19px}
+/* glaze */
+.glaze{display:grid;grid-template-columns:1.1fr 1fr;gap:60px;align-items:center}
+.swatches{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+.sw{border-radius:18px;padding:20px;min-height:170px;display:flex;flex-direction:column;justify-content:flex-end;position:relative;overflow:hidden;color:#fff}
+.sw svg{position:absolute;inset:0;width:100%;height:100%}
+.sw b{position:relative;font-family:'Hahmlet',serif;font-size:21px}
+.sw span{position:relative;font-size:13px;opacity:.92}
+.glaze .txt h2{font-family:'Hahmlet',serif;font-size:clamp(32px,3.6vw,48px);line-height:1.25;letter-spacing:-.025em;margin:14px 0 22px}
+.glaze .txt p{color:var(--iron2);margin-bottom:16px}
+.care{margin-top:26px;border-top:1px solid var(--line)}
+.care li{list-style:none;display:flex;gap:14px;padding:14px 0;border-bottom:1px solid var(--line);font-size:15px}
+.care li b{min-width:96px;font-weight:600}
+/* class */
+.class{background:var(--paper)}
+.cls-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:22px}
+.cls{border:1.5px solid var(--line);border-radius:22px;padding:28px;cursor:pointer;transition:.2s;background:var(--clay);display:flex;flex-direction:column}
+.cls:hover{border-color:var(--iron2)}
+.cls[aria-checked=true]{border-color:var(--iron);background:var(--iron);color:var(--clay)}
+.cls[aria-checked=true] .cmeta,.cls[aria-checked=true] li{color:#d9ccb8}
+.cls .top{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:18px}
+.cls .top svg{width:60px;height:60px}
+.cls .lv{font-size:12px;font-weight:600;padding:4px 10px;border-radius:999px;border:1px solid currentColor}
+.cls h3{font-family:'Hahmlet',serif;font-size:25px;font-weight:700}
+.cmeta{font-size:14px;color:var(--iron2);margin:4px 0 16px}
+.cls ul{margin-bottom:22px;flex:1}
+.cls li{list-style:none;font-size:14px;color:var(--iron2);padding-left:18px;position:relative;margin-bottom:6px}
+.cls li:before{content:'';position:absolute;left:0;top:10px;width:7px;height:7px;border-radius:50%;background:var(--rust)}
+.cls .pr{font-family:'Hahmlet',serif;font-size:28px;font-weight:700}
+.cls .pr small{font-size:14px;font-weight:500;font-family:'IBM Plex Sans KR'}
+.book{margin-top:30px;display:grid;grid-template-columns:1.3fr 1fr;gap:26px;background:var(--clay2);border-radius:24px;padding:30px}
+.days{display:grid;grid-template-columns:repeat(7,1fr);gap:8px;margin-top:12px}
+.day{border:1.5px solid var(--line);background:var(--paper);border-radius:12px;padding:10px 0;text-align:center;font-family:inherit;cursor:pointer;color:var(--iron);transition:.15s}
+.day small{display:block;font-size:12px;color:var(--iron2)}
+.day b{font-family:'Hahmlet',serif;font-size:19px}
+.day[aria-pressed=true]{background:var(--rust);border-color:var(--rust);color:#fff}
+.day[aria-pressed=true] small{color:#fbe3d8}
+.day:disabled{opacity:.4;cursor:not-allowed;text-decoration:line-through}
+.times{display:flex;gap:8px;margin-top:14px;flex-wrap:wrap}
+.times button{height:42px;padding:0 16px;border-radius:10px;border:1.5px solid var(--line);background:var(--paper);font-family:inherit;font-size:14px;cursor:pointer;color:var(--iron)}
+.times button[aria-pressed=true]{border-color:var(--iron);background:var(--iron);color:var(--paper)}
+.lab{font-size:13px;font-weight:600;letter-spacing:.08em;color:var(--iron2)}
+.sum{background:var(--paper);border-radius:18px;padding:22px;display:flex;flex-direction:column;gap:10px}
+.sum .r{display:flex;justify-content:space-between;font-size:14px;border-bottom:1px dashed var(--line);padding-bottom:8px}
+.qty{display:flex;align-items:center;gap:10px}
+.qty button{width:32px;height:32px;border-radius:50%;border:1.5px solid var(--iron);background:none;cursor:pointer;font-size:17px;color:var(--iron);line-height:1}
+.sum .tot{display:flex;justify-content:space-between;align-items:baseline;margin-top:4px}
+.sum .tot b{font-family:'Hahmlet',serif;font-size:28px}
+.okmsg{display:none;font-size:14px;color:var(--ash);font-weight:600}
+.okmsg.on{display:block}
+/* custom order */
+.custom .in{display:grid;grid-template-columns:1fr 1.05fr;gap:70px;align-items:center}
+.custom-art{background:var(--iron);border-radius:30px;padding:20px;position:relative}
+.custom-art svg{width:100%;height:auto}
+.custom h2{font-family:'Hahmlet',serif;font-size:clamp(32px,3.6vw,48px);line-height:1.25;letter-spacing:-.025em;margin:14px 0 20px}
+.custom p{color:var(--iron2)}
+.flow{margin:30px 0 34px;display:grid;gap:12px}
+.flow div{display:flex;gap:16px;align-items:center;padding:16px 20px;border:1px solid var(--line);border-radius:14px;background:var(--paper)}
+.flow i{font-style:normal;font-family:'Hahmlet',serif;font-weight:700;color:var(--rust);font-size:18px;min-width:30px}
+.flow b{font-weight:600;min-width:110px}
+.flow span{font-size:14px;color:var(--iron2)}
+/* visit */
+.visit{background:var(--clay2)}
+.visit .in{display:grid;grid-template-columns:1fr 1fr;gap:40px}
+.map{border-radius:24px;overflow:hidden;background:var(--paper);border:1px solid var(--line);align-self:center}
+.map svg{width:100%;height:auto}
+.vinfo h2{font-family:'Hahmlet',serif;font-size:clamp(30px,3.4vw,44px);line-height:1.25;margin:14px 0 26px;letter-spacing:-.02em}
+.hours{border-top:1.5px solid var(--iron)}
+.hours div{display:flex;justify-content:space-between;padding:14px 0;border-bottom:1px solid var(--line);font-size:15px}
+.hours div span:last-child{font-weight:600}
+.contact{margin-top:26px;display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.contact div{background:var(--paper);border-radius:14px;padding:16px 18px;font-size:14px}
+.contact b{display:block;font-size:12px;letter-spacing:.12em;color:var(--iron2);font-weight:600}
+/* faq */
+.faq{max-width:860px;margin:0 auto}
+.q{border-bottom:1px solid var(--line)}
+.q button{width:100%;text-align:left;background:none;border:0;padding:24px 0;font-family:'Hahmlet',serif;font-size:20px;font-weight:500;color:var(--iron);cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:20px}
+.q button svg{width:22px;height:22px;stroke:var(--iron);stroke-width:2;fill:none;transition:.25s;flex:none}
+.q.on button svg{transform:rotate(45deg)}
+.q .a{max-height:0;overflow:hidden;transition:max-height .35s;color:var(--iron2);font-size:15px}
+.q.on .a{max-height:200px}
+.q .a p{padding:0 0 24px}
+/* footer */
+.ft{background:var(--iron);color:#cdbfaa;padding:70px 0 40px;font-size:14px}
+.ft .in{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:40px}
+.ft .logo b{color:var(--clay)}
+.ft .logo span{color:#b5a58e}
+.ft h4{font-size:12px;letter-spacing:.2em;color:var(--ash2);margin-bottom:12px}
+.ft p{margin-bottom:4px}
+.ft .cp{grid-column:1/-1;border-top:1px solid rgba(236,227,211,.15);padding-top:22px;margin-top:20px;font-size:12px;color:#9a8b78}
+/* responsive */
+@media(max-width:1080px){.goods{grid-template-columns:repeat(2,1fr)}.steps{grid-template-columns:repeat(3,1fr)}.step:nth-child(3){border-right:0}.cls-grid{grid-template-columns:1fr}.book{grid-template-columns:1fr}}
+@media(max-width:860px){
+ .in{padding:0 20px}.nav,.hd .btn{display:none}.menu-t{display:block}
+ .nav.open{display:flex;position:absolute;top:76px;left:0;right:0;flex-direction:column;gap:0;background:var(--clay);border-bottom:1px solid var(--line);padding:6px 20px 16px}
+ .nav.open a{padding:12px 0;border-bottom:1px solid var(--line)}
+ .hero{padding:36px 0 60px}.hero .in{grid-template-columns:1fr;gap:20px}
+ .hero h1{font-size:44px}.kick{letter-spacing:.12em;font-size:12px}.hero p.lead{font-size:16px}.vert{display:none}
+ .tag{padding:9px 12px;font-size:12px}.tag b{font-size:14px}
+ section{padding:76px 0}
+ .steps{grid-template-columns:1fr 1fr}.step{border-right:0;border-bottom:1px solid rgba(236,227,211,.2);padding:22px 14px}.step:nth-child(odd){border-right:1px solid rgba(236,227,211,.2)}.step svg{width:56px;height:56px;margin:10px 0 12px}.step h3{font-size:19px}
+ .glaze,.custom .in,.visit .in{grid-template-columns:1fr;gap:36px}
+ .goods{gap:14px}.good .bd{padding:14px}.good h3{font-size:16px}.good .pr{font-size:17px}.good .meta{font-size:12px;margin-bottom:8px}.add{width:34px;height:34px}
+ .sw{min-height:130px;padding:16px}.sw b{font-size:18px}
+ .days{grid-template-columns:repeat(4,1fr)}
+ .book{padding:20px}
+ .flow b{min-width:auto}.flow div{flex-wrap:wrap;gap:4px 14px}
+ .contact{grid-template-columns:1fr}
+ .q button{font-size:17px}
+ .ft .in{grid-template-columns:1fr;gap:26px}
+ .facts b{font-size:24px}.facts div+div{padding-left:14px;margin-left:14px}
+}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+ <defs>
+  <filter id="grain" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency="1.3" numOctaves="2" result="t"/><feColorMatrix in="t" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 .22 0" result="g"/><feComposite in="g" in2="SourceGraphic" operator="in" result="m"/><feBlend in="SourceGraphic" in2="m" mode="multiply"/></filter>
+  <filter id="soft" x="-20%" y="-20%" width="140%" height="150%"><feDropShadow dx="0" dy="16" stdDeviation="14" flood-color="#3a2820" flood-opacity=".22"/></filter>
+  <linearGradient id="gIron" x1="0" x2="1"><stop offset="0" stop-color="#2a1c16"/><stop offset=".45" stop-color="#5a4034"/><stop offset="1" stop-color="#22160f"/></linearGradient>
+  <linearGradient id="gWhite" x1="0" x2="1"><stop offset="0" stop-color="#d9cfbf"/><stop offset=".4" stop-color="#f8f3ea"/><stop offset="1" stop-color="#cbbfac"/></linearGradient>
+  <linearGradient id="gAsh" x1="0" x2="1"><stop offset="0" stop-color="#5b5a2f"/><stop offset=".45" stop-color="#9c9b60"/><stop offset="1" stop-color="#4c4b26"/></linearGradient>
+  <linearGradient id="gRust" x1="0" x2="1"><stop offset="0" stop-color="#7d3522"/><stop offset=".45" stop-color="#c46a48"/><stop offset="1" stop-color="#6b2d1c"/></linearGradient>
+  <linearGradient id="gBisque" x1="0" x2="1"><stop offset="0" stop-color="#b98a68"/><stop offset=".45" stop-color="#e0b894"/><stop offset="1" stop-color="#a77857"/></linearGradient>
+  <linearGradient id="gWood" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#8c6849"/><stop offset="1" stop-color="#5e4330"/></linearGradient>
+  <radialGradient id="gInside" cx=".5" cy=".4" r=".6"><stop offset="0" stop-color="#fbf7ef"/><stop offset="1" stop-color="#d8ccb9"/></radialGradient>
+ </defs>
+</svg>
+
+<header class="hd">
+ <div class="in">
+  <a class="logo" href="#top"><svg viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="20" r="19" fill="#3a2820"/><path d="M13 13c0-2 14-2 14 0 0 4-3 5-3 9 0 4 4 5 4 8 0 2-16 2-16 0 0-3 4-4 4-8 0-4-3-5-3-9z" fill="#ece3d3"/><path d="M12 28c3-1.5 13-1.5 16 0" stroke="#7b7a45" stroke-width="2" fill="none"/></svg><div><b>흙마루</b><span>CERAMIC STUDIO</span></div></a>
+  <nav class="nav" id="nav"><a href="#shop">생활 그릇</a><a href="#glaze">유약 이야기</a><a href="#class">물레 클래스</a><a href="#custom">주문 제작</a><a href="#visit">오시는 길</a></nav>
+  <a class="btn" href="#class">클래스 예약</a>
+  <button class="menu-t" aria-label="메뉴 열기" onclick="document.getElementById('nav').classList.toggle('open')"><svg viewBox="0 0 24 24"><path d="M3 7h18M3 12h18M3 17h18"/></svg></button>
+ </div>
+</header>
+
+<main id="top">
+<section class="hero">
+ <div class="in">
+  <div>
+   <span class="kick">HANDMADE STONEWARE · SINCE 2019</span>
+   <h1>흙의 결을<br>식탁 위에<br><em>그대로 옮깁니다</em></h1>
+   <p class="lead">물레 위에서 하나씩 빚고, 1250도 가마에서 두 번 구운 생활 그릇. 같은 모양이라도 유약 흐름은 한 점 한 점 다르게 나옵니다.</p>
+   <div class="acts"><a class="btn" href="#shop">그릇 둘러보기 <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a><a class="btn ghost" href="#class">원데이 물레 클래스</a></div>
+   <div class="facts"><div><b>2회 소성</b><span>초벌 · 재벌</span></div><div><b>4가지</b><span>자체 배합 유약</span></div><div><b>2~6명</b><span>소규모 클래스</span></div></div>
+  </div>
+  <div class="hero-art">
+   <svg viewBox="0 0 600 600" aria-label="나무 선반 위의 달항아리와 사발, 찻잔 일러스트">
+    <defs>
+     <radialGradient id="hBg" cx=".55" cy=".45" r=".6"><stop offset="0" stop-color="#f4ecdf"/><stop offset="1" stop-color="#ddcfb9"/></radialGradient>
+     <radialGradient id="moonJar" cx=".38" cy=".38" r=".72"><stop offset="0" stop-color="#fffdf8"/><stop offset=".55" stop-color="#efe6d6"/><stop offset="1" stop-color="#c7b8a0"/></radialGradient>
+     <linearGradient id="drip" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#6e6d3a"/><stop offset="1" stop-color="#a7a66b" stop-opacity="0"/></linearGradient>
+    </defs>
+    <path d="M60 40h480a20 20 0 0 1 20 20v480H40V60a20 20 0 0 1 20-20z" fill="url(#hBg)"/>
+    <path d="M300 40a260 260 0 0 1 260 260v240H40V300A260 260 0 0 1 300 40z" fill="#e6dac6" opacity=".7"/>
+    <circle cx="440" cy="150" r="54" fill="#b0583a" opacity=".14"/>
+    <!-- shelf -->
+    <rect x="40" y="470" width="520" height="26" fill="url(#gWood)"/>
+    <rect x="40" y="496" width="520" height="44" fill="#4a3426"/>
+    <path d="M40 476h520" stroke="#a88566" stroke-width="2" opacity=".6"/>
+    <ellipse cx="300" cy="472" rx="250" ry="8" fill="#2a1c16" opacity=".18"/>
+    <!-- moon jar -->
+    <g filter="url(#soft)">
+     <ellipse cx="270" cy="470" rx="64" ry="9" fill="#3a2820" opacity=".25"/>
+     <path d="M232 128h76c0 10-6 16-8 24 52 16 98 72 98 150 0 76-42 132-98 158h-60c-56-26-98-82-98-158 0-78 46-134 98-150-2-8-8-14-8-24z" fill="url(#moonJar)"/>
+     <path d="M232 128h76" stroke="#c9bba3" stroke-width="3"/>
+     <path d="M162 300c20 6 196 6 216 0" stroke="#d4c6ae" stroke-width="2" fill="none" opacity=".7"/>
+     <path d="M190 210c-16 30-22 70-18 110" stroke="#fff" stroke-width="10" stroke-linecap="round" fill="none" opacity=".55"/>
+     <path d="M330 168c-4 14 6 34 2 52-2 10-10 12-10 0 0-20-6-34 8-52z" fill="#c9b18c" opacity=".45"/>
+     <path d="M250 440c4-10 18-10 22 0" stroke="#b9a88f" stroke-width="2" fill="none" opacity=".6"/>
+    </g>
+    <!-- ash glazed bowl -->
+    <g filter="url(#soft)">
+     <path d="M378 392h150c-4 44-34 78-75 78s-71-34-75-78z" fill="url(#gIron)"/>
+     <path d="M378 392h150c-1 10-3 18-6 26-10 8-22 4-30 12-10-10-24 2-36-4-10 6-22 0-30-4-6 2-14 0-22-6-3-8-5-16-6-24z" fill="url(#gAsh)"/>
+     <path d="M396 424c4 12 0 22 4 30M428 428c2 10-2 18 2 28M470 426c-2 12 4 20 0 30" stroke="#a7a66b" stroke-width="4" stroke-linecap="round" opacity=".55"/>
+     <ellipse cx="453" cy="392" rx="75" ry="14" fill="#55542c"/>
+     <ellipse cx="453" cy="393" rx="66" ry="10" fill="#8d8c55"/>
+     <path d="M430 470h46l-4 4h-38z" fill="#c49c7a"/>
+    </g>
+    <!-- iron teacup -->
+    <g filter="url(#soft)">
+     <path d="M86 404h88l-6 58c-1 8-8 12-16 12h-44c-8 0-15-4-16-12z" fill="url(#gRust)"/>
+     <path d="M86 404h88l-2 18c-8 6-14-2-22 6-8-6-16 4-24-2-8 6-14-2-22 2-8-4-12 2-16-6z" fill="#3a2820"/>
+     <ellipse cx="130" cy="404" rx="44" ry="8" fill="#2a1c16"/>
+     <ellipse cx="130" cy="405" rx="38" ry="5" fill="#5a3a2c"/>
+     <path d="M100 430c0 14 2 26 4 36" stroke="#e7a383" stroke-width="5" stroke-linecap="round" opacity=".35"/>
+    </g>
+    <!-- small spoon rest leaf -->
+    <path d="M178 468c10-16 40-20 56-8-14 14-40 16-56 8z" fill="#7b7a45"/>
+    <path d="M182 466c16-4 32-6 48-6" stroke="#c4c38a" stroke-width="1.5"/>
+    <!-- branch -->
+    <path d="M520 40c-30 50-30 90-70 120" stroke="#5a4034" stroke-width="4" fill="none" stroke-linecap="round"/>
+    <path d="M480 100c-20-4-30 6-36 18 16 2 28-4 36-18zM500 70c10-18 26-22 40-18-8 14-22 20-40 18zM462 140c-18 4-24 18-24 30 14-4 22-14 24-30z" fill="#7b7a45"/>
+   </svg>
+   <div class="tag t1"><b>달항아리 소 · 백자토</b>높이 22cm · 한 점 제작</div>
+   <div class="tag t2"><b>재유 사발</b>철분이 녹아 흐른 자국</div>
+   <div class="vert">흙 · 물레 · 불 · 시간</div>
+  </div>
+ </div>
+</section>
+
+<section class="proc" id="process">
+ <div class="in">
+  <div class="sh"><div><span class="kick">HOW WE MAKE</span><h2>그릇 하나가 나오기까지<br>평균 3주가 걸립니다</h2></div><p>반죽부터 재벌 소성까지 다섯 단계를 공방에서 직접 진행합니다. 손이 많이 가는 만큼 같은 그릇이 두 개 나오지 않습니다.</p></div>
+  <div class="steps">
+   <div class="step"><i>01</i><svg viewBox="0 0 80 80"><ellipse cx="40" cy="56" rx="28" ry="10" fill="#5a4034"/><path d="M14 50c0-16 12-26 26-26s26 10 26 26c-6 8-46 8-52 0z" fill="url(#gBisque)"/><path d="M24 40c6-4 12-6 18-4M30 48c8-3 16-3 24 0" stroke="#8c6849" stroke-width="2" fill="none" stroke-linecap="round"/></svg><h3>흙 반죽</h3><p>국내산 백자토와 분청토를 섞어 공기를 빼냅니다.</p><small>1일</small></div>
+   <div class="step"><i>02</i><svg viewBox="0 0 80 80"><ellipse cx="40" cy="62" rx="32" ry="8" fill="#7b7a45"/><ellipse cx="40" cy="60" rx="32" ry="8" fill="#a3a26a"/><path d="M28 60c0-10 2-18-2-30h28c-4 12-2 20-2 30z" fill="url(#gBisque)"/><path d="M26 30h28" stroke="#ece3d3" stroke-width="2"/><path d="M14 40c4 0 8 2 12 4M66 40c-4 0-8 2-12 4" stroke="#ece3d3" stroke-width="3" stroke-linecap="round" fill="none"/></svg><h3>물레 성형</h3><p>전동 물레 위에서 두께와 곡선을 잡습니다.</p><small>1~2일</small></div>
+   <div class="step"><i>03</i><svg viewBox="0 0 80 80"><path d="M14 66V30a26 26 0 0 1 52 0v36z" fill="#5a4034"/><path d="M22 66V34a18 18 0 0 1 36 0v32z" fill="#2a1c16"/><path d="M32 62c0-8 4-10 8-18 4 8 8 10 8 18z" fill="#e0884f"/><path d="M36 62c0-4 2-6 4-10 2 4 4 6 4 10z" fill="#f6d28a"/><rect x="10" y="64" width="60" height="6" rx="2" fill="#a3a26a"/></svg><h3>초벌 소성</h3><p>800도에서 한 번 구워 단단하게 만듭니다.</p><small>2일</small></div>
+   <div class="step"><i>04</i><svg viewBox="0 0 80 80"><path d="M18 34h44l-4 30c-1 4-4 6-8 6H30c-4 0-7-2-8-6z" fill="#cdbfaa"/><path d="M18 34h44l-1 10c-6 4-10-2-16 4-6-6-10 2-16-2-6 4-8-2-10-2z" fill="url(#gAsh)"/><ellipse cx="40" cy="34" rx="22" ry="5" fill="#5b5a2f"/><path d="M52 10c0 8-6 10-6 16 0 3 3 5 6 5s6-2 6-5c0-6-6-8-6-16z" fill="#7b7a45"/></svg><h3>유약 시유</h3><p>그릇마다 담금·흘림 방식으로 유약을 입힙니다.</p><small>1일</small></div>
+   <div class="step"><i>05</i><svg viewBox="0 0 80 80"><circle cx="40" cy="40" r="28" fill="none" stroke="#b0583a" stroke-width="3" stroke-dasharray="4 5"/><path d="M24 44h32c-2 10-8 16-16 16s-14-6-16-16z" fill="url(#gIron)"/><ellipse cx="40" cy="44" rx="16" ry="4" fill="#8d8c55"/><path d="M40 12v6M40 62v6M12 40h6M62 40h6" stroke="#ece3d3" stroke-width="3" stroke-linecap="round"/></svg><h3>재벌 소성</h3><p>1250도 환원 소성 후 이틀간 천천히 식힙니다.</p><small>4일</small></div>
+  </div>
+ </div>
+</section>
+
+<section id="shop">
+ <div class="in">
+  <div class="sh"><div><span class="kick">TABLEWARE</span><h2>이번 달 가마에서 나온<br>생활 그릇</h2></div>
+   <div class="filters" role="group" aria-label="그릇 종류"><button type="button" aria-pressed="true" data-f="all">전체</button><button type="button" aria-pressed="false" data-f="bowl">사발·볼</button><button type="button" aria-pressed="false" data-f="plate">접시</button><button type="button" aria-pressed="false" data-f="cup">잔·컵</button></div>
+  </div>
+  <div class="goods" id="goods">
+   <article class="good" data-c="bowl"><div class="ph"><svg viewBox="0 0 300 300" aria-label="재유 밥공기 일러스트"><rect width="300" height="300" fill="#e2d6c1"/><circle cx="150" cy="150" r="104" fill="#ece3d3"/><g filter="url(#soft)"><path d="M72 140h156c-4 52-36 90-78 90s-74-38-78-90z" fill="url(#gIron)"/><path d="M72 140h156c-1 14-4 26-8 36-12 6-20-4-30 6-10-10-22 4-34-2-12 6-22-4-34 2-10-6-20 2-30-8-4-10-6-22-8-34z" fill="url(#gAsh)"/><ellipse cx="150" cy="140" rx="78" ry="16" fill="#55542c"/><ellipse cx="150" cy="141" rx="68" ry="11" fill="#8d8c55"/><path d="M128 230h44l-3 6h-38z" fill="#c49c7a"/></g></svg><span class="lbl">재유</span></div><div class="bd"><h3>재유 밥공기</h3><p class="meta">지름 12cm · 높이 6.5cm</p><div class="row"><span class="pr">28,000원</span><button class="add" type="button" aria-label="장바구니 담기" data-p="28000"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></button></div></div></article>
+   <article class="good" data-c="plate"><div class="ph"><svg viewBox="0 0 300 300" aria-label="분청 덤벙 접시 일러스트"><rect width="300" height="300" fill="#d9cbb2"/><g filter="url(#soft)"><ellipse cx="150" cy="160" rx="110" ry="58" fill="#8a6a52"/><ellipse cx="150" cy="154" rx="108" ry="56" fill="url(#gWhite)" filter="url(#grain)"/><ellipse cx="150" cy="156" rx="78" ry="38" fill="#e6dccb"/><path d="M80 148c20 8 40-6 60 2s40-4 60 2" stroke="#b9a88f" stroke-width="2" fill="none" opacity=".7"/><path d="M196 126c10 4 14 12 12 20" stroke="#8a6a52" stroke-width="3" stroke-linecap="round" fill="none" opacity=".5"/></g></svg><span class="lbl">분청</span></div><div class="bd"><h3>분청 덤벙 접시</h3><p class="meta">지름 21cm · 넓은 림</p><div class="row"><span class="pr">36,000원</span><button class="add" type="button" aria-label="장바구니 담기" data-p="36000"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></button></div></div></article>
+   <article class="good" data-c="cup"><div class="ph"><svg viewBox="0 0 300 300" aria-label="철화 머그 일러스트"><rect width="300" height="300" fill="#e8ddca"/><rect x="0" y="210" width="300" height="90" fill="#d6c7ae"/><g filter="url(#soft)"><path d="M196 130c30 0 34 46 4 50" stroke="#5a4034" stroke-width="12" fill="none" stroke-linecap="round"/><path d="M100 96h100v112c0 10-8 18-18 18h-64c-10 0-18-8-18-18z" fill="url(#gWhite)"/><path d="M100 96h100v24c-12 6-18-2-28 6-10-8-20 2-30-4-10 6-18-4-28 2-8-4-10 0-14-4z" fill="#3a2820"/><path d="M122 150c10 14 28 20 36 8s22-12 30 4" stroke="#6b3a24" stroke-width="5" fill="none" stroke-linecap="round"/><path d="M136 176c6 6 14 4 18-2" stroke="#6b3a24" stroke-width="4" fill="none" stroke-linecap="round"/><ellipse cx="150" cy="96" rx="50" ry="8" fill="#2a1c16"/></g></svg><span class="lbl">철화</span></div><div class="bd"><h3>철화 들풀 머그</h3><p class="meta">350ml · 손그림</p><div class="row"><span class="pr">32,000원</span><button class="add" type="button" aria-label="장바구니 담기" data-p="32000"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></button></div></div></article>
+   <article class="good" data-c="bowl"><div class="ph"><svg viewBox="0 0 300 300" aria-label="진사 면기 일러스트"><rect width="300" height="300" fill="#3a2820"/><circle cx="150" cy="150" r="110" fill="#4a3428"/><g filter="url(#soft)"><path d="M56 128h188c-6 64-44 104-94 104s-88-40-94-104z" fill="url(#gRust)"/><path d="M56 128h188c-2 16-6 28-10 38-14 6-22-6-34 4-12-10-24 6-40 0-14 8-24-6-38 0-12-6-22 2-34-6-6-10-10-22-12-36z" fill="#e8d9c2"/><ellipse cx="150" cy="128" rx="94" ry="18" fill="#cdbfaa"/><ellipse cx="150" cy="130" rx="82" ry="12" fill="url(#gInside)"/></g></svg><span class="lbl">진사</span></div><div class="bd"><h3>진사 흘림 면기</h3><p class="meta">지름 18cm · 국수·라면</p><div class="row"><span class="pr">42,000원</span><button class="add" type="button" aria-label="장바구니 담기" data-p="42000"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></button></div></div></article>
+   <article class="good" data-c="cup"><div class="ph"><svg viewBox="0 0 300 300" aria-label="재유 찻잔 두 개 일러스트"><rect width="300" height="300" fill="#cfc4a6"/><g filter="url(#soft)"><path d="M60 140h80l-6 66c-1 8-8 14-16 14H82c-8 0-15-6-16-14z" fill="url(#gAsh)"/><ellipse cx="100" cy="140" rx="40" ry="8" fill="#5b5a2f"/><path d="M160 150h80l-6 62c-1 8-8 12-16 12h-36c-8 0-15-4-16-12z" fill="url(#gIron)"/><path d="M160 150h80l-2 16c-10 6-14-2-22 4-8-6-16 4-24-2-8 4-14-2-20 0-6-4-8-2-12-6z" fill="url(#gAsh)"/><ellipse cx="200" cy="150" rx="40" ry="8" fill="#2a1c16"/></g><path d="M40 238h220" stroke="#8c6849" stroke-width="3"/></svg><span class="lbl">재유</span></div><div class="bd"><h3>재유 찻잔 2인 세트</h3><p class="meta">120ml · 2개 1세트</p><div class="row"><span class="pr">39,000원</span><button class="add" type="button" aria-label="장바구니 담기" data-p="39000"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></button></div></div></article>
+   <article class="good" data-c="plate"><div class="ph"><svg viewBox="0 0 300 300" aria-label="흑유 타원 접시 일러스트"><rect width="300" height="300" fill="#ece3d3"/><g filter="url(#soft)"><path d="M40 160c0-40 50-62 110-62s110 22 110 62-50 50-110 50S40 200 40 160z" fill="#22160f"/><path d="M52 156c0-32 44-50 98-50s98 18 98 50-44 42-98 42-98-10-98-42z" fill="url(#gIron)"/><path d="M80 140c30-14 110-16 150 2" stroke="#8b6a54" stroke-width="3" fill="none" opacity=".5"/><path d="M118 168c10-8 26-10 36-2-10 8-26 8-36 2z" fill="#7b7a45" opacity=".8"/></g></svg><span class="lbl">흑유</span></div><div class="bd"><h3>흑유 타원 접시</h3><p class="meta">가로 26cm · 메인 요리</p><div class="row"><span class="pr">45,000원</span><button class="add" type="button" aria-label="장바구니 담기" data-p="45000"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></button></div></div></article>
+   <article class="good" data-c="bowl"><div class="ph"><svg viewBox="0 0 300 300" aria-label="백자 볼 세트 일러스트"><rect width="300" height="300" fill="#b9c0a8"/><g filter="url(#soft)"><path d="M50 170h110c-4 34-26 56-55 56s-51-22-55-56z" fill="url(#gWhite)"/><ellipse cx="105" cy="170" rx="55" ry="11" fill="#d9cfbf"/><ellipse cx="105" cy="171" rx="48" ry="7" fill="url(#gInside)"/><path d="M150 130h100c-4 32-24 52-50 52s-46-20-50-52z" fill="url(#gWhite)"/><ellipse cx="200" cy="130" rx="50" ry="10" fill="#d9cfbf"/><ellipse cx="200" cy="131" rx="43" ry="6" fill="url(#gInside)"/></g></svg><span class="lbl">백자</span></div><div class="bd"><h3>백자 샐러드볼 2종</h3><p class="meta">대 18cm · 소 14cm</p><div class="row"><span class="pr">54,000원</span><button class="add" type="button" aria-label="장바구니 담기" data-p="54000"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></button></div></div></article>
+   <article class="good" data-c="cup"><div class="ph"><svg viewBox="0 0 300 300" aria-label="분청 술잔과 주병 일러스트"><rect width="300" height="300" fill="#e2c9b4"/><g filter="url(#soft)"><path d="M136 60h28c0 10-4 14-4 22 24 10 40 40 40 74 0 40-22 66-50 66s-50-26-50-66c0-34 16-64 40-74 0-8-4-12-4-22z" fill="url(#gBisque)"/><path d="M110 150c10 6 70 6 80 0" stroke="#fff" stroke-width="16" opacity=".55" stroke-linecap="round"/><path d="M196 196h40l-4 28h-32z" fill="url(#gWhite)"/><ellipse cx="216" cy="196" rx="20" ry="4" fill="#cdbfaa"/></g></svg><span class="lbl">분청</span></div><div class="bd"><h3>분청 주병 · 잔 세트</h3><p class="meta">주병 400ml · 잔 2개</p><div class="row"><span class="pr">58,000원</span><button class="add" type="button" aria-label="장바구니 담기" data-p="58000"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></button></div></div></article>
+  </div>
+  <div class="cartbar"><span>담은 그릇 <b id="cCnt">0</b>점 · 합계 <b id="cSum">0원</b></span><span style="font-size:13px;color:var(--iron2)">5만원 이상 무료 배송 · 완충 포장 기본</span></div>
+ </div>
+</section>
+
+<section id="glaze" style="padding-top:20px">
+ <div class="in glaze">
+  <div class="swatches">
+   <div class="sw" style="background:#7b7a45"><svg viewBox="0 0 300 180" preserveAspectRatio="none"><rect width="300" height="180" fill="url(#gAsh)"/><path d="M0 0h300v50c-20 20-30-10-50 14-20-16-40 18-60 0-20 16-40-14-60 6-20-20-40 10-60-4-20 14-40-6-70 4z" fill="#4c4b26" opacity=".6"/></svg><b>재유</b><span>나뭇재를 섞은 올리브빛</span></div>
+   <div class="sw" style="background:#2a1c16"><svg viewBox="0 0 300 180" preserveAspectRatio="none"><rect width="300" height="180" fill="url(#gIron)"/><path d="M40 0c10 40-8 70 6 110M140 0c-8 50 10 80 0 130M230 0c12 40-4 60 8 100" stroke="#8b6a54" stroke-width="6" opacity=".35" fill="none"/></svg><b>흑유</b><span>철분이 많은 깊은 먹빛</span></div>
+   <div class="sw" style="background:#d9cfbf;color:var(--iron)"><svg viewBox="0 0 300 180" preserveAspectRatio="none"><rect width="300" height="180" fill="url(#gWhite)" filter="url(#grain)"/><path d="M0 120c60-20 120 20 180 0s90-10 120 6v54H0z" fill="#cbbfac" opacity=".6"/></svg><b>분청 덤벙</b><span>백토에 담갔다 뺀 붓결</span></div>
+   <div class="sw" style="background:#b0583a"><svg viewBox="0 0 300 180" preserveAspectRatio="none"><rect width="300" height="180" fill="url(#gRust)"/><path d="M0 0h300v40c-30 26-50-6-80 16-30-18-50 20-80 2-30 20-50-10-80 4-30-14-40 4-60-4z" fill="#e8d9c2" opacity=".85"/></svg><b>진사</b><span>구리가 만드는 붉은 흘림</span></div>
+  </div>
+  <div class="txt">
+   <span class="kick">OUR GLAZES</span>
+   <h2>유약 네 가지,<br>가마 안에서 완성되는 색</h2>
+   <p>흙마루의 유약은 공방에서 직접 배합합니다. 가마 속 위치와 불의 흐름에 따라 같은 유약도 조금씩 다른 표정을 갖습니다.</p>
+   <p>사진과 색감 차이가 있을 수 있고, 작은 기포나 철점은 수작업 도자기의 자연스러운 흔적입니다.</p>
+   <ul class="care"><li><b>식기세척기</b>사용 가능 (금 장식 제품 제외)</li><li><b>전자레인지</b>짧은 데우기 가능, 빈 그릇 가열은 피해 주세요</li><li><b>처음 사용할 때</b>쌀뜨물에 한 번 끓여 두면 좋습니다</li></ul>
+  </div>
+ </div>
+</section>
+
+<section class="class" id="class">
+ <div class="in">
+  <div class="sh"><div><span class="kick">ONE-DAY CLASS</span><h2>물레 앞에 앉아<br>내 그릇을 빚어 보세요</h2></div><p>처음이어도 괜찮습니다. 흙 만지는 법부터 천천히 알려 드리고, 완성품은 시유·소성 후 약 3주 뒤 택배로 보내 드립니다.</p></div>
+  <div class="cls-grid" role="radiogroup" aria-label="클래스 선택">
+   <div class="cls" role="radio" tabindex="0" aria-checked="true" data-name="원데이 물레" data-p="65000"><div class="top"><svg viewBox="0 0 60 60"><ellipse cx="30" cy="46" rx="24" ry="6" fill="#7b7a45"/><path d="M20 46c0-8 2-14-2-24h24c-4 10-2 16-2 24z" fill="url(#gBisque)"/></svg><span class="lv">입문</span></div><h3>원데이 물레</h3><p class="cmeta">2시간 · 최대 6명</p><ul><li>컵 또는 밥그릇 2점 성형</li><li>유약 색 선택 (4가지 중)</li><li>앞치마·도구 모두 준비</li></ul><div class="pr">65,000<small>원 / 1인</small></div></div>
+   <div class="cls" role="radio" tabindex="0" aria-checked="false" data-name="커플·친구 2인 물레" data-p="58000"><div class="top"><svg viewBox="0 0 60 60"><ellipse cx="30" cy="48" rx="26" ry="5" fill="#b0583a"/><path d="M10 48c0-6 2-10-1-18h16c-3 8-1 12-1 18zM36 48c0-6 2-10-1-18h16c-3 8-1 12-1 18z" fill="url(#gBisque)"/></svg><span class="lv">2인 이상</span></div><h3>2인 함께 물레</h3><p class="cmeta">2시간 30분 · 2인 기준</p><ul><li>1인당 2점, 이니셜 각인</li><li>서로의 그릇 유약 골라 주기</li><li>따뜻한 차 한 잔 제공</li></ul><div class="pr">58,000<small>원 / 1인</small></div></div>
+   <div class="cls" role="radio" tabindex="0" aria-checked="false" data-name="4주 정규반" data-p="240000"><div class="top"><svg viewBox="0 0 60 60"><rect x="8" y="10" width="44" height="40" rx="6" fill="none" stroke="#5a4034" stroke-width="3"/><path d="M8 22h44M20 6v8M40 6v8" stroke="#5a4034" stroke-width="3"/><circle cx="22" cy="34" r="4" fill="#b0583a"/><circle cx="38" cy="34" r="4" fill="#7b7a45"/></svg><span class="lv">주 1회</span></div><h3>4주 정규반</h3><p class="cmeta">주 1회 3시간 · 최대 4명</p><ul><li>중심 잡기부터 굽 깎기까지</li><li>작품 6~8점 소성 포함</li><li>흙 5kg 기본 제공</li></ul><div class="pr">240,000<small>원 / 4회</small></div></div>
+  </div>
+  <div class="book">
+   <div>
+    <span class="lab">날짜 선택 · 12월</span>
+    <div class="days" id="days"></div>
+    <div style="margin-top:20px"><span class="lab">시간 선택</span><div class="times" id="times"><button type="button" aria-pressed="true">오전 10:30</button><button type="button" aria-pressed="false">오후 2:00</button><button type="button" aria-pressed="false">오후 4:30</button><button type="button" aria-pressed="false">저녁 7:30</button></div></div>
+   </div>
+   <div class="sum">
+    <div class="r"><span>클래스</span><b id="sName">원데이 물레</b></div>
+    <div class="r"><span>일정</span><b id="sWhen">12월 5일 (토) 오전 10:30</b></div>
+    <div class="r"><span>인원</span><div class="qty"><button type="button" id="qm" aria-label="인원 줄이기">−</button><b id="qn">2</b><button type="button" id="qp" aria-label="인원 늘리기">+</button></div></div>
+    <div class="tot"><span>예상 금액</span><b id="sTot">130,000원</b></div>
+    <button class="btn" type="button" id="bookBtn" style="width:100%">예약 요청 보내기</button>
+    <p class="okmsg" id="okmsg">예약 요청이 접수되었습니다. 확인 문자로 안내드릴게요.</p>
+   </div>
+  </div>
+ </div>
+</section>
+
+<section class="custom" id="custom">
+ <div class="in">
+  <div class="custom-art">
+   <svg viewBox="0 0 520 400" aria-label="식당용 맞춤 그릇 세트와 로고 각인 일러스트">
+    <rect width="520" height="400" rx="20" fill="#3a2820"/>
+    <circle cx="260" cy="150" r="150" fill="#4a3428" opacity=".6"/>
+    <path d="M0 300h520v80a20 20 0 0 1-20 20H20a20 20 0 0 1-20-20z" fill="#2a1c16"/><path d="M0 300h520" stroke="#5a4034" stroke-width="2"/>
+    <g transform="translate(0 -30)">
+    <g filter="url(#soft)">
+     <ellipse cx="160" cy="300" rx="130" ry="36" fill="#1c120d"/>
+     <ellipse cx="160" cy="292" rx="128" ry="34" fill="url(#gWhite)"/>
+     <ellipse cx="160" cy="292" rx="96" ry="24" fill="#e6dccb"/>
+     <path d="M70 300c14 10 166 10 180 0" stroke="#b9a88f" stroke-width="2" fill="none"/>
+     <path d="M290 220h150c-4 50-34 84-75 84s-71-34-75-84z" fill="url(#gIron)"/>
+     <path d="M290 220h150c-2 14-5 24-9 32-12 6-20-6-30 4-10-8-22 4-34-2-12 6-22-4-32 0-12-4-18 4-28-6-4-10-6-18-7-28z" fill="url(#gAsh)"/>
+     <ellipse cx="365" cy="220" rx="75" ry="14" fill="#55542c"/>
+     <ellipse cx="365" cy="221" rx="66" ry="9" fill="#8d8c55"/>
+     <path d="M200 130h80l-5 58c-1 6-6 10-12 10h-46c-6 0-11-4-12-10z" fill="url(#gRust)"/>
+     <ellipse cx="240" cy="130" rx="40" ry="8" fill="#5a2a1a"/>
+    </g>
+    <circle cx="160" cy="292" r="20" fill="none" stroke="#8a6a52" stroke-width="2" stroke-dasharray="3 3"/><path d="M152 292l6 6 10-12" stroke="#8a6a52" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+    <text x="160" y="331" font-family="Hahmlet" font-size="13" font-weight="700" fill="#8a6a52" text-anchor="middle"> </text>
+    <g font-family="IBM Plex Sans KR" font-size="22" font-weight="500" fill="#e5d9c6">
+     <path d="M140 292l-60-104" stroke="#a3a26a" stroke-width="1.5"/><circle cx="140" cy="292" r="4" fill="#a3a26a"/><text x="30" y="176">로고 각인</text>
+     <path d="M420 262l36 86" stroke="#a3a26a" stroke-width="1.5"/><circle cx="420" cy="262" r="4" fill="#a3a26a"/><text x="372" y="382">유약 색 맞춤</text>
+     <path d="M272 150l78-70" stroke="#a3a26a" stroke-width="1.5"/><circle cx="272" cy="150" r="4" fill="#a3a26a"/><text x="300" y="62">크기·수량 조정</text>
+    </g>
+    </g>
+   </svg>
+  </div>
+  <div>
+   <span class="kick">FOR RESTAURANTS &amp; CAFES</span>
+   <h2>식당·카페 전용 그릇,<br>메뉴에 맞춰 빚습니다</h2>
+   <p>시그니처 메뉴의 양과 담음새에 맞춘 크기, 가게 분위기에 어울리는 유약, 바닥 굽 안쪽 로고 각인까지 함께 정합니다. 30점부터 제작 가능합니다.</p>
+   <div class="flow">
+    <div><i>01</i><b>메뉴·공간 상담</b><span>사진과 메뉴 구성을 보며 필요한 그릇 정리</span></div>
+    <div><i>02</i><b>샘플 3점 제작</b><span>크기·유약 시안을 실물로 확인</span></div>
+    <div><i>03</i><b>본 제작 · 납품</b><span>확정 후 약 5~7주, 완충 포장 납품</span></div>
+   </div>
+   <a class="btn" href="#visit">맞춤 제작 상담하기 <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+  </div>
+ </div>
+</section>
+
+<section class="visit" id="visit">
+ <div class="in">
+  <div class="map">
+   <svg viewBox="0 0 560 420" aria-label="공방 위치 약도">
+    <rect width="560" height="420" fill="#f1e9db"/>
+    <g stroke="#ddd0bb" stroke-width="1"><path d="M0 60h560M0 140h560M0 300h560M0 380h560M80 0v420M200 0v420M360 0v420M480 0v420"/></g>
+    <path d="M0 220h560" stroke="#fff" stroke-width="34"/><path d="M0 220h560" stroke="#e2d6c1" stroke-width="2" stroke-dasharray="10 10"/>
+    <path d="M280 0v420" stroke="#fff" stroke-width="24"/>
+    <path d="M0 340c120-30 200 20 320-10s200 10 240-10" stroke="#b9c7b8" stroke-width="22" fill="none" opacity=".8"/>
+    <rect x="96" y="80" width="84" height="54" rx="6" fill="#e2d6c1"/><rect x="380" y="76" width="80" height="60" rx="6" fill="#e2d6c1"/><rect x="100" y="250" width="90" height="40" rx="6" fill="#e2d6c1"/>
+    <circle cx="430" cy="270" r="34" fill="#cfd8c0"/>
+    <g transform="translate(330 150)"><path d="M0 0c-20 0-34 14-34 32 0 24 34 52 34 52s34-28 34-52C34 14 20 0 0 0z" fill="#b0583a"/><circle cx="0" cy="31" r="13" fill="#f6f1e7"/></g>
+    <rect x="364" y="164" width="150" height="50" rx="10" fill="#3a2820"/><text x="439" y="197" font-family="Hahmlet" font-size="21" font-weight="700" fill="#ece3d3" text-anchor="middle">흙마루 공방</text>
+    <g font-family="IBM Plex Sans KR" font-size="19" font-weight="500" fill="#5a4034"><text x="24" y="200">큰길</text><text x="292" y="44">골목 2길</text><text x="26" y="318">개천 산책로</text></g>
+    <g transform="translate(232 238)"><rect width="36" height="22" rx="4" fill="#7b7a45"/><text x="18" y="16" font-family="IBM Plex Sans KR" font-size="12" font-weight="600" fill="#fff" text-anchor="middle">P</text></g>
+   </svg>
+  </div>
+  <div class="vinfo">
+   <span class="kick">VISIT</span>
+   <h2>쇼룸은 누구나<br>편하게 들러 보세요</h2>
+   <div class="hours">
+    <div><span>화 – 금</span><span>11:00 – 20:00</span></div>
+    <div><span>토 – 일</span><span>10:00 – 18:00</span></div>
+    <div><span>월요일</span><span>가마 작업일 · 휴무</span></div>
+   </div>
+   <div class="contact">
+    <div><b>전화</b>000-0000-0000</div>
+    <div><b>카카오톡</b>ID: example</div>
+    <div><b>주소</b>○○시 ○○구 골목 2길 00</div>
+    <div><b>주차</b>공방 앞 2대 가능</div>
+   </div>
+  </div>
+ </div>
+</section>
+
+<section id="faq">
+ <div class="in">
+  <div class="sh" style="justify-content:center;text-align:center"><div><span class="kick">FAQ</span><h2>자주 묻는 질문</h2></div></div>
+  <div class="faq">
+   <div class="q on"><button type="button" aria-expanded="true">클래스에서 만든 그릇은 언제 받을 수 있나요?<svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></button><div class="a"><p>건조·초벌·시유·재벌 과정을 거쳐 약 3주 뒤 택배로 보내 드립니다. 공방 방문 수령도 가능합니다.</p></div></div>
+   <div class="q"><button type="button" aria-expanded="false">손재주가 없어도 참여할 수 있나요?<svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></button><div class="a"><p>원데이 클래스는 처음 오시는 분 기준으로 진행합니다. 중심 잡기는 강사가 함께 도와 드려요.</p></div></div>
+   <div class="q"><button type="button" aria-expanded="false">배송 중 그릇이 깨지면 어떻게 하나요?<svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></button><div class="a"><p>도착 후 3일 안에 사진을 보내 주시면 같은 제품으로 다시 보내 드리거나 환불해 드립니다.</p></div></div>
+   <div class="q"><button type="button" aria-expanded="false">예약 변경은 언제까지 가능한가요?<svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></button><div class="a"><p>수업 2일 전까지 무료로 변경할 수 있습니다. 그 이후에는 카카오톡으로 문의해 주세요.</p></div></div>
+  </div>
+ </div>
+</section>
+</main>
+
+<footer class="ft">
+ <div class="in">
+  <div><a class="logo" href="#top"><svg viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="20" r="19" fill="#ece3d3"/><path d="M13 13c0-2 14-2 14 0 0 4-3 5-3 9 0 4 4 5 4 8 0 2-16 2-16 0 0-3 4-4 4-8 0-4-3-5-3-9z" fill="#3a2820"/></svg><div><b>흙마루</b><span>CERAMIC STUDIO</span></div></a><p style="margin-top:18px;max-width:320px">손으로 빚고 두 번 구운 생활 그릇과 물레 클래스</p></div>
+  <div><h4>STUDIO</h4><p>○○시 ○○구 골목 2길 00</p><p>000-0000-0000</p><p>카카오톡 ID: example</p></div>
+  <div><h4>SHOP INFO</h4><p>상호 흙마루 도예공방</p><p>사업자등록번호 000-00-00000</p><p>통신판매업 신고 0000-○○-0000</p></div>
+  <p class="cp">© 흙마루 도예공방</p>
+ </div>
+</footer>
+
+<script>
+(function(){
+ var $=function(s,c){return (c||document).querySelector(s)},$$=function(s,c){return [].slice.call((c||document).querySelectorAll(s))};
+ // filters
+ $$('.filters button').forEach(function(b){b.addEventListener('click',function(){
+  $$('.filters button').forEach(function(x){x.setAttribute('aria-pressed',x===b)});
+  var f=b.dataset.f;$$('.good').forEach(function(g){g.classList.toggle('hide',f!=='all'&&g.dataset.c!==f)});
+ })});
+ // cart
+ var cnt=0,sum=0;
+ $$('.add').forEach(function(b){b.addEventListener('click',function(){
+  var on=b.classList.toggle('on'),p=+b.dataset.p;cnt+=on?1:-1;sum+=on?p:-p;
+  b.innerHTML=on?'<svg viewBox="0 0 24 24"><path d="M5 12l5 5 9-10"/></svg>':'<svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg>';
+  $('#cCnt').textContent=cnt;$('#cSum').textContent=sum.toLocaleString('ko-KR')+'원';
+ })});
+ // class
+ var price=65000,qty=2,day='12월 5일 (토)',time='오전 10:30';
+ function upd(){$('#sTot').textContent=(price*qty).toLocaleString('ko-KR')+'원';$('#qn').textContent=qty;$('#sWhen').textContent=day+' '+time;$('#okmsg').classList.remove('on')}
+ $$('.cls').forEach(function(c){function pick(){$$('.cls').forEach(function(x){x.setAttribute('aria-checked',x===c)});price=+c.dataset.p;$('#sName').textContent=c.dataset.name;upd()}
+  c.addEventListener('click',pick);c.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();pick()}})});
+ $('#qm').addEventListener('click',function(){if(qty>1){qty--;upd()}});
+ $('#qp').addEventListener('click',function(){if(qty<6){qty++;upd()}});
+ var wd=['일','월','화','수','목','금','토'],box=$('#days'),html='';
+ for(var d=1;d<=7;d++){var dt=new Date(2026,11,d+3),w=dt.getDay(),closed=w===1;
+  html+='<button type="button" class="day" aria-pressed="'+(d===2)+'"'+(closed?' disabled':'')+' data-l="12월 '+dt.getDate()+'일 ('+wd[w]+')"><small>'+wd[w]+'</small><b>'+dt.getDate()+'</b></button>'}
+ box.innerHTML=html;
+ $$('.day').forEach(function(b){b.addEventListener('click',function(){$$('.day').forEach(function(x){x.setAttribute('aria-pressed',x===b)});day=b.dataset.l;upd()})});
+ $$('#times button').forEach(function(b){b.addEventListener('click',function(){$$('#times button').forEach(function(x){x.setAttribute('aria-pressed',x===b)});time=b.textContent;upd()})});
+ $('#bookBtn').addEventListener('click',function(){$('#okmsg').classList.add('on')});
+ // faq
+ $$('.q button').forEach(function(b){b.addEventListener('click',function(){var q=b.parentNode,on=q.classList.toggle('on');b.setAttribute('aria-expanded',on)})});
+ $$('.nav a').forEach(function(a){a.addEventListener('click',function(){$('#nav').classList.remove('open')})});
+})();
+</script>
+</body>
+</html>

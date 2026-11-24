@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>다홍결 한복대여 · 겨울 평일 2인 대여 20% 할인</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&family=Noto+Sans+KR:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+:root{--night:#141c33;--night2:#1d2846;--navy3:#2a3760;--red:#c8312b;--red2:#e0493e;--snow:#f7f4ee;--gold:#d8b46a;--jade:#2f8c7a;--ink:#1a1f2e}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Noto Sans KR',sans-serif;background:var(--snow);color:var(--ink);word-break:keep-all;-webkit-font-smoothing:antialiased;line-height:1.7;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+svg{display:block}
+.bat{font-family:'Gowun Batang',serif}
+.in{max-width:1180px;margin:0 auto;padding:0 32px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;height:58px;padding:0 30px;border-radius:6px;background:var(--red);color:#fff;font-weight:700;font-size:17px;border:0;cursor:pointer;font-family:inherit;transition:.2s;box-shadow:0 10px 24px rgba(200,49,43,.35)}
+.btn:hover{background:var(--red2);transform:translateY(-2px)}
+.btn svg{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+/* dancheong band */
+.band{height:22px;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='88' height='22'%3E%3Crect width='88' height='22' fill='%23c8312b'/%3E%3Crect y='0' width='88' height='4' fill='%232f8c7a'/%3E%3Crect y='18' width='88' height='4' fill='%232f8c7a'/%3E%3Cpath d='M22 4l9 7-9 7-9-7z' fill='%23d8b46a'/%3E%3Cpath d='M66 4l9 7-9 7-9-7z' fill='%23f7f4ee'/%3E%3Ccircle cx='22' cy='11' r='2.5' fill='%23c8312b'/%3E%3Ccircle cx='66' cy='11' r='2.5' fill='%232f8c7a'/%3E%3Cpath d='M44 4v14' stroke='%23141c33' stroke-width='3'/%3E%3C/svg%3E") repeat-x}
+/* top */
+.top{position:absolute;left:0;right:0;top:0;z-index:5}
+.top .in{display:flex;justify-content:space-between;align-items:center;height:84px}
+.logo{display:flex;align-items:center;gap:12px;color:#fff}
+.logo svg{width:42px;height:42px}
+.logo b{font-family:'Gowun Batang',serif;font-size:24px;font-weight:700;letter-spacing:.02em}
+.logo span{display:block;font-size:11px;letter-spacing:.3em;color:var(--gold);line-height:1}
+.top .ph{color:#d6dbea;font-size:14px}
+.top .ph b{color:#fff;font-weight:700;margin-left:6px}
+/* hero */
+.hero{position:relative;background:var(--night);color:var(--snow);overflow:hidden;padding:150px 0 0}
+.hero .bgsvg{position:absolute;inset:0;width:100%;height:100%}
+.hero .in{position:relative;display:grid;grid-template-columns:1.05fr .95fr;gap:20px;align-items:end}
+.ribbon{display:inline-flex;align-items:center;gap:10px;background:rgba(216,180,106,.14);border:1px solid rgba(216,180,106,.5);color:var(--gold);font-size:14px;font-weight:700;padding:8px 16px;border-radius:999px;letter-spacing:.06em}
+.ribbon i{width:8px;height:8px;border-radius:50%;background:var(--red2);box-shadow:0 0 0 4px rgba(224,73,62,.25)}
+.hero h1{font-family:'Gowun Batang',serif;font-weight:700;font-size:clamp(42px,5.4vw,74px);line-height:1.2;letter-spacing:-.02em;margin:24px 0 22px}
+.hero h1 em{font-style:normal;color:#ff9d8e;position:relative}
+.hero p.lead{font-size:18px;color:#c9cfe2;max-width:520px}
+.offer{display:flex;align-items:stretch;gap:0;margin:34px 0 30px;max-width:540px;background:var(--snow);color:var(--ink);border-radius:10px;overflow:hidden;box-shadow:0 30px 60px rgba(0,0,0,.35)}
+.offer .pct{background:var(--red);color:#fff;padding:20px 26px;display:flex;flex-direction:column;justify-content:center;align-items:center;min-width:150px;position:relative}
+.offer .pct:after{content:'';position:absolute;right:-9px;top:0;bottom:0;width:18px;background:radial-gradient(circle at 9px 9px,var(--snow) 5px,transparent 6px) 0 0/18px 18px repeat-y}
+.offer .pct small{font-size:13px;font-weight:700;letter-spacing:.1em;opacity:.9}
+.offer .pct b{font-family:'Gowun Batang',serif;font-size:58px;line-height:1}
+.offer .det{padding:18px 26px 18px 30px;flex:1}
+.offer .det strong{display:block;font-size:19px;font-weight:900}
+.offer .det .pr{margin-top:6px;display:flex;align-items:baseline;gap:10px;flex-wrap:wrap}
+.offer .det s{color:#8a8f9c;font-size:15px}
+.offer .det .now{font-family:'Gowun Batang',serif;font-size:32px;font-weight:700;color:var(--red)}
+.offer .det span{font-size:13px;color:#5b6070}
+.hero .note{font-size:14px;color:#a9b0c8;margin-top:14px}
+.hero-art{position:relative;align-self:end}
+.hero-art svg{width:100%;height:auto}
+/* sections */
+section{padding:110px 0}
+.kick{font-size:13px;font-weight:700;letter-spacing:.24em;color:var(--red)}
+.h2{font-family:'Gowun Batang',serif;font-weight:700;font-size:clamp(30px,3.6vw,46px);line-height:1.3;letter-spacing:-.02em;margin:12px 0 16px}
+.sub{color:#5b6070;font-size:17px;max-width:560px}
+.center{text-align:center}.center .sub{margin:0 auto}
+/* includes */
+.inc{display:grid;grid-template-columns:repeat(5,1fr);gap:16px;margin-top:50px}
+.inc div{background:#fff;border:1px solid #e6e0d4;border-radius:14px;padding:26px 18px 22px;text-align:center;position:relative}
+.inc div:before{content:'';position:absolute;left:18px;right:18px;top:0;height:4px;background:var(--red);border-radius:0 0 4px 4px}
+.inc div:nth-child(even):before{background:var(--jade)}
+.inc svg{width:64px;height:64px;margin:0 auto 14px}
+.inc b{display:block;font-size:17px;font-weight:700}
+.inc span{font-size:14px;color:#5b6070}
+/* styles */
+.styles{background:linear-gradient(180deg,#efe9dd,#f7f4ee)}
+.stabs{display:flex;gap:8px;justify-content:center;margin:38px 0 34px;flex-wrap:wrap}
+.stabs button{height:46px;padding:0 22px;border-radius:999px;border:1.5px solid #cfc6b5;background:transparent;font-family:inherit;font-size:15px;font-weight:500;cursor:pointer;color:var(--ink)}
+.stabs button[aria-selected=true]{background:var(--night);border-color:var(--night);color:#fff}
+.racks{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
+.rack{background:#fff;border-radius:16px;overflow:hidden;border:1px solid #e6e0d4;transition:.3s}
+.rack:hover{transform:translateY(-6px);box-shadow:0 24px 40px rgba(20,28,51,.12)}
+.rack .ph{aspect-ratio:4/5;position:relative}
+.rack .ph svg{width:100%;height:100%}
+.rack .bd{padding:16px 18px 20px}
+.rack h3{font-family:'Gowun Batang',serif;font-size:20px}
+.rack p{font-size:14px;color:#5b6070}
+.rack .t{display:inline-block;font-size:12px;font-weight:700;padding:3px 10px;border-radius:999px;background:#f3e3df;color:var(--red);margin-bottom:8px}
+.rack.hide{display:none}
+/* price */
+.price-wrap{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+.ptable{background:var(--night);color:var(--snow);border-radius:20px;padding:34px;position:relative;overflow:hidden}
+.ptable:before{content:'';position:absolute;inset:0;background:radial-gradient(500px 260px at 100% 0,rgba(200,49,43,.35),transparent 70%)}
+.prow{position:relative;display:grid;grid-template-columns:1fr auto auto;gap:18px;align-items:center;padding:18px 0;border-bottom:1px solid rgba(247,244,238,.15)}
+.prow:last-of-type{border-bottom:0}
+.prow b{font-size:18px}
+.prow small{display:block;font-size:13px;color:#a9b0c8;font-weight:400}
+.prow s{color:#8d94ad;font-size:15px}
+.prow .n{font-family:'Gowun Batang',serif;font-size:26px;font-weight:700;color:#fff;min-width:110px;text-align:right}
+.prow .n.hl{color:#ffb3a6}
+.ptable .tip{position:relative;margin-top:14px;font-size:13px;color:#a9b0c8}
+.steps{display:grid;gap:14px;margin-top:30px}
+.steps>div{display:flex;gap:18px;align-items:flex-start}
+.steps i{font-style:normal;flex:none;width:46px;height:46px;border-radius:50%;background:var(--red);color:#fff;display:grid;place-items:center;font-family:'Gowun Batang',serif;font-weight:700;font-size:18px}
+.steps>div:nth-child(even) i{background:var(--jade)}
+.steps b{display:block;font-size:17px}
+.steps span{font-size:15px;color:#5b6070}
+/* form */
+.apply{background:var(--night);color:var(--snow);position:relative;overflow:hidden}
+.apply .bgsvg{position:absolute;inset:0;width:100%;height:100%;opacity:.5}
+.apply .in{position:relative;display:grid;grid-template-columns:.9fr 1.1fr;gap:60px;align-items:center}
+.apply .kick{color:#ff9d8e}
+.apply .sub{color:#c9cfe2}
+.chk{margin-top:26px;display:grid;gap:10px}
+.chk div{display:flex;gap:12px;align-items:center;font-size:16px;color:#e4e7f1}
+.chk svg{width:22px;height:22px;flex:none}
+form{background:var(--snow);color:var(--ink);border-radius:18px;padding:34px;box-shadow:0 30px 70px rgba(0,0,0,.4)}
+form h3{font-family:'Gowun Batang',serif;font-size:24px;margin-bottom:4px}
+form .fs{font-size:14px;color:#5b6070;margin-bottom:20px}
+.frow{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:14px}
+label{display:block;font-size:13px;font-weight:700;color:#3a4052;margin-bottom:6px}
+input,select{width:100%;height:50px;border-radius:8px;border:1.5px solid #d9d2c4;background:#fff;padding:0 14px;font-family:inherit;font-size:15px;color:var(--ink)}
+input:focus,select:focus{outline:none;border-color:var(--red)}
+.cnt{display:flex;align-items:center;border:1.5px solid #d9d2c4;border-radius:8px;height:50px;background:#fff;overflow:hidden}
+.cnt button{width:50px;height:100%;border:0;background:#f1ece2;font-size:20px;cursor:pointer;color:var(--ink)}
+.cnt b{flex:1;text-align:center;font-size:16px}
+.est{display:flex;justify-content:space-between;align-items:center;background:#f3e3df;border-radius:10px;padding:14px 18px;margin:6px 0 16px}
+.est span{font-size:14px;color:#6b3a36}
+.est b{font-family:'Gowun Batang',serif;font-size:26px;color:var(--red)}
+.agree{display:flex;gap:8px;align-items:center;font-size:13px;color:#5b6070;margin-bottom:16px}
+.agree input{width:18px;height:18px}
+form .btn{width:100%}
+.done{display:none;text-align:center;padding:40px 10px}
+.done svg{width:70px;height:70px;margin:0 auto 16px}
+.done b{font-family:'Gowun Batang',serif;font-size:24px;display:block;margin-bottom:6px}
+.done p{color:#5b6070}
+.err{color:var(--red);font-size:13px;min-height:18px;margin-bottom:6px}
+/* faq & foot */
+.faq{max-width:820px;margin:44px auto 0}
+.faq details{border-bottom:1px solid #ddd5c6;padding:4px 0}
+.faq summary{list-style:none;cursor:pointer;padding:20px 0;font-size:18px;font-weight:700;display:flex;justify-content:space-between;gap:20px}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary:after{content:'+';font-size:24px;color:var(--red);line-height:1}
+.faq details[open] summary:after{content:'−'}
+.faq p{padding:0 0 20px;color:#5b6070}
+.ft{background:#0e1426;color:#99a1bb;font-size:14px;padding:44px 0 110px}
+.ft .in{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+.ft b{color:#fff;font-family:'Gowun Batang',serif;font-size:18px}
+.sticky{position:fixed;left:0;right:0;bottom:0;z-index:20;background:rgba(14,20,38,.96);backdrop-filter:blur(8px);border-top:2px solid var(--red);padding:12px 0;transform:translateY(110%);transition:.3s}
+.sticky.on{transform:none}
+.sticky .in{display:flex;justify-content:space-between;align-items:center;gap:16px}
+.sticky p{color:#fff;font-size:15px}
+.sticky p b{color:#ffb3a6}
+.sticky .btn{height:48px;font-size:15px;box-shadow:none}
+@media(max-width:1000px){.inc{grid-template-columns:repeat(3,1fr)}.racks{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:860px){
+ .in{padding:0 20px}
+ .top .ph{display:none}
+ .hero{padding:110px 0 0}.hero .in{grid-template-columns:1fr}
+ .hero h1{font-size:40px}.hero p.lead{font-size:16px}
+ .offer .pct{min-width:112px;padding:16px}.offer .pct b{font-size:44px}.offer .det{padding:14px 16px 14px 22px}.offer .det strong{font-size:16px}.offer .det .now{font-size:26px}
+ .hero-art{margin:10px -20px 0}
+ section{padding:76px 0}
+ .inc{grid-template-columns:1fr 1fr;gap:12px}.inc div:last-child{grid-column:span 2}
+ .racks{gap:12px}.rack .bd{padding:12px 12px 14px}.rack h3{font-size:17px}.rack p{font-size:13px}
+ .price-wrap,.apply .in{grid-template-columns:1fr;gap:40px}
+ .ptable{padding:22px}.prow{grid-template-columns:1fr auto;gap:4px 12px}.prow s{grid-column:2;grid-row:1;text-align:right}.prow .n{grid-column:2;min-width:0}.prow b{grid-row:span 2}
+ form{padding:22px}.frow{grid-template-columns:1fr}
+ .faq summary{font-size:16px}
+ .sticky p{font-size:13px}.sticky .btn{padding:0 18px}
+}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+ <defs>
+  <linearGradient id="silkR" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#e8564a"/><stop offset=".5" stop-color="#c8312b"/><stop offset="1" stop-color="#8e1d1a"/></linearGradient>
+  <linearGradient id="silkN" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#3f4f86"/><stop offset=".5" stop-color="#25325c"/><stop offset="1" stop-color="#141c33"/></linearGradient>
+  <linearGradient id="silkY" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ffe7a8"/><stop offset=".5" stop-color="#f1c862"/><stop offset="1" stop-color="#c99a32"/></linearGradient>
+  <linearGradient id="silkP" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ffd3d6"/><stop offset=".5" stop-color="#f2a6b0"/><stop offset="1" stop-color="#cf7584"/></linearGradient>
+  <linearGradient id="silkJ" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#6fc2ae"/><stop offset=".5" stop-color="#2f8c7a"/><stop offset="1" stop-color="#1d5c50"/></linearGradient>
+  <linearGradient id="silkW" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ffffff"/><stop offset=".6" stop-color="#ece7dc"/><stop offset="1" stop-color="#cfc6b5"/></linearGradient>
+  <linearGradient id="silkG" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#9aa0ae"/><stop offset=".5" stop-color="#6c7383"/><stop offset="1" stop-color="#454b59"/></linearGradient>
+  <linearGradient id="hang" x1="0" x2="1"><stop offset="0" stop-color="#8a6443"/><stop offset=".5" stop-color="#c49a6c"/><stop offset="1" stop-color="#7a5536"/></linearGradient>
+  <filter id="dsh" x="-20%" y="-10%" width="140%" height="130%"><feDropShadow dx="0" dy="14" stdDeviation="12" flood-color="#0b1022" flood-opacity=".35"/></filter>
+  <pattern id="gold" width="18" height="18" patternUnits="userSpaceOnUse"><circle cx="9" cy="9" r="2.2" fill="#f2d48a" opacity=".85"/><circle cx="0" cy="0" r="1.2" fill="#f2d48a" opacity=".6"/><circle cx="18" cy="18" r="1.2" fill="#f2d48a" opacity=".6"/></pattern>
+  <!-- hanbok on hanger: jeogori + chima. params via use/transform -->
+  <symbol id="hb" viewBox="0 0 240 360">
+   <path d="M120 6c-8 0-10 8-6 12l6 6" stroke="#c9b48a" stroke-width="4" fill="none" stroke-linecap="round"/>
+   <path d="M30 40l90-16 90 16" stroke="url(#hang)" stroke-width="7" fill="none" stroke-linecap="round"/>
+  </symbol>
+ </defs>
+</svg>
+
+<header class="top">
+ <div class="in">
+  <a class="logo" href="#"><svg viewBox="0 0 42 42" aria-hidden="true"><circle cx="21" cy="21" r="20" fill="#c8312b"/><path d="M11 15c4-4 16-4 20 0l-4 5c-4-2-8-2-12 0z" fill="#f7f4ee"/><path d="M14 20l7 4 7-4-2 14H16z" fill="#f2c862"/><path d="M21 24v10" stroke="#c8312b" stroke-width="1.6"/></svg><div><b>다홍결</b><span>HANBOK RENTAL</span></div></a>
+  <span class="ph">예약 문의<b>000-0000-0000</b></span>
+ </div>
+</header>
+
+<section class="hero" style="padding-bottom:0">
+ <svg class="bgsvg" viewBox="0 0 1440 820" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+  <defs>
+   <radialGradient id="moon" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#fff8e6"/><stop offset=".7" stop-color="#f4e2b8"/><stop offset="1" stop-color="#f4e2b8" stop-opacity="0"/></radialGradient>
+   <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0f1528"/><stop offset="1" stop-color="#26335e"/></linearGradient>
+  </defs>
+  <rect width="1440" height="820" fill="url(#sky)"/>
+  <circle cx="1180" cy="170" r="120" fill="url(#moon)" opacity=".35"/>
+  <circle cx="1180" cy="170" r="54" fill="#fbf1d8" opacity=".9"/>
+  <!-- palace roof silhouette -->
+  <g fill="#0c1222" opacity=".9">
+   <path d="M300 820c110-50 190-104 260-120 80-18 140-60 180-110h420c40 50 100 92 180 110 50 14 80 40 100 120z"/>
+   <path d="M700 590c30-6 60-22 80-44h340c20 22 50 38 80 44z"/>
+   <rect x="780" y="600" width="340" height="120"/>
+  </g>
+  <g fill="#f7f4ee" opacity=".85"><path d="M560 700c80-18 140-60 180-110h420c40 50 100 92 180 110l-8 4c-80-18-138-58-178-106H748c-40 48-98 88-178 106z"/><path d="M700 590c30-6 60-22 80-44h340c20 22 50 38 80 44l-6 3c-30-6-58-20-78-40H784c-20 20-48 34-78 40z"/></g>
+  <g fill="#c8312b" opacity=".55"><rect x="800" y="610" width="10" height="110"/><rect x="900" y="610" width="10" height="110"/><rect x="990" y="610" width="10" height="110"/><rect x="1090" y="610" width="10" height="110"/></g>
+  <!-- snow -->
+  <g fill="#fff">
+   <circle cx="90" cy="120" r="2.4" opacity=".7"/><circle cx="420" cy="90" r="2.2" opacity=".6"/><circle cx="760" cy="80" r="2.6" opacity=".7"/><circle cx="900" cy="300" r="2" opacity=".6"/><circle cx="1010" cy="120" r="1.6" opacity=".5"/><circle cx="1330" cy="330" r="2.4" opacity=".7"/><circle cx="1390" cy="90" r="1.8" opacity=".6"/><circle cx="1260" cy="460" r="2" opacity=".5"/><circle cx="1100" cy="400" r="1.6" opacity=".5"/>
+  </g>
+  <path d="M0 796c240-26 520-8 760-20s460 8 680-4v48H0z" fill="#3a4a78" opacity=".55"/><path d="M0 806c260-20 540-6 780-16s440 6 660-2v32H0z" fill="#f7f4ee" opacity=".16"/>
+ </svg>
+ <div class="in">
+  <div style="padding-bottom:90px">
+   <span class="ribbon"><i></i>12월 – 2월 · 평일 한정</span>
+   <h1>눈 내린 궁궐 산책,<br><em>둘이 함께</em> 입으면<br>20% 가볍게</h1>
+   <p class="lead">겨울 평일, 두 분이 함께 오시면 한복 2벌을 20% 할인해 드립니다. 솜 누빔 배자와 털목도리까지 기본으로 챙겨 드려요.</p>
+   <div class="offer">
+    <div class="pct"><small>2인 대여</small><b>20%</b></div>
+    <div class="det"><strong>4시간 한복 2벌 + 헤어 스타일링</strong><div class="pr"><s>58,000원</s><span class="now">46,400원</span></div><span>평일 09:00 – 17:00 출발 기준 · 1인 23,200원</span></div>
+   </div>
+   <a class="btn" href="#apply">겨울 2인 예약하기 <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+   <p class="note">예약금 없이 신청 가능 · 방문 당일 결제</p>
+  </div>
+  <div class="hero-art">
+   <svg viewBox="0 0 560 560" aria-label="옷걸이에 걸린 다홍 저고리와 남색 치마, 쪽빛 두루마기 한복 두 벌 일러스트">
+    <path d="M40 40h480" stroke="url(#hang)" stroke-width="10" stroke-linecap="round"/>
+    <circle cx="40" cy="40" r="10" fill="#7a5536"/><circle cx="520" cy="40" r="10" fill="#7a5536"/>
+    <!-- left hanbok: red jeogori + navy chima -->
+    <g filter="url(#dsh)" transform="translate(40 0)">
+     <path d="M130 40c-6 0-8 8-4 12l4 6" stroke="#d8b46a" stroke-width="4" fill="none" stroke-linecap="round"/>
+     <path d="M50 78l80-18 80 18" stroke="url(#hang)" stroke-width="7" fill="none" stroke-linecap="round"/>
+     <!-- chima -->
+     <path d="M78 150h104c30 120 50 240 66 400H12c16-160 36-280 66-400z" fill="url(#silkN)"/>
+     <path d="M100 160c-10 120-22 260-30 390M130 160v390M160 160c10 120 22 260 30 390" stroke="#0e1426" stroke-width="2" opacity=".5" fill="none"/>
+     <path d="M30 500c60 10 140 10 200 0v50H12z" fill="url(#gold)" opacity=".7"/>
+     <path d="M20 498c70 14 150 14 220 0" stroke="#d8b46a" stroke-width="3" fill="none"/>
+     <!-- jeogori -->
+     <path d="M130 66l-60 12c-30 6-44 30-48 60l-10 60c-2 10 6 14 14 12l30-8 4-30 6 52h128l6-52 4 30 30 8c8 2 16-2 14-12l-10-60c-4-30-18-54-48-60z" fill="url(#silkR)"/>
+     <path d="M18 196l36-10 4 14-36 10z" fill="#f2c862"/><path d="M238 196l-36-10-4 14 36 10z" fill="#f2c862"/>
+     <path d="M130 66l-22 10 22 70 22-70z" fill="#f7f4ee"/>
+     <path d="M108 76l22 70 30-16-8-54" fill="#8e1d1a" opacity=".35"/>
+     <path d="M130 146c-10 6-30 22-28 60M130 146c14 4 40 14 44 50" stroke="#8e1d1a" stroke-width="10" fill="none" stroke-linecap="round"/>
+     <path d="M130 146c-10 6-30 22-28 60" stroke="#c8312b" stroke-width="6" fill="none" stroke-linecap="round"/>
+     <path d="M70 92c-14 20-20 50-22 80" stroke="#fff" stroke-width="5" opacity=".25" fill="none" stroke-linecap="round"/>
+    </g>
+    <!-- right hanbok: jade durumagi + baeja -->
+    <g filter="url(#dsh)" transform="translate(290 10)">
+     <path d="M115 30c-6 0-8 8-4 12l4 6" stroke="#d8b46a" stroke-width="4" fill="none" stroke-linecap="round"/>
+     <path d="M38 68l77-18 77 18" stroke="url(#hang)" stroke-width="7" fill="none" stroke-linecap="round"/>
+     <path d="M115 56l-54 12c-28 6-40 28-44 56l-14 80c-2 10 6 14 14 12l26-6 0 300h144l0-300 26 6c8 2 16-2 14-12l-14-80c-4-28-16-50-44-56z" fill="url(#silkJ)"/>
+     <path d="M115 56l-22 10 22 120 22-120z" fill="#f7f4ee"/>
+     <path d="M93 66l22 120v324" stroke="#1d5c50" stroke-width="3" fill="none"/>
+     <!-- baeja (fur vest) -->
+     <path d="M70 80c-6 40-8 90-6 140h40l11-34 11 34h40c2-50 0-100-6-140l-22-8-23 120-23-120z" fill="url(#silkY)"/>
+     <path d="M70 80c-6 40-8 90-6 140M160 80c6 40 8 90 6 140" stroke="#fffaf0" stroke-width="12" stroke-linecap="round" fill="none"/>
+     <path d="M70 80l45 112 45-112" stroke="#fffaf0" stroke-width="10" fill="none" stroke-linejoin="round"/>
+     <g fill="#c99a32" opacity=".7"><circle cx="90" cy="150" r="5"/><circle cx="140" cy="150" r="5"/><circle cx="86" cy="190" r="4"/><circle cx="144" cy="190" r="4"/></g>
+     <path d="M26 210l30-7 0 14-30 7zM204 210l-30-7 0 14 30 7z" fill="#f7f4ee"/>
+     <path d="M55 260v240" stroke="#fff" stroke-width="6" opacity=".18" stroke-linecap="round"/>
+    </g>
+    <!-- norigae -->
+    <g transform="translate(255 170)">
+     <path d="M0 0v30" stroke="#d8b46a" stroke-width="2"/>
+     <path d="M0 30l10 12-10 12-10-12z" fill="#c8312b"/>
+     <path d="M-6 54l-4 46M0 54v50M6 54l4 46" stroke="#c8312b" stroke-width="3" stroke-linecap="round"/>
+    </g>
+   </svg>
+  </div>
+ </div>
+ <div class="band"></div>
+</section>
+
+<section>
+ <div class="in center">
+  <span class="kick">INCLUDED</span>
+  <h2 class="h2">대여 요금 안에 모두 들어 있어요</h2>
+  <p class="sub">따로 챙기실 것 없이 빈손으로 오셔도 됩니다. 겨울에는 방한 소품을 기본으로 준비해 둡니다.</p>
+  <div class="inc">
+   <div><svg viewBox="0 0 64 64"><path d="M32 10l-18 6c-6 2-8 8-9 14l-2 10 10-2 2-8 1 30h32l1-30 2 8 10 2-2-10c-1-6-3-12-9-14z" fill="url(#silkR)"/><path d="M32 10l-6 4 6 18 6-18z" fill="#f7f4ee"/></svg><b>한복 1벌</b><span>저고리 · 치마 · 속치마</span></div>
+   <div><svg viewBox="0 0 64 64"><path d="M18 14c-4 10-4 26-2 40h12l4-10 4 10h12c2-14 2-30-2-40l-6-2-8 28-8-28z" fill="url(#silkY)"/><path d="M18 14c-4 10-4 26-2 40M46 14c4 10 4 26 2 40" stroke="#fffaf0" stroke-width="5" stroke-linecap="round" fill="none"/></svg><b>누빔 배자</b><span>겨울 방한 조끼</span></div>
+   <div><svg viewBox="0 0 64 64"><path d="M14 30c0-10 8-18 18-18s18 8 18 18" stroke="#2a3760" stroke-width="6" fill="none" stroke-linecap="round"/><circle cx="32" cy="12" r="5" fill="#c8312b"/><path d="M22 40c4 10 16 10 20 0" stroke="#d8b46a" stroke-width="4" fill="none" stroke-linecap="round"/><path d="M28 46l4 12 4-12" fill="#c8312b"/></svg><b>헤어 스타일링</b><span>댕기 · 머리 장식</span></div>
+   <div><svg viewBox="0 0 64 64"><rect x="14" y="20" width="36" height="30" rx="6" fill="url(#silkN)"/><path d="M24 20v-4a8 8 0 0 1 16 0v4" stroke="#2a3760" stroke-width="4" fill="none"/><path d="M14 32h36" stroke="#d8b46a" stroke-width="3"/></svg><b>짐 보관</b><span>캐리어 · 외투 보관</span></div>
+   <div><svg viewBox="0 0 64 64"><path d="M20 12h24l-4 10H24z" fill="#d8b46a"/><path d="M24 22h16v6c6 4 8 10 8 16 0 8-7 12-16 12s-16-4-16-12c0-6 2-12 8-16z" fill="url(#silkP)"/><circle cx="32" cy="42" r="5" fill="#c8312b"/></svg><b>복주머니 · 털목도리</b><span>소품 대여 무료</span></div>
+  </div>
+ </div>
+</section>
+
+<section class="styles">
+ <div class="in center">
+  <span class="kick">STYLE</span>
+  <h2 class="h2">원하는 분위기로 골라 입기</h2>
+  <p class="sub">전통·퓨전·남성·아동까지 사이즈별로 준비되어 있어요. 현장에서 직원과 함께 어울리는 색을 맞춰 드립니다.</p>
+  <div class="stabs" role="tablist"><button type="button" role="tab" aria-selected="true" data-f="all">전체</button><button type="button" role="tab" aria-selected="false" data-f="tr">전통</button><button type="button" role="tab" aria-selected="false" data-f="fu">퓨전</button><button type="button" role="tab" aria-selected="false" data-f="mk">남성 · 아동</button></div>
+  <div class="racks" style="text-align:left">
+   <article class="rack" data-c="tr"><div class="ph"><svg viewBox="0 0 240 300" aria-label="노랑 저고리와 다홍 치마 일러스트"><rect width="240" height="300" fill="#f3e3df"/><path d="M60 30l60-12 60 12" stroke="url(#hang)" stroke-width="6" fill="none" stroke-linecap="round"/><g filter="url(#dsh)"><path d="M84 92h72c22 70 34 140 44 200H40c10-60 22-130 44-200z" fill="url(#silkR)"/><path d="M48 262c50 8 94 8 144 0v30H40z" fill="url(#gold)"/><path d="M120 26l-44 8c-20 4-30 20-32 40l-8 40c-2 8 4 10 10 8l20-6 4-22 4 36h92l4-36 4 22 20 6c6 2 12 0 10-8l-8-40c-2-20-12-36-32-40z" fill="url(#silkY)"/><path d="M120 26l-16 8 16 50 16-50z" fill="#f7f4ee"/><path d="M120 84c-8 4-22 16-20 44" stroke="#c8312b" stroke-width="7" fill="none" stroke-linecap="round"/><path d="M40 118l26-8 3 12-26 8zM200 118l-26-8-3 12 26 8z" fill="#2f8c7a"/></g></svg></div><div class="bd"><span class="t">전통</span><h3>노랑 저고리 · 다홍 치마</h3><p>금박 단 치마, 사진이 밝게 나오는 색</p></div></article>
+   <article class="rack" data-c="tr"><div class="ph"><svg viewBox="0 0 240 300" aria-label="흰 저고리와 쪽빛 치마 일러스트"><rect width="240" height="300" fill="#dfe5ef"/><path d="M60 30l60-12 60 12" stroke="url(#hang)" stroke-width="6" fill="none" stroke-linecap="round"/><g filter="url(#dsh)"><path d="M84 92h72c22 70 34 140 44 200H40c10-60 22-130 44-200z" fill="url(#silkN)"/><path d="M100 96c-6 70-12 140-16 196M140 96c6 70 12 140 16 196" stroke="#0e1426" stroke-width="2" opacity=".5"/><path d="M120 26l-44 8c-20 4-30 20-32 40l-8 40c-2 8 4 10 10 8l20-6 4-22 4 36h92l4-36 4 22 20 6c6 2 12 0 10-8l-8-40c-2-20-12-36-32-40z" fill="url(#silkW)"/><path d="M120 26l-16 8 16 50 16-50z" fill="#25325c"/><path d="M120 84c-8 4-22 16-20 44" stroke="#25325c" stroke-width="7" fill="none" stroke-linecap="round"/><path d="M40 118l26-8 3 12-26 8zM200 118l-26-8-3 12 26 8z" fill="#25325c"/></g></svg></div><div class="bd"><span class="t">전통</span><h3>설백 저고리 · 쪽빛 치마</h3><p>눈 풍경과 잘 어울리는 단정한 조합</p></div></article>
+   <article class="rack" data-c="fu"><div class="ph"><svg viewBox="0 0 240 300" aria-label="분홍 퓨전 한복 원피스 일러스트"><rect width="240" height="300" fill="#f7e6ea"/><path d="M60 30l60-12 60 12" stroke="url(#hang)" stroke-width="6" fill="none" stroke-linecap="round"/><g filter="url(#dsh)"><path d="M90 100h60c30 50 46 110 56 170-30 14-142 14-172 0 10-60 26-120 56-170z" fill="url(#silkP)"/><path d="M50 250c40 12 100 12 140 0" stroke="#fff" stroke-width="3" opacity=".7" fill="none"/><path d="M50 262c40 12 100 12 140 0" stroke="#fff" stroke-width="3" opacity=".5" fill="none"/><path d="M120 28l-36 8c-14 4-20 14-22 28l-4 30 14-2 4-14 4 26h80l4-26 4 14 14 2-4-30c-2-14-8-24-22-28z" fill="url(#silkW)"/><path d="M120 28l-14 8 14 40 14-40z" fill="#cf7584"/><rect x="84" y="98" width="72" height="10" rx="4" fill="#cf7584"/><path d="M120 108l-8 30M120 108l8 30" stroke="#cf7584" stroke-width="5" stroke-linecap="round"/></g></svg></div><div class="bd"><span class="t">퓨전</span><h3>벚꽃 퓨전 원피스</h3><p>걷기 편한 길이, 허리 리본 장식</p></div></article>
+   <article class="rack" data-c="mk"><div class="ph"><svg viewBox="0 0 240 300" aria-label="회색 남성 한복과 아동 색동 저고리 일러스트"><rect width="240" height="300" fill="#e7e3da"/><path d="M30 30l50-10 50 10M140 60l40-8 40 8" stroke="url(#hang)" stroke-width="6" fill="none" stroke-linecap="round"/><g filter="url(#dsh)"><path d="M80 26l-34 8c-16 4-22 16-24 30l-8 52c-2 8 4 10 10 8l18-4v160h76V120l18 4c6 2 12 0 10-8l-8-52c-2-14-8-26-24-30z" fill="url(#silkG)"/><path d="M80 26l-14 8 14 80 14-80z" fill="#f7f4ee"/><path d="M80 114v166" stroke="#454b59" stroke-width="3"/><path d="M80 100l-20 14M80 100l20 14" stroke="#1d2846" stroke-width="5" stroke-linecap="round"/></g><g filter="url(#dsh)"><path d="M180 56l-24 6c-10 2-14 10-16 20l-4 26 10-2 2-12 2 20h60l2-20 2 12 10 2-4-26c-2-10-6-18-16-20z" fill="url(#silkY)"/><g><path d="M140 82l-4 26 10-2 2-12" fill="url(#silkR)"/><path d="M220 82l4 26-10 2-2-12" fill="url(#silkR)"/></g><path d="M136 100l10-2M224 100l-10-2" stroke="#2f8c7a" stroke-width="6"/><path d="M136 92l8-2M224 92l-8-2" stroke="#3f4f86" stroke-width="6"/><path d="M150 114h60l14 120h-88z" fill="url(#silkJ)"/><path d="M180 56l-10 6 10 30 10-30z" fill="#f7f4ee"/></g></svg></div><div class="bd"><span class="t">남성 · 아동</span><h3>남성 철릭 · 아동 색동</h3><p>키 100cm부터 아동 사이즈 준비</p></div></article>
+  </div>
+ </div>
+</section>
+
+<section>
+ <div class="in price-wrap">
+  <div>
+   <span class="kick">PRICE &amp; HOW</span>
+   <h2 class="h2">요금은 간단하게,<br>순서는 네 단계</h2>
+   <p class="sub">기본 4시간 대여 기준입니다. 반납 시간이 늦어질 때는 1시간 단위로 연장할 수 있어요.</p>
+   <div class="steps">
+    <div><i>1</i><div><b>예약 신청</b><span>아래 양식으로 날짜·인원을 남겨 주세요</span></div></div>
+    <div><i>2</i><div><b>한복 고르기</b><span>방문 후 직원과 함께 색과 사이즈 선택</span></div></div>
+    <div><i>3</i><div><b>머리 · 소품 준비</b><span>헤어 스타일링과 방한 소품까지 약 20분</span></div></div>
+    <div><i>4</i><div><b>산책 후 반납</b><span>4시간 뒤 매장으로 돌아와 반납</span></div></div>
+   </div>
+  </div>
+  <div class="ptable">
+   <div class="prow"><b>전통 · 퓨전 한복<small>1인 · 4시간</small></b><s></s><span class="n">29,000원</span></div>
+   <div class="prow"><b>겨울 평일 2인<small>2벌 · 4시간 · 20% 할인</small></b><s>58,000원</s><span class="n hl">46,400원</span></div>
+   <div class="prow"><b>남성 한복<small>1인 · 4시간</small></b><s></s><span class="n">25,000원</span></div>
+   <div class="prow"><b>아동 한복<small>키 100 – 150cm</small></b><s></s><span class="n">18,000원</span></div>
+   <div class="prow"><b>시간 연장<small>1시간 단위</small></b><s></s><span class="n">5,000원</span></div>
+   <p class="tip">※ 2인 할인은 12월 1일 – 2월 26일 평일(공휴일 제외) 방문에 적용됩니다.</p>
+  </div>
+ </div>
+</section>
+
+<section class="apply" id="apply">
+ <svg class="bgsvg" viewBox="0 0 1440 700" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><g fill="#fff" opacity=".5"><circle cx="100" cy="100" r="2"/><circle cx="300" cy="400" r="1.6"/><circle cx="520" cy="160" r="2.2"/><circle cx="700" cy="560" r="1.6"/><circle cx="1240" cy="120" r="2"/><circle cx="1360" cy="480" r="2.4"/><circle cx="980" cy="620" r="1.8"/><circle cx="860" cy="80" r="1.6"/></g><circle cx="140" cy="600" r="220" fill="#c8312b" opacity=".18"/></svg>
+ <div class="in">
+  <div>
+   <span class="kick">BOOKING</span>
+   <h2 class="h2">겨울 2인 대여,<br>날짜만 먼저 잡아 두세요</h2>
+   <p class="sub">신청 후 확인 연락을 드리면 예약이 확정됩니다. 예약금은 받지 않아요.</p>
+   <div class="chk">
+    <div><svg viewBox="0 0 22 22"><circle cx="11" cy="11" r="10" fill="#c8312b"/><path d="M6.5 11.5l3 3 6-7" stroke="#fff" stroke-width="2.2" fill="none" stroke-linecap="round"/></svg>방문 2일 전까지 무료 변경</div>
+    <div><svg viewBox="0 0 22 22"><circle cx="11" cy="11" r="10" fill="#c8312b"/><path d="M6.5 11.5l3 3 6-7" stroke="#fff" stroke-width="2.2" fill="none" stroke-linecap="round"/></svg>배자 · 털목도리 · 장갑 무료</div>
+    <div><svg viewBox="0 0 22 22"><circle cx="11" cy="11" r="10" fill="#c8312b"/><path d="M6.5 11.5l3 3 6-7" stroke="#fff" stroke-width="2.2" fill="none" stroke-linecap="round"/></svg>오전 9시 첫 타임은 조용하게 촬영하기 좋아요</div>
+   </div>
+  </div>
+  <form id="f" novalidate>
+   <div id="fbody">
+    <h3>겨울 2인 예약 신청</h3>
+    <p class="fs">1분이면 끝나요. 확인 후 연락드립니다.</p>
+    <div class="frow">
+     <div><label for="d">방문 날짜</label><input id="d" type="date" min="2026-12-01" max="2027-02-26" value="2026-12-09"></div>
+     <div><label for="t">출발 시간</label><select id="t"><option>09:00</option><option selected>11:00</option><option>13:00</option><option>15:00</option><option>17:00</option></select></div>
+    </div>
+    <div class="frow">
+     <div><label>인원</label><div class="cnt"><button type="button" id="m" aria-label="인원 줄이기">−</button><b id="n">2명</b><button type="button" id="p" aria-label="인원 늘리기">+</button></div></div>
+     <div><label for="s">관심 스타일</label><select id="s"><option>전통 한복</option><option>퓨전 한복</option><option>남성 · 아동 포함</option><option>현장에서 고를게요</option></select></div>
+    </div>
+    <div class="frow">
+     <div><label for="nm">예약자 이름</label><input id="nm" placeholder="홍길동"></div>
+     <div><label for="tel">연락처</label><input id="tel" inputmode="tel" placeholder="010-0000-0000"></div>
+    </div>
+    <div class="est"><span id="estl">2인 · 평일 20% 할인 적용</span><b id="est">46,400원</b></div>
+    <label class="agree"><input type="checkbox" id="ag">예약 확인 연락을 위한 개인정보 수집에 동의합니다</label>
+    <p class="err" id="err"></p>
+    <button class="btn" type="submit">예약 신청하기</button>
+   </div>
+   <div class="done" id="done"><svg viewBox="0 0 70 70"><circle cx="35" cy="35" r="33" fill="#c8312b"/><path d="M22 36l9 9 18-20" stroke="#fff" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg><b>신청이 접수되었어요</b><p id="donep">확인 후 입력하신 번호로 연락드릴게요.</p></div>
+  </form>
+ </div>
+</section>
+
+<section style="padding-top:90px">
+ <div class="in center">
+  <span class="kick">FAQ</span>
+  <h2 class="h2">자주 묻는 질문</h2>
+  <div class="faq" style="text-align:left">
+   <details open><summary>추운 날에도 한복만 입고 다니나요?</summary><p>속에 얇은 내복을 입으셔도 되고, 누빔 배자·털목도리·장갑을 무료로 빌려 드립니다. 외투는 매장에 맡겨 두실 수 있어요.</p></details>
+   <details><summary>눈이나 비가 오면 어떻게 하나요?</summary><p>우산을 무료로 빌려 드리고, 기상 악화로 방문이 어려우면 당일 오전까지 연락 주시면 날짜를 바꿔 드립니다.</p></details>
+   <details><summary>3명 이상이어도 할인되나요?</summary><p>2인 이상 함께 방문하시면 인원 전체에 평일 20% 할인이 적용됩니다.</p></details>
+  </div>
+ </div>
+</section>
+
+<footer class="ft">
+ <div class="in">
+  <div><b>다홍결 한복대여</b><p style="margin-top:6px">○○시 ○○구 ○○길 00, 1층 · 매일 08:30 – 19:00</p></div>
+  <div><p>예약 문의 000-0000-0000 · 카카오톡 ID: example</p><p>사업자등록번호 000-00-00000</p></div>
+ </div>
+</footer>
+
+<div class="sticky" id="sticky"><div class="in"><p>겨울 평일 2인 <b>20% 할인</b> · 2월 26일까지</p><a class="btn" href="#apply">예약하기</a></div></div>
+
+<script>
+(function(){
+ var $=function(s){return document.querySelector(s)},$$=function(s){return [].slice.call(document.querySelectorAll(s))};
+ $$('.stabs button').forEach(function(b){b.addEventListener('click',function(){
+  $$('.stabs button').forEach(function(x){x.setAttribute('aria-selected',x===b)});
+  var f=b.dataset.f;$$('.rack').forEach(function(r){r.classList.toggle('hide',f!=='all'&&r.dataset.c!==f)});
+ })});
+ var n=2;
+ function est(){
+  var d=new Date($('#d').value+'T12:00:00'),w=d.getDay(),wk=w>0&&w<6,base=29000*n,disc=(n>=2&&wk)?Math.round(base*.8):base;
+  $('#n').textContent=n+'명';$('#est').textContent=disc.toLocaleString('ko-KR')+'원';
+  $('#estl').textContent=n+'인 · '+(n>=2&&wk?'평일 20% 할인 적용':(wk?'1인 기본 요금':'주말 · 기본 요금'));
+ }
+ $('#m').addEventListener('click',function(){if(n>1){n--;est()}});
+ $('#p').addEventListener('click',function(){if(n<8){n++;est()}});
+ $('#d').addEventListener('change',est);est();
+ $('#f').addEventListener('submit',function(e){e.preventDefault();
+  var err='';if(!$('#nm').value.trim())err='예약자 이름을 입력해 주세요.';else if($('#tel').value.replace(/\D/g,'').length<9)err='연락 가능한 번호를 입력해 주세요.';else if(!$('#ag').checked)err='개인정보 수집에 동의해 주세요.';
+  $('#err').textContent=err;if(err)return;
+  $('#fbody').style.display='none';$('#done').style.display='block';
+  $('#donep').textContent=$('#d').value.replace(/-/g,'.')+' '+$('#t').value+' · '+n+'명 신청 완료. 확인 후 연락드릴게요.';
+ });
+ var st=$('#sticky');window.addEventListener('scroll',function(){st.classList.toggle('on',window.scrollY>700&&window.scrollY<document.body.scrollHeight-innerHeight-900)},{passive:true});
+})();
+</script>
+</body>
+</html>
