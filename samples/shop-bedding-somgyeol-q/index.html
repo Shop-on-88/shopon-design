@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>솜결 침구 | 구스 이불 · 차렵이불 · 베개 온라인 스토어</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&family=Noto+Sans+KR:wght@400;500;700&family=Outfit:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#18213d;--navy:#25335e;--navy2:#33457a;--goose:#f8f6f1;--linen:#eee8dc;--sand:#e2d8c6;--mustard:#d6a03c;--mustard2:#b9862a;--mist:#c8d2e6;--text:#2b3149;--muted:#646a80}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Noto Sans KR',sans-serif;color:var(--text);background:var(--goose);word-break:keep-all;-webkit-font-smoothing:antialiased;line-height:1.65;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+button{font-family:inherit;cursor:pointer}
+.en{font-family:'Outfit',sans-serif;letter-spacing:.18em;text-transform:uppercase;font-size:12px;font-weight:600;color:var(--mustard2)}
+.serif{font-family:'Gowun Batang',serif}
+.wrap{max-width:1240px;margin:0 auto;padding:0 32px}
+/* notice */
+.notice{background:var(--ink);color:#dfe4f1;font-size:13px;text-align:center;padding:9px 16px}
+.notice b{color:var(--mustard);font-weight:700}
+/* header */
+header{position:sticky;top:0;z-index:30;background:rgba(248,246,241,.94);backdrop-filter:blur(8px);border-bottom:1px solid rgba(24,33,61,.1)}
+.hd{display:flex;align-items:center;justify-content:space-between;height:72px;gap:20px}
+.logo{display:flex;align-items:center;gap:10px}
+.logo svg{width:38px;height:38px}
+.logo b{font-family:'Gowun Batang',serif;font-size:24px;color:var(--ink);letter-spacing:-.02em}
+.logo small{display:block;font-family:'Outfit',sans-serif;font-size:11px;letter-spacing:.28em;color:var(--muted);margin-top:-4px}
+nav{display:flex;gap:30px;font-size:15px;font-weight:500;color:var(--ink)}
+nav a{position:relative;padding:4px 0}
+nav a:hover::after{content:'';position:absolute;left:0;right:0;bottom:-2px;height:2px;background:var(--mustard);border-radius:2px}
+.hd-r{display:flex;gap:10px;align-items:center}
+.ic{width:42px;height:42px;border-radius:50%;border:1px solid rgba(24,33,61,.16);display:grid;place-items:center;background:#fff;position:relative}
+.ic svg{width:19px;height:19px;fill:none;stroke:var(--ink);stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.ic i{position:absolute;top:-4px;right:-4px;min-width:19px;height:19px;border-radius:10px;background:var(--mustard);color:var(--ink);font-style:normal;font-size:11px;font-weight:700;display:grid;place-items:center;padding:0 5px;font-family:'Outfit',sans-serif}
+.menu-btn{display:none}
+/* hero */
+.hero{position:relative;background:linear-gradient(90deg,#f8f6f1 0%,#f8f6f1 48%,#eee8dc 48%,#eee8dc 100%);color:var(--ink);overflow:hidden}
+.hero::after{content:"";position:absolute;left:48%;top:0;bottom:0;border-left:2px dashed rgba(185,134,42,.45)}
+.hero .wrap{display:grid;grid-template-columns:1fr 1.12fr;gap:40px;align-items:center;min-height:640px;padding-top:40px;padding-bottom:40px}
+.hero h1{font-family:'Gowun Batang',serif;font-size:58px;line-height:1.28;letter-spacing:-.03em;font-weight:700;margin:18px 0 22px}
+.hero h1 em{font-style:normal;color:var(--mustard)}
+.hero p{font-size:17px;color:var(--muted);max-width:470px}
+.hero .en{color:var(--mustard2)}
+.hero h1 em{color:var(--mustard2)}
+.hero .wrap{position:relative;z-index:2}
+.btns{display:flex;gap:12px;margin-top:34px;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;gap:10px;height:56px;padding:0 28px;border-radius:999px;font-weight:700;font-size:16px;transition:.2s;border:0}
+.btn svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+.btn.p{background:var(--mustard);color:var(--ink)}
+.btn.p:hover{background:#e6b24f}
+.btn.g{background:transparent;color:var(--ink);border:1.5px solid rgba(24,33,61,.3)}
+.btn.g:hover{background:#fff}
+.hero .btn.p{background:var(--ink);color:#fff}
+.hero .btn.p:hover{background:var(--navy2)}
+.hero-meta{display:flex;gap:30px;margin-top:44px;padding-top:26px;border-top:1px solid rgba(255,255,255,.14)}
+.hero-meta div b{display:block;font-family:'Outfit',sans-serif;font-size:26px;font-weight:500;color:#fff}
+.hero-meta div span{font-size:13px;color:#aeb8d2}
+.hero-art{position:relative}
+.hero-art svg{width:100%;height:auto;display:block;filter:drop-shadow(0 30px 40px rgba(24,33,61,.28))}
+.htag{position:absolute;z-index:3;left:-14px;top:46px;background:var(--mustard);color:var(--ink);border-radius:16px;padding:14px 20px 14px 18px;box-shadow:0 16px 30px rgba(24,33,61,.22);outline:2px dashed rgba(24,33,61,.35);outline-offset:-7px;transform:rotate(-3deg)}
+.htag small{display:block;font-family:Outfit,sans-serif;font-size:12px;font-weight:600;letter-spacing:.18em}
+.htag b{display:block;font-size:17px;margin-top:2px}
+.htag span{font-family:Outfit,sans-serif;font-size:20px;font-weight:600}
+.snow{position:absolute;inset:0;pointer-events:none;background-image:radial-gradient(circle,#fff 1.2px,transparent 1.6px),radial-gradient(circle,rgba(255,255,255,.6) 1px,transparent 1.4px);background-size:120px 120px,70px 70px;background-position:0 0,30px 40px;opacity:.28;animation:fall 18s linear infinite}
+@keyframes fall{to{background-position:0 600px,30px 440px}}
+/* stitch line */
+.stitch{height:14px;background:var(--linen);position:relative}
+.stitch::before{content:'';position:absolute;left:0;right:0;top:6px;border-top:2px dashed var(--mustard2);opacity:.55}
+section{padding:100px 0}
+.sec-h{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;margin-bottom:44px;flex-wrap:wrap}
+.sec-h h2{font-family:'Gowun Batang',serif;font-size:40px;line-height:1.3;color:var(--ink);letter-spacing:-.02em;margin-top:10px}
+.sec-h p{color:var(--muted);max-width:420px;font-size:15px}
+/* categories */
+.cats{display:grid;grid-template-columns:repeat(6,1fr);gap:16px}
+.cat{background:#fff;border-radius:20px;padding:22px 14px 18px;text-align:center;border:1px solid rgba(24,33,61,.08);transition:.25s}
+.cat:hover{transform:translateY(-4px);box-shadow:0 16px 30px rgba(24,33,61,.1)}
+.cat svg{width:76px;height:62px;display:block;margin:0 auto 12px}
+.cat b{display:block;color:var(--ink);font-size:15px}
+.cat span{font-size:12px;color:var(--muted)}
+/* products */
+.tabs{display:flex;gap:8px;flex-wrap:wrap}
+.tab{height:40px;padding:0 18px;border-radius:999px;border:1px solid rgba(24,33,61,.18);background:#fff;color:var(--ink);font-size:14px;font-weight:500}
+.tab.on{background:var(--ink);color:#fff;border-color:var(--ink)}
+.prods{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
+.prod{background:#fff;border-radius:22px;overflow:hidden;border:1px solid rgba(24,33,61,.07);display:flex;flex-direction:column}
+.prod .im{aspect-ratio:4/3;position:relative}
+.prod .im svg{width:100%;height:100%;display:block}
+.tag{position:absolute;top:16px;left:16px;background:var(--ink);color:#fff;font-size:12px;font-weight:700;padding:5px 11px;border-radius:999px}
+.tag.m{background:var(--mustard);color:var(--ink)}
+.prod .bd{padding:22px 24px 24px;display:flex;flex-direction:column;flex:1}
+.prod h3{font-size:18px;color:var(--ink);font-weight:700}
+.prod .sp{font-size:13px;color:var(--muted);margin:4px 0 14px}
+.sizes{display:flex;gap:6px;margin-bottom:16px}
+.sizes button{min-width:40px;height:32px;border-radius:8px;border:1px solid rgba(24,33,61,.2);background:#fff;font-size:13px;font-weight:500;color:var(--ink);font-family:'Outfit',sans-serif}
+.sizes button.on{background:var(--navy);color:#fff;border-color:var(--navy)}
+.pr{display:flex;align-items:center;justify-content:space-between;margin-top:auto}
+.pr b{font-family:'Outfit',sans-serif;font-size:22px;font-weight:600;color:var(--ink)}
+.pr b small{font-family:'Noto Sans KR',sans-serif;font-size:14px;font-weight:500;margin-left:2px}
+.add{height:40px;padding:0 16px;border-radius:999px;border:0;background:var(--linen);color:var(--ink);font-weight:700;font-size:13px;transition:.2s}
+.add:hover,.add.done{background:var(--mustard)}
+/* material */
+.material{background:var(--ink);color:#fff;position:relative;overflow:hidden}
+.material .sec-h h2{color:#fff}
+.material .sec-h p{color:#b8c1da}
+.mat-grid{display:grid;grid-template-columns:1.05fr 1fr;gap:56px;align-items:center}
+.mat-art svg{width:100%;height:auto;display:block}
+.specs{display:grid;gap:18px}
+.spec{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.12);border-radius:18px;padding:22px 24px;display:grid;grid-template-columns:96px 1fr;gap:18px;align-items:center}
+.spec .n{font-family:'Outfit',sans-serif;font-size:34px;font-weight:500;color:var(--mustard);line-height:1}
+.spec .n small{display:block;font-size:11px;letter-spacing:.06em;white-space:nowrap;color:#98a3c2;margin-top:6px}
+.spec b{font-size:16px;display:block;margin-bottom:2px}
+.spec p{font-size:14px;color:#bcc5dc}
+.bar{height:6px;border-radius:3px;background:rgba(255,255,255,.12);margin-top:10px;overflow:hidden}
+.bar i{display:block;height:100%;background:linear-gradient(90deg,var(--mustard2),var(--mustard));border-radius:3px}
+/* season guide */
+.season{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border:1px solid rgba(24,33,61,.14);border-radius:24px;overflow:hidden;background:#fff}
+.sz{padding:30px 26px;border-right:1px solid rgba(24,33,61,.1);position:relative}
+.sz:last-child{border-right:0}
+.sz .tp{font-family:'Outfit',sans-serif;font-size:13px;color:var(--muted);letter-spacing:.1em}
+.sz h3{font-family:'Gowun Batang',serif;font-size:24px;color:var(--ink);margin:6px 0 14px}
+.sz svg{width:100%;height:84px;display:block;margin-bottom:16px}
+.sz p{font-size:14px;color:var(--muted)}
+.sz.now{background:linear-gradient(180deg,#f4ecd9,#fff)}
+.sz.now::before{content:'지금 이 계절';position:absolute;top:18px;right:18px;font-size:12px;font-weight:700;background:var(--mustard);color:var(--ink);padding:3px 10px;border-radius:999px}
+/* size guide */
+.sizeg{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}
+.sg-art{background:#fff;border-radius:24px;padding:30px;border:1px solid rgba(24,33,61,.08)}
+.sg-art svg{width:100%;height:auto;display:block}
+.sg-pick{display:flex;gap:8px;margin-bottom:22px;flex-wrap:wrap}
+.sg-pick button{height:46px;padding:0 20px;border-radius:12px;border:1px solid rgba(24,33,61,.2);background:#fff;font-weight:700;color:var(--ink);font-size:15px}
+.sg-pick button.on{background:var(--navy);color:#fff;border-color:var(--navy)}
+table{width:100%;border-collapse:collapse;font-size:15px}
+th,td{padding:14px 10px;border-bottom:1px solid rgba(24,33,61,.1);text-align:left}
+th{font-size:13px;color:var(--muted);font-weight:500;width:38%}
+td{color:var(--ink);font-weight:500;font-family:'Outfit','Noto Sans KR',sans-serif}
+/* care */
+.care{background:var(--linen)}
+.care-g{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.cr{background:var(--goose);border-radius:20px;padding:26px 22px}
+.cr svg{width:48px;height:48px;fill:none;stroke:var(--navy);stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round;margin-bottom:14px}
+.cr b{display:block;font-size:16px;color:var(--ink);margin-bottom:6px}
+.cr p{font-size:14px;color:var(--muted)}
+.gift{margin-top:26px;background:var(--navy);color:#fff;border-radius:24px;display:grid;grid-template-columns:1.4fr 1fr;overflow:hidden}
+.gift .t{padding:40px 44px;display:flex;flex-direction:column;justify-content:center}
+.gift .lk{display:inline-flex;align-items:center;gap:8px;margin-top:22px;height:46px;padding:0 20px;border-radius:999px;background:var(--mustard);color:var(--ink);font-weight:700;font-size:14px;align-self:flex-start}
+.gift h3{font-family:'Gowun Batang',serif;font-size:30px;margin:8px 0 10px;line-height:1.35}
+.gift p{color:#c9d1e6;font-size:15px}
+.gift .t .en{color:var(--mustard)}
+.gift svg{width:100%;height:100%;display:block;min-height:230px}
+/* faq */
+.faq{max-width:860px;margin:0 auto}
+.q{border-bottom:1px solid rgba(24,33,61,.12)}
+.q button{width:100%;text-align:left;background:none;border:0;padding:22px 4px;font-size:17px;font-weight:700;color:var(--ink);display:flex;justify-content:space-between;gap:16px;align-items:center}
+.q button span{width:28px;height:28px;border-radius:50%;background:var(--linen);display:grid;place-items:center;flex-shrink:0;transition:.25s;font-family:'Outfit';font-size:18px;font-weight:400}
+.q.open button span{transform:rotate(45deg);background:var(--mustard)}
+.q .a{max-height:0;overflow:hidden;transition:max-height .3s;color:var(--muted);font-size:15px}
+.q.open .a{max-height:200px}
+.q .a p{padding:0 4px 22px}
+/* contact */
+.contact{background:linear-gradient(180deg,#25335e,#18213d);color:#fff}
+.ct{display:grid;grid-template-columns:1fr 1.1fr;gap:56px;align-items:start}
+.ct h2{font-family:'Gowun Batang',serif;font-size:40px;line-height:1.3;margin:10px 0 16px}
+.ct p{color:#c3cbe0}
+.ct .en{color:var(--mustard)}
+.ct ul{list-style:none;margin-top:28px;display:grid;gap:12px}
+.ct li{white-space:nowrap;display:flex;gap:12px;align-items:center;font-size:15px;color:#e4e8f3}
+.ct li svg{width:20px;height:20px;fill:none;stroke:var(--mustard);stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0}
+form{background:var(--goose);color:var(--text);border-radius:24px;padding:34px;display:grid;gap:14px}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+label{font-size:13px;font-weight:700;color:var(--ink);display:grid;gap:6px}
+input,select,textarea{font-family:inherit;font-size:15px;padding:13px 14px;border:1px solid rgba(24,33,61,.2);border-radius:12px;background:#fff;color:var(--ink);width:100%}
+textarea{min-height:96px;resize:vertical}
+input:focus,select:focus,textarea:focus{outline:2px solid var(--mustard);border-color:transparent}
+form .btn{justify-content:center;width:100%;background:var(--ink);color:#fff}
+form .btn:hover{background:var(--navy2)}
+.ok{display:none;background:#eaf1e3;color:#2f5a2c;border-radius:12px;padding:12px 14px;font-size:14px;font-weight:500}
+.ok.show{display:block}
+footer{background:#121a31;color:#9aa4c0;font-size:13px;padding:44px 0}
+.ft{display:flex;justify-content:space-between;gap:30px;flex-wrap:wrap;align-items:flex-start}
+.ft .logo b{color:#fff}
+.ft p{margin-top:12px;line-height:1.8}
+.nw{white-space:nowrap}
+.ft nav{gap:22px;color:#c6cde0;font-size:13px}
+@media(max-width:1080px){
+ .hero .wrap{grid-template-columns:1fr;min-height:0;padding-top:56px}
+ .hero-art{max-width:640px;margin:0 auto;width:100%}
+ .hero{background:#f8f6f1}
+ .hero::after{display:none}
+ .htag{left:4px;top:8px}
+ .cats{grid-template-columns:repeat(3,1fr)}
+ .prods{grid-template-columns:1fr 1fr}
+ .mat-grid,.sizeg,.ct{grid-template-columns:1fr;gap:36px}
+ .season{grid-template-columns:1fr 1fr}
+ .sz:nth-child(2){border-right:0}
+ .sz:nth-child(-n+2){border-bottom:1px solid rgba(24,33,61,.1)}
+ .care-g{grid-template-columns:1fr 1fr}
+}
+@media(max-width:760px){
+ .wrap{padding:0 18px}
+ nav,.hd-r .ic.s{display:none}
+ .menu-btn{display:grid}
+ .hd{height:62px}
+ .logo b{font-size:21px}
+ .hero h1{font-size:38px}
+ .hero p{font-size:15px}
+ .btn{height:52px;padding:0 22px;font-size:15px}
+ .htag{padding:8px 12px;top:auto;bottom:22%}.htag b{font-size:14px}.htag span{font-size:16px}.htag small{font-size:11px}
+ section{padding:70px 0}
+ .sec-h h2,.ct h2{font-size:30px}
+ .cats{grid-template-columns:1fr 1fr;gap:12px}
+ .prods{grid-template-columns:1fr}
+ .season{grid-template-columns:1fr}
+ .sz{border-right:0!important;border-bottom:1px solid rgba(24,33,61,.1)}
+ .sz:last-child{border-bottom:0}
+ .care-g{grid-template-columns:1fr}
+ .gift{grid-template-columns:1fr}
+ .gift .t{padding:30px 26px}
+ .gift h3{font-size:24px}
+ .spec{grid-template-columns:76px 1fr;padding:18px}
+ .spec .n{font-size:26px}
+ form{padding:24px 20px}
+ .row{grid-template-columns:1fr}
+ .q button{font-size:16px}
+ .notice{font-size:12px}
+}
+</style>
+</head>
+<body>
+<div class="notice">겨울 침구 교체 시즌 · 5만원 이상 주문 시 <b>무료 배송</b> · 구스 이불 구매 시 커버 세탁 망 증정</div>
+<header>
+ <div class="wrap hd">
+  <a class="logo" href="#top" aria-label="솜결 침구">
+   <svg viewBox="0 0 40 40"><circle cx="20" cy="20" r="19" fill="#18213d"/><path d="M9 23c3-5 7-5 11 0s8 5 11 0" fill="none" stroke="#d6a03c" stroke-width="2.2" stroke-linecap="round"/><path d="M9 17c3-5 7-5 11 0s8 5 11 0" fill="none" stroke="#f8f6f1" stroke-width="2.2" stroke-linecap="round" opacity=".8"/><circle cx="28" cy="11" r="2.2" fill="#d6a03c"/></svg>
+   <div><b>솜결 침구</b><small>SOMGYEOL BEDDING</small></div>
+  </a>
+  <nav><a href="#shop">겨울 컬렉션</a><a href="#material">소재 이야기</a><a href="#season">계절 가이드</a><a href="#size">사이즈</a><a href="#care">관리법</a><a href="#contact">주문 상담</a></nav>
+  <div class="hd-r">
+   <a class="ic s" href="#shop" aria-label="검색"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg></a>
+   <a class="ic" href="#shop" aria-label="장바구니"><svg viewBox="0 0 24 24"><path d="M5 8h14l-1.2 11H6.2z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/></svg><i id="cart">0</i></a>
+   <button class="ic menu-btn" aria-label="메뉴"><svg viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+  </div>
+ </div>
+</header>
+
+<section class="hero" id="top" style="padding:0">
+  <div class="wrap">
+  <div>
+   <span class="en">Winter Bedding Collection 2026</span>
+   <h1>창밖에 눈이 와도<br>이불 속은 <em>포근하게</em></h1>
+   <p>거위털 구스 이불부터 사계절 차렵이불, 높이를 고르는 베개까지. 한 땀씩 누빈 솜결의 겨울 침구를 집 앞까지 보내 드립니다.</p>
+   <div class="btns">
+    <a class="btn p" href="#shop">겨울 컬렉션 보기 <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+    <a class="btn g" href="#size">우리 집 사이즈 찾기</a>
+   </div>
+     </div>
+  <div class="hero-art"><div class="htag"><small>NEW ARRIVAL</small><b>설원 구스 이불 850</b><span>389,000</span>원</div>
+   <svg viewBox="0 0 680 540" role="img" aria-label="눈 내리는 창가의 침대와 누빔 구스 이불 일러스트">
+    <defs>
+     <linearGradient id="hw" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0f1730"/><stop offset="1" stop-color="#2a3d70"/></linearGradient>
+     <linearGradient id="wall" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#34477c"/><stop offset="1" stop-color="#2a3a68"/></linearGradient>
+     <linearGradient id="duv" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fdfcf8"/><stop offset=".6" stop-color="#ece7dc"/><stop offset="1" stop-color="#d6cdbb"/></linearGradient>
+     <linearGradient id="duv2" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f1ece2"/><stop offset="1" stop-color="#cfc5b1"/></linearGradient>
+     <linearGradient id="thr" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#c58f2e"/><stop offset="1" stop-color="#e3b459"/></linearGradient>
+     <linearGradient id="pil" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffffff"/><stop offset="1" stop-color="#ddd6c8"/></linearGradient>
+     <linearGradient id="pilN" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#46598f"/><stop offset="1" stop-color="#2b3a66"/></linearGradient>
+     <linearGradient id="wood" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#7a5636"/><stop offset="1" stop-color="#9c7248"/></linearGradient>
+     <radialGradient id="glow" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#ffd98a" stop-opacity=".75"/><stop offset="1" stop-color="#ffd98a" stop-opacity="0"/></radialGradient>
+     <radialGradient id="moon" cx=".4" cy=".4" r=".6"><stop offset="0" stop-color="#fff8e6"/><stop offset="1" stop-color="#f1dfae"/></radialGradient>
+     <clipPath id="win"><rect x="128" y="34" width="250" height="230" rx="125" ry="125"/></clipPath>
+    </defs>
+    <rect x="20" y="0" width="640" height="470" rx="34" fill="url(#wall)"/>
+    <!-- window -->
+    <g clip-path="url(#win)">
+     <rect x="128" y="34" width="250" height="240" fill="url(#hw)"/>
+     <circle cx="310" cy="96" r="24" fill="url(#moon)"/>
+     <path d="M128 230 Q190 196 250 218 T378 206 V274 H128Z" fill="#d9e1f1"/>
+     <path d="M128 250 Q200 226 270 244 T378 236 V274 H128Z" fill="#f4f7fc"/>
+     <g fill="#2d4a3e"><path d="M170 222l14-44 14 44z"/><path d="M164 236l20-50 20 50z" opacity=".85"/><path d="M332 214l11-34 11 34z"/></g>
+     <g fill="#fff"><circle cx="160" cy="80" r="2"/><circle cx="214" cy="60" r="1.6"/><circle cx="250" cy="120" r="2.2"/><circle cx="196" cy="150" r="1.5"/><circle cx="350" cy="150" r="1.8"/><circle cx="276" cy="168" r="1.4"/><circle cx="230" cy="190" r="2"/><circle cx="150" cy="180" r="1.6"/><circle cx="340" cy="60" r="1.4"/></g>
+    </g>
+    <rect x="128" y="34" width="250" height="230" rx="125" fill="none" stroke="#e8dcc0" stroke-width="10"/>
+    <path d="M253 38v226M132 160h242" stroke="#e8dcc0" stroke-width="6"/>
+    <rect x="116" y="262" width="274" height="14" rx="5" fill="#e8dcc0"/>
+    <!-- lamp -->
+    <circle cx="578" cy="250" r="110" fill="url(#glow)"/>
+    <rect x="540" y="330" width="90" height="120" rx="10" fill="url(#wood)"/>
+    <rect x="548" y="364" width="74" height="4" rx="2" fill="#5e4129" opacity=".55"/>
+    <rect x="576" y="380" width="18" height="6" rx="3" fill="#e2c38a"/>
+    <path d="M585 330v-68" stroke="#caa868" stroke-width="4"/>
+    <path d="M552 266h66l-12-52h-42z" fill="#f3e5c4"/>
+    <path d="M552 266h66l-3-12h-60z" fill="#e0c995"/>
+    <rect x="556" y="304" width="40" height="26" rx="4" fill="#f8f6f1" opacity=".9"/>
+    <rect x="560" y="308" width="32" height="4" rx="2" fill="#25335e" opacity=".5"/>
+    <!-- headboard -->
+    <rect x="70" y="250" width="460" height="128" rx="26" fill="#1c2748"/>
+    <g stroke="#2f3f6e" stroke-width="3"><path d="M146 262v110M222 262v110M298 262v110M374 262v110M450 262v110"/></g>
+    <!-- bed frame -->
+    <rect x="60" y="420" width="480" height="46" rx="10" fill="url(#wood)"/>
+    <rect x="76" y="462" width="16" height="36" rx="4" fill="#6a4a2e"/><rect x="508" y="462" width="16" height="36" rx="4" fill="#6a4a2e"/>
+    <!-- pillows -->
+    <path d="M108 342c0-26 16-38 40-38h126c26 0 40 12 40 38 0 24-12 36-40 36H146c-26 0-38-12-38-36z" fill="url(#pil)"/>
+    <path d="M286 342c0-26 16-38 40-38h126c26 0 40 12 40 38 0 24-12 36-40 36H324c-26 0-38-12-38-36z" fill="url(#pil)"/>
+    <path d="M150 350c0-18 10-26 28-26h70c18 0 28 8 28 26s-10 26-28 26h-70c-18 0-28-8-28-26z" fill="url(#pilN)"/>
+    <path d="M154 342h118" stroke="#d6a03c" stroke-width="2" stroke-dasharray="5 5" opacity=".9"/>
+    <!-- duvet -->
+    <path d="M56 380c40-14 150-22 250-18s200 10 244 22c10 3 14 10 14 20v34c0 14-8 22-22 22H64c-14 0-22-8-22-22v-36c0-12 4-19 14-22z" fill="url(#duv)"/>
+    <path d="M42 418c8 40 12 66 30 74h458c18-8 26-30 34-74" fill="url(#duv2)"/>
+    <g fill="none" stroke="#c9bea8" stroke-width="2" stroke-dasharray="2 7" stroke-linecap="round">
+     <path d="M60 408c80-8 160-12 246-10s170 6 238 14"/>
+     <path d="M150 372c-6 30-6 70 4 120M250 366c-4 34-4 78 2 126M350 366c2 34 2 78 0 126M450 372c6 30 6 74 0 120"/>
+     <path d="M52 450c90 6 200 8 300 6s150-4 200-8"/>
+    </g>
+    <!-- mustard throw -->
+    <path d="M396 372c40 2 104 8 150 18 10 2 16 10 16 20v68c0 10-6 16-16 18l-128 4c-12-46-20-82-22-128z" fill="url(#thr)"/>
+    <g stroke="#a87322" stroke-width="2" opacity=".55"><path d="M412 392l136 12M414 418l138 8M418 444l140 4M424 470l134 0"/></g>
+    <g stroke="#f0cf86" stroke-width="2" stroke-linecap="round"><path d="M420 502v12M432 502v12M444 501v12M456 501v12M468 500v12M480 500v12M492 499v12M504 499v12M516 498v12M528 498v12M540 497v12"/></g>
+    <!-- mug -->
+    <ellipse cx="584" cy="452" rx="40" ry="6" fill="#121a31" opacity=".25"/>
+    <!-- floor rug -->
+    <ellipse cx="320" cy="512" rx="290" ry="22" fill="#121a31" opacity=".28"/>
+   </svg>
+  </div>
+ </div>
+</section>
+
+<section id="cats">
+ <div class="wrap">
+  <div class="sec-h"><div><span class="en">Shop by Category</span><h2>무엇을 바꿔 볼까요</h2></div><p>이불 하나만 바꿔도 겨울 침실 분위기가 달라집니다. 필요한 것부터 골라 보세요.</p></div>
+  <div class="cats">
+   <a class="cat" href="#shop"><svg viewBox="0 0 76 62"><rect x="6" y="18" width="64" height="38" rx="10" fill="#f1ece2" stroke="#25335e" stroke-width="2"/><path d="M6 32h64M27 18v38M49 18v38" stroke="#b9862a" stroke-width="1.6" stroke-dasharray="3 4"/><path d="M20 12c6-6 30-6 36 0" stroke="#25335e" stroke-width="2" fill="none" stroke-linecap="round"/></svg><b>구스 이불</b><span>필파워 600–850</span></a>
+   <a class="cat" href="#shop"><svg viewBox="0 0 76 62"><rect x="6" y="14" width="64" height="40" rx="8" fill="#c8d2e6" stroke="#25335e" stroke-width="2"/><path d="M6 27h64M6 40h64" stroke="#25335e" stroke-width="1.4" stroke-dasharray="3 4"/><path d="M6 14l64 40" stroke="#fff" stroke-width="2" opacity=".6"/></svg><b>차렵이불</b><span>사계절 누빔</span></a>
+   <a class="cat" href="#shop"><svg viewBox="0 0 76 62"><path d="M8 32c0-14 8-20 20-20h20c12 0 20 6 20 20s-8 20-20 20H28C16 52 8 46 8 32z" fill="#fff" stroke="#25335e" stroke-width="2"/><path d="M14 32h48" stroke="#d6a03c" stroke-width="1.6" stroke-dasharray="3 4"/></svg><b>베개</b><span>높이 3단 선택</span></a>
+   <a class="cat" href="#shop"><svg viewBox="0 0 76 62"><rect x="6" y="30" width="64" height="18" rx="6" fill="#e2d8c6" stroke="#25335e" stroke-width="2"/><rect x="10" y="22" width="56" height="10" rx="5" fill="#fff" stroke="#25335e" stroke-width="2"/><path d="M14 39h48" stroke="#25335e" stroke-width="1.4" stroke-dasharray="3 4"/></svg><b>토퍼·패드</b><span>바닥·매트 겸용</span></a>
+   <a class="cat" href="#shop"><svg viewBox="0 0 76 62"><path d="M10 50V22c0-6 4-10 10-10h36c6 0 10 4 10 10v28z" fill="#25335e"/><path d="M18 50V26c0-3 2-6 6-6h28c4 0 6 3 6 6v24" fill="#33457a"/><circle cx="26" cy="32" r="2" fill="#d6a03c"/><circle cx="38" cy="38" r="2" fill="#d6a03c"/><circle cx="50" cy="30" r="2" fill="#d6a03c"/><path d="M6 50h64" stroke="#25335e" stroke-width="3" stroke-linecap="round"/></svg><b>커버·시트</b><span>면 60수 · 워싱</span></a>
+   <a class="cat" href="#shop"><svg viewBox="0 0 76 62"><rect x="14" y="16" width="48" height="36" rx="10" fill="#f4ecd9" stroke="#25335e" stroke-width="2"/><circle cx="30" cy="30" r="3" fill="#d6a03c"/><circle cx="46" cy="38" r="3" fill="#c8d2e6"/><circle cx="44" cy="26" r="2.4" fill="#25335e"/><path d="M22 44c6-4 12-4 18 0" stroke="#25335e" stroke-width="1.6" fill="none"/></svg><b>아기 침구</b><span>낮잠 이불 세트</span></a>
+  </div>
+ </div>
+</section>
+
+<div class="stitch"></div>
+
+<section id="shop" style="background:var(--linen)">
+ <div class="wrap">
+  <div class="sec-h"><div><span class="en">Winter Collection</span><h2>이번 겨울 컬렉션</h2></div>
+   <div class="tabs" role="tablist"><button class="tab on" data-f="all">전체</button><button class="tab" data-f="duvet">이불</button><button class="tab" data-f="pillow">베개</button><button class="tab" data-f="etc">토퍼·커버</button></div></div>
+  <div class="prods" id="prods">
+   <article class="prod" data-k="duvet">
+    <div class="im"><span class="tag m">겨울 신상</span>
+     <svg viewBox="0 0 400 300"><defs><linearGradient id="p1b" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#e9eef7"/><stop offset="1" stop-color="#cdd6e8"/></linearGradient><linearGradient id="p1a" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffffff"/><stop offset="1" stop-color="#e5ded0"/></linearGradient></defs>
+      <rect width="400" height="300" fill="url(#p1b)"/><ellipse cx="200" cy="250" rx="140" ry="14" fill="#25335e" opacity=".15"/>
+      <path d="M70 200c0-12 8-18 20-18h220c12 0 20 6 20 18v34c0 10-6 16-16 16H86c-10 0-16-6-16-16z" fill="url(#p1a)"/>
+      <path d="M80 150c0-12 8-18 20-18h200c12 0 20 6 20 18v34c0 10-6 16-16 16H96c-10 0-16-6-16-16z" fill="url(#p1a)"/>
+      <path d="M92 100c0-12 8-18 20-18h176c12 0 20 6 20 18v34c0 10-6 16-16 16H108c-10 0-16-6-16-16z" fill="url(#p1a)"/>
+      <g stroke="#cbbfa8" stroke-width="2" stroke-dasharray="3 6"><path d="M92 117h216M80 167h240M70 217h260"/></g>
+      <rect x="250" y="88" width="46" height="22" rx="4" fill="#25335e"/><text x="273" y="104" text-anchor="middle" font-family="Outfit" font-size="14" fill="#d6a03c" font-weight="600">850</text>
+     </svg></div>
+    <div class="bd"><h3>설원 구스 이불 850</h3><div class="sp">구스다운 90% · 필파워 850 · 면 80수 겉감</div><div class="sizes"><button>SS</button><button class="on">Q</button><button>K</button></div><div class="pr"><b>389,000<small>원</small></b><button class="add">담기</button></div></div>
+   </article>
+   <article class="prod" data-k="duvet">
+    <div class="im">
+     <svg viewBox="0 0 400 300"><defs><linearGradient id="p2b" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f4ecd9"/><stop offset="1" stop-color="#e6d6b3"/></linearGradient><linearGradient id="p2a" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#3a4d84"/><stop offset="1" stop-color="#1f2b51"/></linearGradient></defs>
+      <rect width="400" height="300" fill="url(#p2b)"/><ellipse cx="200" cy="254" rx="150" ry="14" fill="#5e4129" opacity=".14"/>
+      <path d="M70 196h260c12 0 20 8 20 20v20c0 10-8 18-18 18H68c-10 0-18-8-18-18v-20c0-12 8-20 20-20z" fill="url(#p2a)"/>
+      <path d="M78 150h244c12 0 20 8 20 20v20c0 10-8 18-18 18H76c-10 0-18-8-18-18v-20c0-12 8-20 20-20z" fill="#d6a03c"/>
+      <path d="M86 104h228c12 0 20 8 20 20v20c0 10-8 18-18 18H84c-10 0-18-8-18-18v-20c0-12 8-20 20-20z" fill="url(#p2a)"/>
+      <g fill="none" stroke="#7d91c8" stroke-width="1.6" stroke-dasharray="3 6"><path d="M70 133h260M58 225h284"/><path d="M150 106v54M250 106v54M140 198v54M260 198v54"/></g>
+      <path d="M62 179h276" stroke="#a87322" stroke-width="1.6" stroke-dasharray="3 6"/>
+      <path d="M300 104c18 0 34 8 34 22" fill="none" stroke="#f8f6f1" stroke-width="2" opacity=".35"/>
+     </svg></div>
+    <div class="bd"><h3>밤바다 사계절 차렵이불</h3><div class="sp">면 60수 · 마이크로 화이바 충전 · 양면 배색</div><div class="sizes"><button>SS</button><button class="on">Q</button><button>K</button></div><div class="pr"><b>129,000<small>원</small></b><button class="add">담기</button></div></div>
+   </article>
+   <article class="prod" data-k="pillow">
+    <div class="im"><span class="tag">높이 선택</span>
+     <svg viewBox="0 0 400 300"><defs><linearGradient id="p3b" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2c3c6c"/><stop offset="1" stop-color="#1a2443"/></linearGradient><linearGradient id="p3a" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff"/><stop offset="1" stop-color="#d9d1c1"/></linearGradient></defs>
+      <rect width="400" height="300" fill="url(#p3b)"/><ellipse cx="200" cy="232" rx="150" ry="14" fill="#000" opacity=".25"/>
+      <path d="M70 176c0-34 20-50 52-50h156c32 0 52 16 52 50 0 32-18 50-52 50H122c-34 0-52-18-52-50z" fill="url(#p3a)"/>
+      <path d="M92 176h216" stroke="#d6a03c" stroke-width="2" stroke-dasharray="4 6"/>
+      <g font-family="Outfit" font-size="13" font-weight="600" text-anchor="middle"><rect x="86" y="62" width="62" height="32" rx="16" fill="none" stroke="#c8d2e6" stroke-width="1.5"/><text x="117" y="83" fill="#c8d2e6">LOW</text><rect x="169" y="62" width="62" height="32" rx="16" fill="#d6a03c"/><text x="200" y="83" fill="#18213d">MID</text><rect x="252" y="62" width="62" height="32" rx="16" fill="none" stroke="#c8d2e6" stroke-width="1.5"/><text x="283" y="83" fill="#c8d2e6">HIGH</text></g>
+     </svg></div>
+    <div class="bd"><h3>구름결 높이 맞춤 베개</h3><div class="sp">속통 3단 분리 · 커버 면 60수 · 50×70cm</div><div class="sizes"><button>낮음</button><button class="on">중간</button><button>높음</button></div><div class="pr"><b>59,000<small>원</small></b><button class="add">담기</button></div></div>
+   </article>
+   <article class="prod" data-k="etc">
+    <div class="im">
+     <svg viewBox="0 0 400 300"><defs><linearGradient id="p4b" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#eae4d6"/><stop offset="1" stop-color="#d9cfba"/></linearGradient><linearGradient id="p4a" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#f6f2ea"/><stop offset="1" stop-color="#e0d7c5"/></linearGradient></defs>
+      <rect width="400" height="300" fill="url(#p4b)"/><ellipse cx="200" cy="246" rx="150" ry="12" fill="#5e4129" opacity=".15"/>
+      <path d="M96 200h170v42H96c-12 0-20-9-20-21s8-21 20-21z" fill="url(#p4a)"/>
+      <g transform="translate(14 0)"><circle cx="268" cy="184" r="58" fill="url(#p4a)" stroke="#d3c9b6" stroke-width="1.5"/><circle cx="268" cy="184" r="44" fill="none" stroke="#c9bea8" stroke-width="2"/><circle cx="268" cy="184" r="30" fill="none" stroke="#c9bea8" stroke-width="2"/><circle cx="268" cy="184" r="16" fill="none" stroke="#c9bea8" stroke-width="2"/><rect x="214" y="160" width="108" height="12" rx="6" fill="#25335e" opacity=".9"/></g>
+      <path d="M100 221h160" stroke="#c9bea8" stroke-width="2" stroke-dasharray="3 6"/>
+      <path d="M226 160c40 4 80 4 100 0" stroke="#25335e" stroke-width="6" stroke-linecap="round" fill="none" opacity=".0"/>
+      
+     </svg></div>
+    <div class="bd"><h3>포근 바닥 토퍼 7cm</h3><div class="sp">말아서 보관 · 미끄럼 방지 밑면 · 커버 분리 세탁</div><div class="sizes"><button>SS</button><button class="on">Q</button><button>K</button></div><div class="pr"><b>149,000<small>원</small></b><button class="add">담기</button></div></div>
+   </article>
+   <article class="prod" data-k="etc">
+    <div class="im"><span class="tag">컬러 4종</span>
+     <svg viewBox="0 0 400 300"><defs><linearGradient id="p5b" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f8f6f1"/><stop offset="1" stop-color="#ebe5d8"/></linearGradient></defs>
+      <rect width="400" height="300" fill="url(#p5b)"/><ellipse cx="200" cy="250" rx="150" ry="12" fill="#25335e" opacity=".12"/>
+      <rect x="80" y="206" width="240" height="38" rx="8" fill="#25335e"/>
+      <rect x="90" y="170" width="220" height="38" rx="8" fill="#c8d2e6"/>
+      <rect x="100" y="134" width="200" height="38" rx="8" fill="#e2d8c6"/>
+      <rect x="110" y="98" width="180" height="38" rx="8" fill="#d6a03c"/>
+      <g stroke="#fff" stroke-width="1.4" opacity=".55"><path d="M80 225h240M90 189h220M100 153h200M110 117h180"/></g>
+      <path d="M180 98v-18c0-10 40-10 40 0v18" fill="none" stroke="#18213d" stroke-width="3"/>
+     </svg></div>
+    <div class="bd"><h3>워싱 면 커버 3종 세트</h3><div class="sp">이불 커버 + 베개 커버 2 · 면 60수 워싱 · 지퍼형</div><div class="sizes"><button>SS</button><button class="on">Q</button><button>K</button></div><div class="pr"><b>89,000<small>원</small></b><button class="add">담기</button></div></div>
+   </article>
+   <article class="prod" data-k="duvet">
+    <div class="im">
+     <svg viewBox="0 0 400 300"><defs><linearGradient id="p6b" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#dbe3f1"/><stop offset="1" stop-color="#bfcbe2"/></linearGradient><linearGradient id="p6a" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fbf4e4"/><stop offset="1" stop-color="#ead9b4"/></linearGradient></defs>
+      <rect width="400" height="300" fill="url(#p6b)"/><ellipse cx="200" cy="248" rx="130" ry="12" fill="#25335e" opacity=".16"/>
+      <rect x="86" y="120" width="228" height="120" rx="26" fill="url(#p6a)"/>
+      <g fill="none" stroke="#d6a03c" stroke-width="1.6" stroke-dasharray="3 5"><rect x="100" y="134" width="200" height="92" rx="18"/></g>
+      <g fill="#25335e"><circle cx="140" cy="168" r="5"/><circle cx="200" cy="190" r="5"/><circle cx="260" cy="164" r="5"/><circle cx="170" cy="208" r="4"/><circle cx="236" cy="210" r="4"/></g>
+      <path d="M150 96c10-18 30-18 40 0" fill="none" stroke="#25335e" stroke-width="3" stroke-linecap="round"/><circle cx="200" cy="90" r="9" fill="#d6a03c"/><path d="M210 96c10-18 30-18 40 0" fill="none" stroke="#25335e" stroke-width="3" stroke-linecap="round"/>
+     </svg></div>
+    <div class="bd"><h3>별잠 아기 낮잠 이불 세트</h3><div class="sp">이불 + 요 + 베개 · 무형광 면 겉감 · 가방 포함</div><div class="sizes"><button class="on">기본</button><button>확장</button></div><div class="pr"><b>119,000<small>원</small></b><button class="add">담기</button></div></div>
+   </article>
+  </div>
+ </div>
+</section>
+
+<section class="material" id="material">
+ <div class="wrap">
+  <div class="sec-h"><div><span class="en">Material Story</span><h2>숫자로 고르는 겨울 이불</h2></div><p>필파워·충전량·원단 밀도. 상세 페이지마다 같은 기준으로 표기해 비교하기 쉽게 정리했습니다.</p></div>
+  <div class="mat-grid">
+   <div class="mat-art">
+    <svg viewBox="0 0 560 420" role="img" aria-label="구스 이불 단면 구조 일러스트">
+     <defs><linearGradient id="m1" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fffdf8"/><stop offset="1" stop-color="#e5dccb"/></linearGradient><radialGradient id="dn" cx=".4" cy=".4" r=".6"><stop offset="0" stop-color="#ffffff"/><stop offset="1" stop-color="#e4ddd0"/></radialGradient></defs>
+     <rect x="0" y="0" width="560" height="420" rx="28" fill="#202b4f"/>
+     <path d="M40 150c40-30 80-30 120 0s80 30 120 0 80-30 120 0 80 30 120 0v130c-40 30-80 30-120 0s-80-30-120 0-80 30-120 0-80-30-120 0z" fill="url(#m1)"/>
+     <path d="M40 150c40-30 80-30 120 0s80 30 120 0 80-30 120 0 80 30 120 0" fill="none" stroke="#d6a03c" stroke-width="3"/>
+     <path d="M40 280c40 30 80 30 120 0s80-30 120 0 80 30 120 0 80-30 120 0" fill="none" stroke="#d6a03c" stroke-width="3"/>
+     <g stroke="#b9862a" stroke-width="2" stroke-dasharray="4 5"><path d="M160 150v130M280 150v130M400 150v130"/></g>
+     <g fill="url(#dn)" stroke="#d3c9b6" stroke-width="1"><circle cx="90" cy="200" r="18"/><circle cx="118" cy="232" r="14"/><circle cx="76" cy="240" r="12"/><circle cx="210" cy="198" r="16"/><circle cx="240" cy="236" r="18"/><circle cx="196" cy="246" r="12"/><circle cx="330" cy="206" r="18"/><circle cx="356" cy="240" r="13"/><circle cx="316" cy="246" r="11"/><circle cx="452" cy="200" r="15"/><circle cx="478" cy="236" r="17"/><circle cx="440" cy="244" r="12"/></g>
+     <g font-family="Noto Sans KR" font-size="19" fill="#e4e8f3" font-weight="500"><path d="M100 90v40" stroke="#d6a03c" stroke-width="1.5"/><circle cx="100" cy="130" r="4" fill="#d6a03c"/><text x="100" y="78" text-anchor="middle">면 80수 겉감</text>
+     <path d="M280 360v-56" stroke="#d6a03c" stroke-width="1.5"/><circle cx="280" cy="304" r="4" fill="#d6a03c"/><text x="280" y="384" text-anchor="middle">칸막이 박스 누빔</text>
+     <path d="M460 90v80" stroke="#d6a03c" stroke-width="1.5"/><circle cx="460" cy="172" r="4" fill="#d6a03c"/><text x="460" y="78" text-anchor="middle">구스다운 90%</text></g>
+    </svg>
+   </div>
+   <div class="specs">
+    <div class="spec"><div class="n">850<small>FILL POWER</small></div><div><b>필파워</b><p>솜털 1온스가 부풀어 오르는 부피. 숫자가 클수록 같은 무게에서 더 볼록합니다.</p><div class="bar"><i style="width:92%"></i></div></div></div>
+    <div class="spec"><div class="n">1.2<small>KG · QUEEN</small></div><div><b>충전량</b><p>퀸 사이즈 한겨울용 기준. 간절기용은 0.6kg 라인으로 따로 준비했습니다.</p><div class="bar"><i style="width:70%"></i></div></div></div>
+    <div class="spec"><div class="n">80<small>THREAD</small></div><div><b>겉감 원단</b><p>촘촘하게 짠 면 80수 원단으로 털 빠짐을 줄이고 손에 닿는 감촉을 부드럽게.</p><div class="bar"><i style="width:80%"></i></div></div></div>
+   </div>
+  </div>
+ </div>
+</section>
+
+<section id="season">
+ <div class="wrap">
+  <div class="sec-h"><div><span class="en">Season Guide</span><h2>계절마다 바꾸는 이불</h2></div><p>집 실내 온도와 잠버릇에 따라 무게를 고르시면 됩니다. 잘 모르겠다면 상담으로 물어보세요.</p></div>
+  <div class="season">
+   <div class="sz"><div class="tp">MAR – MAY</div><h3>봄</h3><svg viewBox="0 0 240 84"><rect x="20" y="44" width="200" height="22" rx="8" fill="#c8d2e6"/><path d="M30 55h180" stroke="#25335e" stroke-width="1.4" stroke-dasharray="3 5"/><circle cx="196" cy="22" r="10" fill="#f2d48a"/></svg><p>차렵이불 단독. 쌀쌀한 밤엔 얇은 패드를 함께.</p></div>
+   <div class="sz"><div class="tp">JUN – AUG</div><h3>여름</h3><svg viewBox="0 0 240 84"><rect x="20" y="54" width="200" height="12" rx="6" fill="#e2d8c6"/><circle cx="196" cy="24" r="14" fill="#d6a03c"/><g stroke="#d6a03c" stroke-width="2" stroke-linecap="round"><path d="M196 2v4M218 24h-4M174 24h4"/></g></svg><p>인견·면 홑이불. 토퍼 위에 시원한 패드 한 장.</p></div>
+   <div class="sz"><div class="tp">SEP – NOV</div><h3>가을</h3><svg viewBox="0 0 240 84"><rect x="20" y="40" width="200" height="26" rx="10" fill="#f1ece2" stroke="#d6a03c" stroke-width="1.5"/><path d="M30 53h180" stroke="#b9862a" stroke-width="1.4" stroke-dasharray="3 5"/><path d="M190 14c10 2 14 10 10 18-8-2-12-10-10-18z" fill="#c77a35"/></svg><p>간절기 구스 0.6kg. 낮과 밤 온도 차가 큰 시기.</p></div>
+   <div class="sz now"><div class="tp">DEC – FEB</div><h3>겨울</h3><svg viewBox="0 0 240 84"><rect x="20" y="28" width="200" height="40" rx="14" fill="#fff" stroke="#25335e" stroke-width="1.5"/><path d="M30 48h180M86 28v40M154 28v40" stroke="#b9862a" stroke-width="1.4" stroke-dasharray="3 5"/><g fill="#25335e"><circle cx="40" cy="12" r="2.4"/><circle cx="70" cy="6" r="1.8"/><circle cx="104" cy="14" r="2"/></g></svg><p>한겨울 구스 1.2kg. 커버를 씌워 세탁 횟수를 줄이세요.</p></div>
+  </div>
+ </div>
+</section>
+
+<section id="size" style="padding-top:0">
+ <div class="wrap">
+  <div class="sizeg">
+   <div class="sg-art">
+    <svg viewBox="0 0 520 360" role="img" aria-label="침대 사이즈별 이불 크기 비교 도식">
+     <rect x="0" y="0" width="520" height="360" rx="18" fill="#f8f6f1"/>
+     <g id="sgShapes">
+      <rect id="szK" x="60" y="40" width="400" height="280" rx="14" fill="#e9e3d6"/>
+      <rect id="szQ" x="90" y="60" width="340" height="250" rx="14" fill="#dcd3c1"/>
+      <rect id="szSS" x="130" y="80" width="260" height="220" rx="14" fill="#c8d2e6"/><g font-family="Outfit" font-size="20" font-weight="600" fill="#8a8170"><text x="450" y="66" text-anchor="end">K</text><text x="420" y="86" text-anchor="end">Q</text></g><g font-family="Outfit" font-size="20" font-weight="600" fill="#25335e"><text x="380" y="106" text-anchor="end">SS</text></g>
+     </g>
+     <rect id="szSel" x="90" y="60" width="340" height="250" rx="14" fill="none" stroke="#d6a03c" stroke-width="4" style="transition:.35s"/>
+     <rect x="170" y="110" width="80" height="34" rx="12" fill="#fff"/><rect x="270" y="110" width="80" height="34" rx="12" fill="#fff"/>
+     <rect x="160" y="186" width="200" height="100" rx="14" fill="#fff"/><text id="szLbl" x="260" y="236" text-anchor="middle" font-family="Outfit" font-size="40" font-weight="600" fill="#18213d">Q</text>
+     <text id="szDim" x="260" y="272" text-anchor="middle" font-family="Outfit" font-size="24" fill="#646a80">200 × 230 cm</text>
+    </svg>
+   </div>
+   <div>
+    <span class="en">Size Finder</span>
+    <div class="sec-h" style="margin-bottom:22px"><h2>우리 집 침대에 맞는 사이즈</h2></div>
+    <div class="sg-pick" id="sgPick"><button data-s="SS">SS 슈퍼싱글</button><button data-s="Q" class="on">Q 퀸</button><button data-s="K">K 킹</button></div>
+    <table>
+     <tr><th>매트리스</th><td id="t1">150 × 200 cm</td></tr>
+     <tr><th>추천 이불</th><td id="t2">200 × 230 cm</td></tr>
+     <tr><th>추천 베개</th><td id="t3">50 × 70 cm · 2개</td></tr>
+     <tr><th>구스 충전량</th><td id="t4">한겨울 1.2kg · 간절기 0.6kg</td></tr>
+    </table>
+   </div>
+  </div>
+ </div>
+</section>
+
+<section class="care" id="care">
+ <div class="wrap">
+  <div class="sec-h"><div><span class="en">Care Guide</span><h2>오래 포근하게 쓰는 법</h2></div><p>커버만 자주, 속통은 가끔. 기본만 지켜도 볼륨이 오래 유지됩니다.</p></div>
+  <div class="care-g">
+   <div class="cr"><svg viewBox="0 0 48 48"><circle cx="24" cy="24" r="10"/><path d="M24 6v4M24 38v4M6 24h4M38 24h4M11 11l3 3M34 34l3 3M11 37l3-3M34 14l3-3"/></svg><b>그늘에서 거풍</b><p>2주에 한 번, 바람이 잘 드는 그늘에 걸어 두세요.</p></div>
+   <div class="cr"><svg viewBox="0 0 48 48"><rect x="8" y="6" width="32" height="36" rx="5"/><circle cx="24" cy="26" r="9"/><path d="M14 12h4M30 12h4"/></svg><b>커버는 주 1회</b><p>지퍼형 커버는 일반 세탁 코스, 30도 이하 물에서.</p></div>
+   <div class="cr"><svg viewBox="0 0 48 48"><path d="M10 34c4-12 24-12 28 0"/><path d="M8 34h32v6H8z"/><path d="M18 20c0-6 12-6 12 0"/></svg><b>속통은 전문 세탁</b><p>구스 속통은 1년에 한 번 전문 세탁을 권합니다.</p></div>
+   <div class="cr"><svg viewBox="0 0 48 48"><rect x="8" y="14" width="32" height="24" rx="4"/><path d="M8 22h32M20 14v-4h8v4"/></svg><b>보관은 통기성 가방</b><p>압축하지 말고 부직포 가방에 넣어 습기 없는 곳에.</p></div>
+  </div>
+  <div class="gift">
+   <div class="t"><span class="en">Gift Wrapping</span><h3>집들이·결혼 선물은<br>리넨 보자기 포장으로</h3><p>주문서에 메시지를 적어 주시면 손글씨 카드와 함께 포장해 보내 드립니다. 포장비 5,000원.</p><p style="margin-top:10px;color:#e6d3a6;font-size:14px">리넨 보자기 2색 · 손글씨 카드 무료</p><a class="lk" href="#contact">선물 포장 문의 →</a></div>
+   <svg viewBox="0 0 400 260" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><rect width="400" height="260" fill="#2f4173"/><circle cx="330" cy="40" r="80" fill="#3a4e88" opacity=".6"/><ellipse cx="200" cy="220" rx="120" ry="12" fill="#121a31" opacity=".35"/><path d="M100 120h200v90c0 8-6 14-14 14H114c-8 0-14-6-14-14z" fill="#eee8dc"/><path d="M100 120h200l-10-20H110z" fill="#e2d8c6"/><path d="M190 100h20v124h-20z" fill="#d6a03c"/><path d="M200 100c-30-40-70-20-40 0M200 100c30-40 70-20 40 0" fill="none" stroke="#d6a03c" stroke-width="10" stroke-linecap="round"/><rect x="224" y="150" width="56" height="36" rx="4" fill="#fff" transform="rotate(-8 252 168)"/><path d="M234 166l36-5M236 176l24-3" stroke="#25335e" stroke-width="2" stroke-linecap="round" transform="rotate(-8 252 168)"/></svg>
+  </div>
+ </div>
+</section>
+
+<section id="faq">
+ <div class="wrap">
+  <div class="sec-h" style="justify-content:center;text-align:center"><div><span class="en">FAQ</span><h2>자주 묻는 질문</h2></div></div>
+  <div class="faq">
+   <div class="q open"><button>배송은 얼마나 걸리나요?<span>+</span></button><div class="a"><p>평일 오후 2시 전 결제 건은 당일 출고, 보통 1–2일 안에 도착합니다. 제주·도서 지역은 1–2일 더 걸릴 수 있습니다.</p></div></div>
+   <div class="q"><button>받아 보고 사이즈가 안 맞으면요?<span>+</span></button><div class="a"><p>포장을 뜯지 않은 상품은 수령 후 7일 안에 교환할 수 있습니다. 왕복 배송비는 고객 부담입니다.</p></div></div>
+   <div class="q"><button>커버만 따로 살 수 있나요?<span>+</span></button><div class="a"><p>네, 이불 커버와 베개 커버는 낱개로도 판매합니다. 컬러 4종 중에서 고르실 수 있습니다.</p></div></div>
+   <div class="q"><button>매장에서 직접 만져 볼 수 있나요?<span>+</span></button><div class="a"><p>온라인 전용 스토어입니다. 대신 원단 견본 3종을 무료로 보내 드리니 주문 상담에서 신청해 주세요.</p></div></div>
+  </div>
+ </div>
+</section>
+
+<section class="contact" id="contact">
+ <div class="wrap ct">
+  <div>
+   <span class="en">Order Consultation</span>
+   <h2>사이즈가 고민되면<br>먼저 물어보세요</h2>
+   <p>침대 크기와 원하는 두께를 알려 주시면 맞는 이불과 베개 조합을 골라 드립니다. 원단 견본 신청도 여기서 받습니다.</p>
+   <ul>
+    <li><svg viewBox="0 0 24 24"><path d="M4 5h16v11H8l-4 4z"/></svg>카카오톡 ID: example</li>
+    <li><svg viewBox="0 0 24 24"><path d="M5 4h4l2 5-3 2a11 11 0 0 0 5 5l2-3 5 2v4a2 2 0 0 1-2 2A17 17 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg>000-0000-0000 (평일 10:00–18:00)</li>
+    <li><svg viewBox="0 0 24 24"><rect x="3" y="7" width="18" height="12" rx="2"/><path d="M3 9l9 6 9-6"/></svg>hello@example.com</li>
+   </ul>
+  </div>
+  <form id="f">
+   <div class="row"><label>이름<input required placeholder="홍길동"></label><label>연락처<input required placeholder="010-0000-0000"></label></div>
+   <div class="row"><label>침대 사이즈<select><option>SS 슈퍼싱글</option><option selected>Q 퀸</option><option>K 킹</option><option>잘 모르겠어요</option></select></label><label>문의 종류<select><option>이불·베개 추천</option><option>원단 견본 신청</option><option>선물 포장</option><option>교환·배송</option></select></label></div>
+   <label>요청 사항<textarea placeholder="예) 남향 아파트, 더위를 많이 타는 편이에요"></textarea></label>
+   <button class="btn" type="submit">상담 남기기 <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+   <div class="ok" id="ok">상담이 접수되었습니다. 영업일 기준 하루 안에 연락드릴게요.</div>
+  </form>
+ </div>
+</section>
+
+<footer>
+ <div class="wrap ft">
+  <div><a class="logo" href="#top"><svg viewBox="0 0 40 40" width="34" height="34"><circle cx="20" cy="20" r="19" fill="#25335e"/><path d="M9 23c3-5 7-5 11 0s8 5 11 0" fill="none" stroke="#d6a03c" stroke-width="2.2" stroke-linecap="round"/><path d="M9 17c3-5 7-5 11 0s8 5 11 0" fill="none" stroke="#f8f6f1" stroke-width="2.2" stroke-linecap="round" opacity=".8"/></svg><div><b>솜결 침구</b></div></a>
+   <p><span class="nw">상호 솜결 침구</span> · <span class="nw">대표 000</span> · <span class="nw">사업자등록번호 000-00-00000</span><br><span class="nw">통신판매업 신고 제0000-서울-0000호</span> · <span class="nw">고객센터 000-0000-0000</span></p></div>
+  <nav><a href="#shop">컬렉션</a><a href="#size">사이즈</a><a href="#care">관리법</a><a href="#faq">FAQ</a><a href="#contact">상담</a></nav>
+ </div>
+</footer>
+<script>
+var SZ={SS:{r:[130,80,260,220],m:'110 × 200 cm',d:'160 × 210 cm',p:'50 × 70 cm · 1개',w:'한겨울 0.9kg · 간절기 0.45kg'},Q:{r:[90,60,340,250],m:'150 × 200 cm',d:'200 × 230 cm',p:'50 × 70 cm · 2개',w:'한겨울 1.2kg · 간절기 0.6kg'},K:{r:[60,40,400,280],m:'160 × 200 cm',d:'230 × 230 cm',p:'50 × 70 cm · 2개',w:'한겨울 1.4kg · 간절기 0.7kg'}};
+document.getElementById('sgPick').addEventListener('click',function(e){var b=e.target.closest('button');if(!b)return;var s=b.dataset.s,z=SZ[s];this.querySelectorAll('button').forEach(function(x){x.classList.toggle('on',x===b)});var r=document.getElementById('szSel');r.setAttribute('x',z.r[0]);r.setAttribute('y',z.r[1]);r.setAttribute('width',z.r[2]);r.setAttribute('height',z.r[3]);document.getElementById('szLbl').textContent=s;document.getElementById('szDim').textContent=z.d;document.getElementById('t1').textContent=z.m;document.getElementById('t2').textContent=z.d;document.getElementById('t3').textContent=z.p;document.getElementById('t4').textContent=z.w});
+document.querySelectorAll('.sizes').forEach(function(g){g.addEventListener('click',function(e){var b=e.target.closest('button');if(!b)return;g.querySelectorAll('button').forEach(function(x){x.classList.toggle('on',x===b)})})});
+var n=0;document.querySelectorAll('.add').forEach(function(b){b.addEventListener('click',function(){n++;document.getElementById('cart').textContent=n;b.textContent='담았어요';b.classList.add('done')})});
+document.querySelectorAll('.tab').forEach(function(t){t.addEventListener('click',function(){document.querySelectorAll('.tab').forEach(function(x){x.classList.toggle('on',x===t)});var f=t.dataset.f;document.querySelectorAll('.prod').forEach(function(p){p.style.display=(f==='all'||p.dataset.k===f)?'':'none'})})});
+document.querySelectorAll('.q button').forEach(function(b){b.addEventListener('click',function(){b.parentNode.classList.toggle('open')})});
+document.getElementById('f').addEventListener('submit',function(e){e.preventDefault();document.getElementById('ok').classList.add('show');this.querySelector('button[type=submit]').disabled=true});
+</script>
+</body>
+</html>
