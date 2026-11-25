@@ -1,0 +1,1060 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>살결담 왁싱 스튜디오 · 1인 1실 예약제 왁싱</title>
+<meta name="description" content="살결담 왁싱 스튜디오 — 얼굴·겨드랑이·팔·다리·남성 그루밍 왁싱. 1인 1실 예약제, 1회용 스파출라와 개별 소분 왁스 사용.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&family=Noto+Sans+KR:wght@400;500;700&family=Playfair+Display:ital,wght@0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#f1ddd3;--bg2:#e8c9bb;--paper:#faf1ec;--clay:#c98a78;--clayd:#a5604d;--clayx:#8c4c3b;
+  --cocoa:#3a2119;--cocoa2:#5a382c;--muted:#7b5b4f;--honey:#e3a136;--amber:#b8680f;--honeyl:#f6d27a;
+  --line:rgba(58,33,25,.15);--line2:rgba(58,33,25,.28);
+  --serif:'Gowun Batang',serif;--sans:'Noto Sans KR',sans-serif;--latin:'Playfair Display',serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font-family:var(--sans);background:var(--bg);color:var(--cocoa);word-break:keep-all;overflow-wrap:break-word;overflow-x:hidden;line-height:1.7;-webkit-font-smoothing:antialiased}
+svg{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+button,input,select,textarea{font:inherit;color:inherit}
+.wrap{max-width:1200px;margin:0 auto;padding:0 40px}
+.serif{font-family:var(--serif)}
+.latin{font-family:var(--latin);font-style:italic;font-weight:400}
+.eyebrow{display:inline-flex;align-items:center;gap:10px;font-family:var(--latin);font-style:italic;font-size:17px;color:var(--clayd);letter-spacing:.01em}
+.eyebrow::before{content:"";width:26px;height:1px;background:currentColor}
+.h2{font-family:var(--serif);font-weight:700;font-size:clamp(30px,3.6vw,46px);line-height:1.28;letter-spacing:-.02em;margin-top:14px}
+.lead{font-size:16.5px;color:var(--muted);margin-top:16px;max-width:560px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;height:54px;padding:0 28px;border-radius:999px;font-weight:700;font-size:15.5px;cursor:pointer;border:0;transition:transform .2s,box-shadow .2s,background .2s;white-space:nowrap}
+.btn-honey{background:linear-gradient(180deg,#f2bf55,#dc8f22 70%,#c97a14);color:#3a1f0e;box-shadow:0 10px 24px -10px rgba(184,104,15,.8),inset 0 1px 0 rgba(255,240,200,.8)}
+.btn-honey:hover{transform:translateY(-2px);box-shadow:0 16px 30px -12px rgba(184,104,15,.85),inset 0 1px 0 rgba(255,240,200,.8)}
+.btn-line{background:transparent;color:var(--cocoa);box-shadow:inset 0 0 0 1.5px var(--cocoa)}
+.btn-line:hover{background:var(--cocoa);color:var(--paper)}
+.btn svg{width:18px;height:18px}
+
+/* header */
+header{position:sticky;top:0;z-index:60;background:rgba(241,221,211,.9);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:78px;gap:20px}
+.logo{display:flex;align-items:center;gap:12px}
+.logo svg{width:36px;height:44px}
+.logo b{display:block;font-family:var(--serif);font-weight:700;font-size:23px;line-height:1;letter-spacing:-.02em}
+.logo small{display:block;font-family:var(--latin);font-style:italic;font-size:12.5px;color:var(--clayd);margin-top:5px;letter-spacing:.06em}
+.menu{display:flex;gap:30px;font-size:15px;font-weight:500}
+.menu a{position:relative;padding:6px 0}
+.menu a::after{content:"";position:absolute;left:0;right:0;bottom:0;height:2px;background:var(--honey);border-radius:2px;transform:scaleX(0);transition:.25s}
+.menu a:hover::after{transform:scaleX(1)}
+.nav .btn{height:46px;padding:0 22px;font-size:14.5px}
+.burger{display:none;width:46px;height:46px;border-radius:50%;border:1.5px solid var(--cocoa);background:transparent;cursor:pointer;align-items:center;justify-content:center}
+.burger span{display:block;width:18px;height:1.5px;background:var(--cocoa);position:relative}
+.burger span::before,.burger span::after{content:"";position:absolute;left:0;width:18px;height:1.5px;background:var(--cocoa)}
+.burger span::before{top:-6px}.burger span::after{top:6px}
+
+/* hero */
+.hero{position:relative;padding:40px 0 0;overflow:hidden}
+.hero-drip{position:absolute;left:0;right:0;top:0;height:120px;pointer-events:none}
+.hero-drip svg{width:100%;height:120px}
+.hero-grid{position:relative;display:grid;grid-template-columns:1.02fr 1fr;gap:40px;align-items:end}
+.hero-copy{padding:104px 0 60px}
+.hero h1{font-family:var(--serif);font-weight:700;font-size:clamp(44px,5.6vw,78px);line-height:1.16;letter-spacing:-.035em;margin-top:22px}
+.hero h1 em{font-style:normal;background:linear-gradient(180deg,transparent 62%,rgba(227,161,54,.45) 62%,rgba(227,161,54,.45) 92%,transparent 92%)}
+.hero-sub{font-size:17px;color:var(--muted);margin-top:24px;max-width:470px}
+.hero-cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:36px}
+.hero-meta{display:flex;flex-wrap:wrap;gap:0;margin-top:44px;border-top:1px solid var(--line2);max-width:520px}
+.hero-meta div{flex:1;min-width:130px;padding:18px 18px 0 0}
+.hero-meta div+div{padding-left:18px;border-left:1px solid var(--line)}
+.hero-meta small{display:block;font-family:var(--latin);font-style:italic;font-size:14px;color:var(--clayd)}
+.hero-meta b{display:block;font-family:var(--serif);font-size:18px;margin-top:4px}
+.hero-art{position:relative;align-self:end;max-width:540px;justify-self:end;width:100%}
+.hero-art svg{width:100%;height:auto}
+.hero-tag{position:absolute;left:-4%;top:44%;background:var(--paper);border-radius:18px;padding:16px 18px;box-shadow:0 18px 40px -18px rgba(58,33,25,.45);max-width:200px}
+.hero-tag small{display:block;font-family:var(--latin);font-style:italic;font-size:13.5px;color:var(--clayd)}
+.hero-tag b{display:block;font-family:var(--serif);font-size:16px;line-height:1.45;margin-top:4px}
+
+/* ribbon */
+.ribbon{position:relative;z-index:2;margin-top:-2px}
+.ribbon-band{background:linear-gradient(180deg,#f4c862 0%,#e3a136 45%,#c7791a 100%);color:#3a1f0e;overflow:hidden;white-space:nowrap;box-shadow:inset 0 2px 0 rgba(255,236,190,.7)}
+.ribbon-track{display:inline-flex;gap:0;padding:15px 0;animation:mq 38s linear infinite}
+.ribbon-track span{display:inline-flex;align-items:center;gap:22px;padding-right:22px;font-family:var(--latin);font-style:italic;font-size:21px}
+.ribbon-track span i{font-style:normal;font-family:var(--serif);font-size:17px;font-weight:700}
+.ribbon-track span svg{width:14px;height:18px}
+@keyframes mq{to{transform:translateX(-50%)}}
+.ribbon-drip svg{width:100%;height:70px}
+
+/* sections */
+section{position:relative}
+.sec{padding:120px 0}
+.sec-head{display:flex;justify-content:space-between;align-items:flex-end;gap:40px;flex-wrap:wrap;margin-bottom:56px}
+.sec-head .lead{margin-top:0;max-width:420px}
+
+/* services */
+.svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.svc{background:var(--paper);border-radius:28px;padding:16px 16px 26px;border:1px solid rgba(255,255,255,.6);box-shadow:0 1px 0 rgba(58,33,25,.04),0 24px 48px -36px rgba(58,33,25,.5);transition:transform .3s}
+.svc:hover{transform:translateY(-4px)}
+.svc-art{border-radius:20px;overflow:hidden;background:linear-gradient(160deg,#f3dfd5,#e7c3b4)}
+.svc-art svg{width:100%;height:auto}
+.svc-body{padding:20px 10px 0}
+.svc-top{display:flex;justify-content:space-between;align-items:baseline;gap:10px}
+.svc h3{font-family:var(--serif);font-size:23px;font-weight:700;letter-spacing:-.02em}
+.svc .no{font-family:var(--latin);font-style:italic;color:var(--clayd);font-size:15px}
+.svc p{font-size:14.5px;color:var(--muted);margin-top:8px}
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:14px}
+.chips span{font-size:12.5px;padding:4px 11px;border-radius:999px;background:#f2e1d8;color:var(--cocoa2)}
+
+/* price */
+.price{background:var(--paper)}
+.price-wrap{display:grid;grid-template-columns:.8fr 1.2fr;gap:70px;align-items:start}
+.price-side{position:sticky;top:110px}
+.tabs{display:inline-flex;padding:5px;border-radius:999px;background:#efdcd2;margin-top:34px;gap:4px}
+.tabs button{border:0;background:transparent;height:46px;padding:0 26px;border-radius:999px;font-weight:700;font-size:15px;cursor:pointer;color:var(--muted);transition:.25s}
+.tabs button.on{background:var(--cocoa);color:var(--paper);box-shadow:0 8px 18px -10px rgba(58,33,25,.8)}
+.price-note{margin-top:28px;font-size:13.5px;color:var(--muted);padding-left:14px;border-left:2px solid var(--honey)}
+.price-art{margin-top:36px;max-width:340px}
+.p-panel{display:none}
+.p-panel.on{display:block;animation:fade .45s ease}
+@keyframes fade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+.p-group+.p-group{margin-top:38px}
+.p-group h4{display:flex;align-items:center;gap:12px;font-family:var(--serif);font-size:20px;font-weight:700;padding-bottom:12px;border-bottom:1.5px solid var(--cocoa)}
+.p-group h4 small{font-family:var(--latin);font-style:italic;font-weight:400;font-size:15px;color:var(--clayd)}
+.p-row{display:grid;grid-template-columns:1fr auto auto;gap:18px;align-items:baseline;padding:15px 0;border-bottom:1px dashed var(--line2)}
+.p-row b{font-weight:500;font-size:16px}
+.p-row b small{display:block;font-weight:400;font-size:13px;color:var(--muted);margin-top:2px}
+.p-row .min{font-size:13px;color:var(--muted);white-space:nowrap}
+.p-row .won{font-family:var(--latin);font-weight:600;font-size:20px;white-space:nowrap;text-align:right;min-width:100px}
+.p-row .won span{font-family:var(--sans);font-size:14px;font-weight:500;margin-left:2px}
+
+/* offer */
+.offer{padding:120px 0}
+.coupon{position:relative;display:grid;grid-template-columns:1.25fr .75fr;border-radius:36px;background:linear-gradient(135deg,#c98a78,#a65f4c 70%,#8f4d3c);color:var(--paper);overflow:hidden;box-shadow:0 40px 80px -50px rgba(58,33,25,.8)}
+.coupon-drip{position:absolute;left:0;right:0;top:0;height:110px}
+.coupon-drip svg{width:100%;height:110px}
+.coupon-main{position:relative;padding:130px 64px 64px}
+.coupon-main .eyebrow{color:var(--honeyl)}
+.coupon h2{font-family:var(--serif);font-size:clamp(30px,3.4vw,44px);line-height:1.3;margin-top:12px;letter-spacing:-.02em}
+.coupon-big{display:flex;align-items:flex-end;gap:16px;margin-top:22px}
+.coupon-big strong{font-family:var(--latin);font-weight:600;font-size:clamp(84px,10vw,140px);line-height:.85;color:var(--honeyl);text-shadow:0 2px 0 rgba(120,50,20,.25)}
+.coupon-big span{font-family:var(--serif);font-size:22px;padding-bottom:8px}
+.coupon ul{list-style:none;margin-top:28px;display:grid;gap:8px;font-size:14.5px;color:rgba(250,241,236,.88)}
+.coupon li{display:flex;gap:10px}
+.coupon li::before{content:"";flex:none;width:7px;height:7px;border-radius:50%;background:var(--honeyl);margin-top:9px}
+.coupon-side{position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:130px 40px 56px;border-left:2px dashed rgba(250,241,236,.35)}
+.coupon-side::before,.coupon-side::after{content:"";position:absolute;left:-19px;width:36px;height:36px;border-radius:50%;background:var(--bg)}
+.coupon-side::before{top:-18px}.coupon-side::after{bottom:-18px}
+.coupon-side svg{width:220px;height:220px}
+.coupon-side .btn{margin-top:26px}
+
+/* process */
+.process{background:var(--cocoa);color:var(--paper);overflow:hidden}
+.process .eyebrow{color:var(--honeyl)}
+.process .lead{color:rgba(250,241,236,.7)}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:0;position:relative;margin-top:10px}
+.steps::before{content:"";position:absolute;left:12.5%;right:12.5%;top:58px;height:2px;background:repeating-linear-gradient(90deg,rgba(246,210,122,.55) 0 8px,transparent 8px 16px)}
+.step{position:relative;padding:0 18px;text-align:center}
+.step-ic{position:relative;width:118px;height:118px;margin:0 auto;border-radius:50%;background:radial-gradient(circle at 35% 30%,#6c4536,#4a2b20 70%);box-shadow:inset 0 0 0 1px rgba(246,210,122,.3),0 18px 30px -16px rgba(0,0,0,.6);display:flex;align-items:center;justify-content:center}
+.step-ic svg{width:62px;height:62px}
+.step-ic em{position:absolute;top:-4px;right:-2px;width:38px;height:38px;border-radius:50%;background:linear-gradient(180deg,#f4c862,#d98e22);color:#3a1f0e;font-family:var(--latin);font-style:italic;font-size:17px;display:flex;align-items:center;justify-content:center;box-shadow:0 6px 14px -6px rgba(0,0,0,.6)}
+.step h3{font-family:var(--serif);font-size:21px;margin-top:26px}
+.step p{font-size:14.5px;color:rgba(250,241,236,.72);margin-top:10px}
+.step small{display:inline-block;margin-top:14px;font-size:12.5px;color:var(--honeyl);border:1px solid rgba(246,210,122,.4);border-radius:999px;padding:3px 12px}
+
+/* hygiene */
+.hyg-grid{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:start}
+#hygiene{padding-top:76px}
+.process.sec{padding-bottom:100px}
+@media (max-width:560px){#hygiene{padding-top:64px}.process.sec{padding-bottom:76px}}
+.hyg-art{border-radius:36px;overflow:hidden;box-shadow:0 40px 70px -50px rgba(58,33,25,.7)}
+.hyg-art svg{width:100%;height:auto}
+.hyg-list{margin-top:36px;display:grid;gap:0}
+.hyg-item{display:grid;grid-template-columns:52px 1fr;gap:18px;padding:22px 0;border-top:1px solid var(--line2)}
+.hyg-item:last-child{border-bottom:1px solid var(--line2)}
+.hyg-item .ic{width:52px;height:52px;border-radius:16px;background:var(--paper);display:flex;align-items:center;justify-content:center}
+.hyg-item .ic svg{width:28px;height:28px}
+.hyg-item h3{font-family:var(--serif);font-size:19px}
+.hyg-item p{font-size:14.5px;color:var(--muted);margin-top:4px}
+
+/* care */
+.care{background:linear-gradient(180deg,var(--bg2),var(--bg))}
+.care-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.care-card{background:var(--paper);border-radius:30px;padding:40px 40px 34px;position:relative;overflow:hidden}
+.care-card.after{background:#3a2119;color:var(--paper)}
+.care-card .tagline{display:flex;align-items:center;justify-content:space-between;gap:16px}
+.care-card h3{font-family:var(--serif);font-size:27px;letter-spacing:-.02em}
+.care-card .latin{font-size:17px;color:var(--clayd)}
+.care-card.after .latin{color:var(--honeyl)}
+.care-card ol{list-style:none;margin-top:26px;counter-reset:c}
+.care-card li{counter-increment:c;display:grid;grid-template-columns:40px 1fr;gap:14px;padding:16px 0;border-top:1px solid var(--line)}
+.care-card.after li{border-top-color:rgba(250,241,236,.14)}
+.care-card li::before{content:counter(c,decimal-leading-zero);font-family:var(--latin);font-style:italic;font-size:20px;color:var(--clayd);line-height:1.4}
+.care-card.after li::before{color:var(--honeyl)}
+.care-card li b{display:block;font-size:16px;font-weight:700}
+.care-card li span{display:block;font-size:14px;color:var(--muted);margin-top:3px}
+.care-card.after li span{color:rgba(250,241,236,.7)}
+.care-card .corner{position:absolute;right:-10px;top:-10px;width:150px;height:150px;opacity:.95}
+.care-foot{margin-top:22px;font-size:13.5px;color:var(--muted);text-align:center}
+
+/* booking */
+.booking{background:var(--cocoa);color:var(--paper);overflow:hidden}
+.booking-drip svg{width:100%;height:80px}
+.booking .eyebrow{color:var(--honeyl)}
+.booking .lead{color:rgba(250,241,236,.7)}
+.bk-grid{display:grid;grid-template-columns:1.25fr .75fr;gap:28px;margin-top:50px;align-items:start}
+.bk-form{background:var(--paper);color:var(--cocoa);border-radius:30px;padding:40px}
+.field{margin-bottom:24px}
+.field>label,.field>.lab{display:block;font-weight:700;font-size:14.5px;margin-bottom:10px}
+.field>label small,.field>.lab small{font-weight:400;color:var(--muted);margin-left:6px;font-size:13px}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.inp{width:100%;height:52px;border-radius:14px;border:1.5px solid #e2cbbf;background:#fff;padding:0 16px;font-size:15px;transition:border .2s,box-shadow .2s;appearance:none;-webkit-appearance:none}
+select.inp{background:#fff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='9' viewBox='0 0 14 9'%3E%3Cpath d='M1 1l6 6 6-6' fill='none' stroke='%233a2119' stroke-width='1.6'/%3E%3C/svg%3E") no-repeat right 16px center;padding-right:42px}
+textarea.inp{height:96px;padding:14px 16px;resize:vertical}
+.inp:focus{outline:0;border-color:var(--honey);box-shadow:0 0 0 4px rgba(227,161,54,.2)}
+.inp.err{border-color:#b33a2a}
+.times{display:grid;grid-template-columns:repeat(6,1fr);gap:8px}
+.times label{position:relative}
+.times input{position:absolute;opacity:0;pointer-events:none}
+.times span{display:flex;align-items:center;justify-content:center;height:46px;border-radius:12px;border:1.5px solid #e2cbbf;background:#fff;font-size:14.5px;font-weight:500;cursor:pointer;transition:.2s}
+.times input:checked+span{background:var(--cocoa);color:var(--paper);border-color:var(--cocoa)}
+.times input:disabled+span{background:#f1e5df;color:#b8a49b;text-decoration:line-through;cursor:not-allowed}
+.times input:focus-visible+span{box-shadow:0 0 0 4px rgba(227,161,54,.35)}
+.check{display:flex;align-items:center;gap:12px;padding:16px 18px;border-radius:16px;background:#f6e6dd;cursor:pointer;font-size:14.5px}
+.check input{width:20px;height:20px;accent-color:var(--amber);flex:none}
+.err-msg{display:none;color:#a3301f;font-size:13.5px;margin-top:-6px;margin-bottom:16px}
+.err-msg.on{display:block}
+.bk-form .btn{width:100%;margin-top:6px}
+.bk-sum{position:sticky;top:110px;border-radius:30px;padding:34px;background:linear-gradient(160deg,#5a382c,#47291f);box-shadow:inset 0 0 0 1px rgba(246,210,122,.22)}
+.bk-sum h3{font-family:var(--serif);font-size:22px}
+.bk-sum dl{margin-top:20px}
+.bk-sum dl div{display:flex;justify-content:space-between;gap:16px;padding:12px 0;border-bottom:1px solid rgba(250,241,236,.12);font-size:14.5px}
+.bk-sum dt{color:rgba(250,241,236,.62);flex:none}
+.bk-sum dd{text-align:right;font-weight:500}
+.bk-total{display:flex;justify-content:space-between;align-items:baseline;margin-top:20px}
+.bk-total span{font-size:14px;color:rgba(250,241,236,.7)}
+.bk-total b{font-family:var(--latin);font-size:34px;font-weight:600;color:var(--honeyl)}
+.bk-total b small{font-family:var(--sans);font-size:16px;margin-left:3px}
+.bk-sum p{font-size:13px;color:rgba(250,241,236,.58);margin-top:16px}
+.bk-done{display:none;text-align:center;padding:30px 10px}
+.bk-done.on{display:block;animation:fade .5s ease}
+.bk-done svg{width:120px;height:120px;margin:0 auto}
+.bk-done h3{font-family:var(--serif);font-size:28px;margin-top:18px}
+.bk-done p{color:var(--muted);margin-top:10px;font-size:15px}
+.bk-done .ticket{margin:24px auto 0;max-width:420px;text-align:left;border:1.5px dashed #dcbcae;border-radius:18px;padding:18px 22px;background:#fff}
+.bk-done .ticket div{display:flex;justify-content:space-between;gap:14px;padding:7px 0;font-size:14.5px}
+.bk-done .ticket dt{color:var(--muted)}
+.bk-done .btn{margin-top:24px}
+
+/* faq */
+.faq-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:70px;align-items:start}
+.qa{border-top:1px solid var(--line2)}
+.qa:last-child{border-bottom:1px solid var(--line2)}
+.qa button{width:100%;display:flex;justify-content:space-between;align-items:center;gap:20px;text-align:left;background:none;border:0;padding:24px 0;cursor:pointer;font-family:var(--serif);font-size:19px;font-weight:700;color:var(--cocoa)}
+.qa button i{flex:none;width:34px;height:34px;border-radius:50%;border:1.5px solid var(--cocoa);position:relative;transition:.3s}
+.qa button i::before,.qa button i::after{content:"";position:absolute;left:50%;top:50%;width:12px;height:1.5px;background:var(--cocoa);transform:translate(-50%,-50%)}
+.qa button i::after{transform:translate(-50%,-50%) rotate(90deg);transition:.3s}
+.qa.open button i{background:var(--honey);border-color:var(--honey)}
+.qa.open button i::after{transform:translate(-50%,-50%) rotate(0)}
+.qa .ans{display:grid;grid-template-rows:0fr;transition:grid-template-rows .35s ease}
+.qa.open .ans{grid-template-rows:1fr}
+.qa .ans>div{overflow:hidden}
+.qa .ans p{padding:0 54px 24px 0;color:var(--muted);font-size:15px}
+.faq-card{margin-top:34px;border-radius:26px;background:var(--paper);padding:28px}
+.faq-card b{font-family:var(--serif);font-size:19px;display:block}
+.faq-card p{font-size:14.5px;color:var(--muted);margin-top:6px}
+.faq-card .contact{display:flex;flex-direction:column;gap:8px;margin-top:16px;font-size:14.5px}
+.faq-card .contact span{display:flex;align-items:center;gap:10px}
+.faq-card .contact svg{width:18px;height:18px;flex:none}
+
+/* footer */
+footer{background:#2c1811;color:rgba(250,241,236,.78);padding:0 0 40px;position:relative}
+.foot-drip svg{width:100%;height:70px}
+.foot-top{display:grid;grid-template-columns:1.2fr 1fr 1fr 1fr;gap:40px;padding:60px 0 50px;border-bottom:1px solid rgba(250,241,236,.12)}
+.foot-top .logo b{color:var(--paper)}
+.foot-top .logo small{color:var(--honeyl)}
+.foot-top p{font-size:14px;margin-top:18px;max-width:280px}
+.foot-top h4{font-family:var(--latin);font-style:italic;font-weight:400;font-size:17px;color:var(--honeyl);margin-bottom:14px}
+.foot-top li{list-style:none;font-size:14px;padding:3px 0}
+.foot-bottom{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;padding-top:26px;font-size:12.5px;color:rgba(250,241,236,.5)}
+
+.mbar{display:none}
+
+/* responsive */
+@media (max-width:1080px){
+  .wrap{padding:0 28px}
+  .menu{gap:20px;font-size:14px}
+  .svc-grid{grid-template-columns:repeat(2,1fr)}
+  .price-wrap,.faq-grid{grid-template-columns:1fr;gap:40px}
+  .price-side{position:static}
+  .price-art{display:none}
+  .hyg-grid{grid-template-columns:1fr;gap:50px}
+  .bk-grid{grid-template-columns:1fr}
+  .bk-sum{position:static}
+  .foot-top{grid-template-columns:1fr 1fr}
+}
+@media (max-width:860px){
+  .menu{display:none;position:absolute;left:0;right:0;top:78px;flex-direction:column;gap:0;background:var(--paper);border-bottom:1px solid var(--line);padding:8px 28px 18px;box-shadow:0 20px 30px -20px rgba(58,33,25,.4)}
+  .menu.open{display:flex}
+  .menu a{padding:14px 0;border-bottom:1px solid var(--line);font-size:16px}
+  .menu a::after{display:none}
+  .burger{display:inline-flex}
+  .nav .btn{display:none}
+  .hero-grid{grid-template-columns:1fr;gap:0}
+  .hero-copy{padding:96px 0 30px}
+  .hero-art{max-width:520px;margin:0 auto;width:100%}
+  .coupon{grid-template-columns:1fr}
+  .coupon-side{border-left:0;border-top:2px dashed rgba(250,241,236,.35);padding:44px 30px 50px}
+  .coupon-side::before{top:-19px;left:-18px}
+  .coupon-side::after{top:-19px;bottom:auto;left:auto;right:-18px}
+  .steps{grid-template-columns:1fr 1fr;row-gap:50px}
+  .steps::before{display:none}
+  .care-grid{grid-template-columns:1fr}
+}
+@media (max-width:560px){
+  .wrap{padding:0 16px}
+  .nav{height:68px}
+  .menu{top:68px;padding:8px 16px 18px}
+  .logo svg{width:30px;height:38px}
+  .logo b{font-size:20px}
+  .logo small{font-size:11.5px}
+  .sec,.offer{padding:84px 0}
+  .sec-head{margin-bottom:36px;gap:18px}
+  .hero{padding-top:20px}
+  .hero-drip,.hero-drip svg{height:90px}
+  .hero-copy{padding:80px 0 26px}
+  .hero h1{font-size:41px}
+  .hero-sub{font-size:15.5px}
+  .hero-cta .btn{flex:1;min-width:0;padding:0 16px}
+  .hero-meta{margin-top:36px}
+  .hero-meta div{min-width:0;padding:14px 10px 0 0}
+  .hero-meta div+div{padding-left:10px}
+  .hero-meta b{font-size:15px}
+  .hero-meta small{font-size:12.5px}
+  .hero-tag{left:0;top:40%;padding:12px 14px;max-width:150px;border-radius:14px}
+  .hero-tag b{font-size:13.5px}
+  .hero-tag small{font-size:12px}
+  .ribbon-track span{font-size:17px}
+  .ribbon-track span i{font-size:15px}
+  .ribbon-drip svg{height:46px}
+  .svc-grid{grid-template-columns:1fr;gap:16px}
+  .svc{border-radius:24px}
+  .tabs{display:flex}
+  .tabs button{flex:1;padding:0 12px}
+  .p-row{grid-template-columns:1fr auto;gap:4px 14px}
+  .p-row .min{grid-column:1;grid-row:2;font-size:12.5px}
+  .p-row .won{grid-column:2;grid-row:1 / span 2;align-self:center;min-width:0;font-size:18px}
+  .coupon{border-radius:28px}
+  .coupon-main{padding:96px 24px 36px}
+  .coupon-drip,.coupon-drip svg{height:84px}
+  .coupon-big span{font-size:18px}
+  .coupon-side svg{width:170px;height:170px}
+  .steps{grid-template-columns:1fr;row-gap:40px}
+  .step{display:grid;grid-template-columns:88px 1fr;gap:18px;text-align:left;padding:0}
+  .step-ic{width:88px;height:88px;margin:0}
+  .step-ic svg{width:46px;height:46px}
+  .step-ic em{width:32px;height:32px;font-size:15px}
+  .step h3{margin-top:4px;font-size:19px}
+  .hyg-art{border-radius:26px}
+  .care-card{padding:30px 22px 24px;border-radius:24px}
+  .care-card h3{font-size:23px}
+  .care-card .corner{width:110px;height:110px}
+  .booking-drip svg{height:54px}
+  .bk-form{padding:26px 18px;border-radius:24px}
+  .two{grid-template-columns:1fr;gap:0}
+  .two .field{margin-bottom:24px}
+  .times{grid-template-columns:repeat(4,1fr)}
+  .bk-sum{padding:26px 22px;border-radius:24px}
+  .qa button{font-size:17px;padding:20px 0}
+  .qa .ans p{padding-right:0}
+  .foot-top{grid-template-columns:1fr;gap:28px;padding:44px 0 36px}
+  .foot-drip svg{height:46px}
+  footer{padding-bottom:100px}
+  .mbar{display:flex;position:fixed;left:12px;right:12px;bottom:12px;z-index:70;gap:8px;padding:8px;border-radius:999px;background:rgba(58,33,25,.94);box-shadow:0 18px 30px -14px rgba(0,0,0,.6)}
+  .mbar{transform:translateY(140%);opacity:0;visibility:hidden;transition:transform .35s ease,opacity .35s,visibility .35s}.mbar.show{transform:none;opacity:1;visibility:visible}
+  .mbar a{flex:1;height:48px;border-radius:999px;display:flex;align-items:center;justify-content:center;gap:8px;font-weight:700;font-size:14.5px;color:var(--paper)}
+  .mbar a.go{background:linear-gradient(180deg,#f2bf55,#d98e22);color:#3a1f0e}
+  .mbar svg{width:18px;height:18px}
+}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a class="logo" href="#top" aria-label="살결담 왁싱 스튜디오 처음으로">
+      <svg viewBox="0 0 36 44" aria-hidden="true"><defs><linearGradient id="lg-logo" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f4c862"/><stop offset=".6" stop-color="#e09a2a"/><stop offset="1" stop-color="#b8680f"/></linearGradient></defs><path d="M18 2C18 2 4 18 4 28a14 14 0 0 0 28 0C32 18 18 2 18 2Z" fill="url(#lg-logo)"/><path d="M11 27c0-4 3-9 5-11" stroke="#fff3cf" stroke-width="2.4" stroke-linecap="round" fill="none" opacity=".85"/><path d="M10 33c4 3 12 3 16 0" stroke="#3a2119" stroke-width="1.6" stroke-linecap="round" fill="none" opacity=".55"/></svg>
+      <span><b>살결담</b><small>Salgyeoldam Wax Studio</small></span>
+    </a>
+    <nav class="menu" id="menu">
+      <a href="#services">시술 부위</a><a href="#price">가격</a><a href="#hygiene">위생·재료</a><a href="#care">관리 안내</a><a href="#faq">자주 묻는 질문</a>
+    </nav>
+    <a class="btn btn-honey" href="#booking">예약하기</a>
+    <button class="burger" id="burger" aria-label="메뉴 열기" aria-expanded="false" aria-controls="menu"><span></span></button>
+  </div>
+</header>
+
+<main id="top">
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-drip" aria-hidden="true">
+    <svg viewBox="0 0 1440 120" preserveAspectRatio="xMidYMin slice"><defs><linearGradient id="g-hd" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f4c862"/><stop offset=".5" stop-color="#e3a136"/><stop offset="1" stop-color="#bd6e14"/></linearGradient></defs>
+      <path d="M0,0 H1440 V20 Q1431.5,24 1423.0,20 Q1412.9,22 1412.5,32 L1412.5,57.3 A11.7,11.7 0 1 1 1397.5,57.3 L1397.5,32 Q1397.1,22 1387.0,20 Q1360.7,24 1334.4,20 Q1326.3,22 1326.0,32 L1326.0,49.4 A9.4,9.4 0 1 1 1314.0,49.4 L1314.0,32 Q1313.7,22 1305.6,20 Q1270.4,24 1235.2,20 Q1221.0,22 1220.5,32 L1220.5,77.0 A16.4,16.4 0 1 1 1199.5,77.0 L1199.5,32 Q1199.0,22 1184.8,20 Q1148.4,24 1112.0,20 Q1105.2,22 1105.0,32 L1105.0,40.2 A7.8,7.8 0 1 1 1095.0,40.2 L1095.0,32 Q1094.8,22 1088.0,20 Q1049.2,24 1010.4,20 Q998.9,22 998.5,32 L998.5,62.5 A13.3,13.3 0 1 1 981.5,62.5 L981.5,32 Q981.1,22 969.6,20 Q932.0,24 894.4,20 Q886.3,22 886.0,32 L886.0,47.4 A9.4,9.4 0 1 1 874.0,47.4 L874.0,32 Q873.7,22 865.6,20 Q827.2,24 788.8,20 Q772.6,22 772.0,32 L772.0,78.9 A18.7,18.7 0 1 1 748.0,78.9 L748.0,32 Q747.4,22 731.2,20 Q699.1,24 667.0,20 Q660.2,22 660.0,32 L660.0,36.2 A7.8,7.8 0 1 1 650.0,36.2 L650.0,32 Q649.8,22 643.0,20 Q602.3,24 561.6,20 Q549.5,22 549.0,32 L549.0,67.2 A14.0,14.0 0 1 1 531.0,67.2 L531.0,32 Q530.5,22 518.4,20 Q472.0,24 425.6,20 Q416.8,22 416.5,32 L416.5,50.1 A10.1,10.1 0 1 1 403.5,50.1 L403.5,32 Q403.2,22 394.4,20 Q360.4,24 326.4,20 Q311.6,22 311.0,32 L311.0,75.6 A17.2,17.2 0 1 1 289.0,75.6 L289.0,32 Q288.4,22 273.6,20 Q238.4,24 203.2,20 Q195.8,22 195.5,32 L195.5,38.8 A8.6,8.6 0 1 1 184.5,38.8 L184.5,32 Q184.2,22 176.8,20 Q133.0,24 89.2,20 Q78.4,22 78.0,32 L78.0,53.9 A12.5,12.5 0 1 1 62.0,53.9 L62.0,32 Q61.6,22 50.8,20 Q25.4,24 0,20 Z" fill="url(#g-hd)"/>
+      <path d="M0,10 C300,18 600,6 900,14 S1300,10 1440,12" stroke="#fff1c4" stroke-width="3" fill="none" opacity=".6"/>
+      <ellipse cx="65.2" cy="63.5" rx="2.2" ry="4.8" fill="#fff3cf" opacity="0.55"/><ellipse cx="186.7" cy="45.4" rx="1.6" ry="3.3" fill="#fff3cf" opacity="0.55"/><ellipse cx="293.4" cy="88.8" rx="3.1" ry="6.6" fill="#fff3cf" opacity="0.55"/><ellipse cx="406.1" cy="57.9" rx="1.8" ry="3.9" fill="#fff3cf" opacity="0.55"/><ellipse cx="534.6" cy="78.0" rx="2.5" ry="5.4" fill="#fff3cf" opacity="0.55"/><ellipse cx="652.0" cy="42.2" rx="1.6" ry="3.0" fill="#fff3cf" opacity="0.55"/><ellipse cx="752.8" cy="93.3" rx="3.4" ry="7.2" fill="#fff3cf" opacity="0.55"/><ellipse cx="876.4" cy="54.6" rx="1.7" ry="3.6" fill="#fff3cf" opacity="0.55"/><ellipse cx="984.9" cy="72.7" rx="2.4" ry="5.1" fill="#fff3cf" opacity="0.55"/><ellipse cx="1097.0" cy="46.2" rx="1.6" ry="3.0" fill="#fff3cf" opacity="0.55"/><ellipse cx="1203.7" cy="89.6" rx="2.9" ry="6.3" fill="#fff3cf" opacity="0.55"/><ellipse cx="1316.4" cy="56.6" rx="1.7" ry="3.6" fill="#fff3cf" opacity="0.55"/><ellipse cx="1400.5" cy="66.3" rx="2.1" ry="4.5" fill="#fff3cf" opacity="0.55"/>
+    </svg>
+  </div>
+  <div class="wrap hero-grid">
+    <div class="hero-copy">
+      <span class="eyebrow">Honey-warm waxing studio</span>
+      <h1>살결 따라,<br><em>천천히</em> 담다.</h1>
+      <p class="hero-sub">한 사람을 위한 한 개의 방. 따뜻하게 데운 왁스와 한 번 쓰고 버리는 도구로, 부위마다 시간을 넉넉히 두고 정돈합니다.</p>
+      <div class="hero-cta">
+        <a class="btn btn-honey" href="#booking"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3.5" y="5" width="17" height="15" rx="3"/><path d="M8 3v4M16 3v4M3.5 10h17"/></svg>예약하기</a>
+        <a class="btn btn-line" href="#price">가격 보기</a>
+      </div>
+      <div class="hero-meta">
+        <div><small>Room</small><b>1인 1실</b></div>
+        <div><small>Booking</small><b>100% 예약제</b></div>
+        <div><small>Weekdays</small><b>11:00 – 21:00</b></div>
+      </div>
+    </div>
+    <div class="hero-art">
+      <svg viewBox="0 0 560 620" role="img" aria-label="따뜻한 꿀빛 왁스가 담긴 왁스 워머와 나무 스파출라 일러스트">
+<defs>
+<linearGradient id="h-arch" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#dfab9b"/><stop offset=".55" stop-color="#c8826f"/><stop offset="1" stop-color="#ab6654"/></linearGradient>
+<linearGradient id="h-honey" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f8d57c"/><stop offset=".45" stop-color="#e7a73a"/><stop offset="1" stop-color="#c27613"/></linearGradient>
+<linearGradient id="h-honey2" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#c27613"/><stop offset=".35" stop-color="#f0b84f"/><stop offset=".55" stop-color="#fbe2a0"/><stop offset=".75" stop-color="#e29c2e"/><stop offset="1" stop-color="#b56a10"/></linearGradient>
+<radialGradient id="h-pool" cx=".42" cy=".3" r=".75"><stop offset="0" stop-color="#fde6a8"/><stop offset=".45" stop-color="#eeae42"/><stop offset="1" stop-color="#b9690f"/></radialGradient>
+<linearGradient id="h-pot" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#2e1912"/><stop offset=".22" stop-color="#5e3a2d"/><stop offset=".42" stop-color="#8a5a47"/><stop offset=".62" stop-color="#5a362a"/><stop offset="1" stop-color="#2a160f"/></linearGradient>
+<linearGradient id="h-rim" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#5a362a"/><stop offset=".4" stop-color="#b98470"/><stop offset=".7" stop-color="#7a4c3b"/><stop offset="1" stop-color="#3d241b"/></linearGradient>
+<linearGradient id="h-base" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#d6bcad"/><stop offset=".3" stop-color="#fbf1ea"/><stop offset=".55" stop-color="#efe0d6"/><stop offset="1" stop-color="#b9998a"/></linearGradient>
+<linearGradient id="h-wood" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#b9864f"/><stop offset=".45" stop-color="#ecd0a5"/><stop offset="1" stop-color="#b07d46"/></linearGradient>
+<radialGradient id="h-floor" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#5a2f22" stop-opacity=".45"/><stop offset="1" stop-color="#5a2f22" stop-opacity="0"/></radialGradient>
+<radialGradient id="h-glow" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#fbe7c9" stop-opacity=".75"/><stop offset="1" stop-color="#fbe7c9" stop-opacity="0"/></radialGradient>
+<radialGradient id="h-led" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#ffd27a"/><stop offset="1" stop-color="#ffb43a" stop-opacity="0"/></radialGradient>
+<clipPath id="h-clip"><path d="M40,620 V290 A240,240 0 0 1 520,290 V620 Z"/></clipPath>
+<filter id="h-grain" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency=".9" numOctaves="3" stitchTiles="stitch"/><feColorMatrix values="0 0 0 0 .23  0 0 0 0 .13  0 0 0 0 .1  0 0 0 0.16 0"/></filter>
+<filter id="h-soft" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="6"/></filter>
+</defs>
+<path d="M40,620 V290 A240,240 0 0 1 520,290 V620 Z" fill="url(#h-arch)"/>
+<g clip-path="url(#h-clip)">
+  <rect width="560" height="620" filter="url(#h-grain)"/>
+  <circle cx="280" cy="350" r="190" fill="url(#h-glow)"/>
+  <path d="M0,0 H560 V150 Q507.8,154 455.6,150 Q450.2,152 450.0,162 L450.0,179.0 A6.2,6.2 0 1 1 442.0,179.0 L442.0,162 Q441.8,152 436.4,150 Q426.8,154 417.2,150 Q406.4,152 406.0,162 L406.0,219.9 A12.5,12.5 0 1 1 390.0,219.9 L390.0,162 Q389.6,152 378.8,150 Q363.0,154 347.2,150 Q339.8,152 339.5,162 L339.5,196.8 A8.6,8.6 0 1 1 328.5,196.8 L328.5,162 Q328.2,152 320.8,150 Q302.2,154 283.6,150 Q271.4,152 271.0,162 L271.0,243.2 A14.0,14.0 0 1 1 253.0,243.2 L253.0,162 Q252.6,152 240.4,150 Q228.6,154 216.8,150 Q210.7,152 210.5,162 L210.5,175.6 A7.0,7.0 0 1 1 201.5,175.6 L201.5,162 Q201.3,152 195.2,150 Q181.0,154 166.8,150 Q157.3,152 157.0,162 L157.0,204.7 A10.9,10.9 0 1 1 143.0,204.7 L143.0,162 Q142.7,152 133.2,150 Q66.6,154 0,150 Z" fill="url(#h-honey)"/>
+  <path d="M60,128 C160,146 260,140 330,146 S460,140 520,128" stroke="#fff1c4" stroke-width="4" fill="none" opacity=".5" stroke-linecap="round"/>
+  <ellipse cx="145.8" cy="213.1" rx="2.0" ry="4.2" fill="#fff3cf" opacity="0.6"/><ellipse cx="203.3" cy="181.0" rx="1.6" ry="3.0" fill="#fff3cf" opacity="0.6"/><ellipse cx="256.6" cy="254.0" rx="2.5" ry="5.4" fill="#fff3cf" opacity="0.6"/><ellipse cx="330.7" cy="203.4" rx="1.6" ry="3.3" fill="#fff3cf" opacity="0.6"/><ellipse cx="393.2" cy="229.5" rx="2.2" ry="4.8" fill="#fff3cf" opacity="0.6"/><ellipse cx="443.6" cy="183.8" rx="1.6" ry="3.0" fill="#fff3cf" opacity="0.6"/>
+</g>
+<path d="M62,620 V292 A218,218 0 0 1 498,292 V620" fill="none" stroke="#fbeee6" stroke-opacity=".35" stroke-width="1.5"/>
+<!-- dried stems -->
+<g fill="none" stroke="#5a382c" stroke-width="2" stroke-linecap="round" opacity=".85">
+  <path d="M118,600 C116,520 124,440 150,350"/><path d="M128,520 C112,500 100,470 98,446"/><path d="M134,470 C150,452 160,430 164,406"/>
+</g>
+<g fill="#5a382c" opacity=".85">
+  <ellipse cx="98" cy="440" rx="5" ry="11" transform="rotate(-12 98 440)"/><ellipse cx="165" cy="400" rx="5" ry="11" transform="rotate(18 165 400)"/>
+  <ellipse cx="108" cy="478" rx="4" ry="9" transform="rotate(-40 108 478)"/><ellipse cx="150" cy="456" rx="4" ry="9" transform="rotate(40 150 456)"/>
+</g>
+<g fill="#f2c2b3"><circle cx="150" cy="346" r="9"/><circle cx="142" cy="336" r="6"/><circle cx="158" cy="334" r="5"/></g>
+<circle cx="150" cy="346" r="3.2" fill="#e3a136"/>
+<g fill="none" stroke="#fbeee6" stroke-width="1.6" stroke-linecap="round" opacity=".7"><path d="M452,600 C452,540 446,500 432,460"/><path d="M446,520 C462,506 470,488 472,470"/></g>
+<g fill="#fbeee6" opacity=".7"><ellipse cx="432" cy="456" rx="4" ry="9" transform="rotate(-20 432 456)"/><ellipse cx="473" cy="466" rx="4" ry="9" transform="rotate(24 473 466)"/></g>
+<!-- floor -->
+<ellipse cx="280" cy="600" rx="210" ry="22" fill="url(#h-floor)"/>
+<!-- heater back + pot -->
+<ellipse cx="280" cy="474" rx="130" ry="16" fill="#b39383"/>
+<path d="M170,404 L176,472 Q178,488 200,488 H360 Q382,488 384,472 L390,404 Z" fill="url(#h-pot)"/>
+<path d="M186,412 C190,440 192,462 196,476" stroke="#c99580" stroke-width="4" stroke-linecap="round" opacity=".35" fill="none"/>
+<ellipse cx="280" cy="404" rx="112" ry="20" fill="url(#h-rim)"/>
+<ellipse cx="280" cy="406" rx="101" ry="15" fill="url(#h-pool)"/>
+<path d="M226,404 C246,396 284,394 312,400" stroke="#fff6d6" stroke-width="3" fill="none" stroke-linecap="round" opacity=".8"/>
+<ellipse cx="318" cy="407" rx="15" ry="3.5" fill="none" stroke="#fff0c0" stroke-width="1.4" opacity=".8"/>
+<ellipse cx="318" cy="407" rx="26" ry="6" fill="none" stroke="#fff0c0" stroke-width="1" opacity=".45"/>
+<path d="M180,408 Q280,436 380,408 L381,414 C381,420 374,421 368,422 L354,424 C349,425 347,429 347,434 L347,451 A7.5,7.5 0 1 1 332,451 L332,432 C332,428 328,427 322,428 L252,430 C247,430 245,434 245,440 L245,468 A9.5,9.5 0 1 1 226,468 L226,436 C226,430 222,428 216,426 C200,422 186,420 180,414 Z" fill="url(#h-honey2)"/>
+<ellipse cx="232" cy="466" rx="2.4" ry="5" fill="#fff3cf" opacity=".7"/><ellipse cx="337" cy="450" rx="2" ry="4" fill="#fff3cf" opacity=".7"/>
+<!-- heater front -->
+<path d="M150,474 A130,16 0 0 0 410,474 V560 Q410,590 380,590 H180 Q150,590 150,560 Z" fill="url(#h-base)"/>
+<path d="M150,474 A130,16 0 0 0 410,474" fill="none" stroke="#fffaf6" stroke-width="2.5" opacity=".9"/>
+<path d="M160,566 Q166,586 186,586 H374 Q394,586 400,566" fill="none" stroke="#a6877a" stroke-width="1.5" opacity=".5"/>
+<circle cx="280" cy="540" r="21" fill="#3a2119"/><circle cx="280" cy="540" r="15" fill="#5a382c"/>
+<path d="M280,540 L289,530" stroke="#f6d27a" stroke-width="3" stroke-linecap="round"/>
+<g fill="#a6877a" opacity=".7"><circle cx="252" cy="540" r="1.8"/><circle cx="256" cy="526" r="1.8"/><circle cx="266" cy="516" r="1.8"/></g>
+<circle cx="334" cy="540" r="14" fill="url(#h-led)"/><circle cx="334" cy="540" r="4" fill="#ffcf6a"/>
+<!-- spatula -->
+<g transform="translate(318,352) rotate(25)">
+  <rect x="-17" y="-210" width="34" height="210" rx="17" fill="url(#h-wood)"/>
+  <path d="M-7,-196 C-6,-150 -8,-110 -6,-76 M6,-184 C7,-140 5,-104 8,-70 M0,-200 C1,-170 -1,-130 1,-96" stroke="#a87642" stroke-width="1" fill="none" opacity=".55"/>
+  <path d="M-17,-62 C-8,-70 8,-58 17,-66 V-17 A17,17 0 0 1 -17,-17 Z" fill="url(#h-honey2)"/>
+  <path d="M-10,-56 C-10,-40 -9,-28 -6,-18" stroke="#fff3cf" stroke-width="3" stroke-linecap="round" fill="none" opacity=".75"/>
+</g>
+<path d="M312,354 C315,372 316,388 316,404 L321,404 C321,388 322,372 326,354 Z" fill="url(#h-honey2)"/>
+<path d="M316,362 C317,376 318,388 318,398" stroke="#fff3cf" stroke-width="1.2" opacity=".7" fill="none"/>
+<!-- floating drops -->
+<g fill="url(#h-honey)"><path d="M444,318 c0,0 -10,13 -10,19 a10,10 0 0 0 20,0 c0,-6 -10,-19 -10,-19Z"/><path d="M470,368 c0,0 -6,8 -6,12 a6,6 0 0 0 12,0 c0,-4 -6,-12 -6,-12Z"/><path d="M108,282 c0,0 -7,9 -7,13 a7,7 0 0 0 14,0 c0,-4 -7,-13 -7,-13Z"/></g>
+<g fill="#fff3cf" opacity=".7"><ellipse cx="440" cy="336" rx="2" ry="4"/><ellipse cx="105" cy="294" rx="1.5" ry="3"/></g>
+<g fill="#fff6dc"><path d="M488,262 l3,9 9,3 -9,3 -3,9 -3,-9 -9,-3 9,-3Z"/><path d="M86,360 l2,6 6,2 -6,2 -2,6 -2,-6 -6,-2 6,-2Z" opacity=".8"/></g>
+</svg>
+      <div class="hero-tag"><small>First visit</small><b>첫 방문 20%<br>웰컴 혜택</b></div>
+    </div>
+  </div>
+</section>
+
+<!-- RIBBON -->
+<div class="ribbon" aria-hidden="true">
+  <div class="ribbon-band"><div class="ribbon-track"><span>Face <i>얼굴</i><svg viewBox="0 0 14 18" aria-hidden="true"><path d="M7 1S1 8 1 12a6 6 0 0 0 12 0C13 8 7 1 7 1Z" fill="#5a2f10" opacity=".75"/></svg></span><span>Underarm <i>겨드랑이</i><svg viewBox="0 0 14 18" aria-hidden="true"><path d="M7 1S1 8 1 12a6 6 0 0 0 12 0C13 8 7 1 7 1Z" fill="#5a2f10" opacity=".75"/></svg></span><span>Arm <i>팔</i><svg viewBox="0 0 14 18" aria-hidden="true"><path d="M7 1S1 8 1 12a6 6 0 0 0 12 0C13 8 7 1 7 1Z" fill="#5a2f10" opacity=".75"/></svg></span><span>Leg <i>다리</i><svg viewBox="0 0 14 18" aria-hidden="true"><path d="M7 1S1 8 1 12a6 6 0 0 0 12 0C13 8 7 1 7 1Z" fill="#5a2f10" opacity=".75"/></svg></span><span>Men's grooming <i>남성 그루밍</i><svg viewBox="0 0 14 18" aria-hidden="true"><path d="M7 1S1 8 1 12a6 6 0 0 0 12 0C13 8 7 1 7 1Z" fill="#5a2f10" opacity=".75"/></svg></span><span>One room, one guest <i>1인 1실</i><svg viewBox="0 0 14 18" aria-hidden="true"><path d="M7 1S1 8 1 12a6 6 0 0 0 12 0C13 8 7 1 7 1Z" fill="#5a2f10" opacity=".75"/></svg></span><span>Single-use spatula <i>1회용 스파출라</i><svg viewBox="0 0 14 18" aria-hidden="true"><path d="M7 1S1 8 1 12a6 6 0 0 0 12 0C13 8 7 1 7 1Z" fill="#5a2f10" opacity=".75"/></svg></span><span>Face <i>얼굴</i><svg viewBox="0 0 14 18" aria-hidden="true"><path d="M7 1S1 8 1 12a6 6 0 0 0 12 0C13 8 7 1 7 1Z" fill="#5a2f10" opacity=".75"/></svg></span><span>Underarm <i>겨드랑이</i><svg viewBox="0 0 14 18" aria-hidden="true"><path d="M7 1S1 8 1 12a6 6 0 0 0 12 0C13 8 7 1 7 1Z" fill="#5a2f10" opacity=".75"/></svg></span><span>Arm <i>팔</i><svg viewBox="0 0 14 18" aria-hidden="true"><path d="M7 1S1 8 1 12a6 6 0 0 0 12 0C13 8 7 1 7 1Z" fill="#5a2f10" opacity=".75"/></svg></span><span>Leg <i>다리</i><svg viewBox="0 0 14 18" aria-hidden="true"><path d="M7 1S1 8 1 12a6 6 0 0 0 12 0C13 8 7 1 7 1Z" fill="#5a2f10" opacity=".75"/></svg></span><span>Men's grooming <i>남성 그루밍</i><svg viewBox="0 0 14 18" aria-hidden="true"><path d="M7 1S1 8 1 12a6 6 0 0 0 12 0C13 8 7 1 7 1Z" fill="#5a2f10" opacity=".75"/></svg></span><span>One room, one guest <i>1인 1실</i><svg viewBox="0 0 14 18" aria-hidden="true"><path d="M7 1S1 8 1 12a6 6 0 0 0 12 0C13 8 7 1 7 1Z" fill="#5a2f10" opacity=".75"/></svg></span><span>Single-use spatula <i>1회용 스파출라</i><svg viewBox="0 0 14 18" aria-hidden="true"><path d="M7 1S1 8 1 12a6 6 0 0 0 12 0C13 8 7 1 7 1Z" fill="#5a2f10" opacity=".75"/></svg></span></div></div>
+  <div class="ribbon-drip"><svg viewBox="0 0 1440 70" preserveAspectRatio="xMidYMin slice"><defs><linearGradient id="g-rd" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#c7791a"/><stop offset="1" stop-color="#a95f10"/></linearGradient></defs><path d="M0,0 H1440 V6 Q1415.2,9 1390.4,6 Q1378.9,8 1378.5,18 L1378.5,38.5 A13.3,13.3 0 1 1 1361.5,38.5 L1361.5,18 Q1361.1,8 1349.6,6 Q1286.4,9 1223.2,6 Q1215.8,8 1215.5,18 L1215.5,26.8 A8.6,8.6 0 1 1 1204.5,26.8 L1204.5,18 Q1204.2,8 1196.8,6 Q1128.0,9 1059.2,6 Q1048.4,8 1048.0,18 L1048.0,35.9 A12.5,12.5 0 1 1 1032.0,35.9 L1032.0,18 Q1031.6,8 1020.8,6 Q961.4,9 902.0,6 Q895.2,8 895.0,18 L895.0,22.2 A7.8,7.8 0 1 1 885.0,22.2 L885.0,18 Q884.8,8 878.0,6 Q811.0,9 744.0,6 Q730.5,8 730.0,18 L730.0,40.4 A15.6,15.6 0 1 1 710.0,40.4 L710.0,18 Q709.5,8 696.0,6 Q637.0,9 578.0,6 Q567.9,8 567.5,18 L567.5,33.3 A11.7,11.7 0 1 1 552.5,33.3 L552.5,18 Q552.1,8 542.0,6 Q476.4,9 410.8,6 Q404.7,8 404.5,18 L404.5,21.6 A7.0,7.0 0 1 1 395.5,21.6 L395.5,18 Q395.3,8 389.2,6 Q320.4,9 251.6,6 Q239.4,8 239.0,18 L239.0,39.2 A14.0,14.0 0 1 1 221.0,39.2 L221.0,18 Q220.6,8 208.4,6 Q141.4,9 74.4,6 Q66.3,8 66.0,18 L66.0,29.4 A9.4,9.4 0 1 1 54.0,29.4 L54.0,18 Q53.7,8 45.6,6 Q22.8,9 0,6 Z" fill="url(#g-rd)"/></svg></div>
+</div>
+
+<!-- SERVICES -->
+<section class="sec" id="services">
+  <div class="wrap">
+    <div class="sec-head">
+      <div><span class="eyebrow">Services</span><h2 class="h2">부위별로 다른 결,<br>다른 왁스로 다룹니다.</h2></div>
+      <p class="lead">넓은 부위는 소프트 왁스와 부직포로, 좁고 섬세한 부위는 하드 왁스로. 부위와 털의 굵기에 맞춰 왁스와 온도를 고릅니다.</p>
+    </div>
+    <div class="svc-grid">
+      <article class="svc"><div class="svc-art"><svg viewBox="0 0 320 200" role="img" aria-label="옆모습 얼굴 라인 일러스트">
+<defs><linearGradient id="f-bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f5e2d9"/><stop offset="1" stop-color="#e6bfae"/></linearGradient><linearGradient id="f-sk" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f8e3d8"/><stop offset=".6" stop-color="#efc8b7"/><stop offset="1" stop-color="#e0ab97"/></linearGradient><linearGradient id="f-h" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f8d57c"/><stop offset=".5" stop-color="#e5a137"/><stop offset="1" stop-color="#bf7314"/></linearGradient><filter id="f-gr" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency=".9" numOctaves="3" stitchTiles="stitch"/><feColorMatrix values="0 0 0 0 .23  0 0 0 0 .13  0 0 0 0 .1  0 0 0 0.1 0"/></filter>
+<linearGradient id="f-hair" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#6a4334"/><stop offset="1" stop-color="#2f1a12"/></linearGradient></defs>
+<rect width="320" height="200" fill="url(#f-bg)"/><rect width="320" height="200" filter="url(#f-gr)"/>
+<circle cx="150" cy="112" r="92" fill="#e2ad9b" opacity=".45"/>
+<circle cx="150" cy="112" r="70" fill="none" stroke="#fff" stroke-opacity=".45"/>
+<path d="M146,38 C166,40 176,58 177,78 C178,86 182,92 190,102 C196,109 194,113 186,114 C188,118 190,121 186,124 C189,127 189,131 185,135 C182,138 178,140 181,145 C184,151 182,157 172,162 C164,166 162,178 164,200 L112,200 C120,180 128,160 124,138 C112,128 100,110 100,86 C100,58 120,36 146,38Z" fill="url(#f-sk)"/>
+<path d="M146,36 C118,32 96,54 98,86 C99,104 106,118 118,128 C122,110 128,96 140,82 C150,70 162,62 174,62 C170,46 160,38 146,36Z" fill="url(#f-hair)"/>
+<circle cx="100" cy="60" r="22" fill="url(#f-hair)"/>
+<path d="M90,52 C96,46 104,44 112,48" stroke="#9a6a55" stroke-width="2" fill="none" stroke-linecap="round" opacity=".6"/>
+<ellipse cx="130" cy="102" rx="7" ry="11" fill="#e3ad98"/>
+<path d="M146,38 C166,40 176,58 177,78 C178,86 182,92 190,102 C196,109 194,113 186,114 C188,118 190,121 186,124 C189,127 189,131 185,135 C182,138 178,140 181,145 C184,151 182,157 172,162 C164,166 162,178 164,200" fill="none" stroke="#3a2119" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M158,90 q7,5 14,0" stroke="#3a2119" stroke-width="2" fill="none" stroke-linecap="round"/>
+<path d="M160,93 l-2,4 M165,95 l-1,4 M170,93 l1,4" stroke="#3a2119" stroke-width="1.4" stroke-linecap="round"/>
+<ellipse cx="166" cy="108" rx="10" ry="6" fill="#e8907c" opacity=".35"/>
+<path d="M156,77 q10,-7 22,-1" stroke="url(#f-h)" stroke-width="8" fill="none" stroke-linecap="round"/>
+<path d="M159,75 q8,-4 15,-2" stroke="#fff3cf" stroke-width="2" fill="none" stroke-linecap="round" opacity=".8"/>
+<g transform="translate(248,170) rotate(16)"><rect x="-8" y="-118" width="16" height="118" rx="8" fill="#e9cfa8"/><path d="M-8,-30 C-3,-34 3,-28 8,-32 V-8 A8,8 0 0 1 -8,-8Z" fill="url(#f-h)"/></g>
+<path d="M268,40 c0,0 -6,8 -6,12 a6,6 0 0 0 12,0 c0,-4 -6,-12 -6,-12Z" fill="url(#f-h)"/>
+</svg></div><div class="svc-body"><div class="svc-top"><h3>얼굴</h3><span class="no">01 · Face</span></div><p>눈썹 모양 정리부터 인중·이마 라인까지, 작은 면적을 하드 왁스로 꼼꼼하게.</p><div class="chips"><span>눈썹</span><span>인중</span><span>이마 라인</span><span>얼굴 전체</span></div></div></article>
+      <article class="svc"><div class="svc-art"><svg viewBox="0 0 320 200" role="img" aria-label="팔을 들어 올린 어깨와 겨드랑이 라인 일러스트">
+<defs><linearGradient id="u-bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#efd4c8"/><stop offset="1" stop-color="#dca896"/></linearGradient><linearGradient id="u-sk" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f8e3d8"/><stop offset=".6" stop-color="#efc8b7"/><stop offset="1" stop-color="#e0ab97"/></linearGradient><linearGradient id="u-h" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f8d57c"/><stop offset=".5" stop-color="#e5a137"/><stop offset="1" stop-color="#bf7314"/></linearGradient><filter id="u-gr" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency=".9" numOctaves="3" stitchTiles="stitch"/><feColorMatrix values="0 0 0 0 .23  0 0 0 0 .13  0 0 0 0 .1  0 0 0 0.1 0"/></filter>
+<radialGradient id="u-gl" cx=".4" cy=".35" r=".7"><stop offset="0" stop-color="#fde6a8"/><stop offset=".5" stop-color="#eaa83c"/><stop offset="1" stop-color="#b9690f"/></radialGradient>
+<linearGradient id="u-sh" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#d79c87" stop-opacity=".6"/><stop offset="1" stop-color="#d79c87" stop-opacity="0"/></linearGradient></defs>
+<rect width="320" height="200" fill="url(#u-bg)"/><rect width="320" height="200" filter="url(#u-gr)"/>
+<path d="M40,200 V96 A70,70 0 0 1 180,96 V200Z" fill="#f5e2d9" opacity=".45"/>
+<path d="M112,200 C118,160 130,126 152,100 C164,72 172,36 178,0 H238 C238,40 240,64 248,82 C260,104 284,116 320,124 V200Z" fill="url(#u-sk)"/>
+<path d="M150,104 C160,130 168,160 170,200 H112 C118,160 130,126 150,104Z" fill="url(#u-sh)"/>
+<path d="M112,200 C118,160 130,126 152,100 C164,72 172,36 178,0 M238,0 C238,40 240,64 248,82 C260,104 284,116 320,124" fill="none" stroke="#3a2119" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M234,52 C240,78 254,96 278,108" fill="none" stroke="#3a2119" stroke-width="1.4" stroke-linecap="round" opacity=".4"/>
+<path d="M176,128 C182,150 186,170 186,190" fill="none" stroke="#3a2119" stroke-width="1.4" stroke-linecap="round" opacity=".3"/>
+<ellipse cx="166" cy="100" rx="13" ry="24" transform="rotate(14 166 100)" fill="url(#u-gl)"/>
+<path d="M168,120 C168,128 167,134 168,140 A4.5,4.5 0 0 0 177,139 C177,133 176,126 175,120Z" fill="url(#u-gl)"/>
+<ellipse cx="161" cy="92" rx="3" ry="8" transform="rotate(14 161 92)" fill="#fff3cf" opacity=".8"/>
+<g transform="translate(276,176) rotate(-62)"><rect x="-8" y="-104" width="16" height="104" rx="8" fill="#e9cfa8"/><path d="M-8,-28 C-3,-32 3,-26 8,-30 V-8 A8,8 0 0 1 -8,-8Z" fill="url(#u-h)"/></g>
+<path d="M70,44 c0,0 -9,12 -9,18 a9,9 0 0 0 18,0 c0,-6 -9,-18 -9,-18Z" fill="url(#u-h)"/>
+<path d="M94,78 c0,0 -5,7 -5,10 a5,5 0 0 0 10,0 c0,-3 -5,-10 -5,-10Z" fill="url(#u-h)" opacity=".8"/>
+<g fill="#fff6dc"><path d="M282,36 l2.5,7 7,2.5 -7,2.5 -2.5,7 -2.5,-7 -7,-2.5 7,-2.5Z"/></g>
+</svg></div><div class="svc-body"><div class="svc-top"><h3>겨드랑이</h3><span class="no">02 · Underarm</span></div><p>방향이 여러 갈래인 부위라 구역을 나눠 털의 결 방향대로 차근차근 진행합니다.</p><div class="chips"><span>하드 왁스</span><span>약 15분</span></div></div></article>
+      <article class="svc"><div class="svc-art"><svg viewBox="0 0 320 200" role="img" aria-label="팔과 손등 라인 위 왁스 스트립 일러스트">
+<defs><linearGradient id="a-bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f3ddd2"/><stop offset="1" stop-color="#e2b5a3"/></linearGradient><linearGradient id="a-sk" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f8e3d8"/><stop offset=".6" stop-color="#efc8b7"/><stop offset="1" stop-color="#e0ab97"/></linearGradient><linearGradient id="a-h" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f8d57c"/><stop offset=".5" stop-color="#e5a137"/><stop offset="1" stop-color="#bf7314"/></linearGradient><filter id="a-gr" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency=".9" numOctaves="3" stitchTiles="stitch"/><feColorMatrix values="0 0 0 0 .23  0 0 0 0 .13  0 0 0 0 .1  0 0 0 0.1 0"/></filter>
+<linearGradient id="a-strip" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fffaf5"/><stop offset="1" stop-color="#efe2d8"/></linearGradient>
+<filter id="a-sh" x="-20%" y="-20%" width="140%" height="160%"><feDropShadow dx="0" dy="6" stdDeviation="5" flood-color="#5a2f22" flood-opacity=".25"/></filter></defs>
+<rect width="320" height="200" fill="url(#a-bg)"/><rect width="320" height="200" filter="url(#a-gr)"/>
+<g stroke="#fff" stroke-opacity=".35"><path d="M0,40 H320"/><path d="M0,166 H320"/></g>
+<g filter="url(#a-sh)">
+<path d="M0,88 C70,82 150,84 200,90 C222,92 236,88 254,84 C270,80 290,82 304,90 C312,95 310,102 300,103 L276,104 C284,108 284,114 274,115 L250,116 C236,118 220,116 200,118 C150,124 70,128 0,132Z" fill="url(#a-sk)"/>
+</g>
+<path d="M0,88 C70,82 150,84 200,90 C222,92 236,88 254,84 C270,80 290,82 304,90 C312,95 310,102 300,103 L276,104 C284,108 284,114 274,115 L250,116 C236,118 220,116 200,118 C150,124 70,128 0,132" fill="none" stroke="#3a2119" stroke-width="2.2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M262,92 C272,90 284,92 292,96" stroke="#3a2119" stroke-width="1.4" fill="none" opacity=".45" stroke-linecap="round"/>
+<g transform="rotate(-3 140 104)">
+  <rect x="86" y="86" width="104" height="32" rx="3" fill="url(#a-h)" opacity=".9"/>
+  <rect x="92" y="82" width="104" height="32" rx="3" fill="url(#a-strip)" stroke="#d9c1b3"/>
+  <path d="M98,88 H190 M98,108 H190" stroke="#d2b6a6" stroke-dasharray="3 4"/>
+  <path d="M196,86 C208,80 218,70 222,58" stroke="#3a2119" stroke-width="1.4" fill="none" stroke-dasharray="2 5" stroke-linecap="round" opacity=".5"/>
+</g>
+<g transform="translate(72,178) rotate(-78)"><rect x="-9" y="-150" width="18" height="150" rx="9" fill="#e9cfa8"/><path d="M-9,-40 C-3,-44 3,-38 9,-42 V-9 A9,9 0 0 1 -9,-9Z" fill="url(#a-h)"/></g>
+<path d="M44,170 c0,0 -5,7 -5,10 a5,5 0 0 0 10,0 c0,-3 -5,-10 -5,-10Z" fill="url(#a-h)"/>
+<path d="M232,40 c0,0 -7,10 -7,14 a7,7 0 0 0 14,0 c0,-4 -7,-14 -7,-14Z" fill="url(#a-h)"/>
+</svg></div><div class="svc-body"><div class="svc-top"><h3>팔</h3><span class="no">03 · Arm</span></div><p>팔꿈치 아래 하완, 또는 어깨까지 팔 전체. 손등·손가락 정리도 함께 고를 수 있어요.</p><div class="chips"><span>하완</span><span>팔 전체</span><span>손등</span></div></div></article>
+      <article class="svc"><div class="svc-art"><svg viewBox="0 0 320 200" role="img" aria-label="종아리와 발끝 라인 일러스트">
+<defs><linearGradient id="l-bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ecd0c2"/><stop offset="1" stop-color="#d89e8b"/></linearGradient><linearGradient id="l-sk" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f8e3d8"/><stop offset=".6" stop-color="#efc8b7"/><stop offset="1" stop-color="#e0ab97"/></linearGradient><linearGradient id="l-h" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f8d57c"/><stop offset=".5" stop-color="#e5a137"/><stop offset="1" stop-color="#bf7314"/></linearGradient><filter id="l-gr" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency=".9" numOctaves="3" stitchTiles="stitch"/><feColorMatrix values="0 0 0 0 .23  0 0 0 0 .13  0 0 0 0 .1  0 0 0 0.1 0"/></filter>
+<linearGradient id="l-wax" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fbe0a0"/><stop offset=".5" stop-color="#e9a73c"/><stop offset="1" stop-color="#c07415"/></linearGradient></defs>
+<rect width="320" height="200" fill="url(#l-bg)"/><rect width="320" height="200" filter="url(#l-gr)"/>
+<circle cx="250" cy="56" r="40" fill="#f6dccf" opacity=".55"/>
+<path d="M62,0 C92,52 140,104 190,136 C210,148 236,158 262,168 C280,175 300,179 308,186 C311,190 307,194 300,194 C280,193 244,192 214,188 C204,186 202,178 196,172 C170,158 140,142 110,128 C70,110 40,80 24,0Z" fill="url(#l-sk)"/>
+<path d="M62,0 C92,52 140,104 190,136 C210,148 236,158 262,168 C280,175 300,179 308,186 C311,190 307,194 300,194 C280,193 244,192 214,188 C204,186 202,178 196,172 C170,158 140,142 110,128 C70,110 40,80 24,0" fill="none" stroke="#3a2119" stroke-width="2.2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M196,150 C200,156 204,160 210,162" stroke="#3a2119" stroke-width="1.4" fill="none" opacity=".45" stroke-linecap="round"/>
+<path d="M70,24 C92,58 118,84 150,106 L144,116 C112,96 82,70 58,36Z" fill="url(#l-wax)" opacity=".95"/>
+<path d="M112,94 C112,104 110,112 112,120 A5,5 0 0 0 122,119 C122,112 120,104 120,98Z" fill="url(#l-wax)"/>
+<path d="M82,58 C82,66 81,72 82,78 A4,4 0 0 0 90,77 C90,72 89,66 88,62Z" fill="url(#l-wax)"/>
+<path d="M76,30 C96,60 118,82 142,100" stroke="#fff3cf" stroke-width="2.5" fill="none" stroke-linecap="round" opacity=".7"/>
+<g transform="translate(258,128) rotate(-30)"><rect x="-26" y="-6" width="52" height="12" rx="6" fill="#f0dcc6"/><rect x="-26" y="-6" width="20" height="12" rx="6" fill="url(#l-h)"/></g>
+<g fill="#fff6dc"><path d="M40,150 l2.5,7 7,2.5 -7,2.5 -2.5,7 -2.5,-7 -7,-2.5 7,-2.5Z"/></g>
+</svg></div><div class="svc-body"><div class="svc-top"><h3>다리</h3><span class="no">04 · Leg</span></div><p>무릎 아래 하프부터 다리 전체까지. 넓은 면적은 소프트 왁스로 속도감 있게.</p><div class="chips"><span>하프</span><span>다리 전체</span><span>발등</span></div></div></article>
+      <article class="svc"><div class="svc-art"><svg viewBox="0 0 320 200" role="img" aria-label="남성 옆모습과 수염 라인 일러스트">
+<defs><linearGradient id="m-bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#e9c9bb"/><stop offset="1" stop-color="#c98a78"/></linearGradient><linearGradient id="m-sk" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f8e3d8"/><stop offset=".6" stop-color="#efc8b7"/><stop offset="1" stop-color="#e0ab97"/></linearGradient><linearGradient id="m-h" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f8d57c"/><stop offset=".5" stop-color="#e5a137"/><stop offset="1" stop-color="#bf7314"/></linearGradient><filter id="m-gr" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency=".9" numOctaves="3" stitchTiles="stitch"/><feColorMatrix values="0 0 0 0 .23  0 0 0 0 .13  0 0 0 0 .1  0 0 0 0.12 0"/></filter>
+<linearGradient id="m-hair" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#4a2c21"/><stop offset="1" stop-color="#1f100b"/></linearGradient>
+<linearGradient id="m-jar" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#2f1a12"/><stop offset=".4" stop-color="#6a4334"/><stop offset="1" stop-color="#2a160f"/></linearGradient></defs>
+<rect width="320" height="200" fill="url(#m-bg)"/><rect width="320" height="200" filter="url(#m-gr)"/>
+<path d="M190,0 V200" stroke="#fff" stroke-opacity=".25"/><path d="M0,100 H320" stroke="#fff" stroke-opacity=".18"/>
+<path d="M184,36 C164,36 150,52 148,72 C147,80 142,86 134,96 C130,102 134,106 140,107 C138,112 141,116 145,117 C141,121 142,126 147,128 C146,138 150,148 160,152 C172,156 184,154 196,148 C200,166 198,184 196,200 H226 C218,182 214,160 216,136 C224,124 232,110 232,88 C232,58 214,36 184,36Z" fill="url(#m-sk)"/>
+<path d="M148,64 C150,40 168,28 192,28 C218,28 236,48 234,80 C232,92 228,100 226,106 C222,92 220,80 212,72 C196,66 174,62 154,68Z" fill="url(#m-hair)"/>
+<ellipse cx="208" cy="100" rx="7" ry="11" fill="#e3ad98"/>
+<g fill="#5a382c" opacity=".55"><circle cx="166" cy="132" r="1.3"/><circle cx="173" cy="132" r="1.3"/><circle cx="180" cy="132" r="1.3"/><circle cx="187" cy="132" r="1.3"/><circle cx="194" cy="132" r="1.3"/><circle cx="155" cy="138" r="1.3"/><circle cx="162" cy="138" r="1.3"/><circle cx="169" cy="138" r="1.3"/><circle cx="176" cy="138" r="1.3"/><circle cx="183" cy="138" r="1.3"/><circle cx="190" cy="138" r="1.3"/><circle cx="197" cy="138" r="1.3"/><circle cx="152" cy="144" r="1.3"/><circle cx="159" cy="144" r="1.3"/><circle cx="166" cy="144" r="1.3"/><circle cx="173" cy="144" r="1.3"/><circle cx="180" cy="144" r="1.3"/><circle cx="187" cy="144" r="1.3"/><circle cx="194" cy="144" r="1.3"/><circle cx="155" cy="150" r="1.3"/><circle cx="162" cy="150" r="1.3"/><circle cx="169" cy="150" r="1.3"/><circle cx="176" cy="150" r="1.3"/><circle cx="183" cy="150" r="1.3"/><circle cx="190" cy="150" r="1.3"/><circle cx="197" cy="150" r="1.3"/></g>
+<path d="M184,36 C164,36 150,52 148,72 C147,80 142,86 134,96 C130,102 134,106 140,107 C138,112 141,116 145,117 C141,121 142,126 147,128 C146,138 150,148 160,152 C172,156 184,154 196,148 C200,166 198,184 196,200" fill="none" stroke="#3a2119" stroke-width="2.2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M152,82 h10" stroke="#3a2119" stroke-width="2.2" stroke-linecap="round"/><path d="M150,74 q7,-4 15,-1" stroke="#3a2119" stroke-width="3" stroke-linecap="round" fill="none"/>
+<path d="M154,124 C168,128 186,128 204,122" stroke="url(#m-h)" stroke-width="7" fill="none" stroke-linecap="round"/>
+<path d="M160,124 C172,126 184,126 196,123" stroke="#fff3cf" stroke-width="1.6" fill="none" stroke-linecap="round" opacity=".8"/>
+<g transform="translate(60,128)">
+  <ellipse cx="0" cy="46" rx="34" ry="8" fill="#5a2f22" opacity=".25"/>
+  <path d="M-30,0 L-26,40 Q-24,48 0,48 Q24,48 26,40 L30,0Z" fill="url(#m-jar)"/>
+  <ellipse cx="0" cy="0" rx="30" ry="8" fill="#7a4c3b"/><ellipse cx="0" cy="1" rx="25" ry="6" fill="url(#m-h)"/>
+  <g fill="#f8d57c"><circle cx="-36" cy="34" r="4"/><circle cx="-44" cy="40" r="3"/><circle cx="38" cy="40" r="3.5"/></g>
+</g>
+</svg></div><div class="svc-body"><div class="svc-top"><h3>남성 그루밍</h3><span class="no">05 · Men</span></div><p>눈썹 사이·볼 라인·목 뒤 정리와 등·가슴 같은 넓은 부위까지 남성 전용 메뉴로.</p><div class="chips"><span>볼·목 라인</span><span>코 왁싱</span><span>등·가슴</span></div></div></article>
+      <article class="svc"><div class="svc-art"><svg viewBox="0 0 320 200" role="img" aria-label="정기 방문 달력과 하드 왁스 비즈 그릇 일러스트">
+<defs><linearGradient id="k-bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f4e0d6"/><stop offset="1" stop-color="#e3b8a7"/></linearGradient><linearGradient id="k-h" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f8d57c"/><stop offset=".5" stop-color="#e5a137"/><stop offset="1" stop-color="#bf7314"/></linearGradient><filter id="k-gr" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency=".9" numOctaves="3" stitchTiles="stitch"/><feColorMatrix values="0 0 0 0 .23  0 0 0 0 .13  0 0 0 0 .1  0 0 0 0.1 0"/></filter>
+<radialGradient id="k-b" cx=".35" cy=".3" r=".8"><stop offset="0" stop-color="#fff0c2"/><stop offset=".5" stop-color="#eaa83c"/><stop offset="1" stop-color="#b9690f"/></radialGradient>
+<linearGradient id="k-bowl" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#a5604d"/><stop offset=".4" stop-color="#d9927c"/><stop offset="1" stop-color="#8c4c3b"/></linearGradient>
+<filter id="k-sh" x="-20%" y="-20%" width="140%" height="150%"><feDropShadow dx="0" dy="8" stdDeviation="6" flood-color="#5a2f22" flood-opacity=".25"/></filter></defs>
+<rect width="320" height="200" fill="url(#k-bg)"/><rect width="320" height="200" filter="url(#k-gr)"/>
+<g filter="url(#k-sh)" transform="rotate(-5 90 110)">
+  <rect x="28" y="44" width="124" height="134" rx="12" fill="#fffaf6"/>
+  <rect x="28" y="44" width="124" height="24" rx="12" fill="#3a2119"/><rect x="28" y="56" width="124" height="12" fill="#3a2119"/>
+  <circle cx="58" cy="44" r="4" fill="#e3a136"/><circle cx="122" cy="44" r="4" fill="#e3a136"/>
+  <circle cx="48" cy="84" r="3" fill="#c9a596"/><circle cx="70" cy="84" r="8" fill="url(#k-h)"/><circle cx="92" cy="84" r="3" fill="#c9a596"/><circle cx="114" cy="84" r="3" fill="#c9a596"/><circle cx="136" cy="84" r="3" fill="#c9a596"/><circle cx="48" cy="106" r="3" fill="#c9a596"/><circle cx="70" cy="106" r="3" fill="#c9a596"/><circle cx="92" cy="106" r="3" fill="#c9a596"/><circle cx="114" cy="106" r="3" fill="#c9a596"/><circle cx="136" cy="106" r="3" fill="#c9a596"/><circle cx="48" cy="128" r="3" fill="#c9a596"/><circle cx="70" cy="128" r="3" fill="#c9a596"/><circle cx="92" cy="128" r="3" fill="#c9a596"/><circle cx="114" cy="128" r="8" fill="url(#k-h)"/><circle cx="136" cy="128" r="3" fill="#c9a596"/><circle cx="48" cy="150" r="3" fill="#c9a596"/><circle cx="70" cy="150" r="3" fill="#c9a596"/><circle cx="92" cy="150" r="3" fill="#c9a596"/><circle cx="114" cy="150" r="3" fill="#c9a596"/><circle cx="136" cy="150" r="3" fill="#c9a596"/>
+  <path d="M56,80 C80,66 116,70 120,124" stroke="#a5604d" stroke-width="1.6" fill="none" stroke-dasharray="3 4"/>
+</g>
+<g filter="url(#k-sh)">
+  <path d="M164,118 C166,160 192,178 222,178 C252,178 278,160 280,118Z" fill="url(#k-bowl)"/>
+  <ellipse cx="222" cy="118" rx="58" ry="14" fill="#8c4c3b"/>
+</g>
+<g><circle cx="212.8" cy="124.9" r="4.4" fill="url(#k-b)"/><circle cx="256.7" cy="124.4" r="3.9" fill="url(#k-b)"/><circle cx="257.1" cy="123.0" r="3.3" fill="url(#k-b)"/><circle cx="209.2" cy="120.1" r="3.4" fill="url(#k-b)"/><circle cx="179.3" cy="126.2" r="3.4" fill="url(#k-b)"/><circle cx="229.0" cy="133.5" r="4.9" fill="url(#k-b)"/><circle cx="192.6" cy="112.2" r="5.0" fill="url(#k-b)"/><circle cx="268.8" cy="123.3" r="3.7" fill="url(#k-b)"/><circle cx="233.2" cy="123.3" r="3.8" fill="url(#k-b)"/><circle cx="231.1" cy="110.3" r="4.2" fill="url(#k-b)"/><circle cx="201.3" cy="108.7" r="4.2" fill="url(#k-b)"/><circle cx="233.9" cy="119.9" r="3.6" fill="url(#k-b)"/><circle cx="207.4" cy="106.3" r="3.8" fill="url(#k-b)"/><circle cx="191.5" cy="111.2" r="3.7" fill="url(#k-b)"/><circle cx="234.1" cy="102.1" r="3.6" fill="url(#k-b)"/><circle cx="187.8" cy="111.5" r="4.8" fill="url(#k-b)"/><circle cx="218.3" cy="107.5" r="5.0" fill="url(#k-b)"/><circle cx="247.2" cy="126.7" r="4.6" fill="url(#k-b)"/><circle cx="243.3" cy="129.3" r="3.3" fill="url(#k-b)"/><circle cx="199.3" cy="102.9" r="4.2" fill="url(#k-b)"/><circle cx="243.0" cy="110.2" r="4.5" fill="url(#k-b)"/><circle cx="188.7" cy="109.6" r="4.0" fill="url(#k-b)"/><circle cx="249.5" cy="101.7" r="4.1" fill="url(#k-b)"/><circle cx="215.3" cy="113.8" r="4.5" fill="url(#k-b)"/><circle cx="190.3" cy="102.3" r="4.7" fill="url(#k-b)"/><circle cx="214.9" cy="130.0" r="4.4" fill="url(#k-b)"/><circle cx="257.5" cy="119.9" r="3.5" fill="url(#k-b)"/><circle cx="231.5" cy="121.2" r="4.6" fill="url(#k-b)"/><circle cx="240.1" cy="125.2" r="3.9" fill="url(#k-b)"/><circle cx="232.4" cy="113.9" r="4.0" fill="url(#k-b)"/><circle cx="174.7" cy="112.3" r="4.7" fill="url(#k-b)"/><circle cx="240.3" cy="110.1" r="3.9" fill="url(#k-b)"/><circle cx="190.7" cy="132.4" r="4.9" fill="url(#k-b)"/><circle cx="234.9" cy="124.8" r="3.6" fill="url(#k-b)"/><circle cx="225.8" cy="131.7" r="4.3" fill="url(#k-b)"/><circle cx="221.7" cy="119.3" r="4.0" fill="url(#k-b)"/><circle cx="194.9" cy="128.9" r="4.9" fill="url(#k-b)"/><circle cx="208.1" cy="104.8" r="4.3" fill="url(#k-b)"/><circle cx="216.5" cy="113.9" r="4.8" fill="url(#k-b)"/><circle cx="231.2" cy="99.8" r="4.6" fill="url(#k-b)"/><circle cx="196.0" cy="125.8" r="3.4" fill="url(#k-b)"/><circle cx="213.2" cy="114.3" r="3.3" fill="url(#k-b)"/><circle cx="227.5" cy="125.7" r="3.8" fill="url(#k-b)"/><circle cx="222.8" cy="118.1" r="3.5" fill="url(#k-b)"/><circle cx="247.6" cy="125.1" r="3.2" fill="url(#k-b)"/><circle cx="251.1" cy="107.0" r="3.5" fill="url(#k-b)"/></g>
+<path d="M176,140 C182,156 196,166 210,170" stroke="#f3c1af" stroke-width="3" fill="none" stroke-linecap="round" opacity=".6"/>
+<g fill="url(#k-b)"><circle cx="296" cy="168" r="5"/><circle cx="286" cy="180" r="4"/><circle cx="150" cy="186" r="4"/></g>
+</svg></div><div class="svc-body"><div class="svc-top"><h3>정기 케어</h3><span class="no">06 · Routine</span></div><p>4~6주 간격으로 다시 찾는 분들을 위한 부위 조합. 방문 주기에 맞춰 일정을 함께 잡아 드려요.</p><div class="chips"><span>2부위 조합</span><span>주기 알림</span></div></div></article>
+    </div>
+  </div>
+</section>
+
+<!-- PRICE -->
+<section class="sec price" id="price">
+  <div class="wrap price-wrap">
+    <div class="price-side">
+      <span class="eyebrow">Price list</span>
+      <h2 class="h2">가격은 부위와<br>시간으로 정직하게.</h2>
+      <p class="lead">표시된 금액에 왁스·1회용 도구·마무리 오일 사용이 모두 포함됩니다. 추가 비용이 필요한 경우 시술 전에 먼저 안내해요.</p>
+      <div class="tabs" role="tablist">
+        <button class="on" role="tab" aria-selected="true" data-tab="w">여성</button>
+        <button role="tab" aria-selected="false" data-tab="m">남성</button>
+      </div>
+      <p class="price-note">부가세 포함 · 시간은 대략적인 기준이며 털의 양에 따라 달라질 수 있어요.</p>
+      <div class="price-art"><svg viewBox="0 0 340 300" role="img" aria-label="꿀빛 왁스 유리병과 나무 디퍼 일러스트">
+<defs>
+<linearGradient id="p-glass" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#b96e12"/><stop offset=".25" stop-color="#f2bd52"/><stop offset=".45" stop-color="#fde3a4"/><stop offset=".7" stop-color="#e09a2c"/><stop offset="1" stop-color="#9b5509"/></linearGradient>
+<linearGradient id="p-lid" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#2e1912"/><stop offset=".4" stop-color="#7a4c3b"/><stop offset="1" stop-color="#2a160f"/></linearGradient>
+<linearGradient id="p-wood" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#b9864f"/><stop offset=".5" stop-color="#ecd0a5"/><stop offset="1" stop-color="#a87642"/></linearGradient>
+<radialGradient id="p-sh" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#5a2f22" stop-opacity=".3"/><stop offset="1" stop-color="#5a2f22" stop-opacity="0"/></radialGradient>
+</defs>
+<circle cx="170" cy="150" r="130" fill="#f1ddd3"/>
+<ellipse cx="170" cy="278" rx="120" ry="12" fill="url(#p-sh)"/>
+<path d="M104,96 C96,110 92,130 92,160 V240 Q92,272 124,272 H216 Q248,272 248,240 V160 C248,130 244,110 236,96Z" fill="url(#p-glass)"/>
+<path d="M108,120 C104,150 104,200 108,244" stroke="#fff6dc" stroke-width="7" stroke-linecap="round" fill="none" opacity=".55"/>
+<rect x="100" y="70" width="140" height="30" rx="8" fill="url(#p-lid)"/>
+<path d="M226,96 C232,96 236,100 236,108 L236,150 A7,7 0 0 1 222,150 L222,110 C222,104 222,98 226,96Z" fill="#d48a1e"/><ellipse cx="227" cy="148" rx="1.8" ry="4" fill="#fff3cf" opacity=".7"/>
+<rect x="128" y="168" width="84" height="56" rx="6" fill="#fbf1ea" opacity=".92"/>
+<path d="M142,186 H198 M150,200 H190 M158,212 H182" stroke="#a5604d" stroke-width="2" stroke-linecap="round"/>
+<g transform="translate(262,268) rotate(-24)">
+  <rect x="-6" y="-150" width="12" height="104" rx="6" fill="url(#p-wood)"/>
+  <g fill="url(#p-wood)"><ellipse cx="0" cy="-36" rx="20" ry="9"/><ellipse cx="0" cy="-22" rx="22" ry="9"/><ellipse cx="0" cy="-8" rx="20" ry="9"/></g>
+  <path d="M-22,-24 C-14,-30 14,-30 22,-24 C22,-10 10,-2 0,4 C-10,-2 -22,-10 -22,-24Z" fill="#e3a136" opacity=".85"/>
+</g>
+<path d="M266,276 c0,0 -6,8 -6,12 a6,6 0 0 0 12,0 c0,-4 -6,-12 -6,-12Z" fill="#e3a136"/>
+</svg></div>
+    </div>
+    <div>
+      <div class="p-panel on" id="p-w" role="tabpanel">
+        <div class="p-group"><h4>얼굴 <small>Face</small></h4>
+          <div class="p-row"><b>눈썹 정리<small>모양 상담 포함</small></b><span class="min">20분</span><span class="won">18,000<span>원</span></span></div>
+          <div class="p-row"><b>인중</b><span class="min">10분</span><span class="won">10,000<span>원</span></span></div>
+          <div class="p-row"><b>얼굴 전체<small>이마·인중·볼·턱 라인</small></b><span class="min">35분</span><span class="won">39,000<span>원</span></span></div>
+        </div>
+        <div class="p-group"><h4>바디 <small>Body</small></h4>
+          <div class="p-row"><b>겨드랑이</b><span class="min">15분</span><span class="won">25,000<span>원</span></span></div>
+          <div class="p-row"><b>팔 하완</b><span class="min">25분</span><span class="won">35,000<span>원</span></span></div>
+          <div class="p-row"><b>팔 전체</b><span class="min">40분</span><span class="won">55,000<span>원</span></span></div>
+          <div class="p-row"><b>다리 하프<small>무릎 아래</small></b><span class="min">35분</span><span class="won">45,000<span>원</span></span></div>
+          <div class="p-row"><b>다리 전체</b><span class="min">60분</span><span class="won">79,000<span>원</span></span></div>
+        </div>
+        <div class="p-group"><h4>정기 케어 <small>Routine</small></h4>
+          <div class="p-row"><b>겨드랑이 + 다리 하프</b><span class="min">50분</span><span class="won">62,000<span>원</span></span></div>
+          <div class="p-row"><b>팔 전체 + 다리 전체</b><span class="min">95분</span><span class="won">119,000<span>원</span></span></div>
+        </div>
+      </div>
+      <div class="p-panel" id="p-m" role="tabpanel">
+        <div class="p-group"><h4>얼굴 <small>Face</small></h4>
+          <div class="p-row"><b>눈썹 정리<small>미간 포함</small></b><span class="min">20분</span><span class="won">20,000<span>원</span></span></div>
+          <div class="p-row"><b>코 왁싱<small>콧구멍 입구 부분</small></b><span class="min">10분</span><span class="won">15,000<span>원</span></span></div>
+          <div class="p-row"><b>볼·목 라인 정리</b><span class="min">25분</span><span class="won">29,000<span>원</span></span></div>
+        </div>
+        <div class="p-group"><h4>바디 <small>Body</small></h4>
+          <div class="p-row"><b>겨드랑이</b><span class="min">20분</span><span class="won">29,000<span>원</span></span></div>
+          <div class="p-row"><b>팔 전체</b><span class="min">45분</span><span class="won">65,000<span>원</span></span></div>
+          <div class="p-row"><b>가슴·복부</b><span class="min">45분</span><span class="won">59,000<span>원</span></span></div>
+          <div class="p-row"><b>등 전체</b><span class="min">50분</span><span class="won">65,000<span>원</span></span></div>
+          <div class="p-row"><b>다리 전체</b><span class="min">70분</span><span class="won">95,000<span>원</span></span></div>
+        </div>
+        <div class="p-group"><h4>정기 케어 <small>Routine</small></h4>
+          <div class="p-row"><b>눈썹 + 볼·목 라인</b><span class="min">40분</span><span class="won">44,000<span>원</span></span></div>
+          <div class="p-row"><b>가슴·복부 + 등 전체</b><span class="min">90분</span><span class="won">112,000<span>원</span></span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- OFFER -->
+<section class="offer" id="offer">
+  <div class="wrap">
+    <div class="coupon">
+      <div class="coupon-drip" aria-hidden="true"><svg viewBox="0 0 1200 110" preserveAspectRatio="xMinYMin slice"><defs><linearGradient id="g-cd" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f6d27a"/><stop offset=".55" stop-color="#e3a136"/><stop offset="1" stop-color="#c27613"/></linearGradient></defs><path d="M0,0 H1200 V24 Q1180.2,28 1160.4,24 Q1148.9,26 1148.5,36 L1148.5,60.5 A13.3,13.3 0 1 1 1131.5,60.5 L1131.5,36 Q1131.1,26 1119.6,24 Q1077.6,28 1035.6,24 Q1026.8,26 1026.5,36 L1026.5,52.1 A10.1,10.1 0 1 1 1013.5,52.1 L1013.5,36 Q1013.2,26 1004.4,24 Q954.2,28 904.0,24 Q890.5,26 890.0,36 L890.0,74.4 A15.6,15.6 0 1 1 870.0,74.4 L870.0,36 Q869.5,26 856.0,24 Q814.0,28 772.0,24 Q765.2,26 765.0,36 L765.0,42.2 A7.8,7.8 0 1 1 755.0,42.2 L755.0,36 Q754.8,26 748.0,24 Q683.6,28 619.2,24 Q608.4,26 608.0,36 L608.0,63.9 A12.5,12.5 0 1 1 592.0,63.9 L592.0,36 Q591.6,26 580.8,24 Q532.6,28 484.4,24 Q476.3,26 476.0,36 L476.0,51.4 A9.4,9.4 0 1 1 464.0,51.4 L464.0,36 Q463.7,26 455.6,24 Q406.0,28 356.4,24 Q341.6,26 341.0,36 L341.0,77.6 A17.2,17.2 0 1 1 319.0,77.6 L319.0,36 Q318.4,26 303.6,24 Q268.4,28 233.2,24 Q225.8,26 225.5,36 L225.5,44.8 A8.6,8.6 0 1 1 214.5,44.8 L214.5,36 Q214.2,26 206.8,24 Q159.2,28 111.6,24 Q99.5,26 99.0,36 L99.0,69.2 A14.0,14.0 0 1 1 81.0,69.2 L81.0,36 Q80.5,26 68.4,24 Q34.2,28 0,24 Z" fill="url(#g-cd)"/><ellipse cx="84.6" cy="80.0" rx="2.5" ry="5.4" fill="#fff3cf" opacity="0.55"/><ellipse cx="216.7" cy="51.4" rx="1.6" ry="3.3" fill="#fff3cf" opacity="0.55"/><ellipse cx="323.4" cy="90.8" rx="3.1" ry="6.6" fill="#fff3cf" opacity="0.55"/><ellipse cx="466.4" cy="58.6" rx="1.7" ry="3.6" fill="#fff3cf" opacity="0.55"/><ellipse cx="595.2" cy="73.5" rx="2.2" ry="4.8" fill="#fff3cf" opacity="0.55"/><ellipse cx="757.0" cy="48.2" rx="1.6" ry="3.0" fill="#fff3cf" opacity="0.55"/><ellipse cx="874.0" cy="86.4" rx="2.8" ry="6.0" fill="#fff3cf" opacity="0.55"/><ellipse cx="1016.1" cy="59.9" rx="1.8" ry="3.9" fill="#fff3cf" opacity="0.55"/><ellipse cx="1134.9" cy="70.7" rx="2.4" ry="5.1" fill="#fff3cf" opacity="0.55"/></svg></div>
+      <div class="coupon-main">
+        <span class="eyebrow">Welcome offer</span>
+        <h2>처음 오시는 날,<br>모든 부위 20% 할인</h2>
+        <div class="coupon-big"><strong>20%</strong><span>첫 방문<br>웰컴 혜택</span></div>
+        <ul>
+          <li>살결담을 처음 방문하는 분께 1회 적용돼요.</li>
+          <li>예약 시 ‘첫 방문’을 선택하면 금액에 바로 반영됩니다.</li>
+          <li>정기 케어 조합에도 사용할 수 있으며, 다른 할인과 중복되지 않아요.</li>
+        </ul>
+      </div>
+      <div class="coupon-side">
+        <svg viewBox="0 0 220 220" role="img" aria-label="첫 방문 꿀빛 왁스 실 일러스트">
+<defs>
+<radialGradient id="s-g" cx=".38" cy=".32" r=".8"><stop offset="0" stop-color="#fde3a0"/><stop offset=".45" stop-color="#e9a63a"/><stop offset="1" stop-color="#a95f10"/></radialGradient>
+<radialGradient id="s-in" cx=".6" cy=".65" r=".7"><stop offset="0" stop-color="#f0b84f"/><stop offset="1" stop-color="#c27613"/></radialGradient>
+<filter id="s-sh" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="10" stdDeviation="8" flood-color="#3a1a10" flood-opacity=".45"/></filter>
+<path id="s-path" d="M110,110 m-62,0 a62,62 0 1,1 124,0 a62,62 0 1,1 -124,0"/>
+</defs>
+<g filter="url(#s-sh)"><polygon points="202.0,110.0 211.1,123.3 197.9,133.5 197.1,146.1 191.4,157.0 190.3,171.6 173.1,173.1 168.2,185.8 157.7,192.7 148.1,202.0 132.8,195.2 122.7,206.6 110.0,206.0 97.3,206.7 87.2,195.1 71.9,201.9 62.2,192.7 51.8,185.9 47.0,173.0 29.8,171.5 28.5,157.1 22.8,146.1 22.3,133.5 8.9,123.3 17.8,110.0 16.8,97.7 20.3,86.0 16.0,71.1 31.9,64.9 34.9,52.3 43.1,43.1 48.8,30.2 65.7,33.2 73.2,21.1 85.2,17.5 97.1,12.1 110.0,22.0 122.8,12.6 134.8,17.3 147.0,20.6 154.2,33.4 171.0,30.5 177.2,42.8 185.4,52.2 187.7,65.1 203.8,71.1 200.2,85.8 203.3,97.7" fill="url(#s-g)" stroke-linejoin="round"/></g>
+<path d="M150,192 C152,204 150,212 156,214 A7,7 0 0 0 164,204 C162,196 158,192 158,186Z" fill="#c27613"/>
+<circle cx="110" cy="110" r="76" fill="url(#s-in)"/>
+<circle cx="110" cy="110" r="76" fill="none" stroke="#8f4d0c" stroke-opacity=".35" stroke-width="2"/>
+<circle cx="110" cy="110" r="50" fill="none" stroke="#fff1c4" stroke-opacity=".7" stroke-width="1.5"/><text x="110" y="92" text-anchor="middle" font-family="Playfair Display, serif" font-style="italic" font-size="15" fill="#6b3610">N°20</text>
+<text font-family="Playfair Display, serif" font-style="italic" font-size="14" fill="#5a2f10" letter-spacing="1.6"><textPath href="#s-path">First visit · Salgyeoldam · Welcome ·</textPath></text>
+<text x="110" y="124" text-anchor="middle" font-family="Gowun Batang, serif" font-weight="700" font-size="26" fill="#4a250c">첫 방문</text><path d="M92,136 H128" stroke="#6b3610" stroke-width="1.2" opacity=".6"/>
+<path d="M66,70 C76,54 96,44 116,44" stroke="#fff6dc" stroke-width="4" fill="none" stroke-linecap="round" opacity=".6"/>
+</svg>
+        <a class="btn btn-honey" href="#booking">첫 방문 예약하기</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section class="sec process" id="process">
+  <div class="wrap">
+    <div class="sec-head">
+      <div><span class="eyebrow">How it goes</span><h2 class="h2">방에 들어와서 나가기까지,<br>네 단계로.</h2></div>
+      <p class="lead">처음이라 낯설어도 괜찮아요. 시작 전에 순서와 걸리는 시간을 먼저 설명드리고, 진행 중에도 언제든 잠시 멈출 수 있어요.</p>
+    </div>
+    <div class="steps">
+      <div class="step"><div class="step-ic"><em>1</em><svg viewBox="0 0 64 64" aria-hidden="true"><rect x="14" y="10" width="36" height="46" rx="6" fill="none" stroke="#f6d27a" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/><rect x="24" y="6" width="16" height="8" rx="3" fill="#e3a136"/><path d="M22 26l3 3 5-6M22 38l3 3 5-6" fill="none" stroke="#f6d27a" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/><path d="M35 27h8M35 39h8" fill="none" stroke="#f6d27a" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" opacity=".7"/></svg></div><div><h3>상담과 확인</h3><p>원하는 부위·모양을 듣고, 최근 피부 시술이나 복용 중인 약이 있는지 체크리스트로 확인해요.</p><small>약 5분</small></div></div>
+      <div class="step"><div class="step-ic"><em>2</em><svg viewBox="0 0 64 64" aria-hidden="true"><path d="M8 40h40a8 8 0 0 0 0-16H16" fill="none" stroke="#f6d27a" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/><path d="M8 40v8h44" fill="none" stroke="#f6d27a" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/><path d="M16 24a6 6 0 0 0 0 12" fill="none" stroke="#f6d27a" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/><path d="M14 52h38" fill="none" stroke="#f6d27a" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" opacity=".6"/><path d="M44 8l2 5 5 2-5 2-2 5-2-5-5-2 5-2z" fill="#e3a136"/></svg></div><div><h3>준비와 정돈</h3><p>새 시트를 깐 베드에서 부위를 닦아 유분을 정리하고, 길이가 긴 털은 알맞게 다듬어요.</p><small>약 5분</small></div></div>
+      <div class="step"><div class="step-ic"><em>3</em><svg viewBox="0 0 64 64" aria-hidden="true"><g transform="rotate(30 32 32)"><rect x="25" y="4" width="14" height="44" rx="7" fill="none" stroke="#f6d27a" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/><path d="M25 34c4-3 10 2 14-1v8a7 7 0 0 1-14 0z" fill="#e3a136"/></g><path d="M24 50c0 0-4 6-4 8a4 4 0 0 0 8 0c0-2-4-8-4-8z" fill="#e3a136"/></svg></div><div><h3>왁싱</h3><p>손목 안쪽으로 왁스 온도를 먼저 확인한 뒤, 구역을 나눠 털의 결을 따라 진행합니다.</p><small>부위별 10~70분</small></div></div>
+      <div class="step"><div class="step-ic"><em>4</em><svg viewBox="0 0 64 64" aria-hidden="true"><rect x="10" y="14" width="44" height="34" rx="6" fill="none" stroke="#f6d27a" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/><path d="M32 40c-6-4-10-7-10-11a5 5 0 0 1 10-1 5 5 0 0 1 10 1c0 4-4 7-10 11z" fill="#e3a136"/><path d="M18 54h28" fill="none" stroke="#f6d27a" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" opacity=".6"/></svg></div><div><h3>마무리와 안내</h3><p>남은 왁스를 오일로 닦아 내고, 당일과 며칠간의 관리 방법을 카드로 정리해 드려요.</p><small>약 5분</small></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- HYGIENE -->
+<section class="sec" id="hygiene">
+  <div class="wrap hyg-grid">
+    <div class="hyg-art"><svg viewBox="0 0 560 500" role="img" aria-label="나무 트레이 위 1회용 스파출라와 개별 왁스 컵 일러스트">
+<defs>
+<linearGradient id="y-bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#e7c3b4"/><stop offset="1" stop-color="#c98a78"/></linearGradient>
+<linearGradient id="y-tray" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#6a4334"/><stop offset=".5" stop-color="#4a2b20"/><stop offset="1" stop-color="#2f1a12"/></linearGradient>
+<linearGradient id="y-wood" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#c39560"/><stop offset=".5" stop-color="#f1d8b0"/><stop offset="1" stop-color="#b9864f"/></linearGradient>
+<radialGradient id="y-cup" cx=".4" cy=".35" r=".7"><stop offset="0" stop-color="#ffffff"/><stop offset="1" stop-color="#eadbd1"/></radialGradient>
+<radialGradient id="y-wax" cx=".38" cy=".35" r=".75"><stop offset="0" stop-color="#fde3a0"/><stop offset=".5" stop-color="#e9a63a"/><stop offset="1" stop-color="#b56a10"/></radialGradient>
+<linearGradient id="y-towel" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fffaf6"/><stop offset="1" stop-color="#ead9cf"/></linearGradient>
+<filter id="y-sh" x="-10%" y="-10%" width="120%" height="125%"><feDropShadow dx="0" dy="16" stdDeviation="14" flood-color="#3a1a10" flood-opacity=".35"/></filter>
+<filter id="y-gr" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency=".9" numOctaves="3" stitchTiles="stitch"/><feColorMatrix values="0 0 0 0 .23  0 0 0 0 .13  0 0 0 0 .1  0 0 0 0.14 0"/></filter>
+<pattern id="y-grain" width="40" height="8" patternUnits="userSpaceOnUse"><path d="M0,4 C10,2 20,6 40,4" stroke="#7a4c3b" stroke-width=".8" fill="none" opacity=".5"/></pattern>
+</defs>
+<rect width="560" height="500" fill="url(#y-bg)"/><rect width="560" height="500" filter="url(#y-gr)"/>
+<circle cx="470" cy="70" r="110" fill="#f1ddd3" opacity=".35"/>
+<g filter="url(#y-sh)"><rect x="60" y="60" width="440" height="380" rx="36" fill="url(#y-tray)"/></g>
+<rect x="60" y="60" width="440" height="380" rx="36" fill="url(#y-grain)" opacity=".5"/>
+<rect x="78" y="78" width="404" height="344" rx="24" fill="none" stroke="#8a5a47" stroke-width="2" opacity=".6"/>
+<!-- towel roll -->
+<g><rect x="96" y="352" width="200" height="50" rx="25" fill="url(#y-towel)"/><path d="M118,360 V394 M140,360 V394 M162,360 V394 M184,360 V394 M206,360 V394 M228,360 V394 M250,360 V394" stroke="#e2cfc4" stroke-width="1.5"/><circle cx="271" cy="377" r="22" fill="#f6ece5" stroke="#e2cfc4"/><circle cx="271" cy="377" r="12" fill="none" stroke="#e2cfc4"/><circle cx="271" cy="377" r="4" fill="#e2cfc4"/></g>
+<g transform="translate(176,330) rotate(-28)"><rect x="-11" y="-170" width="22" height="170" rx="11" fill="url(#y-wood)" stroke="#a87642" stroke-opacity=".3"/><path d="M-3,-160 C-2,-120 -4,-80 -2,-40" stroke="#a87642" stroke-width=".8" opacity=".5" fill="none"/></g><g transform="translate(176,330) rotate(-18)"><rect x="-11" y="-170" width="22" height="170" rx="11" fill="url(#y-wood)" stroke="#a87642" stroke-opacity=".3"/><path d="M-3,-160 C-2,-120 -4,-80 -2,-40" stroke="#a87642" stroke-width=".8" opacity=".5" fill="none"/></g><g transform="translate(176,330) rotate(-8)"><rect x="-11" y="-170" width="22" height="170" rx="11" fill="url(#y-wood)" stroke="#a87642" stroke-opacity=".3"/><path d="M-3,-160 C-2,-120 -4,-80 -2,-40" stroke="#a87642" stroke-width=".8" opacity=".5" fill="none"/></g><g transform="translate(176,330) rotate(2)"><rect x="-11" y="-170" width="22" height="170" rx="11" fill="url(#y-wood)" stroke="#a87642" stroke-opacity=".3"/><path d="M-3,-160 C-2,-120 -4,-80 -2,-40" stroke="#a87642" stroke-width=".8" opacity=".5" fill="none"/></g><g transform="translate(176,330) rotate(12)"><rect x="-11" y="-170" width="22" height="170" rx="11" fill="url(#y-wood)" stroke="#a87642" stroke-opacity=".3"/><path d="M-3,-160 C-2,-120 -4,-80 -2,-40" stroke="#a87642" stroke-width=".8" opacity=".5" fill="none"/></g><g transform="translate(176,330) rotate(22)"><rect x="-11" y="-170" width="22" height="170" rx="11" fill="url(#y-wood)" stroke="#a87642" stroke-opacity=".3"/><path d="M-3,-160 C-2,-120 -4,-80 -2,-40" stroke="#a87642" stroke-width=".8" opacity=".5" fill="none"/></g>
+<g><circle cx="395" cy="178" r="46" fill="#5a2f22" opacity=".22"/>
+<circle cx="392" cy="170" r="46" fill="url(#y-cup)"/>
+<g stroke="#e4d2c7" stroke-width="1"><line x1="437.0" y1="170.0" x2="431.0" y2="170.0"/><line x1="435.5" y1="181.6" x2="429.7" y2="180.1"/><line x1="431.0" y1="192.5" x2="425.8" y2="189.5"/><line x1="423.8" y1="201.8" x2="419.6" y2="197.6"/><line x1="414.5" y1="209.0" x2="411.5" y2="203.8"/><line x1="403.6" y1="213.5" x2="402.1" y2="207.7"/><line x1="392.0" y1="215.0" x2="392.0" y2="209.0"/><line x1="380.4" y1="213.5" x2="381.9" y2="207.7"/><line x1="369.5" y1="209.0" x2="372.5" y2="203.8"/><line x1="360.2" y1="201.8" x2="364.4" y2="197.6"/><line x1="353.0" y1="192.5" x2="358.2" y2="189.5"/><line x1="348.5" y1="181.7" x2="354.3" y2="180.1"/><line x1="347.0" y1="170.0" x2="353.0" y2="170.0"/><line x1="348.5" y1="158.4" x2="354.3" y2="159.9"/><line x1="353.0" y1="147.5" x2="358.2" y2="150.5"/><line x1="360.2" y1="138.2" x2="364.4" y2="142.4"/><line x1="369.5" y1="131.0" x2="372.5" y2="136.2"/><line x1="380.3" y1="126.5" x2="381.9" y2="132.3"/><line x1="392.0" y1="125.0" x2="392.0" y2="131.0"/><line x1="403.6" y1="126.5" x2="402.1" y2="132.3"/><line x1="414.5" y1="131.0" x2="411.5" y2="136.2"/><line x1="423.8" y1="138.2" x2="419.6" y2="142.4"/><line x1="431.0" y1="147.5" x2="425.8" y2="150.5"/><line x1="435.5" y1="158.3" x2="429.7" y2="159.9"/></g>
+<circle cx="392" cy="170" r="37" fill="url(#y-wax)"/>
+<ellipse cx="378.2" cy="155.3" rx="12.9" ry="4.6" transform="rotate(-30 378.2 155.3)" fill="#fff6dc" opacity=".75"/></g><g><circle cx="443" cy="270" r="40" fill="#5a2f22" opacity=".22"/>
+<circle cx="440" cy="262" r="40" fill="url(#y-cup)"/>
+<g stroke="#e4d2c7" stroke-width="1"><line x1="479.0" y1="262.0" x2="473.0" y2="262.0"/><line x1="477.7" y1="272.1" x2="471.9" y2="270.5"/><line x1="473.8" y1="281.5" x2="468.6" y2="278.5"/><line x1="467.6" y1="289.6" x2="463.3" y2="285.3"/><line x1="459.5" y1="295.8" x2="456.5" y2="290.6"/><line x1="450.1" y1="299.7" x2="448.5" y2="293.9"/><line x1="440.0" y1="301.0" x2="440.0" y2="295.0"/><line x1="429.9" y1="299.7" x2="431.5" y2="293.9"/><line x1="420.5" y1="295.8" x2="423.5" y2="290.6"/><line x1="412.4" y1="289.6" x2="416.7" y2="285.3"/><line x1="406.2" y1="281.5" x2="411.4" y2="278.5"/><line x1="402.3" y1="272.1" x2="408.1" y2="270.5"/><line x1="401.0" y1="262.0" x2="407.0" y2="262.0"/><line x1="402.3" y1="251.9" x2="408.1" y2="253.5"/><line x1="406.2" y1="242.5" x2="411.4" y2="245.5"/><line x1="412.4" y1="234.4" x2="416.7" y2="238.7"/><line x1="420.5" y1="228.2" x2="423.5" y2="233.4"/><line x1="429.9" y1="224.3" x2="431.5" y2="230.1"/><line x1="440.0" y1="223.0" x2="440.0" y2="229.0"/><line x1="450.1" y1="224.3" x2="448.5" y2="230.1"/><line x1="459.5" y1="228.2" x2="456.5" y2="233.4"/><line x1="467.6" y1="234.4" x2="463.3" y2="238.7"/><line x1="473.8" y1="242.5" x2="468.6" y2="245.5"/><line x1="477.7" y1="251.9" x2="471.9" y2="253.5"/></g>
+<circle cx="440" cy="262" r="31" fill="url(#y-wax)"/>
+<ellipse cx="428.0" cy="249.2" rx="11.2" ry="4.0" transform="rotate(-30 428.0 249.2)" fill="#fff6dc" opacity=".75"/></g><g><circle cx="373" cy="308" r="34" fill="#5a2f22" opacity=".22"/>
+<circle cx="370" cy="300" r="34" fill="url(#y-cup)"/>
+<g stroke="#e4d2c7" stroke-width="1"><line x1="403.0" y1="300.0" x2="397.0" y2="300.0"/><line x1="401.9" y1="308.5" x2="396.1" y2="307.0"/><line x1="398.6" y1="316.5" x2="393.4" y2="313.5"/><line x1="393.3" y1="323.3" x2="389.1" y2="319.1"/><line x1="386.5" y1="328.6" x2="383.5" y2="323.4"/><line x1="378.5" y1="331.9" x2="377.0" y2="326.1"/><line x1="370.0" y1="333.0" x2="370.0" y2="327.0"/><line x1="361.5" y1="331.9" x2="363.0" y2="326.1"/><line x1="353.5" y1="328.6" x2="356.5" y2="323.4"/><line x1="346.7" y1="323.3" x2="350.9" y2="319.1"/><line x1="341.4" y1="316.5" x2="346.6" y2="313.5"/><line x1="338.1" y1="308.5" x2="343.9" y2="307.0"/><line x1="337.0" y1="300.0" x2="343.0" y2="300.0"/><line x1="338.1" y1="291.5" x2="343.9" y2="293.0"/><line x1="341.4" y1="283.5" x2="346.6" y2="286.5"/><line x1="346.7" y1="276.7" x2="350.9" y2="280.9"/><line x1="353.5" y1="271.4" x2="356.5" y2="276.6"/><line x1="361.5" y1="268.1" x2="363.0" y2="273.9"/><line x1="370.0" y1="267.0" x2="370.0" y2="273.0"/><line x1="378.5" y1="268.1" x2="377.0" y2="273.9"/><line x1="386.5" y1="271.4" x2="383.5" y2="276.6"/><line x1="393.3" y1="276.7" x2="389.1" y2="280.9"/><line x1="398.6" y1="283.5" x2="393.4" y2="286.5"/><line x1="401.9" y1="291.5" x2="396.1" y2="293.0"/></g>
+<circle cx="370" cy="300" r="25" fill="url(#y-wax)"/>
+<ellipse cx="359.8" cy="289.1" rx="9.5" ry="3.4" transform="rotate(-30 359.8 289.1)" fill="#fff6dc" opacity=".75"/></g>
+<!-- sprig -->
+<g fill="none" stroke="#f6d27a" stroke-width="1.6" stroke-linecap="round" opacity=".8"><path d="M330,410 C350,390 380,384 420,388"/></g>
+<g fill="#f6d27a" opacity=".8"><ellipse cx="356" cy="392" rx="3" ry="7" transform="rotate(50 356 392)"/><ellipse cx="380" cy="386" rx="3" ry="7" transform="rotate(70 380 386)"/><ellipse cx="404" cy="386" rx="3" ry="7" transform="rotate(84 404 386)"/></g>
+<g fill="#fff6dc"><path d="M512,420 l3,8 8,3 -8,3 -3,8 -3,-8 -8,-3 8,-3Z"/></g>
+</svg></div>
+    <div>
+      <span class="eyebrow">Hygiene &amp; materials</span>
+      <h2 class="h2">한 사람에게 쓴 것은<br>다음 사람에게 쓰지 않아요.</h2>
+      <div class="hyg-list">
+        <div class="hyg-item"><div class="ic"><svg viewBox="0 0 28 28" aria-hidden="true"><rect x="10" y="2" width="8" height="22" rx="4" fill="none" stroke="#a5604d" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" transform="rotate(20 14 14)"/><path d="M4 24L24 4" fill="none" stroke="#a5604d" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" opacity=".4"/></svg></div><div><h3>1회용 스파출라, 한 번 담그면 교체</h3><p>왁스 통에 같은 스파출라를 다시 넣지 않아요. 한 번 담근 스파출라는 바로 폐기합니다.</p></div></div>
+        <div class="hyg-item"><div class="ic"><svg viewBox="0 0 28 28" aria-hidden="true"><path d="M5 9h18l-2 14H7z" fill="none" stroke="#a5604d" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><ellipse cx="14" cy="9" rx="9" ry="2.5" fill="#e3a136" stroke="#a5604d" stroke-width="1.4"/></svg></div><div><h3>개인별 소분 왁스</h3><p>큰 통에서 한 분이 쓸 양만 개별 컵에 덜어 데우고, 남은 왁스는 다시 합치지 않아요.</p></div></div>
+        <div class="hyg-item"><div class="ic"><svg viewBox="0 0 28 28" aria-hidden="true"><rect x="3" y="8" width="22" height="12" rx="6" fill="none" stroke="#a5604d" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><circle cx="19" cy="14" r="3" fill="none" stroke="#a5604d" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M8 4l1.5 3M14 3v3M20 4l-1.5 3" fill="none" stroke="#a5604d" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div><h3>매회 새 베드 시트·장갑</h3><p>손님마다 베드 시트와 니트릴 장갑을 새로 바꾸고, 베드와 손잡이는 매회 소독제로 닦아요.</p></div></div>
+        <div class="hyg-item"><div class="ic"><svg viewBox="0 0 28 28" aria-hidden="true"><path d="M7 3h10l5 5v17H7z" fill="none" stroke="#a5604d" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M17 3v5h5M11 14h7M11 18h7M11 22h4" fill="none" stroke="#a5604d" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div><h3>사용 제품 성분표 비치</h3><p>사용하는 왁스·오일의 성분표를 방마다 두고 있어요. 확인하고 싶은 성분이 있으면 미리 말씀해 주세요.</p></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CARE -->
+<section class="sec care" id="care">
+  <div class="wrap">
+    <div class="sec-head">
+      <div><span class="eyebrow">Before &amp; after</span><h2 class="h2">오기 전, 다녀간 후<br>알아 두면 좋은 것들.</h2></div>
+      <p class="lead">일반적인 관리 안내예요. 피부 상태에 따라 다를 수 있으니, 걱정되는 부분은 상담 때 편하게 물어봐 주세요.</p>
+    </div>
+    <div class="care-grid">
+      <div class="care-card">
+        <svg class="corner" viewBox="0 0 150 150" aria-hidden="true"><defs><linearGradient id="cb-h" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f8d57c"/><stop offset="1" stop-color="#c27613"/></linearGradient></defs>
+<circle cx="96" cy="54" r="46" fill="#f1ddd3"/>
+<g transform="rotate(-35 96 60)"><rect x="56" y="48" width="80" height="22" rx="4" fill="#fffaf6" stroke="#c98a78"/><path d="M64,48 v8 M72,48 v5 M80,48 v8 M88,48 v5 M96,48 v8 M104,48 v5 M112,48 v8 M120,48 v5 M128,48 v8" stroke="#a5604d" stroke-width="1.4"/></g>
+<path d="M60,96 c0,0 -9,12 -9,18 a9,9 0 0 0 18,0 c0,-6 -9,-18 -9,-18Z" fill="url(#cb-h)"/></svg>
+        <div class="tagline"><div><span class="latin">Before your visit</span><h3>방문 전</h3></div></div>
+        <ol>
+          <li><div><b>털 길이는 0.5~1cm 정도로</b><span>너무 짧으면 왁스가 잘 잡지 못해요. 면도는 방문 1~2주 전부터 쉬어 주세요.</span></div></li>
+          <li><div><b>당일 스크럽·필링은 쉬어 가기</b><span>각질 제거는 방문 2일 전까지만 가볍게 해 주세요.</span></div></li>
+          <li><div><b>로션·오일은 바르지 않고</b><span>유분이 남아 있으면 왁스가 미끄러질 수 있어요.</span></div></li>
+          <li><div><b>편안한 옷차림으로</b><span>시술 부위가 쓸리지 않는 넉넉한 옷이 좋아요.</span></div></li>
+        </ol>
+      </div>
+      <div class="care-card after">
+        <svg class="corner" viewBox="0 0 150 150" aria-hidden="true"><defs><linearGradient id="ca-h" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f8d57c"/><stop offset="1" stop-color="#c27613"/></linearGradient></defs>
+<circle cx="96" cy="54" r="46" fill="#4d2e23"/>
+<path d="M108,26 A30,30 0 1 0 122,74 A24,24 0 1 1 108,26Z" fill="url(#ca-h)"/>
+<g fill="#f6d27a"><path d="M62,40 l2,5 5,2 -5,2 -2,5 -2,-5 -5,-2 5,-2Z"/><circle cx="76" cy="90" r="2.5"/><circle cx="120" cy="104" r="2"/></g></svg>
+        <div class="tagline"><div><span class="latin">After your visit</span><h3>다녀간 후</h3></div></div>
+        <ol>
+          <li><div><b>24시간은 사우나·찜질 쉬기</b><span>뜨거운 열과 땀이 많은 운동은 하루 정도 피하는 것을 권해요.</span></div></li>
+          <li><div><b>햇볕 노출은 짧게</b><span>당일에는 시술 부위가 직접 햇볕에 오래 닿지 않도록 해 주세요.</span></div></li>
+          <li><div><b>2~3일 뒤부터 가벼운 각질 정리</b><span>부드러운 타월로 결을 따라 살살 정리하면 충분해요.</span></div></li>
+          <li><div><b>다음 방문은 4~6주 간격</b><span>털이 다시 0.5cm 정도 자랐을 때가 다음 예약 시기예요.</span></div></li>
+        </ol>
+      </div>
+    </div>
+    <p class="care-foot">피부에 상처·염증이 있거나 최근 피부 시술을 받으셨다면, 예약 전에 먼저 상담해 주세요.</p>
+  </div>
+</section>
+
+<!-- BOOKING -->
+<section class="booking" id="booking">
+  <div class="booking-drip" aria-hidden="true"><svg viewBox="0 0 1440 80" preserveAspectRatio="xMidYMin slice"><defs><linearGradient id="g-bd" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#e8c9bb"/><stop offset="1" stop-color="#dcb3a2"/></linearGradient></defs><rect width="1440" height="80" fill="#3a2119"/><path d="M0,0 H1440 V10 Q1386.6,13 1333.2,10 Q1325.8,12 1325.5,22 L1325.5,28.8 A8.6,8.6 0 1 1 1314.5,28.8 L1314.5,22 Q1314.2,12 1306.8,10 Q1219.8,13 1132.8,10 Q1120.0,12 1119.5,22 L1119.5,43.8 A14.8,14.8 0 1 1 1100.5,43.8 L1100.5,22 Q1100.0,12 1087.2,10 Q1000.8,13 914.4,10 Q906.3,12 906.0,22 L906.0,33.4 A9.4,9.4 0 1 1 894.0,33.4 L894.0,22 Q893.7,12 885.6,10 Q803.0,13 720.4,10 Q708.9,12 708.5,22 L708.5,40.5 A13.3,13.3 0 1 1 691.5,40.5 L691.5,22 Q691.1,12 679.6,10 Q605.8,13 532.0,10 Q525.2,12 525.0,22 L525.0,26.2 A7.8,7.8 0 1 1 515.0,26.2 L515.0,22 Q514.8,12 508.0,10 Q416.0,13 324.0,10 Q310.5,12 310.0,22 L310.0,44.4 A15.6,15.6 0 1 1 290.0,44.4 L290.0,22 Q289.5,12 276.0,10 Q206.4,13 136.8,10 Q127.3,12 127.0,22 L127.0,36.7 A10.9,10.9 0 1 1 113.0,36.7 L113.0,22 Q112.7,12 103.2,10 Q51.6,13 0,10 Z" fill="#f1ddd3"/></svg></div>
+  <div class="wrap" style="padding-top:60px;padding-bottom:120px">
+    <div class="sec-head" style="margin-bottom:0">
+      <div><span class="eyebrow">Reservation</span><h2 class="h2">원하는 날, 원하는 시간에<br>방을 비워 둘게요.</h2></div>
+      <p class="lead">부위와 시간을 고르면 예상 금액이 바로 계산돼요. 예약 확정 안내는 입력하신 연락처로 따로 드립니다.</p>
+    </div>
+    <div class="bk-grid">
+      <div class="bk-form">
+        <form id="bkForm" novalidate>
+          <div class="field"><label for="svc">시술 부위 <small>하나를 골라 주세요</small></label>
+            <select class="inp" id="svc" required>
+              <option value="">부위를 선택해 주세요</option>
+              <optgroup label="여성">
+                <option value="18000" data-min="20">여성 · 눈썹 정리 (18,000원)</option>
+                <option value="10000" data-min="10">여성 · 인중 (10,000원)</option>
+                <option value="39000" data-min="35">여성 · 얼굴 전체 (39,000원)</option>
+                <option value="25000" data-min="15">여성 · 겨드랑이 (25,000원)</option>
+                <option value="35000" data-min="25">여성 · 팔 하완 (35,000원)</option>
+                <option value="55000" data-min="40">여성 · 팔 전체 (55,000원)</option>
+                <option value="45000" data-min="35">여성 · 다리 하프 (45,000원)</option>
+                <option value="79000" data-min="60">여성 · 다리 전체 (79,000원)</option>
+                <option value="62000" data-min="50">여성 · 겨드랑이 + 다리 하프 (62,000원)</option>
+              </optgroup>
+              <optgroup label="남성">
+                <option value="20000" data-min="20">남성 · 눈썹 정리 (20,000원)</option>
+                <option value="15000" data-min="10">남성 · 코 왁싱 (15,000원)</option>
+                <option value="29000" data-min="25">남성 · 볼·목 라인 정리 (29,000원)</option>
+                <option value="29001" data-min="20">남성 · 겨드랑이 (29,000원)</option>
+                <option value="65000" data-min="45">남성 · 팔 전체 (65,000원)</option>
+                <option value="59000" data-min="45">남성 · 가슴·복부 (59,000원)</option>
+                <option value="65001" data-min="50">남성 · 등 전체 (65,000원)</option>
+                <option value="95000" data-min="70">남성 · 다리 전체 (95,000원)</option>
+              </optgroup>
+            </select>
+          </div>
+          <div class="field"><label for="date">날짜</label><select class="inp" id="date" required></select></div>
+          <div class="field"><span class="lab">시간 <small>회색은 이미 예약된 시간이에요</small></span>
+            <div class="times" id="times"></div>
+          </div>
+          <div class="two">
+            <div class="field"><label for="nm">이름</label><input class="inp" id="nm" placeholder="홍길동" autocomplete="off" required></div>
+            <div class="field"><label for="ph">연락처</label><input class="inp" id="ph" type="tel" placeholder="010-0000-0000" autocomplete="off" required></div>
+          </div>
+          <div class="field"><label for="memo">요청 사항 <small>선택</small></label><textarea class="inp" id="memo" placeholder="원하는 눈썹 모양, 피부 관련해 미리 알려 주실 내용 등"></textarea></div>
+          <div class="field"><label class="check"><input type="checkbox" id="first" checked> 살결담에 처음 방문해요 (첫 방문 20% 적용)</label></div>
+          <p class="err-msg" id="err">부위·날짜·시간·이름·연락처를 모두 입력해 주세요.</p>
+          <button class="btn btn-honey" type="submit">예약 요청하기</button>
+        </form>
+        <div class="bk-done" id="done" aria-live="polite">
+          <svg viewBox="0 0 120 120" aria-hidden="true"><defs><linearGradient id="d-h" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f8d57c"/><stop offset=".55" stop-color="#e3a136"/><stop offset="1" stop-color="#bf7314"/></linearGradient></defs>
+<circle cx="60" cy="64" r="50" fill="#f6e6dd"/>
+<path d="M60,12 C60,12 30,48 30,70 a30,30 0 0 0 60,0 C90,48 60,12 60,12Z" fill="url(#d-h)"/>
+<path d="M46,70 l10,10 18,-20" fill="none" stroke="#fffaf6" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M42,62 C42,52 48,42 54,34" stroke="#fff3cf" stroke-width="3" fill="none" stroke-linecap="round" opacity=".7"/></svg>
+          <h3>예약 요청이 접수되었어요</h3>
+          <p>아래 내용으로 방을 준비해 둘게요.<br>확정 안내는 입력하신 연락처로 따로 보내 드립니다.</p>
+          <dl class="ticket" id="ticket"></dl>
+          <button class="btn btn-line" type="button" id="again">새로 예약하기</button>
+        </div>
+      </div>
+      <aside class="bk-sum">
+        <h3>예약 요약</h3>
+        <dl>
+          <div><dt>부위</dt><dd id="s-svc">선택 전</dd></div>
+          <div><dt>날짜</dt><dd id="s-date">선택 전</dd></div>
+          <div><dt>시간</dt><dd id="s-time">선택 전</dd></div>
+          <div><dt>예상 소요</dt><dd id="s-min">–</dd></div>
+          <div><dt>첫 방문 할인</dt><dd id="s-dc">–</dd></div>
+        </dl>
+        <div class="bk-total"><span>예상 금액</span><b id="s-total">0<small>원</small></b></div>
+        <p>현장에서 부위를 추가하거나 바꾸면 금액이 달라질 수 있어요. 예약 변경·취소는 하루 전까지 연락 주세요.</p>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="sec" id="faq">
+  <div class="wrap faq-grid">
+    <div>
+      <span class="eyebrow">Questions</span>
+      <h2 class="h2">자주 묻는 질문</h2>
+      <p class="lead">더 궁금한 점은 예약 전 상담으로 편하게 물어봐 주세요.</p>
+      <div class="faq-card">
+        <b>상담 문의</b>
+        <p>시술 중에는 답장이 늦을 수 있어요.</p>
+        <div class="contact">
+          <span><svg viewBox="0 0 24 24" fill="none" stroke="#a5604d" stroke-width="1.7"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a1 1 0 0 1-1 1A16 16 0 0 1 4 5a1 1 0 0 1 1-1Z"/></svg>000-0000-0000</span>
+          <span><svg viewBox="0 0 24 24" fill="none" stroke="#a5604d" stroke-width="1.7"><path d="M4 5h16v11H9l-5 4V5Z"/></svg>카카오톡 ID: example</span>
+          <span><svg viewBox="0 0 24 24" fill="none" stroke="#a5604d" stroke-width="1.7"><circle cx="12" cy="12" r="3.6"/><path d="M15.6 12v1.4a2.6 2.6 0 0 0 5.2 0V12a8.8 8.8 0 1 0-3.4 6.9"/></svg>인스타그램 @example</span>
+        </div>
+      </div>
+    </div>
+    <div class="faq-list">
+      <div class="qa open"><button aria-expanded="true">왁싱 전에 털은 얼마나 길러야 하나요?<i></i></button><div class="ans"><div><p>0.5~1cm 정도가 적당해요. 너무 길면 상담 때 알맞게 다듬어 드리고, 너무 짧으면 왁스가 잡지 못해 다음 방문을 권해 드릴 수 있어요.</p></div></div></div>
+      <div class="qa"><button aria-expanded="false">하드 왁스와 소프트 왁스는 어떻게 다른가요?<i></i></button><div class="ans"><div><p>하드 왁스는 굳은 뒤 왁스 자체를 떼어 내는 방식으로 얼굴·겨드랑이처럼 좁은 부위에, 소프트 왁스는 얇게 펴 바른 뒤 부직포로 떼어 내는 방식으로 팔·다리처럼 넓은 부위에 주로 사용해요.</p></div></div></div>
+      <div class="qa"><button aria-expanded="false">생리 기간에도 예약할 수 있나요?<i></i></button><div class="ans"><div><p>얼굴·팔·다리 등은 진행할 수 있어요. 컨디션에 따라 일정을 바꾸고 싶다면 하루 전까지 연락 주시면 다른 날로 옮겨 드립니다.</p></div></div></div>
+      <div class="qa"><button aria-expanded="false">왁싱을 받기 어려운 경우가 있나요?<i></i></button><div class="ans"><div><p>시술 부위에 상처·염증·햇볕 화상이 있거나, 최근 레이저·필링 같은 피부 시술을 받았거나, 피부에 영향을 주는 약을 복용 중이라면 진행하지 않거나 일정을 미룰 수 있어요. 해당되는지 애매하면 예약 전에 먼저 물어봐 주세요.</p></div></div></div>
+      <div class="qa"><button aria-expanded="false">남성 고객도 같은 공간을 쓰나요?<i></i></button><div class="ans"><div><p>모든 시술은 1인 1실로 진행되며, 대기 공간 없이 예약 시간에 맞춰 바로 방으로 안내해 드려요.</p></div></div></div>
+      <div class="qa"><button aria-expanded="false">예약 변경이나 취소는 어떻게 하나요?<i></i></button><div class="ans"><div><p>예약 하루 전까지 전화나 카카오톡으로 알려 주세요. 당일 변경은 다음 예약 상황에 따라 어려울 수 있어요.</p></div></div></div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="foot-drip" aria-hidden="true"><svg viewBox="0 0 1440 70" preserveAspectRatio="xMidYMin slice"><rect width="1440" height="70" fill="#2c1811"/><path d="M0,0 H1440 V8 Q1359.6,11 1279.2,8 Q1268.4,10 1268.0,20 L1268.0,33.9 A12.5,12.5 0 1 1 1252.0,33.9 L1252.0,20 Q1251.6,10 1240.8,8 Q1157.0,11 1073.2,8 Q1065.8,10 1065.5,20 L1065.5,24.8 A8.6,8.6 0 1 1 1054.5,24.8 L1054.5,20 Q1054.2,10 1046.8,8 Q964.8,11 882.8,8 Q870.0,10 869.5,20 L869.5,37.8 A14.8,14.8 0 1 1 850.5,37.8 L850.5,20 Q850.0,10 837.2,8 Q752.6,11 668.0,8 Q657.9,10 657.5,20 L657.5,31.3 A11.7,11.7 0 1 1 642.5,31.3 L642.5,20 Q642.1,10 632.0,8 Q557.0,11 482.0,8 Q475.2,10 475.0,20 L475.0,22.2 A7.8,7.8 0 1 1 465.0,22.2 L465.0,20 Q464.8,10 458.0,8 Q369.2,11 280.4,8 Q268.9,10 268.5,20 L268.5,36.5 A13.3,13.3 0 1 1 251.5,36.5 L251.5,20 Q251.1,10 239.6,8 Q167.0,11 94.4,8 Q86.3,10 86.0,20 L86.0,27.4 A9.4,9.4 0 1 1 74.0,27.4 L74.0,20 Q73.7,10 65.6,8 Q32.8,11 0,8 Z" fill="#f1ddd3"/></svg></div>
+  <div class="wrap">
+    <div class="foot-top">
+      <div>
+        <a class="logo" href="#top"><svg viewBox="0 0 36 44" aria-hidden="true"><path d="M18 2C18 2 4 18 4 28a14 14 0 0 0 28 0C32 18 18 2 18 2Z" fill="url(#lg-logo)"/><path d="M11 27c0-4 3-9 5-11" stroke="#fff3cf" stroke-width="2.4" stroke-linecap="round" fill="none" opacity=".85"/></svg><span><b>살결담</b><small>Salgyeoldam Wax Studio</small></span></a>
+        <p>한 사람을 위한 한 개의 방에서, 결을 따라 천천히 정돈하는 왁싱 스튜디오.</p>
+      </div>
+      <div><h4>Visit</h4><ul><li>OO시 OO구 OO동 00-0, 2층</li><li>OO역 0번 출구 도보 0분</li><li>건물 뒤편 주차 0대</li></ul></div>
+      <div><h4>Hours</h4><ul><li>평일 11:00 – 21:00</li><li>토요일 10:00 – 18:00</li><li>일요일·공휴일 휴무</li></ul></div>
+      <div><h4>Contact</h4><ul><li>000-0000-0000</li><li>카카오톡 ID: example</li><li>인스타그램 @example</li></ul></div>
+    </div>
+    <div class="foot-bottom"><span>상호 살결담 왁싱 스튜디오 · 대표 OOO · <span style="white-space:nowrap">사업자등록번호 000-00-00000</span></span><span>© Salgyeoldam Wax Studio</span></div>
+  </div>
+</footer>
+
+<div class="mbar"><a href="tel:000-0000-0000"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a1 1 0 0 1-1 1A16 16 0 0 1 4 5a1 1 0 0 1 1-1Z"/></svg>전화 상담</a><a class="go" href="#booking"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3.5" y="5" width="17" height="15" rx="3"/><path d="M8 3v4M16 3v4M3.5 10h17"/></svg>예약하기</a></div>
+
+<script>
+(function(){
+  var burger=document.getElementById('burger'),menu=document.getElementById('menu');
+  burger.addEventListener('click',function(){var o=menu.classList.toggle('open');burger.setAttribute('aria-expanded',o)});
+  menu.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){menu.classList.remove('open');burger.setAttribute('aria-expanded',false)})});
+
+  var mbar=document.querySelector('.mbar');function mb(){mbar.classList.toggle('show',window.scrollY>window.innerHeight*.8)}window.addEventListener('scroll',mb,{passive:true});mb();
+
+  document.querySelectorAll('.tabs button').forEach(function(b){
+    b.addEventListener('click',function(){
+      document.querySelectorAll('.tabs button').forEach(function(x){x.classList.toggle('on',x===b);x.setAttribute('aria-selected',x===b)});
+      document.querySelectorAll('.p-panel').forEach(function(p){p.classList.toggle('on',p.id==='p-'+b.dataset.tab)});
+    });
+  });
+
+  document.querySelectorAll('.qa button').forEach(function(b){
+    b.addEventListener('click',function(){var q=b.parentNode,o=q.classList.toggle('open');b.setAttribute('aria-expanded',o)});
+  });
+
+  var f=document.getElementById('bkForm'),svc=document.getElementById('svc'),date=document.getElementById('date'),
+      times=document.getElementById('times'),first=document.getElementById('first'),err=document.getElementById('err');
+  var slots=['11:00','12:00','13:00','14:00','15:00','16:00','17:00','18:00','19:00','20:00'];
+  var days=['일','월','화','수','목','금','토'];
+  function pad(n){return n<10?'0'+n:''+n}
+  function iso(d){return d.getFullYear()+'-'+pad(d.getMonth()+1)+'-'+pad(d.getDate())}
+  var t=new Date();t.setDate(t.getDate()+1);if(t.getDay()===0)t.setDate(t.getDate()+1);
+  var dh='',dd=new Date();for(var k=0;k<21;k++){var x=new Date(dd.getFullYear(),dd.getMonth(),dd.getDate()+k),su=x.getDay()===0;dh+='<option value="'+iso(x)+'"'+(su?' disabled':'')+'>'+x.getFullYear()+'.'+pad(x.getMonth()+1)+'.'+pad(x.getDate())+' ('+days[x.getDay()]+')'+(su?' · 휴무':(k===0?' · 오늘':''))+'</option>'}date.innerHTML=dh;date.value=iso(t);
+  function won(n){return n.toLocaleString('ko-KR')}
+  function price(){var o=svc.options[svc.selectedIndex];return o&&o.value?Math.round(parseInt(o.value,10)/1000)*1000:0}
+  function buildTimes(){
+    var v=date.value,seed=0,d=v?new Date(v+'T00:00:00'):null;
+    for(var i=0;i<v.length;i++)seed+=v.charCodeAt(i)*(i+3);
+    var sat=d&&d.getDay()===6,sun=d&&d.getDay()===0,html='';
+    slots.forEach(function(s,i){
+      var h=parseInt(s,10),off=sun||(sat&&(h<10||h>17))||((seed+i*7)%5===0);
+      html+='<label><input type="radio" name="tm" value="'+s+'"'+(off?' disabled':'')+'><span>'+s+'</span></label>';
+    });
+    times.innerHTML=html;
+    times.querySelectorAll('input').forEach(function(r){r.addEventListener('change',sum)});
+    sum();
+  }
+  function fmtDate(v){if(!v)return '선택 전';var d=new Date(v+'T00:00:00');return (d.getMonth()+1)+'월 '+d.getDate()+'일 ('+days[d.getDay()]+')'}
+  function sum(){
+    var o=svc.options[svc.selectedIndex],p=price(),tm=times.querySelector('input:checked');
+    document.getElementById('s-svc').textContent=o&&o.value?o.text.replace(/ \(.+\)$/,''):'선택 전';
+    var d=date.value?new Date(date.value+'T00:00:00'):null;
+    document.getElementById('s-date').textContent=d&&d.getDay()===0?'일요일은 휴무예요':fmtDate(date.value);
+    document.getElementById('s-time').textContent=tm?tm.value:'선택 전';
+    document.getElementById('s-min').textContent=o&&o.value?'약 '+o.dataset.min+'분':'–';
+    var dc=first.checked&&p?Math.round(p*0.2/100)*100:0;
+    document.getElementById('s-dc').textContent=first.checked?(p?'−'+won(dc)+'원':'20% 적용 예정'):'미적용';
+    document.getElementById('s-total').innerHTML=won(p-dc)+'<small>원</small>';
+    return {svc:o&&o.value?o.text.replace(/ \(.+\)$/,''):'',date:fmtDate(date.value),time:tm?tm.value:'',total:p-dc,dc:dc};
+  }
+  svc.addEventListener('change',sum);first.addEventListener('change',sum);
+  date.addEventListener('change',buildTimes);
+  buildTimes();
+  f.addEventListener('submit',function(e){
+    e.preventDefault();
+    var nm=document.getElementById('nm'),ph=document.getElementById('ph'),ok=true,s=sum();
+    [svc,date,nm,ph].forEach(function(el){var bad=!el.value.trim();el.classList.toggle('err',bad);if(bad)ok=false});
+    if(!s.time)ok=false;
+    var d=date.value?new Date(date.value+'T00:00:00'):null;if(d&&d.getDay()===0){ok=false;date.classList.add('err')}
+    err.classList.toggle('on',!ok);
+    if(!ok)return;
+    var rows=[['이름',nm.value.trim()],['부위',s.svc],['일시',s.date+' '+s.time],['예상 금액',won(s.total)+'원'+(s.dc?' (첫 방문 할인)':'')]];
+    var tk=document.getElementById('ticket');tk.innerHTML='';
+    rows.forEach(function(r){var w=document.createElement('div'),a=document.createElement('dt'),b=document.createElement('dd');a.textContent=r[0];b.textContent=r[1];w.appendChild(a);w.appendChild(b);tk.appendChild(w)});
+    f.style.display='none';document.getElementById('done').classList.add('on');
+    document.getElementById('booking').scrollIntoView({behavior:'smooth'});
+  });
+  document.getElementById('again').addEventListener('click',function(){
+    f.reset();date.value=iso(t);buildTimes();
+    document.getElementById('done').classList.remove('on');f.style.display='';
+  });
+})();
+</script>
+</body>
+</html>
