@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kanto Tusok · Street Food Menu Design</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bungee&family=Outfit:wght@400;500;700;800&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-text-size-adjust:100%}
+body{font-family:'Outfit',sans-serif;background:#f6efe0;color:#3b2414;-webkit-font-smoothing:antialiased;min-height:100vh;overflow-x:hidden;background-image:radial-gradient(rgba(59,36,20,.09) 1.2px,transparent 1.6px);background-size:12px 12px}
+.top{height:16px;background:repeating-linear-gradient(90deg,#c8321e 0 40px,#f6efe0 40px 80px);border-bottom:3px solid #3b2414}
+.wrap{max-width:1200px;margin:0 auto;padding:46px 20px 140px}
+.hd{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:18px;margin-bottom:30px}
+.hd small{display:block;font-size:14px;font-weight:700;letter-spacing:.2em;color:#c8321e}
+.hd h1{font-family:'Bungee',sans-serif;font-weight:400;font-size:clamp(32px,4.6vw,56px);line-height:1.02;margin-top:8px}
+.hd h1 em{font-style:normal;display:block;font-family:'Outfit';font-weight:800;font-size:clamp(18px,2vw,24px);color:#ef7a1a;margin-top:8px;letter-spacing:0}
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:16px}
+.chips span{font-size:13px;font-weight:700;padding:6px 12px;border-radius:999px;background:#fffaf0;border:2px solid #3b2414}
+.chips span.g{background:#3b2414;color:#f6efe0}
+.cta{display:inline-flex;align-items:center;gap:8px;height:52px;padding:0 26px;border-radius:999px;background:#ef7a1a;color:#fff;font-weight:800;font-size:16px;text-decoration:none;border:3px solid #3b2414;box-shadow:4px 4px 0 #3b2414;transition:.2s;white-space:nowrap}
+.cta:hover{transform:translate(-1px,-1px);box-shadow:6px 6px 0 #3b2414}
+.cta svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:2.6;stroke-linecap:round;stroke-linejoin:round}
+.view{display:grid;grid-template-columns:1.25fr 1fr;gap:28px;align-items:start}
+figure{background:#3b2414;padding:10px;border-radius:18px;box-shadow:8px 8px 0 #ef7a1a}
+figure a{display:block}
+figure img{display:block;width:100%;height:auto;border-radius:10px}
+figcaption{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;font-size:13px;color:#e8d9bf;padding:10px 4px 2px;font-weight:500}
+.side{display:grid;gap:20px}
+.zoom{background:#fffaf0;border:3px solid #3b2414;border-radius:18px;overflow:hidden}
+.zoom img{display:block;width:100%;height:auto;border-bottom:3px solid #3b2414}
+.zoom p{font-size:15px;line-height:1.55;padding:14px 18px;color:#5a3d28}
+.info{background:#5f9a3a;color:#fffaf0;border:3px solid #3b2414;border-radius:18px;padding:22px 24px}
+.info h2{font-family:'Bungee';font-weight:400;font-size:22px}
+.info ul{list-style:none;margin-top:12px;display:grid;gap:10px}
+.info li{font-size:15px;line-height:1.5;padding-left:22px;position:relative}
+.info li::before{content:'';position:absolute;left:0;top:7px;width:10px;height:10px;border-radius:50%;background:#ffe08a;border:2px solid #3b2414}
+.bar{position:fixed;left:0;right:0;bottom:0;background:#3b2414;border-top:4px solid #ef7a1a;padding:12px 20px;display:flex;justify-content:center;align-items:center;gap:18px;flex-wrap:wrap}
+.bar p{font-size:15px;color:#f6efe0;font-weight:500}
+.bar .cta{height:46px;box-shadow:none;border-color:#f6efe0}
+@media(max-width:900px){.view{grid-template-columns:1fr}}
+@media(max-width:620px){.wrap{padding:34px 16px 120px}.hd .cta{display:none}.bar p{display:none}.bar .cta{width:100%;justify-content:center}figure{box-shadow:5px 5px 0 #ef7a1a}}
+</style>
+</head>
+<body>
+<div class="top"></div>
+<div class="wrap">
+ <div class="hd">
+  <div>
+   <small>MENU DESIGN · SD-MN43</small>
+   <h1>Kanto Tusok <em>Filipino street food stall menu</em></h1>
+   <div class="chips"><span class="g">A4 portrait · 1 page</span><span>Fried · grill · sweets · drinks · combos</span><span>Kwek-kwek orange &amp; cart steel</span><span>Prices in ₱</span><span>Print &amp; web</span></div>
+  </div>
+  <a class="cta" href="https://design.shoponph.online/#inquiry">Ask about this design <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+ </div>
+ <div class="view">
+  <figure><a href="page1.png" target="_blank" rel="noopener"><img src="page1.png" alt="Kanto Tusok menu: big KANTO TUSOK title, a steel street cart with a red umbrella frying fishballs and kwek-kwek, eight fried skewer cards with prices, grill and sweet stick lists, drinks, two combos and three free dipping sauces" width="2480" height="3508"></a><figcaption><span>8 fried · 5 grill · 5 sweet · 3 drinks · 2 combos · 3 sauces</span><span>A4 2480×3508px</span></figcaption></figure>
+  <div class="side">
+   <div class="zoom"><img src="detail-hero.jpg" alt="Close-up of the KANTO TUSOK headline, the illustrated steel cart and the first row of fried skewer cards" width="1000" height="548"><p>A chunky signage headline next to a hand-drawn steel cart, so the stall reads as street food from across the road.</p></div>
+   <div class="zoom"><img src="detail-sets.jpg" alt="Close-up of the drinks list, two combo cards and the sauce bar with three jars" width="1000" height="307"><p>Combos and free sauces sit together at the bottom, making the add-on and sharing options easy to spot.</p></div>
+   <div class="info"><h2>Why it works</h2><ul><li>Every fried item gets its own skewer drawing and a tilted price tag, perfect for customers who order by pointing</li><li>Bamboo-stick icons line up the grill and sweet lists so they scan like a real stall board</li><li>Opening hours, contact and pick-up info stay on one line at the bottom</li></ul></div>
+  </div>
+ </div>
+</div>
+<div class="bar"><p>Want a menu like this for your shop?</p><a class="cta" href="https://design.shoponph.online/#inquiry">Ask about this design</a></div>
+</body>
+</html>

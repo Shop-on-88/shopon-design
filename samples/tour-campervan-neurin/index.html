@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>느린바퀴 캠핑카 · 캠핑카 렌탈 & 로드트립</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Shrikhand&family=Noto+Sans+KR:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+:root{--cream:#f4e8cf;--paper:#fbf4e4;--brown:#4b2a1a;--ink:#2b1a12;--orange:#d65a26;--mustard:#e7a531;--teal:#2e6b66;--teal2:#245652;--line:rgba(75,42,26,.18)}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font-family:'Noto Sans KR',sans-serif;background:var(--cream);color:var(--ink);word-break:keep-all;overflow-x:hidden;-webkit-font-smoothing:antialiased;line-height:1.6}
+img,svg{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+button,input,select,textarea{font:inherit;color:inherit}
+.wrap{max-width:1200px;margin:0 auto;padding:0 32px}
+.disp{font-family:'Black Han Sans',sans-serif;font-weight:400;letter-spacing:-.01em;line-height:1.12}
+.script{font-family:'Shrikhand',cursive;font-weight:400}
+.stripes{height:30px;background:linear-gradient(var(--orange) 0 33.3%,var(--mustard) 33.3% 66.6%,var(--brown) 66.6%)}
+.stripes.thin{height:15px}
+/* header */
+header{position:sticky;top:0;z-index:50;background:rgba(244,232,207,.94);backdrop-filter:blur(8px);border-bottom:2px solid var(--brown)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:76px;gap:24px}
+.logo{display:flex;align-items:center;gap:12px}
+.logo b{font-family:'Black Han Sans';font-weight:400;font-size:26px;color:var(--brown);line-height:1}
+.logo small{display:block;font-family:'Shrikhand';font-size:13px;color:var(--orange);letter-spacing:.02em;margin-top:3px}
+.menu{display:flex;gap:30px;font-weight:700;font-size:15px;color:var(--brown)}
+.menu a{position:relative;padding:6px 0}
+.menu a:hover{color:var(--orange)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;height:50px;padding:0 24px;border-radius:999px;font-weight:700;font-size:15px;border:2px solid var(--brown);transition:.2s;cursor:pointer;white-space:nowrap}
+.btn.o{background:var(--orange);color:#fff8ea;box-shadow:4px 4px 0 var(--brown)}
+.btn.o:hover{transform:translate(-1px,-1px);box-shadow:5px 5px 0 var(--brown)}
+.btn.g{background:transparent;color:var(--brown)}
+.btn.g:hover{background:var(--paper)}
+.btn svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round}
+.burger{display:none;width:46px;height:46px;border-radius:12px;border:2px solid var(--brown);background:var(--paper);align-items:center;justify-content:center;cursor:pointer}
+.burger svg{width:22px;height:22px;stroke:var(--brown);stroke-width:2.4;fill:none;stroke-linecap:round}
+/* hero */
+.hero{position:relative;padding:64px 0 0;overflow:hidden}
+.hero-grid{display:grid;grid-template-columns:1fr 1.08fr;gap:40px;align-items:center}
+.eyebrow{display:inline-flex;align-items:center;gap:10px;font-weight:700;font-size:14px;color:var(--teal);background:var(--paper);border:2px solid var(--teal);padding:6px 14px;border-radius:999px}
+.eyebrow i{width:8px;height:8px;border-radius:50%;background:var(--orange)}
+.hero h1{font-size:clamp(46px,6.2vw,84px);color:var(--brown);margin:22px 0 0}
+.hero h1 span{color:var(--orange)}
+.hero .script{font-size:clamp(20px,2vw,26px);line-height:1.35;color:var(--teal);margin-top:12px}
+.hero p.lead{font-size:18px;color:#5b3e2e;margin-top:18px;max-width:480px}
+.hero .acts{display:flex;gap:12px;flex-wrap:wrap;margin-top:30px}
+.hero-art{position:relative}
+.search{position:relative;z-index:3;margin:46px auto -46px;background:var(--paper);border:2px solid var(--brown);border-radius:22px;box-shadow:6px 6px 0 var(--brown);display:grid;grid-template-columns:1.1fr 1fr 1fr .9fr auto;gap:0;overflow:hidden}
+.search label{display:block;padding:16px 20px;border-right:1.5px dashed var(--line)}
+.search label span{display:block;font-size:12px;font-weight:700;color:var(--orange);letter-spacing:.06em}
+.search select,.search input{width:100%;border:0;background:transparent;font-weight:700;font-size:16px;color:var(--brown);margin-top:4px;outline:none;appearance:none}
+.search .go{margin:12px;height:auto}
+.road{background:var(--brown) linear-gradient(90deg,var(--mustard) 0 60px,transparent 60px 120px) 0 70%/120px 6px repeat-x;height:110px;position:relative;margin-top:0}
+/* band */
+.band{background:var(--teal);color:#f6ecd5;padding:22px 0;border-top:2px solid var(--brown);border-bottom:2px solid var(--brown)}
+.band ul{display:flex;justify-content:center;flex-wrap:wrap;gap:12px 40px;list-style:none;font-weight:700;font-size:16px}
+.band li{display:flex;align-items:center;gap:10px}
+.band svg{width:22px;height:22px;stroke:var(--mustard);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+section{padding:110px 0}
+.sh{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;margin-bottom:48px;flex-wrap:wrap}
+.sh .k{font-family:'Shrikhand';color:var(--orange);font-size:22px}
+.sh h2{font-size:clamp(34px,4vw,52px);color:var(--brown);margin-top:6px}
+.sh p{max-width:420px;color:#5b3e2e;font-size:16px}
+/* vans */
+.vans{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
+.van{background:var(--paper);border:2px solid var(--brown);border-radius:26px;overflow:hidden;display:flex;flex-direction:column;transition:.2s}
+.van:hover{transform:translateY(-4px);box-shadow:6px 8px 0 var(--brown)}
+.van .pic{height:220px;position:relative;border-bottom:2px solid var(--brown)}
+.van .body{padding:24px 24px 26px;display:flex;flex-direction:column;flex:1}
+.van .tag{display:inline-block;font-size:12px;font-weight:700;letter-spacing:.08em;padding:4px 10px;border-radius:6px;background:var(--brown);color:var(--mustard)}
+.van h3{font-family:'Black Han Sans';font-weight:400;font-size:28px;color:var(--brown);margin-top:12px;line-height:1.2}
+.van h3 small{font-family:'Shrikhand';font-size:16px;color:var(--teal);margin-left:6px}
+.van p{font-size:15px;color:#5b3e2e;margin-top:8px}
+.spec{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:18px 0}
+.spec div{background:var(--cream);border-radius:12px;padding:10px 8px;text-align:center}
+.spec b{display:block;font-size:18px;color:var(--brown);font-weight:900}
+.spec span{font-size:12px;color:#7a5a45;font-weight:500}
+.van ul{list-style:none;font-size:14px;color:#4b3326;display:grid;gap:6px}
+.van li{display:flex;gap:8px;align-items:flex-start}
+.van li::before{content:'';flex:none;width:8px;height:8px;margin-top:7px;border-radius:2px;background:var(--orange);transform:rotate(45deg)}
+.price{margin-top:auto;padding-top:20px;display:flex;justify-content:space-between;align-items:flex-end;border-top:1.5px dashed var(--line);margin-top:20px}
+.price span{font-size:13px;color:#7a5a45}
+.price b{font-family:'Black Han Sans';font-weight:400;font-size:30px;color:var(--orange);line-height:1}
+.price b small{font-family:'Noto Sans KR';font-size:14px;color:var(--brown);font-weight:700;margin-left:2px}
+/* courses */
+.courses{background:var(--brown);color:#f6ecd5;position:relative}
+.courses .sh h2{color:#fbf1dc}
+.courses .sh p{color:#d9c4a6}
+.ctabs{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:28px}
+.ctabs button{height:46px;padding:0 20px;border-radius:999px;border:2px solid #d9c4a6;background:transparent;color:#f6ecd5;font-weight:700;font-size:15px;cursor:pointer}
+.ctabs button.on{background:var(--mustard);border-color:var(--mustard);color:var(--ink)}
+.course{display:none;grid-template-columns:1.15fr 1fr;gap:34px;align-items:stretch}
+.course.on{display:grid}
+.map{background:#f4e8cf;border-radius:26px;border:2px solid #f4e8cf;overflow:hidden;position:relative}
+.days{display:grid;gap:14px;align-content:start}
+.day{background:#5c3725;border-radius:18px;padding:20px 22px;border:1.5px solid rgba(246,236,213,.15);display:grid;grid-template-columns:auto 1fr;gap:16px}
+.day .n{width:54px;height:54px;border-radius:50%;background:var(--orange);display:flex;flex-direction:column;align-items:center;justify-content:center;line-height:1;color:#fff6e4}
+.day .n small{font-size:11px;font-weight:700;letter-spacing:.08em}
+.day .n b{font-family:'Black Han Sans';font-weight:400;font-size:22px}
+.day h4{font-size:18px;font-weight:700;color:#fbf1dc}
+.day p{font-size:14px;color:#d9c4a6;margin-top:4px}
+.cmeta{display:flex;gap:10px;flex-wrap:wrap;margin-top:4px}
+.cmeta span{font-size:13px;font-weight:700;padding:6px 12px;border-radius:999px;background:rgba(231,165,49,.16);color:var(--mustard)}
+/* gear */
+.gear{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.g{background:var(--paper);border:2px solid var(--brown);border-radius:20px;padding:24px 22px}
+.g .ic{width:58px;height:58px;border-radius:16px;background:var(--cream);display:flex;align-items:center;justify-content:center;margin-bottom:16px}
+.g .ic svg{width:32px;height:32px;fill:none;stroke:var(--brown);stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.g .ic svg .a{stroke:var(--orange)}
+.g h4{font-size:17px;font-weight:700;color:var(--brown)}
+.g p{font-size:14px;color:#6a4b38;margin-top:4px}
+.g.alt{background:var(--mustard)}
+.g.alt .ic{background:#fbe2ad}
+/* steps */
+.steps-sec{background:var(--paper);border-top:2px solid var(--brown);border-bottom:2px solid var(--brown)}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:0;position:relative}
+.step{padding:0 22px;position:relative}
+.step:not(:last-child)::after{content:'';position:absolute;top:38px;left:calc(50% + 46px);right:calc(-50% + 46px);border-top:3px dashed var(--orange)}
+.step .c{width:78px;height:78px;border-radius:50%;border:2px solid var(--brown);background:var(--cream);display:flex;align-items:center;justify-content:center;margin:0 auto;position:relative}
+.step .c svg{width:36px;height:36px;fill:none;stroke:var(--brown);stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round}
+.step .c i{position:absolute;top:-6px;right:-6px;width:28px;height:28px;border-radius:50%;background:var(--orange);color:#fff;font-style:normal;font-weight:900;font-size:14px;display:flex;align-items:center;justify-content:center;border:2px solid var(--brown)}
+.step h4{text-align:center;font-size:18px;font-weight:700;color:var(--brown);margin-top:18px}
+.step p{text-align:center;font-size:14px;color:#6a4b38;margin-top:6px}
+/* pricing */
+.ptable{background:var(--paper);border:2px solid var(--brown);border-radius:26px;overflow:hidden}
+.prow{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;align-items:center;border-bottom:1.5px dashed var(--line)}
+.prow:last-child{border-bottom:0}
+.prow>div{padding:20px 24px}
+.prow.h{background:var(--brown);color:#f6ecd5;font-weight:700;font-size:14px;border-bottom:0}
+.prow.h small{display:block;font-weight:500;color:#d9c4a6;font-size:12px}
+.prow .nm b{font-family:'Black Han Sans';font-weight:400;font-size:22px;color:var(--brown)}
+.prow .nm span{display:block;font-size:13px;color:#7a5a45}
+.prow .v{font-weight:900;font-size:19px;color:var(--brown)}
+.prow .v.o{color:var(--orange)}
+.prow .v small{font-weight:500;font-size:13px;color:#7a5a45}
+.pnote{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:20px}
+.pnote div{background:var(--cream);border:1.5px solid var(--line);border-radius:16px;padding:16px 18px;font-size:14px;color:#5b3e2e}
+.pnote b{display:block;color:var(--teal);font-size:15px;margin-bottom:2px}
+/* faq */
+.faq-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:50px}
+.faq details{border-bottom:2px solid var(--brown);padding:20px 0}
+.faq details:first-child{border-top:2px solid var(--brown)}
+.faq summary{list-style:none;display:flex;justify-content:space-between;gap:16px;cursor:pointer;font-weight:700;font-size:17px;color:var(--brown)}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary i{flex:none;width:30px;height:30px;border-radius:50%;background:var(--mustard);display:flex;align-items:center;justify-content:center;font-style:normal;font-weight:900;transition:.2s}
+.faq details[open] summary i{transform:rotate(45deg);background:var(--orange);color:#fff}
+.faq details p{font-size:15px;color:#5b3e2e;margin-top:12px;padding-right:40px}
+.faq-side{background:var(--teal);color:#f6ecd5;border-radius:26px;padding:34px;border:2px solid var(--brown);position:relative;overflow:hidden;align-self:start}
+.faq-side h3{font-size:30px;color:#fbf1dc}
+.faq-side p{font-size:15px;color:#d5e5df;margin-top:10px}
+.faq-side ul{list-style:none;margin-top:20px;display:grid;gap:10px;font-size:15px}
+.faq-side li{display:flex;gap:10px;align-items:center}
+.faq-side li svg{width:20px;height:20px;flex:none;stroke:var(--mustard);fill:none;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+/* booking */
+.book{background:var(--orange);border-top:2px solid var(--brown);position:relative;overflow:hidden}
+.book-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:50px;align-items:center;position:relative;z-index:2}
+.book h2{font-size:clamp(38px,4.6vw,60px);color:#fff6e4}
+.book .script{font-size:24px;color:var(--ink);margin-top:10px}
+.book p.d{color:#ffe9cf;font-size:16px;margin-top:16px;max-width:420px}
+.contact{margin-top:28px;display:grid;gap:10px}
+.contact div{display:flex;gap:12px;align-items:center;font-weight:700;color:#fff6e4;font-size:16px}
+.contact svg{width:22px;height:22px;stroke:#fff6e4;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+form.f{background:var(--paper);border:2px solid var(--brown);border-radius:26px;padding:32px;box-shadow:8px 8px 0 var(--brown)}
+.f h3{font-family:'Black Han Sans';font-weight:400;font-size:26px;color:var(--brown)}
+.f .row{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:16px}
+.f label{display:block;font-size:13px;font-weight:700;color:var(--brown)}
+.f input,.f select,.f textarea{display:block;width:100%;margin-top:6px;height:50px;border:2px solid #d8c3a3;border-radius:12px;background:#fff;padding:0 14px;font-size:15px;outline:none}
+.f textarea{height:90px;padding:12px 14px;resize:vertical}
+.f input:focus,.f select:focus,.f textarea:focus{border-color:var(--orange)}
+.chk{display:flex;flex-wrap:wrap;gap:8px;margin-top:8px}
+.chk label{display:inline-flex}
+.chk input{display:none}
+.chk span{display:inline-block;padding:8px 14px;border-radius:999px;border:2px solid #d8c3a3;font-size:14px;font-weight:700;color:#6a4b38;cursor:pointer;background:#fff}
+.chk input:checked+span{background:var(--teal);border-color:var(--teal);color:#fff}
+.f .btn{width:100%;margin-top:22px}
+.okmsg{display:none;margin-top:16px;background:#e3efe9;border:2px solid var(--teal);border-radius:14px;padding:14px 16px;font-weight:700;color:var(--teal2);font-size:15px}
+.okmsg.on{display:block}
+footer{background:var(--ink);color:#cdb79a;padding:50px 0 40px;font-size:14px}
+.ft{display:flex;justify-content:space-between;gap:30px;flex-wrap:wrap;align-items:flex-start}
+.ft .logo b{color:#fbf1dc}
+.ft p{margin-top:12px;line-height:1.8}
+.ft nav{display:flex;gap:22px;flex-wrap:wrap;font-weight:700;color:#f6ecd5}
+.copy{margin-top:30px;padding-top:20px;border-top:1px solid rgba(205,183,154,.2);font-size:13px}
+@media(max-width:1080px){.search{grid-template-columns:1fr 1fr;}.search label:nth-child(2){border-right:0}.search label{border-bottom:1.5px dashed var(--line)}.search .go{grid-column:span 2}.gear{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:960px){.menu,.nav>.btn{display:none}.burger{display:flex}
+ .menu.open{display:flex;position:absolute;top:76px;left:0;right:0;flex-direction:column;gap:0;background:var(--paper);border-bottom:2px solid var(--brown);padding:8px 24px 16px}
+ .menu.open a{padding:14px 0;border-bottom:1px dashed var(--line)}
+ .hero-grid,.course.on,.faq-grid,.book-grid{grid-template-columns:1fr}
+ .vans{grid-template-columns:1fr;max-width:560px;margin:0 auto}
+ .steps{grid-template-columns:1fr 1fr;gap:40px 0}.step:nth-child(2)::after{display:none}
+ .prow{grid-template-columns:1.2fr 1fr 1fr}.prow>div:nth-child(4){display:none}
+ .pnote{grid-template-columns:1fr}}
+@media(max-width:620px){.wrap{padding:0 18px}section{padding:76px 0}
+ .nav{height:66px}.menu.open{top:66px}.logo b{font-size:22px}
+ .hero{padding-top:40px}.hero p.lead{font-size:16px}
+ .search{grid-template-columns:1fr 1fr;margin-top:30px}.road{height:90px}.search label{padding:14px 16px}.search label:nth-child(odd){border-right:1.5px dashed var(--line)}.search .go{grid-column:span 2;height:50px;margin:14px}.search select,.search input{font-size:15px}
+ .band ul{flex-direction:column;align-items:flex-start;gap:10px;padding:0 20px}
+ .gear{grid-template-columns:1fr 1fr;gap:12px}.g{padding:18px 16px}.g .ic{width:48px;height:48px}.g .ic svg{width:26px;height:26px}.g h4{font-size:15px}.g p{font-size:13px}
+ .steps{grid-template-columns:1fr;gap:34px}.step::after{display:none}
+ .prow,.prow:not(.h){grid-template-columns:.8fr 1fr 1fr 1fr}.prow>div:nth-child(4){display:block}.prow>div{padding:14px 6px}.prow>div:first-child{padding-left:12px}.prow .nm b{font-size:16px}.prow .nm span{display:none}.prow .v{font-size:14px}.prow .v small{font-size:11px}.prow.h{font-size:12px}.prow.h small{font-size:11px}
+ .day{padding:16px}.f{padding:22px}.f .row{grid-template-columns:1fr}
+ .faq summary{font-size:16px}.faq details p{padding-right:0}.faq-side{padding:26px}
+ .ctabs button{height:42px;padding:0 14px;font-size:14px}}
+</style>
+</head>
+<body>
+<header>
+ <div class="wrap nav">
+  <a class="logo" href="#top" aria-label="느린바퀴 캠핑카">
+   <svg width="48" height="48" viewBox="0 0 48 48"><circle cx="24" cy="24" r="22" fill="#4b2a1a"/><path d="M6 26a18 18 0 0 1 36 0z" fill="#e7a531"/><path d="M6 26a18 18 0 0 1 36 0" fill="none" stroke="#d65a26" stroke-width="4"/><circle cx="24" cy="30" r="8" fill="#fbf4e4" stroke="#4b2a1a" stroke-width="3"/><circle cx="24" cy="30" r="2.5" fill="#4b2a1a"/><path d="M24 22v-2M32 30h2M16 30h-2" stroke="#fbf4e4" stroke-width="2.5" stroke-linecap="round"/></svg>
+   <div><b>느린바퀴</b><small>slow wheels campers</small></div>
+  </a>
+  <nav class="menu" id="menu"><a href="#vans">차량</a><a href="#courses">추천 코스</a><a href="#gear">기본 포함</a><a href="#price">요금</a><a href="#faq">자주 묻는 질문</a></nav>
+  <a class="btn o" href="#book">예약 문의 <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+  <button class="burger" aria-label="메뉴 열기" onclick="document.getElementById('menu').classList.toggle('open')"><svg viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+ </div>
+</header>
+
+<main id="top">
+<section class="hero" style="padding-bottom:0">
+ <div class="wrap">
+  <div class="hero-grid">
+   <div>
+    <span class="eyebrow"><i></i>제주 · 강원 · 남해 출고 캠핑카 렌탈</span>
+    <h1 class="disp">천천히 가도<br><span>다 보이는</span> 여행</h1>
+    <p class="script">Stay anywhere, wake up somewhere.</p>
+    <p class="lead">침구·조리도구·캠핑 의자까지 다 실려 있는 캠핑카를 빌려 드립니다. 짐은 가방 하나, 숙소는 매일 바뀌는 창밖 풍경으로.</p>
+    <div class="acts"><a class="btn o" href="#book">날짜 문의하기 <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a><a class="btn g" href="#vans">차량 둘러보기</a></div>
+   </div>
+   <div class="hero-art">
+    <svg viewBox="0 0 640 520" role="img" aria-label="노을 지는 해안 도로를 달리는 주황·크림 투톤 캠핑카 그림">
+     <defs>
+      <linearGradient id="hsky" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="0" y2="520"><stop offset="0" stop-color="#f9d9a0"/><stop offset=".6" stop-color="#f3b874"/><stop offset="1" stop-color="#ec9a5c"/></linearGradient>
+      <linearGradient id="hsea" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#3f8a83"/><stop offset="1" stop-color="#245652"/></linearGradient>
+      <linearGradient id="vb" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#e46a33"/><stop offset="1" stop-color="#c24d1d"/></linearGradient>
+      <linearGradient id="vt" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff8e9"/><stop offset="1" stop-color="#efdfbf"/></linearGradient>
+      <linearGradient id="gl" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#bfe0dc"/><stop offset="1" stop-color="#6fa7a1"/></linearGradient>
+      <clipPath id="arch"><path d="M50 500V270a270 270 0 0 1 540 0v230z"/></clipPath>
+      <radialGradient id="sh" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#2b1a12" stop-opacity=".45"/><stop offset="1" stop-color="#2b1a12" stop-opacity="0"/></radialGradient>
+     </defs>
+     <g clip-path="url(#arch)">
+      <rect width="640" height="520" fill="url(#hsky)"/>
+      <g>
+       <circle cx="320" cy="250" r="118" fill="#e7a531"/>
+       <rect x="180" y="214" width="280" height="10" fill="url(#hsky)"/>
+       <rect x="180" y="240" width="280" height="12" fill="url(#hsky)"/>
+       <rect x="180" y="268" width="280" height="14" fill="url(#hsky)"/>
+       <rect x="180" y="298" width="280" height="16" fill="url(#hsky)"/>
+      </g>
+      <path d="M40 300 130 228l60 40 78-74 92 86 70-52 90 66 80-44v250H40z" fill="#8f4e2c"/>
+      <path d="M40 330 150 270l70 34 90-58 100 70 80-40 110 50v190H40z" fill="#6b3a22"/>
+      <path d="M40 322h560v178H40z" fill="url(#hsea)"/>
+      <g stroke="#f9d9a0" stroke-width="3" stroke-linecap="round" opacity=".55"><path d="M260 340h120M230 356h70M340 356h90M280 372h80"/></g>
+      <path d="M40 390c120-18 220-10 300 6s200 14 260 0v104H40z" fill="#e8d2a4"/>
+      <path d="M40 420c160-20 330-10 560 6v74H40z" fill="#4b2a1a"/>
+      <path d="M70 452h70M190 450h70M310 449h70M430 450h70M550 452h40" stroke="#e7a531" stroke-width="5" stroke-linecap="round"/>
+      <g fill="#3a2215"><path d="M520 330l14-56 14 56z"/><path d="M548 336l11-44 11 44z"/><path d="M500 340l10-36 10 36z"/></g>
+     </g>
+     <path d="M50 500V270a270 270 0 0 1 540 0v230" fill="none" stroke="#4b2a1a" stroke-width="5"/>
+     <!-- van -->
+     <g transform="translate(150 266)">
+      <ellipse cx="170" cy="170" rx="190" ry="16" fill="url(#sh)"/>
+      <path d="M22 72c0-38 26-62 70-64l200-6c30 0 50 18 54 50l10 92H22z" fill="url(#vt)" stroke="#4b2a1a" stroke-width="5" stroke-linejoin="round"/>
+      <path d="M18 98h340l2 46c0 12-8 18-20 18H34c-10 0-16-6-16-16z" fill="url(#vb)" stroke="#4b2a1a" stroke-width="5" stroke-linejoin="round"/>
+      <path d="M352 58c-4-24-20-40-46-40h-8l4 60h52z" fill="url(#gl)" stroke="#4b2a1a" stroke-width="4" stroke-linejoin="round"/>
+      <rect x="60" y="26" width="64" height="46" rx="12" fill="url(#gl)" stroke="#4b2a1a" stroke-width="4"/>
+      <rect x="140" y="26" width="64" height="46" rx="12" fill="url(#gl)" stroke="#4b2a1a" stroke-width="4"/>
+      <rect x="220" y="26" width="64" height="46" rx="12" fill="url(#gl)" stroke="#4b2a1a" stroke-width="4"/>
+      <path d="M70 34h18M150 34h18" stroke="#fff" stroke-width="4" stroke-linecap="round" opacity=".7"/>
+      <path d="M210 98v62" stroke="#4b2a1a" stroke-width="3"/>
+      <rect x="226" y="110" width="20" height="6" rx="3" fill="#4b2a1a"/>
+      <path d="M18 112h342" stroke="#e7a531" stroke-width="6"/>
+      <path d="M18 124h342" stroke="#4b2a1a" stroke-width="4"/>
+      <rect x="350" y="126" width="16" height="12" rx="3" fill="#f9d9a0" stroke="#4b2a1a" stroke-width="3"/>
+      <path d="M100 0h150" stroke="#4b2a1a" stroke-width="5" stroke-linecap="round"/>
+      <path d="M110 0v10M240 0v10" stroke="#4b2a1a" stroke-width="5"/>
+      <rect x="120" y="-24" width="70" height="22" rx="6" fill="#2e6b66" stroke="#4b2a1a" stroke-width="4"/>
+      <path d="M120 -14h70" stroke="#e7a531" stroke-width="3"/>
+      <g><circle cx="88" cy="162" r="32" fill="#2b1a12"/><circle cx="88" cy="162" r="16" fill="#fbf4e4" stroke="#4b2a1a" stroke-width="4"/><circle cx="88" cy="162" r="5" fill="#4b2a1a"/></g>
+      <g><circle cx="290" cy="162" r="32" fill="#2b1a12"/><circle cx="290" cy="162" r="16" fill="#fbf4e4" stroke="#4b2a1a" stroke-width="4"/><circle cx="290" cy="162" r="5" fill="#4b2a1a"/></g>
+     </g>
+     <g fill="#fbf4e4" opacity=".9"><path d="M110 120c10-8 22-8 30 0 8-6 18-4 22 4h-58z"/><path d="M468 96c8-6 18-6 24 0 6-4 14-3 18 3h-46z"/></g>
+     <g stroke="#4b2a1a" stroke-width="3" fill="none" stroke-linecap="round"><path d="M450 150q8-8 16 0q8-8 16 0"/><path d="M490 176q6-6 12 0q6-6 12 0"/></g>
+    </svg>
+   </div>
+  </div>
+  <form class="search" onsubmit="event.preventDefault();location.hash='book';document.getElementById('fdepart').value=this.dep.value;">
+   <label><span>출고지</span><select name="dep"><option>제주 공항 인근</option><option>강원 강릉</option><option>경남 남해</option></select></label>
+   <label><span>출발일</span><input type="text" value="12월 13일 (토)" aria-label="출발일"></label>
+   <label><span>반납일</span><input type="text" value="12월 15일 (월)" aria-label="반납일"></label>
+   <label><span>인원</span><select><option>성인 2명</option><option>성인 2 + 아이 1</option><option>성인 4명</option></select></label>
+   <button class="btn o go" type="submit">빈 차량 문의</button>
+  </form>
+ </div>
+ <div class="road"></div>
+</section>
+
+<div class="band">
+ <ul class="wrap">
+  <li><svg viewBox="0 0 24 24"><path d="M3 12h18M12 3v18"/><circle cx="12" cy="12" r="9"/></svg>출고 전 30분 1:1 운전·설비 안내</li>
+  <li><svg viewBox="0 0 24 24"><path d="M4 18V9l8-5 8 5v9"/><path d="M9 18v-5h6v5"/></svg>침구·조리도구·캠핑 의자 기본 포함</li>
+  <li><svg viewBox="0 0 24 24"><circle cx="7" cy="8" r="2"/><circle cx="12" cy="5" r="2"/><circle cx="17" cy="8" r="2"/><path d="M8 18c0-3 2-6 4-6s4 3 4 6c0 2-8 2-8 0z"/></svg>반려견 동반 전용 차량 운영</li>
+ </ul>
+</div>
+
+<section id="vans">
+ <div class="wrap">
+  <div class="sh"><div><span class="k">Our Campers</span><h2 class="disp">여행 인원에 맞춰<br>고르는 세 대</h2></div><p>모든 차량은 2종 보통 면허로 운전할 수 있고, 반납 후 매번 실내 세척과 침구 교체를 합니다.</p></div>
+  <div class="vans">
+   <article class="van">
+    <div class="pic">
+     <svg viewBox="0 0 380 220" preserveAspectRatio="xMidYMid slice" width="100%" height="100%" aria-label="작은 머스터드색 밴 그림">
+      <rect width="380" height="220" fill="#f6dca6"/>
+      <circle cx="300" cy="70" r="44" fill="#f3b874"/>
+      <path d="M0 160c80-30 160-30 240-10s110 10 140 0v70H0z" fill="#e7c48a"/>
+      <rect y="176" width="380" height="44" fill="#4b2a1a"/>
+      <g transform="translate(80 72)">
+       <ellipse cx="110" cy="110" rx="120" ry="9" fill="#2b1a12" opacity=".3"/>
+       <path d="M10 50c0-26 18-42 46-42h120c24 0 38 14 42 38l8 54H10z" fill="#e7a531" stroke="#4b2a1a" stroke-width="4" stroke-linejoin="round"/>
+       <path d="M10 70h216v26c0 8-4 12-12 12H22c-8 0-12-4-12-12z" fill="#fbf4e4" stroke="#4b2a1a" stroke-width="4"/>
+       <rect x="36" y="20" width="48" height="34" rx="9" fill="#9cc9c3" stroke="#4b2a1a" stroke-width="3.5"/>
+       <rect x="96" y="20" width="48" height="34" rx="9" fill="#9cc9c3" stroke="#4b2a1a" stroke-width="3.5"/>
+       <path d="M214 40c-4-14-12-22-26-22h-6l2 32h32z" fill="#9cc9c3" stroke="#4b2a1a" stroke-width="3.5"/>
+       <circle cx="60" cy="106" r="20" fill="#2b1a12"/><circle cx="60" cy="106" r="9" fill="#fbf4e4"/>
+       <circle cx="186" cy="106" r="20" fill="#2b1a12"/><circle cx="186" cy="106" r="9" fill="#fbf4e4"/>
+      </g>
+     </svg>
+    </div>
+    <div class="body">
+     <span class="tag">COMPACT</span>
+     <h3>솔방울 <small>Pinecone</small></h3>
+     <p>둘이 떠나는 짧은 여행에 맞춘 작은 밴. 주차가 쉬워 골목 맛집도 들르기 좋아요.</p>
+     <div class="spec"><div><b>4명</b><span>승차</span></div><div><b>2명</b><span>취침</span></div><div><b>2종</b><span>보통 면허</span></div></div>
+     <ul><li>팝업 루프 · 더블 매트리스</li><li>인덕션 1구 · 미니 냉장고 18L</li><li>보조 배터리 · 실내 무드등</li></ul>
+     <div class="price"><span>비수기 1박</span><b>139,000<small>원부터</small></b></div>
+    </div>
+   </article>
+   <article class="van">
+    <div class="pic">
+     <svg viewBox="0 0 380 220" preserveAspectRatio="xMidYMid slice" width="100%" height="100%" aria-label="청록색 중형 캠핑카와 어닝 그림">
+      <rect width="380" height="220" fill="#cfe3dc"/>
+      <path d="M0 120l60-40 50 30 70-56 80 60 60-34 60 40v100H0z" fill="#8fb9ae"/>
+      <path d="M0 160c100-24 220-24 380 0v60H0z" fill="#e8d2a4"/>
+      <rect y="182" width="380" height="38" fill="#4b2a1a"/>
+      <g transform="translate(40 52)">
+       <ellipse cx="150" cy="134" rx="160" ry="9" fill="#2b1a12" opacity=".3"/>
+       <path d="M8 30c0-12 10-20 22-20h180c40 0 60 26 66 60l6 60H8z" fill="#fbf4e4" stroke="#4b2a1a" stroke-width="4" stroke-linejoin="round"/>
+       <path d="M8 82h274l2 38c0 6-4 10-10 10H18c-6 0-10-4-10-10z" fill="#2e6b66" stroke="#4b2a1a" stroke-width="4"/>
+       <path d="M8 94h276" stroke="#e7a531" stroke-width="5"/>
+       <rect x="28" y="30" width="56" height="36" rx="8" fill="#9cc9c3" stroke="#4b2a1a" stroke-width="3.5"/>
+       <rect x="100" y="30" width="40" height="80" rx="6" fill="#efdfbf" stroke="#4b2a1a" stroke-width="3.5"/>
+       <path d="M270 64c-6-22-20-34-42-34h-10v34z" fill="#9cc9c3" stroke="#4b2a1a" stroke-width="3.5"/>
+       <path d="M96 10l-60 0-30 26" fill="none"/>
+       <path d="M150 18h110l28 34H150z" fill="#d65a26" stroke="#4b2a1a" stroke-width="3.5" stroke-linejoin="round"/>
+       <path d="M168 18v34M186 18v34M204 18v34M222 18v34M240 18v34" stroke="#e7a531" stroke-width="6"/>
+       <circle cx="70" cy="130" r="22" fill="#2b1a12"/><circle cx="70" cy="130" r="10" fill="#fbf4e4"/>
+       <circle cx="226" cy="130" r="22" fill="#2b1a12"/><circle cx="226" cy="130" r="10" fill="#fbf4e4"/>
+      </g>
+     </svg>
+    </div>
+    <div class="body">
+     <span class="tag">FAMILY</span>
+     <h3>물결 <small>Wave</small></h3>
+     <p>아이와 함께하는 가족 여행용. 접이식 테이블이 2층 침대로 바뀌는 구조예요.</p>
+     <div class="spec"><div><b>5명</b><span>승차</span></div><div><b>4명</b><span>취침</span></div><div><b>2종</b><span>보통 면허</span></div></div>
+     <ul><li>전동 어닝 · 야외 샤워기</li><li>인덕션 2구 · 냉장고 50L · 싱크대</li><li>무시동 히터 · 220V 인버터</li></ul>
+     <div class="price"><span>비수기 1박</span><b>189,000<small>원부터</small></b></div>
+    </div>
+   </article>
+   <article class="van">
+    <div class="pic">
+     <svg viewBox="0 0 380 220" preserveAspectRatio="xMidYMid slice" width="100%" height="100%" aria-label="크림색 몸체에 갈색 줄무늬 캠핑카와 강아지 그림">
+      <rect width="380" height="220" fill="#f3c9a6"/>
+      <g fill="#e9b088"><circle cx="70" cy="60" r="26"/><circle cx="96" cy="66" r="18"/></g>
+      <path d="M0 150c90-20 200-26 380-6v76H0z" fill="#9fbf8a"/>
+      <rect y="182" width="380" height="38" fill="#4b2a1a"/>
+      <g transform="translate(46 44)">
+       <ellipse cx="150" cy="142" rx="158" ry="9" fill="#2b1a12" opacity=".3"/>
+       <path d="M60 20h176c26 0 44 18 44 44v74H14V70c0-28 18-50 46-50z" fill="#fbf4e4" stroke="#4b2a1a" stroke-width="4" stroke-linejoin="round"/>
+       <path d="M14 96h266M14 108h266M14 120h266" stroke-width="7"/>
+       <path d="M14 96h266" stroke="#d65a26" stroke-width="7"/><path d="M14 108h266" stroke="#e7a531" stroke-width="7"/><path d="M14 120h266" stroke="#4b2a1a" stroke-width="7"/>
+       <rect x="40" y="38" width="60" height="38" rx="10" fill="#9cc9c3" stroke="#4b2a1a" stroke-width="3.5"/>
+       <rect x="116" y="38" width="44" height="82" rx="7" fill="#efdfbf" stroke="#4b2a1a" stroke-width="3.5"/>
+       <rect x="178" y="38" width="60" height="38" rx="10" fill="#9cc9c3" stroke="#4b2a1a" stroke-width="3.5"/>
+       <circle cx="80" cy="140" r="22" fill="#2b1a12"/><circle cx="80" cy="140" r="10" fill="#fbf4e4"/>
+       <circle cx="226" cy="140" r="22" fill="#2b1a12"/><circle cx="226" cy="140" r="10" fill="#fbf4e4"/>
+      </g>
+      <g transform="translate(314 134)">
+       <ellipse cx="18" cy="46" rx="22" ry="4" fill="#2b1a12" opacity=".25"/>
+       <path d="M2 40c0-14 6-22 18-22h10c6 0 8 4 8 10v12z" fill="#c98b55" stroke="#4b2a1a" stroke-width="3"/>
+       <circle cx="34" cy="16" r="10" fill="#c98b55" stroke="#4b2a1a" stroke-width="3"/>
+       <path d="M28 8c-2-6 0-10 4-10l2 8z" fill="#7b4a2a"/>
+       <circle cx="37" cy="14" r="1.8" fill="#2b1a12"/>
+       <path d="M2 26c-6-4-6-10-2-12" fill="none" stroke="#4b2a1a" stroke-width="3" stroke-linecap="round"/>
+      </g>
+     </svg>
+    </div>
+    <div class="body">
+     <span class="tag">WITH DOGS</span>
+     <h3>멍멍길 <small>Pawroad</small></h3>
+     <p>반려견과 함께 쓰는 전용 차량. 바닥 매트와 시트 커버를 따로 씌우고 반납 후 탈취 세척합니다.</p>
+     <div class="spec"><div><b>4명</b><span>승차</span></div><div><b>3명</b><span>취침</span></div><div><b>2종</b><span>보통 면허</span></div></div>
+     <ul><li>반려견 계단 · 물그릇 · 목줄 고리</li><li>인덕션 1구 · 냉장고 40L</li><li>세척용 호스 · 타월 4장</li></ul>
+     <div class="price"><span>비수기 1박</span><b>169,000<small>원부터</small></b></div>
+    </div>
+   </article>
+  </div>
+ </div>
+</section>
+
+<section class="courses" id="courses">
+ <div class="wrap">
+  <div class="sh"><div><span class="k">Road Trips</span><h2 class="disp">처음이라면 이 길부터</h2></div><p>출고지마다 차를 세우기 좋은 캠핑장과 오토캠핑 가능한 곳을 이어 만든 2박 3일 코스예요. 예약하시면 지도와 체크리스트를 함께 보내 드립니다.</p></div>
+  <div class="ctabs" role="tablist">
+   <button class="on" data-c="c1">제주 동쪽 해안</button><button data-c="c2">강원 고개와 바다</button><button data-c="c3">남해 다랭이 길</button>
+  </div>
+  <div class="course on" id="c1">
+   <div class="map">
+    <svg viewBox="0 0 600 420" width="100%" height="100%" preserveAspectRatio="xMidYMid slice" aria-label="제주 동쪽 해안 코스 지도 그림">
+     <rect width="600" height="420" fill="#9fcfc6"/>
+     <g stroke="#bfe0da" stroke-width="2" fill="none" opacity=".8"><path d="M0 60q40-10 80 0t80 0 80 0"/><path d="M380 380q40-10 80 0t80 0"/><path d="M20 360q30-8 60 0t60 0"/></g>
+     <path d="M70 230c20-70 110-130 230-136 110-6 210 34 240 96 20 44-10 96-70 120-90 36-230 40-320 14-60-18-96-50-80-94z" fill="#f4e8cf" stroke="#4b2a1a" stroke-width="4"/>
+     <path d="M110 230c20-50 90-90 190-94 90-4 170 26 196 70" fill="none" stroke="#e6d3ab" stroke-width="18" stroke-linecap="round"/>
+     <path d="M240 190l30-40 30 40z" fill="#8f4e2c" stroke="#4b2a1a" stroke-width="3"/>
+     <path d="M262 160l8-10 8 10z" fill="#fbf4e4"/>
+     <path d="M150 260C200 300 260 300 300 286S420 250 470 200" fill="none" stroke="#d65a26" stroke-width="6" stroke-dasharray="2 14" stroke-linecap="round"/>
+     <g font-family="Noto Sans KR" font-weight="900" font-size="23" fill="#2b1a12" stroke="#f4e8cf" stroke-width="7" stroke-linejoin="round" paint-order="stroke">
+      <circle cx="150" cy="260" r="19" fill="#2e6b66" stroke="#4b2a1a" stroke-width="3"/><text x="150" y="266" text-anchor="middle" fill="#fff" font-size="20" stroke="none" dy="1">출</text>
+      <text x="150" y="232" text-anchor="middle">출고 · 공항</text>
+      <circle cx="300" cy="286" r="19" fill="#e7a531" stroke="#4b2a1a" stroke-width="3"/><text x="300" y="292" text-anchor="middle" font-size="20" stroke="none" dy="1">1</text>
+      <text x="300" y="330" text-anchor="middle">해안 캠핑장</text>
+      <circle cx="470" cy="200" r="19" fill="#d65a26" stroke="#4b2a1a" stroke-width="3"/><text x="470" y="206" text-anchor="middle" fill="#fff" font-size="20" stroke="none" dy="1">2</text>
+      <text x="446" y="182" text-anchor="end">오름 캠핑장</text>
+     </g>
+     <g transform="translate(548 362)"><circle r="30" fill="#fbf4e4" stroke="#4b2a1a" stroke-width="3"/><path d="M0-24l7 24h-14z" fill="#d65a26"/><path d="M0 24l7-24h-14z" fill="#4b2a1a"/><text y="-28" text-anchor="middle" font-family="Noto Sans KR" font-weight="900" font-size="12" fill="#4b2a1a" dy="-6">N</text></g>
+    </svg>
+   </div>
+   <div class="days">
+    <div class="cmeta"><span>2박 3일</span><span>총 약 140km</span><span>추천 차량 · 솔방울</span></div>
+    <div class="day"><div class="n"><small>DAY</small><b>1</b></div><div><h4>출고 안내 후 해안도로로</h4><p>오후 2시 출고 · 장보기 · 바다가 보이는 오토캠핑장에서 첫날 밤</p></div></div>
+    <div class="day"><div class="n"><small>DAY</small><b>2</b></div><div><h4>오름 산책과 돌담 마을</h4><p>오전 오름 산책 · 점심은 동네 국숫집 · 오름 아래 캠핑장으로 이동</p></div></div>
+    <div class="day"><div class="n"><small>DAY</small><b>3</b></div><div><h4>일출 보고 천천히 반납</h4><p>해 뜨는 쪽 해변에서 아침 · 오수 비우기 안내 · 오후 12시 반납</p></div></div>
+   </div>
+  </div>
+  <div class="course" id="c2">
+   <div class="map">
+    <svg viewBox="0 0 600 420" width="100%" height="100%" preserveAspectRatio="xMidYMid slice" aria-label="강원 고개와 바다 코스 지도 그림">
+     <rect width="600" height="420" fill="#f4e8cf"/>
+     <path d="M430 0h170v420H380c30-80 10-140 30-220S400 60 430 0z" fill="#9fcfc6" stroke="#4b2a1a" stroke-width="4"/>
+     <g fill="#cbb084" stroke="#4b2a1a" stroke-width="3" stroke-linejoin="round"><path d="M60 200l60-90 60 90z"/><path d="M150 230l70-110 70 110z"/><path d="M250 190l50-70 50 70z"/></g>
+     <g fill="#fbf4e4"><path d="M108 128l12-18 12 18z"/><path d="M206 142l14-22 14 22z"/><path d="M290 134l10-14 10 14z"/></g>
+     <g fill="#6f8f5a"><circle cx="90" cy="300" r="16"/><circle cx="120" cy="320" r="12"/><circle cx="200" cy="330" r="18"/><circle cx="300" cy="300" r="14"/></g>
+     <path d="M100 360C160 330 200 270 260 260s90-60 140-110 30-80 40-110" fill="none" stroke="#d65a26" stroke-width="6" stroke-dasharray="2 14" stroke-linecap="round"/>
+     <g font-family="Noto Sans KR" font-weight="900" font-size="23" fill="#2b1a12" stroke="#f4e8cf" stroke-width="7" stroke-linejoin="round" paint-order="stroke">
+      <circle cx="100" cy="360" r="19" fill="#2e6b66" stroke="#4b2a1a" stroke-width="3"/><text x="100" y="366" text-anchor="middle" fill="#fff" font-size="20" stroke="none" dy="1">출</text><text x="130" y="392">출고 · 강릉</text>
+      <circle cx="260" cy="260" r="19" fill="#e7a531" stroke="#4b2a1a" stroke-width="3"/><text x="260" y="266" text-anchor="middle" font-size="20" stroke="none" dy="1">1</text><text x="244" y="296" text-anchor="end">고원 캠핑장</text>
+      <circle cx="400" cy="150" r="19" fill="#d65a26" stroke="#4b2a1a" stroke-width="3"/><text x="400" y="156" text-anchor="middle" fill="#fff" font-size="20" stroke="none" dy="1">2</text><text x="380" y="140" text-anchor="end">솔숲 해변</text>
+     </g>
+    </svg>
+   </div>
+   <div class="days">
+    <div class="cmeta"><span>2박 3일</span><span>총 약 190km</span><span>추천 차량 · 물결</span></div>
+    <div class="day"><div class="n"><small>DAY</small><b>1</b></div><div><h4>고개를 넘어 고원으로</h4><p>오후 2시 출고 · 시장 장보기 · 별이 잘 보이는 고원 캠핑장</p></div></div>
+    <div class="day"><div class="n"><small>DAY</small><b>2</b></div><div><h4>목장 산책 후 바다로</h4><p>오전 목장길 산책 · 점심은 막국수 · 솔숲 해변 캠핑장에서 불멍</p></div></div>
+    <div class="day"><div class="n"><small>DAY</small><b>3</b></div><div><h4>항구 아침 시장 들르기</h4><p>아침 시장 구경 · 차량 정리 안내 · 오후 12시 반납</p></div></div>
+   </div>
+  </div>
+  <div class="course" id="c3">
+   <div class="map">
+    <svg viewBox="0 0 600 420" width="100%" height="100%" preserveAspectRatio="xMidYMid slice" aria-label="남해 다랭이 길 코스 지도 그림">
+     <rect width="600" height="420" fill="#9fcfc6"/>
+     <path d="M60 60c80-20 200-10 260 20s160 10 220 60c30 60-20 130-100 170s-200 70-280 50-130-90-120-170 0-110 20-130z" fill="#f4e8cf" stroke="#4b2a1a" stroke-width="4"/>
+     <g fill="none" stroke="#a9c28a" stroke-width="10" stroke-linecap="round"><path d="M150 300q60-20 120 0"/><path d="M140 274q70-22 140 0"/><path d="M136 248q80-24 160 0"/></g>
+     <path d="M120 120C200 120 230 170 300 180s150 30 180 80" fill="none" stroke="#d65a26" stroke-width="6" stroke-dasharray="2 14" stroke-linecap="round"/>
+     <g font-family="Noto Sans KR" font-weight="900" font-size="23" fill="#2b1a12" stroke="#f4e8cf" stroke-width="7" stroke-linejoin="round" paint-order="stroke">
+      <circle cx="120" cy="120" r="19" fill="#2e6b66" stroke="#4b2a1a" stroke-width="3"/><text x="120" y="126" text-anchor="middle" fill="#fff" font-size="20" stroke="none" dy="1">출</text><text x="96" y="168">출고 · 남해</text>
+      <circle cx="300" cy="180" r="19" fill="#e7a531" stroke="#4b2a1a" stroke-width="3"/><text x="300" y="186" text-anchor="middle" font-size="20" stroke="none" dy="1">1</text><text x="320" y="164">다랭이 마을</text>
+      <circle cx="480" cy="260" r="19" fill="#d65a26" stroke="#4b2a1a" stroke-width="3"/><text x="480" y="266" text-anchor="middle" fill="#fff" font-size="20" stroke="none" dy="1">2</text><text x="460" y="232" text-anchor="end">몽돌 해변</text>
+     </g>
+    </svg>
+   </div>
+   <div class="days">
+    <div class="cmeta"><span>2박 3일</span><span>총 약 110km</span><span>추천 차량 · 멍멍길</span></div>
+    <div class="day"><div class="n"><small>DAY</small><b>1</b></div><div><h4>바다 옆 굽은 길 드라이브</h4><p>오후 2시 출고 · 해안 전망대 · 계단식 논이 보이는 캠핑장</p></div></div>
+    <div class="day"><div class="n"><small>DAY</small><b>2</b></div><div><h4>반려견과 바닷가 산책</h4><p>아침 마을 산책 · 점심은 멸치쌈밥 · 몽돌 해변 캠핑장 이동</p></div></div>
+    <div class="day"><div class="n"><small>DAY</small><b>3</b></div><div><h4>파도 소리 들으며 정리</h4><p>몽돌 해변 아침 · 세척 안내 · 오후 12시 반납</p></div></div>
+   </div>
+  </div>
+ </div>
+</section>
+
+<section id="gear">
+ <div class="wrap">
+  <div class="sh"><div><span class="k">All Packed</span><h2 class="disp">이건 챙기지 않으셔도 돼요</h2></div><p>차량마다 아래 물품이 기본으로 실려 있습니다. 개인 세면도구와 식재료만 준비하세요.</p></div>
+  <div class="gear">
+   <div class="g"><div class="ic"><svg viewBox="0 0 32 32"><rect x="4" y="12" width="24" height="12" rx="3"/><path d="M8 12V8h8v4" class="a"/><path d="M4 24v3M28 24v3"/></svg></div><h4>침구 세트</h4><p>세탁한 이불·베개·시트를 매번 교체</p></div>
+   <div class="g alt"><div class="ic"><svg viewBox="0 0 32 32"><path d="M6 14h20v4a8 8 0 0 1-8 8h-4a8 8 0 0 1-8-8z"/><path d="M26 16h3" /><path d="M12 6c0 2 2 2 2 4M18 6c0 2 2 2 2 4" class="a"/></svg></div><h4>조리도구</h4><p>냄비·프라이팬·식기 4인분·컵</p></div>
+   <div class="g"><div class="ic"><svg viewBox="0 0 32 32"><path d="M8 28l4-12M24 28l-4-12M6 16h20"/><path d="M8 16l2-8h12l2 8" class="a"/></svg></div><h4>캠핑 의자·테이블</h4><p>의자 4개 · 접이식 테이블 1개</p></div>
+   <div class="g alt"><div class="ic"><svg viewBox="0 0 32 32"><path d="M16 4v4M16 24v4M4 16h4M24 16h4"/><circle cx="16" cy="16" r="6" class="a"/></svg></div><h4>무드등·랜턴</h4><p>충전식 랜턴 2개 · 실내 무드등</p></div>
+   <div class="g alt"><div class="ic"><svg viewBox="0 0 32 32"><rect x="6" y="8" width="20" height="18" rx="3"/><path d="M6 14h20" class="a"/><path d="M11 8V5M21 8V5"/></svg></div><h4>아이스박스</h4><p>얼음팩 4개 포함 · 냉장고와 별도</p></div>
+   <div class="g"><div class="ic"><svg viewBox="0 0 32 32"><path d="M16 4c6 8 8 12 8 16a8 8 0 0 1-16 0c0-4 2-8 8-16z" class="a"/><path d="M13 20a3 3 0 0 0 3 3"/></svg></div><h4>생활용수 100L</h4><p>출고 전 가득 채워 드립니다</p></div>
+   <div class="g alt"><div class="ic"><svg viewBox="0 0 32 32"><rect x="5" y="10" width="18" height="12" rx="2"/><path d="M23 14h3v4h-3" /><path d="M10 13l-2 4h4l-2 4" class="a"/></svg></div><h4>파워뱅크·인버터</h4><p>휴대폰·노트북 충전 가능</p></div>
+   <div class="g"><div class="ic"><svg viewBox="0 0 32 32"><path d="M6 26h20M9 26V12l7-6 7 6v14"/><path d="M13 26v-7h6v7" class="a"/></svg></div><h4>캠핑장 목록</h4><p>차박·오토캠핑 가능한 곳 정리본</p></div>
+  </div>
+ </div>
+</section>
+
+<section class="steps-sec">
+ <div class="wrap">
+  <div class="sh"><div><span class="k">How it Works</span><h2 class="disp">처음 타 보셔도 괜찮아요</h2></div><p>캠핑카가 처음인 분이 대부분이에요. 출고할 때 직원이 30분 동안 함께 차를 둘러보며 하나씩 알려 드립니다.</p></div>
+  <div class="steps">
+   <div class="step"><div class="c"><i>1</i><svg viewBox="0 0 36 36"><rect x="6" y="8" width="24" height="22" rx="3"/><path d="M6 14h24M12 5v6M24 5v6"/><path d="M12 21l4 3 7-7"/></svg></div><h4>날짜 문의</h4><p>원하는 날짜와 인원을 남기면 빈 차량을 확인해 연락드려요</p></div>
+   <div class="step"><div class="c"><i>2</i><svg viewBox="0 0 36 36"><circle cx="18" cy="14" r="6"/><path d="M7 31c1-6 6-10 11-10s10 4 11 10"/></svg></div><h4>30분 출고 안내</h4><p>운전 요령, 전기·물·가스 사용법을 직접 해 보며 익혀요</p></div>
+   <div class="step"><div class="c"><i>3</i><svg viewBox="0 0 36 36"><path d="M4 26h28M8 26c2-10 8-16 10-16s8 6 10 16"/><circle cx="26" cy="9" r="3"/></svg></div><h4>느리게 여행</h4><p>여행 중 궁금한 점은 메신저로 언제든 물어보세요</p></div>
+   <div class="step"><div class="c"><i>4</i><svg viewBox="0 0 36 36"><path d="M6 18a12 12 0 1 0 4-9"/><path d="M6 5v6h6"/></svg></div><h4>반납</h4><p>오수만 비우고 오시면 실내 정리·세척은 저희가 해요</p></div>
+  </div>
+ </div>
+</section>
+
+<section id="price">
+ <div class="wrap">
+  <div class="sh"><div><span class="k">Rates</span><h2 class="disp">1박 요금 한눈에</h2></div><p>2박 이상 예약하면 출고일 오후 2시부터 반납일 오후 12시까지 이용할 수 있어요.</p></div>
+  <div class="ptable">
+   <div class="prow h"><div>차량</div><div>비수기<small>11월~3월 평일</small></div><div>주말<small>금·토 출고</small></div><div>성수기<small>7월~8월</small></div></div>
+   <div class="prow"><div class="nm"><b>솔방울</b><span>2인 취침 · 컴팩트</span></div><div class="v o">139,000<small>원</small></div><div class="v">169,000<small>원</small></div><div class="v">219,000<small>원</small></div></div>
+   <div class="prow"><div class="nm"><b>물결</b><span>4인 취침 · 패밀리</span></div><div class="v o">189,000<small>원</small></div><div class="v">229,000<small>원</small></div><div class="v">289,000<small>원</small></div></div>
+   <div class="prow"><div class="nm"><b>멍멍길</b><span>3인 취침 · 반려견 동반</span></div><div class="v o">169,000<small>원</small></div><div class="v">199,000<small>원</small></div><div class="v">259,000<small>원</small></div></div>
+  </div>
+  <div class="pnote">
+   <div><b>보험</b>자차 보험은 예약 시 선택할 수 있고, 보장 범위를 미리 안내해 드려요.</div>
+   <div><b>보증금</b>출고 시 보증금을 받고, 반납 확인 후 당일 돌려드립니다.</div>
+   <div><b>추가 옵션</b>화로대·장작 세트, 유아 카시트, 자전거 거치대를 따로 빌릴 수 있어요.</div>
+  </div>
+ </div>
+</section>
+
+<section id="faq" style="padding-top:0">
+ <div class="wrap faq-grid">
+  <div class="faq-side">
+   <span class="script" style="font-size:20px;color:var(--mustard)">Good to know</span>
+   <h3 class="disp">떠나기 전<br>꼭 확인하세요</h3>
+   <p>예약 전 아래 세 가지만 준비되면 바로 출발할 수 있어요.</p>
+   <ul>
+    <li><svg viewBox="0 0 24 24"><path d="M5 12l4 4 10-10"/></svg>만 21세 이상, 면허 취득 1년 이상</li>
+    <li><svg viewBox="0 0 24 24"><path d="M5 12l4 4 10-10"/></svg>운전자 전원 면허증 지참</li>
+    <li><svg viewBox="0 0 24 24"><path d="M5 12l4 4 10-10"/></svg>첫날 묵을 캠핑장 예약</li>
+   </ul>
+  </div>
+  <div class="faq">
+   <details open><summary>캠핑카를 한 번도 운전해 본 적이 없어요.<i>+</i></summary><p>세 차량 모두 승합차와 비슷한 크기라 2종 보통 면허로 운전할 수 있어요. 출고할 때 직원이 동승해 주차장 한 바퀴를 함께 돌아봅니다.</p></details>
+   <details><summary>아무 곳에나 세우고 자도 되나요?<i>+</i></summary><p>주차와 숙박이 허용된 캠핑장·오토캠핑장 이용을 안내해 드려요. 출고지마다 정리한 캠핑장 목록을 예약 확정 시 보내 드립니다.</p></details>
+   <details><summary>겨울에도 춥지 않을까요?<i>+</i></summary><p>모든 차량에 무시동 히터가 있어 시동을 끈 상태에서도 실내 난방을 할 수 있어요. 겨울에는 두꺼운 이불로 바꿔 실어 드립니다.</p></details>
+   <details><summary>예약을 바꾸거나 취소하려면요?<i>+</i></summary><p>출발일 기준 날짜에 따라 변경·환불 기준이 달라요. 예약 확정 문자에 기준표를 함께 보내 드리니 미리 확인해 주세요.</p></details>
+   <details><summary>반려견은 몇 마리까지 탈 수 있나요?<i>+</i></summary><p>반려견 동반은 멍멍길 차량만 가능하고, 중형견 기준 2마리까지 함께 탈 수 있어요.</p></details>
+  </div>
+ </div>
+</section>
+
+<section class="book" id="book">
+ <svg style="position:absolute;right:-120px;top:-120px;width:520px;opacity:.18;z-index:1" viewBox="0 0 200 200" aria-hidden="true"><circle cx="100" cy="100" r="96" fill="none" stroke="#fff6e4" stroke-width="10"/><circle cx="100" cy="100" r="70" fill="none" stroke="#fff6e4" stroke-width="10"/><circle cx="100" cy="100" r="44" fill="none" stroke="#fff6e4" stroke-width="10"/></svg>
+ <div class="wrap book-grid">
+  <div>
+   <h2 class="disp">이번 주말,<br>어디서 깨어날까요?</h2>
+   <p class="script">Let's hit the slow road.</p>
+   <p class="d">날짜와 인원을 남겨 주시면 빈 차량과 요금을 확인해 영업시간 안에 연락드려요.</p>
+   <div class="contact">
+    <div><svg viewBox="0 0 24 24"><path d="M5 4h4l2 5-3 2a12 12 0 0 0 5 5l2-3 5 2v4a2 2 0 0 1-2 2A17 17 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg>000-0000-0000</div>
+    <div><svg viewBox="0 0 24 24"><path d="M4 5h16v11H9l-5 4z"/></svg>카카오톡 ID: example</div>
+    <div><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>상담 매일 10:00 – 19:00</div>
+   </div>
+  </div>
+  <form class="f" id="bookf" onsubmit="event.preventDefault();document.getElementById('okm').classList.add('on');this.querySelector('button').textContent='문의가 접수되었어요';">
+   <h3>예약 문의</h3>
+   <div class="row"><label>이름<input type="text" placeholder="홍길동" required></label><label>연락처<input type="tel" placeholder="000-0000-0000" required></label></div>
+   <div class="row"><label>출고지<select id="fdepart"><option>제주 공항 인근</option><option>강원 강릉</option><option>경남 남해</option></select></label><label>여행 날짜<input type="text" placeholder="예) 12/13 ~ 12/15"></label></div>
+   <div style="margin-top:16px"><label>원하는 차량</label>
+    <div class="chk"><label><input type="radio" name="v" checked><span>솔방울</span></label><label><input type="radio" name="v"><span>물결</span></label><label><input type="radio" name="v"><span>멍멍길</span></label><label><input type="radio" name="v"><span>추천받을래요</span></label></div>
+   </div>
+   <div style="margin-top:16px"><label>남길 말<textarea placeholder="아이 나이, 반려견 크기, 추가 옵션 등"></textarea></label></div>
+   <button class="btn o" type="submit">빈 차량 확인 요청</button>
+   <div class="okmsg" id="okm">문의가 접수되었어요. 확인 후 입력하신 연락처로 안내드릴게요.</div>
+  </form>
+ </div>
+</section>
+</main>
+<div class="stripes thin"></div>
+<footer>
+ <div class="wrap">
+  <div class="ft">
+   <div>
+    <div class="logo"><svg width="40" height="40" viewBox="0 0 48 48"><circle cx="24" cy="24" r="22" fill="#e7a531"/><circle cx="24" cy="30" r="8" fill="#2b1a12"/><circle cx="24" cy="30" r="3" fill="#e7a531"/></svg><div><b>느린바퀴 캠핑카</b></div></div>
+    <p>출고지 · 제주 / 강원 강릉 / 경남 남해<br>대표전화 000-0000-0000 · 카카오톡 ID: example</p>
+   </div>
+   <nav><a href="#vans">차량</a><a href="#courses">추천 코스</a><a href="#price">요금</a><a href="#faq">자주 묻는 질문</a><a href="#book">예약 문의</a></nav>
+  </div>
+  <div class="copy">© 느린바퀴 캠핑카</div>
+ </div>
+</footer>
+<script>
+document.querySelectorAll('.ctabs button').forEach(function(b){b.addEventListener('click',function(){document.querySelectorAll('.ctabs button').forEach(function(x){x.classList.toggle('on',x===b)});document.querySelectorAll('.course').forEach(function(c){c.classList.toggle('on',c.id===b.dataset.c)})})});
+document.querySelectorAll('#menu a').forEach(function(a){a.addEventListener('click',function(){document.getElementById('menu').classList.remove('open')})});
+</script>
+</body>
+</html>
