@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bantay Home CCTV · Free Site Survey + 10% Off in December</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500;600&family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+:root{--ch:#14171B;--ch2:#1E2329;--ch3:#2A3038;--amb:#F39A2B;--amb2:#FFC56B;--con:#E4E3DD;--con2:#F2F1EC;--txt:#1A1D21;--mut:#5C636B;--line:rgba(20,23,27,.14)}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;overflow-x:hidden}
+body{font-family:'Montserrat',sans-serif;color:var(--txt);background:var(--con2);-webkit-font-smoothing:antialiased;overflow-x:hidden;line-height:1.6}
+a{color:inherit;text-decoration:none}
+.mono{font-family:'IBM Plex Mono',monospace}
+.wrap{max-width:1200px;margin:0 auto;padding:0 32px}
+header{position:absolute;top:0;left:0;right:0;z-index:10}
+.nav{display:flex;align-items:center;justify-content:space-between;height:84px}
+.logo{display:flex;align-items:center;gap:12px;color:#fff}
+.logo svg{width:40px;height:40px}
+.logo b{font-weight:900;font-size:21px;letter-spacing:.06em;display:block;line-height:1}
+.logo small{font-family:'IBM Plex Mono';font-size:11.5px;letter-spacing:.2em;color:var(--amb2)}
+.nav ul{display:flex;gap:30px;list-style:none;color:#C9CED4;font-size:14px;font-weight:600}
+.nav ul a:hover{color:#fff}
+.call{display:flex;align-items:center;gap:8px;height:44px;padding:0 18px;border-radius:8px;border:1.5px solid rgba(255,255,255,.3);color:#fff;font-weight:700;font-size:14px}
+.call svg{width:16px;height:16px;fill:none;stroke:var(--amb);stroke-width:2.2}
+/* hero */
+.hero{background:radial-gradient(ellipse 60% 60% at 70% 55%,#2B2A26 0,transparent 70%),linear-gradient(180deg,#0F1215,#191D22);color:#fff;padding:140px 0 90px;position:relative;overflow:hidden}
+.hero:before{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.035) 1px,transparent 1px);background-size:48px 48px;mask-image:linear-gradient(180deg,#000,transparent 85%)}
+.hero .wrap{position:relative;display:grid;grid-template-columns:1.05fr .95fr;gap:40px;align-items:center}
+.rec{display:inline-flex;align-items:center;gap:10px;font-family:'IBM Plex Mono';font-size:13px;letter-spacing:.14em;color:#C9CED4;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);padding:8px 14px;border-radius:6px}
+.rec i{width:9px;height:9px;border-radius:50%;background:#FF4B3E;box-shadow:0 0 0 0 rgba(255,75,62,.6);animation:pulse 1.6s infinite}
+@keyframes pulse{70%{box-shadow:0 0 0 10px rgba(255,75,62,0)}100%{box-shadow:0 0 0 0 rgba(255,75,62,0)}}
+.hero h1{font-weight:900;font-size:clamp(38px,4.4vw,60px);line-height:1.06;letter-spacing:-.02em;margin:24px 0 20px}
+.hero h1 span{color:var(--amb)}
+.hero p.lead{font-size:18px;color:#BFC5CC;max-width:520px}
+.offer{display:flex;gap:14px;margin-top:30px;flex-wrap:wrap}
+.offer div{border:1px solid rgba(243,154,43,.45);background:rgba(243,154,43,.08);border-radius:10px;padding:14px 18px;min-width:180px}
+.offer b{display:block;font-size:24px;font-weight:800;color:var(--amb2);line-height:1.15}
+.offer span{font-size:13.5px;color:#C9CED4}
+.btns{display:flex;gap:12px;margin-top:32px;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;height:56px;padding:0 28px;border-radius:10px;font-weight:800;font-size:15px;cursor:pointer;border:0;font-family:inherit;transition:.2s}
+.btn.a{background:var(--amb);color:#14171B;box-shadow:0 12px 30px rgba(243,154,43,.3)}
+.btn.a:hover{background:var(--amb2);transform:translateY(-2px)}
+.btn.g{border:1.5px solid rgba(255,255,255,.3);color:#fff;background:transparent}
+.btn.g:hover{background:rgba(255,255,255,.06)}
+.monitor{position:relative;border-radius:16px;background:#0B0D10;border:1px solid rgba(255,255,255,.12);padding:12px;box-shadow:0 40px 80px rgba(0,0,0,.5)}
+.screen{position:relative;border-radius:8px;overflow:hidden;aspect-ratio:4/3.25}
+.screen svg{width:100%;height:100%;display:block}
+.osd{position:absolute;font-family:'IBM Plex Mono';font-size:12px;color:#E9F0E8;letter-spacing:.06em;text-shadow:0 1px 2px #000}
+.osd.tl{left:14px;top:12px}.osd.tr{right:14px;top:12px}.osd.bl{left:14px;bottom:12px}
+.osd.tr i{display:inline-block;width:8px;height:8px;border-radius:50%;background:#FF4B3E;margin-right:6px}
+.thumbs{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:8px}
+.thumbs div{border-radius:6px;overflow:hidden;aspect-ratio:16/10;position:relative;background:#1A1F24}
+.thumbs svg{width:100%;height:100%;display:block}
+.thumbs span{position:absolute;left:8px;bottom:6px;font-family:'IBM Plex Mono';font-size:12px;color:#DDE3DA}
+/* strip */
+.strip{background:#0B0D10;color:var(--amb2);border-top:1px solid rgba(243,154,43,.5);border-bottom:1px solid rgba(243,154,43,.5)}
+.strip .wrap{display:flex;justify-content:space-between;align-items:center;gap:20px;padding-top:18px;padding-bottom:18px;flex-wrap:wrap}
+.strip b{font-family:'IBM Plex Mono';font-weight:600;font-size:16px;letter-spacing:.06em;display:flex;align-items:center;gap:12px}.strip b:before{content:"";width:10px;height:10px;border-radius:50%;background:#FF4B3E;box-shadow:0 0 10px #FF4B3E}
+.strip .count{display:flex;gap:10px;font-family:'IBM Plex Mono';font-weight:600}
+.strip .count div{background:transparent;border:1px solid rgba(243,154,43,.6);color:var(--amb2);border-radius:6px;padding:6px 10px;text-align:center;min-width:58px;font-size:20px;line-height:1.1}
+.strip .count small{display:block;font-size:11px;color:#C9CED4;letter-spacing:.1em}
+section{padding:100px 0}
+.sh{max-width:680px;margin-bottom:50px}
+.sh small{font-family:'IBM Plex Mono';font-size:13px;letter-spacing:.18em;color:#B9681A;font-weight:600}
+.sh h2{font-weight:900;font-size:clamp(30px,3.6vw,44px);line-height:1.15;letter-spacing:-.015em;margin-top:10px}
+.sh p{color:var(--mut);margin-top:14px;font-size:16px}
+/* planner */
+.planner{display:grid;grid-template-columns:.9fr 1.1fr;gap:34px;align-items:stretch}
+.pick{background:#fff;border:1px solid var(--line);border-radius:18px;padding:30px}
+.pick h3{font-size:18px;font-weight:800;margin-bottom:6px}
+.pick p{font-size:14px;color:var(--mut)}
+.homes{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:18px 0 24px}
+.homes button{border:1.5px solid var(--line);background:var(--con2);border-radius:12px;padding:14px 6px 12px;font-family:inherit;font-weight:700;font-size:13.5px;color:var(--txt);cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:6px;transition:.2s}
+.homes button svg{width:40px;height:40px}
+.homes button.on{border-color:var(--amb);background:#FFF5E6;box-shadow:0 0 0 3px rgba(243,154,43,.18)}
+.toggles{display:flex;flex-direction:column;gap:10px}
+.toggles label{display:flex;align-items:center;justify-content:space-between;gap:12px;font-size:14.5px;font-weight:600;padding:12px 14px;border:1px solid var(--line);border-radius:10px;cursor:pointer}
+.toggles input{width:20px;height:20px;accent-color:#B9681A}
+.result{background:var(--ch);color:#fff;border-radius:18px;padding:28px;display:flex;flex-direction:column}
+.result .plan{position:relative;border-radius:12px;background:#0E1114;border:1px solid rgba(255,255,255,.08);aspect-ratio:16/10;overflow:hidden}
+.result .plan svg{width:100%;height:100%;display:block}
+.result .out{display:flex;justify-content:space-between;align-items:flex-end;gap:20px;margin-top:22px;flex-wrap:wrap}
+.result .out small{font-family:'IBM Plex Mono';font-size:12px;color:#9AA2AA;letter-spacing:.14em}
+.result .out b{display:block;font-size:30px;font-weight:900;line-height:1.1;margin-top:4px}
+.result .out b span{color:var(--amb2)}
+.result .out .p{text-align:right}
+.result .note{font-size:13px;color:#9AA2AA;margin-top:12px}
+/* packages */
+.pk{background:var(--con)}
+.pkg{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.card{background:#fff;border-radius:18px;padding:30px 28px;border:1px solid var(--line);display:flex;flex-direction:column;position:relative}
+.card.hot{background:var(--ch);color:#fff;border-color:var(--ch);transform:translateY(-10px);box-shadow:0 30px 50px rgba(20,23,27,.25)}
+.card .tag{position:absolute;top:-13px;left:28px;background:var(--amb);color:#14171B;font-size:12px;font-weight:800;padding:5px 12px;border-radius:20px;letter-spacing:.04em}
+.card .ic{display:flex;gap:6px;margin-bottom:18px}
+.card .ic svg{width:34px;height:34px}
+.card h3{font-size:22px;font-weight:800}
+.card .sub{font-size:14px;color:var(--mut)}
+.card.hot .sub{color:#AEB5BC}
+.card .pr{margin:20px 0 4px;font-weight:900;font-size:40px;letter-spacing:-.02em}
+.card .pr small{font-size:14px;font-weight:600;color:var(--mut);margin-left:6px;letter-spacing:0}
+.card.hot .pr small{color:#AEB5BC}
+.card .was{font-size:13.5px;color:#B9681A;font-weight:700}
+.card.hot .was{color:var(--amb2)}
+.card ul{list-style:none;margin:20px 0 26px;flex:1;display:flex;flex-direction:column;gap:10px;font-size:14.5px}
+.card li{display:flex;gap:10px;align-items:flex-start}
+.card li:before{content:"";flex:none;width:18px;height:18px;margin-top:2px;border-radius:50%;background:#FFF0DA url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 18 18'%3E%3Cpath d='M5 9.5l2.5 2.5L13 6.5' stroke='%23B9681A' stroke-width='2' fill='none' stroke-linecap='round'/%3E%3C/svg%3E") center/18px no-repeat}
+.card .btn{width:100%}
+.card .btn.o{border:1.5px solid var(--txt);background:transparent;color:var(--txt)}
+.card .btn.o:hover{background:var(--txt);color:#fff}
+/* steps */
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border-top:2px solid var(--txt)}
+.step{padding:28px 24px 10px 0;border-right:1px dashed var(--line);margin-right:24px;position:relative}
+.step:last-child{border-right:0}
+.step .n{font-family:'IBM Plex Mono';font-weight:600;font-size:13px;color:#B9681A;letter-spacing:.14em}
+.step svg{width:48px;height:48px;margin:16px 0 14px;display:block}
+.step h3{font-size:19px;font-weight:800}
+.step p{font-size:14.5px;color:var(--mut);margin-top:6px}
+.step .t{display:inline-block;margin-top:12px;font-family:'IBM Plex Mono';font-size:12px;background:var(--con);padding:4px 8px;border-radius:4px}
+/* included */
+.inc{background:var(--ch);color:#fff}
+.inc .sh p{color:#AEB5BC}.inc .sh small{color:var(--amb)}
+.incg{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.incg div{background:var(--ch2);border:1px solid rgba(255,255,255,.08);border-radius:14px;padding:24px}
+.incg svg{width:38px;height:38px}
+.incg b{display:block;font-size:16.5px;margin:14px 0 6px}
+.incg p{font-size:14px;color:#AEB5BC}
+/* faq */
+.faqw{display:grid;grid-template-columns:.8fr 1.2fr;gap:50px}
+details{border-bottom:1px solid var(--line);padding:20px 0}
+summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;gap:20px;font-weight:700;font-size:17px}
+summary::-webkit-details-marker{display:none}
+summary:after{content:"";flex:none;width:22px;height:22px;border-radius:50%;background:var(--con) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 22 22'%3E%3Cpath d='M7 11h8M11 7v8' stroke='%2314171B' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E") center no-repeat;transition:.2s}
+details[open] summary:after{transform:rotate(45deg);background-color:var(--amb)}
+details p{margin-top:10px;color:var(--mut);font-size:15px}
+/* form */
+.final{background:linear-gradient(180deg,#14171B,#1E2329);color:#fff;padding:100px 0}
+.final .wrap{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+.final h2{font-weight:900;font-size:clamp(32px,3.8vw,48px);line-height:1.1;letter-spacing:-.015em}
+.final h2 span{color:var(--amb)}
+.final p{color:#BFC5CC;margin-top:16px}
+.final ul{list-style:none;margin-top:22px;display:flex;flex-direction:column;gap:8px;font-size:15px;color:#DDE1E5}
+.final li:before{content:"→ ";color:var(--amb);font-weight:800}
+form{background:#fff;color:var(--txt);border-radius:18px;padding:30px;display:flex;flex-direction:column;gap:14px}
+form h3{font-size:20px;font-weight:800}
+form .two{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+form label{display:block;font-size:13px;font-weight:700;margin-bottom:6px}
+form input,form select{width:100%;height:50px;border:1.5px solid var(--line);border-radius:10px;padding:0 14px;font-family:inherit;font-size:15px;background:var(--con2);color:var(--txt)}
+form input:focus,form select:focus{outline:2px solid var(--amb);border-color:transparent}
+form .err{color:#C2412D;font-size:13px;font-weight:600;display:none}
+form .fine{font-size:12.5px;color:var(--mut)}
+.done{display:none;text-align:center;padding:24px 6px}
+.done svg{width:66px;height:66px}
+.done b{display:block;font-size:22px;margin:12px 0 6px}
+.done p{color:var(--mut);margin:0}
+.done .code{display:inline-block;margin-top:14px;font-family:'IBM Plex Mono';font-weight:600;background:var(--con);padding:8px 14px;border-radius:8px}
+footer{background:#0D0F12;color:#8A9199;font-size:13.5px;padding:34px 0}
+footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+footer b{color:#fff}
+.sticky{display:none}
+@media(max-width:640px){#floor text{font-size:23px}}
+@media(max-width:1020px){.nav ul{display:none}.hero .wrap,.planner,.final .wrap,.faqw{grid-template-columns:1fr}.pkg{grid-template-columns:1fr;max-width:520px}.card.hot{transform:none}.steps{grid-template-columns:1fr 1fr}.step:nth-child(2){border-right:0}.incg{grid-template-columns:1fr 1fr}}
+@media(max-width:640px){.wrap{padding:0 18px}.rec{font-size:11.5px;letter-spacing:.08em}.nav{height:70px}.call span{display:none}.call{padding:0 12px}
+ .hero{padding:104px 0 60px}.hero h1{font-size:38px}.hero p.lead{font-size:16px}.offer div{flex:1;min-width:0}.offer b{font-size:20px}.btns{flex-direction:column}.btns .btn{width:100%}
+ section{padding:70px 0}.homes{grid-template-columns:repeat(3,1fr)}.homes button{font-size:12px}.pick,.result{padding:22px}.result .out b{font-size:24px}
+ .steps{grid-template-columns:1fr}.step{border-right:0;margin-right:0;border-bottom:1px dashed var(--line);padding-right:0}.incg{grid-template-columns:1fr}form .two{grid-template-columns:1fr}
+ .strip .wrap{justify-content:center;text-align:center}.strip b{display:block;line-height:1.5}.strip b:before{display:inline-block;margin-right:8px;vertical-align:1px}.final{padding:70px 0 110px}
+ .sticky{display:flex;position:fixed;left:12px;right:12px;bottom:12px;z-index:30;transform:translateY(90px);opacity:0;transition:.3s}.sticky.show{transform:none;opacity:1}.sticky .btn{width:100%;height:52px}}
+</style>
+</head>
+<body>
+<header><div class="wrap nav">
+ <a class="logo" href="#"><svg viewBox="0 0 40 40"><rect width="40" height="40" rx="9" fill="#F39A2B"/><path d="M8 15l14-5 4 9-14 5z" fill="#14171B"/><circle cx="22" cy="15" r="2.4" fill="#F39A2B"/><path d="M14 23l-2 7h6" stroke="#14171B" stroke-width="2.6" fill="none" stroke-linecap="round"/><path d="M28 12a8 8 0 0 1 4 6M30 9a12 12 0 0 1 5 9" stroke="#14171B" stroke-width="2" fill="none" stroke-linecap="round"/></svg><span><b>BANTAY</b><small>HOME CCTV</small></span></a>
+ <ul><li><a href="#planner">Planner</a></li><li><a href="#packages">Packages</a></li><li><a href="#how">How it works</a></li><li><a href="#faq">FAQ</a></li></ul>
+ <a class="call" href="#book"><svg viewBox="0 0 24 24"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg><span>0900-000-0000</span></a>
+</div></header>
+
+<section class="hero">
+ <div class="wrap">
+  <div>
+   <span class="rec"><i></i>DECEMBER PROMO · METRO MANILA &amp; RIZAL</span>
+   <h1>See your gate,<br>garage and door<br><span>from your phone.</span></h1>
+   <p class="lead">Bantay plans, installs and sets up home CCTV in one visit. Book a free site survey this December and get 10% off any installation package.</p>
+   <div class="offer"><div><b>FREE</b><span>on-site survey &amp; camera plan</span></div><div><b>10% OFF</b><span>installation · until Dec 31</span></div></div>
+   <div class="btns"><a class="btn a" href="#book">Book my free survey</a><a class="btn g" href="#planner">How many cameras do I need?</a></div>
+  </div>
+  <div class="monitor">
+   <div class="screen">
+    <svg viewBox="0 0 520 422" aria-label="Night view of a house gate from a security camera">
+     <defs>
+      <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1C2622"/><stop offset="1" stop-color="#2E3A32"/></linearGradient>
+      <radialGradient id="lamp" cx="50%" cy="0%" r="80%"><stop offset="0" stop-color="#FFC56B" stop-opacity=".75"/><stop offset=".5" stop-color="#F39A2B" stop-opacity=".18"/><stop offset="1" stop-color="#F39A2B" stop-opacity="0"/></radialGradient>
+      <linearGradient id="road" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#3B463E"/><stop offset="1" stop-color="#58655A"/></linearGradient>
+      <pattern id="scan" width="4" height="4" patternUnits="userSpaceOnUse"><rect width="4" height="2" fill="#000" opacity=".18"/></pattern>
+      <filter id="gr"><feTurbulence baseFrequency=".9" numOctaves="2"/><feColorMatrix values="0 0 0 0 .8 0 0 0 0 .9 0 0 0 0 .8 0 0 0 .08 0"/></filter>
+     </defs>
+     <rect width="520" height="422" fill="url(#sky)"/>
+     <!-- house -->
+     <path d="M60 170l150-80 150 80v120H60z" fill="#3E4B42"/>
+     <path d="M40 176l170-96 170 96" stroke="#25302A" stroke-width="12" fill="none"/>
+     <rect x="96" y="196" width="60" height="50" fill="#FFC56B" opacity=".55"/><path d="M126 196v50M96 221h60" stroke="#3E4B42" stroke-width="4"/>
+     <rect x="250" y="196" width="60" height="50" fill="#2A332E"/><path d="M280 196v50M250 221h60" stroke="#3E4B42" stroke-width="4"/>
+     <rect x="184" y="210" width="50" height="80" fill="#26302A"/><circle cx="226" cy="252" r="3" fill="#C9B07A"/>
+     <!-- wall & gate -->
+     <rect x="0" y="262" width="520" height="54" fill="#55625A"/>
+     <path d="M0 262h520" stroke="#6E7C72" stroke-width="4"/>
+     <g stroke="#262E29" stroke-width="5"><path d="M330 236v80M350 236v80M370 236v80M390 236v80M410 236v80M430 236v80M450 236v80M470 236v80"/></g>
+     <path d="M322 236h158M322 276h158" stroke="#262E29" stroke-width="6"/>
+     <rect x="314" y="226" width="16" height="92" fill="#6E7C72"/><rect x="480" y="226" width="16" height="92" fill="#6E7C72"/>
+     <!-- lamp -->
+     <path d="M500 60v170" stroke="#262E29" stroke-width="6"/><path d="M500 60h-30" stroke="#262E29" stroke-width="6"/><rect x="458" y="58" width="24" height="10" rx="3" fill="#FFC56B"/>
+     <path d="M470 68L330 422h300z" fill="url(#lamp)"/>
+     <!-- road -->
+     <path d="M0 316h520v106H0z" fill="url(#road)"/>
+     <path d="M30 380h70M170 380h70M310 380h70M450 380h70" stroke="#C9CDA8" stroke-width="5" opacity=".5"/>
+     <!-- motorbike with box (delivery) -->
+     <g transform="translate(150 316)">
+      <circle cx="0" cy="42" r="18" fill="#1A201C" stroke="#7F8B82" stroke-width="4"/><circle cx="76" cy="42" r="18" fill="#1A201C" stroke="#7F8B82" stroke-width="4"/>
+      <path d="M0 42l26-30h34l16 30" stroke="#8C988F" stroke-width="6" fill="none"/>
+      <rect x="-14" y="-6" width="34" height="30" rx="3" fill="#C98A3A"/>
+      <path d="M40 12c0-30 10-46 24-46s16 18 14 34" fill="#384239"/>
+      <circle cx="62" cy="-46" r="12" fill="#C9CDA8"/><rect x="50" y="-52" width="26" height="10" rx="3" fill="#2A332E"/>
+     </g>
+     <!-- detection box -->
+     <rect x="126" y="250" width="134" height="130" fill="none" stroke="#FFC56B" stroke-width="2.5" stroke-dasharray="14 6"/>
+     <rect x="126" y="220" width="150" height="30" fill="#FFC56B"/>
+     <text x="134" y="241" font-family="IBM Plex Mono" font-size="19" font-weight="600" fill="#14171B">MOTION 96%</text>
+     <rect width="520" height="422" fill="url(#scan)"/>
+     <rect width="520" height="422" filter="url(#gr)"/>
+    </svg>
+    <span class="osd tl">CAM 01 · FRONT GATE</span>
+    <span class="osd tr"><i></i>LIVE</span>
+    <span class="osd bl">2026-12-04 · 21:47:12</span>
+   </div>
+   <div class="thumbs">
+    <div><svg viewBox="0 0 160 100"><rect width="160" height="100" fill="#2A332E"/><rect x="20" y="30" width="120" height="60" fill="#3E4B42"/><rect x="34" y="40" width="40" height="50" fill="#1E2621"/><rect x="88" y="44" width="38" height="28" fill="#55625A"/><path d="M0 90h160" stroke="#6E7C72" stroke-width="4"/></svg><span>02 GARAGE</span></div>
+    <div><svg viewBox="0 0 160 100"><rect width="160" height="100" fill="#26302A"/><rect x="58" y="16" width="44" height="84" fill="#3E4B42"/><circle cx="94" cy="60" r="2.5" fill="#C9B07A"/><rect x="40" y="88" width="80" height="12" fill="#55625A"/><rect x="20" y="20" width="28" height="30" fill="#FFC56B" opacity=".35"/></svg><span>03 DOOR</span></div>
+    <div><svg viewBox="0 0 160 100"><rect width="160" height="100" fill="#2E3A32"/><path d="M0 70h160v30H0z" fill="#4A5A4E"/><path d="M10 70V30l20-10 20 10v40" fill="#3A463E"/><path d="M110 70c0-24 12-40 24-40s20 16 20 40" fill="#2F5A3A"/><circle cx="70" cy="50" r="10" fill="#384239"/></svg><span>04 YARD</span></div>
+   </div>
+  </div>
+ </div>
+</section>
+
+<div class="strip"><div class="wrap"><b>REC · DECEMBER OFFER — FREE SURVEY + 10% OFF INSTALL</b><div class="count" id="count"><div>06<small>DAYS</small></div><div>11<small>HRS</small></div><div>42<small>MIN</small></div></div></div></div>
+
+<section id="planner">
+ <div class="wrap">
+  <div class="sh"><small>01 · CAMERA PLANNER</small><h2>How many cameras does your home need?</h2><p>Pick your home type and the spots you want covered. Our technician confirms the final plan during the free survey.</p></div>
+  <div class="planner">
+   <div class="pick">
+    <h3>Your home</h3><p>Choose one</p>
+    <div class="homes" id="homes">
+     <button data-h="condo" type="button"><svg viewBox="0 0 40 40" fill="none" stroke="#14171B" stroke-width="2"><rect x="10" y="5" width="20" height="31" rx="1"/><path d="M15 11h3M22 11h3M15 17h3M22 17h3M15 23h3M22 23h3M18 36v-6h4v6"/></svg>Condo unit</button>
+     <button data-h="town" class="on" type="button"><svg viewBox="0 0 40 40" fill="none" stroke="#14171B" stroke-width="2"><path d="M4 18l9-8 9 8v18H4zM22 18l7-6 7 6v18H22"/><path d="M10 36v-8h6v8M27 24h4"/></svg>Townhouse</button>
+     <button data-h="house" type="button"><svg viewBox="0 0 40 40" fill="none" stroke="#14171B" stroke-width="2"><path d="M3 19L20 6l17 13"/><path d="M7 16v20h26V16"/><path d="M16 36v-9h8v9M10 21h4M26 21h4"/></svg>House &amp; lot</button>
+    </div>
+    <h3>Spots to cover</h3>
+    <div class="toggles" id="spots">
+     <label>Front gate / entrance <input type="checkbox" data-s="gate" checked></label>
+     <label>Garage / parking <input type="checkbox" data-s="garage" checked></label>
+     <label>Main door <input type="checkbox" data-s="door" checked></label>
+     <label>Backyard / laundry area <input type="checkbox" data-s="back"></label>
+     <label>Side path <input type="checkbox" data-s="side"></label>
+    </div>
+   </div>
+   <div class="result">
+    <div class="plan"><svg viewBox="0 0 480 300" id="floor"></svg></div>
+    <div class="out">
+     <div><small>RECOMMENDED</small><b id="camN"><span>3</span> cameras</b></div>
+     <div class="p"><small>STARTS AT</small><b id="camP"><span>₱12,330</span></b></div>
+    </div>
+    <p class="note" id="camNote">Basic 4-channel kit · price shown with December 10% off · final quote after survey</p>
+    <a class="btn a" href="#book" style="margin-top:20px">Book a survey for this plan</a>
+   </div>
+  </div>
+ </div>
+</section>
+
+<section class="pk" id="packages">
+ <div class="wrap">
+  <div class="sh"><small>02 · PACKAGES</small><h2>Installation packages, all-in pricing</h2><p>Cameras, recorder, hard drive, cabling up to 20 m per camera, and app setup on two phones. December prices already include 10% off.</p></div>
+  <div class="pkg">
+   <div class="card">
+    <div class="ic"><svg viewBox="0 0 34 34"><rect x="3" y="11" width="20" height="12" rx="3" fill="#14171B"/><circle cx="18" cy="17" r="3" fill="#F39A2B"/><path d="M23 14l7-3v12l-7-3z" fill="#14171B"/></svg><svg viewBox="0 0 34 34"><rect x="3" y="11" width="20" height="12" rx="3" fill="#14171B"/><circle cx="18" cy="17" r="3" fill="#F39A2B"/><path d="M23 14l7-3v12l-7-3z" fill="#14171B"/></svg></div>
+    <h3>Bantay Duo</h3><span class="sub">Condo or small unit · 2 cameras</span>
+    <div class="pr">₱8,010<small>/ installed</small></div><span class="was">Regular ₱8,900 · save ₱890</span>
+    <ul><li>2 × 2MP indoor/outdoor cameras</li><li>4-channel recorder + 500GB drive</li><li>About 10 days of recording</li><li>Phone app setup &amp; quick training</li></ul>
+    <a class="btn o" href="#book" data-pk="Duo">Choose Duo</a>
+   </div>
+   <div class="card hot">
+    <span class="tag">GOOD FIT FOR TOWNHOUSES</span>
+    <div class="ic"><svg viewBox="0 0 34 34"><rect x="3" y="11" width="20" height="12" rx="3" fill="#F39A2B"/><circle cx="18" cy="17" r="3" fill="#14171B"/><path d="M23 14l7-3v12l-7-3z" fill="#F39A2B"/></svg><svg viewBox="0 0 34 34"><rect x="3" y="11" width="20" height="12" rx="3" fill="#F39A2B"/><circle cx="18" cy="17" r="3" fill="#14171B"/><path d="M23 14l7-3v12l-7-3z" fill="#F39A2B"/></svg><svg viewBox="0 0 34 34"><rect x="3" y="11" width="20" height="12" rx="3" fill="#F39A2B"/><circle cx="18" cy="17" r="3" fill="#14171B"/><path d="M23 14l7-3v12l-7-3z" fill="#F39A2B"/></svg><svg viewBox="0 0 34 34"><rect x="3" y="11" width="20" height="12" rx="3" fill="#F39A2B"/><circle cx="18" cy="17" r="3" fill="#14171B"/><path d="M23 14l7-3v12l-7-3z" fill="#F39A2B"/></svg></div>
+    <h3>Bantay Four</h3><span class="sub">Townhouse · 4 cameras with night color</span>
+    <div class="pr">₱13,050<small>/ installed</small></div><span class="was">Regular ₱14,500 · save ₱1,450</span>
+    <ul><li>4 × 4MP color night-vision cameras</li><li>4-channel recorder + 1TB drive</li><li>About 14 days of recording</li><li>Motion alerts to your phone</li><li>Weatherproof junction boxes</li></ul>
+    <a class="btn a" href="#book" data-pk="Four">Choose Four</a>
+   </div>
+   <div class="card">
+    <div class="ic"><svg viewBox="0 0 34 34"><rect x="3" y="11" width="20" height="12" rx="3" fill="#14171B"/><circle cx="18" cy="17" r="3" fill="#F39A2B"/><path d="M23 14l7-3v12l-7-3z" fill="#14171B"/></svg><b style="font-size:20px;font-weight:900;align-self:center">× 8</b></div>
+    <h3>Bantay Eight</h3><span class="sub">House &amp; lot or small shop · 8 cameras</span>
+    <div class="pr">₱24,210<small>/ installed</small></div><span class="was">Regular ₱26,900 · save ₱2,690</span>
+    <ul><li>8 × 4MP color night-vision cameras</li><li>8-channel recorder + 2TB drive</li><li>About 14 days of recording</li><li>Two-way audio on the main gate camera</li><li>Backup power for the recorder</li></ul>
+    <a class="btn o" href="#book" data-pk="Eight">Choose Eight</a>
+   </div>
+  </div>
+ </div>
+</section>
+
+<section id="how">
+ <div class="wrap">
+  <div class="sh"><small>03 · HOW IT WORKS</small><h2>From survey to live view in about a week</h2></div>
+  <div class="steps">
+   <div class="step"><span class="n">STEP 01</span><svg viewBox="0 0 48 48" fill="none" stroke="#14171B" stroke-width="2.2"><rect x="8" y="8" width="32" height="34" rx="3"/><path d="M8 16h32M16 4v8M32 4v8"/><path d="M17 28l5 5 9-10" stroke="#F39A2B"/></svg><h3>Book a free survey</h3><p>Pick a date in the form. We confirm by text within the day.</p><span class="t">~2 min</span></div>
+   <div class="step"><span class="n">STEP 02</span><svg viewBox="0 0 48 48" fill="none" stroke="#14171B" stroke-width="2.2"><path d="M6 40V18l18-12 18 12v22z"/><path d="M24 22l-10 14h20z" stroke="#F39A2B"/><circle cx="24" cy="22" r="3" fill="#F39A2B" stroke="none"/></svg><h3>Site survey &amp; plan</h3><p>A technician walks your home, checks angles and wiring paths, then gives a fixed quote.</p><span class="t">~45 min · free</span></div>
+   <div class="step"><span class="n">STEP 03</span><svg viewBox="0 0 48 48" fill="none" stroke="#14171B" stroke-width="2.2"><path d="M30 6l12 12-20 20H10V26z"/><path d="M26 10l12 12" stroke="#F39A2B"/><path d="M6 42h36"/></svg><h3>One-day installation</h3><p>Neat cable runs, sealed outdoor joints and a clean-up when we leave.</p><span class="t">4–8 hours</span></div>
+   <div class="step"><span class="n">STEP 04</span><svg viewBox="0 0 48 48" fill="none" stroke="#14171B" stroke-width="2.2"><rect x="14" y="4" width="20" height="40" rx="4"/><rect x="18" y="10" width="12" height="16" rx="1" stroke="#F39A2B"/><circle cx="24" cy="37" r="2"/></svg><h3>Live view on your phone</h3><p>We set up the app on two phones and show you how to play back footage.</p><span class="t">same day</span></div>
+  </div>
+ </div>
+</section>
+
+<section class="inc">
+ <div class="wrap">
+  <div class="sh"><small>04 · ALWAYS INCLUDED</small><h2>What comes with every install</h2><p>No surprise add-ons on installation day. If something changes, we tell you before we drill.</p></div>
+  <div class="incg">
+   <div><svg viewBox="0 0 38 38" fill="none" stroke="#F39A2B" stroke-width="2.2"><path d="M19 4l13 5v9c0 8-6 14-13 16C12 32 6 26 6 18V9z"/><path d="M13 19l4 4 8-8"/></svg><b>1-year workmanship warranty</b><p>Loose cables or misaligned cameras? We come back at no cost.</p></div>
+   <div><svg viewBox="0 0 38 38" fill="none" stroke="#F39A2B" stroke-width="2.2"><path d="M4 30c8 0 8-8 15-8s7 8 15 8"/><path d="M4 22c8 0 8-8 15-8s7 8 15 8"/></svg><b>Tidy cable routing</b><p>Molding along walls and ceilings, no loose wires hanging.</p></div>
+   <div><svg viewBox="0 0 38 38" fill="none" stroke="#F39A2B" stroke-width="2.2"><circle cx="19" cy="19" r="14"/><path d="M19 11v8l6 4"/></svg><b>Set-up &amp; training</b><p>We show the whole family how to view, save and share clips.</p></div>
+   <div><svg viewBox="0 0 38 38" fill="none" stroke="#F39A2B" stroke-width="2.2"><rect x="6" y="10" width="26" height="18" rx="3"/><path d="M6 16h26M12 23h6"/></svg><b>E-wallet or bank transfer</b><p>50% on installation day, the rest after you see live view.</p></div>
+  </div>
+ </div>
+</section>
+
+<section id="faq">
+ <div class="wrap faqw">
+  <div class="sh" style="margin-bottom:0"><small>05 · FAQ</small><h2>Questions before you book</h2><p>Still unsure? Send us a message and a technician will reply.</p></div>
+  <div>
+   <details open><summary>Is the site survey really free?</summary><p>Yes. The survey and the camera plan are free with no obligation to install. We only ask that someone 18 or older is home during the visit.</p></details>
+   <details><summary>Which areas do you cover?</summary><p>Metro Manila and nearby Rizal towns. For other areas, send your barangay and city in the form and we'll check the schedule.</p></details>
+   <details><summary>Will it work if the internet is down?</summary><p>Yes. The recorder keeps saving footage to its hard drive. You just won't get live view on your phone until the internet is back.</p></details>
+   <details><summary>Can I use my own cameras?</summary><p>We can add compatible cameras you already own. The technician will check them during the survey.</p></details>
+   <details><summary>Until when is the 10% off valid?</summary><p>For surveys booked by December 31, 2026, with installation done by January 31, 2027.</p></details>
+  </div>
+ </div>
+</section>
+
+<section class="final" id="book">
+ <div class="wrap">
+  <div>
+   <h2>Book your <span>free site survey</span> this December</h2>
+   <p>Tell us where you live and when you're free. We'll text to confirm your slot.</p>
+   <ul><li>Free survey &amp; camera plan</li><li>10% off any installation package</li><li>Fixed quote before any drilling</li></ul>
+  </div>
+  <form id="form" novalidate onsubmit="return false">
+   <div class="fields" style="display:flex;flex-direction:column;gap:14px">
+    <h3>Free survey request</h3>
+    <div class="two"><div><label for="nm">Full name</label><input id="nm" placeholder="Juan Dela Cruz"></div><div><label for="ph">Mobile number</label><input id="ph" placeholder="09XX-XXX-XXXX"></div></div>
+    <div class="two"><div><label for="ct">City</label><select id="ct"><option>Quezon City</option><option>Pasig</option><option>Marikina</option><option>Makati</option><option>Taguig</option><option>Antipolo</option><option>Other</option></select></div><div><label for="pk">Package</label><select id="pk"><option>Not sure yet</option><option>Duo · 2 cameras</option><option>Four · 4 cameras</option><option>Eight · 8 cameras</option></select></div></div>
+    <div><label for="dt">Preferred survey date</label><input id="dt" type="date" value="2026-12-12"></div>
+    <span class="err" id="err">Please add your name and an 11-digit mobile number.</span>
+    <button class="btn a" id="sub" type="button">Request my free survey</button>
+    <span class="fine">We only use your number to confirm the visit.</span>
+   </div>
+   <div class="done" id="done"><svg viewBox="0 0 66 66"><circle cx="33" cy="33" r="31" fill="#14171B"/><path d="M20 34l9 9 17-19" stroke="#F39A2B" stroke-width="4.5" fill="none" stroke-linecap="round"/></svg><b>Request received!</b><p>We'll text you within the day to confirm your survey slot.</p><span class="code" id="code">PROMO · DEC10</span></div>
+  </form>
+ </div>
+</section>
+<footer><div class="wrap"><span><b>Bantay Home CCTV</b> · Survey · Installation · Maintenance</span><span>Mobile 0900-000-0000 · hello@example.com</span></div></footer>
+<div class="sticky"><a class="btn a" href="#book">Book my free survey · 10% off</a></div>
+<script>
+// planner
+var H={condo:{w:[[60,40,360,220]],base:0},town:{base:1},house:{base:2}};
+var state={h:'town'};
+var SP={gate:[60,250,-90,'GATE'],garage:[150,250,-60,'GARAGE'],door:[250,170,-90,'DOOR'],back:[400,60,90,'BACK'],side:[420,170,180,'SIDE']};
+function draw(){
+ var on=[].filter.call(document.querySelectorAll('#spots input'),function(i){return i.checked}).map(function(i){return i.dataset.s});
+ var h=state.h,s='<defs><radialGradient id="cone" cx="0" cy="0" r="1"><stop offset="0" stop-color="#F39A2B" stop-opacity=".55"/><stop offset="1" stop-color="#F39A2B" stop-opacity="0"/></radialGradient></defs>';
+ s+='<g stroke="rgba(255,255,255,.06)">';for(var x=0;x<=480;x+=24)s+='<path d="M'+x+' 0v300"/>';for(var y=0;y<=300;y+=24)s+='<path d="M0 '+y+'h480"/>';s+='</g>';
+ if(h==='condo'){s+='<rect x="90" y="40" width="300" height="220" fill="#1A1F24" stroke="#5C656E" stroke-width="3"/><path d="M90 150h140M230 40v110M300 150v110" stroke="#3A424A" stroke-width="3"/><text x="104" y="136" fill="#9AA3AC" font-family="IBM Plex Mono" font-size="17" stroke="#0E1114" stroke-width="5" paint-order="stroke">BEDROOM</text><text x="246" y="136" fill="#9AA3AC" font-family="IBM Plex Mono" font-size="17" stroke="#0E1114" stroke-width="5" paint-order="stroke">KITCHEN</text><text x="100" y="236" fill="#9AA3AC" font-family="IBM Plex Mono" font-size="17" stroke="#0E1114" stroke-width="5" paint-order="stroke">LIVING</text><rect x="210" y="254" width="50" height="10" fill="#F39A2B"/>';}
+ else{var wide=h==='house';s+='<rect x="30" y="20" width="420" height="260" fill="none" stroke="#5C656E" stroke-width="3" stroke-dasharray="'+(wide?'0':'8 6')+'"/>';
+  s+='<rect x="'+(wide?170:190)+'" y="'+(wide?70:60)+'" width="'+(wide?210:180)+'" height="'+(wide?140:150)+'" fill="#1A1F24" stroke="#7E8790" stroke-width="3"/>';
+  s+='<rect x="60" y="150" width="'+(wide?100:120)+'" height="90" fill="#1A1F24" stroke="#3A424A" stroke-width="2" stroke-dasharray="5 4"/><text x="116" y="205" text-anchor="middle" fill="#9AA3AC" font-family="IBM Plex Mono" font-size="17" stroke="#0E1114" stroke-width="5" paint-order="stroke">PARKING</text>';
+  s+='<text x="'+(wide?300:290)+'" y="'+(wide?200:198)+'" fill="#9AA3AC" font-family="IBM Plex Mono" font-size="17" stroke="#0E1114" stroke-width="5" paint-order="stroke">'+(wide?'HOUSE':'UNIT')+'</text><rect x="40" y="274" width="90" height="10" fill="#F39A2B"/><text x="138" y="286" fill="#FFC56B" font-family="IBM Plex Mono" font-size="16" stroke="#0E1114" stroke-width="5" paint-order="stroke">GATE</text>';}
+ var n=0,valid=[];
+ on.forEach(function(k){if(h==='condo'&&k!=='door'&&k!=='back')return;valid.push(k)});
+ if(h==='condo'&&valid.length===0)valid=['door'];
+ valid.forEach(function(k){var p=SP[k];if(h==='condo'){p=k==='door'?[235,240,-90,'DOOR']:[120,60,60,'BALCONY']}n++;
+  s+='<g transform="translate('+p[0]+' '+p[1]+') rotate('+p[2]+')"><path d="M0 0L120 -46A130 130 0 0 1 120 46z" fill="url(#cone)" transform="scale(1)"/></g><circle cx="'+p[0]+'" cy="'+p[1]+'" r="8" fill="#F39A2B" stroke="#14171B" stroke-width="3"/><text x="'+(p[0]>380?p[0]-46:p[0]+12)+'" y="'+(p[1]<100?p[1]+30:p[1]-10)+'" fill="#FFC56B" font-family="IBM Plex Mono" font-size="17" font-weight="600" stroke="#0E1114" stroke-width="5" paint-order="stroke">C'+n+'</text>';});
+ document.getElementById('floor').innerHTML=s;
+ var price,kit;if(n<=2){price=8010;kit='Duo kit, 4-channel recorder'}else if(n<=4){price=13050;kit='Four kit, 4-channel recorder'}else{price=24210;kit='Eight kit, 8-channel recorder'}
+ document.getElementById('camN').innerHTML='<span>'+n+'</span> camera'+(n>1?'s':'');
+ document.getElementById('camP').innerHTML='<span>₱'+price.toLocaleString('en-US')+'</span>';
+ document.getElementById('camNote').textContent=kit+' · December 10% off included · final quote after survey'+(h==='condo'?' · condo plans cover the entrance door, plus the balcony if you tick backyard':'');
+}
+document.getElementById('homes').addEventListener('click',function(e){var b=e.target.closest('button');if(!b)return;state.h=b.dataset.h;[].forEach.call(this.children,function(x){x.classList.toggle('on',x===b)});draw();});
+document.getElementById('spots').addEventListener('change',draw);
+draw();
+// package buttons preset form
+[].forEach.call(document.querySelectorAll('[data-pk]'),function(a){a.addEventListener('click',function(){var m={Duo:1,Four:2,Eight:3};document.getElementById('pk').selectedIndex=m[a.dataset.pk];});});
+// countdown to Dec 31
+(function(){var end=new Date('2026-12-31T23:59:00+08:00').getTime();function t(){var d=Math.max(0,end-Date.now());var D=Math.floor(d/864e5),Hh=Math.floor(d%864e5/36e5),M=Math.floor(d%36e5/6e4);if(D>99)return;document.getElementById('count').innerHTML='<div>'+String(D).padStart(2,'0')+'<small>DAYS</small></div><div>'+String(Hh).padStart(2,'0')+'<small>HRS</small></div><div>'+String(M).padStart(2,'0')+'<small>MIN</small></div>';}t();setInterval(t,30000);})();
+var stk=document.querySelector('.sticky'),bk=document.getElementById('book');window.addEventListener('scroll',function(){var y=scrollY,b=bk.getBoundingClientRect().top;var r=document.querySelector('#planner .result').getBoundingClientRect();stk.classList.toggle('show',y>700&&b>innerHeight&&(r.bottom<0||r.top>innerHeight))},{passive:true});
+document.getElementById('sub').onclick=function(){var n=document.getElementById('nm').value.trim(),p=document.getElementById('ph').value.replace(/\D/g,'');if(!n||p.length!==11){document.getElementById('err').style.display='block';return}document.querySelector('#form .fields').style.display='none';document.getElementById('done').style.display='block';};
+</script>
+</body>
+</html>
