@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>타래 야키토리 · 야키토리 이자카야 메뉴판 디자인</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Song+Myung&family=IBM+Plex+Sans+KR:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Noto Sans KR',sans-serif;background:#e9d6b2;color:#2f2a28;word-break:keep-all;-webkit-font-smoothing:antialiased;min-height:100vh;
+ background-image:radial-gradient(rgba(90,60,30,.09) 1px,transparent 1.3px);background-size:10px 10px}
+.top{height:28px;background:repeating-linear-gradient(90deg,#2f2a28 0 76px,#a8481f 76px 82px)}
+.wrap{max-width:1180px;margin:0 auto;padding:44px 20px 120px}
+.hd{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:18px;margin-bottom:32px}
+.hd small{font-family:'IBM Plex Sans KR',sans-serif;font-weight:600;font-size:14px;letter-spacing:.24em;color:#2f2a28}
+.hd h1{font-family:'Song Myung',serif;font-weight:400;font-size:clamp(34px,5vw,58px);margin-top:8px;line-height:1.15}
+.hd h1 em{font-style:normal;color:#a8481f}
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:14px}
+.chips span{font-size:13px;font-weight:500;padding:6px 12px;border-radius:999px;background:#f6e7c9;color:#4a3d31;border:1.5px solid rgba(42,33,27,.22)}
+.chips span.g{background:#2f2a28;color:#f3e6cc;border-color:#2f2a28;font-weight:700}
+.cta{display:inline-flex;align-items:center;gap:8px;height:52px;padding:0 26px;border-radius:10px;background:#a8481f;color:#fff;font-weight:700;font-size:15px;text-decoration:none;transition:.2s;white-space:nowrap;box-shadow:0 4px 0 #6f2c10}
+.cta:hover{background:#bb5626}
+.cta svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round}
+.view{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,.75fr);gap:28px;align-items:start}
+figure{background:#2f2a28;padding:10px;border-radius:14px;box-shadow:0 30px 60px -30px rgba(42,33,27,.6)}
+figure a{display:block}
+figure img{display:block;width:100%;height:auto;border-radius:6px}
+figcaption{font-size:13px;color:#d9ccb2;padding:10px 4px 2px;display:flex;flex-wrap:wrap;justify-content:space-between;gap:4px 10px}
+.side{display:flex;flex-direction:column;gap:18px;position:sticky;top:24px}
+.zoom{background:#f6e7c9;border-radius:14px;padding:8px;border:1.5px solid rgba(42,33,27,.16)}
+.zoom img{display:block;width:100%;height:auto;border-radius:8px}
+.zoom p{font-size:13px;color:#5a4a3a;padding:8px 4px 2px;line-height:1.55}
+.info{background:#2f2a28;color:#f3e6cc;border-radius:14px;padding:22px}
+.info h2{font-family:'Song Myung',serif;font-weight:400;font-size:26px;color:#f0b062;margin-bottom:8px}
+.info li{list-style:none;font-size:14px;padding:6px 0 6px 18px;position:relative;line-height:1.55;color:#e8e6cf}
+.info li:before{content:"";position:absolute;left:2px;top:13px;width:8px;height:8px;border-radius:2px;background:#f0b062}
+.bar{position:fixed;left:0;right:0;bottom:0;background:rgba(42,33,27,.97);border-top:3px solid #a8481f;padding:12px 20px;display:flex;justify-content:center;align-items:center;gap:18px;flex-wrap:wrap}
+.bar p{font-size:14px;color:#d9ccb2}
+.bar .cta{height:46px;box-shadow:none}
+@media(max-width:900px){.view{grid-template-columns:1fr}.side{position:static}}
+@media(max-width:620px){.hd h1 em{display:block}.hd .cta{display:none}.bar p{display:none}.bar .cta{width:100%;justify-content:center}}
+</style>
+</head>
+<body>
+<div class="top"></div>
+<div class="wrap">
+ <div class="hd">
+  <div>
+   <small>MENU DESIGN · SD-MN41</small>
+   <h1>타래 야키토리 <em>숯불 꼬치 이자카야 메뉴판</em></h1>
+   <div class="chips"><span class="g">A4 세로 · 1장</span><span>꼬치 12종 · 모둠 · 곁들임 · 마실 것</span><span>삼나무 목패 &amp; 비장탄 차콜 &amp; 타레 앰버</span><span>원화 가격</span><span>인쇄 · 웹 겸용</span></div>
+  </div>
+  <a class="cta" href="https://design.shoponph.online/#inquiry">이 디자인으로 상담하기 <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+ </div>
+ <div class="view">
+  <figure><a href="page1.png" target="_blank" rel="noopener"><img src="page1.png" alt="타래 야키토리 메뉴판 전체, 숯불 화로 위 꼬치 그림과 나무 목패 모양의 꼬치 12종 가격, 모둠 꼬치와 곁들임·주류 목록" width="2480" height="3508"></a><figcaption><span>꼬치 12종 · 모둠 꼬치 · 곁들임 · 마실 것 · 원산지</span><span>A4 2480×3508px</span></figcaption></figure>
+  <div class="side">
+   <div class="zoom"><img src="detail-tags.jpg" alt="나무 목패 모양으로 걸린 꼬치 메뉴와 소금·타레 표시 확대" width="1000" height="314"><p>이자카야 벽에 거는 나무 명패처럼 꼬치 이름을 세로로 쓰고, 소금·타레 양념을 색 띠로 구분해 한눈에 고르기 쉽게</p></div>
+   <div class="zoom"><img src="detail-sets.jpg" alt="모둠 꼬치 세트와 곁들임, 마실 것 목록 확대" width="1000" height="422"><p>처음 온 손님을 위한 모둠 세트는 숯빛 카드로 따로 묶고, 곁들임과 주류는 점선 목록으로 깔끔하게</p></div>
+   <div class="info"><h2>이 메뉴판의 포인트</h2><ul><li>화로 위에서 꼬치가 구워지는 장면을 상단에 크게 그려 가게 분위기를 바로 전달</li><li>대표 꼬치 두 가지는 어두운 목패로 강조해 시선이 먼저 가게</li><li>영업시간 · 원산지 · 예약 연락처를 하단 띠에 정리</li></ul></div>
+  </div>
+ </div>
+</div>
+<div class="bar"><p>우리 가게 메뉴판도 이렇게 만들고 싶다면</p><a class="cta" href="https://design.shoponph.online/#inquiry">이 디자인으로 상담하기</a></div>
+</body>
+</html>
