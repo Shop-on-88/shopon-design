@@ -1,0 +1,692 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>담아둠 셀프스토리지 · 12월 첫 달 50% 할인</title>
+<meta name="description" content="0.5평 락커부터 3평 창고까지. 24시간 출입, 항온항습, 개별 출입 비밀번호. 12월 신규 계약 첫 달 50% 할인, 방문 상담·견적 무료.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Big+Shoulders+Display:wght@700;800;900&family=Big+Shoulders+Stencil+Display:wght@800;900&family=IBM+Plex+Sans+KR:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+ --or:#ff6b1a;--or2:#d84f00;--or3:#ffe2cf;
+ --ink:#141414;--steel:#1c1d1f;--steel2:#2a2c2f;--steel3:#3a3d41;
+ --con:#d7d4ce;--con2:#e7e4df;--con3:#bdb9b2;--mute:#55524c;--line:rgba(20,20,20,.16);
+ --yel:#f2c200;
+ --noise:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .16 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+ --tape:repeating-linear-gradient(-45deg,var(--yel) 0 14px,var(--ink) 14px 28px);
+ --tape-s:repeating-linear-gradient(-45deg,var(--yel) 0 5px,var(--ink) 5px 10px);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'IBM Plex Sans KR',sans-serif;color:var(--ink);background:var(--con) var(--noise);word-break:keep-all;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+h1,h2,h3,.bh{font-family:'Black Han Sans',sans-serif;font-weight:400;line-height:1.15;letter-spacing:-.01em}
+.num{font-family:'Big Shoulders Display',sans-serif;font-weight:800;letter-spacing:.01em}
+.stn{font-family:'Big Shoulders Stencil Display','Big Shoulders Display',sans-serif;font-weight:900}
+a{color:inherit;text-decoration:none}
+button{font-family:inherit}
+.wrap{max-width:1240px;margin:0 auto;padding:0 32px}
+svg.i{width:26px;height:26px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;flex:none}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;height:56px;padding:0 26px;font-weight:700;font-size:16px;border:0;cursor:pointer;transition:transform .15s,box-shadow .15s;border-radius:4px;white-space:nowrap}
+.btn.o{background:var(--or);color:var(--ink);box-shadow:4px 4px 0 var(--ink)}
+.btn.o:hover{transform:translate(-2px,-2px);box-shadow:6px 6px 0 var(--ink)}
+.btn.k{background:var(--ink);color:#fff}
+.btn.l{background:transparent;color:var(--ink);border:2px solid var(--ink)}
+.eyebrow{display:inline-flex;align-items:center;gap:10px;font-size:13px;font-weight:700;letter-spacing:.16em;text-transform:uppercase}
+.eyebrow::before{content:'';width:30px;height:10px;background:var(--tape-s);border:1px solid var(--ink)}
+.sec{padding:110px 0;position:relative}
+.sh{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:end;margin-bottom:54px}
+.sh h2{font-size:clamp(32px,3.8vw,52px);margin-top:14px}
+.sh p{font-size:17px;color:var(--mute);max-width:520px;justify-self:end}
+
+/* top strip */
+.strip{background:var(--ink);color:#fff;font-size:14px;font-weight:500}
+.strip .wrap{display:flex;align-items:center;justify-content:center;gap:14px;height:40px}
+.strip b{color:var(--or);font-weight:700}
+.strip i{width:40px;height:10px;background:repeating-linear-gradient(-45deg,var(--yel) 0 5px,transparent 5px 10px);display:inline-block}
+header{position:sticky;top:0;z-index:30;background:rgba(231,228,223,.92);backdrop-filter:blur(8px);border-bottom:2px solid var(--ink)}
+header .wrap{display:flex;align-items:center;justify-content:space-between;height:74px;gap:24px}
+.logo{display:flex;align-items:center;gap:12px}
+.logo svg{width:44px;height:44px}
+.logo b{font-family:'Black Han Sans';font-weight:400;font-size:24px;display:block;line-height:1}
+.logo small{display:block;font-size:12px;letter-spacing:.2em;font-weight:700;color:var(--mute);margin-top:4px}
+nav{display:flex;gap:30px;font-size:15px;font-weight:600}
+nav a{position:relative}
+nav a:hover{color:var(--or2)}
+header .btn{height:46px;font-size:15px;padding:0 20px;box-shadow:3px 3px 0 var(--ink)}
+
+/* hero */
+.hero{position:relative;overflow:hidden;padding:70px 0 0;background:linear-gradient(180deg,var(--con2),var(--con) 70%) ,var(--noise)}
+.hero::before{content:'';position:absolute;inset:0;background:var(--noise);opacity:.9;pointer-events:none}
+.hero .grid{position:relative;display:grid;grid-template-columns:1fr 1.05fr;gap:30px;align-items:center}
+.hero .bigno{position:absolute;right:-20px;top:-40px;font-size:300px;line-height:1;color:transparent;-webkit-text-stroke:2px rgba(20,20,20,.07);pointer-events:none;z-index:0}
+.tag{display:inline-flex;align-items:center;gap:10px;background:var(--ink);color:#fff;font-size:14px;font-weight:600;padding:8px 14px 8px 8px}
+.tag span{background:var(--or);color:var(--ink);font-weight:700;padding:2px 8px;font-size:13px}
+.hero h1{font-size:clamp(44px,5.2vw,76px);margin-top:24px;position:relative;z-index:1}
+.hero h1 em{font-style:normal;color:var(--or);-webkit-text-stroke:0;position:relative;display:inline-block}
+.hero h1 em::after{content:'';position:absolute;left:0;right:0;bottom:.06em;height:.12em;background:var(--ink);opacity:.9;z-index:-1}
+.lead{font-size:19px;color:#34322e;margin-top:22px;max-width:540px}
+.offer{display:grid;grid-template-columns:auto 1fr;margin-top:30px;max-width:560px;background:#fff;border:2px solid var(--ink);box-shadow:6px 6px 0 var(--ink)}
+.offer .pct{background:var(--or);display:flex;flex-direction:column;justify-content:center;align-items:center;padding:12px 22px;border-right:2px dashed var(--ink)}
+.offer .pct b{font-size:64px;line-height:.9}
+.offer .pct small{font-size:13px;font-weight:700;letter-spacing:.06em}
+.offer ul{list-style:none;padding:16px 20px;display:grid;gap:8px;font-size:15px;font-weight:500}
+.offer li{display:flex;gap:10px;align-items:center}
+.offer li svg{color:var(--or2);width:20px;height:20px}
+.cta{display:flex;flex-wrap:wrap;gap:14px;margin-top:30px}
+.art{position:relative;z-index:1;margin-right:-40px}
+.art svg.iso{display:block;width:100%;height:auto}
+.factbar{position:relative;margin-top:10px;background:var(--ink);color:#fff}
+.factbar .wrap{display:grid;grid-template-columns:repeat(4,1fr)}
+.factbar div.f{display:flex;align-items:center;gap:14px;padding:24px 22px;border-left:1px solid rgba(255,255,255,.14)}
+.factbar div.f:last-child{border-right:1px solid rgba(255,255,255,.14)}
+.factbar svg{color:var(--or);width:30px;height:30px}
+.factbar b{display:block;font-size:16px}
+.factbar small{display:block;font-size:13px;color:#b9b6b0}
+.tapeline{height:14px;background:var(--tape)}
+
+/* sizes */
+.sizes{background:var(--con2) var(--noise)}
+.sgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.scard{background:var(--con);border:2px solid var(--ink);display:flex;flex-direction:column;position:relative}
+.scard .hd{display:flex;align-items:baseline;justify-content:space-between;padding:16px 18px 0}
+.scard .hd .stn{font-size:58px;line-height:1}
+.scard .hd .stn sub{font-family:'Black Han Sans';font-size:22px;vertical-align:baseline;margin-left:2px}
+.scard .hd .code{font-size:13px;font-weight:700;letter-spacing:.12em;color:var(--mute)}
+.scard .pic{margin:6px 14px 0;background:#cbc7c0 var(--noise);border:1px solid var(--line)}
+.scard .pic svg{display:block;width:100%;height:auto}
+.scard .bd{padding:16px 18px 20px}
+.scard h3{font-size:21px}
+.scard p{font-size:14px;color:var(--mute);margin-top:6px}
+.scard ul{list-style:none;margin-top:12px;display:flex;flex-wrap:wrap;gap:6px}
+.scard li{font-size:13px;font-weight:600;padding:3px 9px;border:1.5px solid var(--ink);background:var(--con2)}
+
+/* pricing */
+.price{background:var(--steel);color:#fff;overflow:hidden}
+.price::before{content:'';position:absolute;inset:0;background:var(--noise);opacity:.5;pointer-events:none}
+.price .wrap{position:relative}
+.price .sh p{color:#b9b6b0}
+.pgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.pcard{background:var(--steel2);border:1px solid var(--steel3);position:relative;display:flex;flex-direction:column}
+.pcard .door{height:96px;background:repeating-linear-gradient(180deg,#ff8a45 0 3px,var(--or) 3px 7px,#c94a00 7px 10px);position:relative;display:flex;align-items:center;justify-content:space-between;padding:0 20px;color:var(--ink)}
+.pcard .door .stn{font-size:56px;line-height:1}
+.pcard .door .u{font-family:'Black Han Sans';font-size:22px;background:var(--ink);color:#fff;padding:2px 10px}
+.pcard .door::after{content:'';position:absolute;left:0;right:0;bottom:0;height:8px;background:var(--ink)}
+.pcard .bd{padding:22px 20px 24px;display:flex;flex-direction:column;flex:1}
+.pcard h3{font-size:20px}
+.pcard .fit{font-size:14px;color:#b9b6b0;margin-top:4px}
+.pcard .reg{margin-top:18px;font-size:14px;color:#b9b6b0;display:flex;justify-content:space-between}
+.pcard .reg s{color:#d9d6d0}
+.pcard .now{display:flex;align-items:baseline;gap:6px;margin-top:4px}
+.pcard .now b{font-size:52px;line-height:1;color:var(--or)}
+.pcard .now span{font-size:15px;font-weight:600}
+.calc{margin-top:14px;border:1px dashed rgba(255,255,255,.3);padding:10px 12px;font-size:13px;color:#d9d6d0;display:grid;gap:4px}
+.calc div{display:flex;justify-content:space-between;gap:8px}
+.calc .t{border-top:1px solid rgba(255,255,255,.18);padding-top:5px;color:#fff;font-weight:700}
+.calc .t em{font-style:normal;color:var(--or)}
+.pcard .after{font-size:13px;color:#b9b6b0;margin-top:12px}
+.pcard .btn{margin-top:auto;height:50px;font-size:15px;width:100%;box-shadow:none;border-radius:2px}
+.pcard .sp{height:18px}
+.pcard .btn:hover{transform:none;background:#ff8a45}
+.pick{margin-top:22px;display:grid;grid-template-columns:auto 1fr auto;gap:28px;align-items:center;background:var(--con2) var(--noise);color:var(--ink);padding:24px 30px;border:2px solid var(--ink);position:relative}
+.pick::before{content:'';position:absolute;left:-2px;top:-2px;bottom:-2px;width:14px;background:var(--tape)}
+.pick svg.truck{width:120px;height:auto;margin-left:14px}
+.pick h3{font-size:24px}
+.pick p{font-size:15px;color:var(--mute);margin-top:4px}
+.pick .pr{text-align:right}
+.pick .pr b{font-size:44px;line-height:1}
+.pick .pr small{display:block;font-size:13px;color:var(--mute)}
+.fine{margin-top:16px;font-size:13px;color:#a5a29c}
+
+/* steps */
+.steps{background:var(--con) var(--noise)}
+.stgrid{display:grid;grid-template-columns:repeat(4,1fr);border:2px solid var(--ink);background:var(--con2)}
+.st{padding:30px 26px 32px;border-right:2px solid var(--ink);position:relative}
+.st:last-child{border-right:0}
+.st .stn{font-size:74px;line-height:.9;color:var(--or)}
+.st .stn{-webkit-text-stroke:2px var(--ink)}
+.st h3{font-size:22px;margin-top:16px}
+.st p{font-size:15px;color:var(--mute);margin-top:8px}
+.st .ic{position:absolute;top:30px;right:24px;width:52px;height:52px;border:2px solid var(--ink);border-radius:50%;display:grid;place-items:center;background:#fff}
+.st .ic svg{width:26px;height:26px}
+.st .chip{display:inline-block;margin-top:14px;font-size:13px;font-weight:700;background:var(--ink);color:#fff;padding:3px 10px}
+
+/* features */
+.feat{background:var(--con2) var(--noise)}
+.fwrap{display:grid;grid-template-columns:.9fr 1.1fr;gap:56px;align-items:start}
+.fwrap h2{font-size:clamp(32px,3.8vw,52px);margin-top:14px}
+.fwrap .intro p{font-size:17px;color:var(--mute);margin-top:18px}
+.panel{margin-top:30px;background:var(--ink);color:#fff;padding:22px;display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.panel .g{border:1px solid #3a3d41;padding:14px 16px}
+.panel .g small{font-size:13px;color:#a5a29c;display:block}
+.panel .g b{font-size:40px;line-height:1.05;color:var(--or)}
+.panel .g b span{font-size:20px;color:#fff;margin-left:2px}
+.panel .bar{grid-column:1/-1;font-size:13px;color:#a5a29c}
+.fgrid{display:grid;grid-template-columns:1fr 1fr;gap:0;border-top:2px solid var(--ink);border-left:2px solid var(--ink)}
+.fi{padding:26px 24px;border-right:2px solid var(--ink);border-bottom:2px solid var(--ink);background:var(--con2)}
+.fi svg{width:48px;height:48px;stroke-width:1.6;color:var(--ink)}
+.fi svg .a{stroke:var(--or2)}
+.fi h3{font-size:20px;margin-top:14px}
+.fi p{font-size:14px;color:var(--mute);margin-top:6px}
+
+/* quiz */
+.quiz{background:var(--ink);color:#fff;overflow:hidden}
+.quiz::before{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.045) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.045) 1px,transparent 1px);background-size:40px 40px;pointer-events:none}
+.quiz .wrap{position:relative}
+.quiz .sh p{color:#b9b6b0}
+.qbox{display:grid;grid-template-columns:1.15fr .85fr;gap:0;border:2px solid #fff}
+.qleft{padding:30px;border-right:2px solid #fff;display:flex;flex-direction:column}
+.qnote{margin-top:auto;padding-top:22px;font-size:13px;color:#a5a29c;display:flex;gap:10px;align-items:flex-start}
+.qnote svg{width:18px;height:18px;flex:none;margin-top:2px;color:var(--or)}
+.preset{display:flex;flex-wrap:wrap;gap:8px}
+.preset button{height:42px;padding:0 16px;background:transparent;color:#fff;border:1.5px solid #6b6e72;font-size:14px;font-weight:600;cursor:pointer}
+.preset button.on,.preset button:hover{background:var(--or);color:var(--ink);border-color:var(--or)}
+.qlabel{font-size:13px;letter-spacing:.14em;color:#a5a29c;font-weight:700;margin:24px 0 10px}
+.qlabel:first-child{margin-top:0}
+.items{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.it{display:flex;align-items:center;justify-content:space-between;gap:10px;background:var(--steel2);padding:10px 10px 10px 14px}
+.it .n{font-size:14px;font-weight:600;line-height:1.35}
+.it .n small{display:block;font-size:12px;color:#a5a29c;font-weight:400}
+.stp{display:flex;align-items:center;gap:2px;flex:none}
+.stp button{width:34px;height:34px;border:0;background:#45484c;color:#fff;font-size:18px;cursor:pointer;font-weight:700}
+.stp button:hover{background:var(--or);color:var(--ink)}
+.stp output{width:34px;text-align:center;font-family:'Big Shoulders Display';font-weight:800;font-size:22px}
+.qright{padding:30px;display:flex;flex-direction:column;background:var(--steel)}
+.qright .lbl{font-size:13px;letter-spacing:.14em;color:#a5a29c;font-weight:700}
+.vol{display:flex;align-items:baseline;gap:8px;margin-top:6px}
+.vol b{font-size:46px;line-height:1}
+.vol span{font-size:15px;color:#d9d6d0}
+.rec{margin-top:20px;background:var(--or);color:var(--ink);padding:20px 22px;position:relative}
+.rec small{font-size:13px;font-weight:700;letter-spacing:.1em}
+.rec .r{display:flex;align-items:baseline;gap:10px;margin-top:2px}
+.rec .r .stn{font-size:76px;line-height:.95}
+.rec .r .bh{font-size:26px}
+.rec p{font-size:14px;font-weight:600;margin-top:4px}
+.gauge{margin-top:18px}
+.gauge .tr{height:22px;background:#45484c;position:relative;overflow:hidden}
+.gauge .fl{position:absolute;left:0;top:0;bottom:0;background:var(--tape);transition:width .35s}
+.gauge .lg{display:flex;justify-content:space-between;font-size:13px;color:#a5a29c;margin-top:6px}
+.qprice{margin-top:18px;display:flex;justify-content:space-between;align-items:center;border-top:1px dashed #5a5d61;padding-top:16px;font-size:14px;color:#d9d6d0}
+.qprice b{font-size:30px;color:#fff}
+.qright .btn{margin-top:20px;width:100%}
+
+/* faq */
+.faq{background:var(--con) var(--noise)}
+.fq{display:grid;grid-template-columns:.8fr 1.2fr;gap:56px}
+.fq>div:first-child{position:sticky;top:110px;align-self:start}
+.fq h2{font-size:clamp(32px,3.8vw,52px);margin-top:14px}
+.fq .ask{margin-top:28px;background:var(--con2);border:2px solid var(--ink);padding:22px}
+.fq .ask b{font-size:18px;display:block}
+.fq .ask p{font-size:14px;color:var(--mute);margin-top:4px}
+.fq .ask .c{margin-top:14px;display:grid;gap:8px;font-size:15px;font-weight:600}
+.fq .ask .c span{display:flex;gap:10px;align-items:center}
+.acc{border-top:2px solid var(--ink)}
+.qa{border-bottom:2px solid var(--ink)}
+.qa button{width:100%;display:flex;justify-content:space-between;align-items:center;gap:20px;background:none;border:0;padding:22px 4px;text-align:left;font-size:18px;font-weight:700;cursor:pointer;color:var(--ink);word-break:keep-all}
+.qa button .q{display:flex;gap:16px;align-items:baseline}
+.qa button .q i{font-style:normal;font-family:'Big Shoulders Stencil Display';font-weight:900;font-size:24px;color:var(--or2);flex:none;width:30px}
+.qa .pm{width:32px;height:32px;flex:none;border:2px solid var(--ink);position:relative;transition:.25s}
+.qa .pm::before,.qa .pm::after{content:'';position:absolute;left:50%;top:50%;width:14px;height:2px;background:var(--ink);transform:translate(-50%,-50%)}
+.qa .pm::after{transform:translate(-50%,-50%) rotate(90deg);transition:.25s}
+.qa.open .pm{background:var(--or)}
+.qa.open .pm::after{transform:translate(-50%,-50%) rotate(0)}
+.qa .ans{display:grid;grid-template-rows:0fr;transition:grid-template-rows .3s}
+.qa.open .ans{grid-template-rows:1fr}
+.qa .ans>div{overflow:hidden}
+.qa .ans p{padding:0 50px 22px 50px;font-size:15px;color:var(--mute)}
+
+/* form */
+.apply{background:var(--or);overflow:hidden}
+.apply::before{content:'';position:absolute;inset:0;background:var(--noise);opacity:.6;pointer-events:none}
+.apply .bigno{position:absolute;left:-30px;bottom:0;font-size:340px;line-height:1;color:transparent;-webkit-text-stroke:2px rgba(20,20,20,.14);pointer-events:none}
+.agrid{position:relative;display:grid;grid-template-columns:.9fr 1.1fr;gap:56px;align-items:start}
+.agrid h2{font-size:clamp(36px,4.4vw,60px);margin-top:14px}
+.agrid .intro p{font-size:17px;margin-top:18px;max-width:440px;font-weight:500}
+.ticket{margin-top:30px;background:var(--ink);color:#fff;display:grid;grid-template-columns:1fr auto;max-width:440px}
+.ticket div{padding:18px 20px}
+.ticket div+div{border-left:2px dashed var(--or);display:flex;flex-direction:column;justify-content:center;align-items:center}
+.ticket small{font-size:13px;color:#b9b6b0;display:block}
+.ticket b{font-size:20px;display:block}
+.ticket .stn{font-size:46px;line-height:1;color:var(--or)}
+.fcard{background:var(--con2) var(--noise);border:2px solid var(--ink);box-shadow:10px 10px 0 var(--ink);padding:34px;position:relative}
+.fcard .hd{display:flex;justify-content:space-between;align-items:center;border-bottom:2px solid var(--ink);padding-bottom:14px;margin-bottom:20px}
+.fcard .hd b{font-family:'Black Han Sans';font-weight:400;font-size:24px}
+.fcard .hd span{font-size:13px;font-weight:700;letter-spacing:.12em;color:var(--mute)}
+form{display:grid;gap:16px}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+label.f{font-size:14px;font-weight:700;display:block;margin-bottom:6px}
+input[type=text],input[type=tel],input[type=date],select,textarea{width:100%;height:52px;border:2px solid var(--ink);background:#fff;padding:0 14px;font:500 16px 'IBM Plex Sans KR',sans-serif;color:var(--ink);border-radius:0;appearance:none;-webkit-appearance:none}
+select{background:#fff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='9'%3E%3Cpath d='M1 1l6 6 6-6' stroke='%23141414' stroke-width='2' fill='none'/%3E%3C/svg%3E") no-repeat right 16px center;padding-right:40px}
+input:focus,select:focus{outline:3px solid var(--ink);outline-offset:2px}
+.seg{display:grid;grid-template-columns:1fr 1fr;gap:0;border:2px solid var(--ink)}
+.seg label{display:flex;align-items:center;justify-content:center;height:48px;font-size:15px;font-weight:600;cursor:pointer;background:#fff}
+.seg label+label{border-left:2px solid var(--ink)}
+.seg input{position:absolute;opacity:0;pointer-events:none}
+.seg label:has(input:checked){background:var(--ink);color:#fff}
+.chk{display:flex;gap:10px;align-items:flex-start;font-size:14px;font-weight:500;cursor:pointer}
+.chk input{width:20px;height:20px;accent-color:var(--ink);flex:none;margin-top:2px}
+.err{font-size:13px;color:#b3261e;font-weight:700;min-height:0}
+.fcard .btn{width:100%;height:60px;font-size:17px;box-shadow:none;background:var(--ink);color:#fff}
+.fcard .btn:hover{background:#000;transform:none}
+.done{display:none;text-align:center;padding:10px 0}
+.done.show{display:block}
+.done svg{width:120px;height:auto}
+.done h3{font-size:30px;margin-top:10px}
+.done p{font-size:15px;color:var(--mute);margin-top:8px}
+.done .no{display:inline-block;margin-top:16px;border:2px dashed var(--ink);padding:10px 18px}
+.done .no small{display:block;font-size:13px;color:var(--mute)}
+.done .no b{font-size:34px;line-height:1.1}
+.done .sum{margin:18px auto 0;max-width:360px;text-align:left;font-size:14px;display:grid;gap:6px;border-top:1px solid var(--line);padding-top:14px}
+.done .sum div{display:flex;justify-content:space-between;gap:12px}
+.done .sum span{color:var(--mute)}
+.done button{margin-top:20px;height:46px;font-size:14px}
+
+footer{background:var(--ink);color:#c9c6c0;padding:50px 0 40px;font-size:14px}
+footer .wrap{display:flex;justify-content:space-between;gap:30px;flex-wrap:wrap;align-items:flex-start}
+footer .logo b{color:#fff}
+footer .logo small{color:#8f8c86}
+footer .inf{display:grid;gap:6px}
+footer .inf b{color:#fff}
+footer .cp{width:100%;border-top:1px solid #333;padding-top:20px;font-size:13px;color:#8f8c86}
+
+.mcta{display:none}
+
+@media (max-width:1100px){
+ .sgrid,.pgrid{grid-template-columns:repeat(2,1fr)}
+ .stgrid{grid-template-columns:1fr 1fr}
+ .st:nth-child(2){border-right:0}
+ .st:nth-child(-n+2){border-bottom:2px solid var(--ink)}
+ .hero .grid{grid-template-columns:1fr}
+ .art{margin:0 auto;max-width:640px}
+ nav{display:none}
+}
+@media (max-width:860px){
+ .fwrap,.fq,.agrid,.qbox{grid-template-columns:1fr}
+ .qleft{border-right:0;border-bottom:2px solid #fff}
+ .sh{grid-template-columns:1fr;gap:14px}
+ .sh p{justify-self:start}
+ .factbar .wrap{grid-template-columns:1fr 1fr;padding:0}
+ .factbar div.f{border-left:0;border-bottom:1px solid rgba(255,255,255,.14)}
+ .factbar div.f:nth-child(odd){border-right:1px solid rgba(255,255,255,.14)}
+ .pick{grid-template-columns:1fr;gap:14px}
+ .pick .pr{text-align:left}
+ .pick svg.truck{margin-left:10px}
+}
+@media (max-width:640px){
+ .wrap{padding:0 16px}
+ .strip{font-size:13px}
+ .strip .wrap{height:auto;padding:9px 16px;text-align:center}
+ .strip i{display:none}
+ header .wrap{height:62px}
+ header .btn{display:none}
+ .logo b{font-size:21px}
+ .logo svg{width:38px;height:38px}
+ .sec{padding:72px 0}
+ .hero{padding-top:40px}
+ .hero .bigno{font-size:170px;top:-10px}
+ .hero h1{font-size:40px}
+ .lead{font-size:16px}
+ .offer .pct{padding:10px 14px}
+ .offer .pct b{font-size:48px}
+ .offer ul{padding:12px 14px;font-size:14px}
+ .cta .btn{flex:1 1 100%}
+ .art{margin:10px -12px 0}
+ .factbar div.f{padding:18px 14px;gap:10px}
+ .factbar b{font-size:15px}
+ .factbar svg{width:26px;height:26px}
+ .sgrid,.pgrid{grid-template-columns:1fr}
+ .stgrid{grid-template-columns:1fr}
+ .st{border-right:0!important;border-bottom:2px solid var(--ink)}
+ .st:last-child{border-bottom:0}
+ .fgrid{grid-template-columns:1fr}
+ .fi{display:grid;grid-template-columns:48px 1fr;gap:2px 16px;padding:22px 18px}
+ .fi svg{grid-row:1/3}
+ .fi h3{margin-top:2px}
+ .fi p{margin-top:0}
+ .pcard .door{height:72px}
+ .pcard .door .stn{font-size:46px}
+ .fq>div:first-child{position:static}
+ .scard .pic svg{max-width:300px;margin:0 auto}
+ .panel .g b{font-size:32px}
+ .qleft,.qright{padding:20px 16px}
+ .items{grid-template-columns:1fr}
+ .qa button{font-size:16px;padding:18px 2px}
+ .qa .ans p{padding:0 8px 18px 46px}
+ .fcard{padding:22px 18px;box-shadow:6px 6px 0 var(--ink)}
+ .two{grid-template-columns:1fr}
+ .pick{padding:22px 18px 22px 30px}
+ .apply .bigno{font-size:200px;bottom:10px}
+ body{padding-bottom:76px}
+ .mcta{display:grid;transform:translateY(110%);visibility:hidden;transition:transform .3s,visibility .3s;grid-template-columns:auto 1fr;gap:8px;position:fixed;left:0;right:0;bottom:0;z-index:40;padding:10px 12px calc(10px + env(safe-area-inset-bottom));background:var(--ink);border-top:4px solid var(--or)}
+ .mcta.show{transform:none;visibility:visible}
+ .mcta a{height:52px;display:flex;align-items:center;justify-content:center;gap:8px;font-weight:700;font-size:15px}
+ .mcta .call{background:#2a2c2f;color:#fff;padding:0 16px}
+ .mcta .go{background:var(--or);color:var(--ink)}
+ .mcta .go b{font-family:'Big Shoulders Display';font-weight:900;font-size:20px}
+}
+</style>
+</head>
+<body>
+
+<div class="strip"><div class="wrap"><i></i><span>12월 신규 계약 한정 · <b>첫 달 이용료 50% 할인</b> · 방문 상담·견적 무료</span><i></i></div></div>
+
+<header><div class="wrap">
+ <a href="#top" class="logo" aria-label="담아둠 셀프스토리지">
+  <svg viewBox="0 0 44 44" aria-hidden="true"><rect x="2" y="6" width="40" height="36" fill="#141414"/><path d="M2 6L22 0l20 6" fill="#141414"/><rect x="8" y="14" width="28" height="28" fill="#ff6b1a"/><path d="M8 18h28M8 22h28M8 26h28M8 30h28M8 34h28" stroke="#c94a00" stroke-width="1.6"/><rect x="8" y="36" width="28" height="6" fill="#2a2a2a"/><rect x="18" y="31" width="8" height="3" fill="#141414"/></svg>
+  <span><b>담아둠</b><small>SELF STORAGE</small></span>
+ </a>
+ <nav><a href="#sizes">크기 안내</a><a href="#price">요금</a><a href="#how">이용 방법</a><a href="#feat">시설</a><a href="#quiz">크기 추천</a><a href="#faq">자주 묻는 질문</a></nav>
+ <a href="#apply" class="btn o">무료 방문 상담 신청</a>
+</div></header>
+
+<section class="hero" id="top">
+ <div class="wrap grid">
+  <div class="stn bigno" aria-hidden="true">A-102</div>
+  <div class="copy">
+   <span class="tag"><span>12월 한정</span>신규 계약 첫 달 반값</span>
+   <h1>집이 좁은 게 아니라<br><em>짐이 많은</em> 거예요.</h1>
+   <p class="lead">계절 옷, 캠핑 장비, 이사 사이 살림까지. 0.5평 락커부터 3평 창고까지 필요한 만큼만 빌려 쓰세요. 24시간 출입, 항온항습 관리, 내 칸만 열리는 개별 비밀번호.</p>
+   <div class="offer">
+    <div class="pct"><b class="num">50%</b><small>첫 달 이용료</small></div>
+    <ul>
+     <li><svg class="i" viewBox="0 0 24 24"><path d="M4 12l5 5L20 6"/></svg>12월 31일까지 신규 계약 시 적용</li>
+     <li><svg class="i" viewBox="0 0 24 24"><path d="M4 12l5 5L20 6"/></svg>방문 상담·짐 양 견적 무료</li>
+     <li><svg class="i" viewBox="0 0 24 24"><path d="M4 12l5 5L20 6"/></svg>보증금 없이 월 단위 계약</li>
+    </ul>
+   </div>
+   <div class="cta">
+    <a href="#apply" class="btn o">첫 달 50% 받고 상담 신청 <svg class="i" viewBox="0 0 24 24" style="width:20px;height:20px"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+    <a href="#quiz" class="btn l">내 짐에 맞는 크기 찾기</a>
+   </div>
+  </div>
+  <div class="art"><svg class="iso" viewBox="0 0 660 600" role="img" aria-label="아이소메트릭 창고 복도: 주황색 롤업 셔터가 달린 보관함, 박스를 실은 핸드트럭">
+<defs>
+<filter id="soft" x="-30%" y="-30%" width="160%" height="160%"><feGaussianBlur stdDeviation="7"/></filter>
+<filter id="grain"><feTurbulence type="fractalNoise" baseFrequency="1.1" numOctaves="2" seed="4"/><feColorMatrix values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 .22 0"/><feComposite in2="SourceGraphic" operator="in"/></filter>
+<pattern id="corr" width="10" height="8" patternUnits="userSpaceOnUse"><rect width="10" height="8" fill="#ff6b1a"/><rect width="10" height="2.4" fill="#ffa266"/><rect y="5.2" width="10" height="2.8" fill="#c94a00"/></pattern>
+<pattern id="corrD" width="10" height="8" patternUnits="userSpaceOnUse"><rect width="10" height="8" fill="#e85a0c"/><rect width="10" height="2.4" fill="#ff9454"/><rect y="5.2" width="10" height="2.8" fill="#a83c00"/></pattern>
+<pattern id="blk" width="64" height="32" patternUnits="userSpaceOnUse"><rect width="64" height="32" fill="#b9b5ae"/><path d="M0 .5H64M0 16.5H64M.5 0V16M32.5 16V32" stroke="#9d9992" stroke-width="1.2"/></pattern>
+<pattern id="blk2" width="64" height="32" patternUnits="userSpaceOnUse"><rect width="64" height="32" fill="#cfcbc4"/><path d="M0 .5H64M0 16.5H64M.5 0V16M32.5 16V32" stroke="#b3afa8" stroke-width="1.2"/></pattern>
+<pattern id="tile" width="80" height="80" patternUnits="userSpaceOnUse"><rect width="80" height="80" fill="#a9a6a0"/><path d="M.5 0V80M0 .5H80" stroke="#96938d" stroke-width="1.5"/></pattern>
+<pattern id="caut" width="22" height="22" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect width="22" height="22" fill="#f2c200"/><rect width="11" height="22" fill="#151515"/></pattern>
+<linearGradient id="doorSh" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#000" stop-opacity=".18"/><stop offset=".35" stop-color="#000" stop-opacity="0"/><stop offset="1" stop-color="#000" stop-opacity=".22"/></linearGradient>
+<linearGradient id="inside" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#121212"/><stop offset="1" stop-color="#3a3632"/></linearGradient>
+<radialGradient id="glow" cx=".5" cy="0" r=".9"><stop offset="0" stop-color="#fff6dc" stop-opacity=".55"/><stop offset="1" stop-color="#fff6dc" stop-opacity="0"/></radialGradient>
+<radialGradient id="floorFade" cx=".56" cy=".5" r=".52"><stop offset=".6" stop-color="#fff"/><stop offset="1" stop-color="#000"/></radialGradient>
+<mask id="fm"><rect width="660" height="600" fill="url(#floorFade)"/></mask>
+</defs>
+<g mask="url(#fm)"><g transform="matrix(0.8660254 0.5 -0.8660254 0.5 228 262)"><rect x="0" y="0" width="516" height="360" fill="url(#tile)"/><rect x="0" y="0" width="516" height="360" fill="#000" opacity=".06"/><rect x="0" y="40" width="476" height="13" fill="url(#caut)" opacity=".92"/><rect x="40" y="0" width="13" height="40" fill="url(#caut)" opacity="0"/><path d="M0 0H476" stroke="#6e6b66" stroke-width="5"/></g></g>
+<g transform="matrix(0.8660254 -0.5 0 1 228 262)"><rect x="-200" y="-228" width="200" height="228" fill="url(#blk2)"/><rect x="-200" y="-228" width="200" height="228" fill="#fff" opacity=".08"/><rect x="-200" y="-14" width="200" height="14" fill="#2a2a2a"/><rect x="-168" y="-196" width="112" height="70" fill="#141414"/><text x="-112" y="-148" text-anchor="middle" font-family="Big Shoulders Stencil Display, Oswald, sans-serif" font-weight="800" font-size="44" fill="#ff6b1a">24H</text><rect x="-168" y="-136" width="112" height="10" fill="url(#caut)"/><rect x="-120" y="-112" width="40" height="56" rx="4" fill="#2b2d30"/><rect x="-114" y="-106" width="28" height="10" fill="#7ee0a1" opacity=".85"/><rect x="-114" y="-91" width="7" height="6" rx="1" fill="#8b8f94"/><rect x="-104" y="-91" width="7" height="6" rx="1" fill="#8b8f94"/><rect x="-94" y="-91" width="7" height="6" rx="1" fill="#8b8f94"/><rect x="-114" y="-82" width="7" height="6" rx="1" fill="#8b8f94"/><rect x="-104" y="-82" width="7" height="6" rx="1" fill="#8b8f94"/><rect x="-94" y="-82" width="7" height="6" rx="1" fill="#8b8f94"/><rect x="-114" y="-73" width="7" height="6" rx="1" fill="#8b8f94"/><rect x="-104" y="-73" width="7" height="6" rx="1" fill="#8b8f94"/><rect x="-94" y="-73" width="7" height="6" rx="1" fill="#8b8f94"/><path d="M-60 -60v40" stroke="#6f6b65" stroke-width="3"/></g>
+<g transform="matrix(0.8660254 0.5 0 1 228 262)"><rect x="0" y="-228" width="476" height="228" fill="url(#blk)"/><rect x="0" y="-228" width="476" height="16" fill="#2a2b2d"/><rect x="0" y="-14" width="476" height="14" fill="#2a2a2a"/><rect x="5.0" y="-164" width="109.0" height="164" fill="#3c3d3f"/><rect x="9.0" y="-160" width="101.0" height="160" fill="#55575a"/><rect x="12.0" y="-156" width="95.0" height="156" fill="url(#corr)"/><rect x="12.0" y="-156" width="95.0" height="156" fill="url(#doorSh)"/><rect x="10.0" y="-10" width="99.0" height="10" fill="#2c2c2c"/><rect x="45.5" y="-26" width="28" height="7" rx="2" fill="#2a2a2a"/><rect x="91.0" y="-34" width="9" height="18" rx="1.5" fill="#d5d7d9"/><circle cx="95.5" cy="-21" r="2.5" fill="#333"/><text x="59.5" y="-92" text-anchor="middle" font-family="Big Shoulders Stencil Display, Oswald, sans-serif" font-weight="800" font-size="40" fill="#141414" opacity=".88">101</text><rect x="25.5" y="-196" width="68" height="26" fill="#efece6"/><text x="59.5" y="-176" text-anchor="middle" font-family="Big Shoulders Stencil Display, Oswald, sans-serif" font-weight="800" font-size="22" fill="#141414">A-101</text><rect x="124.0" y="-164" width="109.0" height="164" fill="#3c3d3f"/><rect x="128.0" y="-160" width="101.0" height="160" fill="#55575a"/><rect x="131.0" y="-84" width="95.0" height="84" fill="url(#inside)"/><rect x="137.0" y="-36" width="40" height="36" fill="#b98450"/><rect x="155.0" y="-36" width="4" height="14.4" fill="#e6d2a8" opacity=".8"/><rect x="179.0" y="-30" width="36" height="30" fill="#a7743f"/><rect x="195.0" y="-30" width="4" height="12.0" fill="#e6d2a8" opacity=".8"/><rect x="141.0" y="-62" width="32" height="26" fill="#c99559"/><rect x="155.0" y="-62" width="4" height="10.4" fill="#e6d2a8" opacity=".8"/><rect x="185.0" y="-52" width="24" height="22" fill="#8f6234"/><rect x="195.0" y="-52" width="4" height="8.8" fill="#e6d2a8" opacity=".8"/><rect x="131.0" y="-84" width="95.0" height="30" fill="url(#glow)"/><rect x="131.0" y="-156" width="95.0" height="72" fill="url(#corr)"/><rect x="129.0" y="-90" width="99.0" height="8" fill="#2c2c2c"/><rect x="144.5" y="-196" width="68" height="26" fill="#efece6"/><text x="178.5" y="-176" text-anchor="middle" font-family="Big Shoulders Stencil Display, Oswald, sans-serif" font-weight="800" font-size="22" fill="#141414">A-102</text><rect x="243.0" y="-164" width="109.0" height="164" fill="#3c3d3f"/><rect x="247.0" y="-160" width="101.0" height="160" fill="#55575a"/><rect x="250.0" y="-156" width="95.0" height="156" fill="url(#corr)"/><rect x="250.0" y="-156" width="95.0" height="156" fill="url(#doorSh)"/><rect x="248.0" y="-10" width="99.0" height="10" fill="#2c2c2c"/><rect x="283.5" y="-26" width="28" height="7" rx="2" fill="#2a2a2a"/><rect x="329.0" y="-34" width="9" height="18" rx="1.5" fill="#d5d7d9"/><circle cx="333.5" cy="-21" r="2.5" fill="#333"/><text x="297.5" y="-92" text-anchor="middle" font-family="Big Shoulders Stencil Display, Oswald, sans-serif" font-weight="800" font-size="40" fill="#141414" opacity=".88">103</text><rect x="263.5" y="-196" width="68" height="26" fill="#efece6"/><text x="297.5" y="-176" text-anchor="middle" font-family="Big Shoulders Stencil Display, Oswald, sans-serif" font-weight="800" font-size="22" fill="#141414">A-103</text><rect x="362.0" y="-164" width="109.0" height="164" fill="#3c3d3f"/><rect x="366.0" y="-160" width="101.0" height="160" fill="#55575a"/><rect x="369.0" y="-156" width="95.0" height="156" fill="url(#corr)"/><rect x="369.0" y="-156" width="95.0" height="156" fill="url(#doorSh)"/><rect x="367.0" y="-10" width="99.0" height="10" fill="#2c2c2c"/><rect x="402.5" y="-26" width="28" height="7" rx="2" fill="#2a2a2a"/><rect x="448.0" y="-34" width="9" height="18" rx="1.5" fill="#d5d7d9"/><circle cx="452.5" cy="-21" r="2.5" fill="#333"/><text x="416.5" y="-92" text-anchor="middle" font-family="Big Shoulders Stencil Display, Oswald, sans-serif" font-weight="800" font-size="40" fill="#141414" opacity=".88">104</text><rect x="382.5" y="-196" width="68" height="26" fill="#efece6"/><text x="416.5" y="-176" text-anchor="middle" font-family="Big Shoulders Stencil Display, Oswald, sans-serif" font-weight="800" font-size="22" fill="#141414">A-104</text><g transform="translate(394.5 -66) rotate(-4)"><rect width="44" height="30" fill="#fbf7ee"/><rect width="44" height="7" fill="#f2c200"/><path d="M8 15h28M8 22h20" stroke="#333" stroke-width="2"/></g></g>
+<path d="M228.0 262.0V34.0" stroke="#000" stroke-opacity=".25" stroke-width="2"/>
+<polygon points="228.0,34.0 640.2,272.0 648.9,267.0 236.7,29.0" fill="#3a3b3d" />
+<polygon points="228.0,34.0 54.8,134.0 46.1,129.0 219.3,29.0" fill="#444547" />
+<g transform="translate(228.0 62.0)"><rect x="-6" y="-10" width="12" height="8" fill="#2b2b2b"/><path d="M-13 -2a13 11 0 0 0 26 0z" fill="#1d1d1d"/><circle cx="2" cy="4" r="3.4" fill="#4b5d73"/><circle cx="3" cy="3" r="1.2" fill="#c8dcff"/></g>
+<polygon points="515.5,484.0 595.2,530.0 529.4,568.0 449.7,522.0" fill="#000" opacity="0.28" filter="url(#soft)"/>
+<polygon points="394.3,462.0 467.0,504.0 404.7,540.0 331.9,498.0" fill="#000" opacity="0.28" filter="url(#soft)"/>
+<polygon points="150.1,343.0 234.9,392.0 163.9,433.0 79.0,384.0" fill="#000" opacity="0.28" filter="url(#soft)"/>
+<polygon points="330.2,349.0 382.2,379.0 349.2,398.0 297.3,368.0" fill="#000" opacity="0.22" filter="url(#soft)"/>
+<polygon points="311.1,366.0 345.8,386.0 345.8,320.0 311.1,300.0" fill="#2e4a69" /><polygon points="364.8,375.0 345.8,386.0 345.8,320.0 364.8,309.0" fill="#203650" /><polygon points="330.2,289.0 364.8,309.0 345.8,320.0 311.1,300.0" fill="#3b5878" /><polygon points="322.6,293.4 357.2,313.4 353.4,315.6 318.8,295.6" fill="#203650" opacity=".9"/><polygon points="357.2,313.4 353.4,315.6 353.4,336.7 357.2,334.5" fill="#203650" opacity=".85"/><path d="M311.1,300.0L345.8,320.0L364.8,309.0" stroke="#fff" stroke-opacity=".35" stroke-width="1.2" fill="none"/>
+<path d="M330.0 304.5v-14h16v14" stroke="#1a1a1a" stroke-width="3" fill="none"/>
+<polygon points="461.8,519.0 529.4,558.0 529.4,500.0 461.8,461.0" fill="#c8915a" /><polygon points="584.8,526.0 529.4,558.0 529.4,500.0 584.8,468.0" fill="#a87240" /><polygon points="517.3,429.0 584.8,468.0 529.4,500.0 461.8,461.0" fill="#e6b980" /><polygon points="493.9,442.5 561.4,481.5 552.8,486.5 485.2,447.5" fill="#d9c39a" opacity=".9"/><polygon points="561.4,481.5 552.8,486.5 552.8,505.1 561.4,500.1" fill="#d9c39a" opacity=".85"/><path d="M461.8,461.0L529.4,500.0L584.8,468.0" stroke="#fff" stroke-opacity=".35" stroke-width="1.2" fill="none"/><g transform="matrix(0.8660254 0.5 0 1 461.8 519.0)"><rect x="9.4" y="-36.0" width="26.5" height="15.1" fill="#fbf4e6" opacity=".85"/><path d="M13.4 -24.9h15.6M13.4 -30.2h10.9" stroke="#7a5a35" stroke-width="1.6"/></g>
+<polygon points="472.2,461.0 525.9,492.0 525.9,448.0 472.2,417.0" fill="#cf9d62" /><polygon points="570.9,466.0 525.9,492.0 525.9,448.0 570.9,422.0" fill="#ae7a45" /><polygon points="517.3,391.0 570.9,422.0 525.9,448.0 472.2,417.0" fill="#ecc58f" /><polygon points="499.1,401.5 552.8,432.5 544.1,437.5 490.4,406.5" fill="#d9c39a" opacity=".9"/><polygon points="552.8,432.5 544.1,437.5 544.1,451.6 552.8,446.6" fill="#d9c39a" opacity=".85"/><path d="M472.2,417.0L525.9,448.0L570.9,422.0" stroke="#fff" stroke-opacity=".35" stroke-width="1.2" fill="none"/><g transform="matrix(0.8660254 0.5 0 1 472.2 461.0)"><rect x="7.4" y="-27.3" width="21.1" height="11.4" fill="#fbf4e6" opacity=".85"/><path d="M11.4 -18.9h12.4M11.4 -22.9h8.7" stroke="#7a5a35" stroke-width="1.6"/></g>
+<polygon points="482.6,417.0 522.4,440.0 522.4,406.0 482.6,383.0" fill="#c38a52" /><polygon points="557.1,420.0 522.4,440.0 522.4,406.0 557.1,386.0" fill="#9e6a38" /><polygon points="517.3,363.0 557.1,386.0 522.4,406.0 482.6,383.0" fill="#e0b37a" /><polygon points="503.4,371.0 543.2,394.0 536.3,398.0 496.5,375.0" fill="#d9c39a" opacity=".9"/><polygon points="543.2,394.0 536.3,398.0 536.3,408.9 543.2,404.9" fill="#d9c39a" opacity=".85"/><path d="M482.6,383.0L522.4,406.0L557.1,386.0" stroke="#fff" stroke-opacity=".35" stroke-width="1.2" fill="none"/>
+<path d="M401.2 462.0L411.6 284.0" stroke="#1b1b1b" stroke-width="6" stroke-linecap="round"/><path d="M451.4 491.0L461.8 313.0" stroke="#1b1b1b" stroke-width="6" stroke-linecap="round"/><path d="M411.6 284.0Q439.3 268.0 461.8 313.0" stroke="#1b1b1b" stroke-width="6" fill="none" stroke-linecap="round"/><path d="M404.8 403.9L455.1 432.9" stroke="#2b2b2b" stroke-width="4"/><path d="M408.5 341.8L458.7 370.8" stroke="#2b2b2b" stroke-width="4"/>
+<g transform="matrix(-0.8660254 0.5 0 -1 486.1 411.0)"><circle cx="100" cy="17" r="17" fill="#121212"/><circle cx="100" cy="17" r="8" fill="#8a8d91"/><circle cx="100" cy="17" r="3" fill="#2a2a2a"/></g>
+<polygon points="399.5,461.0 454.9,493.0 399.5,525.0 344.0,493.0" fill="#2e2e2e" />
+<polygon points="344.0,497.0 399.5,529.0 399.5,525.0 344.0,493.0" fill="#111" />
+<polygon points="352.7,492.0 401.2,520.0 401.2,464.0 352.7,436.0" fill="#cd9a5f" /><polygon points="448.0,493.0 401.2,520.0 401.2,464.0 448.0,437.0" fill="#ab7643" /><polygon points="399.5,409.0 448.0,437.0 401.2,464.0 352.7,436.0" fill="#ecc28a" /><polygon points="380.4,420.0 428.9,448.0 420.3,453.0 371.8,425.0" fill="#d9c39a" opacity=".9"/><polygon points="428.9,448.0 420.3,453.0 420.3,470.9 428.9,465.9" fill="#d9c39a" opacity=".85"/><path d="M352.7,436.0L401.2,464.0L448.0,437.0" stroke="#fff" stroke-opacity=".35" stroke-width="1.2" fill="none"/><g transform="matrix(0.8660254 0.5 0 1 352.7 492.0)"><rect x="6.7" y="-34.7" width="19.0" height="14.6" fill="#fbf4e6" opacity=".85"/><path d="M10.7 -24.1h11.2M10.7 -29.1h7.8" stroke="#7a5a35" stroke-width="1.6"/></g>
+<polygon points="361.4,435.0 402.9,459.0 402.9,413.0 361.4,389.0" fill="#d6a86e" /><polygon points="441.0,437.0 402.9,459.0 402.9,413.0 441.0,391.0" fill="#b38250" /><polygon points="399.5,367.0 441.0,391.0 402.9,413.0 361.4,389.0" fill="#f0d39f" /><polygon points="384.2,375.8 425.8,399.8 418.2,404.2 376.6,380.2" fill="#d9c39a" opacity=".9"/><polygon points="425.8,399.8 418.2,404.2 418.2,418.9 425.8,414.5" fill="#d9c39a" opacity=".85"/><path d="M361.4,389.0L402.9,413.0L441.0,391.0" stroke="#fff" stroke-opacity=".35" stroke-width="1.2" fill="none"/><g transform="matrix(0.8660254 0.5 0 1 361.4 435.0)"><rect x="5.8" y="-28.5" width="16.3" height="12.0" fill="#fbf4e6" opacity=".85"/><path d="M9.8 -19.8h9.6M9.8 -23.9h6.7" stroke="#7a5a35" stroke-width="1.6"/></g>
+<g transform="matrix(-0.8660254 0.5 0 -1 546.7 446.0)"><circle cx="100" cy="17" r="17" fill="#121212"/><circle cx="100" cy="17" r="8" fill="#8a8d91"/><circle cx="100" cy="17" r="3" fill="#2a2a2a"/></g>
+<polygon points="91.2,381.0 163.9,423.0 163.9,375.0 91.2,333.0" fill="#c8915a" /><polygon points="224.5,388.0 163.9,423.0 163.9,375.0 224.5,340.0" fill="#a87240" /><polygon points="151.8,298.0 224.5,340.0 163.9,375.0 91.2,333.0" fill="#e6b980" /><polygon points="125.8,313.0 198.6,355.0 189.9,360.0 117.1,318.0" fill="#d9c39a" opacity=".9"/><polygon points="198.6,355.0 189.9,360.0 189.9,375.4 198.6,370.4" fill="#d9c39a" opacity=".85"/><path d="M91.2,333.0L163.9,375.0L224.5,340.0" stroke="#fff" stroke-opacity=".35" stroke-width="1.2" fill="none"/><g transform="matrix(0.8660254 0.5 0 1 91.2 381.0)"><rect x="10.1" y="-29.8" width="28.6" height="12.5" fill="#fbf4e6" opacity=".85"/><path d="M14.1 -20.6h16.8M14.1 -25.0h11.8" stroke="#7a5a35" stroke-width="1.6"/></g>
+<polygon points="103.3,334.0 158.7,366.0 158.7,326.0 103.3,294.0" fill="#cf9d62" /><polygon points="207.2,338.0 158.7,366.0 158.7,326.0 207.2,298.0" fill="#ae7a45" /><polygon points="151.8,266.0 207.2,298.0 158.7,326.0 103.3,294.0" fill="#ecc58f" /><polygon points="131.9,277.5 187.3,309.5 178.6,314.5 123.2,282.5" fill="#d9c39a" opacity=".9"/><polygon points="187.3,309.5 178.6,314.5 178.6,327.3 187.3,322.3" fill="#d9c39a" opacity=".85"/><path d="M103.3,294.0L158.7,326.0L207.2,298.0" stroke="#fff" stroke-opacity=".35" stroke-width="1.2" fill="none"/><g transform="matrix(0.8660254 0.5 0 1 103.3 334.0)"><rect x="7.7" y="-24.8" width="21.8" height="10.4" fill="#fbf4e6" opacity=".85"/><path d="M11.7 -17.2h12.8M11.7 -20.8h9.0" stroke="#7a5a35" stroke-width="1.6"/></g>
+</svg></div>
+ </div>
+ <div class="factbar"><div class="wrap">
+  <div class="f"><svg class="i" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><div><b>24시간 출입</b><small>새벽·주말에도 내 일정대로</small></div></div>
+  <div class="f"><svg class="i" viewBox="0 0 24 24"><path d="M10 14.5V5a2 2 0 1 1 4 0v9.5a4 4 0 1 1-4 0z"/><path d="M12 11v6"/><path d="M18 5h3M18 9h3"/></svg><div><b>항온항습 관리</b><small>온도·습도 설정 범위로 운영</small></div></div>
+  <div class="f"><svg class="i" viewBox="0 0 24 24"><rect x="5" y="3" width="14" height="18" rx="2"/><path d="M9 8h6M9 12h.01M12 12h.01M15 12h.01M9 15h.01M12 15h.01M15 15h.01"/></svg><div><b>개별 출입 비밀번호</b><small>계약 칸별로 따로 발급</small></div></div>
+  <div class="f"><svg class="i" viewBox="0 0 24 24"><path d="M3 7l12-3 2 6-12 3z"/><path d="M8 12l1 4h-5M17 7l4-1v5l-3 1"/></svg><div><b>CCTV 녹화 운영</b><small>출입구·복도 구역별 설치</small></div></div>
+ </div></div>
+ <div class="tapeline"></div>
+</section>
+
+<section class="sec sizes" id="sizes"><div class="wrap">
+ <div class="sh"><div><span class="eyebrow">Size guide</span><h2>얼마나 들어갈까?<br>크기별로 그려 봤어요</h2></div><p>정면에서 본 실제 비율 그림입니다. 눈금 1칸이 50cm예요. 깊이까지 쓰면 그림보다 조금 더 들어갑니다.</p></div>
+ <div class="sgrid">
+  <article class="scard"><div class="hd"><span class="stn">0.5<sub>평</sub></span><span class="code">LOCKER</span></div><div class="pic"><svg viewBox="-8 52 238 180" aria-hidden="true"><defs><pattern id="corrS" width="8" height="6" patternUnits="userSpaceOnUse"><rect width="8" height="6" fill="#ff6b1a"/><rect width="8" height="2" fill="#ffa266"/><rect y="4" width="8" height="2" fill="#c94a00"/></pattern></defs><rect x="0" y="214" width="230" height="16" fill="#b3afa8"/><path d="M0 214H230" stroke="#141414" stroke-width="2"/><path d="M24 214V102" stroke="#141414" stroke-width="1.5"/><path d="M18 214.0H28" stroke="#141414" stroke-width="1.5"/><path d="M21 186.0H28" stroke="#141414" stroke-width="1.5"/><path d="M18 158.0H28" stroke="#141414" stroke-width="1.5"/><text x="14" y="162.0" font-size="12" text-anchor="end" font-family="IBM Plex Sans KR, sans-serif" font-weight="700" fill="#141414">1m</text><path d="M21 130.0H28" stroke="#141414" stroke-width="1.5"/><path d="M18 102.0H28" stroke="#141414" stroke-width="1.5"/><text x="14" y="106.0" font-size="12" text-anchor="end" font-family="IBM Plex Sans KR, sans-serif" font-weight="700" fill="#141414">2m</text><rect x="42" y="85.2" width="140.0" height="128.8" fill="#8f9296"/><rect x="46" y="87.4" width="67.2" height="56.0" fill="url(#corrS)" opacity=".55"/><rect x="119.2" y="87.4" width="61.6" height="56.0" fill="url(#corrS)" opacity=".55"/><rect x="119.2" y="146.8" width="61.6" height="67.2" fill="url(#corrS)" opacity=".55"/><text x="79.6" y="109.8" text-anchor="middle" font-size="18" font-family="Big Shoulders Stencil Display, Oswald" font-weight="800" fill="#141414" opacity=".6">L-12</text><text x="150.0" y="109.8" text-anchor="middle" font-size="18" font-family="Big Shoulders Stencil Display, Oswald" font-weight="800" fill="#141414" opacity=".6">L-13</text><text x="150.0" y="186.0" text-anchor="middle" font-size="18" font-family="Big Shoulders Stencil Display, Oswald" font-weight="800" fill="#141414" opacity=".6">L-03</text><rect x="46" y="146.8" width="67.2" height="67.2" fill="#2a2b2d"/><rect x="49.0" y="173.2" width="22.4" height="35.8" rx="5" fill="#2e4a69"/><path d="M55.7 173.2v-8h9.0v8" stroke="#1a1a1a" stroke-width="2.5" fill="none"/><path d="M56.4 178.2v25.8M63.8 178.2v25.8" stroke="#000" stroke-opacity=".25" stroke-width="2"/><circle cx="54.0" cy="211.5" r="2.6" fill="#111"/><circle cx="66.4" cy="211.5" r="2.6" fill="#111"/><rect x="70.6" y="181.0" width="17.9" height="28.0" rx="5" fill="#6b7b4b"/><path d="M76.0 181.0v-8h7.2v8" stroke="#1a1a1a" stroke-width="2.5" fill="none"/><path d="M76.6 186.0v18.0M82.5 186.0v18.0" stroke="#000" stroke-opacity=".25" stroke-width="2"/><circle cx="75.6" cy="211.5" r="2.6" fill="#111"/><circle cx="83.6" cy="211.5" r="2.6" fill="#111"/><rect x="89.7" y="196.1" width="21.3" height="17.9" fill="#c99559" stroke="#7d5a33" stroke-width="1"/><rect x="97.8" y="196.1" width="5" height="8.1" fill="#ead7ad"/><path d="M93.7 208.0h6.4" stroke="#7d5a33" stroke-width="1.4"/><rect x="90.8" y="180.4" width="19.0" height="15.7" fill="#b78248" stroke="#7d5a33" stroke-width="1"/><rect x="97.8" y="180.4" width="5" height="7.1" fill="#ead7ad"/><path d="M94.8 190.1h5.7" stroke="#7d5a33" stroke-width="1.4"/><rect x="49.4" y="153.5" width="28.0" height="16.8" fill="#d3a46a" stroke="#7d5a33" stroke-width="1"/><rect x="60.9" y="153.5" width="5" height="7.6" fill="#ead7ad"/><path d="M53.4 164.3h8.4" stroke="#7d5a33" stroke-width="1.4"/><circle cx="93.6" cy="164.7" r="10" fill="none" stroke="#e6e3dd" stroke-width="2"/><circle cx="93.6" cy="164.7" r="2.5" fill="#e6e3dd"/><rect x="46" y="146.8" width="67.2" height="67.2" fill="none" stroke="#ff6b1a" stroke-width="2.4" stroke-dasharray="6 4"/><path d="M46 136.8" /><rect x="49.6" y="126.8" width="60" height="18" fill="#ff6b1a"/><text x="79.6" y="140.8" text-anchor="middle" font-size="13" font-family="Big Shoulders Display, Oswald" font-weight="800" fill="#141414">1.2 × 1.2m</text></svg></div><div class="bd"><h3>락커형</h3><p>약 1.2 × 1.4 × 1.2m · 계절 짐과 여행 가방 정리용</p><ul><li>캐리어 2</li><li>박스 3~4</li><li>선풍기</li></ul></div></article>
+  <article class="scard"><div class="hd"><span class="stn">1<sub>평</sub></span><span class="code">UNIT S</span></div><div class="pic"><svg viewBox="-8 52 238 180" aria-hidden="true"><rect x="0" y="214" width="230" height="16" fill="#b3afa8"/><path d="M0 214H230" stroke="#141414" stroke-width="2"/><path d="M24 214V74" stroke="#141414" stroke-width="1.5"/><path d="M18 214.0H28" stroke="#141414" stroke-width="1.5"/><path d="M21 186.0H28" stroke="#141414" stroke-width="1.5"/><path d="M18 158.0H28" stroke="#141414" stroke-width="1.5"/><text x="14" y="162.0" font-size="12" text-anchor="end" font-family="IBM Plex Sans KR, sans-serif" font-weight="700" fill="#141414">1m</text><path d="M21 130.0H28" stroke="#141414" stroke-width="1.5"/><path d="M18 102.0H28" stroke="#141414" stroke-width="1.5"/><text x="14" y="106.0" font-size="12" text-anchor="end" font-family="IBM Plex Sans KR, sans-serif" font-weight="700" fill="#141414">2m</text><path d="M21 74.0H28" stroke="#141414" stroke-width="1.5"/><rect x="46" y="79.6" width="100.8" height="134.4" fill="#fff" fill-opacity=".35" stroke="#ff6b1a" stroke-width="2" stroke-dasharray="6 4"/><path d="M46 67.6h100.8M46 62.6v10M146.8 62.6v10" stroke="#141414" stroke-width="1.3"/><rect x="66.4" y="57.6" width="60" height="18" fill="#e3e0da"/><text x="96.4" y="71.6" text-anchor="middle" font-size="13" font-family="Big Shoulders Display, Oswald, sans-serif" font-weight="800" fill="#141414">1.8 × 2.4m</text><g stroke="#2f3a44" stroke-width="2.4" fill="none"><circle cx="68" cy="195.5" r="17.4"/><circle cx="121.2" cy="195.5" r="17.4"/><path d="M68 195.5l20 -30h26l-12 30zM88 165.5l-4 -8h-8M114 165.5l7 -10h8M102 195.5L121.2 195.5"/></g><path d="M104.8 214v-86.8h38.1v86.8" stroke="#3b3d40" stroke-width="2.5" fill="none"/><path d="M108.8 130.0h8l3 39.2h-14z" fill="#5b6f8a"/><path d="M115.6 130.0h8l3 47.2h-14z" fill="#a64b2a"/><path d="M122.4 130.0h8l3 39.2h-14z" fill="#d9d4c7"/><path d="M129.2 130.0h8l3 47.2h-14z" fill="#3f5d4a"/><path d="M136.0 130.0h8l3 39.2h-14z" fill="#7d6a8f"/><rect x="50.0" y="191.6" width="28.0" height="22.4" fill="#c99559" stroke="#7d5a33" stroke-width="1"/><rect x="61.5" y="191.6" width="5" height="10.1" fill="#ead7ad"/><path d="M54.0 208.0h8.4" stroke="#7d5a33" stroke-width="1.4"/><rect x="79.1" y="191.6" width="28.0" height="22.4" fill="#b98450" stroke="#7d5a33" stroke-width="1"/><rect x="90.6" y="191.6" width="5" height="10.1" fill="#ead7ad"/><path d="M83.1 208.0h8.4" stroke="#7d5a33" stroke-width="1.4"/><rect x="54.0" y="171.4" width="23.5" height="20.2" fill="#d3a46a" stroke="#7d5a33" stroke-width="1"/><rect x="63.3" y="171.4" width="5" height="9.1" fill="#ead7ad"/><path d="M58.0 185.6h7.1" stroke="#7d5a33" stroke-width="1.4"/><rect x="79.2" y="171.4" width="23.5" height="20.2" fill="#c99559" stroke="#7d5a33" stroke-width="1"/><rect x="88.5" y="171.4" width="5" height="9.1" fill="#ead7ad"/><path d="M83.2 185.6h7.1" stroke="#7d5a33" stroke-width="1.4"/><rect x="107.6" y="191.6" width="28.0" height="22.4" fill="#c38a52" stroke="#7d5a33" stroke-width="1"/><rect x="119.1" y="191.6" width="5" height="10.1" fill="#ead7ad"/><path d="M111.6 208.0h8.4" stroke="#7d5a33" stroke-width="1.4"/><rect x="60" y="137.8" width="39.2" height="13.4" rx="3" fill="#4e6b3e"/><rect x="60" y="137.8" width="39.2" height="5" fill="#2f4426"/><rect x="68" y="123.8" width="28.0" height="13" rx="6.5" fill="#d36a1f"/></svg></div><div class="bd"><h3>창고 1평</h3><p>약 1.8 × 1.8 × 2.4m · 취미 장비와 옷 정리용</p><ul><li>자전거</li><li>행거 1</li><li>박스 6~8</li><li>캠핑 장비</li></ul></div></article>
+  <article class="scard"><div class="hd"><span class="stn">2<sub>평</sub></span><span class="code">UNIT M</span></div><div class="pic"><svg viewBox="-8 52 238 180" aria-hidden="true"><rect x="0" y="214" width="230" height="16" fill="#b3afa8"/><path d="M0 214H230" stroke="#141414" stroke-width="2"/><path d="M24 214V74" stroke="#141414" stroke-width="1.5"/><path d="M18 214.0H28" stroke="#141414" stroke-width="1.5"/><path d="M21 186.0H28" stroke="#141414" stroke-width="1.5"/><path d="M18 158.0H28" stroke="#141414" stroke-width="1.5"/><text x="14" y="162.0" font-size="12" text-anchor="end" font-family="IBM Plex Sans KR, sans-serif" font-weight="700" fill="#141414">1m</text><path d="M21 130.0H28" stroke="#141414" stroke-width="1.5"/><path d="M18 102.0H28" stroke="#141414" stroke-width="1.5"/><text x="14" y="106.0" font-size="12" text-anchor="end" font-family="IBM Plex Sans KR, sans-serif" font-weight="700" fill="#141414">2m</text><path d="M21 74.0H28" stroke="#141414" stroke-width="1.5"/><rect x="46" y="79.6" width="134.4" height="134.4" fill="#fff" fill-opacity=".35" stroke="#ff6b1a" stroke-width="2" stroke-dasharray="6 4"/><path d="M46 67.6h134.4M46 62.6v10M180.4 62.6v10" stroke="#141414" stroke-width="1.3"/><rect x="83.2" y="57.6" width="60" height="18" fill="#e3e0da"/><text x="113.2" y="71.6" text-anchor="middle" font-size="13" font-family="Big Shoulders Display, Oswald, sans-serif" font-weight="800" fill="#141414">2.4 × 2.4m</text><rect x="52" y="102.0" width="56.0" height="112.0" rx="8" fill="#ece8df" stroke="#b6afa1" stroke-width="1.4"/><g stroke="#cfc7b7" stroke-width="1"><path d="M58 114.0h44.0"/><path d="M58 128.0h44.0"/><path d="M58 142.0h44.0"/><path d="M58 156.0h44.0"/><path d="M58 170.0h44.0"/><path d="M58 184.0h44.0"/><path d="M58 198.0h44.0"/></g><rect x="107.6" y="130.0" width="33.6" height="84.0" rx="4" fill="#d9dde1" stroke="#8b9198" stroke-width="1.2"/><path d="M107.6 158.0h33.6" stroke="#8b9198" stroke-width="1.2"/><path d="M135.2 136.7v14M135.2 163.6v18" stroke="#5b6168" stroke-width="2.5" stroke-linecap="round"/><rect x="144.0" y="166.4" width="33.6" height="47.6" rx="3" fill="#f4f3ef" stroke="#8b9198" stroke-width="1.2"/><circle cx="160.8" cy="191.6" r="11" fill="#4d6a87" stroke="#8b9198" stroke-width="2.5"/><path d="M149.0 172.6h14" stroke="#ff6b1a" stroke-width="3"/><rect x="146.0" y="146.2" width="28.0" height="20.2" fill="#c99559" stroke="#7d5a33" stroke-width="1"/><rect x="157.5" y="146.2" width="5" height="9.1" fill="#ead7ad"/><path d="M150.0 160.4h8.4" stroke="#7d5a33" stroke-width="1.4"/><rect x="150.0" y="129.4" width="22.4" height="16.8" fill="#b98450" stroke="#7d5a33" stroke-width="1"/><rect x="158.7" y="129.4" width="5" height="7.6" fill="#ead7ad"/><path d="M154.0 140.2h6.7" stroke="#7d5a33" stroke-width="1.4"/><path d="M48 172.6h53.2M52 172.6V214M97.2 172.6V214" stroke="#6d4a2c" stroke-width="4"/><rect x="56.0" y="195.0" width="23.5" height="19.0" fill="#c99559" stroke="#7d5a33" stroke-width="1"/><rect x="65.3" y="195.0" width="5" height="8.6" fill="#ead7ad"/><path d="M60.0 208.0h7.1" stroke="#7d5a33" stroke-width="1.4"/><rect x="56.0" y="155.8" width="20.2" height="16.8" fill="#d3a46a" stroke="#7d5a33" stroke-width="1"/><rect x="63.6" y="155.8" width="5" height="7.6" fill="#ead7ad"/><path d="M60.0 166.6h6.0" stroke="#7d5a33" stroke-width="1.4"/></svg></div><div class="bd"><h3>창고 2평</h3><p>약 2.4 × 2.7 × 2.4m · 원룸 살림 한 번에</p><ul><li>매트리스</li><li>냉장고·세탁기</li><li>책상</li><li>박스 10~15</li></ul></div></article>
+  <article class="scard"><div class="hd"><span class="stn">3<sub>평</sub></span><span class="code">UNIT L</span></div><div class="pic"><svg viewBox="-8 52 238 180" aria-hidden="true"><rect x="0" y="214" width="230" height="16" fill="#b3afa8"/><path d="M0 214H230" stroke="#141414" stroke-width="2"/><path d="M24 214V74" stroke="#141414" stroke-width="1.5"/><path d="M18 214.0H28" stroke="#141414" stroke-width="1.5"/><path d="M21 186.0H28" stroke="#141414" stroke-width="1.5"/><path d="M18 158.0H28" stroke="#141414" stroke-width="1.5"/><text x="14" y="162.0" font-size="12" text-anchor="end" font-family="IBM Plex Sans KR, sans-serif" font-weight="700" fill="#141414">1m</text><path d="M21 130.0H28" stroke="#141414" stroke-width="1.5"/><path d="M18 102.0H28" stroke="#141414" stroke-width="1.5"/><text x="14" y="106.0" font-size="12" text-anchor="end" font-family="IBM Plex Sans KR, sans-serif" font-weight="700" fill="#141414">2m</text><path d="M21 74.0H28" stroke="#141414" stroke-width="1.5"/><rect x="46" y="79.6" width="168.0" height="134.4" fill="#fff" fill-opacity=".35" stroke="#ff6b1a" stroke-width="2" stroke-dasharray="6 4"/><path d="M46 67.6h168.0M46 62.6v10M214.0 62.6v10" stroke="#141414" stroke-width="1.3"/><rect x="100.0" y="57.6" width="60" height="18" fill="#e3e0da"/><text x="130.0" y="71.6" text-anchor="middle" font-size="13" font-family="Big Shoulders Display, Oswald, sans-serif" font-weight="800" fill="#141414">3.0 × 2.4m</text><rect x="50" y="107.6" width="50.4" height="106.4" fill="#8a6a4c" stroke="#5c4330" stroke-width="1.2"/><path d="M75.2 111.6V210" stroke="#5c4330" stroke-width="1.4"/><path d="M70.2 158.0v14M80.2 158.0v14" stroke="#e8d9c2" stroke-width="2.5" stroke-linecap="round"/><path d="M99.2 210v-34.7q0 -8 8 -8h62.4q8 0 8 8v34.7z" fill="#3e5468"/><rect x="95.2" y="186.0" width="14" height="24.0" rx="5" fill="#33475a"/><rect x="167.6" y="186.0" width="14" height="24.0" rx="5" fill="#33475a"/><rect x="109.2" y="195.0" width="58.4" height="12" rx="4" fill="#4b6479"/><path d="M107.2 214v-4M169.6 214v-4" stroke="#222" stroke-width="3"/><rect x="105.2" y="154.6" width="24.6" height="20.2" fill="#c99559" stroke="#7d5a33" stroke-width="1"/><rect x="115.0" y="154.6" width="5" height="9.1" fill="#ead7ad"/><path d="M109.2 168.8h7.4" stroke="#7d5a33" stroke-width="1.4"/><rect x="131.0" y="154.6" width="24.6" height="20.2" fill="#b98450" stroke="#7d5a33" stroke-width="1"/><rect x="140.8" y="154.6" width="5" height="9.1" fill="#ead7ad"/><path d="M135.0 168.8h7.4" stroke="#7d5a33" stroke-width="1.4"/><rect x="156.7" y="154.6" width="24.6" height="20.2" fill="#d3a46a" stroke="#7d5a33" stroke-width="1"/><rect x="166.5" y="154.6" width="5" height="9.1" fill="#ead7ad"/><path d="M160.7 168.8h7.4" stroke="#7d5a33" stroke-width="1.4"/><rect x="117.2" y="135.6" width="25.8" height="19.0" fill="#c38a52" stroke="#7d5a33" stroke-width="1"/><rect x="127.6" y="135.6" width="5" height="8.6" fill="#ead7ad"/><path d="M121.2 148.6h7.7" stroke="#7d5a33" stroke-width="1.4"/><rect x="145.2" y="135.6" width="25.8" height="19.0" fill="#c99559" stroke="#7d5a33" stroke-width="1"/><rect x="155.6" y="135.6" width="5" height="8.6" fill="#ead7ad"/><path d="M149.2 148.6h7.7" stroke="#7d5a33" stroke-width="1.4"/><rect x="181.5" y="118.8" width="30.2" height="95.2" rx="4" fill="#d9dde1" stroke="#8b9198" stroke-width="1.2"/><path d="M181.5 151.3h30.2M187.5 124.4v14M187.5 158.0v20" stroke="#5b6168" stroke-width="2"/><g stroke="#a7825b" stroke-width="5"><path d="M170.2 214V102.0"/><path d="M163.2 214V106.0"/><path d="M156.2 214V110.0"/></g><rect x="52" y="95.6" width="67.2" height="12" rx="6" fill="#a64b2a"/><circle cx="58" cy="101.6" r="4" fill="#7c3519"/></svg></div><div class="bd"><h3>창고 3평</h3><p>약 3.0 × 3.3 × 2.4m · 투룸 이사 공백기, 매장 재고</p><ul><li>소파</li><li>옷장</li><li>침대 프레임</li><li>박스 20~</li></ul></div></article>
+ </div>
+</div></section>
+
+<section class="sec price" id="price"><div class="wrap">
+ <div class="sh"><div><span class="eyebrow" style="color:#fff">Price</span><h2>첫 달은 반값,<br>계산까지 보여 드려요</h2></div><p>표시 가격은 월 이용료 예시이며 부가세 포함입니다. 12월 31일까지 신규 계약하면 첫 달 이용료에 <span style="white-space:nowrap">50%가</span> 적용됩니다.</p></div>
+ <div class="pgrid" id="pgrid"></div>
+ <div class="pick">
+  <svg class="truck" viewBox="0 0 120 70" aria-hidden="true"><rect x="2" y="12" width="70" height="40" fill="#ff6b1a" stroke="#141414" stroke-width="2.5"/><path d="M8 20h58M8 28h58M8 36h58M8 44h58" stroke="#c94a00" stroke-width="1.5"/><path d="M72 24h24l14 16v12H72z" fill="#e7e4df" stroke="#141414" stroke-width="2.5"/><path d="M80 29h14l8 10H80z" fill="#9fb3c4" stroke="#141414" stroke-width="2"/><circle cx="22" cy="56" r="9" fill="#141414"/><circle cx="22" cy="56" r="3.5" fill="#bdb9b2"/><circle cx="92" cy="56" r="9" fill="#141414"/><circle cx="92" cy="56" r="3.5" fill="#bdb9b2"/><text x="37" y="38" text-anchor="middle" font-family="Big Shoulders Stencil Display" font-weight="900" font-size="16" fill="#141414">PICK UP</text></svg>
+  <div><span class="eyebrow">Option</span><h3 style="margin-top:6px">짐 픽업 서비스 (선택)</h3><p>직접 옮기기 어렵다면 집 앞에서 실어 보관함까지 넣어 드려요. 1톤 차량·기사 2인 기준, 포장 박스는 별도 판매.</p></div>
+  <div class="pr"><b class="num">49,000원~</b><small>거리·층수·짐 양에 따라 방문 견적 후 확정</small></div>
+ </div>
+ <p class="fine">※ 할인은 신규 계약 1건당 첫 달 이용료에만 적용되며 다른 할인과 중복되지 않습니다. 보관함 재고는 방문 상담 시 확인해 드립니다.</p>
+</div></section>
+
+<section class="sec steps" id="how"><div class="wrap">
+ <div class="sh"><div><span class="eyebrow">How it works</span><h2>신청부터 입고까지<br>네 단계면 끝</h2></div><p>방문 상담 때 짐 양을 함께 보고 맞는 크기를 골라 드려요. 상담만 받고 계약하지 않아도 비용은 없습니다.</p></div>
+ <div class="stgrid">
+  <div class="st"><span class="stn">01</span><span class="ic"><svg class="i" viewBox="0 0 24 24"><rect x="5" y="3" width="14" height="18" rx="2"/><path d="M9 8h6M9 12h6M9 16h3"/></svg></span><h3>상담 신청</h3><p>아래 양식에 희망 크기와 입고 날짜를 남겨 주세요.</p><span class="chip">1분</span></div>
+  <div class="st"><span class="stn">02</span><span class="ic"><svg class="i" viewBox="0 0 24 24"><path d="M3 21V9l9-6 9 6v12"/><path d="M9 21v-6h6v6"/></svg></span><h3>무료 방문 상담</h3><p>집이나 매장에 들러 짐 양을 보고 크기와 견적을 안내해요.</p><span class="chip">견적 무료</span></div>
+  <div class="st"><span class="stn">03</span><span class="ic"><svg class="i" viewBox="0 0 24 24"><circle cx="8" cy="15" r="4"/><path d="M11 12l9-9M17 6l3 3M14 9l2 2"/></svg></span><h3>계약·비밀번호 발급</h3><p>월 단위로 계약하고, 내 칸 전용 출입 비밀번호를 받아요.</p><span class="chip">첫 달 50%</span></div>
+  <div class="st"><span class="stn">04</span><span class="ic"><svg class="i" viewBox="0 0 24 24"><path d="M3 7h11v10H3zM14 10h4l3 3v4h-7"/><circle cx="7" cy="18" r="2"/><circle cx="17" cy="18" r="2"/></svg></span><h3>입고, 그리고 24시간</h3><p>직접 옮기거나 픽업 서비스로 입고. 이후엔 언제든 드나드세요.</p><span class="chip">픽업 선택</span></div>
+ </div>
+</div></section>
+
+<section class="sec feat" id="feat"><div class="wrap fwrap">
+ <div class="intro">
+  <span class="eyebrow">Facility</span>
+  <h2>맡겨 두는 동안<br>신경 쓸 일을 줄였어요</h2>
+  <p>창고 안 환경은 설정 범위 안에서 관리하고, 출입 기록과 CCTV 녹화는 정해진 기간 보관합니다. 필요한 정보는 상담 때 그대로 보여 드려요.</p>
+  <div class="panel">
+   <div class="g"><small>실내 온도 설정 범위</small><b class="num">18–24<span>℃</span></b></div>
+   <div class="g"><small>상대 습도 설정 범위</small><b class="num">45–60<span>%</span></b></div>
+   <div class="g"><small>출입 가능 시간</small><b class="num">24<span>시간</span></b></div>
+   <div class="g"><small>CCTV 녹화 보관</small><b class="num">30<span>일</span></b></div>
+   <div class="bar">※ 계절과 외기 조건에 따라 일시적으로 범위를 벗어날 수 있습니다.</div>
+  </div>
+ </div>
+ <div class="fgrid">
+  <div class="fi"><svg class="i" viewBox="0 0 40 40"><circle cx="20" cy="20" r="15"/><path class="a" d="M20 10v10l7 4"/><path d="M20 3v3M20 34v3M3 20h3M34 20h3"/></svg><h3>24시간 출입</h3><p>새벽 출근 전에도, 주말 밤에도. 비밀번호만 있으면 언제든 들어올 수 있어요.</p></div>
+  <div class="fi"><svg class="i" viewBox="0 0 40 40"><path d="M16 24V8a4 4 0 1 1 8 0v16a7 7 0 1 1-8 0z"/><path class="a" d="M20 17v12"/><path d="M30 10c2 3 2 5 0 8M34 7c3.5 5 3.5 9 0 14"/></svg><h3>항온항습</h3><p>냉난방·제습 설비로 온도와 습도를 설정 범위 안에서 관리합니다.</p></div>
+  <div class="fi"><svg class="i" viewBox="0 0 40 40"><rect x="8" y="17" width="24" height="18" rx="2"/><path d="M13 17v-5a7 7 0 0 1 14 0v5"/><path class="a" d="M15 25h.01M20 25h.01M25 25h.01M15 30h10"/></svg><h3>개별 출입 비밀번호</h3><p>정문과 내 보관함 비밀번호가 계약마다 따로 나오고, 출입 기록이 남아요.</p></div>
+  <div class="fi"><svg class="i" viewBox="0 0 40 40"><path d="M5 12l20-5 3 10-20 5z"/><path d="M12 21l2 7H6"/><path class="a" d="M28 12l6-2v9l-5 1"/><circle cx="14" cy="14" r="2"/></svg><h3>CCTV 녹화</h3><p>출입구·복도·엘리베이터에 카메라를 두고 녹화 영상을 30일 보관합니다.</p></div>
+  <div class="fi"><svg class="i" viewBox="0 0 40 40"><path d="M10 5l4 24"/><path d="M14 29h18"/><rect class="a" x="17" y="13" width="13" height="13"/><circle cx="14" cy="32" r="3"/><circle cx="30" cy="32" r="3"/></svg><h3>카트·핸드트럭 무료</h3><p>하역장에 카트와 핸드트럭이 있어 무거운 짐도 혼자 옮길 수 있어요.</p></div>
+  <div class="fi"><svg class="i" viewBox="0 0 40 40"><path d="M4 12h20v16H4zM24 17h7l5 6v5H24"/><circle cx="11" cy="30" r="3"/><circle cx="29" cy="30" r="3"/><path class="a" d="M9 20h10M15 16l4 4-4 4"/></svg><h3>짐 픽업 옵션</h3><p>차가 없어도 괜찮아요. 집 앞 픽업부터 보관함 입고까지 맡길 수 있어요.</p></div>
+ </div>
+</div></section>
+
+<section class="sec quiz" id="quiz"><div class="wrap">
+ <div class="sh"><div><span class="eyebrow" style="color:#fff">Size finder</span><h2>짐을 세어 보면<br>크기가 나와요</h2></div><p>상황을 고르거나 물건 개수를 직접 조절해 보세요. 쌓는 여유 공간까지 계산해 맞는 크기를 추천합니다.</p></div>
+ <div class="qbox">
+  <div class="qleft">
+   <div class="qlabel">빠른 선택</div>
+   <div class="preset" id="preset">
+    <button type="button" data-p="season">계절 짐 정리</button>
+    <button type="button" data-p="hobby">취미·캠핑 장비</button>
+    <button type="button" data-p="one">원룸 이사 공백</button>
+    <button type="button" data-p="two">투룸 이사 공백</button>
+    <button type="button" data-p="shop">매장 재고</button>
+   </div>
+   <div class="qlabel">물건 개수</div>
+   <div class="items" id="items"></div>
+   <p class="qnote"><svg class="i" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 11v6M12 7.5v.5"/></svg>쌓을 때 생기는 빈틈과 통로 공간을 고려한 대략적인 추천이에요. 정확한 크기는 방문 상담 때 짐을 보고 다시 맞춰 드립니다.</p>
+  </div>
+  <div class="qright">
+   <span class="lbl">예상 짐 부피</span>
+   <div class="vol"><b class="num" id="vol">0.0</b><span>㎥</span></div>
+   <div class="rec">
+    <small>추천 크기</small>
+    <div class="r"><span class="stn" id="recN">0.5</span><span class="bh" id="recU">평 락커</span></div>
+    <p id="recT">물건을 추가하면 추천이 바뀌어요.</p>
+   </div>
+   <div class="gauge"><div class="tr"><div class="fl" id="fill" style="width:0"></div></div><div class="lg"><span>채움 정도</span><span id="pct">0%</span></div></div>
+   <div class="qprice"><span>첫 달 이용료<br><s id="qReg">59,000원</s></span><b class="num" id="qNow">29,500원</b></div>
+   <a href="#apply" class="btn o" id="qGo">이 크기로 상담 신청</a>
+  </div>
+ </div>
+</div></section>
+
+<section class="sec faq" id="faq"><div class="wrap fq">
+ <div>
+  <span class="eyebrow">FAQ</span>
+  <h2>계약 전에<br>많이 물어보시는 것</h2>
+  <div class="ask"><b>다른 궁금한 점이 있나요?</b><p>상담 시간 10:00–19:00 (연중무휴)</p>
+   <div class="c"><span><svg class="i" viewBox="0 0 24 24" style="width:20px;height:20px"><path d="M5 4h4l2 5-3 2a11 11 0 0 0 5 5l2-3 5 2v4a2 2 0 0 1-2 2A17 17 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>000-0000-0000</span><span><svg class="i" viewBox="0 0 24 24" style="width:20px;height:20px"><path d="M4 5h16v11H9l-5 4z"/></svg>카카오톡 ID: example</span></div>
+  </div>
+ </div>
+ <div class="acc" id="acc">
+  <div class="qa open"><button type="button" aria-expanded="true"><span class="q"><i>01</i>첫 달 50% 할인은 어떻게 적용되나요?</span><span class="pm"></span></button><div class="ans"><div><p>12월 31일까지 신규 계약하시면 첫 달 이용료가 반으로 계산됩니다. 예를 들어 1평은 99,000원 → 49,500원이고, 2개월째부터는 정상 요금이 적용돼요. 픽업 비용에는 적용되지 않습니다.</p></div></div></div>
+  <div class="qa"><button type="button" aria-expanded="false"><span class="q"><i>02</i>최소 이용 기간이 있나요?</span><span class="pm"></span></button><div class="ans"><div><p>월 단위 계약이라 한 달만 쓰셔도 됩니다. 연장은 만료 전에 연락 주시면 되고, 3개월 이상 선납 시 요금 안내는 상담 때 따로 드려요.</p></div></div></div>
+  <div class="qa"><button type="button" aria-expanded="false"><span class="q"><i>03</i>보관할 수 없는 물건은 무엇인가요?</span><span class="pm"></span></button><div class="ans"><div><p>음식물·생물, 인화성 물질(가스통, 휘발유 등), 위험물, 귀금속·현금, 불법 물품은 보관할 수 없습니다. 고가품은 별도 보험 가입 여부를 상담 때 확인해 주세요.</p></div></div></div>
+  <div class="qa"><button type="button" aria-expanded="false"><span class="q"><i>04</i>출입은 어떻게 하나요?</span><span class="pm"></span></button><div class="ans"><div><p>계약하면 정문 출입 비밀번호와 보관함 비밀번호를 각각 받습니다. 24시간 언제든 출입할 수 있고, 비밀번호는 상담 채널로 요청하면 바꿀 수 있어요.</p></div></div></div>
+  <div class="qa"><button type="button" aria-expanded="false"><span class="q"><i>05</i>짐 픽업 서비스 비용은 얼마인가요?</span><span class="pm"></span></button><div class="ans"><div><p>1톤 차량과 기사 2인 기준 49,000원부터이며, 거리·층수·엘리베이터 유무·짐 양에 따라 달라집니다. 방문 상담 때 정확한 금액을 먼저 알려 드리고 진행해요.</p></div></div></div>
+  <div class="qa"><button type="button" aria-expanded="false"><span class="q"><i>06</i>중간에 크기를 바꿀 수 있나요?</span><span class="pm"></span></button><div class="ans"><div><p>빈 보관함이 있으면 다음 결제일부터 다른 크기로 옮길 수 있어요. 짐이 늘거나 줄었을 때 편하게 말씀해 주세요.</p></div></div></div>
+ </div>
+</div></section>
+
+<section class="sec apply" id="apply">
+ <div class="stn bigno" aria-hidden="true">50%</div>
+ <div class="wrap agrid">
+  <div class="intro">
+   <span class="eyebrow">Apply</span>
+   <h2>무료 방문 상담<br>신청하기</h2>
+   <p>남겨 주신 연락처로 상담 일정을 잡아 드립니다. 상담과 견적은 무료이고, 계약 여부는 보고 나서 정하셔도 됩니다.</p>
+   <div class="ticket"><div><small>12월 신규 계약 혜택</small><b>첫 달 이용료 50% 할인</b><small style="margin-top:6px">~ 12.31 계약분까지</small></div><div><span class="stn">-50</span><small>%</small></div></div>
+  </div>
+  <div class="fcard">
+   <div class="hd"><b>상담 신청서</b><span>FORM 01</span></div>
+   <form id="form" novalidate>
+    <div class="two">
+     <div><label class="f" for="nm">이름</label><input type="text" id="nm" placeholder="홍길동" autocomplete="off"></div>
+     <div><label class="f" for="ph">연락처</label><input type="tel" id="ph" placeholder="000-0000-0000" autocomplete="off"></div>
+    </div>
+    <div class="two">
+     <div><label class="f" for="sz">희망 크기</label><select id="sz"><option value="">선택해 주세요</option><option value="0.5">0.5평 락커</option><option value="1">1평</option><option value="2">2평</option><option value="3">3평</option><option value="?">잘 모르겠어요 (상담 때 추천)</option></select></div>
+     <div><label class="f" for="dt">희망 입고일</label><input type="text" id="dt" inputmode="numeric" placeholder="2026-12-01" maxlength="10" autocomplete="off"></div>
+    </div>
+    <div><label class="f">상담 방식</label>
+     <div class="seg"><label><input type="radio" name="way" value="방문 상담" checked><span>방문 상담 (무료)</span></label><label><input type="radio" name="way" value="전화 상담"><span>전화 상담</span></label></div>
+    </div>
+    <label class="chk"><input type="checkbox" id="pk">짐 픽업 서비스도 견적 받을게요 (49,000원~)</label>
+    <label class="chk"><input type="checkbox" id="ag">상담 안내를 위한 개인정보(이름·연락처) 수집·이용에 동의합니다.</label>
+    <div class="err" id="err" role="alert"></div>
+    <button type="submit" class="btn">첫 달 50% 혜택으로 상담 신청</button>
+   </form>
+   <div class="done" id="done" aria-live="polite">
+    <svg viewBox="0 0 120 90" aria-hidden="true"><rect x="10" y="20" width="100" height="66" fill="#141414"/><rect x="18" y="28" width="84" height="58" fill="#ff6b1a"/><path d="M18 36h84M18 44h84M18 52h84" stroke="#c94a00" stroke-width="2"/><rect x="18" y="58" width="84" height="28" fill="#2a2a2a"/><rect x="30" y="62" width="26" height="24" fill="#c99559"/><rect x="60" y="68" width="22" height="18" fill="#b98450"/><circle cx="96" cy="20" r="16" fill="#e7e4df" stroke="#141414" stroke-width="3"/><path d="M89 20l5 5 9-10" stroke="#141414" stroke-width="3.5" fill="none" stroke-linecap="round"/></svg>
+    <h3>신청이 접수됐어요</h3>
+    <p>상담 시간(10:00–19:00) 안에 남겨 주신 번호로 연락드릴게요.<br>이 화면은 예시이며 실제로 전송되지 않습니다.</p>
+    <div class="no"><small>접수 번호</small><b class="stn" id="rno">DM-1201</b></div>
+    <div class="sum" id="sum"></div>
+    <button type="button" class="btn l" id="again">다시 작성하기</button>
+   </div>
+  </div>
+ </div>
+</section>
+
+<footer><div class="wrap">
+ <div class="logo"><svg viewBox="0 0 44 44" aria-hidden="true"><rect x="2" y="6" width="40" height="36" fill="#e7e4df"/><path d="M2 6L22 0l20 6" fill="#e7e4df"/><rect x="8" y="14" width="28" height="28" fill="#ff6b1a"/><path d="M8 18h28M8 22h28M8 26h28M8 30h28M8 34h28" stroke="#c94a00" stroke-width="1.6"/><rect x="8" y="36" width="28" height="6" fill="#2a2a2a"/></svg><span><b>담아둠 셀프스토리지</b><small>SELF STORAGE</small></span></div>
+ <div class="inf"><span><b>상담</b> 000-0000-0000 · 카카오톡 ID: example</span><span><b>상담 시간</b> 10:00–19:00 · <b>출입</b> 24시간</span><span><b>위치</b> 방문 상담 신청 시 안내</span></div>
+ <div class="cp">© 담아둠 셀프스토리지 · 표시된 요금과 시설 정보는 예시입니다.</div>
+</div></footer>
+
+<div class="mcta" id="mcta"><a href="#faq" class="call"><svg class="i" viewBox="0 0 24 24" style="width:20px;height:20px"><path d="M5 4h4l2 5-3 2a11 11 0 0 0 5 5l2-3 5 2v4a2 2 0 0 1-2 2A17 17 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>문의</a><a href="#apply" class="go">첫 달 <b>50%</b> 상담 신청</a></div>
+
+<script>
+(function(){
+ var won=function(n){return n.toLocaleString('ko-KR')+'원'};
+ var plans=[
+  {n:'0.5',u:'평',name:'락커형',fit:'캐리어·계절 박스 몇 개',p:59000,code:'L'},
+  {n:'1',u:'평',name:'창고 1평',fit:'자전거·캠핑 장비·옷 행거',p:99000,code:'S'},
+  {n:'2',u:'평',name:'창고 2평',fit:'원룸 살림 한 번에',p:179000,code:'M'},
+  {n:'3',u:'평',name:'창고 3평',fit:'투룸 이사 공백, 매장 재고',p:249000,code:'XL'}
+ ];
+ var pg=document.getElementById('pgrid');
+ pg.innerHTML=plans.map(function(x){
+  var h=x.p/2;
+  return '<article class="pcard"><div class="door"><span class="stn">'+x.n+'</span><span class="u">'+x.u+'</span></div><div class="bd"><h3>'+x.name+'</h3><p class="fit">'+x.fit+'</p>'+
+  '<div class="reg"><span>정상 월 이용료</span><s>'+won(x.p)+'</s></div>'+
+  '<div class="now"><b class="num">'+h.toLocaleString('ko-KR')+'</b><span>원 / 첫 달</span></div>'+
+  '<div class="calc"><div><span>월 이용료</span><span>'+won(x.p)+'</span></div><div><span>12월 신규 50%</span><span>− '+won(h)+'</span></div><div class="t"><span>첫 달 결제</span><em>'+won(h)+'</em></div></div>'+
+  '<p class="after">2개월째부터 월 '+won(x.p)+'</p><div class="sp"></div><a href="#apply" class="btn o" data-size="'+x.n+'">이 크기로 상담 신청</a></div></article>';
+ }).join('');
+
+ // size finder
+ var items=[
+  {k:'box',n:'중형 박스',s:'50×40×40cm',v:.1},
+  {k:'case',n:'캐리어',s:'24~28인치',v:.12},
+  {k:'gear',n:'자전거·골프백',s:'캠핑 장비 1세트 포함',v:.4},
+  {k:'rack',n:'옷 행거',s:'1m 분량',v:.45},
+  {k:'bed',n:'매트리스',s:'퀸 기준',v:.8},
+  {k:'appl',n:'냉장고·세탁기',s:'대당',v:1},
+  {k:'ward',n:'옷장·수납장',s:'1자 기준',v:1.1},
+  {k:'sofa',n:'소파',s:'3인용',v:1.5}
+ ];
+ var cnt={};items.forEach(function(i){cnt[i.k]=0});
+ var presets={season:{box:4,case:2},hobby:{box:6,gear:2,rack:1},one:{box:15,case:2,bed:1,appl:2,rack:1,ward:1},two:{box:22,case:2,bed:2,appl:3,ward:2,sofa:1,rack:2},shop:{box:40,rack:2}};
+ var caps=[{n:'0.5',u:'평 락커',cap:1.4,p:59000,t:'계절 짐이나 여행 가방을 넣기 좋아요.'},{n:'1',u:'평',cap:4.2,p:99000,t:'취미 장비와 옷을 한곳에 모으기 좋아요.'},{n:'2',u:'평',cap:8.5,p:179000,t:'원룸 살림이 한 칸에 들어가는 크기예요.'},{n:'3',u:'평',cap:13,p:249000,t:'투룸 살림이나 매장 재고용으로 넉넉해요.'}];
+ var box=document.getElementById('items');
+ box.innerHTML=items.map(function(i){return '<div class="it"><span class="n">'+i.n+'<small>'+i.s+'</small></span><span class="stp"><button type="button" data-k="'+i.k+'" data-d="-1" aria-label="'+i.n+' 빼기">−</button><output id="c-'+i.k+'">0</output><button type="button" data-k="'+i.k+'" data-d="1" aria-label="'+i.n+' 더하기">+</button></span></div>'}).join('');
+ var cur=caps[0];
+ function calc(){
+  var v=0;items.forEach(function(i){v+=cnt[i.k]*i.v;document.getElementById('c-'+i.k).textContent=cnt[i.k]});
+  var r=caps[caps.length-1],over=false;
+  for(var j=0;j<caps.length;j++){if(v<=caps[j].cap){r=caps[j];break}}
+  if(v>caps[caps.length-1].cap)over=true;
+  cur=r;
+  document.getElementById('vol').textContent=v.toFixed(1);
+  document.getElementById('recN').textContent=r.n;
+  document.getElementById('recU').textContent=r.u+(over?' + α':'');
+  document.getElementById('recT').textContent=v===0?'물건을 추가하면 추천이 바뀌어요.':(over?'한 칸을 넘는 양이에요. 두 칸 조합을 상담 때 안내해 드려요.':r.t);
+  var pc=Math.min(100,Math.round(v/r.cap*100));
+  document.getElementById('fill').style.width=pc+'%';
+  document.getElementById('pct').textContent=pc+'%';
+  document.getElementById('qReg').textContent=won(r.p);
+  document.getElementById('qNow').textContent=won(r.p/2);
+ }
+ box.addEventListener('click',function(e){var b=e.target.closest('button');if(!b)return;var k=b.dataset.k;cnt[k]=Math.max(0,Math.min(60,cnt[k]+(+b.dataset.d)));document.querySelectorAll('#preset button').forEach(function(x){x.classList.remove('on')});calc()});
+ document.getElementById('preset').addEventListener('click',function(e){var b=e.target.closest('button');if(!b)return;var p=presets[b.dataset.p];items.forEach(function(i){cnt[i.k]=p[i.k]||0});document.querySelectorAll('#preset button').forEach(function(x){x.classList.toggle('on',x===b)});calc()});
+ var sz=document.getElementById('sz');
+ document.getElementById('qGo').addEventListener('click',function(){sz.value=cur.n});
+ pg.addEventListener('click',function(e){var a=e.target.closest('[data-size]');if(a)sz.value=a.dataset.size});
+ document.querySelector('#preset button[data-p="one"]').click();
+
+ var mc=document.getElementById('mcta'),ap=document.getElementById('apply');
+ function mct(){var r=ap.getBoundingClientRect();mc.classList.toggle('show',scrollY>520&&!(r.top<innerHeight-80&&r.bottom>0))}
+ addEventListener('scroll',mct,{passive:true});mct();
+ // faq
+ document.getElementById('acc').addEventListener('click',function(e){var b=e.target.closest('button');if(!b)return;var q=b.parentNode,o=q.classList.toggle('open');b.setAttribute('aria-expanded',o)});
+
+ // form
+ var f=document.getElementById('form'),done=document.getElementById('done'),err=document.getElementById('err');
+ var dt=document.getElementById('dt');var t=new Date();t.setDate(t.getDate()+3);dt.value=t.toISOString().slice(0,10);
+ f.addEventListener('submit',function(e){
+  e.preventDefault();
+  var nm=document.getElementById('nm').value.trim(),ph=document.getElementById('ph').value.trim();
+  if(!nm){err.textContent='이름을 입력해 주세요.';return}
+  if(ph.replace(/\D/g,'').length<9){err.textContent='연락처를 정확히 입력해 주세요.';return}
+  if(!document.getElementById('ag').checked){err.textContent='개인정보 수집·이용에 동의해 주세요.';return}
+  err.textContent='';
+  var s=sz.options[sz.selectedIndex].text;if(!sz.value)s='상담 때 추천';
+  var way=f.querySelector('input[name=way]:checked').value;
+  document.getElementById('rno').textContent='DM-12'+String(Math.floor(Math.random()*90)+10)+'-'+String(Math.floor(Math.random()*900)+100);
+  document.getElementById('sum').innerHTML='<div><span>이름</span><b></b></div><div><span>희망 크기</span><b>'+s+'</b></div><div><span>상담 방식</span><b>'+way+'</b></div><div><span>픽업 견적</span><b>'+(document.getElementById('pk').checked?'함께 받기':'필요 없음')+'</b></div><div><span>혜택</span><b>첫 달 50% 적용 예정</b></div>';
+  document.querySelector('#sum b').textContent=nm;
+  f.style.display='none';done.classList.add('show');var r=document.querySelector('.fcard').getBoundingClientRect();window.scrollTo({top:scrollY+r.top-90,behavior:'smooth'});
+ });
+ document.getElementById('again').addEventListener('click',function(){f.reset();dt.value=t.toISOString().slice(0,10);done.classList.remove('show');f.style.display=''});
+})();
+</script>
+</body>
+</html>

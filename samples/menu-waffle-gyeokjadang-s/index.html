@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>격자당 와플 · 와플 디저트 카페 메뉴판 디자인</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Gothic+A1:wght@500;600;700;800&family=Outfit:wght@600;700;800&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+html{overflow-x:hidden}
+body{font-family:'Gothic A1',sans-serif;background:#F3EBDB;color:#16140F;word-break:keep-all;overflow-wrap:break-word;-webkit-font-smoothing:antialiased;min-height:100vh;overflow-x:hidden;
+ background-image:linear-gradient(rgba(22,20,15,.07) 1.5px,transparent 1.5px),linear-gradient(90deg,rgba(22,20,15,.07) 1.5px,transparent 1.5px);background-size:44px 44px}
+.top{height:28px;display:grid;grid-template-columns:3fr 1fr 2fr 1fr;border-bottom:3px solid #16140F}
+.top i:nth-child(1){background:#2347A6}.top i:nth-child(2){background:#F2B31B}.top i:nth-child(3){background:#D63A2A}.top i:nth-child(4){background:#16140F}
+.wrap{max-width:1180px;margin:0 auto;padding:44px 20px 120px}
+.hd{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:18px;margin-bottom:32px}
+.hd small{font-family:'Outfit',sans-serif;font-weight:700;font-size:14px;letter-spacing:.24em;display:flex;align-items:center;gap:10px}
+.hd small:before{content:"";width:14px;height:14px;border-radius:50%;background:#D63A2A;box-shadow:20px 0 0 #F2B31B;margin-right:22px}
+.hd h1{font-family:'Black Han Sans',sans-serif;font-weight:400;font-size:clamp(34px,5vw,58px);margin-top:10px;line-height:1.15}
+.hd h1 em{font-style:normal;color:#2347A6}
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:14px}
+.chips span{font-size:13px;font-weight:600;padding:6px 12px;background:#fffaf0;color:#16140F;border:2px solid #16140F}
+.chips span.g{background:#16140F;color:#F2B31B;font-weight:800}
+.cta{display:inline-flex;align-items:center;gap:8px;height:52px;padding:0 26px;background:#D63A2A;color:#fff;font-weight:800;font-size:15px;text-decoration:none;transition:.2s;white-space:nowrap;border:3px solid #16140F;box-shadow:5px 5px 0 #16140F}
+.cta:hover{transform:translate(2px,2px);box-shadow:3px 3px 0 #16140F}
+.cta svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round}
+.view{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,.75fr);gap:28px;align-items:start}
+figure{background:#16140F;padding:10px;box-shadow:12px 12px 0 #2347A6}
+figure a{display:block}
+figure img{display:block;width:100%;height:auto}
+figcaption{font-size:13px;color:#E8DFCB;padding:10px 4px 2px;display:flex;flex-wrap:wrap;justify-content:space-between;gap:4px 10px}
+.side{display:flex;flex-direction:column;gap:18px;position:sticky;top:24px}
+.zoom{background:#fffaf0;padding:8px;border:3px solid #16140F}
+.zoom img{display:block;width:100%;height:auto}
+.zoom p{font-size:13px;color:#4F4639;padding:8px 4px 2px;line-height:1.6}
+.info{background:#2347A6;color:#F3EBDB;padding:22px;border:3px solid #16140F;position:relative;overflow:hidden}
+.info:after{content:"";position:absolute;right:-30px;bottom:-30px;width:90px;height:90px;border-radius:50%;background:#F2B31B}
+.info h2{font-family:'Black Han Sans',sans-serif;font-weight:400;font-size:26px;color:#F2B31B;margin-bottom:8px}
+.info li{list-style:none;font-size:14px;padding:6px 0 6px 20px;position:relative;line-height:1.55;z-index:1}
+.info li:before{content:"";position:absolute;left:2px;top:12px;width:9px;height:9px;background:#F3EBDB}
+.info li:nth-child(2):before{border-radius:50%}
+.info li:nth-child(3):before{clip-path:polygon(50% 0,100% 100%,0 100%)}
+.bar{position:fixed;left:0;right:0;bottom:0;background:#16140F;border-top:4px solid #F2B31B;padding:12px 20px;display:flex;justify-content:center;align-items:center;gap:18px;flex-wrap:wrap}
+.bar p{font-size:14px;color:#E8DFCB}
+.bar .cta{height:46px;box-shadow:none;border-color:#D63A2A}
+@media(max-width:900px){.view{grid-template-columns:1fr}.side{position:static}}
+@media(max-width:620px){.hd h1 em{display:block}.hd .cta{display:none}.bar p{display:none}.bar .cta{width:100%;justify-content:center}figure{box-shadow:6px 6px 0 #2347A6}}
+</style>
+</head>
+<body>
+<div class="top"><i></i><i></i><i></i><i></i></div>
+<div class="wrap">
+ <div class="hd">
+  <div>
+   <small>MENU DESIGN · SD-MN42</small>
+   <h1>격자당 와플 <em>바우하우스 디저트 카페 메뉴판</em></h1>
+   <div class="chips"><span class="g">A4 세로 · 1장</span><span>와플 10종 · 토핑 · 크로플 · 세트 · 음료</span><span>레드 &amp; 옐로 &amp; 코발트 블루 기하학</span><span>원화 가격</span><span>인쇄 · 웹 겸용</span></div>
+  </div>
+  <a class="cta" href="https://design.shoponph.online/#inquiry">이 디자인으로 상담하기 <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+ </div>
+ <div class="view">
+  <figure><a href="page1.png" target="_blank" rel="noopener"><img src="page1.png" alt="격자당 와플 메뉴판 전체. 빨강·노랑·파랑 사각 칸에 쓴 상호, 딸기와 아이스크림을 올린 와플 그림, 브뤼셀·리에주 와플 10종 가격과 토핑·크로플·세트·음료 목록" width="2480" height="3508"></a><figcaption><span>와플 10종 · 토핑 9종 · 크로플 &amp; 젤라토 · 세트 · 음료 8종</span><span>A4 2480×3508px</span></figcaption></figure>
+  <div class="side">
+   <div class="zoom"><img src="detail-hero.jpg" alt="파란 바탕 위 노란 원 안에 딸기·블루베리·바닐라 아이스크림을 올린 와플 그림과 문구 확대" width="1000" height="629"><p>바우하우스 포스터처럼 원·반원·삼각형 색 블록 위에 대표 와플을 크게 올려, 멀리서도 가게 이름과 분위기가 먼저 보이게</p></div>
+   <div class="zoom"><img src="detail-sets.jpg" alt="크루아상 모양 크로플과 젤라토 컵 그림, 크로플 목록, 빨강·파랑·노랑 세트 메뉴 카드 확대" width="1000" height="548"><p>크로플은 초승달 모양에 와플 자국을 그대로 그려 넣고, 세트는 세 가지 원색 카드로 나눠 고르기 쉽게</p></div>
+   <div class="info"><h2>이 메뉴판의 포인트</h2><ul><li>검은 격자선이 페이지 전체를 나눠 와플의 칸 모양을 그대로 메뉴판 구조로</li><li>브뤼셀 · 리에주를 나란히 두고 메뉴마다 번호 도형을 달아 주문하기 쉽게</li><li>영업시간 · 연락처 · 인스타그램 · 포장 안내를 하단 한 줄에 정리</li></ul></div>
+  </div>
+ </div>
+</div>
+<div class="bar"><p>우리 가게 메뉴판도 이렇게 만들고 싶다면</p><a class="cta" href="https://design.shoponph.online/#inquiry">이 디자인으로 상담하기</a></div>
+</body>
+</html>
