@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>우담 정육식당 · 고르고, 바로 굽는 한우 정육식당</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@600;900&family=Noto+Sans+KR:wght@400;500;700;900&family=Montserrat:wght@600;800&display=swap" rel="stylesheet">
+<style>
+:root{--paper:#F3ECDF;--paper2:#E9DFCC;--ox:#6E1420;--ox2:#8E2230;--ink:#1E1715;--chalk:#2A2E2B;--brass:#B88A3E;--line:rgba(30,23,21,.16)}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;overflow-x:hidden}
+body{font-family:'Noto Sans KR',sans-serif;color:var(--ink);background:var(--paper);word-break:keep-all;overflow-wrap:break-word;-webkit-font-smoothing:antialiased;overflow-x:hidden;line-height:1.6}
+a{color:inherit;text-decoration:none}
+img,svg{display:block}
+.serif{font-family:'Noto Serif KR',serif}
+.mont{font-family:'Montserrat',sans-serif}
+.in{max-width:1240px;margin:0 auto;padding:0 32px}
+/* paper texture */
+.tex{background-image:repeating-linear-gradient(0deg,rgba(110,20,32,.035) 0 1px,transparent 1px 5px),repeating-linear-gradient(90deg,rgba(30,23,21,.025) 0 1px,transparent 1px 7px)}
+/* header */
+header{position:sticky;top:0;z-index:30;background:rgba(243,236,223,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+header .in{display:flex;align-items:center;justify-content:space-between;height:76px;gap:20px}
+.logo{display:flex;align-items:center;gap:12px}
+.logo .seal{width:44px;height:44px;border-radius:50%;background:var(--ox);color:var(--paper);display:grid;place-items:center;font-family:'Noto Serif KR',serif;font-weight:900;font-size:20px;box-shadow:inset 0 0 0 3px var(--ox),inset 0 0 0 4.5px #E8C9A0}
+.logo b{font-family:'Noto Serif KR',serif;font-weight:900;font-size:22px;letter-spacing:.02em;display:block;line-height:1.1}
+.logo small{font-size:11px;letter-spacing:.28em;color:var(--ox2);font-weight:700;font-family:'Montserrat',sans-serif}
+nav{display:flex;gap:30px;font-size:15px;font-weight:500}
+nav a{position:relative;padding:4px 0}
+nav a:after{content:"";position:absolute;left:0;right:100%;bottom:-2px;height:2px;background:var(--ox);transition:.25s}
+nav a:hover:after{right:0}
+.hbtn{display:inline-flex;align-items:center;gap:8px;height:46px;padding:0 22px;background:var(--ox);color:var(--paper);font-weight:700;font-size:15px;border-radius:2px;transition:.2s}
+.hbtn:hover{background:var(--ink)}
+.menu-t{display:none;width:44px;height:44px;border:1.5px solid var(--ink);background:none;border-radius:2px}
+.menu-t span{display:block;width:20px;height:2px;background:var(--ink);margin:4px auto}
+/* hero */
+.hero{position:relative;overflow:hidden;border-bottom:1px solid var(--line)}
+.hero .in{display:grid;grid-template-columns:1.02fr 1fr;gap:40px;align-items:center;padding-top:64px;padding-bottom:72px}
+.tag{display:inline-flex;align-items:center;gap:10px;font-size:13px;font-weight:700;letter-spacing:.18em;color:var(--ox2)}
+.tag:before{content:"";width:34px;height:2px;background:var(--ox2)}
+.hero h1{font-family:'Noto Serif KR',serif;font-weight:900;font-size:clamp(42px,5.6vw,78px);line-height:1.14;margin:22px 0 24px;letter-spacing:-.01em}
+.hero h1 em{font-style:normal;color:var(--ox);position:relative;white-space:nowrap}
+.hero h1 em:after{content:"";position:absolute;left:-2px;right:-2px;bottom:.08em;height:.2em;background:rgba(184,138,62,.35);z-index:-1}
+.hero p.lead{font-size:18px;color:#4A3E39;max-width:500px}
+.hero .acts{display:flex;flex-wrap:wrap;gap:12px;margin-top:34px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;height:56px;padding:0 28px;font-weight:700;font-size:16px;border-radius:2px;transition:.2s;border:2px solid var(--ink);cursor:pointer;font-family:inherit}
+.btn.pri{background:var(--ink);color:var(--paper)}
+.btn.pri:hover{background:var(--ox);border-color:var(--ox)}
+.btn.ghost{background:transparent;color:var(--ink)}
+.btn.ghost:hover{background:var(--ink);color:var(--paper)}
+.btn svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+.facts{display:flex;gap:0;margin-top:44px;border-top:1px solid var(--line);padding-top:22px;max-width:520px}
+.facts div{flex:1;padding-right:16px}
+.facts div+div{padding-left:18px;border-left:1px solid var(--line)}
+.facts b{display:block;font-family:'Noto Serif KR',serif;font-weight:900;font-size:22px;color:var(--ox)}
+.facts span{font-size:13px;color:#5D514B}
+.hero-art{position:relative}
+.hero-art .board{position:relative;border-radius:4px;overflow:hidden;box-shadow:0 40px 70px -30px rgba(60,10,15,.55)}
+.stamp{position:absolute;left:-34px;bottom:-34px;width:132px;height:132px;transform:rotate(9deg);z-index:2}
+/* ticker */
+.ticker{background:var(--ox);color:#F3DFC8;overflow:hidden;white-space:nowrap;font-size:14px;font-weight:500;letter-spacing:.06em}
+.ticker div{display:inline-flex;gap:48px;padding:14px 0;animation:tk 38s linear infinite}
+.ticker span{display:inline-flex;align-items:center;gap:48px}
+.ticker span:after{content:"✕";font-size:10px;color:var(--brass)}
+@keyframes tk{to{transform:translateX(-50%)}}
+/* section shared */
+section{padding:104px 0}
+.sh{display:flex;justify-content:space-between;align-items:flex-end;gap:30px;margin-bottom:48px;flex-wrap:wrap}
+.sh .no{font-family:'Montserrat',sans-serif;font-weight:800;font-size:13px;letter-spacing:.22em;color:var(--ox2)}
+.sh h2{font-family:'Noto Serif KR',serif;font-weight:900;font-size:clamp(30px,3.6vw,46px);line-height:1.25;margin-top:10px}
+.sh p{max-width:430px;color:#5D514B;font-size:16px}
+/* how it works */
+.how{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border:1.5px solid var(--ink);background:#FBF7F0}
+.how div{padding:34px 30px 32px;position:relative}
+.how div+div{border-left:1.5px solid var(--ink)}
+.how .n{font-family:'Montserrat',sans-serif;font-weight:800;font-size:54px;color:transparent;-webkit-text-stroke:1.5px var(--ox);line-height:1}
+.how h3{font-family:'Noto Serif KR',serif;font-weight:900;font-size:23px;margin:18px 0 10px}
+.how p{font-size:15px;color:#5D514B}
+.how svg{position:absolute;right:26px;top:30px;width:56px;height:56px}
+.how .fee{display:inline-block;margin-top:14px;font-size:14px;font-weight:700;background:var(--ink);color:var(--paper);padding:5px 12px}
+/* cut chart */
+.cuts{background:var(--chalk);color:#ECE6DA;position:relative;overflow:hidden}
+.cuts:before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at 20% 10%,rgba(255,255,255,.07),transparent 60%),radial-gradient(ellipse at 90% 90%,rgba(255,255,255,.05),transparent 50%);pointer-events:none}
+.cuts .sh p{color:#BDB6A9}
+.cuts .sh .no{color:#E3B676}
+.cutwrap{display:grid;grid-template-columns:1.15fr .85fr;gap:44px;align-items:center;position:relative}
+.cow{width:100%;height:auto}
+.cow .part{cursor:pointer;transition:fill .2s}
+.cow .part:hover,.cow .part.on{fill:rgba(227,182,118,.32)}
+.cutinfo{border:1.5px dashed rgba(236,230,218,.4);padding:34px 32px;min-height:330px;position:relative}
+.cutinfo .k{font-size:13px;letter-spacing:.2em;color:#E3B676;font-weight:700}
+.cutinfo h3{font-family:'Noto Serif KR',serif;font-weight:900;font-size:40px;margin:8px 0 6px;color:#fff}
+.cutinfo .en{font-family:'Montserrat',sans-serif;font-size:13px;letter-spacing:.2em;color:#9E978B;font-weight:600}
+.cutinfo p{font-size:16px;color:#D7D0C3;margin:18px 0 22px}
+.cutinfo dl{display:grid;grid-template-columns:auto 1fr;gap:9px 18px;font-size:15px;border-top:1px solid rgba(236,230,218,.18);padding-top:18px}
+.cutinfo dt{color:#9E978B}
+.cutinfo dd{color:#fff;font-weight:500}
+.cutpills{display:flex;flex-wrap:wrap;gap:8px;margin-top:26px}
+.cutpills button{font-family:inherit;font-size:14px;font-weight:500;padding:8px 15px;border:1.5px solid rgba(236,230,218,.5);background:none;color:#ECE6DA;border-radius:40px;cursor:pointer;transition:.2s}
+.cutpills button.on,.cutpills button:hover{background:#E3B676;color:var(--chalk);border-color:#E3B676}
+/* today board */
+.today{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
+.card{background:#FBF7F0;border:1px solid var(--line);position:relative;transition:.25s}
+.card:hover{transform:translateY(-5px);box-shadow:0 22px 40px -24px rgba(60,10,15,.45)}
+.card .pic{aspect-ratio:4/3;overflow:hidden;border-bottom:1px solid var(--line)}
+.card .pic svg{width:100%;height:100%}
+.card .bd{padding:20px 20px 22px}
+.card .lbl{position:absolute;left:14px;top:14px;font-size:12px;font-weight:700;background:var(--paper);border:1.5px solid var(--ink);padding:3px 9px}
+.card h3{font-family:'Noto Serif KR',serif;font-weight:900;font-size:21px}
+.card p{font-size:14px;color:#5D514B;margin:6px 0 16px;min-height:44px}
+.card .pr{display:flex;justify-content:space-between;align-items:baseline;border-top:1px dashed rgba(30,23,21,.3);padding-top:12px}
+.card .pr span{font-size:13px;color:#5D514B}
+.card .pr b{font-family:'Montserrat',sans-serif;font-weight:800;font-size:21px;color:var(--ox)}
+.card .pr b small{font-family:'Noto Sans KR';font-size:13px;font-weight:700;margin-left:2px}
+.note{font-size:13px;color:#6E625C;margin-top:20px}
+/* table menu */
+.tbl{background:var(--paper2)}
+.tblgrid{display:grid;grid-template-columns:1fr 1fr;gap:44px 56px}
+.mlist h3{font-family:'Noto Serif KR',serif;font-weight:900;font-size:24px;padding-bottom:12px;border-bottom:2.5px solid var(--ink);display:flex;justify-content:space-between;align-items:baseline}
+.mlist h3 small{font-family:'Noto Sans KR';font-size:13px;font-weight:500;color:#5D514B}
+.mlist li{list-style:none;display:flex;align-items:baseline;gap:10px;padding:15px 0;border-bottom:1px solid var(--line)}
+.mlist li b{font-weight:700;font-size:17px;white-space:nowrap}
+.mlist li i{flex:1;border-bottom:1.5px dotted rgba(30,23,21,.35);transform:translateY(-4px);min-width:20px}
+.mlist li span{font-family:'Montserrat',sans-serif;font-weight:800;font-size:17px;white-space:nowrap}
+.mlist li em{display:block;font-style:normal;font-size:13px;color:#6E625C;font-weight:400;margin-top:2px;white-space:normal}
+.mlist li div{min-width:0}
+.setbox{grid-column:1/-1;display:grid;grid-template-columns:1fr auto;align-items:center;gap:6px 30px;background:var(--ox);color:var(--paper);padding:28px 28px 26px;position:relative}
+.setbox:before{content:"";position:absolute;inset:8px;border:1px solid rgba(243,236,223,.35);pointer-events:none}
+.setbox .k{font-size:12px;letter-spacing:.22em;font-weight:700;color:#E8C9A0}
+.setbox h4{font-family:'Noto Serif KR',serif;font-weight:900;font-size:26px;margin:6px 0 4px}
+.setbox p{font-size:14px;color:#EBD7C3}
+.setbox .p{font-family:'Montserrat',sans-serif;font-weight:800;font-size:34px;grid-column:2;grid-row:1/4;white-space:nowrap}
+.setbox .p small{font-family:'Noto Sans KR';font-size:14px}
+/* gift */
+.gift .in{display:grid;grid-template-columns:.95fr 1.05fr;gap:60px;align-items:center}
+.gift .art{background:#E4D7BF;border-radius:4px;overflow:hidden}
+.gopts{display:grid;gap:14px;margin-top:30px}
+.gopt{display:grid;grid-template-columns:auto 1fr auto;gap:18px;align-items:center;padding:18px 20px;border:1.5px solid var(--ink);background:#FBF7F0;cursor:pointer;transition:.2s}
+.gopt.on{background:var(--ink);color:var(--paper)}
+.gopt.on em{color:#C9BFB4}
+.gopt .r{width:22px;height:22px;border-radius:50%;border:2px solid currentColor;position:relative}
+.gopt.on .r:after{content:"";position:absolute;inset:4px;border-radius:50%;background:#E3B676}
+.gopt b{font-size:17px;display:block}
+.gopt em{font-style:normal;font-size:13px;color:#6E625C}
+.gopt span{font-family:'Montserrat',sans-serif;font-weight:800;font-size:19px}
+.gift .tip{display:flex;gap:10px;align-items:center;margin-top:22px;font-size:14px;color:#5D514B}
+.gift .tip svg{width:20px;height:20px;flex:none;stroke:var(--ox);fill:none;stroke-width:2}
+/* reserve */
+.resv{background:var(--ink);color:var(--paper)}
+.resv .in{display:grid;grid-template-columns:.9fr 1.1fr;gap:60px;align-items:start}
+.resv .sh .no{color:#E3B676}
+.resv .sh p{color:#BDB3A8}
+.hours{border-top:1px solid rgba(243,236,223,.2);margin-top:8px}
+.hours div{display:flex;justify-content:space-between;padding:14px 0;border-bottom:1px solid rgba(243,236,223,.2);font-size:15px}
+.hours div span:first-child{color:#BDB3A8}
+form.f{background:var(--paper);color:var(--ink);padding:36px 34px;border-radius:2px}
+.f h3{font-family:'Noto Serif KR',serif;font-weight:900;font-size:24px;margin-bottom:20px}
+.f .row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.f label{display:block;font-size:13px;font-weight:700;margin:14px 0 6px}
+.f input,.f select{width:100%;height:50px;border:1.5px solid rgba(30,23,21,.4);background:#fff;padding:0 14px;font-family:inherit;font-size:15px;border-radius:2px;color:var(--ink)}
+.f input:focus,.f select:focus{outline:none;border-color:var(--ox);box-shadow:0 0 0 3px rgba(110,20,32,.15)}
+.seg{display:flex;gap:8px;flex-wrap:wrap}
+.seg button{flex:1;min-width:70px;height:46px;border:1.5px solid rgba(30,23,21,.4);background:#fff;font-family:inherit;font-size:14px;font-weight:500;cursor:pointer;border-radius:2px}
+.seg button.on{background:var(--ox);color:#fff;border-color:var(--ox)}
+.f .btn{width:100%;margin-top:24px;background:var(--ox);border-color:var(--ox);color:#fff}
+.f .btn:hover{background:var(--ink);border-color:var(--ink)}
+.f .ok{display:none;margin-top:16px;padding:14px 16px;background:#EADBC4;border-left:4px solid var(--ox);font-size:14px}
+.f .ok.show{display:block}
+/* map */
+.loc .in{display:grid;grid-template-columns:1.2fr .8fr;gap:40px;align-items:stretch}
+.map{border:1.5px solid var(--ink);background:#EFE6D4;min-height:340px;position:relative;overflow:hidden}
+.map svg{width:100%;height:100%;position:absolute;inset:0}
+.addr{display:flex;flex-direction:column;justify-content:center;gap:22px}
+.addr div{border-left:3px solid var(--ox);padding-left:18px}
+.addr small{font-size:12px;letter-spacing:.2em;font-weight:700;color:var(--ox2)}
+.addr p{font-size:17px;font-weight:500;margin-top:4px}
+footer{border-top:1px solid var(--line);padding:34px 0 40px;font-size:13px;color:#6E625C}
+footer .in{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+/* reveal */
+.rv{opacity:0;transform:translateY(24px);transition:opacity .8s,transform .8s}
+.rv.vis{opacity:1;transform:none}
+@media(max-width:1080px){.today{grid-template-columns:repeat(2,1fr)}nav{gap:20px}}
+@media(max-width:900px){nav,.hbtn{display:none}.menu-t{display:block}
+ .hero .in,.cutwrap,.tblgrid,.gift .in,.resv .in,.loc .in{grid-template-columns:1fr}
+ .hero .in{padding-top:40px;gap:44px}
+ .how{grid-template-columns:1fr}.how div+div{border-left:0;border-top:1.5px solid var(--ink)}
+ section{padding:76px 0}}
+@media(max-width:560px){.in{padding:0 18px}
+ .hero h1{font-size:40px}.hero p.lead{font-size:16px}.btn{width:100%}
+ .facts b{font-size:19px}.stamp{width:96px;height:96px;left:-8px;bottom:-26px}
+ .f .row{grid-template-columns:1fr}form.f{padding:28px 20px}.cutinfo{padding:26px 20px}.cutinfo h3{font-size:32px}
+ header .in{height:66px}.logo b{font-size:19px}.logo .seal{width:38px;height:38px;font-size:17px}
+ .mlist li b{white-space:normal}
+ .setbox{grid-template-columns:1fr}.setbox .p{grid-column:auto;grid-row:auto;margin-top:8px}
+ .gopt{grid-template-columns:auto 1fr;gap:6px 14px}.gopt>span:last-child{grid-column:2}
+ .today{grid-template-columns:1fr 1fr;gap:12px}.card .bd{padding:14px 12px 14px}.card h3{font-size:17px}.card p{font-size:13px;min-height:0;margin:4px 0 10px}.card .pr b{font-size:17px}.card .pr span{font-size:12px}.card .lbl{left:8px;top:8px;font-size:11px}
+ .cow text{font-size:26px}.cow text.lg{font-size:20px}.cow text.cm{display:none}}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+ <defs>
+  <linearGradient id="meat" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#C2343F"/><stop offset=".55" stop-color="#A3202E"/><stop offset="1" stop-color="#7C1622"/></linearGradient>
+  <linearGradient id="meat2" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#D24A4E"/><stop offset="1" stop-color="#9A2230"/></linearGradient>
+  <linearGradient id="fat" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FFF6EA"/><stop offset="1" stop-color="#EBD8C2"/></linearGradient>
+  <linearGradient id="wood" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#8A5A34"/><stop offset=".5" stop-color="#A26E43"/><stop offset="1" stop-color="#7A4D2C"/></linearGradient>
+  <pattern id="marb" width="60" height="44" patternUnits="userSpaceOnUse">
+   <path d="M2 10c8-6 14 4 22-1s12-6 18 0M8 30c6 4 12-3 20 1s14 5 24-2M30 20c4 3 9 2 12-2" fill="none" stroke="#FBEBDD" stroke-width="2.2" stroke-linecap="round" opacity=".85"/>
+   <path d="M44 38c4-2 8 1 12-1M14 20c3-2 5 0 7-1" fill="none" stroke="#FBEBDD" stroke-width="1.3" stroke-linecap="round" opacity=".7"/>
+  </pattern>
+  <pattern id="marb2" width="40" height="30" patternUnits="userSpaceOnUse">
+   <path d="M1 8c6-4 10 3 16-1s9-3 13 1M6 22c5 3 9-2 14 1s10 3 18-2" fill="none" stroke="#FBEBDD" stroke-width="1.6" stroke-linecap="round" opacity=".8"/>
+  </pattern>
+  <filter id="mb" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency=".022 .05" numOctaves="2" seed="7"/><feColorMatrix values="0 0 0 0 1  0 0 0 0 .96  0 0 0 0 .92  1 0 0 0 0"/><feComponentTransfer><feFuncA type="table" tableValues="0 0 0 0 0 0 0 0 0 .7 1 .7 0 0 0 0 0 0 0 0 0"/></feComponentTransfer><feComposite in2="SourceAlpha" operator="in"/></filter>
+  <filter id="mb2" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency=".035 .08" numOctaves="2" seed="3"/><feColorMatrix values="0 0 0 0 1  0 0 0 0 .96  0 0 0 0 .92  1 0 0 0 0"/><feComponentTransfer><feFuncA type="table" tableValues="0 0 0 0 0 0 0 0 0 .65 .95 .65 0 0 0 0 0 0 0 0 0"/></feComponentTransfer><feComposite in2="SourceAlpha" operator="in"/></filter>
+  <filter id="soft" x="-20%" y="-20%" width="140%" height="150%"><feDropShadow dx="0" dy="10" stdDeviation="10" flood-color="#3A0A10" flood-opacity=".35"/></filter>
+  <filter id="grain"><feTurbulence type="fractalNoise" baseFrequency=".9" numOctaves="2" stitchTiles="stitch"/><feColorMatrix values="0 0 0 0 .2  0 0 0 0 .1  0 0 0 0 .05  0 0 0 .18 0"/><feComposite in2="SourceGraphic" operator="in"/></filter>
+ </defs>
+</svg>
+
+<header>
+ <div class="in">
+  <a class="logo" href="#top"><span class="seal">우</span><span><b>우담 정육식당</b><small>UDAM BUTCHER &amp; GRILL</small></span></a>
+  <nav><a href="#how">이용 방법</a><a href="#cuts">부위 안내</a><a href="#today">오늘의 고기</a><a href="#table">상차림</a><a href="#gift">선물세트</a><a href="#loc">오시는 길</a></nav>
+  <a class="hbtn" href="#resv">자리 예약</a>
+  <button class="menu-t" aria-label="메뉴"><span></span><span></span><span></span></button>
+ </div>
+</header>
+
+<main id="top">
+<section class="hero tex" style="padding:0">
+ <div class="in">
+  <div>
+   <span class="tag">정육점에서 고르고, 바로 옆 자리에서 굽는</span>
+   <h1>고기는 <em>눈으로 고르고</em><br>불은 우리가 맞춥니다</h1>
+   <p class="lead">쇼케이스에서 오늘 손질한 한우를 직접 골라 무게대로 사고, 상차림비만 더해 바로 구워 드세요. 남은 고기는 진공 포장해 드립니다.</p>
+   <div class="acts">
+    <a class="btn pri" href="#resv">자리 예약하기 <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+    <a class="btn ghost" href="#today">오늘의 고기 보기</a>
+   </div>
+   <div class="facts">
+    <div><b>100g</b><span>원하는 만큼</span></div>
+    <div><b>4,000원</b><span>1인 상차림비</span></div>
+    <div><b>진공 포장</b><span>남은 고기 포장</span></div>
+   </div>
+  </div>
+  <div class="hero-art">
+   <svg class="stamp" viewBox="0 0 140 140" aria-hidden="true">
+    <defs><path id="cir" d="M70 70m-52 0a52 52 0 1 1 104 0a52 52 0 1 1-104 0"/></defs>
+    <circle cx="70" cy="70" r="66" fill="#6E1420"/><circle cx="70" cy="70" r="60" fill="none" stroke="#E8C9A0" stroke-width="1.2"/>
+    <text font-family="Montserrat" font-weight="800" font-size="11.5" letter-spacing="3.2" fill="#F3ECDF"><textPath href="#cir">CUT · WEIGH · GRILL · CUT · WEIGH · GRILL ·</textPath></text>
+    <text x="70" y="66" text-anchor="middle" font-family="Noto Serif KR" font-weight="900" font-size="22" fill="#F3ECDF">오늘</text>
+    <text x="70" y="90" text-anchor="middle" font-family="Noto Serif KR" font-weight="900" font-size="22" fill="#E8C9A0">손질</text>
+   </svg>
+   <div class="board">
+    <svg viewBox="0 0 640 560" role="img" aria-label="나무 도마 위에 마블링 있는 한우 등심과 채끝, 갈빗살이 놓이고 옆에 정육 칼과 굵은 소금, 로즈마리가 있는 그림">
+     <rect width="640" height="560" fill="#2A2E2B"/>
+     <rect width="640" height="560" fill="url(#grain)" filter="url(#grain)" opacity=".6"/>
+     <!-- butcher paper -->
+     <g transform="rotate(-6 320 300)">
+      <rect x="40" y="70" width="560" height="430" fill="#EFE5D3"/>
+      <rect x="40" y="70" width="560" height="430" fill="url(#grain)" filter="url(#grain)"/>
+      <path d="M40 70h560v430H40z" fill="none" stroke="#D9CBB2" stroke-width="2"/>
+      <path d="M40 140h560M40 430h560" stroke="#DCCDB4" stroke-width="1.2" stroke-dasharray="3 6"/>
+     </g>
+     <!-- board -->
+     <g filter="url(#soft)">
+      <rect x="92" y="150" width="440" height="300" rx="26" fill="url(#wood)"/>
+      <path d="M110 190c90-10 200 8 300-4s90 6 110 2M112 250c120 8 220-10 300 2s80-4 100 0M110 320c100-6 180 12 280 0s110 4 130 0M118 390c90 6 210-8 300 0s70 4 96 2" fill="none" stroke="#6E4325" stroke-width="2" opacity=".4"/>
+      <circle cx="502" cy="182" r="11" fill="#5A3519"/><circle cx="502" cy="182" r="6" fill="#2A2E2B"/>
+     </g>
+     <!-- ribeye big -->
+     <g filter="url(#soft)" transform="rotate(-8 240 300)">
+      <path d="M150 258c10-58 82-92 152-78 64 12 98 58 86 112-10 52-74 86-146 76-68-10-104-56-92-110z" fill="url(#fat)"/>
+      <path d="M164 262c10-48 74-76 134-64 54 10 82 48 72 94-9 44-62 72-124 64-58-8-90-48-82-94z" fill="url(#meat)"/>
+      <path d="M164 262c10-48 74-76 134-64 54 10 82 48 72 94-9 44-62 72-124 64-58-8-90-48-82-94z" fill="#fff" filter="url(#mb)"/>
+      <path d="M256 214c-14 28-6 60 22 84 22 18 30 34 24 56" fill="none" stroke="#FBEBDD" stroke-width="5" stroke-linecap="round" opacity=".9"/>
+      <ellipse cx="226" cy="236" rx="30" ry="10" fill="#fff" opacity=".14" transform="rotate(-18 226 236)"/>
+     </g>
+     <!-- striploin -->
+     <g filter="url(#soft)" transform="rotate(10 410 280)">
+      <path d="M352 212h118c12 0 20 10 18 22l-10 100c-2 12-12 20-24 20H366c-12 0-22-10-22-22l-6-98c0-12 8-22 14-22z" fill="url(#fat)"/>
+      <path d="M362 230h100c8 0 14 7 13 15l-9 82c-1 8-8 14-16 14h-82c-8 0-15-6-15-14l-5-82c0-8 6-15 14-15z" fill="url(#meat2)"/>
+      <path d="M362 230h100c8 0 14 7 13 15l-9 82c-1 8-8 14-16 14h-82c-8 0-15-6-15-14l-5-82c0-8 6-15 14-15z" fill="#fff" filter="url(#mb2)"/>
+      <rect x="370" y="238" width="40" height="8" rx="4" fill="#fff" opacity=".16"/>
+     </g>
+     <!-- rib finger meat strips -->
+     <g filter="url(#soft)">
+      <g transform="rotate(-4 360 400)">
+       <rect x="300" y="380" width="130" height="30" rx="14" fill="url(#meat)"/><rect x="300" y="380" width="130" height="30" rx="14" fill="#fff" filter="url(#mb2)"/>
+       <rect x="312" y="414" width="120" height="28" rx="13" fill="url(#meat2)"/><rect x="312" y="414" width="120" height="28" rx="13" fill="#fff" filter="url(#mb2)"/>
+      </g>
+     </g>
+     <!-- knife -->
+     <g transform="rotate(28 540 420)" filter="url(#soft)">
+      <path d="M470 420h120c10 0 16 6 16 14v8H470z" fill="#C9CED0"/>
+      <path d="M470 420h120c10 0 16 6 16 14v8H470z" fill="url(#grain)" opacity=".3"/>
+      <path d="M470 420h136" stroke="#fff" stroke-width="2" opacity=".7"/>
+      <rect x="402" y="418" width="72" height="26" rx="5" fill="#2A1A14"/>
+      <circle cx="420" cy="431" r="3" fill="#B88A3E"/><circle cx="440" cy="431" r="3" fill="#B88A3E"/><circle cx="460" cy="431" r="3" fill="#B88A3E"/>
+     </g>
+     <!-- salt + rosemary -->
+     <g>
+      <ellipse cx="140" cy="470" rx="46" ry="16" fill="#1C1F1D" opacity=".5"/>
+      <ellipse cx="140" cy="462" rx="44" ry="16" fill="#E7E1D6"/>
+      <ellipse cx="140" cy="458" rx="34" ry="10" fill="#F8F6F0"/>
+      <g fill="#fff"><rect x="124" y="452" width="5" height="5" transform="rotate(20 126 454)"/><rect x="140" y="455" width="6" height="6" transform="rotate(-15 143 458)"/><rect x="152" y="451" width="4" height="4"/><rect x="132" y="460" width="4" height="4" transform="rotate(40 134 462)"/></g>
+      <path d="M70 120c40 30 80 50 140 56" fill="none" stroke="#4C6B45" stroke-width="3" stroke-linecap="round"/>
+      <g fill="#6E8F5F"><path d="M90 132l-6-16 10 12zM110 145l-4-18 9 15zM132 156l-2-18 7 17zM156 165l1-18 5 18zM100 140l12 8-14-2zM124 152l13 6-15 0zM148 162l13 3-14 2z"/></g>
+     </g>
+     <!-- price tag -->
+     <g transform="translate(521 135) scale(1.32) translate(-521 -135) rotate(-10 520 130)">
+      <rect x="452" y="96" width="138" height="78" fill="#F3ECDF" stroke="#1E1715" stroke-width="2"/>
+      <circle cx="466" cy="112" r="5" fill="#2A2E2B"/>
+      <path d="M466 112c-20-30-40-40-60-38" fill="none" stroke="#B88A3E" stroke-width="2"/>
+      <text x="521" y="124" text-anchor="middle" font-family="Noto Serif KR" font-weight="900" font-size="18" fill="#1E1715">한우 꽃등심</text>
+      <text x="521" y="156" text-anchor="middle" font-family="Montserrat" font-weight="800" font-size="20" fill="#6E1420">100g 15,900</text>
+     </g>
+    </svg>
+   </div>
+  </div>
+ </div>
+</section>
+
+<div class="ticker" aria-hidden="true"><div><span>오늘 아침 손질한 고기만 쇼케이스에</span><span>100g 단위 계량 판매</span><span>상차림비 1인 4,000원</span><span>남은 고기 진공 포장</span><span>연말 선물세트 예약 받습니다</span><span>오늘 아침 손질한 고기만 쇼케이스에</span><span>100g 단위 계량 판매</span><span>상차림비 1인 4,000원</span><span>남은 고기 진공 포장</span><span>연말 선물세트 예약 받습니다</span></div></div>
+
+<section id="how" class="tex">
+ <div class="in">
+  <div class="sh rv"><div><span class="no">01 — HOW IT WORKS</span><h2>정육식당은 이렇게 이용해요</h2></div><p>정육점 가격 그대로 고기를 사고, 식당 자리에서 굽는 방식이에요. 처음 오셔도 직원이 부위와 양을 같이 골라 드립니다.</p></div>
+  <div class="how rv">
+   <div><span class="n">01</span><svg viewBox="0 0 56 56" fill="none" stroke="#6E1420" stroke-width="2.2" stroke-linejoin="round"><rect x="6" y="14" width="44" height="30" rx="2"/><path d="M6 24h44M14 32h12M14 38h8"/><circle cx="40" cy="35" r="5"/></svg><h3>쇼케이스에서 고르기</h3><p>오늘 손질한 부위를 보고 두께와 양을 말씀해 주세요. 100g 단위로 잘라 무게를 달아 드려요.</p></div>
+   <div><span class="n">02</span><svg viewBox="0 0 56 56" fill="none" stroke="#6E1420" stroke-width="2.2" stroke-linejoin="round"><path d="M10 40h36l-4-18H14z"/><path d="M28 22v-8M22 14h12"/><path d="M20 30h16"/></svg><h3>계산하고 자리로</h3><p>고기 값은 정육 가격 그대로, 앉는 인원만큼 상차림비를 더해 한 번에 계산합니다.</p><span class="fee">상차림비 1인 4,000원</span></div>
+   <div><span class="n">03</span><svg viewBox="0 0 56 56" fill="none" stroke="#6E1420" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 34h40M12 34c0 8 7 12 16 12s16-4 16-12"/><path d="M20 26c-2-4 2-6 0-10M28 26c-2-4 2-6 0-10M36 26c-2-4 2-6 0-10"/></svg><h3>참숯에 구워 먹기</h3><p>참숯 화로와 기본 반찬, 쌈 채소가 나와요. 남은 고기는 진공 포장해 가져가실 수 있어요.</p></div>
+  </div>
+ </div>
+</section>
+
+<section id="cuts" class="cuts">
+ <div class="in">
+  <div class="sh rv"><div><span class="no">02 — CUT CHART</span><h2>어느 부위를 고를까요</h2></div><p>소 그림에서 부위를 누르면 맛과 굽는 법이 나와요. 쇼케이스 앞에서 고민될 때 참고하세요.</p></div>
+  <div class="cutwrap rv">
+   <svg class="cow" viewBox="0 0 640 400" role="img" aria-label="소 옆모습 위에 목심, 등심, 채끝, 안심, 갈비, 양지, 우둔, 사태 부위를 분필 선으로 나눈 부위도">
+    <defs><clipPath id="cowc"><path id="cowp" d="M150 150C190 118 260 112 330 114L470 116C520 118 552 132 560 160C566 190 560 230 546 262L540 370H512L506 286C470 296 420 298 380 296L240 292C220 292 200 288 188 282L180 370H152L148 270C132 250 126 222 128 200L104 222C92 232 70 234 58 224C44 212 46 190 56 178L84 146C92 136 104 130 118 132C130 134 142 140 150 150Z"/></clipPath></defs>
+    <use href="#cowp" fill="rgba(255,255,255,.035)"/>
+    <g clip-path="url(#cowc)" stroke="#ECE6DA" stroke-width="1.6" stroke-dasharray="6 6" fill="rgba(255,255,255,0)">
+     <path class="part" data-k="moksim" d="M128 100H250V200H128Z"/>
+     <path class="part on" data-k="deungsim" d="M250 100H370V200H250Z"/>
+     <path class="part" data-k="chaekkeut" d="M370 100H450V200H370Z"/>
+     <path class="part" data-k="ansim" d="M370 200H450V240H370Z"/>
+     <path class="part" data-k="udun" d="M450 100H600V285H450Z"/>
+     <path class="part" data-k="galbi" d="M250 200H370V240H450V285H250Z"/>
+     <path class="part" data-k="yangji" d="M120 200H250V285H120Z"/>
+     <path class="part" data-k="satae" d="M130 285H250V390H130ZM450 285H600V390H450Z"/>
+    </g>
+    <g fill="none" stroke="#ECE6DA" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="round" pointer-events="none">
+     <use href="#cowp"/>
+     <path d="M96 140L74 122L104 132M110 133C107 118 113 108 124 104"/>
+     <path d="M560 162C578 172 582 204 577 240C575 254 581 262 589 264"/>
+     <circle cx="88" cy="168" r="3.2" fill="#ECE6DA"/>
+     <path d="M62 204c4 2 8 2 11 0"/>
+    </g>
+    <g font-family="Noto Sans KR" font-weight="700" font-size="17" fill="#ECE6DA" text-anchor="middle" pointer-events="none">
+     <text x="192" y="168">목심</text><text x="310" y="162">등심</text><text x="410" y="162">채끝</text><text x="410" y="226" font-size="15">안심</text><text x="505" y="206">우둔</text><text x="330" y="268">갈비</text><text x="192" y="252">양지</text><text class="lg" x="122" y="344" font-size="15">사태</text><text class="lg" x="582" y="344" font-size="15">사태</text><path d="M140 338h18M564 338h-18" stroke="#ECE6DA" stroke-width="1.4"/>
+    </g>
+    <text x="600" y="390" text-anchor="end" font-family="Montserrat" font-weight="600" font-size="13" letter-spacing="3" fill="#9E978B" class="cm">HANWOO CUT MAP</text>
+   </svg>
+   <div class="cutinfo" aria-live="polite">
+    <span class="k" id="ck">TODAY'S PICK</span>
+    <h3 id="cn">등심</h3><span class="en" id="ce">RIBEYE</span>
+    <p id="cd">결 사이사이 지방이 고르게 박혀 있어 처음 오신 분께 먼저 권하는 부위예요. 센 불에 겉만 빠르게 익혀 드세요.</p>
+    <dl><dt>추천 두께</dt><dd id="c1">2.5cm 두툼하게</dd><dt>굽는 법</dt><dd id="c2">한 면 1분 30초씩, 뒤집기 한 번</dd><dt>함께 드시면</dt><dd id="c3">굵은 소금, 와사비</dd></dl>
+    <div class="cutpills" id="pills"></div>
+   </div>
+  </div>
+ </div>
+</section>
+
+<section id="today" class="tex">
+ <div class="in">
+  <div class="sh rv"><div><span class="no">03 — TODAY'S COUNTER</span><h2>오늘의 쇼케이스</h2></div><p>그날 들어온 고기에 따라 부위와 가격이 바뀌어요. 아래는 이번 주 기준 100g 가격입니다.</p></div>
+  <div class="today">
+   <article class="card rv"><span class="lbl">구이용</span><div class="pic"><svg viewBox="0 0 400 300" aria-hidden="true"><rect width="400" height="300" fill="#E4D7BF"/><ellipse cx="200" cy="250" rx="150" ry="18" fill="#B9A688" opacity=".55"/><g transform="rotate(-8 200 160)"><path d="M90 150c8-50 70-80 130-68 56 10 86 50 76 98-9 46-64 76-126 68-58-8-90-48-80-98z" fill="url(#fat)"/><path d="M104 152c8-42 62-66 116-56 46 8 72 42 64 82-8 38-54 62-106 56-50-6-80-42-74-82z" fill="url(#meat)"/><path d="M104 152c8-42 62-66 116-56 46 8 72 42 64 82-8 38-54 62-106 56-50-6-80-42-74-82z" fill="#fff" filter="url(#mb)"/><path d="M184 104c-12 24-4 52 18 72 18 16 24 30 20 48" fill="none" stroke="#FBEBDD" stroke-width="5" stroke-linecap="round"/></g></svg></div><div class="bd"><h3>한우 꽃등심</h3><p>마블링이 고르게 퍼진 등심 가운데 부분</p><div class="pr"><span>100g</span><b>15,900<small>원</small></b></div></div></article>
+   <article class="card rv"><span class="lbl">구이용</span><div class="pic"><svg viewBox="0 0 400 300" aria-hidden="true"><rect width="400" height="300" fill="#DCCDB1"/><ellipse cx="200" cy="252" rx="140" ry="16" fill="#AF9B7C" opacity=".55"/><g transform="rotate(6 200 160)"><path d="M110 92h170c14 0 24 12 22 26l-12 112c-2 14-14 24-28 24H130c-14 0-26-10-26-24l-8-110c0-16 8-28 14-28z" fill="url(#fat)"/><path d="M122 112h146c10 0 17 8 16 18l-10 92c-1 10-10 17-20 17H140c-10 0-18-7-18-17l-7-92c0-10 7-18 7-18z" fill="url(#meat2)"/><path d="M122 112h146c10 0 17 8 16 18l-10 92c-1 10-10 17-20 17H140c-10 0-18-7-18-17l-7-92c0-10 7-18 7-18z" fill="#fff" filter="url(#mb2)"/></g></svg></div><div class="bd"><h3>한우 채끝</h3><p>결이 곱고 씹는 맛이 좋은 허리 부위</p><div class="pr"><span>100g</span><b>14,500<small>원</small></b></div></div></article>
+   <article class="card rv"><span class="lbl">구이용</span><div class="pic"><svg viewBox="0 0 400 300" aria-hidden="true"><rect width="400" height="300" fill="#E9DDC6"/><ellipse cx="200" cy="250" rx="150" ry="16" fill="#B9A688" opacity=".5"/><g transform="rotate(-12 200 160)"><rect x="80" y="110" width="240" height="40" rx="19" fill="url(#meat)"/><rect x="80" y="110" width="240" height="40" rx="19" fill="#fff" filter="url(#mb2)"/><rect x="96" y="158" width="220" height="38" rx="18" fill="url(#meat2)"/><rect x="96" y="158" width="220" height="38" rx="18" fill="#fff" filter="url(#mb2)"/><rect x="88" y="204" width="200" height="34" rx="16" fill="url(#meat)"/><rect x="88" y="204" width="200" height="34" rx="16" fill="#fff" filter="url(#mb2)"/></g></svg></div><div class="bd"><h3>한우 갈빗살</h3><p>갈비뼈 사이에서 떼어 낸 진한 맛의 살</p><div class="pr"><span>100g</span><b>12,900<small>원</small></b></div></div></article>
+   <article class="card rv"><span class="lbl">국·찜용</span><div class="pic"><svg viewBox="0 0 400 300" aria-hidden="true"><rect width="400" height="300" fill="#D8C8AA"/><ellipse cx="200" cy="252" rx="140" ry="16" fill="#A8916F" opacity=".55"/><g><path d="M120 120c20-30 140-36 170 0 22 28 14 90-20 110-40 22-110 18-140-8-26-24-26-74-10-102z" fill="url(#meat2)"/><path d="M150 140c30-10 80-8 110 6M140 180c40 10 90 8 130-4M160 214c30 6 60 4 90-2" fill="none" stroke="#F2DCCB" stroke-width="5" stroke-linecap="round" opacity=".75"/><path d="M200 128c-6 30-4 70 6 100" fill="none" stroke="#F2DCCB" stroke-width="3" opacity=".6"/></g></svg></div><div class="bd"><h3>한우 사태</h3><p>오래 끓일수록 부드러워지는 다리 살</p><div class="pr"><span>100g</span><b>6,800<small>원</small></b></div></div></article>
+  </div>
+  <p class="note">※ 가격은 예시이며 입고 상황에 따라 달라질 수 있어요. 쇼케이스 가격표를 기준으로 계산합니다.</p>
+ </div>
+</section>
+
+<section id="table" class="tbl tex">
+ <div class="in">
+  <div class="sh rv"><div><span class="no">04 — AT THE TABLE</span><h2>자리에서 함께 시키는 메뉴</h2></div><p>고기를 다 구운 뒤 마무리로, 또는 고기와 같이 곁들이기 좋은 식사와 술이에요.</p></div>
+  <div class="tblgrid">
+   <div class="mlist rv">
+    <h3>식사 <small>고기 드신 뒤 마무리</small></h3>
+    <ul>
+     <li><div><b>한우 차돌 된장찌개</b><em>차돌박이를 넉넉히 넣고 뚝배기에 끓여요</em></div><i></i><span>8,000</span></li>
+     <li><div><b>육회 비빔밥</b><em>오늘 손질한 우둔으로 무친 육회</em></div><i></i><span>13,000</span></li>
+     <li><div><b>소고기 무국 &amp; 공깃밥</b><em>사태를 오래 끓인 맑은 국</em></div><i></i><span>7,000</span></li>
+     <li><div><b>물냉면 · 비빔냉면</b><em>고기 뒤에 시원하게</em></div><i></i><span>7,500</span></li>
+    </ul>
+   </div>
+   <div class="mlist rv">
+    <h3>곁들임 &amp; 술 <small>자리에서 주문</small></h3>
+    <ul>
+     <li><div><b>한우 육사시미</b><em>얇게 썰어 참기름 소금장에</em></div><i></i><span>24,000</span></li>
+     <li><div><b>버섯 모둠 구이</b><em>새송이·표고·느타리</em></div><i></i><span>6,000</span></li>
+     <li><div><b>소주 · 맥주</b><em>병</em></div><i></i><span>5,000</span></li>
+     <li><div><b>전통 막걸리</b><em>750ml</em></div><i></i><span>6,000</span></li>
+    </ul>
+   </div>
+   <div class="setbox rv"><span class="k">FOR TWO · 둘이 한 상</span><h4>우담 2인 모둠</h4><p>꽃등심 200g · 채끝 150g · 갈빗살 150g + 된장찌개 1 + 상차림 2인</p><div class="p">79,000<small>원</small></div></div>
+  </div>
+ </div>
+</section>
+
+<section id="gift" class="gift tex">
+ <div class="in">
+  <div class="art rv">
+   <svg viewBox="0 0 560 480" role="img" aria-label="보자기로 묶은 선물 상자와 그 안에 칸칸이 담긴 등심, 불고기, 국거리 포장 그림">
+    <rect width="560" height="480" fill="#E4D7BF"/>
+    <circle cx="460" cy="90" r="120" fill="#D9C8AA"/>
+    <ellipse cx="280" cy="420" rx="220" ry="24" fill="#B9A688" opacity=".6"/>
+    <!-- box -->
+    <g filter="url(#soft)">
+     <path d="M80 200h400v200c0 10-8 18-18 18H98c-10 0-18-8-18-18z" fill="#1E1715"/>
+     <path d="M80 200h400v24H80z" fill="#2E2421"/>
+     <rect x="100" y="230" width="360" height="170" fill="#3A2C27"/>
+     <!-- trays -->
+     <rect x="112" y="242" width="160" height="70" rx="4" fill="#F3ECDF"/>
+     <path d="M126 256c10-6 40-8 64-2s40 6 70 0v44c-30 6-50 4-70-2s-50-4-64 2z" fill="url(#meat)"/><path d="M126 256c10-6 40-8 64-2s40 6 70 0v44c-30 6-50 4-70-2s-50-4-64 2z" fill="#fff" filter="url(#mb2)"/>
+     <rect x="288" y="242" width="160" height="70" rx="4" fill="#F3ECDF"/>
+     <g fill="url(#meat2)"><path d="M300 262c20-8 40 4 60-2s40-6 76 2v10c-30-8-50-2-70 4s-40-6-66 0z"/><path d="M300 282c24-6 40 4 64-2s40-4 72 2v10c-30-6-46-2-70 2s-40-4-66 0z"/></g>
+     <rect x="112" y="322" width="336" height="66" rx="4" fill="#F3ECDF"/>
+     <g><rect x="130" y="336" width="44" height="38" rx="8" fill="url(#meat2)"/><rect x="186" y="336" width="44" height="38" rx="8" fill="url(#meat)"/><rect x="242" y="336" width="44" height="38" rx="8" fill="url(#meat2)"/><rect x="298" y="336" width="44" height="38" rx="8" fill="url(#meat)"/><rect x="354" y="336" width="44" height="38" rx="8" fill="url(#meat2)"/></g>
+     <g fill="#F2DCCB" opacity=".7"><path d="M138 350h28M194 356h28M250 348h28M306 354h28M362 350h28" stroke="#F2DCCB" stroke-width="3" stroke-linecap="round"/></g>
+    </g>
+    <!-- lid tilted with bojagi -->
+    <g transform="rotate(-9 280 150)" filter="url(#soft)">
+     <rect x="96" y="96" width="380" height="80" rx="4" fill="#6E1420"/>
+     <path d="M96 96h380v12H96z" fill="#8E2230"/>
+     <rect x="262" y="96" width="44" height="80" fill="#B88A3E"/>
+     <rect x="262" y="96" width="44" height="80" fill="url(#grain)" filter="url(#grain)"/>
+     <rect x="150" y="118" width="88" height="34" fill="#F3ECDF"/>
+     <text x="194" y="142" text-anchor="middle" font-family="Noto Serif KR" font-weight="900" font-size="20" fill="#6E1420">우담</text>
+    </g>
+    <!-- bow -->
+    <g transform="translate(284 92)" filter="url(#soft)">
+     <path d="M0 0c-30-34-70-30-66-6 4 22 40 22 66 6z" fill="#C79A4B"/>
+     <path d="M0 0c30-34 70-30 66-6-4 22-40 22-66 6z" fill="#B88A3E"/>
+     <path d="M0 0c-10 20-26 44-40 54M0 0c10 20 24 42 36 54" stroke="#B88A3E" stroke-width="12" stroke-linecap="round" fill="none"/>
+     <circle r="12" fill="#A47A33"/>
+    </g>
+   </svg>
+  </div>
+  <div class="rv">
+   <div class="sh" style="margin-bottom:0"><div><span class="no">05 — YEAR-END GIFT</span><h2>연말 한우 선물세트,<br>12월 20일까지 예약</h2></div></div>
+   <p style="color:#5D514B;margin-top:16px;max-width:480px">받는 날짜에 맞춰 당일 아침에 손질해 포장해요. 보자기 포장과 손글씨 카드가 기본으로 들어갑니다.</p>
+   <div class="gopts" role="radiogroup">
+    <div class="gopt on" role="radio" aria-checked="true" tabindex="0"><span class="r"></span><div><b>구이 세트</b><em>꽃등심 · 채끝 · 갈빗살 각 500g</em></div><span>189,000원</span></div>
+    <div class="gopt" role="radio" aria-checked="false" tabindex="0"><span class="r"></span><div><b>정성 세트</b><em>등심 500g · 불고기 600g · 국거리 600g</em></div><span>139,000원</span></div>
+    <div class="gopt" role="radio" aria-checked="false" tabindex="0"><span class="r"></span><div><b>가족 세트</b><em>불고기 800g · 국거리 800g · 사태 600g</em></div><span>99,000원</span></div>
+   </div>
+   <div class="tip"><svg viewBox="0 0 24 24"><path d="M3 7h18v13H3zM3 7l9 6 9-6"/></svg>예약은 아래 양식에서 ‘선물세트 상담’을 골라 남겨 주세요.</div>
+  </div>
+ </div>
+</section>
+
+<section id="resv" class="resv">
+ <div class="in">
+  <div class="rv">
+   <div class="sh" style="margin-bottom:28px"><div><span class="no">06 — RESERVATION</span><h2>자리 예약 &amp; 상담</h2></div><p>저녁 6시부터 8시까지는 자리가 빨리 차요. 미리 예약하시면 원하는 부위를 따로 남겨 둘게요.</p></div>
+   <div class="hours">
+    <div><span>평일</span><span>오전 11:30 – 밤 10:00</span></div>
+    <div><span>주말 · 공휴일</span><span>오전 11:30 – 밤 9:30</span></div>
+    <div><span>정육 코너</span><span>오전 10:00부터 판매</span></div>
+    <div><span>쉬는 날</span><span>매주 월요일</span></div>
+   </div>
+  </div>
+  <form class="f rv" onsubmit="return sendF(event)">
+   <h3>예약 신청</h3>
+   <label>무엇을 도와드릴까요</label>
+   <div class="seg" id="kind"><button type="button" class="on">자리 예약</button><button type="button">선물세트 상담</button><button type="button">단체 회식</button></div>
+   <div class="row">
+    <div><label for="fn">이름</label><input id="fn" required placeholder="홍길동"></div>
+    <div><label for="fp">연락처</label><input id="fp" required placeholder="000-0000-0000"></div>
+   </div>
+   <div class="row">
+    <div><label for="fd">날짜</label><input id="fd" type="text" placeholder="날짜 선택" onfocus="this.type='date'" required></div>
+    <div><label for="ft">시간</label><select id="ft"><option>오후 5:30</option><option>오후 6:00</option><option>오후 6:30</option><option>오후 7:00</option><option>오후 7:30</option><option>오후 8:00</option></select></div>
+   </div>
+   <label>인원</label>
+   <div class="seg" id="ppl"><button type="button">2명</button><button type="button" class="on">3–4명</button><button type="button">5–8명</button><button type="button">9명 이상</button></div>
+   <button class="btn" type="submit">예약 신청 보내기</button>
+   <div class="ok" id="ok">신청이 접수되었어요. 확인 후 남겨 주신 번호로 연락드릴게요. (샘플 화면이라 실제로 전송되지는 않아요)</div>
+  </form>
+ </div>
+</section>
+
+<section id="loc" class="loc tex">
+ <div class="in">
+  <div class="map rv">
+   <svg viewBox="0 0 700 360" preserveAspectRatio="xMidYMid slice" aria-label="가게 위치를 표시한 간단한 약도">
+    <rect width="700" height="360" fill="#EFE6D4"/>
+    <g stroke="#FBF7F0" stroke-width="26" fill="none"><path d="M-10 230h720"/><path d="M220 -10v380"/><path d="M520 -10v380"/></g>
+    <g stroke="#E2D5BC" stroke-width="10" fill="none"><path d="M-10 90h720M-10 320h720M380 -10v380"/></g>
+    <g fill="#E2D5BC"><rect x="250" y="110" width="110" height="90" rx="4"/><rect x="400" y="110" width="100" height="90" rx="4"/><rect x="40" y="110" width="160" height="90" rx="4"/><rect x="550" y="250" width="130" height="56" rx="4"/><rect x="40" y="250" width="160" height="56" rx="4"/></g>
+    <rect x="250" y="250" width="110" height="56" rx="4" fill="#6E1420"/>
+    <text x="305" y="284" text-anchor="middle" font-family="Noto Sans KR" font-weight="700" font-size="16" fill="#F3ECDF">우담</text>
+    <g transform="translate(305 230)"><path d="M0 0c-14-18-22-28-22-40a22 22 0 1 1 44 0c0 12-8 22-22 40z" fill="#1E1715"/><circle cy="-40" r="8" fill="#E3B676"/></g>
+    <g font-family="Noto Sans KR" font-size="13" fill="#7A6D63" font-weight="500"><text x="404" y="235">○○대로</text><text x="396" y="40">○○로 12길</text><text x="420" y="300">공영주차장</text></g>
+    <rect x="410" y="250" width="90" height="56" rx="4" fill="none" stroke="#7A6D63" stroke-width="1.5" stroke-dasharray="4 4"/>
+   </svg>
+  </div>
+  <div class="addr rv">
+   <div><small>ADDRESS</small><p>○○시 ○○구 ○○로 00, 1층</p></div>
+   <div><small>PARKING</small><p>바로 옆 공영주차장 이용 (2시간 지원)</p></div>
+   <div><small>CONTACT</small><p>000-0000-0000 · 카카오톡 ID: example</p></div>
+  </div>
+ </div>
+</section>
+</main>
+
+<footer><div class="in"><span>우담 정육식당 · UDAM BUTCHER &amp; GRILL</span><span>대표 000 · 사업자등록번호 000-00-00000</span></div></footer>
+
+<script>
+var CUTS={
+ moksim:['목심','CHUCK ROLL','목 뒤쪽 살로 지방과 살코기가 섞여 고소해요. 얇게 썰어 불고기나 구이로 좋아요.','1cm 얇게','센 불에 빠르게 앞뒤로','파채, 쌈장'],
+ deungsim:['등심','RIBEYE','결 사이사이 지방이 고르게 박혀 있어 처음 오신 분께 먼저 권하는 부위예요. 센 불에 겉만 빠르게 익혀 드세요.','2.5cm 두툼하게','한 면 1분 30초씩, 뒤집기 한 번','굵은 소금, 와사비'],
+ chaekkeut:['채끝','STRIPLOIN','등심과 안심 사이 허리 살로 결이 곱고 씹는 맛이 있어요. 스테이크처럼 두껍게 굽기 좋아요.','3cm 스테이크용','겉을 굽고 잠시 쉬게 둔 뒤 썰기','구운 마늘, 홀그레인 머스터드'],
+ ansim:['안심','TENDERLOIN','지방이 적고 아주 부드러운 부위예요. 너무 익히지 않는 것이 맛있게 먹는 방법이에요.','3cm 둥글게','중간 불에 천천히, 속은 분홍빛으로','소금, 후추만'],
+ udun:['우둔','TOP ROUND','지방이 거의 없는 살코기라 육회나 장조림에 쓰여요. 오늘 육회 비빔밥도 이 부위로 만들어요.','육회는 채 썰어','굽기보다 육회·장조림 추천','배채, 노른자'],
+ galbi:['갈비','SHORT RIB','갈비뼈 주변 살로 맛이 진하고 쫄깃해요. 뼈에서 떼어 낸 갈빗살은 구이로 특히 잘 어울려요.','1.5cm 길게','중간 불에 노릇하게 여러 번 뒤집기','명이나물, 쌈 채소'],
+ yangji:['양지','BRISKET','가슴에서 배까지 이어진 부위로 국물 맛이 깊어요. 차돌박이도 이 부위에서 나와요.','국거리 한입 크기','오래 끓여 국·찌개로','무, 대파'],
+ satae:['사태','SHANK','다리 근육이라 힘줄이 있어 오래 익히면 쫀득하고 부드러워져요. 찜이나 수육으로 좋아요.','통으로 또는 4cm','1시간 이상 삶거나 찜으로','겨자 간장']
+};
+var order=['deungsim','chaekkeut','galbi','ansim','moksim','udun','yangji','satae'];
+var pills=document.getElementById('pills');
+function pick(k){var c=CUTS[k];document.getElementById('cn').textContent=c[0];document.getElementById('ce').textContent=c[1];document.getElementById('cd').textContent=c[2];document.getElementById('c1').textContent=c[3];document.getElementById('c2').textContent=c[4];document.getElementById('c3').textContent=c[5];
+ document.querySelectorAll('.cow .part').forEach(function(p){p.classList.toggle('on',p.dataset.k===k)});
+ pills.querySelectorAll('button').forEach(function(b){b.classList.toggle('on',b.dataset.k===k)});}
+order.forEach(function(k){var b=document.createElement('button');b.type='button';b.textContent=CUTS[k][0];b.dataset.k=k;if(k==='deungsim')b.className='on';b.onclick=function(){pick(k)};pills.appendChild(b)});
+document.querySelectorAll('.cow .part').forEach(function(p){p.addEventListener('click',function(){pick(p.dataset.k)})});
+document.querySelectorAll('.gopt').forEach(function(g){g.addEventListener('click',function(){document.querySelectorAll('.gopt').forEach(function(x){x.classList.remove('on');x.setAttribute('aria-checked','false')});g.classList.add('on');g.setAttribute('aria-checked','true')})});
+document.querySelectorAll('.seg').forEach(function(s){s.querySelectorAll('button').forEach(function(b){b.onclick=function(){s.querySelectorAll('button').forEach(function(x){x.classList.remove('on')});b.classList.add('on')}})});
+function sendF(e){e.preventDefault();document.getElementById('ok').classList.add('show');return false}
+var io=new IntersectionObserver(function(es){es.forEach(function(x){if(x.isIntersecting){x.target.classList.add('vis');io.unobserve(x.target)}})},{threshold:.12});
+document.querySelectorAll('.rv').forEach(function(el){io.observe(el)});
+</script>
+</body>
+</html>

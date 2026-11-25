@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>바다건너 국제택배 · 필리핀에서 한국으로, 첫 박스 10% 할인</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Do+Hyeon&family=Noto+Sans+KR:wght@400;500;700;900&family=IBM+Plex+Mono:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--y:#FFCE1F;--y2:#F5B800;--ink:#121212;--paper:#F4F1EA;--card:#FFFDF8;--kraft:#C99A62;--kraft2:#A9773F;--red:#E2402B;--mut:#5B5750;--ln:rgba(18,18,18,.14)}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;overflow-x:hidden}
+body{font-family:'Noto Sans KR',sans-serif;color:var(--ink);background:var(--paper);word-break:keep-all;overflow-wrap:break-word;-webkit-font-smoothing:antialiased;overflow-x:hidden;line-height:1.6}
+a{color:inherit;text-decoration:none}
+.dh{font-family:'Do Hyeon',sans-serif;font-weight:400}
+.mono{font-family:'IBM Plex Mono',monospace}
+.in{max-width:1200px;margin:0 auto;padding:0 28px}
+/* top */
+.top{background:var(--ink);color:var(--y);font-size:13px;font-weight:700;letter-spacing:.02em;text-align:center;padding:9px 16px}
+header{background:var(--paper);border-bottom:2px solid var(--ink);position:sticky;top:0;z-index:20}
+header .in{display:flex;align-items:center;justify-content:space-between;height:70px;gap:16px}
+.logo{display:flex;align-items:center;gap:10px}
+.logo i{width:42px;height:42px;background:var(--y);border:2px solid var(--ink);display:grid;place-items:center}
+.logo b{font-family:'Do Hyeon';font-size:26px;font-weight:400;line-height:1}
+.logo small{display:block;font-family:'IBM Plex Mono';font-size:11px;font-weight:600;letter-spacing:.14em;color:var(--mut);margin-top:3px}
+header .btn{height:46px;font-size:15px;padding:0 20px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;height:58px;padding:0 28px;border:2px solid var(--ink);background:var(--y);color:var(--ink);font-weight:900;font-size:17px;font-family:inherit;cursor:pointer;box-shadow:4px 4px 0 var(--ink);transition:.15s}
+.btn:hover{transform:translate(-2px,-2px);box-shadow:6px 6px 0 var(--ink)}
+.btn.k{background:var(--ink);color:var(--y)}
+.btn svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:2.6;stroke-linecap:round;stroke-linejoin:round}
+/* hero */
+.hero{background:var(--y);border-bottom:2px solid var(--ink);position:relative;overflow:hidden}
+.hero:before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(-45deg,transparent 0 22px,rgba(18,18,18,.045) 22px 24px);pointer-events:none}
+.hero .in{display:grid;grid-template-columns:1.05fr .95fr;gap:40px;align-items:center;padding-top:60px;padding-bottom:70px;position:relative}
+.stampline{display:inline-flex;align-items:center;gap:10px;font-weight:700;font-size:15px;letter-spacing:0;border:2px solid var(--ink);padding:6px 12px;background:var(--card)}
+.stampline i{width:9px;height:9px;background:var(--red);border-radius:50%}
+.hero h1{font-family:'Do Hyeon';font-weight:400;font-size:clamp(46px,6.2vw,88px);line-height:1.04;margin:24px 0 22px;letter-spacing:-.01em}
+.hero h1 span{background:var(--ink);color:var(--y);padding:0 .14em;display:inline-block;transform:rotate(-1.5deg)}
+.hero p{font-size:18px;max-width:510px;color:#2A2720}
+.offer{display:flex;align-items:stretch;margin-top:30px;max-width:520px;border:2px solid var(--ink);background:var(--card);box-shadow:6px 6px 0 var(--ink)}
+.offer .pct{background:var(--red);color:#fff;font-family:'Do Hyeon';font-size:56px;line-height:1;padding:16px 20px;display:flex;align-items:center;border-right:2px dashed var(--ink)}
+.offer .pct small{font-size:24px;margin-left:2px}
+.offer div{padding:14px 18px}
+.offer b{display:block;font-size:19px;font-weight:900}
+.offer em{font-style:normal;font-size:14px;color:var(--mut)}
+.hero .acts{display:flex;gap:14px;margin-top:30px;flex-wrap:wrap}
+.hero-art{position:relative}
+.hero-art svg{width:100%;height:auto;display:block}
+/* strip */
+.strip{background:var(--ink);color:var(--paper);border-bottom:2px solid var(--ink)}
+.strip .in{display:grid;grid-template-columns:repeat(4,1fr)}
+.strip div{padding:22px 18px;border-left:1px solid rgba(244,241,234,.18)}
+.strip div:first-child{border-left:0}
+.strip small{display:block;font-family:'IBM Plex Mono';font-size:12px;letter-spacing:.14em;color:var(--y);font-weight:600}
+.strip b{font-size:19px;font-weight:700}.nw{white-space:nowrap}
+/* sections */
+section{padding:96px 0}
+.sh{margin-bottom:44px;display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap}
+.sh small{font-family:'IBM Plex Mono';font-weight:700;font-size:13px;letter-spacing:.14em;background:var(--ink);color:var(--y);padding:4px 10px}
+.sh h2{font-family:'Do Hyeon';font-weight:400;font-size:clamp(34px,4vw,52px);line-height:1.15;margin-top:14px}
+.sh p{max-width:420px;color:var(--mut)}
+/* steps */
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;counter-reset:s}
+.step{background:var(--card);border:2px solid var(--ink);padding:28px 26px 26px;position:relative}
+.step .num{font-family:'IBM Plex Mono';font-weight:700;font-size:14px;letter-spacing:.1em;color:var(--mut)}
+.step svg{width:64px;height:64px;margin:16px 0 14px}
+.step h3{font-size:22px;font-weight:900;margin-bottom:6px}
+.step p{font-size:15px;color:var(--mut)}
+.step .dd{position:absolute;right:20px;top:24px;font-family:'Do Hyeon';font-size:22px;background:var(--y);border:2px solid var(--ink);padding:2px 10px}
+.step:not(:last-child):after{content:"";position:absolute;right:-24px;top:50%;width:26px;height:2px;background:var(--ink);z-index:2}
+/* calc */
+.calc{background:#E9E4D8;border-top:2px solid var(--ink);border-bottom:2px solid var(--ink)}
+.cgrid{display:grid;grid-template-columns:1.15fr .85fr;gap:30px;align-items:start}
+.boxes{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.bx{background:var(--card);border:2px solid var(--ink);padding:18px 14px 16px;text-align:center;cursor:pointer;transition:.15s;font-family:inherit;color:var(--ink)}
+.bx:hover{transform:translateY(-3px)}
+.bx.on{background:var(--y);box-shadow:4px 4px 0 var(--ink)}
+.bx svg{width:100%;height:84px}
+.bx b{display:block;font-size:20px;font-weight:900;margin-top:8px}
+.bx em{display:block;font-style:normal;font-size:13px;color:var(--mut)}
+.bx span{display:block;font-family:'IBM Plex Mono';font-weight:700;font-size:18px;margin-top:6px}
+.opts{margin-top:22px;display:grid;gap:10px}
+.opt{display:flex;align-items:center;gap:12px;background:var(--card);border:2px solid var(--ink);padding:14px 16px;cursor:pointer;font-size:15px}
+.opt input{width:20px;height:20px;accent-color:var(--ink)}
+.opt b{margin-left:auto;font-family:'IBM Plex Mono';font-weight:700;white-space:nowrap}
+.receipt{background:var(--card);border:2px solid var(--ink);padding:26px 26px 22px;position:relative;font-family:'IBM Plex Mono';box-shadow:6px 6px 0 var(--ink)}
+.receipt:after{content:"";position:absolute;left:-2px;right:-2px;bottom:-14px;height:14px;background:radial-gradient(circle at 10px 0,transparent 8px,var(--card) 8.5px) 0 0/20px 14px repeat-x}
+.receipt h3{font-family:'Do Hyeon';font-weight:400;font-size:28px;border-bottom:2px dashed var(--ink);padding-bottom:12px;margin-bottom:10px}
+.receipt .r{display:flex;justify-content:space-between;gap:10px;font-size:15px;font-weight:500;padding:7px 0;font-family:'Noto Sans KR',sans-serif}.receipt .r span:last-child{font-family:'IBM Plex Mono',monospace;font-weight:600}
+.receipt .r.d{color:var(--red)}
+.receipt .tot{display:flex;justify-content:space-between;align-items:baseline;border-top:2px solid var(--ink);margin-top:10px;padding-top:14px}
+.receipt .tot span{font-family:'Noto Sans KR';font-weight:900;font-size:17px}
+.receipt .tot b{font-size:34px;font-weight:700}
+.receipt small{display:block;font-family:'Noto Sans KR';font-size:13px;color:var(--mut);margin-top:12px;line-height:1.55}
+.receipt .bc{margin-top:14px;height:44px;background:repeating-linear-gradient(90deg,var(--ink) 0 2px,transparent 2px 4px,var(--ink) 4px 7px,transparent 7px 9px,var(--ink) 9px 10px,transparent 10px 14px)}
+/* send list */
+.lists{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+.lst{border:2px solid var(--ink);background:var(--card)}
+.lst h3{display:flex;align-items:center;gap:10px;padding:16px 22px;font-size:20px;font-weight:900;border-bottom:2px solid var(--ink)}
+.lst.ok h3{background:var(--y)}
+.lst.no h3{background:var(--ink);color:var(--paper)}
+.lst h3 svg{width:24px;height:24px;fill:none;stroke:currentColor;stroke-width:3;stroke-linecap:round;stroke-linejoin:round}
+.lst ul{list-style:none;padding:8px 22px 14px}
+.lst li{padding:12px 0;border-bottom:1px dashed var(--ln);font-size:16px;display:flex;justify-content:space-between;gap:14px}
+.lst li:last-child{border-bottom:0}
+.lst li em{font-style:normal;font-size:14px;color:var(--mut);text-align:right}
+/* cutoff */
+.cut{background:var(--ink);color:var(--paper)}
+.cut .sh small{background:var(--y);color:var(--ink)}
+.cut .sh p{color:#B9B3A8}
+.tl{display:grid;grid-template-columns:repeat(4,1fr);border-top:2px solid var(--y);position:relative}
+.tl div{padding:26px 18px 0 0;position:relative}
+.tl div:before{content:"";position:absolute;left:0;top:-9px;width:16px;height:16px;background:var(--y);border-radius:50%}
+.tl div.hot:before{background:var(--red);box-shadow:0 0 0 6px rgba(226,64,43,.3)}
+.tl b{font-family:'Do Hyeon';font-weight:400;font-size:30px;color:var(--y);display:block}
+.tl div.hot b{color:#FF7B66}
+.tl span{font-size:15px;color:#D8D2C6}
+/* faq */
+.faq{max-width:860px}
+.q{border:2px solid var(--ink);background:var(--card);margin-bottom:12px}
+.q button{width:100%;text-align:left;background:none;border:0;font-family:inherit;font-size:17px;font-weight:700;padding:20px 56px 20px 22px;cursor:pointer;position:relative;color:var(--ink)}
+.q button:after{content:"+";position:absolute;right:20px;top:50%;transform:translateY(-50%);font-family:'IBM Plex Mono';font-size:26px;font-weight:600}
+.q.open button:after{content:"–"}
+.q .a{display:none;padding:0 22px 20px;color:var(--mut);font-size:15px}
+.q.open .a{display:block}
+/* form */
+.apply{background:var(--y);border-top:2px solid var(--ink)}
+.apply .in{display:grid;grid-template-columns:.85fr 1.15fr;gap:50px;align-items:start}
+.apply .sh{margin-bottom:20px}
+.apply .sh p{color:#3A362E}
+.chk{list-style:none;margin-top:10px}
+.chk li{display:flex;gap:12px;align-items:flex-start;padding:10px 0;font-size:16px;font-weight:500}
+.chk li:before{content:"✓";font-family:'IBM Plex Mono';font-weight:700;width:26px;height:26px;flex:none;display:grid;place-items:center;background:var(--ink);color:var(--y);font-size:14px}
+form.wb{background:var(--card);border:2px solid var(--ink);box-shadow:8px 8px 0 var(--ink)}
+.wb .wh{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:16px 22px;border-bottom:2px solid var(--ink);background:var(--ink);color:var(--y)}
+.wb .wh b{font-family:'Do Hyeon';font-weight:400;font-size:26px}
+.wb .wh span{font-family:'IBM Plex Mono';font-size:13px;font-weight:600;letter-spacing:.1em}
+.wb .cells{display:grid;grid-template-columns:1fr 1fr}
+.wb .cell{padding:14px 20px 16px;border-bottom:2px solid var(--ink)}
+.wb .cell:nth-child(odd){border-right:2px solid var(--ink)}
+.wb .cell.full{grid-column:1/-1;border-right:0}
+.wb label{display:block;font-size:13px;font-weight:700;letter-spacing:0;color:var(--mut);margin-bottom:6px}
+.wb input,.wb select{width:100%;border:0;border-bottom:1.5px solid rgba(18,18,18,.3);background:transparent;font-family:inherit;font-size:16px;padding:6px 0;color:var(--ink);border-radius:0}
+.wb input:focus,.wb select:focus{outline:none;border-bottom-color:var(--ink)}
+.wb .ft{padding:18px 20px 20px;display:flex;flex-direction:column;gap:12px}
+.wb .ft .btn{width:100%}
+.wb .ft p{font-size:13px;color:var(--mut)}
+.wb .ok{display:none;background:var(--ink);color:var(--y);padding:14px 16px;font-size:14px;font-weight:500}
+.wb .ok.show{display:block}
+footer{background:var(--ink);color:#B9B3A8;font-size:13px;padding:30px 0}
+footer .in{display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap}
+.mbar{display:none}
+@media(max-width:960px){
+ .hero .in,.cgrid,.apply .in{grid-template-columns:1fr}
+ .steps{grid-template-columns:1fr}.step:not(:last-child):after{display:none}
+ .strip .in{grid-template-columns:1fr 1fr}.strip div:nth-child(3){border-left:0}.strip div:nth-child(n+3){border-top:1px solid rgba(244,241,234,.18)}
+ .tl{grid-template-columns:1fr;border-top:0;border-left:2px solid var(--y);margin-left:8px}.tl div{padding:0 0 26px 28px}.tl div:before{left:-9px;top:8px}
+ .lists{grid-template-columns:1fr}
+ section{padding:72px 0}}
+@media(max-width:600px){
+ .in{padding:0 18px}
+ header .btn{display:none}
+ .hero .in{padding-top:36px;padding-bottom:48px}
+ .hero h1{font-size:48px}.hero p{font-size:16px}
+ .offer .pct{font-size:44px;padding:14px 14px}
+ .btn{width:100%}
+ .boxes{grid-template-columns:1fr 1fr}
+ .wb .cells{grid-template-columns:1fr}.wb .cell:nth-child(odd){border-right:0}
+ .strip b{font-size:16px}
+ .tl b{font-size:26px}
+ body{padding-bottom:74px}
+ .mbar{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:30;background:var(--paper);border-top:2px solid var(--ink);padding:10px 14px}
+ .mbar .btn{height:52px;box-shadow:none}}
+</style>
+</head>
+<body>
+<div class="top">MANILA · CEBU · CLARK → KOREA  ·  12월 첫 박스 10% 할인 진행 중</div>
+<header>
+ <div class="in">
+  <a class="logo" href="#"><i><svg width="26" height="26" viewBox="0 0 26 26" fill="none" stroke="#121212" stroke-width="2.4" stroke-linejoin="round"><path d="M3 8l10-5 10 5v10l-10 5-10-5z"/><path d="M3 8l10 5 10-5M13 13v10"/></svg></i><span><b>바다건너 국제택배</b><small>BADAGEONNEO CARGO PH→KR</small></span></a>
+  <a class="btn" href="#apply">수거 신청</a>
+ </div>
+</header>
+
+<section class="hero" style="padding:0">
+ <div class="in">
+  <div>
+   <span class="stampline"><i></i>필리핀 → 한국 · 집 앞 수거부터 집 앞 도착까지</span>
+   <h1>한국 가족에게<br><span>박스 하나로</span><br>보내세요</h1>
+   <p>박스만 채워 두시면 저희가 집으로 가지러 갑니다. 포장 보강과 통관 서류 작성까지 대신 해 드리고, 한국 주소 문 앞까지 배달해요.</p>
+   <div class="offer"><span class="pct">10<small>%</small></span><div><b>첫 박스 운임 10% 할인</b><em>12월 31일 수거 신청분까지 · 박스 크기 상관없이</em></div></div>
+   <div class="acts"><a class="btn k" href="#apply">무료 수거 신청하기 <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a><a class="btn" href="#calc">박스 요금 보기</a></div>
+  </div>
+  <div class="hero-art">
+   <svg viewBox="0 0 560 520" role="img" aria-label="테이프로 봉한 크라프트 상자에 송장 스티커와 취급주의 라벨이 붙어 있고, 뒤로 필리핀에서 한국까지 점선 비행 경로가 그려진 그림">
+    <defs>
+     <linearGradient id="kf" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#D8AA70"/><stop offset="1" stop-color="#B9864B"/></linearGradient>
+     <linearGradient id="kf2" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#A9773F"/><stop offset="1" stop-color="#C08B50"/></linearGradient>
+     <linearGradient id="kt" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#E7BE86"/><stop offset="1" stop-color="#CC9A5C"/></linearGradient>
+     <filter id="hs" x="-20%" y="-20%" width="140%" height="150%"><feDropShadow dx="10" dy="12" stdDeviation="0" flood-color="#121212" flood-opacity="1"/></filter>
+     <filter id="ns"><feTurbulence type="fractalNoise" baseFrequency="1.2" numOctaves="2"/><feColorMatrix values="0 0 0 0 .3 0 0 0 0 .2 0 0 0 0 .1 0 0 0 .22 0"/><feComposite in2="SourceGraphic" operator="in"/></filter>
+    </defs>
+    <!-- map card -->
+    <g transform="rotate(4 300 150)">
+     <rect x="200" y="20" width="330" height="230" fill="#FFFDF8" stroke="#121212" stroke-width="2.5"/>
+     <path d="M200 50h330" stroke="#121212" stroke-width="2"/>
+     <text x="214" y="42" font-family="IBM Plex Mono" font-weight="700" font-size="15" fill="#121212" letter-spacing="1.5">ROUTE · PH → KR</text>
+     <!-- korea peninsula simplified -->
+     <path d="M436 70c8-4 18 0 22 8 4 10-2 16 2 24s12 10 8 20c-4 12-14 10-18 18-4 6 2 14-6 18-8 2-12-6-18-6-8 0-10 6-16 2-6-6 0-14-2-22s-10-12-6-20c4-6 12-4 16-10 4-8-2-18 6-24 4-4 8-6 12-8z" fill="#FFCE1F" stroke="#121212" stroke-width="2"/>
+     <!-- philippines simplified islands -->
+     <g fill="#FFCE1F" stroke="#121212" stroke-width="2" transform="translate(-8 -50)">
+      <path d="M262 150c6-6 14-4 16 4s-4 14 0 22-2 14-8 12-6-10-12-12-6-10-2-16c2-4 4-8 6-10z"/>
+      <path d="M284 196c8-2 14 4 12 10s-10 6-14 2-4-10 2-12z"/>
+      <path d="M300 214c10-4 20 2 18 12s-14 10-18 4-6-12 0-16z"/>
+      <path d="M246 206l20-10-2 8-18 12z"/>
+     </g>
+     <path d="M266 108C320 70 380 70 432 104" fill="none" stroke="#121212" stroke-width="2.5" stroke-dasharray="7 7"/>
+     <g transform="translate(352 78) rotate(-8)"><path d="M-16 0h26l10-4c4-2 6 2 2 4l-10 4h-28z" fill="#121212"/><path d="M-2 0l-8-14h6l12 14zM-2 4l-8 12h6l12-12z" fill="#121212"/></g>
+     <circle cx="262" cy="118" r="6" fill="#E2402B" stroke="#121212" stroke-width="2"/>
+     <circle cx="440" cy="112" r="6" fill="#E2402B" stroke="#121212" stroke-width="2"/>
+     <text x="284" y="136" font-family="Noto Sans KR" font-weight="700" font-size="18" fill="#121212">마닐라</text>
+     <text x="474" y="98" font-family="Noto Sans KR" font-weight="700" font-size="18" fill="#121212">인천</text>
+     
+    </g>
+    <!-- box -->
+    <g filter="url(#hs)">
+     <path d="M60 238l190-62 200 62-190 70z" fill="url(#kt)" stroke="#121212" stroke-width="2.5" stroke-linejoin="round"/>
+     <path d="M60 238v190l200 72V308z" fill="url(#kf)" stroke="#121212" stroke-width="2.5" stroke-linejoin="round"/>
+     <path d="M260 308v192l190-74V238z" fill="url(#kf2)" stroke="#121212" stroke-width="2.5" stroke-linejoin="round"/>
+    </g>
+    <path d="M60 238v190l200 72V308z" fill="#fff" filter="url(#ns)" opacity=".6"/>
+    <path d="M260 308v192l190-74V238z" fill="#fff" filter="url(#ns)" opacity=".6"/>
+    <!-- tape -->
+    <path d="M150 208l200 64-2 22-200-64z" fill="#F2E7C9" opacity=".92" stroke="#121212" stroke-width="1.5"/>
+    <path d="M348 272v60l-22 8v-60z" fill="#E9DDBE" opacity=".95" stroke="#121212" stroke-width="1.5"/>
+    <!-- waybill on front-left face -->
+    <g transform="matrix(1 .36 0 1 0 0)">
+     <rect x="88" y="232" width="146" height="112" fill="#FFFDF8" stroke="#121212" stroke-width="2"/>
+     <rect x="88" y="232" width="146" height="22" fill="#121212"/>
+     <text x="96" y="248" font-family="IBM Plex Mono" font-weight="700" font-size="13" fill="#FFCE1F" letter-spacing=".5">WAYBILL·PH→KR</text>
+     <g fill="#121212"><rect x="98" y="264" width="2" height="30"/><rect x="102" y="264" width="4" height="30"/><rect x="109" y="264" width="1.5" height="30"/><rect x="113" y="264" width="3" height="30"/><rect x="119" y="264" width="2" height="30"/><rect x="124" y="264" width="5" height="30"/><rect x="132" y="264" width="2" height="30"/><rect x="136" y="264" width="3" height="30"/><rect x="142" y="264" width="1.5" height="30"/><rect x="146" y="264" width="4" height="30"/><rect x="153" y="264" width="2" height="30"/><rect x="158" y="264" width="3" height="30"/><rect x="164" y="264" width="2" height="30"/><rect x="169" y="264" width="5" height="30"/></g>
+     <rect x="184" y="264" width="40" height="30" fill="#FFCE1F" stroke="#121212" stroke-width="1.5"/>
+     <text x="204" y="285" text-anchor="middle" font-family="Do Hyeon" font-size="18" fill="#121212">KR</text>
+     <path d="M98 306h126M98 318h100M98 330h80" stroke="#121212" stroke-width="2" opacity=".35"/>
+    </g>
+    <!-- fragile label right face -->
+    <g transform="matrix(1 -.38 0 1 0 0)">
+     <rect x="300" y="458" width="110" height="64" fill="#E2402B" stroke="#121212" stroke-width="2"/>
+     <text x="355" y="500" text-anchor="middle" font-family="Do Hyeon" font-size="30" fill="#fff">취급주의</text>
+    </g>
+    <!-- arrows up -->
+    <g transform="matrix(1 -.38 0 1 0 0)" stroke="#121212" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M310 550v-20M302 538l8-8 8 8M332 550v-20M324 538l8-8 8 8"/></g>
+   </svg>
+  </div>
+ </div>
+</section>
+
+<div class="strip"><div class="in">
+ <div><small>PICK-UP</small><b><span class="nw">메트로 마닐라 ·</span> <span class="nw">세부 ·</span> <span class="nw">클락</span> <span class="nw">무료 수거</span></b></div>
+ <div><small>TRANSIT</small><b>수거 후 평균 7–10일 도착</b></div>
+ <div><small>PAPERWORK</small><b>통관 서류 작성 대행</b></div>
+ <div><small>TRACKING</small><b>카카오톡으로 진행 상황 안내</b></div>
+</div></div>
+
+<section>
+ <div class="in">
+  <div class="sh"><div><small>01 · HOW IT WORKS</small><h2>세 단계면 끝나요</h2></div><p>박스가 없으시면 수거 기사님이 빈 박스를 먼저 가져다 드려요.</p></div>
+  <div class="steps">
+   <div class="step"><span class="num">STEP 01</span><span class="dd">D-day</span>
+    <svg viewBox="0 0 64 64" fill="none" stroke="#121212" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="round"><path d="M6 40V22h28v18M34 28h12l8 8v4H34"/><circle cx="16" cy="44" r="5" fill="#FFCE1F"/><circle cx="44" cy="44" r="5" fill="#FFCE1F"/><path d="M6 40h4M22 40h16M50 40h4"/></svg>
+    <h3>집 앞 수거</h3><p>원하는 날짜를 신청하시면 오전 또는 오후로 기사님이 방문해 무게를 재고 박스를 가져갑니다.</p></div>
+   <div class="step"><span class="num">STEP 02</span><span class="dd">D+1</span>
+    <svg viewBox="0 0 64 64" fill="none" stroke="#121212" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="round"><path d="M8 22l24-12 24 12v24L32 58 8 46z" fill="#FFCE1F"/><path d="M8 22l24 12 24-12M32 34v24"/><path d="M40 16L16 28"/></svg>
+    <h3>포장 보강 · 서류</h3><p>모서리와 테이프를 한 번 더 보강하고, 품목 목록을 받아 통관 서류를 대신 작성해 드려요.</p></div>
+   <div class="step"><span class="num">STEP 03</span><span class="dd">D+7~10</span>
+    <svg viewBox="0 0 64 64" fill="none" stroke="#121212" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="round"><path d="M10 30L32 12l22 18v24H10z"/><path d="M26 54V40h12v14"/><rect x="40" y="44" width="12" height="10" fill="#FFCE1F"/></svg>
+    <h3>한국 집 앞 도착</h3><p>한국 도착 후 국내 택배로 받는 분 주소까지 배달해요. 송장 번호는 카카오톡으로 보내 드립니다.</p></div>
+  </div>
+ </div>
+</section>
+
+<section id="calc" class="calc">
+ <div class="in">
+  <div class="sh"><div><small>02 · BOX RATES</small><h2>박스 크기를 골라 보세요</h2></div><p>무게가 아니라 박스 크기로 정해진 요금이에요. 정해진 무게 안에서는 얼마나 채우셔도 같은 가격입니다.</p></div>
+  <div class="cgrid">
+   <div>
+    <div class="boxes" id="boxes">
+     <button type="button" class="bx" data-p="2900" data-n="S 박스"><svg viewBox="0 0 100 84"><path d="M30 34l20-8 20 8-20 8z" fill="#E7BE86" stroke="#121212" stroke-width="2"/><path d="M30 34v26l20 8V42z" fill="#D8AA70" stroke="#121212" stroke-width="2"/><path d="M50 42v26l20-8V34z" fill="#B9864B" stroke="#121212" stroke-width="2"/></svg><b>S</b><em>최대 10kg</em><span>₱2,900</span></button>
+     <button type="button" class="bx on" data-p="4900" data-n="M 박스"><svg viewBox="0 0 100 84"><path d="M24 30l26-10 26 10-26 10z" fill="#E7BE86" stroke="#121212" stroke-width="2"/><path d="M24 30v34l26 10V40z" fill="#D8AA70" stroke="#121212" stroke-width="2"/><path d="M50 40v34l26-10V30z" fill="#B9864B" stroke="#121212" stroke-width="2"/></svg><b>M</b><em>최대 20kg</em><span>₱4,900</span></button>
+     <button type="button" class="bx" data-p="6700" data-n="L 박스"><svg viewBox="0 0 100 84"><path d="M18 24l32-12 32 12-32 12z" fill="#E7BE86" stroke="#121212" stroke-width="2"/><path d="M18 24v42l32 12V36z" fill="#D8AA70" stroke="#121212" stroke-width="2"/><path d="M50 36v42l32-12V24z" fill="#B9864B" stroke="#121212" stroke-width="2"/></svg><b>L</b><em>최대 30kg</em><span>₱6,700</span></button>
+     <button type="button" class="bx" data-p="8500" data-n="점보 박스"><svg viewBox="0 0 100 84"><path d="M12 20l38-14 38 14-38 14z" fill="#E7BE86" stroke="#121212" stroke-width="2"/><path d="M12 20v48l38 14V34z" fill="#D8AA70" stroke="#121212" stroke-width="2"/><path d="M50 34v48l38-14V20z" fill="#B9864B" stroke="#121212" stroke-width="2"/><path d="M24 40l14 5" stroke="#E2402B" stroke-width="5"/></svg><b>점보</b><em>최대 40kg</em><span>₱8,500</span></button>
+    </div>
+    <div class="opts">
+     <label class="opt"><input type="checkbox" id="o1" data-p="350"> 빈 박스 미리 받기 (수거 전날 배달) <b>+₱350</b></label>
+     <label class="opt"><input type="checkbox" id="o2" data-p="500"> 깨지기 쉬운 물건 완충 포장 <b>+₱500</b></label>
+    </div>
+   </div>
+   <div class="receipt" aria-live="polite">
+    <h3>예상 요금</h3>
+    <div class="r"><span id="rn">M 박스 운임</span><span id="rp">₱4,900</span></div>
+    <div class="r" id="ro1" style="display:none"><span>빈 박스 미리 받기</span><span>₱350</span></div>
+    <div class="r" id="ro2" style="display:none"><span>완충 포장</span><span>₱500</span></div>
+    <div class="r d"><span>첫 박스 운임 10% 할인</span><span id="rd">−₱490</span></div>
+    <div class="r"><span>집 앞 수거</span><span>₱0</span></div>
+    <div class="tot"><span>합계</span><b id="rt">₱4,410</b></div>
+    <small>※ 예시 요금이에요. 한국 내 도서·산간 지역은 추가 배송비가 붙을 수 있어요.</small>
+    <div class="bc"></div>
+   </div>
+  </div>
+ </div>
+</section>
+
+<section>
+ <div class="in">
+  <div class="sh"><div><small>03 · WHAT TO PACK</small><h2>박스에 넣기 전에 확인하세요</h2></div><p>헷갈리는 품목은 수거 신청 때 적어 주시면 미리 확인해 드려요.</p></div>
+  <div class="lists">
+   <div class="lst ok"><h3><svg viewBox="0 0 24 24"><path d="M4 12l5 5L20 6"/></svg>보낼 수 있어요</h3><ul>
+    <li>말린 망고 · 과자 · 커피 <em>밀봉된 포장 그대로</em></li>
+    <li>옷 · 신발 · 가방 <em>새 제품은 가격표 동봉</em></li>
+    <li>책 · 사진 · 기념품</li>
+    <li>생활용품 · 주방용품 <em>칼 종류는 문의</em></li>
+   </ul></div>
+   <div class="lst no"><h3><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg>보낼 수 없어요</h3><ul>
+    <li>생과일 · 생고기 · 씨앗</li>
+    <li>배터리 단독 포장 · 보조배터리</li>
+    <li>스프레이 · 인화성 물질</li>
+    <li>현금 · 귀금속</li>
+   </ul></div>
+  </div>
+ </div>
+</section>
+
+<section class="cut">
+ <div class="in">
+  <div class="sh"><div><small>04 · HOLIDAY CUT-OFF</small><h2>설 전에 받으시려면<br>1월 10일까지 신청하세요</h2></div><p>연말연시와 설 앞에는 물량이 몰려요. 아래 날짜까지 수거 신청하신 박스는 설 연휴 전 도착을 목표로 보냅니다.</p></div>
+  <div class="tl">
+   <div><b>12.31</b><span>첫 박스 10% 할인 마지막 신청일</span></div>
+   <div class="hot"><b>1.10</b><span>설 전 도착 목표 마지막 수거 신청일</span></div>
+   <div><b>1.12 – 1.14</b><span>연휴 전 마지막 출발 묶음</span></div>
+   <div><b>2.3 – 2.7</b><span>설 연휴 · 국내 배송 쉬어요</span></div>
+  </div>
+ </div>
+</section>
+
+<section>
+ <div class="in">
+  <div class="sh"><div><small>05 · FAQ</small><h2>자주 묻는 질문</h2></div></div>
+  <div class="faq">
+   <div class="q open"><button type="button">무게가 조금 넘으면 어떻게 되나요?</button><div class="a">정해진 무게를 넘으면 1kg당 ₱180이 추가돼요. 수거할 때 기사님이 함께 저울로 재고 바로 알려 드립니다.</div></div>
+   <div class="q"><button type="button">할인은 어떤 박스에 적용되나요?</button><div class="a">12월 31일까지 처음 신청하신 분의 첫 박스 운임에 10%가 적용돼요. 옵션 요금은 할인에서 빠집니다.</div></div>
+   <div class="q"><button type="button">한국에서 받는 분이 세금을 내야 하나요?</button><div class="a">품목과 금액에 따라 받는 분께 세금이 생길 수 있어요. 신청할 때 품목과 대략의 금액을 적어 주시면 미리 확인해 안내해 드립니다.</div></div>
+   <div class="q"><button type="button">수거 날짜를 바꿀 수 있나요?</button><div class="a">수거 전날 오후 6시까지 카카오톡으로 말씀해 주시면 무료로 바꿔 드려요.</div></div>
+  </div>
+ </div>
+</section>
+
+<section id="apply" class="apply">
+ <div class="in">
+  <div>
+   <div class="sh"><div><small>06 · BOOK A PICK-UP</small><h2>무료 수거 신청</h2></div><p>신청서를 남기시면 30분 안에 카카오톡으로 수거 시간을 확정해 드려요.</p></div>
+   <ul class="chk"><li>첫 박스 운임 10% 할인 자동 적용</li><li>메트로 마닐라 · 세부 · 클락 수거비 무료</li><li>통관 서류 작성 대행</li></ul>
+  </div>
+  <form class="wb" onsubmit="return go(event)">
+   <div class="wh"><b>수거 신청서</b><span>NO. 0000-0000</span></div>
+   <div class="cells">
+    <div class="cell"><label for="a1">보내는 분 이름</label><input id="a1" required placeholder="홍길동"></div>
+    <div class="cell"><label for="a2">필리핀 연락처</label><input id="a2" required placeholder="0900-000-0000"></div>
+    <div class="cell full"><label for="a3">수거 주소 (필리핀)</label><input id="a3" required placeholder="콘도·동네 이름, 시"></div>
+    <div class="cell"><label for="a4">수거 희망일</label><input id="a4" type="text" placeholder="날짜 선택" onfocus="this.type='date'" required></div>
+    <div class="cell"><label for="a5">박스 크기</label><select id="a5"><option>S 박스 (최대 10kg)</option><option selected>M 박스 (최대 20kg)</option><option>L 박스 (최대 30kg)</option><option>점보 박스 (최대 40kg)</option><option>아직 모르겠어요</option></select></div>
+    <div class="cell full"><label for="a6">받는 곳 (한국 시·도)</label><input id="a6" placeholder="예: 경기도 ○○시"></div>
+   </div>
+   <div class="ft">
+    <button class="btn k" type="submit">수거 신청 보내기 <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+    <div class="ok" id="ok">신청이 접수되었어요. 카카오톡으로 수거 시간을 안내해 드릴게요. (샘플 화면이라 실제로 전송되지는 않아요)</div>
+    <p>카카오톡 ID: example · 전화 0900-000-0000 · 월–토 오전 9시 – 오후 7시</p>
+   </div>
+  </form>
+ </div>
+</section>
+
+<footer><div class="in"><span>바다건너 국제택배 · BADAGEONNEO CARGO</span><span>○○ City, Metro Manila · 사업자 정보 000-000-000</span></div></footer>
+<div class="mbar"><a class="btn k" href="#apply" style="width:100%">첫 박스 10% 할인 · 수거 신청</a></div>
+
+<script>
+var cur={p:4900,n:'M 박스'};
+function fmt(n){return '₱'+n.toLocaleString('en-US')}
+function calc(){var o1=document.getElementById('o1'),o2=document.getElementById('o2');
+ var d=Math.round(cur.p*.1),t=cur.p-d+(o1.checked?350:0)+(o2.checked?500:0);
+ document.getElementById('rn').textContent=cur.n+' 운임';document.getElementById('rp').textContent=fmt(cur.p);
+ document.getElementById('rd').textContent='−'+fmt(d);document.getElementById('rt').textContent=fmt(t);
+ document.getElementById('ro1').style.display=o1.checked?'flex':'none';document.getElementById('ro2').style.display=o2.checked?'flex':'none';}
+document.querySelectorAll('.bx').forEach(function(b){b.onclick=function(){document.querySelectorAll('.bx').forEach(function(x){x.classList.remove('on')});b.classList.add('on');cur={p:+b.dataset.p,n:b.dataset.n};calc()}});
+document.getElementById('o1').onchange=calc;document.getElementById('o2').onchange=calc;
+document.querySelectorAll('.q button').forEach(function(b){b.onclick=function(){b.parentNode.classList.toggle('open')}});
+function go(e){e.preventDefault();document.getElementById('ok').classList.add('show');return false}
+</script>
+</body>
+</html>
