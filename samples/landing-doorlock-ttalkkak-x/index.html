@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>딸깍 키앤락 · 12월 지문 도어락 교체 15% 할인</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{--bg:#ECEEF0;--metal:#D9DDE1;--ink:#1C2126;--gr:#2B3238;--mut:#5F6870;--cy:#0FB3C8;--cyd:#0A8597;--brass:#C69B45;--card:#FFFFFF}
+html{scroll-behavior:smooth;overflow-x:hidden}
+body{font-family:'Noto Sans KR',sans-serif;background:var(--bg);color:var(--ink);word-break:keep-all;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+button{font:inherit;cursor:pointer}
+.wrap{max-width:1180px;margin:0 auto;padding:0 32px}
+.num{font-family:'Outfit',sans-serif}
+.lab{font-family:'Outfit';font-weight:600;font-size:13px;letter-spacing:.2em;text-transform:uppercase;color:var(--cyd)}
+h2{font-weight:900;font-size:clamp(28px,3.3vw,42px);line-height:1.3;letter-spacing:-.02em;margin-top:12px}
+.sec{padding:100px 0}
+.brushed{background:repeating-linear-gradient(90deg,rgba(255,255,255,.35) 0 1px,transparent 1px 3px),linear-gradient(180deg,#F3F4F6,#DADEE2)}
+/* top */
+.top{position:sticky;top:0;z-index:30;background:rgba(28,33,38,.96);color:#E8ECEF}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;height:66px}
+.brand{display:flex;align-items:center;gap:10px;font-weight:900;font-size:20px;letter-spacing:-.01em}
+.brand svg{width:34px;height:34px}
+.top .tel{font-family:'Outfit';font-size:15px;color:#AEB7BE}
+.top .go{height:42px;padding:0 20px;border-radius:30px;background:var(--cy);color:#06262B;font-weight:700;font-size:15px;display:inline-flex;align-items:center}
+/* hero */
+.hero{position:relative;overflow:hidden}
+.hero-in{display:grid;grid-template-columns:1.05fr .95fr;gap:40px;align-items:center;padding-top:70px;padding-bottom:90px}
+.pill{display:inline-flex;align-items:center;gap:10px;background:var(--ink);color:#fff;padding:9px 16px 9px 10px;border-radius:30px;font-size:14px;font-weight:700}
+.pill i{width:24px;height:24px;border-radius:50%;background:var(--cy);display:grid;place-items:center;font-style:normal;color:#06262B;font-family:'Outfit';font-size:12px;font-weight:800}
+.hero h1{font-weight:900;font-size:clamp(40px,5vw,66px);line-height:1.18;letter-spacing:-.03em;margin:24px 0 22px}
+.hero h1 .c{color:var(--cyd)}
+.hero h1 .u{background:linear-gradient(transparent 62%,rgba(198,155,69,.4) 62%)}
+.hero p.lead{font-size:18px;line-height:1.8;color:var(--mut);max-width:500px}
+.offer{display:flex;gap:14px;margin-top:32px;flex-wrap:wrap}
+.ocard{background:var(--card);border-radius:18px;padding:18px 22px;min-width:200px;box-shadow:0 18px 30px -22px rgba(28,33,38,.5);border:1px solid rgba(28,33,38,.08)}
+.ocard small{display:block;font-size:13px;color:var(--mut);font-weight:500}
+.ocard b{display:block;font-family:'Outfit';font-weight:800;font-size:40px;line-height:1.1;margin-top:4px;color:var(--ink)}
+.ocard b span{font-family:'Noto Sans KR';font-size:18px;font-weight:700;margin-left:4px}
+.ocard.k{background:var(--ink);color:#fff}
+.ocard.k small{color:#AEB7BE}
+.ocard.k b{color:var(--cy)}
+.cta{display:inline-flex;align-items:center;gap:10px;height:58px;padding:0 30px;border-radius:40px;background:var(--ink);color:#fff;font-weight:700;font-size:17px;margin-top:30px;border:0;transition:.2s}
+.cta:hover{background:var(--cyd)}
+.cta svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round}
+.fine{font-size:13px;color:var(--mut);margin-top:14px}
+.door{position:relative}
+.door svg{width:100%;height:auto;display:block}
+/* checks */
+.checks{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:40px}
+.chk{background:var(--card);border-radius:20px;padding:26px 22px;border:1.5px solid transparent;text-align:left;transition:.2s;position:relative}
+.chk svg.ic{width:46px;height:46px}
+.chk h3{font-size:17px;font-weight:700;margin-top:16px;line-height:1.45}
+.chk p{font-size:14px;color:var(--mut);margin-top:6px;line-height:1.6}
+.chk .bx{position:absolute;top:20px;right:20px;width:26px;height:26px;border-radius:8px;border:2px solid #C3C9CE;display:grid;place-items:center}
+.chk.on{border-color:var(--cy);box-shadow:0 18px 30px -24px rgba(10,133,151,.8)}
+.chk.on .bx{background:var(--cy);border-color:var(--cy)}
+.chk .bx svg{width:14px;height:14px;fill:none;stroke:#fff;stroke-width:3;opacity:0}
+.chk.on .bx svg{opacity:1}
+.verdict{margin-top:22px;background:var(--ink);color:#E8ECEF;border-radius:18px;padding:20px 26px;display:flex;align-items:center;gap:16px;font-size:16px;line-height:1.6}
+.verdict b{color:var(--cy);font-family:'Outfit';font-size:30px;min-width:40px}
+/* models */
+.models{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:44px}
+.mdl{background:var(--card);border-radius:24px;overflow:hidden;border:1px solid rgba(28,33,38,.08);display:flex;flex-direction:column}
+.mdl .im{height:260px;display:grid;place-items:center;position:relative}
+.mdl .im svg{height:220px;width:auto}
+.mdl .tg{position:absolute;left:18px;top:18px;font-size:12px;font-weight:700;padding:6px 12px;border-radius:20px;background:var(--ink);color:#fff}
+.mdl .tg.c{background:var(--cy);color:#06262B}
+.mdl .bd{padding:24px 24px 26px;display:flex;flex-direction:column;flex:1}
+.mdl h3{font-size:21px;font-weight:900}
+.mdl ul{list-style:none;margin:14px 0 18px}
+.mdl li{font-size:15px;color:var(--mut);padding:5px 0 5px 20px;position:relative}
+.mdl li:before{content:"";position:absolute;left:2px;top:13px;width:8px;height:8px;border-radius:50%;background:var(--cy)}
+.mdl .pr{margin-top:auto;padding-top:16px;border-top:1px dashed #C9CED3;display:flex;align-items:baseline;gap:10px;flex-wrap:wrap}
+.mdl .pr s{font-family:'Outfit';color:#8B949B;font-size:17px}
+.mdl .pr b{font-family:'Outfit';font-weight:800;font-size:32px}
+.mdl .pr b small{font-family:'Noto Sans KR';font-size:15px;font-weight:700;margin-left:2px}
+.mdl .pr em{font-style:normal;font-size:13px;font-weight:700;color:var(--cyd);background:rgba(15,179,200,.12);padding:4px 9px;border-radius:12px}
+.mdl .note{font-size:13px;color:var(--mut);margin-top:8px}
+/* steps */
+.dark{background:var(--ink);color:#E8ECEF;position:relative;overflow:hidden}
+.dark .lab{color:var(--cy)}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:50px;position:relative}
+.steps:before{content:"";position:absolute;left:30px;right:30px;top:30px;height:2px;background:repeating-linear-gradient(90deg,#3B444C 0 10px,transparent 10px 18px)}
+.step{position:relative;padding-right:24px}
+.step .n{width:60px;height:60px;border-radius:50%;background:var(--gr);border:2px solid var(--cy);display:grid;place-items:center;font-family:'Outfit';font-weight:700;font-size:20px;color:var(--cy);position:relative}
+.step h3{font-size:19px;font-weight:700;margin-top:22px}
+.step p{font-size:15px;color:#A9B3BA;margin-top:8px;line-height:1.7}
+.step .t{display:inline-block;margin-top:12px;font-family:'Outfit';font-size:13px;font-weight:600;color:var(--brass);letter-spacing:.06em}
+/* calculator */
+.calc{display:grid;grid-template-columns:1.1fr .9fr;gap:26px;margin-top:44px;align-items:start}
+.qbox{background:var(--card);border-radius:24px;padding:30px 30px 26px;border:1px solid rgba(28,33,38,.08)}
+.q+.q{margin-top:26px}
+.q h4{font-size:16px;font-weight:700;margin-bottom:12px}
+.q h4 span{font-family:'Outfit';color:var(--cyd);margin-right:8px}
+.opts{display:flex;flex-wrap:wrap;gap:8px}
+.opt{height:46px;padding:0 18px;border-radius:12px;border:1.5px solid #CDD2D6;background:#F7F8F9;font-size:15px;font-weight:500;color:var(--ink);transition:.15s}
+.opt.on{border-color:var(--ink);background:var(--ink);color:#fff}
+.est{background:var(--ink);color:#fff;border-radius:24px;padding:30px;position:sticky;top:90px}
+.est small{font-size:14px;color:#AEB7BE}
+.est .big{font-family:'Outfit';font-weight:800;font-size:54px;line-height:1.1;color:var(--cy);margin:8px 0 4px}
+.est .big span{font-family:'Noto Sans KR';font-size:20px;color:#fff;margin-left:4px}
+.est .was{font-family:'Outfit';color:#8B949B;font-size:16px}
+.est ul{list-style:none;margin-top:20px;border-top:1px solid #39424A;padding-top:14px}
+.est li{display:flex;justify-content:space-between;font-size:15px;padding:7px 0;color:#CBD2D7}
+.est li b{font-family:'Outfit';font-weight:600;color:#fff}
+.est .cta{background:var(--cy);color:#06262B;width:100%;justify-content:center;margin-top:22px}
+.est .cta:hover{background:#3FD0E2}
+/* faq */
+.faq{margin-top:40px;border-top:2px solid var(--ink)}
+.fq{border-bottom:1px solid #C9CED3}
+.fq button{width:100%;display:flex;justify-content:space-between;align-items:center;gap:20px;background:none;border:0;padding:24px 4px;font-size:18px;font-weight:700;text-align:left;color:var(--ink)}
+.fq button i{width:30px;height:30px;border-radius:50%;background:var(--metal);flex:none;position:relative;transition:.2s}
+.fq button i:before,.fq button i:after{content:"";position:absolute;left:9px;right:9px;top:14px;height:2px;background:var(--ink)}
+.fq button i:after{transform:rotate(90deg);transition:.2s}
+.fq.on button i{background:var(--cy)}
+.fq.on button i:after{transform:rotate(0)}
+.fq .a{max-height:0;overflow:hidden;transition:max-height .3s}
+.fq .a p{padding:0 4px 24px;font-size:16px;color:var(--mut);line-height:1.8;max-width:820px}
+.fq.on .a{max-height:200px}
+/* form */
+.apply{display:grid;grid-template-columns:.9fr 1.1fr;gap:40px;align-items:start}
+.apply .side p{font-size:16px;color:var(--mut);line-height:1.8;margin-top:16px}
+.cnt{margin-top:28px;display:grid;gap:12px}
+.cnt div{display:flex;gap:14px;align-items:center;background:var(--card);border-radius:16px;padding:16px 18px;font-size:15px}
+.cnt svg{width:28px;height:28px;flex:none;fill:none;stroke:var(--cyd);stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.cnt b{display:block;font-size:13px;color:var(--mut);font-weight:500}
+form{background:var(--card);border-radius:26px;padding:34px 32px;box-shadow:0 30px 50px -36px rgba(28,33,38,.6)}
+.f2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+form label{display:block;font-size:14px;font-weight:700;margin:16px 0 8px}
+form input,form select,form textarea{width:100%;height:52px;border-radius:12px;border:1.5px solid #CDD2D6;background:#F7F8F9;padding:0 16px;font:inherit;font-size:16px;color:var(--ink)}
+form textarea{height:96px;padding:14px 16px;resize:none}
+form input:focus,form select:focus,form textarea:focus{outline:2px solid var(--cy);border-color:transparent}
+.agree{display:flex;gap:10px;align-items:center;font-size:14px;color:var(--mut);margin-top:16px}
+.agree input{width:20px;height:20px;accent-color:var(--cyd)}
+form .cta{width:100%;justify-content:center;margin-top:20px}
+.done{display:none;margin-top:16px;background:rgba(15,179,200,.12);color:var(--cyd);border-radius:14px;padding:16px;font-size:15px;line-height:1.6;font-weight:500}
+.done.show{display:block}
+footer{background:#14181C;color:#8E979E;padding:44px 0 90px;font-size:14px;line-height:1.9}
+footer .brand{color:#E8ECEF;margin-bottom:10px}
+.mbar{display:none}
+@media(max-width:1000px){
+ .hero-in,.calc,.apply{grid-template-columns:1fr}
+ .door{max-width:520px;margin:0 auto;width:100%}
+ .checks{grid-template-columns:1fr 1fr}
+ .models{grid-template-columns:1fr}
+ .steps{grid-template-columns:1fr 1fr;gap:36px 0}
+ .steps:before{display:none}
+ .est{position:static}
+}
+@media(max-width:600px){
+ .wrap{padding-left:18px;padding-right:18px}
+ .sec{padding:70px 0}
+ .top .tel{display:none}
+ .top .go{display:none}
+ .hero-in{padding-top:44px;padding-bottom:56px}
+ .hero h1{font-size:36px}
+ .hero p.lead{font-size:16px}
+ .ocard{min-width:0;flex:1}
+ .ocard b{font-size:32px}
+ .checks{grid-template-columns:1fr;gap:12px}
+ .steps{grid-template-columns:1fr}
+ .qbox,.est{padding:24px 20px}
+ .est .big{font-size:44px}
+ .f2{grid-template-columns:1fr;gap:0}
+ form{padding:26px 20px}
+ .fq button{font-size:16px}
+ .mbar{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:40;padding:10px 14px;background:rgba(28,33,38,.97);gap:10px;align-items:center}
+ .mbar span{color:#E8ECEF;font-size:14px;flex:1;line-height:1.35}
+ .mbar span b{color:var(--cy)}
+ .mbar a{height:46px;padding:0 18px;border-radius:30px;background:var(--cy);color:#06262B;font-weight:700;font-size:15px;display:inline-flex;align-items:center;white-space:nowrap}
+}
+</style>
+</head>
+<body>
+<div class="top">
+ <div class="wrap">
+  <a class="brand" href="#"><svg viewBox="0 0 34 34"><rect x="3" y="3" width="28" height="28" rx="9" fill="#0FB3C8"/><circle cx="17" cy="14" r="4.5" fill="none" stroke="#1C2126" stroke-width="2.6"/><path d="M17 18.5v7M17 22h3.5" stroke="#1C2126" stroke-width="2.6" stroke-linecap="round"/></svg>딸깍 키앤락</a>
+  <span class="tel">상담 000-0000-0000 · 매일 오전 9시 – 오후 9시</span>
+  <a class="go" href="#apply">출장 점검 신청</a>
+ </div>
+</div>
+
+<section class="hero brushed">
+ <div class="wrap hero-in">
+  <div>
+   <span class="pill"><i>12</i>12월 한 달 · 지문 도어락 교체 할인</span>
+   <h1>열쇠 대신 손끝으로,<br><span class="c">지문 도어락</span> 교체<br><span class="u">15% 할인</span></h1>
+   <p class="lead">현관문 두께와 기존 타공 자리를 먼저 확인하고, 맞는 모델만 골라 설치합니다. 12월에 신청하시면 방문 점검비는 받지 않아요.</p>
+   <div class="offer">
+    <div class="ocard k"><small>지문 도어락 교체</small><b>15%<span>할인</span></b></div>
+    <div class="ocard"><small>방문 점검·견적</small><b>0<span>원</span></b></div>
+   </div>
+   <a class="cta" href="#apply">무료 방문 점검 신청하기 <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+   <p class="fine">2026년 12월 31일 신청분까지 · 설치비 포함 금액 기준 · 일부 방화문은 현장 확인 후 안내</p>
+  </div>
+  <div class="door">
+   <svg viewBox="0 0 520 560">
+    <defs>
+     <linearGradient id="dr" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#3B454E"/><stop offset=".5" stop-color="#4A555F"/><stop offset="1" stop-color="#333C44"/></linearGradient>
+     <linearGradient id="fr" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#BFC5CB"/><stop offset="1" stop-color="#9AA2A9"/></linearGradient>
+     <linearGradient id="lk" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#2A3036"/><stop offset="1" stop-color="#121519"/></linearGradient>
+     <linearGradient id="lkr" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#E9ECEE"/><stop offset=".5" stop-color="#9EA6AD"/><stop offset="1" stop-color="#D4D8DC"/></linearGradient>
+     <radialGradient id="glow" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#0FB3C8" stop-opacity=".55"/><stop offset="1" stop-color="#0FB3C8" stop-opacity="0"/></radialGradient>
+     <linearGradient id="hand" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#F2D2B6"/><stop offset="1" stop-color="#D9A988"/></linearGradient>
+     <linearGradient id="hdl" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#F1F3F4"/><stop offset=".5" stop-color="#A8B0B6"/><stop offset="1" stop-color="#DDE1E4"/></linearGradient>
+     <filter id="sh"><feGaussianBlur stdDeviation="12"/></filter>
+     <pattern id="pnl" width="14" height="560" patternUnits="userSpaceOnUse"><rect width="14" height="560" fill="none"/><path d="M0 0v560" stroke="#fff" stroke-opacity=".035" stroke-width="2"/></pattern>
+    </defs>
+    <!-- frame and door -->
+    <rect x="40" y="10" width="420" height="560" rx="6" fill="url(#fr)"/>
+    <rect x="62" y="30" width="376" height="540" fill="url(#dr)"/>
+    <rect x="62" y="30" width="376" height="540" fill="url(#pnl)"/>
+    <rect x="96" y="66" width="308" height="160" rx="4" fill="none" stroke="#2B3238" stroke-width="3"/>
+    <rect x="98" y="68" width="304" height="156" rx="3" fill="none" stroke="#5A6670" stroke-width="1.5"/>
+    <rect x="96" y="300" width="308" height="240" rx="4" fill="none" stroke="#2B3238" stroke-width="3" opacity=".7"/>
+    <!-- address plate -->
+    <rect x="200" y="120" width="100" height="44" rx="6" fill="#C69B45"/><text x="250" y="150" text-anchor="middle" font-family="Outfit" font-weight="700" font-size="22" fill="#2B2416" letter-spacing="2">1203</text>
+    <!-- glow -->
+    <circle cx="350" cy="320" r="120" fill="url(#glow)"/>
+    <!-- lock body -->
+    <rect x="300" y="196" width="104" height="270" rx="22" fill="#000" opacity=".35" filter="url(#sh)" transform="translate(6 12)"/>
+    <rect x="300" y="196" width="104" height="270" rx="22" fill="url(#lkr)"/>
+    <rect x="308" y="204" width="88" height="254" rx="16" fill="url(#lk)"/>
+    <!-- keypad -->
+    <g font-family="Outfit" font-weight="600" font-size="15" fill="#7CE6F2" text-anchor="middle">
+     <g id="keys"></g>
+    </g>
+    <!-- fingerprint pad -->
+    <rect x="330" y="384" width="44" height="54" rx="14" fill="#1A1F24" stroke="#0FB3C8" stroke-width="2"/>
+    <g fill="none" stroke="#0FB3C8" stroke-width="1.6" stroke-linecap="round"><path d="M342 400 a10 10 0 0 1 20 0 v12"/><path d="M346 402 a6 6 0 0 1 12 0 v14"/><path d="M352 404 v16"/><path d="M340 408 v8 a12 12 0 0 0 4 8"/></g>
+    <!-- handle -->
+    <rect x="292" y="470" width="120" height="22" rx="11" fill="url(#hdl)"/>
+    <rect x="392" y="464" width="22" height="34" rx="8" fill="#9AA2A9"/>
+    <!-- finger -->
+    <g transform="translate(372 420) rotate(-28)">
+     <path d="M-6 0 C-6 -14 18 -16 20 0 L26 90 L-2 96 Z" fill="url(#hand)"/>
+     <path d="M-2 4 C0 -6 14 -8 16 4 L16 12 C10 14 2 14 -2 12 Z" fill="#F7E3D2" opacity=".9"/>
+    </g>
+    <!-- click badge -->
+    <g transform="translate(96 372)">
+     <rect x="-6" y="-6" width="206" height="90" rx="45" fill="#000" opacity=".25" filter="url(#sh)"/>
+     <rect width="206" height="84" rx="42" fill="#FFFFFF"/>
+     <circle cx="42" cy="42" r="25" fill="#0FB3C8"/><path d="M31 42l8 8 15-16" fill="none" stroke="#fff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+     <text x="80" y="38" font-family="Noto Sans KR" font-weight="900" font-size="25" fill="#1C2126">딸깍</text>
+     <text x="80" y="62" font-family="Noto Sans KR" font-weight="700" font-size="17" fill="#5F6870">지문 인식 완료</text>
+    </g>
+    <!-- key brass floating -->
+    <g transform="translate(108 270) rotate(-20)" opacity=".95">
+     <circle cx="0" cy="0" r="22" fill="#C69B45"/><circle cx="0" cy="0" r="8" fill="#3B454E"/>
+     <path d="M20 -6 H86 V6 H78 V16 H70 V6 H62 V14 H54 V6 H20Z" fill="#C69B45"/>
+     
+    </g>
+    <line x1="70" y1="250" x2="150" y2="300" stroke="#ECEEF0" stroke-width="4" stroke-linecap="round" opacity=".0"/>
+   </svg>
+  </div>
+ </div>
+</section>
+
+<section class="sec" id="check">
+ <div class="wrap">
+  <span class="lab">Self check</span>
+  <h2>우리 집 도어락, 바꿀 때가 됐을까요?</h2>
+  <div class="checks" id="checks">
+   <button class="chk"><span class="bx"><svg viewBox="0 0 14 14"><path d="M2 7l3.5 3.5L12 4"/></svg></span><svg class="ic" viewBox="0 0 46 46"><rect x="6" y="14" width="30" height="18" rx="4" fill="none" stroke="#1C2126" stroke-width="2.4"/><rect x="36" y="19" width="4" height="8" rx="1.5" fill="#1C2126"/><rect x="10" y="18" width="6" height="10" rx="1.5" fill="#E2574C"/></svg><h3>배터리 경고음이 자주 울려요</h3><p>새 건전지로 바꿔도 한두 달이면 다시 울린다면</p></button>
+   <button class="chk"><span class="bx"><svg viewBox="0 0 14 14"><path d="M2 7l3.5 3.5L12 4"/></svg></span><svg class="ic" viewBox="0 0 46 46"><g fill="#1C2126"><rect x="8" y="8" width="8" height="8" rx="2"/><rect x="19" y="8" width="8" height="8" rx="2" opacity=".3"/><rect x="30" y="8" width="8" height="8" rx="2"/><rect x="8" y="19" width="8" height="8" rx="2" opacity=".3"/><rect x="19" y="19" width="8" height="8" rx="2"/><rect x="30" y="19" width="8" height="8" rx="2" opacity=".3"/><rect x="8" y="30" width="8" height="8" rx="2" opacity=".3"/><rect x="19" y="30" width="8" height="8" rx="2" opacity=".3"/><rect x="30" y="30" width="8" height="8" rx="2"/></g></svg><h3>자주 누르는 번호가 닳아 보여요</h3><p>버튼 몇 개만 반질반질하다면</p></button>
+   <button class="chk"><span class="bx"><svg viewBox="0 0 14 14"><path d="M2 7l3.5 3.5L12 4"/></svg></span><svg class="ic" viewBox="0 0 46 46"><rect x="10" y="6" width="22" height="34" rx="3" fill="none" stroke="#1C2126" stroke-width="2.4"/><path d="M32 23h8M36 19l4 4-4 4" fill="none" stroke="#1C2126" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg><h3>문이 잠겼는지 늘 다시 봐요</h3><p>잠김 표시가 없어 외출 후에도 신경 쓰인다면</p></button>
+   <button class="chk"><span class="bx"><svg viewBox="0 0 14 14"><path d="M2 7l3.5 3.5L12 4"/></svg></span><svg class="ic" viewBox="0 0 46 46"><circle cx="16" cy="23" r="8" fill="none" stroke="#1C2126" stroke-width="2.4"/><path d="M24 23h16M34 23v6M39 23v4" fill="none" stroke="#1C2126" stroke-width="2.4" stroke-linecap="round"/></svg><h3>열쇠·카드를 자주 두고 나와요</h3><p>아이나 부모님이 따로 열쇠를 들고 다닌다면</p></button>
+  </div>
+  <div class="verdict"><b class="num" id="vn">0</b><span id="vt">해당하는 항목을 눌러 보세요. 두 개 이상이면 방문 점검을 권해 드려요.</span></div>
+ </div>
+</section>
+
+<section class="sec brushed" id="models">
+ <div class="wrap">
+  <span class="lab">December models</span>
+  <h2>12월 교체 모델, 설치비까지 한 번에</h2>
+  <div class="models">
+   <div class="mdl"><div class="im" style="background:#E3E6E9"><span class="tg">기본</span>
+    <svg viewBox="0 0 120 240"><rect x="10" y="6" width="100" height="196" rx="20" fill="#C9CED2"/><rect x="18" y="14" width="84" height="180" rx="14" fill="#2A3036"/><g fill="#9CA6AE" font-family="Outfit" font-size="13" text-anchor="middle"><text x="38" y="58">1</text><text x="60" y="58">2</text><text x="82" y="58">3</text><text x="38" y="88">4</text><text x="60" y="88">5</text><text x="82" y="88">6</text><text x="38" y="118">7</text><text x="60" y="118">8</text><text x="82" y="118">9</text><text x="60" y="148">0</text></g><rect x="6" y="206" width="108" height="20" rx="10" fill="#B9BFC4"/></svg></div>
+    <div class="bd"><h3>번호키 도어락</h3><ul><li>비밀번호 + 카드키 4장</li><li>허수 번호 입력 지원</li><li>건전지 4개, 약 1년 사용</li></ul><div class="pr"><s>220,000</s><b>187,000<small>원</small></b><em>15%</em></div><p class="note">설치비·기존 도어락 수거 포함</p></div></div>
+   <div class="mdl"><div class="im" style="background:#D6EEF1"><span class="tg c">12월 할인 대상</span>
+    <svg viewBox="0 0 120 240"><rect x="10" y="6" width="100" height="196" rx="20" fill="#DDE1E4"/><rect x="18" y="14" width="84" height="180" rx="14" fill="#1A1F24"/><g fill="#7CE6F2" font-family="Outfit" font-size="13" text-anchor="middle"><text x="38" y="50">1</text><text x="60" y="50">2</text><text x="82" y="50">3</text><text x="38" y="76">4</text><text x="60" y="76">5</text><text x="82" y="76">6</text><text x="38" y="102">7</text><text x="60" y="102">8</text><text x="82" y="102">9</text></g><rect x="40" y="126" width="40" height="50" rx="13" fill="none" stroke="#0FB3C8" stroke-width="2"/><g fill="none" stroke="#0FB3C8" stroke-width="1.5" stroke-linecap="round"><path d="M51 142a9 9 0 0 1 18 0v12"/><path d="M55 144a5 5 0 0 1 10 0v14"/><path d="M60 146v16"/></g><rect x="6" y="206" width="108" height="20" rx="10" fill="#C3C9CE"/></svg></div>
+    <div class="bd"><h3>지문 인식 도어락</h3><ul><li>지문 최대 100개 등록</li><li>번호·카드 함께 사용 가능</li><li>잠김 상태 LED 표시</li></ul><div class="pr"><s>340,000</s><b>289,000<small>원</small></b><em>15%</em></div><p class="note">설치비·기존 도어락 수거 포함</p></div></div>
+   <div class="mdl"><div class="im" style="background:#ECE3D1"><span class="tg">대형 현관</span>
+    <svg viewBox="0 0 120 240"><rect x="22" y="2" width="76" height="236" rx="18" fill="#C69B45"/><rect x="30" y="10" width="60" height="220" rx="12" fill="#2A2418"/><g fill="#E8C987" font-family="Outfit" font-size="11" text-anchor="middle"><text x="47" y="46">1</text><text x="60" y="46">2</text><text x="73" y="46">3</text><text x="47" y="66">4</text><text x="60" y="66">5</text><text x="73" y="66">6</text><text x="47" y="86">7</text><text x="60" y="86">8</text><text x="73" y="86">9</text></g><rect x="40" y="110" width="40" height="92" rx="10" fill="#3B3222"/><rect x="44" y="114" width="32" height="84" rx="8" fill="none" stroke="#E8C987" stroke-width="1.5"/><rect x="45" y="208" width="30" height="14" rx="4" fill="none" stroke="#E8C987" stroke-width="1.5"/></svg></div>
+    <div class="bd"><h3>푸시풀 지문 도어락</h3><ul><li>손잡이를 밀고 당겨 여닫기</li><li>지문 + 번호 + 카드</li><li>두꺼운 현관문 대응</li></ul><div class="pr"><s>520,000</s><b>442,000<small>원</small></b><em>15%</em></div><p class="note">문 두께 확인 후 설치 가능 여부 안내</p></div></div>
+  </div>
+ </div>
+</section>
+
+<section class="sec dark">
+ <div class="wrap">
+  <span class="lab">How it works</span>
+  <h2>신청부터 설치까지 네 단계</h2>
+  <div class="steps">
+   <div class="step"><div class="n">01</div><h3>신청</h3><p>아래 양식에 주소와 원하는 시간을 남겨 주세요.</p><span class="t">1 MIN</span></div>
+   <div class="step"><div class="n">02</div><h3>방문 점검</h3><p>문 두께, 타공 크기, 기존 도어락 상태를 확인합니다. 점검비 0원.</p><span class="t">20 MIN · FREE</span></div>
+   <div class="step"><div class="n">03</div><h3>모델 확정</h3><p>현관에 맞는 모델과 최종 금액을 현장에서 안내해요. 원치 않으면 그대로 마무리.</p><span class="t">ON SITE</span></div>
+   <div class="step"><div class="n">04</div><h3>설치·등록</h3><p>설치 후 지문과 번호 등록을 함께 해 드리고 기존 도어락은 수거합니다.</p><span class="t">40 – 60 MIN</span></div>
+  </div>
+ </div>
+</section>
+
+<section class="sec" id="calc">
+ <div class="wrap">
+  <span class="lab">Estimate</span>
+  <h2>예상 금액 바로 보기</h2>
+  <div class="calc">
+   <div class="qbox">
+    <div class="q"><h4><span>Q1</span>어떤 도어락으로 바꿀까요?</h4><div class="opts" data-g="m"><button class="opt" data-v="187000" data-o="220000" data-n="번호키 도어락">번호키</button><button class="opt on" data-v="289000" data-o="340000" data-n="지문 인식 도어락">지문 인식</button><button class="opt" data-v="442000" data-o="520000" data-n="푸시풀 지문 도어락">푸시풀 지문</button></div></div>
+    <div class="q"><h4><span>Q2</span>현관문 종류는요?</h4><div class="opts" data-g="d"><button class="opt on" data-v="0" data-n="일반 현관문">일반 현관문</button><button class="opt" data-v="30000" data-n="방화문 추가 보강">방화문</button><button class="opt" data-v="0" data-n="아직 모르겠어요">잘 모르겠어요</button></div></div>
+    <div class="q"><h4><span>Q3</span>보조키도 함께 할까요?</h4><div class="opts" data-g="a"><button class="opt on" data-v="0" data-n="보조키 없음">필요 없어요</button><button class="opt" data-v="45000" data-n="보조 디지털키">보조 디지털키 추가</button></div></div>
+   </div>
+   <div class="est">
+    <small>12월 할인 적용 예상 금액</small>
+    <div class="big" id="eb">289,000<span>원</span></div>
+    <div class="was" id="ew">정가 기준 340,000원</div>
+    <ul id="el"></ul>
+    <a class="cta" href="#apply">이 내용으로 점검 신청</a>
+   </div>
+  </div>
+ </div>
+</section>
+
+<section class="sec brushed" id="faq">
+ <div class="wrap">
+  <span class="lab">FAQ</span>
+  <h2>자주 묻는 질문</h2>
+  <div class="faq">
+   <div class="fq on"><button>점검만 받고 설치를 안 해도 되나요? <i></i></button><div class="a"><p>네. 12월 신청분은 방문 점검과 견적이 무료이며, 설치를 진행하지 않아도 비용을 받지 않습니다.</p></div></div>
+   <div class="fq"><button>기존 도어락 구멍이 맞지 않으면 어떻게 하나요? <i></i></button><div class="a"><p>점검 때 타공 크기를 재고, 커버 플레이트로 가릴 수 있는 모델을 먼저 안내합니다. 추가 타공이 필요하면 미리 말씀드리고 진행해요.</p></div></div>
+   <div class="fq"><button>지문이 잘 안 찍히는 가족도 쓸 수 있나요? <i></i></button><div class="a"><p>모든 모델이 비밀번호와 카드키를 함께 지원합니다. 지문 등록이 어려운 분은 카드나 번호로 여시면 됩니다.</p></div></div>
+   <div class="fq"><button>설치 후 고장이 나면요? <i></i></button><div class="a"><p>설치일로부터 1년 동안 제품과 시공 문제는 무상으로 다시 방문합니다. 건전지 교체는 제외예요.</p></div></div>
+  </div>
+ </div>
+</section>
+
+<section class="sec" id="apply">
+ <div class="wrap apply">
+  <div class="side">
+   <span class="lab">Free visit</span>
+   <h2>무료 방문 점검 신청</h2>
+   <p>남겨 주신 연락처로 30분 안에 방문 시간을 확정해 드려요. 저녁 8시 방문까지 가능합니다.</p>
+   <div class="cnt">
+    <div><svg viewBox="0 0 24 24"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg><span><b>전화 상담</b>000-0000-0000</span></div>
+    <div><svg viewBox="0 0 24 24"><path d="M4 5h16v11H8l-4 4z"/></svg><span><b>메신저 상담</b>카카오톡 ID: example</span></div>
+    <div><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/><path d="M12 8v4l3 2"/></svg><span><b>방문 가능 시간</b>매일 오전 9시 – 오후 8시</span></div>
+   </div>
+  </div>
+  <form id="f" onsubmit="return false">
+   <div class="f2"><div><label for="n">이름</label><input id="n" placeholder="홍길동" required></div><div><label for="p">연락처</label><input id="p" placeholder="000-0000-0000" required></div></div>
+   <label for="ad">주소 (동까지)</label><input id="ad" placeholder="예) ○○구 ○○동">
+   <div class="f2"><div><label for="md">관심 모델</label><select id="md"><option>지문 인식 도어락</option><option>번호키 도어락</option><option>푸시풀 지문 도어락</option><option>방문해서 추천받고 싶어요</option></select></div><div><label for="tm">희망 시간</label><select id="tm"><option>평일 오전</option><option>평일 오후</option><option>평일 저녁</option><option>주말</option></select></div></div>
+   <label for="mm">요청 사항</label><textarea id="mm" placeholder="현관문 상태나 궁금한 점을 적어 주세요"></textarea>
+   <label class="agree"><input type="checkbox" checked> 상담을 위한 연락처 수집에 동의합니다</label>
+   <button class="cta" type="submit">무료 점검 신청하기</button>
+   <div class="done" id="done"></div>
+  </form>
+ </div>
+</section>
+
+<footer>
+ <div class="wrap">
+  <div class="brand">딸깍 키앤락</div>
+  도어락 교체·설치 · 열쇠 출장 · 상담 000-0000-0000 · 카카오톡 ID: example<br>
+  12월 할인은 2026년 12월 31일 신청분까지 적용되며 현장 상황에 따라 추가 자재비가 생길 수 있습니다.
+ </div>
+</footer>
+<div class="mbar"><span>12월 지문 도어락 <b>15% 할인</b><br>방문 점검 0원</span><a href="#apply">점검 신청</a></div>
+
+<script>
+// keypad on hero
+const keys=document.getElementById('keys');let k='';const L=['1','2','3','4','5','6','7','8','9','*','0','#'];
+L.forEach((t,i)=>{const x=330+(i%3)*22,y=236+Math.floor(i/3)*32;k+=`<circle cx="${x}" cy="${y-5}" r="10" fill="#0FB3C8" opacity=".12"/><text x="${x}" y="${y}">${t}</text>`});keys.innerHTML=k;
+// checks
+const cs=document.querySelectorAll('.chk');const msg=['해당하는 항목을 눌러 보세요. 두 개 이상이면 방문 점검을 권해 드려요.','하나만 해당돼요. 건전지와 배선 상태만 점검해도 충분할 수 있어요.','두 개 해당. 무료 방문 점검으로 교체가 필요한지 확인해 보세요.','세 개 이상 해당. 12월 할인 기간에 교체를 검토해 보시길 권해요.'];
+cs.forEach(c=>c.onclick=()=>{c.classList.toggle('on');const n=document.querySelectorAll('.chk.on').length;document.getElementById('vn').textContent=n;document.getElementById('vt').textContent=msg[Math.min(n,3)]});
+// faq
+document.querySelectorAll('.fq button').forEach(b=>b.onclick=()=>b.parentElement.classList.toggle('on'));
+// calc
+const fmt=v=>v.toLocaleString('ko-KR');
+function calc(){const g=x=>document.querySelector(`[data-g="${x}"] .on`);const m=g('m'),d=g('d'),a=g('a');
+ const tot=+m.dataset.v+ +d.dataset.v+ +a.dataset.v;const was=+m.dataset.o+ +d.dataset.v+ +a.dataset.v;
+ document.getElementById('eb').innerHTML=fmt(tot)+'<span>원</span>';document.getElementById('ew').textContent='정가 기준 '+fmt(was)+'원';
+ document.getElementById('el').innerHTML=`<li>${m.dataset.n}<b>${fmt(+m.dataset.v)}</b></li><li>${d.dataset.n}<b>${+d.dataset.v?'+'+fmt(+d.dataset.v):'0'}</b></li><li>${a.dataset.n}<b>${+a.dataset.v?'+'+fmt(+a.dataset.v):'0'}</b></li><li>방문 점검비<b>0</b></li>`}
+document.querySelectorAll('.opts').forEach(o=>o.querySelectorAll('.opt').forEach(b=>b.onclick=()=>{o.querySelectorAll('.opt').forEach(x=>x.classList.remove('on'));b.classList.add('on');calc()}));calc();
+document.getElementById('f').addEventListener('submit',()=>{const d=document.getElementById('done');d.textContent=(document.getElementById('n').value.trim()||'고객')+'님, '+document.getElementById('md').value+' 방문 점검 신청이 접수되었습니다. 곧 시간 확정 연락을 드릴게요.';d.classList.add('show')});
+</script>
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>한소끔 삼계탕·백숙 · 메뉴판 디자인</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@800&family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+html{overflow-x:hidden;background:#152A20}
+body{font-family:'Noto Sans KR',sans-serif;word-break:keep-all;color:#F5EEDF;-webkit-font-smoothing:antialiased;min-height:100vh;overflow-x:hidden;
+ background:radial-gradient(ellipse 60% 40% at 85% 0%,rgba(228,197,142,.18),transparent 70%),linear-gradient(180deg,#1E3A2C 0%,#152A20 100%)}
+.wrap{max-width:1180px;margin:0 auto;padding:46px 20px 130px}
+.hd{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:22px;margin-bottom:34px;padding-bottom:28px;border-bottom:1.5px solid rgba(245,238,223,.22)}
+.hd small{font-size:13px;font-weight:700;letter-spacing:.24em;color:#E4C58E}
+.hd h1{font-family:'Nanum Myeongjo',serif;font-weight:800;font-size:clamp(38px,5vw,60px);line-height:1.1;margin-top:12px}
+.hd h1 em{display:block;font-style:normal;font-size:.48em;color:#E4C58E;margin-top:8px;letter-spacing:.06em}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
+.chips span{font-size:13px;font-weight:500;padding:6px 13px;border:1px solid rgba(245,238,223,.35);border-radius:30px}
+.chips span.k{background:#9E2328;border-color:#9E2328;color:#F8E9D2}
+.cta{display:inline-flex;align-items:center;gap:9px;height:54px;padding:0 26px;background:#E4C58E;color:#1E3A2C;font-weight:700;font-size:16px;text-decoration:none;border-radius:40px;transition:.2s;white-space:nowrap}
+.cta:hover{background:#fff}
+.cta svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round}
+.view{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,.75fr);gap:30px;align-items:start}
+figure{background:#F5EEDF;padding:10px;border-radius:6px;box-shadow:0 30px 60px rgba(5,15,10,.55)}
+figure a{display:block;overflow:hidden;border-radius:3px}
+figure img{display:block;width:100%;height:auto}
+figcaption{font-size:13px;color:#6F6556;padding:11px 4px 2px;display:flex;flex-wrap:wrap;justify-content:space-between;gap:4px 10px}
+.side{display:flex;flex-direction:column;gap:18px;position:sticky;top:24px}
+.zoom{background:rgba(255,255,255,.05);border:1px solid rgba(245,238,223,.18);padding:9px;border-radius:6px}
+.zoom img{display:block;width:100%;height:auto;border-radius:3px}
+.zoom p{font-size:14px;color:#D7CDB6;padding:10px 4px 3px;line-height:1.65}
+.info{background:#F5EEDF;color:#2A2620;padding:24px 24px 18px;border-radius:6px}
+.info h2{font-family:'Nanum Myeongjo',serif;font-weight:800;font-size:23px;color:#1E3A2C;margin-bottom:8px}
+.info li{list-style:none;font-size:14.5px;padding:9px 0 9px 22px;position:relative;line-height:1.6;border-top:1px solid rgba(42,38,32,.12)}
+.info li:first-child{border-top:0}
+.info li:before{content:"";position:absolute;left:3px;top:16px;width:9px;height:9px;background:#9E2328;transform:rotate(45deg)}
+.bar{position:fixed;left:0;right:0;bottom:0;background:#11211A;border-top:2px solid #E4C58E;padding:12px 20px;display:flex;justify-content:center;align-items:center;gap:18px;flex-wrap:wrap}
+.bar p{font-size:14px;color:#D7CDB6}
+.bar .cta{height:46px}
+@media(max-width:900px){.view{grid-template-columns:1fr}.side{position:static}}
+@media(max-width:620px){.wrap{padding:26px 16px 120px}.hd .cta{display:none}.bar p{display:none}.bar .cta{width:100%;justify-content:center}figure{padding:6px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+ <div class="hd">
+  <div>
+   <small>MENU DESIGN · SD-MN48</small>
+   <h1>한소끔 <em>삼계탕 · 백숙</em></h1>
+   <div class="chips"><span class="k">A4 세로 · 1페이지</span><span>뚝배기 탑뷰 일러스트</span><span>국물 3종 선택 안내</span><span>백숙 다크 박스</span><span>솔잎 그린 & 대추 레드 & 한지 크림</span></div>
+  </div>
+  <a class="cta" href="https://design.shoponph.online/#inquiry">이 디자인으로 상담하기 <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+ </div>
+ <div class="view">
+  <figure><a href="page1.png" target="_blank" rel="noopener"><img src="page1.png" alt="한소끔 삼계탕 메뉴판 전체. 위쪽은 짙은 솔잎색 바탕에 큰 명조체 상호와 영업시간, 오른쪽에 위에서 내려다본 뚝배기 삼계탕 그림(통닭, 수삼, 대추, 마늘, 밤)과 깍두기 접시. 아래는 왼쪽에 삼계탕 다섯 가지와 국물 세 가지 고르기 칸, 오른쪽에 짙은 초록 상자로 묶은 백숙 메뉴와 곁들임, 음료 칩, 맨 아래 포장·단체 예약 안내." width="2480" height="3508"></a><figcaption><span>page1.png · A4 2480 × 3508 px</span><span>인쇄용 · 원화 표기</span></figcaption></figure>
+  <div class="side">
+   <div class="zoom"><img src="detail-bowl.jpg" alt="뚝배기 삼계탕 일러스트 확대. 뽀얀 국물 위 다리를 꼰 영계, 수삼 한 뿌리, 대추 세 알, 마늘과 밤, 송송 썬 파" width="1000" height="1104"><p>위에서 내려다본 뚝배기 한 그릇이 가게의 대표 메뉴를 글보다 먼저 알려 줍니다.</p></div>
+   <div class="zoom"><img src="detail-list.jpg" alt="삼계탕 메뉴 목록 확대. 메뉴 이름, 한 줄 설명, 붉은 가격, 아래 국물 세 가지 선택 칸" width="1000" height="1143"><p>메뉴마다 한 줄 설명을 달고, 국물 선택은 그림 칸으로 따로 묶어 주문이 빨라집니다.</p></div>
+   <div class="info"><h2>이 메뉴판의 포인트</h2><ul><li>대표 메뉴와 백숙을 색 상자로 나눠 1인·단체 손님이 각자 볼 곳을 바로 찾음</li><li>국물 선택과 추가 금액을 그림 칸으로 정리</li><li>영업시간·마지막 주문 시간을 상호 바로 아래 배치</li><li>포장·단체 예약 안내는 맨 아래 한 줄로 정리</li></ul></div>
+  </div>
+ </div>
+</div>
+<div class="bar"><p>우리 가게 메뉴판도 이렇게 만들고 싶다면</p><a class="cta" href="https://design.shoponph.online/#inquiry">이 디자인으로 상담하기</a></div>
+</body>
+</html>
