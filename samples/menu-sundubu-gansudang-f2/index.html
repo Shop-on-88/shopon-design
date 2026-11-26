@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>간수당 순두부 · 메뉴판 디자인</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@700&family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+html{background:#E6DFCF}
+body{font-family:'Noto Sans KR',sans-serif;color:#23231F;background:#E6DFCF;word-break:keep-all;-webkit-font-smoothing:antialiased;min-height:100vh;overflow-x:clip;line-height:1.6}
+.wrap{max-width:1180px;margin:0 auto;padding:48px 24px 136px}
+.hd{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:24px;padding-bottom:32px;margin-bottom:40px;border-bottom:2px solid #23231F}
+.hd small{font-size:14px;font-weight:500;color:#6B5A40}
+.hd h1{font-family:'Nanum Myeongjo',serif;font-weight:700;font-size:clamp(40px,5.4vw,64px);line-height:1.1;margin-top:8px}
+.hd h1 em{display:block;font-family:'Noto Sans KR',sans-serif;font-style:normal;font-weight:400;font-size:.32em;color:#4A4438;margin-top:12px}
+.facts{display:flex;flex-wrap:wrap;gap:8px 24px;margin-top:20px;font-size:15px;color:#4A4438}
+.facts span{display:flex;align-items:center;gap:8px}
+.facts span:before{content:"";width:8px;height:8px;border-radius:50%;border:2px solid #B8391B}
+.cta{display:inline-flex;align-items:center;gap:8px;height:52px;padding:0 24px;background:#23231F;color:#F2EDE1;font-weight:700;font-size:16px;text-decoration:none;border-radius:8px;transition:background .2s;white-space:nowrap}
+.cta:hover{background:#7A5A34}
+.cta svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+.view{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,.8fr);gap:32px;align-items:start}
+figure{background:#F4EFE4;padding:12px;border-radius:8px;border:1px solid rgba(35,35,31,.18);box-shadow:0 24px 48px -28px rgba(60,45,25,.55)}
+figure a{display:block;overflow:hidden;border-radius:4px}
+figure img{display:block;width:100%;height:auto}
+figcaption{font-size:14px;color:#4A4438;padding:12px 4px 0;display:flex;flex-wrap:wrap;justify-content:space-between;gap:4px 12px}
+figcaption b{color:#23231F}
+.side{display:flex;flex-direction:column;gap:20px;position:sticky;top:24px}
+.zoom{background:#F4EFE4;padding:8px;border-radius:8px;border:1px solid rgba(35,35,31,.18)}
+.zoom img{display:block;width:100%;height:auto;border-radius:4px}
+.zoom p{font-size:15px;color:#4A4438;padding:12px 8px 4px}
+.zoom p b{display:block;font-family:'Nanum Myeongjo',serif;font-weight:700;font-size:19px;color:#23231F;margin-bottom:4px}
+.info{background:#2B2A25;color:#E6DFCF;padding:24px;border-radius:8px}
+.info h2{font-family:'Nanum Myeongjo',serif;font-weight:700;font-size:22px;color:#F2EDE1;margin-bottom:8px}
+.info li{list-style:none;font-size:15px;padding:12px 0 12px 20px;position:relative;border-top:1px solid rgba(230,223,207,.16)}
+.info li:first-child{border-top:0}
+.info li:before{content:"";position:absolute;left:0;top:21px;width:8px;height:8px;border-radius:2px;background:#B98D5C}
+.bar{position:fixed;left:0;right:0;bottom:0;background:#23231F;border-top:3px solid #B98D5C;padding:12px 20px;display:flex;justify-content:center;align-items:center;gap:20px;flex-wrap:wrap;z-index:10}
+.bar p{font-size:15px;color:#CFC6B3}
+.bar .cta{height:48px;background:#F2EDE1;color:#23231F}
+.bar .cta:hover{background:#B98D5C}
+@media(max-width:900px){.view{grid-template-columns:1fr}.side{position:static}}
+@media(max-width:620px){.wrap{padding:28px 16px 112px}.hd .cta{display:none}.bar p{display:none}.bar .cta{width:100%;justify-content:center}figure{padding:6px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+ <div class="hd">
+  <div>
+   <small>메뉴판 디자인 · SD-MN56</small>
+   <h1>간수당 순두부 <em>아침마다 콩을 갈아 간수로 굳히는 동네 두부집 · 한국어 · 원화</em></h1>
+   <div class="facts"><span>A4 세로 · 1페이지</span><span>콩물 아이보리 · 두부틀 소나무 · 고추기름 주홍</span><span>나무 받침 위 뚝배기 일러스트</span></div>
+  </div>
+  <a class="cta" href="https://design.shoponph.online/#inquiry">이 디자인으로 상담하기 <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+ </div>
+ <div class="view">
+  <figure><a href="page1.png" target="_blank" rel="noopener"><img src="page1.png" alt="간수당 순두부 메뉴판 전체. 면포 결이 비치는 아이보리 바탕에 얇은 이중 테두리가 있고, 왼쪽 위에 '아침 일곱 시, 그날 간 콩으로 문을 엽니다'와 큰 명조체 가게 이름 간수당, 순두부·모두부·콩비지, 콩을 맷돌에 갈아 간수로 굳힌다는 짧은 소개와 찌개에 밥·반찬 세 가지·날달걀이 포함된다는 안내가 있습니다. 오른쪽 위 모서리에는 나무 받침에 올린 검은 뚝배기를 위에서 본 큰 그림이 종이 밖으로 걸쳐 있고, 붉은 국물에 반쯤 잠긴 커다란 흰 순두부 세 덩어리, 가장자리 쪽 날달걀 노른자, 바지락 두 개, 애호박, 송송 썬 파와 기름방울이 떠 있습니다. 가운데에는 소나무 두부틀 모양의 나무 틀 안 여섯 칸에 맑은 순두부 9,000원(주홍색 가격), 바지락 10,000원, 해물 11,000원, 차돌 11,000원, 굴 12,000원, 들깨 10,000원이 맵기 0~3 점 표시와 함께 들어 있습니다. 아래에는 두부 한 모, 곁들임·마실 것, 두부 사 가기 세 단의 가격표와 영업시간, 자리표시 연락처가 있습니다." width="2480" height="3508"></a><figcaption><b>1페이지</b><span>2480 × 3508 px · A4 인쇄용</span></figcaption></figure>
+  <div class="side">
+   <div class="zoom"><img src="detail-pot.jpg" alt="뚝배기 일러스트 확대: 나무 받침 위 검은 뚝배기 안 붉은 국물에 반쯤 잠긴 순두부 세 덩어리가 젖은 듯 반짝이고, 가장자리 쪽 노른자, 바지락 두 개, 애호박 조각, 송송 썬 파와 고춧가루, 기름방울이 떠 있습니다" width="900" height="954" loading="lazy"><p><b>뚝배기 한 그릇</b>위에서 내려다본 뚝배기 하나로 이 집이 무엇을 끓이는지 바로 보이게 했습니다.</p></div>
+   <div class="zoom"><img src="detail-press.jpg" alt="두부틀 메뉴 확대: 소나무 나무 틀 안 여섯 칸에 순두부찌개 여섯 가지 이름과 한 줄 설명, 가격, 빨간 점 세 개로 된 맵기 표시가 정리되어 있습니다" width="1180" height="626" loading="lazy"><p><b>두부틀 여섯 칸</b>두부를 굳히는 나무 틀 모양 칸에 찌개 여섯 가지를 넣고, 맵기는 점 세 개로 표시했습니다.</p></div>
+   <div class="info"><h2>이 메뉴판의 구성</h2><ul><li>색은 콩물, 소나무 두부틀, 고추기름에서 가져왔습니다</li><li>주홍색은 맵기 점과 대표 찌개 가격에만 씁니다</li><li>포장 두부 판매와 미리 맡겨 두기 안내를 따로 두었습니다</li><li>큰 글씨와 점선 구분으로 벽이나 테이블에서도 읽기 쉽습니다</li></ul></div>
+  </div>
+ </div>
+</div>
+<div class="bar"><p>우리 가게도 이런 메뉴판이 필요하다면</p><a class="cta" href="https://design.shoponph.online/#inquiry">이 디자인으로 상담하기</a></div>
+</body>
+</html>
