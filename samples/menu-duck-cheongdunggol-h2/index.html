@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>청둥골 오리 · 메뉴판 디자인</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@700&family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+html{background:#ECE5D5}
+body{font-family:'Noto Sans KR',sans-serif;color:#2A2620;background:#ECE5D5;word-break:keep-all;-webkit-font-smoothing:antialiased;min-height:100vh;overflow-x:clip;line-height:1.6}
+.wrap{max-width:1180px;margin:0 auto;padding:48px 24px 136px}
+.hd{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:24px;padding-bottom:32px;margin-bottom:40px;border-bottom:2px solid #2A2620}
+.hd small{font-size:14px;font-weight:500;color:#5A5246}
+.hd h1{font-family:'Nanum Myeongjo',serif;font-weight:700;font-size:clamp(40px,5.4vw,64px);line-height:1.1;margin-top:8px}
+.hd h1 em{display:block;font-family:'Noto Sans KR',sans-serif;font-style:normal;font-weight:400;font-size:.32em;color:#5A5246;margin-top:12px}
+.facts{display:flex;flex-wrap:wrap;gap:8px 24px;margin-top:20px;font-size:15px;color:#5A5246}
+.facts span{display:flex;align-items:center;gap:8px}
+.facts span:before{content:"";width:8px;height:8px;border-radius:50%;border:2px solid #1F5A4C}
+.cta{display:inline-flex;align-items:center;gap:8px;height:52px;padding:0 24px;background:#2A2620;color:#F7F2E6;font-weight:700;font-size:16px;text-decoration:none;border-radius:8px;transition:background .2s;white-space:nowrap}
+.cta:hover{background:#1F5A4C}
+.cta svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+.view{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,.8fr);gap:32px;align-items:start}
+figure{background:#F7F2E6;padding:12px;border-radius:8px;border:1px solid rgba(30,42,44,.18);box-shadow:0 24px 48px -28px rgba(30,42,44,.55)}
+figure a{display:block;overflow:hidden;border-radius:4px}
+figure img{display:block;width:100%;height:auto}
+figcaption{font-size:14px;color:#5A5246;padding:12px 4px 0;display:flex;flex-wrap:wrap;justify-content:space-between;gap:4px 12px}
+figcaption b{color:#2A2620}
+.side{display:flex;flex-direction:column;gap:20px;position:sticky;top:24px}
+.zoom{background:#F7F2E6;padding:8px;border-radius:8px;border:1px solid rgba(30,42,44,.18)}
+.zoom img{display:block;width:100%;height:auto;border-radius:4px}
+.zoom p{font-size:15px;color:#5A5246;padding:12px 8px 4px}
+.zoom p b{display:block;font-family:'Nanum Myeongjo',serif;font-weight:700;font-size:19px;color:#2A2620;margin-bottom:4px}
+.info{background:#2A2620;color:#ECE5D5;padding:24px;border-radius:8px}
+.info h2{font-family:'Nanum Myeongjo',serif;font-weight:700;font-size:22px;color:#F7F2E6;margin-bottom:8px}
+.info li{list-style:none;font-size:15px;padding:12px 0 12px 20px;position:relative;border-top:1px solid rgba(230,223,207,.16)}
+.info li:first-child{border-top:0}
+.info li:before{content:"";position:absolute;left:0;top:21px;width:8px;height:8px;border-radius:2px;background:#B9A57C}
+.bar{position:fixed;left:0;right:0;bottom:0;background:#2A2620;border-top:3px solid #B9A57C;padding:12px 20px;display:flex;justify-content:center;align-items:center;gap:20px;flex-wrap:wrap;z-index:10}
+.bar p{font-size:15px;color:#CFC4AE}
+.bar .cta{height:48px;background:#F7F2E6;color:#2A2620}
+.bar .cta:hover{background:#B9A57C}
+@media(max-width:900px){.view{grid-template-columns:1fr}.side{position:static}}
+@media(max-width:620px){.wrap{padding:28px 16px 112px}.hd .cta{display:none}.bar p{display:none}.bar .cta{width:100%;justify-content:center}figure{padding:6px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+ <div class="hd">
+  <div>
+   <small>메뉴판 디자인 · SD-MN58</small>
+   <h1>청둥골 오리 <em>생오리 로스 · 주물럭 · 훈제 · 누룽지 백숙을 내는 오리 식당</em></h1>
+   <div class="facts"><span>A4 세로 · 1페이지 · 한국어 · 원화</span><span>도감 종이 아이보리 · 먹 · 청둥오리 청록</span><span>조류 도감 판화풍 청둥오리 일러스트</span></div>
+  </div>
+  <a class="cta" href="https://design.shoponph.online/#inquiry">이 디자인으로 상담하기 <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+ </div>
+ <div class="view">
+  <figure><a href="page1.png" target="_blank" rel="noopener"><img src="page1.png" alt="청둥골 오리 메뉴판 전체. 아이보리 도감 종이에 이중 테두리를 두르고, 위쪽에 청둥오리 학명과 영업시간, 큰 명조체 가게 이름과 '갈대 저수지 옆, 생오리 로스 · 주물럭 · 훈제 · 누룽지 백숙' 소개가 있습니다. 가운데에는 갈대와 부들 사이 저수지를 헤엄치는 청둥오리 수컷이 판화처럼 가는 빗금으로 그려져 있고, 청록 머리와 흰 목테, 밤색 가슴, 파란 날개깃이 보입니다. 아래에는 No. 01 생오리 로스(대표, 한 마리 62,000원 · 반 마리 34,000원), No. 02 오리 주물럭, No. 03 참나무 훈제오리 29,000원, No. 04 누룽지 오리백숙 68,000원(누룽지죽 포함)이 두 줄로 있고, 맨 아래 식사 · 곁들임 · 마실 것 세 칸 가격표와 자리표시 예약 번호가 있습니다." width="2480" height="3508"></a><figcaption><b>A4 세로 · 2480 × 3508</b><span>눌러서 원본 크기로 보기</span></figcaption></figure>
+  <div class="side">
+   <div class="zoom"><img src="detail-plate.jpg" alt="청둥오리 일러스트 확대: 갈대와 부들이 선 저수지 물 위로 청둥오리 수컷이 왼쪽을 보고 헤엄치고 있고, 머리의 청록 깃과 흰 목테, 밤색 가슴, 회색 옆구리의 가는 빗금, 날개의 파란 깃, 꼬리의 말린 깃이 보입니다. 물결은 가는 먹선으로 표현했습니다" width="1080" height="450" loading="lazy"><p><b>도감 한 장 같은 첫인상</b>가게 이름의 청둥오리를 판화풍 빗금으로 그려, 오리집 메뉴판이 흔한 사진 대신 이 집만의 그림을 갖게 했습니다.</p></div>
+   <div class="zoom"><img src="detail-list.jpg" alt="메뉴 목록 확대: No. 01부터 No. 04까지 번호, 명조체 메뉴 이름, 한 줄 설명, 한 마리와 반 마리 가격이 정리되어 있고, 생오리 로스에만 청록색 대표 표시와 가격 색이 들어가 있습니다" width="1080" height="491" loading="lazy"><p><b>도감 번호처럼 매긴 메뉴</b>네 가지 주메뉴를 No. 번호로 묶고, 한 마리 · 반 마리 가격을 나란히 두어 인원수대로 고르기 쉽게 했습니다.</p></div>
+   <div class="info"><h2>이 메뉴판의 구성</h2><ul><li>색은 도감 종이, 먹, 청둥오리 머리 깃에서 가져왔습니다</li><li>청록은 대표 메뉴 표시와 그 가격에만 씁니다</li><li>백숙 예약 안내는 맨 위 영업시간 옆에 두었습니다</li><li>식사 · 곁들임 · 마실 것은 아래 세 칸에 모아 한눈에 보이게 했습니다</li></ul></div>
+  </div>
+ </div>
+</div>
+<div class="bar"><p>우리 가게도 이런 메뉴판이 필요하다면</p><a class="cta" href="https://design.shoponph.online/#inquiry">이 디자인으로 상담하기</a></div>
+</body>
+</html>

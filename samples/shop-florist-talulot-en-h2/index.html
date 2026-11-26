@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Talulot Flower Stall · Same-day bouquets in Manila</title>
+<meta name="description" content="A family flower stall in Manila. Bouquets tied in the morning, wrapped in newsprint or kraft, delivered across Metro Manila by noon.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700&family=Public+Sans:wght@400;500;600&family=Caveat:wght@600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+ --bg:#F3EFE5;--surface:#FBF9F3;--sunk:#E8E2D3;--ink:#1F2A22;--ink2:#4C5649;--ink3:#6A7264;
+ --line:rgba(31,42,34,.14);--line2:rgba(31,42,34,.3);
+ --red:#B0372B;--red-d:#922C22;--red-t:#F4DED8;--leaf:#3E5B3F;
+ --head:'Bricolage Grotesque',sans-serif;--sans:'Public Sans',sans-serif;--hand:'Caveat',cursive;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{background:var(--bg);scroll-behavior:smooth}
+body{font-family:var(--sans);font-size:17px;line-height:1.6;color:var(--ink);background:var(--bg);-webkit-font-smoothing:antialiased;overflow-x:clip}
+img,svg{display:block}
+a{color:inherit}
+.in{max-width:1200px;margin:0 auto;padding:0 32px}
+.num{font-variant-numeric:tabular-nums}
+h1,h2,h3{font-family:var(--head);font-weight:600;line-height:1.08;letter-spacing:-.02em}
+h2{font-size:clamp(34px,4vw,52px)}
+.lead{font-size:19px;color:var(--ink2);max-width:580px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;height:48px;padding:0 24px;border-radius:8px;font-family:var(--sans);font-size:17px;font-weight:600;text-decoration:none;border:1px solid transparent;cursor:pointer;transition:background .2s,border-color .2s,color .2s}
+.btn-p{background:var(--red);color:#fff}
+.btn-p:hover{background:var(--red-d)}
+.btn-s{border-color:var(--line2);color:var(--ink);background:transparent}
+.btn-s:hover{background:var(--surface);border-color:var(--ink)}
+.btn svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.ico{width:24px;height:24px;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round;flex:none}
+.sec{padding:96px 0}
+.kicker{font-size:16px;font-weight:600;color:var(--leaf);margin-bottom:12px}
+
+/* nav */
+.nav{border-bottom:1px solid var(--line);background:var(--bg);position:sticky;top:0;z-index:20}
+.nav .in{display:flex;align-items:center;justify-content:space-between;height:72px;gap:24px}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none}
+.logo svg{width:32px;height:32px}
+.logo b{font-family:var(--head);font-weight:700;font-size:26px;letter-spacing:-.02em}
+.nav nav{display:flex;gap:28px;font-size:16px;color:var(--ink2)}
+.nav nav a{text-decoration:none;padding:12px 0}
+.nav nav a:hover{color:var(--ink)}
+.nav .btn{height:40px;padding:0 18px;font-size:15px}
+
+/* hero */
+.hero{padding:64px 0 96px}
+.hero .in{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:56px;align-items:center}
+.hero .where{display:flex;align-items:center;gap:8px;font-size:16px;color:var(--ink3);margin-bottom:20px}
+.hero .where svg{width:20px;height:20px}
+.hero h1{font-size:clamp(40px,4.6vw,62px)}
+.hero .lead{margin-top:24px}
+.hero .acts{display:flex;gap:12px;margin-top:36px;flex-wrap:wrap}
+.hero dl{display:grid;grid-template-columns:repeat(3,auto);justify-content:start;gap:8px 40px;margin-top:44px;padding-top:24px;border-top:1px solid var(--line)}
+.hero dt{font-size:14px;color:var(--ink3)}
+.hero dd{font-family:var(--head);font-size:24px;font-weight:600}
+.art{aspect-ratio:640/560;width:100%}
+.art svg{width:100%;height:100%;border-radius:20px}
+
+/* today's buckets */
+.today{background:var(--surface);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.today .top{display:flex;justify-content:space-between;align-items:flex-end;gap:32px;flex-wrap:wrap;margin-bottom:48px}
+.today .stamp{font-size:16px;color:var(--ink3);display:flex;align-items:center;gap:8px}
+.board{display:grid;grid-template-columns:1.3fr 1fr 1fr 1fr;gap:16px}
+.tag .pr{margin-top:20px}
+.tag{background:#E9DCC0;border-radius:12px;padding:20px 20px 16px;position:relative;display:flex;flex-direction:column;justify-content:space-between;border:1px solid rgba(31,42,34,.12)}
+.tag h3{font-family:var(--sans);font-size:17px;font-weight:600;color:var(--ink)}
+.tag p{font-size:15px;color:var(--ink2);margin-top:4px;line-height:1.45}
+.tag .pr{font-family:var(--hand);font-weight:700;font-size:34px;line-height:1;color:var(--ink);margin-top:16px}
+.tag .pr small{font-size:22px;color:var(--ink2);font-weight:600}
+.tag.big{grid-row:span 2;background:var(--ink);color:#EDEAE0;border:0;padding:28px}
+.tag.big h3{font-family:var(--head);font-size:32px;font-weight:600;color:#FBF9F3;line-height:1.1}
+.tag.big p{color:#BFC5B9;font-size:16px;margin-top:12px;max-width:300px}
+.tag.big .pr{color:#FBF9F3;font-size:48px}
+.tag.big .pr small{color:#BFC5B9;font-size:26px}
+.tag.big svg{width:100%;max-width:240px;height:auto;margin:16px 0 0}
+
+/* builder */
+.build .in{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,380px);gap:56px;align-items:start}
+.build .lead{margin-top:16px}
+fieldset{border:0;margin-top:40px}
+legend{font-family:var(--head);font-size:22px;font-weight:600;margin-bottom:16px}
+legend span{font-family:var(--sans);font-size:15px;font-weight:400;color:var(--ink3);margin-left:8px}
+.opts{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.opt{position:relative;display:block;cursor:pointer}
+.opt input{position:absolute;opacity:0;pointer-events:none}
+.opt .box{display:flex;flex-direction:column;gap:4px;height:100%;padding:16px;border:1px solid var(--line2);border-radius:12px;background:var(--surface);transition:border-color .2s,background .2s}
+.opt:hover .box{border-color:var(--ink)}
+.opt input:checked+.box{border-color:var(--red);background:var(--red-t);box-shadow:inset 0 0 0 1px var(--red)}
+.opt input:focus-visible+.box{outline:2px solid var(--ink);outline-offset:2px}
+.opt b{font-weight:600;font-size:17px}
+.opt span{font-size:15px;color:var(--ink2);line-height:1.45}
+.opt .p{font-weight:600;color:var(--ink);font-size:16px;margin-top:auto;padding-top:8px}
+.opt svg{width:56px;height:56px;margin-bottom:8px}
+.sel{width:100%;height:48px;border:1px solid var(--line2);border-radius:8px;background:var(--surface);font:inherit;font-size:16px;color:var(--ink);padding:0 14px}
+.summary{position:sticky;top:96px;background:var(--surface);border:1px solid var(--line);border-radius:20px;padding:28px}
+.summary h3{font-size:24px}
+.summary ul{list-style:none;margin-top:16px}
+.summary li{display:flex;justify-content:space-between;gap:16px;padding:12px 0;border-bottom:1px solid var(--line);font-size:16px;color:var(--ink2)}
+.summary li b{color:var(--ink);font-weight:500}
+.summary .tot{display:flex;justify-content:space-between;align-items:baseline;margin-top:20px}
+.summary .tot span{font-size:16px;color:var(--ink2)}
+.summary .tot b{font-family:var(--head);font-size:40px;font-weight:600;color:var(--red)}
+.summary .btn{width:100%;margin-top:20px}
+.summary .note{font-size:14px;color:var(--ink3);margin-top:12px;line-height:1.5}
+.summary .ok{display:none;margin-top:16px;padding:14px 16px;border-radius:8px;background:#E3EADF;color:var(--leaf);font-size:15px;line-height:1.5}
+
+/* occasions */
+.occ{background:var(--sunk)}
+.occ h2{max-width:640px}
+.occ-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:48px}
+.oc{background:var(--surface);border-radius:16px;padding:24px;border:1px solid var(--line);display:flex;flex-direction:column}
+.oc h3{font-size:24px}
+.oc.main .from{margin-top:24px}
+.oc p{font-size:16px;color:var(--ink2);margin-top:8px}
+.oc .from{margin-top:auto;padding-top:20px;font-size:15px;color:var(--ink3)}
+.oc .from b{font-size:20px;color:var(--ink);font-weight:600;margin-left:4px}
+.oc.main{grid-column:1/-1;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,.8fr);column-gap:48px;align-items:center;background:var(--leaf);color:#EEF0E8;border:0;padding:40px}
+.oc.main .txt{display:flex;flex-direction:column}
+.oc.main h3{font-size:34px;color:#FBF9F3}
+.oc.main p{color:#CFD7CA;font-size:17px;max-width:520px}
+.oc.main .from{color:#CFD7CA}
+.oc.main .from b{color:#FBF9F3}
+.oc.main svg{width:100%;max-width:320px;height:auto;margin:0 auto;grid-row:1}
+.oc ul{list-style:none;margin-top:16px}
+.oc li{font-size:15px;padding:8px 0;border-top:1px solid rgba(238,240,232,.22);color:#E2E7DD}
+
+/* delivery */
+.del .in{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);gap:64px;align-items:start}
+.clock{display:flex;flex-direction:column;gap:0;margin-top:40px;border-left:2px solid var(--line2);padding-left:24px}
+.clock div{position:relative;padding:0 0 28px}
+.clock div:before{content:"";position:absolute;left:-31px;top:6px;width:12px;height:12px;border-radius:50%;background:var(--bg);border:2px solid var(--ink)}
+.clock div.hot:before{background:var(--red);border-color:var(--red)}
+.clock b{font-family:var(--head);font-size:22px;font-weight:600;display:block}
+.clock span{font-size:16px;color:var(--ink2)}
+table{width:100%;border-collapse:collapse;font-size:16px}
+caption{text-align:left;font-family:var(--head);font-size:22px;font-weight:600;margin-bottom:16px}
+th{text-align:left;font-weight:500;font-size:14px;color:var(--ink3);padding:0 0 10px;border-bottom:1px solid var(--line2)}
+td{padding:16px 0;border-bottom:1px solid var(--line);vertical-align:top}
+td small{display:block;font-size:14px;color:var(--ink3)}
+td:last-child,th:last-child{text-align:right;white-space:nowrap}
+.del .pick{margin-top:24px;display:flex;gap:12px;align-items:flex-start;font-size:16px;color:var(--ink2);background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:16px}
+
+/* care */
+.care{background:var(--ink);color:#E7E9E1}
+.care h2{color:#FBF9F3}
+.care .lead{color:#B9C0B4;margin-top:16px}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:32px;margin-top:56px;counter-reset:s}
+.steps li{list-style:none;border-top:1px solid rgba(231,233,225,.25);padding-top:20px}
+.steps svg{width:32px;height:32px;stroke:#E7E9E1;stroke-width:1.5}
+.steps b{display:block;font-family:var(--head);font-size:21px;font-weight:600;color:#FBF9F3;margin-top:16px}
+.steps span{display:block;font-size:16px;color:#B9C0B4;margin-top:8px}
+
+/* order */
+.order .in{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:64px;align-items:start}
+.order address{font-style:normal;margin-top:32px;display:flex;flex-direction:column;gap:16px;font-size:16px;color:var(--ink2)}
+.order address div{display:flex;gap:12px;align-items:flex-start}
+.order address b{display:block;color:var(--ink);font-weight:600}
+form{background:var(--surface);border:1px solid var(--line);border-radius:20px;padding:32px;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:20px}
+form label{display:flex;flex-direction:column;gap:8px;font-size:15px;font-weight:500;color:var(--ink2)}
+form .full{grid-column:1/-1}
+form input,form textarea,form select{font:inherit;font-size:16px;color:var(--ink);background:var(--bg);border:1px solid var(--line2);border-radius:8px;padding:12px 14px;min-height:48px}
+form input,form select,form textarea{width:100%;min-width:0}
+form .agree input{width:20px}
+form textarea{min-height:104px;resize:vertical}
+form input:focus,form textarea:focus,form select:focus{outline:2px solid var(--ink);outline-offset:1px}
+form .btn{grid-column:1/-1;justify-self:start}
+.sent{grid-column:1/-1;display:none;padding:14px 16px;border-radius:8px;background:#E3EADF;color:var(--leaf);font-size:15px}
+
+footer{border-top:1px solid var(--line);padding:40px 0 48px;font-size:15px;color:var(--ink3)}
+footer .in{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap}
+
+.rv{opacity:0;transform:translateY(12px);transition:opacity .5s ease,transform .5s ease}
+.rv.on{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}}
+
+@media(max-width:1000px){
+ .hero .in,.build .in,.del .in,.order .in{grid-template-columns:1fr}
+ .board{grid-template-columns:1fr 1fr}
+ .tag.big{grid-column:span 2;grid-row:auto}
+ .occ-grid{grid-template-columns:1fr 1fr}
+ .steps{grid-template-columns:1fr 1fr}
+ .summary{position:static}
+ .nav nav{display:none}
+}
+@media(max-width:620px){
+ .in{padding:0 16px}
+ .sec{padding:64px 0}
+ .hero{padding:40px 0 64px}
+ .hero dl{grid-template-columns:repeat(3,1fr);gap:8px 16px}
+ .hero dd{font-size:20px}
+ .opts{grid-template-columns:1fr}
+ .opt .box{flex-direction:row;flex-wrap:wrap;align-items:center;column-gap:12px}
+ .opt svg{width:44px;height:44px;margin:0}
+ .opt .p{margin-left:auto;padding-top:0}
+ .opt span.d{width:100%}
+ .board{grid-template-columns:1fr 1fr;gap:12px}
+ .tag{padding:16px 14px 14px}
+ .tag .pr{font-size:30px}
+ .occ-grid{grid-template-columns:1fr}
+ .oc.main{grid-template-columns:1fr;padding:28px 24px}
+ .oc.main svg{grid-row:auto;max-width:240px;margin-top:24px}
+ .steps{grid-template-columns:1fr;gap:24px}
+ form{grid-template-columns:1fr;padding:20px}
+ form .btn{width:100%}
+ .nav .btn{padding:0 14px}
+ .logo b{font-size:22px}
+}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+ <defs>
+  <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></symbol>
+  <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></symbol>
+  <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+  <symbol id="i-phone" viewBox="0 0 24 24"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></symbol>
+  <symbol id="i-chat" viewBox="0 0 24 24"><path d="M4 5h16v11H9l-5 4z"/></symbol>
+  <symbol id="i-store" viewBox="0 0 24 24"><path d="M4 9l1.5-5h13L20 9M4 9h16v11H4zM9 20v-6h6v6"/></symbol>
+  <symbol id="i-scissors" viewBox="0 0 24 24"><circle cx="6" cy="7" r="3"/><circle cx="6" cy="17" r="3"/><path d="M8.5 8.5L20 19M8.5 15.5L20 5"/></symbol>
+  <symbol id="i-water" viewBox="0 0 24 24"><path d="M12 3s6 7 6 11a6 6 0 0 1-12 0c0-4 6-11 6-11z"/></symbol>
+  <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/><path d="M3 3l18 18"/></symbol>
+  <symbol id="i-leaf" viewBox="0 0 24 24"><path d="M5 19C5 10 11 5 20 4c0 9-5 15-14 15z"/><path d="M5 19l8-8"/></symbol>
+ </defs>
+</svg>
+
+<header class="nav">
+ <div class="in">
+  <a class="logo" href="#top" aria-label="Talulot Flower Stall home">
+   <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 4c4 4 4 10 0 14-4-4-4-10 0-14z" fill="#B0372B"/><path d="M16 18c-5 0-9-3-10-8 5 0 9 3 10 8zM16 18c5 0 9-3 10-8-5 0-9 3-10 8z" fill="#1F2A22"/><path d="M16 18v10" stroke="#1F2A22" stroke-width="2.4" stroke-linecap="round"/></svg>
+   <b>Talulot</b>
+  </a>
+  <nav aria-label="Main"><a href="#today">Today's buckets</a><a href="#build">Bouquets</a><a href="#occasions">Occasions</a><a href="#delivery">Delivery</a></nav>
+  <a class="btn btn-p" href="#build">Order a bouquet</a>
+ </div>
+</header>
+
+<main id="top">
+<section class="hero">
+ <div class="in">
+  <div>
+   <p class="where"><svg class="ico"><use href="#i-pin"/></svg>Flower stall in Sampaloc, Manila · open 4 a.m. to 8 p.m.</p>
+   <h1>Bouquets tied at the stall at dawn, at your door by noon</h1>
+   <p class="lead">We pick from the growers' trucks before sunrise, wrap every bunch in newsprint or kraft, and send riders across Metro Manila from 9 a.m.</p>
+   <div class="acts">
+    <a class="btn btn-p" href="#build">Order a bouquet <svg><use href="#i-arrow"/></svg></a>
+    <a class="btn btn-s" href="#today">See today's buckets</a>
+   </div>
+   <dl>
+    <div><dt>Order before</dt><dd class="num">10:00 a.m.</dd></div>
+    <div><dt>Delivered by</dt><dd class="num">12 noon</dd></div>
+    <div><dt>Bouquets from</dt><dd class="num">₱450</dd></div>
+   </dl>
+  </div>
+  <div class="art"><svg id="stall" viewBox="0 0 640 560" role="img" aria-label="Illustration of the flower stall: galvanized buckets on two wooden crates filled with red roses, yellow chrysanthemums, white Malaysian mums, sunflowers and eucalyptus, with handwritten cardboard price tags and a sampaguita garland hanging from a hook on the wall"></svg></div>
+ </div>
+</section>
+
+<section class="sec today" id="today">
+ <div class="in">
+  <div class="top rv">
+   <div><p class="kicker">Today's buckets</p><h2>What came off the trucks this morning</h2></div>
+   <p class="stamp"><svg class="ico"><use href="#i-clock"/></svg>Board written at 5:10 a.m. · prices change with the harvest</p>
+  </div>
+  <div class="board rv">
+   <div class="tag big">
+    <div><h3>Highland roses, red and blush</h3><p>Cut two days ago in the mountain farms. We strip the guard petals so they open in your vase.</p></div>
+    <p class="pr num">₱480 <small>/ dozen</small></p><p style="margin-top:4px">or ₱45 a stem</p>
+   </div>
+   <div class="tag"><div><h3>Malaysian mums</h3><p>White and lilac, long-lasting</p></div><p class="pr num">₱120 <small>/ bunch</small></p></div>
+   <div class="tag"><div><h3>Chrysanthemums</h3><p>Yellow pompoms</p></div><p class="pr num">₱90 <small>/ bunch</small></p></div>
+   <div class="tag"><div><h3>Sunflowers</h3><p>Single stems, big heads</p></div><p class="pr num">₱60 <small>/ stem</small></p></div>
+   <div class="tag"><div><h3>Gerbera</h3><p>Orange, pink, cream</p></div><p class="pr num">₱35 <small>/ stem</small></p></div>
+   <div class="tag"><div><h3>Baby's breath</h3><p>For filling and drying</p></div><p class="pr num">₱150 <small>/ bunch</small></p></div>
+   <div class="tag"><div><h3>Sampaguita garland</h3><p>Strung this morning</p></div><p class="pr num">₱20 <small>/ each</small></p></div>
+  </div>
+ </div>
+</section>
+
+<section class="sec build" id="build">
+ <div class="in">
+  <div class="rv">
+   <p class="kicker">Build a bouquet</p>
+   <h2>Pick a size and a wrap, we choose the stems from today's buckets</h2>
+   <p class="lead">Tell us the colors or the person in the notes. Every bouquet gets a photo by message before the rider leaves.</p>
+
+   <fieldset>
+    <legend>Size</legend>
+    <div class="opts" id="size">
+     <label class="opt"><input type="radio" name="size" value="450" data-n="Hand-tied" checked><span class="box"><svg viewBox="0 0 56 56" aria-hidden="true"><path d="M22 54l6-22 6 22z" fill="#C8B48A"/><circle cx="28" cy="22" r="8" fill="#B0372B"/><circle cx="18" cy="28" r="6" fill="#E6C14A"/><circle cx="38" cy="28" r="6" fill="#F1EEE4" stroke="#1F2A22" stroke-width="1"/></svg><b>Hand-tied</b><span class="d">10 to 12 stems, easy to carry</span><span class="p num">₱450</span></span></label>
+     <label class="opt"><input type="radio" name="size" value="850" data-n="Medium"><span class="box"><svg viewBox="0 0 56 56" aria-hidden="true"><path d="M20 54l8-20 8 20z" fill="#C8B48A"/><circle cx="28" cy="18" r="8" fill="#B0372B"/><circle cx="16" cy="24" r="7" fill="#E6C14A"/><circle cx="40" cy="24" r="7" fill="#F1EEE4" stroke="#1F2A22" stroke-width="1"/><circle cx="22" cy="32" r="6" fill="#D9867A"/><circle cx="35" cy="33" r="6" fill="#B0372B"/></svg><b>Medium</b><span class="d">20 stems with greens</span><span class="p num">₱850</span></span></label>
+     <label class="opt"><input type="radio" name="size" value="1500" data-n="Armful"><span class="box"><svg viewBox="0 0 56 56" aria-hidden="true"><path d="M18 54l10-18 10 18z" fill="#C8B48A"/><circle cx="28" cy="12" r="7" fill="#B0372B"/><circle cx="14" cy="18" r="7" fill="#E6C14A"/><circle cx="42" cy="18" r="7" fill="#F1EEE4" stroke="#1F2A22" stroke-width="1"/><circle cx="20" cy="28" r="7" fill="#D9867A"/><circle cx="36" cy="28" r="7" fill="#B0372B"/><circle cx="8" cy="30" r="5" fill="#6E8C62"/><circle cx="48" cy="30" r="5" fill="#6E8C62"/><circle cx="28" cy="25" r="5" fill="#E6C14A"/></svg><b>Armful</b><span class="d">35 stems, sunflowers or roses up front</span><span class="p num">₱1,500</span></span></label>
+    </div>
+   </fieldset>
+
+   <fieldset>
+    <legend>Wrap</legend>
+    <div class="opts" id="wrap">
+     <label class="opt"><input type="radio" name="wrap" value="0" data-n="Newsprint" checked><span class="box"><b>Newsprint</b><span class="d">The stall classic, tied with raffia</span><span class="p">Free</span></span></label>
+     <label class="opt"><input type="radio" name="wrap" value="50" data-n="Kraft paper"><span class="box"><b>Kraft paper</b><span class="d">Brown paper and twine</span><span class="p num">+ ₱50</span></span></label>
+     <label class="opt"><input type="radio" name="wrap" value="120" data-n="Abaca sleeve"><span class="box"><b>Abaca sleeve</b><span class="d">Woven sleeve they can keep</span><span class="p num">+ ₱120</span></span></label>
+    </div>
+   </fieldset>
+
+   <fieldset>
+    <legend>Delivery area <span>riders leave from Sampaloc</span></legend>
+    <select class="sel" id="zone" aria-label="Delivery area">
+     <option value="0" data-n="Pick up at the stall">Pick up at the stall · free</option>
+     <option value="80" data-n="Manila" selected>Manila · ₱80</option>
+     <option value="150" data-n="Quezon City">Quezon City · ₱150</option>
+     <option value="180" data-n="Makati, Taguig, Pasig">Makati, Taguig, Pasig · ₱180</option>
+     <option value="220" data-n="Parañaque, Pasay">Parañaque, Pasay · ₱220</option>
+    </select>
+   </fieldset>
+
+   <fieldset>
+    <legend>Card</legend>
+    <div class="opts" id="card" style="grid-template-columns:repeat(2,1fr)">
+     <label class="opt"><input type="radio" name="card" value="0" data-n="No card" checked><span class="box"><b>No card</b><span class="p">Free</span></span></label>
+     <label class="opt"><input type="radio" name="card" value="30" data-n="Handwritten card"><span class="box"><b>Handwritten card</b><span class="p num">+ ₱30</span></span></label>
+    </div>
+   </fieldset>
+  </div>
+
+  <aside class="summary rv" aria-live="polite">
+   <h3>Your order</h3>
+   <ul>
+    <li><span>Size</span><b id="sSize">Hand-tied</b></li>
+    <li><span>Wrap</span><b id="sWrap">Newsprint</b></li>
+    <li><span>Delivery</span><b id="sZone">Manila</b></li>
+    <li><span>Card</span><b id="sCard">No card</b></li>
+   </ul>
+   <div class="tot"><span>Total</span><b class="num" id="sTot">₱530</b></div>
+   <button class="btn btn-p" type="button" id="sendOrder">Send this order</button>
+   <p class="note">We confirm by message within 15 minutes during stall hours. Pay by bank transfer, e-wallet or cash on pickup.</p>
+   <p class="ok" id="okOrder">Order received. We will text you a photo of the bouquet before the rider leaves.</p>
+  </aside>
+ </div>
+</section>
+
+<section class="sec occ" id="occasions">
+ <div class="in">
+  <div class="rv"><p class="kicker">Occasions</p><h2>Standing sprays, altar flowers and the small bunches in between</h2><p class="lead" style="margin-top:16px">Call before 1 p.m. for anything that needs to be at a chapel or church the same day.</p></div>
+  <div class="occ-grid rv">
+   <div class="oc main"><div class="txt">
+    <h3>Sympathy sprays</h3>
+    <p>Standing sprays and casket pieces in white mums, lilies and greens. We deliver to chapels and homes, and write the ribbon by hand.</p>
+    <ul><li>Ready in 3 hours on the same day</li><li>Ribbon text sent to you for checking first</li><li>Easel included, collected after the wake</li></ul>
+    <p class="from">Standing spray from <b class="num">₱2,800</b></p>
+   </div><svg viewBox="0 0 300 220" aria-hidden="true" id="spray"></svg></div>
+   <div class="oc"><h3>Birthdays</h3><p>Bright mixed bouquets, sunflowers if you are not sure.</p><p class="from">from <b class="num">₱450</b></p></div>
+   <div class="oc"><h3>Church and altar</h3><p>Pairs of altar vases for Sunday, fiestas and weddings.</p><p class="from">per pair from <b class="num">₱1,600</b></p></div>
+   <div class="oc"><h3>Graduations</h3><p>Hand-tied sunflowers in kraft, sized for photos on stage.</p><p class="from">from <b class="num">₱380</b></p></div>
+   <div class="oc"><h3>Sampaguita by the dozen</h3><p>Garlands for home altars, cars and visiting guests.</p><p class="from">12 garlands <b class="num">₱200</b></p></div>
+  </div>
+ </div>
+</section>
+
+<section class="sec del" id="delivery">
+ <div class="in">
+  <div class="rv">
+   <p class="kicker">Delivery</p>
+   <h2>One morning run, one afternoon run</h2>
+   <div class="clock">
+    <div><b class="num">4:00 a.m.</b><span>Growers' trucks arrive, we choose the buckets</span></div>
+    <div class="hot"><b class="num">10:00 a.m.</b><span>Last call for the noon run</span></div>
+    <div><b class="num">12 noon</b><span>Morning orders delivered</span></div>
+    <div><b class="num">3:00 p.m.</b><span>Afternoon orders out, at your door by 6 p.m.</span></div>
+   </div>
+  </div>
+  <div class="rv">
+   <table>
+    <caption>Rider fees from the stall</caption>
+    <thead><tr><th>Area</th><th>Fee</th></tr></thead>
+    <tbody class="num">
+     <tr><td>Manila<small>Sampaloc, Sta. Mesa, Ermita, Malate, Tondo</small></td><td>₱80</td></tr>
+     <tr><td>Quezon City<small>Up to Commonwealth and Cubao</small></td><td>₱150</td></tr>
+     <tr><td>Makati, Taguig, Pasig<small>Offices, condos and chapels</small></td><td>₱180</td></tr>
+     <tr><td>Parañaque, Pasay<small>Afternoon run only</small></td><td>₱220</td></tr>
+    </tbody>
+   </table>
+   <p class="pick"><svg class="ico"><use href="#i-store"/></svg><span>Picking up yourself? Order ahead and we keep it in the cool corner of the stall, no fee.</span></p>
+  </div>
+ </div>
+</section>
+
+<section class="sec care">
+ <div class="in">
+  <div class="rv"><p class="kicker" style="color:#B9C9AE">Keeping them</p><h2>A week in the vase, if you do four things</h2><p class="lead">The same card goes inside every bouquet.</p></div>
+  <ol class="steps rv">
+   <li><svg class="ico"><use href="#i-scissors"/></svg><b>Cut on a slant</b><span>Trim two fingers off the stems before the first drink.</span></li>
+   <li><svg class="ico"><use href="#i-water"/></svg><b>Change the water</b><span>Every second day, and rinse the vase while you are at it.</span></li>
+   <li><svg class="ico"><use href="#i-leaf"/></svg><b>Strip low leaves</b><span>No leaves under the waterline, they cloud it fast.</span></li>
+   <li><svg class="ico"><use href="#i-sun"/></svg><b>Keep off the sill</b><span>Out of direct sun and away from the electric fan.</span></li>
+  </ol>
+ </div>
+</section>
+
+<section class="sec order" id="order">
+ <div class="in">
+  <div class="rv">
+   <p class="kicker">Ask the stall</p>
+   <h2>For big orders, weddings and anything not on the board</h2>
+   <address>
+    <div><svg class="ico"><use href="#i-store"/></svg><span><b>The stall</b>Stall 00, Flower Row, Sampaloc, Manila</span></div>
+    <div><svg class="ico"><use href="#i-phone"/></svg><span><b>Call or text</b><span class="num">0900-000-0000</span></span></div>
+    <div><svg class="ico"><use href="#i-chat"/></svg><span><b>Message</b>@talulot.example</span></div>
+    <div><svg class="ico"><use href="#i-clock"/></svg><span><b>Hours</b>Every day, 4 a.m. to 8 p.m.</span></div>
+   </address>
+  </div>
+  <form class="rv" id="askForm" novalidate>
+   <label>Your name<input type="text" name="name" autocomplete="name" required></label>
+   <label>Mobile number<input type="tel" name="tel" autocomplete="tel" placeholder="09xx xxx xxxx" required></label>
+   <label>Date needed<input type="date" name="date"></label>
+   <label>What for<select name="what"><option>Bouquet</option><option>Sympathy spray</option><option>Altar flowers</option><option>Wedding or event</option><option>Sampaguita, bulk</option></select></label>
+   <label class="full">Notes<textarea name="notes" placeholder="Colors, budget, where it is going"></textarea></label>
+   <button class="btn btn-p" type="submit">Send to the stall</button>
+   <p class="sent" id="sent">Thank you. The stall will reply by text within the day.</p>
+  </form>
+ </div>
+</section>
+</main>
+
+<footer>
+ <div class="in"><span>Talulot Flower Stall · Sampaloc, Manila</span><span>Bouquets · Sympathy sprays · Altar flowers · Sampaguita</span></div>
+</footer>
+
+<script>
+(function(){
+const NS='http://www.w3.org/2000/svg';
+function el(t,a,p){const e=document.createElementNS(NS,t);for(const k in a)e.setAttribute(k,a[k]);if(p)p.appendChild(e);return e}
+let seed=7;const r=()=>{seed=(seed*9301+49297)%233280;return seed/233280};
+
+function rose(g,x,y,s,col,dark){
+ el('circle',{cx:x,cy:y,r:s,fill:col},g);
+ el('path',{d:`M${x-s*.85} ${y+s*.2} Q ${x-s*.2} ${y+s*1.1} ${x+s*.85} ${y+s*.15}`,fill:'none',stroke:dark,'stroke-width':s*.16,'stroke-linecap':'round'},g);
+ el('path',{d:`M${x-s*.55} ${y-s*.2} Q ${x} ${y+s*.55} ${x+s*.6} ${y-s*.25}`,fill:'none',stroke:dark,'stroke-width':s*.14,'stroke-linecap':'round'},g);
+ el('path',{d:`M${x-s*.3} ${y-s*.35} Q ${x+s*.25} ${y-s*.6} ${x+s*.3} ${y-s*.05} Q ${x} ${y+s*.15} ${x-s*.12} ${y-s*.1}`,fill:'none',stroke:dark,'stroke-width':s*.13,'stroke-linecap':'round'},g);
+ el('ellipse',{cx:x-s*.35,cy:y-s*.45,rx:s*.28,ry:s*.16,fill:'#fff',opacity:.18,transform:`rotate(-25 ${x-s*.35} ${y-s*.45})`},g);
+}
+function pompom(g,x,y,s,col,dark){
+ el('circle',{cx:x,cy:y,r:s,fill:dark},g);
+ for(let i=0;i<22;i++){const a=i*137.5*Math.PI/180,rr=s*Math.sqrt((i+.5)/22)*.82;el('circle',{cx:x+Math.cos(a)*rr,cy:y+Math.sin(a)*rr,r:s*.3,fill:col,stroke:dark,'stroke-width':.6},g)}
+}
+function daisy(g,x,y,s,col,center){
+ for(let i=0;i<12;i++){const a=i*30;el('ellipse',{cx:x,cy:y-s*.55,rx:s*.2,ry:s*.5,fill:col,stroke:'#C9C2B0','stroke-width':.6,transform:`rotate(${a} ${x} ${y})`},g)}
+ el('circle',{cx:x,cy:y,r:s*.28,fill:center},g);
+}
+function sunflower(g,x,y,s){
+ for(let i=0;i<18;i++){const a=i*20;el('path',{d:`M${x} ${y-s*.4} Q ${x+s*.2} ${y-s*.8} ${x} ${y-s*1.05} Q ${x-s*.2} ${y-s*.8} ${x} ${y-s*.4}Z`,fill:i%2?'#E8B730':'#D9A21E',transform:`rotate(${a} ${x} ${y})`},g)}
+ el('circle',{cx:x,cy:y,r:s*.48,fill:'#4A3220'},g);
+ for(let i=0;i<14;i++){const a=i*137.5*Math.PI/180,rr=s*.4*Math.sqrt((i+.5)/14);el('circle',{cx:x+Math.cos(a)*rr,cy:y+Math.sin(a)*rr,r:s*.05,fill:'#7A5434'},g)}
+}
+function leafy(g,x,y,len,ang,col){el('path',{d:`M0 0 Q ${len*.5} ${-len*.28} ${len} 0 Q ${len*.5} ${len*.28} 0 0Z`,fill:col,transform:`translate(${x} ${y}) rotate(${ang})`},g)}
+function euca(g,x,y,h,lean){
+ el('path',{d:`M${x} ${y} Q ${x+lean*.4} ${y-h*.5} ${x+lean} ${y-h}`,fill:'none',stroke:'#6F7F6A','stroke-width':2},g);
+ for(let i=1;i<7;i++){const t=i/7;const px=x+lean*t*t*.6+lean*t*.4,py=y-h*t;el('circle',{cx:px+(i%2?7:-7),cy:py,r:6+i*.2,fill:'#9DB09A',stroke:'#7A8F77','stroke-width':.8},g)}
+}
+function bucket(g,x,y,w,h){
+ const id='bk'+Math.round(x);
+ const d=el('defs',{},g);
+ const lg=el('linearGradient',{id,x1:0,x2:1,y1:0,y2:0},d);
+ [[0,'#7E868A'],[.18,'#C7CDCF'],[.32,'#E8ECEC'],[.5,'#A9B0B3'],[.8,'#8E969A'],[1,'#5E666A']].forEach(([o,c])=>el('stop',{offset:o,'stop-color':c},lg));
+ el('path',{d:`M${x} ${y} L${x+w} ${y} L${x+w*.9} ${y+h} L${x+w*.1} ${y+h}Z`,fill:`url(#${id})`},g);
+ el('ellipse',{cx:x+w/2,cy:y,rx:w/2,ry:8,fill:'#5E666A'},g);
+ el('ellipse',{cx:x+w/2,cy:y,rx:w/2-3,ry:6,fill:'#2B3430'},g);
+ [.3,.65].forEach(t=>{const yy=y+h*t,ins=w*.1*t;el('path',{d:`M${x+ins} ${yy} Q ${x+w/2} ${yy+6} ${x+w-ins} ${yy}`,fill:'none',stroke:'#6B7377','stroke-width':2},g)});
+ el('rect',{x:x+2,y:y-2,width:w-4,height:5,rx:2,fill:'#B9C0C2',opacity:.7},g);
+}
+function tag(g,x,y,txt,sub,rot){
+ const t=el('g',{transform:`translate(${x} ${y}) rotate(${rot})`},g);
+ el('line',{x1:0,y1:-6,x2:0,y2:-40,stroke:'#8A7350','stroke-width':2.4},t);
+ el('rect',{x:-36,y:-8,width:72,height:46,rx:3,fill:'#E9DCC0',stroke:'#B8A47E','stroke-width':1},t);
+ el('text',{x:0,y:16,'text-anchor':'middle','font-family':'Caveat','font-weight':700,'font-size':24,fill:'#1F2A22'},t).textContent=txt;
+ el('text',{x:0,y:32,'text-anchor':'middle','font-family':'Caveat','font-weight':600,'font-size':15,fill:'#4C5649'},t).textContent=sub;
+}
+
+// HERO STALL
+const s=document.getElementById('stall');
+if(s){
+ const d=el('defs',{},s);
+ const bg=el('linearGradient',{id:'wall',x1:0,y1:0,x2:0,y2:1},d);[[0,'#E6DFCF'],[1,'#D8CFBB']].forEach(([o,c])=>el('stop',{offset:o,'stop-color':c},bg));
+ const fl=el('linearGradient',{id:'floor',x1:0,y1:0,x2:0,y2:1},d);[[0,'#9EA39B'],[1,'#7F857C']].forEach(([o,c])=>el('stop',{offset:o,'stop-color':c},fl));
+ el('rect',{x:0,y:0,width:640,height:560,fill:'url(#wall)'},s);
+ // newsprint sheets pinned on wall
+ const np=el('g',{opacity:.9},s);
+ [[36,40,150,110,-4]].forEach(([x,y,w,h,rt])=>{const gg=el('g',{transform:`rotate(${rt} ${x+w/2} ${y+h/2})`},np);el('rect',{x,y,width:w,height:h,fill:'#EEEBE2',stroke:'#CFC8B6'},gg);el('rect',{x:x+10,y:y+10,width:w-20,height:12,fill:'#B9B4A6'},gg);for(let i=0;i<7;i++)el('rect',{x:x+10+(i%2)*((w-20)/2+4),y:y+30+Math.floor(i/2)*16,width:(w-20)/2-4,height:4,fill:'#CFC9BA'},gg);for(let i=0;i<4;i++)el('rect',{x:x+10,y:y+62+i*10,width:w-20-(i%2)*30,height:4,fill:'#CFC9BA'},gg)});
+ // hook + sampaguita garland
+ el('path',{d:'M560 18 v18 q0 10 -10 10',fill:'none',stroke:'#5E666A','stroke-width':3,'stroke-linecap':'round'},s);
+ const gar=el('g',{},s);
+ for(let side of [-1,1]){for(let i=0;i<20;i++){const t=i/19;const x=556+side*(t*44);const y=40+t*96+Math.sin(t*Math.PI)*14;el('circle',{cx:x,cy:y,r:5.2,fill:'#FBF9F1',stroke:'#CFC7AE','stroke-width':1},gar);if(i%4==2)el('circle',{cx:x,cy:y,r:1.8,fill:'#E4D27A'},gar)}}
+ el('path',{d:'M512 140 q 44 26 88 0',fill:'none',stroke:'#B0372B','stroke-width':3},gar);
+ // floor
+ el('rect',{x:0,y:470,width:640,height:90,fill:'url(#floor)'},s);
+ for(let i=0;i<5;i++)el('ellipse',{cx:80+i*120+r()*40,cy:500+r()*40,rx:40+r()*30,ry:5,fill:'#6D736A',opacity:.35},s);
+ // crates (two tiers)
+ function crate(x,y,w,h){const g=el('g',{},s);el('rect',{x,y,width:w,height:h,fill:'#B88A55'},g);for(let i=0;i<3;i++)el('rect',{x,y:y+i*(h/3)+2,width:w,height:h/3-6,fill:i%2?'#C79A62':'#BE9058'},g);el('rect',{x,y,width:10,height:h,fill:'#9C7444'},g);el('rect',{x:x+w-10,y,width:10,height:h,fill:'#9C7444'},g);el('rect',{x,y:y+h-4,width:w,height:4,fill:'#7E5C36'},g)}
+ crate(40,380,560,96);
+ crate(110,300,420,84);
+ // back row buckets on upper crate, front row on lower crate
+ const back=el('g',{},s), front=el('g',{},s);
+ // back: roses, eucalyptus+baby's breath, sunflowers
+ const B=[[128,222,108,80],[266,222,108,80],[404,222,108,80]];
+ // flowers for back row drawn before buckets (stems hidden behind bucket front)
+ // roses
+ for(let i=0;i<14;i++){const x=136+r()*92,y=150+r()*60;el('line',{x1:x,y1:y,x2:182,y2:226,stroke:'#4E6B44','stroke-width':2},back)}
+ for(let i=0;i<5;i++)leafy(back,140+i*20,200+r()*12,26,-150+i*28,'#4E6B44');
+ [[150,170],[178,156],[206,168],[164,196],[192,190],[220,198],[140,206],[230,176],[186,214],[204,146]].forEach(([x,y],i)=>rose(back,x,y,15+r()*3,i%3==1?'#D98C83':'#B0372B',i%3==1?'#A85C55':'#7D211A'));
+ // eucalyptus + baby's breath
+ for(let i=0;i<6;i++)euca(back,300+i*8,226,100+r()*50,-40+i*16);
+ for(let i=0;i<40;i++){const x=282+r()*80,y=130+r()*80;el('circle',{cx:x,cy:y,r:2.6,fill:'#FBFAF4',stroke:'#D8D2C2','stroke-width':.5},back)}
+ // sunflowers
+ for(let i=0;i<4;i++){el('line',{x1:440+i*18,y1:170,x2:458,y2:226,stroke:'#55703F','stroke-width':4},back)}
+ leafy(back,420,206,34,-160,'#55703F');leafy(back,476,200,34,-20,'#55703F');
+ [[432,160,26],[470,140,30],[500,176,22],[452,196,20]].forEach(a=>sunflower(back,...a));
+ B.forEach(b=>bucket(back,...b));
+ // front row: mums white, chrysanthemum yellow, gerbera, roses blush, mums lilac
+ const F=[[64,300,96,84],[176,300,96,84],[288,300,96,84],[400,300,96,84],[512,300,96,84]];
+ const fg=el('g',{},front);
+ // white Malaysian mums
+ for(let i=0;i<16;i++){const x=72+r()*80,y=222+r()*70;daisy(fg,x,y,14,'#FBF9F1','#D9B94A')}
+ // yellow pompoms
+ for(let i=0;i<10;i++){const x=188+r()*72,y=226+r()*64;pompom(fg,x,y,18,'#EBC63E','#B68E1C')}
+ // gerbera
+ [[300,248,'#E07A3A'],[330,230,'#E6A2A0'],[362,250,'#F1E6CF'],[314,280,'#E6A2A0'],[348,276,'#E07A3A'],[372,222,'#E07A3A'],[300,216,'#F1E6CF']].forEach(([x,y,c])=>{for(let i=0;i<16;i++)el('ellipse',{cx:x,cy:y-11,rx:3.4,ry:10,fill:c,transform:`rotate(${i*22.5} ${x} ${y})`},fg);el('circle',{cx:x,cy:y,r:6,fill:'#4A3B22'},fg)});
+ // blush roses
+ [[414,246],[442,232],[470,248],[426,276],[456,272],[484,226],[440,262],[414,222]].forEach(([x,y])=>rose(fg,x,y,16,'#E7B7AE','#B8837B'));
+ // lilac mums
+ for(let i=0;i<15;i++){const x=522+r()*78,y=222+r()*70;daisy(fg,x,y,14,'#C9B4D6','#D9B94A')}
+ F.forEach(b=>bucket(front,...b));
+ // price tags
+ tag(s,112,420,'₱120','/ bunch',-4);
+ tag(s,224,424,'₱90','/ bunch',3);
+ tag(s,336,420,'₱35','/ stem',-2);
+ tag(s,448,424,'₱480','/ dozen',4);
+ tag(s,560,420,'₱120','/ bunch',-3);
+ // a newsprint-wrapped bouquet leaning on the crate
+ const wb=el('g',{transform:'translate(-999 -999)'},s);
+ rose(wb,-6,-122,13,'#B0372B','#7D211A');rose(wb,16,-128,13,'#D98C83','#A85C55');daisy(wb,-22,-108,10,'#FBF9F1','#D9B94A');
+ el('path',{d:'M-34 -110 L34 -116 L10 0 L-6 0Z',fill:'#EEEBE2',stroke:'#C9C2B0'},wb);
+ for(let i=0;i<5;i++)el('rect',{x:-22+i*2,y:-96+i*16,width:36-i*6,height:3,fill:'#C9C3B4'},wb);
+ el('path',{d:'M-8 -40 h20',stroke:'#C8A86A','stroke-width':4},wb);
+}
+
+// rose row in the featured tag
+const rr=null;
+if(rr){for(let i=0;i<9;i++){const x=20+i*30;el('line',{x1:x,y1:60,x2:x+(i-4)*2,y2:120,stroke:'#7E9A73','stroke-width':2.2},rr)}
+ for(let i=0;i<9;i++)rose(rr,20+i*30,44+(i%2)*12,15,i%3==1?'#E7B7AE':'#C8473A',i%3==1?'#B8837B':'#8E2A20');}
+
+// sympathy spray
+const sp=document.getElementById('spray');
+if(sp){
+ el('path',{d:'M150 210 L120 140 M150 210 L180 140 M150 210 L150 130',stroke:'#C9D2C1','stroke-width':3},sp);
+ el('ellipse',{cx:150,cy:96,rx:110,ry:78,fill:'#4D6B4E'},sp);
+ for(let i=0;i<14;i++)leafy(sp,150,96,100,i*25.7,'#5E7E5E');
+ for(let i=0;i<34;i++){const a=r()*Math.PI*2,rad=Math.sqrt(r())*72;daisy(sp,150+Math.cos(a)*rad*1.3,96+Math.sin(a)*rad*.9,12,'#FBF9F1','#E0D49A')}
+ el('path',{d:'M110 150 q40 20 80 0 l-8 40 q-32 -14 -64 0z',fill:'#F3EFE5'},sp);
+}
+
+// builder
+const fmt=n=>'₱'+n.toLocaleString('en-PH');
+function val(name){return document.querySelector(`input[name=${name}]:checked`)}
+function upd(){
+ const sz=val('size'),wr=val('wrap'),cd=val('card'),z=document.getElementById('zone');const zo=z.options[z.selectedIndex];
+ document.getElementById('sSize').textContent=sz.dataset.n+' · '+fmt(+sz.value);
+ document.getElementById('sWrap').textContent=wr.dataset.n+(+wr.value?' · '+fmt(+wr.value):'');
+ document.getElementById('sZone').textContent=zo.dataset.n+(+zo.value?' · '+fmt(+zo.value):'');
+ document.getElementById('sCard').textContent=cd.dataset.n+(+cd.value?' · '+fmt(+cd.value):'');
+ document.getElementById('sTot').textContent=fmt(+sz.value + +wr.value + +cd.value + +zo.value);
+ document.getElementById('okOrder').style.display='none';
+}
+document.querySelectorAll('.build input,#zone').forEach(i=>i.addEventListener('change',upd));
+upd();
+document.getElementById('sendOrder').addEventListener('click',()=>{document.getElementById('okOrder').style.display='block'});
+document.getElementById('askForm').addEventListener('submit',e=>{e.preventDefault();document.getElementById('sent').style.display='block'});
+
+// reveal
+const rv=document.querySelectorAll('.rv');
+if('IntersectionObserver' in window){const io=new IntersectionObserver(es=>es.forEach(en=>{if(en.isIntersecting){en.target.classList.add('on');io.unobserve(en.target)}}),{threshold:.12});rv.forEach(x=>io.observe(x))}else rv.forEach(x=>x.classList.add('on'));
+})();
+</script>
+</body>
+</html>
