@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Suelas Sneaker Care · Cleaning, sole whitening &amp; re-glue</title>
+<meta name="description" content="Sneaker cleaning, sole whitening and re-glue in Quezon City. Drop off or book a pickup, every pair gets a claim ticket.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#F2EFE8;--surface:#FAF8F3;--sunk:#E6E1D6;--ink:#222120;--ink2:#55524C;--ink3:#706B63;
+  --line:rgba(34,33,32,.14);--line2:rgba(34,33,32,.28);
+  --gum:#A8621F;--gum-d:#8A4F17;--gum-t:#F1E1CC;
+  --cond:'Barlow Condensed',sans-serif;--sans:'Barlow',sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{background:var(--bg);scroll-behavior:smooth}
+body{font-family:var(--sans);font-size:17px;line-height:1.6;color:var(--ink);background:var(--bg);-webkit-font-smoothing:antialiased;overflow-x:clip}
+img,svg{display:block}
+a{color:inherit}
+.in{max-width:1200px;margin:0 auto;padding:0 32px}
+.num{font-variant-numeric:tabular-nums}
+h1,h2,h3{font-family:var(--cond);font-weight:600;line-height:1.08;letter-spacing:-.005em}
+h2{font-size:clamp(36px,4.2vw,56px)}
+.lead{font-size:19px;color:var(--ink2);max-width:560px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;height:48px;padding:0 24px;border-radius:8px;font-family:var(--sans);font-size:17px;font-weight:600;text-decoration:none;border:1px solid transparent;cursor:pointer;transition:background .2s,border-color .2s,color .2s}
+.btn-p{background:var(--gum);color:#fff}
+.btn-p:hover{background:var(--gum-d)}
+.btn-s{border-color:var(--line2);color:var(--ink);background:transparent}
+.btn-s:hover{background:var(--surface);border-color:var(--ink)}
+.btn svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+
+.nav{border-bottom:1px solid var(--line)}
+.nav .in{display:flex;align-items:center;justify-content:space-between;height:72px;gap:24px}
+.logo{display:flex;align-items:center;gap:12px;text-decoration:none}
+.logo svg{width:36px;height:20px}
+.logo b{font-family:var(--cond);font-weight:600;font-size:26px;letter-spacing:.01em}
+.nav .meta{display:flex;align-items:center;gap:24px;font-size:15px;color:var(--ink2)}
+.nav .btn{height:40px;padding:0 18px;font-size:15px}
+
+/* hero */
+.hero{padding:72px 0 112px}
+.hero .in{display:grid;grid-template-columns:minmax(0,.95fr) minmax(0,1.05fr);gap:56px;align-items:center}
+.hero .where{font-size:16px;color:var(--ink3);margin-bottom:20px}
+.hero h1{font-size:clamp(48px,6vw,84px)}
+.hero h1 span{color:var(--gum)}
+.hero .lead{margin-top:24px}
+.hero .acts{display:flex;gap:12px;margin-top:36px;flex-wrap:wrap}
+.hero ul{list-style:none;display:flex;flex-wrap:wrap;gap:8px 28px;margin-top:40px;padding-top:24px;border-top:1px solid var(--line);font-size:16px;color:var(--ink2)}
+.hero ul li{display:flex;align-items:center;gap:8px}
+.hero ul svg{width:20px;height:20px;fill:none;stroke:var(--ink);stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+.art{aspect-ratio:600/450;width:100%}
+.art svg{width:100%;height:100%;border-radius:20px;border:1px solid var(--line)}
+
+/* steps */
+.how{padding:112px 0;background:var(--ink);color:#E9E5DC}
+.how h2{color:#FAF8F3;max-width:720px}
+.how .lead{color:#BDB7AC;margin-top:16px}
+.st{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:24px;margin-top:64px;list-style:none;counter-reset:s}
+.st li{border-top:2px solid rgba(233,229,220,.3);padding-top:24px}
+.st li.on{border-color:#E0A462}
+.st li:before{counter-increment:s;content:counter(s,decimal-leading-zero);font-family:var(--cond);font-size:20px;color:#BDB7AC}
+.st li.on:before{color:#E0A462}
+.st h3{font-size:28px;color:#FAF8F3;margin-top:8px}
+.st p{font-size:16px;color:#BDB7AC;margin-top:8px}
+
+/* prices */
+.prices{padding:112px 0}
+.prices .head{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:48px;align-items:end;margin-bottom:48px}
+.tbl{border-top:2px solid var(--ink)}
+.row{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,2fr) 120px 140px;gap:24px;align-items:baseline;padding:24px 0;border-bottom:1px solid var(--line2)}
+.row h3{font-size:26px}
+.row p{font-size:16px;color:var(--ink2)}
+.row .t{font-size:15px;color:var(--ink3)}
+.row .p{font-family:var(--cond);font-size:32px;font-weight:600;text-align:right}
+.row.main{background:var(--gum-t);margin:0 -24px;padding:24px;border-bottom-color:transparent;border-radius:8px}
+.row.main .p{color:var(--gum-d)}
+.tbl small{display:block;font-size:15px;color:var(--ink3);margin-top:16px}
+
+/* materials */
+.mat{padding:112px 0;background:var(--surface);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.mat .grid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:16px;margin-top:48px}
+.sw{border:1px solid var(--line2);border-radius:12px;overflow:hidden;background:var(--bg)}
+.sw .tex{aspect-ratio:4/3}
+.sw .tex svg{width:100%;height:100%}
+.sw div:last-child{padding:16px 16px 20px}
+.sw b{font-family:var(--cond);font-size:24px;font-weight:600;display:block}
+.sw p{font-size:15px;color:var(--ink2);margin-top:4px}
+.mat .no{margin-top:24px;font-size:16px;color:var(--ink2)}
+
+/* pickup + form */
+.book{padding:112px 0}
+.book .in{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:64px;align-items:start}
+.zones{margin-top:32px;border-top:2px solid var(--ink)}
+.zones div{display:flex;justify-content:space-between;gap:16px;padding:16px 0;border-bottom:1px solid var(--line2);font-size:17px}
+.zones span:last-child{font-family:var(--cond);font-size:22px;font-weight:600;white-space:nowrap}
+.book .note{font-size:15px;color:var(--ink3);margin-top:16px}
+form{background:var(--surface);border:1px solid var(--line2);border-radius:16px;padding:40px}
+form h3{font-size:34px}
+form .sub{font-size:16px;color:var(--ink2);margin-top:4px}
+.fl{display:block;font-size:15px;font-weight:500;color:var(--ink2);margin:24px 0 8px}
+.opts{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.opts label{position:relative;cursor:pointer}
+.opts input{position:absolute;opacity:0;width:1px;height:1px}
+.opts span{display:flex;justify-content:space-between;align-items:center;gap:12px;min-height:52px;padding:12px 16px;border:1px solid var(--line2);border-radius:8px;background:#fff;font-size:16px;transition:background .2s,border-color .2s}
+.opts span i{font-style:normal;font-family:var(--cond);font-size:20px;font-weight:600;color:var(--ink2)}
+.opts input:checked+span{border-color:var(--gum);background:var(--gum-t)}
+.opts input:checked+span i{color:var(--gum-d)}
+.opts input:focus-visible+span{outline:2px solid var(--gum);outline-offset:2px}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:0 16px}
+.qty{display:flex;align-items:center;border:1px solid var(--line2);border-radius:8px;background:#fff;height:52px;width:100%}
+.qty button{width:52px;height:50px;border:0;background:none;font-size:24px;cursor:pointer;color:var(--ink)}
+.qty button:hover{background:var(--sunk)}
+.qty output{flex:1;text-align:center;font-family:var(--cond);font-size:24px;font-weight:600}
+select,input[type=text],input[type=tel],input[type=date]{width:100%;height:52px;border:1px solid var(--line2);border-radius:8px;background:#fff;padding:0 14px;font:inherit;font-size:16px;color:var(--ink)}
+select:focus,input:focus{outline:2px solid var(--gum);outline-offset:1px}
+.tot{display:flex;justify-content:space-between;align-items:center;gap:16px;margin-top:28px;padding-top:24px;border-top:1px solid var(--line)}
+.tot p{font-size:15px;color:var(--ink3)}
+.tot strong{display:block;font-family:var(--cond);font-size:40px;font-weight:600;line-height:1.1}
+.ok{display:none;margin-top:20px;border:1px dashed var(--gum);border-radius:8px;padding:16px 20px;font-size:16px;background:#fff}
+.ok.show{display:block}
+.ok b{font-family:var(--cond);font-size:22px;font-weight:600;color:var(--gum-d)}
+
+/* faq */
+.faq{padding:112px 0;border-top:1px solid var(--line)}
+.faq .in{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:64px}
+details{border-top:1px solid var(--line2)}
+details:last-child{border-bottom:1px solid var(--line2)}
+summary{list-style:none;cursor:pointer;min-height:64px;display:flex;align-items:center;justify-content:space-between;gap:16px;font-size:19px;font-weight:600}
+summary::-webkit-details-marker{display:none}
+summary svg{width:20px;height:20px;fill:none;stroke:var(--ink2);stroke-width:2;flex:none;transition:transform .2s}
+details[open] summary svg{transform:rotate(45deg)}
+details p{padding:0 40px 24px 0;color:var(--ink2);font-size:16px}
+
+footer{background:var(--ink);color:#BDB7AC;padding:48px 0;font-size:15px}
+footer .in{display:flex;justify-content:space-between;flex-wrap:wrap;gap:24px}
+footer b{font-family:var(--cond);font-size:24px;font-weight:600;color:#FAF8F3;display:block}
+
+.rv{opacity:0;transform:translateY(12px);transition:opacity .6s ease,transform .6s ease}
+.rv.vis{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}}
+
+@media(max-width:1040px){
+  .hero .in,.book .in,.faq .in,.prices .head{grid-template-columns:1fr;gap:40px}
+  .art{max-width:600px}
+  .hero .txt{display:contents}
+  .hero .where{order:1;margin-bottom:0}.hero h1{order:2}.hero .art{order:3}.hero .lead{order:4;margin-top:0}.hero .acts{order:5;margin-top:0}.hero ul{order:6;margin-top:0}
+  .hero .in{display:flex;flex-direction:column;align-items:stretch;gap:24px}
+  .tk-sm{display:none}
+  .st{grid-template-columns:1fr 1fr;row-gap:40px}
+  .mat .grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .row{grid-template-columns:minmax(0,1fr) auto;gap:4px 24px}
+  .row p{grid-column:1/-1;grid-row:2}
+  .row .t{grid-column:1;grid-row:3}
+  .row .p{grid-column:2;grid-row:1}
+}
+@media(max-width:640px){
+  .in{padding:0 20px}
+  .nav .meta span{display:none}
+  .hero{padding:40px 0 80px}
+  .hero .acts .btn{flex:1 1 100%}
+  .how,.prices,.mat,.book,.faq{padding:80px 0}
+  .st{grid-template-columns:1fr;margin-top:40px}
+  .mat .grid{grid-template-columns:1fr 1fr}
+  .mat .grid .sw:last-child{grid-column:1/-1}
+  .mat .grid .sw:last-child .tex{aspect-ratio:8/3}
+  .row.main{margin:0 -12px;padding:20px 12px}
+  form{padding:24px 20px}
+  .opts,.two{grid-template-columns:1fr}
+  .tot{flex-direction:column;align-items:stretch}
+  .tot .btn{width:100%}
+  details p{padding-right:0}
+}
+</style>
+</head>
+<body>
+<header class="nav">
+ <div class="in">
+  <a class="logo" href="#top" aria-label="Suelas Sneaker Care home">
+   <svg viewBox="0 0 36 20" aria-hidden="true"><path d="M2 12c6 0 10-8 16-8 4 0 6 4 10 5 4 1 6 2 6 5v2H2z" fill="none" stroke="#222120" stroke-width="1.8" stroke-linejoin="round"/><path d="M2 16h32" stroke="#A8621F" stroke-width="3"/></svg>
+   <b>Suelas</b>
+  </a>
+  <div class="meta"><span>Tue–Sun · 10 AM – 7 PM</span><a class="btn btn-p" href="#book">Book a cleaning</a></div>
+ </div>
+</header>
+
+<main id="top">
+<section class="hero">
+ <div class="in">
+  <div class="txt">
+   <p class="where">Sneaker cleaning · Kamuning, Quezon City</p>
+   <h1>Every pair gets a<br><span>claim ticket</span> and<br>its own brush</h1>
+   <p class="lead">Drop off your sneakers or book a rider pickup. We check the material, write what we'll do on the ticket, and text you a photo before anything is washed.</p>
+   <div class="acts">
+    <a class="btn btn-p" href="#book">Book a cleaning <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+    <a class="btn btn-s" href="#prices">See prices</a>
+   </div>
+   <ul>
+    <li><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8"/><path d="M12 8v4l3 2"/></svg>Ready in 3–5 days</li>
+    <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 7h11v9H3zM14 10h4l3 3v3h-7z"/><circle cx="7" cy="17" r="2"/><circle cx="17" cy="17" r="2"/></svg>Pickup across QC</li>
+    <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v14H4z"/><path d="M8 9h8M8 13h5"/></svg>Photo update by text</li>
+   </ul>
+  </div>
+  <div class="art" role="img" aria-label="A white canvas low-top sneaker with a caramel gum rubber sole sits on a wooden workbench in front of a pegboard wall. A paper claim ticket numbered 0412 hangs from the laces, marked Deep clean, sole whitening and ready Thursday. A round boar-bristle brush, a foam bottle lie beside it.">
+   <svg viewBox="0 70 600 450" aria-hidden="true">
+    <defs>
+     <linearGradient id="bench" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#C9A57F"/><stop offset="1" stop-color="#B08A63"/></linearGradient>
+     <linearGradient id="canvas" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FBFAF6"/><stop offset=".7" stop-color="#EEEAE1"/><stop offset="1" stop-color="#DCD6CA"/></linearGradient>
+     <linearGradient id="gumg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#D49556"/><stop offset=".5" stop-color="#B8742F"/><stop offset="1" stop-color="#8E5420"/></linearGradient>
+     <linearGradient id="toe" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#F6F3EC"/><stop offset="1" stop-color="#E3DED3"/></linearGradient>
+     <linearGradient id="tag" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#FBF6EA"/><stop offset="1" stop-color="#EDE3CF"/></linearGradient>
+     <linearGradient id="wood" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#9A7350"/><stop offset=".5" stop-color="#C09C76"/><stop offset="1" stop-color="#8E6846"/></linearGradient>
+     <linearGradient id="bottle" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#2E2D2B"/><stop offset=".35" stop-color="#4A4845"/><stop offset="1" stop-color="#262523"/></linearGradient>
+     <linearGradient id="shade" x1="0" y1="0" x2="0" y2="1"><stop offset=".45" stop-color="#8C8273" stop-opacity="0"/><stop offset="1" stop-color="#8C8273" stop-opacity=".28"/></linearGradient>
+     <filter id="sh" x="-20%" y="-20%" width="140%" height="160%"><feGaussianBlur stdDeviation="8"/></filter>
+     <pattern id="weave" width="6" height="6" patternUnits="userSpaceOnUse"><path d="M0 3h6M3 0v6" stroke="#D8D2C6" stroke-width=".6"/></pattern>
+     <pattern id="grip" width="10" height="8" patternUnits="userSpaceOnUse"><path d="M0 8l5-8 5 8" fill="none" stroke="#7E4A1C" stroke-width="1.2" opacity=".6"/></pattern>
+    </defs>
+    <rect width="600" height="520" fill="#F2EFE8"/>
+    <rect x="0" y="0" width="600" height="400" fill="#E9E4DA"/>
+    <g stroke="#DDD6C9" stroke-width="1"><path d="M0 80h600M0 160h600M0 240h600M0 320h600"/></g>
+    <!-- pegboard holes -->
+    <g fill="#D3CBBD">
+     <circle cx="60" cy="110" r="3"/><circle cx="120" cy="110" r="3"/><circle cx="180" cy="110" r="3"/><circle cx="240" cy="110" r="3"/><circle cx="300" cy="110" r="3"/><circle cx="360" cy="110" r="3"/><circle cx="420" cy="110" r="3"/><circle cx="480" cy="110" r="3"/><circle cx="540" cy="110" r="3"/>
+    </g>
+    <!-- bench -->
+    <rect x="0" y="400" width="600" height="120" fill="url(#bench)"/>
+    <path d="M0 400h600" stroke="#9C7853" stroke-width="2"/>
+    <g stroke="#A88160" stroke-width="1.2" opacity=".55" fill="none"><path d="M0 430c160-6 300 6 600-2"/><path d="M0 470c200 4 380-6 600 2"/><path d="M0 500c150-4 340 4 600-2"/></g>
+    <!-- shadow -->
+    <ellipse cx="300" cy="410" rx="230" ry="16" fill="#5E4630" opacity=".35" filter="url(#sh)"/>
+    <!-- sneaker -->
+    <g>
+     <!-- inner lining of opening -->
+     <path d="M352 224c30-10 70-8 100-4 16 2 30 6 40 14l-6 10c-30-8-70-10-112-8z" fill="#BDB3A3"/>
+     <!-- upper -->
+     <path id="up" d="M84 372C76 350 88 324 128 316C160 310 190 304 214 296L332 238C338 224 352 216 368 220C372 236 384 248 404 252C434 256 466 250 490 236C510 252 516 320 512 372z" fill="url(#canvas)"/>
+     <path d="M84 372C76 350 88 324 128 316C160 310 190 304 214 296L332 238C338 224 352 216 368 220C372 236 384 248 404 252C434 256 466 250 490 236C510 252 516 320 512 372z" fill="url(#weave)" opacity=".7"/>
+     <path d="M84 372C76 350 88 324 128 316C160 310 190 304 214 296L332 238C338 224 352 216 368 220C372 236 384 248 404 252C434 256 466 250 490 236C510 252 516 320 512 372z" fill="none" stroke="#B5AC9D" stroke-width="1.6"/>
+     <path d="M84 372C76 350 88 324 128 316C160 310 190 304 214 296L332 238C338 224 352 216 368 220C372 236 384 248 404 252C434 256 466 250 490 236C510 252 516 320 512 372z" fill="url(#shade)"/>
+     <ellipse cx="130" cy="338" rx="40" ry="16" fill="#fff" opacity=".35"/>
+     <!-- collar padding line -->
+     <path d="M370 226c6 16 18 28 36 32 30 4 62-2 86-16" fill="none" stroke="#D3CBBE" stroke-width="6" stroke-linecap="round"/>
+     <!-- toe cap -->
+     <path d="M84 372C76 350 88 324 128 316C146 313 160 311 172 309C164 330 162 352 166 372z" fill="url(#toe)" stroke="#C3BAAB" stroke-width="1.4"/>
+     <path d="M98 334c12-8 28-12 46-14" fill="none" stroke="#fff" stroke-width="3" opacity=".85" stroke-linecap="round"/>
+     <!-- vamp / quarter seams -->
+     <path d="M172 309c-6 22-6 44-2 63" fill="none" stroke="#B9B1A3" stroke-width="1.2" stroke-dasharray="4 4"/>
+     <path d="M214 296c10 24 30 44 64 54 50 14 120 12 200 4" fill="none" stroke="#C3BAAB" stroke-width="1.4"/>
+     <path d="M218 304c10 22 28 38 60 48 50 14 120 12 200 4" fill="none" stroke="#B9B1A3" stroke-width="1.1" stroke-dasharray="4 4"/>
+     <path d="M470 246c8 30 10 80 8 126" fill="none" stroke="#C3BAAB" stroke-width="1.4"/>
+     <!-- heel tab -->
+     <path d="M490 236c14 14 22 60 22 136h-20c2-50 0-100-12-128z" fill="#E6E1D7" stroke="#C3BAAB" stroke-width="1.2"/>
+     <path d="M494 262h12v34h-12z" fill="#2B2A28" transform="rotate(4 500 279)"/>
+     <!-- tongue -->
+     <path d="M332 238C336 222 350 212 368 216l2 8C356 222 344 230 338 242z" fill="#E8E3D9" stroke="#C3BAAB" stroke-width="1.2"/>
+     <!-- eyelets + lace bars -->
+     <g fill="none" stroke="#FFFFFF" stroke-width="7" stroke-linecap="round">
+      <path d="M222 304l-6-10M246 292l-6-10M270 280l-6-10M294 268l-6-10M318 256l-6-10"/>
+     </g>
+     <g fill="#FBFAF6" stroke="#857D71" stroke-width="2">
+      <circle cx="226" cy="300" r="4.5"/><circle cx="250" cy="288" r="4.5"/><circle cx="274" cy="276" r="4.5"/><circle cx="298" cy="264" r="4.5"/><circle cx="322" cy="252" r="4.5"/>
+     </g>
+     <g fill="none" stroke="#FFFFFF" stroke-width="6" stroke-linecap="round"><path d="M216 294L240 284M240 282L264 272M264 270L288 260M288 258L312 248"/></g>
+     <g fill="none" stroke="#D2CABD" stroke-width="1"><path d="M216 297L240 287M240 285L264 275M264 273L288 263M288 261L312 251"/></g>
+     <!-- bow -->
+     <path d="M326 240c-18-14-44-12-48 0-3 10 22 10 48 0z" fill="#FFFFFF" stroke="#CBC3B5" stroke-width="1.4"/>
+     <path d="M326 240c8-22 30-30 38-20 6 10-14 18-38 20z" fill="#FFFFFF" stroke="#CBC3B5" stroke-width="1.4"/>
+     <path d="M326 240c-6 22-18 44-30 56" fill="none" stroke="#FFFFFF" stroke-width="5" stroke-linecap="round"/>
+     <path d="M326 240c-6 22-18 44-30 56" fill="none" stroke="#D2CABD" stroke-width="1"/>
+     <circle cx="326" cy="240" r="4" fill="#F4F1EA" stroke="#CBC3B5"/>
+     <!-- foxing stripe -->
+     <path d="M84 358h430v13H84z" fill="#F4F1EA" stroke="#D2CABD" stroke-width="1"/>
+     <path d="M94 364h412" stroke="#A8621F" stroke-width="3"/>
+     <!-- gum sole -->
+     <path d="M90 370C76 372 70 386 78 396C82 402 90 405 100 405H498C510 405 517 399 518 389L517 376C516 371 513 370 509 370Z" fill="url(#gumg)"/>
+     <path d="M84 396H516V403H84z" fill="url(#grip)" opacity=".8"/>
+     <path d="M88 375H512" stroke="#E7B27A" stroke-width="2" opacity=".8"/>
+     <path d="M80 388c4 6 10 9 20 9H514" fill="none" stroke="#7E4A1C" stroke-width="1.2" opacity=".5"/>
+    </g>
+    <!-- string to tag -->
+    <path d="M298 294c-6 36 -40 62 -82 80" fill="none" stroke="#6B645A" stroke-width="1.6"/>
+    <!-- claim ticket -->
+    <g transform="rotate(-7 190 430)">
+     <ellipse cx="200" cy="492" rx="84" ry="10" fill="#5E4630" opacity=".3" filter="url(#sh)"/>
+     <path d="M122 372h170v118H122z" fill="url(#tag)" stroke="#CDBFA4" stroke-width="1.2"/>
+     <path d="M122 372l-14 14v90l14 14z" fill="#EDE3CF" stroke="#CDBFA4" stroke-width="1.2"/>
+     <circle cx="128" cy="431" r="5" fill="#B08A63" stroke="#8E6846"/>
+     <text class="tk-sm" x="144" y="398" font-family="Barlow" font-size="15" font-weight="600" fill="#5E5A53">Claim no.</text>
+     <text x="144" y="434" font-family="Barlow Condensed" font-size="38" font-weight="600" fill="#222120">0412</text>
+     <path d="M144 444h132" stroke="#CDBFA4"/>
+     <text class="tk-sm" x="144" y="462" font-family="Barlow" font-size="15" fill="#222120">Deep clean + sole</text>
+     <text x="144" y="484" font-family="Barlow" font-size="20" font-weight="600" fill="#8A4F17">Ready Thu</text>
+    </g>
+    <!-- brush -->
+    <g transform="rotate(10 470 450)">
+     <ellipse cx="470" cy="470" rx="62" ry="9" fill="#5E4630" opacity=".35" filter="url(#sh)"/>
+     <rect x="412" y="434" width="116" height="24" rx="12" fill="url(#wood)"/>
+     <g stroke="#3A3430" stroke-width="2.2" stroke-linecap="round"><path d="M420 458v12M428 458v13M436 458v13M444 458v13M452 458v13M460 458v13M468 458v13M476 458v13M484 458v13M492 458v13M500 458v13M508 458v13M516 458v12"/></g>
+     <path d="M424 440h92" stroke="#E2C9A6" stroke-width="2" opacity=".7"/>
+    </g>
+    <!-- foam bottle -->
+    <g>
+     <ellipse cx="560" cy="414" rx="26" ry="6" fill="#5E4630" opacity=".35" filter="url(#sh)"/>
+     <rect x="538" y="316" width="44" height="96" rx="8" fill="url(#bottle)"/>
+     <rect x="548" y="296" width="24" height="22" rx="3" fill="#1C1B1A"/>
+     <path d="M556 296v-10h16" fill="none" stroke="#1C1B1A" stroke-width="6" stroke-linejoin="round"/>
+     <rect x="544" y="344" width="32" height="40" rx="2" fill="#F2EFE8"/>
+     <path d="M550 356h20M550 364h14M550 372h18" stroke="#A8621F" stroke-width="2"/>
+     <path d="M546 324v80" stroke="#fff" stroke-width="3" opacity=".25"/>
+    </g>
+   </svg>
+  </div>
+ </div>
+</section>
+
+<section class="how">
+ <div class="in">
+  <div class="rv"><h2>What happens to your pair</h2><p class="lead">The ticket stays on the laces from drop-off to claim, so pairs never get mixed up.</p></div>
+  <ol class="st rv">
+   <li><h3>Drop off or pickup</h3><p>Bring them to the shop or book a rider. We write a claim number on a paper ticket.</p></li>
+   <li class="on"><h3>Check and text</h3><p>We look at the material, glue and stains, then text you a photo and the price before washing.</p></li>
+   <li><h3>Clean and dry</h3><p>Hand brushing by material, then air drying on shoe trees for at least 24 hours. No washing machine.</p></li>
+   <li><h3>Claim</h3><p>Show the ticket number at the counter, or the rider brings them back in a cloth bag.</p></li>
+  </ol>
+ </div>
+</section>
+
+<section class="prices" id="prices">
+ <div class="in">
+  <div class="head rv">
+   <h2>Prices per pair</h2>
+   <p class="lead">Prices are for one pair, VAT included. If a pair needs more than you booked, we text first and only go ahead when you reply.</p>
+  </div>
+  <div class="tbl rv">
+   <div class="row"><h3>Basic clean</h3><p>Upper, midsole and laces, for everyday canvas and mesh</p><span class="t">2–3 days</span><span class="p num">₱350</span></div>
+   <div class="row main"><h3>Deep clean</h3><p>Basic clean plus insoles, inside lining and stubborn stains, with deodorizing</p><span class="t">3–4 days</span><span class="p num">₱550</span></div>
+   <div class="row"><h3>Sole whitening</h3><p>Lifts yellowing from white rubber midsoles, best added to a clean</p><span class="t">+2 days</span><span class="p num">₱450</span></div>
+   <div class="row"><h3>Suede &amp; nubuck</h3><p>Dry brushing, eraser, gentle foam and a nap lift, no soaking</p><span class="t">3–5 days</span><span class="p num">₱650</span></div>
+   <div class="row"><h3>Sole re-glue</h3><p>Opened toe or heel seams pressed and clamped overnight</p><span class="t">2 days</span><span class="p num">₱400</span></div>
+   <div class="row"><h3>Touch-up paint</h3><p>Scuffed leather and midsole edges, color matched by hand</p><span class="t">4–5 days</span><span class="p num">from ₱800</span></div>
+   <small>Kids' pairs are ₱100 less for Basic and Deep clean.</small>
+  </div>
+ </div>
+</section>
+
+<section class="mat">
+ <div class="in">
+  <div class="rv"><h2>We brush by material</h2><p class="lead" style="margin-top:16px">Each material gets a different brush and cleaner. Tell us what yours are made of, or we'll check at drop-off.</p></div>
+  <div class="grid rv">
+   <div class="sw"><div class="tex"><svg viewBox="0 0 160 120" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><rect width="160" height="120" fill="#F3EFE6"/><g stroke="#D9D2C4" stroke-width="1.4"><path d="M0 6h160M0 14h160M0 22h160M0 30h160M0 38h160M0 46h160M0 54h160M0 62h160M0 70h160M0 78h160M0 86h160M0 94h160M0 102h160M0 110h160M0 118h160"/></g><g stroke="#E6E0D4" stroke-width="1.2"><path d="M6 0v120M18 0v120M30 0v120M42 0v120M54 0v120M66 0v120M78 0v120M90 0v120M102 0v120M114 0v120M126 0v120M138 0v120M150 0v120"/></g></svg></div><div><b>Canvas</b><p>Soft nylon brush and mild foam</p></div></div>
+   <div class="sw"><div class="tex"><svg viewBox="0 0 160 120" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><rect width="160" height="120" fill="#E7E4DD"/><g fill="#D2CDC2"><circle cx="10" cy="10" r="4"/><circle cx="30" cy="10" r="4"/><circle cx="50" cy="10" r="4"/><circle cx="70" cy="10" r="4"/><circle cx="90" cy="10" r="4"/><circle cx="110" cy="10" r="4"/><circle cx="130" cy="10" r="4"/><circle cx="150" cy="10" r="4"/><circle cx="20" cy="28" r="4"/><circle cx="40" cy="28" r="4"/><circle cx="60" cy="28" r="4"/><circle cx="80" cy="28" r="4"/><circle cx="100" cy="28" r="4"/><circle cx="120" cy="28" r="4"/><circle cx="140" cy="28" r="4"/><circle cx="10" cy="46" r="4"/><circle cx="30" cy="46" r="4"/><circle cx="50" cy="46" r="4"/><circle cx="70" cy="46" r="4"/><circle cx="90" cy="46" r="4"/><circle cx="110" cy="46" r="4"/><circle cx="130" cy="46" r="4"/><circle cx="150" cy="46" r="4"/><circle cx="20" cy="64" r="4"/><circle cx="40" cy="64" r="4"/><circle cx="60" cy="64" r="4"/><circle cx="80" cy="64" r="4"/><circle cx="100" cy="64" r="4"/><circle cx="120" cy="64" r="4"/><circle cx="140" cy="64" r="4"/><circle cx="10" cy="82" r="4"/><circle cx="30" cy="82" r="4"/><circle cx="50" cy="82" r="4"/><circle cx="70" cy="82" r="4"/><circle cx="90" cy="82" r="4"/><circle cx="110" cy="82" r="4"/><circle cx="130" cy="82" r="4"/><circle cx="150" cy="82" r="4"/><circle cx="20" cy="100" r="4"/><circle cx="40" cy="100" r="4"/><circle cx="60" cy="100" r="4"/><circle cx="80" cy="100" r="4"/><circle cx="100" cy="100" r="4"/><circle cx="120" cy="100" r="4"/><circle cx="140" cy="100" r="4"/></g></svg></div><div><b>Mesh</b><p>Foam only, dabbed, never scrubbed</p></div></div>
+   <div class="sw"><div class="tex"><svg viewBox="0 0 160 120" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><defs><radialGradient id="lth" cx=".35" cy=".3" r=".8"><stop offset="0" stop-color="#F3E7D3"/><stop offset=".6" stop-color="#D9C3A2"/><stop offset="1" stop-color="#C3A982"/></radialGradient></defs><rect width="160" height="120" fill="url(#lth)"/><path d="M0 40c40-8 80 10 160-4M0 84c50 8 100-10 160 2" fill="none" stroke="#C7AE88" stroke-width="1.4"/><path d="M20 30c30-14 60-14 90-4" fill="none" stroke="#fff" stroke-width="6" opacity=".35" stroke-linecap="round"/><g fill="#BFA47C"><circle cx="30" cy="24" r="1.5"/><circle cx="70" cy="60" r="1.5"/><circle cx="120" cy="30" r="1.5"/><circle cx="100" cy="100" r="1.5"/><circle cx="40" cy="96" r="1.5"/><circle cx="140" cy="72" r="1.5"/></g></svg></div><div><b>Smooth leather</b><p>Cleaner, then conditioner to keep it soft</p></div></div>
+   <div class="sw"><div class="tex"><svg viewBox="0 0 160 120" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><rect width="160" height="120" fill="#B3855A"/><path d="M0 0h160v120H0z" fill="#A97C52" opacity=".5" transform="skewX(-20) translate(60 0) scale(.5 1)"/><g stroke="#9E7149" stroke-width="1" opacity=".7"><path d="M10 10l6 4M30 20l6 4M50 12l6 4M20 50l6 4M60 40l6 4M40 80l6 4M70 100l6 4M14 100l6 4"/></g><g stroke="#C99A6E" stroke-width="1" opacity=".7"><path d="M90 10l6-4M120 30l6-4M140 60l6-4M100 70l6-4M130 100l6-4M150 20l6-4"/></g></svg></div><div><b>Suede</b><p>Brass and crepe brush, no water soak</p></div></div>
+   <div class="sw"><div class="tex"><svg viewBox="0 0 160 120" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><rect width="160" height="120" fill="#3A3A3D"/><g fill="none" stroke="#56565A" stroke-width="3"><path d="M0 10c10 6 20 6 30 0s20-6 30 0 20 6 30 0 20-6 30 0 20 6 40 0"/><path d="M0 30c10 6 20 6 30 0s20-6 30 0 20 6 30 0 20-6 30 0 20 6 40 0"/><path d="M0 50c10 6 20 6 30 0s20-6 30 0 20 6 30 0 20-6 30 0 20 6 40 0"/><path d="M0 70c10 6 20 6 30 0s20-6 30 0 20 6 30 0 20-6 30 0 20 6 40 0"/><path d="M0 90c10 6 20 6 30 0s20-6 30 0 20 6 30 0 20-6 30 0 20 6 40 0"/><path d="M0 110c10 6 20 6 30 0s20-6 30 0 20 6 30 0 20-6 30 0 20 6 40 0"/></g></svg></div><div><b>Knit</b><p>Cool water, flat drying to keep the shape</p></div></div>
+  </div>
+  <p class="no">We don't take pairs with cracked soles that are coming apart, or boots taller than the ankle.</p>
+ </div>
+</section>
+
+<section class="book" id="book">
+ <div class="in">
+  <div class="rv">
+   <h2>Pickup or drop-off</h2>
+   <p class="lead" style="margin-top:16px">Riders come by between 1 PM and 6 PM. Return delivery is included in the pickup fee.</p>
+   <div class="zones">
+    <div><span>Drop off at the shop</span><span class="num">Free</span></div>
+    <div><span>Kamuning, Scout area, Diliman</span><span class="num">₱120</span></div>
+    <div><span>Cubao, Project 4, Teachers Village</span><span class="num">₱180</span></div>
+    <div><span>Rest of Quezon City</span><span class="num">₱250</span></div>
+    <div><span>3 pairs or more, anywhere in QC</span><span class="num">Free</span></div>
+   </div>
+   <p class="note">Shop address: 00 Example St., Kamuning, Quezon City · 0900-000-0000</p>
+  </div>
+
+  <form class="rv" id="f" novalidate>
+   <h3>Book a cleaning</h3>
+   <p class="sub">We'll text to confirm the pickup time within the day.</p>
+   <span class="fl">Service</span>
+   <div class="opts">
+    <label><input type="radio" name="svc" value="350"><span>Basic clean<i>₱350</i></span></label>
+    <label><input type="radio" name="svc" value="550" checked><span>Deep clean<i>₱550</i></span></label>
+    <label><input type="radio" name="svc" value="650"><span>Suede &amp; nubuck<i>₱650</i></span></label>
+    <label><input type="radio" name="svc" value="400"><span>Sole re-glue<i>₱400</i></span></label>
+   </div>
+   <label class="opts" style="grid-template-columns:1fr;margin-top:8px"><input type="checkbox" id="white"><span>Add sole whitening<i>+₱450</i></span></label>
+   <div class="two">
+    <div><span class="fl">Pairs</span><div class="qty"><button type="button" id="minus" aria-label="One pair less">−</button><output id="q">1</output><button type="button" id="plus" aria-label="One pair more">+</button></div></div>
+    <div><label class="fl" for="zone">Pickup area</label><select id="zone"><option value="0">Drop off at the shop</option><option value="120" selected>Kamuning, Scout, Diliman</option><option value="180">Cubao, Project 4, Teachers Village</option><option value="250">Rest of Quezon City</option></select></div>
+   </div>
+   <div class="two">
+    <div><label class="fl" for="d">Pickup date</label><input type="date" id="d"></div>
+    <div><label class="fl" for="m">Mobile number</label><input type="tel" id="m" placeholder="0900-000-0000"></div>
+   </div>
+   <div class="tot">
+    <div><p>Estimated total</p><strong class="num" id="tot">₱670</strong></div>
+    <button class="btn btn-p" type="submit">Request pickup</button>
+   </div>
+   <div class="ok" id="ok" role="status"></div>
+  </form>
+ </div>
+</section>
+
+<section class="faq">
+ <div class="in">
+  <div class="rv"><h2>Questions</h2><p class="lead" style="margin-top:16px">Anything else, message us on Messenger: @example.</p></div>
+  <div class="rv">
+   <details open><summary>Will every stain come out?<svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></summary><p>Not always. Old ink, dye transfer and deep yellowing in mesh may only fade. We tell you on the photo text before we start, so you can decide.</p></details>
+   <details><summary>How do I pay?<svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></summary><p>Cash or e-wallet when you claim the pair. For pickups, pay the rider on return.</p></details>
+   <details><summary>What if I can't claim on time?<svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></summary><p>We keep pairs for 30 days after the ready date. Just text us your claim number if you need more time.</p></details>
+   <details><summary>Do you clean slides and sandals?<svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></summary><p>Yes, rubber and foam slides are ₱200 a pair. Leather sandals follow the smooth leather price.</p></details>
+  </div>
+ </div>
+</section>
+</main>
+
+<footer>
+ <div class="in">
+  <div><b>Suelas Sneaker Care</b>Kamuning, Quezon City</div>
+  <div>Tue–Sun · 10 AM – 7 PM · 0900-000-0000 · Messenger: @example</div>
+ </div>
+</footer>
+
+<script>
+(function(){
+  var f=document.getElementById('f'),q=1,qo=document.getElementById('q'),tot=document.getElementById('tot'),ok=document.getElementById('ok');
+  function calc(){
+    var svc=+f.querySelector('input[name=svc]:checked').value;
+    var w=document.getElementById('white').checked?450:0;
+    var z=+document.getElementById('zone').value;
+    if(q>=3)z=0;
+    var t=(svc+w)*q+z;
+    tot.textContent='₱'+t.toLocaleString('en-PH');
+    return t;
+  }
+  document.getElementById('minus').onclick=function(){if(q>1){q--;qo.textContent=q;calc()}};
+  document.getElementById('plus').onclick=function(){if(q<10){q++;qo.textContent=q;calc()}};
+  f.addEventListener('change',calc);
+  f.addEventListener('submit',function(e){
+    e.preventDefault();
+    var m=document.getElementById('m').value.trim(),d=document.getElementById('d').value;
+    if(!m||!d){ok.innerHTML='Please add a pickup date and your mobile number.';ok.classList.add('show');return}
+    var n=String(400+Math.floor(Math.random()*500)).padStart(4,'0');
+    ok.innerHTML='Request received. Your claim number will be <b>'+n+'</b>. We’ll text '+m.replace(/</g,'')+' to confirm the rider time.';
+    ok.classList.add('show');
+  });
+  calc();
+  var io='IntersectionObserver' in window?new IntersectionObserver(function(es){es.forEach(function(x){if(x.isIntersecting){x.target.classList.add('vis');io.unobserve(x.target)}})},{threshold:.1}):null;
+  document.querySelectorAll('.rv').forEach(function(el){io?io.observe(el):el.classList.add('vis')});
+})();
+</script>
+</body>
+</html>

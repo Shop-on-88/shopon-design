@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>아침단장 · 본식 헤어메이크업</title>
+<meta name="description" content="결혼식 당일 아침, 신부와 혼주의 헤어와 메이크업을 시간표대로 끝내는 본식 전문 단장실">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Hahmlet:wght@400;500;600&family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#F1EEEC;--surface:#FAF9F8;--sunk:#E6E1DF;--ink:#24262E;--ink2:#555761;--ink3:#6E707A;
+  --line:rgba(36,38,46,.13);--line2:rgba(36,38,46,.26);--night:#232833;
+  --rose:#A63F52;--rose-d:#8A3242;--rose-t:#F2DCDD;
+  --serif:'Hahmlet',serif;--sans:'Noto Sans KR',sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{background:var(--bg);scroll-behavior:smooth}
+body{font-family:var(--sans);font-size:16px;line-height:1.65;color:var(--ink);background:var(--bg);word-break:keep-all;-webkit-font-smoothing:antialiased;overflow-x:clip}
+a{color:inherit}
+img,svg{display:block}
+.in{max-width:1200px;margin:0 auto;padding:0 32px}
+.num{font-variant-numeric:tabular-nums}
+h1,h2,h3{font-family:var(--serif);font-weight:500;line-height:1.3;letter-spacing:-.01em}
+h2{font-size:clamp(28px,3.2vw,40px)}
+.lead{font-size:17px;color:var(--ink2);max-width:560px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;height:48px;padding:0 24px;border-radius:8px;font-size:16px;font-weight:500;text-decoration:none;border:1px solid transparent;cursor:pointer;font-family:var(--sans);transition:background .2s,color .2s,border-color .2s}
+.btn-p{background:var(--rose);color:#fff}
+.btn-p:hover{background:var(--rose-d)}
+.btn-s{border-color:var(--line2);color:var(--ink);background:transparent}
+.btn-s:hover{background:var(--surface);border-color:var(--ink)}
+.btn svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.ico{width:24px;height:24px;fill:none;stroke:var(--ink);stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;flex:none}
+
+/* nav */
+.nav{position:sticky;top:0;z-index:20;background:rgba(241,238,236,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.nav .in{display:flex;align-items:center;justify-content:space-between;height:72px;gap:24px}
+.logo{display:flex;align-items:center;gap:12px;text-decoration:none}
+.logo svg{width:32px;height:32px}
+.logo b{font-family:var(--serif);font-weight:600;font-size:22px;letter-spacing:.02em}
+.logo span{font-size:13px;color:var(--ink3);border-left:1px solid var(--line2);padding-left:12px}
+.nav ul{display:flex;gap:32px;list-style:none;font-size:15px}
+.nav ul a{text-decoration:none;color:var(--ink2);padding:8px 0}
+.nav ul a:hover{color:var(--ink)}
+.nav .btn{height:40px;padding:0 20px;font-size:15px}
+
+.nr{display:flex;align-items:center;gap:8px}
+.mb{display:none;width:44px;height:44px;border:1px solid var(--line2);border-radius:8px;background:transparent;cursor:pointer;align-items:center;justify-content:center}
+.mb svg{width:20px;height:20px;fill:none;stroke:var(--ink);stroke-width:1.6;stroke-linecap:round}
+.mm{border-top:1px solid var(--line);padding:8px 20px 16px;display:flex;flex-direction:column}
+.mm[hidden]{display:none}
+.mm a{display:flex;align-items:center;min-height:48px;text-decoration:none;border-bottom:1px solid var(--line);font-size:16px}
+/* hero */
+.hero{padding:64px 0 80px}
+.hero .in{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);gap:64px;align-items:center}
+.hero small{display:block;font-size:15px;color:var(--ink3);margin-bottom:20px}
+.hero h1{font-size:clamp(34px,4.4vw,58px);line-height:1.22}
+.hero h1 em{font-style:normal;color:var(--rose)}
+.hero h1 .ln{display:block;white-space:nowrap}
+.hero .lead{margin-top:24px}
+.hero .acts{display:flex;gap:12px;margin-top:40px;flex-wrap:wrap}
+.hero dl{display:grid;grid-template-columns:repeat(3,auto);justify-content:start;gap:8px 40px;margin-top:48px;padding-top:24px;border-top:1px solid var(--line)}
+.hero dt{font-size:13px;color:var(--ink3)}
+.hero dd{font-family:var(--serif);font-size:22px;font-weight:500}
+.art{position:relative;aspect-ratio:560/600;width:100%}
+.art svg{width:100%;height:100%;border-radius:24px;border:1px solid var(--line)}
+
+/* timeline */
+.day{background:var(--night);color:#E4E5EA;padding:96px 0}
+.day .head{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:48px;align-items:end;margin-bottom:56px}
+.day .head p{color:#B9BCC7;font-size:16px}
+.day h2{color:#FAF9F8}
+.tl{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));border-top:1px solid rgba(228,229,234,.22)}
+.tl li{list-style:none;padding:24px 24px 0 0;position:relative}
+.tl li:before{content:"";position:absolute;top:-5px;left:0;width:9px;height:9px;border-radius:50%;background:#E4E5EA}
+.tl li.on:before{background:#E7A3AE;width:13px;height:13px;top:-7px}
+.tl time{display:block;font-family:var(--serif);font-size:32px;font-weight:500;line-height:1.2;color:#FAF9F8}
+.tl li.on time{color:#E7A3AE}
+.tl b{display:block;font-weight:500;font-size:16px;margin-top:12px}
+.tl p{font-size:14px;color:#B4B7C2;margin-top:4px}
+
+/* services */
+.svc{padding:112px 0 96px}
+.svc .head{display:flex;justify-content:space-between;align-items:flex-end;gap:32px;margin-bottom:48px}
+.plans{display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:20px}
+.plan{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:32px;display:flex;flex-direction:column}
+.plan.main{background:var(--sunk);border-color:var(--line2);grid-row:span 2}
+.plan h3{font-size:22px}
+.plan .who{font-size:14px;color:var(--ink3);margin-top:4px}
+.plan .price{font-family:var(--serif);font-size:32px;font-weight:500;margin-top:24px}
+.plan.main .price{color:var(--rose);font-size:40px}
+.plan .price span{font-family:var(--sans);font-size:15px;color:var(--ink3);font-weight:400;margin-left:4px}
+.plan ul{list-style:none;margin-top:24px;border-top:1px solid var(--line)}
+.plan li{font-size:15px;color:var(--ink2);padding:12px 0;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;gap:16px}
+.plan li i{font-style:normal;color:var(--ink3);white-space:nowrap}
+.plan .note{font-size:14px;color:var(--ink3);margin-top:auto;padding-top:24px}
+.plan.sm{padding:24px 32px}
+.plan.sm .price{font-size:26px;margin-top:16px}
+
+/* styles */
+.styles{padding:96px 0;border-top:1px solid var(--line)}
+.styles .head{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:48px;align-items:end;margin-bottom:48px}
+.sty{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:20px}
+.sty figure{background:var(--surface);border:1px solid var(--line);border-radius:12px;overflow:hidden}
+.sty .pic{aspect-ratio:1/1;background:#EAE5E3}
+.sty .pic svg{width:100%;height:100%}
+.sty figcaption{padding:16px 20px 20px}
+.sty figcaption b{font-family:var(--serif);font-weight:500;font-size:19px;display:block}
+.sty figcaption span{font-size:14px;color:var(--ink3)}
+
+/* trial */
+.trial{padding:96px 0;background:var(--surface);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.trial .in{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:64px;align-items:start}
+.steps{list-style:none;counter-reset:s}
+.steps li{display:grid;grid-template-columns:48px minmax(0,1fr);gap:20px;padding:24px 0;border-top:1px solid var(--line)}
+.steps li:last-child{border-bottom:1px solid var(--line)}
+.steps li:before{counter-increment:s;content:counter(s,decimal-leading-zero);font-family:var(--serif);font-size:24px;color:var(--rose)}
+.steps b{display:block;font-weight:500;font-size:17px}
+.steps p{font-size:15px;color:var(--ink2);margin-top:4px}
+
+/* before day */
+.prep{padding:96px 0}
+.prep .grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;margin-top:48px}
+.prep .card{padding:28px;border:1px solid var(--line2);border-radius:12px}
+.prep .card h3{font-size:19px;margin:16px 0 8px}
+.prep .card p{font-size:15px;color:var(--ink2)}
+
+/* visit */
+.visit{padding:96px 0;background:var(--sunk)}
+.visit .in{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:64px}
+.area{margin-top:32px;border-top:1px solid var(--line2)}
+.area div{display:flex;justify-content:space-between;gap:16px;padding:16px 0;border-bottom:1px solid var(--line2);font-size:16px}
+.area div span:last-child{font-family:var(--serif);white-space:nowrap}
+
+/* booking */
+.book{background:var(--surface);border:1px solid var(--line2);border-radius:20px;padding:40px}
+.book h3{font-size:24px}
+.book .sub{font-size:15px;color:var(--ink2);margin-top:4px}
+.f{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:28px}
+.f label{display:flex;flex-direction:column;gap:8px;font-size:14px;color:var(--ink2)}
+.f .full{grid-column:1/-1}
+.f input,.f select{height:48px;border:1px solid var(--line2);border-radius:8px;background:#fff;padding:0 16px;font:inherit;font-size:16px;color:var(--ink)}
+.f input:focus,.f select:focus{outline:2px solid var(--rose);outline-offset:1px;border-color:transparent}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chips label{flex-direction:row;align-items:center;cursor:pointer}
+.chips input{position:absolute;opacity:0;width:1px;height:1px}
+.chips span{display:inline-flex;align-items:center;height:44px;padding:0 16px;border:1px solid var(--line2);border-radius:8px;font-size:15px;color:var(--ink);background:#fff;transition:background .2s,border-color .2s}
+.chips input:checked+span{background:var(--rose-t);border-color:var(--rose);color:var(--rose-d)}
+.chips input:focus-visible+span{outline:2px solid var(--rose);outline-offset:2px}
+.sum{display:flex;justify-content:space-between;align-items:center;gap:16px;margin-top:24px;padding-top:20px;border-top:1px solid var(--line)}
+.sum p{font-size:14px;color:var(--ink3)}
+.sum strong{display:block;font-family:var(--serif);font-weight:500;font-size:26px;color:var(--ink)}
+.done{display:none;margin-top:20px;padding:16px 20px;border-radius:8px;background:var(--rose-t);color:var(--rose-d);font-size:15px}
+.done.show{display:block}
+
+/* faq */
+.faq{padding:96px 0}
+.faq .in{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:64px}
+details{border-top:1px solid var(--line2)}
+details:last-child{border-bottom:1px solid var(--line2)}
+summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:16px;min-height:64px;font-size:17px;font-weight:500}
+summary::-webkit-details-marker{display:none}
+summary svg{width:20px;height:20px;fill:none;stroke:var(--ink2);stroke-width:1.6;transition:transform .2s;flex:none}
+details[open] summary svg{transform:rotate(45deg)}
+details p{padding:0 40px 24px 0;color:var(--ink2);font-size:15px}
+
+footer{background:var(--night);color:#B9BCC7;padding:56px 0 48px;font-size:14px}
+footer .in{display:flex;justify-content:space-between;gap:32px;flex-wrap:wrap}
+footer b{font-family:var(--serif);font-size:20px;font-weight:500;color:#FAF9F8;display:block;margin-bottom:8px}
+footer dl{display:grid;grid-template-columns:auto auto;gap:8px 24px}
+footer dt{color:#9497A3}
+
+.rv{opacity:0;transform:translateY(12px);transition:opacity .6s ease,transform .6s ease}
+.rv.vis{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}}
+
+@media(max-width:1080px){
+  .nav ul{display:none}
+  .mb{display:inline-flex}
+  .hero .in{grid-template-columns:1fr;gap:40px}
+  .art{max-width:560px}
+  .tl{grid-template-columns:repeat(3,minmax(0,1fr));row-gap:40px}
+  .plans{grid-template-columns:1fr 1fr}
+  .plan.main{grid-column:1/-1;grid-row:auto}
+  .sty{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .trial .in,.visit .in,.faq .in,.day .head,.styles .head{grid-template-columns:1fr;gap:32px}
+  .prep .grid{grid-template-columns:1fr}
+}
+@media(max-width:640px){
+  .in{padding:0 20px}
+  .nav .in{height:64px}
+  .logo span{display:none}
+  .hero{padding:40px 0 64px}
+  .hero dl{grid-template-columns:repeat(3,auto);gap:4px 24px}
+  .hero dd{font-size:19px}
+  .hero .acts .btn{flex:1 1 100%}
+  .day,.svc,.styles,.trial,.prep,.visit,.faq{padding:72px 0}
+  .tl{grid-template-columns:1fr;row-gap:0;border-top:0;border-left:1px solid rgba(228,229,234,.22);margin-left:6px}
+  .tl li{padding:0 0 28px 24px}
+  .tl li:last-child{padding-bottom:0}
+  .tl li:before{top:8px;left:-5px}
+  .tl li.on:before{top:6px;left:-7px}
+  .tl time{font-size:24px}
+  .tl b{margin-top:4px}
+  .chips{display:grid;grid-template-columns:1fr 1fr}
+  .chips span{width:100%;justify-content:center}
+  .plans{grid-template-columns:1fr}
+  .svc .head{flex-direction:column;align-items:flex-start}
+  .sty{gap:12px}
+  .sty figcaption{padding:12px 16px 16px}
+  .sty figcaption b{font-size:17px}
+  .book{padding:24px 20px}
+  .f{grid-template-columns:1fr}
+  .sum{flex-direction:column;align-items:stretch}
+  .sum .btn{width:100%}
+  details p{padding-right:0}
+}
+</style>
+</head>
+<body>
+
+<header class="nav">
+ <div class="in">
+  <a class="logo" href="#top" aria-label="아침단장 처음으로">
+   <svg viewBox="0 0 32 32" aria-hidden="true"><rect x="5" y="3" width="22" height="26" rx="11" fill="none" stroke="#24262E" stroke-width="1.6"/><path d="M11 21c2-5 8-5 10 0" fill="none" stroke="#A63F52" stroke-width="1.6" stroke-linecap="round"/><circle cx="16" cy="12" r="2.2" fill="#A63F52"/></svg>
+   <b>아침단장</b><span>본식 헤어메이크업</span>
+  </a>
+  <ul>
+   <li><a href="#day">당일 시간표</a></li>
+   <li><a href="#price">가격</a></li>
+   <li><a href="#styles">머리 모양</a></li>
+   <li><a href="#visit">출장 지역</a></li>
+   <li><a href="#faq">자주 묻는 질문</a></li>
+  </ul>
+  <div class="nr"><a class="btn btn-p" href="#book">날짜 확인</a><button class="mb" type="button" aria-label="메뉴 열기" aria-expanded="false" aria-controls="mm"><svg viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button></div>
+ </div>
+ <nav class="mm" id="mm" hidden><a href="#day">당일 시간표</a><a href="#price">가격</a><a href="#styles">머리 모양</a><a href="#visit">출장 지역</a><a href="#faq">자주 묻는 질문</a></nav>
+</header>
+
+<main id="top">
+<section class="hero">
+ <div class="in">
+  <div>
+   <small>결혼식 · 상견례 · 돌잔치 당일 아침</small>
+   <h1><span class="ln">예식 시작</span> <span class="ln"><em>두 시간 전</em>에</span> <span class="ln">머리와 화장을</span> <span class="ln">끝내 둡니다</span></h1>
+   <p class="lead">새벽 다섯 시 반부터 문을 엽니다. 신부 한 분에 원장 한 명이 붙어 리허설 때 정한 머리 모양 그대로 핀을 꽂고, 혼주 두 분까지 같은 공간에서 순서대로 마칩니다.</p>
+   <div class="acts">
+    <a class="btn btn-p" href="#book">예식 날짜 비어 있는지 보기 <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+    <a class="btn btn-s" href="#day">당일 순서 보기</a>
+   </div>
+   <dl>
+    <div><dt>신부 담당</dt><dd>원장 1명</dd></div>
+    <div><dt>하루 예약</dt><dd class="num">최대 2팀</dd></div>
+    <div><dt>문 여는 시간</dt><dd class="num">05:30</dd></div>
+   </dl>
+  </div>
+
+  <div class="art" aria-label="새벽빛이 도는 단장실. 전구가 둘린 아치형 화장대 거울 앞에 흰 가운을 입은 신부가 등을 보이고 앉아 있고, 진주 핀을 꽂은 낮은 쪽머리가 보입니다. 거울에는 신부의 얼굴이 흐릿하게 비치고, 대리석 화장대 양옆에 브러시 꽂이, 열린 파우더 팩트, 작은 립스틱, 실핀 접시, 빗이 놓여 있는 그림" role="img">
+   <svg viewBox="0 0 560 600" aria-hidden="true">
+    <defs>
+     <linearGradient id="wall" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#E4E1E2"/><stop offset="1" stop-color="#D9D3D2"/></linearGradient>
+     <linearGradient id="frame" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#F7F4F2"/><stop offset=".5" stop-color="#E2DCD8"/><stop offset="1" stop-color="#C8BFBA"/></linearGradient>
+     <linearGradient id="glass" x1="0" y1="0" x2=".3" y2="1"><stop offset="0" stop-color="#DCDADF"/><stop offset=".6" stop-color="#CBC7CC"/><stop offset="1" stop-color="#BDB7BB"/></linearGradient>
+     <radialGradient id="bulb" cx=".4" cy=".35" r=".7"><stop offset="0" stop-color="#FFFDF8"/><stop offset=".55" stop-color="#FBF1E0"/><stop offset="1" stop-color="#E7D3B6"/></radialGradient>
+     <radialGradient id="hair" cx=".45" cy=".3" r=".8"><stop offset="0" stop-color="#5A3B2C"/><stop offset=".6" stop-color="#3A251C"/><stop offset="1" stop-color="#24160F"/></radialGradient>
+     <linearGradient id="skin" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#E2BCA2"/><stop offset="1" stop-color="#D3A98D"/></linearGradient>
+     <linearGradient id="robe" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#FCFAF7"/><stop offset=".55" stop-color="#EEE9E4"/><stop offset="1" stop-color="#D8D0CA"/></linearGradient>
+     <linearGradient id="marble" x1="0" y1="0" x2="1" y2=".3"><stop offset="0" stop-color="#F7F5F3"/><stop offset="1" stop-color="#E8E3E0"/></linearGradient>
+     <linearGradient id="edge" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#D6CFCB"/><stop offset="1" stop-color="#C0B7B2"/></linearGradient>
+     <radialGradient id="pearl" cx=".35" cy=".3" r=".75"><stop offset="0" stop-color="#FFFFFF"/><stop offset=".55" stop-color="#F0EBE6"/><stop offset="1" stop-color="#C6BCB3"/></radialGradient>
+     <linearGradient id="gold" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#9C7A4C"/><stop offset=".5" stop-color="#D9BD8C"/><stop offset="1" stop-color="#9C7A4C"/></linearGradient>
+     <linearGradient id="lip" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#7E2B3A"/><stop offset=".45" stop-color="#B44A5D"/><stop offset="1" stop-color="#7E2B3A"/></linearGradient>
+     <radialGradient id="powder" cx=".45" cy=".4" r=".6"><stop offset="0" stop-color="#F1D9C6"/><stop offset="1" stop-color="#DDBCA3"/></radialGradient>
+     <clipPath id="mclip"><path d="M150 470V200a130 130 0 0 1 260 0v270z"/></clipPath>
+     <filter id="soft" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="6"/></filter>
+     <filter id="haze" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="3.5"/></filter>
+     <pattern id="vein" width="160" height="60" patternUnits="userSpaceOnUse"><path d="M0 40c30-12 50 6 80-8s50-20 80-6" fill="none" stroke="#D6CFCB" stroke-width="1"/><path d="M10 12c22 6 40-6 64 2" fill="none" stroke="#DFD9D6" stroke-width=".8"/></pattern>
+     <g id="b"><circle r="13" fill="url(#bulb)"/><circle r="13" fill="none" stroke="#D6C3A4" stroke-width="1"/><circle cx="-4" cy="-4" r="4" fill="#fff" opacity=".8"/></g>
+    </defs>
+    <rect width="560" height="600" fill="url(#wall)"/>
+    <path d="M118 478V200a162 162 0 0 1 324 0v278z" fill="url(#frame)" stroke="#BDB2AB" stroke-width="1"/>
+    <path d="M150 470V200a130 130 0 0 1 260 0v270z" fill="url(#glass)"/>
+    <g clip-path="url(#mclip)">
+     <!-- soft reflection of the bride's face -->
+     <g filter="url(#haze)" opacity=".62">
+      <path d="M200 480c6-50 40-76 96-80 56 4 90 30 96 80z" fill="#EEE9E4"/>
+      <path d="M282 356v34c12 6 24 6 34 0v-34z" fill="#D6AE94"/>
+      <ellipse cx="299" cy="300" rx="50" ry="62" fill="#3E2A20"/>
+      <ellipse cx="299" cy="312" rx="38" ry="48" fill="#DDB59B"/>
+      <path d="M262 286c10-28 64-30 76 0-14-10-62-12-76 0z" fill="#3E2A20"/>
+      <ellipse cx="284" cy="308" rx="5" ry="2.5" fill="#6B4A3A"/><ellipse cx="314" cy="308" rx="5" ry="2.5" fill="#6B4A3A"/>
+      <path d="M290 340c6 4 12 4 18 0" stroke="#A9505E" stroke-width="3" fill="none" stroke-linecap="round"/>
+     </g>
+     <path d="M180 120l60-50 30 0-100 90z" fill="#fff" opacity=".2"/>
+     <path d="M172 170l90-90 14 0-104 104z" fill="#fff" opacity=".12"/>
+    </g>
+    <path d="M150 470V200a130 130 0 0 1 260 0v270z" fill="none" stroke="#A39893" stroke-width="1.2"/>
+    <use href="#b" x="134" y="452"/><use href="#b" x="134" y="392"/><use href="#b" x="134" y="332"/><use href="#b" x="134" y="272"/><use href="#b" x="138" y="212"/>
+    <use href="#b" x="160" y="146"/><use href="#b" x="204" y="94"/><use href="#b" x="280" y="72"/><use href="#b" x="356" y="94"/><use href="#b" x="400" y="146"/>
+    <use href="#b" x="422" y="212"/><use href="#b" x="426" y="272"/><use href="#b" x="426" y="332"/><use href="#b" x="426" y="392"/><use href="#b" x="426" y="452"/>
+    <!-- table -->
+    <ellipse cx="280" cy="500" rx="280" ry="10" fill="#7E7570" opacity=".25" filter="url(#soft)"/>
+    <path d="M0 486h560v40H0z" fill="url(#marble)"/>
+    <path d="M0 486h560v40H0z" fill="url(#vein)"/>
+    <path d="M0 526h560v74H0z" fill="url(#edge)"/>
+    <path d="M0 526h560" stroke="#B3A8A2" stroke-width="1"/>
+    <!-- brush cup -->
+    <ellipse cx="62" cy="514" rx="32" ry="7" fill="#6E6560" opacity=".3" filter="url(#soft)"/>
+    <path d="M46 420l6 84M62 404v100M78 414l-5 90" stroke="#2F2A2C" stroke-width="4.5" stroke-linecap="round"/>
+    <path d="M40 396c-7 12-2 28 7 30s14-9 10-21-10-16-17-9z" fill="#E8D6CB"/>
+    <path d="M58 376c-7 14-4 32 5 32s12-16 7-30-7-9-12-2z" fill="#C7A090"/>
+    <path d="M82 388c-3 14 2 28-2 30s-10-9-7-23 5-10 9-7z" fill="#3A3032"/>
+    <path d="M40 448h44l-5 64H45z" fill="#EEEAE7" stroke="#CDC4BF"/>
+    <path d="M40 448h44" stroke="url(#gold)" stroke-width="3"/>
+    <!-- compact + small lipstick -->
+    <ellipse cx="132" cy="512" rx="40" ry="7" fill="#6E6560" opacity=".3" filter="url(#soft)"/>
+    <path d="M100 488c-4-24 12-40 32-40s36 16 32 40" fill="#E9E4E0" stroke="#CDC4BF"/>
+    <path d="M108 486c-3-18 10-30 24-30s28 12 24 30" fill="#CFCACA"/>
+    <ellipse cx="132" cy="502" rx="34" ry="11" fill="url(#gold)"/>
+    <ellipse cx="132" cy="499" rx="31" ry="9" fill="url(#powder)"/>
+    <ellipse cx="136" cy="497" rx="18" ry="5" fill="#F7E7DA"/>
+    <g>
+     <ellipse cx="196" cy="514" rx="14" ry="4" fill="#6E6560" opacity=".35" filter="url(#soft)"/>
+     <rect x="189" y="490" width="14" height="22" rx="2" fill="#2F2A2C"/>
+     <rect x="190" y="476" width="12" height="15" fill="url(#gold)"/>
+     <path d="M191 476v-12c0-4 3-7 10-10v22z" fill="url(#lip)"/>
+    </g>
+    <!-- pin dish + comb -->
+    <ellipse cx="452" cy="512" rx="50" ry="8" fill="#6E6560" opacity=".3" filter="url(#soft)"/>
+    <ellipse cx="452" cy="502" rx="46" ry="12" fill="#EEEAE7" stroke="#CDC4BF"/>
+    <ellipse cx="452" cy="500" rx="36" ry="8" fill="#E0DAD6"/>
+    <g fill="none" stroke="#3A3032" stroke-width="1.5" stroke-linecap="round"><path d="M424 499l24-5-22 2"/><path d="M436 503l26-3-24 0"/><path d="M456 496l22 3-22 1"/></g>
+    <circle cx="470" cy="497" r="4" fill="url(#pearl)"/><circle cx="430" cy="496" r="3.5" fill="url(#pearl)"/><circle cx="478" cy="503" r="3.5" fill="url(#pearl)"/>
+    <g transform="rotate(4 520 520)"><rect x="494" y="512" width="60" height="9" rx="2" fill="#2F2A2C"/><path d="M498 521v7M503 521v7M508 521v7M513 521v7M518 521v7M523 521v7M528 521v7M533 521v7M538 521v7M543 521v7M548 521v7" stroke="#2F2A2C" stroke-width="2"/></g>
+    <!-- bride, foreground, seated, seen from behind -->
+    <ellipse cx="280" cy="600" rx="190" ry="20" fill="#5E5553" opacity=".25" filter="url(#soft)"/>
+    <path d="M108 600c4-70 50-108 172-116 122 8 168 46 172 116z" fill="url(#robe)"/>
+    <path d="M166 540c40-14 76-18 114-18s74 4 114 18" fill="none" stroke="#E2DBD5" stroke-width="2"/>
+    <path d="M280 484v116" stroke="#DDD5CF" stroke-width="1.6"/>
+    <path d="M250 430c0 26-6 44-18 56 28 12 68 12 96 0-12-12-18-30-18-56z" fill="url(#skin)"/>
+    <path d="M258 468c14 6 30 6 44 0" fill="none" stroke="#C49478" stroke-width="1.4" opacity=".6"/>
+    <ellipse cx="214" cy="376" rx="10" ry="20" fill="#D6AB90"/><ellipse cx="346" cy="376" rx="10" ry="20" fill="#D6AB90"/>
+    <circle cx="214" cy="400" r="5" fill="url(#pearl)"/><circle cx="346" cy="400" r="5" fill="url(#pearl)"/>
+    <path d="M280 240c-56 0-72 50-72 104 0 46 16 82 34 102h76c18-20 34-56 34-102 0-54-16-104-72-104z" fill="url(#hair)"/>
+    <g fill="none" stroke="#6E4A37" stroke-width="1.4" opacity=".55" stroke-linecap="round">
+     <path d="M280 244c-30 18-46 68-42 136"/><path d="M280 244c-14 24-20 72-16 132"/><path d="M280 244c2 34 0 80 2 128"/><path d="M280 244c16 24 22 72 18 132"/><path d="M280 244c30 18 46 68 42 136"/>
+     <path d="M260 246c-34 22-44 72-40 122"/><path d="M300 246c34 22 44 72 40 122"/>
+    </g>
+    <path d="M244 262c12-12 26-16 40-16" fill="none" stroke="#8C6248" stroke-width="3.5" stroke-linecap="round" opacity=".5"/>
+    <ellipse cx="280" cy="424" rx="54" ry="38" fill="#2C1C14"/>
+    <g fill="none" stroke-linecap="round">
+     <path d="M238 424c4-26 34-36 60-30 26 6 38 26 30 44" stroke="#5E3F2E" stroke-width="3.4"/>
+     <path d="M248 436c0-18 20-30 40-26s28 18 20 32" stroke="#6E4A37" stroke-width="3"/>
+     <path d="M260 438c2-12 14-16 24-14s14 12 9 18" stroke="#7A543F" stroke-width="2.4"/>
+     <path d="M234 412c12-16 34-22 56-20" stroke="#4A3023" stroke-width="2.2"/>
+    </g>
+    <circle cx="240" cy="404" r="5.5" fill="url(#pearl)"/><circle cx="258" cy="392" r="4.5" fill="url(#pearl)"/><circle cx="306" cy="394" r="5.5" fill="url(#pearl)"/><circle cx="326" cy="410" r="4.5" fill="url(#pearl)"/><circle cx="318" cy="444" r="5" fill="url(#pearl)"/><circle cx="246" cy="446" r="4.5" fill="url(#pearl)"/>
+    <g fill="none" stroke="url(#gold)" stroke-width="1.8" stroke-linecap="round"><path d="M330 404c12-8 20-18 24-32"/><path d="M342 394c7 2 12 0 16-5"/></g>
+    <ellipse cx="354" cy="370" rx="4.5" ry="7" transform="rotate(30 354 370)" fill="#D9BD8C"/>
+   </svg>
+  </div>
+ </div>
+</section>
+
+<section class="day" id="day">
+ <div class="in">
+  <div class="head rv">
+   <h2>낮 열두 시 예식이면,<br>열 시 전에 끝납니다</h2>
+   <p>예식 시간에서 거꾸로 세어 도착 시간을 정해 드립니다. 원장이 중간에 다른 신부를 받지 않도록 하루 두 팀까지만 받습니다.</p>
+  </div>
+  <ol class="tl rv">
+   <li><time class="num">05:30</time><b>도착 · 기초 피부</b><p>세안 후 보습과 붓기 정리</p></li>
+   <li class="on"><time class="num">06:00</time><b>신부 메이크업</b><p>리허설 때 고른 색 그대로, 90분</p></li>
+   <li><time class="num">07:30</time><b>업스타일 · 핀</b><p>베일 자리까지 잡아 고정, 60분</p></li>
+   <li><time class="num">08:30</time><b>혼주 두 분</b><p>어머님 두 분 머리와 화장, 각 35분</p></li>
+   <li><time class="num">09:40</time><b>점검 · 출발</b><p>수정용 파우치 챙겨 10:00 전 출발</p></li>
+  </ol>
+ </div>
+</section>
+
+<section class="svc" id="price">
+ <div class="in">
+  <div class="head rv">
+   <div><h2>가격</h2><p class="lead" style="margin-top:12px">부가세 포함 금액입니다. 새벽 다섯 시 이전 시작은 시간당 3만 원이 붙습니다.</p></div>
+  </div>
+  <div class="plans rv">
+   <article class="plan main">
+    <h3>본식 신부</h3>
+    <p class="who">리허설 1회 포함 · 원장 직접</p>
+    <p class="price num">550,000<span>원</span></p>
+    <ul>
+     <li>메이크업과 업스타일<i>150분</i></li>
+     <li>속눈썹 붙임 · 베일과 장식 고정<i>포함</i></li>
+     <li>리허설 · 예식 2~4주 전<i>90분</i></li>
+     <li>수정용 파우치 · 립과 파우더<i>포함</i></li>
+    </ul>
+    <p class="note">리허설 때 정한 머리 모양과 색은 사진으로 남겨 두고 당일 그대로 맞춥니다.</p>
+   </article>
+   <article class="plan">
+    <h3>혼주</h3>
+    <p class="who">어머님 한 분 기준</p>
+    <p class="price num">150,000<span>원</span></p>
+    <ul><li>화장과 드라이 · 단발 올림<i>35분</i></li><li>한복 머리 쪽 찌기<i>+2만 원</i></li></ul>
+   </article>
+   <article class="plan">
+    <h3>상견례 · 돌잔치</h3>
+    <p class="who">주인공 한 분 기준</p>
+    <p class="price num">120,000<span>원</span></p>
+    <ul><li>화장과 드라이<i>60분</i></li><li>가족 추가 한 분마다<i>8만 원</i></li></ul>
+   </article>
+   <article class="plan sm">
+    <h3>들러리 · 하객</h3>
+    <p class="price num">70,000<span>원</span></p>
+   </article>
+   <article class="plan sm">
+    <h3>리허설만 따로</h3>
+    <p class="price num">180,000<span>원</span></p>
+   </article>
+  </div>
+ </div>
+</section>
+
+<section class="styles" id="styles">
+ <div class="in">
+  <div class="head rv">
+   <h2>리허설 때 고르는<br>머리 모양 네 가지</h2>
+   <p class="lead">드레스 목선과 베일 길이를 보고 원장이 두 가지를 권해 드립니다. 고른 모양은 핀 위치까지 사진으로 남깁니다.</p>
+  </div>
+  <div class="sty rv">
+   <figure>
+    <div class="pic"><svg viewBox="0 0 240 240" aria-hidden="true"><rect width="240" height="240" fill="#EAE5E3"/><path d="M70 240c4-36 22-52 50-56 28 4 46 20 50 56z" fill="#F6F0E8"/><path d="M108 168v20c0 6 24 6 24 0v-20z" fill="#DDB396"/><path d="M120 60c-30 0-40 28-40 56 0 26 10 46 22 58h36c12-12 22-32 22-58 0-28-10-56-40-56z" fill="#3A251C"/><g stroke="#6E4A37" stroke-width="1.2" fill="none" opacity=".6"><path d="M120 62c-16 12-24 40-22 80"/><path d="M120 62c16 12 24 40 22 80"/><path d="M120 62v84"/></g><ellipse cx="120" cy="160" rx="28" ry="20" fill="#2E1D15"/><path d="M96 160c4-14 22-20 34-14s16 18 10 26" fill="none" stroke="#6E4A37" stroke-width="2.2"/><circle cx="100" cy="150" r="3.5" fill="#F3EBE0"/><circle cx="140" cy="152" r="3.5" fill="#F3EBE0"/><circle cx="132" cy="174" r="3" fill="#F3EBE0"/></svg></div>
+    <figcaption><b>로우 쪽머리</b><span>긴 베일 · 어깨 드러나는 드레스</span></figcaption>
+   </figure>
+   <figure>
+    <div class="pic"><svg viewBox="0 0 240 240" aria-hidden="true"><rect width="240" height="240" fill="#E2DCDA"/><path d="M70 240c4-36 22-52 50-56 28 4 46 20 50 56z" fill="#F6F0E8"/><path d="M108 168v20c0 6 24 6 24 0v-20z" fill="#DDB396"/><path d="M120 72c-30 0-40 26-40 54 0 24 10 40 22 48h36c12-8 22-24 22-48 0-28-10-54-40-54z" fill="#4A2F22"/><circle cx="120" cy="66" r="26" fill="#3A251C"/><path d="M98 66c2-14 14-22 26-20s20 12 18 24" fill="none" stroke="#7A543F" stroke-width="2.2"/><path d="M106 70c2-8 10-12 16-10s10 8 8 14" fill="none" stroke="#7A543F" stroke-width="2"/><g stroke="#6E4A37" stroke-width="1.2" fill="none" opacity=".6"><path d="M120 92c-14 10-20 36-18 74"/><path d="M120 92c14 10 20 36 18 74"/></g><path d="M146 70c8-4 14-12 16-20" stroke="#C9AA74" stroke-width="1.6" fill="none"/><ellipse cx="162" cy="48" rx="3" ry="5" fill="#D9BD8C"/></svg></div>
+    <figcaption><b>하이 번</b><span>짧은 베일 · 하이넥 드레스</span></figcaption>
+   </figure>
+   <figure>
+    <div class="pic"><svg viewBox="0 0 240 240" aria-hidden="true"><rect width="240" height="240" fill="#EAE5E3"/><path d="M70 240c4-36 22-52 50-56 28 4 46 20 50 56z" fill="#F6F0E8"/><path d="M80 116c0-30 12-56 40-56s40 26 40 56c0 40-4 70-6 92-10 6-58 6-68 0-2-22-6-52-6-92z" fill="#3A251C"/><path d="M108 168v20c0 6 24 6 24 0v-20z" fill="#DDB396" opacity=".0"/><g fill="none" stroke="#6E4A37" stroke-width="1.6" opacity=".7" stroke-linecap="round"><path d="M92 120c8 10-6 22 2 34s-6 22 2 34"/><path d="M106 118c8 12-6 24 2 36s-6 22 2 36"/><path d="M120 116c8 12-6 24 2 36s-6 22 2 38"/><path d="M134 118c8 12-6 24 2 36s-6 22 2 36"/><path d="M148 120c8 10-6 22 2 34s-6 22 2 34"/></g><path d="M86 106c16-12 52-12 68 0" fill="none" stroke="#2E1D15" stroke-width="7" stroke-linecap="round"/><g><circle cx="96" cy="104" r="3.5" fill="#F3EBE0"/><circle cx="108" cy="100" r="3.5" fill="#F3EBE0"/><circle cx="120" cy="99" r="3.5" fill="#F3EBE0"/><circle cx="132" cy="100" r="3.5" fill="#F3EBE0"/><circle cx="144" cy="104" r="3.5" fill="#F3EBE0"/></g></svg></div>
+    <figcaption><b>반올림 웨이브</b><span>야외 예식 · 가벼운 드레스</span></figcaption>
+   </figure>
+   <figure>
+    <div class="pic"><svg viewBox="0 0 240 240" aria-hidden="true"><rect width="240" height="240" fill="#E2DCDA"/><path d="M70 240c4-36 22-52 50-56 28 4 46 20 50 56z" fill="#E9DCCB"/><path d="M84 218c10-8 26-12 36-12s26 4 36 12" fill="none" stroke="#A63F52" stroke-width="3" opacity=".6"/><path d="M108 168v20c0 6 24 6 24 0v-20z" fill="#DDB396"/><path d="M120 60c-30 0-40 28-40 56 0 26 10 46 22 58h36c12-12 22-32 22-58 0-28-10-56-40-56z" fill="#26170F"/><g stroke="#5E3F2E" stroke-width="1.2" fill="none" opacity=".7"><path d="M120 62c-18 14-24 44-22 82"/><path d="M120 62c18 14 24 44 22 82"/><path d="M120 62v86"/></g><ellipse cx="120" cy="166" rx="24" ry="14" fill="#1E120C"/><rect x="86" y="160" width="68" height="6" rx="3" fill="url(#gold)" /><circle cx="86" cy="163" r="6" fill="#A63F52"/><circle cx="154" cy="163" r="5" fill="#C9AA74"/></svg></div>
+    <figcaption><b>쪽 찐 머리 · 비녀</b><span>폐백 · 한복 혼주</span></figcaption>
+   </figure>
+  </div>
+ </div>
+</section>
+
+<section class="trial">
+ <div class="in">
+  <div class="rv">
+   <h2>리허설 한 번으로<br>당일 고민을 없앱니다</h2>
+   <p class="lead" style="margin-top:16px">예식 2~4주 전, 드레스 사진과 베일을 들고 오시면 90분 동안 실제로 한 번 해 봅니다. 당일에는 그날 정한 것만 합니다.</p>
+  </div>
+  <ol class="steps rv">
+   <li><div><b>드레스 · 베일 확인</b><p>목선, 소매, 베일 길이에 맞춰 머리 높이를 정합니다.</p></div></li>
+   <li><div><b>피부 톤에 맞춘 색 고르기</b><p>식장 조명과 사진에서 뜨지 않는 파운데이션 두 가지를 비교합니다.</p></div></li>
+   <li><div><b>머리 모양 실제로 올려 보기</b><p>고른 모양을 핀 위치까지 올려 보고 무게와 당김을 확인합니다.</p></div></li>
+   <li><div><b>사진으로 기록</b><p>앞·옆·뒤 세 장과 쓴 제품을 적은 카드를 드리고, 당일 그대로 맞춥니다.</p></div></li>
+  </ol>
+ </div>
+</section>
+
+<section class="prep">
+ <div class="in">
+  <div class="rv"><h2>전날 밤에 해 두실 일</h2></div>
+  <div class="grid rv">
+   <div class="card"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3c3 4 6 7 6 11a6 6 0 0 1-12 0c0-4 3-7 6-11z"/></svg><h3>머리는 감고 말려 오기</h3><p>트리트먼트나 오일은 바르지 않습니다. 핀이 미끄러지지 않아야 오래 갑니다.</p></div>
+   <div class="card"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16v12H4z"/><path d="M8 7V5h8v2"/><path d="M4 12h16"/></svg><h3>앞이 열리는 옷</h3><p>단추나 지퍼가 앞에 있는 셔츠를 입고 오시면 머리와 화장을 지키며 갈아입을 수 있습니다.</p></div>
+   <div class="card"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8"/><path d="M12 8v4l3 2"/></svg><h3>도착 시간 문자 확인</h3><p>예식 사흘 전에 도착 시간과 주차 위치를 문자로 다시 보내 드립니다.</p></div>
+  </div>
+ </div>
+</section>
+
+<section class="visit" id="visit">
+ <div class="in">
+  <div class="rv">
+   <h2>식장으로 가기도 합니다</h2>
+   <p class="lead" style="margin-top:16px">신부 대기실에서 준비해야 하는 경우 원장과 보조 한 명이 도구를 들고 갑니다. 단장실 기준 이동 거리로 출장비가 정해집니다.</p>
+   <div class="area">
+    <div><span>단장실 방문</span><span class="num">없음</span></div>
+    <div><span>차로 30분 이내 예식장</span><span class="num">50,000원</span></div>
+    <div><span>차로 30분~1시간</span><span class="num">100,000원</span></div>
+    <div><span>그 밖의 지역 · 지방 예식</span><span>상담 후 결정</span></div>
+   </div>
+  </div>
+
+  <form class="book rv" id="book" novalidate>
+   <h3>예식 날짜 비어 있는지 보기</h3>
+   <p class="sub">날짜와 인원을 남기시면 하루 안에 가능 여부와 도착 시간을 문자로 드립니다.</p>
+   <div class="f">
+    <label>예식 날짜<input type="text" name="date" inputmode="numeric" placeholder="예: 2027.05.15" required></label>
+    <label>예식 시간<select name="time"><option>오전 11시</option><option selected>낮 12시</option><option>오후 1시</option><option>오후 2시 이후</option></select></label>
+    <div class="full"><span style="display:block;font-size:14px;color:var(--ink2);margin-bottom:8px">받으실 분</span>
+     <div class="chips">
+      <label><input type="checkbox" name="p" value="550000" checked><span>신부</span></label>
+      <label><input type="checkbox" name="p" value="150000"><span>혼주 1</span></label>
+      <label><input type="checkbox" name="p" value="150000"><span>혼주 2</span></label>
+      <label><input type="checkbox" name="p" value="70000"><span>들러리</span></label>
+     </div>
+    </div>
+    <label>장소<select name="place" id="place"><option value="0">단장실 방문</option><option value="50000">30분 이내 예식장</option><option value="100000">30분~1시간</option></select></label>
+    <label>연락처<input type="tel" name="tel" placeholder="010-0000-0000" required></label>
+   </div>
+   <div class="sum">
+    <div><p>예상 금액 · 부가세 포함</p><strong class="num" id="total">550,000원</strong></div>
+    <button class="btn btn-p" type="submit">가능 여부 문의하기</button>
+   </div>
+   <p class="done" id="done" role="status"></p>
+  </form>
+ </div>
+</section>
+
+<section class="faq" id="faq">
+ <div class="in">
+  <div class="rv"><h2>자주 묻는 질문</h2><p class="lead" style="margin-top:16px">그 밖의 질문은 카카오톡 ID: example 로 남겨 주세요.</p></div>
+  <div class="rv">
+   <details open><summary>예약금은 얼마이고 언제 내나요?<svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></summary><p>날짜가 확정되면 신부 가격의 30%를 예약금으로 받습니다. 나머지는 예식 당일 마친 뒤 결제합니다.</p></details>
+   <details><summary>날짜를 바꾸거나 취소하면요?<svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></summary><p>예식 60일 전까지는 예약금을 모두 돌려 드립니다. 그 뒤로는 비어 있는 다른 날짜로 한 번 옮겨 드립니다.</p></details>
+   <details><summary>쓰던 화장품을 써 달라고 해도 되나요?<svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></summary><p>네. 리허설 때 가져오시면 같이 발라 보고, 당일 쓸 제품을 카드에 적어 둡니다.</p></details>
+   <details><summary>신랑 머리도 하나요?<svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></summary><p>드라이와 가벼운 메이크업을 5만 원에 합니다. 신부 준비 중간 20분 정도 시간을 냅니다.</p></details>
+  </div>
+ </div>
+</section>
+</main>
+
+<footer>
+ <div class="in">
+  <div><b>아침단장</b>본식 헤어메이크업 단장실</div>
+  <dl>
+   <dt>문 여는 시간</dt><dd>예식일 05:30부터 · 평일 리허설 10:00~19:00</dd>
+   <dt>연락</dt><dd>000-0000-0000 · 카카오톡 ID: example</dd>
+   <dt>주소</dt><dd>서울시 OO구 OO로 00, 2층</dd>
+  </dl>
+ </div>
+</footer>
+
+<script>
+(function(){
+  var f=document.getElementById('book'),t=document.getElementById('total'),d=document.getElementById('done');
+  function calc(){
+    var s=0;f.querySelectorAll('input[name=p]:checked').forEach(function(i){s+=+i.value});
+    s+=+document.getElementById('place').value;
+    t.textContent=s.toLocaleString('ko-KR')+'원';
+    return s;
+  }
+  f.addEventListener('change',calc);
+  f.addEventListener('submit',function(e){
+    e.preventDefault();
+    var date=f.date.value,tel=f.tel.value.trim();
+    if(!date||!tel){d.textContent='예식 날짜와 연락처를 적어 주세요';d.classList.add('show');return}
+    var p=date.match(/\d+/g)||[];
+    if(p.length<3){d.textContent='예식 날짜를 2027.05.15 처럼 적어 주세요';d.classList.add('show');return}
+    d.textContent=(+p[1])+'월 '+(+p[2])+'일 '+f.time.value+' 예식으로 문의를 받았습니다. 하루 안에 '+tel+' 로 가능 여부와 도착 시간을 보내 드립니다';
+    d.classList.add('show');
+  });
+  calc();
+  var mb=document.querySelector('.mb'),mm=document.getElementById('mm');
+  mb.addEventListener('click',function(){var o=mm.hidden;mm.hidden=!o;mb.setAttribute('aria-expanded',o)});
+  mm.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){mm.hidden=true;mb.setAttribute('aria-expanded','false')})});
+  var io='IntersectionObserver' in window?new IntersectionObserver(function(es){es.forEach(function(x){if(x.isIntersecting){x.target.classList.add('vis');io.unobserve(x.target)}})},{threshold:.12}):null;
+  document.querySelectorAll('.rv').forEach(function(el){io?io.observe(el):el.classList.add('vis')});
+})();
+</script>
+</body>
+</html>
