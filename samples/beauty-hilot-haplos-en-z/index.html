@@ -1,0 +1,786 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Haplos Hilot House · Filipino hilot massage</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,600&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{--clay:#B4532E;--clay-d:#7A2F1D;--ember:#E0874F;--cream:#FBF6EC;--paper:#F3EADA;--moss:#2F4A33;--moss-d:#1C2E21;--gold:#D9A441;--ink:#2A1E17;--mute:#6E5D50}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;overflow-x:hidden}
+body{font-family:'DM Sans',sans-serif;color:var(--ink);background:var(--cream);-webkit-font-smoothing:antialiased;overflow-x:hidden;line-height:1.6}
+a{color:inherit}
+svg{display:block}
+.w{max-width:1200px;margin:0 auto;padding:0 32px}
+.serif{font-family:'Fraunces',serif}
+.eyebrow{font-size:12px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--clay)}
+h2{font-family:'Fraunces',serif;font-weight:600;font-size:clamp(34px,4vw,52px);line-height:1.08;letter-spacing:-.01em}
+h2 i{font-weight:400;color:var(--clay)}
+.btn{display:inline-flex;align-items:center;gap:10px;height:54px;padding:0 28px;border-radius:999px;background:var(--clay);color:var(--cream);font-weight:700;font-size:15px;text-decoration:none;border:0;cursor:pointer;transition:.2s;font-family:inherit}
+.btn:hover{background:var(--clay-d)}
+.btn.ghost{background:transparent;color:var(--cream);box-shadow:inset 0 0 0 1.5px rgba(251,246,236,.5)}
+.btn.ghost:hover{background:rgba(251,246,236,.1)}
+.btn svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+
+/* NAV */
+.nav{position:absolute;top:0;left:0;right:0;z-index:5;background:linear-gradient(180deg,rgba(34,14,8,.82) 0%,rgba(34,14,8,.45) 65%,rgba(34,14,8,0) 100%)}
+.nav .w{display:flex;align-items:center;justify-content:space-between;height:86px}
+.logo{display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--cream)}
+.logo svg{width:40px;height:40px}
+.logo b{font-family:'Fraunces',serif;font-weight:600;font-size:24px;letter-spacing:.01em;line-height:1}
+.logo small{display:block;font-size:11px;letter-spacing:.26em;text-transform:uppercase;opacity:.75;margin-top:4px;font-weight:500}
+.nav ul{display:flex;gap:30px;list-style:none}
+.nav ul a{text-decoration:none;color:rgba(251,246,236,.85);font-size:14.5px;font-weight:500}
+.nav ul a:hover{color:#fff}
+.nav .btn{height:44px;padding:0 20px;font-size:14px;background:var(--cream);color:var(--clay-d)}
+.nav .btn:hover{background:#fff}
+.nav .btn .s{display:none}
+
+/* HERO */
+.hero{position:relative;background:#3A1D12;color:var(--cream);overflow:hidden;min-height:860px;display:flex;align-items:center}
+.hero .scene{position:absolute;inset:0;width:100%;height:100%}
+.hero .scene.m{display:none}
+.hero .w{position:relative;z-index:2;width:100%;text-align:center;padding-top:110px;padding-bottom:90px}
+.hero-txt{max-width:640px;margin:0 auto;padding:44px 40px 40px;border-radius:30px;background:radial-gradient(closest-side,rgba(46,22,13,.8),rgba(46,22,13,.55) 62%,rgba(46,22,13,0) 100%)}
+.hero .eyebrow{color:var(--gold);display:inline-flex;align-items:center;gap:12px}
+.hero .eyebrow:before,.hero .eyebrow:after{content:"";width:34px;height:1px;background:rgba(217,164,65,.6)}
+.hero h1{font-family:'Fraunces',serif;font-weight:600;font-size:clamp(46px,5.4vw,78px);line-height:1.02;letter-spacing:-.02em;margin:20px 0 22px;text-shadow:0 4px 30px rgba(0,0,0,.35)}
+.hero h1 i{font-weight:400;color:#F6CFA6}
+.hero p.lead{font-size:18px;max-width:520px;margin:0 auto;color:rgba(251,246,236,.9);line-height:1.7}
+.hero .cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:32px;justify-content:center}
+.facts{background:var(--cream);border-bottom:1px solid #EADCC6}
+.facts .w{display:grid;grid-template-columns:repeat(4,1fr)}
+.facts .w>div{padding:30px 10px 28px 26px;border-left:1px solid #EADCC6}
+.facts .w>div:first-child{border-left:0;padding-left:0}
+.facts b{display:block;font-family:'Fraunces',serif;font-size:30px;font-weight:600;color:var(--clay-d);line-height:1.1}
+.facts span{font-size:14px;color:var(--mute)}
+.garland{position:relative;height:64px;background:var(--moss-d);overflow:hidden}
+.garland svg{position:absolute;left:0;top:0;width:100%;height:64px}
+
+/* ABOUT */
+section{position:relative}
+.about{padding:120px 0 110px}
+.about .w{display:grid;grid-template-columns:.9fr 1.1fr;gap:70px;align-items:center}
+.about-art{position:relative;background:var(--paper);border-radius:28px;padding:34px 28px 28px;box-shadow:18px 18px 0 0 #E9B07E,0 30px 60px -30px rgba(122,47,29,.35)}
+.about h2{margin:16px 0 22px}
+.about p{font-size:17px;color:var(--mute);max-width:560px}
+.pillars{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:38px}
+.pillars div{border-top:2px solid var(--clay);padding-top:16px}
+.pillars b{font-family:'Fraunces',serif;font-size:20px;font-weight:600;display:block;margin-bottom:6px}
+.pillars span{font-size:14.5px;color:var(--mute);line-height:1.6;display:block}
+
+/* TREATMENTS */
+.treat{background:var(--moss-d);color:var(--cream);padding:110px 0}
+.treat:before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(90deg,rgba(251,246,236,.025) 0 1px,transparent 1px 48px);pointer-events:none}
+.treat .w{position:relative}
+.treat .eyebrow{color:var(--gold)}
+.treat h2 i{color:#E9B07E}
+.th{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:20px;margin-bottom:50px}
+.th p{max-width:420px;color:rgba(251,246,236,.72);font-size:15.5px}
+.tlist{display:grid;grid-template-columns:1fr 1fr;gap:0 60px}
+.titem{display:grid;grid-template-columns:64px 1fr auto;gap:20px;align-items:start;padding:26px 0;border-top:1px solid rgba(251,246,236,.14)}
+.titem .ic{width:64px;height:64px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#3F6145,#24392A);display:grid;place-items:center;box-shadow:inset 0 0 0 1px rgba(217,164,65,.35)}
+.titem .ic svg{width:38px;height:38px}
+.titem h3{font-family:'Fraunces',serif;font-weight:600;font-size:22px;line-height:1.2}
+.titem p{font-size:14.5px;color:rgba(251,246,236,.68);margin-top:6px;line-height:1.6}
+.titem .dur{display:inline-block;margin-top:10px;font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--gold)}
+.titem .pr{font-family:'Fraunces',serif;font-size:26px;font-weight:600;color:#F6CFA6;white-space:nowrap;line-height:1.2}
+.tnote{margin-top:30px;font-size:13.5px;color:rgba(251,246,236,.6)}
+
+/* RITUAL */
+.ritual{padding:120px 0;background:linear-gradient(180deg,var(--cream),var(--paper))}
+.ritual .head{text-align:center;max-width:780px;margin:0 auto 64px}
+.ritual .head h2{margin-top:14px}
+.ritual .head p{color:var(--mute);margin-top:16px;font-size:16.5px}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:26px;position:relative}
+.steps:before{content:"";position:absolute;left:12%;right:12%;top:74px;border-top:2px dashed rgba(180,83,46,.4)}
+.step{text-align:center;position:relative}
+.step .disc{width:148px;height:148px;margin:0 auto 22px;border-radius:50%;background:var(--cream);box-shadow:0 0 0 10px var(--paper),0 20px 40px -18px rgba(122,47,29,.45);display:grid;place-items:center;position:relative}
+.step .disc svg{width:96px;height:96px}
+.step .n{position:absolute;top:2px;right:6px;width:36px;height:36px;border-radius:50%;background:var(--clay);color:var(--cream);font-family:'Fraunces',serif;font-weight:600;font-size:17px;display:grid;place-items:center}
+.step h3{font-family:'Fraunces',serif;font-weight:600;font-size:21px}
+.step .t{font-size:12px;font-weight:700;letter-spacing:.14em;color:var(--clay);text-transform:uppercase;margin:6px 0 8px}
+.step p{font-size:14.5px;color:var(--mute);max-width:240px;margin:0 auto}
+
+/* PACKAGES */
+.pack{padding:120px 0;background:var(--cream)}
+.pack .th p{color:var(--mute)}
+.pgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.pc{border-radius:22px;padding:34px 30px 30px;background:#fff;box-shadow:0 0 0 1px #EADCC6;display:flex;flex-direction:column;position:relative;overflow:hidden}
+.pc.hot{background:linear-gradient(170deg,#B4532E,#7A2F1D);color:var(--cream);box-shadow:0 30px 60px -28px rgba(122,47,29,.7)}
+.pc .tag{align-self:flex-start;font-size:11.5px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;padding:6px 12px;border-radius:30px;background:#EFE3CF;color:var(--clay-d)}
+.pc.hot .tag{background:rgba(251,246,236,.16);color:#F6CFA6}
+.pc h3{font-family:'Fraunces',serif;font-size:28px;font-weight:600;margin:20px 0 6px;line-height:1.15}
+.pc .sub{font-size:14.5px;color:var(--mute)}
+.pc.hot .sub{color:rgba(251,246,236,.75)}
+.pc .price{font-family:'Fraunces',serif;font-size:46px;font-weight:600;margin:24px 0 2px;line-height:1}
+.pc .price small{font-family:'DM Sans';font-size:14px;font-weight:500;opacity:.7;margin-left:6px}
+.pc ul{list-style:none;margin:22px 0 28px;flex:1}
+.pc li{font-size:14.5px;padding:10px 0 10px 28px;border-top:1px solid rgba(110,93,80,.15);position:relative}
+.pc.hot li{border-color:rgba(251,246,236,.18)}
+.pc li:before{content:"";position:absolute;left:2px;top:15px;width:12px;height:12px;border-radius:50%;background:radial-gradient(circle,#fff 30%,var(--gold) 32%,var(--gold) 60%,transparent 62%)}
+.pc .btn{justify-content:center;background:var(--moss)}
+.pc .btn:hover{background:var(--moss-d)}
+.pc.hot .btn{background:var(--cream);color:var(--clay-d)}
+.pc .flower{position:absolute;right:-30px;top:-30px;width:150px;height:150px;opacity:.16}
+
+/* SPACE */
+.space{padding:0 0 120px;background:var(--cream)}
+.sgrid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:22px;align-items:start}
+.sgrid figure{border-radius:20px;overflow:hidden;background:var(--paper);position:relative}
+.sgrid figure svg{width:100%;height:auto}
+.sgrid figcaption{position:absolute;left:16px;bottom:16px;background:rgba(28,46,33,.88);color:var(--cream);font-size:13px;font-weight:500;padding:8px 14px;border-radius:30px;backdrop-filter:blur(4px)}
+.space .th{margin-bottom:40px}
+.space .th p{color:var(--mute)}
+
+/* BOOK */
+.book{background:var(--moss);color:var(--cream);padding:110px 0;overflow:hidden}
+.book .w>*,.about .w>*,.faq .w>*,.contact .w>*,.hero .w>*{min-width:0}
+.fl select{width:100%;min-width:0}
+.book .w{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);gap:60px;align-items:start;position:relative}
+.book .eyebrow{color:var(--gold)}
+.book h2 i{color:#E9B07E}
+.book .intro p{color:rgba(251,246,236,.78);margin-top:18px;font-size:16px}
+.book .hours{margin-top:34px;border-radius:18px;background:rgba(0,0,0,.18);padding:22px 24px}
+.book .hours div{display:flex;justify-content:space-between;gap:12px;padding:9px 0;font-size:15px;border-top:1px solid rgba(251,246,236,.12)}
+.book .hours div:first-child{border-top:0}
+.book .hours b{font-weight:700}
+form.card{background:var(--cream);color:var(--ink);border-radius:24px;padding:36px;box-shadow:0 40px 80px -30px rgba(0,0,0,.5)}
+.fgrid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.fl{display:flex;flex-direction:column;gap:7px}
+.fl.full{grid-column:1/-1}
+.fl label,.fl .lb{font-size:12.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--mute)}
+.fl input,.fl select{height:50px;border-radius:12px;border:1.5px solid #E2D3BC;background:#fff;padding:0 14px;font:inherit;font-size:15px;color:var(--ink)}
+.fl input:focus,.fl select:focus{outline:none;border-color:var(--clay)}
+.slots{display:flex;flex-wrap:wrap;gap:8px}
+.slots button{height:42px;padding:0 16px;border-radius:30px;border:1.5px solid #E2D3BC;background:#fff;font:inherit;font-size:14px;font-weight:500;cursor:pointer;color:var(--ink)}
+.slots button.on{background:var(--clay);border-color:var(--clay);color:var(--cream)}
+.sum{display:flex;justify-content:space-between;align-items:center;gap:14px;flex-wrap:wrap;margin-top:24px;padding-top:22px;border-top:1px dashed #D9C6A8}
+.sum span{font-size:14px;color:var(--mute)}
+.sum b{display:block;font-family:'Fraunces',serif;font-size:28px;color:var(--clay-d);font-weight:600}
+.done{display:none;text-align:center;padding:20px 0}
+.done svg{width:90px;height:90px;margin:0 auto 14px}
+.done h3{font-family:'Fraunces',serif;font-size:28px;font-weight:600}
+.done p{color:var(--mute);margin-top:8px;font-size:15px}
+form.sent .fields{display:none}
+form.sent .done{display:block}
+.err{color:#A1341B;font-size:13px;margin-top:10px;min-height:18px}
+
+/* FAQ */
+.faq{padding:110px 0;background:var(--paper)}
+.faq .w{display:grid;grid-template-columns:.8fr 1.2fr;gap:60px}
+.faq p.s{color:var(--mute);margin-top:16px}
+details{border-top:1px solid #DCCAB0;padding:22px 0}
+details:last-child{border-bottom:1px solid #DCCAB0}
+summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;gap:20px;font-family:'Fraunces',serif;font-size:20px;font-weight:600}
+summary::-webkit-details-marker{display:none}
+summary:after{content:"+";font-family:'DM Sans';font-weight:400;font-size:26px;line-height:1;color:var(--clay);transition:.2s}
+details[open] summary:after{transform:rotate(45deg)}
+details p{margin-top:12px;color:var(--mute);font-size:15.5px;max-width:640px}
+
+/* CONTACT */
+.contact{background:linear-gradient(160deg,#7A2F1D,#4A1D12);color:var(--cream);padding:100px 0 0;overflow:hidden}
+.contact .w{display:grid;grid-template-columns:1.1fr .9fr;gap:50px;align-items:center}
+.contact h2{color:var(--cream)}
+.contact h2 i{color:#F6CFA6}
+.clist{margin-top:34px;display:grid;gap:14px}
+.clist>div{display:flex;gap:16px;align-items:center;font-size:16px}
+.clist .ci{width:46px;height:46px;border-radius:50%;background:rgba(251,246,236,.1);display:grid;place-items:center;flex:none}
+.clist .ci svg{width:22px;height:22px;fill:none;stroke:#F6CFA6;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.clist small{display:block;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:rgba(251,246,236,.6)}
+.map{border-radius:22px;overflow:hidden;box-shadow:0 30px 60px -20px rgba(0,0,0,.5)}
+.map svg{width:100%;height:auto}
+footer{margin-top:90px;border-top:1px solid rgba(251,246,236,.15);padding:28px 0 34px}
+footer .w{display:flex!important;justify-content:space-between;flex-wrap:wrap;gap:6px 20px!important;font-size:13px;color:rgba(251,246,236,.6)}
+
+.mbar{display:none}
+
+@media(max-width:1024px){
+ .nav ul{display:none}
+ .facts .w{grid-template-columns:1fr 1fr}
+ .facts .w>div:nth-child(3){border-left:0;padding-left:0;border-top:1px solid #EADCC6}
+ .facts .w>div:nth-child(4){border-top:1px solid #EADCC6}
+ .about .w,.book .w,.faq .w,.contact .w{grid-template-columns:minmax(0,1fr);gap:44px}
+ .about-art{max-width:480px}
+ .tlist{grid-template-columns:1fr}
+ .steps{grid-template-columns:1fr 1fr;gap:44px 20px}
+ .steps:before{display:none}
+ .pgrid{grid-template-columns:1fr;max-width:520px}
+ .sgrid{grid-template-columns:1fr 1fr}
+ .sgrid figure:first-child{grid-column:1/-1}
+}
+@media(max-width:620px){
+ .w{padding:0 20px}
+ .nav .w{height:72px}
+ .nav .btn{height:40px;padding:0 18px;font-size:14px}
+ .nav .btn .l{display:none}
+ .nav .btn .s{display:inline}
+ .logo b{font-size:21px}
+ .hero{min-height:0;display:block}
+ .hero .scene.d{display:none}
+ .hero .scene.m{display:block}
+ .hero .w{padding-top:300px;padding-bottom:290px}
+ .hero-txt{padding:26px 6px 24px;background:radial-gradient(closest-side,rgba(46,22,13,.85),rgba(46,22,13,.6) 65%,rgba(46,22,13,0) 100%)}
+ .hero h1{font-size:44px}
+ .hero p.lead{font-size:16px}
+ .hero .eyebrow:before,.hero .eyebrow:after{width:18px}
+ .facts .w>div{padding:20px 8px 18px 16px}
+ .about-art{box-shadow:10px 10px 0 0 #E9B07E,0 30px 60px -30px rgba(122,47,29,.35);margin-right:10px}
+ .facts b{font-size:24px}
+ .facts span{font-size:13px}
+ .fl select{font-size:14px;padding:0 10px}
+ .about,.ritual,.pack,.faq{padding:80px 0}
+ .treat,.book{padding:80px 0}
+ .space{padding-bottom:80px}
+ .pillars{grid-template-columns:1fr;gap:14px}
+ .titem{grid-template-columns:52px 1fr;gap:14px}
+ .titem .ic{width:52px;height:52px}
+ .titem .ic svg{width:32px;height:32px}
+ .titem .pr{grid-column:2;font-size:22px}
+ .steps{grid-template-columns:1fr 1fr;gap:34px 14px}
+ .step .disc{width:112px;height:112px;box-shadow:0 0 0 7px var(--paper),0 16px 30px -16px rgba(122,47,29,.45)}
+ .step .disc svg{width:72px;height:72px}
+ .step .n{width:30px;height:30px;font-size:15px;right:0}
+ .step h3{font-size:18px}
+ .step p{font-size:13.5px}
+ .sgrid{gap:12px}
+ .sgrid figcaption{left:10px;bottom:10px;font-size:12px;padding:6px 11px}
+ form.card{padding:24px 20px}
+ .fgrid{grid-template-columns:1fr}
+ .sum .btn{width:100%;justify-content:center}
+ summary{font-size:18px}
+ .contact{padding-top:80px}
+ footer{margin-top:60px;padding-bottom:74px}
+ .mbar{display:flex;position:fixed;left:12px;right:12px;bottom:12px;z-index:20;gap:10px}
+ .mbar a{flex:1;justify-content:center;height:52px;box-shadow:0 12px 30px -8px rgba(0,0,0,.45)}
+}
+</style>
+</head>
+<body>
+
+<!-- reusable symbols -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+ <defs>
+  <symbol id="samp" viewBox="-20 -20 40 40">
+   <g>
+    <ellipse cx="0" cy="-10" rx="5.2" ry="9.5" fill="#FFFDF7"/>
+    <ellipse cx="0" cy="-10" rx="5.2" ry="9.5" fill="#FFFDF7" transform="rotate(72)"/>
+    <ellipse cx="0" cy="-10" rx="5.2" ry="9.5" fill="#FFFDF7" transform="rotate(144)"/>
+    <ellipse cx="0" cy="-10" rx="5.2" ry="9.5" fill="#FFFDF7" transform="rotate(216)"/>
+    <ellipse cx="0" cy="-10" rx="5.2" ry="9.5" fill="#FFFDF7" transform="rotate(288)"/>
+    <ellipse cx="0" cy="-8" rx="3" ry="6" fill="#EFE6D2" transform="rotate(36)"/>
+    <ellipse cx="0" cy="-8" rx="3" ry="6" fill="#EFE6D2" transform="rotate(108)"/>
+    <ellipse cx="0" cy="-8" rx="3" ry="6" fill="#EFE6D2" transform="rotate(180)"/>
+    <ellipse cx="0" cy="-8" rx="3" ry="6" fill="#EFE6D2" transform="rotate(252)"/>
+    <ellipse cx="0" cy="-8" rx="3" ry="6" fill="#EFE6D2" transform="rotate(324)"/>
+    <circle r="3.4" fill="#E9C66B"/>
+   </g>
+  </symbol>
+  <symbol id="bud" viewBox="-6 -12 12 24">
+   <path d="M0-11C4-7 4 3 0 8C-4 3-4-7 0-11Z" fill="#FFFDF7"/>
+   <path d="M0 6V11" stroke="#6E8F5A" stroke-width="1.6"/>
+  </symbol>
+  <symbol id="jarTop" viewBox="-110 -110 220 220">
+   <circle r="104" cx="10" cy="12" fill="#1A0A05" opacity=".45"/>
+   <circle r="100" fill="url(#jarBody)"/>
+   <circle r="100" fill="none" stroke="#5E2416" stroke-width="3"/>
+   <circle r="74" fill="none" stroke="#E9B07E" stroke-width="2" stroke-dasharray="3 9" stroke-linecap="round" opacity=".7"/>
+   <circle r="52" fill="#7A2F1D"/><circle r="46" fill="#C46A3F"/><circle r="38" fill="#3A1A0E"/>
+   <circle r="32" fill="url(#oilG)"/><ellipse cx="-10" cy="-10" rx="12" ry="6" fill="#FFF4D0" opacity=".8"/>
+  </symbol>
+  <symbol id="coco" viewBox="-70 -70 140 140">
+   <circle r="64" cx="6" cy="8" fill="#1A0A05" opacity=".45"/>
+   <circle r="62" fill="url(#husk2)"/>
+   <circle r="50" fill="#F7F1E4"/><circle r="50" fill="none" stroke="#E2D6BE" stroke-width="3"/>
+   <circle r="36" fill="url(#oilG)" opacity=".9"/><ellipse cx="-8" cy="-10" rx="10" ry="5" fill="#FFF7DC"/>
+  </symbol>
+  <symbol id="cocoBack" viewBox="-70 -70 140 140">
+   <circle r="64" cx="6" cy="8" fill="#1A0A05" opacity=".45"/>
+   <circle r="62" fill="url(#husk2)"/>
+   <g stroke="#2E1A0E" stroke-width="2" opacity=".35" fill="none"><path d="M-50-20C-20-40 20-40 50-20M-56 10C-20-6 20-6 56 10M-44 36C-14 24 14 24 44 36"/></g>
+   <circle cx="-12" cy="-8" r="7" fill="#2E1A0E"/><circle cx="12" cy="-8" r="7" fill="#2E1A0E"/><circle cy="12" r="7" fill="#2E1A0E"/>
+  </symbol>
+  <symbol id="bLeaf" viewBox="0 0 520 200">
+   <path d="M6 110C90 20 360 0 514 70C430 170 150 210 6 110Z" fill="url(#leafTop)"/>
+   <path d="M10 108C170 80 340 70 510 72" stroke="#C3DCA2" stroke-width="4" fill="none"/>
+   <g stroke="#24402A" stroke-width="1.6" opacity=".4" fill="none"><path d="M60 100L40 56M100 96L84 44M140 92L128 34M180 88L174 28M220 86L220 26M260 84L266 26M300 82L312 30M340 80L358 36M380 78L402 44M420 76L446 54M70 104L66 150M110 100L116 160M150 96L164 166M190 94L210 168M230 92L256 166M270 90L300 160M310 88L344 150M350 86L388 138M390 82L428 124"/></g>
+   <path d="M330 150C350 140 380 140 396 128" stroke="#2F4A33" stroke-width="2" fill="none" opacity=".5"/>
+  </symbol>
+  <symbol id="towelTop" viewBox="0 0 240 170">
+   <rect x="16" y="20" width="220" height="146" rx="12" fill="#1A0A05" opacity=".4"/>
+   <rect x="6" y="6" width="220" height="146" rx="12" fill="#FBF6EC"/>
+   <rect x="6" y="6" width="220" height="146" rx="12" fill="none" stroke="#E4D6BC" stroke-width="2"/>
+   <path d="M6 54H226M6 102H226" stroke="#E9DCC3" stroke-width="3"/>
+   <rect x="6" y="120" width="220" height="16" fill="#2F4A33"/><rect x="6" y="124" width="220" height="3" fill="#D9A441"/>
+   <rect x="40" y="26" width="150" height="88" rx="10" fill="#F1E6D1"/>
+   <path d="M40 70H190" stroke="#E2D3B8" stroke-width="2"/>
+  </symbol>
+  <symbol id="bowlTop" viewBox="-80 -80 160 160">
+   <circle r="74" cx="8" cy="10" fill="#1A0A05" opacity=".45"/>
+   <circle r="72" fill="url(#jarBody)"/><circle r="72" fill="none" stroke="#5E2416" stroke-width="3"/>
+   <circle r="60" fill="#7FB1B5"/><circle r="60" fill="url(#water)"/>
+   <use href="#samp" x="-36" y="-34" width="34" height="34"/><use href="#samp" x="4" y="-14" width="30" height="30"/><use href="#samp" x="-22" y="8" width="32" height="32"/>
+   <path d="M18-40C30-36 36-28 38-18" stroke="#F6D36A" stroke-width="5" stroke-linecap="round" fill="none"/>
+  </symbol>
+  <symbol id="candleTop" viewBox="-70 -70 140 140">
+   <circle r="68" fill="url(#cGlow)"/>
+   <circle r="30" fill="#FBF1DD"/><circle r="30" fill="none" stroke="#E5D3B0" stroke-width="3"/>
+   <circle r="22" fill="#F4E6C8"/><circle r="7" fill="#FFE3A0"/><circle r="3" fill="#3A2016"/>
+  </symbol>
+  <symbol id="cupTop" viewBox="-50 -50 100 100">
+   <circle r="44" cx="5" cy="6" fill="#1A0A05" opacity=".4"/>
+   <circle r="42" fill="#F3EADA"/><circle r="34" fill="#C98B3E"/><ellipse cx="-8" cy="-8" rx="10" ry="5" fill="#E9B76A"/>
+   <path d="M40-6C54-6 54 10 40 10" stroke="#F3EADA" stroke-width="8" fill="none"/>
+  </symbol>
+  <symbol id="grassTop" viewBox="0 0 300 70">
+   <g stroke-linecap="round"><path d="M10 20L290 30" stroke="#9DBA6A" stroke-width="9"/><path d="M14 36L284 42" stroke="#B9CF84" stroke-width="8"/><path d="M8 50L276 54" stroke="#86A75A" stroke-width="8"/></g>
+   <path d="M120 14V62" stroke="#B4532E" stroke-width="9" stroke-linecap="round"/>
+  </symbol>
+  <symbol id="sticks" viewBox="0 0 260 60">
+   <g stroke="#C9A35E" stroke-width="7" stroke-linecap="round"><path d="M10 14L250 22"/><path d="M10 30L250 34"/><path d="M10 46L250 46"/></g>
+   <g stroke="#8A6233" stroke-width="2"><path d="M70 10V52M150 14V52"/></g>
+  </symbol>
+  <radialGradient id="jarBody" cx=".4" cy=".35" r=".75"><stop offset="0" stop-color="#D98256"/><stop offset=".6" stop-color="#A84A28"/><stop offset="1" stop-color="#6A2818"/></radialGradient>
+  <radialGradient id="husk2" cx=".38" cy=".34" r=".75"><stop offset="0" stop-color="#9A6840"/><stop offset="1" stop-color="#4A2A16"/></radialGradient>
+  <linearGradient id="leafTop" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#7DAA5E"/><stop offset=".55" stop-color="#4E7A45"/><stop offset="1" stop-color="#2F4A33"/></linearGradient>
+  <radialGradient id="water" cx=".4" cy=".35" r=".7"><stop offset="0" stop-color="#CFE6E4" stop-opacity=".7"/><stop offset="1" stop-color="#4F8A90" stop-opacity=".2"/></radialGradient>
+  <radialGradient id="cGlow" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#FFD98A" stop-opacity=".55"/><stop offset="1" stop-color="#FFD98A" stop-opacity="0"/></radialGradient>
+  <linearGradient id="woodTop" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#4A2416"/><stop offset=".5" stop-color="#5C2E1C"/><stop offset="1" stop-color="#43200F"/></linearGradient>
+<linearGradient id="topShade" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2A120B" stop-opacity=".85"/><stop offset="1" stop-color="#2A120B" stop-opacity="0"/></linearGradient>
+  <radialGradient id="vign" cx=".5" cy=".5" r=".7"><stop offset=".45" stop-color="#000" stop-opacity="0"/><stop offset="1" stop-color="#000" stop-opacity=".45"/></radialGradient>
+  <pattern id="planks" width="1440" height="96" patternUnits="userSpaceOnUse"><rect width="1440" height="96" fill="url(#woodTop)"/><path d="M0 95.5H1440" stroke="#2E140A" stroke-width="2"/><path d="M0 30C300 26 600 36 900 30S1300 24 1440 30M0 64C400 60 800 70 1200 62" stroke="#3A1A0E" stroke-width="1.2" fill="none" opacity=".5"/><path d="M380 0V96M1020 0V96" stroke="#2E140A" stroke-width="2" opacity=".7"/></pattern>
+  <linearGradient id="clayG" x1="0" x2="1">
+   <stop offset="0" stop-color="#7A2F1D"/><stop offset=".45" stop-color="#C46A3F"/><stop offset=".7" stop-color="#A84A28"/><stop offset="1" stop-color="#5E2416"/>
+  </linearGradient>
+  <linearGradient id="leafG" x1="0" y1="0" x2="1" y2="1">
+   <stop offset="0" stop-color="#6E9A55"/><stop offset="1" stop-color="#2F4A33"/>
+  </linearGradient>
+  <radialGradient id="oilG" cx=".4" cy=".35" r=".7">
+   <stop offset="0" stop-color="#FFE7A8"/><stop offset=".6" stop-color="#E2B04F"/><stop offset="1" stop-color="#B07A26"/>
+  </radialGradient>
+ </defs>
+</svg>
+
+<header class="nav">
+ <div class="w">
+  <a class="logo" href="#top">
+   <svg viewBox="-24 -24 48 48"><circle r="23" fill="none" stroke="#F6CFA6" stroke-width="1.5"/><use href="#samp" x="-15" y="-15" width="30" height="30"/></svg>
+   <span><b>Haplos</b><small>Hilot House</small></span>
+  </a>
+  <ul><li><a href="#ritual">The Ritual</a></li><li><a href="#treatments">Treatments</a></li><li><a href="#packages">Packages</a></li><li><a href="#space">The House</a></li><li><a href="#faq">FAQ</a></li></ul>
+  <a class="btn" href="#book"><span class="l">Book a session</span><span class="s">Book</span></a>
+ </div>
+</header>
+
+<section class="hero" id="top">
+ <svg class="scene d" viewBox="0 0 1440 860" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+  <rect width="1440" height="860" fill="url(#planks)"/>
+  <use href="#bLeaf" x="-150" y="120" width="540" height="208" transform="rotate(8 120 224)"/>
+  <use href="#bLeaf" x="1000" y="600" width="560" height="216" transform="rotate(-12 1280 708)"/>
+  <use href="#bLeaf" x="-120" y="580" width="520" height="200" transform="rotate(18 140 680)"/>
+  <use href="#jarTop" x="50" y="140" width="230" height="230"/>
+  <use href="#grassTop" x="40" y="400" width="270" height="64" transform="rotate(8 175 432)"/>
+  <use href="#coco" x="1100" y="120" width="160" height="160"/>
+  <use href="#cocoBack" x="1275" y="190" width="140" height="140"/>
+  <use href="#candleTop" x="1150" y="320" width="120" height="120"/>
+  <use href="#sticks" x="1215" y="430" width="230" height="54" transform="rotate(-75 1330 457)"/>
+  <use href="#towelTop" x="60" y="580" width="300" height="212" transform="rotate(-8 210 686)"/>
+  <use href="#bowlTop" x="1080" y="600" width="210" height="210"/>
+  <use href="#cupTop" x="1010" y="755" width="96" height="96"/>
+  <use href="#samp" x="300" y="150" width="36" height="36"/><use href="#samp" x="340" y="190" width="26" height="26"/><use href="#samp" x="320" y="350" width="30" height="30"/><use href="#samp" x="250" y="500" width="34" height="34"/><use href="#samp" x="300" y="520" width="26" height="26"/><use href="#samp" x="200" y="535" width="28" height="28"/><use href="#samp" x="390" y="720" width="34" height="34"/><use href="#samp" x="380" y="780" width="26" height="26"/><use href="#samp" x="1090" y="500" width="30" height="30"/><use href="#samp" x="1050" y="540" width="24" height="24"/><use href="#samp" x="1380" y="560" width="30" height="30"/><use href="#samp" x="1395" y="140" width="26" height="26"/>
+  <rect width="1440" height="860" fill="url(#vign)"/>
+  <rect width="1440" height="150" fill="url(#topShade)"/>
+ </svg>
+ <svg class="scene m" viewBox="0 0 390 1000" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+  <rect width="390" height="1000" fill="url(#planks)"/>
+  <use href="#bLeaf" x="-90" y="110" width="400" height="162"/>
+  <use href="#jarTop" x="-40" y="120" width="175" height="175"/>
+  <use href="#coco" x="260" y="120" width="130" height="130"/>
+  <use href="#candleTop" x="160" y="170" width="100" height="100"/>
+  <use href="#bLeaf" x="60" y="820" width="420" height="162" transform="rotate(-10 270 900)"/>
+  <use href="#towelTop" x="-40" y="790" width="220" height="156" transform="rotate(-8 70 868)"/>
+  <use href="#bowlTop" x="220" y="790" width="170" height="170"/>
+  <use href="#samp" x="150" y="140" width="28" height="28"/><use href="#samp" x="196" y="128" width="22" height="22"/><use href="#samp" x="20" y="285" width="24" height="24"/><use href="#samp" x="330" y="170" width="24" height="24"/><use href="#samp" x="170" y="820" width="28" height="28"/><use href="#samp" x="196" y="860" width="22" height="22"/><use href="#samp" x="150" y="930" width="26" height="26"/><use href="#samp" x="340" y="760" width="26" height="26"/>
+  <rect width="390" height="1000" fill="url(#vign)"/>
+  <rect width="390" height="130" fill="url(#topShade)"/>
+ </svg>
+ <div class="w">
+  <div class="hero-txt">
+   <span class="eyebrow">Filipino hilot · Metro Manila</span>
+   <h1>Slow hands,<br><i>warm coconut oil.</i></h1>
+   <p class="lead">Haplos is a small hilot house where every session starts with oil warmed on a banana leaf and ends with a cup of salabat. No rush, no noise — just an unhurried, full-body massage in the old Filipino way.</p>
+   <div class="cta"><a class="btn" href="#book">Book a session <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a><a class="btn ghost" href="#treatments">See treatments</a></div>
+  </div>
+ </div>
+</section>
+
+<div class="garland" aria-hidden="true">
+ <svg viewBox="0 0 1440 64" preserveAspectRatio="xMidYMid slice">
+  <path d="M0 18Q60 52 120 18T240 18T360 18T480 18T600 18T720 18T840 18T960 18T1080 18T1200 18T1320 18T1440 18" fill="none" stroke="#6E8F5A" stroke-width="2"/>
+  <g>
+   <use href="#samp" x="46" y="22" width="26" height="26"/><use href="#samp" x="166" y="22" width="26" height="26"/><use href="#samp" x="286" y="22" width="26" height="26"/><use href="#samp" x="406" y="22" width="26" height="26"/><use href="#samp" x="526" y="22" width="26" height="26"/><use href="#samp" x="646" y="22" width="26" height="26"/><use href="#samp" x="766" y="22" width="26" height="26"/><use href="#samp" x="886" y="22" width="26" height="26"/><use href="#samp" x="1006" y="22" width="26" height="26"/><use href="#samp" x="1126" y="22" width="26" height="26"/><use href="#samp" x="1246" y="22" width="26" height="26"/><use href="#samp" x="1366" y="22" width="26" height="26"/>
+   <use href="#bud" x="112" y="6" width="10" height="20"/><use href="#bud" x="232" y="6" width="10" height="20"/><use href="#bud" x="352" y="6" width="10" height="20"/><use href="#bud" x="472" y="6" width="10" height="20"/><use href="#bud" x="592" y="6" width="10" height="20"/><use href="#bud" x="712" y="6" width="10" height="20"/><use href="#bud" x="832" y="6" width="10" height="20"/><use href="#bud" x="952" y="6" width="10" height="20"/><use href="#bud" x="1072" y="6" width="10" height="20"/><use href="#bud" x="1192" y="6" width="10" height="20"/><use href="#bud" x="1312" y="6" width="10" height="20"/><use href="#bud" x="1432" y="6" width="10" height="20"/>
+  </g>
+ </svg>
+</div>
+
+<div class="facts"><div class="w"><div><b>₱450</b><span>sessions from</span></div><div><b>6 rooms</b><span>private &amp; for two</span></div><div><b>11am – 10pm</b><span>open every day</span></div><div><b>+₱300</b><span>home service, Metro Manila</span></div></div></div>
+
+<section class="about" id="ritual">
+ <div class="w">
+  <div class="about-art">
+   <svg viewBox="0 0 420 420" role="img" aria-label="Illustration: banana leaf with warm oil, coconut halves, lemongrass and sampaguita">
+    <defs>
+     <linearGradient id="hand" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#C98B62"/><stop offset="1" stop-color="#9A5F3E"/></linearGradient>
+     <radialGradient id="glow2" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#F7C989" stop-opacity=".7"/><stop offset="1" stop-color="#F7C989" stop-opacity="0"/></radialGradient>
+     <linearGradient id="leaf2" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#3E6A3C"/><stop offset=".5" stop-color="#6E9A55"/><stop offset="1" stop-color="#3E6A3C"/></linearGradient>
+    </defs>
+    <circle cx="210" cy="200" r="190" fill="url(#glow2)"/>
+    <!-- banana leaf -->
+    <path d="M30 300C80 180 330 160 396 230C340 330 110 380 30 300Z" fill="url(#leaf2)"/>
+    <path d="M36 298C150 250 280 230 392 232" stroke="#B9D69C" stroke-width="3" fill="none"/>
+    <g stroke="#2F4A33" stroke-width="1.2" opacity=".45" fill="none"><path d="M90 280L70 230M130 266L118 208M170 256L166 196M210 248L214 190M250 242L262 186M290 238L308 186M330 236L352 196M100 284L110 332M150 270L170 330M200 260L226 320M250 250L282 306M300 244L334 290"/></g>
+    <!-- oil pool -->
+    <ellipse cx="210" cy="250" rx="70" ry="18" fill="url(#oilG)" opacity=".9"/>
+    <ellipse cx="190" cy="246" rx="22" ry="5" fill="#FFF4D0" opacity=".8"/>
+    <!-- coconut halves -->
+    <defs>
+     <radialGradient id="husk" cx=".4" cy=".3" r=".8"><stop offset="0" stop-color="#8A5A36"/><stop offset="1" stop-color="#4A2A16"/></radialGradient>
+     <radialGradient id="meat" cx=".5" cy=".4" r=".6"><stop offset="0" stop-color="#FFFFFF"/><stop offset="1" stop-color="#EDE4D2"/></radialGradient>
+    </defs>
+    <ellipse cx="128" cy="214" rx="64" ry="12" fill="#2F4A33" opacity=".35"/>
+    <path d="M66 168A62 62 0 0 0 190 168Z" fill="url(#husk)"/>
+    <ellipse cx="128" cy="168" rx="62" ry="20" fill="#5A3520"/>
+    <ellipse cx="128" cy="168" rx="54" ry="16" fill="url(#meat)"/>
+    <ellipse cx="128" cy="170" rx="38" ry="10" fill="url(#oilG)" opacity=".85"/>
+    <g stroke="#2E1A0E" stroke-width="1.4" opacity=".4" fill="none"><path d="M76 184C96 200 120 206 150 200M84 198C104 212 134 214 168 202"/></g>
+    <path d="M232 132C226 98 250 74 286 72C322 74 344 98 338 132C334 156 312 168 286 168S236 156 232 132Z" fill="url(#husk)"/>
+    <g stroke="#2E1A0E" stroke-width="1.4" opacity=".35" fill="none"><path d="M244 108C260 92 300 88 326 104M240 130C262 118 306 116 334 128"/></g>
+    <circle cx="270" cy="100" r="5" fill="#2E1A0E"/><circle cx="292" cy="96" r="5" fill="#2E1A0E"/><circle cx="282" cy="114" r="5" fill="#2E1A0E"/>
+    <!-- lemongrass bundle -->
+    <g stroke-linecap="round"><path d="M150 236L250 112" stroke="#9DBA6A" stroke-width="7"/><path d="M162 240L268 118" stroke="#B9CF84" stroke-width="6"/><path d="M174 242L282 128" stroke="#86A75A" stroke-width="6"/></g>
+    <path d="M190 210L214 222" stroke="#B4532E" stroke-width="7" stroke-linecap="round"/>
+    <!-- small clay dish -->
+    <path d="M300 214C300 236 330 244 350 244S398 236 398 214Z" fill="url(#clayG)"/>
+    <ellipse cx="349" cy="214" rx="49" ry="10" fill="#8E3A22"/><ellipse cx="349" cy="214" rx="40" ry="7" fill="url(#oilG)"/>
+    <use href="#samp" x="250" y="268" width="50" height="50"/>
+    <use href="#samp" x="60" y="300" width="36" height="36"/>
+    <use href="#bud" x="340" y="250" width="12" height="26"/>
+   </svg>
+  </div>
+  <div>
+   <span class="eyebrow">What hilot means here</span>
+   <h2>An old Filipino way of touch, <i>kept unhurried.</i></h2>
+   <p>Hilot is the massage many of us grew up with — a lola's warm palms, coconut oil, a banana leaf by the stove. At Haplos we keep that feeling and give it a calm room, clean linens and enough time so no one watches the clock.</p>
+   <div class="pillars">
+    <div><b>Warm oil</b><span>Virgin coconut oil warmed over a banana leaf before every session.</span></div>
+    <div><b>Slow hands</b><span>Long, steady strokes from shoulders to soles, at the pace you choose.</span></div>
+    <div><b>Quiet rooms</b><span>Six private rooms with soft dusk light and no music unless you ask.</span></div>
+   </div>
+  </div>
+ </div>
+</section>
+
+<section class="treat" id="treatments">
+ <div class="w">
+  <div class="th">
+   <div><span class="eyebrow">Treatments</span><h2 style="margin-top:14px">Choose your <i>hilot</i></h2></div>
+   <p>Every session includes a warm foot soak, ginger salabat after, and a rest corner for as long as you like.</p>
+  </div>
+  <div class="tlist">
+   <div class="titem"><div class="ic"><svg viewBox="0 0 40 40"><path d="M20 6C27 13 30 20 30 25A10 10 0 0 1 10 25C10 20 13 13 20 6Z" fill="url(#oilG)"/><path d="M15 25A5 5 0 0 0 20 30" stroke="#FFF4D0" stroke-width="2" fill="none" stroke-linecap="round"/></svg></div><div><h3>Haplos Signature Hilot</h3><p>Full-body hilot with warm coconut oil and banana-leaf compress on the back.</p><span class="dur">90 min</span></div><div class="pr">₱1,450</div></div>
+   <div class="titem"><div class="ic"><svg viewBox="0 0 40 40"><g stroke="#E9B07E" stroke-width="2.4" stroke-linecap="round"><path d="M8 30L32 10"/><path d="M8 22L24 10"/><path d="M16 32L32 18"/></g><circle cx="8" cy="30" r="2.5" fill="#D9A441"/><circle cx="32" cy="10" r="2.5" fill="#D9A441"/></svg></div><div><h3>Dagdagay Foot Ritual</h3><p>Warm soak, then a rhythmic foot massage using thin bamboo sticks and palms.</p><span class="dur">60 min</span></div><div class="pr">₱850</div></div>
+   <div class="titem"><div class="ic"><svg viewBox="0 0 40 40"><path d="M6 30C10 16 26 10 34 14C30 26 16 34 6 30Z" fill="url(#leafG)"/><path d="M7 29C16 24 26 18 33 15" stroke="#B9D69C" stroke-width="1.5" fill="none"/></svg></div><div><h3>Banana Leaf Warm Wrap</h3><p>Lighter hilot followed by a wrap of warmed banana leaves and a long rest.</p><span class="dur">75 min</span></div><div class="pr">₱1,250</div></div>
+   <div class="titem"><div class="ic"><svg viewBox="0 0 40 40"><path d="M8 32C8 22 13 16 20 16S32 22 32 32" fill="none" stroke="#E9B07E" stroke-width="2.4" stroke-linecap="round"/><circle cx="20" cy="10" r="5" fill="#D9A441"/></svg></div><div><h3>Back &amp; Shoulder Hilot</h3><p>Focused session for the upper back, neck and arms — good for a lunch break.</p><span class="dur">45 min</span></div><div class="pr">₱650</div></div>
+   <div class="titem"><div class="ic"><svg viewBox="0 0 40 40"><use href="#samp" x="6" y="6" width="28" height="28"/></svg></div><div><h3>Coconut Scalp &amp; Face</h3><p>Warm oil on the scalp, slow temple and jaw strokes, finished with a hot towel.</p><span class="dur">30 min</span></div><div class="pr">₱450</div></div>
+   <div class="titem"><div class="ic"><svg viewBox="0 0 40 40"><circle cx="15" cy="20" r="8" fill="none" stroke="#E9B07E" stroke-width="2.4"/><circle cx="25" cy="20" r="8" fill="none" stroke="#D9A441" stroke-width="2.4"/></svg></div><div><h3>Hilot for Two</h3><p>Two therapists, one room with two beds — the Signature Hilot side by side.</p><span class="dur">90 min · 2 guests</span></div><div class="pr">₱2,800</div></div>
+  </div>
+  <p class="tnote">Prices are per session and include tea and foot soak. Home service within Metro Manila: add ₱300.</p>
+ </div>
+</section>
+
+<section class="ritual">
+ <div class="w">
+  <div class="head">
+   <span class="eyebrow">Your visit</span>
+   <h2>Four quiet steps, <i>start to finish</i></h2>
+   <p>From the moment you take off your slippers, the pace slows down. Here is how a session at Haplos goes.</p>
+  </div>
+  <div class="steps">
+   <div class="step"><div class="disc"><span class="n">1</span><svg viewBox="0 0 96 96"><defs><linearGradient id="bowl" x1="0" x2="1"><stop offset="0" stop-color="#7A2F1D"/><stop offset=".5" stop-color="#C46A3F"/><stop offset="1" stop-color="#7A2F1D"/></linearGradient></defs><path d="M12 48H84C82 70 66 82 48 82S14 70 12 48Z" fill="url(#bowl)"/><ellipse cx="48" cy="48" rx="36" ry="8" fill="#9FC4C9"/><ellipse cx="48" cy="48" rx="36" ry="8" fill="none" stroke="#5E2416" stroke-width="2"/><use href="#samp" x="30" y="38" width="16" height="16"/><use href="#samp" x="50" y="40" width="14" height="14"/><path d="M36 32C32 26 40 22 36 14M50 30C46 24 54 20 50 12M62 32C58 26 66 22 62 14" stroke="#C6A58A" stroke-width="2" fill="none" stroke-linecap="round"/></svg></div><div class="t">10 min</div><h3>Foot soak</h3><p>Warm water with sampaguita and calamansi peel while we ask how you'd like the pressure.</p></div>
+   <div class="step"><div class="disc"><span class="n">2</span><svg viewBox="0 0 96 96"><path d="M8 66C24 50 72 46 90 58C74 74 26 80 8 66Z" fill="url(#leafG)"/><path d="M10 65C36 60 64 58 88 58" stroke="#B9D69C" stroke-width="1.5" fill="none"/><ellipse cx="50" cy="60" rx="18" ry="5" fill="url(#oilG)"/><path d="M34 40C30 32 38 28 34 20M50 38C46 30 54 26 50 18M64 40C60 32 68 28 64 20" stroke="#E0874F" stroke-width="2.2" fill="none" stroke-linecap="round"/></svg></div><div class="t">5 min</div><h3>Warming the oil</h3><p>Coconut oil is warmed over a banana leaf, the way it was done at home.</p></div>
+   <div class="step"><div class="disc"><span class="n">3</span><svg viewBox="0 0 96 96"><rect x="10" y="54" width="76" height="12" rx="6" fill="#2F4A33"/><rect x="14" y="66" width="6" height="16" fill="#1C2E21"/><rect x="76" y="66" width="6" height="16" fill="#1C2E21"/><path d="M18 54C18 46 30 42 48 44S80 46 80 54Z" fill="#F3EADA"/><circle cx="24" cy="46" r="7" fill="#9A5F3E"/><path d="M40 36C44 28 56 26 60 34L54 46" stroke="#9A5F3E" stroke-width="5" fill="none" stroke-linecap="round"/><path d="M64 34C68 26 78 26 80 34L72 46" stroke="#C98B62" stroke-width="5" fill="none" stroke-linecap="round"/></svg></div><div class="t">30–90 min</div><h3>The hilot</h3><p>Long, warm strokes along the back, arms and legs, adjusted to the pressure you like.</p></div>
+   <div class="step"><div class="disc"><span class="n">4</span><svg viewBox="0 0 96 96"><defs><linearGradient id="cup" x1="0" x2="1"><stop offset="0" stop-color="#F3EADA"/><stop offset="1" stop-color="#D9C6A8"/></linearGradient></defs><path d="M22 40H66V60C66 72 56 80 44 80S22 72 22 60Z" fill="url(#cup)"/><path d="M66 46C78 46 80 62 66 64" stroke="#D9C6A8" stroke-width="5" fill="none"/><ellipse cx="44" cy="40" rx="22" ry="5" fill="#C98B3E"/><path d="M34 30C30 24 38 20 34 12M48 30C44 24 52 20 48 12" stroke="#C6A58A" stroke-width="2" fill="none" stroke-linecap="round"/><ellipse cx="44" cy="82" rx="30" ry="4" fill="#7A2F1D" opacity=".25"/><path d="M70 74C74 70 82 72 84 76C80 80 74 80 70 74Z" fill="#E0B25A"/></svg></div><div class="t">As long as you like</div><h3>Salabat &amp; rest</h3><p>Hot ginger salabat and a little kakanin in the rest corner before you head home.</p></div>
+  </div>
+ </div>
+</section>
+
+<section class="pack" id="packages">
+ <div class="w">
+  <div class="th">
+   <div><span class="eyebrow">Packages</span><h2 style="margin-top:14px">Come alone, <i>or bring the barkada</i></h2></div>
+   <p>Bundles for afternoons off, friend groups and regular visits. All packages can be shared or gifted.</p>
+  </div>
+  <div class="pgrid">
+   <div class="pc">
+    <svg class="flower" viewBox="-20 -20 40 40"><use href="#samp" x="-20" y="-20" width="40" height="40"/></svg>
+    <span class="tag">Weekday · before 4pm</span>
+    <h3>Hapon Pass</h3>
+    <div class="sub">A slow afternoon for one</div>
+    <div class="price">₱1,690<small>/ guest</small></div>
+    <ul><li>Signature Hilot, 90 min</li><li>Coconut Scalp &amp; Face, 30 min</li><li>Salabat &amp; kakanin plate</li></ul>
+    <a class="btn" href="#book" data-pick="Hapon Pass">Choose this</a>
+   </div>
+   <div class="pc hot">
+    <svg class="flower" viewBox="-20 -20 40 40"><use href="#samp" x="-20" y="-20" width="40" height="40"/></svg>
+    <span class="tag">For 3 guests</span>
+    <h3>Barkada Trio</h3>
+    <div class="sub">Three friends, one evening</div>
+    <div class="price">₱3,900<small>/ 3 guests</small></div>
+    <ul><li>Signature Hilot for each guest</li><li>Shared foot-soak lounge, 20 min</li><li>Private rest room with tea</li></ul>
+    <a class="btn" href="#book" data-pick="Barkada Trio">Choose this</a>
+   </div>
+   <div class="pc">
+    <svg class="flower" viewBox="-20 -20 40 40"><use href="#samp" x="-20" y="-20" width="40" height="40"/></svg>
+    <span class="tag">Use within 3 months</span>
+    <h3>Haplos Card</h3>
+    <div class="sub">Four visits, any treatment up to 90 min</div>
+    <div class="price">₱5,200<small>/ 4 visits</small></div>
+    <ul><li>Book any day, any room</li><li>Share visits with family</li><li>Free upgrade to warm wrap once</li></ul>
+    <a class="btn" href="#book" data-pick="Haplos Card">Choose this</a>
+   </div>
+  </div>
+ </div>
+</section>
+
+<section class="space" id="space">
+ <div class="w">
+  <div class="th">
+   <div><span class="eyebrow">The house</span><h2 style="margin-top:14px">Rooms that feel <i>like dusk</i></h2></div>
+   <p>Clay walls, rattan lamps and soft cotton — every corner is kept warm, dim and quiet.</p>
+  </div>
+  <div class="sgrid">
+   <figure>
+    <svg viewBox="0 0 640 420" role="img" aria-label="Illustration: treatment room with a wooden bed, rattan pendant lamp, folded towels and a window of evening light">
+     <defs>
+      <linearGradient id="wall" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#C77A52"/><stop offset="1" stop-color="#8E4428"/></linearGradient>
+      <radialGradient id="lamp" cx=".5" cy=".3" r=".6"><stop offset="0" stop-color="#FFE3A6" stop-opacity=".9"/><stop offset="1" stop-color="#FFE3A6" stop-opacity="0"/></radialGradient>
+      <linearGradient id="win" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#6A4060"/><stop offset=".6" stop-color="#F09A5B"/><stop offset="1" stop-color="#F7C989"/></linearGradient>
+      <linearGradient id="wood" x1="0" x2="1"><stop offset="0" stop-color="#5A2D1A"/><stop offset=".5" stop-color="#7E4428"/><stop offset="1" stop-color="#4A2414"/></linearGradient>
+     </defs>
+     <rect width="640" height="420" fill="url(#wall)"/>
+     <rect y="320" width="640" height="100" fill="#5E2E1C"/>
+     <path d="M0 320H640" stroke="#3E1C10" stroke-width="3"/>
+     <g opacity=".15" stroke="#2A120B"><path d="M0 340H640M0 362H640M0 386H640M0 410H640"/></g>
+     <!-- window -->
+     <path d="M430 270V120A70 70 0 0 1 570 120V270Z" fill="url(#win)"/>
+     <path d="M430 270V120A70 70 0 0 1 570 120V270Z" fill="none" stroke="#3E1C10" stroke-width="6"/>
+     <path d="M500 50V270M430 180H570" stroke="#3E1C10" stroke-width="4"/>
+     <circle cx="470" cy="210" r="16" fill="#FFE7B0" opacity=".9"/>
+     <!-- light pool -->
+     <ellipse cx="240" cy="160" rx="220" ry="180" fill="url(#lamp)"/>
+     <!-- rattan lamp -->
+     <path d="M240 0V70" stroke="#3E1C10" stroke-width="2"/>
+     <path d="M196 120C196 92 214 70 240 70S284 92 284 120Z" fill="#C69A5B"/>
+     <g stroke="#8A6233" stroke-width="1.5" fill="none"><path d="M204 100H276M199 112H281M214 84H266M226 72L216 120M240 70V120M254 72L264 120"/></g>
+     <ellipse cx="240" cy="121" rx="44" ry="6" fill="#FFE8B0"/>
+     <!-- bed -->
+     <path d="M70 270H410V296H70Z" fill="url(#wood)"/>
+     <rect x="84" y="296" width="14" height="50" fill="#3E1C10"/><rect x="382" y="296" width="14" height="50" fill="#3E1C10"/>
+     <path d="M70 248C70 240 76 236 84 236H396C404 236 410 240 410 248V270H70Z" fill="#F7F0E2"/>
+     <path d="M200 238H410V270H200Z" fill="#2F4A33"/>
+     <path d="M200 238H410" stroke="#D9A441" stroke-width="3"/>
+     <ellipse cx="116" cy="236" rx="40" ry="10" fill="#EFE4CF"/>
+     <!-- towels -->
+     <rect x="290" y="216" width="70" height="12" rx="6" fill="#FBF6EC"/><rect x="294" y="204" width="62" height="12" rx="6" fill="#E9DCC3"/>
+     <use href="#samp" x="320" y="190" width="20" height="20"/>
+     <!-- plant -->
+     <path d="M560 330C560 300 570 296 582 296S604 300 604 330Z" fill="#9A4A28"/>
+     <path d="M582 296C566 250 540 240 520 250C548 254 568 272 582 296ZM582 296C590 244 612 226 632 230C610 240 594 262 582 296ZM582 296C578 260 584 230 600 214C594 236 590 266 582 296Z" fill="#3E6A3C"/>
+     <!-- side table with jar -->
+     <rect x="20" y="276" width="40" height="70" fill="#4A2414"/>
+     <path d="M28 276C28 256 52 256 52 276Z" fill="#C46A3F"/>
+    </svg>
+    <figcaption>Private hilot room</figcaption>
+   </figure>
+   <figure>
+    <svg viewBox="0 0 320 420" role="img" aria-label="Illustration: tea corner with a clay teapot, cups of salabat and a bowl of kakanin on a low bench">
+     <defs>
+      <linearGradient id="bg3" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2F4A33"/><stop offset="1" stop-color="#1C2E21"/></linearGradient>
+      <linearGradient id="pot" x1="0" x2="1"><stop offset="0" stop-color="#5E2416"/><stop offset=".5" stop-color="#B4532E"/><stop offset="1" stop-color="#5E2416"/></linearGradient>
+     </defs>
+     <rect width="320" height="420" fill="url(#bg3)"/>
+     <g opacity=".12" stroke="#FBF6EC"><path d="M0 60H320M0 120H320M0 180H320M80 0V250M160 0V250M240 0V250"/></g>
+     <circle cx="230" cy="90" r="40" fill="#F7C989" opacity=".2"/>
+     <path d="M230 30V60" stroke="#D9A441" stroke-width="1.5"/>
+     <path d="M206 82C206 66 216 58 230 58S254 66 254 82Z" fill="#D9A441"/>
+     <ellipse cx="230" cy="83" rx="24" ry="4" fill="#FFE8B0"/>
+     <rect x="20" y="300" width="280" height="22" rx="4" fill="#7E4428"/>
+     <rect x="36" y="322" width="14" height="80" fill="#4A2414"/><rect x="270" y="322" width="14" height="80" fill="#4A2414"/>
+     <!-- teapot -->
+     <path d="M80 300C64 300 56 280 60 262C64 240 82 230 106 230S148 240 152 262C156 280 148 300 132 300Z" fill="url(#pot)"/>
+     <path d="M150 256C168 248 176 234 180 222" stroke="#8E3A22" stroke-width="8" stroke-linecap="round" fill="none"/>
+     <path d="M62 250C46 250 44 278 62 282" stroke="#8E3A22" stroke-width="6" fill="none"/>
+     <ellipse cx="106" cy="230" rx="24" ry="6" fill="#7A2F1D"/><circle cx="106" cy="222" r="6" fill="#C46A3F"/>
+     <path d="M184 214C180 206 188 202 184 194" stroke="#C6A58A" stroke-width="2" fill="none" stroke-linecap="round"/>
+     <!-- cups -->
+     <path d="M186 272H222L218 298H190Z" fill="#F3EADA"/><ellipse cx="204" cy="272" rx="18" ry="4" fill="#C98B3E"/>
+     <path d="M232 272H268L264 298H236Z" fill="#E9DCC3"/><ellipse cx="250" cy="272" rx="18" ry="4" fill="#C98B3E"/>
+     <!-- wall shelf with banana-leaf plate of kakanin -->
+     <rect x="30" y="150" width="150" height="8" fill="#7E4428"/>
+     <path d="M36 150C60 136 150 136 174 150Z" fill="#4E7A45"/>
+     <g><rect x="52" y="124" width="26" height="20" rx="4" fill="#7B3F8A"/><rect x="52" y="124" width="26" height="6" rx="3" fill="#FBF6EC"/>
+     <rect x="84" y="126" width="26" height="18" rx="4" fill="#E9C66B"/><rect x="84" y="126" width="26" height="5" rx="2.5" fill="#FBF6EC"/>
+     <rect x="116" y="124" width="26" height="20" rx="4" fill="#C97A3E"/><circle cx="160" cy="136" r="10" fill="#F3EADA"/><circle cx="160" cy="136" r="4" fill="#E2B04F"/></g>
+     <g opacity=".9"><path d="M40 60C40 40 60 30 80 30S120 40 120 60V110H40Z" fill="#1C2E21"/><path d="M48 60C48 46 62 38 80 38S112 46 112 60V104H48Z" fill="#E0874F" opacity=".45"/><path d="M80 38V104M48 72H112" stroke="#1C2E21" stroke-width="3"/></g>
+     <use href="#samp" x="30" y="280" width="20" height="20"/>
+    </svg>
+    <figcaption>Salabat tea corner</figcaption>
+   </figure>
+   <figure>
+    <svg viewBox="0 0 320 420" role="img" aria-label="Illustration: wooden shelf with clay oil jars of different sizes, rolled towels and a sampaguita garland">
+     <defs>
+      <linearGradient id="bg4" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#F3EADA"/><stop offset="1" stop-color="#E4D3B7"/></linearGradient>
+      <linearGradient id="jar2" x1="0" x2="1"><stop offset="0" stop-color="#7A2F1D"/><stop offset=".4" stop-color="#D07A4C"/><stop offset="1" stop-color="#6A2818"/></linearGradient>
+      <linearGradient id="jar3" x1="0" x2="1"><stop offset="0" stop-color="#3E2A1E"/><stop offset=".45" stop-color="#7A5A3E"/><stop offset="1" stop-color="#3E2A1E"/></linearGradient>
+     </defs>
+     <rect width="320" height="420" fill="url(#bg4)"/>
+     <rect x="20" y="170" width="280" height="12" fill="#7E4428"/><rect x="20" y="310" width="280" height="12" fill="#7E4428"/>
+     <rect x="20" y="182" width="280" height="6" fill="#5A2D1A" opacity=".4"/><rect x="20" y="322" width="280" height="6" fill="#5A2D1A" opacity=".4"/>
+     <!-- top shelf jars -->
+     <path d="M50 170C40 170 36 150 40 132C44 116 54 108 70 108S96 116 100 132C104 150 100 170 90 170Z" fill="url(#jar2)"/><rect x="58" y="96" width="24" height="14" rx="3" fill="#5E2416"/>
+     <path d="M120 170C112 170 110 156 112 144C114 132 122 126 134 126S154 132 156 144C158 156 156 170 148 170Z" fill="url(#jar3)"/><rect x="126" y="116" width="16" height="12" rx="3" fill="#2A1E17"/>
+     <path d="M176 170V120C176 114 180 110 186 110H190V98H202V110H206C212 110 216 114 216 120V170Z" fill="#F7EBD0" opacity=".6"/><rect x="178" y="130" width="36" height="38" fill="url(#oilG)" opacity=".85"/><rect x="190" y="88" width="12" height="12" rx="2" fill="#5E2416"/>
+     <path d="M236 170C230 170 228 160 230 150C232 142 238 138 248 138S264 142 266 150C268 160 266 170 260 170Z" fill="url(#jar2)"/>
+     <!-- garland across top shelf -->
+     <path d="M30 70Q160 120 290 70" fill="none" stroke="#6E8F5A" stroke-width="2"/>
+     <use href="#samp" x="30" y="64" width="20" height="20"/><use href="#samp" x="66" y="78" width="20" height="20"/><use href="#samp" x="104" y="88" width="20" height="20"/><use href="#samp" x="142" y="92" width="20" height="20"/><use href="#samp" x="180" y="88" width="20" height="20"/><use href="#samp" x="218" y="78" width="20" height="20"/><use href="#samp" x="256" y="64" width="20" height="20"/>
+     <!-- bottom shelf rolled towels -->
+     <g>
+      <rect x="40" y="268" width="80" height="42" rx="21" fill="#FBF6EC"/><circle cx="62" cy="289" r="16" fill="#F0E4CC"/><circle cx="62" cy="289" r="7" fill="#E2D3BA"/>
+      <rect x="40" y="226" width="80" height="42" rx="21" fill="#2F4A33"/><circle cx="62" cy="247" r="16" fill="#3E6145"/><circle cx="62" cy="247" r="7" fill="#24392A"/>
+      <rect x="130" y="268" width="80" height="42" rx="21" fill="#E9B07E"/><circle cx="152" cy="289" r="16" fill="#F2C49A"/><circle cx="152" cy="289" r="7" fill="#D99A66"/>
+     </g>
+     <!-- bamboo sticks bundle -->
+     <g stroke="#B8924F" stroke-width="5" stroke-linecap="round"><path d="M230 308L250 230M244 308L258 232M258 308L268 236"/></g>
+     <path d="M232 280H270" stroke="#7A2F1D" stroke-width="4"/>
+     <rect x="0" y="380" width="320" height="40" fill="#C9B593"/>
+    </svg>
+    <figcaption>Oils &amp; linens</figcaption>
+   </figure>
+  </div>
+ </div>
+</section>
+
+<section class="book" id="book">
+ <div class="w">
+  <div class="intro">
+   <span class="eyebrow">Book a session</span>
+   <h2 style="margin-top:14px">Reserve your room, <i>we'll warm the oil.</i></h2>
+   <p>Send your preferred time and we'll confirm by text within the hour. Walk-ins are welcome when a room is free.</p>
+   <div class="hours">
+    <div><span>Every day</span><b>11:00am – 10:00pm</b></div>
+    <div><span>Last booking</span><b>8:30pm</b></div>
+    <div><span>Home service</span><b>Book 1 day ahead</b></div>
+   </div>
+  </div>
+  <form class="card" id="bk" novalidate>
+   <div class="fields">
+    <div class="fgrid">
+     <div class="fl full"><label for="tr">Treatment</label>
+      <select id="tr">
+       <option value="1450">Signature Hilot · 90 min · ₱1,450</option>
+       <option value="850">Dagdagay Foot · 60 min · ₱850</option>
+       <option value="1250">Banana Leaf Wrap · 75 min · ₱1,250</option>
+       <option value="650">Back &amp; Shoulder · 45 min · ₱650</option>
+       <option value="450">Scalp &amp; Face · 30 min · ₱450</option>
+       <option value="2800">Hilot for Two · 90 min · ₱2,800</option>
+       <option value="1690">Hapon Pass · ₱1,690</option>
+       <option value="3900">Barkada Trio · ₱3,900</option>
+       <option value="5200">Haplos Card · ₱5,200</option>
+      </select></div>
+     <div class="fl"><label for="dt">Date</label><input id="dt" type="date"></div>
+     <div class="fl"><label for="pr">Pressure</label><select id="pr"><option>Gentle</option><option selected>Medium</option><option>Firm</option></select></div>
+     <div class="fl full"><span class="lb">Time</span>
+      <div class="slots" id="slots"><button type="button">11:00</button><button type="button">1:00</button><button type="button" class="on">3:30</button><button type="button">5:00</button><button type="button">7:00</button><button type="button">8:30</button></div></div>
+     <div class="fl"><label for="nm">Name</label><input id="nm" placeholder="Your name"></div>
+     <div class="fl"><label for="ph">Mobile</label><input id="ph" placeholder="0900-000-0000" inputmode="tel"></div>
+    </div>
+    <div class="err" id="err"></div>
+    <div class="sum"><div><span>Total to pay at the house</span><b id="tot">₱1,450</b></div><button class="btn" type="submit">Request booking <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button></div>
+   </div>
+   <div class="done">
+    <svg viewBox="-20 -20 40 40"><circle r="19" fill="#2F4A33"/><use href="#samp" x="-14" y="-14" width="28" height="28"/></svg>
+    <h3>Salamat, <span id="dn">friend</span>!</h3>
+    <p id="dm">We've noted your request and will text you to confirm.</p>
+    <button class="btn" type="button" id="again" style="margin-top:20px">Make another booking</button>
+   </div>
+  </form>
+ </div>
+</section>
+
+<section class="faq" id="faq">
+ <div class="w">
+  <div><span class="eyebrow">Good to know</span><h2 style="margin-top:14px">Questions <i>before you come</i></h2><p class="s">Can't find your answer? Send us a message and a therapist will reply.</p></div>
+  <div>
+   <details open><summary>What should I wear?</summary><p>Come as you are. We provide a sarong-style wrap, disposable underwear and a robe. Your clothes stay in a private locker.</p></details>
+   <details><summary>Is the coconut oil scented?</summary><p>Our house oil is plain virgin coconut oil. If you'd like, we can add a few drops of lemongrass or ylang-ylang — just tell us at the foot soak.</p></details>
+   <details><summary>Can I ask for a female or male therapist?</summary><p>Yes. Add your preference when you book or tell us at the front desk, and we'll match you when available.</p></details>
+   <details><summary>Do you do home service?</summary><p>Yes, within Metro Manila for sessions of 60 minutes or more. We bring the oil, linens and a portable bed. Add ₱300 per visit.</p></details>
+   <details><summary>How do I cancel or move my booking?</summary><p>Text us at least 3 hours before your time and we'll move it at no charge.</p></details>
+  </div>
+ </div>
+</section>
+
+<section class="contact">
+ <div class="w">
+  <div>
+   <span class="eyebrow" style="color:#F6CFA6">Visit us</span>
+   <h2 style="margin-top:14px">Find the house with the <i>sampaguita door</i></h2>
+   <div class="clist">
+    <div><span class="ci"><svg viewBox="0 0 24 24"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21Z"/><circle cx="12" cy="9.5" r="2.5"/></svg></span><div><small>Address</small>Sample Street, Metro Manila</div></div>
+    <div><span class="ci"><svg viewBox="0 0 24 24"><path d="M6 3h4l2 5-2.5 1.5a11 11 0 0 0 5 5L16 12l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 4 5a2 2 0 0 1 2-2Z"/></svg></span><div><small>Call or text</small>0900-000-0000</div></div>
+    <div><span class="ci"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></span><div><small>Email</small>hello@example.com</div></div>
+   </div>
+  </div>
+  <div class="map">
+   <svg viewBox="0 0 520 360" role="img" aria-label="Illustrated map showing the hilot house on a quiet side street">
+    <rect width="520" height="360" fill="#F3EADA"/>
+    <g fill="#E4D3B7"><rect x="20" y="20" width="140" height="100" rx="8"/><rect x="190" y="20" width="150" height="100" rx="8"/><rect x="370" y="20" width="130" height="100" rx="8"/><rect x="20" y="160" width="140" height="180" rx="8"/><rect x="370" y="160" width="130" height="80" rx="8"/><rect x="370" y="270" width="130" height="70" rx="8"/></g>
+    <rect x="190" y="160" width="150" height="180" rx="8" fill="#CFE0BE"/>
+    <g fill="#6E9A55"><circle cx="220" cy="200" r="14"/><circle cx="260" cy="290" r="18"/><circle cx="310" cy="210" r="12"/><circle cx="300" cy="310" r="10"/></g>
+    <path d="M0 140H520M175 0V360M355 0V360" stroke="#FBF6EC" stroke-width="18"/>
+    <path d="M0 140H520M175 0V360M355 0V360" stroke="#E2D3BA" stroke-width="1.5" stroke-dasharray="8 8"/>
+    <path d="M100 340C120 280 150 220 175 200S260 160 300 140" stroke="#B4532E" stroke-width="3" fill="none" stroke-dasharray="2 8" stroke-linecap="round"/>
+    <g transform="translate(300 110)"><path d="M0 30C-16 12-22 2-22-8A22 22 0 0 1 22-8C22 2 16 12 0 30Z" fill="#B4532E"/><circle cy="-8" r="13" fill="#FBF6EC"/><use href="#samp" x="-11" y="-19" width="22" height="22"/></g>
+    <rect x="326" y="92" width="186" height="40" rx="20" fill="#1C2E21"/><text x="419" y="118" fill="#FBF6EC" font-family="DM Sans" font-size="17" font-weight="700" text-anchor="middle">Haplos Hilot House</text>
+    <rect x="60" y="322" width="150" height="30" rx="15" fill="#FBF6EC"/><text x="135" y="343" text-anchor="middle" fill="#6E5D50" font-family="DM Sans" font-size="17" font-weight="500">MRT · 5 min walk</text>
+   </svg>
+  </div>
+ </div>
+ <footer><div class="w"><span>© Haplos Hilot House · Metro Manila</span><span>Open every day · 11am – 10pm</span></div></footer>
+</section>
+
+<div class="mbar"><a class="btn" href="#book">Book a session</a></div>
+
+<script>
+(function(){
+ var f=document.getElementById('bk'),tr=document.getElementById('tr'),tot=document.getElementById('tot'),slots=document.getElementById('slots');
+ function fmt(n){return '₱'+Number(n).toLocaleString('en-US')}
+ tr.addEventListener('change',function(){tot.textContent=fmt(tr.value)});
+ slots.addEventListener('click',function(e){var b=e.target.closest('button');if(!b)return;[].forEach.call(slots.children,function(x){x.classList.remove('on')});b.classList.add('on')});
+ document.querySelectorAll('[data-pick]').forEach(function(a){a.addEventListener('click',function(){var n=a.getAttribute('data-pick');[].forEach.call(tr.options,function(o){if(o.text.indexOf(n)===0)tr.value=o.value});tot.textContent=fmt(tr.value)})});
+ var d=new Date();d.setDate(d.getDate()+1);document.getElementById('dt').value=d.toISOString().slice(0,10);
+ f.addEventListener('submit',function(e){e.preventDefault();var nm=document.getElementById('nm').value.trim(),ph=document.getElementById('ph').value.trim(),er=document.getElementById('err');
+  if(!nm||!ph){er.textContent='Please add your name and mobile number so we can confirm.';return}
+  er.textContent='';var on=slots.querySelector('.on');document.getElementById('dn').textContent=nm;
+  document.getElementById('dm').textContent=tr.options[tr.selectedIndex].text.split(' · ')[0]+' on '+document.getElementById('dt').value+' at '+(on?on.textContent:'')+'. We will text '+ph+' to confirm.';
+  f.classList.add('sent')});
+ document.getElementById('again').addEventListener('click',function(){f.classList.remove('sent')});
+})();
+</script>
+</body>
+</html>
