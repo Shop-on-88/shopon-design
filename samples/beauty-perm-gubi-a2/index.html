@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>헤어 굽이 · 펌 전문 살롱 BGC</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;600;900&family=Noto+Sans+KR:wght@400;500;700&family=Outfit:wght@300;500;700&display=swap" rel="stylesheet">
+<style>
+:root{--ecru:#F3ECDF;--ecru2:#E9DFCD;--choc:#2B1A14;--choc2:#4A2F24;--pers:#E8622C;--pers2:#F39A6B;--clay:#B9876A;--line:rgba(43,26,20,.16)}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;overflow-x:hidden}
+body{font-family:'Noto Sans KR',sans-serif;color:var(--choc);background:var(--ecru);word-break:keep-all;-webkit-font-smoothing:antialiased;overflow-x:hidden;line-height:1.6}
+a{color:inherit;text-decoration:none}
+.serif{font-family:'Noto Serif KR',serif}
+.en{font-family:'Outfit',sans-serif}
+.in{max-width:1240px;margin:0 auto;padding:0 40px}
+/* header */
+header{position:sticky;top:0;z-index:20;background:rgba(243,236,223,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+header .in{display:flex;align-items:center;justify-content:space-between;height:76px;gap:20px}
+.logo{display:flex;align-items:center;gap:12px}
+.logo svg{width:42px;height:42px}
+.logo b{font-family:'Noto Serif KR',serif;font-weight:900;font-size:24px;letter-spacing:-.02em}
+.logo small{display:block;font-family:Outfit;font-size:11px;letter-spacing:.32em;color:var(--clay);margin-top:-2px}
+nav{display:flex;gap:30px;font-size:15px;font-weight:500}
+nav a{position:relative;padding:4px 0}
+nav a:after{content:"";position:absolute;left:0;right:100%;bottom:-2px;height:2px;background:var(--pers);transition:.25s}
+nav a:hover:after{right:0}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;height:52px;padding:0 28px;border-radius:60px;background:var(--choc);color:var(--ecru);font-weight:700;font-size:15px;border:0;cursor:pointer;transition:.2s;font-family:inherit}
+.btn:hover{background:var(--pers)}
+.btn.o{background:transparent;color:var(--choc);border:1.5px solid var(--choc)}
+.btn.o:hover{background:var(--choc);color:var(--ecru)}
+.btn svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+header .btn{height:44px;padding:0 22px;font-size:14px}
+.menu-t{display:none;background:none;border:0;width:44px;height:44px;cursor:pointer}
+.menu-t span{display:block;width:24px;height:2px;background:var(--choc);margin:5px auto;border-radius:2px}
+/* hero */
+.hero{position:relative;padding:70px 0 90px;overflow:hidden}
+.hero .in{display:grid;grid-template-columns:1.02fr .98fr;gap:40px;align-items:center}
+.eyebrow{display:inline-flex;align-items:center;gap:10px;font-family:Outfit;font-weight:500;font-size:13px;letter-spacing:.3em;color:var(--pers)}
+.eyebrow:before{content:"";width:34px;height:10px;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 34 10'%3E%3Cpath d='M1 5c4-5 6-5 8 0s4 5 8 0 6-5 8 0 4 5 8 0' fill='none' stroke='%23E8622C' stroke-width='2'/%3E%3C/svg%3E") no-repeat}
+.hero h1{font-family:'Noto Serif KR',serif;font-weight:900;font-size:clamp(44px,5.6vw,82px);line-height:1.12;letter-spacing:-.035em;margin:22px 0 26px}
+.hero h1 i{font-style:normal;color:var(--pers);position:relative;white-space:nowrap}
+.hero h1 i svg{position:absolute;left:-2%;bottom:-.12em;width:104%;height:.32em}
+.hero p.lead{font-size:18px;color:var(--choc2);max-width:470px;line-height:1.8}
+.hero .acts{display:flex;gap:12px;margin-top:36px;flex-wrap:wrap}
+.hero .facts{display:flex;gap:0;margin-top:48px;border-top:1px solid var(--line);padding-top:22px;max-width:520px}
+.hero .facts div{flex:1;padding-right:18px}
+.hero .facts div+div{border-left:1px solid var(--line);padding-left:18px}
+.hero .facts b{display:block;font-family:Outfit;font-weight:700;font-size:26px;letter-spacing:-.02em}
+.hero .facts span{font-size:13px;color:var(--choc2)}
+.art{position:relative;aspect-ratio:1/1.08;width:100%}
+.art svg{width:100%;height:100%;display:block}
+.tag{position:absolute;background:var(--ecru);border:1.5px solid var(--choc);border-radius:16px;padding:12px 16px;box-shadow:6px 6px 0 var(--choc);font-size:13px;line-height:1.45}
+.tag b{display:block;font-size:15px}
+.tag.t1{left:-4%;bottom:14%}
+.tag.t2{right:-2%;top:9%;background:var(--pers);color:#fff;border-color:var(--choc)}
+/* marquee */
+.wave-band{background:var(--choc);color:var(--ecru);overflow:hidden;padding:20px 0}
+.track{display:flex;gap:46px;white-space:nowrap;font-family:'Noto Serif KR',serif;font-weight:600;font-size:22px;animation:mv 36s linear infinite;width:max-content}
+.track span{display:inline-flex;align-items:center;gap:46px}
+.track span:after{content:"";width:40px;height:12px;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 12'%3E%3Cpath d='M1 6c5-6 7-6 9.5 0s4.5 6 9.5 0 7-6 9.5 0 4.5 6 9.5 0' fill='none' stroke='%23F39A6B' stroke-width='2'/%3E%3C/svg%3E") no-repeat}
+@keyframes mv{to{transform:translateX(-50%)}}
+section{padding:110px 0}
+.sh{display:flex;justify-content:space-between;align-items:flex-end;gap:30px;margin-bottom:54px;flex-wrap:wrap}
+.sh h2{font-family:'Noto Serif KR',serif;font-weight:900;font-size:clamp(32px,3.6vw,50px);line-height:1.22;letter-spacing:-.03em;margin-top:14px}
+.sh p{max-width:420px;color:var(--choc2);font-size:16px}
+/* curl types */
+.types{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
+.type{background:#FBF7F0;border:1px solid var(--line);border-radius:26px;padding:24px 22px 26px;transition:.3s;position:relative}
+.type:hover{transform:translateY(-6px);box-shadow:0 26px 40px -26px rgba(43,26,20,.5)}
+.type .sw{height:150px;border-radius:18px;margin-bottom:22px;overflow:hidden;background:var(--ecru2)}
+.type .sw svg{width:100%;height:100%;display:block}
+.type .no{font-family:Outfit;font-size:13px;letter-spacing:.2em;color:var(--clay);font-weight:500}
+.type h3{font-family:'Noto Serif KR',serif;font-size:23px;font-weight:900;margin:6px 0 8px}
+.type p{font-size:14.5px;color:var(--choc2);line-height:1.7}
+.type .lv{display:flex;align-items:center;gap:10px;margin-top:16px;font-size:13px;font-weight:500}
+.type .lv i{display:flex;gap:4px}
+.type .lv i em{width:16px;height:6px;border-radius:4px;background:var(--ecru2)}
+.type .lv i em.on{background:var(--pers)}
+/* finder */
+.finder{background:var(--ecru2)}
+.fd{display:grid;grid-template-columns:.9fr 1.1fr;gap:50px;align-items:start}
+.qs{display:flex;flex-direction:column;gap:24px}
+.q h4{font-size:16px;font-weight:700;margin-bottom:12px}
+.q h4 span{font-family:Outfit;color:var(--pers);margin-right:8px}
+.opts{display:flex;flex-wrap:wrap;gap:8px}
+.opts button{font-family:inherit;font-size:14px;font-weight:500;padding:10px 18px;border-radius:40px;border:1.5px solid var(--choc);background:transparent;color:var(--choc);cursor:pointer;transition:.15s}
+.opts button.on{background:var(--choc);color:var(--ecru)}
+.result{background:var(--choc);color:var(--ecru);border-radius:30px;padding:40px;position:relative;overflow:hidden;min-height:100%}
+.result .rl{font-family:Outfit;font-size:13px;letter-spacing:.28em;color:var(--pers2)}
+.result h3{font-family:'Noto Serif KR',serif;font-size:38px;font-weight:900;margin:14px 0 12px;line-height:1.25}
+.result p{color:#E5D6C6;font-size:16px;max-width:420px}
+.result ul{list-style:none;margin-top:26px;display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.result li{border:1px solid rgba(243,236,223,.22);border-radius:16px;padding:14px 16px;font-size:13px;color:#D9C9B8}
+.result li b{display:block;font-size:18px;color:#fff;font-weight:700;margin-top:2px}
+.result .bg{position:absolute;right:-60px;bottom:-60px;width:300px;opacity:.22}
+/* price */
+.price-wrap{display:grid;grid-template-columns:1fr 1fr;gap:28px}
+.pcol{background:#FBF7F0;border-radius:28px;padding:34px 36px;border:1px solid var(--line)}
+.pcol h3{font-family:'Noto Serif KR',serif;font-size:24px;font-weight:900;display:flex;align-items:center;gap:12px;margin-bottom:10px}
+.pcol h3 small{font-family:Outfit;font-weight:500;font-size:12px;letter-spacing:.24em;color:var(--clay)}
+.row{display:flex;align-items:baseline;gap:12px;padding:16px 0;border-bottom:1px dashed rgba(43,26,20,.22)}
+.row:last-child{border-bottom:0}
+.row .nm{font-weight:700;font-size:16px}
+.row .ds{display:block;font-weight:400;font-size:13px;color:var(--choc2);margin-top:2px}
+.row .dot{flex:1}
+.row .pr{font-family:Outfit;font-weight:700;font-size:20px;white-space:nowrap}
+.row .pr small{font-size:13px;font-weight:500;color:var(--choc2)}
+.note{margin-top:20px;font-size:13px;color:var(--choc2);display:flex;gap:8px;align-items:flex-start}
+.note svg{flex:none;width:16px;height:16px;margin-top:3px;stroke:var(--pers);fill:none;stroke-width:2}
+/* process */
+.process{background:var(--choc);color:var(--ecru)}
+.process .sh p{color:#D6C4B2}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:0;position:relative}
+.steps:before{content:"";position:absolute;left:6%;right:6%;top:38px;height:14px;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 60 14'%3E%3Cpath d='M0 7c7.5-8 10-8 15 0s7.5 8 15 0 10-8 15 0 7.5 8 15 0' fill='none' stroke='%23E8622C' stroke-width='1.6' stroke-dasharray='3 4'/%3E%3C/svg%3E") repeat-x;background-size:60px 14px}
+.step{padding:0 22px;position:relative}
+.step .c{width:76px;height:76px;border-radius:50%;background:var(--ecru);color:var(--choc);display:flex;align-items:center;justify-content:center;position:relative;z-index:1;margin-bottom:24px}
+.step .c svg{width:34px;height:34px;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+.step .c em{position:absolute;top:-6px;right:-8px;width:28px;height:28px;border-radius:50%;background:var(--pers);color:#fff;font-style:normal;font-family:Outfit;font-weight:700;font-size:13px;display:flex;align-items:center;justify-content:center}
+.step h4{font-family:'Noto Serif KR',serif;font-size:21px;font-weight:600;margin-bottom:8px}
+.step p{font-size:14.5px;color:#D6C4B2;line-height:1.75}
+.step .tm{display:inline-block;margin-top:12px;font-size:12px;font-family:Outfit;letter-spacing:.12em;border:1px solid rgba(243,236,223,.3);padding:4px 10px;border-radius:20px;color:var(--pers2)}
+/* designers */
+.team{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
+.mem{border-radius:28px;overflow:hidden;background:#FBF7F0;border:1px solid var(--line)}
+.mem .pic{aspect-ratio:4/3.4;position:relative}
+.mem .pic svg{width:100%;height:100%;display:block}
+.mem .bd{padding:22px 26px 26px}
+.mem .role{font-family:Outfit;font-size:12px;letter-spacing:.24em;color:var(--pers);font-weight:500}
+.mem h3{font-family:'Noto Serif KR',serif;font-size:24px;font-weight:900;margin:4px 0 8px}
+.mem p{font-size:14.5px;color:var(--choc2)}
+.mem .sk{display:flex;flex-wrap:wrap;gap:6px;margin-top:14px}
+.mem .sk span{font-size:12px;font-weight:500;padding:5px 12px;border-radius:20px;background:var(--ecru2)}
+/* care */
+.care{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+.care .art2{border-radius:34px;overflow:hidden;background:var(--ecru2);aspect-ratio:5/4}
+.care .art2 svg{width:100%;height:100%;display:block}
+.tips{list-style:none;margin-top:30px;display:flex;flex-direction:column;gap:6px}
+.tips li{display:grid;grid-template-columns:54px 1fr;gap:16px;padding:18px 0;border-top:1px solid var(--line)}
+.tips li b{font-family:Outfit;font-weight:300;font-size:36px;line-height:1;color:var(--pers)}
+.tips li h4{font-size:17px;font-weight:700;margin-bottom:3px}
+.tips li p{font-size:14.5px;color:var(--choc2)}
+/* booking */
+.booking{background:var(--ecru2)}
+.bk{display:grid;grid-template-columns:.85fr 1.15fr;gap:50px}
+.info-card{background:var(--choc);color:var(--ecru);border-radius:30px;padding:38px;display:flex;flex-direction:column;gap:22px}
+.info-card h3{font-family:'Noto Serif KR',serif;font-size:28px;font-weight:900}
+.ic{display:flex;gap:14px;align-items:flex-start}
+.ic svg{flex:none;width:22px;height:22px;stroke:var(--pers2);fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;margin-top:2px}
+.ic b{display:block;font-size:13px;color:#C8B5A3;font-weight:500}
+.ic span{font-size:16px}
+.mapbox{border-radius:20px;overflow:hidden;flex:1;min-height:170px;margin-top:4px}
+.mapbox svg{min-height:170px}
+.mapbox svg{width:100%;height:100%;display:block}
+form{background:#FBF7F0;border-radius:30px;padding:38px;border:1px solid var(--line)}
+form h3{font-family:'Noto Serif KR',serif;font-size:28px;font-weight:900;margin-bottom:6px}
+#fbody>p{font-size:14.5px;color:var(--choc2);margin-bottom:24px}
+.fr{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px}
+label{display:block;font-size:13px;font-weight:700;margin-bottom:7px}
+input,select,textarea{width:100%;font-family:inherit;font-size:15px;padding:13px 16px;border-radius:14px;border:1.5px solid rgba(43,26,20,.22);background:#fff;color:var(--choc);outline:none}
+input:focus,select:focus,textarea:focus{border-color:var(--pers)}
+textarea{height:96px;resize:none}
+.slots{display:flex;flex-wrap:wrap;gap:8px}
+.slots button{font-family:Outfit;font-size:14px;font-weight:500;padding:9px 15px;border-radius:12px;border:1.5px solid rgba(43,26,20,.22);background:#fff;cursor:pointer;color:var(--choc)}
+.slots button.on{background:var(--pers);border-color:var(--pers);color:#fff}
+.slots button:disabled{opacity:.35;text-decoration:line-through;cursor:not-allowed}
+form .btn{width:100%;margin-top:22px;height:56px;font-size:16px}
+.done{display:none;text-align:center;padding:40px 10px}
+.done svg{width:70px;height:70px;margin-bottom:16px}
+.done h4{font-family:'Noto Serif KR',serif;font-size:26px;font-weight:900;margin-bottom:8px}
+.done p{color:var(--choc2)}
+footer{background:var(--choc);color:#CDB9A6;padding:56px 0 40px;font-size:14px}
+footer .in{display:flex;justify-content:space-between;gap:30px;flex-wrap:wrap;align-items:flex-end}
+footer .logo b{color:var(--ecru)}
+footer p{margin-top:16px;line-height:1.8}
+.fab{position:fixed;right:22px;bottom:22px;z-index:30;display:none}
+@media(max-width:1080px){.types{grid-template-columns:1fr 1fr}.team{grid-template-columns:1fr 1fr}.team .mem:last-child{display:none}}
+@media(max-width:900px){
+ .in{padding:0 22px}
+ nav,header .btn{display:none}.menu-t{display:block}
+ header .in{height:66px}
+ .hero{padding:40px 0 70px}
+ .hero .in,.fd,.price-wrap,.care,.bk{grid-template-columns:1fr}
+ .art{max-width:520px;margin:0 auto}
+ .steps{grid-template-columns:1fr 1fr;row-gap:44px}.steps:before{display:none}
+ section{padding:80px 0}
+}
+@media(max-width:560px){
+ .in{padding:0 18px}
+ .hero h1{font-size:42px}
+ .hero p.lead{font-size:16px}
+ .hero .acts .btn{flex:1;padding:0 16px}
+ .hero .facts b{font-size:21px}
+ .hero .facts div{padding-right:10px}.hero .facts div+div{padding-left:12px}
+ .tag{font-size:12px;padding:10px 12px;box-shadow:4px 4px 0 var(--choc)}.tag b{font-size:13px}
+ .tag.t1{left:0;bottom:6%}.tag.t2{right:0;top:3%}
+ .types,.team{grid-template-columns:1fr}.team .mem:last-child{display:block}
+ .result{padding:30px 24px}.result h3{font-size:30px}
+ .result ul{grid-template-columns:1fr 1fr}
+ .pcol{padding:26px 22px}
+ .row .pr{font-size:18px}
+ .steps{grid-template-columns:1fr}
+ form,.info-card{padding:28px 22px}
+ .fr{grid-template-columns:1fr}
+ .track{font-size:18px}
+ section{padding:70px 0}
+ .sh{margin-bottom:36px}
+}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+ <defs>
+  <linearGradient id="hairA" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#5A3326"/><stop offset=".55" stop-color="#2B1A14"/><stop offset="1" stop-color="#170D09"/></linearGradient>
+  <linearGradient id="hairB" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#8A5A3F"/><stop offset="1" stop-color="#3A2219"/></linearGradient>
+  <linearGradient id="skin" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#F2CDAF"/><stop offset="1" stop-color="#D9A383"/></linearGradient>
+  <linearGradient id="pers" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#F39A6B"/><stop offset="1" stop-color="#D5501F"/></linearGradient>
+ </defs>
+</svg>
+<header>
+ <div class="in">
+  <a class="logo" href="#top"><svg viewBox="0 0 42 42"><circle cx="21" cy="21" r="20" fill="#2B1A14"/><path d="M9 16c4-5 6-5 8 0s4 5 8 0 6-5 8 0M9 26c4-5 6-5 8 0s4 5 8 0 6-5 8 0" fill="none" stroke="#F39A6B" stroke-width="2.2" stroke-linecap="round"/></svg><div><b>헤어 굽이</b><small>PERM ATELIER</small></div></a>
+  <nav><a href="#types">펌 종류</a><a href="#finder">펌 찾기</a><a href="#price">가격</a><a href="#team">디자이너</a><a href="#booking">오시는 길</a></nav>
+  <a class="btn" href="#booking">예약하기</a>
+  <button class="menu-t" aria-label="메뉴"><span></span><span></span><span></span></button>
+ </div>
+</header>
+
+<section class="hero" id="top">
+ <div class="in">
+  <div>
+   <div class="eyebrow">BGC · KOREAN PERM SALON</div>
+   <h1>내 머리결에 맞춘<br><i>한 굽이<svg viewBox="0 0 200 20" preserveAspectRatio="none"><path d="M2 12c16-12 24-12 32 0s16 12 32 0 24-12 32 0 16 12 32 0 24-12 32 0 16 12 34 0" fill="none" stroke="#E8622C" stroke-width="4" stroke-linecap="round"/></svg></i>의 웨이브</h1>
+   <p class="lead">습한 마닐라 날씨에도 오래가는 컬을 위해, 시술 전 모발 상태를 먼저 보고 약제와 롯드 크기를 정합니다. 펌만 오래 해 온 디자이너가 처음부터 끝까지 맡아요.</p>
+   <div class="acts"><a class="btn" href="#booking">시술 예약하기 <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a><a class="btn o" href="#finder">나에게 맞는 펌 찾기</a></div>
+   <div class="facts"><div><b>1:1</b><span>디자이너 전담</span></div><div><b>15분</b><span>시술 전 모발 상담</span></div><div><b>₱0</b><span>2주 안 컬 리터치</span></div></div>
+  </div>
+  <div class="art">
+   <svg viewBox="0 0 560 605" role="img" aria-label="풍성한 웨이브 머리를 한 사람의 옆모습 일러스트">
+    <defs>
+     <radialGradient id="sun" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#F7B68E"/><stop offset=".7" stop-color="#EE8452"/><stop offset="1" stop-color="#E8622C"/></radialGradient>
+     <linearGradient id="arch" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#E4D5BE"/><stop offset="1" stop-color="#D4BFA1"/></linearGradient>
+     <filter id="sh" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="18" stdDeviation="16" flood-color="#2B1A14" flood-opacity=".28"/></filter>
+     <clipPath id="archc"><path d="M60 605V250a220 220 0 0 1 440 0v355z"/></clipPath>
+    </defs>
+    <path d="M60 605V250a220 220 0 0 1 440 0v355z" fill="url(#arch)"/>
+    <g clip-path="url(#archc)">
+     <circle cx="390" cy="200" r="120" fill="url(#sun)" opacity=".95"/>
+     <g fill="none" stroke="#C9AE8D" stroke-width="2" opacity=".7">
+      <path d="M40 470c40-24 60-24 90 0s50 24 90 0 60-24 90 0 50 24 90 0 60-24 90 0"/>
+      <path d="M40 510c40-24 60-24 90 0s50 24 90 0 60-24 90 0 50 24 90 0 60-24 90 0"/>
+      <path d="M40 550c40-24 60-24 90 0s50 24 90 0 60-24 90 0 50 24 90 0 60-24 90 0"/>
+     </g>
+     <!-- shoulders -->
+     <path d="M120 605c10-70 60-108 140-118l56-6c80 6 132 50 148 124z" fill="#2B1A14"/>
+     <path d="M190 605c14-48 48-80 96-90l30-4c-10 30-12 62-6 94z" fill="#4A2F24"/>
+     <!-- neck -->
+     <path d="M262 420c4 30 2 52-8 74 22 14 52 16 78 4-8-26-10-50-6-82z" fill="url(#skin)"/>
+     <path d="M262 440c18 12 40 14 64 6" stroke="#C48E6E" stroke-width="3" fill="none" opacity=".6"/>
+     <!-- back hair mass -->
+     <g filter="url(#sh)">
+      <path d="M186 160c26-66 108-96 176-70 66 24 98 92 84 160-6 30 12 52 18 84 10 54-20 92-58 110 10 30-4 64-40 76-30 10-54-4-66-24-34 14-74 6-92-26-30 6-60-14-64-48-32-14-44-52-26-84-20-34-14-80 18-104-8-30 10-58 50-74z" fill="url(#hairA)"/>
+     </g>
+     <g fill="none" stroke-linecap="round">
+      <path d="M206 166c-24 28-20 60 2 78-22 22-24 56-2 80-20 26-14 60 12 78-12 28 0 56 30 62" stroke="#170D09" stroke-width="36"/>
+      <path d="M206 166c-24 28-20 60 2 78-22 22-24 56-2 80-20 26-14 60 12 78-12 28 0 56 30 62" stroke="#6B3E2C" stroke-width="5" opacity=".9"/>
+      <path d="M188 230c-22 28-20 56 4 74-20 24-16 52 8 70-14 26-4 52 24 62" stroke="#3A2219" stroke-width="22"/>
+      <path d="M188 230c-22 28-20 56 4 74-20 24-16 52 8 70-14 26-4 52 24 62" stroke="#A36B4C" stroke-width="3" opacity=".8"/>
+     </g>
+     <!-- face -->
+     <path d="M232 220c4-46 44-78 90-74 44 4 72 42 70 90l-2 40c10 6 16 16 12 28l-10 8 8 28c2 8-4 14-12 14l-8 2c0 18-10 34-30 38l-34 6c-26 4-50-10-60-34-22-6-36-30-30-54 6-24 2-52 6-92z" fill="url(#skin)"/>
+     <path d="M374 292c8 4 12 10 10 18" stroke="#B57D5D" stroke-width="3" fill="none" stroke-linecap="round"/>
+     <path d="M362 252c8-4 18-4 24 2" stroke="#2B1A14" stroke-width="4" fill="none" stroke-linecap="round"/>
+     <path d="M366 266c6 2 12 2 16 0" stroke="#2B1A14" stroke-width="3" fill="none" stroke-linecap="round"/>
+     <path d="M366 348c8 2 14 0 18-4" stroke="#B4553A" stroke-width="5" fill="none" stroke-linecap="round"/>
+     <ellipse cx="340" cy="312" rx="20" ry="12" fill="#E89B7E" opacity=".5"/>
+     <!-- front hair waves -->
+     <g fill="none" stroke-linecap="round">
+      <path d="M300 118c-40 4-70 30-74 70 30-6 58-30 74-70z" fill="#2B1A14" stroke="none"/>
+      <path d="M240 150c34-36 90-46 136-22 26 14 34 36 30 60-26-24-60-30-92-20-30 10-56 6-74-18z" fill="url(#hairA)" stroke="none"/>
+      <path d="M250 152c32-24 80-30 118-12" stroke="#8A5A3F" stroke-width="4" opacity=".8"/>
+      <path d="M420 230c18 28 14 54-8 72 22 24 18 52-8 70 12 28 0 52-26 60" stroke="#2B1A14" stroke-width="26"/>
+      <path d="M420 230c18 28 14 54-8 72 22 24 18 52-8 70 12 28 0 52-26 60" stroke="#8A5A3F" stroke-width="3.4" opacity=".85"/>
+      <path d="M156 280c-16 22-14 46 4 60-14 20-10 42 8 56" stroke="#5A3326" stroke-width="14"/>
+      <path d="M156 280c-16 22-14 46 4 60-14 20-10 42 8 56" stroke="#C08560" stroke-width="2.4" opacity=".8"/>
+      <path d="M454 264c12 22 10 44-6 58 14 20 10 42-8 56" stroke="#4A2F24" stroke-width="14"/>
+      <path d="M454 264c12 22 10 44-6 58 14 20 10 42-8 56" stroke="#B57D5D" stroke-width="2.4" opacity=".8"/>
+     </g>
+     <!-- shine -->
+     <path d="M210 196c-10 18-8 34 4 46" stroke="#F3ECDF" stroke-width="4" fill="none" stroke-linecap="round" opacity=".45"/>
+     <path d="M212 300c-10 18-6 34 6 44" stroke="#F3ECDF" stroke-width="4" fill="none" stroke-linecap="round" opacity=".35"/>
+     <!-- earring -->
+     
+    </g>
+    <path d="M60 605V250a220 220 0 0 1 440 0v355" fill="none" stroke="#2B1A14" stroke-width="2"/>
+    <g fill="#2B1A14"><circle cx="520" cy="80" r="5"/><circle cx="40" cy="150" r="4"/></g>
+    <path d="M492 120c8-10 14-10 18 0s10 10 18 0" fill="none" stroke="#E8622C" stroke-width="3" stroke-linecap="round"/>
+   </svg>
+   <div class="tag t1"><b>오늘의 상담 포인트</b>모발 굵기 · 손상도 · 평소 손질 시간</div>
+   <div class="tag t2"><b>첫 방문 클리닉 포함</b>펌 시술 시 함께 진행</div>
+  </div>
+ </div>
+</section>
+
+<div class="wave-band"><div class="track"><span>디지털펌</span><span>셋팅펌</span><span>히피펌</span><span>볼륨매직</span><span>남성 다운펌</span><span>애즈펌</span><span>디지털펌</span><span>셋팅펌</span><span>히피펌</span><span>볼륨매직</span><span>남성 다운펌</span><span>애즈펌</span></div></div>
+
+<section id="types">
+ <div class="in">
+  <div class="sh"><div><div class="eyebrow">CURL LIBRARY</div><h2>컬의 굵기부터<br>고르세요</h2></div><p>같은 펌이라도 롯드 굵기와 감는 방향에 따라 인상이 달라집니다. 대표 컬 네 가지를 먼저 보고 상담 때 골라 주세요.</p></div>
+  <div class="types">
+   <article class="type"><div class="sw"><svg viewBox="0 0 260 150"><rect width="260" height="150" fill="#E9DFCD"/><g fill="none" stroke-linecap="round"><path d="M30 10c40 30 40 60 0 90s-40 50 0 60" stroke="#2B1A14" stroke-width="16"/><path d="M90 0c40 30 40 60 0 90s-40 50 0 70" stroke="#4A2F24" stroke-width="16"/><path d="M150 10c40 30 40 60 0 90s-40 50 0 60" stroke="#2B1A14" stroke-width="16"/><path d="M210 0c40 30 40 60 0 90s-40 50 0 70" stroke="#5A3326" stroke-width="16"/><path d="M30 10c40 30 40 60 0 90" stroke="#B57D5D" stroke-width="2.5"/><path d="M150 10c40 30 40 60 0 90" stroke="#B57D5D" stroke-width="2.5"/></g></svg></div><span class="no en">CURL 01</span><h3>굵은 S컬</h3><p>어깨 아래 기장에 자연스럽게 흘러내리는 큰 웨이브. 출근 머리로도 부담 없어요.</p><div class="lv">컬 강도 <i><em class="on"></em><em class="on"></em><em></em><em></em></i></div></article>
+   <article class="type"><div class="sw"><svg viewBox="0 0 260 150"><rect width="260" height="150" fill="#F0E2D0"/><g fill="none" stroke-linecap="round"><path d="M20 0c26 14 26 30 0 44s-26 30 0 44 26 30 0 44" stroke="#2B1A14" stroke-width="12"/><path d="M66 6c26 14 26 30 0 44s-26 30 0 44 26 30 0 44" stroke="#4A2F24" stroke-width="12"/><path d="M112 0c26 14 26 30 0 44s-26 30 0 44 26 30 0 44" stroke="#2B1A14" stroke-width="12"/><path d="M158 6c26 14 26 30 0 44s-26 30 0 44 26 30 0 44" stroke="#5A3326" stroke-width="12"/><path d="M204 0c26 14 26 30 0 44s-26 30 0 44 26 30 0 44" stroke="#2B1A14" stroke-width="12"/><path d="M250 6c26 14 26 30 0 44s-26 30 0 44 26 30 0 44" stroke="#4A2F24" stroke-width="12"/><path d="M66 6c26 14 26 30 0 44" stroke="#C08560" stroke-width="2"/><path d="M158 6c26 14 26 30 0 44" stroke="#C08560" stroke-width="2"/></g></svg></div><span class="no en">CURL 02</span><h3>탄력 C컬</h3><p>끝선만 안으로 말려 단정한 볼륨. 단발·중단발에 가장 많이 하는 스타일입니다.</p><div class="lv">컬 강도 <i><em class="on"></em><em class="on"></em><em class="on"></em><em></em></i></div></article>
+   <article class="type"><div class="sw"><svg viewBox="0 0 260 150"><rect width="260" height="150" fill="#E4D3BE"/><g fill="none" stroke-linecap="round" stroke-width="7"><path d="M14 0c14 6 14 14 0 20s-14 14 0 20 14 14 0 20-14 14 0 20 14 14 0 20-14 14 0 20 14 14 0 20" stroke="#2B1A14"/><path d="M44 4c14 6 14 14 0 20s-14 14 0 20 14 14 0 20-14 14 0 20 14 14 0 20-14 14 0 20" stroke="#5A3326"/><path d="M74 0c14 6 14 14 0 20s-14 14 0 20 14 14 0 20-14 14 0 20 14 14 0 20-14 14 0 20 14 14 0 20" stroke="#2B1A14"/><path d="M104 4c14 6 14 14 0 20s-14 14 0 20 14 14 0 20-14 14 0 20 14 14 0 20-14 14 0 20" stroke="#4A2F24"/><path d="M134 0c14 6 14 14 0 20s-14 14 0 20 14 14 0 20-14 14 0 20 14 14 0 20-14 14 0 20 14 14 0 20" stroke="#2B1A14"/><path d="M164 4c14 6 14 14 0 20s-14 14 0 20 14 14 0 20-14 14 0 20 14 14 0 20-14 14 0 20" stroke="#5A3326"/><path d="M194 0c14 6 14 14 0 20s-14 14 0 20 14 14 0 20-14 14 0 20 14 14 0 20-14 14 0 20 14 14 0 20" stroke="#2B1A14"/><path d="M224 4c14 6 14 14 0 20s-14 14 0 20 14 14 0 20-14 14 0 20 14 14 0 20-14 14 0 20" stroke="#4A2F24"/><path d="M254 0c14 6 14 14 0 20s-14 14 0 20 14 14 0 20-14 14 0 20 14 14 0 20-14 14 0 20 14 14 0 20" stroke="#2B1A14"/></g><circle cx="200" cy="40" r="26" fill="#E8622C" opacity=".2"/></svg></div><span class="no en">CURL 03</span><h3>잔컬 히피</h3><p>뿌리부터 촘촘한 컬로 머리숱이 두 배처럼 보이는 볼륨. 손질은 물 묻혀 털기만.</p><div class="lv">컬 강도 <i><em class="on"></em><em class="on"></em><em class="on"></em><em class="on"></em></i></div></article>
+   <article class="type"><div class="sw"><svg viewBox="0 0 260 150"><rect width="260" height="150" fill="#EDE4D6"/><g fill="none" stroke-linecap="round"><path d="M20 0v110c0 22 14 32 34 32" stroke="#2B1A14" stroke-width="14"/><path d="M60 0v104c0 22 14 32 34 32" stroke="#4A2F24" stroke-width="14"/><path d="M100 0v110c0 22 14 32 34 32" stroke="#2B1A14" stroke-width="14"/><path d="M140 0v104c0 22 14 32 34 32" stroke="#5A3326" stroke-width="14"/><path d="M180 0v110c0 22 14 32 34 32" stroke="#2B1A14" stroke-width="14"/><path d="M220 0v104c0 22 14 32 34 32" stroke="#4A2F24" stroke-width="14"/><path d="M60 0v100" stroke="#C08560" stroke-width="2.4"/><path d="M180 0v100" stroke="#C08560" stroke-width="2.4"/></g></svg></div><span class="no en">CURL 04</span><h3>볼륨매직</h3><p>곱슬은 차분하게 펴고 끝만 둥글게. 습한 날 부스스함이 신경 쓰일 때 추천해요.</p><div class="lv">컬 강도 <i><em class="on"></em><em></em><em></em><em></em></i></div></article>
+  </div>
+ </div>
+</section>
+
+<section class="finder" id="finder">
+ <div class="in">
+  <div class="sh"><div><div class="eyebrow">PERM FINDER</div><h2>세 가지만 고르면<br>맞는 펌을 알려 드려요</h2></div><p>정확한 시술은 모발을 직접 본 뒤 정하지만, 예약 전에 방향을 잡아 두면 상담이 훨씬 빨라집니다.</p></div>
+  <div class="fd">
+   <div class="qs">
+    <div class="q" data-q="len"><h4><span class="en">01</span>지금 머리 기장은?</h4><div class="opts"><button data-v="s">귀~턱선</button><button data-v="m" class="on">어깨선</button><button data-v="l">가슴 아래</button></div></div>
+    <div class="q" data-q="hair"><h4><span class="en">02</span>모발 상태는?</h4><div class="opts"><button data-v="thin" class="on">가늘고 힘이 없어요</button><button data-v="frizz">곱슬·부스스해요</button><button data-v="thick">굵고 숱이 많아요</button></div></div>
+    <div class="q" data-q="time"><h4><span class="en">03</span>아침 손질 시간은?</h4><div class="opts"><button data-v="0" class="on">5분 이내</button><button data-v="1">10~15분</button><button data-v="2">고데기도 OK</button></div></div>
+   </div>
+   <div class="result" id="res">
+    <svg class="bg" viewBox="0 0 200 200"><g fill="none" stroke="#F39A6B" stroke-width="5" stroke-linecap="round"><path d="M10 40c30-30 50-30 70 0s40 30 70 0 40-30 50 0"/><path d="M10 90c30-30 50-30 70 0s40 30 70 0 40-30 50 0"/><path d="M10 140c30-30 50-30 70 0s40 30 70 0 40-30 50 0"/></g></svg>
+    <div class="rl">YOUR MATCH</div>
+    <h3 id="rName">굵은 S컬 디지털펌</h3>
+    <p id="rDesc">가는 모발은 열을 쓰는 디지털펌이 컬 유지가 오래갑니다. 어깨선 기장이면 끝에서 두 바퀴 감아 자연스럽게.</p>
+    <ul><li>예상 시간<b id="rTime">2시간 30분</b></li><li>시작 가격<b id="rPrice">₱4,800</b></li><li>추천 롯드<b id="rRod">26mm</b></li><li>유지 기간<b id="rKeep">약 3~4개월</b></li></ul>
+   </div>
+  </div>
+ </div>
+</section>
+
+<section id="price">
+ <div class="in">
+  <div class="sh"><div><div class="eyebrow">PRICE LIST</div><h2>가격은 숨김없이,<br>기장별로 안내해요</h2></div><p>표시 가격은 어깨선 기장 기준입니다. 상담 후 기장·모발 상태에 따라 달라지면 시술 전에 먼저 말씀드려요.</p></div>
+  <div class="price-wrap">
+   <div class="pcol">
+    <h3>펌 <small>PERM</small></h3>
+    <div class="row"><div><span class="nm">디지털펌</span><span class="ds">열로 고정하는 굵은 웨이브</span></div><span class="dot"></span><span class="pr">₱4,800<small>~</small></span></div>
+    <div class="row"><div><span class="nm">셋팅펌</span><span class="ds">마른 상태에서도 살아있는 컬</span></div><span class="dot"></span><span class="pr">₱5,500<small>~</small></span></div>
+    <div class="row"><div><span class="nm">히피펌</span><span class="ds">뿌리부터 촘촘한 잔컬</span></div><span class="dot"></span><span class="pr">₱5,200<small>~</small></span></div>
+    <div class="row"><div><span class="nm">볼륨매직</span><span class="ds">곱슬 정리 + 끝선 C컬</span></div><span class="dot"></span><span class="pr">₱4,200<small>~</small></span></div>
+    <div class="row"><div><span class="nm">남성 애즈펌 · 다운펌</span><span class="ds">옆머리 정리 포함</span></div><span class="dot"></span><span class="pr">₱2,400<small>~</small></span></div>
+   </div>
+   <div class="pcol">
+    <h3>커트 · 케어 <small>CUT &amp; CARE</small></h3>
+    <div class="row"><div><span class="nm">디자인 커트</span><span class="ds">샴푸 · 드라이 포함</span></div><span class="dot"></span><span class="pr">₱900</span></div>
+    <div class="row"><div><span class="nm">남성 커트</span><span class="ds">투블럭 · 댄디</span></div><span class="dot"></span><span class="pr">₱650</span></div>
+    <div class="row"><div><span class="nm">단백질 클리닉</span><span class="ds">펌 전후 손상 케어</span></div><span class="dot"></span><span class="pr">₱1,800</span></div>
+    <div class="row"><div><span class="nm">두피 스케일링</span><span class="ds">각질 정리 · 마사지 20분</span></div><span class="dot"></span><span class="pr">₱1,200</span></div>
+    <div class="row"><div><span class="nm">컬 리터치</span><span class="ds">시술 후 2주 안, 같은 펌 기준</span></div><span class="dot"></span><span class="pr">₱0</span></div>
+   </div>
+  </div>
+  <p class="note"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 8v5M12 16v.5"/></svg>가슴 아래 기장은 ₱600, 허리 기장은 ₱1,200이 추가됩니다. 전자지갑 · 카드 · 현금 결제 가능.</p>
+ </div>
+</section>
+
+<section class="process">
+ <div class="in">
+  <div class="sh"><div><div class="eyebrow">HOW IT GOES</div><h2>펌 한 번에<br>네 번 확인합니다</h2></div><p>시술 시간이 길수록 중간 확인이 중요합니다. 단계마다 거울 앞에서 같이 보고 넘어가요.</p></div>
+  <div class="steps">
+   <div class="step"><div class="c"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="6"/><path d="M20 20l-4.5-4.5"/></svg><em>1</em></div><h4>모발 진단</h4><p>굵기, 손상도, 지난 시술 이력을 확인하고 원하는 사진을 함께 봅니다.</p><span class="tm">15 MIN</span></div>
+   <div class="step"><div class="c"><svg viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h10"/><circle cx="18" cy="17" r="2"/></svg><em>2</em></div><h4>약제 · 롯드 결정</h4><p>모발에 맞춰 약제 세기와 롯드 굵기를 정하고, 예상 결과와 가격을 먼저 안내합니다.</p><span class="tm">10 MIN</span></div>
+   <div class="step"><div class="c"><svg viewBox="0 0 24 24"><path d="M5 19c2-8 4-12 7-12s5 4 7 12"/><path d="M8 13c1.5-2 2.5-3 4-3s2.5 1 4 3"/></svg><em>3</em></div><h4>시술 · 중간 체크</h4><p>컬이 나오는 정도를 중간에 한 번 풀어 보고 시간을 조절해요.</p><span class="tm">90–150 MIN</span></div>
+   <div class="step"><div class="c"><svg viewBox="0 0 24 24"><path d="M12 3v4M12 17v4M3 12h4M17 12h4"/><circle cx="12" cy="12" r="3"/></svg><em>4</em></div><h4>손질법 안내</h4><p>집에서 쓰는 드라이 방향과 에센스 양을 직접 해 보며 알려 드립니다.</p><span class="tm">10 MIN</span></div>
+  </div>
+ </div>
+</section>
+
+<section id="team">
+ <div class="in">
+  <div class="sh"><div><div class="eyebrow">DESIGNERS</div><h2>펌을 오래 해 온<br>세 명의 디자이너</h2></div><p>원하는 디자이너를 지정해 예약할 수 있어요. 처음이라면 상담 때 모발 상태를 보고 추천해 드립니다.</p></div>
+  <div class="team">
+   <article class="mem"><div class="pic"><svg viewBox="0 0 400 340"><rect width="400" height="340" fill="#E8622C"/><g fill="none" stroke="#F39A6B" stroke-width="3" opacity=".7"><path d="M0 60c40-30 60-30 100 0s60 30 100 0 60-30 100 0 60 30 100 0"/><path d="M0 110c40-30 60-30 100 0s60 30 100 0 60-30 100 0 60 30 100 0"/></g><path d="M90 340c8-60 50-92 110-96s102 36 110 96z" fill="#2B1A14"/><path d="M180 230c2 14 0 24-4 30 14 8 34 8 48 0-4-8-6-18-4-30z" fill="url(#skin)"/><ellipse cx="200" cy="170" rx="56" ry="66" fill="url(#skin)"/><path d="M140 170c-10-60 28-100 72-96 44 4 62 40 56 82-10-24-30-40-58-44-26 18-48 34-70 58z" fill="#2B1A14"/><path d="M140 170c-14 30-10 64 10 84M262 160c10 32 4 66-16 86" stroke="#2B1A14" stroke-width="18" fill="none" stroke-linecap="round"/><circle cx="182" cy="186" r="4.5" fill="#2B1A14"/><circle cx="220" cy="186" r="4.5" fill="#2B1A14"/><g fill="none" stroke="#2B1A14" stroke-width="3"><circle cx="182" cy="186" r="15"/><circle cx="220" cy="186" r="15"/><path d="M197 186h8M167 184l-7-2M235 184l7-2"/></g><path d="M192 214h16" stroke="#B4553A" stroke-width="4" fill="none" stroke-linecap="round"/><path d="M162 270l38 22 38-22" fill="none" stroke="#E8622C" stroke-width="5"/></svg></div><div class="bd"><span class="role">DIRECTOR</span><h3>원장 하윤</h3><p>펌 경력 14년. 손상모·재시술 상담을 주로 맡습니다.</p><div class="sk"><span>셋팅펌</span><span>손상모 복구</span><span>재시술</span></div></div></article>
+   <article class="mem"><div class="pic"><svg viewBox="0 0 400 340"><rect width="400" height="340" fill="#4A2F24"/><g fill="#5E3D2F"><circle cx="60" cy="60" r="30"/><circle cx="340" cy="90" r="46"/><circle cx="300" cy="300" r="24"/></g><path d="M90 340c8-60 50-92 110-96s102 36 110 96z" fill="#E9DFCD"/><path d="M180 230c2 14 0 24-4 30 14 8 34 8 48 0-4-8-6-18-4-30z" fill="#C99273"/><ellipse cx="200" cy="168" rx="54" ry="64" fill="#D9A383"/><g fill="#170D09"><circle cx="150" cy="120" r="26"/><circle cx="178" cy="96" r="26"/><circle cx="212" cy="90" r="26"/><circle cx="244" cy="104" r="26"/><circle cx="260" cy="134" r="22"/><circle cx="142" cy="150" r="20"/><circle cx="262" cy="164" r="18"/><circle cx="138" cy="182" r="16"/></g><g fill="none" stroke="#6B3E2C" stroke-width="2.4"><path d="M138 116a14 14 0 0 1 20-10"/><path d="M200 84a14 14 0 0 1 22 0"/><path d="M240 96a14 14 0 0 1 18 10"/></g><ellipse cx="182" cy="180" rx="8" ry="6" fill="#fff"/><ellipse cx="220" cy="180" rx="8" ry="6" fill="#fff"/><circle cx="186" cy="181" r="4" fill="#2B1A14"/><circle cx="224" cy="181" r="4" fill="#2B1A14"/><path d="M174 168l14-3M212 165l14 3" stroke="#2B1A14" stroke-width="3" stroke-linecap="round"/><path d="M186 204c8 12 22 12 30 0z" fill="#8E3B26"/><path d="M190 205h22" stroke="#fff" stroke-width="3"/><circle cx="146" cy="200" r="6" fill="#E8622C"/><circle cx="254" cy="200" r="6" fill="#E8622C"/></svg></div><div class="bd"><span class="role">SENIOR DESIGNER</span><h3>실장 도담</h3><p>잔컬 · 히피펌 담당. 숱 많은 모발의 볼륨 조절이 특기예요.</p><div class="sk"><span>히피펌</span><span>잔컬</span><span>숱 정리</span></div></div></article>
+   <article class="mem"><div class="pic"><svg viewBox="0 0 400 340"><rect width="400" height="340" fill="#D4BFA1"/><path d="M0 250c60-40 100-40 160 0s100 40 160 0 60-30 80-10v100H0z" fill="#C9AE8D"/><path d="M90 340c8-60 50-92 110-96s102 36 110 96z" fill="#E8622C"/><path d="M180 230c2 14 0 24-4 30 14 8 34 8 48 0-4-8-6-18-4-30z" fill="url(#skin)"/><g transform="rotate(-8 200 200)"><ellipse cx="200" cy="170" rx="54" ry="64" fill="url(#skin)"/><path d="M146 160c-6-54 26-86 62-84 38 2 58 28 52 72-6-6-14-10-22-8 2-16-6-30-20-36-10 20-42 36-72 56z" fill="#3A2219"/><path d="M146 150c18-14 40-30 50-56" stroke="#6B3E2C" stroke-width="3" fill="none"/><circle cx="182" cy="186" r="5" fill="#2B1A14"/><path d="M212 188c4-5 10-5 14 0" stroke="#2B1A14" stroke-width="4" fill="none" stroke-linecap="round"/><path d="M186 212c8 8 22 6 28-4" stroke="#9A4430" stroke-width="4" fill="none" stroke-linecap="round"/><ellipse cx="176" cy="204" rx="9" ry="5" fill="#E89B7E" opacity=".5"/></g><path d="M150 280c20 18 80 18 100 0" fill="none" stroke="#2B1A14" stroke-width="10" stroke-linecap="round"/></svg></div><div class="bd"><span class="role">DESIGNER</span><h3>디자이너 결</h3><p>남성 펌 · 커트 담당. 다운펌과 애즈펌을 짧은 시간에 끝냅니다.</p><div class="sk"><span>애즈펌</span><span>다운펌</span><span>남성 커트</span></div></div></article>
+  </div>
+ </div>
+</section>
+
+<section style="padding-top:0">
+ <div class="in care">
+  <div class="art2"><svg viewBox="0 0 500 400" role="img" aria-label="세면대 위 헤어 에센스 병과 수건, 빗 일러스트"><defs><linearGradient id="bot" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#C9632F"/><stop offset=".5" stop-color="#F39A6B"/><stop offset="1" stop-color="#B9502A"/></linearGradient><linearGradient id="towel" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FBF7F0"/><stop offset="1" stop-color="#E2D4BF"/></linearGradient></defs><rect width="500" height="400" fill="#E9DFCD"/><rect x="0" y="0" width="500" height="250" fill="#E1D3BC"/><g stroke="#D3C1A5" stroke-width="2"><path d="M0 60h500M0 120h500M0 180h500M0 240h500"/><path d="M80 0v60M200 0v60M320 0v60M440 0v60M140 60v60M260 60v60M380 60v60M80 120v60M200 120v60M320 120v60M440 120v60M140 180v60M260 180v60M380 180v60"/></g><rect x="0" y="250" width="500" height="150" fill="#CDB394"/><rect x="0" y="250" width="500" height="12" fill="#B9987A"/><ellipse cx="250" cy="320" rx="200" ry="10" fill="#2B1A14" opacity=".12"/><g><rect x="110" y="150" width="70" height="140" rx="14" fill="url(#bot)"/><rect x="128" y="120" width="34" height="34" rx="6" fill="#2B1A14"/><rect x="136" y="96" width="18" height="28" rx="4" fill="#4A2F24"/><rect x="124" y="196" width="42" height="56" rx="6" fill="#F3ECDF"/><path d="M132 218c4-6 7-6 10 0s6 6 10 0 6-6 10 0" stroke="#E8622C" stroke-width="2.4" fill="none"/><rect x="118" y="158" width="8" height="120" rx="4" fill="#fff" opacity=".35"/></g><g><rect x="200" y="190" width="56" height="100" rx="26" fill="#2B1A14"/><rect x="214" y="170" width="28" height="24" rx="5" fill="#B9876A"/><rect x="208" y="200" width="7" height="76" rx="4" fill="#fff" opacity=".2"/><rect x="212" y="232" width="32" height="18" rx="3" fill="#E9DFCD"/></g><g><path d="M286 300h170c10 0 14-10 8-18l-22-28H300z" fill="url(#towel)"/><path d="M300 254h142l-8-34H308z" fill="#E8622C"/><path d="M300 254h142" stroke="#C9632F" stroke-width="3"/><path d="M308 220h126" stroke="#F39A6B" stroke-width="3"/><path d="M296 286h164" stroke="#D6C6AE" stroke-width="3"/></g><g transform="rotate(-12 380 330)"><rect x="300" y="322" width="160" height="22" rx="10" fill="#4A2F24"/><g stroke="#4A2F24" stroke-width="4" stroke-linecap="round"><path d="M316 322v-22M328 322v-22M340 322v-22M352 322v-22M364 322v-22M376 322v-22M388 322v-22M400 322v-22"/></g></g><circle cx="90" cy="330" r="16" fill="#F3ECDF"/><circle cx="90" cy="330" r="8" fill="#E9DFCD"/></svg></div>
+  <div>
+   <div class="eyebrow">AFTER CARE</div>
+   <h2 class="serif" style="font-size:clamp(32px,3.6vw,48px);font-weight:900;line-height:1.24;letter-spacing:-.03em;margin-top:14px">펌을 오래 유지하는<br>세 가지 습관</h2>
+   <ul class="tips">
+    <li><b>01</b><div><h4>시술 당일은 샴푸를 쉬어 주세요</h4><p>컬이 자리 잡는 시간이 필요해요. 다음 날부터 미지근한 물로 감아 주세요.</p></div></li>
+    <li><b>02</b><div><h4>드라이는 아래에서 위로</h4><p>손으로 컬을 쥐었다 놓으며 말리면 웨이브가 더 또렷하게 살아납니다.</p></div></li>
+    <li><b>03</b><div><h4>에어컨 바람 아래선 에센스 한 번</h4><p>건조한 실내에서는 끝부분에만 소량 발라 부스스함을 막아 주세요.</p></div></li>
+   </ul>
+  </div>
+ </div>
+</section>
+
+<section class="booking" id="booking">
+ <div class="in">
+  <div class="sh"><div><div class="eyebrow">BOOKING</div><h2>원하는 시간에<br>미리 자리를 잡아 두세요</h2></div><p>예약 요청을 남기면 영업시간 안에 카카오톡으로 확정 안내를 드립니다.</p></div>
+  <div class="bk">
+   <div class="info-card">
+    <h3>헤어 굽이 BGC</h3>
+    <div class="ic"><svg viewBox="0 0 24 24"><path d="M12 21s-7-6.5-7-12a7 7 0 0 1 14 0c0 5.5-7 12-7 12z"/><circle cx="12" cy="9" r="2.5"/></svg><div><b>주소</b><span>타기그 BGC 00번가 0층</span></div></div>
+    <div class="ic"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><div><b>영업시간</b><span>화–일 10:00 – 20:00 · 월요일 휴무</span></div></div>
+    <div class="ic"><svg viewBox="0 0 24 24"><path d="M5 4h4l2 5-3 2a11 11 0 0 0 5 5l2-3 5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg><div><b>전화 · 카카오톡</b><span>000-0000-0000 · 카카오톡 ID: example</span></div></div>
+    <div class="mapbox"><svg viewBox="0 0 400 170" preserveAspectRatio="xMidYMid slice"><rect width="400" height="170" fill="#3A2219"/><g stroke="#4F3328" stroke-width="10"><path d="M0 50h400M0 120h400M90 0v170M230 0v170M330 0v170"/></g><g fill="#4A2F24"><rect x="104" y="64" width="112" height="42" rx="6"/><rect x="244" y="10" width="72" height="30" rx="6"/><rect x="10" y="64" width="66" height="42" rx="6"/><rect x="244" y="134" width="72" height="30" rx="6"/><rect x="344" y="64" width="50" height="42" rx="6"/></g><rect x="120" y="134" width="96" height="30" rx="6" fill="#5B7A55" opacity=".7"/><path d="M160 118c-14-12-22-22-22-34a22 22 0 0 1 44 0c0 12-8 22-22 34z" fill="#E8622C"/><circle cx="160" cy="84" r="8" fill="#F3ECDF"/></svg></div>
+   </div>
+   <form id="bkf" onsubmit="return false">
+    <div id="fbody">
+     <h3>시술 예약 요청</h3>
+     <p>희망 시술과 시간을 골라 주세요. 확정 전까지 비용은 들지 않아요.</p>
+     <div class="fr"><div><label for="nm">이름</label><input id="nm" placeholder="홍길동"></div><div><label for="ct">연락처 · 카카오톡 ID</label><input id="ct" placeholder="000-0000-0000"></div></div>
+     <div class="fr"><div><label for="sv">희망 시술</label><select id="sv"><option>디지털펌</option><option>셋팅펌</option><option>히피펌</option><option>볼륨매직</option><option>남성 애즈펌 · 다운펌</option><option>커트만</option></select></div><div><label for="ds">디자이너</label><select id="ds"><option>상담 후 추천</option><option>원장 하윤</option><option>실장 도담</option><option>디자이너 결</option></select></div></div>
+     <div style="margin-bottom:16px"><label>희망 날짜</label><div class="slots" id="days"></div></div>
+     <div style="margin-bottom:16px"><label>희망 시간</label><div class="slots" id="times"><button type="button">10:00</button><button type="button" disabled>11:30</button><button type="button" class="on">13:00</button><button type="button">14:30</button><button type="button" disabled>16:00</button><button type="button">17:30</button></div></div>
+     <div><label for="mm">요청 사항 (선택)</label><textarea id="mm" placeholder="원하는 스타일 사진이 있으면 카카오톡으로 보내 주셔도 좋아요."></textarea></div>
+     <button class="btn" type="submit" id="go">예약 요청 보내기</button>
+    </div>
+    <div class="done" id="done"><svg viewBox="0 0 70 70"><circle cx="35" cy="35" r="33" fill="#E8622C"/><path d="M22 36l9 9 17-19" fill="none" stroke="#fff" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/></svg><h4>예약 요청이 접수되었어요</h4><p id="dtx">영업시간 안에 확정 안내를 보내 드립니다.</p></div>
+   </form>
+  </div>
+ </div>
+</section>
+
+<footer>
+ <div class="in">
+  <div><a class="logo" href="#top"><svg viewBox="0 0 42 42"><circle cx="21" cy="21" r="20" fill="#F3ECDF"/><path d="M9 16c4-5 6-5 8 0s4 5 8 0 6-5 8 0M9 26c4-5 6-5 8 0s4 5 8 0 6-5 8 0" fill="none" stroke="#E8622C" stroke-width="2.2" stroke-linecap="round"/></svg><div><b>헤어 굽이</b><small>PERM ATELIER</small></div></a><p>타기그 BGC 00번가 0층<br>000-0000-0000 · 카카오톡 ID: example</p></div>
+  <p class="en" style="font-size:13px;letter-spacing:.08em">© HAIR GUBI · BGC MANILA</p>
+ </div>
+</footer>
+
+<script>
+(function(){
+ var D={
+  s:{thin:['탄력 C컬 디지털펌','짧은 기장의 가는 모발은 끝선만 C컬로 말아 볼륨을 살립니다.','2시간','₱4,800','20mm','약 3개월'],frizz:['볼륨매직 + 끝 C컬','곱슬을 차분히 펴고 끝선만 둥글게 정리해 습한 날에도 단정해요.','2시간 30분','₱4,200','매직 + 18mm','약 4개월'],thick:['애즈 · 볼륨 셋팅펌','숱 많은 짧은 머리는 뿌리 볼륨을 눌러 주며 자연스럽게 흘러가게.','2시간','₱5,500','22mm','약 3개월']},
+  m:{thin:['굵은 S컬 디지털펌','가는 모발은 열을 쓰는 디지털펌이 컬 유지가 오래갑니다. 어깨선 기장이면 끝에서 두 바퀴 감아 자연스럽게.','2시간 30분','₱4,800','26mm','약 3~4개월'],frizz:['볼륨매직 + 굵은 S컬','곱슬 정리와 웨이브를 한 번에. 뿌리는 차분하게, 중간부터 부드러운 S컬.','3시간','₱6,800','매직 + 26mm','약 4개월'],thick:['잔컬 히피펌','숱이 많으면 잔컬이 무겁지 않게 퍼져요. 손질은 물 묻혀 털기만.','3시간','₱5,200','12mm','약 4~5개월']},
+  l:{thin:['물결 셋팅펌','긴 기장의 가는 모발은 셋팅펌으로 마른 상태에서도 웨이브가 또렷하게.','3시간','₱6,100','28mm','약 3개월'],frizz:['볼륨매직 롱 C컬','긴 곱슬머리는 매직으로 정리하고 끝을 크게 말아 자연스러운 흐름을.','3시간 30분','₱5,400','매직 + 30mm','약 4~5개월'],thick:['굵은 S컬 디지털펌','무게가 있는 긴 머리는 굵은 롯드로 큰 웨이브를 만들어야 처지지 않아요.','3시간','₱6,000','32mm','약 4개월']}
+ };
+ var st={len:'m',hair:'thin',time:'0'};
+ function upd(){var r=D[st.len][st.hair];var t=['손질 5분이면 충분한 스타일이에요.','드라이로 컬을 쥐었다 놓으면 더 살아나요.','고데기로 겉머리만 한 번 정리하면 완성.'][+st.time];
+  document.getElementById('rName').textContent=r[0];document.getElementById('rDesc').textContent=r[1]+' '+t;document.getElementById('rTime').textContent=r[2];document.getElementById('rPrice').textContent=r[3];document.getElementById('rRod').textContent=r[4];document.getElementById('rKeep').textContent=r[5];}
+ document.querySelectorAll('.q').forEach(function(q){q.querySelectorAll('button').forEach(function(b){b.addEventListener('click',function(){q.querySelectorAll('button').forEach(function(x){x.classList.remove('on')});b.classList.add('on');st[q.dataset.q]=b.dataset.v;upd();});});});
+ upd();
+ var days=document.getElementById('days'),wk=['일','월','화','수','목','금','토'],d=new Date(2026,11,1),n=0;
+ while(n<6){if(d.getDay()!==1){var b=document.createElement('button');b.type='button';b.textContent=(d.getMonth()+1)+'/'+d.getDate()+' ('+wk[d.getDay()]+')';if(n===1)b.className='on';days.appendChild(b);n++;}d.setDate(d.getDate()+1);}
+ ['days','times'].forEach(function(id){var w=document.getElementById(id);w.addEventListener('click',function(e){var b=e.target.closest('button');if(!b||b.disabled)return;w.querySelectorAll('button').forEach(function(x){x.classList.remove('on')});b.classList.add('on');});});
+ document.getElementById('go').addEventListener('click',function(){var day=document.querySelector('#days .on'),tm=document.querySelector('#times .on'),sv=document.getElementById('sv').value;
+  document.getElementById('dtx').textContent=(day?day.textContent:'')+' '+(tm?tm.textContent:'')+' · '+sv+' 요청을 받았어요. 영업시간 안에 확정 안내를 보내 드립니다.';
+  document.getElementById('fbody').style.display='none';document.getElementById('done').style.display='block';});
+})();
+</script>
+</body>
+</html>
