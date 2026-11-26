@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>동그란날 베이글 하우스 · 메뉴판 디자인</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Do+Hyeon&family=Noto+Sans+KR:wght@400;500;700&family=Outfit:wght@600;800;900&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+html{overflow-x:hidden;background:#1F1C18}
+body{font-family:'Noto Sans KR',sans-serif;word-break:keep-all;color:#FBF7EE;-webkit-font-smoothing:antialiased;min-height:100vh;overflow-x:hidden;
+ background:radial-gradient(circle at 1px 1px,rgba(251,247,238,.06) 1.3px,transparent 1.8px) 0 0/24px 24px,radial-gradient(ellipse 60% 45% at 90% 0%,rgba(227,165,90,.22),transparent 70%),#1F1C18}
+.wrap{max-width:1180px;margin:0 auto;padding:46px 20px 130px}
+.hd{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:22px;margin-bottom:34px;padding-bottom:28px;border-bottom:2px solid rgba(251,247,238,.16)}
+.hd small{font-family:Outfit;font-size:13px;font-weight:800;letter-spacing:.24em;color:#E3A55A}
+.hd h1{font-family:'Do Hyeon',sans-serif;font-weight:400;font-size:clamp(42px,5.4vw,66px);line-height:1.05;margin-top:12px}
+.hd h1 em{display:block;font-style:normal;font-family:Outfit;font-weight:900;font-size:.42em;letter-spacing:.16em;color:#E3A55A;margin-top:10px}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
+.chips span{font-size:13px;font-weight:500;padding:6px 13px;border:1.5px solid rgba(251,247,238,.3);border-radius:30px}
+.chips span.k{background:#E3A55A;border-color:#E3A55A;color:#1F1C18;font-weight:700}
+.cta{display:inline-flex;align-items:center;gap:9px;height:54px;padding:0 26px;background:#E3A55A;color:#1F1C18;font-weight:700;font-size:16px;text-decoration:none;border-radius:40px;transition:.2s;white-space:nowrap}
+.cta:hover{background:#FBF7EE}
+.cta svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round}
+.view{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,.75fr);gap:30px;align-items:start}
+figure{background:#FBF7EE;padding:10px;border-radius:10px;box-shadow:0 30px 60px rgba(0,0,0,.5)}
+figure a{display:block;overflow:hidden;border-radius:4px}
+figure img{display:block;width:100%;height:auto}
+figcaption{font-size:13px;color:#6B6257;padding:11px 4px 2px;display:flex;flex-wrap:wrap;justify-content:space-between;gap:4px 10px}
+.side{display:flex;flex-direction:column;gap:18px;position:sticky;top:24px}
+.zoom{background:rgba(251,247,238,.05);border:1px solid rgba(251,247,238,.16);padding:9px;border-radius:10px}
+.zoom img{display:block;width:100%;height:auto;border-radius:5px}
+.zoom p{font-size:14px;color:#D8CFBF;padding:10px 4px 3px;line-height:1.65}
+.info{background:#B8742F;color:#FFF8EC;padding:24px 24px 18px;border-radius:10px}
+.info h2{font-family:'Do Hyeon',sans-serif;font-weight:400;font-size:26px;margin-bottom:8px}
+.info li{list-style:none;font-size:14.5px;padding:9px 0 9px 22px;position:relative;line-height:1.6;border-top:1px solid rgba(255,248,236,.25)}
+.info li:first-child{border-top:0}
+.info li:before{content:"";position:absolute;left:2px;top:15px;width:10px;height:10px;border-radius:50%;border:2.5px solid #1F1C18}
+.bar{position:fixed;left:0;right:0;bottom:0;background:#161411;border-top:2px solid #E3A55A;padding:12px 20px;display:flex;justify-content:center;align-items:center;gap:18px;flex-wrap:wrap}
+.bar p{font-size:14px;color:#D8CFBF}
+.bar .cta{height:46px}
+@media(max-width:900px){.view{grid-template-columns:1fr}.side{position:static}}
+@media(max-width:620px){.wrap{padding:26px 16px 120px}.hd .cta{display:none}.bar p{display:none}.bar .cta{width:100%;justify-content:center}figure{padding:6px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+ <div class="hd">
+  <div>
+   <small>MENU DESIGN · SD-MN49</small>
+   <h1>동그란날 <em>BAGEL HOUSE</em></h1>
+   <div class="chips"><span class="k">A4 세로 · 1페이지</span><span>베이글 6종 원형 일러스트</span><span>크림치즈 통 아이콘</span><span>번호형 샌드위치 목록</span><span>포피시드 블랙 &amp; 토스트 크러스트 &amp; 쪽파 그린</span></div>
+  </div>
+  <a class="cta" href="https://design.shoponph.online/#inquiry">이 디자인으로 상담하기 <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+ </div>
+ <div class="view">
+  <figure><a href="page1.png" target="_blank" rel="noopener"><img src="page1.png" alt="동그란날 베이글 하우스 메뉴판 전체. 위쪽은 검은 바탕에 큰 크림색 상호와 영업시간, 오른쪽에 에브리띵·참깨·양귀비씨 베이글과 반으로 갈라 크림치즈를 바른 베이글 그림. 가운데는 베이글 여섯 가지를 동그란 그림과 가격으로 한 줄에 나열하고, 아래 왼쪽은 크림치즈 여섯 가지를 통 아이콘 카드로, 오른쪽은 번호를 붙인 베이글 샌드위치 다섯 가지. 맨 아래 토스트색 띠에 음료와 박스 포장 가격." width="2480" height="3508"></a><figcaption><span>page1.png · A4 2480 × 3508 px</span><span>클릭하면 원본 크기</span></figcaption></figure>
+  <div class="side">
+   <div class="zoom"><img src="detail-bagels.jpg" alt="베이글 여섯 가지 확대. 플레인, 참깨, 양귀비씨, 에브리띵, 블루베리, 시나몬 레이즌을 토핑까지 다르게 그린 동그란 그림과 이름, 영문 이름, 가격" width="1140" height="360"><p>토핑을 하나하나 다르게 그려, 글을 읽지 않아도 진열대 앞에서 고르듯 맛을 구분할 수 있습니다.</p></div>
+   <div class="zoom"><img src="detail-sandwich.jpg" alt="베이글 샌드위치 목록 확대. 검은 원 안의 번호, 굵은 메뉴 이름, 재료 한 줄, 오른쪽 가격, 점선 구분" width="610" height="550"><p>번호를 붙인 샌드위치 목록은 "3번 주세요"처럼 주문을 짧게 만들어 줍니다.</p></div>
+   <div class="info"><h2>이 메뉴판의 포인트</h2><ul><li>베이글 · 크림치즈 · 샌드위치 세 단계로 나눠 조합 주문을 쉽게</li><li>굽는 시간을 따로 표시해 갓 구운 시간에 맞춰 오도록 안내</li><li>음료 세트 할인과 박스 포장 가격을 맨 아래 한 띠에 정리</li><li>계산대 뒤 벽면 출력이나 테이블용 A4로 모두 사용 가능</li></ul></div>
+  </div>
+ </div>
+</div>
+<div class="bar"><p>우리 가게 메뉴판도 이렇게 만들고 싶다면</p><a class="cta" href="https://design.shoponph.online/#inquiry">이 디자인으로 상담하기</a></div>
+</body>
+</html>
