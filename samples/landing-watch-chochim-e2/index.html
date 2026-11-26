@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>초침공방 · 12월 멈춘 시계 무료 진단 + 오버홀 20% 할인</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@500;600;700&family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{--mat:#1E3A31;--mat2:#264A3E;--mat3:#2F5849;--enamel:#F5F1E8;--enamel2:#ECE6D8;--ink:#1C2422;--ink2:#46524D;--ink3:#66716B;--line:#D9D1C0;--blue:#2C4C9C;--blue-d:#223D80;--brass:#C49A52;--ruby:#B3263A}
+*{box-sizing:border-box;margin:0;padding:0}
+html{background:var(--enamel);scroll-behavior:smooth}
+body{font-family:'Noto Sans KR',sans-serif;color:var(--ink);background:var(--enamel);word-break:keep-all;line-height:1.6;font-size:16px;-webkit-font-smoothing:antialiased;overflow-x:clip}
+a{color:inherit;text-decoration:none}
+button{font:inherit;cursor:pointer}
+svg{display:block}
+.num{font-variant-numeric:tabular-nums}
+.serif{font-family:'Noto Serif KR',serif}
+.wrap{max-width:1200px;margin:0 auto;padding:0 40px}
+h2{font-family:'Noto Serif KR',serif;font-weight:600;font-size:clamp(28px,3.2vw,40px);line-height:1.3;letter-spacing:-.02em}
+.lead{color:var(--ink2);margin-top:16px;max-width:560px}
+
+.top{background:var(--mat);color:#E6EEE9;border-bottom:1px solid rgba(230,238,233,.12)}
+.top .wrap{height:72px;display:flex;align-items:center;gap:24px}
+.logo{display:flex;align-items:center;gap:12px;font-family:'Noto Serif KR',serif;font-weight:700;font-size:20px}
+.logo svg{width:32px;height:32px}
+.top .tel{margin-left:auto;font-size:15px;color:#B7C6BE}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;height:48px;padding:0 24px;border-radius:8px;background:var(--blue);color:#fff;font-weight:700;font-size:16px;border:0;transition:background .2s}
+.btn:hover{background:var(--blue-d)}
+.btn.sm{height:40px;padding:0 16px;font-size:15px}
+.btn svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+
+.hero{background:var(--mat);color:#EEF3EF;padding:80px 0 96px;position:relative;overflow:hidden}
+.hero:before{content:"";position:absolute;inset:0;background-image:radial-gradient(rgba(238,243,239,.05) 1px,transparent 1px);background-size:16px 16px}
+.hero .wrap{position:relative;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:56px;align-items:center}
+.month{font-size:15px;color:#B7C6BE;display:flex;align-items:center;gap:12px}
+.month:before{content:"";width:32px;height:1px;background:#B7C6BE}
+.hero h1{font-family:'Noto Serif KR',serif;font-weight:600;font-size:clamp(34px,4.2vw,54px);line-height:1.28;letter-spacing:-.025em;margin:20px 0 24px}
+.hero p{color:#C9D6CF;font-size:18px;max-width:520px}
+.offer{display:grid;grid-template-columns:repeat(3,1fr);margin-top:40px;border:1px solid rgba(238,243,239,.2);border-radius:12px;overflow:hidden}
+.offer div{padding:20px;border-right:1px solid rgba(238,243,239,.2)}
+.offer div:last-child{border-right:0}
+.offer small{display:block;font-size:13px;color:#B7C6BE}
+.offer b{display:block;font-family:'Noto Serif KR',serif;font-size:26px;font-weight:600;margin-top:4px}
+.offer div.k{background:var(--enamel);color:var(--ink)}
+.offer div.k small{color:var(--ink3)}
+.offer div.k b{color:var(--blue)}
+.acts{display:flex;align-items:center;gap:24px;margin-top:32px;flex-wrap:wrap}
+.acts .t{font-weight:500;color:#E6EEE9;border-bottom:1px solid #8FA79A;padding:4px 0}
+.acts .t:hover{border-color:#fff}
+.note{font-size:14px;color:#9FB2A8;margin-top:16px}
+.mv svg{width:100%;height:auto}
+
+section.blk{padding:96px 0}
+.sym{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:64px;align-items:start}
+.symlist{display:grid;grid-template-columns:1fr 1fr;border-top:1px solid var(--ink)}
+.symlist div{padding:24px 24px 24px 0;border-bottom:1px solid var(--line)}
+.symlist div:nth-child(odd){border-right:1px solid var(--line)}
+.symlist div:nth-child(even){padding-left:24px;padding-right:0}
+.symlist svg{width:32px;height:32px;fill:none;stroke:var(--blue);stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+.symlist b{display:block;font-weight:700;font-size:17px;margin-top:16px}
+.symlist p{font-size:15px;color:var(--ink2);margin-top:4px}
+
+.proc{background:var(--enamel2)}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;margin-top:48px;counter-reset:s}
+.steps li{list-style:none;position:relative;padding-top:48px}
+.steps li:before{counter-increment:s;content:counter(s,decimal-leading-zero);position:absolute;top:0;left:0;font-family:'Noto Serif KR',serif;font-weight:600;font-size:15px;color:var(--blue);background:var(--enamel2);padding-right:12px;z-index:1}
+.steps li:after{content:"";position:absolute;top:11px;left:0;right:-24px;height:1px;background:var(--ink3);opacity:.5}
+.steps li:last-child:after{right:0}
+.steps b{font-weight:700;font-size:17px}
+.steps p{font-size:15px;color:var(--ink2);margin-top:8px}
+.tg{margin-top:56px;display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:40px;align-items:center;background:var(--enamel);border:1px solid var(--line);border-radius:16px;padding:32px}
+.tg svg{width:100%;height:auto}
+.tg h3{font-family:'Noto Serif KR',serif;font-weight:600;font-size:22px}
+.tg p{font-size:15px;color:var(--ink2);margin-top:8px}
+.tg dl{display:grid;grid-template-columns:auto 1fr;gap:8px 24px;margin-top:20px;font-size:15px}
+.tg dt{color:var(--ink3)}
+.tg dd{font-weight:700}
+
+.price table{width:100%;border-collapse:collapse;margin-top:40px}
+.price th{font-size:14px;font-weight:500;color:var(--ink3);text-align:left;padding:12px 16px;border-bottom:1px solid var(--ink)}
+.price th:nth-child(3),.price td:nth-child(3){text-align:right}
+.price td{padding:20px 16px;border-bottom:1px solid var(--line);vertical-align:top}
+.price td b{font-weight:700;display:block}
+.price td small{font-size:14px;color:var(--ink3)}
+.price td:nth-child(3){font-weight:700;white-space:nowrap}
+.price td s{color:var(--ink3);font-weight:400;margin-right:8px;font-size:15px}
+.price tr.dec td:nth-child(3) span{color:var(--blue)}
+.price .flag{display:block;width:fit-content;font-size:13px;font-weight:700;line-height:1.5;color:var(--blue);border:1px solid var(--blue);border-radius:4px;padding:2px 8px;margin-top:4px}
+.price .foot{font-size:14px;color:var(--ink3);margin-top:16px}
+
+.how{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:40px}
+.how div{border:1px solid var(--line);border-radius:16px;padding:32px;background:#FBF9F4}
+.how svg{width:40px;height:40px;fill:none;stroke:var(--ink);stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
+.how h3{font-family:'Noto Serif KR',serif;font-weight:600;font-size:22px;margin-top:20px}
+.how p{color:var(--ink2);margin-top:8px;font-size:15px}
+.how ul{margin-top:16px;list-style:none;font-size:15px}
+.how li{padding:8px 0;border-top:1px solid var(--line);display:flex;justify-content:space-between;gap:16px}
+.how li span:first-child{color:var(--ink3)}
+
+.apply{background:var(--mat);color:#EEF3EF}
+.applyg{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);gap:64px;align-items:start}
+.apply .lead{color:#C9D6CF}
+.apply ul.inc{list-style:none;margin-top:32px;border-top:1px solid rgba(238,243,239,.2)}
+.apply ul.inc li{padding:16px 0;border-bottom:1px solid rgba(238,243,239,.2);display:flex;gap:16px;font-size:15px;color:#DCE5E0}
+.apply ul.inc svg{width:20px;height:20px;flex:none;fill:none;stroke:#9DB6E6;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;margin-top:2px}
+form.f{background:var(--enamel);color:var(--ink);border-radius:16px;padding:40px}
+.f h3{font-family:'Noto Serif KR',serif;font-weight:600;font-size:24px;margin-bottom:24px}
+.f .g{margin-bottom:24px}
+.f .lab{display:block;font-size:14px;font-weight:700;color:var(--ink2);margin-bottom:8px}
+.seg{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
+.seg label,.chips label{position:relative;display:flex;align-items:center;justify-content:center;min-height:44px;padding:8px 12px;border:1px solid var(--line);border-radius:8px;background:#fff;font-size:15px;cursor:pointer;text-align:center;transition:border-color .2s,background .2s}
+.seg input,.chips input{position:absolute;opacity:0;pointer-events:none}
+.seg label:has(input:checked),.chips label:has(input:checked){border-color:var(--blue);background:#E8EDF7;color:var(--blue-d);font-weight:700}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.f .two{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.f input[type=text],.f input[type=tel],.f input[type=date]{width:100%;height:48px;border:1px solid var(--line);border-radius:8px;padding:0 16px;font:inherit;background:#fff;color:var(--ink)}
+.f input:focus-visible{outline:2px solid var(--blue);outline-offset:1px}
+.seg label:has(input:focus-visible),.chips label:has(input:focus-visible){outline:2px solid var(--blue);outline-offset:1px}
+.f .btn{width:100%;margin-top:8px}
+.f .small{font-size:13px;color:var(--ink3);margin-top:12px}
+.done{display:none}
+form.sent .fields{display:none}
+form.sent .done{display:block}
+.done h3{font-family:'Noto Serif KR',serif;font-weight:600;font-size:24px}
+.done p{color:var(--ink2);margin-top:12px}
+.done dl{display:grid;grid-template-columns:auto 1fr;gap:8px 24px;margin-top:24px;padding-top:16px;border-top:1px solid var(--line);font-size:15px}
+.done dt{color:var(--ink3)}
+
+.faq{max-width:840px}
+.faq details{border-bottom:1px solid var(--line)}
+.faq details:first-of-type{border-top:1px solid var(--ink)}
+.faq summary{list-style:none;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:20px 0;font-weight:700;font-size:17px;cursor:pointer;min-height:44px}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary:after{content:"";width:10px;height:10px;border-right:2px solid var(--ink);border-bottom:2px solid var(--ink);transform:rotate(45deg);transition:transform .2s;flex:none;margin-right:4px}
+.faq details[open] summary:after{transform:rotate(-135deg)}
+.faq details p{color:var(--ink2);padding:0 0 20px;font-size:15px;max-width:680px}
+
+footer{background:#16241F;color:#9FB2A8;padding:40px 0;font-size:14px}
+footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:16px}
+footer b{color:#E6EEE9;font-family:'Noto Serif KR',serif;font-size:16px}
+
+.rv{opacity:0;transform:translateY(16px);transition:opacity .6s ease,transform .6s ease}
+.rv.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}}
+
+@media(max-width:1024px){
+ .hero .wrap,.sym,.applyg{grid-template-columns:1fr;gap:48px}
+ .mv{max-width:560px}
+ .steps{grid-template-columns:1fr 1fr;row-gap:40px}
+ .steps li:nth-child(2):after{right:0}
+ .tg{grid-template-columns:1fr}
+}
+@media(max-width:640px){
+ .wrap{padding:0 16px}
+ .top .tel{display:none}
+ .top .btn{margin-left:auto}
+ .hero{padding:48px 0 64px}
+ .hero p{font-size:16px}
+ .offer{grid-template-columns:1fr}
+ .offer div{border-right:0;border-bottom:1px solid rgba(238,243,239,.2);display:flex;justify-content:space-between;align-items:baseline;gap:16px}
+ .offer div:last-child{border-bottom:0}
+ .offer b{font-size:22px}
+ .acts .btn{width:100%}
+ section.blk{padding:64px 0}
+ .symlist{grid-template-columns:1fr}
+ .symlist div:nth-child(odd){border-right:0}
+ .symlist div:nth-child(even){padding-left:0}
+ .steps{grid-template-columns:1fr}
+ .steps li:after{right:0}
+ .tg{padding:20px}
+ .tg text.cl{font-size:22px}
+ .price table,.price tbody,.price tr,.price td{display:block;width:100%}
+ .price thead{display:none}
+ .price tr{padding:16px 0;border-bottom:1px solid var(--line);display:grid;grid-template-columns:1fr auto;gap:4px 16px}
+ .price td{padding:0;border:0}
+ .price td:nth-child(2){grid-column:1/-1;grid-row:2;font-size:14px;color:var(--ink3)}
+ .price td:nth-child(3){grid-column:2;grid-row:1}
+ .how{grid-template-columns:1fr}
+ .how div{padding:24px}
+ form.f{padding:24px 16px}
+ .seg{grid-template-columns:1fr 1fr}
+ .f .two{grid-template-columns:1fr;gap:0}
+}
+</style>
+</head>
+<body>
+
+<header class="top">
+ <div class="wrap">
+  <a class="logo" href="#">
+   <svg viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="16" r="14.5" fill="#F5F1E8" stroke="#C49A52" stroke-width="2"/><path d="M16 16 V6" stroke="#2C4C9C" stroke-width="2" stroke-linecap="round"/><path d="M16 16 L22 19" stroke="#1C2422" stroke-width="2" stroke-linecap="round"/><circle cx="16" cy="16" r="1.8" fill="#1C2422"/></svg>
+   초침공방
+  </a>
+  <span class="tel num">전화 000-0000-0000</span>
+  <a class="btn sm" href="#apply">무료 진단 신청</a>
+ </div>
+</header>
+
+<section class="hero">
+ <div class="wrap">
+  <div>
+   <p class="month">12월 한 달 · 멈춘 시계 무료 진단</p>
+   <h1>서랍 속에서 멈춘 시계,<br>뒷판부터 열어 보고<br>말씀드릴게요</h1>
+   <p>배터리만 갈면 되는지, 기름이 말라 오버홀이 필요한지 무브먼트를 직접 보고 알려 드립니다. 진단만 받고 수리를 맡기지 않으셔도 비용은 없습니다.</p>
+   <div class="offer">
+    <div class="k"><small>12월 진단비</small><b class="num">0원</b></div>
+    <div><small>오버홀</small><b class="num">20% 할인</b></div>
+    <div><small>배터리 교체</small><b>당일</b></div>
+   </div>
+   <div class="acts">
+    <a class="btn" href="#apply">무료 진단 신청하기 <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+    <a class="t" href="#price">수리 가격표 보기</a>
+   </div>
+   <p class="note">12월 31일 접수분까지 · 오버홀 할인은 진단 후 맡기실 때 적용</p>
+  </div>
+  <div class="mv">
+   <svg viewBox="0 0 560 560" role="img" aria-label="뒷판을 연 손목시계의 무브먼트를 위에서 본 그림. 황동빛 기어 여러 개와 붉은 루비 보석, 가는 헤어스프링이 감긴 밸런스 휠, 파란 나사가 보이고 옆에 핀셋이 놓여 있다">
+    <defs>
+     <radialGradient id="case" cx=".4" cy=".35" r=".7"><stop offset="0" stop-color="#E9E6DE"/><stop offset=".6" stop-color="#B9B6AE"/><stop offset="1" stop-color="#7F7C75"/></radialGradient>
+     <radialGradient id="plate" cx=".45" cy=".4" r=".7"><stop offset="0" stop-color="#D8D3C6"/><stop offset="1" stop-color="#A8A294"/></radialGradient>
+     <radialGradient id="brass" cx=".4" cy=".35" r=".7"><stop offset="0" stop-color="#F0D49A"/><stop offset=".6" stop-color="#C99D55"/><stop offset="1" stop-color="#9A7234"/></radialGradient>
+     <radialGradient id="ruby" cx=".35" cy=".3" r=".7"><stop offset="0" stop-color="#F06A7C"/><stop offset=".5" stop-color="#B3263A"/><stop offset="1" stop-color="#6E1322"/></radialGradient>
+     <radialGradient id="screw" cx=".35" cy=".3" r=".7"><stop offset="0" stop-color="#6F8FD6"/><stop offset="1" stop-color="#223D80"/></radialGradient>
+     <pattern id="stripes" width="12" height="12" patternUnits="userSpaceOnUse" patternTransform="rotate(-30)"><rect width="12" height="12" fill="#C9C3B5"/><rect width="6" height="12" fill="#D9D4C7"/></pattern>
+     <filter id="sh" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="12"/></filter>
+     <clipPath id="mvclip"><circle cx="270" cy="270" r="196"/></clipPath>
+    </defs>
+    <circle cx="282" cy="290" r="236" fill="#0E1F19" opacity=".55" filter="url(#sh)"/>
+    <!-- lugs -->
+    <rect x="200" y="14" width="140" height="60" rx="14" fill="#A6A39B"/>
+    <rect x="200" y="466" width="140" height="60" rx="14" fill="#8F8C84"/>
+    <rect x="186" y="0" width="168" height="34" rx="6" fill="#3B2A1E"/>
+    <rect x="186" y="506" width="168" height="54" rx="6" fill="#3B2A1E"/>
+    <!-- crown -->
+    <rect x="496" y="246" width="34" height="48" rx="6" fill="url(#case)"/>
+    <path d="M504 250 v40 M512 250 v40 M520 250 v40" stroke="#7F7C75"/>
+    <!-- case -->
+    <circle cx="270" cy="270" r="236" fill="url(#case)"/>
+    <circle cx="270" cy="270" r="220" fill="#8F8C84"/>
+    <circle cx="270" cy="270" r="212" fill="#BDB8AD"/>
+    <circle cx="270" cy="270" r="200" fill="url(#plate)"/>
+    <g clip-path="url(#mvclip)">
+     <!-- bridges with stripes -->
+     <path d="M70 180 Q170 120 300 140 L330 230 Q220 230 120 290 Z" fill="url(#stripes)" stroke="#9C9688"/>
+     <path d="M250 300 Q340 280 470 320 L470 470 L220 470 Z" fill="url(#stripes)" stroke="#9C9688"/>
+     <!-- barrel / mainspring -->
+     <circle cx="190" cy="350" r="78" fill="url(#brass)"/>
+     <g stroke="#9A7234" stroke-width="2" fill="none" opacity=".7">
+      <circle cx="190" cy="350" r="66"/><circle cx="190" cy="350" r="40"/>
+     </g>
+     <g stroke="#7E5C28" stroke-width="2"><path d="M190 272 v10"/><path d="M190 418 v10"/><path d="M112 350 h10"/><path d="M258 350 h10"/><path d="M135 295 l7 7"/><path d="M238 398 l7 7"/><path d="M245 295 l-7 7"/><path d="M135 405 l7 -7"/></g>
+     <circle cx="190" cy="350" r="22" fill="#C9C3B5" stroke="#9C9688"/>
+     <path d="M178 350 h24" stroke="#5B574F" stroke-width="3"/>
+     <!-- gear train -->
+     <g>
+      <circle cx="300" cy="230" r="54" fill="url(#brass)"/>
+      <circle cx="300" cy="230" r="54" fill="none" stroke="#9A7234" stroke-width="5" stroke-dasharray="3 3"/>
+      <circle cx="300" cy="230" r="34" fill="none" stroke="#9A7234" stroke-width="2"/>
+      <path d="M300 196 V264 M266 230 H334 M276 206 L324 254 M324 206 L276 254" stroke="#B48843" stroke-width="5"/>
+      <circle cx="300" cy="230" r="12" fill="url(#ruby)"/><circle cx="300" cy="230" r="4" fill="#3B0A12"/>
+     </g>
+     <g>
+      <circle cx="372" cy="176" r="34" fill="url(#brass)"/>
+      <circle cx="372" cy="176" r="34" fill="none" stroke="#9A7234" stroke-width="4" stroke-dasharray="2.5 2.5"/>
+      <path d="M372 150 V202 M346 176 H398" stroke="#B48843" stroke-width="4"/>
+      <circle cx="372" cy="176" r="9" fill="url(#ruby)"/>
+     </g>
+     <g>
+      <circle cx="226" cy="186" r="28" fill="url(#brass)"/>
+      <circle cx="226" cy="186" r="28" fill="none" stroke="#9A7234" stroke-width="4" stroke-dasharray="2.5 2.5"/>
+      <circle cx="226" cy="186" r="8" fill="url(#ruby)"/>
+     </g>
+     <!-- balance wheel -->
+     <g>
+      <circle cx="372" cy="340" r="66" fill="none" stroke="url(#brass)" stroke-width="10"/>
+      <circle cx="372" cy="340" r="66" fill="none" stroke="#8C6630" stroke-width="1"/>
+      <path d="M372 274 V406 M306 340 H438" stroke="#C99D55" stroke-width="6"/>
+      <g fill="none" stroke="#2C4C9C" stroke-width="1.6">
+       <circle cx="372" cy="340" r="14"/><circle cx="372" cy="340" r="20"/><circle cx="372" cy="340" r="26"/><circle cx="372" cy="340" r="32"/><circle cx="372" cy="340" r="38"/>
+      </g>
+      <path d="M260 410 Q330 400 400 350" stroke="#A8A294" stroke-width="18" stroke-linecap="round" fill="none"/>
+      <path d="M260 410 Q330 400 400 350" stroke="url(#stripes)" stroke-width="14" stroke-linecap="round" fill="none"/>
+      <circle cx="372" cy="340" r="10" fill="url(#ruby)"/><circle cx="372" cy="340" r="3.5" fill="#3B0A12"/>
+     </g>
+     <!-- jewels on plate -->
+     <circle cx="150" cy="226" r="9" fill="url(#ruby)"/>
+     <circle cx="440" cy="250" r="8" fill="url(#ruby)"/>
+     <circle cx="300" cy="420" r="8" fill="url(#ruby)"/>
+     <!-- blued screws -->
+     <g><circle cx="110" cy="250" r="10" fill="url(#screw)"/><path d="M103 250 h14" stroke="#14254D" stroke-width="2.5"/></g>
+     <g><circle cx="320" cy="150" r="10" fill="url(#screw)"/><path d="M314 145 l12 10" stroke="#14254D" stroke-width="2.5"/></g>
+     <g><circle cx="270" cy="450" r="10" fill="url(#screw)"/><path d="M263 450 h14" stroke="#14254D" stroke-width="2.5"/></g>
+     <g><circle cx="450" cy="400" r="10" fill="url(#screw)"/><path d="M445 394 l10 12" stroke="#14254D" stroke-width="2.5"/></g>
+    </g>
+    <circle cx="270" cy="270" r="200" fill="none" stroke="#6F6B63" stroke-width="2"/>
+    <!-- tweezers -->
+    <g transform="translate(372 530) rotate(-24)">
+     <path d="M0 0 L150 -8 L150 -2 L6 6Z" fill="#D8D6D0" stroke="#8F8C84"/>
+     <path d="M0 6 L150 10 L150 16 L6 12Z" fill="#C4C1BA" stroke="#8F8C84"/>
+    </g>
+   </svg>
+  </div>
+ </div>
+</section>
+
+<section class="blk" id="sym">
+ <div class="wrap sym">
+  <div class="rv">
+   <h2>이런 시계라면<br>12월에 가져오세요</h2>
+   <p class="lead">겉으로는 같은 ‘고장’이어도 원인은 제각각입니다. 진단 때 아래 증상을 말씀해 주시면 확인이 빨라집니다.</p>
+  </div>
+  <div class="symlist rv">
+   <div><svg viewBox="0 0 32 32"><circle cx="16" cy="16" r="12"/><path d="M16 9 v7"/><path d="M11 25 l10 -18" opacity=".0"/><path d="M8 8 l16 16"/></svg><b>바늘이 아예 멈췄어요</b><p>배터리가 다 됐거나, 기계식이면 기름이 굳어 태엽이 힘을 전하지 못하는 경우가 많습니다.</p></div>
+   <div><svg viewBox="0 0 32 32"><circle cx="16" cy="16" r="12"/><path d="M16 9 v7 l5 3"/><path d="M26 4 l2 4 -4 1"/></svg><b>하루에 몇 분씩 틀려요</b><p>자석에 닿았거나 헤어스프링이 엉킨 경우입니다. 측정기로 하루 오차를 재 봅니다.</p></div>
+   <div><svg viewBox="0 0 32 32"><circle cx="16" cy="16" r="12"/><path d="M12 14 q2 -4 4 0 q2 4 4 0"/><path d="M11 20 q2 -3 4 0"/></svg><b>유리 안쪽이 뿌옇게 흐려요</b><p>습기가 들어갔다는 신호입니다. 녹이 번지기 전에 빨리 여는 것이 좋습니다.</p></div>
+   <div><svg viewBox="0 0 32 32"><circle cx="14" cy="16" r="10"/><rect x="24" y="13" width="6" height="6" rx="1.5"/><path d="M14 10 v6"/></svg><b>용두가 헛돌거나 빠져요</b><p>태엽을 감는 축이 부러졌거나 나사가 풀린 경우로, 부품 교체로 해결됩니다.</p></div>
+  </div>
+ </div>
+</section>
+
+<section class="blk proc" id="proc">
+ <div class="wrap">
+  <div class="rv"><h2>진단은 이렇게 진행합니다</h2><p class="lead">맡기신 시계는 보관함 번호표를 달아 하나씩 작업대에 올립니다. 보통 접수 다음 날 결과를 안내해 드립니다.</p></div>
+  <ol class="steps rv">
+   <li><b>접수와 사진 기록</b><p>케이스 흠집, 유리 상태를 먼저 사진으로 남깁니다.</p></li>
+   <li><b>뒷판 열고 무브먼트 확인</b><p>먼지, 습기, 굳은 기름, 부러진 부품이 있는지 루페로 봅니다.</p></li>
+   <li><b>측정기로 하루 오차 재기</b><p>기계식은 자세별로 하루 몇 초 빠르고 느린지 기록합니다.</p></li>
+   <li><b>견적 안내 후 결정</b><p>수리 범위와 기간을 알려 드리고, 맡기실지는 그다음에 정하시면 됩니다.</p></li>
+  </ol>
+  <div class="tg rv">
+   <svg viewBox="0 0 520 220" role="img" aria-label="측정기 화면 예시. 위쪽 띠는 오버홀 전 기록으로 점들이 오른쪽 위로 크게 기울어 있고, 아래쪽 띠는 오버홀 후 기록으로 점들이 거의 수평이다">
+    <rect width="520" height="220" rx="12" fill="#1C2422"/>
+    <g stroke="#2F3A37"><path d="M24 60 H496 M24 110 H496 M24 160 H496"/><path d="M120 24 V196 M216 24 V196 M312 24 V196 M408 24 V196"/></g>
+    <g fill="#E07A5F"><circle cx="40" cy="96" r="2.4"/><circle cx="64" cy="92" r="2.4"/><circle cx="88" cy="88" r="2.4"/><circle cx="112" cy="83" r="2.4"/><circle cx="136" cy="79" r="2.4"/><circle cx="160" cy="74" r="2.4"/><circle cx="184" cy="70" r="2.4"/><circle cx="208" cy="65" r="2.4"/><circle cx="232" cy="61" r="2.4"/><circle cx="256" cy="56" r="2.4"/><circle cx="280" cy="52" r="2.4"/><circle cx="304" cy="47" r="2.4"/><circle cx="328" cy="43" r="2.4"/><circle cx="352" cy="38" r="2.4"/><circle cx="376" cy="34" r="2.4"/></g>
+    <g fill="#8FB1F0"><circle cx="40" cy="160" r="2.4"/><circle cx="64" cy="160" r="2.4"/><circle cx="88" cy="159" r="2.4"/><circle cx="112" cy="159" r="2.4"/><circle cx="136" cy="159" r="2.4"/><circle cx="160" cy="158" r="2.4"/><circle cx="184" cy="158" r="2.4"/><circle cx="208" cy="158" r="2.4"/><circle cx="232" cy="158" r="2.4"/><circle cx="256" cy="157" r="2.4"/><circle cx="280" cy="157" r="2.4"/><circle cx="304" cy="157" r="2.4"/><circle cx="328" cy="157" r="2.4"/><circle cx="352" cy="156" r="2.4"/><circle cx="376" cy="156" r="2.4"/></g>
+    <text x="400" y="40" class="cl" font-family="Noto Sans KR" font-size="14" fill="#E07A5F">오버홀 전</text>
+    <text x="400" y="150" class="cl" font-family="Noto Sans KR" font-size="14" fill="#8FB1F0">오버홀 후</text>
+   </svg>
+   <div>
+    <h3>측정 결과는 그래프로 보여 드립니다</h3>
+    <p>기울기가 클수록 하루 오차가 큽니다. 예시는 10년 넘게 서랍에 있던 오토매틱 시계입니다.</p>
+    <dl class="num"><dt>오버홀 전</dt><dd>하루 +38초</dd><dt>오버홀 후</dt><dd>하루 +4초</dd><dt>작업 기간</dt><dd>약 2주</dd></dl>
+   </div>
+  </div>
+ </div>
+</section>
+
+<section class="blk price" id="price">
+ <div class="wrap">
+  <div class="rv"><h2>수리 가격표</h2><p class="lead">시계 상태에 따라 달라질 수 있어 ‘부터’로 적었습니다. 정확한 금액은 무료 진단 뒤 안내해 드립니다.</p></div>
+  <table class="rv">
+   <thead><tr><th>항목</th><th>내용</th><th>가격</th></tr></thead>
+   <tbody>
+    <tr><td><b>무료 진단</b></td><td>뒷판 열고 원인 확인, 측정기 기록</td><td class="num"><s>10,000원</s><span style="color:var(--blue)">0원</span></td></tr>
+    <tr><td><b>배터리 교체</b></td><td>쿼츠 시계 · 기다리시면 당일 30분 안팎</td><td class="num">15,000원부터</td></tr>
+    <tr class="dec"><td><b>쿼츠 오버홀</b><span class="flag">12월 20%</span></td><td>분해 세척, 회로 점검, 방수 패킹 교체</td><td class="num"><s>80,000원</s><span>64,000원부터</span></td></tr>
+    <tr class="dec"><td><b>기계식 오버홀</b><span class="flag">12월 20%</span></td><td>전체 분해 세척, 주유, 하루 오차 조정 · 약 2주</td><td class="num"><s>180,000원</s><span>144,000원부터</span></td></tr>
+    <tr><td><b>유리 교체</b></td><td>미네랄·사파이어 유리, 크기 맞춤</td><td class="num">40,000원부터</td></tr>
+    <tr><td><b>용두·축 교체</b></td><td>헛도는 용두, 부러진 태엽 축</td><td class="num">30,000원부터</td></tr>
+    <tr><td><b>줄 길이 조절</b></td><td>금속 줄 마디 빼기·넣기</td><td class="num">무료</td></tr>
+   </tbody>
+  </table>
+  <p class="foot">오버홀 뒤 같은 증상이 다시 생기면 1년 동안 무상으로 다시 봐 드립니다.</p>
+ </div>
+</section>
+
+<section class="blk" id="how" style="padding-top:0">
+ <div class="wrap">
+  <div class="rv"><h2>맡기는 방법은 두 가지</h2></div>
+  <div class="how rv">
+   <div>
+    <svg viewBox="0 0 40 40"><path d="M6 18 L20 6 L34 18"/><path d="M10 16 V34 H30 V16"/><path d="M17 34 V24 H23 V34"/></svg>
+    <h3>공방에 직접 오시기</h3>
+    <p>예약 없이 오셔도 되지만, 신청서를 먼저 보내 주시면 기다리는 시간이 줄어듭니다.</p>
+    <ul><li><span>화–토</span><span class="num">10:30 – 19:00</span></li><li><span>일·월</span><span>쉽니다</span></li><li><span>주소</span><span>서울 종로구 ○○길 00, 2층</span></li></ul>
+   </div>
+   <div>
+    <svg viewBox="0 0 40 40"><rect x="5" y="12" width="30" height="22" rx="2"/><path d="M5 18 H35"/><path d="M15 12 V6 H25 V12"/><path d="M14 26 h12"/></svg>
+    <h3>택배로 보내기</h3>
+    <p>신청하시면 완충재가 든 포장 상자를 보내 드립니다. 왕복 택배비는 수리를 맡기실 때만 받습니다.</p>
+    <ul><li><span>포장 상자</span><span>무료 발송</span></li><li><span>보내실 곳</span><span>신청 후 문자로 안내</span></li><li><span>진단 결과</span><span>도착 다음 날 연락</span></li></ul>
+   </div>
+  </div>
+ </div>
+</section>
+
+<section class="blk apply" id="apply">
+ <div class="wrap applyg">
+  <div class="rv">
+   <h2>무료 진단 신청</h2>
+   <p class="lead">시계 종류를 몰라도 괜찮습니다. 증상만 골라 주시면 접수 확인 연락을 드립니다.</p>
+   <ul class="inc">
+    <li><svg viewBox="0 0 24 24"><path d="M5 12 l5 5 9 -10"/></svg>12월 31일까지 신청분 진단비 0원</li>
+    <li><svg viewBox="0 0 24 24"><path d="M5 12 l5 5 9 -10"/></svg>진단 후 오버홀을 맡기시면 20% 할인</li>
+    <li><svg viewBox="0 0 24 24"><path d="M5 12 l5 5 9 -10"/></svg>진단만 받고 돌려받으셔도 비용 없음</li>
+   </ul>
+  </div>
+  <form class="f rv" id="form" novalidate>
+   <div class="fields">
+    <h3>신청서</h3>
+    <div class="g"><span class="lab">시계 종류</span>
+     <div class="seg">
+      <label><input type="radio" name="kind" value="쿼츠(배터리)" checked>쿼츠(배터리)</label>
+      <label><input type="radio" name="kind" value="수동 기계식">수동 기계식</label>
+      <label><input type="radio" name="kind" value="오토매틱">오토매틱</label>
+      <label><input type="radio" name="kind" value="잘 모름">잘 모름</label>
+     </div>
+    </div>
+    <div class="g"><span class="lab">증상 (여러 개 선택)</span>
+     <div class="chips">
+      <label><input type="checkbox" name="sym" value="멈춤" checked>멈췄어요</label>
+      <label><input type="checkbox" name="sym" value="시간이 틀림">시간이 틀려요</label>
+      <label><input type="checkbox" name="sym" value="습기">유리 안쪽 습기</label>
+      <label><input type="checkbox" name="sym" value="용두">용두 이상</label>
+      <label><input type="checkbox" name="sym" value="줄·유리">줄·유리 문제</label>
+     </div>
+    </div>
+    <div class="g"><span class="lab">맡기는 방법</span>
+     <div class="seg" style="grid-template-columns:1fr 1fr">
+      <label><input type="radio" name="way" value="공방 방문" checked>공방 방문</label>
+      <label><input type="radio" name="way" value="택배 발송">택배 발송</label>
+     </div>
+    </div>
+    <div class="two">
+     <div class="g"><label class="lab" for="nm">이름</label><input type="text" id="nm" placeholder="홍길동"></div>
+     <div class="g"><label class="lab" for="tl">연락처</label><input type="tel" id="tl" placeholder="000-0000-0000"></div>
+    </div>
+    <div class="g"><label class="lab" for="dt">방문 또는 발송 예정일</label><input type="date" id="dt" value="2026-12-05"></div>
+    <button class="btn" type="submit">무료 진단 신청하기</button>
+    <p class="small">신청 내용은 진단 안내 연락에만 사용합니다.</p>
+   </div>
+   <div class="done" role="status">
+    <h3>신청서를 받았습니다</h3>
+    <p>공방 문을 여는 날 기준 하루 안에 적어 주신 번호로 연락드립니다. 택배를 고르셨다면 포장 상자 발송 일정도 함께 알려 드립니다.</p>
+    <dl><dt>시계 종류</dt><dd id="rk">-</dd><dt>증상</dt><dd id="rs">-</dd><dt>맡기는 방법</dt><dd id="rw">-</dd></dl>
+   </div>
+  </form>
+ </div>
+</section>
+
+<section class="blk" id="faq">
+ <div class="wrap">
+  <div class="rv"><h2>자주 묻는 질문</h2></div>
+  <div class="faq rv" style="margin-top:40px">
+   <details open><summary>오래된 시계도 부품이 있을까요?</summary><p>흔히 쓰인 무브먼트는 공용 부품을 구할 수 있습니다. 구하기 어려운 부품은 진단 때 미리 말씀드리고, 비슷한 부품으로 대신할지 함께 정합니다.</p></details>
+   <details><summary>배터리 교체만 해도 방수가 유지되나요?</summary><p>뒷판을 열면 고무 패킹이 눌려 있던 자리가 어긋날 수 있습니다. 원하시면 배터리 교체 때 패킹을 새로 끼우고 방수 점검을 함께 해 드립니다.</p></details>
+   <details><summary>오버홀은 얼마나 자주 해야 하나요?</summary><p>기계식은 보통 4~5년에 한 번을 권합니다. 하루 오차가 갑자기 커졌거나 태엽을 감아도 금방 서면 그 전에 점검하는 것이 좋습니다.</p></details>
+   <details><summary>진단 후 수리를 안 맡겨도 정말 무료인가요?</summary><p>12월에 접수하신 시계는 진단만 받고 돌려받으셔도 비용이 없습니다. 택배로 보내셨다면 돌려보내는 택배비만 받습니다.</p></details>
+  </div>
+ </div>
+</section>
+
+<footer>
+ <div class="wrap">
+  <div><b>초침공방</b><p style="margin-top:8px">손목시계 수리 · 오버홀 · 배터리 교체</p></div>
+  <div><p>전화 000-0000-0000 · 카카오톡 ID: example</p><p>사업자등록번호 000-00-00000</p></div>
+ </div>
+</footer>
+
+<script>
+(function(){
+ var f=document.getElementById('form');
+ f.addEventListener('submit',function(e){
+  e.preventDefault();
+  var k=f.querySelector('input[name=kind]:checked'),w=f.querySelector('input[name=way]:checked');
+  var s=[].map.call(f.querySelectorAll('input[name=sym]:checked'),function(x){return x.value});
+  document.getElementById('rk').textContent=k?k.value:'-';
+  document.getElementById('rs').textContent=s.length?s.join(', '):'선택 안 함';
+  document.getElementById('rw').textContent=w?w.value:'-';
+  f.classList.add('sent');
+ });
+ var io='IntersectionObserver' in window?new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12}):null;
+ document.querySelectorAll('.rv').forEach(function(el){io?io.observe(el):el.classList.add('in')});
+})();
+</script>
+</body>
+</html>
