@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>테두리 액자공방 · 연말 맞춤 액자 첫 주문 15% 할인</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&family=Noto+Sans+KR:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+:root{--wall:#F3F1EC;--wall2:#E9E5DC;--walnut:#5B3B27;--walnut2:#3E2617;--mat:#FBF8F1;--ink:#24211D;--brass:#B08A47;--sage:#7D8B74;--muted:#6F675D}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Noto Sans KR',sans-serif;color:var(--ink);background:var(--wall);word-break:keep-all;-webkit-font-smoothing:antialiased;overflow-x:clip;line-height:1.65}
+svg{display:block}
+.serif{font-family:'Gowun Batang',serif}
+.wrap{max-width:1200px;margin:0 auto;padding:0 32px}
+.lab{font-size:13px;font-weight:700;letter-spacing:.22em;color:var(--brass)}
+h2.t{font-family:'Gowun Batang',serif;font-weight:700;font-size:clamp(30px,3.6vw,46px);line-height:1.3;margin-top:12px;letter-spacing:-.01em}
+.lead{font-size:17.5px;color:var(--muted);margin-top:14px;max-width:560px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;height:56px;padding:0 28px;border-radius:2px;font-weight:700;font-size:16px;text-decoration:none;border:0;cursor:pointer;font-family:inherit;transition:.2s}
+.btn.p{background:var(--walnut);color:#FBF6EC;box-shadow:0 14px 28px -14px rgba(62,38,23,.8)}
+.btn.p:hover{background:var(--walnut2)}
+.btn.l{background:transparent;color:var(--ink);box-shadow:inset 0 0 0 1.5px var(--ink)}
+.btn svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:2.3;stroke-linecap:round;stroke-linejoin:round}
+
+.topbar{background:var(--walnut2);color:#EDE3D2;text-align:center;font-size:14px;padding:10px 16px;font-weight:500}
+.topbar b{color:#E2C084}
+header{border-bottom:1px solid rgba(36,33,29,.1);background:var(--wall)}
+header .wrap{display:flex;justify-content:space-between;align-items:center;height:76px}
+.logo{display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--ink)}
+.logo b{font-family:'Gowun Batang',serif;font-weight:700;font-size:23px;line-height:1;display:block}
+.logo small{font-size:11px;font-weight:700;letter-spacing:.3em;color:var(--muted);display:block;margin-top:5px}
+header .btn{height:44px;padding:0 20px;font-size:14.5px}
+
+.hero{position:relative;overflow:hidden;background:linear-gradient(180deg,#F3F1EC,#ECE8E0)}
+.hero:before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse 50% 60% at 78% 30%,rgba(255,250,236,.9),transparent 70%)}
+.hero .wrap{position:relative;display:grid;grid-template-columns:.95fr 1.05fr;gap:36px;align-items:center;padding-top:60px;padding-bottom:76px}
+.hero h1{font-family:'Gowun Batang',serif;font-weight:700;font-size:clamp(38px,4.6vw,60px);line-height:1.25;letter-spacing:-.02em;margin-top:18px}
+.hero h1 em{font-style:normal;background:linear-gradient(transparent 64%,rgba(176,138,71,.32) 64%,rgba(176,138,71,.32) 92%,transparent 92%);padding:0 .06em}
+.hero p.sub{font-size:18px;color:var(--muted);margin-top:20px;max-width:470px}
+.offer{margin-top:30px;display:flex;background:var(--mat);border:1px solid rgba(36,33,29,.14);box-shadow:0 20px 40px -28px rgba(36,33,29,.5);max-width:520px}
+.offer .pct{background:var(--walnut);color:#FBF6EC;padding:18px 24px;display:flex;flex-direction:column;justify-content:center;align-items:center;flex:none}
+.offer .pct b{font-family:'Gowun Batang',serif;font-size:50px;line-height:1}
+.offer .pct span{font-size:13px;font-weight:700;letter-spacing:.14em;margin-top:6px;color:#E2C084}
+.offer .tx{padding:18px 22px;display:flex;flex-direction:column;justify-content:center}
+.offer .tx b{font-size:18px;font-weight:700}
+.offer .tx span{font-size:15px;color:var(--muted);margin-top:4px}
+.hero .ctas{display:flex;gap:12px;margin-top:28px;flex-wrap:wrap}
+.wallart{position:relative}
+.wallart svg{width:100%;height:auto}
+
+.strip{background:var(--walnut2);color:#EDE3D2}
+.strip .wrap{display:grid;grid-template-columns:repeat(3,1fr);gap:0}
+.strip div{padding:30px 28px;border-left:1px solid rgba(237,227,210,.16);display:flex;gap:16px;align-items:center}
+.strip div:first-child{border-left:0;padding-left:0}
+.strip svg{width:40px;height:40px;stroke:#E2C084;fill:none;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round;flex:none}
+.strip b{display:block;font-family:'Gowun Batang',serif;font-size:20px;color:#FBF6EC}
+.strip span{font-size:14.5px;color:#CDBFA8}
+
+section{padding:104px 0}
+/* FRAMES */
+.frames .wrap{display:grid;grid-template-columns:1.05fr .95fr;gap:64px;align-items:center}
+.stage{background:linear-gradient(180deg,#EDE9E1,#E4DFD4);padding:50px 40px 40px;position:relative;border-radius:2px}
+.stage:after{content:"";position:absolute;left:0;right:0;bottom:0;height:40px;background:linear-gradient(180deg,#CFC6B6,#BDB3A1)}
+.stage svg{width:100%;max-width:440px;margin:0 auto;position:relative;z-index:1}
+.stage .cap{position:absolute;right:18px;top:16px;font-size:12.5px;font-weight:700;letter-spacing:.14em;color:var(--muted)}
+.opts{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:30px}
+.opt{display:flex;gap:14px;align-items:center;padding:14px;border:1.5px solid rgba(36,33,29,.14);background:var(--mat);cursor:pointer;text-align:left;font-family:inherit;color:inherit;border-radius:2px;transition:.15s}
+.opt:hover{border-color:rgba(36,33,29,.4)}
+.opt.on{border-color:var(--walnut);box-shadow:0 0 0 2px var(--walnut) inset}
+.opt i{width:52px;height:52px;flex:none;border-radius:1px;box-shadow:inset 0 0 0 8px var(--c),inset 0 0 0 9px rgba(0,0,0,.25),inset 0 0 0 14px #FBF8F1}
+.opt b{display:block;font-size:16px;font-weight:700}
+.opt span{font-size:13.5px;color:var(--muted)}
+
+/* STEPS */
+.steps{background:var(--mat)}
+.sgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;margin-top:50px;counter-reset:st}
+.sgrid div{position:relative;padding-top:26px;border-top:2px solid var(--ink)}
+.sgrid div:before{counter-increment:st;content:"0" counter(st);font-family:'Gowun Batang',serif;font-weight:700;font-size:15px;color:var(--brass);letter-spacing:.1em}
+.sgrid svg{width:46px;height:46px;stroke:var(--walnut);fill:none;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round;margin:14px 0 16px}
+.sgrid b{font-family:'Gowun Batang',serif;font-size:21px;display:block}
+.sgrid p{font-size:15px;color:var(--muted);margin-top:8px}
+
+/* PRICE */
+.price .tbl{margin-top:44px;background:var(--mat);border:1px solid rgba(36,33,29,.12)}
+.tr{display:grid;grid-template-columns:1.2fr 1fr 1fr 1fr;align-items:center;padding:20px 28px;border-top:1px solid rgba(36,33,29,.1)}
+.tr:first-child{border-top:0;background:#EFEBE3;font-size:13px;font-weight:700;letter-spacing:.12em;color:var(--muted);padding:14px 28px}
+.tr .sz{display:grid;grid-template-columns:50px 1fr;align-items:center;gap:12px}
+.tr .sz i{justify-self:center}
+.tr .sz i{display:block;border:3px solid var(--walnut);background:var(--mat);box-shadow:inset 0 0 0 4px #FBF8F1,inset 0 0 0 5px rgba(0,0,0,.12)}
+.tr b{font-family:'Gowun Batang',serif;font-size:21px}
+.tr small{display:block;font-size:13.5px;color:var(--muted);font-family:'Noto Sans KR'}
+.tr s{color:#9A9186;font-size:16px}
+.tr .now{font-family:'Gowun Batang',serif;font-weight:700;font-size:23px;color:var(--walnut);display:grid;grid-template-columns:118px auto;align-items:center;justify-content:start}
+.tr .now em{font-style:normal;font-family:'Noto Sans KR';font-size:12.5px;font-weight:700;background:#E9D9B8;color:var(--walnut2);padding:3px 7px;margin-left:8px;justify-self:start;border-radius:2px;vertical-align:middle}
+.pnote{font-size:14.5px;color:var(--muted);margin-top:14px}
+
+/* WHAT */
+.what{background:linear-gradient(180deg,#ECE8E0,#F3F1EC)}
+.wgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:22px;margin-top:46px}
+.wcard{background:var(--mat);padding:18px 18px 22px;box-shadow:0 22px 40px -32px rgba(36,33,29,.6)}
+.wcard svg{width:100%;height:auto}
+.wcard b{display:block;font-family:'Gowun Batang',serif;font-size:20px;margin-top:16px}
+.wcard p{font-size:14.5px;color:var(--muted);margin-top:4px}
+
+/* FORM */
+.apply{background:var(--walnut);color:#F3EBDD;position:relative;overflow:hidden}
+.apply:before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(90deg,rgba(0,0,0,.05) 0 2px,transparent 2px 9px),linear-gradient(180deg,rgba(0,0,0,.08),transparent)}
+.apply .wrap{position:relative;display:grid;grid-template-columns:.85fr 1.15fr;gap:56px;align-items:start}
+.apply .lab{color:#E2C084}
+.apply .lead{color:#DCCDB6}
+.apply ul{list-style:none;margin-top:30px}
+.apply li{display:flex;gap:12px;padding:12px 0;border-top:1px solid rgba(243,235,221,.16);font-size:15.5px}
+.apply li:before{content:"";flex:none;width:10px;height:10px;margin-top:8px;background:#E2C084;transform:rotate(45deg)}
+form{background:var(--mat);color:var(--ink);padding:34px;box-shadow:0 0 0 10px #EFE7D8,0 0 0 11px rgba(0,0,0,.2),0 40px 70px -30px rgba(0,0,0,.6)}
+.f2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.fld{margin-bottom:16px;display:flex;flex-direction:column;gap:7px}
+.fld label,.fld .lb{font-size:13.5px;font-weight:700;color:#4E463D}
+.fld input,.fld select{font-family:inherit;font-size:16px;padding:13px 14px;border:1.5px solid #D8D0C2;background:#fff;border-radius:2px;color:var(--ink);width:100%}
+.fld input:focus,.fld select:focus{outline:none;border-color:var(--walnut);box-shadow:0 0 0 3px rgba(91,59,39,.15)}
+.fld.err input,.fld.err select{border-color:#B3412F;background:#FFF5F2}
+.fld .e{display:none;font-size:13px;color:#A63A2A;font-weight:500}
+.fld.err .e{display:block}
+.drop{border:1.5px dashed #BFB4A2;background:#F7F3EA;padding:18px;display:flex;align-items:center;gap:14px;cursor:pointer;border-radius:2px}
+.drop svg{width:34px;height:34px;stroke:var(--walnut);fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;flex:none}
+.drop b{font-size:15px;display:block}
+.drop span{font-size:13.5px;color:var(--muted)}
+.drop input{display:none}
+.est{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;background:#F1ECE2;padding:14px 18px;margin:4px 0 18px}
+.est span{font-size:14px;color:#5F574D}
+.est s{color:#9A9186;font-size:15px;margin-right:8px}
+.est b.ph{font-family:"Noto Sans KR";font-weight:500;font-size:14px;color:#8F867B}
+.est b{font-family:'Gowun Batang',serif;font-weight:700;font-size:26px;color:var(--walnut)}
+.agree{display:flex;gap:10px;align-items:flex-start;font-size:14px;color:#5F574D;margin-bottom:18px}
+.agree input{width:18px;height:18px;margin-top:3px;accent-color:var(--walnut)}
+form .btn{width:100%}
+.done{display:none;text-align:center;padding:24px 6px}
+.done svg{width:62px;height:62px;margin:0 auto 14px;stroke:var(--sage);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.done h3{font-family:'Gowun Batang',serif;font-size:28px}
+.done p{font-size:16px;color:var(--muted);margin-top:10px}
+
+/* FAQ */
+.faq .wrap{max-width:860px}
+details{border-bottom:1px solid rgba(36,33,29,.16)}
+details:first-of-type{border-top:1px solid rgba(36,33,29,.16);margin-top:36px}
+summary{list-style:none;cursor:pointer;padding:22px 0;font-family:'Gowun Batang',serif;font-weight:700;font-size:20px;display:flex;justify-content:space-between;gap:16px;align-items:center}
+summary::-webkit-details-marker{display:none}
+summary:after{content:"+";font-family:'Noto Sans KR';font-weight:400;font-size:28px;line-height:1;color:var(--walnut);transition:.2s}
+details[open] summary:after{transform:rotate(45deg)}
+details p{padding:0 30px 22px 0;font-size:16px;color:var(--muted)}
+
+footer{background:var(--walnut2);color:#BFB09A;padding:44px 0;font-size:14.5px}
+footer .wrap{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap;align-items:center}
+footer .fc span{white-space:nowrap}
+footer .logo b{color:#F3EBDD}
+footer .logo small{color:#BFB09A}
+.mcta{display:none}
+
+@media(max-width:1000px){
+ .hero .wrap,.frames .wrap,.apply .wrap{grid-template-columns:1fr;gap:44px}
+ .sgrid,.wgrid{grid-template-columns:1fr 1fr}
+}
+@media(max-width:720px){
+ .wrap{padding:0 20px}
+ section{padding:72px 0}
+ header .btn{display:none}
+ .hero .wrap{padding-top:34px;padding-bottom:56px}
+ .hero h1{font-size:36px}
+ .hero p.sub{font-size:16.5px}
+ .offer .pct{padding:14px 16px}.offer .pct b{font-size:40px}
+ .offer .tx{padding:14px 16px}.offer .tx b{font-size:16.5px}
+ .hero .btn{flex:1 1 100%}
+ .strip .wrap{grid-template-columns:1fr}
+ .strip div{border-left:0;border-top:1px solid rgba(237,227,210,.16);padding:20px 0}
+ .strip div:first-child{border-top:0}
+ .opts{grid-template-columns:1fr}
+ .stage{padding:34px 20px 30px}
+ .sgrid{grid-template-columns:1fr}
+ .wgrid{grid-template-columns:1fr 1fr;gap:12px}
+ .wcard{padding:10px 10px 14px}.wcard b{font-size:17px}.wcard p{font-size:13px}
+ .tr{grid-template-columns:1fr auto;gap:6px 14px;padding:18px}
+ .tr:first-child{display:none}
+ .tr .sz{grid-column:1/-1}
+ .tr .frm{display:none}
+ form{padding:22px 18px}
+ .f2{grid-template-columns:1fr;gap:0}
+ summary{font-size:18px}
+ body{padding-bottom:76px}
+ .mcta{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:20;padding:10px 16px;background:rgba(243,241,236,.96);border-top:1px solid rgba(36,33,29,.12)}
+ .mcta .btn{width:100%;height:52px}
+}
+</style>
+</head>
+<body>
+
+<div class="topbar">12월 31일까지 · <b>첫 주문 15% 할인 + 무광 매트 무료 업그레이드</b></div>
+<header>
+ <div class="wrap">
+  <a class="logo" href="#top"><svg width="44" height="44" viewBox="0 0 44 44"><rect x="2" y="2" width="40" height="40" fill="#5B3B27"/><rect x="8" y="8" width="28" height="28" fill="#FBF8F1"/><rect x="13" y="13" width="18" height="18" fill="none" stroke="#B08A47" stroke-width="1.5"/><path d="M2 2l6 6M42 2l-6 6M2 42l6-6M42 42l-6-6" stroke="#3E2617" stroke-width="1.2"/></svg><span><b>테두리 액자공방</b><small>CUSTOM FRAMING</small></span></a>
+  <a class="btn p" href="#apply">견적 · 주문 신청</a>
+ </div>
+</header>
+
+<section class="hero" id="top" style="padding:0">
+ <div class="wrap">
+  <div>
+   <div class="lab">연말 맞춤 액자 이벤트</div>
+   <h1>서랍 속 한 장을<br><em>걸어 두는 사진으로</em></h1>
+   <p class="sub">가족사진, 여행 사진, 아이 그림까지. 크기와 매트, 나무 결을 골라 한 점씩 손으로 짜 맞춥니다.</p>
+   <div class="offer"><div class="pct"><b>15%</b><span>첫 주문</span></div><div class="tx"><b>모든 맞춤 액자 15% 할인</b><span>+ 무광 매트 무료 업그레이드<br>12월 31일 주문분까지</span></div></div>
+   <div class="ctas"><a class="btn p" href="#apply">사진 보내고 견적 받기 <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a><a class="btn l" href="#frames">프레임 보기</a></div>
+  </div>
+  <div class="wallart">
+   <svg viewBox="0 0 640 560" role="img" aria-label="벽에 걸린 여러 크기의 액자 일러스트: 바다 풍경, 식물 그림, 아이 크레파스 그림, 산 풍경 사진이 원목과 메탈 프레임에 들어 있고 아래 선반에 작은 액자와 화병이 놓여 있음">
+    <defs>
+     <linearGradient id="wn" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#7A5135"/><stop offset=".5" stop-color="#5B3B27"/><stop offset="1" stop-color="#3E2617"/></linearGradient>
+     <linearGradient id="ok" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#D9B98A"/><stop offset=".5" stop-color="#C29E6C"/><stop offset="1" stop-color="#A27E4E"/></linearGradient>
+     <linearGradient id="bk" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#4A4643"/><stop offset="1" stop-color="#1E1C1A"/></linearGradient>
+     <linearGradient id="gd" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#E3C688"/><stop offset=".5" stop-color="#B08A47"/><stop offset="1" stop-color="#8A6A30"/></linearGradient>
+     <linearGradient id="sea" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#F1D3B4"/><stop offset=".45" stop-color="#E9B996"/><stop offset=".46" stop-color="#7FA3A8"/><stop offset="1" stop-color="#4E7880"/></linearGradient>
+     <linearGradient id="mt" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#C9D6DA"/><stop offset="1" stop-color="#EEF1EE"/></linearGradient>
+     <linearGradient id="shelf" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#8A6243"/><stop offset="1" stop-color="#5B3B27"/></linearGradient>
+     <radialGradient id="lightw" cx=".5" cy=".2" r=".7"><stop offset="0" stop-color="#FFFBF0"/><stop offset="1" stop-color="#E9E4D9"/></radialGradient>
+     <filter id="fs" x="-20%" y="-20%" width="140%" height="150%"><feDropShadow dx="6" dy="12" stdDeviation="9" flood-color="#2A2018" flood-opacity=".3"/></filter>
+     <filter id="fs2" x="-20%" y="-20%" width="140%" height="150%"><feDropShadow dx="3" dy="6" stdDeviation="5" flood-color="#2A2018" flood-opacity=".28"/></filter>
+     <pattern id="grain" width="8" height="60" patternUnits="userSpaceOnUse"><path d="M2 0q2 30 0 60M6 0q-1 30 1 60" stroke="#000" stroke-opacity=".12" stroke-width="1" fill="none"/></pattern>
+    </defs>
+    <rect width="640" height="560" fill="url(#lightw)" opacity=".0"/>
+    <!-- big sea frame walnut -->
+    <g filter="url(#fs)">
+     <rect x="70" y="40" width="300" height="230" fill="url(#wn)"/><rect x="70" y="40" width="300" height="230" fill="url(#grain)"/>
+     <rect x="88" y="58" width="264" height="194" fill="#FBF8F1"/>
+     <rect x="120" y="86" width="200" height="138" fill="url(#sea)"/>
+     <circle cx="250" cy="146" r="18" fill="#FBEBD2"/>
+     <path d="M120 150q30-12 60 0t60 0 80 0" stroke="#A9C6C9" stroke-width="3" fill="none"/>
+     <path d="M120 180q40-10 80 0t120 0" stroke="#9FBFC3" stroke-width="2.5" fill="none" opacity=".8"/>
+     <path d="M120 224v-22c30-10 70-14 110-6 30 6 60 4 90-4v32z" fill="#E7D3B4"/>
+     <path d="M196 196l10-26 10 26z" fill="#F8F1E4"/><path d="M206 170v28" stroke="#5B3B27" stroke-width="1.5"/>
+     <rect x="120" y="86" width="200" height="138" fill="none" stroke="rgba(0,0,0,.18)" stroke-width="2"/>
+     <path d="M70 40l18 18M370 40l-18 18M70 270l18-18M370 270l-18-18" stroke="#2E1C10" stroke-width="1.5"/>
+    </g>
+    <!-- botanical oak tall -->
+    <g filter="url(#fs)">
+     <rect x="402" y="30" width="170" height="250" fill="url(#ok)"/><rect x="402" y="30" width="170" height="250" fill="url(#grain)"/>
+     <rect x="414" y="42" width="146" height="226" fill="#F5F0E3"/>
+     <g stroke="#5C7058" stroke-width="2.5" fill="none"><path d="M487 250c0-60-4-120 6-180"/></g>
+     <g fill="#7D8B74"><ellipse cx="470" cy="210" rx="22" ry="9" transform="rotate(-30 470 210)"/><ellipse cx="506" cy="186" rx="22" ry="9" transform="rotate(30 506 186)"/><ellipse cx="468" cy="160" rx="20" ry="8" transform="rotate(-35 468 160)"/><ellipse cx="510" cy="134" rx="20" ry="8" transform="rotate(35 510 134)"/><ellipse cx="474" cy="108" rx="17" ry="7" transform="rotate(-40 474 108)"/><ellipse cx="504" cy="88" rx="15" ry="6" transform="rotate(40 504 88)"/></g>
+     <g fill="#5C7058" opacity=".6"><ellipse cx="482" cy="226" rx="14" ry="5" transform="rotate(-20 482 226)"/></g>
+     <circle cx="493" cy="70" r="8" fill="#D9A27A"/><circle cx="493" cy="70" r="3.5" fill="#B5714A"/>
+     <path d="M440 258h96" stroke="#9A8F7C" stroke-width="1"/>
+    </g>
+    <!-- kid drawing black metal -->
+    <g filter="url(#fs)">
+     <rect x="40" y="306" width="200" height="160" fill="url(#bk)"/>
+     <rect x="47" y="313" width="186" height="146" fill="#FBF8F1"/>
+     <rect x="70" y="332" width="140" height="108" fill="#FFFFFF"/>
+     <path d="M70 420h140v20H70z" fill="#9CCB7A" opacity=".75"/>
+     <circle cx="186" cy="356" r="14" fill="#F4C542"/><g stroke="#F4C542" stroke-width="3" stroke-linecap="round"><path d="M186 334v-6M204 356h6M200 342l5-5M168 342l-5-5"/></g>
+     <path d="M96 420v-36l22-20 22 20v36z" fill="#E86D5A"/><path d="M90 386l28-26 28 26" stroke="#7A3A2E" stroke-width="4" fill="none" stroke-linecap="round"/>
+     <rect x="112" y="400" width="12" height="20" fill="#5B8BC9"/>
+     <path d="M150 420c0-14 4-20 10-20s10 6 10 20" stroke="#5B8BC9" stroke-width="4" fill="none" stroke-linecap="round"/><circle cx="160" cy="392" r="7" fill="none" stroke="#5B8BC9" stroke-width="3"/>
+     <g stroke="#9E5BB5" stroke-width="3" fill="none" stroke-linecap="round"><path d="M80 350q8-8 16 0M100 344q8-8 16 0"/></g>
+    </g>
+    <!-- mountain photo gold thin -->
+    <g filter="url(#fs)">
+     <rect x="272" y="300" width="150" height="120" fill="url(#gd)"/>
+     <rect x="278" y="306" width="138" height="108" fill="#FBF8F1"/>
+     <rect x="294" y="320" width="106" height="80" fill="url(#mt)"/>
+     <path d="M294 400v-30l24-26 18 18 22-30 42 44v24z" fill="#5E7C86"/>
+     <path d="M336 332l-8 12 6-2 4 6 4-6 6 2z" fill="#F5F7F5"/>
+     <path d="M294 400v-14c20-6 40-4 60-8s34 0 46 4v18z" fill="#3F5E68"/>
+    </g>
+    <!-- small walnut frame -->
+    <g filter="url(#fs)">
+     <rect x="452" y="310" width="120" height="120" fill="url(#wn)"/><rect x="452" y="310" width="120" height="120" fill="url(#grain)"/>
+     <rect x="464" y="322" width="96" height="96" fill="#FBF8F1"/>
+     <rect x="482" y="340" width="60" height="60" fill="#E7DCC8"/>
+     <path d="M512 352c-14 0-20 12-20 22s8 18 20 18 20-8 20-18-6-22-20-22z" fill="#C97A5A"/>
+     <path d="M512 352c2-8 8-12 14-10" stroke="#5C7058" stroke-width="2.5" fill="none"/>
+    </g>
+    <!-- shelf -->
+    <g filter="url(#fs2)"><rect x="20" y="492" width="600" height="18" fill="url(#shelf)"/><rect x="20" y="510" width="600" height="6" fill="#3E2617"/></g>
+    <g filter="url(#fs2)">
+     <rect x="300" y="432" width="64" height="60" fill="url(#ok)" transform="rotate(-4 332 462)"/><rect x="308" y="440" width="48" height="44" fill="#FBF8F1" transform="rotate(-4 332 462)"/><rect x="316" y="448" width="32" height="28" fill="#D6C2E0" transform="rotate(-4 332 462)"/>
+     <path d="M420 492c-4-20 0-34 10-40h20c10 6 14 20 10 40z" fill="#E9E1D2"/><path d="M430 452h20" stroke="#BDB3A1" stroke-width="3"/>
+     <g stroke="#7D8B74" stroke-width="2" fill="none"><path d="M440 452c-6-20-14-30-24-36M440 452c2-22 10-34 18-40M440 452c0-24-2-36 0-46"/></g>
+     <g fill="#D9A27A"><circle cx="416" cy="416" r="5"/><circle cx="458" cy="412" r="5"/><circle cx="440" cy="404" r="4"/></g>
+    </g>
+    <!-- museum label -->
+    <g transform="translate(560 452)"><rect width="56" height="34" fill="#FBF8F1" stroke="#D8D0C2"/><path d="M8 11h40M8 18h30M8 25h22" stroke="#9A9186" stroke-width="2"/></g>
+   </svg>
+  </div>
+ </div>
+</section>
+
+<div class="strip">
+ <div class="wrap">
+  <div><svg viewBox="0 0 40 40"><path d="M6 20l14-14h14v14L20 34z"/><circle cx="27" cy="13" r="2.5"/></svg><span><b>첫 주문 15% 할인</b>사이즈·프레임 상관없이 전 품목</span></div>
+  <div><svg viewBox="0 0 40 40"><rect x="5" y="5" width="30" height="30"/><rect x="12" y="12" width="16" height="16"/></svg><span><b>무광 매트 무료 업그레이드</b>반사 적은 고급 매트지로</span></div>
+  <div><svg viewBox="0 0 40 40"><rect x="7" y="9" width="26" height="25" rx="2"/><path d="M7 16h26M14 5v7M26 5v7"/></svg><span><b>12월 31일 주문분까지</b>연말 선물은 12월 20일 전 주문 권장</span></div>
+ </div>
+</div>
+
+<section class="frames" id="frames">
+ <div class="wrap">
+  <div class="stage">
+   <span class="cap" id="cap">월넛 원목 · 30mm</span>
+   <svg viewBox="0 0 440 520" id="pv" role="img" aria-label="선택한 프레임으로 보는 액자 미리보기">
+    <defs>
+     <linearGradient id="pvf" x1="0" y1="0" x2="1" y2="1"><stop offset="0" id="s1" stop-color="#7A5135"/><stop offset=".5" id="s2" stop-color="#5B3B27"/><stop offset="1" id="s3" stop-color="#3E2617"/></linearGradient>
+     <linearGradient id="pvp" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#F6D7A8"/><stop offset=".5" stop-color="#EAB284"/><stop offset="1" stop-color="#C98B6A"/></linearGradient>
+     <filter id="pvs" x="-20%" y="-20%" width="140%" height="150%"><feDropShadow dx="10" dy="18" stdDeviation="14" flood-color="#2A2018" flood-opacity=".35"/></filter>
+     <pattern id="pvg" width="8" height="60" patternUnits="userSpaceOnUse"><path d="M2 0q2 30 0 60M6 0q-1 30 1 60" stroke="#000" stroke-opacity=".12" stroke-width="1" fill="none"/></pattern>
+    </defs>
+    <g filter="url(#pvs)">
+     <rect x="20" y="10" width="400" height="500" fill="url(#pvf)"/>
+     <rect x="20" y="10" width="400" height="500" fill="url(#pvg)" id="pvgrain"/>
+     <rect x="50" y="40" width="340" height="440" fill="#FBF8F1"/>
+     <rect x="50" y="40" width="340" height="440" fill="none" stroke="rgba(0,0,0,.18)" stroke-width="3"/>
+     <path d="M20 10l30 30M420 10l-30 30M20 510l30-30M420 510l-30-30" stroke="rgba(0,0,0,.28)" stroke-width="1.5"/>
+     <rect x="100" y="96" width="240" height="300" fill="url(#pvp)"/>
+     <circle cx="220" cy="200" r="34" fill="#FFF1DA"/>
+     <path d="M100 396V300c30-30 60-40 90-24s50 6 70-14 60-20 80 8v126z" fill="#8F6A5A"/>
+     <path d="M100 396v-60c40-10 70 4 110-4s80-24 130 0v64z" fill="#5E4A44"/>
+     <g fill="#3A2C28"><path d="M150 396v-60l6-16 6 16v60zM172 396v-44l5-12 5 12v44z"/></g>
+     <rect x="100" y="96" width="240" height="300" fill="none" stroke="rgba(0,0,0,.14)" stroke-width="2"/>
+     <path d="M140 438h160" stroke="#C8BFAE" stroke-width="1.5"/>
+    </g>
+   </svg>
+  </div>
+  <div>
+   <div class="lab">프레임 고르기</div>
+   <h2 class="t">같은 사진도<br>테두리에 따라 달라집니다</h2>
+   <p class="lead">아래에서 골라 보세요. 실제 샘플은 공방에서 사진에 대어 보고 정할 수 있습니다.</p>
+   <div class="opts">
+    <button class="opt on" data-f="walnut" data-c="#7A5135,#5B3B27,#3E2617" data-g="1" data-cap="월넛 원목 · 30mm" style="--c:#5B3B27"><i></i><span><b>월넛 원목</b><span>깊은 갈색 · 가족사진</span></span></button>
+    <button class="opt" data-f="oak" data-c="#D9B98A,#C29E6C,#A27E4E" data-g="1" data-cap="오크 내추럴 · 25mm" style="--c:#C29E6C"><i></i><span><b>오크 내추럴</b><span>밝은 결 · 아이 그림</span></span></button>
+    <button class="opt" data-f="black" data-c="#4A4643,#2E2B29,#1E1C1A" data-g="0" data-cap="블랙 메탈 · 12mm" style="--c:#2E2B29"><i></i><span><b>블랙 메탈</b><span>얇고 단정 · 포스터</span></span></button>
+    <button class="opt" data-f="gold" data-c="#E3C688,#B08A47,#8A6A30" data-g="0" data-cap="브라스 골드 · 15mm" style="--c:#B08A47"><i></i><span><b>브라스 골드</b><span>은은한 금빛 · 웨딩</span></span></button>
+   </div>
+  </div>
+ </div>
+</section>
+
+<section class="steps">
+ <div class="wrap">
+  <div class="lab">주문 과정</div>
+  <h2 class="t">사진만 보내 주세요, 나머지는 공방에서</h2>
+  <div class="sgrid">
+   <div><svg viewBox="0 0 48 48"><rect x="8" y="10" width="32" height="26" rx="2"/><circle cx="18" cy="20" r="3"/><path d="M8 32l10-8 8 6 6-4 8 6"/><path d="M24 42v-8M20 38l4-4 4 4"/></svg><b>사진 · 그림 보내기</b><p>파일을 올리거나, 원본 그림은 공방에 맡겨 주세요.</p></div>
+   <div><svg viewBox="0 0 48 48"><rect x="6" y="8" width="36" height="28" rx="2"/><rect x="13" y="14" width="22" height="16"/><path d="M18 42h12M24 36v6"/></svg><b>시안 확인</b><p>프레임·매트를 입힌 미리보기 이미지를 메시지로 보내 드립니다.</p></div>
+   <div><svg viewBox="0 0 48 48"><path d="M8 40l10-10M18 30l18-18 4 4-18 18zM32 16l4 4"/><path d="M6 12h14M6 18h8"/></svg><b>손으로 제작</b><p>나무를 45도로 재단해 짜 맞추고, 무반사 아크릴을 끼웁니다.</p></div>
+   <div><svg viewBox="0 0 48 48"><rect x="6" y="16" width="26" height="18"/><path d="M32 22h7l4 6v6H32"/><circle cx="14" cy="36" r="4"/><circle cx="36" cy="36" r="4"/></svg><b>방문 수령 · 배송</b><p>보통 5~7일. 모서리 보호 포장으로 배송도 가능합니다.</p></div>
+  </div>
+ </div>
+</section>
+
+<section class="price" id="price">
+ <div class="wrap">
+  <div class="lab">사이즈별 가격</div>
+  <h2 class="t">이벤트가로 바로 확인하세요</h2>
+  <div class="tbl">
+   <div class="tr"><span>사이즈</span><span class="frm">추천 용도</span><span>정상가</span><span>첫 주문가</span></div>
+   <div class="tr"><div class="sz"><i style="width:30px;height:38px"></i><div><b>A4</b><small>21 × 29.7cm</small></div></div><span class="frm" style="font-size:15px;color:var(--muted)">책상 위 · 아이 그림</span><s>48,000원</s><span class="now">40,800원<em>15%</em></span></div>
+   <div class="tr"><div class="sz"><i style="width:38px;height:50px"></i><div><b>A3</b><small>29.7 × 42cm</small></div></div><span class="frm" style="font-size:15px;color:var(--muted)">거실 선반 · 여행 사진</span><s>68,000원</s><span class="now">57,800원<em>15%</em></span></div>
+   <div class="tr"><div class="sz"><i style="width:46px;height:62px"></i><div><b>50 × 70</b><small>대형 · 매트 포함</small></div></div><span class="frm" style="font-size:15px;color:var(--muted)">현관 · 가족사진</span><s>118,000원</s><span class="now">100,300원<em>15%</em></span></div>
+  </div>
+  <p class="pnote">원목 프레임 · 무광 매트 · 무반사 아크릴 포함 가격 · 사진 인화 포함 시 A4 +5,000원 / A3 +8,000원 / 50×70 +15,000원</p>
+ </div>
+</section>
+
+<section class="what">
+ <div class="wrap">
+  <div class="lab">이런 것도 액자로</div>
+  <h2 class="t">사진이 아니어도 괜찮아요</h2>
+  <div class="wgrid">
+   <div class="wcard"><svg viewBox="0 0 240 180"><rect width="240" height="180" fill="#E9E1D2"/><rect x="40" y="18" width="160" height="144" fill="#2E2B29"/><rect x="48" y="26" width="144" height="128" fill="#FBF8F1"/><rect x="64" y="42" width="112" height="96" fill="#fff"/><path d="M64 138v-20c18-14 30-10 44 0s30 4 44-6 18 0 24 6v20z" fill="#9CCB7A"/><circle cx="148" cy="64" r="10" fill="#F4C542"/><path d="M86 118v-24l16-14 16 14v24z" fill="#E86D5A"/></svg><b>아이 그림</b><p>크레파스 그림도 번지지 않게</p></div>
+   <div class="wcard"><svg viewBox="0 0 240 180"><rect width="240" height="180" fill="#E5DED0"/><rect x="34" y="20" width="172" height="140" fill="#C29E6C"/><rect x="42" y="28" width="156" height="124" fill="#F2EBDD"/><g fill="none" stroke-width="3"><circle cx="120" cy="90" r="34" stroke="#B5714A"/><circle cx="120" cy="90" r="22" stroke="#7D8B74"/></g><g fill="#D9A27A"><circle cx="120" cy="56" r="6"/><circle cx="154" cy="90" r="6"/><circle cx="120" cy="124" r="6"/><circle cx="86" cy="90" r="6"/></g><path d="M42 28l10 10M198 28l-10 10" stroke="#8A6A30" stroke-width="1.2"/></svg><b>자수 · 퍼즐</b><p>두께 있는 작품은 깊은 프레임으로</p></div>
+   <div class="wcard"><svg viewBox="0 0 240 180"><rect width="240" height="180" fill="#E2DCD0"/><rect x="40" y="16" width="160" height="148" fill="#5B3B27"/><rect x="50" y="26" width="140" height="128" fill="#3E2617"/><rect x="56" y="32" width="128" height="116" fill="#ECE5D6"/><path d="M92 50h56l14 18-12 8v52H90V76l-12-8z" fill="#3E5A80"/><path d="M110 50c4 8 16 8 20 0" stroke="#2A3E5A" stroke-width="3" fill="none"/><text x="120" y="112" text-anchor="middle" font-family="Gowun Batang" font-weight="700" font-size="30" fill="#ECE5D6">7</text></svg><b>유니폼 · 기념품</b><p>입체 박스 액자로 그대로</p></div>
+   <div class="wcard"><svg viewBox="0 0 240 180"><rect width="240" height="180" fill="#EAE4D8"/><rect x="58" y="14" width="124" height="152" fill="#B08A47"/><rect x="64" y="20" width="112" height="140" fill="#FBF8F1"/><rect x="78" y="34" width="84" height="104" fill="#F1E3D3"/><path d="M120 60c-16-22-40 2-20 22l20 18 20-18c20-20-4-44-20-22z" fill="#D58C86"/><path d="M90 150h60" stroke="#C8BFAE"/></svg><b>웨딩 · 기념일</b><p>날짜를 새긴 동판 추가 가능</p></div>
+  </div>
+ </div>
+</section>
+
+<section class="apply" id="apply">
+ <div class="wrap">
+  <div>
+   <div class="lab">견적 · 주문 신청</div>
+   <h2 class="t">사진 한 장으로<br>바로 견적 받기</h2>
+   <p class="lead">신청을 남기시면 영업시간 안에 시안과 최종 가격을 메시지로 보내 드립니다. 확인 전까지 결제는 없습니다.</p>
+   <ul>
+    <li>첫 주문 15% 할인은 시안 확인 후 자동 적용</li>
+    <li>무광 매트 업그레이드는 12월 31일 주문분까지</li>
+    <li>방문 상담: 화–토 11:00–19:00</li>
+    <li>전화 000-0000-0000 · 카카오톡 ID: example</li>
+   </ul>
+  </div>
+  <form id="fm" novalidate>
+   <div id="fb">
+    <div class="fld"><span class="lb">사진 · 그림 파일</span>
+     <label class="drop"><svg viewBox="0 0 36 36"><rect x="4" y="6" width="28" height="22" rx="2"/><circle cx="13" cy="14" r="2.5"/><path d="M4 24l8-6 7 5 5-3 8 6"/></svg><span><b id="fname">파일 선택 (선택 사항)</b><span>JPG · PNG · 원본 그림은 공방 방문 접수</span></span><input type="file" id="file" accept="image/*"></label>
+    </div>
+    <div class="f2">
+     <div class="fld" id="f-size"><label for="size">사이즈</label><select id="size"><option value="">선택해 주세요</option><option value="48000">A4 (21×29.7)</option><option value="68000">A3 (29.7×42)</option><option value="118000">50×70</option></select><span class="e">사이즈를 골라 주세요.</span></div>
+     <div class="fld"><label for="frame">프레임</label><select id="frame"><option value="walnut">월넛 원목</option><option value="oak">오크 내추럴</option><option value="black">블랙 메탈</option><option value="gold">브라스 골드</option></select></div>
+    </div>
+    <div class="f2">
+     <div class="fld" id="f-name"><label for="nm">이름</label><input id="nm" placeholder="홍길동"><span class="e">이름을 적어 주세요.</span></div>
+     <div class="fld" id="f-tel"><label for="tel">연락처</label><input id="tel" inputmode="tel" placeholder="010-0000-0000"><span class="e">연락처를 정확히 적어 주세요.</span></div>
+    </div>
+    <div class="fld"><label for="qty">수량</label><select id="qty"><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option></select></div>
+    <div class="est"><span>예상 금액 (첫 주문 15% 적용)</span><span><s id="org"></s><b id="est" class="ph">사이즈를 고르면 표시됩니다</b></span></div>
+    <label class="agree" id="f-agree"><input type="checkbox" id="ag"> 견적 안내를 위한 연락처 이용에 동의합니다.</label>
+    <button class="btn p" type="submit">견적 신청하기 <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+   </div>
+   <div class="done" id="done"><svg viewBox="0 0 64 64"><circle cx="32" cy="32" r="28"/><path d="m20 33 8 8 16-18"/></svg><h3>신청이 접수되었습니다</h3><p id="dt">시안과 최종 가격을 메시지로 보내 드릴게요.</p></div>
+  </form>
+ </div>
+</section>
+
+<section class="faq">
+ <div class="wrap">
+  <div class="lab">자주 묻는 질문</div>
+  <h2 class="t">주문 전에 확인하세요</h2>
+  <details open><summary>휴대폰 사진도 크게 뽑을 수 있나요?</summary><p>대부분 A3까지는 충분합니다. 파일을 보내 주시면 해상도를 먼저 확인하고, 크기가 부족하면 알맞은 사이즈를 안내해 드립니다.</p></details>
+  <details><summary>원본 그림을 맡기면 손상되지 않나요?</summary><p>원본은 중성 매트와 무산성 테이프로만 고정하고, 그림에 직접 풀을 쓰지 않습니다. 나중에 꺼낼 수 있게 짜 맞춥니다.</p></details>
+  <details><summary>할인은 어떻게 적용되나요?</summary><p>테두리 액자공방에 처음 주문하시는 분께 시안 확인 단계에서 15%가 적용됩니다. 무광 매트 업그레이드는 12월 31일 주문분까지입니다.</p></details>
+  <details><summary>배송도 되나요?</summary><p>모서리 보호대와 완충재로 포장해 택배로 보내 드립니다. 50×70 대형은 방문 수령을 권해 드립니다.</p></details>
+ </div>
+</section>
+
+<footer>
+ <div class="wrap">
+  <a class="logo" href="#top"><svg width="40" height="40" viewBox="0 0 44 44"><rect x="2" y="2" width="40" height="40" fill="#B08A47"/><rect x="8" y="8" width="28" height="28" fill="#FBF8F1"/><rect x="13" y="13" width="18" height="18" fill="none" stroke="#5B3B27" stroke-width="1.5"/></svg><span><b>테두리 액자공방</b><small>CUSTOM FRAMING</small></span></a>
+  <span class="fc"><span>화–토 11:00–19:00</span> · <span>000-0000-0000</span> · <span>카카오톡 ID: example</span></span>
+ </div>
+</footer>
+<div class="mcta"><a class="btn p" href="#apply">첫 주문 15% 견적 받기</a></div>
+
+<script>
+(function(){
+ function won(n){return n.toLocaleString('ko-KR')+'원'}
+ var opts=document.querySelectorAll('.opt');
+ opts.forEach(function(b){b.addEventListener('click',function(){
+  opts.forEach(function(x){x.classList.remove('on')});b.classList.add('on');
+  var c=b.dataset.c.split(',');['s1','s2','s3'].forEach(function(id,i){document.getElementById(id).setAttribute('stop-color',c[i])});
+  document.getElementById('pvgrain').style.display=b.dataset.g==='1'?'':'none';
+  document.getElementById('cap').textContent=b.dataset.cap;
+  document.getElementById('frame').value=b.dataset.f;
+ })});
+ var size=document.getElementById('size'),qty=document.getElementById('qty');
+ function calc(){var v=+size.value,q=+qty.value;if(!v){document.getElementById('est').textContent='사이즈를 고르면 표시됩니다';document.getElementById('est').className='ph';document.getElementById('org').textContent='';return}
+  document.getElementById('org').textContent=won(v*q);document.getElementById('est').className='';document.getElementById('est').textContent=won(Math.round(v*q*.85/100)*100)}
+ size.onchange=calc;qty.onchange=calc;
+ document.getElementById('file').onchange=function(e){var f=e.target.files[0];document.getElementById('fname').textContent=f?f.name:'파일 선택 (선택 사항)'};
+ document.getElementById('fm').addEventListener('submit',function(e){e.preventDefault();var ok=true;
+  function chk(id,cond){var f=document.getElementById(id);if(!cond){f.classList.add('err');ok=false}else f.classList.remove('err')}
+  chk('f-size',!!size.value);chk('f-name',document.getElementById('nm').value.trim().length>0);
+  chk('f-tel',/^[0-9\-\s]{9,}$/.test(document.getElementById('tel').value.trim()));
+  var ag=document.getElementById('ag').checked;document.getElementById('f-agree').style.color=ag?'':'#A63A2A';if(!ag)ok=false;
+  if(!ok)return;
+  document.getElementById('dt').textContent=document.getElementById('nm').value.trim()+'님, '+size.options[size.selectedIndex].text+' · '+document.getElementById('frame').options[document.getElementById('frame').selectedIndex].text+' '+qty.value+'점 견적 신청을 받았습니다. 예상 금액 '+document.getElementById('est').textContent+' 기준으로 시안을 보내 드릴게요.';
+  document.getElementById('fb').style.display='none';document.getElementById('done').style.display='block';
+ });
+})();
+</script>
+</body>
+</html>

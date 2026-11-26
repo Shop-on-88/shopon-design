@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>굴마루 석화구이·굴보쌈 · 메뉴판 디자인</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@700;800&family=Noto+Sans+KR:wght@400;500;700&family=Cormorant+Garamond:ital,wght@1,600&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+html{background:#EDEAE4}
+body{font-family:'Noto Sans KR',sans-serif;word-break:keep-all;color:#24313A;-webkit-font-smoothing:antialiased;min-height:100vh;overflow-x:clip;
+ background:radial-gradient(ellipse 50% 40% at 100% 0%,rgba(198,186,214,.5),transparent 70%),radial-gradient(ellipse 50% 40% at 0% 100%,rgba(176,206,204,.5),transparent 70%),linear-gradient(175deg,#F4F1EC,#E8E4DD)}
+.wrap{max-width:1180px;margin:0 auto;padding:46px 20px 130px}
+.hd{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:22px;margin-bottom:34px;padding:30px 32px 28px;background:linear-gradient(120deg,#26323A,#2F3E48 55%,#26323A);border-radius:16px;color:#F1EEE8;position:relative;overflow:hidden}
+.hd:before{content:"";position:absolute;inset:0;background:linear-gradient(115deg,transparent 40%,rgba(208,196,230,.18) 55%,rgba(170,214,210,.15) 65%,transparent 80%)}
+.hd>*{position:relative}
+.hd small{display:inline-block;font-size:13px;font-weight:700;letter-spacing:.24em;color:#E9C93F}
+.hd h1{font-family:'Nanum Myeongjo',serif;font-weight:800;font-size:clamp(40px,5.2vw,64px);line-height:1.05;margin-top:12px}
+.hd h1 em{font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:600;font-size:.45em;color:#C9BEDC;margin-left:14px;letter-spacing:.04em}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
+.chips span{font-size:13px;font-weight:500;padding:6px 13px;border:1.5px solid rgba(241,238,232,.35);border-radius:30px}
+.chips span.k{background:#E9C93F;border-color:#E9C93F;color:#24313A;font-weight:700}
+.cta{display:inline-flex;align-items:center;gap:9px;height:54px;padding:0 26px;background:#E9C93F;color:#24313A;font-weight:700;font-size:15px;text-decoration:none;border-radius:40px;transition:.2s;white-space:nowrap}
+.cta:hover{background:#F1EEE8}
+.cta svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round}
+.view{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,.8fr);gap:30px;align-items:start}
+figure{background:#fff;padding:10px;border-radius:10px;box-shadow:0 30px 60px -30px rgba(30,42,50,.5);border:1px solid rgba(36,49,58,.12)}
+figure a{display:block;overflow:hidden;border-radius:4px}
+figure img{display:block;width:100%;height:auto}
+figcaption{font-size:13px;color:#6B7A83;padding:11px 4px 2px;display:flex;flex-wrap:wrap;justify-content:space-between;gap:4px 10px}
+figcaption b{color:#24313A}
+.side{display:flex;flex-direction:column;gap:18px;position:sticky;top:24px}
+.zoom{background:#FBFAF7;padding:9px;border-radius:12px;border:1px solid rgba(36,49,58,.14);box-shadow:0 18px 30px -24px rgba(30,42,50,.5)}
+.zoom img{display:block;width:100%;height:auto;border-radius:7px}
+.zoom p{font-size:14px;color:#4A5961;padding:10px 4px 3px;line-height:1.65}
+.zoom p b{font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:600;font-size:17px;color:#8A7FA0;display:block}
+.info{background:#26323A;color:#E9ECEB;padding:24px 24px 18px;border-radius:12px}
+.info h2{font-family:'Nanum Myeongjo',serif;font-weight:800;font-size:23px;margin-bottom:8px;color:#F3D772}
+.info li{list-style:none;font-size:14.5px;padding:9px 0 9px 22px;position:relative;line-height:1.6;border-top:1px solid rgba(233,236,235,.14)}
+.info li:first-child{border-top:0}
+.info li:before{content:"";position:absolute;left:2px;top:16px;width:9px;height:9px;border-radius:50%;background:linear-gradient(135deg,#FBFAF7,#D6C9E6)}
+.bar{position:fixed;left:0;right:0;bottom:0;background:#24313A;border-top:3px solid #E9C93F;padding:12px 20px;display:flex;justify-content:center;align-items:center;gap:18px;flex-wrap:wrap;z-index:10}
+.bar p{font-size:14px;color:#D2D8DA}
+.bar .cta{height:46px}
+@media(max-width:900px){.view{grid-template-columns:1fr}.side{position:static}}
+@media(max-width:620px){.wrap{padding:22px 16px 120px}.hd{padding:24px 18px 22px}.hd .cta{display:none}.hd h1 em{display:block;margin:8px 0 0}.bar p{display:none}.bar .cta{width:100%;justify-content:center}figure{padding:6px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+ <div class="hd">
+  <div>
+   <small>MENU DESIGN · SD-MN54</small>
+   <h1>굴마루 <em>Oyster house</em></h1>
+   <div class="chips"><span class="k">A4 세로 · 1페이지</span><span>펄 화이트 · 슬레이트 · 레몬 옐로</span><span>석화 플래터 탑뷰 일러스트</span><span>2단 메뉴 + 크기 고르기 띠</span></div>
+  </div>
+  <a class="cta" href="https://design.shoponph.online/#inquiry">이 디자인으로 상담하기 <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+ </div>
+ <div class="view">
+  <figure><a href="page1.png" target="_blank" rel="noopener"><img src="page1.png" alt="굴마루 메뉴판 전체. 진줏빛 아이보리 바탕에 가는 이중 테두리, 왼쪽 위에 큰 명조체 상호 '굴마루'와 보랏빛 영문 필기체, 석화구이·굴보쌈·굴솥밥 소개. 오른쪽 위에는 짙은 슬레이트 원형 접시에 얼음을 깔고 껍데기째 석화 여섯 개를 둥글게 놓은 탑뷰 그림과 가운데 초장 종지, 레몬 조각. 아래는 석화, 굴 요리, 식사, 곁들임 & 마실 것 네 구역이 2단으로 놓이고, 맨 아래 짙은 띠에 작은 알·보통 알·큰 알 석화 크기 고르기와 원산지, 예약 자리표시 전화번호가 있습니다." width="2480" height="3508"></a><figcaption><b>A4 세로 2480 × 3508</b><span>클릭하면 원본 크기로 열립니다</span></figcaption></figure>
+  <div class="side">
+   <div class="zoom"><img src="detail-platter.jpg" alt="석화 플래터 확대. 슬레이트 원형 접시 위 하얀 얼음 조각 사이로 진줏빛 안쪽이 보이는 석화 여섯 개, 가운데 빨간 초장 종지와 레몬 웨지 두 조각, 초록 해초 장식" width="900" height="900"><p><b>Hero platter</b>얼음 위 석화를 위에서 내려다본 그림 한 장으로 가게의 대표 메뉴와 제철감을 한눈에 보여 줍니다.</p></div>
+   <div class="zoom"><img src="detail-list.jpg" alt="메뉴 목록 확대. 석화 구역의 생굴 석화 한 접시 1kg 26,000원, 석화찜 2kg·3kg 가격, 버터·치즈 석화구이와 식사 구역의 굴솥밥, 굴국밥, 매생이 굴떡국, 굴 칼국수 가격" width="1180" height="449"><p><b>Two-column list</b>구역마다 작은 아이콘과 영문 부제를 달고, kg·크기별 가격을 한 줄에 나란히 적어 고르기 쉽게 했습니다.</p></div>
+   <div class="info"><h2>이 메뉴판의 포인트</h2><ul><li>굴 껍데기 안쪽의 진줏빛을 바탕색과 테두리에 옮겨 깨끗하고 차분한 인상</li><li>‘석화 크기 고르기’ 띠로 주문할 때 자주 받는 질문을 미리 해결</li><li>제철·당일 입고·주문 후 20분 같은 안내를 작은 표지로 메뉴명 옆에 배치</li><li>원산지와 조기 마감 안내까지 한 장에 정리해 그대로 인쇄 가능</li></ul></div>
+  </div>
+ </div>
+</div>
+<div class="bar"><p>우리 가게 메뉴판도 이렇게 만들고 싶다면</p><a class="cta" href="https://design.shoponph.online/#inquiry">이 디자인으로 상담하기</a></div>
+</body>
+</html>
