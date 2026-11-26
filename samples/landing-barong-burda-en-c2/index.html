@@ -1,0 +1,1225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Burda Barong Atelier · Made-to-Measure Barong &amp; Filipiniana</title>
+<meta name="description" content="Made-to-measure Barong Tagalog and Filipiniana in Quezon City. Free fitting consultation and 10% off made-to-measure barongs ordered by Dec 15.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ivory:#F7F2E7;--sheer:#FBF8F1;--linen:#EFE6D3;--champ:#E3D1AC;--champ2:#D2BA88;
+  --gold:#B48A45;--gold2:#D6B46E;--ink:#221F1C;--ink2:#46413A;--mut:#6E665B;
+  --leaf:#2E4A3B;--leaf2:#3E604D;--pearl:#E9E4DA;--line:rgba(34,31,28,.14);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;overflow-x:hidden}
+body{font-family:'Jost',sans-serif;color:var(--ink);background:var(--ivory);line-height:1.65;font-size:16px;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+img,svg{display:block}
+.serif{font-family:'Cormorant Garamond',serif}
+.wrap{max-width:1240px;margin:0 auto;padding:0 40px}
+/* woven piña texture */
+.weave{background-color:var(--sheer);background-image:
+  repeating-linear-gradient(0deg,rgba(180,138,69,.055) 0 1px,transparent 1px 4px),
+  repeating-linear-gradient(90deg,rgba(180,138,69,.045) 0 1px,transparent 1px 5px)}
+.kicker{display:inline-flex;align-items:center;gap:12px;font-size:12.5px;letter-spacing:.28em;text-transform:uppercase;color:var(--gold);font-weight:500}
+.kicker:before{content:"";width:34px;height:1px;background:linear-gradient(90deg,transparent,var(--gold))}
+h2.title{font-family:'Cormorant Garamond',serif;font-weight:500;font-size:clamp(38px,4.6vw,64px);line-height:1.02;letter-spacing:-.01em;margin:18px 0 18px}
+h2.title em{font-style:italic;color:var(--leaf)}
+.sub{color:var(--mut);font-size:17px;max-width:560px;font-weight:300}
+.kicker .mbr{display:none}
+.bring{margin-top:26px;border-top:1px solid rgba(214,180,110,.3);padding-top:22px}
+.bring h4{font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:500;color:var(--sheer)}
+.bring h4 em{color:var(--gold2)}
+.bring ol{list-style:none;margin-top:16px;display:grid;gap:12px;counter-reset:b}
+.bring li{counter-increment:b;display:flex;gap:14px;font-size:14.5px;color:rgba(251,248,241,.8);align-items:baseline}
+.bring li:before{content:counter(b,lower-roman)".";font-family:'Cormorant Garamond',serif;font-style:italic;font-size:18px;color:var(--gold2);min-width:26px}
+.swrow{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:26px}
+.swrow div{border:1px solid rgba(214,180,110,.35);padding:6px 6px 8px;background:rgba(251,248,241,.04)}
+.swrow svg{width:100%;height:46px}
+.swrow span{display:block;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:rgba(251,248,241,.72);margin-top:7px;text-align:center}
+.thread{height:14px;width:100%;max-width:260px}
+section{position:relative}
+
+/* header */
+header{position:absolute;top:0;left:0;right:0;z-index:20}
+.nav{display:flex;align-items:center;justify-content:space-between;height:92px}
+.logo{display:flex;align-items:center;gap:14px}
+.logo svg{width:46px;height:46px}
+.logo b{display:block;font-family:'Cormorant Garamond',serif;font-weight:600;font-size:25px;letter-spacing:.04em;line-height:1}
+.logo small{display:block;font-size:12px;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);margin-top:5px}
+.nav ul{display:flex;gap:34px;list-style:none;font-size:14px;letter-spacing:.06em;color:var(--ink2)}
+.nav ul a{position:relative;padding:4px 0}
+.nav ul a:after{content:"";position:absolute;left:0;right:100%;bottom:0;height:1px;background:var(--gold);transition:right .3s}
+.nav ul a:hover:after{right:0}
+.nav .book{display:inline-flex;align-items:center;gap:10px;height:46px;padding:0 22px;border:1px solid var(--ink);border-radius:40px;font-size:14px;letter-spacing:.06em;font-weight:500;transition:.25s}
+.nav .book:hover{background:var(--ink);color:var(--ivory)}
+
+/* hero */
+.hero{padding:132px 0 70px;overflow:hidden;background:
+  radial-gradient(ellipse 50% 60% at 78% 45%,rgba(227,209,172,.55),transparent 70%),
+  radial-gradient(ellipse 40% 40% at 10% 90%,rgba(46,74,59,.08),transparent 70%),
+  linear-gradient(180deg,#FBF8F1,#F4EDDF)}
+.hero:before{content:"";position:absolute;inset:0;opacity:.9;background-image:
+  repeating-linear-gradient(0deg,rgba(180,138,69,.05) 0 1px,transparent 1px 4px),
+  repeating-linear-gradient(90deg,rgba(180,138,69,.04) 0 1px,transparent 1px 5px);pointer-events:none}
+.hero .wrap{position:relative;display:grid;grid-template-columns:1.02fr .98fr;gap:40px;align-items:center}
+.hero h1{font-family:'Cormorant Garamond',serif;font-weight:500;font-size:clamp(50px,6.6vw,98px);line-height:.95;letter-spacing:-.02em;margin:26px 0 26px}
+.hero h1 em{font-style:italic;font-weight:400;color:var(--leaf)}
+.hero h1 .g{background:linear-gradient(100deg,#9C7535,#D9B877 45%,#A47B3A);-webkit-background-clip:text;background-clip:text;color:transparent;font-style:italic}
+.lead{font-size:18.5px;font-weight:300;color:var(--ink2);max-width:520px}
+.offer{margin-top:34px;display:grid;grid-template-columns:auto 1fr;border:1px solid rgba(180,138,69,.45);background:rgba(251,248,241,.72);backdrop-filter:blur(6px);border-radius:4px;max-width:560px;position:relative}
+.offer:before{content:"";position:absolute;inset:5px;border:1px dashed rgba(180,138,69,.45);pointer-events:none;border-radius:2px}
+.offer .pct{padding:20px 26px;border-right:1px solid rgba(180,138,69,.35);text-align:center;display:flex;flex-direction:column;justify-content:center}
+.offer .pct b{font-family:'Cormorant Garamond',serif;font-size:58px;font-weight:600;line-height:.9;color:var(--leaf)}
+.offer .pct span{font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--mut)}
+.offer .txt{padding:20px 26px}
+.offer .txt strong{display:block;font-family:'Cormorant Garamond',serif;font-size:24px;font-weight:600;line-height:1.2}
+.offer .txt p{font-size:14.5px;color:var(--mut);margin-top:6px}
+.offer .txt .date{display:inline-flex;align-items:center;gap:8px;margin-top:10px;font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);font-weight:500}
+.btns{display:flex;gap:14px;flex-wrap:wrap;margin-top:32px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:12px;height:58px;padding:0 32px;border-radius:60px;font-family:'Jost';font-size:15px;letter-spacing:.08em;font-weight:500;cursor:pointer;border:0;transition:.25s}
+.btn svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:1.6}
+.btn.p{background:var(--ink);color:var(--ivory);box-shadow:0 16px 34px -14px rgba(34,31,28,.55)}
+.btn.p:hover{background:var(--leaf);transform:translateY(-2px)}
+.btn.o{border:1px solid rgba(34,31,28,.35);color:var(--ink);background:transparent}
+.btn.o:hover{border-color:var(--gold);color:var(--gold)}
+.occ{display:flex;gap:26px;margin-top:38px;flex-wrap:wrap;font-size:13px;letter-spacing:.16em;text-transform:uppercase;color:var(--mut)}
+.occ span{display:flex;align-items:center;gap:9px}
+.occ i{width:6px;height:6px;transform:rotate(45deg);background:var(--gold2)}
+.stage{position:relative}
+.stage svg.main{width:100%;height:auto;max-height:780px}
+.tag{position:absolute;background:rgba(251,248,241,.88);backdrop-filter:blur(6px);border:1px solid rgba(180,138,69,.4);padding:10px 16px 10px 14px;border-radius:2px;font-size:12.5px;letter-spacing:.08em;color:var(--ink2);box-shadow:0 14px 30px -18px rgba(34,31,28,.4)}
+.tag b{display:block;font-family:'Cormorant Garamond',serif;font-size:19px;font-weight:600;letter-spacing:0;color:var(--ink);line-height:1.1}
+.tag:before{content:"";position:absolute;width:44px;height:1px;background:var(--gold);top:50%}
+.tag.t1{left:-2%;top:30%}.tag.t1:before{right:-44px}
+.tag.t2{right:-1%;top:56%}.tag.t2:before{left:-44px}
+.tag.t3{left:4%;bottom:9%}.tag.t3:before{right:-44px}
+
+/* ribbon */
+.ribbon{background:var(--ink);color:var(--champ);overflow:hidden;border-top:1px solid #3a352f;border-bottom:1px solid #3a352f}
+.ribbon .row{display:flex;gap:46px;white-space:nowrap;padding:18px 0;animation:slide 40s linear infinite;width:max-content}
+.ribbon span{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:24px;display:flex;align-items:center;gap:46px}
+.ribbon span:after{content:"";width:8px;height:8px;transform:rotate(45deg);border:1px solid var(--gold2)}
+@keyframes slide{to{transform:translateX(-50%)}}
+
+/* intro split */
+.intro{padding:120px 0 40px}
+.intro .wrap{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start}
+.intro p.big{font-family:'Cormorant Garamond',serif;font-size:clamp(26px,2.6vw,36px);line-height:1.3;color:var(--ink2)}
+.intro p.big em{color:var(--leaf)}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--line)}
+.stats div{padding:22px 18px 0 0}
+.stats b{display:block;font-family:'Cormorant Garamond',serif;font-size:42px;font-weight:500;line-height:1;color:var(--ink)}
+.stats span{font-size:13.5px;color:var(--mut);display:block;margin-top:8px}
+
+/* fabrics */
+.fabrics{padding:80px 0 120px}
+.head{display:flex;justify-content:space-between;align-items:flex-end;gap:40px;flex-wrap:wrap;margin-bottom:54px}
+.fab-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
+.fab{background:var(--sheer);border:1px solid var(--line);border-radius:2px;overflow:hidden;display:flex;flex-direction:column;transition:.3s;position:relative}
+.fab:hover{transform:translateY(-6px);box-shadow:0 30px 50px -30px rgba(34,31,28,.45)}
+.fab .sw{aspect-ratio:1/1.02;position:relative;overflow:hidden}
+.fab .sw svg{width:100%;height:100%}
+.fab .no{position:absolute;top:14px;left:16px;font-family:'Cormorant Garamond',serif;font-style:italic;font-size:17px;color:var(--ink2);background:rgba(251,248,241,.8);padding:2px 10px;border-radius:20px}
+.fab .bd{padding:24px 24px 26px;display:flex;flex-direction:column;flex:1}
+.fab h3{font-family:'Cormorant Garamond',serif;font-size:31px;font-weight:600;line-height:1}
+.fab .lat{font-size:12.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-top:8px}
+.fab p{font-size:14.5px;color:var(--mut);margin-top:12px;flex:1}
+.fab ul{list-style:none;margin-top:16px;display:flex;flex-wrap:wrap;gap:6px}
+.fab li{font-size:12px;letter-spacing:.06em;border:1px solid var(--line);padding:3px 10px;border-radius:20px;color:var(--ink2)}
+.fab .pr{display:flex;align-items:baseline;justify-content:space-between;margin-top:20px;padding-top:16px;border-top:1px solid var(--line)}
+.fab .pr span{font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--mut)}
+.fab .pr b{font-family:'Cormorant Garamond',serif;font-size:32px;font-weight:600;color:var(--ink)}
+.fab .pr b small{font-size:18px;color:var(--gold)}
+.fab.feat{border-color:rgba(180,138,69,.6)}
+.fab.feat:after{content:"Heirloom weave";position:absolute;top:14px;right:14px;font-size:12px;letter-spacing:.16em;text-transform:uppercase;background:var(--leaf);color:var(--sheer);padding:5px 11px;border-radius:20px}
+.note{margin-top:22px;font-size:13.5px;color:var(--mut);display:flex;gap:10px;align-items:center}
+.note svg{width:16px;height:16px;fill:none;stroke:var(--gold);stroke-width:1.5;flex:none}
+
+/* embroidery */
+.emb{background:var(--leaf);color:var(--sheer);padding:120px 0;overflow:hidden}
+.emb:before{content:"";position:absolute;inset:0;background-image:repeating-linear-gradient(45deg,rgba(255,255,255,.025) 0 1px,transparent 1px 7px),repeating-linear-gradient(-45deg,rgba(255,255,255,.025) 0 1px,transparent 1px 7px);pointer-events:none}
+.emb .kicker{color:var(--gold2)}
+.emb h2.title em{color:var(--gold2)}
+.emb .sub{color:rgba(251,248,241,.72)}
+.emb-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:34px;margin-top:60px;position:relative}
+.ec{position:relative}
+.ec .hoop{position:relative;aspect-ratio:1/1;border-radius:50%;padding:16px;background:radial-gradient(circle at 35% 30%,#E2C48C,#A27939 55%,#6E5025);box-shadow:0 30px 60px -20px rgba(0,0,0,.5),inset 0 2px 3px rgba(255,255,255,.4)}
+.ec .hoop:after{content:"";position:absolute;right:6%;top:4%;width:34px;height:22px;border-radius:4px;background:linear-gradient(180deg,#D9BA7E,#8D6A33);transform:rotate(40deg);box-shadow:0 4px 8px rgba(0,0,0,.3)}
+.ec .hoop svg{width:100%;height:100%;border-radius:50%;box-shadow:inset 0 0 0 4px rgba(0,0,0,.15)}
+.ec h3{font-family:'Cormorant Garamond',serif;font-size:36px;font-weight:500;margin-top:30px;line-height:1}
+.ec h3 i{font-size:20px;color:var(--gold2);margin-left:10px}
+.ec p{font-size:15px;color:rgba(251,248,241,.74);margin-top:12px;max-width:340px}
+.ec .meta{display:flex;gap:18px;margin-top:16px;font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold2)}
+.ec .meta span{border-top:1px solid rgba(214,180,110,.5);padding-top:8px}
+
+/* steps */
+.steps{padding:120px 0}
+.st-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:60px;position:relative}
+.st-grid:before{content:"";position:absolute;top:44px;left:6%;right:22%;height:1px;background:repeating-linear-gradient(90deg,var(--gold) 0 8px,transparent 8px 14px)}
+.st{padding:0 26px;position:relative}
+.st .ic{width:88px;height:88px;border-radius:50%;background:var(--sheer);border:1px solid rgba(180,138,69,.55);display:grid;place-items:center;position:relative;box-shadow:0 0 0 8px var(--ivory)}
+.st .ic svg{width:40px;height:40px;fill:none;stroke:var(--ink);stroke-width:1.3;stroke-linecap:round;stroke-linejoin:round}
+.st .n{position:absolute;top:-4px;right:-6px;width:30px;height:30px;border-radius:50%;background:var(--leaf);color:var(--sheer);font-family:'Cormorant Garamond',serif;font-size:17px;font-weight:600;display:grid;place-items:center}
+.st .wk{font-size:12.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-top:28px;font-weight:500}
+.st h3{font-family:'Cormorant Garamond',serif;font-size:29px;font-weight:600;line-height:1.08;margin-top:8px}
+.st p{font-size:14.5px;color:var(--mut);margin-top:10px}
+.timeline{margin-top:60px;border:1px solid var(--line);background:var(--sheer);padding:22px 28px;display:flex;align-items:center;gap:24px;flex-wrap:wrap;border-radius:2px}
+.timeline .bar{flex:1;min-width:240px;height:10px;border-radius:10px;background:var(--linen);position:relative;overflow:hidden}
+.timeline .bar i{position:absolute;inset:0;width:100%;background:linear-gradient(90deg,var(--champ),var(--gold) 70%,var(--leaf))}
+.timeline .bar u{position:absolute;top:0;bottom:0;width:2px;background:var(--sheer)}
+.timeline b{font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:600}
+.timeline span{font-size:14px;color:var(--mut)}
+
+/* measure */
+.measure{padding:120px 0;background:linear-gradient(180deg,var(--ivory),#F1E8D6)}
+.sheet{display:grid;grid-template-columns:1.1fr .9fr;background:#FCFAF4;border:1px solid rgba(180,138,69,.4);box-shadow:0 50px 80px -50px rgba(34,31,28,.5),0 2px 0 #EDE3CF,0 4px 0 #F6F0E2,0 6px 0 #E6DAC2;margin-top:56px;position:relative}
+.sheet .draw{display:flex;align-items:center;padding:34px;border-right:1px solid rgba(180,138,69,.35);background-image:linear-gradient(rgba(46,74,59,.07) 1px,transparent 1px),linear-gradient(90deg,rgba(46,74,59,.07) 1px,transparent 1px),linear-gradient(rgba(46,74,59,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(46,74,59,.035) 1px,transparent 1px);background-size:60px 60px,60px 60px,12px 12px,12px 12px}
+.sheet .draw svg{width:100%;height:auto}
+.sheet .card{padding:40px 40px 36px}
+.sheet .top{display:flex;justify-content:space-between;align-items:flex-start;border-bottom:2px solid var(--ink);padding-bottom:16px}
+.sheet .top b{font-family:'Cormorant Garamond',serif;font-size:30px;font-weight:600;line-height:1}
+.sheet .top span{font-size:12.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--mut)}
+.sheet .top .no{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:20px;color:var(--gold)}
+.mtab{width:100%;border-collapse:collapse;margin-top:12px}
+.mtab td{padding:11px 0;border-bottom:1px dashed rgba(34,31,28,.2);font-size:15px;vertical-align:middle}
+.mtab td.k{width:38px}
+.mtab td.k i{display:grid;place-items:center;width:26px;height:26px;border-radius:50%;border:1px solid var(--leaf);color:var(--leaf);font-style:normal;font-size:13px;font-weight:600}
+.mtab td.v{text-align:right;font-family:'Cormorant Garamond',serif;font-style:italic;font-size:19px;color:var(--mut);white-space:nowrap}
+.mtab td.v u{text-decoration:none;display:inline-block;min-width:70px;border-bottom:1px solid rgba(34,31,28,.45);margin-right:6px}
+.mtab td small{display:block;font-size:12.5px;color:var(--mut)}
+.sheet .tip{margin-top:22px;display:flex;gap:14px;background:var(--linen);padding:16px 18px;font-size:14px;color:var(--ink2);border-left:2px solid var(--gold)}
+.sheet .tip svg{width:22px;height:22px;flex:none;fill:none;stroke:var(--leaf);stroke-width:1.5}
+.stamp{position:absolute;left:calc(52% - 59px);bottom:-46px;width:118px;height:118px;transform:rotate(-12deg)}
+
+/* group */
+.group{padding:120px 0;overflow:hidden}
+.gbox{display:grid;grid-template-columns:.95fr 1.05fr;gap:0;background:var(--ink);color:var(--sheer);border-radius:2px;overflow:hidden;position:relative}
+.gbox .l{padding:64px 60px}
+.gbox .kicker{color:var(--gold2)}
+.gbox h2.title em{color:var(--gold2)}
+.gbox .sub{color:rgba(251,248,241,.7)}
+.glist{list-style:none;margin-top:30px;display:grid;gap:16px}
+.glist li{display:flex;gap:16px;font-size:15.5px;color:rgba(251,248,241,.86)}
+.glist svg{width:22px;height:22px;flex:none;fill:none;stroke:var(--gold2);stroke-width:1.4;margin-top:2px}
+.glist b{color:var(--sheer);font-weight:500}
+.gbox .r{position:relative;background:radial-gradient(ellipse at 50% 70%,#3A342D,#221F1C 70%);display:flex;align-items:center;justify-content:center;padding:40px 30px 0}
+.gbox .r svg{width:100%;height:auto;max-width:620px}
+.gbox .pill{position:absolute;top:34px;right:34px;border:1px solid rgba(214,180,110,.5);padding:10px 18px;font-size:12.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--gold2);border-radius:30px}
+
+/* faq */
+.faq{padding:40px 0 120px}
+.faq .wrap{display:grid;grid-template-columns:.8fr 1.2fr;gap:80px}
+.faq details{border-bottom:1px solid var(--line)}
+.faq details:first-child{border-top:1px solid var(--line)}
+.faq summary{list-style:none;cursor:pointer;padding:26px 50px 26px 0;position:relative;font-family:'Cormorant Garamond',serif;font-size:25px;font-weight:600;line-height:1.25}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary:after,.faq summary:before{content:"";position:absolute;right:10px;top:50%;width:18px;height:1.5px;background:var(--gold);transition:.3s}
+.faq summary:before{transform:rotate(90deg)}
+.faq details[open] summary:before{transform:rotate(0)}
+.faq details p{padding:0 50px 26px 0;color:var(--mut);font-size:15.5px}
+.faq .side p{margin-top:10px}
+.faq .contact{margin-top:34px;display:grid;gap:12px}
+.faq .contact a{display:flex;align-items:center;gap:14px;font-size:15px;padding:14px 18px;border:1px solid var(--line);background:var(--sheer);border-radius:2px}
+.faq .contact svg{width:20px;height:20px;fill:none;stroke:var(--leaf);stroke-width:1.5}
+
+/* booking */
+.booking{padding:120px 0;background:var(--ink);color:var(--sheer);overflow:hidden}
+.booking:before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse 50% 70% at 0% 100%,rgba(46,74,59,.6),transparent 70%),radial-gradient(ellipse 40% 50% at 100% 0%,rgba(180,138,69,.25),transparent 70%)}
+.booking .wrap{position:relative;display:grid;grid-template-columns:.9fr 1.1fr;gap:70px;align-items:start}
+.booking .kicker{color:var(--gold2)}
+.booking h2.title em{color:var(--gold2)}
+.booking .sub{color:rgba(251,248,241,.7)}
+.perks{margin-top:30px;display:grid;gap:10px}
+.perks div{display:flex;gap:16px;align-items:center;padding:12px 20px;border:1px solid rgba(214,180,110,.3);border-radius:2px}
+.perks b{white-space:nowrap;font-family:'Cormorant Garamond',serif;font-size:30px;font-weight:600;color:var(--gold2);min-width:74px;line-height:1}
+.perks span{font-size:14.5px;color:rgba(251,248,241,.82)}
+form.fm{background:var(--sheer);color:var(--ink);padding:44px;border-radius:2px;position:relative;box-shadow:0 40px 80px -30px rgba(0,0,0,.6)}
+form.fm:before{content:"";position:absolute;inset:8px;border:1px solid rgba(180,138,69,.35);pointer-events:none}
+.fm h3{font-family:'Cormorant Garamond',serif;font-size:32px;font-weight:600;line-height:1.1}
+.fm .fs{font-size:14px;color:var(--mut);margin-top:6px}
+.fgrid{display:grid;grid-template-columns:1fr 1fr;gap:18px 20px;margin-top:28px}
+.fgrid .full{grid-column:1/-1}
+.fm label{display:block;font-size:12.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink2);margin-bottom:8px;font-weight:500}
+.fm input,.fm select,.fm textarea{width:100%;height:52px;border:1px solid rgba(34,31,28,.22);background:#fff;border-radius:2px;padding:0 16px;font-family:'Jost';font-size:16px;color:var(--ink);outline:none;transition:.2s;-webkit-appearance:none;appearance:none}
+.fm textarea{height:120px;padding:12px 16px;resize:vertical}
+.fm select{background-image:linear-gradient(45deg,transparent 50%,var(--gold) 50%),linear-gradient(135deg,var(--gold) 50%,transparent 50%);background-position:calc(100% - 22px) 23px,calc(100% - 16px) 23px;background-size:6px 6px;background-repeat:no-repeat;padding-right:40px}
+.fm input:focus,.fm select:focus,.fm textarea:focus{border-color:var(--gold);box-shadow:0 0 0 3px rgba(180,138,69,.18)}
+.fm .agree{text-transform:none;letter-spacing:0;font-weight:400;display:flex;gap:10px;align-items:flex-start;font-size:13.5px;color:var(--mut);margin-top:18px}
+.fm .agree input{width:18px;height:18px;flex:none;margin-top:2px;-webkit-appearance:auto;appearance:auto;accent-color:var(--leaf)}
+.fm .btn{width:100%;margin-top:22px}
+.done{display:none;text-align:center;padding:20px 0}
+.done svg{width:96px;height:96px;margin:0 auto}
+.done h3{margin-top:18px}
+.done p{color:var(--mut);font-size:15px;margin-top:10px}
+.done dl{display:grid;grid-template-columns:auto 1fr;gap:8px 18px;text-align:left;max-width:380px;margin:24px auto 0;font-size:14.5px;border-top:1px solid var(--line);padding-top:18px}
+.done dt{color:var(--mut);font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;padding-top:2px}
+.done dd{font-weight:500}
+form.fm.sent .fbody{display:none}
+form.fm.sent .done{display:block}
+
+footer{background:#201D19;color:rgba(251,248,241,.66);padding:60px 0 40px;font-size:14px}
+footer .wrap{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:40px}
+footer .logo b{color:var(--sheer)}
+footer h4{font-size:12.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold2);font-weight:500;margin-bottom:14px}
+footer p{line-height:1.9}
+footer .cp{grid-column:1/-1;border-top:1px solid rgba(255,255,255,.1);padding-top:22px;margin-top:10px;font-size:12.5px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
+
+.mbar{display:none}
+
+@media (max-width:1100px){
+  .fab-grid{grid-template-columns:repeat(2,1fr)}
+  .st-grid{grid-template-columns:repeat(2,1fr);row-gap:50px}
+  .st-grid:before{display:none}
+}
+@media (max-width:900px){
+  .wrap{padding:0 22px}
+  .nav ul{display:none}
+  .nav{height:76px}
+  .hero{padding:100px 0 50px}
+  .hero .wrap,.intro .wrap,.sheet,.gbox,.faq .wrap,.booking .wrap{grid-template-columns:1fr}
+  .intro .wrap{gap:40px}
+  .stage{max-width:520px;margin:0 auto;width:100%}
+  .emb-grid{grid-template-columns:1fr;gap:56px;max-width:420px;margin-left:auto;margin-right:auto}
+  .sheet .draw{border-right:0;border-bottom:1px solid rgba(180,138,69,.35)}
+  .faq .wrap{gap:40px}
+  .booking .wrap{gap:44px}
+  footer .wrap{grid-template-columns:1fr}
+}
+@media (max-width:600px){
+  body{padding-bottom:74px}
+  .hero .kicker{align-items:flex-start;line-height:1.7}
+  .hero .kicker:before{margin-top:11px}
+  .kicker .mbr{display:inline}.kicker .kdot{display:none}
+  .swrow{grid-template-columns:repeat(2,1fr)}
+  .logo svg{width:38px;height:38px}
+  .logo b{font-size:21px}
+  .logo small{font-size:12px;letter-spacing:.2em}
+  .nav .book{height:40px;padding:0 15px;font-size:13px}
+  .nav .book svg{display:none}
+  .hero h1{font-size:52px}
+  .lead{font-size:17px}
+  .offer{grid-template-columns:1fr}
+  .offer .pct{border-right:0;border-bottom:1px solid rgba(180,138,69,.35);flex-direction:row;gap:14px;align-items:center;justify-content:flex-start;padding:16px 20px}
+  .offer .pct b{font-size:46px}
+  .offer .txt{padding:16px 20px 20px}
+  .btn{width:100%}
+  .occ{gap:14px 20px}
+  .tag{padding:7px 11px}
+  .tag b{font-size:16px}
+  .tag:before{display:none}
+  .tag.t1{left:0;top:24%}.tag.t2{right:0;top:58%}.tag.t3{left:0;bottom:4%}
+  .intro{padding:80px 0 20px}
+  .stats b{font-size:32px}
+  .stats span{font-size:13px}
+  .fabrics,.emb,.steps,.measure,.group,.booking{padding:80px 0}
+  .fab-grid{grid-template-columns:1fr}
+  .st-grid{grid-template-columns:1fr;row-gap:40px}
+  .st{padding:0;display:grid;grid-template-columns:88px 1fr;column-gap:20px}
+  .st .ic{grid-row:1/4}
+  .st .wk{margin-top:6px}
+  .timeline{padding:20px}
+  .sheet .draw{padding:18px}
+  .sheet .card{padding:28px 22px 60px}
+  .mtab td{font-size:14.5px}
+  .mtab td.v u{min-width:44px}
+  .gbox .l{padding:44px 24px}
+  .gbox .pill{top:18px;right:18px}
+  .faq summary{font-size:22px;padding-right:40px}
+  .faq details p{padding-right:10px}
+  form.fm{padding:30px 22px}
+  .fgrid{grid-template-columns:1fr}
+  .mbar{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:50;gap:10px;padding:12px 14px;background:rgba(251,248,241,.94);backdrop-filter:blur(10px);border-top:1px solid rgba(180,138,69,.4)}
+  .mbar a{flex:1;height:50px;border-radius:40px;display:flex;align-items:center;justify-content:center;gap:10px;font-size:14px;letter-spacing:.06em;font-weight:500}
+  .mbar a.c{flex:0 0 50px;border:1px solid rgba(34,31,28,.3)}
+  .mbar a.b{background:var(--ink);color:var(--ivory)}
+  .mbar svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:1.6}
+}
+</style>
+</head>
+<body>
+
+<!-- shared defs -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="gGold" x1="0" x2="1"><stop offset="0" stop-color="#9C7535"/><stop offset=".5" stop-color="#E0C185"/><stop offset="1" stop-color="#A47B3A"/></linearGradient>
+  </defs>
+</svg>
+
+<header>
+  <div class="wrap nav">
+    <a href="#top" class="logo" aria-label="Burda Barong Atelier">
+      <svg viewBox="0 0 48 48" fill="none">
+        <circle cx="24" cy="24" r="22.5" stroke="#B48A45" stroke-width="1"/>
+        <circle cx="24" cy="24" r="19" stroke="#B48A45" stroke-width=".6" stroke-dasharray="1.5 2"/>
+        <path d="M17 13h14l4 6-3 16H16l-3-16z" stroke="#221F1C" stroke-width="1.2" stroke-linejoin="round"/>
+        <path d="M21 13l3 4 3-4M24 17v18" stroke="#221F1C" stroke-width="1.1"/>
+        <path d="M20 22c1.5-2 2.5 0 4-1.5M28 22c-1.5-2-2.5 0-4-1.5M20 27c1.5-2 2.5 0 4-1.5M28 27c-1.5-2-2.5 0-4-1.5" stroke="#B48A45" stroke-width=".9"/>
+      </svg>
+      <span><b>Burda</b><small>Barong Atelier</small></span>
+    </a>
+    <ul>
+      <li><a href="#fabrics">Fabrics</a></li>
+      <li><a href="#embroidery">Embroidery</a></li>
+      <li><a href="#process">Process</a></li>
+      <li><a href="#measure">Fitting Card</a></li>
+      <li><a href="#faq">FAQ</a></li>
+    </ul>
+    <a href="#book" class="book">Book a fitting
+      <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+  </div>
+</header>
+
+<main id="top">
+<!-- HERO -->
+<section class="hero">
+  <div class="wrap">
+    <div>
+      <span class="kicker">Made-to-measure<span class="kdot"> · </span><br class="mbr">Quezon City</span>
+      <h1>Woven light,<br><em>stitched</em> <span class="g">by hand.</span></h1>
+      <p class="lead">Barong Tagalog and Filipiniana cut to your measurements, embroidered in our atelier, and fitted until the sheer falls just right — for Christmas parties, weddings and debuts.</p>
+      <div class="offer">
+        <div class="pct"><b>10%</b><span>off</span></div>
+        <div class="txt">
+          <strong>Free fitting consultation + 10% off made-to-measure barongs</strong>
+          <p>Book your consultation, choose your fabric, and order by the date below.</p>
+          <span class="date"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="5" width="18" height="16" rx="1"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>Order by December 15</span>
+        </div>
+      </div>
+      <div class="btns">
+        <a class="btn p" href="#book">Book free fitting <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <a class="btn o" href="#fabrics">See fabrics</a>
+      </div>
+      <div class="occ"><span><i></i>Christmas parties</span><span><i></i>Weddings</span><span><i></i>Debuts</span></div>
+    </div>
+
+    <div class="stage">
+      <svg class="main" viewBox="0 0 560 700" role="img" aria-label="Illustration of an embroidered barong on a dress form">
+        <defs>
+          <radialGradient id="hArch" cx=".5" cy=".35" r=".75"><stop offset="0" stop-color="#FFFDF7"/><stop offset=".6" stop-color="#F1E6CF"/><stop offset="1" stop-color="#E2D0AA"/></radialGradient>
+          <linearGradient id="hCurtain" x1="0" x2="1"><stop offset="0" stop-color="#fff" stop-opacity=".0"/><stop offset=".25" stop-color="#fff" stop-opacity=".55"/><stop offset=".5" stop-color="#fff" stop-opacity=".15"/><stop offset=".75" stop-color="#fff" stop-opacity=".6"/><stop offset="1" stop-color="#fff" stop-opacity=".05"/></linearGradient>
+          <linearGradient id="hForm" x1="0" x2="1"><stop offset="0" stop-color="#7C6A50"/><stop offset=".35" stop-color="#B7A07A"/><stop offset=".6" stop-color="#A68E68"/><stop offset="1" stop-color="#6A5940"/></linearGradient>
+          <linearGradient id="hNeck" x1="0" x2="1"><stop offset="0" stop-color="#5F4F38"/><stop offset=".45" stop-color="#9C8661"/><stop offset="1" stop-color="#584834"/></linearGradient>
+          <linearGradient id="hPole" x1="0" x2="1"><stop offset="0" stop-color="#6B5226"/><stop offset=".5" stop-color="#E2C384"/><stop offset="1" stop-color="#7A5D2B"/></linearGradient>
+          <linearGradient id="hBarong" x1="0" x2="1"><stop offset="0" stop-color="#EDE2C8"/><stop offset=".22" stop-color="#FFFCF3"/><stop offset=".5" stop-color="#F8F0DC"/><stop offset=".78" stop-color="#FFFBF0"/><stop offset="1" stop-color="#E4D6B6"/></linearGradient>
+          <linearGradient id="hFold" x1="0" x2="1">
+            <stop offset="0" stop-color="#8C7450" stop-opacity=".0"/><stop offset=".08" stop-color="#8C7450" stop-opacity=".18"/><stop offset=".16" stop-color="#fff" stop-opacity=".35"/><stop offset=".3" stop-color="#8C7450" stop-opacity=".1"/><stop offset=".45" stop-color="#fff" stop-opacity=".25"/><stop offset=".62" stop-color="#8C7450" stop-opacity=".12"/><stop offset=".76" stop-color="#fff" stop-opacity=".35"/><stop offset=".9" stop-color="#8C7450" stop-opacity=".2"/><stop offset="1" stop-color="#8C7450" stop-opacity=".0"/>
+          </linearGradient>
+          <linearGradient id="hSleeve" x1="0" x2="1"><stop offset="0" stop-color="#E9DDBF"/><stop offset=".5" stop-color="#FFFBF1"/><stop offset="1" stop-color="#E0D1AE"/></linearGradient>
+          <pattern id="hWeave" width="4" height="4" patternUnits="userSpaceOnUse"><path d="M0 .5h4M.5 0v4" stroke="#B9A274" stroke-width=".35" opacity=".55"/></pattern>
+          <pattern id="hEmb" width="34" height="46" patternUnits="userSpaceOnUse">
+            <path d="M17 0C7 10 27 20 17 30C10 37 17 46 17 46" fill="none" stroke="#C49F5B" stroke-width=".9"/>
+            <g transform="translate(17 13)"><g fill="#FFFEF9" stroke="#B48A45" stroke-width=".45">
+              <ellipse rx="2.4" ry="4.6" transform="rotate(0)" cy="-3.4"/><ellipse rx="2.4" ry="4.6" transform="rotate(72) translate(0 -3.4)"/><ellipse rx="2.4" ry="4.6" transform="rotate(144) translate(0 -3.4)"/><ellipse rx="2.4" ry="4.6" transform="rotate(216) translate(0 -3.4)"/><ellipse rx="2.4" ry="4.6" transform="rotate(288) translate(0 -3.4)"/></g>
+              <circle r="1.7" fill="#D6B46E"/></g>
+            <path d="M8 29c-4-3-6 1-7 2 3 1 5 0 7-2zM26 34c4-3 6 1 7 2-3 1-5 0-7-2z" fill="#E8DAB8" stroke="#B48A45" stroke-width=".4"/>
+            <circle cx="5" cy="42" r=".9" fill="#C49F5B"/><circle cx="29" cy="6" r=".9" fill="#C49F5B"/><circle cx="29" cy="22" r=".7" fill="#C49F5B"/>
+          </pattern>
+          <pattern id="hHem" width="22" height="34" patternUnits="userSpaceOnUse">
+            <path d="M0 6Q5.5 0 11 6T22 6" fill="none" stroke="#B48A45" stroke-width=".9"/>
+            <path d="M11 10l3 6-3 6-3-6z" fill="#FFFDF6" stroke="#B48A45" stroke-width=".5"/>
+            <circle cx="0" cy="16" r="1.4" fill="#D6B46E"/><circle cx="22" cy="16" r="1.4" fill="#D6B46E"/>
+            <path d="M0 28Q5.5 34 11 28T22 28" fill="none" stroke="#B48A45" stroke-width=".9"/>
+          </pattern>
+          <filter id="hShadow" x="-20%" y="-10%" width="140%" height="130%"><feDropShadow dx="0" dy="18" stdDeviation="16" flood-color="#4A3B22" flood-opacity=".28"/></filter>
+          <filter id="hBlur"><feGaussianBlur stdDeviation="8"/></filter>
+          <clipPath id="hBodyClip"><path d="M248 112Q280 126 312 112L372 142Q394 152 398 176L408 566Q280 584 152 566L162 176Q166 152 188 142Z"/></clipPath>
+        </defs>
+
+        <!-- arch window -->
+        <path d="M60 690V250C60 120 160 40 280 40S500 120 500 250V690Z" fill="url(#hArch)"/>
+        <path d="M60 690V250C60 120 160 40 280 40S500 120 500 250V690" fill="none" stroke="#B48A45" stroke-width="1.2"/>
+        <path d="M76 690V252C76 132 168 56 280 56S484 132 484 252V690" fill="none" stroke="#B48A45" stroke-width=".6" stroke-dasharray="2 4"/>
+        <!-- capiz window grid -->
+        <g opacity=".35" stroke="#C9B48A" stroke-width=".8" fill="none">
+          <path d="M120 690V190M180 690V110M240 690V64M320 690V64M380 690V110M440 690V190"/>
+          <path d="M76 300H484M76 380H484M76 460H484M76 540H484M76 620H484M90 220H470M130 150H430"/>
+        </g>
+        <!-- sheer curtains -->
+        <path d="M60 60C90 200 70 420 96 690H60Z" fill="url(#hCurtain)" opacity=".9"/>
+        <path d="M500 60C468 220 498 440 470 690H500Z" fill="url(#hCurtain)" opacity=".9"/>
+        <path d="M66 40C140 120 120 360 150 690H60V40Z" fill="#fff" opacity=".18"/>
+        <!-- floor shadow -->
+        <ellipse cx="280" cy="672" rx="150" ry="16" fill="#5B4A2E" opacity=".22" filter="url(#hBlur)"/>
+
+        <!-- stand -->
+        <rect x="274" y="470" width="12" height="190" fill="url(#hPole)"/>
+        <path d="M280 652L196 678M280 652L364 678M280 652V684" stroke="url(#hPole)" stroke-width="7" stroke-linecap="round"/>
+        <circle cx="196" cy="679" r="5" fill="#6B5226"/><circle cx="364" cy="679" r="5" fill="#6B5226"/><circle cx="280" cy="684" r="5" fill="#6B5226"/>
+        <!-- dress form neck -->
+        <rect x="262" y="70" width="36" height="52" rx="6" fill="url(#hNeck)"/>
+        <ellipse cx="280" cy="70" rx="22" ry="7" fill="#C2A878"/>
+        <ellipse cx="280" cy="68" rx="9" ry="3" fill="url(#hPole)"/>
+        <rect x="277" y="40" width="6" height="28" rx="2" fill="url(#hPole)"/>
+        <circle cx="280" cy="38" r="6" fill="url(#hPole)"/>
+
+        <!-- dress form torso (visible through sheer) -->
+        <path d="M205 124Q166 140 172 200Q182 290 196 350Q180 420 198 486Q280 500 362 486Q380 420 364 350Q378 290 388 200Q394 140 355 124Q280 106 205 124Z" fill="url(#hForm)"/>
+        <path d="M205 124Q166 140 172 200Q182 290 196 350Q180 420 198 486Q280 500 362 486Q380 420 364 350Q378 290 388 200Q394 140 355 124Q280 106 205 124Z" fill="url(#hWeave)" opacity=".6"/>
+        <path d="M280 112V494" stroke="#5E4E37" stroke-width="1" stroke-dasharray="3 3" opacity=".6"/>
+
+        <!-- camisa (undershirt) faint -->
+        <path d="M214 132Q280 150 346 132L360 470Q280 484 200 470Z" fill="#FFFCF3" opacity=".5"/>
+
+        <g filter="url(#hShadow)">
+          <!-- sleeves -->
+          <path d="M188 142Q162 152 158 180L112 474Q138 490 170 484L186 260Z" fill="url(#hSleeve)" opacity=".86"/>
+          <path d="M372 142Q398 152 402 180L448 474Q422 490 390 484L374 260Z" fill="url(#hSleeve)" opacity=".86"/>
+          <!-- body -->
+          <path d="M248 112Q280 126 312 112L372 142Q394 152 398 176L408 566Q280 584 152 566L162 176Q166 152 188 142Z" fill="url(#hBarong)" opacity=".74"/>
+        </g>
+        <g clip-path="url(#hBodyClip)">
+          <rect x="140" y="100" width="280" height="490" fill="url(#hWeave)" opacity=".7"/>
+          <rect x="140" y="100" width="280" height="490" fill="url(#hFold)"/>
+          <!-- embroidered front panels -->
+          <path d="M222 130Q236 124 268 128V430Q240 440 214 432Z" fill="url(#hEmb)"/>
+          <path d="M338 130Q324 124 292 128V430Q320 440 346 432Z" fill="url(#hEmb)"/>
+          <path d="M222 130Q236 124 268 128V430Q240 440 214 432Z" fill="none" stroke="#B48A45" stroke-width=".9"/>
+          <path d="M338 130Q324 124 292 128V430Q320 440 346 432Z" fill="none" stroke="#B48A45" stroke-width=".9"/>
+          <path d="M218 134V428M342 134V428" stroke="#D6B46E" stroke-width=".6" stroke-dasharray="1.5 2.5"/>
+          <!-- panel bottom flourish -->
+          <path d="M214 432Q241 470 268 430M292 430Q319 470 346 432" fill="none" stroke="#B48A45" stroke-width="1"/>
+          <g fill="#FFFEF9" stroke="#B48A45" stroke-width=".6">
+            <path d="M241 452c-6-8 0-14 0-14s6 6 0 14z"/><path d="M319 452c-6-8 0-14 0-14s6 6 0 14z"/>
+          </g>
+          <!-- hem band -->
+          <rect x="140" y="526" width="280" height="34" fill="url(#hHem)"/>
+          <path d="M152 524Q280 540 408 524M152 562Q280 578 408 562" fill="none" stroke="#B48A45" stroke-width=".8"/>
+          <!-- side slit -->
+          <path d="M162 520L158 568M398 520L402 568" stroke="#A88A5A" stroke-width="1"/>
+        </g>
+        <!-- placket + studs -->
+        <path d="M280 124V334" stroke="#C7AE80" stroke-width="7" opacity=".5"/>
+        <path d="M276.5 124V334M283.5 124V334" stroke="#B48A45" stroke-width=".6"/>
+        <g>
+          <circle cx="280" cy="152" r="4" fill="url(#gGold)" stroke="#7C5C2A" stroke-width=".5"/>
+          <circle cx="280" cy="196" r="4" fill="url(#gGold)" stroke="#7C5C2A" stroke-width=".5"/>
+          <circle cx="280" cy="240" r="4" fill="url(#gGold)" stroke="#7C5C2A" stroke-width=".5"/>
+          <circle cx="280" cy="284" r="4" fill="url(#gGold)" stroke="#7C5C2A" stroke-width=".5"/>
+          <circle cx="278.6" cy="150.6" r="1.2" fill="#FFF6DD"/><circle cx="278.6" cy="194.6" r="1.2" fill="#FFF6DD"/><circle cx="278.6" cy="238.6" r="1.2" fill="#FFF6DD"/><circle cx="278.6" cy="282.6" r="1.2" fill="#FFF6DD"/>
+        </g>
+        <!-- collar -->
+        <path d="M248 98Q280 108 312 98L314 116Q280 128 246 116Z" fill="#FBF5E6" stroke="#B48A45" stroke-width=".9"/>
+        <path d="M250 104Q280 113 310 104" fill="none" stroke="#D6B46E" stroke-width=".6" stroke-dasharray="1.5 2"/>
+        <!-- shoulder seams -->
+        <path d="M188 142Q176 160 186 260M372 142Q384 160 374 260" fill="none" stroke="#B9A274" stroke-width=".8" opacity=".8"/>
+        <!-- sleeve weave + folds -->
+        <path d="M150 230L138 470M168 220L160 482M418 230L430 470M400 220L404 482" stroke="#fff" stroke-width="3" opacity=".45"/>
+        <path d="M144 300L132 470M412 300L424 470" stroke="#8C7450" stroke-width="1" opacity=".22"/>
+        <!-- cuffs -->
+        <path d="M114 456Q140 470 172 466L170 484Q138 490 112 474Z" fill="#FBF5E6" stroke="#B48A45" stroke-width=".8"/>
+        <path d="M446 456Q420 470 388 466L390 484Q422 490 448 474Z" fill="#FBF5E6" stroke="#B48A45" stroke-width=".8"/>
+        <path d="M118 468Q140 478 168 475M442 468Q420 478 392 475" fill="none" stroke="#D6B46E" stroke-width=".7" stroke-dasharray="2 2"/>
+        <circle cx="160" cy="476" r="2.4" fill="url(#gGold)"/><circle cx="400" cy="476" r="2.4" fill="url(#gGold)"/>
+        <!-- sleeve embroidery sprigs -->
+        <g fill="none" stroke="#C49F5B" stroke-width=".8">
+          <path d="M130 440c6-10 14-12 20-22M136 444c-2-8 4-10 6-14M144 432c6 0 10-4 12-8"/>
+          <path d="M430 440c-6-10-14-12-20-22M424 444c2-8-4-10-6-14M416 432c-6 0-10-4-12-8"/>
+        </g>
+
+        <!-- measuring tape draped -->
+        <path d="M232 106C210 140 196 220 214 300C226 352 206 380 196 420" fill="none" stroke="#2E4A3B" stroke-width="9" stroke-linecap="round" opacity=".92"/>
+        <path d="M232 106C210 140 196 220 214 300C226 352 206 380 196 420" fill="none" stroke="#E9E4DA" stroke-width="1" stroke-dasharray="1 5" opacity=".9"/>
+        <path d="M328 106C346 130 352 170 344 210" fill="none" stroke="#2E4A3B" stroke-width="9" stroke-linecap="round" opacity=".92"/>
+        <path d="M328 106C346 130 352 170 344 210" fill="none" stroke="#E9E4DA" stroke-width="1" stroke-dasharray="1 5"/>
+        <rect x="336" y="206" width="16" height="10" rx="1" fill="url(#gGold)" transform="rotate(-8 344 211)"/>
+
+        <!-- needle with gold thread -->
+        <g transform="translate(440 120) rotate(32)">
+          <path d="M0 -40L2 30L0 34L-2 30Z" fill="#C9C4BA" stroke="#8D877C" stroke-width=".5"/>
+          <ellipse cx="0" cy="-34" rx=".9" ry="3" fill="#F1E6CF"/>
+        </g>
+        <path d="M424 92C380 40 300 30 250 60C210 84 190 70 170 54" fill="none" stroke="url(#gGold)" stroke-width="1.2"/>
+        <!-- thread spool -->
+        <g transform="translate(102 600)">
+          <ellipse cx="0" cy="-34" rx="22" ry="7" fill="#A57D3F"/>
+          <rect x="-18" y="-34" width="36" height="44" fill="url(#gGold)"/>
+          <g stroke="#8D6A33" stroke-width=".5" opacity=".7"><path d="M-18 -28h36M-18 -22h36M-18 -16h36M-18 -10h36M-18 -4h36M-18 2h36"/></g>
+          <ellipse cx="0" cy="10" rx="22" ry="7" fill="#8D6A33"/>
+          <ellipse cx="0" cy="-34" rx="22" ry="7" fill="none" stroke="#C9A462"/>
+          <ellipse cx="0" cy="-34" rx="5" ry="1.8" fill="#4C3A1C"/>
+          <path d="M18 -8C40 0 50 30 30 58" fill="none" stroke="url(#gGold)" stroke-width="1"/>
+        </g>
+        <!-- sampaguita sprig -->
+        <g transform="translate(452 600)">
+          <path d="M0 40C-6 20 -2 0 8 -16" fill="none" stroke="#2E4A3B" stroke-width="1.6"/>
+          <path d="M2 18c-14-4-20 4-22 8 10 2 18 0 22-8zM4 2c12-6 20 0 22 4-10 4-18 2-22-4z" fill="#3E604D"/>
+          <g transform="translate(8 -22)" fill="#FFFEF9" stroke="#D2BA88" stroke-width=".5">
+            <ellipse rx="3" ry="7" cy="-5"/><ellipse rx="3" ry="7" cy="-5" transform="rotate(72)"/><ellipse rx="3" ry="7" cy="-5" transform="rotate(144)"/><ellipse rx="3" ry="7" cy="-5" transform="rotate(216)"/><ellipse rx="3" ry="7" cy="-5" transform="rotate(288)"/><circle r="2" fill="#E8D49A"/>
+          </g>
+          <g transform="translate(-14 6) scale(.6)" fill="#FFFEF9" stroke="#D2BA88" stroke-width=".6">
+            <ellipse rx="3" ry="7" cy="-5"/><ellipse rx="3" ry="7" cy="-5" transform="rotate(72)"/><ellipse rx="3" ry="7" cy="-5" transform="rotate(144)"/><ellipse rx="3" ry="7" cy="-5" transform="rotate(216)"/><ellipse rx="3" ry="7" cy="-5" transform="rotate(288)"/><circle r="2" fill="#E8D49A"/>
+          </g>
+        </g>
+        <!-- sheer veil over everything (front layer) -->
+        <path d="M470 40C430 200 470 420 430 690H500V40Z" fill="#fff" opacity=".12"/>
+      </svg>
+      <div class="tag t1"><b>Piña-seda</b>hand-loomed sheer</div>
+      <div class="tag t2"><b>Sombrado panel</b>shadow-work embroidery</div>
+      <div class="tag t3"><b>Cut to you</b>14-point fitting card</div>
+    </div>
+  </div>
+</section>
+
+<div class="ribbon" aria-hidden="true">
+  <div class="row">
+    <span>Barong Tagalog</span><span>Filipiniana</span><span>Groom &amp; entourage</span><span>Debut escorts</span><span>Christmas party coats</span><span>Ninong &amp; ninang sets</span><span>Kids' barong</span>
+    <span>Barong Tagalog</span><span>Filipiniana</span><span>Groom &amp; entourage</span><span>Debut escorts</span><span>Christmas party coats</span><span>Ninong &amp; ninang sets</span><span>Kids' barong</span>
+  </div>
+</div>
+
+<!-- INTRO -->
+<section class="intro">
+  <div class="wrap">
+    <div>
+      <span class="kicker">The atelier</span>
+      <h2 class="title">Not off the rack.<br><em>Off your measurements.</em></h2>
+    </div>
+    <div>
+      <p class="big">Every barong starts as a bolt of fabric on our cutting table and a fitting card with <em>your</em> name on it. We cut, embroider and finish in-house, then adjust at a final fitting so the shoulders sit clean and the sheer drapes as it should.</p>
+      <div class="stats">
+        <div><b>14</b><span>points on every fitting card</span></div>
+        <div><b>~3</b><span>weeks from fitting to pickup</span></div>
+        <div><b>2</b><span>fittings included per piece</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FABRICS -->
+<section class="fabrics" id="fabrics">
+  <div class="wrap">
+    <div class="head">
+      <div>
+        <span class="kicker">01 — Choose your fabric</span>
+        <h2 class="title">Four weaves,<br><em>four kinds of light.</em></h2>
+      </div>
+      <p class="sub">Feel every swatch at your fitting. Prices are starting rates for a made-to-measure long-sleeve barong with standard embroidery; your final quote depends on fabric yardage and embroidery coverage.</p>
+    </div>
+    <div class="fab-grid">
+      <!-- JUSI -->
+      <article class="fab">
+        <div class="sw">
+          <svg viewBox="0 0 300 306" preserveAspectRatio="xMidYMid slice">
+            <defs>
+              <linearGradient id="jBg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#E8DCC0"/><stop offset="1" stop-color="#C9B68E"/></linearGradient>
+              <linearGradient id="jCloth" x1="0" y1="0" x2="1" y2=".4"><stop offset="0" stop-color="#F6EEDB"/><stop offset=".3" stop-color="#FFFBF0"/><stop offset=".45" stop-color="#E9DCBC"/><stop offset=".62" stop-color="#FFF9EA"/><stop offset=".8" stop-color="#E2D2AE"/><stop offset="1" stop-color="#F7EEDA"/></linearGradient>
+              <linearGradient id="jSheen" x1="0" y1="0" x2="1" y2="1"><stop offset=".3" stop-color="#fff" stop-opacity="0"/><stop offset=".5" stop-color="#fff" stop-opacity=".7"/><stop offset=".7" stop-color="#fff" stop-opacity="0"/></linearGradient>
+              <pattern id="jW" width="3" height="3" patternUnits="userSpaceOnUse"><path d="M0 .5h3" stroke="#A8915F" stroke-width=".4" opacity=".5"/><path d="M1.5 0v3" stroke="#fff" stroke-width=".4" opacity=".6"/></pattern>
+            </defs>
+            <rect width="300" height="306" fill="url(#jBg)"/>
+            <path d="M-10 40C60 20 120 60 180 30S290 10 320 26V320H-10Z" fill="url(#jCloth)"/>
+            <path d="M-10 40C60 20 120 60 180 30S290 10 320 26V320H-10Z" fill="url(#jW)"/>
+            <path d="M-10 40C60 20 120 60 180 30S290 10 320 26V320H-10Z" fill="url(#jSheen)"/>
+            <path d="M60 30C70 120 40 220 70 320M180 30C170 140 200 220 180 320" stroke="#A8915F" stroke-width="10" opacity=".08" fill="none"/>
+            <g opacity=".5" stroke="#B48A45" stroke-width=".7" fill="none"><path d="M0 250h300M0 256h300" stroke-dasharray="3 3"/></g>
+          </svg>
+          <span class="no">i.</span>
+        </div>
+        <div class="bd">
+          <h3>Jusi</h3>
+          <div class="lat">Silk-blend · soft sheen</div>
+          <p>A crisp, gently lustrous weave that holds embroidery beautifully. The classic choice for grooms and principal sponsors.</p>
+          <ul><li>Weddings</li><li>Formal evening</li></ul>
+          <div class="pr"><span>From</span><b><small>₱</small>4,800</b></div>
+        </div>
+      </article>
+      <!-- PINA SEDA -->
+      <article class="fab feat">
+        <div class="sw">
+          <svg viewBox="0 0 300 306" preserveAspectRatio="xMidYMid slice">
+            <defs>
+              <linearGradient id="pBg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#3E604D"/><stop offset="1" stop-color="#2E4A3B"/></linearGradient>
+              <linearGradient id="pCloth" x1="0" x2="1"><stop offset="0" stop-color="#F7EBD0" stop-opacity=".78"/><stop offset=".35" stop-color="#FFF8E4" stop-opacity=".62"/><stop offset=".6" stop-color="#EEDCB5" stop-opacity=".8"/><stop offset="1" stop-color="#FFF6E0" stop-opacity=".6"/></linearGradient>
+              <linearGradient id="pIri" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#F3D7E0" stop-opacity=".25"/><stop offset=".5" stop-color="#D9EBDF" stop-opacity=".2"/><stop offset="1" stop-color="#F3E3B5" stop-opacity=".3"/></linearGradient>
+              <pattern id="pSlub" width="60" height="12" patternUnits="userSpaceOnUse">
+                <path d="M0 2h22M28 2.4h32M0 5.6h8M14 5.4h40M0 9h34M40 9.2h20" stroke="#C9AE74" stroke-width=".55" opacity=".75"/>
+                <path d="M22 2.2h6M8 5.6h6M34 9.1h6" stroke="#B4955A" stroke-width="1.3" stroke-linecap="round" opacity=".7"/>
+                <path d="M4 0v12M16 0v12M28 0v12M40 0v12M52 0v12" stroke="#fff" stroke-width=".3" opacity=".5"/>
+              </pattern>
+            </defs>
+            <rect width="300" height="306" fill="url(#pBg)"/>
+            <g opacity=".35" fill="#E9E4DA"><circle cx="60" cy="80" r="26"/><circle cx="220" cy="210" r="34"/><circle cx="240" cy="60" r="16"/></g>
+            <path d="M-10 26C80 10 140 50 220 20S300 40 320 30V320H-10Z" fill="url(#pCloth)"/>
+            <path d="M-10 26C80 10 140 50 220 20S300 40 320 30V320H-10Z" fill="url(#pSlub)"/>
+            <path d="M-10 26C80 10 140 50 220 20S300 40 320 30V320H-10Z" fill="url(#pIri)"/>
+            <path d="M40 60C80 140 30 220 70 320H140C110 220 150 130 110 40Z" fill="#fff" opacity=".18"/>
+            <path d="M200 40C230 140 190 230 230 320" stroke="#8C7450" stroke-width="14" opacity=".1" fill="none"/>
+            <path d="M-10 26C80 10 140 50 220 20S300 40 320 30" fill="none" stroke="#E9D9B0" stroke-width="1.2" stroke-dasharray="1 2"/>
+          </svg>
+          <span class="no">ii.</span>
+        </div>
+        <div class="bd">
+          <h3>Piña-seda</h3>
+          <div class="lat">Pineapple fiber + silk</div>
+          <p>Hand-loomed, airy and faintly iridescent, with natural slubs that make every panel one of a kind. Sheer enough to glow over a camisa.</p>
+          <ul><li>Grooms</li><li>Heirloom pieces</li></ul>
+          <div class="pr"><span>From</span><b><small>₱</small>9,500</b></div>
+        </div>
+      </article>
+      <!-- ORGANZA -->
+      <article class="fab">
+        <div class="sw">
+          <svg viewBox="0 0 300 306" preserveAspectRatio="xMidYMid slice">
+            <defs>
+              <linearGradient id="oBg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#E9E4DA"/><stop offset="1" stop-color="#D8D0C2"/></linearGradient>
+              <linearGradient id="oL" x1="0" x2="1"><stop offset="0" stop-color="#fff" stop-opacity=".2"/><stop offset=".5" stop-color="#fff" stop-opacity=".75"/><stop offset="1" stop-color="#fff" stop-opacity=".25"/></linearGradient>
+              <pattern id="oGrid" width="30" height="30" patternUnits="userSpaceOnUse"><path d="M0 .5h30M.5 0v30" stroke="#9A9082" stroke-width=".6" opacity=".5"/></pattern>
+            </defs>
+            <rect width="300" height="306" fill="url(#oBg)"/>
+            <rect width="300" height="306" fill="url(#oGrid)"/>
+            <text x="150" y="190" text-anchor="middle" font-family="Cormorant Garamond" font-style="italic" font-size="96" fill="#8E8475" opacity=".5">Aa</text>
+            <path d="M-20 60C60 30 110 90 180 50S280 20 330 50L320 330H-20Z" fill="url(#oL)" opacity=".85"/>
+            <path d="M-20 120C70 90 130 150 200 110S290 100 330 120L320 330H-20Z" fill="#FFFDF8" opacity=".42"/>
+            <path d="M-20 200C80 170 140 230 210 190S300 190 330 200L320 330H-20Z" fill="#FFFDF8" opacity=".45"/>
+            <g fill="none" stroke="#fff" stroke-width="1.4" opacity=".9"><path d="M-20 60C60 30 110 90 180 50S280 20 330 50"/><path d="M-20 120C70 90 130 150 200 110S290 100 330 120"/><path d="M-20 200C80 170 140 230 210 190S300 190 330 200"/></g>
+            <path d="M80 50C90 140 70 240 90 320M230 40C220 140 250 240 230 320" stroke="#fff" stroke-width="16" opacity=".35" fill="none"/>
+          </svg>
+          <span class="no">iii.</span>
+        </div>
+        <div class="bd">
+          <h3>Organza</h3>
+          <div class="lat">Crisp · see-through</div>
+          <p>Light, structured and very sheer — it keeps its shape through a long party night. A smart pick for entourage sets and younger wearers.</p>
+          <ul><li>Debuts</li><li>Entourage</li></ul>
+          <div class="pr"><span>From</span><b><small>₱</small>3,200</b></div>
+        </div>
+      </article>
+      <!-- COCOON LINEN -->
+      <article class="fab">
+        <div class="sw">
+          <svg viewBox="0 0 300 306" preserveAspectRatio="xMidYMid slice">
+            <defs>
+              <linearGradient id="cBg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#DCCDAF"/><stop offset="1" stop-color="#C2AE88"/></linearGradient>
+              <linearGradient id="cShade" x1="0" x2="1"><stop offset="0" stop-color="#6E5A3A" stop-opacity=".18"/><stop offset=".4" stop-color="#fff" stop-opacity=".12"/><stop offset=".7" stop-color="#6E5A3A" stop-opacity=".1"/><stop offset="1" stop-color="#6E5A3A" stop-opacity=".22"/></linearGradient>
+              <pattern id="cW" width="8" height="8" patternUnits="userSpaceOnUse">
+                <rect width="8" height="8" fill="#E7DBC2"/>
+                <path d="M0 2h4M4 6h4" stroke="#C7B28A" stroke-width="2.2"/>
+                <path d="M6 0v4M2 4v4" stroke="#F3EAD6" stroke-width="2"/>
+                <path d="M0 2h4M4 6h4" stroke="#B39D73" stroke-width=".4"/>
+              </pattern>
+            </defs>
+            <rect width="300" height="306" fill="url(#cBg)"/>
+            <g transform="rotate(-6 150 150)">
+              <rect x="-20" y="30" width="340" height="320" fill="url(#cW)"/>
+              <rect x="-20" y="30" width="340" height="320" fill="url(#cShade)"/>
+              <path d="M-20 30H320" stroke="#A89067" stroke-width="2" stroke-dasharray="2 3"/>
+              <g stroke="#9C8660" stroke-width="2.4" stroke-linecap="round" opacity=".5"><path d="M30 90h14M140 150h20M210 80h10M80 220h18M240 250h14M180 290h12"/></g>
+            </g>
+            <!-- folded corner -->
+            <path d="M300 306L210 306L300 216Z" fill="#E9DDC6"/>
+            <path d="M210 306L300 216" stroke="#9C8660" stroke-width="1" opacity=".6"/>
+            <path d="M300 216L300 306L210 306Z" fill="url(#cShade)"/>
+          </svg>
+          <span class="no">iv.</span>
+        </div>
+        <div class="bd">
+          <h3>Cocoon / Linen</h3>
+          <div class="lat">Opaque · breathable</div>
+          <p>Textured, comfortable and easy to wear all day. Great for office Christmas parties and daytime events — no camisa needed.</p>
+          <ul><li>Office parties</li><li>Daytime</li></ul>
+          <div class="pr"><span>From</span><b><small>₱</small>2,900</b></div>
+        </div>
+      </article>
+    </div>
+    <p class="note"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 8v5M12 16v.5"/></svg>The 10% made-to-measure discount applies to orders confirmed by December 15. Filipiniana pieces are quoted at your fitting.</p>
+  </div>
+</section>
+
+<!-- EMBROIDERY -->
+<section class="emb" id="embroidery">
+  <div class="wrap">
+    <span class="kicker">02 — Choose your burda</span>
+    <h2 class="title">Three ways to<br><em>embroider light.</em></h2>
+    <p class="sub">Burda means embroidery. Pick a technique, then choose a motif with our embroiderer — sampaguita, calachuchi, rice stalks, or something personal like initials hidden in the vine.</p>
+    <div class="emb-grid">
+      <!-- CALADO -->
+      <div class="ec">
+        <div class="hoop">
+          <svg viewBox="0 0 300 300">
+            <defs>
+              <pattern id="kWeave" width="3" height="3" patternUnits="userSpaceOnUse"><rect width="3" height="3" fill="#F8F1E0"/><path d="M0 .5h3M.5 0v3" stroke="#D9C9A4" stroke-width=".35"/></pattern>
+              <pattern id="kHoles" width="12" height="12" patternUnits="userSpaceOnUse"><rect width="12" height="12" fill="#F4EAD3"/><rect x="2.5" y="2.5" width="7" height="7" fill="#2E4A3B"/><path d="M6 0v2.5M6 9.5V12M0 6h2.5M9.5 6H12" stroke="#FFFDF6" stroke-width="1.3"/></pattern>
+              <clipPath id="kC"><circle cx="150" cy="150" r="150"/></clipPath>
+            </defs>
+            <g clip-path="url(#kC)">
+              <rect width="300" height="300" fill="url(#kWeave)"/>
+              <!-- openwork diamond -->
+              <path d="M150 50L250 150L150 250L50 150Z" fill="url(#kHoles)"/>
+              <path d="M150 50L250 150L150 250L50 150Z" fill="none" stroke="#FFFDF6" stroke-width="7"/>
+              <path d="M150 50L250 150L150 250L50 150Z" fill="none" stroke="#C49F5B" stroke-width="1.2"/>
+              <path d="M150 38L262 150L150 262L38 150Z" fill="none" stroke="#C49F5B" stroke-width=".8" stroke-dasharray="2 3"/>
+              <!-- central satin flower over openwork -->
+              <circle cx="150" cy="150" r="34" fill="#FBF6EA" stroke="#C49F5B" stroke-width="1"/>
+              <g fill="#FFFEFA" stroke="#B48A45" stroke-width=".8">
+                <path d="M150 122c-10 8-10 20 0 28 10-8 10-20 0-28z"/>
+                <path d="M150 178c-10-8-10-20 0-28 10 8 10 20 0 28z"/>
+                <path d="M122 150c8-10 20-10 28 0-8 10-20 10-28 0z"/>
+                <path d="M178 150c-8-10-20-10-28 0 8 10 20 10 28 0z"/>
+              </g>
+              <circle cx="150" cy="150" r="5" fill="#D6B46E"/>
+              <!-- corner eyelets -->
+              <g fill="#2E4A3B" stroke="#FFFDF6" stroke-width="2.4">
+                <circle cx="60" cy="60" r="7"/><circle cx="240" cy="60" r="7"/><circle cx="60" cy="240" r="7"/><circle cx="240" cy="240" r="7"/>
+                <circle cx="150" cy="22" r="5"/><circle cx="150" cy="278" r="5"/><circle cx="22" cy="150" r="5"/><circle cx="278" cy="150" r="5"/>
+              </g>
+              <g fill="none" stroke="#C49F5B" stroke-width="1"><path d="M60 60L100 100M240 60L200 100M60 240L100 200M240 240L200 200"/></g>
+            </g>
+          </svg>
+        </div>
+        <h3>Calado <i>openwork</i></h3>
+        <p>Threads are drawn out of the fabric and bound into a tiny lattice, so light passes through the pattern itself. Crisp, architectural, very traditional.</p>
+        <div class="meta"><span>Classic panels</span><span>+ ₱1,500</span></div>
+      </div>
+      <!-- SOMBRADO -->
+      <div class="ec">
+        <div class="hoop">
+          <svg viewBox="0 0 300 300">
+            <defs>
+              <radialGradient id="sBg" cx=".4" cy=".35" r=".8"><stop offset="0" stop-color="#FFFCF4"/><stop offset="1" stop-color="#EADFC6"/></radialGradient>
+              <pattern id="sW" width="4" height="4" patternUnits="userSpaceOnUse"><path d="M0 .5h4M.5 0v4" stroke="#CDBB93" stroke-width=".3" opacity=".7"/></pattern>
+              <filter id="sSoft"><feGaussianBlur stdDeviation="2.2"/></filter>
+            </defs>
+            <rect width="300" height="300" fill="url(#sBg)"/>
+            <rect width="300" height="300" fill="url(#sW)"/>
+            <!-- shadow fill (behind sheer) -->
+            <g fill="#BFA676" opacity=".55" filter="url(#sSoft)">
+              <path d="M150 70c-22 20-22 50 0 70 22-20 22-50 0-70z"/>
+              <path d="M150 230c-22-20-22-50 0-70 22 20 22 50 0 70z"/>
+              <path d="M70 150c20-22 50-22 70 0-20 22-50 22-70 0z"/>
+              <path d="M230 150c-20-22-50-22-70 0 20 22 50 22 70 0z"/>
+              <path d="M95 95c25 0 40 15 40 40-25 0-40-15-40-40zM205 95c-25 0-40 15-40 40 25 0 40-15 40-40zM95 205c25 0 40-15 40-40-25 0-40 15-40 40zM205 205c-25 0-40-15-40-40 25 0 40 15 40 40z"/>
+            </g>
+            <!-- crisp outline stitches on top -->
+            <g fill="none" stroke="#8E7347" stroke-width="1" stroke-dasharray="2.2 1.6">
+              <path d="M150 70c-22 20-22 50 0 70 22-20 22-50 0-70z"/>
+              <path d="M150 230c-22-20-22-50 0-70 22 20 22 50 0 70z"/>
+              <path d="M70 150c20-22 50-22 70 0-20 22-50 22-70 0z"/>
+              <path d="M230 150c-20-22-50-22-70 0 20 22 50 22 70 0z"/>
+              <path d="M95 95c25 0 40 15 40 40-25 0-40-15-40-40zM205 95c-25 0-40 15-40 40 25 0 40-15 40-40zM95 205c25 0 40-15 40-40-25 0-40 15-40 40zM205 205c-25 0-40-15-40-40 25 0 40 15 40 40z"/>
+            </g>
+            <g fill="none" stroke="#B48A45" stroke-width=".7" opacity=".8">
+              <path d="M150 78v54M150 222v-54M78 150h54M222 150h-54M100 100l30 30M200 100l-30 30M100 200l30-30M200 200l-30-30"/>
+            </g>
+            <circle cx="150" cy="150" r="9" fill="#FFFDF6" stroke="#8E7347"/>
+            <circle cx="150" cy="150" r="3.5" fill="#B48A45"/>
+            <!-- vine ring -->
+            <circle cx="150" cy="150" r="112" fill="none" stroke="#B48A45" stroke-width=".8" stroke-dasharray="1 3"/>
+            <g fill="#BFA676" opacity=".5" filter="url(#sSoft)">
+              <circle cx="150" cy="38" r="7"/><circle cx="262" cy="150" r="7"/><circle cx="150" cy="262" r="7"/><circle cx="38" cy="150" r="7"/>
+              <circle cx="229" cy="71" r="5"/><circle cx="229" cy="229" r="5"/><circle cx="71" cy="229" r="5"/><circle cx="71" cy="71" r="5"/>
+            </g>
+            <path d="M0 0C60 40 90 0 140 30L60 300H0Z" fill="#fff" opacity=".2"/>
+          </svg>
+        </div>
+        <h3>Sombrado <i>shadow-work</i></h3>
+        <p>Stitched from the back of a sheer fabric, so the motif glows through as a soft, smoky shadow with a fine outline on top. Quiet and romantic.</p>
+        <div class="meta"><span>Sheer fabrics</span><span>+ ₱2,200</span></div>
+      </div>
+      <!-- HAND-PAINTED -->
+      <div class="ec">
+        <div class="hoop">
+          <svg viewBox="0 0 300 300">
+            <defs>
+              <linearGradient id="hpBg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#FBF5E8"/><stop offset="1" stop-color="#EFE3CB"/></linearGradient>
+              <pattern id="hpW" width="5" height="5" patternUnits="userSpaceOnUse"><path d="M0 .5h5" stroke="#D6C6A2" stroke-width=".35"/><path d="M2.5 0v5" stroke="#E5D8BA" stroke-width=".3"/></pattern>
+              <radialGradient id="hpRose" cx=".4" cy=".4" r=".7"><stop offset="0" stop-color="#E8B4AE"/><stop offset=".7" stop-color="#C77C78"/><stop offset="1" stop-color="#A65E5C"/></radialGradient>
+              <radialGradient id="hpRose2" cx=".4" cy=".4" r=".7"><stop offset="0" stop-color="#F4D6B4"/><stop offset="1" stop-color="#D59A62"/></radialGradient>
+              <linearGradient id="hpLeaf" x1="0" x2="1"><stop offset="0" stop-color="#6F8E74"/><stop offset="1" stop-color="#2E4A3B"/></linearGradient>
+              <filter id="hpRough"><feTurbulence type="fractalNoise" baseFrequency=".9" numOctaves="2" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="3"/></filter>
+            </defs>
+            <rect width="300" height="300" fill="url(#hpBg)"/>
+            <rect width="300" height="300" fill="url(#hpW)"/>
+            <g filter="url(#hpRough)">
+              <!-- stems -->
+              <path d="M40 260C90 210 120 170 150 120S210 50 260 40" fill="none" stroke="#5A7A60" stroke-width="3" stroke-linecap="round"/>
+              <path d="M120 170C100 140 80 130 60 128M180 90C200 110 230 116 250 110" fill="none" stroke="#5A7A60" stroke-width="2"/>
+              <!-- leaves -->
+              <path d="M90 210c-30-4-44 14-48 24 22 2 40-6 48-24z" fill="url(#hpLeaf)" opacity=".85"/>
+              <path d="M128 160c8-30 30-36 42-36-2 22-18 36-42 36z" fill="url(#hpLeaf)" opacity=".8"/>
+              <path d="M200 76c-6-26 8-40 18-44 6 20-2 36-18 44z" fill="url(#hpLeaf)" opacity=".75"/>
+              <path d="M70 130c-18 12-36 6-42 0 16-14 32-12 42 0z" fill="url(#hpLeaf)" opacity=".7"/>
+              <path d="M240 112c18 12 34 4 40-2-16-12-30-10-40 2z" fill="url(#hpLeaf)" opacity=".7"/>
+              <!-- big bloom -->
+              <g transform="translate(150 150)">
+                <g fill="url(#hpRose)" opacity=".9">
+                  <path d="M0 0C-18 -14 -18 -40 0 -44C18 -40 18 -14 0 0Z"/>
+                  <path d="M0 0C-18 -14 -18 -40 0 -44C18 -40 18 -14 0 0Z" transform="rotate(72)"/>
+                  <path d="M0 0C-18 -14 -18 -40 0 -44C18 -40 18 -14 0 0Z" transform="rotate(144)"/>
+                  <path d="M0 0C-18 -14 -18 -40 0 -44C18 -40 18 -14 0 0Z" transform="rotate(216)"/>
+                  <path d="M0 0C-18 -14 -18 -40 0 -44C18 -40 18 -14 0 0Z" transform="rotate(288)"/>
+                </g>
+                <g fill="none" stroke="#F4D6CE" stroke-width="1.6" opacity=".8"><path d="M0 -8V-34"/><path d="M0 -8V-34" transform="rotate(72)"/><path d="M0 -8V-34" transform="rotate(144)"/><path d="M0 -8V-34" transform="rotate(216)"/><path d="M0 -8V-34" transform="rotate(288)"/></g>
+                <circle r="9" fill="#E8C27A"/>
+                <g fill="#9C5A3A"><circle cx="-3" cy="-2" r="1.4"/><circle cx="3" cy="-1" r="1.4"/><circle cx="0" cy="3" r="1.4"/></g>
+              </g>
+              <!-- small blooms -->
+              <g transform="translate(62 128)"><circle r="16" fill="url(#hpRose2)" opacity=".9"/><circle r="5" fill="#B67A3E"/></g>
+              <g transform="translate(256 106)"><circle r="18" fill="url(#hpRose)" opacity=".75"/><circle r="6" fill="#A65E5C"/></g>
+              <g transform="translate(222 52)"><circle r="12" fill="url(#hpRose2)" opacity=".85"/></g>
+              <!-- buds -->
+              <g fill="#D59A62" opacity=".85"><ellipse cx="40" cy="258" rx="7" ry="10" transform="rotate(-40 40 258)"/><ellipse cx="262" cy="40" rx="6" ry="9" transform="rotate(40 262 40)"/></g>
+            </g>
+            <!-- gold thread outlines over paint -->
+            <g fill="none" stroke="#B48A45" stroke-width="1">
+              <path d="M150 106C132 120 132 140 150 150C168 140 168 120 150 106Z" stroke-dasharray="3 2"/>
+              <circle cx="62" cy="128" r="18" stroke-dasharray="2 2"/>
+              <circle cx="256" cy="106" r="20" stroke-dasharray="2 2"/>
+            </g>
+            <g fill="#D6B46E"><circle cx="110" cy="96" r="2"/><circle cx="196" cy="214" r="2"/><circle cx="96" cy="250" r="1.6"/><circle cx="230" cy="180" r="1.6"/><circle cx="180" cy="40" r="1.6"/></g>
+          </svg>
+        </div>
+        <h3>Hand-painted <i>pintado</i></h3>
+        <p>Flowers brushed directly onto the fabric with textile paint, then edged in gold thread. Colorful, modern and a favorite for debut escorts and Filipiniana sleeves.</p>
+        <div class="meta"><span>Any fabric</span><span>+ ₱1,800</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section class="steps" id="process">
+  <div class="wrap">
+    <div class="head">
+      <div>
+        <span class="kicker">03 — How it works</span>
+        <h2 class="title">From first fitting<br><em>to pickup.</em></h2>
+      </div>
+      <p class="sub">Four visits at most, no guesswork. Out-of-town clients can do the final fitting by video and have pieces sent by courier.</p>
+    </div>
+    <div class="st-grid">
+      <div class="st">
+        <div class="ic"><svg viewBox="0 0 40 40"><rect x="6" y="9" width="28" height="25" rx="2"/><path d="M6 16h28M13 5v7M27 5v7"/><path d="M15 25l4 4 7-8"/></svg><span class="n">1</span></div>
+        <div class="wk">Day 1</div>
+        <h3>Book your free fitting</h3>
+        <p>Send the form below or message us. We confirm a 45-minute slot at the atelier.</p>
+      </div>
+      <div class="st">
+        <div class="ic"><svg viewBox="0 0 40 40"><path d="M5 26h30v7H5z"/><path d="M10 26v3M15 26v4M20 26v3M25 26v4M30 26v3"/><path d="M12 20l6-13 6 13"/><path d="M14.5 15h7"/></svg><span class="n">2</span></div>
+        <div class="wk">Fitting day</div>
+        <h3>Measure &amp; pick fabric</h3>
+        <p>We take 14 measurements, you feel the swatches and choose collar, cuff and buttons.</p>
+      </div>
+      <div class="st">
+        <div class="ic"><svg viewBox="0 0 40 40"><circle cx="20" cy="20" r="13"/><circle cx="20" cy="20" r="9"/><path d="M30 6l4 4"/><path d="M8 32L32 8"/><path d="M16 18c2-3 4 0 4 2s3 4 5 1"/></svg><span class="n">3</span></div>
+        <div class="wk">Weeks 1 – 2</div>
+        <h3>Cutting &amp; embroidery</h3>
+        <p>Your panels are cut and embroidered by hand. We send a progress photo before assembly.</p>
+      </div>
+      <div class="st">
+        <div class="ic"><svg viewBox="0 0 40 40"><path d="M20 6a3 3 0 1 1 3 3"/><path d="M23 9l-3 4"/><path d="M20 13L5 24h30z"/><path d="M9 24l2 10h18l2-10"/></svg><span class="n">4</span></div>
+        <div class="wk">Around week 3</div>
+        <h3>Final fitting &amp; pickup</h3>
+        <p>Try it on, we fine-tune the hem and sleeves on the spot, then it goes home pressed and covered.</p>
+      </div>
+    </div>
+    <div class="timeline">
+      <b>~3 weeks</b>
+      <div class="bar"><i></i><u style="left:8%"></u><u style="left:66%"></u></div>
+      <span>Rush schedules for events before Christmas are limited — book early.</span>
+    </div>
+  </div>
+</section>
+
+<!-- MEASUREMENT SHEET -->
+<section class="measure" id="measure">
+  <div class="wrap">
+    <span class="kicker">04 — The fitting card</span>
+    <h2 class="title">Fourteen numbers<br><em>that make it yours.</em></h2>
+    <p class="sub">This is the card we fill in at your fitting. It stays on file, so re-orders for future events only need a quick check.</p>
+
+    <div class="sheet">
+      <div class="draw">
+        <svg viewBox="0 0 520 566" role="img" aria-label="Technical drawing of a barong with measurement lines">
+          <defs>
+            <marker id="mA" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 1L9 5L0 9" fill="none" stroke="#2E4A3B" stroke-width="1.6"/></marker>
+            <pattern id="mE" width="16" height="22" patternUnits="userSpaceOnUse"><path d="M8 0C3 6 13 10 8 16C5 19 8 22 8 22" fill="none" stroke="#B48A45" stroke-width=".6"/><circle cx="8" cy="6" r="1.8" fill="none" stroke="#B48A45" stroke-width=".6"/></pattern>
+          </defs>
+          <!-- flat sketch -->
+          <g fill="#FFFDF7" stroke="#221F1C" stroke-width="1.4" stroke-linejoin="round">
+            <path d="M120 120L80 140L50 400L92 410L118 220Z"/>
+            <path d="M400 120L440 140L470 400L428 410L402 220Z"/>
+            <path d="M222 92Q260 104 298 92L400 120L404 220L412 500Q260 516 108 500L116 220L120 120Z"/>
+          </g>
+          <path d="M222 80Q260 90 298 80L300 98Q260 110 220 98Z" fill="#FFFDF7" stroke="#221F1C" stroke-width="1.4"/>
+          <path d="M184 112H240V380Q212 390 184 380Z M336 112H280V380Q308 390 336 380Z" fill="url(#mE)" stroke="#B48A45" stroke-width=".8"/>
+          <path d="M260 104V300" stroke="#221F1C" stroke-width="1"/>
+          <g fill="#221F1C"><circle cx="260" cy="132" r="2.6"/><circle cx="260" cy="172" r="2.6"/><circle cx="260" cy="212" r="2.6"/><circle cx="260" cy="252" r="2.6"/></g>
+          <path d="M108 470Q260 486 412 470" fill="none" stroke="#B48A45" stroke-width=".8" stroke-dasharray="3 3"/>
+          <path d="M50 390L92 400M470 390L428 400" stroke="#221F1C" stroke-width="1"/>
+
+          <!-- measurement lines -->
+          <g stroke="#2E4A3B" stroke-width="1.3" fill="none">
+            <path d="M220 66H300" marker-start="url(#mA)" marker-end="url(#mA)"/>
+            <path d="M120 54H400" marker-start="url(#mA)" marker-end="url(#mA)"/>
+            <path d="M120 46V114M400 46V114" stroke-dasharray="3 3" stroke-width=".8"/>
+            <path d="M118 200H402" marker-start="url(#mA)" marker-end="url(#mA)"/>
+            <path d="M114 300H406" marker-start="url(#mA)" marker-end="url(#mA)" stroke-dasharray="6 3"/>
+            <path d="M110 440H410" marker-start="url(#mA)" marker-end="url(#mA)"/>
+            <path d="M486 124V406" marker-start="url(#mA)" marker-end="url(#mA)" transform="rotate(-6 486 265)"/>
+            <path d="M30 410L96 422" marker-start="url(#mA)" marker-end="url(#mA)"/>
+            <path d="M24 92V500" marker-start="url(#mA)" marker-end="url(#mA)"/>
+            <path d="M18 92H222M18 500H108" stroke-dasharray="3 3" stroke-width=".8"/>
+          </g>
+          <!-- labels -->
+          <g font-family="Jost" font-size="20" font-weight="600" text-anchor="middle">
+            <g><circle cx="260" cy="66" r="15" fill="#2E4A3B"/><text x="260" y="73" fill="#FBF8F1">A</text></g>
+            <g><circle cx="160" cy="54" r="15" fill="#2E4A3B"/><text x="160" y="61" fill="#FBF8F1">B</text></g>
+            <g><circle cx="160" cy="200" r="15" fill="#2E4A3B"/><text x="160" y="207" fill="#FBF8F1">C</text></g>
+            <g><circle cx="160" cy="300" r="15" fill="#2E4A3B"/><text x="160" y="307" fill="#FBF8F1">D</text></g>
+            <g><circle cx="160" cy="440" r="15" fill="#2E4A3B"/><text x="160" y="447" fill="#FBF8F1">E</text></g>
+            <g><circle cx="500" cy="265" r="15" fill="#2E4A3B"/><text x="500" y="272" fill="#FBF8F1">F</text></g>
+            <g><circle cx="44" cy="440" r="15" fill="#2E4A3B"/><text x="44" y="447" fill="#FBF8F1">G</text></g>
+            <g><circle cx="24" cy="296" r="15" fill="#2E4A3B"/><text x="24" y="303" fill="#FBF8F1">H</text></g>
+          </g>
+          <text x="260" y="556" text-anchor="middle" font-family="Jost" font-size="20" letter-spacing="1.5" fill="#6E665B">FRONT · LONG SLEEVE · STANDARD COLLAR</text>
+        </svg>
+      </div>
+      <div class="card">
+        <div class="top">
+          <div><span>Fitting card</span><br><b>Barong Tagalog</b></div>
+          <div class="no">No. ____</div>
+        </div>
+        <table class="mtab">
+          <tr><td class="k"><i>A</i></td><td>Collar / neck<small>around the base of the neck</small></td><td class="v"><u></u>in</td></tr>
+          <tr><td class="k"><i>B</i></td><td>Shoulder width<small>seam to seam across the back</small></td><td class="v"><u></u>in</td></tr>
+          <tr><td class="k"><i>C</i></td><td>Chest<small>relaxed, arms down</small></td><td class="v"><u></u>in</td></tr>
+          <tr><td class="k"><i>D</i></td><td>Waist<small>at the navel line</small></td><td class="v"><u></u>in</td></tr>
+          <tr><td class="k"><i>E</i></td><td>Hip / hem<small>where the barong will fall</small></td><td class="v"><u></u>in</td></tr>
+          <tr><td class="k"><i>F</i></td><td>Sleeve length<small>shoulder point to wrist bone</small></td><td class="v"><u></u>in</td></tr>
+          <tr><td class="k"><i>G</i></td><td>Cuff / wrist<small>with room for a watch</small></td><td class="v"><u></u>in</td></tr>
+          <tr><td class="k"><i>H</i></td><td>Body length<small>collar seam to hem</small></td><td class="v"><u></u>in</td></tr>
+        </table>
+        <div class="tip">
+          <svg viewBox="0 0 24 24"><path d="M9 18h6M10 21h4M12 3a6 6 0 0 0-4 10.5c.8.8 1 1.5 1 2.5h6c0-1 .2-1.7 1-2.5A6 6 0 0 0 12 3z"/></svg>
+          <span>Plus bicep, armhole, back length, front drop, posture notes and your preferred fit (slim, classic or relaxed) — 14 points in total.</span>
+        </div>
+      </div>
+      <svg class="stamp" viewBox="0 0 120 120" aria-hidden="true">
+        <defs><path id="stC" d="M60 60m-42 0a42 42 0 1 1 84 0a42 42 0 1 1-84 0"/></defs>
+        <circle cx="60" cy="60" r="55" fill="none" stroke="#2E4A3B" stroke-width="1.6" opacity=".8"/>
+        <circle cx="60" cy="60" r="31" fill="none" stroke="#2E4A3B" stroke-width="1" opacity=".8"/>
+        <text font-family="Jost" font-size="12" letter-spacing="3.2" fill="#2E4A3B" opacity=".85"><textPath href="#stC">BURDA · MADE TO MEASURE · QC ·</textPath></text>
+        <text x="60" y="68" text-anchor="middle" font-family="Cormorant Garamond" font-style="italic" font-weight="600" font-size="24" fill="#2E4A3B" opacity=".85">B.</text>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<!-- GROUP -->
+<section class="group">
+  <div class="wrap">
+    <div class="gbox">
+      <div class="l">
+        <span class="kicker">05 — Entourage &amp; group orders</span>
+        <h2 class="title">Dressing the<br><em>whole line-up?</em></h2>
+        <p class="sub">Grooms and groomsmen, fathers and ninongs, debut escorts, an office team for the Christmas party — we coordinate it so everyone matches without looking identical.</p>
+        <ul class="glist">
+          <li><svg viewBox="0 0 24 24"><path d="M4 12l5 5L20 6"/></svg><span><b>One fabric lot</b> for the whole group, so shades match in photos.</span></li>
+          <li><svg viewBox="0 0 24 24"><path d="M4 12l5 5L20 6"/></svg><span><b>Group fitting day</b> at the atelier, or we schedule each person separately.</span></li>
+          <li><svg viewBox="0 0 24 24"><path d="M4 12l5 5L20 6"/></svg><span><b>A signature motif</b> for the groom or debutante's father, with a lighter version for the rest.</span></li>
+          <li><svg viewBox="0 0 24 24"><path d="M4 12l5 5L20 6"/></svg><span><b>Group rate</b> for 6 pieces or more, quoted at your consultation.</span></li>
+        </ul>
+      </div>
+      <div class="r">
+        <span class="pill">6+ pieces</span>
+        <svg viewBox="0 0 620 400" aria-hidden="true">
+          <defs>
+            <linearGradient id="gB" x1="0" x2="1"><stop offset="0" stop-color="#D9CBAA"/><stop offset=".5" stop-color="#FBF5E6"/><stop offset="1" stop-color="#CDBD98"/></linearGradient>
+            <linearGradient id="gBk" x1="0" x2="1"><stop offset="0" stop-color="#B9A47C"/><stop offset=".5" stop-color="#E6D8B8"/><stop offset="1" stop-color="#AE9970"/></linearGradient>
+            <pattern id="gE" width="10" height="14" patternUnits="userSpaceOnUse"><path d="M5 0C2 4 8 7 5 10S5 14 5 14" fill="none" stroke="#B48A45" stroke-width=".6"/><circle cx="5" cy="4" r="1.1" fill="#D6B46E"/></pattern>
+            <radialGradient id="gSpot" cx=".5" cy="1" r=".7"><stop offset="0" stop-color="#D6B46E" stop-opacity=".35"/><stop offset="1" stop-color="#D6B46E" stop-opacity="0"/></radialGradient>
+            <g id="gBar">
+              <path d="M-14 0Q0 6 14 0L48 16Q58 22 58 34L62 210Q0 220 -62 210L-58 34Q-58 22 -48 16Z" fill="url(#gBk)" opacity=".9"/>
+              <path d="M-48 16L-72 30L-90 190L-70 196L-56 80Z M48 16L72 30L90 190L70 196L56 80Z" fill="url(#gBk)" opacity=".8"/>
+              <path d="M-14 -6Q0 0 14 -6L15 4Q0 10 -15 4Z" fill="#F4EBD5"/>
+              <path d="M0 6V120" stroke="#9E8558" stroke-width=".8"/>
+              <path d="M0 -26a6 6 0 1 1 6 -6M6 -32L0 -20L-46 6M0 -20L46 6" fill="none" stroke="#B48A45" stroke-width="2"/>
+            </g>
+          </defs>
+          
+          <!-- hangers rail -->
+          <path d="M20 40H600" stroke="#B48A45" stroke-width="3"/><path d="M20 39H600" stroke="#E0C185" stroke-width="1"/>
+          <!-- side pieces small -->
+          <g transform="translate(80 67) scale(.72)"><use href="#gBar"/><path d="M-30 30H-10V150H-30Z M30 30H10V150H30Z" fill="url(#gE)" opacity=".7"/></g>
+          <g transform="translate(195 71) scale(.82)"><use href="#gBar"/><path d="M-30 30H-10V150H-30Z M30 30H10V150H30Z" fill="url(#gE)" opacity=".7"/></g>
+          <g transform="translate(425 71) scale(.82)"><use href="#gBar"/><path d="M-30 30H-10V150H-30Z M30 30H10V150H30Z" fill="url(#gE)" opacity=".7"/></g>
+          <g transform="translate(540 67) scale(.72)"><use href="#gBar"/><path d="M-30 30H-10V150H-30Z M30 30H10V150H30Z" fill="url(#gE)" opacity=".7"/></g>
+          <!-- hero piece (groom) -->
+          <g transform="translate(310 78)">
+            <path d="M-14 0Q0 6 14 0L52 18Q64 24 64 38L68 238Q0 250 -68 238L-64 38Q-64 24 -52 18Z" fill="url(#gB)"/>
+            <path d="M-52 18L-78 32L-98 210L-76 216L-62 88Z M52 18L78 32L98 210L76 216L62 88Z" fill="url(#gB)" opacity=".92"/>
+            <path d="M-46 30H-8V196Q-28 204 -46 196Z M46 30H8V196Q28 204 46 196Z" fill="url(#gE)"/>
+            <path d="M-46 30H-8V196Q-28 204 -46 196Z M46 30H8V196Q28 204 46 196Z" fill="none" stroke="#B48A45" stroke-width=".8"/>
+            <path d="M-68 214Q0 226 68 214" fill="none" stroke="#B48A45" stroke-width="1" stroke-dasharray="3 2"/>
+            <path d="M-15 -7Q0 0 15 -7L16 5Q0 12 -16 5Z" fill="#FBF5E6" stroke="#B48A45" stroke-width=".8"/>
+            <path d="M0 6V130" stroke="#B48A45" stroke-width=".8"/>
+            <g fill="url(#gGold)"><circle cy="24" r="3"/><circle cy="54" r="3"/><circle cy="84" r="3"/><circle cy="114" r="3"/></g>
+            <!-- hanger -->
+            <path d="M0 -26a6 6 0 1 1 6 -6M6 -32L0 -20L-48 6M0 -20L48 6" fill="none" stroke="url(#gGold)" stroke-width="2"/>
+          </g>
+          <!-- label tag -->
+          <g transform="translate(372 300) rotate(-8)">
+            <rect width="138" height="46" rx="2" fill="#FBF8F1"/>
+            <circle cx="14" cy="23" r="4" fill="none" stroke="#B48A45"/>
+            <text x="76" y="31" text-anchor="middle" font-family="Cormorant Garamond" font-style="italic" font-weight="600" font-size="25" fill="#221F1C">The groom</text>
+          </g>
+          <path d="M346 300C356 296 366 300 372 306" fill="none" stroke="#B48A45"/>
+        </svg>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq" id="faq">
+  <div class="wrap">
+    <div class="side">
+      <span class="kicker">06 — Questions</span>
+      <h2 class="title">Before you<br><em>book.</em></h2>
+      <p class="sub">Anything else? Message us and the atelier will reply during opening hours.</p>
+      <div class="contact">
+        <a href="#book"><svg viewBox="0 0 24 24"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a1 1 0 0 1-1 1A16 16 0 0 1 4 5a1 1 0 0 1 1-1z"/></svg>0000-000-0000</a>
+        <a href="#book"><svg viewBox="0 0 24 24"><path d="M4 5h16v11H9l-5 4z"/><path d="M8 10h8M8 13h5"/></svg>Messenger: example</a>
+      </div>
+    </div>
+    <div>
+      <details open>
+        <summary>Is the fitting consultation really free?</summary>
+        <p>Yes. The consultation, measurements and swatch session cost nothing and there is no obligation to order. If you do order, the 10% made-to-measure discount applies when your order is confirmed by December 15.</p>
+      </details>
+      <details>
+        <summary>How long does a made-to-measure barong take?</summary>
+        <p>Around three weeks from your fitting to pickup for standard embroidery. Fully embroidered piña-seda or larger entourage orders can take longer, so we'll give you a clear date at your consultation.</p>
+      </details>
+      <details>
+        <summary>Do you make Filipiniana and terno too?</summary>
+        <p>We do — Filipiniana blouses, Maria Clara sets and modern terno pieces for mothers, ninangs and debutantes. These are quoted individually at your fitting because sleeves and skirts vary so much.</p>
+      </details>
+      <details>
+        <summary>Can I bring my own fabric or a family barong to copy?</summary>
+        <p>You're welcome to. We can work with fabric you supply (after checking yardage), or take a pattern from a barong you love and adjust it to your measurements.</p>
+      </details>
+      <details>
+        <summary>What do I wear under a sheer barong?</summary>
+        <p>A camisa de chino or a fitted white undershirt. We can make a matching camisa so the line under the sheer looks clean — just mention it on the form.</p>
+      </details>
+      <details>
+        <summary>How do I pay?</summary>
+        <p>A 50% down payment confirms your order and reserves embroidery time; the balance is settled at final fitting. Cash and bank transfer are accepted at the atelier.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- BOOKING -->
+<section class="booking" id="book">
+  <div class="wrap">
+    <div>
+      <span class="kicker">Book your fitting</span>
+      <h2 class="title">Reserve a chair<br><em>at the cutting table.</em></h2>
+      <p class="sub">Tell us about your event and we'll message you to confirm a consultation slot. Saturdays fill up first in December.</p>
+      <div class="perks">
+        <div><b>Free</b><span>Fitting consultation, measurements and swatch session</span></div>
+        <div><b>10%</b><span>Off made-to-measure barongs ordered by December 15</span></div>
+        <div><b>~3 wks</b><span>Typical lead time from fitting to pickup</span></div>
+      </div>
+      <p style="margin-top:28px;font-size:14.5px;color:rgba(251,248,241,.7)">Prefer to chat first? Call or text <b style="color:var(--sheer);font-weight:500">0000-000-0000</b> · Messenger: <b style="color:var(--sheer);font-weight:500">example</b></p>
+      <div class="bring">
+        <h4>What to bring <em>to your fitting</em></h4>
+        <ol>
+          <li>The barong or shirt you like the fit of most, if you have one</li>
+          <li>The shoes and undershirt you plan to wear on the day</li>
+          <li>Your event date, motif or color palette — a screenshot is fine</li>
+          <li>For groups: a list of names and who will need fittings</li>
+        </ol>
+        <div class="swrow" aria-hidden="true">
+          <div><svg viewBox="0 0 60 60" preserveAspectRatio="xMidYMid slice"><defs><linearGradient id="bs1" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#F6EEDB"/><stop offset=".5" stop-color="#FFFBF0"/><stop offset="1" stop-color="#E2D2AE"/></linearGradient></defs><rect width="60" height="60" fill="url(#bs1)"/><path d="M0 0L60 60" stroke="#fff" stroke-width="10" opacity=".5"/><path d="M0 50h60" stroke="#B48A45" stroke-dasharray="2 2" stroke-width=".8"/></svg><span>Jusi</span></div>
+          <div><svg viewBox="0 0 60 60" preserveAspectRatio="xMidYMid slice"><rect width="60" height="60" fill="#3E604D"/><rect width="60" height="60" fill="#F7EBD0" opacity=".7"/><path d="M0 8h24M30 9h30M0 20h12M18 19h42M0 32h36M42 33h18M0 44h20M26 45h34M0 56h40" stroke="#B4955A" stroke-width=".8"/><path d="M24 8.5h6M12 19.5h6M36 32.5h6" stroke="#B4955A" stroke-width="2" stroke-linecap="round"/></svg><span>Piña-seda</span></div>
+          <div><svg viewBox="0 0 60 60" preserveAspectRatio="xMidYMid slice"><rect width="60" height="60" fill="#D8D0C2"/><path d="M0 15h60M0 30h60M0 45h60M15 0v60M30 0v60M45 0v60" stroke="#9A9082" stroke-width=".6"/><path d="M0 18C20 8 40 28 60 16V60H0Z" fill="#fff" opacity=".6"/><path d="M0 36C20 26 40 46 60 34V60H0Z" fill="#fff" opacity=".4"/></svg><span>Organza</span></div>
+          <div><svg viewBox="0 0 60 60" preserveAspectRatio="xMidYMid slice"><defs><pattern id="bs4" width="6" height="6" patternUnits="userSpaceOnUse"><rect width="6" height="6" fill="#E7DBC2"/><path d="M0 1.5h3M3 4.5h3" stroke="#C7B28A" stroke-width="1.8"/></pattern></defs><rect width="60" height="60" fill="url(#bs4)"/><path d="M10 20h8M34 40h10" stroke="#9C8660" stroke-width="2" stroke-linecap="round" opacity=".6"/></svg><span>Linen</span></div>
+        </div>
+      </div>
+    </div>
+    <form class="fm" id="fm" novalidate>
+      <div class="fbody">
+        <h3>Fitting request</h3>
+        <p class="fs">Takes about a minute. We'll reply by text or Messenger.</p>
+        <div class="fgrid">
+          <div class="full"><label for="f-name">Full name</label><input id="f-name" name="name" required placeholder="Juan dela Cruz"></div>
+          <div><label for="f-phone">Mobile number</label><input id="f-phone" name="phone" type="tel" required placeholder="0000-000-0000"></div>
+          <div><label for="f-date">Event date</label><input id="f-date" name="date" type="date" required></div>
+          <div><label for="f-event">Occasion</label>
+            <select id="f-event" name="event"><option>Wedding</option><option>Christmas party</option><option>Debut</option><option>Other event</option></select></div>
+          <div><label for="f-qty">Number of pieces</label><input id="f-qty" name="qty" type="number" min="1" max="60" value="1" required></div>
+          <div class="full"><label for="f-fab">Fabric</label>
+            <select id="f-fab" name="fabric"><option>Not sure yet — help me choose</option><option>Jusi (from ₱4,800)</option><option>Piña-seda (from ₱9,500)</option><option>Organza (from ₱3,200)</option><option>Cocoon / Linen (from ₱2,900)</option></select></div>
+          <div class="full"><label for="f-note">Notes <span style="text-transform:none;letter-spacing:0;color:var(--mut);font-weight:400">(optional)</span></label><textarea id="f-note" name="note" placeholder="Embroidery style, colors, Filipiniana for the family…"></textarea></div>
+        </div>
+        <label class="agree"><input type="checkbox" id="f-ok" required> <span>I agree to be contacted about this fitting request.</span></label>
+        <button class="btn p" type="submit">Request free fitting <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+      </div>
+      <div class="done" aria-live="polite">
+        <svg viewBox="0 0 96 96"><circle cx="48" cy="48" r="44" fill="none" stroke="#B48A45" stroke-width="1.2"/><circle cx="48" cy="48" r="38" fill="none" stroke="#B48A45" stroke-width=".8" stroke-dasharray="2 3"/><path d="M30 49l12 12 24-26" fill="none" stroke="#2E4A3B" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <h3>Salamat! Request received.</h3>
+        <p>We'll message you to confirm your fitting slot. Here's what we noted:</p>
+        <dl id="sum"></dl>
+      </div>
+    </form>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div>
+      <div class="logo">
+        <svg viewBox="0 0 48 48" fill="none" width="42" height="42"><circle cx="24" cy="24" r="22.5" stroke="#D6B46E" stroke-width="1"/><path d="M17 13h14l4 6-3 16H16l-3-16z" stroke="#FBF8F1" stroke-width="1.2" stroke-linejoin="round"/><path d="M21 13l3 4 3-4M24 17v18" stroke="#FBF8F1" stroke-width="1.1"/></svg>
+        <span><b>Burda</b><small>Barong Atelier</small></span>
+      </div>
+      <p style="margin-top:18px;max-width:340px">Made-to-measure Barong Tagalog and Filipiniana, cut and embroidered by hand in Quezon City.</p>
+    </div>
+    <div>
+      <h4>Visit</h4>
+      <p>A quiet side-street atelier, Quezon City<br>Exact address sent with your booking<br>Tue – Sun · 10:00 AM – 7:00 PM</p>
+    </div>
+    <div>
+      <h4>Contact</h4>
+      <p>Mobile: 0000-000-0000<br>Messenger: example<br>By appointment preferred</p>
+    </div>
+    <div class="cp"><span>© Burda Barong Atelier</span><span>Prices are starting rates and may change with fabric and embroidery.</span></div>
+  </div>
+</footer>
+
+<div class="mbar">
+  <a class="c" href="#faq" aria-label="Call"><svg viewBox="0 0 24 24"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a1 1 0 0 1-1 1A16 16 0 0 1 4 5a1 1 0 0 1 1-1z"/></svg></a>
+  <a class="b" href="#book">Book free fitting · 10% off</a>
+</div>
+
+<script>
+(function(){
+  var f=document.getElementById('fm');
+  var d=document.getElementById('f-date');
+  try{var t=new Date();t.setDate(t.getDate()+1);d.min=t.toISOString().slice(0,10);}catch(e){}
+  f.addEventListener('submit',function(e){
+    e.preventDefault();
+    var ok=true;
+    ['f-name','f-phone','f-date','f-qty'].forEach(function(id){var el=document.getElementById(id);if(!el.value.trim()){el.style.borderColor='#A65E5C';ok=false;}else{el.style.borderColor='';}});
+    var c=document.getElementById('f-ok');
+    if(!c.checked){c.parentNode.style.color='#A65E5C';ok=false;}else{c.parentNode.style.color='';}
+    if(!ok)return;
+    var dt=d.value?new Date(d.value+'T00:00:00').toLocaleDateString('en-PH',{month:'long',day:'numeric',year:'numeric'}):'';
+    var rows=[['Name',f.name.value],['Mobile',f.phone.value],['Event',f.event.value+(dt?' · '+dt:'')],['Pieces',f.qty.value],['Fabric',f.fabric.value]];
+    var s=document.getElementById('sum');s.innerHTML='';
+    rows.forEach(function(r){var a=document.createElement('dt');a.textContent=r[0];var b=document.createElement('dd');b.textContent=r[1];s.appendChild(a);s.appendChild(b);});
+    f.classList.add('sent');
+    f.scrollIntoView({behavior:'smooth',block:'center'});
+  });
+})();
+</script>
+</body>
+</html>

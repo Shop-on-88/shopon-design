@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>부글당 부대찌개 · 메뉴판 디자인</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Black+Han+Sans&family=Do+Hyeon&family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+html{overflow-x:hidden;background:#F3E7CD}
+body{font-family:'Noto Sans KR',sans-serif;word-break:keep-all;color:#2B1D16;-webkit-font-smoothing:antialiased;min-height:100vh;overflow-x:hidden;
+ background:radial-gradient(circle,rgba(210,63,40,.10) 1.6px,transparent 2px) 0 0/14px 14px,radial-gradient(ellipse 55% 40% at 100% 0%,rgba(210,63,40,.14),transparent 70%),radial-gradient(ellipse 45% 40% at 0% 100%,rgba(44,90,67,.14),transparent 70%),linear-gradient(175deg,#F7EDD8,#EEDFC0)}
+.wrap{max-width:1180px;margin:0 auto;padding:46px 20px 130px}
+.hd{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:22px;margin-bottom:34px;padding:26px 28px 24px;background:linear-gradient(180deg,#D8452D,#BE3420);border-radius:14px;color:#FBEFD4;position:relative;box-shadow:inset 0 0 0 3px #F3D9A4,inset 0 0 0 6px #A92B1B,0 18px 40px rgba(120,40,10,.22)}
+.hd:before{content:"";position:absolute;left:6px;right:6px;top:10px;height:8px;border-top:2px solid #2C5A43;border-bottom:2px solid #2C5A43;opacity:.9}
+.hd small{display:inline-block;margin-top:10px;font-family:'Bebas Neue',sans-serif;font-size:17px;letter-spacing:.3em;color:#F3D9A4}
+.hd h1{font-family:'Black Han Sans',sans-serif;font-weight:400;font-size:clamp(42px,5.4vw,68px);line-height:1.02;margin-top:8px;text-shadow:3px 3px 0 #1E3F2F}
+.hd h1 em{display:inline-block;font-style:normal;font-family:'Do Hyeon',sans-serif;font-size:.42em;letter-spacing:.12em;color:#2B1D16;background:#F3D9A4;padding:4px 14px 2px;margin-left:14px;vertical-align:middle;text-shadow:none;border-radius:3px}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
+.chips span{font-size:13px;font-weight:500;padding:6px 13px;border:1.5px solid rgba(251,239,212,.55);border-radius:30px;background:rgba(0,0,0,.08)}
+.chips span.k{background:#2C5A43;border-color:#2C5A43;color:#FBEFD4;font-weight:700}
+.cta{display:inline-flex;align-items:center;gap:9px;height:54px;padding:0 26px;background:#2C5A43;color:#FBEFD4;font-family:'Do Hyeon',sans-serif;font-size:19px;text-decoration:none;border-radius:8px;transition:.2s;white-space:nowrap;box-shadow:4px 4px 0 #2B1D16}
+.cta:hover{background:#2B1D16;box-shadow:4px 4px 0 #F3D9A4}
+.cta svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round}
+.view{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,.75fr);gap:30px;align-items:start}
+figure{background:#2B1D16;padding:10px;border-radius:8px;box-shadow:0 30px 60px rgba(60,30,10,.28);border:2px solid #B98A2F}
+figure a{display:block;overflow:hidden;border-radius:3px}
+figure img{display:block;width:100%;height:auto}
+figcaption{font-size:13px;color:#E3D3B0;padding:11px 4px 2px;display:flex;flex-wrap:wrap;justify-content:space-between;gap:4px 10px}
+.side{display:flex;flex-direction:column;gap:18px;position:sticky;top:24px}
+.zoom{background:#FFF8E9;padding:9px;border-radius:10px;border:2px solid #2B1D16;box-shadow:6px 6px 0 #D23F28}
+.zoom:nth-child(2){box-shadow:6px 6px 0 #2C5A43}
+.zoom img{display:block;width:100%;height:auto;border-radius:5px}
+.zoom p{font-size:14px;color:#4A3828;padding:10px 4px 3px;line-height:1.65}
+.zoom p b{font-family:'Bebas Neue',sans-serif;font-weight:400;font-size:15px;letter-spacing:.2em;color:#D23F28;display:block}
+.info{background:#2C5A43;color:#FBEFD4;padding:24px 24px 18px;border-radius:10px;border:2px solid #B98A2F;position:relative;overflow:hidden}
+.info:after{content:"";position:absolute;right:-50px;bottom:-50px;width:170px;height:170px;border-radius:50%;background:radial-gradient(circle,rgba(243,217,164,.2) 1.8px,transparent 2.2px) 0 0/11px 11px}
+.info h2{font-family:'Black Han Sans',sans-serif;font-weight:400;font-size:26px;margin-bottom:8px;color:#F3D9A4}
+.info li{list-style:none;font-size:14.5px;padding:9px 0 9px 24px;position:relative;line-height:1.6;border-top:1px solid rgba(251,239,212,.18);color:#EDE3CA}
+.info li:first-child{border-top:0}
+.info li:before{content:"";position:absolute;left:2px;top:15px;width:11px;height:11px;background:#EE9E92;border-radius:50%;box-shadow:0 0 0 3px rgba(238,158,146,.3)}
+.bar{position:fixed;left:0;right:0;bottom:0;background:#2B1D16;border-top:3px solid #D23F28;padding:12px 20px;display:flex;justify-content:center;align-items:center;gap:18px;flex-wrap:wrap;z-index:10}
+.bar p{font-size:14px;color:#E3D3B0}
+.bar .cta{height:46px;box-shadow:none;background:#D23F28}
+.bar .cta:hover{background:#2C5A43}
+@media(max-width:900px){.view{grid-template-columns:1fr}.side{position:static}}
+@media(max-width:620px){.wrap{padding:22px 16px 120px}.hd{padding:24px 18px 20px}.hd .cta{display:none}.hd h1 em{display:table;margin:10px 0 0}.bar p{display:none}.bar .cta{width:100%;justify-content:center}figure{padding:6px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+ <div class="hd">
+  <div>
+   <small>MENU DESIGN · SD-MN53</small>
+   <h1>부글당 <em>부대찌개</em></h1>
+   <div class="chips"><span class="k">A4 세로 · 1페이지</span><span>레트로 통조림 라벨 스타일</span><span>양은 냄비 탑뷰 일러스트</span><span>사리 추가 아이콘표</span><span>맛있게 먹는 법 3단계</span></div>
+  </div>
+  <a class="cta" href="https://design.shoponph.online/#inquiry">이 디자인으로 상담하기 <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+ </div>
+ <div class="view">
+  <figure><a href="page1.png" target="_blank" rel="noopener"><img src="page1.png" alt="부글당 부대찌개 메뉴판 전체. 크림색 종이 바탕 위쪽에 토마토 빨강 통조림 라벨 띠, 가운데 타원 안에 큰 상호 '부글당'과 초록 리본 '부대찌개', 양옆에 원형 스탬프. 왼쪽에 위에서 내려다본 금빛 양은 냄비 부대찌개(햄, 소시지, 김치, 두부, 떡, 팽이버섯, 라면사리 위 치즈, 대파, 김이 오르는 모습)와 맵기 선택 띠, 오른쪽에 대표 메뉴 1인 12,000원(2인 이상 주문), 기본 재료, 햄 듬뿍 부대전골 중·대 가격. 가운데 모둠 사리 부대전골, 치즈 부대볶음, 스테이크 부대찌개, 우유 부대탕 그림 카드 네 장. 아래에 사리 추가 아이콘 8칸과 마실 것, 맛있게 먹는 법 3단계, 원산지와 영업 정보 띠." width="2480" height="3508"></a><figcaption><span>page1.png · A4 2480 × 3508 px</span><span>클릭하면 원본 크기</span></figcaption></figure>
+  <div class="side">
+   <div class="zoom"><img src="detail-pot.jpg" alt="대표 메뉴 확대. 손잡이 두 개 달린 금빛 양은 냄비를 위에서 본 그림, 빨간 국물 위 햄, 소시지, 김치, 두부, 라면사리와 치즈, 김이 오르는 모습 옆에 1인 12,000원 가격 상자와 기본 재료, 햄 듬뿍 부대전골 중·대 가격" width="1180" height="630"><p><b>HERO POT</b>냄비째 식탁에 오르는 모습을 그대로 그려, 무엇이 들어가는지 한눈에 보이고 1인 가격과 2인 이상 주문 안내를 바로 옆에 두었습니다.</p></div>
+   <div class="zoom"><img src="detail-sari.jpg" alt="사리 추가와 마실 것, 맛있게 먹는 법 확대. 라면사리, 치즈, 당면, 떡, 소시지, 햄, 계란후라이, 공깃밥 아이콘 8칸과 가격, 초록 바탕 마실 것 목록, 끓이기·사리 넣기·볶음밥 3단계 띠" width="1140" height="353"><p><b>ADD-ONS</b>사리마다 다른 그림 아이콘을 붙여 추가 주문을 쉽게 고르고, 3단계 안내로 마무리 볶음밥까지 자연스럽게 이어지게 했습니다.</p></div>
+   <div class="info"><h2>이 메뉴판의 포인트</h2><ul><li>크림 종이 · 토마토 빨강 · 소나무 초록 · 햄 분홍에 가는 황토 금선으로 옛 통조림 라벨 같은 인상</li><li>요리마다 전골 냄비 · 철판 · 뚝배기 · 법랑 냄비로 그릇을 달리 그려 메뉴 차이가 그림으로 보임</li><li>고추 개수로 맵기를 고르는 띠와 원산지 표시 자리까지 넣어 실제 매장에서 바로 사용 가능</li><li>벽면 게시용 A4 출력이나 테이블 메뉴로 모두 사용 가능</li></ul></div>
+  </div>
+ </div>
+</div>
+<div class="bar"><p>우리 가게 메뉴판도 이렇게 만들고 싶다면</p><a class="cta" href="https://design.shoponph.online/#inquiry">이 디자인으로 상담하기</a></div>
+</body>
+</html>
