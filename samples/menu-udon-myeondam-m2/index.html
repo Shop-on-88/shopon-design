@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>면담 우동 · 메뉴판 디자인</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@700;800&family=IBM+Plex+Sans+KR:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+html{background:#ECE5D6}
+body{word-break:keep-all;font-family:'IBM Plex Sans KR',sans-serif;color:#2E3324;background:#ECE5D6;-webkit-font-smoothing:antialiased;min-height:100vh;overflow-x:clip;line-height:1.6}
+.wrap{max-width:1180px;margin:0 auto;padding:48px 24px 136px}
+.hd{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:24px;padding-bottom:32px;margin-bottom:40px;border-bottom:1.5px solid #2E3324}
+.hd small{font-size:14px;font-weight:500;color:#5E564A}
+.hd h1{font-family:'Nanum Myeongjo',serif;font-weight:800;font-size:clamp(40px,5.4vw,64px);line-height:1.1;letter-spacing:-.03em;margin-top:8px}
+.hd h1 em{display:block;font-family:'IBM Plex Sans KR',sans-serif;font-style:normal;font-weight:400;font-size:clamp(16px,1.6vw,19px);letter-spacing:0;color:#5E564A;margin-top:12px;max-width:640px;line-height:1.6}
+.facts{display:flex;flex-wrap:wrap;gap:8px 24px;margin-top:20px;font-size:15px;color:#5E564A}
+.facts span{display:flex;align-items:center;gap:8px}
+.facts span:before{content:"";width:8px;height:8px;border-radius:50%;background:#A8581A}
+.cta{display:inline-flex;align-items:center;gap:8px;height:52px;padding:0 24px;background:#2E3324;color:#F4EEDD;font-weight:600;font-size:16px;text-decoration:none;border-radius:8px;transition:background-color .2s;white-space:nowrap}
+.cta:hover{background:#41483A}
+.cta svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+.view{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,.8fr);gap:32px;align-items:start}
+figure{background:#F7F2E7;padding:12px;border-radius:8px;border:1px solid rgba(46,51,36,.14);box-shadow:0 24px 48px -32px rgba(46,51,36,.55)}
+figure a{display:block;overflow:hidden;border-radius:4px}
+figure img{display:block;width:100%;height:auto}
+figcaption{font-size:14px;color:#5E564A;padding:12px 4px 0;display:flex;flex-wrap:wrap;justify-content:space-between;gap:4px 12px}
+figcaption b{color:#2E3324;font-weight:600}
+.side{display:flex;flex-direction:column;gap:20px;position:sticky;top:24px}
+.zoom{background:#F7F2E7;padding:8px;border-radius:8px;border:1px solid rgba(46,51,36,.14)}
+.zoom img{display:block;width:100%;height:auto;border-radius:4px}
+.zoom p{font-size:15px;color:#5E564A;padding:12px 8px 4px}
+.zoom p b{display:block;font-family:'Nanum Myeongjo',serif;font-weight:800;font-size:19px;color:#2E3324;margin-bottom:4px}
+.wide{margin-top:32px;display:block}
+.wide p{padding:12px 8px 4px;max-width:720px}
+.info{background:#2E3324;color:#DEDACB;padding:24px;border-radius:8px}
+.info h2{font-family:'Nanum Myeongjo',serif;font-weight:800;font-size:22px;color:#F4EEDD;margin-bottom:8px}
+.info li{list-style:none;font-size:15px;padding:12px 0 12px 20px;position:relative;border-top:1px solid rgba(233,227,210,.16)}
+.info li:first-child{border-top:0}
+.info li:before{content:"";position:absolute;left:0;top:21px;width:8px;height:8px;border-radius:50%;background:#A8581A}
+.bar{position:fixed;left:0;right:0;bottom:0;background:#2E3324;border-top:3px solid #A8581A;padding:12px 20px;display:flex;justify-content:center;align-items:center;gap:20px;flex-wrap:wrap;z-index:10}
+.bar p{font-size:15px;color:#C6C3B2}
+.bar .cta{height:48px;background:#F4EEDD;color:#2E3324}
+.bar .cta:hover{background:#E4DCC8}
+@media(max-width:900px){.view{grid-template-columns:1fr}.side{position:static}.wide{grid-template-columns:1fr}}
+@media(max-width:620px){.wide{display:none}.wrap{padding:28px 16px 112px}.hd .cta{display:none}.bar p{display:none}.bar .cta{width:100%;justify-content:center}figure{padding:6px}}
+@media(prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+<div class="wrap">
+ <div class="hd">
+  <div>
+   <small>메뉴판 디자인 · SD-MN63</small>
+   <h1>면담 우동 <em>아침마다 반죽을 밟아 뽑는 굵은 수타 우동과 매일 우리는 가쓰오 다시 국물을 내는 우동집</em></h1>
+   <div class="facts"><span>A4 세로 · 1쪽 · 한국어 · 원화</span><span>생지 미색 · 다시마 먹녹색 · 다시 앰버</span><span>젓가락으로 들어 올린 굵은 면 일러스트</span></div>
+  </div>
+  <a class="cta" href="https://design.shoponph.online/#inquiry">이 디자인으로 상담하기 <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+ </div>
+ <div class="view">
+  <figure><a href="page1.png" target="_blank" rel="noopener"><img src="page1.png" alt="면담 우동 메뉴판 전체. 밀가루 결이 느껴지는 미색 종이 바탕 왼쪽 위에 아침마다 반죽을 밟아 뽑는 굵은 우동이라는 작은 글씨와 굵은 명조체 큰 글씨 면담 우동, 가쓰오 다시와 수타 굵은 면이라는 부제, 반죽을 두 번 밟고 하룻밤 재우며 국물은 매일 오전 9시에 새로 우린다는 소개가 있고, 그 아래 반죽 숙성 18시간, 면 굵기 6mm, 하루 국물 1솥 세 칸이 있습니다. 오른쪽 위에는 나무 쟁반에 놓인 흑갈색 사발에 호박색 국물과 어묵, 유부, 쪽파, 새우튀김이 담겨 있고, 나무 젓가락이 굵은 우동 면 다섯 가닥을 들어 올리고 있습니다. 아래 왼쪽에는 따뜻한 국물 우동 다섯 가지와 차가운 우동 두 가지가 설명과 가격으로 나뉘어 있고, 첫 줄 가케 우동 8,500원은 연한 갈색 바탕과 처음 오셨다면 표시로 강조되어 있습니다. 오른쪽에는 튀김 한 조각과 밥과 음료 목록, 짙은 먹녹색 상자 속 면은 주문 받고 삶는다는 안내가 있고, 맨 아래 영업시간, 포장 안내, 주홍색 면담 도장이 있습니다." width="2480" height="3508"></a><figcaption><b>A4 세로 1쪽</b><span>2480 × 3508 px · 인쇄용</span></figcaption></figure>
+  <div class="side">
+   <div class="zoom"><img src="detail-bowl.jpg" alt="사발 부분 확대. 나무 쟁반 위 흑갈색 유약 사발에 호박색 국물이 찰랑이고, 분홍 소용돌이 어묵 한 조각, 세모난 유부, 동그란 쪽파 송송, 노릇한 새우튀김이 올라가 있습니다. 가운데에서 나무 젓가락 한 쌍이 굵고 하얀 우동 면 다섯 가닥을 높이 들어 올리고 있고, 국물 위로 김이 올라옵니다. 오른쪽 아래에는 시치미가 담긴 작은 종지가 있습니다." width="1210" height="1160" loading="lazy"><p><b>들어 올린 면 한 젓가락</b>면 굵기가 한눈에 보이도록 젓가락으로 들어 올린 순간을 그렸습니다</p></div>
+   <div class="info"><h2>바꿀 수 있는 것</h2><ul><li>메뉴 구성, 가격, 곱빼기 금액</li><li>사발 그림을 국물 색과 고명에 맞춰 교체</li><li>벽 메뉴판, 키오스크 화면, QR 웹 메뉴판</li></ul></div>
+  </div>
+ </div>
+</div>
+<div class="bar"><p>우리 가게도 이런 메뉴판이 필요하다면</p><a class="cta" href="https://design.shoponph.online/#inquiry">이 디자인으로 상담하기</a></div>
+</body>
+</html>

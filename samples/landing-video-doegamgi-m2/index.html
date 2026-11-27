@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>되감기 영상변환소 · 비디오테이프 파일 변환 12월 할인</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Hahmlet:wght@500;600;700&family=Noto+Sans+KR:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&family=Nanum+Pen+Script&display=swap" rel="stylesheet">
+<style>
+:root{
+ --paper:#EEE9DF;--paper2:#E4DDCF;--card:#F8F5EE;--ink:#1F1E1C;--ink2:#56524A;--ink3:#7A7468;
+ --rec:#B8301F;--rec2:#CF3A2A;--line:rgba(31,30,28,.16);--tape:#5B3B26
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;background:var(--paper)}
+body{font-family:'Noto Sans KR',sans-serif;font-size:16px;line-height:1.65;color:var(--ink);background:var(--paper);word-break:keep-all;-webkit-font-smoothing:antialiased;overflow-x:clip}
+h1,h2,h3{font-family:'Hahmlet',serif;font-weight:600;letter-spacing:-.03em;line-height:1.2}
+.mono{font-family:'IBM Plex Mono',monospace;font-variant-numeric:tabular-nums}
+.wrap{max-width:1200px;margin:0 auto;padding:0 40px}
+.ico{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:1.75;stroke-linecap:round;stroke-linejoin:round;flex:none}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;height:48px;padding:0 24px;border-radius:8px;font:600 16px/1 'Noto Sans KR',sans-serif;text-decoration:none;border:0;cursor:pointer;transition:background-color .2s,color .2s}
+.btn-rec{background:var(--rec);color:#fff}
+.btn-rec:hover{background:#9C2717}
+.btn-line{color:var(--ink);box-shadow:inset 0 0 0 1.5px var(--ink);background:transparent}
+.btn-line:hover{background:var(--ink);color:var(--paper)}
+
+header.top{border-bottom:1px solid var(--line)}
+header.top .wrap{display:flex;align-items:center;height:72px;gap:24px}
+.logo{display:flex;align-items:center;gap:12px;font-family:'Hahmlet',serif;font-weight:700;font-size:20px;letter-spacing:-.03em;text-decoration:none;color:var(--ink)}
+.logo svg{width:36px;height:24px}
+header.top nav{margin-left:auto;display:flex;gap:28px}
+header.top nav a{text-decoration:none;color:var(--ink2);font-size:15px;font-weight:500;padding:12px 0}
+header.top nav a:hover{color:var(--ink)}
+header.top .btn{height:44px;font-size:15px;padding:0 20px}
+
+.hero{padding:72px 0 56px}
+.hero .wrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:48px;align-items:center}
+.hero .sub{font-size:16px;font-weight:600;color:var(--ink2)}
+.hero h1{font-size:clamp(38px,4.4vw,60px);margin-top:16px}
+.hero h1 em{font-style:normal;color:var(--rec)}
+.hero p.lead{font-size:18px;color:var(--ink2);margin-top:20px;max-width:520px}
+.deal{margin-top:32px;display:grid;grid-template-columns:auto 1fr;gap:4px 20px;align-items:center;padding:20px 24px;background:var(--card);border:1px solid var(--line);border-left:4px solid var(--rec);border-radius:8px;max-width:520px}
+.deal b{font-family:'Hahmlet',serif;font-weight:700;font-size:40px;line-height:1;color:var(--rec);grid-row:span 2;font-variant-numeric:tabular-nums}
+.deal strong{font-weight:600;font-size:17px}
+.deal span{font-size:15px;color:var(--ink2)}
+.hero .acts{display:flex;gap:12px;margin-top:28px;flex-wrap:wrap}
+.tapefig{position:relative}
+.tapefig svg{width:100%;height:auto;display:block}
+
+section{padding:96px 0}
+.hd{max-width:720px;margin-bottom:48px}
+.hd .k{font-size:15px;font-weight:600;color:var(--rec);margin-bottom:12px;display:block}
+.hd h2{font-size:clamp(30px,3.2vw,44px)}
+.hd p{font-size:17px;color:var(--ink2);margin-top:16px}
+
+/* tape types */
+.types{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:24px;align-items:start}
+.type{border-top:2px solid var(--ink);padding-top:20px}
+.type .sil{height:140px;display:flex;align-items:flex-end;margin-bottom:20px}
+.type .sil svg{height:auto;display:block}
+.type h3{font-size:22px}
+.type p{font-size:15px;color:var(--ink2);margin-top:4px}
+.type .mono{font-size:13px;color:var(--ink3);margin-top:8px;display:block}
+.types-note{margin-top:32px;font-size:15px;color:var(--ink2);display:flex;gap:12px;align-items:flex-start}
+
+/* price */
+.price-sec{background:var(--ink);color:#E8E3D8}
+.price-sec .hd p{color:#B8B2A6}
+.price-sec .hd .k{color:#F07B66}
+.pgrid{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);gap:48px;align-items:start}
+table{width:100%;border-collapse:collapse}
+td{padding:18px 0;border-top:1px solid rgba(232,227,216,.16);font-size:16px;vertical-align:top}
+tr:last-child td{border-bottom:1px solid rgba(232,227,216,.16)}
+td:last-child{text-align:right;font-family:'IBM Plex Mono',monospace;font-weight:500;white-space:nowrap;padding-left:24px}
+td small{display:block;color:#A9A397;font-size:14px;margin-top:2px}
+td s{color:#8F897D;margin-right:8px}
+td .free{color:#F07B66}
+.calc{background:#2B2926;border-radius:16px;padding:32px;border:1px solid rgba(232,227,216,.12)}
+.calc h3{font-size:22px;color:#F4EFE4}
+.calc label{display:flex;justify-content:space-between;align-items:baseline;margin-top:24px;font-size:15px;color:#C9C3B6}
+.calc label output{font-family:'IBM Plex Mono',monospace;font-size:20px;color:#F4EFE4}
+.calc input[type=range]{width:100%;margin-top:12px;accent-color:#CF3A2A;height:32px}
+.calc .chk{display:flex;justify-content:flex-start;align-items:center;gap:12px;margin-top:16px;font-size:15px;color:#C9C3B6;min-height:44px;cursor:pointer}
+.calc .chk input{width:20px;height:20px;accent-color:#CF3A2A}
+.calc .sum{margin-top:24px;padding-top:24px;border-top:1px solid rgba(232,227,216,.16)}
+.calc .row{display:flex;justify-content:space-between;font-size:15px;color:#B8B2A6;padding:4px 0}
+.calc .row span:last-child{font-family:'IBM Plex Mono',monospace}
+.calc .row.dc span:last-child{color:#F07B66}
+.calc .row[hidden]{display:none}
+.calc .tot{display:flex;justify-content:space-between;align-items:baseline;margin-top:12px}
+.calc .tot span{font-size:15px;color:#C9C3B6}
+.calc .tot b{font-family:'Hahmlet',serif;font-size:40px;font-weight:700;color:#F4EFE4;font-variant-numeric:tabular-nums}
+.calc .hint{font-size:14px;color:#A9A397;margin-top:12px}
+
+/* steps */
+.steps{list-style:none;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.steps li{padding:28px 24px 32px;border-left:1px solid var(--line)}
+.steps li:first-child{border-left:0;padding-left:0}
+.steps .mono{font-size:14px;color:var(--ink3);font-weight:600}
+.steps h3{font-size:21px;margin-top:12px}
+.steps p{font-size:15px;color:var(--ink2);margin-top:8px}
+.files{margin-top:48px;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}
+.files>div{display:flex;gap:16px;align-items:flex-start}
+.files .ico{width:24px;height:24px;margin-top:2px}
+.files b{display:block;font-weight:600}
+.files p{font-size:15px;color:var(--ink2)}
+
+/* form */
+.apply{background:var(--paper2)}
+.agrid{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);gap:64px;align-items:start}
+.label-card{background:var(--card);border-radius:4px;padding:32px;box-shadow:0 1px 0 var(--line),0 24px 40px -32px rgba(31,30,28,.5);position:relative;border-top:24px solid var(--ink)}
+.label-card .hw{font-family:'Nanum Pen Script',cursive;font-size:44px;line-height:1.1;color:#2D3A6B}
+.label-card ul{list-style:none;margin-top:20px;display:grid;gap:12px}
+.label-card li{display:flex;gap:12px;font-size:15px;color:var(--ink2)}
+.label-card li .ico{color:var(--ink2);margin-top:2px}
+.label-card .until{margin-top:24px;padding-top:20px;border-top:1px dashed var(--line);font-size:15px}
+.label-card .until b{font-weight:400}
+form{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+form .full{grid-column:span 2}
+form label.t{display:block;font-size:14px;font-weight:600;margin-bottom:8px}
+form input[type=text],form input[type=tel],form select{width:100%;height:48px;padding:0 16px;border-radius:8px;border:1px solid rgba(31,30,28,.3);background:#fff;font:400 16px 'Noto Sans KR',sans-serif;color:var(--ink)}
+form input:focus,form select:focus{outline:2px solid var(--rec2);outline-offset:1px}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chips input{position:absolute;opacity:0;width:1px;height:1px}
+.chips label{display:inline-flex;align-items:center;height:44px;padding:0 16px;border-radius:8px;border:1px solid rgba(31,30,28,.3);background:#fff;font-size:15px;font-weight:500;cursor:pointer}
+.chips input:checked+label{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.chips input:focus-visible+label{outline:2px solid var(--rec2)}
+form .btn{width:100%;height:52px}
+form .fine{grid-column:span 2;font-size:13px;color:var(--ink3)}
+.ok{display:none;grid-column:span 2;padding:16px;border-radius:8px;background:var(--card);border-left:4px solid var(--rec);font-size:15px}
+.ok b{display:block}
+
+/* faq */
+.faq{max-width:840px}
+.faq details{border-top:1px solid var(--line)}
+.faq details:last-child{border-bottom:1px solid var(--line)}
+.faq summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;gap:24px;padding:24px 0;font-weight:600;font-size:18px}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary .ico{transition:transform .2s;margin-top:4px}
+.faq details[open] summary .ico{transform:rotate(45deg)}
+.faq details p{padding:0 40px 24px 0;color:var(--ink2)}
+
+footer{padding:40px 0 48px;font-size:14px;color:var(--ink2);border-top:1px solid var(--line)}
+footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:16px}
+
+.rv{opacity:0;transform:translateY(12px);transition:opacity .5s ease,transform .5s ease}
+.rv.in{opacity:1;transform:none}
+
+@media(max-width:1000px){
+ header.top nav{display:none}
+ header.top .btn{margin-left:auto}
+ .hero .wrap,.pgrid,.agrid{grid-template-columns:1fr}
+ .types{grid-template-columns:repeat(2,minmax(0,1fr));gap:40px 24px}
+ .steps{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .steps li:nth-child(3){border-left:0;padding-left:0}
+ .steps li:nth-child(n+3){border-top:1px solid var(--line)}
+ .files{grid-template-columns:1fr}
+}
+@media(max-width:640px){
+ .wrap{padding:0 16px}
+ header.top .wrap{height:64px}
+ .logo{font-size:18px}
+ .hero{padding:40px 0 16px}
+ .hero p.lead{font-size:17px}
+ .deal{grid-template-columns:1fr;padding:16px 20px}
+ .deal b{grid-row:auto;font-size:36px;margin-bottom:4px}
+ .hero .acts .btn{flex:1}
+ section{padding:72px 0}
+ .type .sil{height:96px}
+ .type .sil svg{transform:scale(.8);transform-origin:left bottom}
+ .steps{grid-template-columns:1fr}
+ .steps li{border-left:0;padding:24px 0;border-top:1px solid var(--line)}
+ .steps li:first-child{border-top:0}
+ .calc{padding:24px}
+ form{grid-template-columns:1fr}
+ form .full,form .fine,.ok{grid-column:auto}
+ .label-card{padding:24px}
+ .faq details p{padding-right:0}
+}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}.rv{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+ <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+ <symbol id="i-check" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></symbol>
+ <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
+ <symbol id="i-info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 11v5M12 8v.01"/></symbol>
+ <symbol id="i-file" viewBox="0 0 24 24"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5M10 12l5 3-5 3z"/></symbol>
+ <symbol id="i-usb" viewBox="0 0 24 24"><rect x="8" y="9" width="8" height="12" rx="1.5"/><path d="M9.5 9V4h5v5M11 6h.01M13 6h.01"/></symbol>
+ <symbol id="i-lock" viewBox="0 0 24 24"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></symbol>
+</svg>
+
+<header class="top">
+ <div class="wrap">
+  <a class="logo" href="#"><svg viewBox="0 0 36 24" aria-hidden="true"><path d="M16 4L4 12l12 8zM30 4L18 12l12 8z" fill="#1F1E1C"/><circle cx="33" cy="4" r="3" fill="#B8301F"/></svg>되감기 영상변환소</a>
+  <nav><a href="#types">맡길 수 있는 테이프</a><a href="#price">가격</a><a href="#how">진행 순서</a><a href="#faq">자주 묻는 질문</a></nav>
+  <a class="btn btn-rec" href="#apply">변환 신청</a>
+ </div>
+</header>
+
+<main>
+<section class="hero">
+ <div class="wrap">
+  <div>
+   <div class="sub">VHS · 6mm · 8mm 캠코더 테이프를 MP4 파일로</div>
+   <h1>장롱 속 비디오테이프, 설 전에 <em>파일로</em> 꺼내 드립니다</h1>
+   <p class="lead">돌잔치, 입학식, 가족 여행을 찍어 둔 테이프를 한 개씩 재생하며 그대로 옮깁니다. 받은 파일은 휴대폰과 TV에서 바로 열립니다.</p>
+   <div class="deal"><b>15%</b><strong>12월 접수, 테이프 10개 이상이면 할인</strong><span>32GB USB 한 개 증정 · <span style="white-space:nowrap">12월 31일 접수분까지</span></span></div>
+   <div class="acts">
+    <a class="btn btn-rec" href="#apply">변환 신청하기 <svg class="ico"><use href="#i-arrow"/></svg></a>
+    <a class="btn btn-line" href="#price">가격 계산해 보기</a>
+   </div>
+  </div>
+  <figure class="tapefig" aria-label="손글씨 라벨이 붙은 비디오테이프와 재생 시간 표시">
+   <svg viewBox="0 0 600 520" role="img" aria-label="1998년 5월 하윤이 돌잔치라고 손글씨로 쓴 라벨이 붙은 검은 VHS 테이프. 두 개의 창으로 갈색 테이프가 감긴 릴이 보이고, 아래에 재생 시간 00:41:12 표시가 있습니다.">
+    <defs>
+     <linearGradient id="sleeve" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#E2D6BE"/><stop offset="1" stop-color="#C7B898"/></linearGradient>
+     <linearGradient id="body" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2E2D2B"/><stop offset=".5" stop-color="#1E1D1B"/><stop offset="1" stop-color="#121110"/></linearGradient>
+     <linearGradient id="win" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#4A4640"/><stop offset="1" stop-color="#2A2724"/></linearGradient>
+     <radialGradient id="reel" cx=".45" cy=".4" r=".6"><stop offset="0" stop-color="#7A5236"/><stop offset=".8" stop-color="#5B3B26"/><stop offset="1" stop-color="#3E2817"/></radialGradient>
+     <linearGradient id="lab" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FCFAF3"/><stop offset="1" stop-color="#EFEADF"/></linearGradient>
+     <radialGradient id="shadow" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#1F1E1C" stop-opacity=".3"/><stop offset="1" stop-color="#1F1E1C" stop-opacity="0"/></radialGradient>
+    </defs>
+    <ellipse cx="300" cy="470" rx="270" ry="26" fill="url(#shadow)"/>
+    <!-- sleeve behind -->
+    <g transform="translate(330 40) rotate(9)">
+     <rect width="230" height="380" rx="6" fill="url(#sleeve)"/>
+     <rect x="16" y="16" width="198" height="348" rx="3" fill="none" stroke="#B5A584" stroke-width="2"/>
+     <g stroke="#B5A584" stroke-opacity=".7" stroke-width="2"><path d="M200 40v300"/></g>
+    </g>
+    <!-- tape body -->
+    <g transform="translate(40 120) rotate(-4)">
+     <rect width="460" height="270" rx="14" fill="url(#body)"/>
+     <rect x="6" y="6" width="448" height="258" rx="10" fill="none" stroke="#3A3835" stroke-width="2"/>
+     <!-- label -->
+     <rect x="40" y="24" width="380" height="92" rx="4" fill="url(#lab)"/>
+     <path d="M40 52h380" stroke="#B8301F" stroke-width="2" opacity=".7"/>
+     <text x="56" y="44" font-family="IBM Plex Mono" font-weight="500" font-size="22" fill="#7A7468">SP · 120</text>
+     <text x="56" y="96" font-family="Nanum Pen Script" font-size="46" fill="#2D3A6B">1998. 5 하윤이 돌잔치</text>
+     <!-- window -->
+     <rect x="60" y="134" width="340" height="96" rx="10" fill="url(#win)"/>
+     <rect x="60" y="134" width="340" height="96" rx="10" fill="none" stroke="#55514A" stroke-width="2"/>
+     <!-- reels -->
+     <circle cx="132" cy="182" r="44" fill="url(#reel)"/>
+     <circle cx="328" cy="182" r="30" fill="url(#reel)"/>
+     <g fill="#D8D2C4"><circle cx="132" cy="182" r="18"/><circle cx="328" cy="182" r="18"/></g>
+     <g fill="#2A2724"><circle cx="132" cy="182" r="8"/><circle cx="328" cy="182" r="8"/></g>
+     <g stroke="#2A2724" stroke-width="3"><path d="M132 166v-4M132 198v4M116 182h-4M148 182h4M328 166v-4M328 198v4M312 182h-4M344 182h4"/></g>
+     <path d="M100 160c40-14 90-14 128-2" stroke="#FFFFFF" stroke-opacity=".12" stroke-width="10" fill="none"/>
+     <!-- bottom ridges & screws -->
+     <g fill="#2B2A27"><rect x="40" y="244" width="380" height="6" rx="3"/></g>
+     <g fill="#55514A"><circle cx="22" cy="22" r="5"/><circle cx="438" cy="22" r="5"/><circle cx="22" cy="248" r="5"/><circle cx="438" cy="248" r="5"/></g>
+    </g>
+    <!-- timecode display -->
+    <g transform="translate(60 400)">
+     <rect width="360" height="64" rx="8" fill="#1F1E1C"/>
+     <circle cx="30" cy="32" r="8" fill="#CF3A2A"/>
+     <text x="48" y="40" font-family="Noto Sans KR" font-weight="600" font-size="22" fill="#F07B66">재생</text>
+     <text x="114" y="42" font-family="IBM Plex Mono" font-weight="600" font-size="28" fill="#EDE6D6">00:41:12</text>
+     <path d="M290 20l14 12-14 12z" fill="#EDE6D6"/><rect x="310" y="20" width="5" height="24" fill="#EDE6D6"/><rect x="320" y="20" width="5" height="24" fill="#EDE6D6"/>
+    </g>
+   </svg>
+  </figure>
+ </div>
+</section>
+
+<section id="types">
+ <div class="wrap">
+  <div class="hd rv"><span class="k">맡길 수 있는 테이프</span><h2>크기만 맞으면 오래된 것도 받습니다</h2><p>테이프 옆면 글자나 크기로 종류를 알 수 있습니다. 헷갈리면 사진을 찍어 보내 주세요.</p></div>
+  <div class="types rv">
+   <div class="type"><div class="sil"><svg width="188" height="104" viewBox="0 0 188 104"><rect x="1" y="1" width="186" height="102" rx="6" fill="#1F1E1C"/><rect x="20" y="10" width="148" height="30" rx="2" fill="#F8F5EE"/><rect x="34" y="52" width="120" height="36" rx="4" fill="#4A4640"/><circle cx="62" cy="70" r="12" fill="#5B3B26"/><circle cx="126" cy="70" r="9" fill="#5B3B26"/></svg></div><h3>VHS</h3><p>가정용 비디오 플레이어 테이프</p><span class="mono">188 × 104 mm</span></div>
+   <div class="type"><div class="sil"><svg width="92" height="58" viewBox="0 0 92 58"><rect x="1" y="1" width="90" height="56" rx="5" fill="#1F1E1C"/><rect x="10" y="7" width="72" height="16" rx="2" fill="#F8F5EE"/><rect x="18" y="30" width="56" height="20" rx="3" fill="#4A4640"/><circle cx="34" cy="40" r="6" fill="#5B3B26"/></svg></div><h3>VHS-C</h3><p>작은 캠코더용, 어댑터 없이 받습니다</p><span class="mono">92 × 59 mm</span></div>
+   <div class="type"><div class="sil"><svg width="95" height="62" viewBox="0 0 95 62"><rect x="1" y="1" width="93" height="60" rx="5" fill="#1F1E1C"/><rect x="10" y="8" width="75" height="18" rx="2" fill="#F8F5EE"/><rect x="22" y="34" width="50" height="18" rx="3" fill="#4A4640"/><circle cx="36" cy="43" r="6" fill="#5B3B26"/><circle cx="58" cy="43" r="6" fill="#5B3B26"/></svg></div><h3>8mm · Hi8</h3><p>90년대 소형 캠코더 테이프</p><span class="mono">95 × 62 mm</span></div>
+   <div class="type"><div class="sil"><svg width="66" height="48" viewBox="0 0 66 48"><rect x="1" y="1" width="64" height="46" rx="4" fill="#1F1E1C"/><rect x="8" y="6" width="50" height="14" rx="2" fill="#F8F5EE"/><rect x="14" y="26" width="38" height="14" rx="3" fill="#4A4640"/><circle cx="26" cy="33" r="4" fill="#5B3B26"/><circle cx="40" cy="33" r="4" fill="#5B3B26"/></svg></div><h3>6mm · MiniDV</h3><p>2000년대 디지털 캠코더 테이프</p><span class="mono">66 × 48 mm</span></div>
+  </div>
+  <p class="types-note rv"><svg class="ico"><use href="#i-info"/></svg>음악 카세트테이프, 필름 릴(8mm 영화 필름)은 장비가 달라 따로 문의해 주세요.</p>
+ </div>
+</section>
+
+<section class="price-sec" id="price">
+ <div class="wrap">
+  <div class="hd rv"><span class="k">가격</span><h2>테이프 한 개에 15,000원부터</h2><p>재생 시간 그대로 옮기기 때문에 길이에 따라 값이 정해집니다. 견적과 다르게 받는 일은 없습니다.</p></div>
+  <div class="pgrid">
+   <table class="rv">
+    <tr><td>테이프 1개 변환<small>120분까지, MP4 파일 1개</small></td><td>15,000원</td></tr>
+    <tr><td>120분 넘는 테이프<small>장시간(LP·EP) 녹화분, 30분마다</small></td><td>+3,000원</td></tr>
+    <tr><td>곰팡이 세척<small>하얀 얼룩이 보이면 재생 전에 닦습니다</small></td><td>5,000원</td></tr>
+    <tr><td>끊어진 테이프 잇기<small>새 껍데기로 옮겨 감는 작업 포함</small></td><td>8,000원</td></tr>
+    <tr><td>32GB USB<small>12월, 10개 이상 맡기면 무료</small></td><td><s>12,000원</s><span class="free">0원</span></td></tr>
+    <tr><td>다운로드 링크<small>30일 동안 받을 수 있습니다</small></td><td>무료</td></tr>
+   </table>
+   <div class="calc rv" id="calc">
+    <h3>우리 집 테이프로 계산하기</h3>
+    <label for="n">테이프 개수 <output id="nOut" class="mono">12개</output></label>
+    <input type="range" id="n" min="1" max="40" value="12">
+    <label class="chk"><input type="checkbox" id="mold">곰팡이 세척이 필요한 테이프가 있어요 (3개로 계산)</label>
+    <div class="sum">
+     <div class="row"><span>변환</span><span id="r1">180,000원</span></div>
+     <div class="row" id="rMold" hidden><span>곰팡이 세척</span><span id="r2">15,000원</span></div>
+     <div class="row dc" id="rDc"><span>12월 15% 할인</span><span id="r3">−27,000원</span></div>
+     <div class="row dc" id="rUsb"><span>32GB USB</span><span>0원</span></div>
+     <div class="tot"><span>예상 금액</span><b id="tot">153,000원</b></div>
+     <p class="hint" id="hint">120분 이하 테이프 기준이에요. 정확한 금액은 테이프를 받은 뒤 알려 드립니다.</p>
+    </div>
+   </div>
+  </div>
+ </div>
+</section>
+
+<section id="how">
+ <div class="wrap">
+  <div class="hd rv"><span class="k">진행 순서</span><h2>보내 주시고 열흘이면 받습니다</h2><p>테이프는 하나씩 번호를 붙여 관리하고, 파일과 함께 원본을 그대로 돌려 드립니다.</p></div>
+  <ol class="steps rv">
+   <li><span class="mono">00:00</span><h3>택배 또는 방문 접수</h3><p>신청서를 보내면 받는 주소를 문자로 알려 드립니다. 상자에 신청자 이름만 적어 주세요.</p></li>
+   <li><span class="mono">00:01</span><h3>점검과 세척</h3><p>테이프마다 번호를 붙이고 곰팡이, 늘어짐, 끊김을 확인합니다. 추가 비용이 생기면 먼저 연락합니다.</p></li>
+   <li><span class="mono">00:02</span><h3>재생하며 옮기기</h3><p>2시간 테이프는 2시간 동안 재생해 그대로 담습니다. 중간에 멈춘 곳 없이 끝까지 확인합니다.</p></li>
+   <li><span class="mono">00:03</span><h3>파일과 원본 전달</h3><p>다운로드 링크를 먼저 보내고, USB와 원본 테이프는 택배로 돌려 드립니다.</p></li>
+  </ol>
+  <div class="files rv">
+   <div><svg class="ico"><use href="#i-file"/></svg><div><b>테이프 1개 = MP4 1개</b><p>파일 이름은 라벨에 적힌 글자 그대로 붙입니다.</p></div></div>
+   <div><svg class="ico"><use href="#i-usb"/></svg><div><b>USB 또는 링크</b><p>둘 다 받아도 되고, 하나만 골라도 됩니다.</p></div></div>
+   <div><svg class="ico"><use href="#i-lock"/></svg><div><b>30일 뒤 삭제</b><p>보낸 파일 사본은 30일이 지나면 저희 쪽에서 지웁니다.</p></div></div>
+  </div>
+ </div>
+</section>
+
+<section class="apply" id="apply">
+ <div class="wrap">
+  <div class="agrid">
+   <div class="rv">
+    <div class="hd" style="margin-bottom:32px"><span class="k">변환 신청</span><h2>개수만 대략 적어도 됩니다</h2></div>
+    <div class="label-card">
+     <div class="hw">12월 혜택</div>
+     <ul>
+      <li><svg class="ico"><use href="#i-check"/></svg>테이프 10개 이상이면 변환비 15% 할인</li>
+      <li><svg class="ico"><use href="#i-check"/></svg>32GB USB 한 개 무료</li>
+      <li><svg class="ico"><use href="#i-check"/></svg>보내는 택배비는 착불로 받습니다</li>
+     </ul>
+     <div class="until">12월 31일까지 <b>접수된 테이프</b>에 적용됩니다</div>
+    </div>
+   </div>
+   <form class="rv" id="f" novalidate>
+    <div><label class="t" for="nm">이름</label><input type="text" id="nm" placeholder="홍길동" autocomplete="name"></div>
+    <div><label class="t" for="ph">연락처</label><input type="tel" id="ph" placeholder="000-0000-0000" autocomplete="tel"></div>
+    <div class="full"><label class="t">테이프 종류 (여러 개 골라도 됩니다)</label>
+     <div class="chips">
+      <input type="checkbox" id="c1" checked><label for="c1">VHS</label>
+      <input type="checkbox" id="c2"><label for="c2">VHS-C</label>
+      <input type="checkbox" id="c3"><label for="c3">8mm · Hi8</label>
+      <input type="checkbox" id="c4"><label for="c4">6mm · MiniDV</label>
+      <input type="checkbox" id="c5"><label for="c5">잘 모르겠어요</label>
+     </div>
+    </div>
+    <div><label class="t" for="cnt">대략 몇 개인가요</label><select id="cnt"><option>1~4개</option><option>5~9개</option><option selected>10~19개</option><option>20개 이상</option></select></div>
+    <div><label class="t" for="how2">접수 방법</label><select id="how2"><option>택배로 보낼게요</option><option>직접 가져갈게요</option></select></div>
+    <div class="full"><button class="btn btn-rec" type="submit">신청서 보내기</button></div>
+    <p class="fine">신청서를 보내도 비용은 생기지 않습니다. 테이프를 받은 뒤 견적을 문자로 드립니다.</p>
+    <div class="ok" id="ok" role="status"><b>신청서를 받았습니다</b>받는 주소와 포장 방법을 문자로 보내 드릴게요.</div>
+   </form>
+  </div>
+ </div>
+</section>
+
+<section id="faq">
+ <div class="wrap">
+  <div class="hd rv"><span class="k">자주 묻는 질문</span><h2>맡기기 전에 궁금한 것</h2></div>
+  <div class="faq rv">
+   <details open><summary>화질이 좋아지나요?<svg class="ico"><use href="#i-plus"/></svg></summary><p>테이프에 담긴 화질 그대로 옮깁니다. 흔들림이나 흐림을 고치지는 않고, 재생 중 생기는 줄무늬만 장비에서 최대한 줄입니다.</p></details>
+   <details><summary>무슨 내용인지 모르는 테이프도 되나요?<svg class="ico"><use href="#i-plus"/></svg></summary><p>네. 라벨이 없으면 첫 장면 사진을 보내 드려서 파일 이름을 함께 정합니다. 빈 테이프로 확인되면 변환비를 받지 않습니다.</p></details>
+   <details><summary>재생기가 고장 나서 내용을 확인 못 했어요<svg class="ico"><use href="#i-plus"/></svg></summary><p>괜찮습니다. 테이프만 보내 주시면 저희 장비로 확인합니다. 재생이 안 되는 테이프는 비용 없이 돌려 드립니다.</p></details>
+   <details><summary>다른 사람이 영상을 보나요?<svg class="ico"><use href="#i-plus"/></svg></summary><p>변환 중 재생이 끊기지 않았는지 확인하는 담당자 한 명만 봅니다. 파일 사본은 보낸 날로부터 30일 뒤 지웁니다.</p></details>
+  </div>
+ </div>
+</section>
+</main>
+
+<footer>
+ <div class="wrap">
+  <span>되감기 영상변환소 · <span style="white-space:nowrap">평일 10:00 – 19:00</span> · <span style="white-space:nowrap">토요일 10:00 – 15:00</span></span>
+  <span>문의 000-0000-0000 · 카카오톡 ID: example</span>
+ </div>
+</footer>
+
+<script>
+(function(){
+ var n=document.getElementById('n'),mold=document.getElementById('mold');
+ function won(v){return v.toLocaleString('ko-KR')+'원'}
+ function calc(){
+  var c=+n.value,base=c*15000,m=mold.checked?Math.min(3,c)*5000:0,dc=c>=10?Math.round(base*0.15):0;
+  document.getElementById('nOut').textContent=c+'개';
+  document.getElementById('r1').textContent=won(base);
+  document.getElementById('rMold').hidden=!mold.checked;document.getElementById('r2').textContent=won(m);
+  document.getElementById('rDc').hidden=!dc;document.getElementById('r3').textContent='−'+won(dc);
+  document.getElementById('rUsb').hidden=c<10;
+  document.getElementById('tot').textContent=won(base+m-dc);
+  document.getElementById('hint').textContent=c<10?'10개부터 15% 할인과 USB 무료가 적용돼요. 지금 '+(10-c)+'개 더 있으면 됩니다.':'120분 이하 테이프 기준이에요. 정확한 금액은 테이프를 받은 뒤 알려 드립니다.';
+ }
+ n.addEventListener('input',calc);mold.addEventListener('change',calc);calc();
+ document.getElementById('f').addEventListener('submit',function(e){e.preventDefault();var ok=true;['nm','ph'].forEach(function(id){var el=document.getElementById(id);if(!el.value.trim()){el.style.borderColor='#B8301F';ok=false}else el.style.borderColor=''});if(ok)document.getElementById('ok').style.display='block'});
+ var io='IntersectionObserver' in window?new IntersectionObserver(function(es){es.forEach(function(x){if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target)}})},{threshold:.12}):null;
+ document.querySelectorAll('.rv').forEach(function(el){io?io.observe(el):el.classList.add('in')});
+})();
+</script>
+</body>
+</html>

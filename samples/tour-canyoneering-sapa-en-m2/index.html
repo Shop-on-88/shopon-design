@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sapa Canyon Treks · Canyoneering day trips, south Cebu</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700&family=Figtree:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+ --lime:#EDE8DD;--lime2:#E3DDCF;--stone:#D3CBB9;--paper:#F6F3EC;
+ --ink:#17302B;--ink2:#46574F;--ink3:#6B7A71;
+ --water:#3A9E97;--water2:#7CC6BC;--moss:#2F5A3E;
+ --orange:#C2461F;--orange2:#D9612F;
+ --line:rgba(23,48,43,.16);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;background:var(--lime)}
+body{font-family:'Figtree',sans-serif;font-size:16px;line-height:1.6;color:var(--ink);background:var(--lime);-webkit-font-smoothing:antialiased;overflow-x:clip}
+h1,h2,h3{font-family:'Bricolage Grotesque',sans-serif;font-weight:600;letter-spacing:-.02em;line-height:1.08}
+a{color:inherit}
+.wrap{max-width:1280px;margin:0 auto;padding:0 40px}
+.ico{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:1.75;stroke-linecap:round;stroke-linejoin:round;flex:none}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;height:48px;padding:0 24px;border-radius:8px;font:600 16px/1 'Figtree',sans-serif;text-decoration:none;border:0;cursor:pointer;transition:background-color .2s,color .2s}
+.btn-main{background:var(--orange);color:#fff}
+.btn-main:hover{background:#A93B18}
+.btn-ghost{background:transparent;color:var(--ink);box-shadow:inset 0 0 0 1.5px var(--ink)}
+.btn-ghost:hover{background:var(--ink);color:var(--lime)}
+
+/* nav */
+.nav{position:sticky;top:0;z-index:20;background:rgba(237,232,221,.94);backdrop-filter:blur(6px);border-bottom:1px solid var(--line)}
+.nav .wrap{display:flex;align-items:center;gap:32px;height:72px}
+.logo{display:flex;align-items:center;gap:12px;text-decoration:none;font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:20px;letter-spacing:-.02em}
+.logo svg{width:32px;height:32px}
+.logo small{display:block;font-family:'Figtree',sans-serif;font-weight:500;font-size:12px;letter-spacing:0;color:var(--ink3);margin-top:2px}
+.nav ul{display:flex;gap:28px;list-style:none;margin-left:auto}
+.nav ul a{text-decoration:none;font-weight:500;font-size:15px;color:var(--ink2);padding:12px 0}
+.nav ul a:hover{color:var(--ink)}
+.nav .btn{height:44px;padding:0 20px;font-size:15px}
+.menu-btn{display:none}
+
+/* hero */
+.hero{padding:40px 0 0}
+.hero-top{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(0,.65fr);gap:64px;align-items:end}
+.kicker{font-size:15px;font-weight:600;color:var(--moss);display:flex;align-items:center;gap:8px}
+.kicker:before{content:"";width:24px;height:2px;background:var(--water)}
+.hero h1{font-size:clamp(42px,5vw,68px);margin-top:16px;max-width:820px}
+.hero h1 span{color:inherit}
+.hero p.lead{font-size:19px;color:var(--ink2);max-width:600px;margin-top:20px}
+.hero .acts{display:flex;gap:12px;margin-top:32px;flex-wrap:wrap}
+.depart{background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:24px}
+.depart h2{font-size:15px;font-family:'Figtree',sans-serif;font-weight:600;letter-spacing:0;color:var(--ink3)}
+.depart .day{font-family:'Bricolage Grotesque',sans-serif;font-size:32px;font-weight:600;margin-top:4px}
+.depart dl{margin-top:16px;display:grid;grid-template-columns:auto 1fr;gap:8px 16px;font-size:15px}
+.depart dt{color:var(--ink3)}
+.depart dd{font-weight:500;font-variant-numeric:tabular-nums}
+.depart .river{margin-top:16px;padding-top:16px;border-top:1px solid var(--line);display:flex;gap:12px;align-items:flex-start;font-size:14px;color:var(--ink2)}
+.depart .river i{width:12px;height:12px;border-radius:50%;background:var(--water);margin-top:5px;flex:none}
+
+.profile{margin-top:40px;position:relative}
+.profile-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:thin}
+.profile svg{display:block;width:100%;height:auto;min-width:0}
+.profile-note{display:none;font-size:13px;color:var(--ink3);padding:8px 0 0}
+.profile text{font-family:'Figtree',sans-serif}
+
+/* sections */
+section{padding:96px 0}
+.sec-hd{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:64px;align-items:end;margin-bottom:48px}
+.sec-hd h2{font-size:clamp(34px,3.6vw,52px)}
+.sec-hd p{color:var(--ink2);font-size:17px;max-width:560px}
+.label{font-size:14px;font-weight:600;color:var(--moss);margin-bottom:12px;display:block}
+
+/* stops */
+.stops{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));grid-template-rows:repeat(4,auto);grid-auto-flow:column;gap:0 64px}
+.stop{display:grid;grid-template-columns:48px minmax(0,1fr) auto;gap:16px;align-items:start;padding:24px 0;border-top:1px solid var(--line)}
+.stop .n{width:40px;height:40px;border-radius:50%;background:var(--ink);color:var(--lime);display:grid;place-items:center;font-weight:600;font-size:16px;font-variant-numeric:tabular-nums}
+.stop.opt .n{background:transparent;color:var(--ink);box-shadow:inset 0 0 0 1.5px var(--ink)}
+.stop h3{font-size:21px;font-weight:600}
+.stop p{font-size:15px;color:var(--ink2);margin-top:4px}
+.stop .h{font-family:'Bricolage Grotesque',sans-serif;font-weight:600;font-size:24px;font-variant-numeric:tabular-nums;text-align:right;white-space:nowrap}
+.stop .h small{display:block;font-family:'Figtree',sans-serif;font-size:13px;font-weight:500;color:var(--ink3)}
+.stop.opt .h{color:var(--orange)}
+.legend{display:flex;gap:24px;flex-wrap:wrap;margin-top:24px;font-size:14px;color:var(--ink2)}
+.legend span{display:flex;align-items:center;gap:8px}
+.legend i{width:16px;height:16px;border-radius:50%;background:var(--ink)}
+.legend i.o{background:transparent;box-shadow:inset 0 0 0 1.5px var(--ink)}
+
+/* trips */
+.trips-bg{background:var(--ink);color:#E6E7DD}
+.trips-bg .label{color:var(--water2)}
+.trips-bg .sec-hd p{color:#B9C3BA}
+.trips{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:24px}
+.trip{border-radius:16px;padding:32px;border:1px solid rgba(230,231,221,.16);display:flex;flex-direction:column}
+.trip.main{background:var(--lime);color:var(--ink);grid-row:span 2;border:0}
+.trip h3{font-size:28px}
+.trip .meta{font-size:15px;color:#B9C3BA;margin-top:8px}
+.trip.main .meta{color:var(--ink2)}
+.price{display:flex;align-items:baseline;gap:8px;margin-top:24px;font-variant-numeric:tabular-nums}
+.price b{font-family:'Bricolage Grotesque',sans-serif;font-size:48px;font-weight:600;letter-spacing:-.02em;line-height:1}
+.trip:not(.main) .price b{font-size:36px}
+.price span{font-size:15px;color:#B9C3BA}
+.trip.main .price span{color:var(--ink2)}
+.incl{list-style:none;margin-top:24px;display:grid;gap:12px;font-size:15px}
+.incl li{display:flex;gap:12px;align-items:flex-start}
+.incl .ico{color:var(--water2);margin-top:2px}
+.trip.main .incl .ico{color:var(--moss)}
+.trip.main .incl{grid-template-columns:1fr 1fr;gap:12px 24px}
+.trip .btn{margin-top:auto}
+.trip.main .btn{margin-top:auto;align-self:flex-start}
+.facts{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin:32px 0;padding:20px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.facts b{display:block;font-family:'Bricolage Grotesque',sans-serif;font-weight:600;font-size:24px;font-variant-numeric:tabular-nums}
+.facts span{font-size:14px;color:var(--ink2)}
+.trip:not(.main) .btn{margin-top:24px;align-self:flex-start;background:transparent;color:#E6E7DD;box-shadow:inset 0 0 0 1.5px rgba(230,231,221,.5)}
+.trip:not(.main) .btn:hover{background:rgba(230,231,221,.1)}
+.trip-note{font-size:14px;color:#B9C3BA;margin-top:24px}
+
+/* day plan */
+.day-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:64px;align-items:start}
+.tl{list-style:none;position:relative}
+.tl:before{content:"";position:absolute;left:71px;top:8px;bottom:8px;width:2px;background:var(--stone)}
+.tl li{display:grid;grid-template-columns:56px 32px minmax(0,1fr);gap:0 0;padding:0 0 28px;align-items:start}
+.tl time{font-weight:600;font-variant-numeric:tabular-nums;font-size:16px;padding-top:0}
+.tl li:before{content:"";grid-column:2;grid-row:1;width:12px;height:12px;border-radius:50%;background:var(--lime);box-shadow:inset 0 0 0 2px var(--ink);margin:6px 0 0 10px;position:relative;z-index:1}
+.tl li.w:before{background:var(--water);box-shadow:none}
+.tl li>div{grid-column:3;grid-row:1}
+.tl b{font-weight:600;display:block}
+.tl p{font-size:15px;color:var(--ink2)}
+.bring{background:var(--paper);border-radius:16px;padding:32px;border:1px solid var(--line)}
+.bring h3{font-size:24px}
+.bring ul{list-style:none;margin-top:20px;display:grid;gap:0}
+.bring li{display:flex;justify-content:space-between;gap:16px;padding:12px 0;border-top:1px solid var(--line);font-size:15px}
+.bring li:first-child{border-top:0}
+.bring li span:last-child{color:var(--ink3);text-align:right;font-variant-numeric:tabular-nums}
+.bring .rent{margin-top:20px;font-size:14px;color:var(--ink2)}
+
+/* safety */
+.safety{background:var(--lime2)}
+.safe-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:64px;align-items:center}
+.ratio{display:flex;align-items:flex-end;gap:24px}
+.ratio b{font-family:'Bricolage Grotesque',sans-serif;font-size:120px;font-weight:600;line-height:.85;letter-spacing:-.04em;font-variant-numeric:tabular-nums}
+.ratio p{font-size:17px;color:var(--ink2);max-width:280px;padding-bottom:8px}
+.rules{list-style:none;display:grid;gap:0;margin-top:40px}
+.rules li{display:grid;grid-template-columns:24px minmax(0,1fr);gap:16px;padding:16px 0;border-top:1px solid var(--line)}
+.rules li .ico{margin-top:2px;color:var(--moss)}
+.rules b{font-weight:600}
+.rules p{font-size:15px;color:var(--ink2)}
+.riv{background:var(--paper);border:1px solid var(--line);border-radius:20px;padding:32px}
+.riv h3{font-size:24px}
+.riv>p{font-size:15px;color:var(--ink2);margin-top:8px}
+.riv ul{list-style:none;margin-top:24px;display:grid;gap:12px}
+.riv li{display:grid;grid-template-columns:56px minmax(0,1fr) auto;gap:16px;align-items:center;padding:12px;border-radius:12px;background:var(--lime)}
+.riv li i{width:56px;height:56px;border-radius:8px}
+.riv li b{display:block;font-weight:600}
+.riv li span{font-size:14px;color:var(--ink2)}
+.riv li em{font-style:normal;font-size:14px;font-weight:600;color:var(--moss);white-space:nowrap}
+.riv li em.m{color:#6B5A2E}
+.riv li em.x{color:var(--orange)}
+
+/* faq */
+.faq{max-width:880px}
+.faq details{border-top:1px solid var(--line)}
+.faq details:last-child{border-bottom:1px solid var(--line)}
+.faq summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;gap:24px;padding:24px 0;font-weight:600;font-size:18px;min-height:44px}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary .ico{transition:transform .2s}
+.faq details[open] summary .ico{transform:rotate(45deg)}
+.faq details p{padding:0 48px 24px 0;color:var(--ink2);font-size:16px}
+
+/* book */
+.book{background:var(--ink);color:#E6E7DD}
+.book-grid{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:64px;align-items:start}
+.book h2{font-size:clamp(34px,3.6vw,52px)}
+.book .label{color:var(--water2)}
+.book .side p{color:#B9C3BA;margin-top:16px;max-width:440px}
+.book .contact{margin-top:32px;display:grid;gap:12px;font-size:15px;color:#D5D9CF}
+.book .contact div{display:flex;gap:12px;align-items:center}
+.form{background:var(--paper);color:var(--ink);border-radius:16px;padding:32px;display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.form .full{grid-column:span 2}
+.form label{display:block;font-size:14px;font-weight:600;margin-bottom:8px}
+.form input,.form select{width:100%;height:48px;border-radius:8px;border:1px solid rgba(23,48,43,.28);background:#fff;padding:0 16px;font:400 16px 'Figtree',sans-serif;color:var(--ink)}
+.form input:focus,.form select:focus{outline:2px solid var(--water);outline-offset:1px}
+.seg{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.seg input{position:absolute;opacity:0;width:1px;height:1px}
+.seg label{margin:0;height:auto;min-height:48px;border-radius:8px;border:1px solid rgba(23,48,43,.28);background:#fff;display:flex;flex-direction:column;justify-content:center;padding:8px 12px;cursor:pointer;font-weight:600;font-size:15px;line-height:1.3}
+.seg label small{font-weight:400;font-size:13px;color:var(--ink3)}
+.seg input:checked+label{border-color:var(--ink);box-shadow:inset 0 0 0 1.5px var(--ink);background:#F1EEE4}
+.seg input:focus-visible+label{outline:2px solid var(--water)}
+.total{display:flex;justify-content:space-between;align-items:baseline;padding-top:16px;border-top:1px solid var(--line)}
+.total span{font-size:15px;color:var(--ink2)}
+.total b{font-family:'Bricolage Grotesque',sans-serif;font-size:32px;font-weight:600;font-variant-numeric:tabular-nums}
+.form .btn{width:100%;height:52px}
+.form .fine{font-size:13px;color:var(--ink3);grid-column:span 2}
+.done{display:none;grid-column:span 2;background:#E3EFEA;border-radius:8px;padding:16px;font-size:15px}
+.done b{display:block}
+
+footer{padding:48px 0 40px;font-size:14px;color:var(--ink2)}
+footer .wrap{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap;align-items:center}
+footer .logo{font-size:18px}
+
+.rv{opacity:0;transform:translateY(12px);transition:opacity .5s ease,transform .5s ease}
+.rv.in{opacity:1;transform:none}
+
+@media(max-width:1080px){
+ .nav ul{display:none}
+ .menu-btn{display:none}
+ .nav .btn{margin-left:auto}
+ .hero-top,.sec-hd,.day-grid,.safe-grid,.book-grid{grid-template-columns:1fr;gap:32px}
+ .trips{grid-template-columns:1fr}
+ .trip.main{grid-row:auto}
+}
+@media(max-width:720px){
+ .wrap{padding:0 16px}
+ .nav .wrap{height:64px;gap:12px}
+ .logo small{display:none}
+ .nav .btn{height:44px;padding:0 16px}
+ .hero{padding-top:40px}
+ .hero p.lead{font-size:17px}
+ .hero .acts .btn{flex:1}
+ .profile{margin-top:32px;margin-right:-16px}
+ .profile svg{width:1200px;max-width:none}
+ .profile-note{display:block}
+ section{padding:72px 0}
+ .stops{grid-template-columns:1fr;grid-template-rows:none;grid-auto-flow:row}
+ .stop{grid-template-columns:40px minmax(0,1fr) auto;gap:12px}
+ .stop .n{width:36px;height:36px;font-size:15px}
+ .stop h3{font-size:19px}
+ .stop .h{font-size:20px}
+ .trip{padding:24px}
+ .trip.main .incl{grid-template-columns:1fr}
+ .price b{font-size:40px}
+ .ratio b{font-size:88px}
+ .form{grid-template-columns:1fr;padding:24px}
+ .form .full,.form .fine,.done{grid-column:auto}
+ .seg{grid-template-columns:1fr}
+ .faq details p{padding-right:0}
+ .riv{padding:24px}
+ .bring li{flex-direction:column;gap:2px}
+ .bring li span:last-child{text-align:left;font-size:14px}
+ .riv li{grid-template-columns:48px minmax(0,1fr)}
+ .riv li i{width:48px;height:48px}
+ .riv li em{grid-column:2}
+ .facts b{font-size:20px}
+}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}.rv{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+ <symbol id="i-check" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></symbol>
+ <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+ <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
+ <symbol id="i-helmet" viewBox="0 0 24 24"><path d="M4 16a8 8 0 0 1 16 0"/><path d="M3 16h18v2H3z"/><path d="M12 8v4"/></symbol>
+ <symbol id="i-vest" viewBox="0 0 24 24"><path d="M8 3l4 3 4-3 3 3v14H5V6z"/><path d="M12 6v14M8 11h2M14 11h2"/></symbol>
+ <symbol id="i-rope" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M12 12v9M9 21h6"/></symbol>
+ <symbol id="i-cloud" viewBox="0 0 24 24"><path d="M7 18h10a4 4 0 0 0 .5-8 6 6 0 0 0-11.4 1.5A3.3 3.3 0 0 0 7 18z"/><path d="M9 21l1-2M14 21l1-2"/></symbol>
+ <symbol id="i-phone" viewBox="0 0 24 24"><rect x="7" y="3" width="10" height="18" rx="2"/><path d="M11 18h2"/></symbol>
+ <symbol id="i-mail" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></symbol>
+ <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21s7-6.2 7-11.5A7 7 0 0 0 5 9.5C5 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></symbol>
+ <symbol id="i-swim" viewBox="0 0 24 24"><path d="M3 17c2 0 2-1.5 4.5-1.5S9.5 17 12 17s2-1.5 4.5-1.5S18.5 17 21 17"/><path d="M3 21c2 0 2-1.5 4.5-1.5S9.5 21 12 21s2-1.5 4.5-1.5S18.5 21 21 21"/><circle cx="16" cy="6" r="2"/><path d="M6 13l4-5 4 3"/></symbol>
+</svg>
+
+<nav class="nav">
+ <div class="wrap">
+  <a class="logo" href="#top" aria-label="Sapa Canyon Treks home">
+   <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M4 26V8l6 4v14z" fill="#17302B"/><path d="M28 26V6l-6 5v15z" fill="#17302B"/><path d="M10 26c2-3 4-4 6-4s4 1 6 4z" fill="#3A9E97"/><circle cx="16" cy="12" r="3" fill="#C2461F"/></svg>
+   <span>Sapa Canyon Treks<small>Badian, south Cebu</small></span>
+  </a>
+  <ul>
+   <li><a href="#route">The route</a></li>
+   <li><a href="#trips">Trips &amp; rates</a></li>
+   <li><a href="#day">Your day</a></li>
+   <li><a href="#safety">Safety</a></li>
+   <li><a href="#faq">FAQ</a></li>
+  </ul>
+  <a class="btn btn-main" href="#book">Book a date</a>
+ </div>
+</nav>
+
+<header class="hero" id="top">
+ <div class="wrap">
+  <div class="hero-top">
+   <div>
+    <div class="kicker">Guided canyoneering, daily from 07:30</div>
+    <h1>Four kilometres of river, jumped and swum <span>down to the falls</span></h1>
+    <p class="lead">One guide for every four guests, helmets and vests on from the first step, and a walk-around at every jump above three metres. You choose how high you go.</p>
+    <div class="acts">
+     <a class="btn btn-main" href="#book">Check a date <svg class="ico"><use href="#i-arrow"/></svg></a>
+     <a class="btn btn-ghost" href="#route">See the route</a>
+    </div>
+   </div>
+   <aside class="depart" aria-label="Next departure">
+    <h2>Next open departure</h2>
+    <div class="day">Sat, 30 Nov</div>
+    <dl>
+     <dt>Pickup</dt><dd>06:00 · Moalboal</dd>
+     <dt>Start</dt><dd>07:30 · Canyon entry</dd>
+     <dt>Seats left</dt><dd>7 of 16</dd>
+    </dl>
+    <div class="river"><i></i><span>River clear and green-blue this morning. We post the river status at 05:00 every day.</span></div>
+   </aside>
+  </div>
+
+  <figure class="profile" id="route-map">
+   <div class="profile-scroll">
+   <svg viewBox="0 0 1400 440" role="img" aria-label="Side view of the canyon route: the river drops in steps from the entry ledge at left to the falls at right, with seven numbered stops and the height of each jump.">
+    <defs>
+     <linearGradient id="wall" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#D9D1BF"/><stop offset=".6" stop-color="#C9BFA9"/><stop offset="1" stop-color="#B3A98F"/></linearGradient>
+     <linearGradient id="wall2" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#C4BAA3"/><stop offset="1" stop-color="#A3987D"/></linearGradient>
+     <linearGradient id="water" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#7CC6BC"/><stop offset=".5" stop-color="#3A9E97"/><stop offset="1" stop-color="#1F6E6C"/></linearGradient>
+     <linearGradient id="fall" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#F3F4EE"/><stop offset="1" stop-color="#A9DCD3"/></linearGradient>
+     <linearGradient id="fade" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#EDE8DD" stop-opacity="1"/><stop offset="1" stop-color="#EDE8DD" stop-opacity="0"/></linearGradient>
+     <pattern id="strata" width="140" height="18" patternUnits="userSpaceOnUse"><path d="M0 9c30-3 50 3 70 0s50-3 70 0" fill="none" stroke="#9E9378" stroke-opacity=".28" stroke-width="1.2"/></pattern>
+    </defs>
+    <!-- back wall -->
+    <path d="M0 40 C120 30 200 52 320 44 S520 30 640 46 S860 36 980 50 S1220 40 1400 54 V440 H0Z" fill="url(#wall2)"/>
+    <!-- jungle rim -->
+    <g fill="#2F5A3E"><path d="M0 70 L0 52 q22 -46 43 0 q20 -52 39 0 q26 -36 51 0 q19 -32 38 0 q18 -52 36 0 q26 -46 53 0 q30 -30 61 0 q22 -60 43 0 q26 -50 53 0 q22 -38 44 0 q31 -34 62 0 q22 -40 44 0 q18 -44 36 0 q30 -44 61 0 q21 -38 42 0 q22 -46 45 0 q28 -50 56 0 q19 -48 38 0 q28 -52 57 0 q26 -42 52 0 q20 -42 41 0 q26 -44 51 0 q19 -46 38 0 q18 -46 36 0 q27 -46 54 0 q30 -60 60 0 q21 -54 42 0 q24 -46 49 0 q24 -56 49 0 q20 -42 41 0 L1415 70 Z"/></g>
+    <g fill="#24482F"><path d="M0 80 L0 66 q34 -20 69 0 q26 -14 52 0 q26 -26 52 0 q45 -20 90 0 q42 -28 83 0 q40 -22 80 0 q30 -18 59 0 q27 -24 54 0 q31 -26 62 0 q34 -16 67 0 q36 -24 72 0 q44 -22 87 0 q45 -28 90 0 q31 -22 62 0 q28 -12 56 0 q32 -20 64 0 q44 -18 87 0 q28 -22 57 0 q30 -20 61 0 q40 -12 79 0 q26 -22 52 0 L1435 80 Z"/></g>
+    <!-- vines -->
+    <g stroke="#2F5A3E" stroke-width="2" fill="none" opacity=".7">
+     <path d="M210 70c4 30-6 50 2 80"/><path d="M560 74c-6 26 4 44-2 70"/><path d="M905 76c5 20-4 36 3 58"/><path d="M1180 80c-4 22 5 40-1 62"/>
+    </g>
+    <!-- front walls / stepped river bed -->
+    <path d="M0 150 H150 L160 196 H330 L338 232 H560 L566 260 H760 L770 300 H1000 L1010 352 H1210 L1214 360 H1400 V440 H0Z" fill="url(#wall)"/>
+    <path d="M0 150 H150 L160 196 H330 L338 232 H560 L566 260 H760 L770 300 H1000 L1010 352 H1210 L1214 360 H1400 V440 H0Z" fill="url(#strata)"/>
+    <!-- water following steps -->
+    <path d="M0 146 H152 Q156 170 160 192 H332 Q335 214 338 228 H562 Q564 246 566 256 H762 Q766 280 770 296 H1002 Q1006 330 1010 348 H1400 V372 H1214 L1210 366 H1010 L1000 312 H770 L760 272 H566 L560 244 H338 L330 208 H160 L150 162 H0Z" fill="url(#water)"/>
+    <!-- light ripples -->
+    <g stroke="#E8F6F2" stroke-opacity=".7" stroke-width="1.5" stroke-linecap="round">
+     <path d="M40 152h30M96 156h20"/><path d="M200 198h40M270 202h24"/><path d="M400 234h50M480 238h30"/><path d="M620 262h40M690 266h28"/><path d="M820 302h60M910 306h30"/><path d="M1060 354h40M1130 358h30M1260 356h50"/>
+    </g>
+    <!-- waterfall at the end -->
+    <path d="M1330 56 C1324 140 1336 240 1326 352 L1376 352 C1370 240 1382 140 1372 56Z" fill="url(#fall)" opacity=".95"/>
+    <g stroke="#FFFFFF" stroke-opacity=".75" stroke-width="2" fill="none"><path d="M1340 70c-2 80 4 180-2 270"/><path d="M1356 66c2 90-4 190 2 280"/></g>
+    <ellipse cx="1352" cy="356" rx="56" ry="8" fill="#E8F6F2" opacity=".8"/>
+    <!-- boulders -->
+    <g fill="#9C9177"><path d="M420 232c4-16 26-20 36-6l2 6z"/><path d="M860 300c6-14 24-16 32-2l1 2z"/><path d="M1090 352c6-12 22-14 30-1v1z"/></g>
+    <!-- slide chutes -->
+    <path d="M330 196 Q336 214 344 232" stroke="#E8F6F2" stroke-width="3" fill="none"/>
+    <path d="M760 260 Q766 282 778 300" stroke="#E8F6F2" stroke-width="3" fill="none"/>
+
+    <!-- jump arcs (dashed) -->
+    <g fill="none" stroke="#17302B" stroke-width="1.6" stroke-dasharray="4 5">
+     <path d="M150 150 q18 -24 34 44"/>
+     <path d="M560 232 q22 -20 40 26"/>
+     <path d="M1000 300 q26 -30 54 50"/>
+    </g>
+    <!-- height ticks -->
+    <g stroke="#17302B" stroke-width="1.2">
+     <path d="M140 150v46M136 150h8M136 196h8"/>
+     <path d="M548 232v28M544 232h8M544 260h8"/>
+     <path d="M988 300v52M984 300h8M984 352h8"/>
+    </g>
+    <g font-size="15" font-weight="600" fill="#17302B">
+     <text x="124" y="178" text-anchor="end">3 m</text>
+     <text x="532" y="252" text-anchor="end">7 m</text>
+     <text x="972" y="332" text-anchor="end">10 m</text>
+    </g>
+
+    <!-- stop markers -->
+    <g font-size="16" font-weight="600" text-anchor="middle">
+     <g><line x1="90" y1="146" x2="90" y2="112" stroke="#17302B" stroke-width="1.5"/><circle cx="90" cy="98" r="16" fill="#17302B"/><text x="90" y="104" fill="#EDE8DD">1</text></g>
+     <g><line x1="250" y1="192" x2="250" y2="122" stroke="#17302B" stroke-width="1.5"/><circle cx="250" cy="108" r="16" fill="#17302B"/><text x="250" y="114" fill="#EDE8DD">2</text></g>
+     <g><line x1="470" y1="228" x2="470" y2="140" stroke="#17302B" stroke-width="1.5"/><circle cx="470" cy="126" r="16" fill="#EDE8DD" stroke="#17302B" stroke-width="2"/><text x="470" y="132" fill="#17302B">3</text></g>
+     <g><line x1="660" y1="256" x2="660" y2="150" stroke="#17302B" stroke-width="1.5"/><circle cx="660" cy="136" r="16" fill="#17302B"/><text x="660" y="142" fill="#EDE8DD">4</text></g>
+     <g><line x1="880" y1="296" x2="880" y2="164" stroke="#17302B" stroke-width="1.5"/><circle cx="880" cy="150" r="16" fill="#17302B"/><text x="880" y="156" fill="#EDE8DD">5</text></g>
+     <g><line x1="1100" y1="348" x2="1100" y2="180" stroke="#C2461F" stroke-width="1.5"/><circle cx="1100" cy="166" r="16" fill="#EDE8DD" stroke="#C2461F" stroke-width="2"/><text x="1100" y="172" fill="#C2461F">6</text></g>
+     <g><line x1="1290" y1="350" x2="1290" y2="196" stroke="#17302B" stroke-width="1.5"/><circle cx="1290" cy="182" r="16" fill="#17302B"/><text x="1290" y="188" fill="#EDE8DD">7</text></g>
+    </g>
+    <!-- labels on the wall -->
+    <g font-size="14" fill="#2A3B35">
+     <text x="20" y="410" font-weight="600">0 km · entry ledge</text>
+     <text x="610" y="410" font-weight="600" text-anchor="middle">2.1 km · narrows</text>
+     <text x="1380" y="410" font-weight="600" text-anchor="end">4.0 km · the falls, lunch</text>
+    </g>
+    <!-- tiny figure on stop 1 ledge -->
+    <g transform="translate(132 118)">
+     <rect x="-4" y="12" width="9" height="14" rx="3" fill="#C2461F"/>
+     <circle cx="0.5" cy="7" r="5" fill="#8A5A3C"/>
+     <path d="M-5 6a5.5 5.5 0 0 1 11 0z" fill="#D9612F"/>
+     <path d="M-2 26v6M3 26v6" stroke="#17302B" stroke-width="2.4" stroke-linecap="round"/>
+    </g>
+    <rect x="0" y="0" width="1400" height="30" fill="url(#fade)"/>
+   </svg>
+   </div>
+   <figcaption class="profile-note">Swipe to follow the river from the entry ledge to the falls</figcaption>
+  </figure>
+ </div>
+</header>
+
+<section id="route">
+ <div class="wrap">
+  <div class="sec-hd rv">
+   <div><span class="label">The route, stop by stop</span><h2>Seven stops, three of them jumps</h2></div>
+   <p>Filled numbers are on every trip. Outlined ones are optional — your guide walks you around on the rock path and you meet the group in the pool below.</p>
+  </div>
+  <div class="stops rv">
+   <div class="stop"><span class="n">1</span><div><h3>Entry ledge</h3><p>Gear check, then a first low jump into a deep green pool to get used to the water.</p></div><div class="h">3 m<small>jump</small></div></div>
+   <div class="stop"><span class="n">2</span><div><h3>Kid's slide</h3><p>A short, gentle slide that most guests do twice. Good warm-up before the narrows.</p></div><div class="h">4 m<small>slide</small></div></div>
+   <div class="stop opt"><span class="n">3</span><div><h3>Middle drop</h3><p>Jump, or sit and slide down the side channel. Both land in the same pool.</p></div><div class="h">7 m<small>optional</small></div></div>
+   <div class="stop"><span class="n">4</span><div><h3>The narrows</h3><p>Walls close to three metres apart. You float on your back with the current for about ten minutes.</p></div><div class="h">2.1 km<small>swim</small></div></div>
+   <div class="stop"><span class="n">5</span><div><h3>Long rock slide</h3><p>A smooth limestone chute about twelve metres long. Feet first, arms crossed.</p></div><div class="h">12 m<small>slide</small></div></div>
+   <div class="stop opt"><span class="n">6</span><div><h3>High ledge</h3><p>The tallest jump of the day, from a wide flat rock. Two guides in the water below.</p></div><div class="h">10 m<small>optional</small></div></div>
+   <div class="stop"><span class="n">7</span><div><h3>The falls</h3><p>Float on a bamboo raft under the waterfall, then lunch on the bank.</p></div><div class="h">4.0 km<small>finish</small></div></div>
+  </div>
+  <div class="legend"><span><i></i>On every trip</span><span><i class="o"></i>Optional, walk-around available</span></div>
+ </div>
+</section>
+
+<section class="trips-bg" id="trips">
+ <div class="wrap">
+  <div class="sec-hd rv">
+   <div><span class="label">Trips &amp; rates</span><h2>Pick a trip, then pick your jumps</h2></div>
+   <p>Prices are per person and include the environmental fee, guide, gear and the van from Moalboal. Children 8 to 12 pay ₱300 less on every trip.</p>
+  </div>
+  <div class="trips rv">
+   <article class="trip main">
+    <h3>Full Sapa route</h3>
+    <div class="meta">All seven stops · about 4 hours in the canyon · ages 10+</div>
+    <div class="price"><b>₱2,450</b><span>per person</span></div>
+    <ul class="incl">
+     <li><svg class="ico"><use href="#i-check"/></svg>Van pickup &amp; drop-off, Moalboal</li>
+     <li><svg class="ico"><use href="#i-check"/></svg>Helmet, life vest, water shoes</li>
+     <li><svg class="ico"><use href="#i-check"/></svg>1 guide for every 4 guests</li>
+     <li><svg class="ico"><use href="#i-check"/></svg>Bamboo raft at the falls</li>
+     <li><svg class="ico"><use href="#i-check"/></svg>Lunch: grilled fish, rice, fruit</li>
+     <li><svg class="ico"><use href="#i-check"/></svg>Dry bag for phones, one per pair</li>
+    </ul>
+    <div class="facts"><div><b>4 h</b><span>in the water</span></div><div><b>2–16</b><span>guests per departure</span></div><div><b>₱500</b><span>deposit to hold a seat</span></div></div>
+    <a class="btn btn-main" href="#book" data-trip="full">Book the full route <svg class="ico"><use href="#i-arrow"/></svg></a>
+   </article>
+   <article class="trip">
+    <h3>Half canyon</h3>
+    <div class="meta">Stops 4 to 7 · no jump over 3 m · ages 8+</div>
+    <div class="price"><b>₱1,650</b><span>per person</span></div>
+    <a class="btn" href="#book" data-trip="half">Book half canyon</a>
+   </article>
+   <article class="trip">
+    <h3>Private barkada</h3>
+    <div class="meta">Your group of 8 to 12 · own guides · pick your start time</div>
+    <div class="price"><b>₱2,200</b><span>per person</span></div>
+    <a class="btn" href="#book" data-trip="private">Ask for a private date</a>
+   </article>
+  </div>
+  <p class="trip-note">Action camera rental with chest mount ₱600 per day. A guide can film your jumps on our camera; we send the clips the same evening.</p>
+ </div>
+</section>
+
+<section id="day">
+ <div class="wrap">
+  <div class="sec-hd rv">
+   <div><span class="label">Your day</span><h2>Back at your hotel by mid-afternoon</h2></div>
+   <p>Times are for the full route. Half canyon starts at the narrows at 09:30 and joins the full group for lunch.</p>
+  </div>
+  <div class="day-grid">
+   <ol class="tl rv">
+    <li><time>06:00</time><div><b>Pickup in Moalboal</b><p>Van leaves from the public beach road. Other pickups on request.</p></div></li>
+    <li><time>07:00</time><div><b>Gear and briefing</b><p>Fit helmets and vests, practise the jump position on dry land, meet your guide.</p></div></li>
+    <li class="w"><time>07:30</time><div><b>Into the canyon</b><p>Stops 1 to 3, with time to repeat the slides.</p></div></li>
+    <li class="w"><time>09:30</time><div><b>The narrows</b><p>Float and swim through the gorge. Half-canyon guests join here.</p></div></li>
+    <li class="w"><time>11:30</time><div><b>The falls</b><p>Raft ride and free time in the basin.</p></div></li>
+    <li><time>12:30</time><div><b>Lunch on the bank</b><p>Grilled fish, rice and fruit. Vegetarian plate if you tell us when booking.</p></div></li>
+    <li><time>14:00</time><div><b>Van back</b><p>Showers and lockers at the base before you leave.</p></div></li>
+   </ol>
+   <div class="bring rv">
+    <h3>What to bring</h3>
+    <ul>
+     <li><span>Swimwear you can move in</span><span>wear it under clothes</span></li>
+     <li><span>Shirt for the sun, rash guard is best</span><span>long sleeve</span></li>
+     <li><span>Shoes that stay on in water</span><span>no slippers</span></li>
+     <li><span>Dry change of clothes and towel</span><span>stays in the van</span></li>
+     <li><span>Cash for snacks and tips</span><span>₱300 to ₱500</span></li>
+    </ul>
+    <p class="rent">Forgot something? Water shoes ₱150, rash guards ₱200 to rent at the base.</p>
+   </div>
+  </div>
+ </div>
+</section>
+
+<section class="safety" id="safety">
+ <div class="wrap">
+  <div class="safe-grid">
+   <div class="rv">
+    <span class="label">Safety</span>
+    <div class="ratio"><b>1:4</b><p>One guide for every four guests, never more, on every trip and every date.</p></div>
+    <ul class="rules">
+     <li><svg class="ico"><use href="#i-helmet"/></svg><div><b>Helmet and vest stay on</b><p>From the briefing until you reach the lunch bank, including in calm pools.</p></div></li>
+     <li><svg class="ico"><use href="#i-swim"/></svg><div><b>Non-swimmers are welcome</b><p>The vest keeps you floating. A guide stays within arm's reach through the narrows.</p></div></li>
+     <li><svg class="ico"><use href="#i-cloud"/></svg><div><b>We cancel when the river is brown</b><p>After heavy rain the water rises and turns cloudy. You get a new date or your money back.</p></div></li>
+     <li><svg class="ico"><use href="#i-rope"/></svg><div><b>Guides check every landing</b><p>Before each jump a guide swims the pool to check depth and clear branches.</p></div></li>
+    </ul>
+   </div>
+   <div class="riv rv">
+    <h3>How we read the river each morning</h3>
+    <p>At 05:00 a guide walks to the entry ledge and checks the colour and the mark on the gauge rock. You get a message by 05:30 if your trip changes.</p>
+    <ul>
+     <li><i style="background:linear-gradient(160deg,#8FD0C4,#3A9E97 70%,#2A7D78)"></i><div><b>Clear green-blue</b><span>Water at or below the white line. All trips run.</span></div><em>Go</em></li>
+     <li><i style="background:linear-gradient(160deg,#C9D8C6,#9DB6A6 70%,#7E9A8A)"></i><div><b>Milky after light rain</b><span>Up to 30 cm over the line. Half canyon only, no high jumps.</span></div><em class="m">Half only</em></li>
+     <li><i style="background:linear-gradient(160deg,#C8A57E,#9C7650 70%,#7A5A3A)"></i><div><b>Brown and fast</b><span>Above the red line. We cancel and you choose a new date or a refund.</span></div><em class="x">Cancelled</em></li>
+    </ul>
+   </div>
+   </div>
+  </div>
+ </div>
+</section>
+
+<section id="faq">
+ <div class="wrap">
+  <div class="sec-hd rv">
+   <div><span class="label">Questions</span><h2>Before you book</h2></div>
+   <p>Still unsure? Message us with your group's ages and swimming level and we will suggest a trip.</p>
+  </div>
+  <div class="faq rv">
+   <details open><summary>I can't swim. Can I still come?<svg class="ico"><use href="#i-plus"/></svg></summary><p>Yes. Most of the route is floating with the current, and the vest keeps your head above water. Choose the half canyon if you would rather skip the deep entry pools.</p></details>
+   <details><summary>Do I have to jump?<svg class="ico"><use href="#i-plus"/></svg></summary><p>No. Every jump above three metres has a path around it. Stop 1 is a 3 m jump or a short scramble down with a guide holding your hand.</p></details>
+   <details><summary>What is the youngest age?<svg class="ico"><use href="#i-plus"/></svg></summary><p>Eight for the half canyon and ten for the full route. Children need to wear the junior vest, which we bring for every booking with kids.</p></details>
+   <details><summary>Can I bring my phone?<svg class="ico"><use href="#i-plus"/></svg></summary><p>Inside the dry bag, yes, but you will not be able to hold it on the slides. Rent an action camera or ask a guide to film you.</p></details>
+   <details><summary>How do I pay?<svg class="ico"><use href="#i-plus"/></svg></summary><p>A ₱500 deposit per person holds your seats, by bank transfer or e-wallet. The rest is paid in cash or by transfer on the morning of the trip.</p></details>
+  </div>
+ </div>
+</section>
+
+<section class="book" id="book">
+ <div class="wrap">
+  <div class="book-grid">
+   <div class="side rv">
+    <span class="label">Book a date</span>
+    <h2>Hold seats for your group</h2>
+    <p>Send this form and we reply with the river forecast for your date and how to pay the deposit. Nothing is charged until you confirm.</p>
+    <div class="contact">
+     <div><svg class="ico"><use href="#i-phone"/></svg>+63 900 000 0000</div>
+     <div><svg class="ico"><use href="#i-mail"/></svg>hello@example.com</div>
+     <div><svg class="ico"><use href="#i-pin"/></svg>Base camp: Badian, south Cebu</div>
+    </div>
+   </div>
+   <form class="form rv" id="f" novalidate>
+    <div class="full">
+     <label>Trip</label>
+     <div class="seg" role="radiogroup">
+      <input type="radio" name="trip" id="t1" value="2450" checked><label for="t1">Full route<small>₱2,450</small></label>
+      <input type="radio" name="trip" id="t2" value="1650"><label for="t2">Half canyon<small>₱1,650</small></label>
+      <input type="radio" name="trip" id="t3" value="2200"><label for="t3">Private<small>₱2,200 · 8+</small></label>
+     </div>
+    </div>
+    <div><label for="d">Date</label><input id="d" type="date" value="2026-11-30" required></div>
+    <div><label for="g">Guests</label><select id="g"><option>1</option><option selected>2</option><option>3</option><option>4</option><option>5</option><option>6</option><option>8</option><option>10</option><option>12</option></select></div>
+    <div><label for="n">Name</label><input id="n" type="text" placeholder="Your name" autocomplete="name" required></div>
+    <div><label for="m">Mobile number</label><input id="m" type="tel" placeholder="+63 9xx xxx xxxx" autocomplete="tel" required></div>
+    <div class="full total"><span>Estimated total</span><b id="tot">₱4,900</b></div>
+    <div class="full"><button class="btn btn-main" type="submit">Send booking request</button></div>
+    <p class="fine">Deposit of ₱500 per guest after we confirm. Full refund if we cancel for river conditions.</p>
+    <div class="done" id="done" role="status"><b>Request received</b>We will message you with the river forecast and deposit details.</div>
+   </form>
+  </div>
+ </div>
+</section>
+
+<footer>
+ <div class="wrap">
+  <a class="logo" href="#top"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M4 26V8l6 4v14z" fill="#17302B"/><path d="M28 26V6l-6 5v15z" fill="#17302B"/><path d="M10 26c2-3 4-4 6-4s4 1 6 4z" fill="#3A9E97"/><circle cx="16" cy="12" r="3" fill="#C2461F"/></svg>Sapa Canyon Treks</a>
+  <span>Daily departures 07:30 · closed on river-warning days</span>
+  <span>© 2026 Sapa Canyon Treks</span>
+ </div>
+</footer>
+
+<script>
+(function(){
+ var f=document.getElementById('f'),tot=document.getElementById('tot'),g=document.getElementById('g');
+ function calc(){var p=+f.querySelector('input[name=trip]:checked').value;tot.textContent='₱'+(p*(+g.value)).toLocaleString('en-US')}
+ f.addEventListener('change',calc);calc();
+ document.querySelectorAll('[data-trip]').forEach(function(a){a.addEventListener('click',function(){var m={full:'t1',half:'t2',private:'t3'};document.getElementById(m[a.dataset.trip]).checked=true;calc()})});
+ f.addEventListener('submit',function(e){e.preventDefault();var ok=true;['n','m'].forEach(function(id){var el=document.getElementById(id);if(!el.value.trim()){el.style.borderColor='#C2461F';ok=false}else{el.style.borderColor=''}});if(ok){document.getElementById('done').style.display='block'}});
+ var io='IntersectionObserver' in window?new IntersectionObserver(function(es){es.forEach(function(x){if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target)}})},{threshold:.12}):null;
+ document.querySelectorAll('.rv').forEach(function(el){io?io.observe(el):el.classList.add('in')});
+})();
+</script>
+</body>
+</html>
