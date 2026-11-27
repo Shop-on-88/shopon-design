@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>대숲채 떡갈비 · 메뉴판 디자인</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Song+Myung&family=Gothic+A1:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+html{background:#E8E3D2}
+body{word-break:keep-all;font-family:'Gothic A1',sans-serif;color:#1E3326;background:#E8E3D2;-webkit-font-smoothing:antialiased;min-height:100vh;overflow-x:clip;line-height:1.6}
+.wrap{max-width:1180px;margin:0 auto;padding:48px 24px 136px}
+.hd{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:24px;padding-bottom:32px;margin-bottom:40px;border-bottom:1.5px solid #1E3326}
+.hd small{font-size:14px;font-weight:500;color:#4D5E4F}
+.hd h1{font-family:'Song Myung',serif;font-weight:400;font-size:clamp(40px,5.4vw,64px);line-height:1.1;letter-spacing:-.03em;margin-top:8px}
+.hd h1 em{display:block;font-family:'Gothic A1',sans-serif;font-style:normal;font-weight:400;font-size:clamp(16px,1.6vw,19px);letter-spacing:0;color:#4D5E4F;margin-top:12px;max-width:640px;line-height:1.6}
+.facts{display:flex;flex-wrap:wrap;gap:8px 24px;margin-top:20px;font-size:15px;color:#4D5E4F}
+.facts span{display:flex;align-items:center;gap:8px}
+.facts span:before{content:"";width:8px;height:8px;border-radius:50%;background:#C4561E}
+.cta{display:inline-flex;align-items:center;gap:8px;height:52px;padding:0 24px;background:#1E3326;color:#F1ECDD;font-weight:600;font-size:16px;text-decoration:none;border-radius:8px;transition:background-color .2s;white-space:nowrap}
+.cta:hover{background:#2E4A37}
+.cta svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+.view{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,.8fr);gap:32px;align-items:start}
+figure{background:#F4F0E4;padding:12px;border-radius:8px;border:1px solid rgba(34,48,31,.14);box-shadow:0 24px 48px -32px rgba(34,48,31,.55)}
+figure a{display:block;overflow:hidden;border-radius:4px}
+figure img{display:block;width:100%;height:auto}
+figcaption{font-size:14px;color:#4D5E4F;padding:12px 4px 0;display:flex;flex-wrap:wrap;justify-content:space-between;gap:4px 12px}
+figcaption b{color:#1E3326;font-weight:600}
+.side{display:flex;flex-direction:column;gap:20px;position:sticky;top:24px}
+.zoom{background:#F4F0E4;padding:8px;border-radius:8px;border:1px solid rgba(34,48,31,.14)}
+.zoom img{display:block;width:100%;height:auto;border-radius:4px}
+.zoom p{font-size:15px;color:#4D5E4F;padding:12px 8px 4px}
+.zoom p b{display:block;font-family:'Song Myung',serif;font-weight:400;font-size:19px;color:#1E3326;margin-bottom:4px}
+.wide{margin-top:32px;display:block}
+.wide p{padding:12px 8px 4px;max-width:720px}
+.info{background:#1E3326;color:#E1DFCF;padding:24px;border-radius:8px}
+.info h2{font-family:'Song Myung',serif;font-weight:400;font-size:22px;color:#F1ECDD;margin-bottom:8px}
+.info li{list-style:none;font-size:15px;padding:12px 0 12px 20px;position:relative;border-top:1px solid rgba(227,224,207,.16)}
+.info li:first-child{border-top:0}
+.info li:before{content:"";position:absolute;left:0;top:21px;width:8px;height:8px;border-radius:50%;background:#C4561E}
+.bar{position:fixed;left:0;right:0;bottom:0;background:#1E3326;border-top:3px solid #C4561E;padding:12px 20px;display:flex;justify-content:center;align-items:center;gap:20px;flex-wrap:wrap;z-index:10}
+.bar p{font-size:15px;color:#C3CBBB}
+.bar .cta{height:48px;background:#F1ECDD;color:#1E3326}
+.bar .cta:hover{background:#E2DCC6}
+@media(max-width:900px){.view{grid-template-columns:1fr}.side{position:static}.wide{grid-template-columns:1fr}}
+@media(max-width:620px){.wide{display:none}.wrap{padding:28px 16px 112px}.hd .cta{display:none}.bar p{display:none}.bar .cta{width:100%;justify-content:center}figure{padding:6px}}
+@media(prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+<div class="wrap">
+ <div class="hd">
+  <div>
+   <small>메뉴판 디자인 · SD-MN62</small>
+   <h1>대숲채 떡갈비 <em>참숯 석쇠에 구운 담양식 떡갈비를 대나무 통에 쪄 낸 대통밥과 함께 내는 정식집</em></h1>
+   <div class="facts"><span>A4 세로 · 1쪽 · 한국어 · 원화</span><span>대나무 속 미색 · 대잎 그린 · 숯불 주황</span><span>석쇠 탑뷰 떡갈비 일러스트</span></div>
+  </div>
+  <a class="cta" href="https://design.shoponph.online/#inquiry">이 디자인으로 상담하기 <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+ </div>
+ <div class="view">
+  <figure><a href="page1.png" target="_blank" rel="noopener"><img src="page1.png" alt="대숲채 떡갈비 메뉴판 전체. 미색 종이 바탕 왼쪽 가장자리를 따라 굵기가 다른 초록 대나무 줄기 세 대가 마디를 드러내며 위아래로 길게 서 있습니다. 왼쪽 위에 담양식 숯불 떡갈비 대통밥 정식이라는 작은 글씨와 붓맛 나는 큰 글씨 대숲채, 갈비살을 다져 참숯 석쇠에서 두 번 뒤집어 굽는다는 소개, 정식에 대통밥·죽순 무침·시래기 된장국·반찬 다섯 가지가 함께 나온다는 안내가 있습니다. 오른쪽 위에는 숯불 위 둥근 석쇠에 잣과 쪽파를 올린 윤기 나는 떡갈비 두 장이 석쇠 자국과 함께 놓여 있고, 왼쪽 아래 대나무 통 안에 대추·밤·은행을 올린 대통밥, 오른쪽 아래 놋접시에 죽순 무침이 있습니다. 가운데에는 한우·반반·한돈·어린이 떡갈비 정식 네 가지가 설명과 가격으로 나뉘어 있고, 아래에 추가와 곁들임, 술과 음료 두 칸 목록, 연둣빛 테두리 상자 속 두 사람용 대숲채 한상 49,000원이 주홍 숫자로, 맨 아래 영업시간과 포장 안내가 있습니다." width="2480" height="3508"></a><figcaption><b>A4 세로 1쪽</b><span>2480 × 3508 px · 인쇄용</span></figcaption></figure>
+  <div class="side">
+   <div class="zoom"><img src="detail-grill.jpg" alt="석쇠 부분 확대. 회색 테두리의 둥근 석쇠 아래로 검붉은 숯이 비치고, 은색 석쇠 줄 위에 결이 거친 갈색 떡갈비 두 장이 겹쳐 놓여 있습니다. 떡갈비마다 진한 석쇠 자국이 사선으로 나 있고 위쪽에 양념 윤기가 돌며 잣과 쪽파가 흩어져 있습니다. 왼쪽 아래 대나무 통에 담긴 흰 밥 위 대추·밤·은행, 오른쪽 아래 놋접시의 죽순 무침이 보입니다." width="1220" height="1110" loading="lazy"><p><b>석쇠 한 판 그림</b>떡갈비를 위에서 내려다본 그림으로 숯불에 굽는 방식을 한눈에 보여 줍니다</p></div>
+   <div class="info"><h2>바꿀 수 있는 것</h2><ul><li>정식 구성, 고기 무게, 가격</li><li>대나무 줄기 띠를 가게 간판색에 맞춰 교체</li><li>벽 메뉴판, 테이블 세움판, QR 웹 메뉴판</li></ul></div>
+  </div>
+ </div>
+ <div class="zoom wide"><img src="detail-set.jpg" alt="메뉴판 아래쪽 확대. 왼쪽에 추가와 곁들임 목록으로 한우·한돈 떡갈비 한 장, 대통밥 추가, 죽순 들깨탕, 숯불 더덕구이와 가격이, 오른쪽에 술과 음료 목록으로 대잎 막걸리, 복분자주, 소주·맥주, 살얼음 식혜, 음료와 가격이 가는 선으로 나뉘어 있습니다. 아래 연둣빛 테두리 상자에는 대숲채 한상, 두 분이 오셨다면이라는 제목 옆에 구성 세 줄과 2인 49,000원이 짙은 주홍색 큰 숫자로 적혀 있습니다." width="2100" height="1045" loading="lazy"><p><b>한상 상자</b>두 사람 구성을 테두리 상자 하나로 묶어 정식 목록 아래에서 바로 보이게 했습니다</p></div>
+</div>
+<div class="bar"><p>우리 가게도 이런 메뉴판이 필요하다면</p><a class="cta" href="https://design.shoponph.online/#inquiry">이 디자인으로 상담하기</a></div>
+</body>
+</html>

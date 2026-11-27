@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Atip Roof Repair · Free Roof Inspection</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@600&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#E6E9E7;--surface:#F4F5F3;--deep:#D7DCDA;--ink:#1D2A31;--muted:#4F5E66;--line:rgba(29,42,49,.16);--accent:#B0432A;--accent-d:#923521;--dark:#1D2A31}
+*{box-sizing:border-box;margin:0;padding:0}
+html{background:var(--bg);scroll-behavior:smooth}
+body{font-family:'Barlow',sans-serif;font-size:17px;line-height:1.6;color:var(--ink);background:var(--bg);-webkit-font-smoothing:antialiased;overflow-x:clip}
+h1,h2,h3{font-family:'Barlow Semi Condensed',sans-serif;font-weight:600;line-height:1.1;letter-spacing:-.01em}
+.in{max-width:1200px;margin:0 auto;padding:0 40px}
+.btn{white-space:nowrap;display:inline-flex;align-items:center;justify-content:center;gap:8px;height:44px;padding:0 20px;border-radius:6px;font:inherit;font-size:16px;font-weight:600;text-decoration:none;border:1.5px solid transparent;cursor:pointer;transition:background-color .2s,border-color .2s}
+.btn-p{background:var(--accent);color:#FBF3EF}
+.btn-p:hover{background:var(--accent-d)}
+.btn-s{border-color:rgba(29,42,49,.4);color:var(--ink);background:transparent}
+.btn-s:hover{background:var(--surface)}
+svg.i{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;flex:none}
+
+header{border-bottom:1px solid var(--line);background:var(--bg)}
+header .in{display:flex;align-items:center;justify-content:space-between;height:72px;gap:16px}
+.logo{display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--ink)}
+.logo svg{width:40px;height:28px}
+.logo b{font-family:'Barlow Semi Condensed',sans-serif;font-weight:600;font-size:24px;letter-spacing:-.01em}
+.hd-r{display:flex;align-items:center;gap:24px}
+.hd-r .tel{display:flex;align-items:center;gap:8px;font-weight:500;color:var(--muted);text-decoration:none}
+
+.hero{padding:56px 0 88px}
+.hero .in{display:grid;grid-template-columns:minmax(0,.92fr) minmax(0,1.08fr);gap:48px;align-items:center}
+.hero .loc{font-size:16px;font-weight:500;color:var(--muted);margin-bottom:16px}
+.hero h1{font-size:clamp(42px,5vw,68px)}
+.hero p.sub{font-size:19px;color:var(--muted);margin-top:24px;max-width:520px}
+.hero .acts{display:flex;gap:12px;flex-wrap:wrap;margin-top:32px}
+.hero .acts .btn{height:48px;padding:0 24px;font-size:17px}
+.deal{margin-top:32px;display:flex;gap:16px;align-items:flex-start;padding:16px 0 0;border-top:1px solid var(--line);max-width:520px}
+.deal b{font-family:'Barlow Semi Condensed',sans-serif;font-size:32px;line-height:1;color:var(--accent)}
+.deal span{font-size:16px;color:var(--muted)}
+.deal span strong{color:var(--ink);font-weight:600}
+.roof{position:relative;aspect-ratio:640/428}
+.roof svg{width:100%;height:100%;display:block}
+
+section{padding:96px 0}
+.sh{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:48px;align-items:end;margin-bottom:48px}
+.sh h2{font-size:clamp(32px,3.4vw,46px)}
+.sh p{color:var(--muted);max-width:500px}
+
+.checks{background:var(--surface)}
+.chk{display:grid;grid-template-columns:repeat(5,1fr);gap:0;border-top:2px solid var(--ink)}
+.chk div{padding:24px 24px 8px 0;margin-right:24px;border-right:1px solid var(--line)}
+.chk div:last-child{border-right:0;margin-right:0}
+.chk .n{display:inline-flex;align-items:center;justify-content:center;width:32px;height:32px;border-radius:50%;background:var(--ink);color:#F4F5F3;font-weight:600;font-size:15px;margin-bottom:16px}
+.chk h3{font-size:22px;margin-bottom:8px}
+.chk p{font-size:16px;color:var(--muted)}
+
+.prices .in{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:64px;align-items:start}
+.prices h2{font-size:clamp(32px,3.4vw,46px)}
+.prices .note{color:var(--muted);margin-top:16px;max-width:400px}
+.ptable{width:100%;border-collapse:collapse;font-variant-numeric:tabular-nums}
+.ptable th{text-align:left;font-size:14px;font-weight:500;color:var(--muted);padding:0 0 12px;border-bottom:2px solid var(--ink)}
+.ptable th:last-child,.ptable td:last-child{text-align:right}
+.ptable td{padding:18px 0;border-bottom:1px solid var(--line);vertical-align:baseline}
+.ptable td b{display:block;font-weight:600;font-size:18px}
+.ptable td span{font-size:15px;color:var(--muted)}
+.ptable td:last-child{font-weight:600;font-size:20px;white-space:nowrap;padding-left:24px}
+.ptable td small{display:block;font-size:14px;font-weight:400;color:var(--muted)}
+
+.steps{background:var(--dark);color:#E6ECEE}
+.steps .sh p{color:#AAB8BF}
+.st{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;counter-reset:s}
+.st div{border-top:1px solid rgba(230,236,238,.3);padding-top:24px}
+.st div:before{counter-increment:s;content:"Step " counter(s);display:block;font-size:15px;color:#AAB8BF;margin-bottom:12px}
+.st h3{font-size:26px;margin-bottom:8px}
+.st p{color:#C2CDD2;font-size:16px}
+
+.season .bar{display:grid;grid-template-columns:repeat(12,1fr);gap:4px;margin-top:8px}
+.season .m{height:88px;border-radius:6px;background:var(--deep);display:flex;align-items:flex-end;justify-content:center;padding-bottom:12px;font-size:14px;font-weight:500;color:var(--muted)}
+.season .m.dry{background:#F3DED5;border:1.5px solid #B0432A;color:var(--ink)}
+.season .m.wet{background:#9FB0B8;color:#1D2A31}
+.season .lg{display:flex;gap:12px 32px;flex-wrap:wrap;margin-top:20px;font-size:15px;color:var(--muted)}
+.season .lg span{display:flex;align-items:center;gap:8px}
+.season .lg i{width:14px;height:14px;border-radius:3px;display:inline-block;flex:none}
+
+.form-s{background:var(--surface)}
+.form-s .in{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);gap:64px;align-items:start}
+.form-s h2{font-size:clamp(32px,3.4vw,46px)}
+.form-s .lead{color:var(--muted);margin-top:16px}
+.form-s ul{list-style:none;margin-top:32px;border-top:1px solid var(--line)}
+.form-s li{display:flex;gap:12px;padding:14px 0;border-bottom:1px solid var(--line);font-size:16px}
+.form-s li svg{color:var(--accent);margin-top:3px}
+form{background:var(--bg);border:1px solid var(--line);border-radius:16px;padding:40px}
+.f{margin-top:20px}
+.f:first-child{margin-top:0}
+.two{margin-top:20px}.two:first-child{margin-top:0}.two .f{margin-top:0}
+
+.f label,.f legend{display:block;font-size:15px;font-weight:600;margin-bottom:8px}
+.f input[type=text],.f input[type=tel],.f select{width:100%;height:48px;border:1px solid rgba(29,42,49,.3);background:#FBFCFB;border-radius:6px;padding:0 14px;font:inherit;font-size:16px;color:var(--ink)}
+.f input:focus,.f select:focus{outline:2px solid var(--accent);outline-offset:1px}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+fieldset{border:0}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chips label{position:relative;margin:0;font-weight:400}
+.chips input{position:absolute;opacity:0}
+.chips span{display:inline-flex;align-items:center;min-height:44px;padding:0 16px;border:1px solid rgba(29,42,49,.3);border-radius:6px;font-size:15px;cursor:pointer;background:#FBFCFB;transition:background-color .2s,border-color .2s}
+.chips input:checked+span{background:var(--ink);border-color:var(--ink);color:#F4F5F3}
+.chips input:focus-visible+span{outline:2px solid var(--accent);outline-offset:2px}
+form .btn{width:100%;height:48px;margin-top:28px;font-size:17px}
+form .fine{font-size:14px;color:var(--muted);margin-top:12px;text-align:center}
+.done{display:none;margin-top:16px;padding:16px;border-radius:6px;background:var(--deep);font-size:16px}
+.done.on{display:block}
+
+.faq .in{max-width:880px}
+.faq h2{font-size:clamp(32px,3.4vw,46px);margin-bottom:32px}
+details{border-top:1px solid var(--line)}
+details:last-of-type{border-bottom:1px solid var(--line)}
+summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:20px 0;font-weight:600;font-size:19px;min-height:44px}
+summary::-webkit-details-marker{display:none}
+summary svg{transition:transform .2s}
+details[open] summary svg{transform:rotate(45deg)}
+details p{padding:0 0 24px;color:var(--muted);max-width:720px}
+
+footer{background:var(--dark);color:#AAB8BF;padding:40px 0;font-size:15px}
+footer .in{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+footer b{color:#E6ECEE;font-weight:600}
+
+.rv{opacity:0;transform:translateY(12px);transition:opacity .5s ease,transform .5s ease}
+.rv.on{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}*{transition:none!important}html{scroll-behavior:auto}}
+
+@media(max-width:1000px){
+ .hero .in,.prices .in,.form-s .in,.sh{grid-template-columns:1fr}
+ .chk{grid-template-columns:1fr 1fr;row-gap:24px}
+ .chk div{border-right:0;margin-right:0;border-bottom:1px solid var(--line);padding-bottom:20px}
+ .st{grid-template-columns:1fr}
+ .hd-r .tel{display:none}
+}
+@media(max-width:620px){
+ .in{padding:0 20px}
+ header .in{height:64px}
+ .logo b{font-size:20px;white-space:nowrap}
+ .logo svg{width:32px}
+ .hm{display:none}
+ .chk div{padding:20px 0 16px}
+ .chk .n{margin-bottom:12px}
+ .hd-r .btn{padding:0 14px;font-size:15px}
+ .hero{padding:40px 0 64px}
+ .hero p.sub{font-size:18px}
+ .hero .acts .btn{flex:1 1 100%}
+ section{padding:64px 0}
+ .sh{gap:16px;margin-bottom:32px}
+ .chk{grid-template-columns:1fr}
+ .season .bar{grid-template-columns:repeat(6,1fr)}
+ .season .m{height:64px}
+ .season .lg{flex-direction:column;gap:8px}
+ .stick{position:static!important}
+ form{padding:24px 20px}
+ .two{grid-template-columns:1fr;gap:20px}
+ .ptable td:last-child{font-size:18px;padding-left:12px}
+}
+</style>
+</head>
+<body>
+<header>
+ <div class="in">
+  <a class="logo" href="#top" aria-label="Atip Roof Repair home">
+   <svg viewBox="0 0 40 28" aria-hidden="true"><path d="M3 16 L20 4 L37 16" fill="none" stroke="#1D2A31" stroke-width="3" stroke-linejoin="round"/><path d="M9 20 h22" stroke="#B0432A" stroke-width="3"/><path d="M9 25 h22" stroke="#1D2A31" stroke-width="2"/></svg>
+   <b>Atip Roof Repair</b>
+  </a>
+  <div class="hd-r">
+   <a class="tel" href="#book"><svg class="i" viewBox="0 0 24 24"><path d="M5 4h4l2 5-3 2a11 11 0 0 0 5 5l2-3 5 2v4a2 2 0 0 1-2 2A17 17 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>0900 000 0000</a>
+   <a class="btn btn-p" href="#book"><span>Book<span class="hm"> free</span> inspection</span></a>
+  </div>
+ </div>
+</header>
+
+<main id="top">
+<section class="hero">
+ <div class="in">
+  <div class="rv">
+   <p class="loc">Roofing crew for houses in Quezon City and nearby</p>
+   <h1>Rusted GI sheets and drip spots, fixed while the weather is dry</h1>
+   <p class="sub">We climb up, check the five places roofs usually fail, and photograph every problem we find. You get a written quote before any work starts. The inspection costs nothing.</p>
+   <div class="acts"><a class="btn btn-p" href="#book">Book a free inspection</a><a class="btn btn-s" href="#prices">See repair prices</a></div>
+   <div class="deal"><b>10%</b><span><strong>Off any repair above ₱5,000</strong> when you book your inspection by January 31.</span></div>
+  </div>
+  <figure class="roof rv" aria-label="Diagram of a house with a corrugated GI roof showing five numbered check points: a rusted sheet, a loose screw, the ridge roll, a clogged gutter and a water stain on the ceiling inside">
+   <svg viewBox="0 62 640 428" aria-hidden="true">
+    <defs>
+     <linearGradient id="zinc" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#B9C3C7"/><stop offset=".55" stop-color="#9DA9AE"/><stop offset="1" stop-color="#8B979C"/></linearGradient>
+     <linearGradient id="rust" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#A88E7E"/><stop offset=".5" stop-color="#9C6A4E"/><stop offset="1" stop-color="#8A5034"/></linearGradient>
+     <linearGradient id="wall" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#DCD5C6"/><stop offset="1" stop-color="#CFC7B6"/></linearGradient>
+     <linearGradient id="gut" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#7D898F"/><stop offset=".5" stop-color="#A9B4B8"/><stop offset="1" stop-color="#6E7A80"/></linearGradient>
+     <linearGradient id="inside" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#EDE9E0"/><stop offset="1" stop-color="#D9D3C6"/></linearGradient>
+     <radialGradient id="stain" cx=".5" cy=".4" r=".5"><stop offset="0" stop-color="#8C6A42" stop-opacity=".7"/><stop offset=".7" stop-color="#A78358" stop-opacity=".35"/><stop offset="1" stop-color="#A78358" stop-opacity="0"/></radialGradient>
+     <clipPath id="rclip"><polygon points="380.0,172 420.0,172 440.0,300 392.0,300"/></clipPath>
+     <linearGradient id="ground" x1="0" x2="1"><stop offset="0" stop-color="#CBD1CE" stop-opacity="0"/><stop offset=".15" stop-color="#CBD1CE"/><stop offset=".85" stop-color="#CBD1CE"/><stop offset="1" stop-color="#CBD1CE" stop-opacity="0"/></linearGradient>
+     <radialGradient id="rustp" cx=".5" cy=".45" r=".55"><stop offset="0" stop-color="#8A3B18"/><stop offset=".55" stop-color="#B0602F" stop-opacity=".85"/><stop offset="1" stop-color="#C98448" stop-opacity="0"/></radialGradient>
+     <filter id="soft"><feGaussianBlur stdDeviation="6"/></filter>
+    </defs>
+    <ellipse cx="320" cy="476" rx="290" ry="14" fill="#1D2A31" opacity=".12" filter="url(#soft)"/>
+    <rect x="0" y="470" width="640" height="20" fill="url(#ground)"/>
+    <!-- wall -->
+    <rect x="86" y="316" width="468" height="156" fill="url(#wall)"/>
+    <path d="M86 340 H554 M86 372 H554 M86 404 H554 M86 436 H554" stroke="#C3BBA9" stroke-width="1"/>
+    <rect x="128" y="352" width="96" height="74" rx="2" fill="#5C6E77"/><path d="M176 352 V426 M128 389 H224" stroke="#DCD5C6" stroke-width="4"/>
+    <rect x="124" y="426" width="104" height="6" fill="#BDB4A1"/>
+    <!-- cutaway interior -->
+    <rect x="296" y="334" width="210" height="130" fill="url(#inside)"/>
+    <rect x="296" y="334" width="210" height="16" fill="#C9C1B0"/>
+    <ellipse cx="402" cy="356" rx="52" ry="18" fill="url(#stain)"/>
+    <path d="M402 352 C398 360 398 368 402 372 C406 368 406 360 402 352 Z" fill="#7FA0B3"/>
+    <path d="M402 384 C399 389 399 394 402 396 C405 394 405 389 402 384 Z" fill="#7FA0B3" opacity=".8"/>
+    <path d="M380 424 L386 462 H418 L424 424 Z" fill="#5D7685"/><ellipse cx="402" cy="424" rx="22" ry="5" fill="#45606F"/><ellipse cx="402" cy="425" rx="17" ry="3" fill="#7FA0B3"/>
+    <path d="M296 334 H506 V464 H296 Z" fill="none" stroke="#1D2A31" stroke-width="2" stroke-dasharray="6 5"/>
+    <!-- roof -->
+    <polygon points="100.0,172 140.0,172 104.0,300 56.0,300" fill="url(#zinc)"/>
+<path d="M103.3 172 L60.0 300" stroke="#F2F4F3" stroke-opacity=".55" stroke-width="1.6"/>
+<path d="M105.7 172 L62.8 300" stroke="#6F7C82" stroke-opacity=".45" stroke-width="1.6"/>
+<path d="M110.0 172 L68.0 300" stroke="#F2F4F3" stroke-opacity=".55" stroke-width="1.6"/>
+<path d="M112.3 172 L70.8 300" stroke="#6F7C82" stroke-opacity=".45" stroke-width="1.6"/>
+<path d="M116.7 172 L76.0 300" stroke="#F2F4F3" stroke-opacity=".55" stroke-width="1.6"/>
+<path d="M119.0 172 L78.8 300" stroke="#6F7C82" stroke-opacity=".45" stroke-width="1.6"/>
+<path d="M123.3 172 L84.0 300" stroke="#F2F4F3" stroke-opacity=".55" stroke-width="1.6"/>
+<path d="M125.7 172 L86.8 300" stroke="#6F7C82" stroke-opacity=".45" stroke-width="1.6"/>
+<path d="M130.0 172 L92.0 300" stroke="#F2F4F3" stroke-opacity=".55" stroke-width="1.6"/>
+<path d="M132.3 172 L94.8 300" stroke="#6F7C82" stroke-opacity=".45" stroke-width="1.6"/>
+<path d="M136.7 172 L100.0 300" stroke="#F2F4F3" stroke-opacity=".55" stroke-width="1.6"/>
+<path d="M139.0 172 L102.8 300" stroke="#6F7C82" stroke-opacity=".45" stroke-width="1.6"/>
+<path d="M140.0 172 L104.0 300" stroke="#5E6A70" stroke-width="1.2"/>
+<circle cx="100.8" cy="200" r="1.8" fill="#48535A"/>
+<circle cx="121.7" cy="200" r="1.8" fill="#48535A"/>
+<circle cx="84.4" cy="250" r="1.8" fill="#48535A"/>
+<circle cx="106.8" cy="250" r="1.8" fill="#48535A"/>
+<circle cx="70.6" cy="292" r="1.8" fill="#48535A"/>
+<circle cx="94.4" cy="292" r="1.8" fill="#48535A"/>
+<polygon points="140.0,172 180.0,172 152.0,300 104.0,300" fill="url(#zinc)"/>
+<path d="M143.3 172 L108.0 300" stroke="#F2F4F3" stroke-opacity=".55" stroke-width="1.6"/>
+<path d="M145.7 172 L110.8 300" stroke="#6F7C82" stroke-opacity=".45" stroke-width="1.6"/>
+<path d="M150.0 172 L116.0 300" stroke="#F2F4F3" stroke-opacity=".55" stroke-width="1.6"/>
+<path d="M152.3 172 L118.8 300" stroke="#6F7C82" stroke-opacity=".45" stroke-width="1.6"/>
+<path d="M156.7 172 L124.0 300" stroke="#F2F4F3" stroke-opacity=".55" stroke-width="1.6"/>
+<path d="M159.0 172 L126.8 300" stroke="#6F7C82" stroke-opacity=".45" stroke-width="1.6"/>
+<path d="M163.3 172 L132.0 300" stroke="#F2F4F3" stroke-opacity=".55" stroke-width="1.6"/>
+<path d="M165.7 172 L134.8 300" stroke="#6F7C82" stroke-opacity=".45" stroke-width="1.6"/>
+<path d="M170.0 172 L140.0 300" stroke="#F2F4F3" stroke-opacity=".55" stroke-width="1.6"/>
+<path d="M172.3 172 L142.8 300" stroke="#6F7C82" stroke-opacity=".45" stroke-width="1.6"/>
+<path d="M176.7 172 L148.0 300" stroke="#F2F4F3" stroke-opacity=".55" stroke-width="1.6"/>
+<path d="M179.0 172 L150.8 300" stroke="#6F7C82" stroke-opacity=".45" stroke-width="1.6"/>
+<path d="M180.0 172 L152.0 300" stroke="#5E6A70" stroke-width="1.2"/>
+<circle cx="142.6" cy="200" r="1.8" fill="#48535A"/>
+<circle cx="163.4" cy="200" r="1.8" fill="#48535A"/>
+<circle cx="129.3" cy="250" r="1.8" fill="#48535A"/>
+<circle cx="151.7" cy="250" r="1.8" fill="#48535A"/>
+<circle cx="118.1" cy="292" r="1.8" fill="#48535A"/>
+<circle cx="141.9" cy="292" r="1.8" fill="#48535A"/>
+<polygon points="180.0,172 220.0,172 200.0,300 152.0,300" fill="url(#zinc)"/>
+<path d="M183.3 172 L156.0 300" stroke="#F2F4F3" stroke-opacity=".55" stroke-width="1.6"/>
+<path d="M185.7 172 L158.8 300" stroke="#6F7C82" stroke-opacity=".45" stroke-width="1.6"/>
+<path d="M190.0 172 L164.0 300" stroke="#F2F4F3" stroke-opacity=".55" stroke-width="1.6"/>
+<path d="M192.3 172 L166.8 300" stroke="#6F7C82" stroke-opacity=".45" stroke-width="1.6"/>
+<path d="M196.7 172 L172.0 300" stroke="#F2F4F3" stroke-opacity=".55" stroke-width="1.6"/>
+<path d="M199.0 172 L174.8 300" stroke="#6F7C82" stroke-opacity=".45" stroke-width="1.6"/>
+<path d="M203.3 172 L180.0 300" stroke="#F2F4F3" stroke-opacity=".55" stroke-width="1.6"/>
+<path d="M205.7 172 L182.8 300" stroke="#6F7C82" stroke-opacity=".45" stroke-width="1.6"/>
+<path d="M210.0 172 L188.0 300" stroke="#F2F4F3" stroke-opacity=".55" stroke-width="1.6"/>
+<path d="M212.3 172 L190.8 300" stroke="#6F7C82" stroke-opacity=".45" stroke-width="1.6"/>
+<path d="M216.7 172 L196.0 300" stroke="#F2F4F3" stroke-opacity=".55" stroke-width="1.6"/>
+<path d="M219.0 172 L198.8 300" stroke="#6F7C82" stroke-opacity=".45" stroke-width="1.6"/>
+<path d="M220.0 172 L200.0 300" stroke="#5E6A70" stroke-width="1.2"/>
+<circle cx="184.3" cy="200" r="1.8" fill="#48535A"/>
+<circle cx="205.2" cy="200" r="1.8" fill="#48535A"/>
+<circle cx="174.2" cy="250" r="1.8" fill="#48535A"/>
+<circle cx="196.6" cy="250" r="1.8" fill="#48535A"/>
+<circle cx="165.6" cy="292" r="1.8" fill="#48535A"/>
+<circle cx="189.4" cy="292" r="1.8" fill="#48535A"/>
+<polygon points="220.0,172 260.0,172 248.0,300 200.0,300" fill="url(#zinc)"/>
+<path d="M223.3 172 L204.0 300" stroke="#F2F4F3" stroke-opacity=".55" stroke-width="1.6"/>
+<path d="M225.7 172 L206.8 300" stroke="#6F7C82" stroke-opacity=".45" stroke-width="1.6"/>
+<path d="M230.0 172 L212.0 300" stroke="#F2F4F3" stroke-opacity=".55" stroke-width="1.6"/>
+<path d="M232.3 172 L214.8 300" stroke="#6F7C82" stroke-opacity=".45" stroke-width="1.6"/>
+<path d="M236.7 172 L220.0 300" stroke="#F2F4F3" stroke-opacity=".55" stroke-width="1.6"/>
+<path d="M239.0 172 L222.8 300" stroke="#6F7C82" stroke-opacity=".45" stroke-width="1.6"/>
+<path d="M243.3 172 L228.0 300" stroke="#F2F4F3" stroke-opacity=".55" stroke-width="1.6"/>
+<path d="M245.7 172 L230.8 300" stroke="#6F7C82" stroke-opacity=".45" stroke-width="1.6"/>
+<path d="M250.0 172 L236.0 300" stroke="#F2F4F3" stroke-opacity=".55" stroke-width="1.6"/>
+<path d="M252.3 172 L238.8 300" stroke="#6F7C82" stroke-opacity=".45" stroke-width="1.6"/>
+<path d="M256.7 172 L244.0 300" stroke="#F2F4F3" stroke-opacity=".55" stroke-width="1.6"/>
+<path d="M259.0 172 L246.8 300" stroke="#6F7C82" stroke-opacity=".45" stroke-width="1.6"/>
+<path d="M260.0 172 L248.0 300" stroke="#5E6A70" stroke-width="1.2"/>
+<circle cx="226.1" cy="200" r="1.8" fill="#48535A"/>
+<circle cx="246.9" cy="200" r="1.8" fill="#48535A"/>
+<circle cx="219.0" cy="250" r="1.8" fill="#48535A"/>
+<circle cx="241.5" cy="250" r="1.8" fill="#48535A"/>
+<circle cx="213.1" cy="292" r="1.8" fill="#48535A"/>
+<circle cx="236.9" cy="292" r="1.8" fill="#48535A"/>
+<polygon points="260.0,172 300.0,172 296.0,300 248.0,300" fill="url(#zinc)"/>
+<path d="M263.3 172 L252.0 300" stroke="#F2F4F3" stroke-opacity=".55" stroke-width="1.6"/>
+<path d="M265.7 172 L254.8 300" stroke="#6F7C82" stroke-opacity=".45" stroke-width="1.6"/>
+<path d="M270.0 172 L260.0 300" stroke="#F2F4F3" stroke-opacity=".55" stroke-width="1.6"/>
+<path d="M272.3 172 L262.8 300" stroke="#6F7C82" stroke-opacity=".45" stroke-width="1.6"/>
+<path d="M276.7 172 L268.0 300" stroke="#F2F4F3" stroke-opacity=".55" stroke-width="1.6"/>
+<path d="M279.0 172 L270.8 300" stroke="#6F7C82" stroke-opacity=".45" stroke-width="1.6"/>
+<path d="M283.3 172 L276.0 300" stroke="#F2F4F3" stroke-opacity=".55" stroke-width="1.6"/>
+<path d="M285.7 172 L278.8 300" stroke="#6F7C82" stroke-opacity=".45" stroke-width="1.6"/>
+<path d="M290.0 172 L284.0 300" stroke="#F2F4F3" stroke-opacity=".55" stroke-width="1.6"/>
+<path d="M292.3 172 L286.8 300" stroke="#6F7C82" stroke-opacity=".45" stroke-width="1.6"/>
+<path d="M296.7 172 L292.0 300" stroke="#F2F4F3" stroke-opacity=".55" stroke-width="1.6"/>
+<path d="M299.0 172 L294.8 300" stroke="#6F7C82" stroke-opacity=".45" stroke-width="1.6"/>
+<path d="M300.0 172 L296.0 300" stroke="#5E6A70" stroke-width="1.2"/>
+<circle cx="267.8" cy="200" r="1.8" fill="#48535A"/>
+<circle cx="288.7" cy="200" r="1.8" fill="#48535A"/>
+<circle cx="263.9" cy="250" r="1.8" fill="#48535A"/>
+<circle cx="286.3" cy="250" r="1.8" fill="#48535A"/>
+<circle cx="260.6" cy="292" r="1.8" fill="#48535A"/>
+<circle cx="284.4" cy="292" r="1.8" fill="#48535A"/>
+<polygon points="300.0,172 340.0,172 344.0,300 296.0,300" fill="url(#zinc)"/>
+<path d="M303.3 172 L300.0 300" stroke="#F2F4F3" stroke-opacity=".55" stroke-width="1.6"/>
+<path d="M305.7 172 L302.8 300" stroke="#6F7C82" stroke-opacity=".45" stroke-width="1.6"/>
+<path d="M310.0 172 L308.0 300" stroke="#F2F4F3" stroke-opacity=".55" stroke-width="1.6"/>
+<path d="M312.3 172 L310.8 300" stroke="#6F7C82" stroke-opacity=".45" stroke-width="1.6"/>
+<path d="M316.7 172 L316.0 300" stroke="#F2F4F3" stroke-opacity=".55" stroke-width="1.6"/>
+<path d="M319.0 172 L318.8 300" stroke="#6F7C82" stroke-opacity=".45" stroke-width="1.6"/>
+<path d="M323.3 172 L324.0 300" stroke="#F2F4F3" stroke-opacity=".55" stroke-width="1.6"/>
+<path d="M325.7 172 L326.8 300" stroke="#6F7C82" stroke-opacity=".45" stroke-width="1.6"/>
+<path d="M330.0 172 L332.0 300" stroke="#F2F4F3" stroke-opacity=".55" stroke-width="1.6"/>
+<path d="M332.3 172 L334.8 300" stroke="#6F7C82" stroke-opacity=".45" stroke-width="1.6"/>
+<path d="M336.7 172 L340.0 300" stroke="#F2F4F3" stroke-opacity=".55" stroke-width="1.6"/>
+<path d="M339.0 172 L342.8 300" stroke="#6F7C82" stroke-opacity=".45" stroke-width="1.6"/>
+<path d="M340.0 172 L344.0 300" stroke="#5E6A70" stroke-width="1.2"/>
+<circle cx="309.6" cy="200" r="1.8" fill="#48535A"/>
+<circle cx="330.4" cy="200" r="1.8" fill="#48535A"/>
+<circle cx="308.8" cy="250" r="1.8" fill="#48535A"/>
+<circle cx="331.2" cy="250" r="1.8" fill="#48535A"/>
+<circle cx="308.1" cy="292" r="1.8" fill="#48535A"/>
+<circle cx="331.9" cy="292" r="1.8" fill="#48535A"/>
+<polygon points="340.0,172 380.0,172 392.0,300 344.0,300" fill="url(#zinc)"/>
+<path d="M343.3 172 L348.0 300" stroke="#F2F4F3" stroke-opacity=".55" stroke-width="1.6"/>
+<path d="M345.7 172 L350.8 300" stroke="#6F7C82" stroke-opacity=".45" stroke-width="1.6"/>
+<path d="M350.0 172 L356.0 300" stroke="#F2F4F3" stroke-opacity=".55" stroke-width="1.6"/>
+<path d="M352.3 172 L358.8 300" stroke="#6F7C82" stroke-opacity=".45" stroke-width="1.6"/>
+<path d="M356.7 172 L364.0 300" stroke="#F2F4F3" stroke-opacity=".55" stroke-width="1.6"/>
+<path d="M359.0 172 L366.8 300" stroke="#6F7C82" stroke-opacity=".45" stroke-width="1.6"/>
+<path d="M363.3 172 L372.0 300" stroke="#F2F4F3" stroke-opacity=".55" stroke-width="1.6"/>
+<path d="M365.7 172 L374.8 300" stroke="#6F7C82" stroke-opacity=".45" stroke-width="1.6"/>
+<path d="M370.0 172 L380.0 300" stroke="#F2F4F3" stroke-opacity=".55" stroke-width="1.6"/>
+<path d="M372.3 172 L382.8 300" stroke="#6F7C82" stroke-opacity=".45" stroke-width="1.6"/>
+<path d="M376.7 172 L388.0 300" stroke="#F2F4F3" stroke-opacity=".55" stroke-width="1.6"/>
+<path d="M379.0 172 L390.8 300" stroke="#6F7C82" stroke-opacity=".45" stroke-width="1.6"/>
+<path d="M380.0 172 L392.0 300" stroke="#5E6A70" stroke-width="1.2"/>
+<circle cx="351.3" cy="200" r="1.8" fill="#48535A"/>
+<circle cx="372.2" cy="200" r="1.8" fill="#48535A"/>
+<circle cx="353.7" cy="250" r="1.8" fill="#48535A"/>
+<circle cx="376.1" cy="250" r="1.8" fill="#48535A"/>
+<circle cx="355.6" cy="292" r="1.8" fill="#48535A"/>
+<circle cx="379.4" cy="292" r="1.8" fill="#48535A"/>
+<polygon points="380.0,172 420.0,172 440.0,300 392.0,300" fill="url(#zinc)"/>
+<path d="M383.3 172 L396.0 300" stroke="#F2F4F3" stroke-opacity=".55" stroke-width="1.6"/>
+<path d="M385.7 172 L398.8 300" stroke="#6F7C82" stroke-opacity=".45" stroke-width="1.6"/>
+<path d="M390.0 172 L404.0 300" stroke="#F2F4F3" stroke-opacity=".55" stroke-width="1.6"/>
+<path d="M392.3 172 L406.8 300" stroke="#6F7C82" stroke-opacity=".45" stroke-width="1.6"/>
+<path d="M396.7 172 L412.0 300" stroke="#F2F4F3" stroke-opacity=".55" stroke-width="1.6"/>
+<path d="M399.0 172 L414.8 300" stroke="#6F7C82" stroke-opacity=".45" stroke-width="1.6"/>
+<path d="M403.3 172 L420.0 300" stroke="#F2F4F3" stroke-opacity=".55" stroke-width="1.6"/>
+<path d="M405.7 172 L422.8 300" stroke="#6F7C82" stroke-opacity=".45" stroke-width="1.6"/>
+<path d="M410.0 172 L428.0 300" stroke="#F2F4F3" stroke-opacity=".55" stroke-width="1.6"/>
+<path d="M412.3 172 L430.8 300" stroke="#6F7C82" stroke-opacity=".45" stroke-width="1.6"/>
+<path d="M416.7 172 L436.0 300" stroke="#F2F4F3" stroke-opacity=".55" stroke-width="1.6"/>
+<path d="M419.0 172 L438.8 300" stroke="#6F7C82" stroke-opacity=".45" stroke-width="1.6"/>
+<path d="M420.0 172 L440.0 300" stroke="#5E6A70" stroke-width="1.2"/>
+<circle cx="393.1" cy="200" r="1.8" fill="#48535A"/>
+<circle cx="413.9" cy="200" r="1.8" fill="#48535A"/>
+<circle cx="398.5" cy="250" r="1.8" fill="#48535A"/>
+<circle cx="421.0" cy="250" r="1.8" fill="#48535A"/>
+<circle cx="403.1" cy="292" r="1.8" fill="#48535A"/>
+<circle cx="426.9" cy="292" r="1.8" fill="#48535A"/>
+<polygon points="420.0,172 460.0,172 488.0,300 440.0,300" fill="url(#zinc)"/>
+<path d="M423.3 172 L444.0 300" stroke="#F2F4F3" stroke-opacity=".55" stroke-width="1.6"/>
+<path d="M425.7 172 L446.8 300" stroke="#6F7C82" stroke-opacity=".45" stroke-width="1.6"/>
+<path d="M430.0 172 L452.0 300" stroke="#F2F4F3" stroke-opacity=".55" stroke-width="1.6"/>
+<path d="M432.3 172 L454.8 300" stroke="#6F7C82" stroke-opacity=".45" stroke-width="1.6"/>
+<path d="M436.7 172 L460.0 300" stroke="#F2F4F3" stroke-opacity=".55" stroke-width="1.6"/>
+<path d="M439.0 172 L462.8 300" stroke="#6F7C82" stroke-opacity=".45" stroke-width="1.6"/>
+<path d="M443.3 172 L468.0 300" stroke="#F2F4F3" stroke-opacity=".55" stroke-width="1.6"/>
+<path d="M445.7 172 L470.8 300" stroke="#6F7C82" stroke-opacity=".45" stroke-width="1.6"/>
+<path d="M450.0 172 L476.0 300" stroke="#F2F4F3" stroke-opacity=".55" stroke-width="1.6"/>
+<path d="M452.3 172 L478.8 300" stroke="#6F7C82" stroke-opacity=".45" stroke-width="1.6"/>
+<path d="M456.7 172 L484.0 300" stroke="#F2F4F3" stroke-opacity=".55" stroke-width="1.6"/>
+<path d="M459.0 172 L486.8 300" stroke="#6F7C82" stroke-opacity=".45" stroke-width="1.6"/>
+<path d="M460.0 172 L488.0 300" stroke="#5E6A70" stroke-width="1.2"/>
+<circle cx="434.8" cy="200" r="1.8" fill="#48535A"/>
+<circle cx="455.7" cy="200" r="1.8" fill="#48535A"/>
+<circle cx="443.4" cy="250" r="1.8" fill="#48535A"/>
+<circle cx="465.8" cy="250" r="1.8" fill="#48535A"/>
+<circle cx="450.6" cy="292" r="1.8" fill="#48535A"/>
+<circle cx="474.4" cy="292" r="1.8" fill="#48535A"/>
+<polygon points="460.0,172 500.0,172 536.0,300 488.0,300" fill="url(#zinc)"/>
+<path d="M463.3 172 L492.0 300" stroke="#F2F4F3" stroke-opacity=".55" stroke-width="1.6"/>
+<path d="M465.7 172 L494.8 300" stroke="#6F7C82" stroke-opacity=".45" stroke-width="1.6"/>
+<path d="M470.0 172 L500.0 300" stroke="#F2F4F3" stroke-opacity=".55" stroke-width="1.6"/>
+<path d="M472.3 172 L502.8 300" stroke="#6F7C82" stroke-opacity=".45" stroke-width="1.6"/>
+<path d="M476.7 172 L508.0 300" stroke="#F2F4F3" stroke-opacity=".55" stroke-width="1.6"/>
+<path d="M479.0 172 L510.8 300" stroke="#6F7C82" stroke-opacity=".45" stroke-width="1.6"/>
+<path d="M483.3 172 L516.0 300" stroke="#F2F4F3" stroke-opacity=".55" stroke-width="1.6"/>
+<path d="M485.7 172 L518.8 300" stroke="#6F7C82" stroke-opacity=".45" stroke-width="1.6"/>
+<path d="M490.0 172 L524.0 300" stroke="#F2F4F3" stroke-opacity=".55" stroke-width="1.6"/>
+<path d="M492.3 172 L526.8 300" stroke="#6F7C82" stroke-opacity=".45" stroke-width="1.6"/>
+<path d="M496.7 172 L532.0 300" stroke="#F2F4F3" stroke-opacity=".55" stroke-width="1.6"/>
+<path d="M499.0 172 L534.8 300" stroke="#6F7C82" stroke-opacity=".45" stroke-width="1.6"/>
+<path d="M500.0 172 L536.0 300" stroke="#5E6A70" stroke-width="1.2"/>
+<circle cx="476.6" cy="200" r="1.8" fill="#48535A"/>
+<circle cx="497.4" cy="200" r="1.8" fill="#48535A"/>
+<circle cx="488.3" cy="250" r="1.8" fill="#48535A"/>
+<circle cx="510.7" cy="250" r="1.8" fill="#48535A"/>
+<circle cx="498.1" cy="292" r="1.8" fill="#48535A"/>
+<circle cx="521.9" cy="292" r="1.8" fill="#48535A"/>
+<polygon points="500.0,172 540.0,172 584.0,300 536.0,300" fill="url(#zinc)"/>
+<path d="M503.3 172 L540.0 300" stroke="#F2F4F3" stroke-opacity=".55" stroke-width="1.6"/>
+<path d="M505.7 172 L542.8 300" stroke="#6F7C82" stroke-opacity=".45" stroke-width="1.6"/>
+<path d="M510.0 172 L548.0 300" stroke="#F2F4F3" stroke-opacity=".55" stroke-width="1.6"/>
+<path d="M512.3 172 L550.8 300" stroke="#6F7C82" stroke-opacity=".45" stroke-width="1.6"/>
+<path d="M516.7 172 L556.0 300" stroke="#F2F4F3" stroke-opacity=".55" stroke-width="1.6"/>
+<path d="M519.0 172 L558.8 300" stroke="#6F7C82" stroke-opacity=".45" stroke-width="1.6"/>
+<path d="M523.3 172 L564.0 300" stroke="#F2F4F3" stroke-opacity=".55" stroke-width="1.6"/>
+<path d="M525.7 172 L566.8 300" stroke="#6F7C82" stroke-opacity=".45" stroke-width="1.6"/>
+<path d="M530.0 172 L572.0 300" stroke="#F2F4F3" stroke-opacity=".55" stroke-width="1.6"/>
+<path d="M532.3 172 L574.8 300" stroke="#6F7C82" stroke-opacity=".45" stroke-width="1.6"/>
+<path d="M536.7 172 L580.0 300" stroke="#F2F4F3" stroke-opacity=".55" stroke-width="1.6"/>
+<path d="M539.0 172 L582.8 300" stroke="#6F7C82" stroke-opacity=".45" stroke-width="1.6"/>
+<path d="M540.0 172 L584.0 300" stroke="#5E6A70" stroke-width="1.2"/>
+<circle cx="518.3" cy="200" r="1.8" fill="#48535A"/>
+<circle cx="539.2" cy="200" r="1.8" fill="#48535A"/>
+<circle cx="533.2" cy="250" r="1.8" fill="#48535A"/>
+<circle cx="555.6" cy="250" r="1.8" fill="#48535A"/>
+<circle cx="545.6" cy="292" r="1.8" fill="#48535A"/>
+<circle cx="569.4" cy="292" r="1.8" fill="#48535A"/>
+<g clip-path="url(#rclip)" style="mix-blend-mode:multiply">
+     <path d="M384 206 C392 196 404 200 410 192 C418 186 426 196 430 206 C434 222 428 236 432 252 C436 266 426 274 420 268 C414 262 408 276 400 270 C392 262 396 248 390 238 C384 228 378 218 384 206 Z" fill="url(#rustp)"/>
+     <path d="M396 250 L402 300 M410 258 L416 300 M422 244 L430 300 M388 236 L392 280" stroke="#9A4A22" stroke-width="3" opacity=".55" stroke-linecap="round"/>
+     <path d="M404 268 L408 300 M416 276 L419 300" stroke="#B5642E" stroke-width="2" opacity=".5"/>
+     <ellipse cx="420" cy="196" rx="6" ry="4" fill="#C0753A" opacity=".7"/>
+    </g>
+    <g fill="#2A2420"><circle cx="402" cy="236" r="2.2"/><circle cx="412" cy="226" r="1.6"/><circle cx="418" cy="246" r="2"/><circle cx="406" cy="252" r="1.4"/></g>
+
+
+
+    <!-- ridge roll -->
+    <path d="M94 164 H546 L540 180 H100 Z" fill="#6F7B81"/>
+    <path d="M96 166 H544" stroke="#C7D0D3" stroke-width="2"/>
+    <path d="M300 164 L312 164 L310 180 L298 180 Z" fill="#1D2A31" opacity=".55"/>
+    <!-- loose screw lifted -->
+    <g transform="translate(241.5 250)"><circle r="7" fill="#F4F5F3" stroke="#1D2A31" stroke-width="1.5"/><circle r="3" fill="#48535A"/><path d="M-10 -9 L10 9" stroke="#1D2A31" stroke-width="1.2" opacity=".6"/></g>
+    <!-- gutter -->
+    <path d="M50 300 H590 L586 318 H54 Z" fill="url(#gut)"/>
+    <path d="M50 300 H590" stroke="#C7D0D3" stroke-width="2"/>
+    <g fill="#7A6A3C"><path d="M150 300 C156 290 166 290 170 298 Z"/><path d="M164 300 C172 292 182 294 184 300 Z" fill="#8E7C45"/><path d="M178 300 C186 288 198 290 200 299 Z"/><path d="M206 300 C210 294 218 294 220 300 Z" fill="#6B5C33"/></g>
+    <rect x="560" y="316" width="16" height="150" fill="url(#gut)"/>
+    <path d="M556 462 H586 L590 472 H552 Z" fill="#6E7A80"/>
+    <!-- ladder -->
+    <g stroke="#7F5F3A" stroke-width="6" stroke-linecap="round"><path d="M22 470 L84 296"/><path d="M52 470 L114 296"/></g>
+    <g stroke="#9C7A50" stroke-width="5" stroke-linecap="round"><path d="M31 444 L61 444"/><path d="M40 418 L70 418"/><path d="M49 392 L79 392"/><path d="M58 366 L88 366"/><path d="M67 340 L97 340"/><path d="M76 314 L106 314"/></g>
+    <!-- markers -->
+    <g font-family="Barlow" font-weight="600" font-size="22" text-anchor="middle">
+     <g><path d="M412 230 L450 154" stroke="#1D2A31" stroke-width="1.5"/><circle cx="456" cy="136" r="21" fill="#B0432A"/><text x="456" y="144.0" fill="#FBF3EF">1</text></g>
+     <g><path d="M241.5 243 L230 150" stroke="#1D2A31" stroke-width="1.5"/><circle cx="226" cy="136" r="21" fill="#B0432A"/><text x="226" y="144.0" fill="#FBF3EF">2</text></g>
+     <g><path d="M320 166 L340 110" stroke="#1D2A31" stroke-width="1.5"/><circle cx="344" cy="96" r="21" fill="#B0432A"/><text x="344" y="104.0" fill="#FBF3EF">3</text></g>
+     <g><path d="M200 316 L252 352" stroke="#1D2A31" stroke-width="1.5"/><circle cx="264" cy="360" r="21" fill="#B0432A"/><text x="264" y="368.0" fill="#FBF3EF">4</text></g>
+     <g><path d="M446 360 L472 376" stroke="#1D2A31" stroke-width="1.5"/><circle cx="484" cy="386" r="21" fill="#B0432A"/><text x="484" y="394.0" fill="#FBF3EF">5</text></g>
+    </g>
+   </svg>
+  </figure>
+ </div>
+</section>
+
+<section class="checks" id="checks">
+ <div class="in">
+  <div class="sh rv"><h2>The five things we check on every roof</h2><p>The numbers match the drawing above. Each one gets a photo in the report we send to your phone after the visit.</p></div>
+  <div class="chk rv">
+   <div><span class="n">1</span><h3>Rusted sheets</h3><p>Brown patches, pinholes and thinning along the overlaps of your GI sheets.</p></div>
+   <div><span class="n">2</span><h3>Loose screws</h3><p>Lifted roof screws and cracked rubber washers where rain gets pushed in by wind.</p></div>
+   <div><span class="n">3</span><h3>Ridge roll</h3><p>Gaps and missing sealant along the top where both sides of the roof meet.</p></div>
+   <div><span class="n">4</span><h3>Gutters</h3><p>Leaves, mud and sagging brackets that make water spill back under the sheets.</p></div>
+   <div><span class="n">5</span><h3>Ceiling and trusses</h3><p>Water stains on the ceiling board and soft or wet wood in the roof frame.</p></div>
+  </div>
+ </div>
+</section>
+
+<section class="prices" id="prices">
+ <div class="in">
+  <div class="rv stick" style="position:sticky;top:96px">
+   <h2>Repair prices, labor included</h2>
+   <p class="note">These are our usual rates for a one-storey house. The final amount is on the written quote you get after the inspection, and it does not change once you approve it.</p>
+   <p class="note">Two-storey houses: add ₱500 per job for safety rigging. Materials are bought only after you approve the quote.</p>
+  </div>
+  <table class="ptable rv">
+   <thead><tr><th>Work</th><th>Price</th></tr></thead>
+   <tbody>
+    <tr><td><b>Leak sealing</b><span>Per leak spot, with roof sealant and patch</span></td><td>₱1,800</td></tr>
+    <tr><td><b>GI sheet replacement</b><span>Gauge 26, per sheet, removed and installed</span></td><td>₱1,150<small>per sheet</small></td></tr>
+    <tr><td><b>Screw and washer change</b><span>New roof screws with rubber washers</span></td><td>₱2,400<small>per 100 pcs</small></td></tr>
+    <tr><td><b>Gutter cleaning</b><span>Up to 15 meters, downspout flushed</span></td><td>₱1,500</td></tr>
+    <tr><td><b>Anti-rust repaint</b><span>Wire brushed, primed in red oxide, top coat</span></td><td>₱320<small>per m²</small></td></tr>
+   </tbody>
+  </table>
+ </div>
+</section>
+
+<section class="steps">
+ <div class="in">
+  <div class="sh rv"><h2>How the free inspection works</h2><p>About 45 minutes on site for a typical house. Someone needs to be home to open the ceiling access.</p></div>
+  <div class="st rv">
+   <div><h3>Pick a morning slot</h3><p>Send the form below or text us. We visit Monday to Saturday, 8 AM to 11 AM, before the roof gets too hot to walk on.</p></div>
+   <div><h3>We go up and take photos</h3><p>Two crew members check all five points with a ladder and harness, then look at the ceiling from inside.</p></div>
+   <div><h3>You get a written quote</h3><p>Photos and a line-by-line price list arrive by text the same day. If you approve, we schedule the repair within the week.</p></div>
+  </div>
+ </div>
+</section>
+
+<section class="season">
+ <div class="in">
+  <div class="sh rv"><h2>Why we ask you to book now</h2><p>Sealant and paint need dry days to cure. From June the rains make roof work slow and slippery, and most crews are booked with emergency leaks.</p></div>
+  <div class="rv">
+   <div class="bar" aria-label="Months of the year: December to April are best for repairs, June to October are rainy">
+    <div class="m dry">Jan</div><div class="m dry">Feb</div><div class="m dry">Mar</div><div class="m dry">Apr</div><div class="m">May</div><div class="m wet">Jun</div><div class="m wet">Jul</div><div class="m wet">Aug</div><div class="m wet">Sep</div><div class="m wet">Oct</div><div class="m">Nov</div><div class="m dry">Dec</div>
+   </div>
+   <div class="lg"><span><i style="background:#F3DED5;border:1.5px solid #B0432A"></i>Best months for roof repair</span><span><i style="background:#9FB0B8"></i>Rainy months</span><span><i style="background:#D7DCDA;border:1.5px solid #AEB8BC"></i>In between</span></div>
+  </div>
+ </div>
+</section>
+
+<section class="form-s" id="book">
+ <div class="in">
+  <div class="rv stick" style="position:sticky;top:96px">
+   <h2>Book your free roof inspection</h2>
+   <p class="lead">We reply by text within the day to confirm your slot.</p>
+   <ul>
+    <li><svg class="i" viewBox="0 0 24 24"><path d="M5 12l5 5 9-10"/></svg>No charge for the visit, even if you decide not to repair</li>
+    <li><svg class="i" viewBox="0 0 24 24"><path d="M5 12l5 5 9-10"/></svg>Photo report and written quote the same day</li>
+    <li><svg class="i" viewBox="0 0 24 24"><path d="M5 12l5 5 9-10"/></svg>10% off repairs above ₱5,000 when booked by January 31</li>
+   </ul>
+  </div>
+  <form id="bk" class="rv" novalidate>
+   <div class="two">
+    <div class="f"><label for="nm">Your name</label><input type="text" id="nm" autocomplete="name" placeholder="Juan Dela Cruz"></div>
+    <div class="f"><label for="mb">Mobile number</label><input type="tel" id="mb" autocomplete="tel" placeholder="0900 000 0000"></div>
+   </div>
+   <div class="two">
+    <div class="f"><label for="ar">Barangay and city</label><input type="text" id="ar" placeholder="Brgy. Example, Quezon City"></div>
+    <div class="f"><label for="rt">Roof type</label><select id="rt"><option>Corrugated GI sheet</option><option>Long span rib type</option><option>Concrete or clay tile</option><option>Not sure</option></select></div>
+   </div>
+   <fieldset class="f"><legend>What have you noticed?</legend>
+    <div class="chips">
+     <label><input type="checkbox" checked><span>Drips when it rains</span></label>
+     <label><input type="checkbox"><span>Ceiling stains</span></label>
+     <label><input type="checkbox"><span>Rust on sheets</span></label>
+     <label><input type="checkbox"><span>Overflowing gutter</span></label>
+     <label><input type="checkbox"><span>Just a check-up</span></label>
+    </div>
+   </fieldset>
+   <fieldset class="f"><legend>Preferred day</legend>
+    <div class="chips">
+     <label><input type="radio" name="d" checked><span>Weekday morning</span></label>
+     <label><input type="radio" name="d"><span>Saturday morning</span></label>
+    </div>
+   </fieldset>
+   <button class="btn btn-p" type="submit">Request my inspection</button>
+   <p class="fine">We only use your number to confirm this visit.</p>
+   <div class="done" id="done" role="status"></div>
+  </form>
+ </div>
+</section>
+
+<section class="faq">
+ <div class="in">
+  <h2 class="rv">Questions before you book</h2>
+  <details class="rv"><summary>Is the inspection really free?<svg class="i" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></summary><p>Yes. There is no visit fee within Quezon City. For areas outside QC we may add a transport fee, and we tell you the amount before we confirm the slot.</p></details>
+  <details class="rv"><summary>Do you work on two-storey houses?<svg class="i" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></summary><p>Yes. Two-storey roofs need extra safety rigging, which adds ₱500 per job. The inspection is still free.</p></details>
+  <details class="rv"><summary>Can you replace only a few sheets?<svg class="i" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></summary><p>Yes, as long as the frame underneath is sound. If the purlins are rotten we show you the photos and price the frame repair separately.</p></details>
+  <details class="rv"><summary>How do I pay?<svg class="i" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></summary><p>Half when materials are delivered and half when the work is done, in cash or bank transfer. You get a receipt for both.</p></details>
+ </div>
+</section>
+</main>
+
+<footer><div class="in"><span><b>Atip Roof Repair</b> · Leak repair, GI sheets and gutters</span><span>Text 0900 000 0000 · Messenger: example</span></div></footer>
+
+<script>
+(function(){
+ var f=document.getElementById('bk'),d=document.getElementById('done');
+ f.addEventListener('submit',function(e){e.preventDefault();var n=document.getElementById('nm').value.trim();
+  d.textContent=(n?'Thanks, '+n+'. ':'Thanks. ')+'We got your request and will text you to confirm the inspection slot.';d.classList.add('on');});
+ var els=document.querySelectorAll('.rv');
+ if('IntersectionObserver' in window){var io=new IntersectionObserver(function(es){es.forEach(function(x){if(x.isIntersecting){x.target.classList.add('on');io.unobserve(x.target);}})},{threshold:.1});els.forEach(function(x){io.observe(x)});}
+ else els.forEach(function(x){x.classList.add('on')});
+})();
+</script>
+</body>
+</html>

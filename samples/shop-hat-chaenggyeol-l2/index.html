@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>챙결 모자공방 · 펠트 모자 맞춤과 수선</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Hahmlet:wght@500;600&family=IBM+Plex+Sans+KR:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#ECE6DB;--surface:#F5F1EA;--deep:#E1D9CB;--ink:#2A2521;--muted:#665C53;--line:rgba(42,37,33,.16);
+  --accent:#7C2D2A;--accent-ink:#F7EFE6;--felt:#5A4636;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{background:var(--bg);scroll-behavior:smooth}
+body{font-family:'IBM Plex Sans KR',sans-serif;font-size:16px;line-height:1.65;color:var(--ink);background:var(--bg);word-break:keep-all;-webkit-font-smoothing:antialiased;overflow-x:clip}
+a{color:inherit}
+h1,h2,h3{font-family:'Hahmlet',serif;font-weight:600;letter-spacing:-.02em;line-height:1.25}
+.in{max-width:1200px;margin:0 auto;padding:0 40px}
+svg.i{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round;flex:none}
+
+/* header */
+header{border-bottom:1px solid var(--line)}
+header .in{display:flex;align-items:center;justify-content:space-between;height:72px;gap:24px}
+.logo{display:flex;align-items:center;gap:12px;text-decoration:none}
+.logo svg{width:36px;height:24px}
+.logo b{font-family:'Hahmlet',serif;font-weight:600;font-size:22px;letter-spacing:-.02em}
+.logo span{font-size:14px;color:var(--muted)}
+nav{display:flex;gap:32px;font-size:15px}
+nav a{text-decoration:none;color:var(--muted);padding:12px 0}
+nav a:hover{color:var(--ink)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;height:44px;padding:0 20px;border-radius:8px;font-size:15px;font-weight:500;text-decoration:none;border:1px solid transparent;cursor:pointer;font-family:inherit;transition:background-color .2s,color .2s,border-color .2s}
+.btn-p{background:var(--accent);color:var(--accent-ink)}
+.btn-p:hover{background:#63221F}
+.btn-s{border-color:rgba(42,37,33,.36);color:var(--ink);background:transparent}
+.btn-s:hover{background:var(--surface)}
+
+/* hero */
+.hero{padding:64px 0 16px}
+.hero .in{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.08fr);gap:48px;align-items:center}
+.hero small{display:block;font-size:15px;color:var(--muted);margin-bottom:20px}
+.hero h1{font-size:clamp(36px,4.4vw,58px);font-weight:600}
+.hero h1 em{font-style:normal;color:var(--accent)}
+.hero p{font-size:18px;color:var(--muted);margin-top:24px;max-width:500px}
+.hero .acts{display:flex;gap:12px;margin-top:32px;flex-wrap:wrap}
+.hero .acts .btn{height:48px;padding:0 24px;font-size:16px}
+.art{position:relative;background:var(--deep);border-radius:24px;aspect-ratio:600/660;overflow:hidden}
+.art svg{position:absolute;inset:0;width:100%;height:100%}
+.art figcaption{position:absolute;left:24px;top:20px;font-size:14px;color:var(--muted)}
+.facts{display:grid;grid-template-columns:repeat(3,1fr);margin-top:56px;border-top:1px solid var(--line)}
+.facts div{padding:20px 24px 0 0}
+.facts b{display:block;font-family:'Hahmlet',serif;font-weight:600;font-size:26px;font-variant-numeric:tabular-nums}
+.facts span{font-size:14px;color:var(--muted)}
+
+section{padding:96px 0}
+.sec-h{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:48px;align-items:end;margin-bottom:48px}
+.sec-h h2{font-size:clamp(28px,3vw,40px)}
+.sec-h p{color:var(--muted);max-width:480px}
+
+/* process */
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border-top:1.5px solid var(--ink)}
+.step{display:flex;flex-direction:column;padding:24px 24px 0 0;border-right:1px solid var(--line);margin-right:24px}
+.step:last-child{border-right:0;margin-right:0}
+.step .n{display:flex;align-items:center;justify-content:space-between;margin-bottom:24px;color:var(--muted);font-size:14px;font-variant-numeric:tabular-nums}
+.step .n svg{width:28px;height:28px;stroke-width:1.4;color:var(--ink)}
+.step h3{font-size:21px;margin-bottom:8px}
+.step p{font-size:15px;color:var(--muted)}
+.step .d{display:block;margin-top:auto;padding-top:16px;font-size:14px;color:var(--ink);font-weight:500}
+
+/* hats */
+.hats{background:var(--surface)}
+.hat-grid{display:grid;grid-template-columns:1.3fr 1fr 1fr;grid-template-rows:auto auto;gap:24px}
+.card{min-width:0;background:var(--bg);border-radius:16px;padding:24px;display:flex;flex-direction:column;border:1px solid var(--line)}
+.card.big{grid-row:span 2;background:#2E2723;color:#EDE5D9;border-color:transparent}
+.card .pic{aspect-ratio:240/150;margin:-8px -8px 16px;border-radius:12px;background:var(--deep)}
+.card.big .pic{aspect-ratio:auto;flex:1;min-height:280px;background:#3A312B}
+.card .pic svg{width:100%;height:100%;display:block}
+.card h3{font-size:21px}
+.card p{font-size:15px;color:var(--muted);margin-top:4px}
+.card.big p{color:#BDB0A2}
+.card .pr{display:flex;justify-content:space-between;align-items:baseline;margin-top:16px;padding-top:12px;border-top:1px solid var(--line);font-size:14px;color:var(--muted)}
+.card.big .pr{border-color:rgba(237,229,217,.18);color:#BDB0A2}
+.card .pr b{font-size:18px;font-weight:600;color:var(--ink);font-variant-numeric:tabular-nums}
+.card.big .pr b{color:#F1D9CC;font-size:22px}
+.card.big h3{font-size:28px}
+
+/* size */
+.size .in{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:64px;align-items:center}
+.size h2{font-size:clamp(28px,3vw,40px)}
+.size .lead{color:var(--muted);margin-top:16px;max-width:460px}
+.howto{list-style:none;margin-top:32px;counter-reset:h}
+.howto li{counter-increment:h;display:grid;grid-template-columns:32px 1fr;gap:12px;padding:12px 0;border-top:1px solid var(--line);font-size:15px}
+.howto li:before{content:counter(h);font-family:'Hahmlet',serif;font-weight:600;color:var(--accent)}
+.calc{background:var(--surface);border-radius:20px;padding:32px;border:1px solid var(--line)}
+.calc label{display:block;font-size:15px;color:var(--muted);margin-bottom:12px}
+.calc .row{display:flex;align-items:baseline;gap:8px}
+.calc output{font-family:'Hahmlet',serif;font-weight:600;font-size:56px;line-height:1;font-variant-numeric:tabular-nums}
+.calc .row span{font-size:18px;color:var(--muted)}
+.calc input[type=range]{width:100%;margin:24px 0 8px;accent-color:var(--accent);height:44px}
+.ticks{display:flex;justify-content:space-between;font-size:13px;color:var(--muted);font-variant-numeric:tabular-nums}
+.res{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:24px;padding-top:24px;border-top:1px solid var(--line)}
+.res div span{display:block;font-size:14px;color:var(--muted)}
+.res div b{font-size:24px;font-weight:600;font-variant-numeric:tabular-nums}
+.res div b.acc{color:var(--accent)}
+.calc .note{font-size:14px;color:var(--muted);margin-top:16px}
+.diagram{position:relative;margin-top:24px;aspect-ratio:460/180;border-radius:12px;background:var(--bg)}
+.diagram .dl{position:absolute;left:76%;top:50%;transform:translateY(-50%);font-size:14px;color:var(--muted);line-height:1.45;max-width:22%}
+.diagram .dl b{display:block;color:var(--ink);font-weight:600}
+.diagram svg{width:100%;height:100%;display:block}
+
+/* repair */
+.repair{background:#2E2723;color:#EDE5D9}
+.repair .sec-h p{color:#BDB0A2}
+.rep-list{list-style:none;border-top:1px solid rgba(237,229,217,.3)}
+.rep-list li{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1.6fr) auto;gap:24px;padding:20px 0;border-bottom:1px solid rgba(237,229,217,.14);align-items:baseline}
+.rep-list h3{font-size:19px}
+.rep-list p{font-size:15px;color:#BDB0A2}
+.rep-list b{font-size:17px;font-weight:600;font-variant-numeric:tabular-nums;white-space:nowrap}
+.rep-foot{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap;margin-top:24px;font-size:15px;color:#BDB0A2}
+
+/* visit + book */
+.book .in{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:64px;align-items:start}
+.visit h2{font-size:clamp(28px,3vw,40px)}
+.visit dl{margin-top:32px;display:grid;grid-template-columns:96px 1fr;border-top:1px solid var(--line)}
+.visit dt,.visit dd{padding:16px 0;border-bottom:1px solid var(--line);font-size:15px}
+.visit dt{color:var(--muted)}
+.visit .box .mp{position:absolute;left:16px;bottom:12px;font-size:14px;color:var(--muted);background:rgba(245,241,234,.85);padding:4px 8px;border-radius:6px}
+.visit .box{position:relative;margin-top:32px;aspect-ratio:460/200;border-radius:16px;background:var(--deep);overflow:hidden}
+.visit .box svg{width:100%;height:100%;display:block}
+form{background:var(--surface);border:1px solid var(--line);border-radius:20px;padding:40px}
+form h3{font-size:24px}
+form>p{font-size:15px;color:var(--muted);margin-top:4px}
+.f{margin-top:20px}
+.f label,.f legend{display:block;font-size:14px;font-weight:500;margin-bottom:8px}
+.f input[type=text],.f input[type=tel],.f select{width:100%;height:48px;border:1px solid rgba(42,37,33,.28);background:#FBF9F5;border-radius:8px;padding:0 16px;font:inherit;font-size:16px;color:var(--ink)}
+.f input:focus,.f select:focus{outline:2px solid var(--accent);outline-offset:1px}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+fieldset{border:0}
+.slots{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.slots label{position:relative;margin:0}
+.slots input{position:absolute;opacity:0}
+.slots span{display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:56px;border:1px solid rgba(42,37,33,.28);border-radius:8px;font-size:14px;font-weight:400;cursor:pointer;background:#FBF9F5;transition:background-color .2s,border-color .2s;text-align:center;line-height:1.35}
+.slots span b{font-weight:600}
+.slots input:checked+span{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}
+.slots input:focus-visible+span{outline:2px solid var(--ink);outline-offset:2px}
+form .btn{width:100%;height:48px;margin-top:28px;font-size:16px}
+.done{display:none;margin-top:16px;padding:16px;border-radius:8px;background:var(--deep);font-size:15px}
+.done.on{display:block}
+
+footer{border-top:1px solid var(--line);padding:32px 0 48px;font-size:14px;color:var(--muted)}
+footer .in{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+
+.rv{opacity:0;transform:translateY(12px);transition:opacity .5s ease,transform .5s ease}
+.rv.on{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}*{transition:none!important}}
+
+@media(max-width:1000px){
+  nav{display:none}
+  .hero .in,.size .in,.book .in,.sec-h{grid-template-columns:1fr}
+  .hero .in{gap:40px}
+  .hat-grid{grid-template-columns:1fr 1fr}
+  .card.big{grid-column:span 2;grid-row:auto}
+  .card.big .pic{min-height:240px;aspect-ratio:16/9;flex:none}
+  .steps{grid-template-columns:1fr 1fr;row-gap:32px}
+  .step:nth-child(2){border-right:0;margin-right:0}
+}
+@media(max-width:620px){
+  .in{padding:0 20px}
+  header .in{height:64px}
+  .logo span{display:none}
+  .hero{padding:40px 0 16px}
+  .hero p{font-size:17px}
+  .hero .acts .btn{flex:1}
+  .facts div{padding:16px 12px 0 0}
+  .facts b{font-size:20px}
+  section{padding:64px 0}
+  .sec-h{gap:16px;margin-bottom:32px}
+  .steps{grid-template-columns:1fr;border-top-width:1px}
+  .step{border-right:0;margin-right:0;border-bottom:1px solid var(--line);padding:20px 0}
+  .step .n{margin-bottom:12px}
+  .hat-grid{grid-template-columns:1fr}
+  .card.big{grid-column:auto}
+  .rep-list li{grid-template-columns:1fr auto;gap:4px 16px}
+  .rep-list p{grid-column:1/-1;grid-row:2}
+  .calc,form{padding:24px 20px}
+  .calc output{font-size:48px}
+  .diagram{aspect-ratio:auto}.diagram svg{height:auto;aspect-ratio:460/180}
+  .diagram .ll{display:none}
+  .diagram .dl{position:static;transform:none;max-width:none;padding:0 16px 12px}
+  .two{grid-template-columns:1fr}
+  .visit dl{grid-template-columns:80px 1fr}
+}
+</style>
+</head>
+<body>
+<header>
+ <div class="in">
+  <a class="logo" href="#top" aria-label="챙결 모자공방 처음으로">
+   <svg viewBox="0 0 36 24" aria-hidden="true"><ellipse cx="18" cy="17" rx="16" ry="4.5" fill="none" stroke="#2A2521" stroke-width="1.6"/><path d="M10 16.5 C10 9 12.5 4 18 4 C23.5 4 26 9 26 16.5" fill="none" stroke="#2A2521" stroke-width="1.6"/><path d="M10.3 13.2 C15 14.4 21 14.4 25.7 13.2" stroke="#7C2D2A" stroke-width="2.4" fill="none"/></svg>
+   <b>챙결</b><span>모자공방</span>
+  </a>
+  <nav aria-label="주요 메뉴"><a href="#process">맞춤 과정</a><a href="#hats">모자</a><a href="#size">치수</a><a href="#repair">수선</a><a href="#visit">오시는 길</a></nav>
+  <a class="btn btn-p" href="#visit">치수 재기 예약</a>
+ </div>
+</header>
+
+<main id="top">
+<section class="hero" style="padding-top:64px">
+ <div class="in">
+  <div class="rv">
+   <small>펠트·울 모자 맞춤과 수선 · 골목 2층 공방</small>
+   <h1>머리 둘레를 재고<br>나무 틀에 씌워<br><em>내 머리에 맞는 모자</em>를 뜹니다</h1>
+   <p>너도밤나무 모자틀 42개 가운데 머리 모양에 맞는 틀을 골라, 증기로 펠트를 당겨 모양을 잡습니다. 첫 방문 때 치수를 재고 3주 뒤 찾아가세요.</p>
+   <div class="acts"><a class="btn btn-p" href="#visit">치수 재기 예약</a><a class="btn btn-s" href="#hats">모자 종류 보기</a></div>
+   <div class="facts">
+    <div><b>3주</b><span>맞춤 제작 기간</span></div>
+    <div><b>0.5cm</b><span>틀을 고르는 단위</span></div>
+    <div><b>1주</b><span>수선 기간</span></div>
+   </div>
+  </div>
+  <figure class="art rv" aria-label="나무 모자틀 위에 씌워진 갈색 펠트 중절모, 옆에 줄자와 리본 실패">
+   <svg viewBox="0 -140 600 660" aria-hidden="true">
+    <defs>
+     <linearGradient id="wall" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#E4DCCE"/><stop offset="1" stop-color="#D9CFBE"/></linearGradient>
+     <linearGradient id="table" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#9C7650"/><stop offset="1" stop-color="#7E5C3D"/></linearGradient>
+     <linearGradient id="crown" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#3E3026"/><stop offset=".32" stop-color="#6A5340"/><stop offset=".55" stop-color="#5E4937"/><stop offset="1" stop-color="#33271F"/></linearGradient>
+     <linearGradient id="brimTop" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#4A392C"/><stop offset="1" stop-color="#6B5442"/></linearGradient>
+     <linearGradient id="brimFront" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#6E5745"/><stop offset=".7" stop-color="#57432F"/><stop offset="1" stop-color="#3C2E23"/></linearGradient>
+     <linearGradient id="band" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#4E1A18"/><stop offset=".35" stop-color="#8A3430"/><stop offset=".6" stop-color="#7C2D2A"/><stop offset="1" stop-color="#4A1917"/></linearGradient>
+     <linearGradient id="beech" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#A9824F"/><stop offset=".4" stop-color="#D3B07F"/><stop offset="1" stop-color="#9A7445"/></linearGradient>
+     <radialGradient id="shadow" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#3A2817" stop-opacity=".45"/><stop offset="1" stop-color="#3A2817" stop-opacity="0"/></radialGradient>
+     <filter id="felt" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency="1.6" numOctaves="2" seed="4" result="n"/><feColorMatrix in="n" type="matrix" values="0 0 0 0 .2  0 0 0 0 .15  0 0 0 0 .1  0 0 0 .22 0"/><feComposite in2="SourceGraphic" operator="in"/><feBlend in="SourceGraphic" mode="multiply"/></filter>
+     <pattern id="grain" width="60" height="8" patternUnits="userSpaceOnUse"><path d="M0 4 C15 2 30 6 60 3" stroke="#6E4E31" stroke-opacity=".25" fill="none"/></pattern>
+    </defs>
+    <rect y="-140" width="600" height="660" fill="url(#wall)"/>
+    <!-- shelf of hat blocks behind, soft -->
+    <g opacity=".6">
+     <rect x="0" y="40" width="600" height="10" fill="#C2B59F"/>
+     <rect x="0" y="50" width="600" height="6" fill="#B3A68F" opacity=".6"/>
+     <g fill="#CDB794"><path d="M52 4 C52 -30 70 -46 96 -46 C122 -46 140 -30 140 4 Z"/><rect x="88" y="4" width="16" height="26"/><rect x="72" y="30" width="48" height="10" rx="2"/></g>
+     <g fill="#C7AE88"><path d="M186 8 C186 -22 202 -36 224 -36 C246 -36 262 -22 262 8 Z"/><rect x="217" y="8" width="14" height="22"/><rect x="202" y="30" width="44" height="10" rx="2"/></g>
+     <g fill="#CDB794"><path d="M444 0 C444 -34 464 -50 492 -50 C520 -50 540 -34 540 0 Z"/><rect x="484" y="0" width="16" height="30"/><rect x="468" y="30" width="48" height="10" rx="2"/></g>
+     <path d="M60 -14 C80 -10 112 -10 132 -14" stroke="#B59C76" stroke-width="2" fill="none"/>
+     <path d="M452 -20 C474 -16 510 -16 532 -20" stroke="#B59C76" stroke-width="2" fill="none"/>
+    </g>
+    <!-- table -->
+    <rect x="0" y="430" width="600" height="90" fill="url(#table)"/>
+    <rect x="0" y="430" width="600" height="90" fill="url(#grain)"/>
+    <rect x="0" y="428" width="600" height="4" fill="#B48D62"/>
+    <ellipse cx="300" cy="444" rx="150" ry="16" fill="url(#shadow)"/>
+    <!-- block stand -->
+    <ellipse cx="300" cy="440" rx="74" ry="12" fill="#7A5735"/>
+    <path d="M226 440 L226 430 A74 12 0 0 1 374 430 L374 440 A74 12 0 0 1 226 440 Z" fill="#8F6A43"/>
+    <ellipse cx="300" cy="430" rx="74" ry="12" fill="#B08A5C"/>
+    <rect x="282" y="372" width="36" height="58" fill="url(#beech)"/>
+    <!-- head block below brim -->
+    <path d="M214 330 C212 372 246 392 300 392 C354 392 388 372 386 330 Z" fill="url(#beech)"/>
+    <path d="M214 330 C212 372 246 392 300 392 C354 392 388 372 386 330 Z" fill="url(#grain)" opacity=".7"/>
+    <path d="M240 372 C262 384 338 384 360 372" stroke="#8A6438" stroke-opacity=".5" fill="none"/>
+    <!-- brim back -->
+    <ellipse cx="300" cy="310" rx="222" ry="58" fill="url(#brimTop)" filter="url(#felt)"/>
+    <ellipse cx="300" cy="312" rx="106" ry="24" fill="#2B211A" opacity=".55"/>
+    <!-- crown -->
+    <path d="M198 306 C192 248 202 190 226 156 C246 128 278 120 300 128 C322 120 354 128 374 156 C398 190 408 248 402 306 A102 26 0 0 1 198 306 Z" fill="url(#crown)" filter="url(#felt)"/>
+    <path d="M300 132 C284 156 280 190 300 206 C320 190 316 156 300 132 Z" fill="#2B2019" opacity=".75"/>
+    <path d="M300 132 C292 152 290 178 300 198" stroke="#7D6550" stroke-width="2" fill="none" opacity=".6"/>
+    <path d="M246 170 C254 188 254 214 246 232" stroke="#2B2019" stroke-width="6" stroke-linecap="round" fill="none" opacity=".45"/>
+    <path d="M354 170 C346 188 346 214 354 232" stroke="#2B2019" stroke-width="6" stroke-linecap="round" fill="none" opacity=".45"/>
+    <path d="M226 168 C214 200 210 244 212 286" stroke="#8B725B" stroke-width="3" fill="none" opacity=".35"/>
+    <!-- band -->
+    <path d="M200 268 Q300 292 400 268 L402 306 A102 26 0 0 1 198 306 Z" fill="url(#band)"/>
+    <path d="M200 270 Q300 294 400 270" stroke="#A44A44" stroke-width="1.5" fill="none" opacity=".7"/>
+    <g>
+     <path d="M214 280 C200 276 192 284 196 294 C200 302 214 300 220 294 Z" fill="#6E2725"/>
+     <path d="M218 282 C226 272 240 274 240 286 C240 296 226 300 218 294 Z" fill="#87332F"/>
+     <rect x="214" y="280" width="10" height="18" rx="2" fill="#5A1F1D"/>
+     <path d="M220 298 L214 322 L222 318 L228 326 L226 300 Z" fill="#6A2522"/>
+    </g>
+    <!-- brim front -->
+    <path d="M78 310 A222 58 0 0 0 522 310 L402 306 A102 26 0 0 1 198 306 Z" fill="url(#brimFront)" filter="url(#felt)"/>
+    <path d="M78 310 C84 322 96 334 120 344" stroke="#2E231B" stroke-width="2" fill="none" opacity=".5"/>
+    <path d="M110 342 C190 372 410 372 490 342" stroke="#8C735D" stroke-width="2" fill="none" opacity=".55"/>
+    <path d="M78 310 A222 58 0 0 0 522 310" stroke="#33271F" stroke-width="2.5" fill="none"/>
+    <!-- tape measure -->
+    <g>
+     <ellipse cx="108" cy="470" rx="50" ry="14" fill="url(#shadow)"/>
+     <path d="M150 458 C200 470 250 468 300 474 C340 478 380 486 420 482" stroke="#E9DDBF" stroke-width="16" fill="none"/>
+     <path d="M150 458 C200 470 250 468 300 474 C340 478 380 486 420 482" stroke="#B9A57E" stroke-width="16" stroke-dasharray="1 9" fill="none"/>
+     <circle cx="108" cy="440" r="36" fill="#E9DDBF"/>
+     <circle cx="108" cy="440" r="36" fill="none" stroke="#C9B88E" stroke-width="2"/>
+     <circle cx="108" cy="440" r="26" fill="none" stroke="#D7C8A3" stroke-width="2"/>
+     <circle cx="108" cy="440" r="16" fill="none" stroke="#D7C8A3" stroke-width="2"/>
+     <circle cx="108" cy="440" r="5" fill="#7C2D2A"/>
+     <rect x="414" y="474" width="14" height="16" rx="2" fill="#8E8A80"/>
+    </g>
+    <!-- ribbon spool -->
+    <g>
+     <ellipse cx="510" cy="474" rx="40" ry="10" fill="url(#shadow)"/>
+     <rect x="478" y="398" width="64" height="70" rx="4" fill="#7C2D2A"/>
+     <rect x="478" y="398" width="64" height="70" rx="4" fill="url(#band)" opacity=".7"/>
+     <path d="M482 410 H538 M482 424 H538 M482 438 H538 M482 452 H538" stroke="#A04641" stroke-opacity=".5"/>
+     <ellipse cx="510" cy="468" rx="40" ry="9" fill="#C8B28C"/>
+     <ellipse cx="510" cy="398" rx="40" ry="9" fill="#DCC7A1"/>
+     <ellipse cx="510" cy="398" rx="8" ry="2.5" fill="#8E7651"/>
+     <path d="M478 448 C460 456 452 470 460 488 L468 486 C462 472 468 462 480 456 Z" fill="#6E2725"/>
+    </g>
+   </svg>
+   <figcaption>너도밤나무 틀 57.5호 위의 맞춤 중절모</figcaption>
+  </figure>
+ </div>
+</section>
+
+<section id="process">
+ <div class="in">
+  <div class="sec-h rv"><h2>한 개의 모자가<br>만들어지는 네 단계</h2><p>치수를 재는 날과 찾아가는 날, 두 번만 오시면 됩니다. 중간 가봉이 필요하면 따로 연락드립니다.</p></div>
+  <div class="steps rv">
+   <div class="step"><div class="n"><span>01</span><svg class="i" viewBox="0 0 28 28"><circle cx="14" cy="14" r="9"/><path d="M14 5v4M23 14h-4M14 23v-4M5 14h4"/></svg></div><h3>치수 재기</h3><p>이마 위 1cm를 지나는 둘레와 앞뒤 길이를 재고, 평소 쓰는 각도를 봅니다.</p><span class="d">첫 방문 · 30분</span></div>
+   <div class="step"><div class="n"><span>02</span><svg class="i" viewBox="0 0 28 28"><path d="M6 20c0-8 3.5-13 8-13s8 5 8 13"/><path d="M4 20h20"/><path d="M12 20v4h4v-4"/></svg></div><h3>틀과 펠트 고르기</h3><p>둥근형·긴 타원형 틀 중 머리에 맞는 것을 고르고, 펠트 색과 챙 너비를 정합니다.</p><span class="d">첫 방문 · 30분</span></div>
+   <div class="step"><div class="n"><span>03</span><svg class="i" viewBox="0 0 28 28"><path d="M8 10c0-2 2-2 2-4M14 10c0-2 2-2 2-4M20 10c0-2 2-2 2-4"/><path d="M5 14h18l-2 9H7z"/></svg></div><h3>증기 성형</h3><p>펠트에 증기를 쐬어 틀에 당겨 씌우고, 하루 말린 뒤 다시 당기기를 세 번 합니다.</p><span class="d">공방 작업 · 2주</span></div>
+   <div class="step"><div class="n"><span>04</span><svg class="i" viewBox="0 0 28 28"><path d="M6 22 L20 8"/><ellipse cx="21.5" cy="6.5" rx="2.2" ry="1.4" transform="rotate(-45 21.5 6.5)"/><path d="M22 7c3 4 0 9-5 10s-9 3-10 6"/></svg></div><h3>리본과 마감</h3><p>그로그랭 리본을 손으로 감아 꿰매고, 가죽 땀받이와 안감을 답니다.</p><span class="d">공방 작업 · 1주</span></div>
+  </div>
+ </div>
+</section>
+
+<section class="hats" id="hats">
+ <div class="in">
+  <div class="sec-h rv"><h2>공방에서 뜨는 모자</h2><p>가격은 맞춤 제작 기준이며 펠트 종류에 따라 달라집니다. 상담 때 원단 견본을 직접 만져 보고 고르세요.</p></div>
+  <div class="hat-grid rv">
+   <article class="card big">
+    <div class="pic"><svg viewBox="30 40 420 360" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
+     <defs><linearGradient id="c2" x1="0" x2="1"><stop offset="0" stop-color="#2F3A33"/><stop offset=".4" stop-color="#4F5D52"/><stop offset="1" stop-color="#28312B"/></linearGradient><linearGradient id="b2" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#4A5649"/><stop offset="1" stop-color="#2D362F"/></linearGradient><linearGradient id="bw2" x1="0" x2="1"><stop offset="0" stop-color="#8E6C45"/><stop offset=".45" stop-color="#B8936A"/><stop offset="1" stop-color="#7E5E3B"/></linearGradient></defs>
+     <rect x="0" y="0" width="480" height="440" fill="#3A312B"/>
+     <ellipse cx="240" cy="372" rx="120" ry="12" fill="#2A231F"/>
+     <ellipse cx="240" cy="364" rx="70" ry="10" fill="#6E5236"/>
+     <path d="M170 364 V354 A70 10 0 0 1 310 354 V364 A70 10 0 0 1 170 364 Z" fill="#7F603F"/>
+     <ellipse cx="240" cy="354" rx="70" ry="10" fill="#9C7B54"/>
+     <rect x="224" y="270" width="32" height="84" fill="url(#bw2)"/>
+     <path d="M158 214 C156 254 190 276 240 276 C290 276 324 254 322 214 Z" fill="url(#bw2)"/>
+     <ellipse cx="240" cy="208" rx="190" ry="44" fill="url(#b2)"/>
+     <path d="M150 204 C146 160 154 112 174 88 C192 66 222 62 240 70 C258 62 288 66 306 88 C326 112 334 160 330 204 A90 20 0 0 1 150 204 Z" fill="url(#c2)"/>
+     <path d="M240 74 C228 92 226 118 240 130 C254 118 252 92 240 74 Z" fill="#1F2621" opacity=".8"/>
+     <path d="M196 102 C202 118 202 138 196 152" stroke="#1F2621" stroke-width="5" stroke-linecap="round" fill="none" opacity=".45"/>
+     <path d="M284 102 C278 118 278 138 284 152" stroke="#1F2621" stroke-width="5" stroke-linecap="round" fill="none" opacity=".45"/>
+     <path d="M152 176 Q240 194 328 176 L330 204 A90 20 0 0 1 150 204 Z" fill="#1C1F1C"/>
+     <path d="M50 208 A190 44 0 0 0 430 208 L330 204 A90 20 0 0 1 150 204 Z" fill="#455246"/>
+     <path d="M80 236 C150 258 330 258 400 236" stroke="#62705F" stroke-width="2" fill="none" opacity=".6"/>
+     <path d="M50 208 A190 44 0 0 0 430 208" stroke="#222A24" stroke-width="2" fill="none"/>
+    </svg></div>
+    <h3>중절모</h3>
+    <p>토끼털 펠트, 챙 6cm부터 8cm까지. 가운데 접힘과 앞쪽 집음 모양을 상담 때 정합니다.</p>
+    <div class="pr"><span>맞춤 · 3주</span><b>380,000원</b></div>
+   </article>
+   <article class="card">
+    <div class="pic"><svg viewBox="0 0 240 150" aria-hidden="true">
+     <defs><radialGradient id="ber" cx=".42" cy=".38" r=".7"><stop offset="0" stop-color="#A65A3C"/><stop offset="1" stop-color="#6E3523"/></radialGradient></defs>
+     <ellipse cx="120" cy="118" rx="78" ry="10" fill="#C7BBA8"/>
+     <path d="M40 92 C44 58 92 42 132 46 C178 50 206 70 202 92 C198 108 160 116 120 116 C80 116 38 110 40 92 Z" fill="url(#ber)"/>
+     <path d="M60 104 C90 114 160 114 186 102" stroke="#4E2416" stroke-width="5" stroke-linecap="round" fill="none"/>
+     <path d="M126 46 L130 34" stroke="#5A2A1A" stroke-width="4" stroke-linecap="round"/>
+    </svg></div>
+    <h3>울 베레</h3><p>메리노 울 펠트를 한 장으로 떠서 이음새가 없습니다.</p>
+    <div class="pr"><span>맞춤 · 2주</span><b>140,000원</b></div>
+   </article>
+   <article class="card">
+    <div class="pic"><svg viewBox="0 0 240 150" aria-hidden="true">
+     <defs><linearGradient id="bk" x1="0" x2="1"><stop offset="0" stop-color="#6F6A3C"/><stop offset=".45" stop-color="#8F8A57"/><stop offset="1" stop-color="#5D5932"/></linearGradient></defs>
+     <ellipse cx="120" cy="124" rx="84" ry="9" fill="#C7BBA8"/>
+     <path d="M84 50 C86 40 154 40 156 50 L162 92 L78 92 Z" fill="url(#bk)"/>
+     <ellipse cx="120" cy="50" rx="36" ry="7" fill="#7D7848"/>
+     <path d="M78 92 L46 114 C80 126 160 126 194 114 L162 92 C140 98 100 98 78 92 Z" fill="#7A7546"/>
+     <path d="M80 98 C110 106 132 106 160 98" stroke="#5B5731" stroke-dasharray="3 4" fill="none"/>
+     <path d="M54 112 C88 122 152 122 186 112" stroke="#5B5731" stroke-dasharray="3 4" fill="none"/>
+    </svg></div>
+    <h3>왁스 버킷햇</h3><p>밀랍을 먹인 면 캔버스, 챙 안쪽 여덟 줄 박음질.</p>
+    <div class="pr"><span>맞춤 · 2주</span><b>160,000원</b></div>
+   </article>
+   <article class="card">
+    <div class="pic"><svg viewBox="0 0 240 150" aria-hidden="true">
+     <defs><pattern id="hb" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M0 10 L5 0 L10 10" stroke="#6C625A" stroke-width="1.2" fill="none"/></pattern></defs>
+     <ellipse cx="120" cy="122" rx="82" ry="9" fill="#C7BBA8"/>
+     <path d="M128 90 C168 88 204 96 216 108 C198 118 160 114 128 104 Z" fill="#5E554D"/>
+     <path d="M48 98 C44 64 84 46 134 50 C176 54 198 72 194 92 C180 100 120 104 48 98 Z" fill="#8C8278"/>
+     <path d="M48 98 C44 64 84 46 134 50 C176 54 198 72 194 92 C180 100 120 104 48 98 Z" fill="url(#hb)" opacity=".6"/>
+     <path d="M120 101 C150 100 178 96 194 92" stroke="#4A433C" stroke-width="3" fill="none" opacity=".7"/>
+     <path d="M196 96 C204 100 210 104 214 108" stroke="#7A7067" stroke-width="1.5" fill="none"/>
+     <path d="M70 92 C60 76 80 60 118 56" stroke="#6C625A" stroke-width="2" fill="none" opacity=".6"/>
+    </svg></div>
+    <h3>헤링본 플랫캡</h3><p>트위드 여덟 조각, 챙 심지를 얇게 넣어 가볍습니다.</p>
+    <div class="pr"><span>맞춤 · 2주</span><b>190,000원</b></div>
+   </article>
+   <article class="card">
+    <div class="pic"><svg viewBox="0 0 240 150" aria-hidden="true">
+     <rect x="60" y="34" width="120" height="86" rx="4" fill="#EFE7D8"/>
+     <path d="M60 34 h120 v86 h-120z" fill="none" stroke="#C4B79F"/>
+     <path d="M72 34v86M88 34v86M104 34v86M120 34v86M136 34v86M152 34v86M168 34v86" stroke="#7C2D2A" stroke-opacity=".75" stroke-width="5"/>
+     <rect x="56" y="26" width="128" height="16" rx="3" fill="#E2D6C0"/>
+     <path d="M56 26h128v16H56z" fill="none" stroke="#C4B79F"/>
+     <ellipse cx="120" cy="126" rx="70" ry="6" fill="#C7BBA8"/>
+    </svg></div>
+    <h3>모자 상자</h3><p>맞춤 모자는 줄무늬 보관 상자에 담아 드립니다. 상자만 따로 사셔도 됩니다.</p>
+    <div class="pr"><span>단품</span><b>28,000원</b></div>
+   </article>
+  </div>
+ </div>
+</section>
+
+<section class="size" id="size">
+ <div class="in">
+  <div class="rv">
+   <h2>집에서 머리 둘레를<br>재 보세요</h2>
+   <p class="lead">줄자 하나면 됩니다. 재 온 치수로 맞는 틀을 미리 꺼내 두면 첫 방문 시간이 짧아집니다.</p>
+   <ol class="howto">
+    <li>눈썹 위 1cm, 귀 위쪽을 지나도록 줄자를 수평으로 두릅니다</li>
+    <li>손가락 하나가 들어갈 만큼만 여유를 두고 숫자를 읽습니다</li>
+    <li>두 번 재서 큰 쪽 숫자를 적어 오세요</li>
+   </ol>
+  </div>
+  <div class="calc rv">
+   <label for="cm">내 머리 둘레</label>
+   <div class="row"><output id="out" for="cm">57.5</output><span>cm</span></div>
+   <input type="range" id="cm" min="53" max="61" step="0.5" value="57.5" aria-describedby="res">
+   <div class="ticks"><span>53</span><span>55</span><span>57</span><span>59</span><span>61</span></div>
+   <div class="res" id="res" aria-live="polite">
+    <div><span>공방 틀 번호</span><b class="acc" id="blk">57.5호</b></div>
+    <div><span>기성 사이즈로는</span><b id="std">M · 7 ⅛</b></div>
+   </div>
+   <div class="diagram"><svg viewBox="0 0 460 180" aria-hidden="true">
+    <path d="M150 150 C120 150 104 128 104 96 C104 52 134 28 176 28 C222 28 250 56 250 96 C250 112 246 124 240 132 L246 148 L226 150" fill="#E1D9CB" stroke="#665C53" stroke-width="1.5"/>
+    <path d="M250 96 C256 98 258 108 250 112" fill="none" stroke="#665C53" stroke-width="1.5"/>
+    <ellipse cx="177" cy="78" rx="76" ry="14" fill="none" stroke="#7C2D2A" stroke-width="3" stroke-dasharray="6 4"/>
+    <path d="M232 90 L232 84" stroke="#665C53" stroke-width="1.5"/>
+    <g class="ll"><path d="M262 80 L330 80" stroke="#665C53" stroke-width="1"/><circle cx="334" cy="80" r="3" fill="#665C53"/></g>
+   </svg><p class="dl"><b>눈썹 위 1cm</b> 귀 윗부분을 지나 수평으로</p></div>
+   <p class="note">틀은 0.5cm 단위로 있습니다. 둥근 머리와 긴 머리는 같은 둘레라도 다른 틀을 씁니다.</p>
+  </div>
+ </div>
+</section>
+
+<section class="repair" id="repair">
+ <div class="in">
+  <div class="sec-h rv"><h2>아끼던 모자, 다시 씁니다</h2><p>다른 곳에서 산 모자도 받습니다. 맡기시는 날 상태를 보고 정확한 금액을 알려 드립니다.</p></div>
+  <ul class="rep-list rv">
+   <li><h3>모양 다시 잡기</h3><p>눌리거나 비에 젖어 처진 크라운과 챙을 증기로 원래 틀에 맞춥니다</p><b>45,000원</b></li>
+   <li><h3>리본 교체</h3><p>색 견본 30가지 그로그랭 리본 중에서 고르고 손으로 감아 꿰맵니다</p><b>35,000원</b></li>
+   <li><h3>땀받이 가죽 교체</h3><p>낡은 안쪽 띠를 양가죽으로 바꾸고 이름 이니셜을 눌러 드립니다</p><b>40,000원</b></li>
+   <li><h3>사이즈 줄이기</h3><p>땀받이 안쪽에 코르크 심을 대서 최대 1.5cm까지 줄입니다</p><b>25,000원</b></li>
+  </ul>
+  <div class="rep-foot"><span>수선 기간 약 1주 · 택배 접수 가능</span><span>모자 상태에 따라 금액이 달라질 수 있습니다</span></div>
+ </div>
+</section>
+
+<section class="book" id="visit">
+ <div class="in">
+  <div class="visit rv">
+   <h2>공방 오시는 길</h2>
+   <dl>
+    <dt>여는 시간</dt><dd>화–토 11:00–19:00<br>일·월 쉼</dd>
+    <dt>위치</dt><dd>○○구 ○○로 00, 2층<br>계단 옆 줄무늬 상자 간판</dd>
+    <dt>연락</dt><dd>000-0000-0000<br>카카오톡 ID: example</dd>
+   </dl>
+   <div class="box"><svg viewBox="0 0 460 200" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+    <rect width="460" height="200" fill="#E1D9CB"/>
+    <path d="M0 132 H460" stroke="#CFC4B1" stroke-width="28"/>
+    <path d="M196 0 V200" stroke="#CFC4B1" stroke-width="22"/>
+    <path d="M0 60 L460 52" stroke="#D7CDBC" stroke-width="10"/>
+    <rect x="232" y="76" width="70" height="40" fill="#F5F1EA" stroke="#665C53"/>
+    <path d="M228 76 L306 76 L300 66 L234 66 Z" fill="#665C53"/>
+    <rect x="258" y="92" width="18" height="24" fill="#CFC4B1" stroke="#665C53"/>
+    <rect x="240" y="86" width="12" height="10" fill="#CFC4B1"/><rect x="282" y="86" width="12" height="10" fill="#CFC4B1"/>
+    <path d="M267 62 C259 50 259 40 267 36 C275 40 275 50 267 62 Z" fill="#7C2D2A"/><circle cx="267" cy="45" r="3.5" fill="#F5F1EA"/>
+   </svg><p class="mp">○○역 2번 출구에서 도보 4분</p></div>
+  </div>
+  <form id="bk" class="rv" novalidate>
+   <h3>치수 재기 예약</h3>
+   <p>첫 방문은 1시간이며 상담과 치수 측정은 무료입니다.</p>
+   <div class="two">
+    <div class="f"><label for="nm">이름</label><input type="text" id="nm" autocomplete="name" placeholder="홍길동"></div>
+    <div class="f"><label for="tel">연락처</label><input type="tel" id="tel" autocomplete="tel" placeholder="000-0000-0000"></div>
+   </div>
+   <div class="f"><label for="kind">관심 있는 모자</label>
+    <select id="kind"><option>중절모</option><option>울 베레</option><option>왁스 버킷햇</option><option>헤링본 플랫캡</option><option>수선 상담</option></select></div>
+   <fieldset class="f"><legend>방문 시간</legend>
+    <div class="slots">
+     <label><input type="radio" name="slot" value="화 11:00" checked><span><b>화</b>11:00</span></label>
+     <label><input type="radio" name="slot" value="수 14:00"><span><b>수</b>14:00</span></label>
+     <label><input type="radio" name="slot" value="목 16:00"><span><b>목</b>16:00</span></label>
+     <label><input type="radio" name="slot" value="금 13:00"><span><b>금</b>13:00</span></label>
+     <label><input type="radio" name="slot" value="토 11:00"><span><b>토</b>11:00</span></label>
+     <label><input type="radio" name="slot" value="토 15:00"><span><b>토</b>15:00</span></label>
+    </div>
+   </fieldset>
+   <button class="btn btn-p" type="submit">예약 요청 보내기</button>
+   <div class="done" id="done" role="status"></div>
+  </form>
+ </div>
+</section>
+</main>
+
+<footer><div class="in"><span>챙결 모자공방 · 펠트·울 모자 맞춤과 수선</span><span>사업자 정보 000-00-00000</span></div></footer>
+
+<script>
+(function(){
+  var r=document.getElementById('cm'),o=document.getElementById('out'),b=document.getElementById('blk'),s=document.getElementById('std');
+  var map=[[54,'XS · 6 ¾'],[55,'S · 6 ⅞'],[56,'S · 7'],[57,'M · 7 ⅛'],[58,'L · 7 ¼'],[59,'L · 7 ⅜'],[60,'XL · 7 ½'],[61,'XL · 7 ⅝'],[99,'XXL · 7 ¾']];
+  function up(){var v=parseFloat(r.value);o.textContent=v.toFixed(1);b.textContent=v.toFixed(1)+'호';
+    for(var i=0;i<map.length;i++){if(v<=map[i][0]){s.textContent=map[i][1];break;}}}
+  r.addEventListener('input',up);up();
+  var f=document.getElementById('bk'),d=document.getElementById('done');
+  f.addEventListener('submit',function(e){e.preventDefault();
+    var n=document.getElementById('nm').value.trim()||'고객';
+    var t=f.querySelector('input[name=slot]:checked').value;
+    d.textContent=n+'님, '+t+' 방문 요청을 받았습니다. 확인 문자를 보내 드릴게요.';d.classList.add('on');});
+  var els=document.querySelectorAll('.rv');
+  if('IntersectionObserver' in window){var io=new IntersectionObserver(function(es){es.forEach(function(x){if(x.isIntersecting){x.target.classList.add('on');io.unobserve(x.target);}})},{threshold:.12});els.forEach(function(x){io.observe(x)});}
+  else els.forEach(function(x){x.classList.add('on')});
+})();
+</script>
+</body>
+</html>
