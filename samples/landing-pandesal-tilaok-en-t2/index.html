@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tilaok Pandesal Route · Morning pandesal delivery</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--paper:#F5EEE2;--paper2:#EDE3D2;--card:#FBF7F0;--ink:#24262A;--ink2:#575349;--line:rgba(36,38,42,.15);--kraft:#C29C6B;--dawn:#2C3753;--am:#A4551B;--am-d:#874514}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;background:var(--paper)}
+body{font-family:'Work Sans',sans-serif;color:var(--ink);background:var(--paper);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:clip}
+.in{max-width:1200px;margin:0 auto;padding:0 32px}
+h1,h2,h3{font-family:'Fraunces',serif;font-weight:600;letter-spacing:-.015em;line-height:1.15}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;height:48px;padding:0 24px;border-radius:8px;font:600 16px 'Work Sans',sans-serif;text-decoration:none;border:0;cursor:pointer;transition:background-color .2s}
+.btn-p{background:var(--am);color:#fff}
+.btn-p:hover{background:var(--am-d)}
+.btn-s{color:var(--ink);background:transparent;box-shadow:inset 0 0 0 1.5px rgba(36,38,42,.5)}
+.btn-s:hover{background:rgba(36,38,42,.05)}
+svg.ic{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;flex:none}
+.num{font-variant-numeric:tabular-nums}
+
+header{position:absolute;top:0;left:0;right:0;z-index:5}
+header .in{display:flex;align-items:center;gap:32px;height:80px;max-width:none;padding:0 40px}
+.logo{display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--ink)}
+.logo svg{width:36px;height:36px}
+.logo b{font-family:'Fraunces',serif;font-weight:600;font-size:24px;line-height:1}
+.logo span{font-size:14px;color:var(--ink2);display:block;margin-top:2px}
+header nav{display:flex;gap:28px;margin-left:auto;margin-right:calc(50% - 520px)}
+header nav a{color:#D9DDE6;text-decoration:none;font-weight:500;font-size:15px}
+header nav a:hover{color:#fff}
+.mlink{display:none}
+
+.hero{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);min-height:760px}
+.hero .txt{padding:144px 64px 72px max(40px,calc(50vw - 560px));display:flex;flex-direction:column;justify-content:center}
+.hero .where{font-size:15px;color:var(--ink2);display:flex;align-items:center;gap:8px}
+.hero h1{font-size:clamp(38px,3.7vw,54px);margin-top:16px}
+.hero p.lead{font-size:18px;color:var(--ink2);margin-top:24px;max-width:520px;line-height:1.7}
+.offer{margin-top:32px;border-left:3px solid var(--am);padding:4px 0 4px 20px;max-width:520px}
+.offer b{display:block;font-size:18px;font-weight:600}
+.offer span{font-size:15px;color:var(--ink2)}
+.hero .acts{display:flex;gap:12px;margin-top:28px;flex-wrap:wrap}
+.hero dl{display:flex;gap:40px;margin-top:40px;padding-top:24px;border-top:1px solid var(--line);flex-wrap:wrap}
+.hero dt{font-size:13px;color:var(--ink2)}
+.hero dd{font-size:17px;font-weight:600;margin-top:2px}
+.scene{position:relative;background:var(--dawn);overflow:hidden}
+.scene svg{position:absolute;inset:0;width:100%;height:100%}
+.stamp{position:absolute;left:32px;bottom:32px;background:rgba(251,247,240,.96);border-radius:8px;padding:12px 16px;font-size:14px;line-height:1.45;max-width:260px}
+.stamp b{display:block;font-size:15px}
+
+section.sec{padding:112px 0}
+.sh{max-width:680px;margin-bottom:56px}
+.sh h2{font-size:clamp(32px,3.4vw,46px)}
+.sh p{font-size:18px;color:var(--ink2);margin-top:16px}
+
+/* timeline */
+.clock{background:var(--dawn);color:#EDE6D8}
+.clock .sh p{color:#BFC4CF}
+.tl{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));position:relative}
+.tl:before{content:"";position:absolute;left:0;right:0;top:27px;height:2px;background:rgba(237,230,216,.25)}
+.tl div{position:relative;padding-right:32px}
+.tl time{display:inline-flex;align-items:center;height:56px;font-family:'Fraunces',serif;font-size:36px;font-weight:500;background:var(--dawn);padding-right:16px;position:relative;font-variant-numeric:tabular-nums}
+.tl div:last-child time{color:#F0B47A}
+.tl h3{font-family:'Work Sans',sans-serif;font-weight:600;font-size:18px;margin-top:16px;color:#fff}
+.tl p{font-size:15px;color:#BFC4CF;margin-top:8px}
+
+/* plans */
+.plans{display:grid;grid-template-columns:1fr 1.15fr 1fr;gap:24px;align-items:stretch}
+.plan{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:32px;display:flex;flex-direction:column}
+.plan.main{background:var(--ink);color:#F1EADD;border-color:var(--ink)}
+.plan h3{font-size:26px}
+.plan .pcs{font-size:15px;color:var(--ink2);margin-top:4px}
+.plan.main .pcs,.plan.main li{color:#C9C3B7}
+.plan .pr{margin-top:28px;display:flex;align-items:baseline;gap:8px}
+.plan .pr b{font-family:'Fraunces',serif;font-weight:600;font-size:48px;line-height:1;font-variant-numeric:tabular-nums}
+.plan .pr span{font-size:15px;color:var(--ink2)}
+.plan.main .pr span{color:#C9C3B7}
+.plan ul{list-style:none;margin-top:24px;display:grid;gap:10px;font-size:15px;color:var(--ink2);flex:1}
+.plan li{display:flex;gap:10px}
+.plan li svg{width:20px;height:20px;margin-top:2px}
+.plan .btn{margin-top:28px;width:100%}
+.plan.main .btn-p{background:#E69A55;color:#24262A}
+.plan.main .btn-p:hover{background:#F0AE70}
+.plan .bag{display:flex;gap:3px;margin-top:20px;flex-wrap:nowrap;height:10px}
+.plan .bag i{width:10px;height:8px;flex:none;border-radius:7px 7px 5px 5px;background:#C9925A;box-shadow:inset 0 -3px 0 #A8703E}
+.plan.main .bag i{background:#E0A86E;box-shadow:inset 0 -3px 0 #B27B44}
+.addons{margin-top:32px;display:flex;flex-wrap:wrap;gap:12px 32px;font-size:15px;color:var(--ink2);padding-top:24px;border-top:1px solid var(--line)}
+.addons b{color:var(--ink);font-weight:600}
+
+/* route */
+.route{background:var(--paper2)}
+.route .grid{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:56px;align-items:center}
+.map{background:var(--card);border-radius:16px;border:1px solid var(--line);aspect-ratio:7/5;overflow:hidden}
+.map svg{display:block;width:100%;height:100%}
+.streets{list-style:none;margin-top:24px}
+.streets li{display:grid;grid-template-columns:24px minmax(0,1fr) auto;align-items:center;gap:16px;padding:14px 0;border-bottom:1px solid var(--line);font-size:16px}
+.streets li i{width:20px;height:4px;border-radius:2px}
+.streets li span{color:var(--ink2);font-variant-numeric:tabular-nums}
+.route p.out{margin-top:24px;font-size:15px;color:var(--ink2)}
+
+/* faq */
+.faqgrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:32px 56px}
+.faqgrid h3{font-family:'Work Sans',sans-serif;font-weight:600;font-size:18px}
+.faqgrid p{color:var(--ink2);margin-top:8px;font-size:16px}
+
+/* form */
+.signup{background:var(--card);border-top:1px solid var(--line)}
+.signup .grid{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,6fr);gap:64px}
+.signup h2{font-size:clamp(32px,3.4vw,46px)}
+.signup .side p{font-size:18px;color:var(--ink2);margin-top:16px}
+.signup .side ul{list-style:none;margin-top:28px;display:grid;gap:12px}
+.signup .side li{display:flex;gap:12px;font-size:16px}
+form{display:grid;grid-template-columns:1fr 1fr;gap:20px;background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:32px}
+label{display:grid;gap:8px;font-size:14px;font-weight:500}
+input,select{height:48px;border:1px solid rgba(36,38,42,.3);border-radius:8px;padding:0 12px;font:16px 'Work Sans',sans-serif;color:var(--ink);background:#fff;width:100%}
+input:focus,select:focus{outline:2px solid var(--ink);outline-offset:1px}
+.full{grid-column:1/-1}
+fieldset{border:0;grid-column:1/-1;display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+legend{font-size:14px;font-weight:500;margin-bottom:8px}
+fieldset label{display:flex;flex-direction:column;align-items:flex-start;gap:2px;border:1px solid rgba(36,38,42,.3);border-radius:8px;padding:12px;cursor:pointer;background:#fff;min-height:64px}
+fieldset input{position:absolute;opacity:0;width:1px;height:1px}
+fieldset label b{font-size:15px}
+fieldset label span{font-size:13px;color:var(--ink2);font-weight:400}
+fieldset label:has(input:checked){border-color:var(--ink);box-shadow:inset 0 0 0 1px var(--ink);background:#FBF7F0}
+form .btn{width:100%}
+.ok{display:none;grid-column:1/-1;background:var(--paper2);border-radius:8px;padding:16px;font-size:15px}
+.ok.on{display:block}
+form small{grid-column:1/-1;font-size:13px;color:var(--ink2)}
+footer{background:var(--ink);color:#BDB8AE;padding:40px 0;font-size:14px}
+footer .in{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap}
+footer b{color:#fff;font-family:'Fraunces',serif;font-weight:600;font-size:20px}
+.rv{opacity:0;transform:translateY(12px);transition:opacity .5s,transform .5s}
+.rv.on{opacity:1;transform:none}
+
+@media(max-width:1000px){
+ header{position:relative;background:var(--paper)}
+ header nav{display:none}
+ .mlink{display:inline-flex;align-items:center;margin-left:auto;min-height:44px;padding:0 16px;border-radius:8px;background:var(--am);color:#fff;font-weight:600;font-size:15px;text-decoration:none}
+ header .in{padding:0 24px}
+ .hero{grid-template-columns:1fr}
+ .hero .txt{padding:32px 24px 56px}
+ .scene{min-height:440px;order:-1}
+ .tl{grid-template-columns:1fr 1fr;gap:40px 0}
+ .plans{grid-template-columns:1fr}
+ .route .grid,.signup .grid{grid-template-columns:1fr}
+}
+@media(max-width:640px){
+ .in{padding:0 16px}
+ header .in{padding:0 16px;height:68px}
+ .hero .txt{padding:28px 16px 48px}
+ .scene{min-height:360px}
+ .stamp{display:none}
+ .hero dl{gap:20px 32px}
+ .hero .acts .btn{flex:1 1 auto}
+ section.sec{padding:72px 0}
+ .tl{grid-template-columns:1fr}
+ .tl:before{display:none}
+ .faqgrid{grid-template-columns:1fr}
+ form{grid-template-columns:1fr;padding:20px}
+ fieldset{grid-template-columns:1fr}
+ .plan{padding:24px}
+}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}.rv{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+<header>
+ <div class="in">
+  <a class="logo" href="#top" aria-label="Tilaok Pandesal Route">
+   <svg viewBox="0 0 36 36" aria-hidden="true"><rect width="36" height="36" rx="8" fill="#24262A"/><path d="M10 25c0-6 4-10 9-10 3 0 5 1 7 3l-2 1 3 2c-1 3-4 5-8 5h-6" fill="none" stroke="#F5EEE2" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/><path d="M17 15c-1-3 0-5 2-6 0 2 1 3 3 3-1 1-2 2-3 3" fill="#E69A55"/><circle cx="21" cy="18" r="1.2" fill="#F5EEE2"/></svg>
+   <div><b>Tilaok</b><span>Pandesal Route</span></div>
+  </a>
+  <nav><a href="#clock">How it runs</a><a href="#plans">Plans</a><a href="#route">Route</a><a href="#faq">Questions</a></nav>
+  <a class="mlink" href="#signup">Sign up</a>
+ </div>
+</header>
+
+<main id="top">
+<section class="hero">
+ <div class="txt">
+  <p class="where"><svg class="ic" viewBox="0 0 24 24"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg>Barangay San Isidro and nearby streets</p>
+  <h1>Warm pandesal on your gate before the 6:30 jeep</h1>
+  <p class="lead">We bake at 4:30, count and bag at 5:30, and our bike riders hang a paper bag on your gate handle as they pass. Choose how many pieces, pay by the week, and skip any morning with a text.</p>
+  <div class="offer"><b>Your first week of drops is free</b><span>Sign up for a month of mornings by December 31. Week one is on us, weeks two to four are billed weekly.</span></div>
+  <div class="acts"><a class="btn btn-p" href="#signup">Claim my free first week <svg class="ic" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a><a class="btn btn-s" href="#plans">See plans</a></div>
+  <dl>
+   <div><dt>Per piece</dt><dd class="num">₱5</dd></div>
+   <div><dt>Drop window</dt><dd class="num">5:45 – 6:30 AM</dd></div>
+   <div><dt>Skip a morning</dt><dd>Text by 9 PM</dd></div>
+  </dl>
+ </div>
+ <div class="scene">
+  <svg viewBox="0 0 720 960" preserveAspectRatio="xMidYMax slice" role="img" aria-label="Before sunrise, a brown paper bag of pandesal hangs from the handle of a green painted steel gate. A bougainvillea branch leans over the concrete wall and a bicycle with a basket is just leaving the right edge.">
+   <defs>
+    <linearGradient id="sky" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="0" y2="500"><stop offset="0" stop-color="#222C46"/><stop offset=".5" stop-color="#3D4870"/><stop offset=".8" stop-color="#9C7B8C"/><stop offset="1" stop-color="#EDB48A"/></linearGradient>
+    <linearGradient id="wall" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#8F8A84"/><stop offset="1" stop-color="#6F6A66"/></linearGradient>
+    <linearGradient id="post" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#7E7973"/><stop offset=".4" stop-color="#A39E96"/><stop offset="1" stop-color="#6E6964"/></linearGradient>
+    <linearGradient id="gate" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#3F6A58"/><stop offset="1" stop-color="#2C4E41"/></linearGradient>
+    <linearGradient id="bag" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#A9824F"/><stop offset=".35" stop-color="#C9A372"/><stop offset=".7" stop-color="#BB9563"/><stop offset="1" stop-color="#9A7444"/></linearGradient>
+    <linearGradient id="road" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#4C4A4C"/><stop offset="1" stop-color="#2E2D30"/></linearGradient>
+    <radialGradient id="bun" cx=".4" cy=".35" r=".7"><stop offset="0" stop-color="#E8B57A"/><stop offset=".7" stop-color="#C98545"/><stop offset="1" stop-color="#9E5F2A"/></radialGradient>
+    <pattern id="crumb" width="10" height="10" patternUnits="userSpaceOnUse"><circle cx="2" cy="3" r="1" fill="#F2DDB6"/><circle cx="7" cy="7" r=".9" fill="#E9CFA0"/></pattern>
+   </defs>
+   <rect width="720" height="960" fill="url(#sky)"/>
+   <g transform="translate(0 200)">
+   <!-- distant roofs -->
+   <g transform="translate(0 -176)"><path d="M0 470l60-34 60 34h40v-30l70-40 70 40v30h60l50-28 50 28h70l60-36 60 36h70v60H0z" fill="#33395A" opacity=".85"/>
+   <rect x="420" y="380" width="4" height="120" fill="#2A2F48"/><path d="M380 386h84" stroke="#2A2F48" stroke-width="3"/></g>
+   <path d="M560 -60a26 26 0 1 0 22 40 22 22 0 1 1 -22 -40z" fill="#F1E6CC" opacity=".9"/>
+   <path d="M-10 150C140 200 280 214 382 210" stroke="#1C2236" stroke-width="2" fill="none"/><path d="M-10 176C150 222 300 230 400 212" stroke="#1C2236" stroke-width="2" fill="none"/><path d="M444 210C560 214 660 196 740 170" stroke="#1C2236" stroke-width="2" fill="none"/><path d="M462 212C580 226 670 214 740 196" stroke="#1C2236" stroke-width="2" fill="none"/>
+   <!-- wall -->
+   <rect x="0" y="300" width="720" height="380" fill="url(#wall)"/>
+   <rect x="0" y="292" width="720" height="16" fill="#A5A099"/>
+   <g stroke="#635E5A" stroke-width="2" opacity=".35"><path d="M0 380h720M0 460h720M0 540h720M0 620h720"/><path d="M110 308v72M330 308v72M560 308v72M220 380v80M450 380v80M660 380v80M110 460v80M330 460v80M560 460v80"/></g>
+   <!-- posts -->
+   <rect x="120" y="270" width="64" height="420" fill="url(#post)"/><rect x="112" y="258" width="80" height="20" rx="3" fill="#B0AAA2"/>
+   <rect x="560" y="270" width="64" height="420" fill="url(#post)"/><rect x="552" y="258" width="80" height="20" rx="3" fill="#B0AAA2"/>
+   <!-- house number plate -->
+   <rect x="134" y="330" width="36" height="46" rx="4" fill="#E9E1D2"/><text x="152" y="361" text-anchor="middle" font-family="Fraunces" font-weight="600" font-size="22" fill="#2C3753">00</text>
+   <!-- gate -->
+   <g>
+    <rect x="184" y="250" width="376" height="440" fill="#1E2A36" opacity=".55"/>
+    <rect x="184" y="250" width="376" height="440" fill="none" stroke="url(#gate)" stroke-width="12"/>
+    <path d="M372 250v440" stroke="url(#gate)" stroke-width="10"/>
+    <path d="M184 330h376M184 610h376" stroke="url(#gate)" stroke-width="8"/>
+    <g stroke="url(#gate)" stroke-width="6" fill="none">
+     <path d="M212 330v280M240 330v280M268 330v280M296 330v280M324 330v280M352 330v280M392 330v280M420 330v280M448 330v280M476 330v280M504 330v280M532 330v280"/>
+    </g>
+    <!-- scroll ornament top -->
+    <g stroke="#3F6A58" stroke-width="6" fill="none" stroke-linecap="round">
+     <path d="M200 312c20-40 60-40 70-14 6 16-10 26-22 18"/><path d="M356 312c-20-40-60-40-70-14-6 16 10 26 22 18"/>
+     <path d="M388 312c20-40 60-40 70-14 6 16-10 26-22 18"/><path d="M544 312c-20-40-60-40-70-14-6 16 10 26 22 18"/>
+    </g>
+    <g fill="#3F6A58"><circle cx="278" cy="280" r="7"/><circle cx="466" cy="280" r="7"/></g>
+    <!-- highlight -->
+    <path d="M190 256h364" stroke="#7FA493" stroke-width="2" opacity=".6"/>
+    <!-- latch / handle -->
+    <rect x="360" y="420" width="24" height="56" rx="4" fill="#2A2C2E"/>
+    <rect x="384" y="440" width="54" height="10" rx="5" fill="#3A3C3F"/><circle cx="438" cy="445" r="8" fill="#3A3C3F"/><circle cx="436" cy="443" r="3" fill="#6A6C70"/>
+   </g>
+   <!-- bougainvillea over left post -->
+   <g>
+    <path d="M-10 214c50-6 90 6 124 26s40 30 46 40" stroke="#4B3A2A" stroke-width="6" fill="none" stroke-linecap="round"/>
+    <path d="M60 222c6-20 20-34 36-40M120 246c14-12 30-16 46-12" stroke="#4B3A2A" stroke-width="4" fill="none" stroke-linecap="round"/>
+    <g fill="#3E6440"><ellipse cx="40" cy="206" rx="20" ry="11" transform="rotate(-20 40 206)"/><ellipse cx="100" cy="190" rx="18" ry="10" transform="rotate(30 100 190)"/><ellipse cx="160" cy="250" rx="18" ry="10" transform="rotate(20 160 250)"/><ellipse cx="60" cy="250" rx="16" ry="9" transform="rotate(60 60 250)"/></g>
+    <g><ellipse cx="19" cy="224" rx="7" ry="5" transform="rotate(0 19 224)" fill="#C2457A"/><ellipse cx="29" cy="222" rx="7" ry="5" transform="rotate(120 29 222)" fill="#D45C8E"/><ellipse cx="24" cy="230" rx="7" ry="5" transform="rotate(240 24 230)" fill="#C2457A"/><circle cx="24" cy="225" r="1.8" fill="#F3E6C8"/><ellipse cx="31" cy="236" rx="7" ry="5" transform="rotate(0 31 236)" fill="#C2457A"/><ellipse cx="41" cy="234" rx="7" ry="5" transform="rotate(120 41 234)" fill="#D45C8E"/><ellipse cx="36" cy="242" rx="7" ry="5" transform="rotate(240 36 242)" fill="#C2457A"/><circle cx="36" cy="237" r="1.8" fill="#F3E6C8"/><ellipse cx="9" cy="238" rx="7" ry="5" transform="rotate(0 9 238)" fill="#C2457A"/><ellipse cx="19" cy="236" rx="7" ry="5" transform="rotate(120 19 236)" fill="#D45C8E"/><ellipse cx="14" cy="244" rx="7" ry="5" transform="rotate(240 14 244)" fill="#C2457A"/><circle cx="14" cy="239" r="1.8" fill="#F3E6C8"/><ellipse cx="81" cy="186" rx="7" ry="5" transform="rotate(0 81 186)" fill="#C2457A"/><ellipse cx="91" cy="184" rx="7" ry="5" transform="rotate(120 91 184)" fill="#D45C8E"/><ellipse cx="86" cy="192" rx="7" ry="5" transform="rotate(240 86 192)" fill="#C2457A"/><circle cx="86" cy="187" r="1.8" fill="#F3E6C8"/><ellipse cx="93" cy="178" rx="7" ry="5" transform="rotate(0 93 178)" fill="#C2457A"/><ellipse cx="103" cy="176" rx="7" ry="5" transform="rotate(120 103 176)" fill="#D45C8E"/><ellipse cx="98" cy="184" rx="7" ry="5" transform="rotate(240 98 184)" fill="#C2457A"/><circle cx="98" cy="179" r="1.8" fill="#F3E6C8"/><ellipse cx="135" cy="236" rx="7" ry="5" transform="rotate(0 135 236)" fill="#C2457A"/><ellipse cx="145" cy="234" rx="7" ry="5" transform="rotate(120 145 234)" fill="#D45C8E"/><ellipse cx="140" cy="242" rx="7" ry="5" transform="rotate(240 140 242)" fill="#C2457A"/><circle cx="140" cy="237" r="1.8" fill="#F3E6C8"/><ellipse cx="147" cy="246" rx="7" ry="5" transform="rotate(0 147 246)" fill="#C2457A"/><ellipse cx="157" cy="244" rx="7" ry="5" transform="rotate(120 157 244)" fill="#D45C8E"/><ellipse cx="152" cy="252" rx="7" ry="5" transform="rotate(240 152 252)" fill="#C2457A"/><circle cx="152" cy="247" r="1.8" fill="#F3E6C8"/><ellipse cx="127" cy="252" rx="7" ry="5" transform="rotate(0 127 252)" fill="#C2457A"/><ellipse cx="137" cy="250" rx="7" ry="5" transform="rotate(120 137 250)" fill="#D45C8E"/><ellipse cx="132" cy="258" rx="7" ry="5" transform="rotate(240 132 258)" fill="#C2457A"/><circle cx="132" cy="253" r="1.8" fill="#F3E6C8"/><ellipse cx="65" cy="228" rx="7" ry="5" transform="rotate(0 65 228)" fill="#C2457A"/><ellipse cx="75" cy="226" rx="7" ry="5" transform="rotate(120 75 226)" fill="#D45C8E"/><ellipse cx="70" cy="234" rx="7" ry="5" transform="rotate(240 70 234)" fill="#C2457A"/><circle cx="70" cy="229" r="1.8" fill="#F3E6C8"/></g>
+   </g>
+   <!-- bag hanging from handle -->
+   <g transform="translate(414 446) scale(.86)">
+    <path d="M-8 0c-10 14-10 30 0 44M8 0c10 14 10 30 0 44" stroke="#E6D3AE" stroke-width="3" fill="none" stroke-linecap="round"/>
+    <path d="M-58 56h116l8 150c0 8-6 14-14 14H-64c-8 0-14-6-14-14z" fill="url(#bag)"/>
+    <path d="M-60 40h120l-2 26H-58z" fill="#A47C4A"/>
+    <path d="M-60 40h120" stroke="#8E6A3E" stroke-width="2"/>
+    <path d="M-58 66h116" stroke="#7A5A32" stroke-width="2" opacity=".6"/>
+    <path d="M-62 52h124l-2 14H-60z" fill="#B48C5A"/>
+    <g transform="translate(0 132)" opacity=".75" fill="none" stroke="#5A3A1E" stroke-width="2.5"><circle r="28"/><path d="M-13 9c0-7 5-13 11-13 4 0 7 2 8 4l-3 1 4 3c-1 4-5 6-9 6h-8" stroke-linejoin="round"/></g>
+    <path d="M-48 80v124" stroke="#E2C99E" stroke-width="3" opacity=".3"/>
+    <path d="M-6 36c-4-8 3-12-1-20M10 34c-4-8 3-12-1-20" stroke="#F4E6CF" stroke-width="2" fill="none" stroke-linecap="round" opacity=".3"/>
+   </g>
+   
+   <!-- road -->
+   <rect x="0" y="690" width="720" height="70" fill="url(#road)"/>
+   <rect x="0" y="680" width="720" height="14" fill="#8B857E"/>
+   <path d="M0 732h120M200 732h120M400 732h120M600 732h120" stroke="#9A948C" stroke-width="3" opacity=".5"/>
+   </g>
+   </g>
+  </svg>
+  <div class="stamp"><b>5:52 AM, No. 00</b>One bag, twelve pieces, folded twice so the heat stays in</div>
+ </div>
+</section>
+
+<section class="sec clock" id="clock">
+ <div class="in">
+  <div class="sh rv"><h2>How a morning runs</h2><p>Pandesal is at its softest within the hour it leaves the oven, so the whole route is timed around that hour.</p></div>
+  <div class="tl">
+   <div class="rv"><time>4:30</time><h3>Into the pugon</h3><p>Dough rolled in breadcrumbs the night before goes into the wood-fired oven, tray by tray.</p></div>
+   <div class="rv"><time>5:30</time><h3>Counted and named</h3><p>Each bag gets your house number written on the fold, so riders never have to knock.</p></div>
+   <div class="rv"><time>5:45</time><h3>Riders leave</h3><p>Three bikes, three loops. Bags ride in covered baskets lined with cloth.</p></div>
+   <div class="rv"><time>6:30</time><h3>Last gate</h3><p>Every bag on the route is hung by 6:30, before the first jeep fills up on the main road.</p></div>
+  </div>
+ </div>
+</section>
+
+<section class="sec" id="plans">
+ <div class="in">
+  <div class="sh rv"><h2>Pick a bag size</h2><p>Every plan runs seven mornings a week at ₱5 a piece. You pay at the end of each week, and skipped mornings are taken off.</p></div>
+  <div class="plans">
+   <div class="plan rv"><h3>Solo</h3><p class="pcs">6 pieces every morning</p><div class="bag"><i></i><i></i><i></i><i></i><i></i><i></i></div><div class="pr"><b>₱210</b><span>a week</span></div>
+    <ul><li><svg class="ic" viewBox="0 0 24 24"><path d="m5 12 4 4 10-10"/></svg>Enough for one or two with coffee</li><li><svg class="ic" viewBox="0 0 24 24"><path d="m5 12 4 4 10-10"/></svg>Hung on your gate by 6:30 AM</li></ul>
+    <a class="btn btn-s" href="#signup" data-plan="solo">Choose Solo</a></div>
+   <div class="plan main rv"><h3>Household</h3><p class="pcs">12 pieces every morning</p><div class="bag"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div><div class="pr"><b>₱420</b><span>a week</span></div>
+    <ul><li><svg class="ic" viewBox="0 0 24 24"><path d="m5 12 4 4 10-10"/></svg>Breakfast and baon for a family of four</li><li><svg class="ic" viewBox="0 0 24 24"><path d="m5 12 4 4 10-10"/></svg>Change to 18 pieces on weekends at no extra fee</li><li><svg class="ic" viewBox="0 0 24 24"><path d="m5 12 4 4 10-10"/></svg>Hung on your gate by 6:30 AM</li></ul>
+    <a class="btn btn-p" href="#signup" data-plan="household">Choose Household</a></div>
+   <div class="plan rv"><h3>Big table</h3><p class="pcs">20 pieces every morning</p><div class="bag"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div><div class="pr"><b>₱700</b><span>a week</span></div>
+    <ul><li><svg class="ic" viewBox="0 0 24 24"><path d="m5 12 4 4 10-10"/></svg>For lola's house, boarding houses, small offices</li><li><svg class="ic" viewBox="0 0 24 24"><path d="m5 12 4 4 10-10"/></svg>Two bags, so one can go straight to the table</li></ul>
+    <a class="btn btn-s" href="#signup" data-plan="big">Choose Big table</a></div>
+  </div>
+  <div class="addons rv"><b>Add to any bag:</b><span>Spanish bread ₱8</span><span>Ube cheese pandesal ₱12</span><span>Ensaymada ₱25</span><span>Kesong puti, 1 pack ₱65</span></div>
+ </div>
+</section>
+
+<section class="sec route" id="route">
+ <div class="in grid">
+  <div class="map rv">
+   <svg viewBox="0 0 700 500" role="img" aria-label="Route map of the barangay. Three colored rider loops start at the bakery and pass along the listed streets.">
+    <rect width="700" height="500" fill="#FBF7F0"/>
+    <g fill="#EDE3D2"><rect x="40" y="40" width="180" height="120" rx="6"/><rect x="260" y="40" width="200" height="120" rx="6"/><rect x="500" y="40" width="160" height="120" rx="6"/><rect x="40" y="200" width="180" height="120" rx="6"/><rect x="260" y="200" width="200" height="120" rx="6"/><rect x="500" y="200" width="160" height="120" rx="6"/><rect x="40" y="360" width="180" height="100" rx="6"/><rect x="260" y="360" width="200" height="100" rx="6"/><rect x="500" y="360" width="160" height="100" rx="6"/></g>
+    <rect x="530" y="230" width="40" height="40" rx="4" fill="#DCE7D6"/><rect x="290" y="390" width="70" height="40" rx="4" fill="#DCE7D6"/>
+    <path d="M0 180h700M0 340h700M240 0v500M480 0v500" stroke="#D6CBB8" stroke-width="22"/>
+    <path d="M0 180h700M0 340h700M240 0v500M480 0v500" stroke="#fff" stroke-width="2" stroke-dasharray="8 10" opacity=".8"/>
+    <path d="M60 180 V340 H240 V180Z" fill="none" stroke="#A4551B" stroke-width="5" stroke-linejoin="round" transform="translate(0 0)"/>
+    <path d="M240 180 H480 V20" fill="none" stroke="#3F6A58" stroke-width="5" stroke-linejoin="round"/>
+    <path d="M240 340 H480 V480 H600 V340" fill="none" stroke="#2C3753" stroke-width="5" stroke-linejoin="round"/>
+    <g><circle cx="240" cy="260" r="16" fill="#24262A"/><path d="M233 264c0-5 3-8 7-8 2 0 4 1 5 2l-2 1 3 2c-1 2-3 4-6 4h-5" fill="none" stroke="#F5EEE2" stroke-width="2"/></g>
+    <g fill="#fff" stroke="#24262A" stroke-width="2.5"><circle cx="60" cy="340" r="6"/><circle cx="480" cy="20" r="6"/><circle cx="600" cy="340" r="6"/></g>
+   </svg>
+  </div>
+  <div class="rv">
+   <h2 style="font-size:clamp(32px,3.4vw,46px)">Where the bikes go</h2>
+   <ul class="streets">
+    <li><i style="background:#A4551B"></i>Mabini St. and Rizal Extension <span>by 6:00</span></li>
+    <li><i style="background:#3F6A58"></i>Sampaguita Village, Phase 1 and 2 <span>by 6:15</span></li>
+    <li><i style="background:#2C3753"></i>Ilang-Ilang St. to the chapel <span>by 6:20</span></li>
+    <li><i style="background:#2C3753"></i>Kalachuchi Homes, guard desk drop <span>by 6:30</span></li>
+   </ul>
+   <p class="out">Each colour is one rider’s loop, starting from the bakery in the middle. Not on the list? Leave your street in the form. When a loop grows close enough to pass your gate, we text you first.</p>
+  </div>
+ </div>
+</section>
+
+<section class="sec" id="faq">
+ <div class="in">
+  <div class="sh rv"><h2>Before you sign up</h2></div>
+  <div class="faqgrid rv">
+   <div><h3>What if it rains?</h3><p>On wet mornings the paper bag goes inside a clear plastic sleeve before it is hung, and riders wear capes over the baskets.</p></div>
+   <div><h3>We have no gate, we're in a condo</h3><p>Bags for Kalachuchi Homes and other buildings are left at the guard desk with your unit number on the fold.</p></div>
+   <div><h3>How do I pay?</h3><p>Every Sunday you get a text with the week's total. Pay by e-wallet or leave cash in an envelope on the gate for Monday's rider.</p></div>
+   <div><h3>Can I pause while we travel?</h3><p>Yes. Text the dates and those mornings are skipped and not billed. There is no minimum after the first month.</p></div>
+  </div>
+ </div>
+</section>
+
+<section class="sec signup" id="signup">
+ <div class="in grid">
+  <div class="side rv">
+   <h2>Start your route</h2>
+   <p>Fill this in by December 31 and your first seven mornings are free. We will text you the night before your first drop.</p>
+   <ul>
+    <li><svg class="ic" viewBox="0 0 24 24"><rect x="7" y="2.5" width="10" height="19" rx="2"/><path d="M11 18h2"/></svg>Order line 0900-000-0000</li>
+    <li><svg class="ic" viewBox="0 0 24 24"><path d="M3 10.5 12 4l9 6.5V20H3z"/><path d="M9 20v-6h6v6"/></svg>Bakery at 00 Sample St., Barangay San Isidro</li>
+    <li><svg class="ic" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>Pick-up counter open 5:00 – 9:00 AM</li>
+   </ul>
+  </div>
+  <form class="rv" id="f" novalidate>
+   <label>Name<input name="n" autocomplete="name" placeholder="Your name"></label>
+   <label>Mobile number<input name="m" inputmode="tel" placeholder="0900-000-0000"></label>
+   <label class="full">Street<select name="s"><option>Mabini St. / Rizal Extension</option><option>Sampaguita Village Phase 1–2</option><option>Ilang-Ilang St.</option><option>Kalachuchi Homes (guard desk)</option><option>Other street, tell me when you pass</option></select></label>
+   <label class="full">House number or unit<input name="h" placeholder="e.g. No. 00, green gate"></label>
+   <fieldset><legend>Bag size</legend>
+    <label><input type="radio" name="p" value="Solo"><b>Solo</b><span>6 pcs · ₱210/wk</span></label>
+    <label><input type="radio" name="p" value="Household" checked><b>Household</b><span>12 pcs · ₱420/wk</span></label>
+    <label><input type="radio" name="p" value="Big table"><b>Big table</b><span>20 pcs · ₱700/wk</span></label>
+   </fieldset>
+   <label class="full">First morning<input type="date" name="d"></label>
+   <div class="full"><button class="btn btn-p" type="submit">Claim my free first week</button></div>
+   <p class="ok" id="ok" role="status"></p>
+   <small>No payment today. Week two is billed on the following Sunday.</small>
+  </form>
+ </div>
+</section>
+</main>
+
+<footer>
+ <div class="in">
+  <div><b>Tilaok Pandesal Route</b><p style="margin-top:6px">Baked at 4:30, on your gate by 6:30 · Open every day</p></div>
+  <p><span style="white-space:nowrap">00 Sample St., Barangay San Isidro</span> · <span style="white-space:nowrap">0900-000-0000</span></p>
+ </div>
+</footer>
+
+<script>
+(function(){
+ var f=document.getElementById('f'),ok=document.getElementById('ok');
+ document.querySelectorAll('[data-plan]').forEach(function(a){a.addEventListener('click',function(){var v={solo:'Solo',household:'Household',big:'Big table'}[a.dataset.plan];var r=f.querySelector('input[value="'+v+'"]');if(r)r.checked=true})});
+ f.addEventListener('submit',function(e){e.preventDefault();var n=f.n.value.trim(),m=f.m.value.trim(),h=f.h.value.trim();
+  if(!n||!m||!h){ok.textContent='Please add your name, mobile number and house number so the rider can find your gate.';ok.classList.add('on');return}
+  var p=f.querySelector('input[name=p]:checked').value,d=f.d.value?(' starting '+f.d.value):'';
+  ok.textContent='Thanks, '+n+'. Your '+p+' bag is set for '+h+d+'. The first seven mornings are free, and we will text '+m+' the night before.';ok.classList.add('on')});
+ if('IntersectionObserver' in window){var io=new IntersectionObserver(function(es){es.forEach(function(x){if(x.isIntersecting){x.target.classList.add('on');io.unobserve(x.target)}})},{threshold:.12});document.querySelectorAll('.rv').forEach(function(el){io.observe(el)})}else{document.querySelectorAll('.rv').forEach(function(el){el.classList.add('on')})}
+})();
+</script>
+</body>
+</html>

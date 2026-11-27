@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>갯골 꼬막정식 · 메뉴판 디자인</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Song+Myung&family=IBM+Plex+Sans+KR:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+html{background:#E9E1D2}
+body{font-family:'IBM Plex Sans KR',sans-serif;color:#2B2824;background:#E9E1D2;word-break:keep-all;-webkit-font-smoothing:antialiased;min-height:100vh;overflow-x:clip;line-height:1.6}
+.wrap{max-width:1180px;margin:0 auto;padding:48px 24px 136px}
+.hd{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:24px;padding-bottom:32px;margin-bottom:40px;border-bottom:2px solid #2B2824}
+.hd small{font-size:14px;font-weight:500;color:#5A534A}
+.hd h1{font-family:'Song Myung',serif;font-weight:400;font-size:clamp(44px,6vw,76px);line-height:1;margin-top:8px;display:flex;flex-wrap:wrap;align-items:flex-end;gap:4px 16px}
+.hd h1 span{font-family:'IBM Plex Sans KR',sans-serif;font-weight:500;font-size:.36em;color:#4E4840;padding-bottom:.12em}
+.hd p.lead{font-size:clamp(16px,1.6vw,19px);color:#3F3A33;margin-top:20px;max-width:720px;line-height:1.7}
+.facts{display:flex;flex-wrap:wrap;gap:8px 24px;margin-top:20px;font-size:15px;color:#5A534A}
+.facts span{display:flex;align-items:center;gap:8px}
+.facts span:before{content:"";flex:none;width:12px;height:11px;border-radius:50% 50% 45% 45%/40% 40% 60% 60%;background:#8C6E50}
+.cta{display:inline-flex;align-items:center;gap:8px;height:52px;padding:0 24px;background:#2B2824;color:#F2EBDD;font-weight:700;font-size:16px;text-decoration:none;border-radius:8px;transition:background-color .2s;white-space:nowrap}
+.cta:hover{background:#4E4840}
+.cta svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+.view{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,.8fr);gap:32px;align-items:start}
+figure{background:#F2EBDD;padding:12px;border-radius:8px;border:1px solid rgba(43,40,36,.18)}
+figure a{display:block;overflow:hidden;border-radius:4px}
+figure img{display:block;width:100%;height:auto}
+figcaption{font-size:14px;color:#5A534A;padding:12px 4px 0;display:flex;flex-wrap:wrap;justify-content:space-between;gap:4px 12px}
+figcaption b{color:#2B2824;font-weight:700}
+.side{display:flex;flex-direction:column;gap:20px;position:sticky;top:24px}
+.zoom{background:#F2EBDD;padding:8px;border-radius:8px;border:1px solid rgba(43,40,36,.18)}
+.zoom img{display:block;width:100%;height:auto;border-radius:4px}
+.zoom p{font-size:15px;color:#4E4840;padding:12px 8px 4px}
+.zoom p b{display:block;font-family:'Song Myung',serif;font-weight:400;font-size:24px;color:#2B2824;margin-bottom:4px;line-height:1.3}
+.info{background:#3B3631;color:#D8CFC0;padding:24px;border-radius:8px}
+.info h2{font-family:'Song Myung',serif;font-weight:400;font-size:26px;color:#F2EBDD;margin-bottom:8px;line-height:1.25}
+.info li{list-style:none;font-size:15px;padding:12px 0 12px 24px;position:relative;border-top:1px solid rgba(242,235,221,.16)}
+.info li:first-child{border-top:0}
+.info li:before{content:"";position:absolute;left:2px;top:20px;width:10px;height:9px;border-radius:50% 50% 45% 45%/40% 40% 60% 60%;background:#C9A57F}
+.bar{position:fixed;left:0;right:0;bottom:0;background:#3B3631;border-top:4px solid #B23F25;padding:12px 20px;display:flex;justify-content:center;align-items:center;gap:20px;flex-wrap:wrap;z-index:10}
+.bar p{font-size:15px;color:#D8CFC0}
+.bar .cta{height:48px;background:#F2EBDD;color:#2B2824}
+.bar .cta:hover{background:#E0D6C4}
+@media(max-width:900px){.view{grid-template-columns:1fr}.side{position:static}}
+@media(max-width:620px){.wrap{padding:28px 16px 112px}.hd .cta{display:none}.bar p{display:none}.bar .cta{width:100%;justify-content:center}figure{padding:6px}}
+@media(prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+<div class="wrap">
+ <div class="hd">
+  <div>
+   <small>메뉴판 디자인 · SD-MN69</small>
+   <h1>갯골 <span>꼬막정식</span></h1>
+   <p class="lead">벌교식으로 꼬막을 삶아 정식과 비빔밥으로 내는 남도 밥집의 메뉴판입니다. 갯벌 펄 빛 윗단에 양은 쟁반과 백자 접시에 담은 꼬막 숙회를 위에서 내려다본 그림으로 크게 놓고, 처음 온 손님도 고를 수 있게 참꼬막과 새꼬막의 차이를 그림으로 나눠 적었습니다.</p>
+   <div class="facts"><span>A4 세로 · 1쪽 · 한국어 · 원화</span><span>갯벌 회갈색 · 조개껍데기 미색 · 양념 주홍</span><span>위에서 본 꼬막 숙회 접시 그림</span></div>
+  </div>
+  <a class="cta" href="https://design.shoponph.online/#inquiry">이 디자인으로 상담하기 <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+ </div>
+ <div class="view">
+  <figure><a href="page1.png" target="_blank" rel="noopener"><img src="page1.png" alt="갯골 꼬막정식 메뉴판 전체. 위쪽 회갈색 갯벌 빛 띠 왼쪽에 작은 글씨 벌교식 꼬막 밥집, 큰 붓 느낌 명조 갯골과 꼬막정식, 꼬막을 아침마다 받아 한 방향으로만 저어 삶는다는 소개, 제철 11·12·1·2·3월 칸이 있습니다. 오른쪽에는 망치 자국 있는 양은 쟁반 위 푸른 테 백자 접시에 꼬막이 가운데로 수북이 겹쳐 쌓여 있는데, 닫힌 꼬막은 골이 부채꼴로 선명하고 반쯤 깐 꼬막에는 윤기 도는 적갈색 살이 담겨 있으며 몇 개에는 고춧가루 양념장, 쪽파, 깨가 얹혀 있습니다. 아래 왼쪽 정식 상자에 꼬막정식 1인 20,000원(2인부터, 삶은 새꼬막·무침·꼬막전·된장국·밥·남도 반찬 6가지)과 참꼬막 정식 1인 27,000원, 한 가지씩 목록에 꼬막비빔밥 13,000, 참꼬막 숙회 500g 25,000, 새꼬막 무침 18,000·28,000, 꼬막전 6장 14,000, 꼬막 탕수 18,000, 꼬막 된장찌개 9,000이 있습니다. 오른쪽에는 참꼬막과 새꼬막 껍데기 그림 비교, 마실 것 생막걸리·소주·맥주 5,000, 유자차·탄산음료 2,000, 짙은 포장 상자 삶은 새꼬막 1kg 23,000원과 무침용 손질 +3,000원, 꼬막 까는 법 안내가 있고, 맨 아래 갯벌 물결선이 있는 짙은 띠에 영업시간과 주소·전화 자리표시가 있습니다." width="2480" height="3508"></a><figcaption><b>A4 세로, 1쪽</b><span>2480 × 3508 px · 인쇄용</span></figcaption></figure>
+  <div class="side">
+   <div class="zoom"><img src="detail-plate.jpg" alt="그림 확대. 양은 쟁반 위 백자 접시에 닫힌 꼬막과 반쯤 깐 꼬막이 수북이 겹쳐 쌓여 있고, 깐 꼬막의 적갈색 살 위에 붉은 양념장과 쪽파, 깨가 얹혀 있습니다." width="1120" height="1096" loading="lazy"><p><b>한 접시를 위에서</b>수북이 쌓은 꼬막마다 껍데기 골과 성장선, 반쯤 깐 꼬막 살의 윤기와 양념장까지 그렸습니다</p></div>
+   <div class="info"><h2>바꿔 드릴 수 있는 것</h2><ul><li>메뉴 이름, 가격, 정식 구성, 영업시간</li><li>접시 위 음식을 바지락·키조개·전복 등 가게 대표 메뉴로</li><li>벽걸이 메뉴판, 테이블 한 장 메뉴, 포장 주문 전단</li></ul></div>
+  </div>
+ </div>
+</div>
+<div class="bar"><p>우리 가게도 이런 메뉴판이 필요하다면</p><a class="cta" href="https://design.shoponph.online/#inquiry">이 디자인으로 상담하기</a></div>
+</body>
+</html>
