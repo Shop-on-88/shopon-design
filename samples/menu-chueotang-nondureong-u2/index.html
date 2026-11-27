@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>논두렁 추어탕 · 메뉴판 디자인</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@700;800&family=Gothic+A1:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+html{background:#EAE0CB}
+body{font-family:'Gothic A1',sans-serif;color:#2E2419;background:#EAE0CB;word-break:keep-all;-webkit-font-smoothing:antialiased;min-height:100vh;overflow-x:clip;line-height:1.6}
+.wrap{max-width:1180px;margin:0 auto;padding:48px 24px 136px}
+.hd{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:24px;padding-bottom:32px;margin-bottom:40px;border-bottom:2px solid #2E2419}
+.hd small{font-size:14px;font-weight:500;color:#5E5141}
+.hd h1{font-family:'Nanum Myeongjo',serif;font-weight:800;font-size:clamp(44px,6vw,76px);line-height:1.05;margin-top:8px;display:flex;flex-wrap:wrap;align-items:flex-end;gap:4px 16px;letter-spacing:-.01em}
+.hd h1 span{font-family:'Gothic A1',sans-serif;font-weight:500;font-size:.34em;color:#5E5141;padding-bottom:.16em;letter-spacing:0}
+.hd p.lead{font-size:clamp(16px,1.6vw,19px);color:#3B3025;margin-top:20px;max-width:720px;line-height:1.7}
+.facts{display:flex;flex-wrap:wrap;gap:8px 24px;margin-top:20px;font-size:15px;color:#5E5141}
+.facts span{display:flex;align-items:center;gap:8px}
+.facts span:before{content:"";flex:none;width:8px;height:16px;border-radius:50%;background:#B9963F;transform:rotate(25deg)}
+.cta{display:inline-flex;align-items:center;gap:8px;height:52px;padding:0 24px;background:#2E2419;color:#F1E8D6;font-weight:700;font-size:16px;text-decoration:none;border-radius:8px;transition:background-color .2s;white-space:nowrap}
+.cta:hover{background:#4A3B2C}
+.cta svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+.view{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,.8fr);gap:32px;align-items:start}
+figure{background:#F4EDDF;padding:12px;border-radius:8px;border:1px solid rgba(46,36,25,.18)}
+figure a{display:block;overflow:hidden;border-radius:4px}
+figure img{display:block;width:100%;height:auto}
+figcaption{font-size:14px;color:#5E5141;padding:12px 4px 0;display:flex;flex-wrap:wrap;justify-content:space-between;gap:4px 12px}
+figcaption b{color:#2E2419;font-weight:700}
+.side{display:flex;flex-direction:column;gap:20px;position:sticky;top:24px}
+.zoom{background:#F4EDDF;padding:8px;border-radius:8px;border:1px solid rgba(46,36,25,.18)}
+.zoom img{display:block;width:100%;height:auto;border-radius:4px}
+.zoom p{font-size:15px;color:#4A3B2C;padding:12px 8px 4px}
+.zoom p b{display:block;font-family:'Nanum Myeongjo',serif;font-weight:800;font-size:24px;color:#2E2419;margin-bottom:4px;line-height:1.3}
+.info{background:#3D3024;color:#DDD1BA;padding:24px;border-radius:8px}
+.info h2{font-family:'Nanum Myeongjo',serif;font-weight:800;font-size:26px;color:#F1E8D6;margin-bottom:8px;line-height:1.25}
+.info li{list-style:none;font-size:15px;padding:12px 0 12px 24px;position:relative;border-top:1px solid rgba(241,232,214,.16)}
+.info li:first-child{border-top:0}
+.info li:before{content:"";position:absolute;left:4px;top:19px;width:6px;height:12px;border-radius:50%;background:#D4B362;transform:rotate(25deg)}
+.bar{position:fixed;left:0;right:0;bottom:0;background:#3D3024;border-top:4px solid #D4B362;padding:12px 20px;display:flex;justify-content:center;align-items:center;gap:20px;flex-wrap:wrap;z-index:10}
+.bar p{font-size:15px;color:#DDD1BA}
+.bar .cta{height:48px;background:#F1E8D6;color:#2E2419}
+.bar .cta:hover{background:#E2D6BE}
+@media(max-width:900px){.view{grid-template-columns:1fr}.side{position:static}}
+@media(max-width:620px){.wrap{padding:28px 16px 112px}.hd .cta{display:none}.bar p{display:none}.bar .cta{width:100%;justify-content:center}figure{padding:6px}}
+@media(prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+<div class="wrap">
+ <div class="hd">
+  <div>
+   <small>메뉴판 디자인 · SD-MN70</small>
+   <h1>논두렁 <span>추어탕</span></h1>
+   <p class="lead">국산 미꾸라지를 갈아 말린 시래기·들깨와 가마솥에 끓이는 남원식 추어탕 집의 메뉴판입니다. 왼쪽 볏짚 빛 세로 띠에 가게 이름을 세로로 세우고, 나무 쟁반 위 끓는 뚝배기를 비스듬히 내려다본 그림을 크게 놓았습니다. 갈아서와 통으로 중 고르는 방법, 산초 넣는 순서까지 처음 온 손님이 읽기 쉽게 적었습니다.</p>
+   <div class="facts"><span>A4 세로 · 1쪽 · 한국어 · 원화</span><span>볏짚 노랑 · 한지 미색 · 산초 초록</span><span>비스듬히 본 뚝배기 추어탕 그림</span></div>
+  </div>
+  <a class="cta" href="https://design.shoponph.online/#inquiry">이 디자인으로 상담하기 <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+ </div>
+ <div class="view">
+  <figure><a href="page1.png" target="_blank" rel="noopener"><img src="page1.png" alt="논두렁 추어탕 메뉴판 전체. 왼쪽 볏짚 노란색 세로 띠에 논 이랑 선이 깔리고, 큰 명조 세로 글씨로 논두렁 추어탕, 작은 세로 글씨로 남원식 · 국산 미꾸라지, 맨 아래 벼 이삭 그림이 있습니다. 오른쪽 한지 미색 바탕 위쪽에 큰 명조 제목 추어탕과 갈아서 끓이는 남원식 · 점심 11시부터, 국산 미꾸라지를 뼈째 곱게 갈아 말린 시래기와 들깨를 넣고 가마솥에서 네 시간 끓인다는 소개가 있습니다. 가운데 짙은 마루 바탕 그림에는 나뭇결 쟁반 위 나무 받침에 놓인 검갈색 뚝배기가 비스듬히 보이고, 끓는 국물 위에 짙은 시래기, 가운데 수북한 들깨가루, 잘게 썬 부추, 붉은 고추 고리, 기포가 떠 있으며 김이 세 줄 올라옵니다. 왼쪽에 뚜껑 덮인 놋 밥그릇과 파란 테 흰 접시에 붉은 양념 국물과 함께 담긴 깍두기, 오른쪽에 산초가루 종지와 놋수저·놋젓가락이 놓여 있고 왼쪽 위에는 말린 시래기 타래가 걸려 있습니다. 아래 왼쪽 탕 칸에 추어탕 11,000원(초록 글씨, 갈아서 · 기본과 통으로 중 선택), 특 추어탕 14,000원, 추어 칼국수 10,000원, 전골·튀김 칸에 추어 전골 2인 32,000원 · 3인 45,000원, 미꾸라지 튀김 15,000원, 추어 만두 6개 7,000원이 있습니다. 오른쪽에 곁들임 공기밥 1,000원 · 칼국수 사리 2,000원, 포장 추어탕 1인분 팩 10,000원 · 냉동 3팩 세트 28,000원, 마실 것 생막걸리·소주·맥주 5,000원 · 식혜·탄산음료 2,000원, 산초 넣는 순서 세 단계 상자가 있고, 맨 아래 짙은 갈색 띠에 영업시간과 주소·전화 자리표시가 있습니다." width="2480" height="3508"></a><figcaption><b>A4 세로, 1쪽</b><span>2480 × 3508 px · 인쇄용</span></figcaption></figure>
+  <div class="side">
+   <div class="zoom"><img src="detail-bowl.jpg" alt="그림 확대. 나무 쟁반 위 검갈색 뚝배기에 추어탕이 끓고 있고, 국물 위에 시래기와 들깨가루, 부추, 붉은 고추 고리가 떠 있으며, 옆에 놋 밥그릇, 산초 종지, 고춧가루 양념 사이로 흰 무 단면이 보이는 깍두기 접시, 놋수저와 젓가락이 놓여 있습니다." width="1120" height="613" loading="lazy"><p><b>끓는 뚝배기 한 그릇</b>시래기 결과 들깨가루, 부추와 고추 고리, 유약 바른 윗단과 거친 흙빛 아랫단까지 뚝배기를 비스듬한 시점으로 그렸습니다</p></div>
+   <div class="info"><h2>바꿔 드릴 수 있는 것</h2><ul><li>메뉴 이름, 가격, 고르는 방법, 영업시간</li><li>뚝배기 속을 순댓국·감자탕·곰탕 등 가게 대표 메뉴로</li><li>벽걸이 메뉴판, 테이블 한 장 메뉴, 포장 안내 전단</li></ul></div>
+  </div>
+ </div>
+</div>
+<div class="bar"><p>우리 가게도 이런 메뉴판이 필요하다면</p><a class="cta" href="https://design.shoponph.online/#inquiry">이 디자인으로 상담하기</a></div>
+</body>
+</html>
