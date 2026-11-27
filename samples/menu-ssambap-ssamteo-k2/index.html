@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>쌈터 쌈밥정식 · 메뉴판 디자인</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&family=Nanum+Gothic:wght@400;700;800&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+html{background:#E9E4D2}
+body{word-break:keep-all;font-family:'Nanum Gothic',sans-serif;color:#22301F;background:#E9E4D2;-webkit-font-smoothing:antialiased;min-height:100vh;overflow-x:clip;line-height:1.6}
+.wrap{max-width:1180px;margin:0 auto;padding:48px 24px 136px}
+.hd{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:24px;padding-bottom:32px;margin-bottom:40px;border-bottom:1.5px solid #22301F}
+.hd small{font-size:14px;font-weight:500;color:#56624C}
+.hd h1{font-family:'Gowun Batang',serif;font-weight:700;font-size:clamp(40px,5.4vw,64px);line-height:1.1;letter-spacing:-.03em;margin-top:8px}
+.hd h1 em{display:block;font-family:'Nanum Gothic',sans-serif;font-style:normal;font-weight:400;font-size:clamp(16px,1.6vw,19px);letter-spacing:0;color:#56624C;margin-top:12px;max-width:640px;line-height:1.6}
+.facts{display:flex;flex-wrap:wrap;gap:8px 24px;margin-top:20px;font-size:15px;color:#56624C}
+.facts span{display:flex;align-items:center;gap:8px}
+.facts span:before{content:"";width:8px;height:8px;border-radius:50%;background:#5E8C3F}
+.cta{display:inline-flex;align-items:center;gap:8px;height:52px;padding:0 24px;background:#2C4430;color:#F2EEE1;font-weight:600;font-size:16px;text-decoration:none;border-radius:8px;transition:background-color .2s;white-space:nowrap}
+.cta:hover{background:#3B5A3F}
+.cta svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+.view{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,.8fr);gap:32px;align-items:start}
+figure{background:#F4F1E6;padding:12px;border-radius:8px;border:1px solid rgba(34,48,31,.14);box-shadow:0 24px 48px -32px rgba(34,48,31,.55)}
+figure a{display:block;overflow:hidden;border-radius:4px}
+figure img{display:block;width:100%;height:auto}
+figcaption{font-size:14px;color:#56624C;padding:12px 4px 0;display:flex;flex-wrap:wrap;justify-content:space-between;gap:4px 12px}
+figcaption b{color:#22301F;font-weight:600}
+.side{display:flex;flex-direction:column;gap:20px;position:sticky;top:24px}
+.zoom{background:#F4F1E6;padding:8px;border-radius:8px;border:1px solid rgba(34,48,31,.14)}
+.zoom img{display:block;width:100%;height:auto;border-radius:4px}
+.zoom p{font-size:15px;color:#56624C;padding:12px 8px 4px}
+.zoom p b{display:block;font-family:'Gowun Batang',serif;font-weight:700;font-size:19px;color:#22301F;margin-bottom:4px}
+.wide{margin-top:32px;display:grid;grid-template-columns:minmax(0,2fr) minmax(0,1fr);gap:16px;align-items:center}
+.wide p{padding:8px 16px}
+.info{background:#22301F;color:#E3E0CF;padding:24px;border-radius:8px}
+.info h2{font-family:'Gowun Batang',serif;font-weight:700;font-size:22px;color:#F2EEE1;margin-bottom:8px}
+.info li{list-style:none;font-size:15px;padding:12px 0 12px 20px;position:relative;border-top:1px solid rgba(227,224,207,.16)}
+.info li:first-child{border-top:0}
+.info li:before{content:"";position:absolute;left:0;top:21px;width:8px;height:8px;border-radius:50%;background:#9BBE6C}
+.bar{position:fixed;left:0;right:0;bottom:0;background:#22301F;border-top:3px solid #B5452B;padding:12px 20px;display:flex;justify-content:center;align-items:center;gap:20px;flex-wrap:wrap;z-index:10}
+.bar p{font-size:15px;color:#C9CFBB}
+.bar .cta{height:48px;background:#F2EEE1;color:#22301F}
+.bar .cta:hover{background:#DCE5C8}
+@media(max-width:900px){.view{grid-template-columns:1fr}.side{position:static}.wide{grid-template-columns:1fr}}
+@media(max-width:620px){.wrap{padding:28px 16px 112px}.hd .cta{display:none}.bar p{display:none}.bar .cta{width:100%;justify-content:center}figure{padding:6px}}
+@media(prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+<div class="wrap">
+ <div class="hd">
+  <div>
+   <small>메뉴판 디자인 · SD-MN61</small>
+   <h1>쌈터 쌈밥정식 <em>쌈채소 열두 가지를 대소쿠리째 내고 제육·고등어·오리훈제·우렁강된장을 곁들이는 쌈밥 정식집</em></h1>
+   <div class="facts"><span>A4 세로 · 1쪽 · 한국어 · 원화</span><span>닥종이 아이보리 · 잎 그린 · 쌈장 주홍</span><span>대소쿠리 탑뷰 쌈채소 일러스트</span></div>
+  </div>
+  <a class="cta" href="https://design.shoponph.online/#inquiry">이 디자인으로 상담하기 <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+ </div>
+ <div class="view">
+  <figure><a href="page1.png" target="_blank" rel="noopener"><img src="page1.png" alt="쌈터 쌈밥정식 메뉴판 전체. 결이 보이는 닥종이 아이보리 바탕 왼쪽 위에 큰 붓글씨 같은 명조체로 쌈터, 그 아래 채소 열두 가지를 소쿠리째라는 부제와 짧은 소개, 오늘 소쿠리에 담기는 채소 열두 가지 이름 목록이 있습니다. 오른쪽 위에는 종이 밖으로 걸쳐 잘린 큰 대나무 소쿠리를 위에서 내려다본 그림이 있고, 물결 모양 청상추, 주름진 가장자리를 따라 붉은 자줏빛이 또렷한 적상추, 크기와 각도가 제각각이고 한두 장은 반으로 접혀 보랏빛 뒷면이 보이는 깻잎 묶음, 오글오글한 청록 케일, 깃털처럼 갈라진 쑥갓, 들쭉날쭉한 치커리, 굵은 흰 줄기의 근대와 청경채, 연노랑 알배추, 자주색 적겨자, 하트 모양 곰취, 연하고 매끈한 찐 양배추가 바닥이 거의 보이지 않게 겹겹이 담겨 있습니다. 소쿠리 아래에는 깨와 쪽파를 올린 쌈장 종지와 풋고추 두 개가 놓여 있습니다. 가운데에는 쌈밥정식 다섯 가지와 가격, 오른쪽 짙은 초록 상자에 쌈터 한상과 그 아래 주홍 글씨로 2인 이상 주문 안내, 1인 19,000원이 있고, 채소 소쿠리를 다시 채워 드린다는 안내, 더 올리기·곁들임·마실 것 세 칸 목록이 이어집니다. 맨 아래 짙은 초록 띠에 알레르기 안내, 영업시간, 자리표시 전화번호가 있습니다." width="2480" height="3508"></a><figcaption><b>A4 세로 · 2480 × 3508</b><span>눌러서 원본 크기로 보기</span></figcaption></figure>
+  <div class="side">
+   <div class="zoom"><img src="detail-basket.jpg" alt="소쿠리 부분 확대. 촘촘히 엮인 대나무 소쿠리 안에 잎 모양과 잎맥, 색이 서로 다른 쌈채소가 두세 겹으로 빽빽이 담겨 있고, 반으로 접힌 깻잎의 보랏빛 뒷면과 적상추의 붉은 주름 가장자리가 보이며, 잎마다 옅은 그림자와 말린 가장자리의 밝은 테가 있습니다. 왼쪽 아래 소쿠리 곁에 쌈장 종지와 풋고추 두 개가 놓여 있습니다." width="720" height="720" loading="lazy"><p><b>소쿠리 하나가 주인공</b>상에 올라가는 모습을 그대로 그려, 채소 가짓수를 말로 늘어놓지 않아도 한눈에 보이게 했습니다.</p></div>
+   <div class="info"><h2>바꿀 수 있는 것</h2><ul><li>정식 구성, 가격, 추가 메뉴</li><li>소쿠리 속 채소를 계절에 맞게 교체</li><li>테이블 세움판, 벽 메뉴판, QR 웹 메뉴판</li></ul></div>
+  </div>
+ </div>
+ <div class="zoom wide"><img src="detail-set.jpg" alt="정식 목록 부분 확대. 왼쪽에 제육, 고등어구이, 오리훈제, 소불고기, 우렁강된장 쌈밥정식 이름과 한 줄 설명, 가격이 가는 선으로 나뉘어 있고, 오른쪽 짙은 초록 상자에 쌈터 한상 제목, 주홍 글씨의 2인 이상 주문 안내, 제육·고등어·오리를 한 접시에 담는 구성, 1인 19,000원이 있습니다. 아래에 소쿠리를 다시 채워 드린다는 안내 줄이 있습니다." width="1096" height="610" loading="lazy"><p><b>한상은 따로 한 칸</b>여럿이 온 손님이 바로 고를 수 있게 2인 이상 메뉴를 짙은 상자로 나누고, 주홍은 꼭 봐야 할 두 곳에만 썼습니다.</p></div>
+</div>
+<div class="bar"><p>우리 가게도 이런 메뉴판이 필요하다면</p><a class="cta" href="https://design.shoponph.online/#inquiry">이 디자인으로 상담하기</a></div>
+</body>
+</html>
