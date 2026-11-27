@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>한겹 돈가스 · 메뉴판 디자인</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@600;700&family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+html{background:#1E2427}
+body{word-break:keep-all;font-family:'Noto Sans KR',sans-serif;color:#ECE6D8;background:#1E2427;-webkit-font-smoothing:antialiased;min-height:100vh;overflow-x:clip;line-height:1.6}
+.wrap{max-width:1180px;margin:0 auto;padding:48px 24px 136px}
+.hd{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:24px;padding-bottom:32px;margin-bottom:40px;border-bottom:1px solid rgba(236,230,216,.24)}
+.hd small{font-size:14px;font-weight:500;color:#A7AFAD}
+.hd h1{font-family:'Noto Serif KR',serif;font-weight:700;font-size:clamp(44px,6vw,72px);line-height:1.05;letter-spacing:-.03em;margin-top:8px}
+.hd h1 em{display:block;font-family:'Noto Sans KR',sans-serif;font-style:normal;font-weight:400;font-size:clamp(16px,1.6vw,19px);letter-spacing:0;color:#CFCABD;margin-top:16px;max-width:680px;line-height:1.6}
+.facts{display:flex;flex-wrap:wrap;gap:8px 24px;margin-top:20px;font-size:15px;color:#A7AFAD}
+.facts span{display:flex;align-items:center;gap:8px}
+.facts span:before{content:"";width:8px;height:2px;background:#B9D27A}
+.cta{display:inline-flex;align-items:center;gap:8px;height:52px;padding:0 24px;background:#ECE6D8;color:#1E2427;font-weight:700;font-size:16px;text-decoration:none;border-radius:8px;transition:background-color .2s;white-space:nowrap}
+.cta:hover{background:#D9D2C1}
+.cta svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+.view{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,.8fr);gap:32px;align-items:start}
+figure{background:#262D30;padding:12px;border-radius:8px;border:1px solid rgba(236,230,216,.12)}
+figure a{display:block;overflow:hidden;border-radius:4px}
+figure img{display:block;width:100%;height:auto}
+figcaption{font-size:14px;color:#A7AFAD;padding:12px 4px 0;display:flex;flex-wrap:wrap;justify-content:space-between;gap:4px 12px}
+figcaption b{color:#ECE6D8;font-weight:700}
+.side{display:flex;flex-direction:column;gap:20px;position:sticky;top:24px}
+.zoom{background:#262D30;padding:8px;border-radius:8px;border:1px solid rgba(236,230,216,.12)}
+.zoom img{display:block;width:100%;height:auto;border-radius:4px}
+.zoom p{font-size:15px;color:#BFC5C3;padding:12px 8px 4px}
+.zoom p b{display:block;font-family:'Noto Serif KR',serif;font-weight:700;font-size:20px;color:#ECE6D8;margin-bottom:4px}
+.info{background:#EEE8D7;color:#3E4548;padding:24px;border-radius:8px}
+.info h2{font-family:'Noto Serif KR',serif;font-weight:700;font-size:22px;color:#1F2326;margin-bottom:8px}
+.info li{list-style:none;font-size:15px;padding:12px 0 12px 20px;position:relative;border-top:1px solid rgba(31,35,38,.14)}
+.info li:first-child{border-top:0}
+.info li:before{content:"";position:absolute;left:0;top:20px;width:8px;height:8px;background:#1F2326;transform:rotate(45deg)}
+.bar{position:fixed;left:0;right:0;bottom:0;background:#15191B;border-top:2px solid #B9D27A;padding:12px 20px;display:flex;justify-content:center;align-items:center;gap:20px;flex-wrap:wrap;z-index:10}
+.bar p{font-size:15px;color:#BFC5C3}
+.bar .cta{height:48px}
+@media(max-width:900px){.view{grid-template-columns:1fr}.side{position:static}}
+@media(max-width:620px){.wrap{padding:28px 16px 112px}.hd .cta{display:none}.bar p{display:none}.bar .cta{width:100%;justify-content:center}figure{padding:6px}}
+@media(prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+<div class="wrap">
+ <div class="hd">
+  <div>
+   <small>메뉴판 디자인 · SD-MN66</small>
+   <h1>한겹 돈가스 <em>두께 3cm 등심과 안심을 낮은 온도의 기름에서 오래 튀겨 철망 받침 위에 내는 돈가스 전문점. 강철빛 짙은 바탕 위에 썬 단면이 보이는 등심 돈가스를 크게 그리고, 정식 표는 기름종이 색 한 장에 중량과 가격을 나란히 맞췄습니다.</em></h1>
+   <div class="facts"><span>A4 세로 · 1장 · 한국어 · 원화</span><span>강철 차콜 · 기름종이 미색 · 양배추 연두</span><span>철망 위 등심 단면과 3cm 치수선</span></div>
+  </div>
+  <a class="cta" href="https://design.shoponph.online/#inquiry">이 디자인으로 상담하기 <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+ </div>
+ <div class="view">
+  <figure><a href="page1.png" target="_blank" rel="noopener"><img src="page1.png" alt="한겹 돈가스 메뉴판 전체. 푸른 기가 도는 짙은 강철 차콜색 바탕 왼쪽 위에 등심 · 안심 돈가스라는 작은 줄과 아주 큰 명조체 상호 한겹, 그 옆에 돈가스가 있고, 오른쪽에는 두께 3cm로 썬 등심과 안심에 굵은 생빵가루를 한 겹만 입혀 낮은 온도의 기름에서 오래 튀기고, 철망 위에서 기름을 뺀 뒤 썰어 낸다는 설명이 있습니다. 그 아래 페이지 폭을 가득 채운 그림에는 스테인리스 쟁반 위 격자 철망 받침에 기름 자국이 밴 기름종이가 깔리고, 그 위에 폭과 높이가 조금씩 다른 썬 등심 돈가스 여섯 조각이 오른쪽으로 갈수록 조금씩 더 기울며 서로 겹쳐 기대어 있습니다. 위에서 내려다본 윗면은 잘게 부서진 금갈색 생빵가루 결로 덮여 있고, 앞쪽 단면은 울퉁불퉁한 튀김옷과 바닥의 짙게 튀겨진 테두리 안에 따뜻한 미색 고기가 있으며 가운데만 은은한 분홍빛으로 물들고, 윗가장자리에 가는 흰 지방 선이 보입니다. 조각마다 바닥에 짧은 그림자가 붙어 있습니다. 왼쪽 어두운 바탕에는 첫 조각의 튀김옷 위부터 아래까지를 잇는 연두색 세로 치수선과 3cm 표시가 있고, 굵은 생빵가루 한 겹, 가운데는 연분홍, 양배추 채, 철망 받침이라는 가는 지시선 글씨가 붙어 있으며, 오른쪽 뒤 철망 위에는 연두색과 흰색 채가 느슨하게 쌓인 양배추 채 더미가 있습니다. 그림 아래 세 칸에는 연두색 3cm 등심을 써는 두께, 140→170℃ 두 번에 나눠 올리는 기름 온도, 4분 철망 위에서 쉬었다가 썹니다가 있습니다. 가운데 기름종이 미색 판에는 정식 표가 있고 밥 · 된장국 · 양배추 채 포함, 밥과 양배추는 더 드린다는 안내와 함께 중량과 가격 두 열로, 처음이라면 표시가 붙은 로스카츠 등심 160g 14,000원과 220g 17,500원, 히레카츠 안심 150g 15,500원, 반반 로스 + 히레 170g 16,500원, 치즈카츠 150g 15,000원, 새우카츠 정식 2장 16,000원이 한 줄 설명과 함께 있고, 등심은 하루 정해진 수량만 준비한다는 메모가 있습니다. 아래 짙은 바탕 왼쪽 곁들임에는 멘치카츠 1개 4,000원, 새우튀김 1미 3,500원, 고로케 1개 3,000원, 카레 소스 추가 2,000원, 오른쪽 마실 것에는 생맥주 500ml 5,500원, 하이볼 7,000원, 우롱차 3,000원, 탄산음료 2,500원이 있습니다. 그 아래 조용한 띠에 먹는 법 세 단계가 선 아이콘과 함께 깨를 절구에 곱게 갈고, 소스를 붓고 섞어 찍기, 처음 한 점은 소금만으로 적혀 있고, 맨 아래에 영업 11:30 – 21:00, 브레이크 15:00 – 17:00, 일요일 쉼, 문의 000-0000-0000이 있습니다." width="2480" height="3508"></a><figcaption><b>A4 세로 1장</b><span>2480 × 3508 px · 인쇄용</span></figcaption></figure>
+  <div class="side">
+   <div class="zoom"><img src="detail-katsu.jpg" alt="등심 돈가스 그림 확대. 스테인리스 쟁반의 격자 철망과 기름종이 위에 썬 돈가스 여섯 조각이 부채꼴로 기울며 서로 겹쳐 있고, 왼쪽에 연두색 3cm 치수선, 오른쪽 뒤에 양배추 채 더미가 있습니다. 조각 윗면은 잘고 날카로운 생빵가루 조각이 밝은 금색과 갈색으로 촘촘히 덮여 있고, 앞쪽 단면은 울퉁불퉁한 튀김옷 안에 미색 고기가 가운데만 은은한 분홍빛이며 윗가장자리에 가는 흰 지방 선이 있습니다. 조각마다 바닥에 짧은 그림자가 붙어 있습니다. 아래 기름종이에는 옅은 기름 자국이 배어 있습니다." width="1600" height="498" loading="lazy"><p><b>철망 위 여섯 조각</b>윗면의 생빵가루 결 따라 보이는 얇은 지방 선, 가운데 분홍빛까지 그렸습니다</p></div>
+   <div class="info"><h2>바꿔 드릴 수 있는 것</h2><ul><li>메뉴 이름, 중량, 가격</li><li>그림 속 돈가스를 안심·치즈카츠 단면으로</li><li>벽 메뉴판, 테이블 한 장 메뉴, QR 웹메뉴</li></ul></div>
+  </div>
+ </div>
+</div>
+<div class="bar"><p>우리 가게도 이런 메뉴판이 필요하다면</p><a class="cta" href="https://design.shoponph.online/#inquiry">이 디자인으로 상담하기</a></div>
+</body>
+</html>

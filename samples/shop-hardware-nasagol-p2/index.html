@@ -1,0 +1,768 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>나사골 철물점 · 낱개 나사부터 재단·열쇠 복사까지</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans+KR:wght@400;500;600;700&family=Nanum+Pen+Script&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#E5E3DE;--surface:#EFEDE8;--paper:#F6F4EF;--deep:#D5D2CB;
+  --ink:#24272B;--muted:#55585B;--line:rgba(36,39,43,.16);--line-2:rgba(36,39,43,.28);
+  --steel:#2B2E32;--steel-2:#363A3E;--steel-ink:#E9E7E2;--steel-mute:#A9ACAD;
+  --kraft:#C8A675;--kraft-deep:#9C7A4C;--peg:#7E5A3B;
+  --tape:#E2AA17;--tape-deep:#C48F0A;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{background:var(--bg);scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+body{font-family:'IBM Plex Sans KR',sans-serif;font-size:16px;line-height:1.6;color:var(--ink);background:var(--bg);word-break:keep-all;overflow-wrap:break-word;-webkit-font-smoothing:antialiased;overflow-x:clip}
+a{color:inherit}
+h1,h2,h3{font-weight:600;letter-spacing:-.025em;line-height:1.25}
+h2{text-wrap:balance}
+.nw{white-space:nowrap}
+.map text{font-size:16px}
+.map text.mk{font-size:20px}
+.map .mkp{x:200px;y:340px;width:80px;height:34px}
+@media (max-width:860px) and (min-width:561px){.map text{font-size:18px}.map text.mk{font-size:22px}}
+@media (max-width:560px){.map text{font-size:27px}.map text.mk{font-size:28px}.map .mkp{x:184px;y:334px;width:112px;height:44px}}
+.mono{font-family:'IBM Plex Mono',monospace;font-variant-numeric:tabular-nums}
+.in{max-width:1240px;margin:0 auto;padding:0 40px}
+svg.i{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round;flex:none}
+
+/* header */
+header{background:var(--bg);border-bottom:1px solid var(--line);position:relative;z-index:2}
+header .in{display:flex;align-items:center;justify-content:space-between;height:72px;gap:24px;max-width:none}
+.logo{display:flex;align-items:center;gap:12px;text-decoration:none}
+.logo svg{width:32px;height:32px;flex:none}
+.logo b{font-size:20px;font-weight:700;letter-spacing:-.03em}
+.logo span{font-size:13px;color:var(--muted);display:block;line-height:1.2}
+nav{display:flex;gap:28px;font-size:15px}
+nav a{text-decoration:none;color:var(--muted);padding:12px 0;transition:color .2s}
+nav a:hover{color:var(--ink)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;height:44px;padding:0 20px;border-radius:8px;font-size:15px;font-weight:600;text-decoration:none;border:1px solid transparent;cursor:pointer;font-family:inherit;transition:background-color .2s,border-color .2s,color .2s}
+.btn-p{background:var(--tape);color:#211C10;border-color:#B98608}
+.btn-p:hover{background:#D59E0E}
+.btn-s{border-color:var(--line-2);color:var(--ink);background:transparent}
+.btn-s:hover{background:var(--surface)}
+.head-call{font-size:15px;color:var(--ink);text-decoration:none;display:flex;align-items:center;gap:8px;min-height:44px}
+
+/* hero */
+.hero{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);align-items:center;gap:56px;padding:0 0 0 0;max-width:1600px;margin:0 auto}
+.art{position:relative;aspect-ratio:760/680;border-radius:0 0 20px 0;overflow:hidden;background:#6E4E33}
+.art svg{position:absolute;inset:0;width:100%;height:100%;display:block}
+.hero-t{padding:48px 40px 48px 0;max-width:560px}
+.hero-t .where{font-size:15px;color:var(--muted);display:flex;align-items:center;gap:8px;margin-bottom:24px}
+.hero-t h1{font-size:clamp(34px,3.6vw,52px);font-weight:700;text-wrap:balance}
+.hero-t p.lead{font-size:18px;color:var(--muted);margin-top:24px}
+.hl{background:linear-gradient(transparent 58%,rgba(226,170,23,.85) 58%,rgba(226,170,23,.85) 92%,transparent 92%);padding:0 2px;color:var(--ink)}
+.hero-t .acts{display:flex;gap:12px;margin-top:32px;flex-wrap:wrap}
+.hero-t .acts .btn{height:48px;padding:0 24px;font-size:16px}
+.today{margin-top:40px;display:grid;grid-template-columns:auto 1fr;gap:4px 20px;font-size:15px;padding-top:20px;border-top:1px dashed var(--line-2)}
+.today dt{color:var(--muted)}
+.today dd{font-family:'IBM Plex Mono',monospace;font-variant-numeric:tabular-nums}
+
+section{padding:96px 0}
+.sec-h{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,6fr);gap:48px;align-items:end;margin-bottom:40px}
+.sec-h .num{font-family:'IBM Plex Mono',monospace;font-size:14px;color:var(--muted);display:block;margin-bottom:12px}
+.sec-h h2{font-size:clamp(28px,2.8vw,38px)}
+.sec-h p{color:var(--muted);max-width:560px}
+
+/* drawers */
+.tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:24px}
+.tab{height:44px;padding:0 18px;border-radius:8px;border:1px solid var(--line-2);background:transparent;font:inherit;font-size:15px;font-weight:500;color:var(--ink);cursor:pointer;transition:background-color .2s,border-color .2s}
+.tab:hover{background:var(--surface)}
+.tab[aria-selected="true"]{background:var(--tape);border-color:#B98608;color:#211C10}
+.cabinet{background:linear-gradient(180deg,#A9ADAE,#8E9394);border-radius:12px;padding:16px;box-shadow:inset 0 1px 0 rgba(255,255,255,.45),inset 0 -2px 0 rgba(0,0,0,.18),0 12px 24px -16px rgba(30,32,34,.5)}
+.drawers{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+.dr{background:linear-gradient(180deg,#F1ECE1,#DCD4C3);border-radius:6px;padding:12px 16px 16px;position:relative;box-shadow:inset 0 1px 0 rgba(255,255,255,.8),0 2px 0 rgba(0,0,0,.18);min-height:148px;display:flex;flex-direction:column}
+.dr .lab{background:var(--paper);border:1px solid rgba(36,39,43,.18);border-radius:3px;padding:4px 12px 6px;box-shadow:0 1px 0 rgba(0,0,0,.06)}
+.dr .lab b{font-family:'Nanum Pen Script',cursive;font-weight:400;font-size:26px;line-height:1.1;display:block;color:#2A2C30}
+.dr .lab .mono{font-size:13px;color:var(--muted)}
+.dr .pull{width:48px;height:8px;border-radius:4px;background:linear-gradient(180deg,#5D6265,#3B3F42);margin:12px auto 12px}
+.dr .pr{margin-top:auto;display:flex;justify-content:space-between;align-items:baseline;gap:8px;font-size:14px;color:var(--muted)}
+.dr .pr .mono{font-size:18px;font-weight:600;color:var(--ink)}
+.drawer-note{margin-top:20px;font-size:14px;color:var(--muted);display:flex;gap:8px;align-items:flex-start}
+
+/* services */
+.svc{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:16px}
+.blk{border-radius:16px;padding:32px}
+.blk h3{font-size:22px}
+.blk p{color:var(--muted);margin-top:12px}
+.s-key{grid-column:1/6;background:var(--surface);border:1px solid var(--line)}
+.s-cut{grid-column:6/13;grid-row:1/3;background:var(--paper);border:1px solid var(--line);display:flex;flex-direction:column}
+.s-part{grid-column:1/6;background:transparent;border:1px solid var(--line-2)}
+.s-rent{grid-column:1/13;background:var(--deep);display:flex;align-items:center;justify-content:space-between;gap:24px;padding:24px 32px}
+.s-rent p{margin-top:4px}
+.plist{margin-top:20px;list-style:none;border-top:1px solid var(--line)}
+.plist li{display:flex;justify-content:space-between;gap:16px;padding:12px 0;border-bottom:1px solid var(--line);font-size:15px}
+.plist .mono{font-weight:500}
+.cutfig{margin:24px 0 8px;background:var(--surface);border-radius:12px;padding:16px;border:1px solid var(--line)}
+.cutfig svg{width:100%;height:auto;display:block}
+.cutfig .cap{font-size:13px;color:var(--muted);margin-top:8px}
+.cut-cols{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:auto}
+.tick{display:flex;gap:8px;align-items:flex-start;margin-top:12px;font-size:15px;color:var(--ink)}
+.tick svg{margin-top:2px;color:var(--muted)}
+.link{display:inline-flex;align-items:center;gap:8px;font-weight:600;text-decoration:none;min-height:44px;border-bottom:1px solid var(--ink);flex:none}
+
+/* picker */
+.pick{background:var(--surface);border:1px solid var(--line);border-radius:20px;display:grid;grid-template-columns:minmax(0,4fr) minmax(0,7fr);overflow:hidden}
+.pick-l{padding:32px;border-right:1px solid var(--line);display:flex;flex-direction:column;gap:8px}
+.pick-l .lbl{font-size:14px;color:var(--muted);margin-bottom:8px}
+.job{display:flex;align-items:center;justify-content:space-between;gap:12px;min-height:56px;padding:0 20px;border-radius:10px;border:1px solid var(--line-2);background:var(--paper);font:inherit;font-size:16px;font-weight:500;color:var(--ink);cursor:pointer;text-align:left;transition:background-color .2s,border-color .2s}
+.job:hover{border-color:var(--ink)}
+.job .mono{font-size:13px;color:var(--muted);font-weight:400}
+.job[aria-pressed="true"]{background:var(--tape);border-color:#B98608}
+.job[aria-pressed="true"] .mono{color:#3A2F12}
+.pick-r{padding:32px 40px;background:var(--paper)}
+.pick-r h3{font-size:24px}
+.pick-r .meta{display:flex;gap:24px;flex-wrap:wrap;margin-top:8px;font-size:14px;color:var(--muted)}
+.chk-h{display:flex;justify-content:space-between;margin-top:24px;font-size:13px;color:var(--muted);padding-bottom:8px;border-bottom:1px solid var(--line-2)}
+.chk{list-style:none}
+.chk li{border-bottom:1px solid var(--line)}
+.chk label{display:grid;grid-template-columns:24px minmax(0,1fr) auto;gap:12px;align-items:center;min-height:52px;padding:8px 0;cursor:pointer}
+.chk input{width:20px;height:20px;accent-color:#24272B;margin:0}
+.chk .nm{font-size:16px}
+.chk .nm small{display:block;font-size:13px;color:var(--muted)}
+.chk .mono{font-size:15px}
+.chk .kind{font-size:12px;color:var(--muted);border:1px solid var(--line-2);border-radius:4px;padding:0 6px;margin-left:8px;vertical-align:2px}
+.chk input:not(:checked) ~ .nm,.chk input:not(:checked) ~ .mono{color:#8A8C8E;text-decoration:line-through}
+.sum{display:flex;justify-content:space-between;align-items:baseline;gap:16px;margin-top:20px}
+.sum span{color:var(--muted);font-size:15px}
+.sum .mono{font-size:30px;font-weight:600}
+.tip{margin-top:20px;padding:16px 20px;border-left:3px solid var(--kraft-deep);background:rgba(200,166,117,.18);font-size:15px;border-radius:0 8px 8px 0}
+
+/* rental */
+.rent{background:var(--steel);color:var(--steel-ink);background-image:radial-gradient(circle at 16px 16px,rgba(0,0,0,.28) 3px,transparent 3.6px);background-size:32px 32px}
+.rent .sec-h p,.rent .sec-h .num{color:var(--steel-mute)}
+.tbl-wrap{background:var(--steel-2);border-radius:16px;padding:8px 32px;border:1px solid rgba(255,255,255,.08)}
+table{width:100%;border-collapse:collapse}
+th{font-size:13px;font-weight:500;color:var(--steel-mute);text-align:left;padding:16px 0 12px;border-bottom:1px solid rgba(255,255,255,.2)}
+th.r,td.r{text-align:right}
+td{padding:16px 0;border-bottom:1px solid rgba(255,255,255,.1);vertical-align:top}
+tr:last-child td{border-bottom:0}
+td b{font-weight:500;font-size:16px}
+td small{display:block;font-size:13px;color:var(--steel-mute);margin-top:2px}
+td.mono{font-size:16px;padding-left:16px}
+.rent-foot{display:flex;gap:32px;flex-wrap:wrap;margin-top:24px;font-size:14px;color:var(--steel-mute)}
+.rent-foot span{display:flex;gap:8px;align-items:center}
+
+/* visit */
+.visit{display:grid;grid-template-columns:minmax(0,6fr) minmax(0,5fr);gap:48px;align-items:start}
+.map{background:var(--surface);border:1px solid var(--line);border-radius:16px;overflow:hidden;aspect-ratio:640/440}
+.map svg{width:100%;height:100%;display:block}
+.info dl{display:grid;grid-template-columns:96px minmax(0,1fr);border-top:1px solid var(--line-2)}
+.info dt,.info dd{padding:16px 0;border-bottom:1px solid var(--line)}
+.info dt{color:var(--muted);font-size:15px}
+.hours{display:grid;grid-template-columns:auto 1fr;gap:4px 16px}
+.hours .mono{font-size:15px}
+.info .note{margin-top:20px;font-size:15px;color:var(--muted)}
+
+/* inquiry */
+.ask{display:grid;grid-template-columns:minmax(0,4fr) minmax(0,7fr);gap:56px;align-items:start}
+.ask-side h2{font-size:clamp(28px,2.8vw,38px)}
+.ask-side p{color:var(--muted);margin-top:16px}
+.bring{list-style:none;margin-top:24px;border-top:1px solid var(--line)}
+.bring li{display:flex;gap:12px;align-items:flex-start;padding:12px 0;border-bottom:1px solid var(--line);font-size:15px}
+.bring .mono{color:var(--muted);font-size:13px;padding-top:2px}
+form{background:var(--paper);border:1px solid var(--line);border-radius:20px;padding:40px;display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.f{display:flex;flex-direction:column;gap:8px}
+.f.full{grid-column:1/-1}
+.f label{font-size:14px;font-weight:500}
+.f input,.f select,.f textarea{font:inherit;font-size:16px;color:var(--ink);background:var(--bg);border:1px solid var(--line-2);border-radius:8px;padding:12px 14px;min-height:48px;width:100%}
+.f textarea{min-height:120px;resize:vertical}
+.f input:focus,.f select:focus,.f textarea:focus{outline:2px solid var(--ink);outline-offset:1px}
+.f .hint{font-size:13px;color:var(--muted)}
+.form-end{grid-column:1/-1;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.form-end small{font-size:13px;color:var(--muted)}
+.done{grid-column:1/-1;display:none;padding:24px;border-radius:12px;background:var(--surface);border:1px solid var(--line-2)}
+.done b{font-size:18px;display:block}
+.done p{color:var(--muted);margin-top:8px}
+form.sent .f,form.sent .form-end{display:none}
+form.sent .done{display:block}
+
+footer{border-top:1px solid var(--line-2);padding:48px 0 56px;font-size:14px;color:var(--muted)}
+footer .in{display:flex;justify-content:space-between;gap:32px;flex-wrap:wrap}
+footer b{color:var(--ink);font-size:16px}
+footer p{margin-top:8px}
+
+@media (max-width:1100px){
+  nav{display:none}
+  .hero{grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:40px}
+  .drawers{grid-template-columns:repeat(3,minmax(0,1fr))}
+}
+@media (max-width:860px){
+  .in{padding:0 24px}
+  .hero{grid-template-columns:1fr;gap:0}
+  .hero-t{order:-1;padding:40px 24px 40px;max-width:none}
+  .art{border-radius:0}
+  section{padding:72px 0}
+  .sec-h{grid-template-columns:1fr;gap:16px}
+  .svc{grid-template-columns:1fr}
+  .s-key,.s-cut,.s-part,.s-rent{grid-column:auto;grid-row:auto}
+  .pick{grid-template-columns:1fr}
+  .pick-l{border-right:0;border-bottom:1px solid var(--line)}
+  .visit,.ask{grid-template-columns:1fr;gap:32px}
+}
+@media (max-width:560px){
+  .in{padding:0 16px}
+  header .in{padding:0 16px}
+  .head-call span{display:none}
+  .hero-t{padding:32px 16px 40px}
+  .hero-t p.lead{font-size:17px}
+  .hero-t .acts .btn{flex:1 1 100%}
+  .drawers{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+  .cabinet{padding:8px;border-radius:10px}
+  .dr{padding:8px 8px 12px;min-height:136px}
+  .dr .lab{padding:4px 8px 4px}
+  .dr .lab b{font-size:23px}
+  .dr .lab .mono{font-size:12px}
+  .dr .pr{flex-direction:column;gap:0;font-size:13px}
+  .dr .pr .mono{font-size:17px}
+  .blk{padding:24px 20px}
+  .s-rent{flex-direction:column;align-items:flex-start;padding:24px 20px}
+  .cut-cols{grid-template-columns:1fr;gap:0}
+  .pick-l,.pick-r{padding:24px 16px}
+  .chk label{grid-template-columns:24px minmax(0,1fr) auto;gap:8px}
+  .sum .mono{font-size:26px}
+  .tbl-wrap{padding:4px 16px}
+  td.mono{font-size:14px;padding-left:12px}
+  form{padding:24px 16px;grid-template-columns:1fr}
+  .info dl{grid-template-columns:80px minmax(0,1fr)}
+}
+</style>
+</head>
+<body>
+<header>
+ <div class="in">
+  <a class="logo" href="#top" aria-label="나사골 철물점">
+   <svg viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="16" r="14" fill="#24272B"/><circle cx="16" cy="16" r="10.5" fill="none" stroke="#6B7074" stroke-width="1"/><path d="M10 16h12M16 10v12" stroke="#E5E3DE" stroke-width="3" stroke-linecap="round"/></svg>
+   <div><b>나사골 철물점</b><span>골목 안 낱개 철물</span></div>
+  </a>
+  <nav aria-label="주요 메뉴">
+   <a href="#drawers">낱개 서랍</a>
+   <a href="#services">해 드리는 일</a>
+   <a href="#picker">고칠 것 고르기</a>
+   <a href="#rent">공구 대여</a>
+   <a href="#visit">찾아오는 길</a>
+  </nav>
+  <a class="head-call" href="#ask"><svg class="i" viewBox="0 0 24 24"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg><span class="mono">000-0000-0000</span></a>
+ </div>
+</header>
+
+<main id="top">
+<div class="hero">
+ <div class="art" role="img" aria-label="갈색 페그보드 벽에 장도리, 몽키스패너, 드라이버, 펜치가 걸려 있고 그 앞 작업대에 작은 나사 서랍장과 노란 줄자가 놓여 있는 그림">
+ <svg viewBox="0 0 760 680" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+  <defs>
+   <linearGradient id="board" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#8D6645"/><stop offset="1" stop-color="#6F4D31"/></linearGradient>
+   <radialGradient id="lamp" cx=".38" cy=".18" r=".8"><stop offset="0" stop-color="#FFE9C8" stop-opacity=".22"/><stop offset=".6" stop-color="#FFE9C8" stop-opacity="0"/><stop offset="1" stop-color="#1E140C" stop-opacity=".35"/></radialGradient>
+   <pattern id="holes" width="32" height="32" patternUnits="userSpaceOnUse" x="0" y="0">
+    <circle cx="16" cy="16" r="4.2" fill="#2E1F13"/>
+    <path d="M12.4 18.2a4.2 4.2 0 0 0 7.2 0" fill="none" stroke="#B58A60" stroke-width="1" opacity=".55"/>
+   </pattern>
+   <pattern id="fiber" width="6" height="6" patternUnits="userSpaceOnUse"><path d="M0 3h6" stroke="#5A3C25" stroke-width=".5" opacity=".18"/></pattern>
+   <linearGradient id="batten" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#A9784A"/><stop offset="1" stop-color="#7C5330"/></linearGradient>
+   <linearGradient id="steelV" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#EEF0F1"/><stop offset=".42" stop-color="#B3B8BC"/><stop offset=".55" stop-color="#D9DCDE"/><stop offset="1" stop-color="#7C8287"/></linearGradient>
+   <linearGradient id="steelH" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#868C91"/><stop offset=".3" stop-color="#E4E7E9"/><stop offset=".55" stop-color="#B5BABE"/><stop offset="1" stop-color="#6E7479"/></linearGradient>
+   <linearGradient id="steelDark" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#4E5459"/><stop offset=".4" stop-color="#8F969B"/><stop offset="1" stop-color="#40454A"/></linearGradient>
+   <linearGradient id="wood" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#9A6536"/><stop offset=".35" stop-color="#D2A06A"/><stop offset=".7" stop-color="#B07A45"/><stop offset="1" stop-color="#83542C"/></linearGradient>
+   <linearGradient id="grip" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#5E241C"/><stop offset=".4" stop-color="#A8473A"/><stop offset="1" stop-color="#4E1D16"/></linearGradient>
+   <linearGradient id="hG" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#1E3631"/><stop offset=".4" stop-color="#4F756C"/><stop offset="1" stop-color="#18302B"/></linearGradient>
+   <linearGradient id="hR" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#5A221A"/><stop offset=".4" stop-color="#9B4234"/><stop offset="1" stop-color="#4A1A13"/></linearGradient>
+   <linearGradient id="hK" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#1E2124"/><stop offset=".4" stop-color="#55595E"/><stop offset="1" stop-color="#17191B"/></linearGradient>
+   <linearGradient id="hA" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#6A4512"/><stop offset=".4" stop-color="#B8822D"/><stop offset="1" stop-color="#5A3A0E"/></linearGradient>
+   <linearGradient id="tapeCase" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#F4C640"/><stop offset=".55" stop-color="#E2AA17"/><stop offset="1" stop-color="#B07E08"/></linearGradient>
+   <linearGradient id="tapeBlade" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#F7D564"/><stop offset="1" stop-color="#D9A31B"/></linearGradient>
+   <linearGradient id="bench" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#C49A68"/><stop offset="1" stop-color="#A57B4B"/></linearGradient>
+   <linearGradient id="benchFront" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#7E5632"/><stop offset="1" stop-color="#4D321C"/></linearGradient>
+   <linearGradient id="cab" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#C3C7C7"/><stop offset="1" stop-color="#8C9293"/></linearGradient>
+   <linearGradient id="cabSide" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#7A8081"/><stop offset="1" stop-color="#5E6465"/></linearGradient>
+   <linearGradient id="drw" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#F1EBDD"/><stop offset="1" stop-color="#CFC5B0"/></linearGradient>
+   <linearGradient id="kraft" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#D5B583"/><stop offset="1" stop-color="#AE8853"/></linearGradient>
+   <filter id="sh" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="5" dy="8" stdDeviation="5" flood-color="#1D120A" flood-opacity=".5"/></filter>
+   <filter id="shS" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="2" dy="3" stdDeviation="2" flood-color="#1D120A" flood-opacity=".45"/></filter>
+   <filter id="soft" x="-20%" y="-50%" width="140%" height="200%"><feGaussianBlur stdDeviation="8"/></filter>
+  </defs>
+
+  <!-- board -->
+  <rect width="760" height="600" fill="url(#board)"/>
+  <rect width="760" height="600" fill="url(#fiber)"/>
+  <rect x="0" y="0" width="760" height="600" fill="url(#holes)"/>
+  <rect width="760" height="600" fill="url(#lamp)"/>
+  <rect x="0" y="0" width="760" height="16" fill="url(#batten)"/>
+  <rect x="0" y="16" width="760" height="2" fill="#4A311C" opacity=".5"/>
+
+  <!-- hammer -->
+  <g filter="url(#sh)">
+   <path d="M123 124 L145 124 L151 394 Q151 414 134 414 Q117 414 117 394 Z" fill="url(#wood)"/>
+   <path d="M128 140 Q131 260 126 390 M138 136 Q141 250 140 398 M133 150 Q134 230 132 300" stroke="#6E4422" stroke-width="1" fill="none" opacity=".45"/>
+   <path d="M117 360 Q134 366 151 360" stroke="#6E4422" stroke-width="1.2" fill="none" opacity=".4"/>
+   <rect x="66" y="94" width="34" height="34" rx="4" fill="url(#steelV)"/>
+   <rect x="62" y="96" width="8" height="30" rx="2" fill="#9EA4A8"/>
+   <rect x="98" y="101" width="20" height="20" fill="url(#steelV)"/>
+   <rect x="114" y="92" width="40" height="38" rx="5" fill="url(#steelV)"/>
+   <path d="M152 96 C186 96 210 110 220 140 L208 144 C200 126 184 118 154 120 Z" fill="url(#steelV)"/>
+   <path d="M160 108 C184 110 200 120 212 140" stroke="#5E6469" stroke-width="2" fill="none"/>
+   <path d="M118 96h32" stroke="#FFFFFF" stroke-width="1.4" opacity=".6"/>
+  </g>
+  <circle cx="108" cy="136" r="5" fill="#C9CDD0" stroke="#5E6469" stroke-width="1.4"/>
+  <circle cx="160" cy="136" r="5" fill="#C9CDD0" stroke="#5E6469" stroke-width="1.4"/>
+
+  <!-- wrench -->
+  <g transform="rotate(-5 266 260)" filter="url(#sh)">
+   <rect x="251" y="118" width="30" height="232" rx="15" fill="url(#steelH)"/>
+   <path d="M258 170 h16 v150 h-16 z" fill="#8F959A" opacity=".35"/>
+   <circle cx="266" cy="140" r="8" fill="#3A2818"/>
+   <path d="M238 344 Q236 326 252 322 L282 322 Q298 326 296 346 L300 420 L285 422 L282 386 L262 386 L260 422 L244 420 Q234 390 238 344 Z" fill="url(#steelH)"/>
+   <rect x="262" y="386" width="20" height="38" fill="#7A5535" opacity=".0"/>
+   <path d="M244 420 L260 422" stroke="#565C61" stroke-width="2"/>
+   <rect x="248" y="352" width="34" height="16" rx="3" fill="url(#steelDark)"/>
+   <path d="M253 352v16M258 352v16M263 352v16M268 352v16M273 352v16M278 352v16" stroke="#2F3438" stroke-width="1.2"/>
+   <path d="M285 330 L296 346 L300 420" stroke="#FFFFFF" stroke-width="1" fill="none" opacity=".4"/>
+  </g>
+  <path d="M266 112 Q266 124 266 138" stroke="#AEB3B7" stroke-width="5" stroke-linecap="round" fill="none"/>
+  <circle cx="266" cy="112" r="4" fill="#5E6469"/>
+
+  <!-- screwdriver rack -->
+  <g filter="url(#sh)">
+   <g>
+    <rect x="370" y="172" width="6" height="150" fill="url(#steelH)"/><path d="M370 322 L376 322 L374 334 L372 334 Z" fill="#7E8489"/>
+    <rect x="417" y="172" width="6" height="118" fill="url(#steelH)"/><path d="M416 290 h8 l-1 12 h-6 z" fill="#7E8489"/>
+    <rect x="465" y="172" width="6" height="168" fill="url(#steelH)"/><path d="M465 340 L471 340 L469 352 L467 352 Z" fill="#7E8489"/>
+    <rect x="513" y="172" width="6" height="132" fill="url(#steelH)"/><path d="M512 304 h8 l-1 12 h-6 z" fill="#7E8489"/>
+   </g>
+   <rect x="342" y="150" width="206" height="24" rx="3" fill="url(#batten)"/>
+   <rect x="342" y="170" width="206" height="4" fill="#5A3A20" opacity=".6"/>
+   <g>
+    <rect x="361" y="86" width="24" height="64" rx="10" fill="url(#hR)"/><rect x="365" y="140" width="16" height="10" fill="url(#steelH)"/>
+    <path d="M367 96v36M373 94v40M379 96v36" stroke="#2A0E09" stroke-width="1" opacity=".45"/>
+    <rect x="408" y="98" width="24" height="52" rx="10" fill="url(#hK)"/><rect x="412" y="140" width="16" height="10" fill="url(#steelH)"/>
+    <path d="M414 108v26M420 106v30M426 108v26" stroke="#000" stroke-width="1" opacity=".5"/>
+    <rect x="456" y="80" width="24" height="70" rx="10" fill="url(#hG)"/><rect x="460" y="140" width="16" height="10" fill="url(#steelH)"/>
+    <path d="M462 90v42M468 88v46M474 90v42" stroke="#0B1A17" stroke-width="1" opacity=".5"/>
+    <rect x="504" y="92" width="24" height="58" rx="10" fill="url(#hA)"/><rect x="508" y="140" width="16" height="10" fill="url(#steelH)"/>
+    <path d="M510 102v30M516 100v34M522 102v30" stroke="#3A2406" stroke-width="1" opacity=".45"/>
+    <path d="M366 92 v30 M413 104 v24 M461 86 v34 M509 98 v26" stroke="#FFF" stroke-width="2" opacity=".25" stroke-linecap="round"/>
+   </g>
+  </g>
+  <circle cx="352" cy="162" r="3" fill="#C9CDD0" stroke="#5E6469"/><circle cx="538" cy="162" r="3" fill="#C9CDD0" stroke="#5E6469"/>
+
+  <!-- pliers -->
+  <g transform="rotate(4 640 220)" filter="url(#sh)">
+   <path d="M631 200 L604 372" stroke="url(#steelDark)" stroke-width="12" stroke-linecap="round"/>
+   <path d="M649 200 L676 372" stroke="url(#steelDark)" stroke-width="12" stroke-linecap="round"/>
+   <path d="M624 250 L606 368" stroke="url(#grip)" stroke-width="18" stroke-linecap="round"/>
+   <path d="M656 250 L674 368" stroke="url(#grip)" stroke-width="18" stroke-linecap="round"/>
+   <path d="M620 262 L608 344 M660 262 L672 344" stroke="#FFF" stroke-width="2" opacity=".18" stroke-linecap="round"/>
+   <path d="M628 196 Q622 150 634 92 L646 92 Q658 150 652 196 Z" fill="url(#steelH)"/>
+   <path d="M640 96 L640 194" stroke="#4E5459" stroke-width="1.4"/>
+   <path d="M634 110h12M633 120h14M632 130h16M632 140h16" stroke="#5E6469" stroke-width=".9" opacity=".7"/>
+   <circle cx="640" cy="200" r="11" fill="url(#steelV)" stroke="#5E6469" stroke-width="1"/>
+   <circle cx="640" cy="200" r="4" fill="#6E7479"/>
+  </g>
+  <circle cx="640" cy="230" r="5" fill="#C9CDD0" stroke="#5E6469" stroke-width="1.4"/>
+
+  <!-- kraft envelopes -->
+  <g filter="url(#shS)">
+   <g transform="translate(-16 0) rotate(4 716 450)">
+    <rect x="684" y="430" width="64" height="88" rx="2" fill="url(#kraft)"/>
+    <path d="M684 446h64" stroke="#8C6A3E" stroke-width="1" opacity=".6"/>
+    <circle cx="716" cy="438" r="4" fill="#3A2818"/>
+    <text x="692" y="482" font-family="Nanum Pen Script" font-size="24" fill="#3A2A18">M6</text>
+    <text x="692" y="506" font-family="Nanum Pen Script" font-size="20" fill="#3A2A18">와셔</text>
+   </g>
+   <g transform="translate(-16 0) rotate(-3 704 360)">
+    <rect x="672" y="336" width="64" height="88" rx="2" fill="url(#kraft)"/>
+    <path d="M672 352h64" stroke="#8C6A3E" stroke-width="1" opacity=".6"/>
+    <circle cx="704" cy="344" r="4" fill="#3A2818"/>
+    <text x="680" y="388" font-family="Nanum Pen Script" font-size="24" fill="#3A2A18">M5</text>
+    <text x="680" y="412" font-family="Nanum Pen Script" font-size="20" fill="#3A2A18">너트</text>
+   </g>
+  </g>
+  <circle cx="688" cy="338" r="3.4" fill="#C9CDD0" stroke="#5E6469"/>
+  <circle cx="700" cy="432" r="3.4" fill="#C9CDD0" stroke="#5E6469"/>
+
+  <!-- bench -->
+  <rect x="0" y="592" width="760" height="34" fill="url(#bench)"/>
+  <path d="M0 600 Q200 598 400 604 T760 600 M0 612 Q260 610 520 616 T760 612" stroke="#8A6238" stroke-width="1" fill="none" opacity=".45"/>
+  <rect x="0" y="626" width="760" height="54" fill="url(#benchFront)"/>
+  <rect x="0" y="626" width="760" height="2" fill="#E2C193" opacity=".35"/>
+
+  <!-- cabinet shadow -->
+  <ellipse cx="496" cy="606" rx="190" ry="12" fill="#2B1A0D" opacity=".45" filter="url(#soft)"/>
+  <!-- cabinet -->
+  <g>
+   <rect x="640" y="376" width="16" height="222" fill="url(#cabSide)"/>
+   <path d="M330 376 L344 366 L668 366 L656 376 Z" fill="#D4D7D7"/>
+   <rect x="330" y="376" width="314" height="222" rx="4" fill="url(#cab)"/>
+   <rect x="330" y="376" width="314" height="2" fill="#FFF" opacity=".6"/>
+   <g id="drs">
+    <!-- row 1 -->
+    <g transform="translate(342 388)"><rect width="66" height="42" rx="3" fill="url(#drw)"/><rect x="8" y="5" width="50" height="18" rx="1.5" fill="#FBF8F0" stroke="#B9B1A0" stroke-width=".6"/><text x="33" y="20" text-anchor="middle" font-family="Nanum Pen Script" font-size="16" fill="#2C2E31">M4×20</text><rect x="24" y="29" width="18" height="6" rx="3" fill="#4C5154"/></g>
+    <g transform="translate(416 388)"><rect width="66" height="42" rx="3" fill="url(#drw)"/><rect x="8" y="5" width="50" height="18" rx="1.5" fill="#FBF8F0" stroke="#B9B1A0" stroke-width=".6"/><text x="33" y="20" text-anchor="middle" font-family="Nanum Pen Script" font-size="16" fill="#2C2E31">와셔</text><rect x="24" y="29" width="18" height="6" rx="3" fill="#4C5154"/></g>
+    <g transform="translate(490 388)"><rect width="66" height="42" rx="3" fill="url(#drw)"/><rect x="8" y="5" width="50" height="18" rx="1.5" fill="#FBF8F0" stroke="#B9B1A0" stroke-width=".6"/><text x="33" y="20" text-anchor="middle" font-family="Nanum Pen Script" font-size="16" fill="#2C2E31">칼블럭</text><rect x="24" y="29" width="18" height="6" rx="3" fill="#4C5154"/></g>
+    <g transform="translate(564 388)"><rect width="66" height="42" rx="3" fill="url(#drw)"/><rect x="8" y="5" width="50" height="18" rx="1.5" fill="#FBF8F0" stroke="#B9B1A0" stroke-width=".6"/><text x="33" y="20" text-anchor="middle" font-family="Nanum Pen Script" font-size="16" fill="#2C2E31">너트</text><rect x="24" y="29" width="18" height="6" rx="3" fill="#4C5154"/></g>
+    <!-- row 2 -->
+    <g transform="translate(342 438)"><rect width="66" height="42" rx="3" fill="url(#drw)"/><rect x="8" y="5" width="50" height="18" rx="1.5" fill="#FBF8F0" stroke="#B9B1A0" stroke-width=".6"/><text x="33" y="20" text-anchor="middle" font-family="Nanum Pen Script" font-size="16" fill="#2C2E31">피스</text><rect x="24" y="29" width="18" height="6" rx="3" fill="#4C5154"/></g>
+    <g transform="translate(416 438)"><rect width="66" height="42" rx="3" fill="url(#drw)"/><rect x="8" y="5" width="50" height="18" rx="1.5" fill="#FBF8F0" stroke="#B9B1A0" stroke-width=".6"/><text x="33" y="20" text-anchor="middle" font-family="Nanum Pen Script" font-size="16" fill="#2C2E31">철못</text><rect x="24" y="29" width="18" height="6" rx="3" fill="#4C5154"/></g>
+    <!-- pulled drawer -->
+    <g transform="translate(490 438)">
+     <rect width="66" height="42" rx="2" fill="#3C3A35"/>
+     <rect x="4" y="3" width="58" height="14" fill="#5B574E"/>
+     <g fill="#C9CDD0" stroke="#6E7479" stroke-width=".8"><circle cx="12" cy="10" r="3"/><circle cx="20" cy="8" r="3"/><circle cx="27" cy="12" r="3"/><circle cx="36" cy="9" r="3"/><circle cx="44" cy="12" r="3"/><circle cx="52" cy="8" r="3"/></g>
+     <g transform="translate(0 10)"><rect width="66" height="42" rx="3" fill="url(#drw)" filter="url(#shS)"/><rect x="8" y="5" width="50" height="18" rx="1.5" fill="#FBF8F0" stroke="#B9B1A0" stroke-width=".6"/><text x="33" y="20" text-anchor="middle" font-family="Nanum Pen Script" font-size="16" fill="#2C2E31">경첩</text><rect x="24" y="29" width="18" height="6" rx="3" fill="#4C5154"/></g>
+    </g>
+    <g transform="translate(564 438)"><rect width="66" height="42" rx="3" fill="url(#drw)"/><rect x="8" y="5" width="50" height="18" rx="1.5" fill="#FBF8F0" stroke="#B9B1A0" stroke-width=".6"/><text x="33" y="20" text-anchor="middle" font-family="Nanum Pen Script" font-size="16" fill="#2C2E31">다보</text><rect x="24" y="29" width="18" height="6" rx="3" fill="#4C5154"/></g>
+    <!-- row 3 -->
+    <g transform="translate(342 498)"><rect width="66" height="42" rx="3" fill="url(#drw)"/><rect x="8" y="5" width="50" height="18" rx="1.5" fill="#FBF8F0" stroke="#B9B1A0" stroke-width=".6"/><text x="33" y="20" text-anchor="middle" font-family="Nanum Pen Script" font-size="16" fill="#2C2E31">M8</text><rect x="24" y="29" width="18" height="6" rx="3" fill="#4C5154"/></g>
+    <g transform="translate(416 498)"><rect width="66" height="42" rx="3" fill="url(#drw)"/><rect x="8" y="5" width="50" height="18" rx="1.5" fill="#FBF8F0" stroke="#B9B1A0" stroke-width=".6"/><text x="33" y="20" text-anchor="middle" font-family="Nanum Pen Script" font-size="16" fill="#2C2E31">패킹</text><rect x="24" y="29" width="18" height="6" rx="3" fill="#4C5154"/></g>
+    <g transform="translate(490 498)"><rect width="66" height="42" rx="3" fill="url(#drw)"/><rect x="8" y="5" width="50" height="18" rx="1.5" fill="#FBF8F0" stroke="#B9B1A0" stroke-width=".6"/><text x="33" y="20" text-anchor="middle" font-family="Nanum Pen Script" font-size="16" fill="#2C2E31">꺾쇠</text><rect x="24" y="29" width="18" height="6" rx="3" fill="#4C5154"/></g>
+    <g transform="translate(564 498)"><rect width="66" height="42" rx="3" fill="url(#drw)"/><rect x="8" y="5" width="50" height="18" rx="1.5" fill="#FBF8F0" stroke="#B9B1A0" stroke-width=".6"/><text x="33" y="20" text-anchor="middle" font-family="Nanum Pen Script" font-size="16" fill="#2C2E31">고무발</text><rect x="24" y="29" width="18" height="6" rx="3" fill="#4C5154"/></g>
+    <!-- row 4 -->
+    <g transform="translate(342 548)"><rect width="66" height="42" rx="3" fill="url(#drw)"/><rect x="8" y="5" width="50" height="18" rx="1.5" fill="#FBF8F0" stroke="#B9B1A0" stroke-width=".6"/><text x="33" y="20" text-anchor="middle" font-family="Nanum Pen Script" font-size="16" fill="#2C2E31">앵커</text><rect x="24" y="29" width="18" height="6" rx="3" fill="#4C5154"/></g>
+    <g transform="translate(416 548)"><rect width="66" height="42" rx="3" fill="url(#drw)"/><rect x="8" y="5" width="50" height="18" rx="1.5" fill="#FBF8F0" stroke="#B9B1A0" stroke-width=".6"/><text x="33" y="20" text-anchor="middle" font-family="Nanum Pen Script" font-size="16" fill="#2C2E31">M3×10</text><rect x="24" y="29" width="18" height="6" rx="3" fill="#4C5154"/></g>
+    <g transform="translate(490 548)"><rect width="66" height="42" rx="3" fill="url(#drw)"/><rect x="8" y="5" width="50" height="18" rx="1.5" fill="#FBF8F0" stroke="#B9B1A0" stroke-width=".6"/><text x="33" y="20" text-anchor="middle" font-family="Nanum Pen Script" font-size="16" fill="#2C2E31">압정</text><rect x="24" y="29" width="18" height="6" rx="3" fill="#4C5154"/></g>
+    <g transform="translate(564 548)"><rect width="66" height="42" rx="3" fill="url(#drw)"/><rect x="8" y="5" width="50" height="18" rx="1.5" fill="#FBF8F0" stroke="#B9B1A0" stroke-width=".6"/><text x="33" y="20" text-anchor="middle" font-family="Nanum Pen Script" font-size="16" fill="#2C2E31">나비</text><rect x="24" y="29" width="18" height="6" rx="3" fill="#4C5154"/></g>
+   </g>
+  </g>
+
+  <!-- tape measure on bench -->
+  <ellipse cx="200" cy="614" rx="70" ry="8" fill="#2B1A0D" opacity=".45" filter="url(#soft)"/>
+  <g>
+   <path d="M36 600 L156 598 L156 612 L34 616 Z" fill="url(#tapeBlade)"/>
+   <path d="M36 600 L156 598" stroke="#FFF2C2" stroke-width="1" opacity=".7"/>
+   <g stroke="#2A2416" stroke-width="1">
+    <path d="M44 600v5M50 600v3M56 600v3M62 600v3M68 600v8M74 599v3M80 599v3M86 599v3M92 599v3M98 599v5M104 599v3M110 599v3M116 599v3M122 599v3M128 599v8M134 598v3M140 598v3M146 598v3"/>
+   </g>
+   <path d="M68 600v8M128 599v8" stroke="#B7311E" stroke-width="1.4"/>
+   <path d="M30 598 L38 598 L38 618 L34 630 L28 630 L30 616 Z" fill="url(#steelH)"/>
+   <rect x="150" y="520" width="98" height="94" rx="20" fill="url(#tapeCase)"/>
+   <path d="M150 548 Q150 520 176 520 L184 520 L184 614 L172 614 Q150 614 150 594 Z" fill="#2E3033"/>
+   <path d="M156 540v60M162 532v74M168 528v82M174 526v86" stroke="#45494D" stroke-width="1.4"/>
+   <circle cx="216" cy="566" r="27" fill="#D69F12" stroke="#A97A06" stroke-width="2"/>
+   <circle cx="216" cy="566" r="18" fill="none" stroke="#F6CF57" stroke-width="1.4" opacity=".8"/>
+   <circle cx="216" cy="566" r="4" fill="#5E6469"/>
+   <rect x="196" y="512" width="26" height="10" rx="3" fill="#2E3033"/>
+   <path d="M160 522 Q200 518 240 524" stroke="#FFF3C4" stroke-width="2" fill="none" opacity=".55"/>
+  </g>
+  <!-- pencil -->
+  <g transform="rotate(-4 300 640)">
+   <rect x="250" y="604" width="74" height="9" rx="1" fill="#2F4A44"/>
+   <path d="M324 604 L340 608.5 L324 613 Z" fill="#D9B88A"/><path d="M334 606.8 L340 608.5 L334 610.2 Z" fill="#2A2C2F"/>
+   <rect x="244" y="604" width="8" height="9" fill="#9AA0A4"/>
+  </g>
+ </svg>
+ </div>
+
+ <div class="hero-t">
+  <p class="where"><svg class="i" viewBox="0 0 24 24"><path d="M12 21s-7-6-7-11a7 7 0 0 1 14 0c0 5-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>○○동 시장 골목 안쪽</p>
+  <h1>나사 세 개, 경첩 한 짝도 서랍에서 꺼내 낱개로 팝니다</h1>
+  <p class="lead">한 봉지씩 사서 남기지 마세요. 서랍 <span class="hl mono">312칸</span>에 크기별로 나눠 둔 못·나사·부속을 필요한 수만큼 세어 드리고, 열쇠 복사와 목재·아크릴 재단도 그 자리에서 합니다.</p>
+  <div class="acts">
+   <a class="btn btn-p" href="#picker">고칠 것 고르기</a>
+   <a class="btn btn-s" href="#drawers">낱개 가격 보기</a>
+  </div>
+  <dl class="today">
+   <dt>평일</dt><dd>07:30 – 19:30</dd>
+   <dt>토요일</dt><dd>08:00 – 17:00</dd>
+   <dt>일요일</dt><dd style="font-family:'IBM Plex Sans KR',sans-serif">쉽니다 · 공휴일은 오전만</dd>
+  </dl>
+ </div>
+</div>
+
+<section id="drawers">
+ <div class="in">
+  <div class="sec-h">
+   <div><span class="num">01 낱개 서랍</span><h2>서랍 라벨에 적힌 값이<br> <span class="nw">개당 값입니다</span></h2></div>
+   <p>규격을 모르면 쓰던 것 하나를 들고 오세요. 나사산 게이지에 대 보고 같은 것을 찾아 마분지 봉투에 담아 드립니다.</p>
+  </div>
+  <div class="tabs" role="tablist" aria-label="서랍 분류">
+   <button class="tab" role="tab" aria-selected="true" data-cat="screw">나사·볼트</button>
+   <button class="tab" role="tab" aria-selected="false" data-cat="nail">못·앵커</button>
+   <button class="tab" role="tab" aria-selected="false" data-cat="fit">경첩·부속</button>
+  </div>
+  <div class="cabinet"><div class="drawers" id="drawerGrid"></div></div>
+  <p class="drawer-note"><svg class="i" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 11v5M12 8v.01"/></svg>100개 이상은 무게로 달아 드리고, 공사용 대량 주문은 하루 전에 말씀해 주시면 준비해 둡니다.</p>
+ </div>
+</section>
+
+<section id="services" style="padding-top:0">
+ <div class="in">
+  <div class="sec-h">
+   <div><span class="num">02 해 드리는 일</span><h2>사 가는 것 말고, 맡기고 가는 일</h2></div>
+   <p>기계가 있는 일은 가게에서 바로 해 드립니다. 재단은 손님이 적은 오전에 오시면 덜 기다리십니다.</p>
+  </div>
+  <div class="svc">
+   <div class="blk s-key">
+    <h3>열쇠 복사</h3>
+    <p>원본 열쇠만 있으면 됩니다. 끝이 닳은 열쇠는 깎기 전에 먼저 말씀드립니다.</p>
+    <ul class="plist">
+     <li><span>일반 현관·방문 열쇠</span><span class="mono">3,000원</span></li>
+     <li><span>홈이 파인 딤플 열쇠</span><span class="mono">8,000원</span></li>
+     <li><span>자물쇠 열쇠</span><span class="mono">2,500원</span></li>
+    </ul>
+   </div>
+   <div class="blk s-cut">
+    <h3>목재·아크릴 소량 재단</h3>
+    <p>합판, MDF, 아크릴 판을 원하는 치수로 잘라 드립니다. 가게에서 산 판이면 직선 두 줄까지 재단비를 받지 않습니다.</p>
+    <div class="cutfig" aria-hidden="true">
+     <svg viewBox="0 -12 520 202">
+      <defs><pattern id="ply" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M0 5 Q5 3 10 5" stroke="#B89A72" stroke-width=".8" fill="none"/></pattern></defs>
+      <rect x="40" y="30" width="300" height="140" fill="#E3CFA9"/><rect x="40" y="30" width="300" height="140" fill="url(#ply)" opacity=".7"/>
+      <rect x="40" y="30" width="300" height="140" fill="none" stroke="#7E6440" stroke-width="1.2"/>
+      <path d="M220 30 V170 M40 110 H220" stroke="#24272B" stroke-width="1.6" stroke-dasharray="8 6"/>
+      <path d="M40 18 H220 M40 12 V24 M220 12 V24" stroke="#55585B" stroke-width="1.2"/>
+      <text x="108" y="8" font-family="IBM Plex Mono" font-size="22" fill="#24272B">600</text>
+      <path d="M352 30 V110 M346 30 H358 M346 110 H358" stroke="#55585B" stroke-width="1.2"/>
+      <text x="360" y="78" font-family="IBM Plex Mono" font-size="22" fill="#24272B">400</text>
+      <rect x="416" y="54" width="96" height="92" fill="#D4E1E0" opacity=".75" stroke="#7F9A9A" stroke-width="1.2"/>
+      <path d="M420 58 L456 58" stroke="#FFF" stroke-width="2" opacity=".8"/>
+      <path d="M416 104 H512" stroke="#24272B" stroke-width="1.6" stroke-dasharray="8 6"/>
+      <text x="416" y="176" font-family="IBM Plex Sans KR" font-size="22" fill="#55585B">아크릴</text>
+     </svg>
+     <p class="cap">합판 9T와 아크릴 3T · 점선을 따라 직선으로 자릅니다</p>
+    </div>
+    <div class="cut-cols">
+     <ul class="plist">
+      <li><span>목재 직선 한 줄</span><span class="mono">500원</span></li>
+      <li><span>아크릴 직선 한 줄</span><span class="mono">1,000원</span></li>
+     </ul>
+     <ul class="plist">
+      <li><span>가장 작은 폭</span><span class="mono">30mm</span></li>
+      <li><span>가장 큰 판</span><span class="mono">1220×2440</span></li>
+     </ul>
+    </div>
+   </div>
+   <div class="blk s-part">
+    <h3>방충망·문고리 부품 맞추기</h3>
+    <p>떼어 낸 부품을 그대로 들고 오세요. 서랍에서 같은 규격을 찾아 맞춰 보고 드립니다.</p>
+    <p class="tick"><svg class="i" viewBox="0 0 24 24"><path d="M5 12l5 5 9-10"/></svg>방충망 롤러, 고정 고무줄, 문고리 몸통과 나사</p>
+    <p class="tick"><svg class="i" viewBox="0 0 24 24"><path d="M5 12l5 5 9-10"/></svg>싱크대 경첩, 서랍 레일, 수전 패킹</p>
+   </div>
+   <div class="blk s-rent">
+    <div><h3>공구 하루 대여</h3><p>한 번 쓰고 말 공구는 사지 말고 빌려 가세요. 다음 날 가게 문 닫기 전까지 돌려주시면 됩니다.</p></div>
+    <a class="link" href="#rent">대여표 보기<svg class="i" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+   </div>
+  </div>
+ </div>
+</section>
+
+<section id="picker" style="padding-top:0">
+ <div class="in">
+  <div class="sec-h">
+   <div><span class="num">03 고칠 것 고르기</span><h2>무엇을 고치시는지 고르면<br> <span class="nw">살 것이 나옵니다</span></h2></div>
+   <p>집에 이미 있는 것은 체크를 풀어 두세요. 합계는 대략의 값이고, 실제 부품은 가게에서 맞춰 보고 정합니다.</p>
+  </div>
+  <div class="pick">
+   <div class="pick-l" id="jobs">
+    <p class="lbl">고칠 곳</p>
+   </div>
+   <div class="pick-r" aria-live="polite">
+    <h3 id="jobTitle"></h3>
+    <div class="meta" id="jobMeta"></div>
+    <div class="chk-h"><span>부품과 공구</span><span>값</span></div>
+    <ul class="chk" id="jobList"></ul>
+    <div class="sum"><span>대략 합계</span><b class="mono" id="jobSum"></b></div>
+    <p class="tip" id="jobTip"></p>
+   </div>
+  </div>
+ </div>
+</section>
+
+<section id="rent" class="rent">
+ <div class="in">
+  <div class="sec-h">
+   <div><span class="num">04 공구 대여</span><h2>하루 빌리는 값과 맡기는 보증금</h2></div>
+   <p>보증금은 돌려주실 때 그대로 돌려드립니다. 날이나 비트가 닳는 공구는 쓴 만큼 소모품값을 따로 받습니다.</p>
+  </div>
+  <div class="tbl-wrap">
+   <table>
+    <thead><tr><th>공구</th><th class="r">하루</th><th class="r">보증금</th></tr></thead>
+    <tbody>
+     <tr><td><b>충전 드릴</b><small>배터리 2개, 기본 비트 포함</small></td><td class="r mono">5,000원</td><td class="r mono">30,000원</td></tr>
+     <tr><td><b>함마 드릴</b><small>콘크리트 벽 구멍, 기리 별도</small></td><td class="r mono">10,000원</td><td class="r mono">50,000원</td></tr>
+     <tr><td><b>직소</b><small>곡선 재단, 날 1개 포함</small></td><td class="r mono">8,000원</td><td class="r mono">50,000원</td></tr>
+     <tr><td><b>레이저 수평기</b><small>선반·액자 수평 맞추기</small></td><td class="r mono">6,000원</td><td class="r mono">50,000원</td></tr>
+     <tr><td><b>타카</b><small>방충망·천 고정, 심 별도</small></td><td class="r mono">4,000원</td><td class="r mono">20,000원</td></tr>
+     <tr><td><b>A형 사다리 2m</b><small>배달 안 됨, 차로 가져가셔야 합니다</small></td><td class="r mono">5,000원</td><td class="r mono">30,000원</td></tr>
+     <tr><td><b>몽키스패너 큰 것</b><small>수전·배관 너트</small></td><td class="r mono">2,000원</td><td class="r mono">10,000원</td></tr>
+     <tr><td><b>실리콘 건</b><small>실리콘은 사 가셔야 합니다</small></td><td class="r mono">1,000원</td><td class="r mono">5,000원</td></tr>
+    </tbody>
+   </table>
+  </div>
+  <div class="rent-foot">
+   <span><svg class="i" viewBox="0 0 24 24"><rect x="4" y="6" width="16" height="12" rx="2"/><path d="M4 10h16"/></svg>신분증 확인 후 대여</span>
+   <span><svg class="i" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>다음 날 영업 종료 전 반납</span>
+  </div>
+ </div>
+</section>
+
+<section id="visit">
+ <div class="in">
+  <div class="sec-h">
+   <div><span class="num">05 찾아오는 길</span><h2>시장 골목으로 들어와 두 번째 갈림길 왼쪽</h2></div>
+   <p>골목이 좁아 차는 들어오기 어렵습니다. 무거운 자재는 골목 입구까지 들어 드립니다.</p>
+  </div>
+  <div class="visit">
+   <div class="map" aria-label="골목 약도">
+    <svg viewBox="0 0 640 440" role="img" aria-label="시장 입구에서 골목 안 철물점까지의 약도">
+     <rect width="640" height="440" fill="#EFEDE8"/>
+     <g fill="#DEDBD4" stroke="#C9C5BC">
+      <rect x="40" y="40" width="200" height="120" rx="4"/><rect x="300" y="40" width="140" height="120" rx="4"/><rect x="500" y="40" width="100" height="120" rx="4"/>
+      <rect x="40" y="220" width="120" height="180" rx="4"/><rect x="220" y="220" width="100" height="70" rx="4"/><rect x="220" y="330" width="100" height="70" rx="4"/><rect x="380" y="220" width="220" height="180" rx="4"/>
+     </g>
+     <path d="M0 190 H640" stroke="#FFFFFF" stroke-width="44"/>
+     <path d="M270 190 V100" stroke="#FFFFFF" stroke-width="0"/>
+     <path d="M190 190 V440 M350 190 V440 M190 310 H350" stroke="#FFFFFF" stroke-width="24"/>
+     <path d="M190 190 V440 M350 190 V440" stroke="#C9C5BC" stroke-width="1" stroke-dasharray="2 6"/>
+     <path d="M560 190 H350 V310 H262" fill="none" stroke="#24272B" stroke-width="3" stroke-dasharray="10 8" stroke-linecap="round"/>
+     <rect x="226" y="294" width="36" height="32" rx="4" fill="#24272B"/>
+     <path d="M236 310h16M244 302v16" stroke="#E5E3DE" stroke-width="2.4" stroke-linecap="round"/>
+     <text x="52" y="252" font-family="IBM Plex Sans KR" font-size="27" fill="#55585B">○○슈퍼</text>
+     <rect class="mkp" x="184" y="334" width="112" height="44" rx="6" fill="#24272B"/><text class="mk" x="240" y="364" dominant-baseline="auto" text-anchor="middle" font-family="IBM Plex Sans KR" font-size="28" font-weight="600" fill="#F6F4EF">나사골</text>
+     <text x="456" y="172" font-family="IBM Plex Sans KR" font-size="27" fill="#55585B">시장 입구</text>
+     <text x="40" y="200" font-family="IBM Plex Sans KR" font-size="27" fill="#55585B">○○로</text>
+     <circle cx="560" cy="190" r="7" fill="#24272B"/>
+     <text x="396" y="258" font-family="IBM Plex Sans KR" font-size="27" fill="#55585B">정육점</text>
+     <text x="330" y="76" font-family="IBM Plex Sans KR" font-size="27" fill="#55585B">정류장</text>
+    </svg>
+   </div>
+   <div class="info">
+    <dl>
+     <dt>주소</dt><dd>○○시 ○○동 시장길 00 골목 안</dd>
+     <dt>전화</dt><dd class="mono">000-0000-0000</dd>
+     <dt>영업</dt><dd><div class="hours"><span>평일</span><span class="mono">07:30 – 19:30</span><span>토요일</span><span class="mono">08:00 – 17:00</span><span>일요일</span><span>쉽니다</span><span>공휴일</span><span class="mono">08:00 – 12:00</span></div></dd>
+     <dt>주차</dt><dd>시장 공영주차장, 골목 입구에서 걸어서 3분</dd>
+    </dl>
+    <p class="note">기사님 새벽 자재는 전날 전화로 말씀해 주시면 문 열 때 바로 내드립니다.</p>
+   </div>
+  </div>
+ </div>
+</section>
+
+<section id="ask" style="padding-top:0">
+ <div class="in ask">
+  <div class="ask-side">
+   <span class="mono" style="font-size:14px;color:var(--muted);display:block;margin-bottom:12px">06 문의</span>
+   <h2>부품 이름을 몰라도 물어보세요</h2>
+   <p>사진과 치수를 함께 적어 주시면 있는지 확인하고, 없으면 언제 들어오는지 알려 드립니다.</p>
+   <ul class="bring">
+    <li><span class="mono">01</span>떼어 낸 부품을 위, 옆에서 찍은 사진</li>
+    <li><span class="mono">02</span>줄자로 잰 길이와 구멍 사이 간격</li>
+    <li><span class="mono">03</span>문, 벽, 싱크대처럼 달 곳의 재질</li>
+   </ul>
+  </div>
+  <form id="askForm" novalidate>
+   <div class="f"><label for="nm">이름</label><input id="nm" name="nm" autocomplete="name" placeholder="홍길동" required></div>
+   <div class="f"><label for="tel">연락처</label><input id="tel" name="tel" inputmode="tel" placeholder="000-0000-0000" required></div>
+   <div class="f full"><label for="kind">문의 종류</label>
+    <select id="kind" name="kind">
+     <option>부품·규격 찾기</option><option>목재·아크릴 재단</option><option>열쇠 복사</option><option>공구 대여 예약</option><option>기사님 자재 주문</option>
+    </select></div>
+   <div class="f full"><label for="size">치수 <span style="font-weight:400;color:var(--muted)">(있으면)</span></label><input id="size" name="size" class="mono" placeholder="예: 600×400, M5×25"></div>
+   <div class="f full"><label for="msg">내용</label><textarea id="msg" name="msg" placeholder="무엇을 고치시는지, 필요한 수량을 적어 주세요" required></textarea><span class="hint" id="err" hidden>이름, 연락처, 내용을 적어 주세요</span></div>
+   <div class="form-end"><small>확인 후 전화로 연락드립니다</small><button class="btn btn-p" type="submit" style="height:48px;padding:0 28px">문의 남기기</button></div>
+   <div class="done" role="status"><b>문의를 받았습니다</b><p id="doneMsg"></p><button class="btn btn-s" type="button" id="again" style="margin-top:16px">다른 문의 쓰기</button></div>
+  </form>
+ </div>
+</section>
+</main>
+
+<footer>
+ <div class="in">
+  <div><b>나사골 철물점</b><p>○○시 ○○동 시장길 00 골목 안 · <span class="mono">000-0000-0000</span></p><p>사업자 정보 000-00-00000</p></div>
+  <div><p style="margin-top:0">평일 <span class="mono">07:30–19:30</span> · 토 <span class="mono">08:00–17:00</span> · 일 쉼</p><p>낱개 판매 · 열쇠 복사 · 소량 재단 · 공구 대여</p></div>
+ </div>
+</footer>
+
+<script>
+const DRAWERS={
+ screw:[
+  ['접시머리 피스','M4×20','50'],['둥근머리 볼트','M6×30','150'],['육각 볼트','M8×40','300'],['육각 너트','M6','50'],
+  ['평 와셔','M8','30'],['나비 너트','M6','200'],['목재 피스','3.5×35','40'],['석고 피스','3.5×25','30']],
+ nail:[
+  ['철못','50mm','20'],['콘크리트 못','38mm','60'],['칼블럭','6mm','50'],['토글 앵커','M5','400'],
+  ['석고 앵커','25mm','300'],['스테이플 심','10mm','10'],['압정','10mm','10'],['액자 고리 못','20mm','100']],
+ fit:[
+  ['평경첩 한 짝','50mm','1,500'],['싱크대 경첩','35파이','2,500'],['선반 다보','5mm','100'],['ㄱ자 꺾쇠','40mm','500'],
+  ['문고리 나사 세트','M4','1,000'],['가구 고무발','20mm','200'],['수전 고무 패킹','15A','300'],['방충망 롤러','24mm','800']]
+};
+const grid=document.getElementById('drawerGrid');
+function showDrawers(cat){
+ grid.innerHTML=DRAWERS[cat].map(d=>`<div class="dr"><div class="lab"><b>${d[0]}</b><span class="mono">${d[1]}</span></div><div class="pull"></div><div class="pr"><span>한 개</span><span class="mono">${d[2]}원</span></div></div>`).join('');
+}
+document.querySelectorAll('.tab').forEach(t=>t.addEventListener('click',()=>{
+ document.querySelectorAll('.tab').forEach(x=>x.setAttribute('aria-selected','false'));
+ t.setAttribute('aria-selected','true');showDrawers(t.dataset.cat);
+}));
+showDrawers('screw');
+
+const JOBS=[
+ {k:'door',name:'문고리 교체',time:'혼자 20분',lvl:'쉬움',items:[
+  ['원통형 문고리','방문용, 기존 구멍 지름 54mm','부품',12000],
+  ['문고리 나사 세트','M4 두 개, 긴 것으로','부품',1000],
+  ['십자 드라이버 2번','손잡이 큰 것','공구',4000],
+  ['줄자 3m','문 두께와 백셋 재기','공구',5000]],
+  tip:'문 옆면 걸쇠판에서 문 끝까지 거리(백셋)를 재 오시면 맞는 몸통을 바로 고를 수 있습니다.'},
+ {k:'shelf',name:'선반 달기',time:'혼자 40분',lvl:'보통',items:[
+  ['선반 받침 브라켓','150mm, 두 개','부품',3000],
+  ['칼블럭 6mm','네 개','부품',200],
+  ['목재 피스 3.5×35','네 개','부품',160],
+  ['선반 판 600×200 재단','집성목 18T, 재단비 포함','부품',8500],
+  ['충전 드릴 하루 대여','보증금 30,000원 별도','공구',5000]],
+  tip:'벽을 두드려 통통 울리면 석고보드입니다. 그때는 칼블럭 대신 석고 앵커로 바꿔 드립니다.'},
+ {k:'faucet',name:'수전 교체',time:'혼자 1시간',lvl:'보통',items:[
+  ['벽붙이 수전','주방용, 기존 간격 확인','부품',35000],
+  ['수전 고무 패킹 15A','두 개','부품',600],
+  ['테프론 테이프','한 롤','부품',1000],
+  ['몽키스패너 하루 대여','보증금 10,000원 별도','공구',2000]],
+  tip:'시작 전에 계량기 쪽 밸브를 꼭 잠그세요. 떼어 낸 수전을 가져오시면 간격을 대 보고 같은 것을 드립니다.'},
+ {k:'screen',name:'방충망 보수',time:'혼자 30분',lvl:'쉬움',items:[
+  ['방충망 망 1m','폭 1m, 회색','부품',4000],
+  ['고정 고무줄 3m','5mm 굵기','부품',1500],
+  ['방충망 롤러','고무줄 눌러 넣는 공구','공구',3000],
+  ['커터 칼','남는 망 자르기','공구',1500],
+  ['구멍 보수 패치','작은 구멍이면 이것만','부품',2000]],
+  tip:'작은 구멍 하나라면 망을 다 갈지 말고 보수 패치만 붙이세요. 틀에 남은 고무줄 한 토막을 가져오시면 굵기를 맞춰 드립니다.'}
+];
+const jobsEl=document.getElementById('jobs');
+JOBS.forEach((j,i)=>{
+ const b=document.createElement('button');b.className='job';b.type='button';
+ b.setAttribute('aria-pressed',i===0?'true':'false');
+ b.innerHTML=`<span>${j.name}</span><span class="mono">${j.time}</span>`;
+ b.addEventListener('click',()=>{jobsEl.querySelectorAll('.job').forEach(x=>x.setAttribute('aria-pressed','false'));b.setAttribute('aria-pressed','true');renderJob(i)});
+ jobsEl.appendChild(b);
+});
+const won=n=>n.toLocaleString('ko-KR')+'원';
+function renderJob(i){
+ const j=JOBS[i];
+ document.getElementById('jobTitle').textContent=j.name;
+ document.getElementById('jobMeta').innerHTML=`<span>난이도 ${j.lvl}</span><span>${j.time}</span><span>부품과 공구 ${j.items.length}가지</span>`;
+ const list=document.getElementById('jobList');
+ list.innerHTML=j.items.map((it,n)=>`<li><label><input type="checkbox" checked data-p="${it[3]}"><span class="nm">${it[0]}<span class="kind">${it[2]}</span><small>${it[1]}</small></span><span class="mono">${won(it[3])}</span></label></li>`).join('');
+ document.getElementById('jobTip').textContent=j.tip;
+ list.querySelectorAll('input').forEach(c=>c.addEventListener('change',sum));sum();
+}
+function sum(){
+ let s=0;document.querySelectorAll('#jobList input:checked').forEach(c=>s+=+c.dataset.p);
+ document.getElementById('jobSum').textContent=won(s);
+}
+renderJob(0);
+
+const form=document.getElementById('askForm');
+form.addEventListener('submit',e=>{
+ e.preventDefault();
+ const nm=form.nm.value.trim(),tel=form.tel.value.trim(),msg=form.msg.value.trim();
+ const err=document.getElementById('err');
+ if(!nm||!tel||!msg){err.hidden=false;return}
+ err.hidden=true;
+ const dm=document.getElementById('doneMsg');dm.textContent=`${nm}님, ${form.kind.value} 문의를 확인했습니다. 영업시간 안에 `;const t=document.createElement('span');t.className='mono';t.style.whiteSpace='nowrap';t.textContent=tel;dm.append(t,'로 연락드리겠습니다.');
+ form.classList.add('sent');
+});
+document.getElementById('again').addEventListener('click',()=>{form.reset();form.classList.remove('sent')});
+</script>
+</body>
+</html>
