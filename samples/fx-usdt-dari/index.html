@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>다리 OTC | USDT 원화·페소 환전</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0b0d14;--bg2:#11141c;--card:#151925;--raise:#1c2130;--line:rgba(238,240,245,.08);--line2:rgba(238,240,245,.14);
+  --tx:#eef0f5;--tx2:#a3a9b8;--tx3:#7a8296;
+  --ac:#2bb58c;--ac-d:#1f8f6e;--ac-soft:rgba(43,181,140,.12);
+  --up:#e5484d;--down:#4c9aff;
+  --paper:#f5f7fa;--ink:#111827;--ink2:#4b5565;--ink3:#6b7487;--pline:#e3e7ee;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font-family:"Noto Sans KR",system-ui,sans-serif;background:var(--bg);color:var(--tx);line-height:1.6;word-break:keep-all;overflow-wrap:break-word;font-size:16px}
+a{color:inherit;text-decoration:none}button,input,select{font:inherit;color:inherit}button{cursor:pointer;border:0;background:none}
+.wrap{max-width:1200px;margin:0 auto;padding:0 32px}
+.mono{font-family:"IBM Plex Mono",ui-monospace,monospace;font-variant-numeric:tabular-nums}
+.ico{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0}
+:focus-visible{outline:2px solid var(--ac);outline-offset:2px;border-radius:6px}
+
+/* header */
+.hd{position:sticky;top:0;z-index:40;background:rgba(11,13,20,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.hd .wrap{height:64px;display:flex;align-items:center;gap:40px}
+.logo{display:flex;align-items:center;gap:10px;font-weight:700;font-size:18px}
+.logo svg{width:28px;height:28px}
+.logo small{font-family:"IBM Plex Mono";font-weight:500;font-size:13px;color:var(--tx3);margin-left:2px}
+.nav{display:flex;gap:28px;font-size:15px;color:var(--tx2)}
+.nav a:hover{color:var(--tx)}
+.hd-r{margin-left:auto;display:flex;align-items:center;gap:12px}
+.status{display:flex;align-items:center;gap:8px;font-size:13px;color:var(--tx2)}
+.status i{width:8px;height:8px;border-radius:50%;background:var(--ac)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;height:44px;padding:0 20px;border-radius:10px;font-size:15px;font-weight:600;transition:background .15s,border-color .15s}
+.btn.pri{background:var(--ac);color:#04140f}
+.btn.pri:hover{background:#34c398}
+.btn.ghost{background:var(--raise);border:1px solid var(--line2);color:var(--tx)}
+.btn.ghost:hover{border-color:rgba(238,240,245,.28)}
+.btn.sm{height:36px;padding:0 14px;font-size:14px}
+.burger{display:none;width:44px;height:44px;place-items:center;color:var(--tx)}
+
+/* hero */
+.hero{padding:88px 0 96px;border-bottom:1px solid var(--line)}
+.hero .wrap{display:grid;grid-template-columns:1fr 460px;gap:64px;align-items:center}
+.hero .wrap>*,.board>*,.safe>*{min-width:0}
+.kick{font-size:14px;color:var(--tx2);margin-bottom:20px}
+.kick b{color:var(--ac);font-weight:600}
+.hero h1{font-size:48px;line-height:1.25;font-weight:700;letter-spacing:-.01em}
+.hero p.lead{margin-top:20px;font-size:18px;color:var(--tx2);max-width:520px}
+.hero-cta{display:flex;gap:12px;margin-top:36px}
+.facts{display:grid;grid-template-columns:repeat(3,auto);gap:32px;margin-top:48px;padding-top:28px;border-top:1px solid var(--line);max-width:520px}
+.facts dt{font-size:13px;color:var(--tx3)}
+.facts dd{font-size:20px;font-weight:600;margin-top:2px}
+.facts dd span{font-size:14px;color:var(--tx2);font-weight:400;margin-left:2px}
+
+/* calculator */
+.calc{background:var(--card);border:1px solid var(--line2);border-radius:20px;padding:24px;box-shadow:0 30px 60px rgba(0,0,0,.35),inset 0 1px 0 rgba(255,255,255,.04)}
+.seg{display:grid;grid-template-columns:1fr 1fr;background:var(--bg2);border:1px solid var(--line);border-radius:12px;padding:4px;gap:4px}
+.seg button{height:40px;border-radius:9px;font-size:15px;font-weight:600;color:var(--tx2)}
+.seg button[aria-pressed="true"]{background:var(--raise);color:var(--tx);box-shadow:inset 0 1px 0 rgba(255,255,255,.05)}
+.cur{display:flex;gap:8px;margin:16px 0 8px}
+.cur button{height:32px;padding:0 12px;border-radius:8px;font-size:13px;font-weight:500;color:var(--tx2);border:1px solid var(--line)}
+.cur button[aria-pressed="true"]{color:var(--tx);border-color:var(--ac);background:var(--ac-soft)}
+.fld{background:var(--bg2);border:1px solid var(--line);border-radius:14px;padding:14px 16px;margin-top:8px}
+.fld:focus-within{border-color:rgba(43,181,140,.6)}
+.fld label{display:block;font-size:13px;color:var(--tx3)}
+.fld .row{display:flex;align-items:center;gap:12px;margin-top:4px}
+.fld input{flex:1;min-width:0;background:none;border:0;outline:0;font-family:"IBM Plex Mono";font-size:26px;font-weight:500;color:var(--tx)}
+.fld .unit{font-size:15px;font-weight:600;color:var(--tx2);display:flex;align-items:center;gap:8px}
+.fld .unit svg{width:22px;height:22px}
+.swap{display:flex;justify-content:center;margin:-6px 0;position:relative;z-index:1}
+.swap span{width:32px;height:32px;border-radius:50%;background:var(--raise);border:1px solid var(--line2);display:grid;place-items:center;color:var(--tx2)}
+.swap svg{width:16px;height:16px}
+.net{margin-top:16px}
+.net label{font-size:13px;color:var(--tx3)}
+.net select{width:100%;height:44px;margin-top:6px;background:var(--bg2);border:1px solid var(--line);border-radius:10px;padding:0 12px;font-size:15px;appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1l5 5 5-5' fill='none' stroke='%23a3a9b8' stroke-width='1.6'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center}
+.sum{margin-top:16px;border-top:1px dashed var(--line2);padding-top:14px;display:grid;gap:8px;font-size:14px}
+.sum div{display:flex;justify-content:space-between;color:var(--tx2)}
+.sum div b{color:var(--tx);font-weight:500}
+.calc .btn{width:100%;margin-top:18px;height:48px;font-size:16px}
+.calc .note{font-size:12px;color:var(--tx3);margin-top:10px;text-align:center}
+
+/* light sections */
+.light{background:var(--paper);color:var(--ink)}
+.sec{padding:96px 0}
+.sec-h{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;margin-bottom:40px;flex-wrap:wrap}
+.sec-h h2{font-size:32px;font-weight:700;line-height:1.3}
+.sec-h p{margin-top:8px;color:var(--ink2);font-size:16px}
+.dark .sec-h p{color:var(--tx2)}
+.upd{font-size:13px;color:var(--ink3);display:flex;align-items:center;gap:8px}
+.upd i{width:8px;height:8px;border-radius:50%;background:var(--ac)}
+
+/* rate board */
+.board{display:grid;grid-template-columns:1.35fr 1fr;gap:24px}
+.tbl{background:#fff;border:1px solid var(--pline);border-radius:16px;overflow:hidden;display:flex;flex-direction:column}
+.tier{margin-top:auto;border-top:1px solid var(--pline);padding:20px;background:#fbfcfd}
+.tier h3{font-size:14px;font-weight:600;color:var(--ink2);margin-bottom:12px}
+.tier ul{list-style:none;display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.tier li{background:#fff;border:1px solid var(--pline);border-radius:10px;padding:12px 14px;font-size:13px;color:var(--ink3)}
+.tier li b{display:block;font-size:15px;color:var(--ink);font-weight:600;margin-top:2px}
+.tier li b em{font-style:normal;color:var(--ac-d)}
+.tbl table{width:100%;border-collapse:collapse}
+.tbl th{font-size:13px;font-weight:500;color:var(--ink3);text-align:right;padding:14px 20px;border-bottom:1px solid var(--pline);background:#fbfcfd}
+.tbl td{padding:20px;text-align:right;border-bottom:1px solid #eef1f5;font-size:17px}
+.tbl tr:last-child td{border-bottom:0}
+.tbl th:first-child,.tbl td:first-child{text-align:left}
+.pair{display:flex;align-items:center;gap:12px;font-weight:600}
+.pair svg{width:32px;height:32px}
+.pair small{display:block;font-size:13px;color:var(--ink3);font-weight:400}
+.buy,.sell{color:var(--ink);font-weight:600}
+.chg{font-size:13px;color:var(--ink3)}
+.chart{background:#fff;border:1px solid var(--pline);border-radius:16px;padding:24px;display:flex;flex-direction:column}
+.chart .t{display:flex;justify-content:space-between;align-items:center}
+.chart .t span{font-size:14px;color:var(--ink2)}
+.tabs{display:flex;gap:4px}
+.tabs button{height:32px;padding:0 12px;border-radius:8px;font-size:13px;color:var(--ink3)}
+.tabs button[aria-pressed="true"]{background:#eef1f5;color:var(--ink);font-weight:600}
+.chart .v{font-size:28px;font-weight:600;margin-top:12px}
+.chart .v small{font-size:14px;color:var(--ink3);font-weight:400;margin-left:4px}
+.chart svg{width:100%;flex:1;min-height:180px;margin-top:16px}
+.chart .rng{display:flex;justify-content:space-between;font-size:13px;color:var(--ink3);margin-top:8px}
+.fine{font-size:13px;color:var(--ink3);margin-top:16px}
+
+/* steps */
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;list-style:none}
+.step{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:24px}
+.step .n{font-family:"IBM Plex Mono";font-size:13px;color:var(--ac)}
+.step h3{font-size:18px;font-weight:600;margin:12px 0 8px}
+.step p{font-size:15px;color:var(--tx2)}
+.step .tm{margin-top:16px;padding-top:12px;border-top:1px solid var(--line);font-size:13px;color:var(--tx3);display:flex;align-items:center;gap:6px}
+.step .tm svg{width:16px;height:16px}
+
+/* network table */
+.nets{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.ncard{background:#fff;border:1px solid var(--pline);border-radius:16px;padding:24px}
+.ncard .h{display:flex;align-items:center;justify-content:space-between}
+.ncard .h b{font-size:18px}
+.ncard .h span{font-size:13px;color:var(--ink3)}
+.ncard dl{display:grid;grid-template-columns:1fr auto;row-gap:10px;margin-top:20px;font-size:15px}
+.ncard dt{color:var(--ink2)}
+.ncard dd{font-weight:500;text-align:right}
+.ncard.rec{border-color:var(--ac-d);box-shadow:0 0 0 1px var(--ac-d) inset}
+.tag{font-size:12px;font-weight:600;color:var(--ac-d);background:#e6f6f0;border-radius:6px;padding:3px 8px}
+
+/* safety */
+.safe{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start}
+.safe h2{font-size:32px;font-weight:700;line-height:1.3}
+.safe .lead{margin-top:12px;color:var(--tx2)}
+.slist{display:grid;gap:4px}
+.sitem{display:grid;grid-template-columns:44px 1fr;gap:16px;padding:20px 0;border-bottom:1px solid var(--line)}
+.sitem:last-child{border-bottom:0}
+.sitem .ic{width:44px;height:44px;border-radius:12px;background:var(--raise);border:1px solid var(--line);display:grid;place-items:center;color:var(--ac)}
+.sitem b{font-size:17px;font-weight:600}
+.sitem p{font-size:15px;color:var(--tx2);margin-top:4px}
+.receipt{margin-top:32px;background:var(--card);border:1px solid var(--line2);border-radius:16px;padding:20px 22px;font-size:14px}
+.receipt .rt{display:flex;justify-content:space-between;color:var(--tx3);font-size:13px;padding-bottom:12px;border-bottom:1px dashed var(--line2)}
+.receipt dl{display:grid;grid-template-columns:1fr auto;row-gap:8px;margin-top:12px}
+.receipt dt{color:var(--tx2)}.receipt dd{text-align:right}
+.receipt .ok{color:var(--ac);font-weight:600}
+
+/* faq */
+.faqw{display:grid;grid-template-columns:4fr 8fr;gap:48px;align-items:start}
+.faqw .sec-h{margin-bottom:0}
+.faq{max-width:none}
+.faq details{border-bottom:1px solid var(--pline)}
+.faq summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:22px 0;font-size:17px;font-weight:600}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary svg{width:20px;height:20px;color:var(--ink3);transition:transform .2s}
+.faq details[open] summary svg{transform:rotate(45deg)}
+.faq details p{padding:0 0 22px;color:var(--ink2);font-size:15px;max-width:700px}
+
+/* contact */
+.contact .box{background:var(--card);border:1px solid var(--line2);border-radius:20px;padding:48px;display:grid;grid-template-columns:1fr auto;gap:32px;align-items:center}
+.contact h2{font-size:28px;font-weight:700}
+.contact p{color:var(--tx2);margin-top:8px}
+.contact .acts{display:flex;gap:12px;flex-wrap:wrap}
+.hours{display:flex;gap:24px;margin-top:20px;font-size:14px;color:var(--tx3)}
+
+footer{border-top:1px solid var(--line);padding:40px 0 48px;font-size:13px;color:var(--tx2)}
+footer .wrap{display:grid;grid-template-columns:1fr auto;gap:24px}
+footer p{line-height:1.9}
+footer .risk{grid-column:1/-1;padding-top:20px;border-top:1px solid var(--line);font-size:12.5px}
+
+.mbar{display:none}
+
+@media(max-width:1080px){
+  .hero .wrap{grid-template-columns:1fr;gap:48px}
+  .calc{max-width:520px}
+  .board,.safe{grid-template-columns:1fr}
+  .steps{grid-template-columns:1fr 1fr}
+  .nav,.status{display:none}.burger{display:grid}
+}
+@media(max-width:640px){
+  .wrap{padding:0 20px}
+  .hd .wrap{gap:12px}.hd-r .btn{display:none}
+  .hero{padding:48px 0 64px}
+  .hero h1{font-size:32px}
+  .hero p.lead{font-size:16px}
+  .hero-cta{flex-direction:column}.hero-cta .btn{width:100%}
+  .facts{grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:36px}
+  .facts dd{font-size:17px}
+  .calc{padding:20px;border-radius:16px}
+  .fld input{font-size:22px}
+  .sec{padding:64px 0}
+  .sec-h h2,.safe h2{font-size:26px}
+  .tbl th,.tbl td{padding:14px 12px}.tbl td{font-size:15px}
+  .tbl th:nth-child(4),.tbl td:nth-child(4){display:none}
+  .pair svg{display:none}.pair{white-space:nowrap;font-size:15px}.tbl th .lg{display:none}
+  .steps,.nets{grid-template-columns:1fr}
+ .tier ul{grid-template-columns:1fr}
+ .faqw{grid-template-columns:1fr;gap:24px}
+  .contact .box{grid-template-columns:1fr;padding:28px 22px}
+  .contact .acts .btn{flex:1}
+  footer .wrap{grid-template-columns:1fr}
+  footer{padding-bottom:100px}
+  .mbar{display:grid;grid-template-columns:1fr 1fr;gap:8px;position:fixed;left:0;right:0;bottom:0;z-index:50;padding:10px 12px calc(10px + env(safe-area-inset-bottom));background:rgba(11,13,20,.96);border-top:1px solid var(--line)}
+  .mbar .btn{height:46px}
+}
+@media(prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+
+<header class="hd">
+  <div class="wrap">
+    <a class="logo" href="#top" aria-label="다리 OTC 홈">
+      <svg viewBox="0 0 28 28" aria-hidden="true"><rect width="28" height="28" rx="7" fill="#2bb58c"/><path d="M5 18c3-6 15-6 18 0M8 18v4M20 18v4M14 13v9" stroke="#04140f" stroke-width="2.2" fill="none" stroke-linecap="round"/></svg>
+      다리 <small>OTC</small>
+    </a>
+    <nav class="nav" aria-label="주 메뉴">
+      <a href="#rate">오늘 환율</a><a href="#how">거래 방법</a><a href="#network">네트워크·수수료</a><a href="#safe">안전 장치</a><a href="#faq">자주 묻는 질문</a>
+    </nav>
+    <div class="hd-r">
+      <span class="status"><i></i>상담 가능 · 09:00–22:00</span>
+      <a class="btn pri sm" href="#contact">상담 신청</a>
+      <button class="burger" aria-label="메뉴 열기"><svg class="ico" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+<section class="hero">
+  <div class="wrap">
+    <div>
+      <p class="kick"><b>USDT ↔ 원화 · 페소</b> 1:1 장외 환전 데스크</p>
+      <h1>USDT를 원화와 페소로,<br>보낸 만큼 정확하게</h1>
+      <p class="lead">한국 계좌로 원화, 필리핀 계좌·GCash로 페소. 입금 전에 확정 금액을 먼저 알려 드리고, 정산이 끝나면 거래 영수증을 보내 드립니다.</p>
+      <div class="hero-cta">
+        <a class="btn pri" href="#contact">거래 상담 시작</a>
+        <a class="btn ghost" href="#rate">오늘 환율 보기</a>
+      </div>
+      <dl class="facts">
+        <div><dt>평균 정산 시간</dt><dd class="mono">18<span>분</span></dd></div>
+        <div><dt>최소 거래</dt><dd class="mono">100<span>USDT</span></dd></div>
+        <div><dt>지원 네트워크</dt><dd class="mono">3<span>종</span></dd></div>
+      </dl>
+    </div>
+
+    <form class="calc" onsubmit="return false" aria-label="환전 계산기">
+      <div class="seg" role="group" aria-label="거래 방향">
+        <button type="button" data-side="sell" aria-pressed="true">USDT 팔기</button>
+        <button type="button" data-side="buy" aria-pressed="false">USDT 사기</button>
+      </div>
+      <div class="cur" role="group" aria-label="받을 통화">
+        <button type="button" data-cur="KRW" aria-pressed="true">원화 KRW</button>
+        <button type="button" data-cur="PHP" aria-pressed="false">페소 PHP</button>
+      </div>
+      <div class="fld">
+        <label for="amt" id="lblA">보내실 USDT</label>
+        <div class="row"><input id="amt" type="text" inputmode="decimal" value="1,000" autocomplete="off"><span class="unit" id="unitA"></span></div>
+      </div>
+      <div class="swap" aria-hidden="true"><span><svg class="ico" viewBox="0 0 24 24"><path d="M12 5v14M6 13l6 6 6-6"/></svg></span></div>
+      <div class="fld">
+        <label id="lblB">받으실 금액</label>
+        <div class="row"><output id="out" class="mono" style="flex:1;font-size:26px;font-weight:500">-</output><span class="unit" id="unitB"></span></div>
+      </div>
+      <div class="net">
+        <label for="net">입금 네트워크</label>
+        <select id="net"><option value="trc">TRON (TRC-20)</option><option value="bep">BNB Chain (BEP-20)</option><option value="erc">Ethereum (ERC-20)</option></select>
+      </div>
+      <div class="sum">
+        <div><span>적용 환율</span><b class="mono" id="sRate">-</b></div>
+        <div><span>네트워크 수수료</span><b class="mono" id="sFee">-</b></div>
+        <div><span>예상 정산 시간</span><b id="sTime">-</b></div>
+      </div>
+      <a class="btn pri" href="#contact">이 금액으로 상담하기</a>
+      <p class="note">환율은 상담 시점에 다시 확정되며, 확정 후 30분간 유지됩니다.</p>
+    </form>
+  </div>
+</section>
+
+<section class="sec light" id="rate">
+  <div class="wrap">
+    <div class="sec-h">
+      <div><h2>오늘 환율</h2><p>1 USDT 기준. 고객님이 USDT를 파실 때와 사실 때의 가격입니다.</p></div>
+      <span class="upd"><i></i><span id="upd">-</span></span>
+    </div>
+    <div class="board">
+      <div class="tbl">
+        <table>
+          <thead><tr><th scope="col">통화</th><th scope="col"><span class="lg">고객님이 </span>팔 때</th><th scope="col"><span class="lg">고객님이 </span>살 때</th><th scope="col">어제보다</th></tr></thead>
+          <tbody id="tb"></tbody>
+        </table>
+        <div class="tier">
+          <h3>거래 수량별 우대 (팔 때 기준, 1 USDT당)</h3>
+          <ul>
+            <li>100 – 999 USDT<b>기본 환율</b></li>
+            <li>1,000 – 4,999 USDT<b><em class="mono">+2원</em> · <span class="mono">₱0.05</span></b></li>
+            <li>5,000 USDT 이상<b><em class="mono">+4원</em> · <span class="mono">₱0.10</span></b></li>
+          </ul>
+        </div>
+      </div>
+      <div class="chart">
+        <div class="t"><span>USDT/KRW 팔 때 가격</span>
+          <div class="tabs" id="ctabs" role="group" aria-label="기간"><button type="button" data-d="24" aria-pressed="true">1일</button><button type="button" data-d="7" aria-pressed="false">1주</button><button type="button" data-d="30" aria-pressed="false">1개월</button></div>
+        </div>
+        <div class="v mono" id="cv">-</div>
+        <svg viewBox="0 0 400 180" preserveAspectRatio="none" aria-label="가격 흐름 그래프"><g id="grid" stroke="#eef1f5"></g><path id="ca" fill="rgba(43,181,140,.10)"/><path id="cl" fill="none" stroke="#1f8f6e" stroke-width="2"/></svg>
+        <div class="rng mono"><span id="lo">-</span><span id="hi">-</span></div>
+      </div>
+    </div>
+    <p class="fine">국제 시세와 환율, 거래 규모에 따라 가격이 바뀝니다. 1만 USDT 이상은 별도 협의 가격을 안내해 드립니다.</p>
+  </div>
+</section>
+
+<section class="sec dark" id="how">
+  <div class="wrap">
+    <div class="sec-h"><div><h2>거래는 이렇게 진행됩니다</h2><p>처음 한 번만 본인 확인을 하면, 다음부터는 상담부터 정산까지 메시지 몇 번이면 끝납니다.</p></div></div>
+    <ol class="steps">
+      <li class="step"><span class="n">01</span><h3>상담과 금액 확정</h3><p>보낼 수량과 받을 계좌를 알려 주시면 환율과 받으실 금액을 확정해 드립니다.</p><div class="tm"><svg class="ico" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>약 3분</div></li>
+      <li class="step"><span class="n">02</span><h3>본인 확인</h3><p>첫 거래에만 신분증과 계좌 명의를 확인합니다. 받는 계좌는 본인 명의만 가능합니다.</p><div class="tm"><svg class="ico" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>첫 거래 약 10분</div></li>
+      <li class="step"><span class="n">03</span><h3>USDT 입금</h3><p>안내받은 지갑 주소로 보내 주세요. 주소는 매 거래마다 새로 발급해 드립니다.</p><div class="tm"><svg class="ico" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>네트워크 확인 1–5분</div></li>
+      <li class="step"><span class="n">04</span><h3>정산과 영수증</h3><p>입금이 확인되면 원화 또는 페소를 보내 드리고, 거래 내역이 담긴 영수증을 드립니다.</p><div class="tm"><svg class="ico" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>평균 18분</div></li>
+    </ol>
+  </div>
+</section>
+
+<section class="sec light" id="network">
+  <div class="wrap">
+    <div class="sec-h"><div><h2>네트워크별 수수료와 처리 시간</h2><p>같은 USDT라도 네트워크마다 수수료가 다릅니다. 지갑에서 보내실 네트워크를 꼭 맞춰 주세요.</p></div></div>
+    <div class="nets">
+      <div class="ncard rec"><div class="h"><b>TRC-20</b><span class="tag">가장 많이 사용</span></div><dl><dt>네트워크</dt><dd>TRON</dd><dt>수수료</dt><dd class="mono">1 USDT</dd><dt>확인 시간</dt><dd>약 1–3분</dd><dt>최소 수량</dt><dd class="mono">100 USDT</dd></dl></div>
+      <div class="ncard"><div class="h"><b>BEP-20</b><span>저렴한 수수료</span></div><dl><dt>네트워크</dt><dd>BNB Chain</dd><dt>수수료</dt><dd class="mono">0.5 USDT</dd><dt>확인 시간</dt><dd>약 1–2분</dd><dt>최소 수량</dt><dd class="mono">100 USDT</dd></dl></div>
+      <div class="ncard"><div class="h"><b>ERC-20</b><span>큰 금액 거래</span></div><dl><dt>네트워크</dt><dd>Ethereum</dd><dt>수수료</dt><dd class="mono">4 USDT</dd><dt>확인 시간</dt><dd>약 3–5분</dd><dt>최소 수량</dt><dd class="mono">500 USDT</dd></dl></div>
+    </div>
+    <p class="fine">다른 네트워크로 잘못 보낸 USDT는 되찾기 어렵거나 별도 비용이 들 수 있습니다. 보내기 전에 주소와 네트워크를 한 번 더 확인해 주세요.</p>
+  </div>
+</section>
+
+<section class="sec dark" id="safe">
+  <div class="wrap safe">
+    <div>
+      <h2>돈이 오가는 일이라<br>절차를 줄이지 않습니다</h2>
+      <p class="lead">빠른 정산보다 정확한 정산을 먼저 봅니다. 모든 거래는 기록이 남고, 고객님께도 같은 기록을 드립니다.</p>
+      <div class="receipt" aria-label="거래 영수증 예시">
+        <div class="rt"><span>거래 영수증</span><span class="mono">No. 2611-0482</span></div>
+        <dl>
+          <dt>보낸 수량</dt><dd class="mono">1,000.00 USDT</dd>
+          <dt>네트워크</dt><dd class="mono">TRC-20</dd>
+          <dt>적용 환율</dt><dd class="mono" id="rRate">-</dd>
+          <dt>받은 금액</dt><dd class="mono" id="rAmt">-</dd>
+          <dt>상태</dt><dd class="ok">정산 완료</dd>
+        </dl>
+      </div>
+    </div>
+    <div class="slist">
+      <div class="sitem"><span class="ic"><svg class="ico" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="11" r="2"/><path d="M6 16c.6-1.5 1.7-2 3-2s2.4.5 3 2M14 10h4M14 13h3"/></svg></span><div><b>본인 명의 확인</b><p>신분증과 받는 계좌의 이름이 같은지 확인합니다. 다른 사람 명의 계좌로는 보내지 않습니다.</p></div></div>
+      <div class="sitem"><span class="ic"><svg class="ico" viewBox="0 0 24 24"><path d="M4 7h16v10H4z"/><path d="M8 11h8M8 14h5"/></svg></span><div><b>거래마다 새 입금 주소</b><p>입금 주소를 매번 새로 발급해, 다른 거래와 섞이거나 잘못 처리되는 일을 막습니다.</p></div></div>
+      <div class="sitem"><span class="ic"><svg class="ico" viewBox="0 0 24 24"><path d="M12 3l8 3v6c0 4.5-3.4 7.7-8 9-4.6-1.3-8-4.5-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg></span><div><b>출처 점검</b><p>들어온 USDT가 사기·도난과 관련된 지갑에서 왔는지 확인한 뒤 정산합니다.</p></div></div>
+      <div class="sitem"><span class="ic"><svg class="ico" viewBox="0 0 24 24"><path d="M7 3h7l5 5v13H7z"/><path d="M14 3v5h5M10 13h6M10 17h4"/></svg></span><div><b>영수증과 거래 기록</b><p>수량, 환율, 받은 금액, 거래 해시가 적힌 영수증을 드리고 기록을 5년간 보관합니다.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec light" id="faq">
+  <div class="wrap">
+    <div class="faqw"><div class="sec-h"><div><h2>자주 묻는 질문</h2><p>더 궁금한 점은 상담 창구로 물어보세요.</p></div></div>
+    <div class="faq">
+      <details open><summary>처음 거래할 때 무엇이 필요한가요?<svg class="ico" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></summary><p>신분증(주민등록증·운전면허증·여권 중 하나)과 받으실 본인 명의 계좌 정보가 필요합니다. 필리핀 계좌로 받으실 때는 여권과 GCash 또는 은행 계좌를 준비해 주세요.</p></details>
+      <details><summary>환율은 언제 확정되나요?<svg class="ico" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></summary><p>상담에서 수량과 받을 계좌가 정해지면 그 시점의 환율로 확정하고, 30분 안에 입금해 주시면 그 금액 그대로 정산합니다.</p></details>
+      <details><summary>네트워크를 잘못 선택해서 보냈어요.<svg class="ico" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></summary><p>바로 상담 창구로 거래 해시(TXID)를 보내 주세요. 같은 주소 체계의 네트워크라면 되찾을 수 있는 경우가 있지만, 시간과 별도 비용이 들 수 있습니다.</p></details>
+      <details><summary>큰 금액도 한 번에 거래할 수 있나요?<svg class="ico" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></summary><p>1만 USDT 이상은 미리 일정을 잡아 나눠서 정산하거나 별도 협의 가격으로 진행합니다. 상담 시 대략적인 수량을 알려 주세요.</p></details>
+    </div></div>
+  </div>
+</section>
+
+<section class="sec dark contact" id="contact">
+  <div class="wrap">
+    <div class="box">
+      <div>
+        <h2>보낼 수량만 알려 주세요</h2>
+        <p>받으실 금액을 계산해서 바로 답장 드립니다.</p>
+        <div class="hours"><span>매일 09:00–22:00</span><span>필리핀·한국 동시 운영</span></div>
+      </div>
+      <div class="acts">
+        <a class="btn pri" href="#">텔레그램 상담</a>
+        <a class="btn ghost" href="#">카카오톡 상담</a>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>다리 OTC · 대표 ○○○ · 사업자등록번호 000-00-00000<br>가상자산사업자 신고번호 ○○○○-○○ · 고객센터 <span style="white-space:nowrap">000-0000-0000</span></p>
+    <p>이용약관 · 개인정보처리방침 · 자금세탁방지 정책</p>
+    <p class="risk">가상자산은 가격 변동이 크며 원금 손실이 생길 수 있습니다. 다른 사람의 부탁으로 대신 환전하거나 계좌를 빌려 주는 일은 범죄에 이용될 수 있으니 응하지 마세요.</p>
+  </div>
+</footer>
+
+<div class="mbar"><a class="btn ghost" href="#rate">오늘 환율</a><a class="btn pri" href="#contact">상담 신청</a></div>
+
+<script>
+(function(){
+  var R={KRW:{sell:1391,buy:1412,dp:0,sym:'원',ch:+3},PHP:{sell:58.20,buy:59.10,dp:2,sym:'₱',ch:-0.08}};
+  var NET={trc:{fee:1,t:'약 15–20분'},bep:{fee:0.5,t:'약 15–20분'},erc:{fee:4,t:'약 20–30분'}};
+  var side='sell',cur='KRW';
+  var $=function(i){return document.getElementById(i)};
+  function fmt(n,dp){return n.toLocaleString('ko-KR',{minimumFractionDigits:dp,maximumFractionDigits:dp})}
+  var usdtIco='<svg viewBox="0 0 22 22" aria-hidden="true"><circle cx="11" cy="11" r="11" fill="#2bb58c"/><path d="M6.5 6.5h9M11 6.5v9M7.5 10.2c1 .6 2.2.9 3.5.9s2.5-.3 3.5-.9" stroke="#04140f" stroke-width="1.7" fill="none" stroke-linecap="round"/></svg>';
+  function curIco(c){return c==='KRW'?'<svg viewBox="0 0 22 22" aria-hidden="true"><circle cx="11" cy="11" r="11" fill="#2a3142"/><path d="M6 7l2 8 3-6 3 6 2-8M5.5 10.5h11" stroke="#eef0f5" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>':'<svg viewBox="0 0 22 22" aria-hidden="true"><circle cx="11" cy="11" r="11" fill="#2a3142"/><path d="M8.5 16V6h3.2a2.6 2.6 0 0 1 0 5.2H8.5M6.5 8.4h9M6.5 10.4h9" stroke="#eef0f5" stroke-width="1.5" fill="none" stroke-linecap="round"/></svg>'}
+  function parse(v){return parseFloat(String(v).replace(/[^0-9.]/g,''))||0}
+  function calc(){
+    var r=R[cur],n=NET[$('net').value],a=parse($('amt').value),out,rate;
+    if(side==='sell'){rate=r.sell;out=Math.max(0,(a-n.fee))*rate;
+      $('lblA').textContent='보내실 USDT';$('unitA').innerHTML=usdtIco+'USDT';$('lblB').textContent='받으실 '+(cur==='KRW'?'원화':'페소');$('unitB').innerHTML=curIco(cur)+cur;
+      $('out').textContent=fmt(cur==='KRW'?Math.floor(out):out,r.dp);
+    }else{rate=r.buy;out=Math.max(0,a/rate-n.fee);
+      $('lblA').textContent='보내실 '+(cur==='KRW'?'원화':'페소');$('unitA').innerHTML=curIco(cur)+cur;$('lblB').textContent='받으실 USDT';$('unitB').innerHTML=usdtIco+'USDT';
+      $('out').textContent=fmt(out,2);
+    }
+    $('sRate').textContent='1 USDT = '+(cur==='KRW'?fmt(rate,0)+'원':'₱'+fmt(rate,2));
+    $('sFee').textContent=fmt(n.fee,n.fee%1?1:0)+' USDT';$('sTime').textContent=n.t;
+  }
+  function press(group,btn){[].forEach.call(group.querySelectorAll('button'),function(b){b.setAttribute('aria-pressed',b===btn)})}
+  document.querySelector('.seg').addEventListener('click',function(e){var b=e.target.closest('button');if(!b)return;press(this,b);side=b.dataset.side;
+    $('amt').value=side==='sell'?'1,000':(cur==='KRW'?'1,000,000':'50,000');calc()});
+  document.querySelector('.cur').addEventListener('click',function(e){var b=e.target.closest('button');if(!b)return;press(this,b);cur=b.dataset.cur;
+    if(side==='buy')$('amt').value=cur==='KRW'?'1,000,000':'50,000';calc()});
+  $('net').addEventListener('change',calc);
+  $('amt').addEventListener('input',function(){var p=this.value.replace(/[^0-9.]/g,'');var parts=p.split('.');parts[0]=parts[0]?Number(parts[0]).toLocaleString('ko-KR'):'';this.value=parts.length>1?parts[0]+'.'+parts[1].slice(0,2):parts[0];calc()});
+  calc();
+
+  /* rate table */
+  var now=new Date(),H=now.getHours(),M=now.getMinutes();if(H<9){now.setDate(now.getDate()-1);H=21;M=58}else if(H>=22){H=21;M=58}var hh=('0'+H).slice(-2)+':'+('0'+M).slice(-2);
+  $('upd').textContent=(now.getMonth()+1)+'월 '+now.getDate()+'일 '+hh+' 기준';
+  var pairIco={KRW:'<svg viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="16" r="16" fill="#e6f6f0"/><path d="M9 10h14M16 10v13M10.5 15.5c1.6.9 3.5 1.3 5.5 1.3s3.9-.4 5.5-1.3" stroke="#1f8f6e" stroke-width="2" fill="none" stroke-linecap="round"/></svg>'};
+  pairIco.PHP=pairIco.KRW;
+  $('tb').innerHTML=['KRW','PHP'].map(function(c){var r=R[c],sy=c==='KRW'?'':'₱',suf=c==='KRW'?'원':'';
+    var ch=r.ch>=0?'+'+fmt(r.ch,r.dp):'−'+fmt(-r.ch,r.dp);
+    return '<tr><td><div class="pair">'+pairIco[c]+'<span>USDT / '+c+'<small>'+(c==='KRW'?'한국 원화':'필리핀 페소')+'</small></span></div></td><td class="mono"><span class="sell">'+sy+fmt(r.sell,r.dp)+suf+'</span></td><td class="mono"><span class="buy">'+sy+fmt(r.buy,r.dp)+suf+'</span></td><td class="mono chg">'+ch+'</td></tr>'}).join('');
+  $('rRate').textContent=fmt(R.KRW.sell,0)+'원';$('rAmt').textContent=fmt((1000-1)*R.KRW.sell,0)+'원';
+
+  /* chart */
+  var g=$('grid');for(var i=1;i<4;i++){var l=document.createElementNS('http://www.w3.org/2000/svg','line');l.setAttribute('x1',0);l.setAttribute('x2',400);l.setAttribute('y1',i*45);l.setAttribute('y2',i*45);g.appendChild(l)}
+  function series(n,end,vol,seed){var a=[],v=end,s=seed;for(var i=0;i<n;i++){s=(s*9301+49297)%233280;a.unshift(v);v-=(s/233280-.47)*vol}return a}
+  function draw(d){var a=series(d==24?48:d*4,R.KRW.sell,d==24?1.2:d==7?2:3,d+3),lo=Math.min.apply(0,a),hi=Math.max.apply(0,a),m=(lo+hi)/2,span=Math.max(hi-lo,m*.012);lo=m-span/2;hi=m+span/2;
+    var pts=a.map(function(v,i){return[(i/(a.length-1))*400,14+(1-(v-lo)/(hi-lo))*152]});
+    var dd=pts.map(function(p,i){return(i?'L':'M')+p[0].toFixed(1)+' '+p[1].toFixed(1)}).join(' ');
+    $('cl').setAttribute('d',dd);$('ca').setAttribute('d',dd+' L400 180 L0 180Z');
+    $('cv').innerHTML=fmt(R.KRW.sell,0)+'<small>원</small>';$('lo').textContent='최저 '+fmt(Math.min.apply(0,a),0);$('hi').textContent='최고 '+fmt(Math.max.apply(0,a),0)}
+  draw(24);
+  $('ctabs').addEventListener('click',function(e){var b=e.target.closest('button');if(!b)return;press(this,b);draw(+b.dataset.d)});
+})();
+</script>
+</body>
+</html>
