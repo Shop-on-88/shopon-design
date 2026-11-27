@@ -1,0 +1,754 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>말갛게 출장세차 · 아파트 지하주차장 정기 스팀세차</title>
+<meta name="description" content="아파트 지하주차장 주차칸으로 찾아가 스팀과 손걸레로 닦는 정기 세차. 12월 신규 신청은 정기세차 첫 달 50% 할인.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Gothic+A1:wght@400;500;600;700&family=Saira+Condensed:wght@500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+ --bg:#E7E6E1;--surface:#F3F2EE;--surface2:#DCDAD3;--line:rgba(31,42,39,.14);--line2:rgba(31,42,39,.28);
+ --ink:#17201D;--ink2:#46514D;--ink3:#59635F;
+ --green:#2F6B57;--green-d:#235144;--green-dd:#1C4137;--on-green:#F1F4F1;--on-green2:#C9D8D1;
+ --coral:#E8643C;--coral-d:#D4542E;--coral-t:#C24626;
+ --ochre:#C79A35;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{background:var(--bg);scroll-behavior:smooth}
+body{font-family:'Gothic A1',sans-serif;font-size:16px;line-height:1.65;color:var(--ink);background:var(--bg);word-break:keep-all;overflow-wrap:break-word;-webkit-font-smoothing:antialiased;overflow-x:clip}
+a{color:inherit}
+svg{display:block}
+.wrap{max-width:1200px;margin:0 auto;padding:0 40px}
+h1,h2,h3{font-weight:700;letter-spacing:-.02em;line-height:1.3}
+h2{font-size:36px}
+.num{font-family:'Saira Condensed',sans-serif;font-variant-numeric:tabular-nums;letter-spacing:.01em}
+.lead{font-size:18px;color:var(--ink2);max-width:600px}
+.sec{padding:112px 0}
+.sec-head{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:48px;align-items:end;margin-bottom:56px}
+.sec-head .k{font-size:14px;font-weight:600;color:var(--green);margin-bottom:12px;display:flex;align-items:center;gap:8px}
+.sec-head .k::before{content:"";width:24px;height:4px;background:var(--green);display:block}
+.sec-head p{color:var(--ink2)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;height:48px;padding:0 24px;border-radius:8px;font:600 16px/1 'Gothic A1',sans-serif;text-decoration:none;border:0;cursor:pointer;transition:background-color .2s,color .2s,border-color .2s}
+.btn-main{background:var(--coral);color:var(--ink)}
+.btn-main:hover{background:var(--coral-d)}
+.btn-sub{border:1px solid rgba(241,244,241,.45);color:var(--on-green)}
+.btn-sub:hover{background:rgba(241,244,241,.08);border-color:rgba(241,244,241,.7)}
+.btn svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+
+/* header */
+header{background:var(--green-dd);color:var(--on-green)}
+.hdr{display:flex;align-items:center;justify-content:space-between;height:72px;gap:24px}
+.logo{display:flex;align-items:center;gap:12px;text-decoration:none}
+.logo svg{width:32px;height:32px}
+.logo b{font-size:19px;font-weight:700;letter-spacing:-.02em}
+nav{display:flex;gap:32px;font-size:15px}
+nav a{text-decoration:none;color:var(--on-green2);padding:12px 0;transition:color .2s}
+nav a:hover{color:#fff}
+.tel{font-size:15px;font-weight:600;text-decoration:none;display:flex;align-items:center;gap:8px;min-height:44px}
+.tel svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+
+/* hero */
+.hero{background:var(--green);color:var(--on-green);position:relative;overflow:hidden}
+.hero .wrap{display:grid;grid-template-columns:minmax(0,6fr) minmax(0,5fr);gap:40px;align-items:center;min-height:calc(900px - 72px);padding-top:48px;padding-bottom:48px}
+.hero-txt{padding-bottom:16px}
+.notice{font-size:15px;color:var(--on-green2);display:flex;align-items:center;gap:12px;margin-bottom:28px}
+.notice span{display:inline-block;width:8px;height:8px;border-radius:2px;background:var(--coral)}
+.hero h1{font-size:54px;line-height:1.24;font-weight:700;letter-spacing:-.03em}
+.hero h1 .num{font-size:60px;font-weight:600;letter-spacing:0;color:#fff}
+.hero .lead{color:var(--on-green2);margin-top:24px;font-size:18px;max-width:520px}
+.hero-cta{display:flex;gap:12px;margin-top:40px;flex-wrap:wrap}
+.hero-price{margin-top:48px;display:flex;gap:0;border-top:1px solid rgba(241,244,241,.22);max-width:560px}
+.hero-price div{flex:1;padding:20px 24px 0 0}
+.hero-price div+div{padding-left:24px;border-left:1px solid rgba(241,244,241,.22)}
+.hero-price small{display:block;font-size:13px;color:var(--on-green2);margin-bottom:4px}
+.hero-price b{font-size:20px;font-weight:600}
+.hero-price s{font-size:14px;color:var(--on-green2);margin-right:8px}
+.hero-art{position:relative;align-self:end;margin-bottom:-48px;display:flex;align-items:flex-end;justify-content:center}
+.hero-art svg{width:100%;max-width:520px;height:auto}
+
+/* steps */
+.steps{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border-top:2px solid var(--ink)}
+.step{padding:32px 32px 0 0;position:relative}
+.step+.step{padding-left:32px;border-left:1px dashed var(--line2)}
+.step .n{font-size:40px;font-weight:600;color:var(--green);line-height:1}
+.step h3{font-size:20px;margin:20px 0 8px}
+.step p{color:var(--ink2);font-size:15px}
+.step .tag{display:inline-block;margin-top:16px;font-size:13px;color:var(--ink3);border:1px solid var(--line2);border-radius:6px;padding:4px 8px}
+.photo-note{margin-top:56px;display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:48px;align-items:center;background:var(--surface);border-radius:16px;padding:40px;border:1px solid var(--line)}
+.photo-note h3{font-size:22px;margin-bottom:12px}
+.photo-note p{color:var(--ink2)}
+.msg{background:#fff;border-radius:12px;border:1px solid var(--line);padding:20px;max-width:420px;margin-left:auto;width:100%}
+.msg .who{font-size:13px;color:var(--ink3);margin-bottom:12px;display:flex;justify-content:space-between}
+.msg .bubble{background:var(--surface2);border-radius:4px 12px 12px 12px;padding:16px;font-size:15px}
+.msg .shots{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:12px}
+.msg .shots svg{width:100%;height:auto;border-radius:6px}
+
+/* pricing */
+.plans{display:grid;grid-template-columns:minmax(0,4fr) minmax(0,5fr) minmax(0,4fr);gap:24px;align-items:stretch}
+.plan{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:32px;display:flex;flex-direction:column}
+.plan h3{font-size:20px}
+.plan .per{font-size:14px;color:var(--ink3);margin-top:4px}
+.plan .was{margin-top:28px;font-size:15px;color:var(--ink3)}
+.plan .was s{margin-right:8px}
+.plan .price{font-size:44px;font-weight:600;line-height:1.1;margin-top:4px}
+.plan .price em{font-style:normal;font-family:'Gothic A1',sans-serif;font-size:18px;font-weight:600;margin-left:4px}
+.plan ul{list-style:none;margin-top:24px;padding-top:24px;border-top:1px solid var(--line);display:grid;gap:12px;font-size:15px;color:var(--ink2)}
+.plan li{display:flex;gap:12px;align-items:flex-start}
+.plan li svg{width:18px;height:18px;flex:none;margin-top:3px;fill:none;stroke:var(--green);stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.plan .go{margin-top:auto;padding-top:32px}
+.plan .go a{width:100%;height:44px;border:1px solid var(--line2);color:var(--ink);background:transparent}
+.plan .go a:hover{background:var(--surface2)}
+.plan.main{background:#fff;border:2px solid var(--ink);padding:40px 36px}
+.plan.main .price{font-size:56px;color:var(--coral-t)}
+.plan.main .flag{font-size:14px;font-weight:600;color:var(--ink);display:flex;align-items:center;gap:8px;margin-bottom:16px}
+.plan.main .flag::before{content:"";width:12px;height:12px;border-radius:3px;background:var(--coral)}
+.plan.main .go a{background:var(--ink);color:#fff;border:0;height:48px}
+.plan.main .go a:hover{background:#2c3834}
+.plan-foot{margin-top:24px;font-size:14px;color:var(--ink3);display:flex;gap:8px 32px;flex-wrap:wrap}
+
+/* scope */
+.scope{background:var(--surface)}
+.scope-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr) minmax(0,1fr);gap:0;border:1px solid var(--line2);border-radius:16px;overflow:hidden;background:#fff}
+.col{padding:32px}
+.col+.col{border-left:1px solid var(--line)}
+.col h3{font-size:18px;display:flex;justify-content:space-between;align-items:baseline;gap:12px;padding-bottom:16px;border-bottom:2px solid var(--ink);margin-bottom:8px}
+.col h3 small{font-size:13px;font-weight:500;color:var(--ink3)}
+.col ul{list-style:none}
+.col li{display:flex;gap:12px;padding:12px 0;border-bottom:1px solid var(--line);font-size:15px}
+.col li:last-child{border-bottom:0}
+.col li svg{width:20px;height:20px;flex:none;margin-top:1px;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.col li .ok{stroke:var(--green)}
+.col li .no{stroke:var(--ink3)}
+.col.out li{color:var(--ink3)}
+.col li span small{display:block;font-size:13px;color:var(--ink3)}
+
+/* facts */
+.facts{background:var(--green-dd);color:var(--on-green)}
+.facts .sec-head .k{color:var(--on-green2)}
+.facts .sec-head .k::before{background:var(--on-green2)}
+.facts .sec-head p{color:var(--on-green2)}
+.board{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0;border-top:1px solid rgba(241,244,241,.25);border-bottom:1px solid rgba(241,244,241,.25)}
+.cell{padding:32px 24px 32px 0}
+.cell+.cell{padding-left:24px;border-left:1px solid rgba(241,244,241,.18)}
+.cell .big{font-size:64px;font-weight:600;line-height:1;color:#fff}
+.cell .big small{font-family:'Gothic A1',sans-serif;font-size:20px;font-weight:600;margin-left:4px}
+.cell h3{font-size:16px;font-weight:600;margin-top:16px}
+.cell p{font-size:14px;color:var(--on-green2);margin-top:4px}
+.area{margin-top:48px;display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:48px;align-items:start}
+.area h3{font-size:20px;margin-bottom:8px}
+.area p{color:var(--on-green2);font-size:15px}
+.zones{display:flex;flex-wrap:wrap;gap:8px}
+.zones span{border:1px solid rgba(241,244,241,.3);border-radius:6px;padding:8px 12px;font-size:15px}
+.zones span.soon{color:var(--on-green2);border-style:dashed}
+
+/* faq */
+.faq-list{border-top:2px solid var(--ink)}
+details{border-bottom:1px solid var(--line2)}
+summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:24px;padding:24px 0;font-size:18px;font-weight:600;min-height:44px}
+summary::-webkit-details-marker{display:none}
+summary svg{width:20px;height:20px;flex:none;fill:none;stroke:var(--ink);stroke-width:1.8;stroke-linecap:round;transition:transform .2s}
+details[open] summary svg{transform:rotate(45deg)}
+details p{padding:0 48px 24px 0;color:var(--ink2);max-width:760px}
+
+/* form */
+.apply{background:var(--surface2)}
+.apply-grid{display:grid;grid-template-columns:minmax(0,4fr) minmax(0,7fr);gap:56px;align-items:start}
+.apply-side h2{margin-bottom:16px}
+.apply-side p{color:var(--ink2)}
+.apply-side dl{margin-top:32px;display:grid;gap:16px;font-size:15px}
+.apply-side dt{font-size:13px;color:var(--ink3)}
+.apply-side dd{font-weight:600}
+form{background:#fff;border-radius:16px;padding:40px;border:1px solid var(--line)}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.f{display:flex;flex-direction:column;gap:8px;margin-bottom:20px}
+.f label,.f .lb{font-size:14px;font-weight:600}
+.f label small,.f .lb small{font-size:13px;font-weight:400;color:var(--ink3);margin-left:4px}
+input[type=text],input[type=tel],select,textarea{font:400 16px/1.4 'Gothic A1',sans-serif;color:var(--ink);background:var(--surface);border:1px solid var(--line2);border-radius:8px;height:48px;padding:0 16px;width:100%;transition:border-color .2s,background-color .2s}
+textarea{height:96px;padding:12px 16px;resize:vertical}
+input:focus,select:focus,textarea:focus{outline:none;border-color:var(--green);background:#fff}
+.days{display:flex;gap:8px;flex-wrap:wrap}
+.days label{position:relative}
+.days input{position:absolute;opacity:0;width:1px;height:1px}
+.days span{display:flex;align-items:center;justify-content:center;width:52px;height:44px;border:1px solid var(--line2);border-radius:8px;font-size:15px;cursor:pointer;background:var(--surface);transition:background-color .2s,color .2s}
+.days input:checked+span{background:var(--green);color:#fff;border-color:var(--green)}
+.days input:focus-visible+span{outline:2px solid var(--ink);outline-offset:2px}
+.plan-pick{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.plan-pick label{position:relative}
+.plan-pick input{position:absolute;opacity:0;width:1px;height:1px}
+.plan-pick span{display:block;border:1px solid var(--line2);border-radius:8px;padding:12px;font-size:14px;cursor:pointer;background:var(--surface);min-height:44px;line-height:1.4}
+.plan-pick span b{display:block;font-size:15px}
+.plan-pick input:checked+span{border:2px solid var(--ink);background:#fff;padding:11px}
+.plan-pick input:focus-visible+span{outline:2px solid var(--green);outline-offset:2px}
+.agree{display:flex;gap:12px;align-items:flex-start;font-size:14px;color:var(--ink2);margin:4px 0 24px}
+.agree input{width:20px;height:20px;margin-top:1px;accent-color:var(--green);flex:none}
+.err{font-size:13px;color:var(--coral-t);min-height:20px;margin-bottom:8px}
+form .btn-main{width:100%}
+.done{display:none;text-align:left}
+.done.on{display:block}
+.done .tick{width:48px;height:48px;border-radius:12px;background:var(--green);display:flex;align-items:center;justify-content:center;margin-bottom:20px}
+.done .tick svg{width:24px;height:24px;fill:none;stroke:#fff;stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round}
+.done h3{font-size:24px;margin-bottom:12px}
+.done p{color:var(--ink2)}
+.ticket{margin-top:24px;border:1px dashed var(--line2);border-radius:12px;padding:20px;display:grid;grid-template-columns:auto 1fr;gap:8px 24px;font-size:15px}
+.ticket dt{color:var(--ink3)}
+.ticket dd{font-weight:600}
+.done button{margin-top:24px;background:none;border:1px solid var(--line2);border-radius:8px;height:44px;padding:0 20px;font:500 15px 'Gothic A1',sans-serif;cursor:pointer;color:var(--ink)}
+
+footer{background:var(--green-dd);color:var(--on-green2);font-size:14px}
+footer .ft{display:flex;justify-content:space-between;gap:32px;padding-top:48px;padding-bottom:48px;flex-wrap:wrap}
+.ft b{color:var(--on-green);font-size:16px;display:block;margin-bottom:8px}
+.ft p+p{margin-top:4px}
+
+/* mobile cta */
+.mcta{display:none}
+
+.rv{opacity:0;transform:translateY(16px);transition:opacity .6s ease,transform .6s ease}
+.rv.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}}
+
+@media (max-width:1100px){
+ nav{display:none}
+ .hero h1{font-size:44px}.hero h1 .num{font-size:50px}
+ .steps{grid-template-columns:1fr 1fr}
+ .step:nth-child(3){padding-left:0;border-left:0}
+ .step:nth-child(n+3){margin-top:32px;border-top:1px dashed var(--line2)}
+ .board{grid-template-columns:1fr 1fr}
+ .cell:nth-child(3){padding-left:0;border-left:0}
+ .cell:nth-child(n+3){border-top:1px solid rgba(241,244,241,.18)}
+}
+@media (max-width:860px){
+ .wrap{padding:0 20px}
+ .sec{padding:80px 0}
+ h2{font-size:28px}
+ .sec-head{grid-template-columns:1fr;gap:16px;margin-bottom:40px}
+ .hero .wrap{grid-template-columns:1fr;min-height:0;padding-top:40px;padding-bottom:24px;gap:24px}
+ .hero h1{font-size:34px}.hero h1 .num{font-size:40px}
+ .hero .lead{font-size:16px}
+ .hero-cta{margin-top:32px}
+ .hero-cta .btn{flex:1 1 auto}
+ .hero-price{margin-top:32px}
+ .hero-price div{padding:16px 16px 0 0}
+ .hero-price div+div{padding-left:16px}
+ .hero-price b{font-size:18px}
+ .hero-art{margin-bottom:-24px}
+ .hero-art svg{max-width:400px}
+ .tel span{display:none}
+ .photo-note{grid-template-columns:1fr;padding:24px;gap:24px}
+ .plans{grid-template-columns:1fr}
+ .plan-foot{flex-direction:column;gap:4px}
+ .plan.main{order:-1}
+ .scope-grid{grid-template-columns:1fr}
+ .col+.col{border-left:0;border-top:1px solid var(--line)}
+ .col{padding:24px}
+ .area{grid-template-columns:1fr;gap:24px}
+ .cell .big{font-size:48px}
+ .apply-grid{grid-template-columns:1fr;gap:32px}
+ form{padding:24px}
+ .row{grid-template-columns:1fr;gap:0}
+ details p{padding-right:0}
+ summary{font-size:17px}
+ .mcta{display:flex;transform:translateY(100%);transition:transform .3s ease;position:fixed;left:0;right:0;bottom:0;z-index:20;background:var(--green-dd);padding:12px 20px;gap:12px;align-items:center;justify-content:space-between;color:var(--on-green);border-top:1px solid rgba(241,244,241,.15)}
+ .mcta.show{transform:none}
+ .mcta small{display:block;font-size:12px;color:var(--on-green2)}
+ .mcta b{font-size:16px}
+ .mcta .btn{height:44px;padding:0 20px}
+ footer{padding-bottom:72px}
+}
+@media (max-width:480px){
+ .steps{grid-template-columns:1fr}
+ .step,.step+.step{padding:24px 0 0;border-left:0}
+ .step+.step{margin-top:24px;border-top:1px dashed var(--line2)}
+ .board{grid-template-columns:1fr 1fr}
+ .cell,.cell+.cell{padding:24px 12px 24px 0}
+ .cell:nth-child(even){padding-left:16px}
+ .cell .big{font-size:44px}
+ .plan-pick{grid-template-columns:1fr}
+ .days{gap:4px}
+ .days span{width:44px}
+}
+</style>
+</head>
+<body>
+
+<header>
+ <div class="wrap hdr">
+  <a class="logo" href="#top" aria-label="말갛게 출장세차">
+   <svg viewBox="0 0 32 32" aria-hidden="true"><rect x="1" y="1" width="30" height="30" rx="7" fill="#F1F4F1"/><path d="M9 6v20M23 6v20" stroke="#1C4137" stroke-width="2.4" stroke-linecap="round"/><path d="M16 11c-2.6 3.2-4 5.4-4 7.2a4 4 0 0 0 8 0c0-1.8-1.4-4-4-7.2z" fill="#E8643C"/></svg>
+   <b>말갛게 출장세차</b>
+  </a>
+  <nav aria-label="주요 메뉴">
+   <a href="#how">진행 방식</a><a href="#price">요금</a><a href="#scope">세차 범위</a><a href="#faq">질문</a><a href="#apply">신청</a>
+  </nav>
+  <a class="tel" href="tel:000-0000-0000"><svg viewBox="0 0 24 24"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg><span class="num">000-0000-0000</span></a>
+ </div>
+</header>
+
+<main id="top">
+<section class="hero">
+ <div class="wrap">
+  <div class="hero-txt">
+   <p class="notice"><span></span>12월 신규 신청 · 정기세차 첫 달 50% 할인</p>
+   <h1>주차칸 <span class="num">B2-17</span>에<br>세워 둔 그대로,<br>출근한 사이 <span style="white-space:nowrap">닦아 둡니다</span></h1>
+   <p class="lead">아파트 지하주차장으로 찾아가 스팀과 극세사 타월로 손세차합니다. 차를 옮기거나 키를 맡기지 않아도 되고, 한 대에 쓰는 물은 3리터 안팎입니다.</p>
+   <div class="hero-cta">
+    <a class="btn btn-main" href="#apply">첫 달 반값으로 신청하기</a>
+    <a class="btn btn-sub" href="#price">요금 보기</a>
+   </div>
+   <div class="hero-price">
+    <div><small>월 2회 정기세차 첫 달</small><s class="num">39,000원</s><b class="num">19,500원</b></div>
+    <div><small>월 4회 정기세차 첫 달</small><s class="num">72,000원</s><b class="num">36,000원</b></div>
+   </div>
+  </div>
+
+  <div class="hero-art">
+   <svg viewBox="0 0 600 720" role="img" aria-label="지하주차장 주차칸에 세워진 회색 세단을 위에서 본 그림. 왼쪽 절반은 닦여 광이 나고 오른쪽 절반은 도로 먼지가 앉아 있으며, 옆에 호스 릴이 달린 스팀기 카트와 접힌 타월이 있다">
+    <defs>
+     <linearGradient id="paint" x1="182" x2="418" y1="0" y2="0" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#3F454B"/><stop offset=".1" stop-color="#6C737A"/><stop offset=".32" stop-color="#A3AAB0"/><stop offset=".5" stop-color="#B7BDC2"/><stop offset=".68" stop-color="#A3AAB0"/><stop offset=".9" stop-color="#6C737A"/><stop offset="1" stop-color="#3F454B"/>
+     </linearGradient>
+     <linearGradient id="paintEnds" x1="0" x2="0" y1="112" y2="612" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#1E2327" stop-opacity=".45"/><stop offset=".06" stop-color="#1E2327" stop-opacity="0"/><stop offset=".93" stop-color="#1E2327" stop-opacity="0"/><stop offset="1" stop-color="#1E2327" stop-opacity=".5"/>
+     </linearGradient>
+     <linearGradient id="roofP" x1="220" x2="380" y1="0" y2="0" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#8E959B"/><stop offset=".5" stop-color="#C3C8CC"/><stop offset="1" stop-color="#8E959B"/>
+     </linearGradient>
+     <linearGradient id="glassG" x1="0" x2="0" y1="0" y2="1">
+      <stop offset="0" stop-color="#1A2228"/><stop offset="1" stop-color="#2D3940"/>
+     </linearGradient>
+     <linearGradient id="band" x1="0" x2="1" y1="0" y2="0">
+      <stop offset="0" stop-color="#fff" stop-opacity="0"/><stop offset=".45" stop-color="#fff" stop-opacity=".2"/><stop offset=".6" stop-color="#fff" stop-opacity=".08"/><stop offset="1" stop-color="#fff" stop-opacity="0"/>
+     </linearGradient>
+     <linearGradient id="grime" x1="300" x2="420" y1="0" y2="0" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#5A4D3B" stop-opacity="0"/><stop offset=".55" stop-color="#5A4D3B" stop-opacity=".12"/><stop offset="1" stop-color="#4A3F30" stop-opacity=".62"/>
+     </linearGradient>
+     <linearGradient id="grimeEnds" x1="0" x2="0" y1="112" y2="612" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#4A3F30" stop-opacity=".5"/><stop offset=".08" stop-color="#4A3F30" stop-opacity="0"/><stop offset=".9" stop-color="#4A3F30" stop-opacity="0"/><stop offset="1" stop-color="#4A3F30" stop-opacity=".55"/>
+     </linearGradient>
+     <linearGradient id="pillar" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#D3D0C7"/><stop offset="1" stop-color="#B8B4AA"/>
+     </linearGradient>
+     <linearGradient id="towel" x1="0" x2="0" y1="0" y2="1">
+      <stop offset="0" stop-color="#EE7550"/><stop offset="1" stop-color="#D9572F"/>
+     </linearGradient>
+     <linearGradient id="cartBody" x1="0" x2="1">
+      <stop offset="0" stop-color="#C8C5BD"/><stop offset=".3" stop-color="#E6E4DE"/><stop offset=".7" stop-color="#E6E4DE"/><stop offset="1" stop-color="#BDBAB2"/>
+     </linearGradient>
+     <filter id="soft" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="14"/></filter>
+     <filter id="soft2" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="4"/></filter>
+     <filter id="grain" x="0" y="0" width="100%" height="100%">
+      <feTurbulence type="fractalNoise" baseFrequency=".9" numOctaves="2" seed="11" result="n"/>
+      <feColorMatrix in="n" type="matrix" values="0 0 0 0 .55  0 0 0 0 .49  0 0 0 0 .40  0 0 0 -1.8 1.3"/>
+     </filter>
+     <path id="carBody" d="M300 112C352 112 392 116 404 130C414 142 416 160 417 190L419 260C421 330 421 420 418 480C416 530 410 568 398 590C384 606 350 612 300 612C250 612 216 606 202 590C190 568 184 530 182 480C179 420 179 330 181 260L183 190C184 160 186 142 196 130C208 116 248 112 300 112Z"/>
+     <path id="seam" d="M306 104C300 150 312 190 304 236C296 280 310 320 302 362C294 404 312 440 304 486C298 524 310 566 302 620"/>
+     <clipPath id="bodyClip"><use href="#carBody"/></clipPath>
+     <clipPath id="dirtySide"><path d="M306 104C300 150 312 190 304 236C296 280 310 320 302 362C294 404 312 440 304 486C298 524 310 566 302 620L470 620L470 104Z"/></clipPath>
+     <clipPath id="cleanSide"><path d="M306 104C300 150 312 190 304 236C296 280 310 320 302 362C294 404 312 440 304 486C298 524 310 566 302 620L130 620L130 104Z"/></clipPath>
+     <mask id="wiper" maskUnits="userSpaceOnUse" x="130" y="100" width="340" height="520">
+      <rect x="130" y="100" width="340" height="520" fill="#fff"/>
+      <path d="M338 488L274 452A72 72 0 0 1 404 446Z" fill="#000"/>
+     </mask>
+    </defs>
+
+    <!-- parking lines -->
+    <g fill="#F1EFE8" opacity=".9">
+     <rect x="136" y="60" width="9" height="660"/>
+     <rect x="455" y="60" width="9" height="660"/>
+     <rect x="136" y="60" width="328" height="9"/>
+    </g>
+    <g fill="#2F6B57" opacity=".55"><rect x="136" y="300" width="9" height="6"/><rect x="455" y="410" width="9" height="4"/><rect x="250" y="60" width="12" height="9"/></g>
+
+    <!-- wheel stoppers -->
+    <g>
+     <rect x="200" y="84" width="72" height="16" rx="5" fill="#BDB9AE"/><rect x="200" y="84" width="72" height="5" rx="2.5" fill="#D6D3CA"/>
+     <rect x="328" y="84" width="72" height="16" rx="5" fill="#BDB9AE"/><rect x="328" y="84" width="72" height="5" rx="2.5" fill="#D6D3CA"/>
+    </g>
+
+    <!-- pillar with corner guards -->
+    <g>
+     <rect x="44" y="0" width="100" height="110" fill="url(#pillar)"/>
+     <rect x="44" y="104" width="100" height="6" fill="#000" opacity=".12"/>
+     <g fill="#2B2F2C"><path d="M44 78h10v22h22v10H44z"/><path d="M144 78h-10v22h-22v10h32z"/></g>
+     <g fill="#C79A35"><rect x="44" y="84" width="10" height="6"/><rect x="44" y="96" width="10" height="4"/><rect x="60" y="100" width="6" height="10"/><rect x="134" y="84" width="10" height="6"/><rect x="134" y="96" width="10" height="4"/><rect x="122" y="100" width="6" height="10"/></g>
+     <rect x="58" y="18" width="72" height="44" rx="4" fill="#1C4137"/>
+     <text x="94" y="50" text-anchor="middle" font-family="Saira Condensed, sans-serif" font-weight="600" font-size="28" fill="#F1F4F1" letter-spacing="1">B2-17</text>
+    </g>
+
+    <!-- car shadow -->
+    <use href="#carBody" fill="#08140F" opacity=".5" filter="url(#soft)" transform="translate(6,14)"/>
+    <use href="#carBody" fill="#08140F" opacity=".45" filter="url(#soft2)" transform="translate(2,5)"/>
+
+    <!-- tyres just outside the body -->
+    <g fill="#141816">
+     <rect x="175" y="166" width="12" height="70" rx="4"/><rect x="413" y="166" width="12" height="70" rx="4"/>
+     <rect x="174" y="470" width="12" height="72" rx="4"/><rect x="414" y="470" width="12" height="72" rx="4"/>
+    </g>
+    <g fill="#3A403D"><rect x="176" y="172" width="3" height="58" rx="1.5"/><rect x="175" y="476" width="3" height="60" rx="1.5"/></g>
+
+    <!-- body paint -->
+    <use href="#carBody" fill="url(#paint)"/>
+    <use href="#carBody" fill="url(#paintEnds)"/>
+
+    <g clip-path="url(#bodyClip)">
+     <!-- trunk lid -->
+     <path d="M212 132Q300 122 388 132L392 194Q300 186 208 194Z" fill="#000" opacity=".05"/>
+     <path d="M208 194Q300 186 392 194" stroke="#2C3135" stroke-width="2" fill="none" opacity=".55"/>
+     <path d="M212 132Q300 122 388 132" stroke="#2C3135" stroke-width="1.5" fill="none" opacity=".4"/>
+     <!-- side glass -->
+     <path d="M195 262L220 258L218 396L195 406Q188 332 195 262Z" fill="url(#glassG)"/>
+     <path d="M405 262L380 258L382 396L405 406Q412 332 405 262Z" fill="url(#glassG)"/>
+     <!-- rear glass -->
+     <path d="M210 200Q300 192 390 200L376 254Q300 248 224 254Z" fill="url(#glassG)"/>
+     <path d="M226 202L272 198L246 252L228 253Z" fill="url(#band)"/>
+     <!-- roof panel -->
+     <path d="M222 258Q300 252 378 258L381 394Q300 400 219 394Z" fill="url(#roofP)"/>
+     <path d="M222 258Q300 252 378 258L381 394Q300 400 219 394Z" fill="none" stroke="#3D4348" stroke-width="1.5" opacity=".6"/>
+     <!-- windshield, raked: wider toward the hood -->
+     <path d="M219 398Q300 404 381 398L399 484Q300 496 201 484Z" fill="url(#glassG)"/>
+     <path d="M232 402L282 404L250 488L214 484Z" fill="url(#band)"/>
+     <!-- wipers resting -->
+     <path d="M226 486L290 478M316 488L376 478" stroke="#0B0F12" stroke-width="3" stroke-linecap="round"/>
+     <!-- hood creases -->
+     <path d="M300 494V604" stroke="#2C3135" stroke-width="1.5" opacity=".45"/>
+     <path d="M301 494V604" stroke="#E6EAEC" stroke-width="1" opacity=".35"/>
+     <path d="M240 494C244 540 248 576 256 604M360 494C356 540 352 576 344 604" stroke="#2C3135" stroke-width="1.5" fill="none" opacity=".45"/>
+     <!-- door seams -->
+     <path d="M183 300H196M404 300H417M182 400H196M404 400H418" stroke="#2C3135" stroke-width="2" opacity=".7"/>
+     <!-- lights -->
+     <path d="M198 126Q222 116 252 115L250 124Q224 127 202 136Z" fill="#8A2420"/>
+     <path d="M402 126Q378 116 348 115L350 124Q376 127 398 136Z" fill="#8A2420"/>
+     <path d="M190 566Q206 592 246 604L246 594Q216 584 196 560Z" fill="#E4E8E8"/>
+     <path d="M410 566Q394 592 354 604L354 594Q384 584 404 560Z" fill="#E4E8E8"/>
+     <path d="M262 606Q300 610 338 606" stroke="#22272A" stroke-width="3" fill="none" stroke-linecap="round"/>
+    </g>
+
+    <!-- mirrors at A-pillars -->
+    <path d="M184 466L166 460Q160 468 163 480L184 482Z" fill="#7B8288"/>
+    <path d="M184 466L166 460Q160 468 163 480L184 482Z" fill="none" stroke="#3F454B" stroke-width="1.5"/>
+    <path d="M416 466L434 460Q440 468 437 480L416 482Z" fill="#7B8288"/>
+    <path d="M416 466L434 460Q440 468 437 480L416 482Z" fill="#7C6E58" opacity=".45"/>
+
+    <!-- clean side: crisp light reflections -->
+    <g clip-path="url(#bodyClip)">
+     <g clip-path="url(#cleanSide)" fill="#fff">
+      <path d="M186 214L420 206L420 214L186 222Z" opacity=".22"/>
+      <path d="M186 532L420 524L420 532L186 540Z" opacity=".2"/>
+      <path d="M232 300L300 297L300 303L232 306Z" opacity=".3"/>
+      <path d="M190 180C186 270 184 380 188 520" stroke="#fff" stroke-width="2.5" fill="none" opacity=".28" stroke-linecap="round"/>
+     </g>
+     <!-- dirty side: road dust over the same paint -->
+     <g clip-path="url(#dirtySide)">
+      <g mask="url(#wiper)">
+       <rect x="130" y="100" width="340" height="520" fill="#9B8D74" opacity=".38"/>
+       <rect x="130" y="100" width="340" height="520" filter="url(#grain)" opacity=".28"/>
+      </g>
+      <rect x="130" y="100" width="340" height="520" fill="url(#grime)"/>
+      <rect x="130" y="100" width="340" height="520" fill="url(#grimeEnds)"/>
+      <path d="M274 452A72 72 0 0 1 404 446" stroke="#8B7D64" stroke-width="2" fill="none" opacity=".55"/>
+      <g fill="none" stroke="#E2D9C6" stroke-width="1.2" opacity=".55">
+       <circle cx="334" cy="168" r="3"/><circle cx="356" cy="182" r="2"/><circle cx="372" cy="160" r="2.5"/><circle cx="330" cy="300" r="2.5"/><circle cx="352" cy="330" r="3"/><circle cx="344" cy="364" r="2"/><circle cx="360" cy="540" r="3"/><circle cx="330" cy="566" r="2.5"/><circle cx="382" cy="520" r="2"/><circle cx="348" cy="222" r="2"/><circle cx="366" cy="282" r="2"/>
+      </g>
+     </g>
+     <!-- wet wiping edge -->
+     <use href="#seam" stroke="#1D2226" stroke-width="5" fill="none" opacity=".22" transform="translate(-3,0)"/>
+     <use href="#seam" stroke="#F4F6F6" stroke-width="1.2" fill="none" opacity=".5" transform="translate(-6,0)"/>
+     <g fill="#fff" opacity=".6"><circle cx="294" cy="214" r="1.8"/><circle cx="290" cy="344" r="1.5"/><circle cx="292" cy="508" r="2"/><circle cx="288" cy="560" r="1.4"/></g>
+    </g>
+
+    <!-- floor number -->
+    <text x="300" y="690" text-anchor="middle" font-family="Saira Condensed, sans-serif" font-weight="600" font-size="64" fill="#F1EFE8" opacity=".82" letter-spacing="4">17</text>
+
+    <!-- mobile steam unit -->
+    <g transform="translate(482 300)">
+     <rect x="0" y="12" width="104" height="214" rx="14" fill="#0B1E18" opacity=".45" filter="url(#soft2)"/>
+     <!-- casters -->
+     <g fill="#161A18"><rect x="-6" y="10" width="10" height="20" rx="3"/><rect x="92" y="10" width="10" height="20" rx="3"/><rect x="-6" y="166" width="10" height="20" rx="3"/><rect x="92" y="166" width="10" height="20" rx="3"/></g>
+     <!-- push handle -->
+     <path d="M12 192V214H84V192" fill="none" stroke="#3A403D" stroke-width="6" stroke-linejoin="round"/>
+     <rect x="28" y="208" width="40" height="12" rx="6" fill="#1E2321"/>
+     <!-- body -->
+     <rect x="0" y="0" width="96" height="196" rx="10" fill="url(#cartBody)"/>
+     <rect x="0" y="0" width="96" height="196" rx="10" fill="none" stroke="#9E9B92" stroke-width="2"/>
+     <!-- hose reel -->
+     <circle cx="48" cy="52" r="38" fill="#B9B6AE"/>
+     <circle cx="48" cy="52" r="34" fill="#262B29"/>
+     <g fill="none" stroke="#3E4542" stroke-width="3"><circle cx="48" cy="52" r="29"/><circle cx="48" cy="52" r="23"/><circle cx="48" cy="52" r="17"/></g>
+     <g fill="none" stroke="#5C6461" stroke-width="1" opacity=".7"><circle cx="48" cy="52" r="30"/><circle cx="48" cy="52" r="24"/><circle cx="48" cy="52" r="18"/></g>
+     <circle cx="48" cy="52" r="10" fill="#A6ACA8"/><circle cx="48" cy="52" r="4" fill="#4A514E"/>
+     <rect x="86" y="44" width="14" height="16" rx="4" fill="#3A403D"/><path d="M18 30Q14 52 22 72" stroke="#5C6461" stroke-width="5" fill="none" stroke-linecap="round" opacity=".9"/>
+     <!-- control panel -->
+     <rect x="12" y="100" width="72" height="24" rx="5" fill="#2E3432"/>
+     <circle cx="26" cy="112" r="7" fill="#E8E6E0"/><path d="M26 112L30 108" stroke="#2E3432" stroke-width="1.5" stroke-linecap="round"/>
+     <rect x="42" y="108" width="14" height="8" rx="2" fill="#5D6562"/><rect x="62" y="108" width="14" height="8" rx="2" fill="#5D6562"/>
+     <!-- folded towels -->
+     <rect x="12" y="132" width="72" height="26" rx="4" fill="url(#towel)"/>
+     <path d="M12 145H84" stroke="#B8451F" stroke-width="1.5"/>
+     <rect x="16" y="160" width="68" height="26" rx="4" fill="url(#towel)" opacity=".85"/>
+     <path d="M16 173H84" stroke="#B8451F" stroke-width="1.5" opacity=".8"/>
+    </g>
+    <!-- hose from reel to the car -->
+    <path d="M512 330C500 380 474 410 446 418C430 422 426 436 420 444" stroke="#1D2622" stroke-width="7" fill="none" stroke-linecap="round"/>
+    <path d="M512 330C500 380 474 410 446 418C430 422 426 436 420 444" stroke="#56625C" stroke-width="2" fill="none" stroke-linecap="round" opacity=".6"/>
+   </svg>
+  </div>
+ </div>
+</section>
+
+<section class="sec" id="how">
+ <div class="wrap">
+  <div class="sec-head rv">
+   <div><p class="k">진행 방식</p><h2>예약하고 주차칸 번호만<br>남겨 두면 됩니다</h2></div>
+   <p>세차하는 날 아침에 평소대로 주차해 두고 출근하세요. 오전 9시부터 오후 5시 사이에 찾아가 차 한 대에 40분 정도 머뭅니다.</p>
+  </div>
+  <div class="steps rv">
+   <div class="step"><p class="n num">01</p><h3>요일 고르기</h3><p>월 2회는 격주, 월 4회는 매주 같은 요일로 잡습니다. 비 오는 날도 지하라서 그대로 진행합니다.</p><span class="tag">신청 양식 1분</span></div>
+   <div class="step"><p class="n num">02</p><h3>주차칸 번호 남기기</h3><p>전날 저녁까지 기둥에 적힌 구역 번호를 카카오톡으로 보내 주세요. 차 위치가 바뀌어도 당일 오전 8시까지 고칠 수 있습니다.</p><span class="tag">예: B2-17</span></div>
+   <div class="step"><p class="n num">03</p><h3>출근한 사이 세차</h3><p>스팀으로 먼지와 물때를 불린 다음 극세사 타월로 닦습니다. 바닥에 물이 흐르지 않아 관리실 허가가 필요 없는 단지가 많습니다.</p><span class="tag">1대 약 40분</span></div>
+   <div class="step"><p class="n num">04</p><h3>사진으로 완료 알림</h3><p>끝나면 앞·옆·휠 사진 세 장과 함께 메시지를 보냅니다. 흠집이나 찍힘이 먼저 보이면 세차 전에 사진으로 알려 드립니다.</p><span class="tag">당일 메시지</span></div>
+  </div>
+  <div class="photo-note rv">
+   <div>
+    <h3>세차가 끝나면 이런 메시지가 갑니다</h3>
+    <p>차를 직접 보지 않아도 상태를 알 수 있게 같은 각도로 찍어 보냅니다. 지난 사진과 나란히 두고 비교할 수 있습니다.</p>
+   </div>
+   <div class="msg" aria-label="완료 알림 메시지 예시">
+    <p class="who"><span>말갛게 출장세차</span><span class="num">14:12</span></p>
+    <p class="bubble">B2-17 회색 세단 세차 마쳤습니다. 오른쪽 뒷문 아래 작은 찍힘은 세차 전부터 있던 것이라 사진에 표시해 두었습니다. 다음 방문은 12월 18일 목요일입니다.</p>
+    <div class="shots">
+     <svg viewBox="0 0 160 120" role="img" aria-label="앞모습 사진"><defs><linearGradient id="pw1" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#1A201E"/><stop offset=".2" stop-color="#3C433F"/><stop offset=".52" stop-color="#6A706B"/></linearGradient><linearGradient id="pf1" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#3A6F5D"/><stop offset="1" stop-color="#1D4136"/></linearGradient><linearGradient id="pp1" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#C2C8CC"/><stop offset=".45" stop-color="#9AA1A7"/><stop offset="1" stop-color="#555C62"/></linearGradient><linearGradient id="pg1" x1="0" x2="1" y1="0" y2="1"><stop offset="0" stop-color="#2E3A42"/><stop offset="1" stop-color="#141B20"/></linearGradient><radialGradient id="pv1" cx=".5" cy=".45" r=".75"><stop offset=".6" stop-color="#000" stop-opacity="0"/><stop offset="1" stop-color="#000" stop-opacity=".45"/></radialGradient></defs><rect width="160" height="120" fill="url(#pw1)"/><rect y="62" width="160" height="58" fill="url(#pf1)"/><rect x="40" y="6" width="80" height="4" rx="2" fill="#EEF2EE" opacity=".8"/><rect x="44" y="104" width="72" height="4" rx="2" fill="#EEF2EE" opacity=".12"/><ellipse cx="80" cy="104" rx="56" ry="6" fill="#07120E" opacity=".55"/><rect x="34" y="92" width="14" height="14" rx="3" fill="#121614"/><rect x="112" y="92" width="14" height="14" rx="3" fill="#121614"/><path d="M40 61L52 42Q80 37 108 42L120 61Z" fill="#8F969C"/><path d="M45 60L55 45Q80 41 105 45L115 60Z" fill="url(#pg1)"/><path d="M58 46L74 44L62 59L50 59Z" fill="#fff" opacity=".14"/><path d="M32 56L40 54L42 60L32 61Z" fill="#7E858B"/><path d="M128 56L120 54L118 60L128 61Z" fill="#7E858B"/><path d="M28 74Q28 62 40 60L120 60Q132 62 132 74L132 96Q80 100 28 96Z" fill="url(#pp1)"/><path d="M34 64Q46 62 54 64L52 70Q42 70 34 70Z" fill="#E9EDEE"/><path d="M126 64Q114 62 106 64L108 70Q118 70 126 70Z" fill="#E9EDEE"/><rect x="62" y="72" width="36" height="10" rx="3" fill="#20262A"/><path d="M62 75H98M62 79H98" stroke="#3A4247" stroke-width="1"/><path d="M30 88Q80 92 130 88" stroke="#2E3438" stroke-width="2" fill="none"/><path d="M36 62L124 62" stroke="#fff" stroke-width="1.5" opacity=".45"/><rect x="66" y="86" width="28" height="6" rx="1" fill="#E8E6DE"/><rect width="160" height="120" fill="url(#pv1)"/></svg>
+     <svg viewBox="0 0 160 120" role="img" aria-label="오른쪽 옆모습 사진, 뒷문 아래 표시"><defs><linearGradient id="pw2" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#1A201E"/><stop offset=".2" stop-color="#3C433F"/><stop offset=".52" stop-color="#6A706B"/></linearGradient><linearGradient id="pf2" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#3A6F5D"/><stop offset="1" stop-color="#1D4136"/></linearGradient><linearGradient id="pp2" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#C2C8CC"/><stop offset=".45" stop-color="#9AA1A7"/><stop offset="1" stop-color="#555C62"/></linearGradient><linearGradient id="pg2" x1="0" x2="1" y1="0" y2="1"><stop offset="0" stop-color="#2E3A42"/><stop offset="1" stop-color="#141B20"/></linearGradient><radialGradient id="pv2" cx=".5" cy=".45" r=".75"><stop offset=".6" stop-color="#000" stop-opacity="0"/><stop offset="1" stop-color="#000" stop-opacity=".45"/></radialGradient></defs><rect width="160" height="120" fill="url(#pw2)"/><rect y="62" width="160" height="58" fill="url(#pf2)"/><rect x="40" y="6" width="80" height="4" rx="2" fill="#EEF2EE" opacity=".8"/><rect x="44" y="104" width="72" height="4" rx="2" fill="#EEF2EE" opacity=".12"/><ellipse cx="82" cy="98" rx="70" ry="5" fill="#07120E" opacity=".55"/><path d="M12 88L14 72Q18 64 32 62L52 46Q60 40 82 40L102 41Q114 42 124 56L142 60Q152 62 152 72L152 88Z" fill="url(#pp2)"/><path d="M56 48Q64 44 82 44L84 58L48 59Z" fill="url(#pg2)"/><path d="M88 44L102 45Q110 46 118 57L88 58Z" fill="url(#pg2)"/><path d="M60 47L70 46L58 58L52 58Z" fill="#fff" opacity=".16"/><path d="M50 59V86M86 58V86M120 58V84" stroke="#3E454A" stroke-width="1.2"/><path d="M16 68Q80 62 150 66" stroke="#fff" stroke-width="1.5" fill="none" opacity=".5"/><path d="M14 80Q80 78 152 80" stroke="#4A5156" stroke-width="1" fill="none"/><circle cx="38" cy="88" r="13" fill="#111513"/><circle cx="38" cy="88" r="7" fill="#9DA4A9"/><circle cx="38" cy="88" r="2.5" fill="#4C5358"/><circle cx="128" cy="88" r="13" fill="#111513"/><circle cx="128" cy="88" r="7" fill="#9DA4A9"/><circle cx="128" cy="88" r="2.5" fill="#4C5358"/><path d="M144 64L152 66L152 70L145 70Z" fill="#E9EDEE"/><path d="M14 72L18 70L18 76L13 77Z" fill="#9A2B24"/><circle cx="70" cy="81" r="5.5" fill="none" stroke="#E8643C" stroke-width="1.6"/><rect width="160" height="120" fill="url(#pv2)"/></svg>
+     <svg viewBox="0 0 160 120" role="img" aria-label="휠 사진"><defs><linearGradient id="pw3" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#1A201E"/><stop offset=".2" stop-color="#3C433F"/><stop offset=".52" stop-color="#6A706B"/></linearGradient><linearGradient id="pf3" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#3A6F5D"/><stop offset="1" stop-color="#1D4136"/></linearGradient><linearGradient id="pp3" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#C2C8CC"/><stop offset=".45" stop-color="#9AA1A7"/><stop offset="1" stop-color="#555C62"/></linearGradient><linearGradient id="pg3" x1="0" x2="1" y1="0" y2="1"><stop offset="0" stop-color="#2E3A42"/><stop offset="1" stop-color="#141B20"/></linearGradient><radialGradient id="pv3" cx=".5" cy=".45" r=".75"><stop offset=".6" stop-color="#000" stop-opacity="0"/><stop offset="1" stop-color="#000" stop-opacity=".45"/></radialGradient></defs><rect width="160" height="120" fill="url(#pw3)"/><rect y="62" width="160" height="58" fill="url(#pf3)"/><rect x="40" y="6" width="80" height="4" rx="2" fill="#EEF2EE" opacity=".8"/><rect x="44" y="104" width="72" height="4" rx="2" fill="#EEF2EE" opacity=".12"/><path d="M0 0H160V58Q150 20 80 18Q10 20 0 58Z" fill="url(#pp3)"/><path d="M0 58Q10 20 80 18Q150 20 160 58V64Q146 30 80 28Q14 30 0 64Z" fill="#1B2023"/><path d="M10 14Q80 4 150 14" stroke="#fff" stroke-width="2" fill="none" opacity=".4"/><ellipse cx="80" cy="114" rx="52" ry="5" fill="#07120E" opacity=".6"/><circle cx="80" cy="72" r="42" fill="#121614"/><circle cx="80" cy="72" r="41" fill="none" stroke="#2A302D" stroke-width="2"/><circle cx="80" cy="72" r="28" fill="#5A6166"/><circle cx="80" cy="72" r="20" fill="#2A3034"/><g stroke="#B9C0C5" stroke-width="7" stroke-linecap="round"><path d="M80 66V46M85.7 70.1L104.7 63.9M83.5 76.9L95.3 93.1M76.5 76.9L64.7 93.1M74.3 70.1L55.3 63.9"/></g><circle cx="80" cy="72" r="28" fill="none" stroke="#C9CFD3" stroke-width="2.5"/><circle cx="80" cy="72" r="7" fill="#8C9399"/><path d="M60 52Q70 44 84 44" stroke="#fff" stroke-width="2" fill="none" opacity=".55"/><rect width="160" height="120" fill="url(#pv3)"/></svg>
+    </div>
+   </div>
+  </div>
+ </div>
+</section>
+
+<section class="sec" id="price" style="padding-top:0">
+ <div class="wrap">
+  <div class="sec-head rv">
+   <div><p class="k">요금</p><h2>정기세차는 첫 달 요금의<br>절반만 받습니다</h2></div>
+   <p>12월 31일까지 새로 신청하는 정기세차에 적용합니다. 둘째 달부터는 정상 요금이고, 해지는 다음 결제일 3일 전까지 메시지 한 통이면 됩니다.</p>
+  </div>
+  <div class="plans rv">
+   <div class="plan">
+    <h3>한 번만</h3><p class="per">원하는 날 1회</p>
+    <p class="was">정기 할인 없음</p>
+    <p class="price num">25,000<em>원</em></p>
+    <ul>
+     <li><svg viewBox="0 0 24 24"><path d="M5 12l5 5 9-10"/></svg>외부 스팀세차와 휠·타이어</li>
+     <li><svg viewBox="0 0 24 24"><path d="M5 12l5 5 9-10"/></svg>유리 안팎</li>
+     <li><svg viewBox="0 0 24 24"><path d="M5 12l5 5 9-10"/></svg>완료 사진 3장</li>
+    </ul>
+    <p class="go"><a class="btn" href="#apply" data-plan="once">1회 신청</a></p>
+   </div>
+   <div class="plan main">
+    <p class="flag">첫 달 50% 할인 적용</p>
+    <h3>월 2회 정기</h3><p class="per">격주 같은 요일</p>
+    <p class="was"><s class="num">39,000원</s>둘째 달부터 39,000원</p>
+    <p class="price num">19,500<em>원</em></p>
+    <ul>
+     <li><svg viewBox="0 0 24 24"><path d="M5 12l5 5 9-10"/></svg>외부 스팀세차, 휠·타이어, 유리 안팎</li>
+     <li><svg viewBox="0 0 24 24"><path d="M5 12l5 5 9-10"/></svg>매트 4장 세척 월 1회</li>
+     <li><svg viewBox="0 0 24 24"><path d="M5 12l5 5 9-10"/></svg>흠집·찍힘 기록 사진 누적 보관</li>
+     <li><svg viewBox="0 0 24 24"><path d="M5 12l5 5 9-10"/></svg>요일 변경 월 1회 무료</li>
+    </ul>
+    <p class="go"><a class="btn" href="#apply" data-plan="two">월 2회로 신청하기</a></p>
+   </div>
+   <div class="plan">
+    <h3>월 4회 정기</h3><p class="per">매주 같은 요일</p>
+    <p class="was"><s class="num">72,000원</s>첫 달 50% 할인</p>
+    <p class="price num">36,000<em>원</em></p>
+    <ul>
+     <li><svg viewBox="0 0 24 24"><path d="M5 12l5 5 9-10"/></svg>월 2회 항목 전부</li>
+     <li><svg viewBox="0 0 24 24"><path d="M5 12l5 5 9-10"/></svg>실내 진공과 대시보드 월 2회</li>
+     <li><svg viewBox="0 0 24 24"><path d="M5 12l5 5 9-10"/></svg>매트 세척 매주</li>
+    </ul>
+    <p class="go"><a class="btn" href="#apply" data-plan="four">월 4회 신청</a></p>
+   </div>
+  </div>
+  <p class="plan-foot rv"><span>SUV·승합은 1회당 5,000원 추가</span><span>경차는 1회당 3,000원 할인</span><span>부가세 포함 금액</span></p>
+ </div>
+</section>
+
+<section class="sec scope" id="scope">
+ <div class="wrap">
+  <div class="sec-head rv">
+   <div><p class="k">세차 범위</p><h2>닦는 곳과 닦지 않는 곳</h2></div>
+   <p>실내 세차가 있는 날만 차 문을 엽니다. 키는 관리실 보관함이나 디지털 키 공유로 받고, 끝나면 같은 곳에 돌려 둡니다.</p>
+  </div>
+  <div class="scope-grid rv">
+   <div class="col">
+    <h3>외부 <small>매번</small></h3>
+    <ul>
+     <li><svg viewBox="0 0 24 24"><path class="ok" d="M5 12l5 5 9-10"/></svg><span>차체 스팀 세척과 손 건조<small>먼지를 불린 뒤 한 방향으로 닦습니다</small></span></li>
+     <li><svg viewBox="0 0 24 24"><path class="ok" d="M5 12l5 5 9-10"/></svg><span>휠·타이어 측면</span></li>
+     <li><svg viewBox="0 0 24 24"><path class="ok" d="M5 12l5 5 9-10"/></svg><span>앞·뒤 유리와 사이드미러</span></li>
+     <li><svg viewBox="0 0 24 24"><path class="ok" d="M5 12l5 5 9-10"/></svg><span>도어 손잡이 안쪽과 주유구 덮개</span></li>
+    </ul>
+   </div>
+   <div class="col">
+    <h3>실내 <small>요금제에 따라</small></h3>
+    <ul>
+     <li><svg viewBox="0 0 24 24"><path class="ok" d="M5 12l5 5 9-10"/></svg><span>바닥 매트 4장 스팀 세척<small>월 2회는 월 1번, 월 4회는 매번</small></span></li>
+     <li><svg viewBox="0 0 24 24"><path class="ok" d="M5 12l5 5 9-10"/></svg><span>시트·바닥 진공<small>월 4회만 월 2번</small></span></li>
+     <li><svg viewBox="0 0 24 24"><path class="ok" d="M5 12l5 5 9-10"/></svg><span>대시보드·컵홀더 닦기</span></li>
+     <li><svg viewBox="0 0 24 24"><path class="ok" d="M5 12l5 5 9-10"/></svg><span>안쪽 유리 김서림 자국</span></li>
+    </ul>
+   </div>
+   <div class="col out">
+    <h3>하지 않는 것 <small>별도 업체 안내</small></h3>
+    <ul>
+     <li><svg viewBox="0 0 24 24"><path class="no" d="M7 7l10 10M17 7L7 17"/></svg><span>광택·유리막 코팅</span></li>
+     <li><svg viewBox="0 0 24 24"><path class="no" d="M7 7l10 10M17 7L7 17"/></svg><span>시트 얼룩 제거·가죽 관리</span></li>
+     <li><svg viewBox="0 0 24 24"><path class="no" d="M7 7l10 10M17 7L7 17"/></svg><span>엔진룸·하부 세척</span></li>
+     <li><svg viewBox="0 0 24 24"><path class="no" d="M7 7l10 10M17 7L7 17"/></svg><span>지상 주차 차량</span></li>
+    </ul>
+   </div>
+  </div>
+ </div>
+</section>
+
+<section class="sec facts" id="info">
+ <div class="wrap">
+  <div class="sec-head rv">
+   <div><p class="k">현장 정보</p><h2>지하주차장에서 쓰는 것들</h2></div>
+   <p>스팀기는 전기 없이 자체 배터리로 돌아가서 주차장 콘센트를 빌리지 않습니다. 소음은 진공청소기보다 작습니다.</p>
+  </div>
+  <div class="board rv">
+   <div class="cell"><p class="big num">3<small>L</small></p><h3>한 대에 쓰는 물</h3><p>바닥에 흘러내리는 물이 없습니다</p></div>
+   <div class="cell"><p class="big num">40<small>분</small></p><h3>한 대 작업 시간</h3><p>실내 포함 날은 55분 안팎</p></div>
+   <div class="cell"><p class="big num">9–17<small>시</small></p><h3>방문 시간</h3><p>평일 기준, 토요일은 오전만</p></div>
+   <div class="cell"><p class="big num">2<small>명</small></p><h3>한 팀 인원</h3><p>같은 단지는 같은 팀이 갑니다</p></div>
+  </div>
+  <div class="area rv">
+   <div><h3>방문 가능한 곳</h3><p>단지 안에 신청 차량이 세 대 이상 모이면 새 지역도 열어 드립니다. 목록에 없는 단지도 신청서를 남겨 주세요.</p></div>
+   <div class="zones">
+    <span>서울 송파구</span><span>서울 강동구</span><span>서울 광진구</span><span>성남 분당구</span><span>하남 미사</span><span class="soon">위례 · 1월부터</span><span class="soon">구리 · 1월부터</span>
+   </div>
+  </div>
+ </div>
+</section>
+
+<section class="sec" id="faq">
+ <div class="wrap">
+  <div class="sec-head rv">
+   <div><p class="k">자주 묻는 질문</p><h2>신청 전에 많이 묻는 것</h2></div>
+   <p>여기 없는 질문은 카카오톡 ID example 로 보내 주세요. 평일 오후 7시 전까지 답합니다.</p>
+  </div>
+  <div class="faq-list rv">
+   <details open><summary>관리실 허락을 따로 받아야 하나요?<svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></summary><p>바닥에 물을 흘리지 않는 방식이라 대부분 단지에서 따로 허락이 필요 없습니다. 단지 규정상 외부 작업자 등록이 필요하면 첫 방문 전에 저희가 관리실에 서류를 내고 진행합니다.</p></details>
+   <details><summary>세차하는 날 차를 쓰게 되면요?<svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></summary><p>당일 오전 8시 전에 알려 주시면 그 주 안의 다른 날로 옮깁니다. 이미 도착한 뒤 차가 없으면 한 번은 다시 잡아 드리고, 같은 달에 두 번째부터는 1회 사용으로 칩니다.</p></details>
+   <details><summary>차 키는 어떻게 전달하나요?<svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></summary><p>외부 세차만 하는 날은 키가 필요 없습니다. 실내 세차가 있는 날은 관리실 보관함이나 디지털 키 공유로 받고, 작업이 끝나면 같은 곳에 돌려 두고 메시지로 알려 드립니다.</p></details>
+   <details><summary>흠집이 생기면 어떻게 하나요?<svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></summary><p>작업 전 네 면을 먼저 찍어 기록해 둡니다. 세차 중 생긴 손상으로 확인되면 영업배상보험으로 수리비를 처리합니다.</p></details>
+   <details><summary>첫 달 50% 할인은 언제까지인가요?<svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></summary><p>12월 31일까지 신청서를 낸 정기세차(월 2회·월 4회)의 첫 달에만 적용합니다. 첫 방문은 1월 중순 전까지 잡으면 됩니다.</p></details>
+  </div>
+ </div>
+</section>
+
+<section class="sec apply" id="apply">
+ <div class="wrap apply-grid">
+  <div class="apply-side rv">
+   <p class="sec-head" style="display:block;margin:0"><span class="k" style="display:flex">신청</span></p>
+   <h2>우리 단지 주차장으로<br>세차 신청하기</h2>
+   <p>신청서를 받으면 하루 안에 첫 방문 날짜를 메시지로 보냅니다. 결제는 첫 방문이 끝난 뒤에 합니다.</p>
+   <dl>
+    <div><dt>전화</dt><dd class="num">000-0000-0000</dd></div>
+    <div><dt>카카오톡</dt><dd>ID: example</dd></div>
+    <div><dt>답장 시간</dt><dd>평일 09:00 – 19:00</dd></div>
+   </dl>
+  </div>
+
+  <div class="rv">
+   <form id="f" novalidate>
+    <div class="row">
+     <div class="f"><label for="nm">이름</label><input type="text" id="nm" autocomplete="name" placeholder="홍길동"></div>
+     <div class="f"><label for="ph">연락처</label><input type="tel" id="ph" autocomplete="tel" placeholder="000-0000-0000"></div>
+    </div>
+    <div class="row">
+     <div class="f"><label for="apt">아파트 이름</label><input type="text" id="apt" placeholder="예: 말갛게마을 1단지"></div>
+     <div class="f"><label for="dong">동</label><input type="text" id="dong" placeholder="예: 104동"></div>
+    </div>
+    <div class="row">
+     <div class="f"><label for="zone">주로 세우는 주차 구역 <small>기둥 번호</small></label><input type="text" id="zone" placeholder="예: B2-17"></div>
+     <div class="f"><label for="car">차종</label>
+      <select id="car"><option value="">선택해 주세요</option><option>경차</option><option>세단</option><option>SUV</option><option>승합</option></select></div>
+    </div>
+    <div class="f"><span class="lb">요금제</span>
+     <div class="plan-pick" role="radiogroup">
+      <label><input type="radio" name="plan" value="once"><span><b>한 번만</b>25,000원</span></label>
+      <label><input type="radio" name="plan" value="two" checked><span><b>월 2회 정기</b>첫 달 19,500원</span></label>
+      <label><input type="radio" name="plan" value="four"><span><b>월 4회 정기</b>첫 달 36,000원</span></label>
+     </div>
+    </div>
+    <div class="f"><span class="lb">희망 요일 <small>여러 개 골라도 됩니다</small></span>
+     <div class="days">
+      <label><input type="checkbox" name="d" value="월"><span>월</span></label>
+      <label><input type="checkbox" name="d" value="화"><span>화</span></label>
+      <label><input type="checkbox" name="d" value="수"><span>수</span></label>
+      <label><input type="checkbox" name="d" value="목"><span>목</span></label>
+      <label><input type="checkbox" name="d" value="금"><span>금</span></label>
+      <label><input type="checkbox" name="d" value="토"><span>토</span></label>
+     </div>
+    </div>
+    <div class="f"><label for="memo">요청 사항 <small>선택</small></label><textarea id="memo" placeholder="예: 블랙박스 주차 녹화가 켜져 있어요"></textarea></div>
+    <label class="agree"><input type="checkbox" id="ag">연락과 방문 일정 안내를 위해 이름·연락처·주차 정보를 받는 데 동의합니다</label>
+    <p class="err" id="err" role="alert"></p>
+    <button class="btn btn-main" type="submit">첫 방문 날짜 받기</button>
+   </form>
+
+   <div class="done" id="done" aria-live="polite">
+    <form style="padding:40px" onsubmit="return false">
+     <div class="tick"><svg viewBox="0 0 24 24"><path d="M5 12l5 5 9-10"/></svg></div>
+     <h3>신청서를 받았습니다</h3>
+     <p>하루 안에 첫 방문 날짜를 메시지로 보내 드립니다. 세차 전날 저녁까지 주차 구역 번호만 다시 확인해 주세요.</p>
+     <dl class="ticket" id="ticket"></dl>
+     <button type="button" id="again">신청 내용 고치기</button>
+    </form>
+   </div>
+  </div>
+ </div>
+</section>
+</main>
+
+<footer>
+ <div class="wrap ft">
+  <div><b>말갛게 출장세차</b><p>아파트 지하주차장 정기 스팀세차</p></div>
+  <div><p>전화 <span class="num">000-0000-0000</span> · 카카오톡 ID: example</p><p>평일 09:00 – 17:00 방문 · 토요일 오전</p></div>
+ </div>
+</footer>
+
+<div class="mcta"><div><small>월 2회 첫 달</small><b class="num">19,500원</b></div><a class="btn btn-main" href="#apply">신청하기</a></div>
+
+<script>
+(function(){
+ var io='IntersectionObserver' in window?new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12}):null;
+ document.querySelectorAll('.rv').forEach(function(el){io?io.observe(el):el.classList.add('in')});
+ var mc=document.querySelector('.mcta'),hero=document.querySelector('.hero'),ap=document.getElementById('apply');
+ if('IntersectionObserver' in window){var vis={h:true,a:false};var o2=new IntersectionObserver(function(es){es.forEach(function(e){vis[e.target===hero?'h':'a']=e.isIntersecting});mc.classList.toggle('show',!vis.h&&!vis.a)});o2.observe(hero);o2.observe(ap)}
+ document.querySelectorAll('[data-plan]').forEach(function(a){a.addEventListener('click',function(){var r=document.querySelector('input[name=plan][value='+a.dataset.plan+']');if(r)r.checked=true})});
+ var f=document.getElementById('f'),err=document.getElementById('err'),done=document.getElementById('done');
+ var names={once:'한 번만 · 25,000원',two:'월 2회 정기 · 첫 달 19,500원',four:'월 4회 정기 · 첫 달 36,000원'};
+ f.addEventListener('submit',function(e){
+  e.preventDefault();
+  var v=function(id){return document.getElementById(id).value.trim()};
+  var days=[].slice.call(document.querySelectorAll('input[name=d]:checked')).map(function(x){return x.value});
+  var miss=[];
+  if(!v('nm'))miss.push('이름');if(!v('ph'))miss.push('연락처');if(!v('apt'))miss.push('아파트 이름');if(!v('zone'))miss.push('주차 구역');if(!v('car'))miss.push('차종');if(!days.length)miss.push('희망 요일');
+  if(miss.length){err.textContent=miss.join(', ')+' 항목을 채워 주세요';return}
+  if(!document.getElementById('ag').checked){err.textContent='정보 이용 동의에 체크해 주세요';return}
+  err.textContent='';
+  var p=document.querySelector('input[name=plan]:checked').value;
+  var rows=[['단지',v('apt')+(v('dong')?' '+v('dong'):'')],['주차 구역',v('zone')],['차종',v('car')],['요금제',names[p]],['희망 요일',days.join(' · ')]];
+  var t=document.getElementById('ticket');t.innerHTML='';
+  rows.forEach(function(r){var dt=document.createElement('dt');dt.textContent=r[0];var dd=document.createElement('dd');dd.textContent=r[1];t.appendChild(dt);t.appendChild(dd)});
+  f.style.display='none';done.classList.add('on');
+ });
+ document.getElementById('again').addEventListener('click',function(){done.classList.remove('on');f.style.display=''});
+})();
+</script>
+</body>
+</html>
