@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>섬한바퀴 자전거여행 · 제주 해안도로 3박 4일</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500;600&family=IBM+Plex+Sans+KR:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+ --paper:#F1ECE1;--paper2:#E7E0D1;--card:#FAF7F0;
+ --ink:#23282B;--ink2:#4C5458;--ink3:#6B7173;
+ --basalt:#3A3F42;--sea:#1F4F55;--sea2:#2E6870;--seaPale:#CFDDD9;
+ --camellia:#C2303A;--camelliaD:#A52530;--leaf:#4E6B45;
+ --line:rgba(35,40,43,.16)
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{background:var(--paper);scroll-behavior:smooth}
+body{font-family:'IBM Plex Sans KR',sans-serif;color:var(--ink);background:var(--paper);line-height:1.6;font-size:16px;word-break:keep-all;-webkit-font-smoothing:antialiased;overflow-x:clip}
+a{color:inherit}
+.mono{font-family:'IBM Plex Mono',monospace;font-variant-numeric:tabular-nums}
+.wrap{max-width:1240px;margin:0 auto;padding:0 40px}
+h1,h2,h3{font-weight:700;letter-spacing:-.02em;line-height:1.25}
+h2{font-size:clamp(28px,3.2vw,40px)}
+.eyebrow{font-size:14px;font-weight:600;color:var(--sea2);margin-bottom:12px;display:flex;align-items:center;gap:8px}
+.eyebrow:before{content:"";width:24px;height:2px;background:var(--sea2)}
+section{padding:96px 0}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;height:48px;padding:0 24px;border-radius:8px;font-weight:600;font-size:16px;text-decoration:none;border:0;cursor:pointer;font-family:inherit;transition:background-color .2s,color .2s}
+.btn svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.btn-main{background:var(--camellia);color:#fff}
+.btn-main:hover{background:var(--camelliaD)}
+.btn-sub{background:transparent;color:var(--ink);box-shadow:inset 0 0 0 1.5px var(--ink)}
+.btn-sub:hover{background:var(--ink);color:var(--paper)}
+
+/* header */
+header{position:sticky;top:0;z-index:20;background:rgba(241,236,225,.94);backdrop-filter:blur(6px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:72px;gap:24px}
+.logo{display:flex;align-items:center;gap:12px;text-decoration:none}
+.logo svg{width:36px;height:36px}
+.logo b{font-size:20px;font-weight:700;letter-spacing:-.02em}
+.logo small{display:block;font-size:12px;color:var(--ink3);font-weight:500;line-height:1.2}
+.menu{display:flex;gap:32px;list-style:none;font-size:15px;font-weight:500}
+.menu a{text-decoration:none;color:var(--ink2);padding:8px 0}
+.menu a:hover{color:var(--ink)}
+.nav .btn{height:40px;padding:0 16px;font-size:15px}
+
+/* hero */
+.hero{padding:64px 0 80px;position:relative}
+.hero-grid{display:grid;grid-template-columns:minmax(0,.88fr) minmax(0,1.12fr);gap:48px;align-items:center}
+.hero h1{font-size:clamp(36px,4.4vw,56px);line-height:1.18;letter-spacing:-.03em}
+.hero h1 .km{color:var(--camellia)}
+.hero .lead{font-size:18px;color:var(--ink2);margin-top:24px;max-width:500px}
+.hero .acts{display:flex;gap:12px;margin-top:32px;flex-wrap:wrap}
+.cue{margin-top:40px;display:grid;grid-template-columns:repeat(3,1fr);border-top:1.5px solid var(--ink);max-width:520px}
+.cue div{padding:16px 16px 0 0}
+.cue div+div{padding-left:16px;border-left:1px solid var(--line)}
+.cue b{display:block;font-size:24px;font-weight:700;font-variant-numeric:tabular-nums}
+.cue span{font-size:14px;color:var(--ink3)}
+.mapcard{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:24px 24px 16px;box-shadow:0 32px 64px -48px rgba(31,79,85,.6)}
+.mapcard svg{display:block;width:100%;height:auto}
+.maphead{display:flex;justify-content:space-between;align-items:baseline;gap:12px;padding-bottom:12px;border-bottom:1px dashed var(--line);font-size:14px;color:var(--ink3)}
+.maphead b{font-size:15px;color:var(--ink);font-weight:600}
+.elev-h{display:flex;justify-content:space-between;gap:12px;font-size:13px;color:var(--ink3);margin-top:16px}
+.elev-h b{color:var(--camelliaD);font-weight:600}
+.elev{display:block;width:100%;height:72px;margin-top:8px}
+.elev-d{display:grid;grid-template-columns:54fr 62fr 58fr 60fr;font-family:'IBM Plex Mono',monospace;font-size:13px;font-weight:600;text-align:center;padding-top:8px;border-top:1px solid var(--ink)}
+.legend{display:flex;flex-wrap:wrap;gap:8px 20px;font-size:13px;color:var(--ink2);padding-top:12px}
+.legend i{display:inline-block;width:20px;height:4px;border-radius:2px;margin-right:8px;vertical-align:middle}
+
+/* days */
+.days{background:var(--card);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.sec-head{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:48px;align-items:end;margin-bottom:48px}
+.sec-head p{color:var(--ink2);font-size:17px}
+.daylist{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border-top:1.5px solid var(--ink)}
+.day{padding:24px 24px 24px 0}
+.day+.day{padding-left:24px;border-left:1px solid var(--line)}
+.day .n{font-family:'IBM Plex Mono',monospace;font-size:14px;font-weight:600;color:var(--sea2)}
+.day h3{font-size:21px;margin:8px 0 4px}
+.day .route{font-size:15px;color:var(--ink2)}
+.day dl{display:grid;grid-template-columns:auto 1fr;gap:8px 16px;margin:20px 0;font-size:14px}
+.day dt{color:var(--ink3)}
+.day dd{font-family:'IBM Plex Mono',monospace;font-weight:500;font-variant-numeric:tabular-nums}
+.day p{font-size:15px;color:var(--ink2);border-top:1px dashed var(--line);padding-top:16px}
+.wind{display:inline-flex;align-items:center;gap:4px}
+.wind svg{width:16px;height:16px;fill:none;stroke:var(--ink);stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+
+/* support */
+.support-grid{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:64px;align-items:center}
+.van{background:var(--seaPale);border-radius:20px;overflow:hidden;aspect-ratio:8/5}
+.van svg{display:block;width:100%;height:100%}
+.inc{list-style:none;margin-top:32px}
+.inc li{display:grid;grid-template-columns:40px 1fr;gap:16px;padding:20px 0;border-top:1px solid var(--line)}
+.inc li:last-child{border-bottom:1px solid var(--line)}
+.inc svg{width:28px;height:28px;fill:none;stroke:var(--sea);stroke-width:1.75;stroke-linecap:round;stroke-linejoin:round;margin-top:2px}
+.inc b{display:block;font-size:17px;font-weight:600}
+.inc span{font-size:15px;color:var(--ink2)}
+
+/* bikes */
+.bikes{background:var(--basalt);color:#ECE7DC}
+.bikes .eyebrow{color:#9FC3C2}.bikes .eyebrow:before{background:#9FC3C2}
+.bikes .sec-head p{color:#C9C6BE}
+.bike-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.bike{background:#454B4E;border-radius:16px;padding:24px;display:flex;flex-direction:column;border:1px solid rgba(236,231,220,.1)}
+.bike.pick{background:#ECE7DC;color:var(--ink)}
+.bike svg{width:100%;height:auto;display:block;margin-bottom:16px}
+.bike h3{font-size:20px}
+.bike .who{font-size:14px;color:#B9B6AE;margin-top:4px}
+.bike.pick .who{color:var(--ink3)}
+.bike ul{list-style:none;margin:16px 0 20px;font-size:15px;flex:1}
+.bike li{padding:8px 0;border-top:1px solid rgba(236,231,220,.14);display:flex;justify-content:space-between;gap:12px}
+.bike.pick li{border-color:var(--line)}
+.bike li span:last-child{font-weight:500;font-variant-numeric:tabular-nums}
+.bike .price{font-size:15px;padding-top:12px;border-top:1.5px solid currentColor;display:flex;justify-content:space-between;align-items:baseline}
+.bike .price b{font-family:'IBM Plex Mono',monospace;font-size:20px;font-weight:600}
+.tag{font-size:13px;font-weight:600;color:var(--camellia);margin-bottom:8px}
+
+/* dates */
+.dates-grid{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:64px;align-items:start}
+.price-box{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:32px}
+.price-box .big{font-family:'IBM Plex Mono',monospace;font-size:40px;font-weight:600;letter-spacing:-.02em;font-variant-numeric:tabular-nums;margin:8px 0 4px}
+.price-box .big small{font-family:'IBM Plex Sans KR',sans-serif;font-size:16px;font-weight:500;color:var(--ink3);margin-left:4px}
+.price-box ul{list-style:none;margin-top:24px;font-size:15px;color:var(--ink2)}
+.price-box li{padding:12px 0;border-top:1px dashed var(--line);display:flex;justify-content:space-between;gap:16px}
+.price-box li span:last-child{font-family:'IBM Plex Mono',monospace;color:var(--ink);font-variant-numeric:tabular-nums;white-space:nowrap}
+table{width:100%;border-collapse:collapse;font-size:15px}
+th{text-align:left;font-weight:500;color:var(--ink3);font-size:14px;padding:0 12px 12px 0;border-bottom:1.5px solid var(--ink)}
+td{padding:16px 12px 16px 0;border-bottom:1px solid var(--line);vertical-align:middle}
+td.mono{font-family:'IBM Plex Sans KR',sans-serif;font-weight:600;font-variant-numeric:tabular-nums}
+.st{display:inline-block;font-size:13px;font-weight:600;padding:4px 8px;border-radius:6px}
+.st.open{background:#DCE7E3;color:var(--sea)}
+.st.few{background:#F3DADB;color:var(--camelliaD)}
+.st.full{background:var(--paper2);color:var(--ink3)}
+td .pickdate{font-family:inherit;font-size:14px;font-weight:600;background:none;border:0;color:var(--sea);text-decoration:underline;text-underline-offset:4px;cursor:pointer;min-height:44px;padding:0 4px}
+td .pickdate:disabled{color:var(--ink3);text-decoration:none;cursor:default}
+
+/* prep */
+.prep{background:var(--paper2)}
+.faq{display:grid;grid-template-columns:repeat(2,1fr);gap:0 48px;border-top:1.5px solid var(--ink)}
+.faq div{padding:24px 0;border-bottom:1px solid var(--line)}
+.faq b{display:block;font-size:17px;font-weight:600;margin-bottom:8px}
+.faq p{font-size:15px;color:var(--ink2)}
+
+/* booking */
+.book-grid{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:64px;align-items:start}
+.book-side p{color:var(--ink2);font-size:17px;margin-top:16px}
+.contact{margin-top:32px;font-size:15px;color:var(--ink2);border-top:1px solid var(--line)}
+.contact div{display:flex;justify-content:space-between;padding:12px 0;border-bottom:1px solid var(--line)}
+.contact b{color:var(--ink);font-weight:500}
+form{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:32px;display:grid;grid-template-columns:1fr 1fr;gap:20px}
+label{min-width:0;display:flex;flex-direction:column;gap:8px;font-size:14px;font-weight:500;color:var(--ink2)}
+label.full{grid-column:1/-1}
+input,select,textarea{width:100%;min-width:0;font-family:inherit;font-size:16px;color:var(--ink);background:#fff;border:1px solid rgba(35,40,43,.24);border-radius:8px;padding:0 12px;height:48px}
+textarea{height:96px;padding:12px;resize:vertical}
+input:focus,select:focus,textarea:focus{outline:2px solid var(--sea2);outline-offset:1px}
+.seg{display:flex;gap:8px;flex-wrap:wrap}
+.seg button{font-family:inherit;font-size:15px;height:44px;padding:0 16px;border-radius:8px;border:1px solid rgba(35,40,43,.24);background:#fff;color:var(--ink);cursor:pointer;transition:background-color .2s}
+.seg button[aria-pressed=true]{background:var(--sea);color:#fff;border-color:var(--sea)}
+form .btn{grid-column:1/-1;width:100%}
+.done{grid-column:1/-1;display:none;background:#DCE7E3;color:var(--sea);border-radius:8px;padding:16px;font-size:15px}
+.done.show{display:block}
+
+footer{background:var(--ink);color:#B9BDBB;padding:48px 0;font-size:14px}
+.foot{display:flex;justify-content:space-between;gap:32px;flex-wrap:wrap}
+.foot b{color:#ECE7DC;font-size:17px;display:block;margin-bottom:8px}
+
+.rv{opacity:0;transform:translateY(16px);transition:opacity .6s ease,transform .6s ease}
+.rv.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}}
+
+@media(max-width:1024px){
+ .hero-grid,.support-grid,.dates-grid,.book-grid,.sec-head{grid-template-columns:1fr;gap:40px}
+ .daylist{grid-template-columns:1fr 1fr}
+ .day:nth-child(3){padding-left:0;border-left:0}
+ .day:nth-child(n+3){border-top:1px solid var(--line)}
+ .bike-grid{grid-template-columns:1fr}
+ .menu{display:none}
+}
+@media(max-width:640px){
+ .wrap{padding:0 16px}
+ section{padding:64px 0}
+ .hero{padding:32px 0 56px}
+ .hero .lead{font-size:16px}
+ .cue b{font-size:20px}
+ .mapcard{padding:16px 12px 12px;border-radius:16px}
+ .maphead{flex-direction:column;gap:4px}
+ .daylist{grid-template-columns:1fr}
+ .day,.day+.day{padding:24px 0;border-left:0}
+ .day+.day{border-top:1px solid var(--line)}
+ .faq{grid-template-columns:1fr}
+ form{grid-template-columns:1fr;padding:20px}
+ .logo small{display:none}
+ .nav{height:64px}
+ table{font-size:14px}
+ th:nth-child(3),td:nth-child(3){display:none}
+ .price-box{padding:24px}
+ .price-box .big{font-size:32px}
+}
+</style>
+</head>
+<body>
+<header>
+ <div class="wrap nav">
+  <a class="logo" href="#top" aria-label="섬한바퀴 자전거여행">
+   <svg viewBox="0 0 36 36" aria-hidden="true"><circle cx="18" cy="18" r="16" fill="none" stroke="#23282B" stroke-width="2"/><path d="M7 21c3-7 8-10 13-10 5 0 8 3 9 6-2 4-6 7-12 7-4 0-8-1-10-3z" fill="#1F4F55"/><path d="M7 21c3-7 8-10 13-10 5 0 8 3 9 6" fill="none" stroke="#C2303A" stroke-width="2.4" stroke-linecap="round" stroke-dasharray="0 0"/></svg>
+   <span><b>섬한바퀴</b><small>제주 해안도로 자전거여행</small></span>
+  </a>
+  <ul class="menu">
+   <li><a href="#days">코스</a></li>
+   <li><a href="#support">포함 사항</a></li>
+   <li><a href="#bikes">자전거</a></li>
+   <li><a href="#dates">출발일·요금</a></li>
+   <li><a href="#prep">준비</a></li>
+  </ul>
+  <a class="btn btn-main" href="#book">출발일 상담</a>
+ </div>
+</header>
+
+<main id="top">
+<section class="hero">
+ <div class="wrap hero-grid">
+  <div>
+   <h1>제주 해안도로 <span class="km">234km</span>,<br>하루 60km씩 나눠<br>나흘에 한 바퀴</h1>
+   <p class="lead">짐은 승합차가 다음 숙소로 먼저 옮기고, 지원 차량이 10km 간격으로 뒤따릅니다. 오르막에서 힘들면 그 구간만 차에 타도 됩니다.</p>
+   <div class="acts">
+    <a class="btn btn-main" href="#dates">2027 봄 출발일 보기 <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+    <a class="btn btn-sub" href="#days">하루 코스 보기</a>
+   </div>
+   <div class="cue">
+    <div><b>3박 4일</b><span>제주시 출발·도착</span></div>
+    <div><b>8명</b><span>한 출발 최대 인원</span></div>
+    <div><b>58km</b><span>하루 평균 주행</span></div>
+   </div>
+  </div>
+
+  <div class="mapcard rv" aria-label="제주 해안도로 일주 코스 지도와 고도표">
+   <div class="maphead"><b>일주 코스 · 시계 반대 방향</b><span class="mono">총 234km · 누적 상승 1,180m</span></div>
+   <svg id="mapsvg" viewBox="0 0 640 320" role="img" aria-label="섬 해안을 따라 네 구간으로 나눈 붉은 경로선 지도">
+    <defs>
+     <linearGradient id="seaG" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#D7E4E0"/><stop offset="1" stop-color="#C3D6D2"/></linearGradient>
+     <radialGradient id="landG" cx=".5" cy=".48" r=".6"><stop offset="0" stop-color="#B9C1A2"/><stop offset=".55" stop-color="#CBCDB0"/><stop offset="1" stop-color="#DAD6BE"/></radialGradient>
+     <pattern id="wave" width="24" height="12" patternUnits="userSpaceOnUse"><path d="M0 8q6-5 12 0t12 0" fill="none" stroke="#9FBDB7" stroke-width="1"/></pattern>
+     <linearGradient id="elevG" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1F4F55" stop-opacity=".55"/><stop offset="1" stop-color="#1F4F55" stop-opacity=".08"/></linearGradient>
+     <filter id="soft" x="-10%" y="-10%" width="120%" height="120%"><feGaussianBlur stdDeviation="6"/></filter>
+    </defs>
+    <rect x="0" y="0" width="640" height="320" rx="12" fill="url(#seaG)"/>
+    <rect x="0" y="0" width="640" height="320" rx="12" fill="url(#wave)" opacity=".5"/>
+    <!-- island shadow -->
+    <path d="M78 176c6-30 40-62 92-80 50-17 104-24 160-26 62-2 118 6 166 22 40 14 66 34 72 58 6 24-8 46-40 62-40 20-96 30-160 34-66 4-132 2-186-8-56-10-96-26-104-62z" fill="#8FA9A3" opacity=".5" filter="url(#soft)" transform="translate(4 8)"/>
+    <!-- island -->
+    <path id="isl" d="M78 176c6-30 40-62 92-80 50-17 104-24 160-26 62-2 118 6 166 22 40 14 66 34 72 58 6 24-8 46-40 62-40 20-96 30-160 34-66 4-132 2-186-8-56-10-96-26-104-62z" fill="url(#landG)" stroke="#7E8A74" stroke-width="1.2"/>
+    <!-- basalt coast dots -->
+    <path d="M78 176c6-30 40-62 92-80 50-17 104-24 160-26 62-2 118 6 166 22 40 14 66 34 72 58 6 24-8 46-40 62-40 20-96 30-160 34-66 4-132 2-186-8-56-10-96-26-104-62z" fill="none" stroke="#3A3F42" stroke-width="2.4" stroke-dasharray="1 5" stroke-linecap="round" opacity=".55"/>
+    <!-- mountain contours -->
+    <g fill="none" stroke="#6F7D63" stroke-width="1" opacity=".75">
+     <ellipse cx="330" cy="166" rx="150" ry="62"/>
+     <ellipse cx="328" cy="164" rx="112" ry="46"/>
+     <ellipse cx="326" cy="162" rx="76" ry="31"/>
+     <ellipse cx="324" cy="160" rx="44" ry="18"/>
+     <ellipse cx="322" cy="159" rx="18" ry="8"/>
+    </g>
+    <path d="M314 152l8-12 9 12" fill="none" stroke="#3A3F42" stroke-width="1.6" stroke-linejoin="round"/>
+    <text x="322" y="186" text-anchor="middle" font-family="IBM Plex Sans KR" font-size="22" fill="#4C5458">한라산</text>
+    <!-- oreum small cones -->
+    <g fill="#A6B08E" stroke="#6F7D63" stroke-width=".8"><circle cx="470" cy="150" r="7"/><circle cx="492" cy="166" r="5"/><circle cx="178" cy="188" r="6"/><circle cx="214" cy="214" r="5"/><circle cx="430" cy="210" r="6"/></g>
+    <!-- route segments: D1 north-west, D2 south-west, D3 south-east, D4 north-east -->
+    <g fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="5">
+     <path d="M300 82c-50 2-96 8-130 22-42 16-70 40-78 68" stroke="#C2303A"/>
+     <path d="M92 172c2 30 38 48 90 58 44 8 92 12 142 12" stroke="#C2303A"/>
+     <path d="M324 242c60 0 116-6 158-20 30-10 50-22 58-38" stroke="#C2303A"/>
+     <path d="M540 184c6-22-14-42-52-58-46-18-108-28-188-28" stroke="#C2303A"/>
+    </g>
+    <!-- overnight stops -->
+    <g font-family="IBM Plex Sans KR" font-size="22" font-weight="600" fill="#23282B">
+     <circle cx="300" cy="82" r="9" fill="#23282B"/><circle cx="300" cy="82" r="4" fill="#F1ECE1"/>
+     <text x="300" y="60" text-anchor="middle" font-weight="700">제주시 출발·도착</text>
+     <circle cx="92" cy="172" r="7" fill="#FAF7F0" stroke="#23282B" stroke-width="2.5"/>
+     <text x="80" y="150" text-anchor="end">협재</text>
+     <circle cx="324" cy="242" r="7" fill="#FAF7F0" stroke="#23282B" stroke-width="2.5"/>
+     <text x="324" y="276" text-anchor="middle">중문</text>
+     <circle cx="540" cy="184" r="7" fill="#FAF7F0" stroke="#23282B" stroke-width="2.5"/>
+     <text x="574" y="216" text-anchor="middle">표선</text>
+    </g>
+    <!-- day chips -->
+    <g font-family="IBM Plex Mono" font-size="22" font-weight="600" fill="#fff">
+     <rect x="146" y="85" width="56" height="30" rx="6" fill="#1F4F55"/><text x="174" y="109" text-anchor="middle">D1</text>
+     <rect x="164" y="235" width="56" height="30" rx="6" fill="#1F4F55"/><text x="192" y="259" text-anchor="middle">D2</text>
+     <rect x="440" y="229" width="56" height="30" rx="6" fill="#1F4F55"/><text x="468" y="253" text-anchor="middle">D3</text>
+     <rect x="464" y="87" width="56" height="30" rx="6" fill="#1F4F55"/><text x="492" y="111" text-anchor="middle">D4</text>
+    </g>
+    <!-- compass + wind -->
+    <g transform="translate(584 62)"><circle r="22" fill="#FAF7F0" stroke="#23282B" stroke-width="1.2"/><path d="M0-15l5 15h-10z" fill="#23282B"/><path d="M0 15l5-15h-10z" fill="#B9BDBB"/><text x="-30" y="8" text-anchor="end" font-family="IBM Plex Mono" font-size="22" font-weight="600" fill="#23282B">N</text></g>
+    <g transform="translate(36 40)" font-family="IBM Plex Sans KR" font-size="12" fill="#1F4F55"><g transform="rotate(26 22 8)"><path d="M0 8h44M34 0l10 8-10 8" fill="none" stroke="#1F4F55" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></g><text x="0" y="42" font-size="22">봄 북서풍</text></g>
+   </svg>
+   <div class="elev-h"><span>고도 단면</span><span>가장 높은 곳 <b>송악산 고개 112m</b></span></div>
+   <svg class="elev" viewBox="40 0 600 108" preserveAspectRatio="none" aria-hidden="true">
+    <g stroke="#23282B" stroke-opacity=".12" vector-effect="non-scaling-stroke"><path d="M40 20h600M40 60h600M40 100h600" vector-effect="non-scaling-stroke"/></g>
+    <path d="M40 100 L60 94 80 90 100 96 120 88 140 92 160 84 180 94 200 90 214 92 230 86 250 70 268 56 284 62 300 50 316 66 334 82 350 76 366 88 380 90 400 84 420 78 440 92 460 88 480 94 500 80 520 72 540 86 560 90 580 94 600 92 620 96 640 100 640 104 40 104 Z" fill="url(#elevG2)"/>
+    <defs><linearGradient id="elevG2" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1F4F55" stop-opacity=".55"/><stop offset="1" stop-color="#1F4F55" stop-opacity=".08"/></linearGradient></defs>
+    <path d="M40 100 L60 94 80 90 100 96 120 88 140 92 160 84 180 94 200 90 214 92 230 86 250 70 268 56 284 62 300 50 316 66 334 82 350 76 366 88 380 90 400 84 420 78 440 92 460 88 480 94 500 80 520 72 540 86 560 90 580 94 600 92 620 96 640 100" fill="none" stroke="#1F4F55" stroke-width="2" vector-effect="non-scaling-stroke"/>
+    <path d="M178.5 4v104M337.4 4v104M486 4v104" stroke="#23282B" stroke-width="1" stroke-dasharray="3 3" vector-effect="non-scaling-stroke"/>
+    <path d="M300 50v58" stroke="#C2303A" stroke-width="1.5" vector-effect="non-scaling-stroke"/>
+   </svg>
+   <div class="elev-d"><span>D1 54km</span><span>D2 62km</span><span>D3 58km</span><span>D4 60km</span></div>
+   <div class="legend"><span><i style="background:#C2303A"></i>해안도로 주행</span><span><i style="background:#1F4F55"></i>D1~D4 하루 구간</span><span><i style="background:#23282B;height:8px;width:8px;border-radius:50%"></i>숙소</span></div>
+  </div>
+ </div>
+</section>
+
+<section class="days" id="days">
+ <div class="wrap">
+  <div class="sec-head rv">
+   <div><div class="eyebrow">나흘 코스</div><h2>바람을 등지도록<br>시계 반대 방향으로 돕니다</h2></div>
+   <p>봄철 제주는 북서풍이 잦아 서쪽 해안을 먼저 달리면 뒤바람을 받는 구간이 길어집니다. 매일 오전 9시에 출발해 오후 4시 전에 숙소에 들어갑니다.</p>
+  </div>
+  <div class="daylist rv">
+   <article class="day"><span class="n">DAY 1</span><h3>용두암에서 협재까지</h3><div class="route">애월 카페 거리 · 한림 항구</div>
+    <dl><dt>거리</dt><dd>54km</dd><dt>상승</dt><dd>210m</dd><dt>바람</dt><dd><span class="wind"><svg viewBox="0 0 16 16"><path d="M2 8h11M9 4l4 4-4 4"/></svg>뒤바람</span></dd></dl>
+    <p>첫날은 짧게. 오전에 자전거를 몸에 맞추고 기어 쓰는 법을 20분 연습한 뒤 출발합니다.</p></article>
+   <article class="day"><span class="n">DAY 2</span><h3>협재에서 중문까지</h3><div class="route">모슬포 · 송악산 둘레 · 대평포구</div>
+    <dl><dt>거리</dt><dd>62km</dd><dt>상승</dt><dd>420m</dd><dt>바람</dt><dd><span class="wind"><svg viewBox="0 0 16 16"><path d="M8 2v11M4 9l4 4 4-4"/></svg>옆바람</span></dd></dl>
+    <p>나흘 중 오르막이 가장 많은 날. 송악산 고개는 차량 탑승을 미리 정해 둘 수 있습니다.</p></article>
+   <article class="day"><span class="n">DAY 3</span><h3>중문에서 표선까지</h3><div class="route">서귀포 · 쇠소깍 · 남원 큰엉</div>
+    <dl><dt>거리</dt><dd>58km</dd><dt>상승</dt><dd>330m</dd><dt>바람</dt><dd><span class="wind"><svg viewBox="0 0 16 16"><path d="M2 8h11M9 4l4 4-4 4"/></svg>뒤바람</span></dd></dl>
+    <p>점심은 서귀포 시장에서 각자 고릅니다. 오후에는 바다를 오른쪽에 두고 평지를 달립니다.</p></article>
+   <article class="day"><span class="n">DAY 4</span><h3>표선에서 제주시까지</h3><div class="route">성산 · 세화 · 김녕 · 함덕</div>
+    <dl><dt>거리</dt><dd>60km</dd><dt>상승</dt><dd>220m</dd><dt>바람</dt><dd><span class="wind"><svg viewBox="0 0 16 16"><path d="M14 8H3M7 4L3 8l4 4"/></svg>맞바람</span></dd></dl>
+    <p>마지막 날 오후 3시 30분 제주시 도착. 공항까지 짐과 함께 차로 모셔 드립니다.</p></article>
+  </div>
+ </div>
+</section>
+
+<section id="support">
+ <div class="wrap support-grid">
+  <div class="van rv">
+   <svg viewBox="0 80 640 400" preserveAspectRatio="xMidYMid slice" role="img" aria-label="현무암 돌담이 이어진 해안도로 위를 자전거 두 대가 달리고 뒤에서 승합차가 비상등을 켜고 따라오는 그림">
+    <defs>
+     <linearGradient id="sky2" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#E5ECE6"/><stop offset="1" stop-color="#CFDDD9"/></linearGradient>
+     <linearGradient id="seaB" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#3D7880"/><stop offset="1" stop-color="#1F4F55"/></linearGradient>
+     <linearGradient id="road" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#5E6466"/><stop offset="1" stop-color="#3A3F42"/></linearGradient>
+     <linearGradient id="vanB" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FAF7F0"/><stop offset="1" stop-color="#DCD6C8"/></linearGradient>
+     <radialGradient id="stone" cx=".35" cy=".3" r=".8"><stop offset="0" stop-color="#5A5F60"/><stop offset="1" stop-color="#2E3234"/></radialGradient>
+    </defs>
+    <rect width="640" height="480" fill="url(#sky2)"/>
+    <path d="M0 176h640v90H0z" fill="url(#seaB)"/>
+    <g stroke="#9FC3C2" stroke-width="1.4" opacity=".55" fill="none"><path d="M20 196h60M140 210h90M300 192h70M430 220h110M560 200h50M60 240h80M250 236h60"/></g>
+    <!-- far coast + windmills -->
+    <path d="M380 176c40-14 90-22 150-20 40 2 80 8 110 16v4H380z" fill="#6F7D63" opacity=".7"/>
+    <g stroke="#FAF7F0" stroke-width="2"><path d="M560 160v-36M600 164v-30"/></g>
+    <g fill="#FAF7F0"><path d="M560 124l-12-8 13 6zM560 124l14-6-12 9zM560 124l-1 14-1-14z"/><path d="M600 134l-10-7 11 5zM600 134l12-5-10 8z"/></g>
+    <!-- road -->
+    <path d="M0 300c120-14 300-22 640-16v196H0z" fill="url(#road)"/>
+    <path d="M0 382c160-12 360-16 640-10" stroke="#E8D36A" stroke-width="4" stroke-dasharray="36 22" fill="none"/>
+    <path d="M0 312c140-12 340-18 640-14" stroke="#C2303A" stroke-width="6" fill="none" opacity=".9"/>
+    <path d="M0 452c180-8 380-10 640-6" stroke="#E7E0D1" stroke-width="4" fill="none" opacity=".8"/>
+    <path d="M0 330c160-14 360-20 640-16v14c-280-2-480 4-640 18z" fill="#1E2224" opacity=".25"/>
+    <g opacity=".5"><circle cx="243" cy="471" r="2" fill="#6E7476"/><circle cx="378" cy="474" r="1.5" fill="#7C8284"/><circle cx="594" cy="336" r="2" fill="#6E7476"/><circle cx="480" cy="386" r="2" fill="#6E7476"/><circle cx="196" cy="440" r="2" fill="#7C8284"/><circle cx="487" cy="421" r="2" fill="#6E7476"/><circle cx="237" cy="358" r="2" fill="#2E3234"/><circle cx="15" cy="336" r="1" fill="#7C8284"/><circle cx="43" cy="397" r="1" fill="#2E3234"/><circle cx="484" cy="472" r="2" fill="#2E3234"/><circle cx="437" cy="421" r="2" fill="#7C8284"/><circle cx="455" cy="354" r="1.5" fill="#6E7476"/><circle cx="36" cy="354" r="1.5" fill="#6E7476"/><circle cx="264" cy="431" r="2" fill="#2E3234"/><circle cx="431" cy="449" r="1.5" fill="#7C8284"/><circle cx="359" cy="456" r="2" fill="#2E3234"/><circle cx="598" cy="379" r="1.5" fill="#7C8284"/><circle cx="29" cy="391" r="2" fill="#7C8284"/><circle cx="167" cy="403" r="2" fill="#7C8284"/><circle cx="582" cy="346" r="2" fill="#7C8284"/><circle cx="216" cy="466" r="1.5" fill="#2E3234"/><circle cx="127" cy="336" r="1.5" fill="#7C8284"/><circle cx="495" cy="342" r="1.5" fill="#6E7476"/><circle cx="420" cy="358" r="1" fill="#2E3234"/><circle cx="437" cy="426" r="1" fill="#6E7476"/><circle cx="619" cy="477" r="1" fill="#2E3234"/><circle cx="600" cy="404" r="2" fill="#2E3234"/><circle cx="517" cy="380" r="1" fill="#2E3234"/><circle cx="7" cy="339" r="1" fill="#7C8284"/><circle cx="548" cy="328" r="1" fill="#2E3234"/><circle cx="298" cy="476" r="1.5" fill="#6E7476"/><circle cx="43" cy="406" r="1.5" fill="#2E3234"/><circle cx="141" cy="416" r="1.5" fill="#2E3234"/><circle cx="532" cy="418" r="2" fill="#7C8284"/><circle cx="572" cy="346" r="2" fill="#7C8284"/><circle cx="277" cy="430" r="2" fill="#7C8284"/><circle cx="243" cy="397" r="1.5" fill="#2E3234"/><circle cx="533" cy="397" r="2" fill="#2E3234"/><circle cx="11" cy="426" r="2" fill="#2E3234"/><circle cx="20" cy="416" r="2" fill="#7C8284"/><circle cx="136" cy="335" r="2" fill="#7C8284"/><circle cx="340" cy="439" r="1.5" fill="#7C8284"/><circle cx="361" cy="475" r="2" fill="#2E3234"/><circle cx="501" cy="325" r="2" fill="#6E7476"/><circle cx="21" cy="414" r="1.5" fill="#7C8284"/><circle cx="467" cy="396" r="2" fill="#7C8284"/><circle cx="327" cy="365" r="1.5" fill="#6E7476"/><circle cx="320" cy="414" r="2" fill="#2E3234"/><circle cx="307" cy="416" r="1" fill="#6E7476"/><circle cx="582" cy="353" r="1.5" fill="#7C8284"/><circle cx="227" cy="388" r="1" fill="#2E3234"/><circle cx="191" cy="431" r="2" fill="#7C8284"/><circle cx="99" cy="346" r="2" fill="#2E3234"/><circle cx="341" cy="377" r="1.5" fill="#6E7476"/><circle cx="81" cy="406" r="2" fill="#7C8284"/><circle cx="223" cy="465" r="1.5" fill="#2E3234"/><circle cx="230" cy="350" r="1" fill="#7C8284"/><circle cx="195" cy="400" r="2" fill="#6E7476"/><circle cx="285" cy="407" r="2" fill="#6E7476"/><circle cx="634" cy="408" r="2" fill="#6E7476"/><circle cx="431" cy="394" r="2" fill="#2E3234"/><circle cx="475" cy="408" r="2" fill="#2E3234"/><circle cx="297" cy="427" r="2" fill="#2E3234"/><circle cx="36" cy="425" r="1" fill="#6E7476"/><circle cx="4" cy="442" r="2" fill="#7C8284"/><circle cx="444" cy="463" r="2" fill="#6E7476"/><circle cx="33" cy="436" r="2" fill="#7C8284"/><circle cx="531" cy="393" r="2" fill="#2E3234"/><circle cx="232" cy="337" r="2" fill="#2E3234"/><circle cx="122" cy="382" r="1" fill="#6E7476"/><circle cx="524" cy="370" r="1.5" fill="#7C8284"/><circle cx="50" cy="323" r="1.5" fill="#7C8284"/><circle cx="123" cy="363" r="2" fill="#2E3234"/><circle cx="244" cy="325" r="2" fill="#7C8284"/><circle cx="423" cy="333" r="2" fill="#6E7476"/><circle cx="349" cy="352" r="1.5" fill="#7C8284"/><circle cx="488" cy="335" r="1.5" fill="#6E7476"/><circle cx="202" cy="351" r="2" fill="#6E7476"/><circle cx="175" cy="381" r="1.5" fill="#6E7476"/><circle cx="7" cy="444" r="2" fill="#7C8284"/><circle cx="409" cy="332" r="1.5" fill="#6E7476"/><circle cx="275" cy="478" r="2" fill="#7C8284"/><circle cx="433" cy="333" r="1.5" fill="#2E3234"/><circle cx="1" cy="334" r="1" fill="#6E7476"/><circle cx="127" cy="332" r="1" fill="#2E3234"/><circle cx="33" cy="342" r="2" fill="#7C8284"/><circle cx="501" cy="400" r="1" fill="#2E3234"/><circle cx="73" cy="409" r="1.5" fill="#7C8284"/><circle cx="398" cy="470" r="1.5" fill="#2E3234"/><circle cx="271" cy="368" r="1.5" fill="#2E3234"/><circle cx="126" cy="352" r="2" fill="#6E7476"/><circle cx="389" cy="340" r="2" fill="#6E7476"/><circle cx="43" cy="415" r="1.5" fill="#7C8284"/><circle cx="554" cy="417" r="2" fill="#6E7476"/><circle cx="637" cy="430" r="1" fill="#2E3234"/><circle cx="508" cy="400" r="1.5" fill="#7C8284"/><circle cx="428" cy="437" r="1" fill="#6E7476"/><circle cx="223" cy="457" r="1.5" fill="#7C8284"/><circle cx="604" cy="338" r="1.5" fill="#6E7476"/><circle cx="436" cy="353" r="1" fill="#2E3234"/><circle cx="383" cy="463" r="1.5" fill="#6E7476"/><circle cx="475" cy="351" r="2" fill="#7C8284"/><circle cx="542" cy="416" r="2" fill="#6E7476"/><circle cx="326" cy="464" r="2" fill="#6E7476"/><circle cx="601" cy="321" r="1.5" fill="#6E7476"/><circle cx="241" cy="419" r="1" fill="#7C8284"/><circle cx="94" cy="464" r="1" fill="#7C8284"/><circle cx="384" cy="365" r="1" fill="#2E3234"/><circle cx="124" cy="326" r="1" fill="#7C8284"/><circle cx="493" cy="392" r="2" fill="#2E3234"/><circle cx="90" cy="329" r="2" fill="#7C8284"/><circle cx="541" cy="381" r="1" fill="#7C8284"/><circle cx="102" cy="461" r="1" fill="#7C8284"/><circle cx="332" cy="464" r="1" fill="#6E7476"/><circle cx="247" cy="366" r="2" fill="#6E7476"/><circle cx="465" cy="477" r="2" fill="#2E3234"/><circle cx="258" cy="414" r="2" fill="#2E3234"/><circle cx="358" cy="462" r="1.5" fill="#6E7476"/><circle cx="384" cy="448" r="1" fill="#2E3234"/><circle cx="164" cy="426" r="2" fill="#7C8284"/><circle cx="593" cy="452" r="2" fill="#2E3234"/><circle cx="159" cy="422" r="1" fill="#6E7476"/><circle cx="98" cy="447" r="2" fill="#2E3234"/><circle cx="529" cy="433" r="2" fill="#7C8284"/><circle cx="190" cy="354" r="1.5" fill="#6E7476"/><circle cx="150" cy="469" r="2" fill="#2E3234"/><circle cx="237" cy="457" r="1.5" fill="#7C8284"/><circle cx="423" cy="472" r="2" fill="#7C8284"/><circle cx="273" cy="375" r="1.5" fill="#6E7476"/><circle cx="274" cy="442" r="1.5" fill="#6E7476"/><circle cx="176" cy="465" r="1.5" fill="#6E7476"/><circle cx="329" cy="443" r="1" fill="#2E3234"/><circle cx="491" cy="473" r="1" fill="#2E3234"/><circle cx="594" cy="462" r="1" fill="#2E3234"/><circle cx="74" cy="422" r="2" fill="#6E7476"/><circle cx="478" cy="378" r="1" fill="#7C8284"/><circle cx="70" cy="375" r="1.5" fill="#6E7476"/><circle cx="194" cy="386" r="1" fill="#6E7476"/><circle cx="636" cy="329" r="1.5" fill="#6E7476"/><circle cx="46" cy="400" r="1" fill="#2E3234"/><circle cx="93" cy="341" r="1" fill="#6E7476"/><circle cx="270" cy="394" r="1" fill="#2E3234"/><circle cx="463" cy="468" r="2" fill="#7C8284"/><circle cx="344" cy="321" r="1" fill="#2E3234"/><circle cx="339" cy="431" r="1.5" fill="#2E3234"/><circle cx="79" cy="373" r="2" fill="#7C8284"/><circle cx="501" cy="420" r="1" fill="#7C8284"/><circle cx="326" cy="350" r="1.5" fill="#6E7476"/><circle cx="442" cy="348" r="1.5" fill="#7C8284"/><circle cx="256" cy="344" r="2" fill="#7C8284"/><circle cx="383" cy="414" r="1.5" fill="#2E3234"/><circle cx="271" cy="347" r="1.5" fill="#7C8284"/><circle cx="579" cy="457" r="2" fill="#6E7476"/><circle cx="505" cy="450" r="1.5" fill="#6E7476"/><circle cx="301" cy="464" r="2" fill="#6E7476"/><circle cx="153" cy="365" r="1.5" fill="#7C8284"/><circle cx="465" cy="351" r="1" fill="#7C8284"/><circle cx="144" cy="404" r="2" fill="#7C8284"/><circle cx="611" cy="427" r="2" fill="#2E3234"/><circle cx="191" cy="437" r="1.5" fill="#2E3234"/></g>
+    <!-- basalt wall -->
+    <g>
+     <path d="M0 266h640v40c-200-10-430-6-640 6z" fill="#2B2F31"/>
+     <g fill="url(#stone)">
+      <ellipse cx="22" cy="282" rx="22" ry="16"/><ellipse cx="66" cy="286" rx="24" ry="15"/><ellipse cx="112" cy="280" rx="20" ry="16"/><ellipse cx="154" cy="286" rx="24" ry="14"/><ellipse cx="200" cy="280" rx="22" ry="16"/><ellipse cx="246" cy="286" rx="24" ry="14"/><ellipse cx="292" cy="280" rx="22" ry="15"/><ellipse cx="338" cy="285" rx="22" ry="14"/><ellipse cx="384" cy="280" rx="24" ry="15"/><ellipse cx="430" cy="285" rx="22" ry="14"/><ellipse cx="476" cy="279" rx="22" ry="15"/><ellipse cx="522" cy="285" rx="24" ry="14"/><ellipse cx="568" cy="279" rx="22" ry="15"/><ellipse cx="614" cy="284" rx="26" ry="14"/>
+     </g>
+     <g fill="#7A7F80" opacity=".5"><circle cx="16" cy="276" r="2"/><circle cx="70" cy="280" r="2.5"/><circle cx="118" cy="276" r="2"/><circle cx="196" cy="276" r="2.5"/><circle cx="250" cy="280" r="2"/><circle cx="300" cy="275" r="2"/><circle cx="388" cy="276" r="2.5"/><circle cx="470" cy="274" r="2"/><circle cx="526" cy="280" r="2.5"/><circle cx="610" cy="278" r="2"/></g>
+    </g>
+    <!-- camellia branch on wall -->
+    <g transform="translate(456 250)">
+     <path d="M0 20c20-10 40-16 66-16" stroke="#3E4A33" stroke-width="3" fill="none"/>
+     <g fill="#4E6B45"><ellipse cx="20" cy="10" rx="12" ry="6" transform="rotate(-25 20 10)"/><ellipse cx="48" cy="2" rx="12" ry="6" transform="rotate(15 48 2)"/><ellipse cx="62" cy="14" rx="10" ry="5" transform="rotate(-10 62 14)"/></g>
+     <g fill="#C2303A"><circle cx="34" cy="6" r="10"/><circle cx="72" cy="2" r="9"/></g>
+     <g fill="#E8D36A"><circle cx="34" cy="6" r="3"/><circle cx="72" cy="2" r="2.6"/></g>
+    </g>
+    <!-- van -->
+    <g transform="translate(36 286)">
+     <ellipse cx="120" cy="118" rx="128" ry="10" fill="#1E2224" opacity=".45"/>
+     <path d="M8 104V44c0-14 10-26 26-28l120-8c18 0 30 4 40 14l44 40c8 6 10 14 10 22v20z" fill="url(#vanB)" stroke="#23282B" stroke-width="2"/>
+     <path d="M168 20l40 38h-56V22z" fill="#9FC3C2" stroke="#23282B" stroke-width="2"/>
+     <path d="M40 22h50v34H34V30c0-4 2-8 6-8zM98 22h46v34H98z" fill="#9FC3C2" stroke="#23282B" stroke-width="2"/>
+     <path d="M8 74h240" stroke="#1F4F55" stroke-width="24"/>
+     <text x="128" y="81" text-anchor="middle" font-family="IBM Plex Sans KR" font-size="19" font-weight="700" fill="#FAF7F0">섬한바퀴 지원 차량</text>
+     <rect x="236" y="70" width="12" height="10" rx="2" fill="#E8A13A"/>
+     <rect x="6" y="66" width="8" height="12" rx="2" fill="#E8A13A"/>
+     <circle cx="56" cy="106" r="20" fill="#23282B"/><circle cx="56" cy="106" r="9" fill="#9AA0A2"/>
+     <circle cx="196" cy="106" r="20" fill="#23282B"/><circle cx="196" cy="106" r="9" fill="#9AA0A2"/>
+    </g>
+    <!-- cyclists -->
+    <g transform="translate(360 300)">
+     <ellipse cx="56" cy="68" rx="60" ry="6" fill="#1E2224" opacity=".4"/>
+     <g fill="none" stroke="#23282B" stroke-width="3"><circle cx="20" cy="44" r="22"/><circle cx="92" cy="44" r="22"/><path d="M20 44l26-30h36l10 30M46 14l18 30h-44M82 14l-4-10M44 14l-4-8h14"/></g>
+     <path d="M54 8l10-30" stroke="#1F4F55" stroke-width="12" stroke-linecap="round"/>
+     <path d="M64-22l20 12" stroke="#1F4F55" stroke-width="8" stroke-linecap="round"/>
+     <path d="M54 8l12 18M54 8l-6 26" stroke="#3A3F42" stroke-width="7" stroke-linecap="round"/>
+     <circle cx="68" cy="-34" r="9" fill="#E3C3A6"/>
+     <path d="M57-38c2-10 22-12 24 0z" fill="#C2303A"/>
+    </g>
+    <g transform="translate(500 296)">
+     <ellipse cx="56" cy="72" rx="60" ry="6" fill="#1E2224" opacity=".4"/>
+     <g fill="none" stroke="#23282B" stroke-width="3"><circle cx="20" cy="48" r="22"/><circle cx="92" cy="48" r="22"/><path d="M20 48l26-30h36l10 30M46 18l18 30h-44M82 18l-4-10M44 18l-4-8h14"/></g>
+     <path d="M54 12l10-30" stroke="#E7E0D1" stroke-width="12" stroke-linecap="round"/>
+     <path d="M64-18l20 12" stroke="#E7E0D1" stroke-width="8" stroke-linecap="round"/>
+     <path d="M54 12l14 16M54 12l-8 24" stroke="#4C5458" stroke-width="7" stroke-linecap="round"/>
+     <circle cx="68" cy="-30" r="9" fill="#D9B494"/>
+     <path d="M57-34c2-10 22-12 24 0z" fill="#1F4F55"/>
+    </g>
+   </svg>
+  </div>
+  <div class="rv">
+   <div class="eyebrow">요금에 포함</div>
+   <h2>달리는 것 말고는<br>저희가 챙깁니다</h2>
+   <ul class="inc">
+    <li><svg viewBox="0 0 28 28"><rect x="3" y="9" width="16" height="11" rx="2"/><path d="M19 12h4l3 4v4h-7M7 23a2 2 0 1 0 0-.1M21 23a2 2 0 1 0 0-.1"/></svg><div><b>지원 차량이 뒤따라옵니다</b><span>물·간식·공구를 싣고 10km마다 만납니다. 펑크는 그 자리에서 갈아 드립니다.</span></div></li>
+    <li><svg viewBox="0 0 28 28"><rect x="5" y="8" width="18" height="15" rx="2"/><path d="M10 8V5h8v3M5 14h18"/></svg><div><b>짐은 다음 숙소로 먼저 갑니다</b><span>매일 아침 8시 30분에 캐리어를 맡기면 오후에 방에서 받습니다.</span></div></li>
+    <li><svg viewBox="0 0 28 28"><path d="M4 22V12l10-7 10 7v10z"/><path d="M11 22v-6h6v6"/></svg><div><b>숙소 3박</b><span>협재·중문·표선의 바다 쪽 숙소, 2인 1실. 1인실은 추가 요금이 있습니다.</span></div></li>
+    <li><svg viewBox="0 0 28 28"><path d="M5 20h18M7 20V9h14v11M10 13h8"/></svg><div><b>아침 3회와 저녁 1회</b><span>둘째 날 저녁은 모슬포에서 다 함께. 나머지 점심·저녁은 자유롭게 드십니다.</span></div></li>
+   </ul>
+  </div>
+ </div>
+</section>
+
+<section class="bikes" id="bikes">
+ <div class="wrap">
+  <div class="sec-head rv">
+   <div><div class="eyebrow">자전거 고르기</div><h2>평소 타는 정도에 맞춰<br>세 가지 중 하나를 고릅니다</h2></div>
+   <p>모든 자전거에 앞뒤 라이트, 물통 두 개, 핸들 가방이 달려 있습니다. 헬멧은 사이즈별로 준비해 둡니다.</p>
+  </div>
+  <div class="bike-grid rv">
+   <article class="bike">
+    <svg viewBox="0 0 300 150" aria-hidden="true"><g fill="none" stroke="#ECE7DC" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><circle cx="64" cy="100" r="40"/><circle cx="236" cy="100" r="40"/><path d="M64 100l56-56h78l38 56M120 44l40 56H64M198 44l-8-20h-20M116 44l-6-14h20"/><circle cx="160" cy="100" r="8"/></g><g stroke="#9FC3C2" stroke-width="5" stroke-linecap="round"><path d="M44 100h40M216 100h40"/></g></svg>
+    <h3>하이브리드</h3><div class="who">주말에 한강을 20~30km 타 보신 분</div>
+    <ul><li><span>변속</span><span>24단</span></li><li><span>무게</span><span>11.8kg</span></li><li><span>타이어 폭</span><span>35mm</span></li></ul>
+    <div class="price"><span>요금에 포함</span><b>0원</b></div>
+   </article>
+   <article class="bike pick">
+    <svg viewBox="0 0 300 150" aria-hidden="true"><g fill="none" stroke="#23282B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><circle cx="64" cy="100" r="40"/><circle cx="236" cy="100" r="40"/><path d="M64 100l56-56h78l38 56M120 44l40 56H64M198 44l-8-20h-20M116 44l-6-14h20"/></g><rect x="122" y="54" width="44" height="18" rx="4" transform="rotate(-36 144 63)" fill="#1F4F55"/><circle cx="160" cy="100" r="14" fill="#C2303A"/><circle cx="160" cy="100" r="5" fill="#FAF7F0"/></svg>
+    <div class="tag">오르막이 걱정되면</div>
+    <h3>전기 보조 자전거</h3><div class="who">자전거를 오랜만에 타는 분, 체력 차이가 나는 커플</div>
+    <ul><li><span>보조 단계</span><span>3단</span></li><li><span>배터리</span><span>약 90km</span></li><li><span>충전</span><span>매일 숙소에서</span></li></ul>
+    <div class="price"><span>추가 요금</span><b>+60,000원</b></div>
+   </article>
+   <article class="bike">
+    <svg viewBox="0 0 300 150" aria-hidden="true"><g fill="none" stroke="#ECE7DC" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><circle cx="64" cy="100" r="40"/><circle cx="236" cy="100" r="40"/><path d="M64 100l58-54h80l34 54M122 46l38 54H64M202 46l-4-16M118 46l-4-12h18"/><path d="M198 30c10 0 18 4 18 12s-6 10-12 8"/><circle cx="160" cy="100" r="8"/></g><g stroke="#9FC3C2" stroke-width="3" stroke-linecap="round"><path d="M50 100h28M222 100h28"/></g></svg>
+    <h3>로드</h3><div class="who">하루 80km 이상 타 보신 분</div>
+    <ul><li><span>변속</span><span>22단</span></li><li><span>무게</span><span>9.2kg</span></li><li><span>페달</span><span>평페달·클릿 선택</span></li></ul>
+    <div class="price"><span>추가 요금</span><b>+30,000원</b></div>
+   </article>
+  </div>
+ </div>
+</section>
+
+<section id="dates">
+ <div class="wrap dates-grid">
+  <div class="rv">
+   <div class="eyebrow">2027 봄 출발</div>
+   <h2>한 출발에 8명,<br>가이드 2명이 함께</h2>
+   <div class="price-box" style="margin-top:32px">
+    <div style="font-size:15px;color:var(--ink2)">3박 4일 일주 · 1인</div>
+    <div class="big">890,000<small>원</small></div>
+    <div style="font-size:14px;color:var(--ink3)">2인 1실 기준, 하이브리드 자전거 포함</div>
+    <ul>
+     <li><span>1인실 사용</span><span>+180,000원</span></li>
+     <li><span>2박 3일 서쪽 반 바퀴 (128km)</span><span>590,000원</span></li>
+     <li><span>예약금</span><span>200,000원</span></li>
+    </ul>
+   </div>
+  </div>
+  <div class="rv">
+   <table>
+    <thead><tr><th>출발일</th><th>코스</th><th>도착</th><th>상태</th><th></th></tr></thead>
+    <tbody>
+     <tr><td class="mono">3/18 (목)</td><td>일주 3박 4일</td><td class="mono">3/21</td><td><span class="st full">마감</span></td><td><button class="pickdate" disabled>상담 불가</button></td></tr>
+     <tr><td class="mono">3/27 (토)</td><td>일주 3박 4일</td><td class="mono">3/30</td><td><span class="st few">2자리</span></td><td><button class="pickdate" data-d="3/27 (토) 일주 3박 4일">이 날짜로 상담</button></td></tr>
+     <tr><td class="mono">4/8 (목)</td><td>서쪽 2박 3일</td><td class="mono">4/10</td><td><span class="st open">모집 중</span></td><td><button class="pickdate" data-d="4/8 (목) 서쪽 2박 3일">이 날짜로 상담</button></td></tr>
+     <tr><td class="mono">4/15 (목)</td><td>일주 3박 4일</td><td class="mono">4/18</td><td><span class="st open">모집 중</span></td><td><button class="pickdate" data-d="4/15 (목) 일주 3박 4일">이 날짜로 상담</button></td></tr>
+     <tr><td class="mono">4/29 (목)</td><td>일주 3박 4일</td><td class="mono">5/2</td><td><span class="st open">모집 중</span></td><td><button class="pickdate" data-d="4/29 (목) 일주 3박 4일">이 날짜로 상담</button></td></tr>
+     <tr><td class="mono">5/13 (목)</td><td>일주 3박 4일</td><td class="mono">5/16</td><td><span class="st open">모집 중</span></td><td><button class="pickdate" data-d="5/13 (목) 일주 3박 4일">이 날짜로 상담</button></td></tr>
+    </tbody>
+   </table>
+   <p style="font-size:14px;color:var(--ink3);margin-top:16px">출발 3일 전 풍속이 초속 12m를 넘으면 일정을 하루 미루거나 전액 환불해 드립니다.</p>
+  </div>
+ </div>
+</section>
+
+<section class="prep" id="prep">
+ <div class="wrap">
+  <div class="sec-head rv">
+   <div><div class="eyebrow">떠나기 전에</div><h2>자주 받는 질문</h2></div>
+   <p>체력, 준비물, 비 오는 날까지. 더 궁금한 점은 상담에서 편하게 물어보세요.</p>
+  </div>
+  <div class="faq rv">
+   <div><b>하루 60km, 처음인데 갈 수 있을까요</b><p>시속 15km 정도로 쉬엄쉬엄 달리면 쉬는 시간을 빼고 4시간입니다. 힘든 구간은 지원 차량에 타고 건너뛰어도 됩니다.</p></div>
+   <div><b>비가 오면 어떻게 하나요</b><p>약한 비는 우비를 나눠 드리고 그대로 달립니다. 강한 비에는 그날 구간을 차로 이동하고 실내 일정으로 바꿉니다.</p></div>
+   <div><b>무엇을 챙겨 가면 되나요</b><p>패드 바지 또는 편한 운동복, 바람막이, 선글라스, 장갑. 장갑은 없으면 현장에서 빌려 드립니다.</p></div>
+   <div><b>혼자 신청해도 되나요</b><p>네. 1인실을 고르거나, 같은 성별 참가자와 방을 함께 쓰는 쪽으로 맞춰 드립니다.</p></div>
+  </div>
+ </div>
+</section>
+
+<section id="book">
+ <div class="wrap book-grid">
+  <div class="book-side rv">
+   <div class="eyebrow">출발일 상담</div>
+   <h2>원하는 날짜와<br>자전거를 남겨 주세요</h2>
+   <p>상담 내용을 보고 하루 안에 연락드립니다. 예약금은 일정과 방 배정을 확정한 뒤에 받습니다.</p>
+   <div class="contact">
+    <div><span>전화</span><b class="mono">000-0000-0000</b></div>
+    <div><span>카카오톡</span><b>ID: example</b></div>
+    <div><span>상담 시간</span><b>평일 10:00–18:00</b></div>
+   </div>
+  </div>
+  <form class="rv" id="f" novalidate>
+   <label>이름<input name="n" autocomplete="name" placeholder="홍길동"></label>
+   <label>연락처<input name="p" inputmode="tel" placeholder="010-0000-0000"></label>
+   <label class="full">출발일
+    <select name="d" id="d">
+     <option>3/27 (토) 일주 3박 4일</option>
+     <option>4/8 (목) 서쪽 2박 3일</option>
+     <option>4/15 (목) 일주 3박 4일</option>
+     <option>4/29 (목) 일주 3박 4일</option>
+     <option>5/13 (목) 일주 3박 4일</option>
+    </select>
+   </label>
+   <label class="full">자전거
+    <span class="seg" role="group" aria-label="자전거 종류">
+     <button type="button" aria-pressed="true">하이브리드</button>
+     <button type="button" aria-pressed="false">전기 보조</button>
+     <button type="button" aria-pressed="false">로드</button>
+    </span>
+   </label>
+   <label>인원<select name="c"><option>1명</option><option selected>2명</option><option>3명</option><option>4명</option></select></label>
+   <label>방<select name="r"><option>2인 1실</option><option>1인실</option></select></label>
+   <label class="full">평소 타는 거리나 궁금한 점<textarea name="m" placeholder="예) 주말마다 한강 30km 정도 탑니다"></textarea></label>
+   <button class="btn btn-main" type="submit">상담 신청하기</button>
+   <div class="done" id="done" role="status"></div>
+  </form>
+ </div>
+</section>
+</main>
+
+<footer>
+ <div class="wrap foot">
+  <div><b>섬한바퀴 자전거여행</b>제주 해안도로 일주 · 소규모 자전거 여행</div>
+  <div>전화 000-0000-0000 · 카카오톡 ID: example<br>제주특별자치도 제주시 (주소 자리)</div>
+ </div>
+</footer>
+
+<script>
+(function(){
+ var ms=document.getElementById('mapsvg');function vb(){ms.setAttribute('viewBox',innerWidth<=640?'14 24 600 284':'0 0 640 320')}vb();addEventListener('resize',vb);
+ var io='IntersectionObserver' in window?new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12}):null;
+ document.querySelectorAll('.rv').forEach(function(el){io?io.observe(el):el.classList.add('in')});
+ var seg=document.querySelectorAll('.seg button');
+ seg.forEach(function(b){b.addEventListener('click',function(){seg.forEach(function(x){x.setAttribute('aria-pressed','false')});b.setAttribute('aria-pressed','true')})});
+ var sel=document.getElementById('d');
+ document.querySelectorAll('.pickdate[data-d]').forEach(function(b){b.addEventListener('click',function(){sel.value=b.dataset.d;document.getElementById('book').scrollIntoView({behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth'});})});
+ document.getElementById('f').addEventListener('submit',function(e){e.preventDefault();var f=e.target,bike=document.querySelector('.seg [aria-pressed=true]').textContent;var d=document.getElementById('done');d.textContent=(f.n.value||'고객')+'님, '+f.d.value+' · '+bike+' · '+f.c.value+' 상담 신청이 접수되었습니다. 하루 안에 연락드리겠습니다.';d.classList.add('show')});
+})();
+</script>
+</body>
+</html>

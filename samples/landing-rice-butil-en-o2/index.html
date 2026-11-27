@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Butil Rice Trading · First 25 kg sack delivered free</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Big+Shoulders+Stencil+Display:wght@700;800&display=swap" rel="stylesheet">
+<style>
+:root{--sack:#EEE7D6;--paper:#F7F2E7;--ink:#2B241B;--ink2:#54493B;--ink3:#6E6253;--green:#2E6E45;--greenD:#23573A;--greenT:#DCE8DD;--jute:#B89A6A;--line:rgba(43,36,27,.16)}
+*{box-sizing:border-box;margin:0;padding:0}
+html{background:var(--sack);scroll-behavior:smooth}
+body{font-family:'Archivo',sans-serif;color:var(--ink);background:var(--sack);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:clip}
+.wrap{max-width:1200px;margin:0 auto;padding:0 40px}
+h1,h2,h3{font-weight:700;letter-spacing:-.02em;line-height:1.15}
+h2{font-size:clamp(30px,3.4vw,44px)}
+.num{font-variant-numeric:tabular-nums}
+section{padding:112px 0}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;height:48px;padding:0 24px;border-radius:8px;font-family:inherit;font-weight:600;font-size:16px;text-decoration:none;border:0;cursor:pointer;transition:background-color .2s,color .2s}
+.btn svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.btn-main{background:var(--green);color:#fff}
+.btn-main:hover{background:var(--greenD)}
+.btn-ghost{color:var(--ink);box-shadow:inset 0 0 0 1.5px var(--ink);background:transparent}
+.btn-ghost:hover{background:var(--ink);color:var(--sack)}
+.lede{font-size:18px;color:var(--ink2)}
+.label{font-size:14px;font-weight:600;color:var(--green);margin-bottom:12px}
+
+header{border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:72px;gap:24px}
+.logo{display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--ink)}
+.logo svg{width:34px;height:34px}
+.logo b{font-size:22px;font-weight:700;letter-spacing:-.02em}
+.logo span{font-size:13px;color:var(--ink3);display:block;line-height:1.1;font-weight:500}
+.links{display:flex;gap:32px;list-style:none;font-size:15px;font-weight:500}
+.links a{text-decoration:none;color:var(--ink2)}
+.links a:hover{color:var(--ink)}
+.nav .btn{height:40px;padding:0 16px;font-size:15px}
+
+.hero{padding:64px 0 96px}
+.hero-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:48px;align-items:center}
+.hero h1{font-size:clamp(38px,4.6vw,60px);letter-spacing:-.035em}
+.hero .lede{margin-top:24px;max-width:520px}
+.acts{display:flex;gap:12px;flex-wrap:wrap;margin-top:32px}
+.offer{margin-top:40px;display:grid;grid-template-columns:auto 1fr;gap:16px;align-items:center;max-width:520px;padding:16px 20px;background:var(--paper);border:1px solid var(--line);border-left:4px solid var(--green);border-radius:8px}
+.offer b{font-size:28px;font-weight:700;color:var(--green);line-height:1}
+.offer span{font-size:15px;color:var(--ink2);line-height:1.45}
+.art{position:relative}
+.art svg{display:block;width:100%;height:auto}
+
+.board{background:var(--ink);color:#EFE7D6}
+.board-grid{display:grid;grid-template-columns:minmax(0,.7fr) minmax(0,1.3fr);gap:64px;align-items:start}
+.board .label{color:#9CC7A6}
+.board .lede{color:#CFC5B2;margin-top:16px}
+.week{margin-top:24px;font-size:14px;color:#B8AE9A}
+.prices{width:100%;border-collapse:collapse}
+.prices th{white-space:nowrap;font-size:14px;font-weight:500;color:#B8AE9A;text-align:right;padding:0 0 16px 16px;border-bottom:1.5px solid #EFE7D6}
+.prices th:first-child{text-align:left;padding-left:0}
+.prices td{padding:18px 0 18px 16px;border-bottom:1px solid rgba(239,231,214,.16);text-align:right;font-size:17px;font-variant-numeric:tabular-nums}
+.prices td:first-child{text-align:left;padding-left:0}
+.prices td:first-child b{display:block;font-size:18px;font-weight:600}
+.prices td:first-child small{font-size:14px;color:#B8AE9A}
+.prices .sm{display:none}
+.prices td.sack{font-weight:700;font-size:19px;color:#fff}
+.prices tr.hl td{background:rgba(46,110,69,.32)}
+.prices tr.hl td:first-child{box-shadow:inset 4px 0 0 #6FB383;padding-left:16px}
+
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin-top:48px;border-top:1.5px solid var(--ink)}
+.step{padding:32px 32px 0 0}
+.step+.step{padding-left:32px;border-left:1px solid var(--line)}
+.step svg{width:40px;height:40px;fill:none;stroke:var(--green);stroke-width:1.75;stroke-linecap:round;stroke-linejoin:round}
+.step .n{font-size:14px;font-weight:600;color:var(--ink3);margin-top:16px}
+.step h3{font-size:21px;margin:4px 0 8px}
+.step p{color:var(--ink2);font-size:16px}
+.head2{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:48px;align-items:end}
+
+.area{background:var(--paper);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.area-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:64px}
+.slots{margin-top:32px;border-top:1px solid var(--line)}
+.slot{display:grid;grid-template-columns:160px 1fr;gap:16px;padding:20px 0;border-bottom:1px solid var(--line)}
+.slot b{font-weight:600}
+.slot span{color:var(--ink2)}
+.fees{list-style:none;margin-top:32px}
+.fees li{display:flex;justify-content:space-between;gap:16px;padding:16px 0;border-bottom:1px dashed var(--line);font-size:16px}
+.fees li span:last-child{font-weight:600;font-variant-numeric:tabular-nums;white-space:nowrap}
+.fees li.free span:last-child{color:var(--green)}
+.biz{margin-top:32px;background:var(--sack);border-radius:12px;padding:24px}
+.biz h3{font-size:19px}
+.biz p{font-size:15px;color:var(--ink2);margin-top:8px}
+
+.order-grid{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:64px;align-items:start}
+.contact{margin-top:32px;border-top:1px solid var(--line);font-size:15px}
+.contact div{display:flex;justify-content:space-between;padding:12px 0;border-bottom:1px solid var(--line);color:var(--ink2)}
+.contact b{color:var(--ink);font-weight:600}
+form{background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:32px;display:grid;grid-template-columns:1fr 1fr;gap:20px}
+label{min-width:0;display:flex;flex-direction:column;gap:8px;font-size:14px;font-weight:600;color:var(--ink2)}
+.full{grid-column:1/-1}
+input,select,textarea{width:100%;min-width:0;font-family:inherit;font-size:16px;color:var(--ink);background:#fff;border:1px solid rgba(43,36,27,.25);border-radius:8px;height:48px;padding:0 12px}
+textarea{height:88px;padding:12px;resize:vertical}
+input:focus,select:focus,textarea:focus{outline:2px solid var(--green);outline-offset:1px}
+.sizes{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.sizes button{font-family:inherit;height:56px;border-radius:8px;border:1px solid rgba(43,36,27,.25);background:#fff;color:var(--ink);cursor:pointer;font-size:16px;font-weight:600;transition:background-color .2s;line-height:1.2}
+.sizes button small{display:block;font-size:13px;font-weight:500;color:var(--ink3)}
+.sizes button[aria-pressed=true]{background:var(--green);border-color:var(--green);color:#fff}
+.sizes button[aria-pressed=true] small{color:#DCE8DD}
+.total{grid-column:1/-1;display:flex;justify-content:space-between;align-items:baseline;padding-top:16px;border-top:1px solid var(--line)}
+.total span{color:var(--ink2);font-size:15px}
+.total b{font-size:28px;font-variant-numeric:tabular-nums}
+.total small{display:block;font-size:14px;color:var(--green);font-weight:600;text-align:right}
+form .btn{grid-column:1/-1;width:100%}
+.done{grid-column:1/-1;display:none;background:var(--greenT);color:var(--greenD);border-radius:8px;padding:16px;font-size:15px}
+.done.show{display:block}
+
+.faq{background:var(--paper);border-top:1px solid var(--line)}
+.qa{display:grid;grid-template-columns:repeat(3,1fr);gap:40px;margin-top:40px}
+.qa div{border-top:1.5px solid var(--ink);padding-top:20px}
+.qa b{display:block;font-size:18px;font-weight:600;margin-bottom:8px}
+.qa p{color:var(--ink2);font-size:15px}
+
+footer{background:var(--ink);color:#B8AE9A;padding:48px 0;font-size:14px}
+.foot{display:flex;justify-content:space-between;gap:32px;flex-wrap:wrap}
+.foot b{display:block;color:#EFE7D6;font-size:18px;margin-bottom:4px}
+
+.rv{opacity:0;transform:translateY(16px);transition:opacity .6s ease,transform .6s ease}
+.rv.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}}
+@media(max-width:1024px){
+ .hero-grid,.board-grid,.area-grid,.order-grid,.head2{grid-template-columns:1fr;gap:40px}
+ .qa{grid-template-columns:1fr;gap:24px}
+ .links{display:none}
+}
+@media(max-width:700px){
+ .wrap{padding:0 16px}
+ section{padding:72px 0}
+ .hero{padding:32px 0 64px}
+ .lede{font-size:16px}
+ .steps{grid-template-columns:1fr}
+ .step,.step+.step{padding:28px 0;border-left:0}
+ .step+.step{border-top:1px solid var(--line)}
+ form{grid-template-columns:1fr;padding:20px}
+ .prices th:nth-child(3),.prices td:nth-child(3){display:none}
+ .prices td{font-size:15px;padding:16px 0 16px 12px}
+ .prices th{padding-left:12px}
+ .prices .sm{display:inline}.prices .lg{display:none}
+ .slot{grid-template-columns:1fr;gap:4px}
+ .logo span{display:none}
+ .offer b{font-size:24px}
+}
+</style>
+</head>
+<body>
+<header>
+ <div class="wrap nav">
+  <a class="logo" href="#top"><svg viewBox="0 0 34 34" aria-hidden="true"><rect x="1" y="1" width="32" height="32" rx="8" fill="#2E6E45"/><g fill="#F7F2E7"><ellipse cx="17" cy="10" rx="3" ry="5.5"/><ellipse cx="11" cy="18" rx="3" ry="5.5" transform="rotate(-35 11 18)"/><ellipse cx="23" cy="18" rx="3" ry="5.5" transform="rotate(35 23 18)"/><rect x="16" y="15" width="2" height="14" rx="1"/></g></svg><div><b>Butil</b><span>Rice Trading</span></div></a>
+  <ul class="links"><li><a href="#prices">This week's prices</a></li><li><a href="#how">How delivery works</a></li><li><a href="#area">Area &amp; times</a></li></ul>
+  <a class="btn btn-main" href="#order">Order a sack</a>
+ </div>
+</header>
+
+<main id="top">
+<section class="hero">
+ <div class="wrap hero-grid">
+  <div>
+   <h1>Rice by the sack, weighed at your door and carried to your kitchen</h1>
+   <p class="lede">Order Dinorado, Jasmine or Sinandomeng before 10AM and it arrives the same afternoon. We bring our platform scale, weigh the sack in front of you, and pour it into your rice bin if you want.</p>
+   <div class="acts">
+    <a class="btn btn-main" href="#order">Order your first sack <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+    <a class="btn btn-ghost" href="#prices">See this week's prices</a>
+   </div>
+   <div class="offer"><b>₱0</b><span>delivery on your first 25 kg sack, anywhere within 3 km of our stall. Until January 31.</span></div>
+  </div>
+  <div class="art rv">
+   <svg viewBox="0 0 600 560" role="img" aria-label="A woven rice sack tied at the neck with string, stenciled in green with Butil, 25 KG and Dinorado, next to a wooden salop box heaped with rice and a few grains spilled on the floor">
+    <defs>
+     <pattern id="weave" width="10" height="10" patternUnits="userSpaceOnUse"><rect width="10" height="10" fill="#EFE8D7"/><rect x="0" y="0" width="10" height="4" fill="#E2D9C3"/><rect x="0" y="5" width="4" height="5" fill="#E6DDC8"/><path d="M0 4.5h10M4.5 5v5" stroke="#D3C7AC" stroke-width=".8"/></pattern>
+     <radialGradient id="sackShade" cx=".38" cy=".38" r=".75"><stop offset="0" stop-color="#fff" stop-opacity=".35"/><stop offset=".6" stop-color="#fff" stop-opacity="0"/><stop offset="1" stop-color="#5A4A30" stop-opacity=".32"/></radialGradient>
+     <linearGradient id="wood" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#C9A877"/><stop offset="1" stop-color="#9A774A"/></linearGradient>
+     <linearGradient id="woodS" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#8C6A40"/><stop offset="1" stop-color="#B08B5A"/></linearGradient>
+     <radialGradient id="heap" cx=".45" cy=".3" r=".8"><stop offset="0" stop-color="#FFFDF6"/><stop offset=".7" stop-color="#F1EADA"/><stop offset="1" stop-color="#D9CFB8"/></radialGradient>
+     <filter id="grain"><feTurbulence type="fractalNoise" baseFrequency="1.6" numOctaves="1" seed="4"/><feColorMatrix values="0 0 0 0 .55 0 0 0 0 .5 0 0 0 0 .4 0 0 0 .5 0"/><feComposite in2="SourceGraphic" operator="in"/></filter>
+     <clipPath id="sackClip"><path d="M150 150c-10-14-6-30 14-34 30-6 70-2 98 4 30-6 72-10 102-4 20 4 24 20 14 34 34 30 58 86 62 160 4 70-8 140-36 176-14 18-40 24-90 26-60 2-120 0-160-6-34-6-50-18-60-40-22-48-28-120-20-190 6-58 30-100 76-126z"/></clipPath>
+    </defs>
+    <ellipse cx="300" cy="512" rx="250" ry="24" fill="#3A2F22" opacity=".16"/>
+    <!-- sack -->
+    <g clip-path="url(#sackClip)">
+     <rect x="60" y="100" width="420" height="440" fill="url(#weave)"/>
+     <g fill="#2E6E45"><rect x="60" y="196" width="420" height="10"/><rect x="60" y="214" width="420" height="4"/><rect x="60" y="452" width="420" height="4"/><rect x="60" y="462" width="420" height="10"/></g>
+     <g font-family="Big Shoulders Stencil Display" font-weight="800" fill="#2E6E45" text-anchor="middle">
+      <text x="268" y="300" font-size="76" letter-spacing="4">BUTIL</text>
+      <text x="268" y="376" font-size="64" letter-spacing="2">25 KG</text>
+      <text x="268" y="428" font-size="30" letter-spacing="6">DINORADO</text>
+     </g>
+     <rect x="60" y="100" width="420" height="440" fill="url(#sackShade)"/>
+     <path d="M120 250c30 10 40 120 30 230" stroke="#B8AA8A" stroke-width="2" fill="none" opacity=".6"/>
+     <path d="M400 230c-20 40-24 140-10 240" stroke="#B8AA8A" stroke-width="2" fill="none" opacity=".6"/>
+    </g>
+    <path d="M150 150c-10-14-6-30 14-34 30-6 70-2 98 4 30-6 72-10 102-4 20 4 24 20 14 34 34 30 58 86 62 160 4 70-8 140-36 176-14 18-40 24-90 26-60 2-120 0-160-6-34-6-50-18-60-40-22-48-28-120-20-190 6-58 30-100 76-126z" fill="none" stroke="#A89A7C" stroke-width="2"/>
+    <!-- gathered neck -->
+    <path d="M196 120c10-40 30-66 50-80 8-6 22-6 30 0 20 14 40 40 50 80" fill="url(#weave)" stroke="#A89A7C" stroke-width="2"/>
+    <path d="M222 112c6-26 18-48 30-60M262 104c2-24 4-44 4-60M296 112c-4-26-12-46-20-60" stroke="#C4B696" stroke-width="2" fill="none"/>
+    <path d="M226 58c14 8 38 8 52 0" stroke="#8B6B3E" stroke-width="7" fill="none" stroke-linecap="round"/>
+    <path d="M278 58c16-6 30-2 34 8M278 58c10 12 12 26 6 36" stroke="#8B6B3E" stroke-width="4" fill="none" stroke-linecap="round"/>
+    <path d="M232 40c8-14 16-22 22-26M270 38c-2-12-6-20-10-26" stroke="#D9CDB0" stroke-width="3" fill="none" stroke-linecap="round"/>
+    <!-- salop box -->
+    <g transform="translate(372 372)">
+     <ellipse cx="96" cy="136" rx="120" ry="14" fill="#3A2F22" opacity=".2"/>
+     <path d="M0 40 L192 40 L176 132 L16 132 Z" fill="url(#wood)" stroke="#6E522F" stroke-width="2"/>
+     <path d="M0 40 L16 132 L4 132 L-10 46Z" fill="url(#woodS)" stroke="#6E522F" stroke-width="2"/>
+     <path d="M30 60h136M26 84h144M22 108h152" stroke="#8C6A40" stroke-width="1.4" opacity=".5"/>
+     <path d="M-6 40 C30 -18 160 -22 198 40 Z" fill="url(#heap)"/>
+     <path d="M-6 40 C30 -18 160 -22 198 40 Z" fill="#fff" filter="url(#grain)" opacity=".7"/>
+     <path d="M-8 40 H200" stroke="#6E522F" stroke-width="5" stroke-linecap="round"/>
+     <text x="96" y="104" text-anchor="middle" font-family="Archivo" font-size="28" font-weight="700" fill="#5A4226" letter-spacing="1">1 SALOP</text>
+    </g>
+    <!-- spilled grains -->
+    <g fill="#FBF7EC" stroke="#D2C6AA" stroke-width=".8">
+     <ellipse cx="350" cy="508" rx="5" ry="2.4" transform="rotate(20 350 508)"/><ellipse cx="338" cy="516" rx="5" ry="2.4" transform="rotate(-30 338 516)"/><ellipse cx="362" cy="520" rx="5" ry="2.4" transform="rotate(60 362 520)"/><ellipse cx="326" cy="506" rx="5" ry="2.4" transform="rotate(5 326 506)"/><ellipse cx="584" cy="514" rx="5" ry="2.4" transform="rotate(40 584 514)"/><ellipse cx="572" cy="522" rx="5" ry="2.4" transform="rotate(-10 572 522)"/><ellipse cx="596" cy="524" rx="5" ry="2.4" transform="rotate(75 596 524)"/>
+    </g>
+   </svg>
+  </div>
+ </div>
+</section>
+
+<section class="board" id="prices">
+ <div class="wrap board-grid">
+  <div class="rv">
+   <div class="label">This week's prices</div>
+   <h2>Same price at the stall and at your door</h2>
+   <p class="lede">We post prices every Monday morning. A 25 kg sack works out cheaper per kilo than buying by the salop.</p>
+   <p class="week">Week of Nov 30 · prices in pesos</p>
+  </div>
+  <div class="rv">
+   <table class="prices">
+    <thead><tr><th>Variety</th><th><span class="lg">Per kilo</span><span class="sm">/kg</span></th><th>5 kg</th><th>10 kg</th><th><span class="lg">25 kg sack</span><span class="sm">25 kg</span></th></tr></thead>
+    <tbody>
+     <tr class="hl"><td><b>Dinorado</b><small>Soft, fragrant, for everyday</small></td><td>₱62</td><td>₱305</td><td>₱600</td><td class="sack">₱1,450</td></tr>
+     <tr><td><b>Jasmine</b><small>Long grain, a little sticky</small></td><td>₱58</td><td>₱285</td><td>₱560</td><td class="sack">₱1,375</td></tr>
+     <tr><td><b>Sinandomeng</b><small>Fluffy, holds up in fried rice</small></td><td>₱52</td><td>₱255</td><td>₱500</td><td class="sack">₱1,225</td></tr>
+     <tr><td><b>Well-milled</b><small>For carinderias and big pots</small></td><td>₱48</td><td>₱235</td><td>₱460</td><td class="sack">₱1,125</td></tr>
+     <tr><td><b>Brown rice</b><small>Chewier, cooks in 40 minutes</small></td><td>₱70</td><td>₱345</td><td>₱680</td><td class="sack">₱1,650</td></tr>
+    </tbody>
+   </table>
+  </div>
+ </div>
+</section>
+
+<section id="how">
+ <div class="wrap">
+  <div class="head2 rv">
+   <div><div class="label">How delivery works</div><h2>You see the scale before you pay</h2></div>
+   <p class="lede">Every sack leaves our stall sealed. The rider opens nothing until you're there to watch the needle.</p>
+  </div>
+  <div class="steps rv">
+   <div class="step"><svg viewBox="0 0 40 40"><rect x="10" y="4" width="20" height="32" rx="4"/><path d="M16 30h8M15 12h10M15 18h10M15 24h6"/></svg><div class="n">Step 1</div><h3>Order before 10AM</h3><p>Use the form below or message us. Tell us the variety, size and your street.</p></div>
+   <div class="step"><svg viewBox="0 0 40 40"><path d="M6 32h28M10 32V18h20v14M20 18V8M14 8h12"/><path d="M15 25l5-4 5 4"/></svg><div class="n">Step 2</div><h3>We weigh it at your door</h3><p>Our platform scale comes with the sack. Under 25.0 kg, we top it up from the salop right there.</p></div>
+   <div class="step"><svg viewBox="0 0 40 40"><path d="M8 14h24l-3 20H11z"/><path d="M14 14c0-5 3-8 6-8s6 3 6 8M8 20h24"/></svg><div class="n">Step 3</div><h3>Carried to your kitchen</h3><p>Up the stairs and into your rice bin if you want. Pay cash or e-wallet after you've seen the weight.</p></div>
+  </div>
+ </div>
+</section>
+
+<section class="area" id="area">
+ <div class="wrap area-grid">
+  <div class="rv">
+   <div class="label">Area &amp; times</div>
+   <h2>Within 3 km of our stall</h2>
+   <div class="slots">
+    <div class="slot"><b>Order by 10AM</b><span>Same day, 1PM to 5PM</span></div>
+    <div class="slot"><b>Order after 10AM</b><span>Next morning, 8AM to 11AM</span></div>
+    <div class="slot"><b>Sundays</b><span>Stall open 7AM to 12NN, no delivery</span></div>
+   </div>
+  </div>
+  <div class="rv">
+   <ul class="fees">
+    <li class="free"><span>First 25 kg sack</span><span>Free delivery</span></li>
+    <li><span>5 kg or 10 kg</span><span>₱30</span></li>
+    <li><span>One 25 kg sack</span><span>₱40</span></li>
+    <li class="free"><span>Two sacks or more, one address</span><span>Free delivery</span></li>
+   </ul>
+   <div class="biz"><h3>Carinderia or sari-sari store?</h3><p>Set a standing order of 4 sacks or more a month. We deliver on the day you choose, take ₱20 off each sack, and you settle every Saturday.</p></div>
+  </div>
+ </div>
+</section>
+
+<section id="order">
+ <div class="wrap order-grid">
+  <div class="rv">
+   <div class="label">Order a sack</div>
+   <h2>Your first 25 kg comes with free delivery</h2>
+   <p class="lede" style="margin-top:16px">We'll text to confirm the delivery time. Nothing to pay until the rice is weighed at your door.</p>
+   <div class="contact">
+    <div><span>Text or call</span><b>0900-000-0000</b></div>
+    <div><span>Facebook page</span><b>example</b></div>
+    <div><span>Stall</span><b>Mon–Sat 7AM–6PM</b></div>
+   </div>
+  </div>
+  <form class="rv" id="f" novalidate>
+   <label>Your name<input name="n" autocomplete="name" placeholder="Juan Dela Cruz"></label>
+   <label>Mobile number<input name="p" inputmode="tel" placeholder="0900 000 0000"></label>
+   <label class="full">Street and barangay<input name="a" placeholder="House no., street, barangay"></label>
+   <label class="full">Variety
+    <select name="v" id="v">
+     <option value="62">Dinorado · ₱62/kg</option>
+     <option value="58">Jasmine · ₱58/kg</option>
+     <option value="52">Sinandomeng · ₱52/kg</option>
+     <option value="48">Well-milled · ₱48/kg</option>
+     <option value="70">Brown rice · ₱70/kg</option>
+    </select>
+   </label>
+   <div class="full" style="display:flex;flex-direction:column;gap:8px;font-size:14px;font-weight:600;color:var(--ink2)">Size
+    <div class="sizes" role="group" aria-label="Sack size">
+     <button type="button" data-k="5" aria-pressed="false">5 kg<small>bag</small></button>
+     <button type="button" data-k="10" aria-pressed="false">10 kg<small>bag</small></button>
+     <button type="button" data-k="25" aria-pressed="true">25 kg<small>sack</small></button>
+    </div>
+   </div>
+   <label class="full">Delivery
+    <select name="t"><option>Today, 1PM–5PM</option><option>Tomorrow, 8AM–11AM</option><option>Tomorrow, 1PM–5PM</option></select>
+   </label>
+   <div class="total"><span>Rice total</span><div><b id="tot">₱1,450</b><small id="del">Delivery free · first sack</small></div></div>
+   <button class="btn btn-main" type="submit">Send my order</button>
+   <div class="done" id="done" role="status"></div>
+  </form>
+ </div>
+</section>
+
+<section class="faq">
+ <div class="wrap">
+  <h2 class="rv">Before you order</h2>
+  <div class="qa rv">
+   <div><b>What if I'm not home?</b><p>Leave a name of someone who can watch the weighing. We don't leave sacks at the gate.</p></div>
+   <div><b>Can I split a sack into two varieties?</b><p>Yes, 12.5 kg each in two sealed bags, priced per kilo of each variety.</p></div>
+   <div><b>Do you take back rice I don't like?</b><p>If the first kilo you cook isn't what you expected, call within 3 days and we'll swap the rest.</p></div>
+  </div>
+ </div>
+</section>
+</main>
+
+<footer>
+ <div class="wrap foot">
+  <div><b>Butil Rice Trading</b>Rice by the kilo, salop and sack</div>
+  <div>0900-000-0000 · Facebook page: example<br>Stall address here</div>
+ </div>
+</footer>
+
+<script>
+(function(){
+ var io='IntersectionObserver' in window?new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12}):null;
+ document.querySelectorAll('.rv').forEach(function(el){io?io.observe(el):el.classList.add('in')});
+ var table={62:{5:305,10:600,25:1450},58:{5:285,10:560,25:1375},52:{5:255,10:500,25:1225},48:{5:235,10:460,25:1125},70:{5:345,10:680,25:1650}};
+ var v=document.getElementById('v'),btns=document.querySelectorAll('.sizes button'),kg=25;
+ function upd(){var p=table[v.value][kg];document.getElementById('tot').textContent='₱'+p.toLocaleString('en-US');document.getElementById('del').textContent=kg==25?'Delivery free · first sack':'Delivery ₱30';}
+ btns.forEach(function(b){b.addEventListener('click',function(){btns.forEach(function(x){x.setAttribute('aria-pressed','false')});b.setAttribute('aria-pressed','true');kg=+b.dataset.k;upd()})});
+ v.addEventListener('change',upd);
+ document.getElementById('f').addEventListener('submit',function(e){e.preventDefault();var f=e.target,d=document.getElementById('done');d.textContent='Thanks'+(f.n.value?', '+f.n.value:'')+'. '+kg+' kg of '+v.options[v.selectedIndex].text.split(' ·')[0]+', '+f.t.value+'. We\'ll text you to confirm before the rider leaves.';d.classList.add('show')});
+})();
+</script>
+</body>
+</html>

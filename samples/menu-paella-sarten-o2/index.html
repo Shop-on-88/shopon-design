@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>사르텐 빠에야 &amp; 타파스 · 메뉴판 디자인</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@700&family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+html{background:#ECE5D6}
+body{word-break:keep-all;font-family:'Noto Sans KR',sans-serif;color:#2A2A1C;background:#ECE5D6;-webkit-font-smoothing:antialiased;min-height:100vh;overflow-x:clip;line-height:1.6}
+.wrap{max-width:1180px;margin:0 auto;padding:48px 24px 136px}
+.hd{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:24px;padding-bottom:32px;margin-bottom:40px;border-bottom:2px solid #2A2A1C}
+.hd small{font-size:14px;font-weight:500;color:#5E5E48}
+.hd h1{font-family:'Gowun Batang',serif;font-weight:700;font-size:clamp(44px,6vw,72px);line-height:1.05;letter-spacing:-.03em;margin-top:8px}
+.hd h1 em{display:block;font-family:'Noto Sans KR',sans-serif;font-style:normal;font-weight:400;font-size:clamp(16px,1.6vw,19px);letter-spacing:0;color:#4A4A36;margin-top:16px;max-width:680px;line-height:1.6}
+.facts{display:flex;flex-wrap:wrap;gap:8px 24px;margin-top:20px;font-size:15px;color:#5E5E48}
+.facts span{display:flex;align-items:center;gap:8px}
+.facts span:before{content:"";width:8px;height:8px;border-radius:50%;background:#D9901E}
+.cta{display:inline-flex;align-items:center;gap:8px;height:52px;padding:0 24px;background:#2E3320;color:#F2ECE0;font-weight:700;font-size:16px;text-decoration:none;border-radius:8px;transition:background-color .2s;white-space:nowrap}
+.cta:hover{background:#41482F}
+.cta svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+.view{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,.8fr);gap:32px;align-items:start}
+figure{background:#F7F2E8;padding:12px;border-radius:8px;border:1px solid rgba(42,42,28,.16);box-shadow:0 24px 48px -32px rgba(42,42,28,.55)}
+figure a{display:block;overflow:hidden;border-radius:4px}
+figure img{display:block;width:100%;height:auto}
+figcaption{font-size:14px;color:#5E5E48;padding:12px 4px 0;display:flex;flex-wrap:wrap;justify-content:space-between;gap:4px 12px}
+figcaption b{color:#2A2A1C;font-weight:700}
+.side{display:flex;flex-direction:column;gap:20px;position:sticky;top:24px}
+.zoom{background:#F7F2E8;padding:8px;border-radius:8px;border:1px solid rgba(42,42,28,.16)}
+.zoom img{display:block;width:100%;height:auto;border-radius:4px}
+.zoom p{font-size:15px;color:#5E5E48;padding:12px 8px 4px}
+.zoom p b{display:block;font-family:'Gowun Batang',serif;font-weight:700;font-size:20px;color:#2A2A1C;margin-bottom:4px}
+.info{background:#2E3320;color:#DCD6C2;padding:24px;border-radius:8px}
+.info h2{font-family:'Gowun Batang',serif;font-weight:700;font-size:22px;color:#F2ECE0;margin-bottom:8px}
+.info li{list-style:none;font-size:15px;padding:12px 0 12px 20px;position:relative;border-top:1px solid rgba(242,236,224,.16)}
+.info li:first-child{border-top:0}
+.info li:before{content:"";position:absolute;left:0;top:21px;width:8px;height:8px;border-radius:50%;background:#D9901E}
+.bar{position:fixed;left:0;right:0;bottom:0;background:#2E3320;border-top:3px solid #D9901E;padding:12px 20px;display:flex;justify-content:center;align-items:center;gap:20px;flex-wrap:wrap;z-index:10}
+.bar p{font-size:15px;color:#CFC9B4}
+.bar .cta{height:48px;background:#F2ECE0;color:#2A2A1C}
+.bar .cta:hover{background:#E2DAC6}
+@media(max-width:900px){.view{grid-template-columns:1fr}.side{position:static}}
+@media(max-width:620px){.wrap{padding:28px 16px 112px}.hd .cta{display:none}.bar p{display:none}.bar .cta{width:100%;justify-content:center}figure{padding:6px}}
+@media(prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+<div class="wrap">
+ <div class="hd">
+  <div>
+   <small>메뉴판 디자인 · SD-MN65</small>
+   <h1>사르텐 <span style="white-space:nowrap">빠에야 &amp; 타파스</span> <em>주문을 받은 뒤에 쌀을 넣어 강철 팬에서 25분 끓이는 스페인 가정식 저녁 가게. 빠에야는 2인과 3~4인 두 가지 팬 가격으로, 기다리는 동안 곁들일 타파스와 상그리아를 한 장에 담았습니다.</em></h1>
+   <div class="facts"><span>A4 세로 · 1장 · 한국어 · 원화</span><span>회반죽 미색 · 올리브 · 사프란 골드</span><span>오른쪽 위로 잘려 나가는 해산물 빠에야 팬</span></div>
+  </div>
+  <a class="cta" href="https://design.shoponph.online/#inquiry">이 디자인으로 상담하기 <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+ </div>
+ <div class="view">
+  <figure><a href="page1.png" target="_blank" rel="noopener"><img src="page1.png" alt="사르텐 메뉴판 전체. 옅은 회반죽 질감의 미색 바탕 왼쪽 위에 스페인 가정식 · 저녁만 엽니다라는 작은 줄과 큰 명조체 상호 사르텐, 그 아래 빠에야 & 타파스와 기울임체 Sartén이 있습니다. 빠에야는 주문을 받은 뒤에 쌀을 넣고 넓은 강철 팬에서 25분 끓여 팬째 내고, 바닥에 눌어붙은 쌀까지 긁어 먹으면 된다는 설명과, 25분(사프란색) 팬에서 끓이는 시간, 2인분 한 팬의 최소 주문, 봄바 쌀 국물을 머금는 쌀 세 칸이 이어집니다. 오른쪽 위에는 양쪽 손잡이가 달린 검은 강철 빠에야 팬이 페이지 밖으로 잘려 나가며 크게 놓여 있고, 노란 사프란 밥 위에 C자로 굽은 붉은 새우 일곱 마리, 홍합 네 개, 오징어 링, 붉은 피망 조각, 완두콩, 파슬리, 레몬 조각 두 개가 올라가 있으며 가장자리 밥은 갈색으로 눌어 있습니다. 아래 빠에야 표는 2인과 3~4인 두 가격 열로, 처음 오셨다면 표시가 붙은 해산물 빠에야 46,000원·66,000원, 발렌시아식 닭고기 빠에야 42,000원·60,000원, 오징어 먹물 빠에야 48,000원·68,000원, 버섯과 아스파라거스 39,000원·56,000원입니다. 왼쪽 아래 타파스에는 감바스 알 아히요 18,000원, 파타타스 브라바스 12,000원, 하몬 크로케타 4개 13,000원, 갈리시아식 문어 24,000원, 꽈리고추 구이 11,000원, 판 콘 토마테 8,000원이 한 줄 설명과 함께 있고, 오른쪽 마실 것 표에는 잔과 병·주전자 가격으로 레드 상그리아 9,000원·32,000원, 하우스 와인 10,000원·42,000원, 카바 11,000원·48,000원, 레몬 소다 7,000원, 탄산수 4,000원이 있습니다. 맨 아래 짙은 올리브색 띠에 화–일 17:00–23:00, 월요일 쉼, 빠에야 마지막 주문 21:30, 예약 000-0000-0000, 인스타그램 @example이 적혀 있습니다." width="2480" height="3508"></a><figcaption><b>A4 세로 1장</b><span>2480 × 3508 px · 인쇄용</span></figcaption></figure>
+  <div class="side">
+   <div class="zoom"><img src="detail-pan.jpg" alt="빠에야 팬 그림 확대. 검은 강철 팬 테두리와 둥근 고리 손잡이 안에 노란 사프란 밥알이 촘촘하고 가장자리로 갈수록 갈색으로 눌어 있습니다. 마디 선과 꼬리 지느러미, 긴 더듬이가 있는 붉은 새우들이 C자로 굽어 밥 위에 놓여 있고, 주황색 살이 보이는 홍합, 오징어 링, 붉은 피망 조각, 완두콩, 레몬 조각이 사이사이 흩어져 있습니다." width="1380" height="1010" loading="lazy"><p><b>팬째 내는 해산물 빠에야</b>새우와 홍합 아래로 가장자리 밥이 갈색으로 눌어 있는 모습까지 그렸습니다</p></div>
+   <div class="info"><h2>바꿔 드릴 수 있는 것</h2><ul><li>메뉴 이름, 가격, 인분 구성</li><li>팬 그림의 재료를 가게 빠에야에 맞춰서</li><li>벽 메뉴판, 테이블 한 장 메뉴, QR 웹메뉴</li></ul></div>
+  </div>
+ </div>
+</div>
+<div class="bar"><p>우리 가게도 이런 메뉴판이 필요하다면</p><a class="cta" href="https://design.shoponph.online/#inquiry">이 디자인으로 상담하기</a></div>
+</body>
+</html>
