@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sili't Gata Bicolano Kitchen · Menu design</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Figtree:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+html{background:#EEE4CE}
+body{font-family:'Figtree',sans-serif;color:#231A16;background:#EEE4CE;-webkit-font-smoothing:antialiased;min-height:100vh;overflow-x:clip;line-height:1.6}
+.wrap{max-width:1180px;margin:0 auto;padding:48px 24px 136px}
+.hd{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:24px;padding-bottom:32px;margin-bottom:40px;border-bottom:2px solid #231A16}
+.hd small{font-size:14px;font-weight:500;color:#5E4E42}
+.hd h1{font-family:'Fraunces',serif;font-weight:700;font-size:clamp(44px,6vw,76px);line-height:1;letter-spacing:-.02em;margin-top:8px;display:flex;flex-wrap:wrap;align-items:flex-end;gap:4px 16px}
+.hd h1 b{font-weight:inherit}
+.hd h1 i{font-style:normal;color:#B8261C}
+.hd h1 span{font-family:'Figtree',sans-serif;font-weight:500;font-size:.4em;letter-spacing:0;color:#4A3B31;padding-bottom:.12em}
+.hd p.lead{font-size:clamp(16px,1.6vw,19px);color:#3F322A;margin-top:20px;max-width:720px;line-height:1.65}
+.facts{display:flex;flex-wrap:wrap;gap:8px 24px;margin-top:20px;font-size:15px;color:#5E4E42}
+.facts span{display:flex;align-items:center;gap:8px}
+.facts span:before{content:"";flex:none;width:8px;height:16px;border-radius:8px 8px 8px 8px/12px 12px 4px 4px;background:#B8261C}
+.cta{display:inline-flex;align-items:center;gap:8px;height:52px;padding:0 24px;background:#231A16;color:#F3E9D4;font-weight:700;font-size:16px;text-decoration:none;border-radius:8px;transition:background-color .2s;white-space:nowrap}
+.cta:hover{background:#3E3029}
+.cta svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+.view{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,.8fr);gap:32px;align-items:start}
+figure{background:#F6EFDE;padding:12px;border-radius:8px;border:1px solid rgba(35,26,22,.18)}
+figure a{display:block;overflow:hidden;border-radius:4px}
+figure img{display:block;width:100%;height:auto}
+figcaption{font-size:14px;color:#5E4E42;padding:12px 4px 0;display:flex;flex-wrap:wrap;justify-content:space-between;gap:4px 12px}
+figcaption b{color:#231A16;font-weight:700}
+.side{display:flex;flex-direction:column;gap:20px;position:sticky;top:24px}
+.zoom{background:#F6EFDE;padding:8px;border-radius:8px;border:1px solid rgba(35,26,22,.18)}
+.zoom img{display:block;width:100%;height:auto;border-radius:4px}
+.zoom p{font-size:15px;color:#4A3B31;padding:12px 8px 4px}
+.zoom p b{display:block;font-family:'Fraunces',serif;font-weight:600;font-size:23px;color:#231A16;margin-bottom:4px;line-height:1.25}
+.info{background:#231A16;color:#D6C9B1;padding:24px;border-radius:8px}
+.info h2{font-family:'Fraunces',serif;font-weight:600;font-size:25px;color:#F3E9D4;margin-bottom:8px;line-height:1.2}
+.info li{list-style:none;font-size:15px;padding:12px 0 12px 24px;position:relative;border-top:1px solid rgba(243,233,212,.16)}
+.info li:first-child{border-top:0}
+.info li:before{content:"";position:absolute;left:2px;top:19px;width:8px;height:14px;border-radius:8px 8px 8px 8px/12px 12px 4px 4px;background:#D9473A}
+.bar{position:fixed;left:0;right:0;bottom:0;background:#231A16;border-top:4px solid #B8261C;padding:12px 20px;display:flex;justify-content:center;align-items:center;gap:20px;flex-wrap:wrap;z-index:10}
+.bar p{font-size:15px;color:#D6C9B1}
+.bar .cta{height:48px;background:#F3E9D4;color:#231A16}
+.bar .cta:hover{background:#E2D6BE}
+@media(max-width:900px){.view{grid-template-columns:1fr}.side{position:static}}
+@media(max-width:620px){.wrap{padding:28px 16px 112px}.hd .cta{display:none}.bar p{display:none}.bar .cta{width:100%;justify-content:center}figure{padding:6px}}
+@media(prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+<div class="wrap">
+ <div class="hd">
+  <div>
+   <small>Menu design · SD-MN68</small>
+   <h1><b>Sili<i>’</i>t Gata</b> <span>Bicolano Kitchen</span></h1>
+   <p class="lead">A neighborhood kitchen cooking Bicol dishes in fresh coconut milk and siling labuyo. A soot-black clay palayok of Bicol Express sits on a rough wooden table with split coconuts and loose chilies, and every dish carries a drawn chili mark so first-time guests can see how hot it runs before they order.</p>
+   <div class="facts"><span>A4 portrait · 1 page · English · ₱</span><span>Coconut cream · palayok black · siling red · taro green</span><span>Three-quarter palayok illustration and chili heat scale</span></div>
+  </div>
+  <a class="cta" href="https://design.shoponph.online/#inquiry">Talk to us about this design <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+ </div>
+ <div class="view">
+  <figure><a href="page1.png" target="_blank" rel="noopener"><img src="page1.png" alt="Full Sili't Gata Bicolano Kitchen menu on a coconut-cream background. Top left: a small line Lutong Bicol · since the first palayok, then the large serif name Sili’t Gata with a red apostrophe and Bicolano Kitchen beneath it; top right: Open daily 10:00 – 21:00, dine in, take out, pot orders, and 0000-000-0000. Below, the headline Pork, taro leaves and squash, slow-cooked in fresh gata with a short paragraph about coconut grated and pressed each morning. Across the page, a three-quarter view of a soot-black clay palayok on a dark wooden table, filled with thick creamy orange coconut sauce with a red oil ring pooling at the edge, glazed pork belly cubes showing skin, fat and lean layers, long green chili strips, red and green chili rings and oil droplets, steam rising and a coconut-shell ladle resting in the sauce; behind it a heart-shaped taro leaf with veins radiating from its center, at left two split coconut halves, at right a scatter of red and green siling labuyo, with notes Palayok — clay pot on a low wood fire, all day and Siling labuyo — added per plate, to your level. A framed How hot strip shows four levels drawn as chili outlines: mild no sili, warm, Bicol hot and lola’s level. The main column Ginataan, cooked in coconut milk with one cup of rice, lists Bicol Express ₱245 (marked first time? start here), Laing ₱195, Pinangat 2 bundles ₱210, Tinutungang Manok ₱265, Ginataang Kalabasa at Sitaw ₱175, Sinantol ₱185 and Ginataang Kuhol ₱230, each with a one-line description and chili marks. The right column has Sweet things — pili tart ₱85, ginataang bilo-bilo ₱90, sili ice cream ₱95, binutong ₱70 — and To drink — salabat ginger tea ₱55, calamansi juice ₱60, fresh buko ₱75, iced tea ₱50. A dark footer offers a whole palayok of Bicol Express or laing for 4 to 5 at ₱890, ordered one day ahead, beside the shop address placeholder and order number 0000-000-0000." width="2480" height="3508"></a><figcaption><b>A4 portrait, 1 page</b><span>2480 × 3508 px · print ready</span></figcaption></figure>
+  <div class="side">
+   <div class="zoom"><img src="detail-palayok.jpg" alt="Close-up of the illustration: a black clay palayok with a burnished sheen and incised dotted band, full of creamy orange coconut sauce with a red oil ring, glazed pork belly cubes in skin, fat and lean layers, green chili strips and chili rings, steam curling up and a coconut-shell ladle resting in the sauce. A heart-shaped taro leaf stands behind it, split coconuts sit on the left of the wooden table and loose red and green chilies on the right, with two short notes beside the pot." width="1520" height="1000" loading="lazy"><p><b>One pot, drawn up close</b>Burnish marks and soot on the clay, skin, fat and lean in every cube of pork, and the red oil that gathers at the rim</p></div>
+   <div class="info"><h2>What we can change for you</h2><ul><li>Dish names, prices, heat levels and opening hours</li><li>The pot contents, for laing, pinangat or your own house dish</li><li>Wall menu, single table card, and a take-out flyer for pot orders</li></ul></div>
+  </div>
+ </div>
+</div>
+<div class="bar"><p>Want a menu like this for your place?</p><a class="cta" href="https://design.shoponph.online/#inquiry">Talk to us about this design</a></div>
+</body>
+</html>
