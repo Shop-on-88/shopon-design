@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Liyab Pares &amp; Mami · Menu design</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600..700&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+html{background:#F2ECDF}
+body{font-family:'Work Sans',sans-serif;color:#3A2418;background:#F2ECDF;-webkit-font-smoothing:antialiased;min-height:100vh;overflow-x:clip;line-height:1.6}
+.wrap{max-width:1180px;margin:0 auto;padding:48px 24px 136px}
+.hd{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:24px;padding-bottom:32px;margin-bottom:40px;border-bottom:1.5px solid #3A2418}
+.hd small{font-size:14px;font-weight:500;color:#6B5040}
+.hd h1{font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:clamp(44px,6vw,72px);line-height:1;letter-spacing:-.035em;margin-top:8px}
+.hd h1 em{display:block;font-family:'Work Sans',sans-serif;font-style:normal;font-weight:400;font-size:clamp(16px,1.6vw,19px);letter-spacing:0;color:#6B5040;margin-top:16px;max-width:660px;line-height:1.6}
+.facts{display:flex;flex-wrap:wrap;gap:8px 24px;margin-top:20px;font-size:15px;color:#6B5040}
+.facts span{display:flex;align-items:center;gap:8px}
+.facts span:before{content:"";width:8px;height:8px;border-radius:50%;background:#C33A1F}
+.cta{display:inline-flex;align-items:center;gap:8px;height:52px;padding:0 24px;background:#3A2418;color:#F4EBDA;font-weight:600;font-size:16px;text-decoration:none;border-radius:8px;transition:background-color .2s;white-space:nowrap}
+.cta:hover{background:#523527}
+.cta svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+.view{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,.8fr);gap:32px;align-items:start}
+figure{background:#FBF7EE;padding:12px;border-radius:8px;border:1px solid rgba(58,36,24,.16);box-shadow:0 24px 48px -32px rgba(58,36,24,.55)}
+figure a{display:block;overflow:hidden;border-radius:4px}
+figure img{display:block;width:100%;height:auto}
+figcaption{font-size:14px;color:#6B5040;padding:12px 4px 0;display:flex;flex-wrap:wrap;justify-content:space-between;gap:4px 12px}
+figcaption b{color:#3A2418;font-weight:600}
+.side{display:flex;flex-direction:column;gap:20px;position:sticky;top:24px}
+.zoom{background:#FBF7EE;padding:8px;border-radius:8px;border:1px solid rgba(58,36,24,.16)}
+.zoom img{display:block;width:100%;height:auto;border-radius:4px}
+.zoom p{font-size:15px;color:#6B5040;padding:12px 8px 4px}
+.zoom p b{display:block;font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:20px;color:#3A2418;margin-bottom:4px;letter-spacing:-.01em}
+.info{background:#3A2418;color:#E4D8C3;padding:24px;border-radius:8px}
+.info h2{font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:22px;color:#F4EBDA;margin-bottom:8px;letter-spacing:-.01em}
+.info li{list-style:none;font-size:15px;padding:12px 0 12px 20px;position:relative;border-top:1px solid rgba(244,235,218,.16)}
+.info li:first-child{border-top:0}
+.info li:before{content:"";position:absolute;left:0;top:21px;width:8px;height:8px;border-radius:50%;background:#C33A1F}
+.bar{position:fixed;left:0;right:0;bottom:0;background:#3A2418;border-top:3px solid #C33A1F;padding:12px 20px;display:flex;justify-content:center;align-items:center;gap:20px;flex-wrap:wrap;z-index:10}
+.bar p{font-size:15px;color:#CDBDA5}
+.bar .cta{height:48px;background:#F4EBDA;color:#3A2418}
+.bar .cta:hover{background:#E6D9C3}
+@media(max-width:900px){.view{grid-template-columns:1fr}.side{position:static}}
+@media(max-width:620px){.wrap{padding:28px 16px 112px}.hd .cta{display:none}.bar p{display:none}.bar .cta{width:100%;justify-content:center}figure{padding:6px}}
+@media(prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+<div class="wrap">
+ <div class="hd">
+  <div>
+   <small>Menu design · SD-MN64</small>
+   <h1>Liyab Pares &amp; Mami <em>A late-night beef pares and mami canteen open 6PM to 4AM. Brisket braised all afternoon in soy and star anise, garlic rice on every plate, and a bowl of broth you can refill for free.</em></h1>
+   <div class="facts"><span>A4 portrait · 1 page · English · ₱ prices</span><span>Melamine cream · toyo brown · sili red</span><span>Order-ticket layout with a pares bowl illustration</span></div>
+  </div>
+  <a class="cta" href="https://design.shoponph.online/#inquiry">Talk to us about this design <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+ </div>
+ <div class="view">
+  <figure><a href="page1.png" target="_blank" rel="noopener"><img src="page1.png" alt="Full Liyab Pares and Mami menu on cream paper. A dark brown strip at the top reads Open every night 6PM to 4AM, and on the right, with a small red dot, Extra broth is free, ask as many times as you like. Below on the left, a small line says Pares, Mami, Lomi, the kaldero goes on at 2PM, then the large name Liyab in heavy brown grotesque letters and Pares and Mami House underneath. A short paragraph explains the brisket is simmered all afternoon in soy, star anise and brown sugar, and every plate comes with garlic rice and broth. Three figures sit in a ruled row: 6 hrs brisket braise, 1 pot broth all night, 4AM last order 3:45. On the right, a large cream melamine bowl with thin red-brown rim lines holds a glossy pool of dark sauce with rough cubes and slabs of braised beef sitting in it, their cut faces showing the grain, plus star anise pods, toasted garlic bits and scattered spring onion rings, with steam rising. Behind it are a garlic rice dome on a plate and a small bowl of clear golden broth, and in front a dish of soy with chili and two calamansi halves. The menu below is laid out as tear-off order tickets with notched edges and a dashed stub. Ticket 01, Beef Pares, offers Regular 120 pesos, Special with a soft-boiled egg 160 pesos printed in red with a red dot, and Overload with double beef, two eggs and chicharon 210 pesos, plus a note about asking for broth over the rice. Ticket 02, Mami and Lomi, lists Pares Mami 150, Beef Mami 110, Chicken Mami 95 and Lomi 130 pesos with short descriptions. On the right, an Add-ons box lists garlic rice 25, plain rice 15, extra egg 15, chicharon bits 20 and extra broth free, and a Drinks box lists sago't gulaman 35, calamansi juice 40, bottled soft drink 30 and hot coffee 20. A three-step row explains ordering and paying at the counter, bringing your number stick to any table, waiting for your number, and raising your bowl for more broth. A dark footer shows the hours, a placeholder number 0900-000-0000 and FB page: example." width="2480" height="3508"></a><figcaption><b>A4 portrait, 1 page</b><span>2480 × 3508 px · print ready</span></figcaption></figure>
+  <div class="side">
+   <div class="zoom"><img src="detail-bowl.jpg" alt="Close-up of the illustration. A cream melamine bowl with two thin red-brown lines holds glossy dark soy sauce with a lighter rim at the edge. Rough cubes and slabs of braised beef in different sizes sit half sunk in the sauce, their lighter cut faces showing the grain, with small glossy highlights on the sauce-coated tops and darker sauce in the creases, among two star anise pods, toasted garlic bits and spring onion rings, some half sunk. Steam rises from the bowl. To the left is a dome of garlic rice dotted with toasted garlic on a plate, to the right a small bowl of golden broth with spring onion, and in front a soy dish with chili and two calamansi halves." width="1380" height="1010" loading="lazy"><p><b>Brisket sitting in the sauce</b>Cubes of brisket and star anise in the dark sauce, with the rice and the free broth beside it</p></div>
+   <div class="info"><h2>What we can change</h2><ul><li>Items, prices and portion names</li><li>The bowl illustration to match your sauce and toppings</li><li>Wall menu board, counter price list or QR web menu</li></ul></div>
+  </div>
+ </div>
+</div>
+<div class="bar"><p>Need a menu like this for your place?</p><a class="cta" href="https://design.shoponph.online/#inquiry">Talk to us about this design</a></div>
+</body>
+</html>
