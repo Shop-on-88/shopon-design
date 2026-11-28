@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>김오름 온천여행 · 료칸 연박 겨울 온천 여행</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@700;800&family=Noto+Sans+KR:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+ --night:#1B252E;--night2:#25323C;--washi:#F2EDE4;--paper:#FAF7F1;--ink:#24211E;--ink2:#56504A;--ink3:#7A726A;
+ --cedar:#5A3E2B;--stone:#3B4248;--yuzu:#E0AA2E;--red:#A8432A;--red-d:#8E3621;--steam:#E9EEF0;
+ --line:rgba(36,33,30,.14);--line2:rgba(36,33,30,.28);--nl:rgba(233,238,240,.16)
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;background:var(--washi)}
+body{font-family:'Noto Sans KR',sans-serif;font-size:16px;line-height:1.65;color:var(--ink);background:var(--washi);word-break:keep-all;-webkit-font-smoothing:antialiased;overflow-x:clip}
+a{color:inherit}
+svg{display:block}
+.in{max-width:1200px;margin:0 auto;padding:0 32px}
+.num{font-variant-numeric:tabular-nums}
+.my{font-family:'Nanum Myeongjo',serif}
+h1,h2,h3{font-family:'Nanum Myeongjo',serif;font-weight:700;letter-spacing:-.02em;line-height:1.35}
+h2{font-size:clamp(28px,3.2vw,40px)}
+.kick{font-size:15px;font-weight:600;color:var(--cedar);margin-bottom:12px}
+.lead{font-size:17px;color:var(--ink2);max-width:620px;margin-top:16px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;height:48px;padding:0 24px;border-radius:8px;background:var(--red);color:#FFF6EE;font-weight:600;font-size:16px;text-decoration:none;border:0;cursor:pointer;font-family:inherit;transition:background-color .2s}
+.btn:hover{background:var(--red-d)}
+.btn svg,.btn-d svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.btn-d{white-space:nowrap;flex:none;display:inline-flex;align-items:center;justify-content:center;gap:8px;height:44px;padding:0 20px;border-radius:8px;background:var(--ink);color:var(--paper);font-weight:600;font-size:15px;text-decoration:none;border:0;cursor:pointer;font-family:inherit;transition:background-color .2s}
+.btn-d:hover{background:#3A3530}
+.ln{display:inline-flex;align-items:center;gap:8px;min-height:44px;color:#DCE3E6;font-weight:500;text-decoration:none;border-bottom:1px solid rgba(220,227,230,.4)}
+.ln:hover{border-color:#DCE3E6}
+.ico{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round;flex:none}
+
+/* header */
+header{position:absolute;top:0;left:0;right:0;z-index:5}
+.nav{display:flex;justify-content:space-between;align-items:center;height:80px;color:#E9EEF0}
+.logo{display:flex;align-items:center;gap:12px;text-decoration:none;font-family:'Nanum Myeongjo',serif;font-weight:800;font-size:22px}
+.logo svg{width:32px;height:32px}
+.nav nav{display:flex;align-items:center;gap:32px;font-size:15px}
+.nav nav a{text-decoration:none;color:#CAD3D7;min-height:44px;display:flex;align-items:center}
+.nav nav a:hover{color:#fff}
+.nav .btn{height:40px;padding:0 16px;font-size:15px}
+
+/* hero */
+.hero{position:relative;min-height:820px;background:var(--night);color:#E9EEF0;overflow:hidden}
+.hero .scene{position:absolute;inset:0}
+.hero .scene svg{width:100%;height:100%}
+.hero .shade{position:absolute;inset:0;background:linear-gradient(90deg,rgba(20,28,35,.82) 0%,rgba(20,28,35,.55) 38%,rgba(20,28,35,0) 64%)}
+.hero .in{position:relative;padding-top:184px;padding-bottom:200px}
+.hero small{display:block;font-size:15px;color:#BAC5CA;margin-bottom:20px}
+.hero h1{font-size:clamp(36px,4.6vw,60px);line-height:1.3;max-width:620px;color:#F4F1EA}
+.hero .lead{color:#C9D2D6;max-width:520px;margin-top:24px}
+.hero .acts{display:flex;flex-wrap:wrap;gap:16px 32px;align-items:center;margin-top:40px}
+.facts{position:relative;border-top:1px solid var(--nl);background:var(--night);color:#E9EEF0}
+.facts .in{display:grid;grid-template-columns:repeat(3,1fr)}
+.facts div.f{padding:24px 0 24px 0;display:flex;align-items:baseline;gap:16px}
+.facts div.f+div.f{border-left:1px solid var(--nl);padding-left:32px}
+.facts b{font-family:'Nanum Myeongjo',serif;font-size:36px;color:#F4F1EA;font-weight:800;line-height:1}
+.facts span{font-size:15px;color:#BAC5CA}
+
+section{padding:96px 0}
+.sec-h{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:24px;margin-bottom:48px}
+.sec-h .lead{margin-top:0;max-width:520px}
+
+/* trips */
+.trips{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:24px}
+.trip{background:var(--paper);border:1px solid var(--line);border-radius:16px;overflow:hidden;display:flex;flex-direction:column}
+.trip .pic{aspect-ratio:16/9;background:#C9CFD1}
+.trip .pic svg{width:100%;height:100%}
+.trip .body{padding:24px 28px 28px;display:flex;flex-direction:column;flex:1}
+.trip .where{font-size:14px;color:var(--ink3)}
+.trip h3{font-size:24px;margin-top:4px}
+.trip p{color:var(--ink2);margin-top:8px;font-size:15px}
+.trip .meta{display:flex;flex-wrap:wrap;gap:8px 20px;margin-top:16px;font-size:14px;color:var(--ink2)}
+.trip .meta span{display:flex;align-items:center;gap:8px}
+.trip .meta .ico{width:18px;height:18px;color:var(--cedar)}
+.trip .pr{margin-top:auto;padding-top:20px;display:flex;justify-content:space-between;align-items:flex-end;gap:16px;border-top:1px solid var(--line)}
+.trip .pr b{font-size:24px;font-weight:700;white-space:nowrap}
+.trip .pr small{display:block;font-size:13px;color:var(--ink3);font-weight:400}
+.trip.big .pic{aspect-ratio:16/8}
+.trip.big h3{font-size:30px}
+.trip.big .pr b{font-size:30px}
+.side{display:grid;grid-template-rows:1fr 1fr;gap:24px}
+.side .trip{flex-direction:row}
+.side .trip .pic{aspect-ratio:auto;width:40%;flex:none}
+.side .trip .body{padding:20px 24px}
+.side .trip h3{font-size:21px}
+
+/* days */
+.days{background:var(--paper);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.dgrid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border-top:2px solid var(--ink)}
+.day{padding:24px 24px 32px 0}
+.day+.day{border-left:1px solid var(--line);padding-left:24px}
+.day .d{font-size:14px;font-weight:600;color:var(--cedar)}
+.day h3{font-size:21px;margin:4px 0 16px}
+.day ul{list-style:none}
+.day li{display:grid;grid-template-columns:52px 1fr;gap:8px;font-size:15px;padding:8px 0;border-bottom:1px dashed var(--line)}
+.day li time{color:var(--ink3);font-variant-numeric:tabular-nums}
+.day .stay{margin-top:16px;font-size:14px;color:var(--ink2);display:flex;gap:8px;align-items:flex-start}
+.day .stay .ico{width:18px;height:18px;color:var(--cedar);margin-top:2px}
+
+/* ryokan compare */
+.cmp{width:100%;border-collapse:collapse}
+.cmp th,.cmp td{text-align:left;padding:18px 16px;border-bottom:1px solid var(--line);vertical-align:top;font-size:15px}
+.cmp thead th{border-bottom:2px solid var(--ink);font-size:14px;color:var(--ink3);font-weight:600}
+.cmp thead th.hl{color:var(--ink)}
+.cmp tbody th{font-weight:600;width:22%}
+.cmp td.hl{background:#EFE6D6}
+.cmp td small{display:block;color:var(--ink3);font-size:13px}
+
+/* dates */
+.dates{background:var(--night);color:#DCE3E6}
+.dates .kick{color:#C9B48A}
+.dates .lead{color:#AAB6BC}
+.tabs{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:24px}
+.tabs button{font:inherit;font-size:15px;font-weight:500;height:44px;padding:0 20px;border-radius:8px;border:1px solid rgba(220,227,230,.28);background:transparent;color:#DCE3E6;cursor:pointer;transition:background-color .2s,border-color .2s}
+.tabs button:hover{background:var(--night2)}
+.tabs button[aria-pressed=true]{background:#E9EEF0;color:var(--night);border-color:#E9EEF0}
+.dl{border-top:1px solid rgba(220,227,230,.28)}
+.dr{display:grid;grid-template-columns:140px 1fr 160px 140px;gap:16px;align-items:center;padding:16px 0;border-bottom:1px solid var(--nl)}
+.dr .dt{font-weight:600;font-variant-numeric:tabular-nums;color:#F4F1EA}
+.dr .nm{color:#C9D2D6}
+.dr .pp{font-variant-numeric:tabular-nums;text-align:right}
+.st{justify-self:end;font-size:14px;display:flex;align-items:center;gap:8px}
+.st:before{content:"";width:8px;height:8px;border-radius:50%;background:#8FB39A}
+.st.few:before{background:var(--yuzu)}
+.st.off{color:#7F8C93}.st.off:before{background:#5B676E}
+.dr.hide{display:none}
+
+/* incl */
+.incl{display:grid;grid-template-columns:1fr 1fr;gap:64px}
+.incl h3{font-size:22px;padding-bottom:12px;border-bottom:2px solid var(--ink)}
+.incl ul{list-style:none}
+.incl li{display:flex;gap:12px;padding:14px 0;border-bottom:1px solid var(--line);font-size:15px}
+.incl li .ico{width:20px;height:20px;margin-top:2px;color:var(--cedar)}
+.incl .no li .ico{color:var(--ink3)}
+
+/* faq */
+.faq details{border-bottom:1px solid var(--line)}
+.faq summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:20px 0;font-weight:600;font-size:17px;min-height:44px}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary .ico{width:20px;height:20px;transition:transform .2s}
+.faq details[open] summary .ico{transform:rotate(45deg)}
+.faq details p{padding:0 0 24px;color:var(--ink2);max-width:760px}
+.two{display:grid;grid-template-columns:minmax(0,4fr) minmax(0,7fr);gap:64px}
+
+/* form */
+.ask{background:var(--paper);border-top:1px solid var(--line)}
+.ask .in{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,6fr);gap:64px;align-items:start}
+.ask .contact{margin-top:32px;font-size:15px;color:var(--ink2);border-top:1px solid var(--line)}
+.ask .contact p{padding:12px 0;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;gap:16px}
+.ask .contact b{color:var(--ink);font-weight:600}
+form{background:var(--washi);border:1px solid var(--line2);border-radius:16px;padding:32px}
+.row{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:16px}
+.fl{display:flex;flex-direction:column;gap:8px;margin-bottom:20px}
+.fl label{font-size:14px;font-weight:600}
+.fl input,.fl select,.fl textarea{width:100%;min-width:0;font:inherit;font-size:16px;height:48px;padding:0 16px;border:1px solid var(--line2);border-radius:8px;background:var(--paper);color:var(--ink)}
+.fl textarea{height:96px;padding:12px 16px;resize:vertical}
+.fl input:focus,.fl select:focus,.fl textarea:focus{outline:2px solid var(--ink);outline-offset:1px}
+form .btn{width:100%}
+.err{font-size:14px;color:#A2381F;min-height:20px;margin:-8px 0 12px}
+.ok{display:none}
+.ok h3{font-size:24px}
+.ok p{color:var(--ink2);margin-top:12px}
+form.done .fields{display:none}
+form.done .ok{display:block}
+
+footer{background:var(--night);color:#AAB6BC;padding:48px 0;font-size:14px}
+footer .in{display:flex;flex-wrap:wrap;justify-content:space-between;gap:24px}
+footer b{color:#F4F1EA;font-family:'Nanum Myeongjo',serif;font-size:18px}
+footer p{margin-top:8px}
+
+.rv{opacity:0;transform:translateY(12px);transition:opacity .5s ease,transform .5s ease}
+.rv.on{opacity:1;transform:none}
+
+@media(max-width:1024px){
+ .nav nav a.lk{display:none}
+ .trips{grid-template-columns:1fr}
+ .dgrid{grid-template-columns:1fr 1fr}
+ .day:nth-child(3){border-left:0;padding-left:0}
+ .day:nth-child(n+3){border-top:1px solid var(--line)}
+}
+@media(max-width:900px){
+ .ask .in,.two,.incl{grid-template-columns:minmax(0,1fr);gap:40px}
+ .dr{grid-template-columns:110px 1fr auto;row-gap:4px}
+ .dr .pp{grid-column:2;text-align:left;color:#AAB6BC;font-size:14px}
+ .dr .st{grid-column:3;grid-row:1/span 2;align-self:center}
+}
+@media(max-width:620px){
+ .in{padding:0 16px}
+ .hero{min-height:0}
+ .hero{background:#1A242D}
+ .hero .scene{top:auto;height:420px}
+ .hero .shade{background:linear-gradient(180deg,#1A242D 0%,rgba(26,36,45,.9) 45%,rgba(26,36,45,0) 75%)}
+ .hero .in{padding-top:112px;padding-bottom:300px}
+ .facts .in{grid-template-columns:1fr}
+ .facts div.f+div.f{border-left:0;padding-left:0;border-top:1px solid var(--nl)}
+ .facts div.f{padding:16px 0}
+ section{padding:64px 0}
+ .side{grid-template-rows:auto}
+ .side .trip{flex-direction:column}
+ .side .trip .pic{width:100%;aspect-ratio:16/9}
+ .dgrid{grid-template-columns:1fr}
+ .day,.day+.day{border-left:0;padding-left:0;border-top:1px solid var(--line)}
+ .day:first-child{border-top:0}
+ .cmp thead{display:none}
+ .cmp,.cmp tbody,.cmp tr,.cmp th,.cmp td{display:block;width:100%}
+ .cmp tr{padding:12px 0;border-bottom:1px solid var(--line)}
+ .cmp th,.cmp td{border:0;padding:4px 0}
+ .cmp td:before{content:attr(data-l);display:block;font-size:13px;color:var(--ink3)}
+ .cmp td.hl{background:none}
+ .row{grid-template-columns:minmax(0,1fr);gap:0}
+ form{padding:24px 16px}
+ .nav .btn{display:none}
+ .hero h1 br{display:none}
+ .hero h1{font-size:32px}
+ .trip.big h3{font-size:24px}
+ .trip.big .pr b{font-size:24px}
+}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}.rv{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+<header>
+ <div class="in nav">
+  <a class="logo" href="#top" aria-label="김오름 온천여행">
+   <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M5 24c4 3 18 3 22 0" fill="none" stroke="#E9EEF0" stroke-width="2.2" stroke-linecap="round"/><path d="M11 19c-2-3 2-5 0-9M16 19c-2-3 2-5 0-10M21 19c-2-3 2-5 0-9" fill="none" stroke="#D9764F" stroke-width="2.2" stroke-linecap="round"/></svg>
+   김오름 온천여행
+  </a>
+  <nav>
+   <a class="lk" href="#trips">겨울 일정</a>
+   <a class="lk" href="#days">하루 흐름</a>
+   <a class="lk" href="#ryokan">료칸 고르기</a>
+   <a class="lk" href="#dates">출발일</a>
+   <a class="btn" href="#ask">상담 예약</a>
+  </nav>
+ </div>
+</header>
+
+<main id="top">
+<div class="hero">
+ <div class="scene" aria-hidden="true">
+  <svg viewBox="0 0 1600 860" preserveAspectRatio="xMidYMid slice">
+   <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1A242D"/><stop offset=".5" stop-color="#3A4650"/><stop offset=".8" stop-color="#7A6D66"/><stop offset="1" stop-color="#B08A6E"/></linearGradient>
+    <linearGradient id="ridge1" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#4C5C66"/><stop offset="1" stop-color="#34424B"/></linearGradient>
+    <linearGradient id="water" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#4A6A6C"/><stop offset="1" stop-color="#28403F"/></linearGradient>
+    <linearGradient id="glow" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#F6CF7A" stop-opacity=".9"/><stop offset="1" stop-color="#E0AA2E" stop-opacity="0"/></linearGradient>
+    <radialGradient id="lantern" cx=".45" cy=".4" r=".6"><stop offset="0" stop-color="#FFE7A8"/><stop offset=".7" stop-color="#E9B444"/><stop offset="1" stop-color="#B98320"/></radialGradient>
+    <radialGradient id="halo" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#F6CF7A" stop-opacity=".45"/><stop offset="1" stop-color="#F6CF7A" stop-opacity="0"/></radialGradient>
+    <linearGradient id="rock" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#4A5258"/><stop offset="1" stop-color="#22282C"/></linearGradient>
+    <linearGradient id="wood" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#6B4A33"/><stop offset="1" stop-color="#3E2A1D"/></linearGradient>
+    <linearGradient id="shoji" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#F8DC9A"/><stop offset="1" stop-color="#E9B95A"/></linearGradient>
+    <filter id="st" x="-40%" y="-40%" width="180%" height="180%"><feGaussianBlur stdDeviation="18"/></filter>
+    <filter id="st2" x="-40%" y="-40%" width="180%" height="180%"><feGaussianBlur stdDeviation="6"/></filter>
+   </defs>
+   <rect width="1600" height="860" fill="url(#sky)"/>
+   <path d="M0 470l140-80 120 50 160-120 140 90 120-60 180 110 160-90 200 120 180-70 200 80v380H0Z" fill="url(#ridge1)" opacity=".7"/>
+   <path d="M420 320l-40 30 30-6 20 18 20-22 30 8ZM1000 360l-40 26 34-4 26 14 16-18 26 6Z" fill="#DDE4E7" opacity=".55"/>
+   <g fill="#202B32">
+    <path d="M520 560l40-150 40 150Z"/><path d="M580 570l34-120 34 120Z"/><path d="M640 560l46-180 46 180Z"/><path d="M710 575l36-130 36 130Z"/>
+    <path d="M60 560l40-140 40 140Z"/><path d="M120 570l34-110 34 110Z"/><path d="M180 560l44-170 44 170Z"/>
+   </g>
+   <g fill="#D7DFE2" opacity=".75">
+    <path d="M556 430l4-16 6 18-5-2Z"/><path d="M682 400l4-18 8 22-6-3Z"/><path d="M220 410l4-18 8 22-6-3Z"/><path d="M98 440l3-14 6 16-4-2Z"/>
+    <path d="M540 500l20-8 20 10-20-2ZM660 470l26-10 26 12-26-2ZM200 480l24-10 24 12-24-2Z"/>
+   </g>
+   <rect y="560" width="1600" height="40" fill="#2A363E"/>
+   <g>
+    <rect x="1040" y="380" width="560" height="250" fill="#2B2420"/>
+    <rect x="1080" y="430" width="140" height="150" fill="url(#shoji)"/>
+    <rect x="1240" y="430" width="140" height="150" fill="url(#shoji)"/>
+    <rect x="1400" y="430" width="140" height="150" fill="url(#shoji)" opacity=".85"/>
+    <g stroke="#7A5A36" stroke-width="3" opacity=".6">
+     <path d="M1115 430v150M1150 430v150M1185 430v150M1080 480h140M1080 530h140"/>
+     <path d="M1275 430v150M1310 430v150M1345 430v150M1240 480h140M1240 530h140"/>
+     <path d="M1435 430v150M1470 430v150M1505 430v150M1400 480h140M1400 530h140"/>
+    </g>
+    <rect x="1040" y="380" width="560" height="14" fill="#3E2A1D"/>
+    <rect x="1060" y="394" width="16" height="236" fill="url(#wood)"/><rect x="1226" y="394" width="10" height="236" fill="url(#wood)"/><rect x="1386" y="394" width="10" height="236" fill="url(#wood)"/><rect x="1546" y="394" width="16" height="236" fill="url(#wood)"/>
+    <path d="M980 380l100-90h520v90Z" fill="#2E2925"/>
+    <path d="M980 380l100-90h520v14H1086l-92 84Z" fill="#40362F"/>
+    <path d="M1076 286c40-14 120-18 200-12 100-8 200-6 324 2v20c-120 6-240 2-330 6-80-2-150 2-196 8Z" fill="#E7EDEF"/>
+    <path d="M984 372c20-30 60-60 96-86l8 10c-34 26-70 56-92 82Z" fill="#E7EDEF"/>
+    <path d="M980 380h620v8H980Z" fill="#DDE4E7" opacity=".6"/>
+   </g>
+   <path d="M1000 388v40" stroke="#1E1A17" stroke-width="3"/>
+   <circle cx="1000" cy="470" r="110" fill="url(#halo)"/>
+   <rect x="984" y="424" width="32" height="8" rx="2" fill="#2B2420"/>
+   <ellipse cx="1000" cy="470" rx="30" ry="40" fill="url(#lantern)"/>
+   <path d="M972 455h56M970 470h60M972 485h56" stroke="#B98320" stroke-width="1.5" opacity=".6"/>
+   <rect x="986" y="508" width="28" height="8" rx="2" fill="#2B2420"/>
+   <path d="M0 600c200-20 400 10 600 0s500-30 1000 0v260H0Z" fill="#C9D3D7"/>
+   <path d="M0 620c240-10 480 12 760 4s560-20 840 0" stroke="#E6ECEE" stroke-width="10" fill="none" opacity=".7"/>
+   <path d="M330 720c40-70 260-100 520-96 260 4 460 40 500 100 30 60-180 110-520 112-340 2-540-50-500-116Z" fill="url(#water)"/>
+   <path d="M1000 640c-6 30 8 60 0 100" stroke="url(#glow)" stroke-width="30" stroke-linecap="round" opacity=".45" filter="url(#st2)"/>
+   <path d="M1150 650c-4 24 6 48 0 76M1310 660c-4 22 6 44 0 70" stroke="url(#glow)" stroke-width="22" stroke-linecap="round" opacity=".35" filter="url(#st2)"/>
+   <path d="M520 700c80-8 180-6 260 0M640 740c90-6 200-4 300 2" stroke="#7FA0A6" stroke-width="3" opacity=".35" stroke-linecap="round"/>
+   <g>
+    <path d="M270 740c-10-40 30-70 80-66 40 4 60 30 56 60-30 20-110 26-136 6Z" fill="url(#rock)"/>
+    <path d="M286 690c20-16 60-20 90-8-20 6-60 8-90 8Z" fill="#E9EEF0"/>
+    <path d="M390 660c0-30 50-46 90-36 30 8 40 28 30 46-40 10-90 8-120-10Z" fill="url(#rock)"/>
+    <path d="M400 640c24-14 60-16 90-6-24 4-60 6-90 6Z" fill="#E9EEF0"/>
+    <path d="M1300 640c10-30 70-40 110-24 26 12 30 34 14 50-44 6-100 0-124-26Z" fill="url(#rock)"/>
+    <path d="M1316 622c24-14 70-16 100-4-28 4-70 6-100 4Z" fill="#E9EEF0"/>
+    <path d="M1380 740c0-36 60-56 110-44 34 10 44 34 30 56-50 12-110 8-140-12Z" fill="url(#rock)"/>
+    <path d="M1396 708c26-16 74-18 108-6-30 6-76 8-108 6Z" fill="#E9EEF0"/>
+    <path d="M300 800c40-30 140-36 220-20 20 30-10 56-60 60-70 4-150-10-160-40Z" fill="url(#rock)"/>
+    <path d="M1040 840c40-40 180-50 280-26 30 30-10 60-80 64-90 6-190-10-200-38Z" fill="url(#rock)"/>
+    <path d="M1080 806c50-20 140-24 210-8-50 8-150 10-210 8Z" fill="#E9EEF0"/>
+    <path d="M600 860c30-30 160-40 260-20 20 20-20 40-80 40H600Z" fill="url(#rock)"/>
+   </g>
+   <g transform="translate(1330 596)">
+    <path d="M0 0h56l-6 40H6Z" fill="#B88A5A"/>
+    <path d="M2 10h52M4 28h48" stroke="#5A3E2B" stroke-width="4"/>
+    <ellipse cx="28" cy="0" rx="28" ry="6" fill="#8A6440"/>
+    <path d="M56 4l30-10" stroke="#B88A5A" stroke-width="6" stroke-linecap="round"/>
+   </g>
+   <g fill="#E9EEF0" filter="url(#st)">
+    <ellipse cx="640" cy="660" rx="180" ry="50" opacity=".5"/>
+    <ellipse cx="900" cy="630" rx="220" ry="64" opacity=".48"/>
+    <ellipse cx="760" cy="540" rx="140" ry="50" opacity=".22"/>
+    <ellipse cx="1140" cy="640" rx="170" ry="48" opacity=".4"/>
+    <ellipse cx="980" cy="470" rx="120" ry="44" opacity=".16"/>
+   </g>
+   <g fill="#F2F5F6">
+    <circle cx="900" cy="160" r="2"/><circle cx="1180" cy="140" r="2.5"/><circle cx="1420" cy="200" r="2"/><circle cx="1540" cy="110" r="3"/><circle cx="960" cy="260" r="2.5"/><circle cx="1110" cy="230" r="2"/><circle cx="1240" cy="250" r="3"/><circle cx="1500" cy="300" r="2.5"/><circle cx="860" cy="340" r="2"/><circle cx="740" cy="200" r="2.5"/><circle cx="680" cy="110" r="2"/><circle cx="1380" cy="330" r="2"/><circle cx="1580" cy="420" r="2.5"/><circle cx="900" cy="420" r="3"/><circle cx="780" cy="300" r="2"/><circle cx="1200" cy="360" r="2"/><circle cx="560" cy="250" r="2"/><circle cx="480" cy="140" r="2.5"/><circle cx="380" cy="230" r="2"/><circle cx="260" cy="120" r="2"/><circle cx="160" cy="250" r="2.5"/><circle cx="1340" cy="480" r="2.5"/><circle cx="1160" cy="520" r="2"/><circle cx="840" cy="500" r="2"/>
+   </g>
+  </svg>
+ </div>
+ <div class="shade"></div>
+ <div class="in">
+  <small>규슈 · 홋카이도 소도시 온천 · 한 팀 8명까지</small>
+  <h1>눈 내리는 노천탕이 있는 <br>료칸 한 곳에 이틀 묵는 <br>겨울 온천 여행</h1>
+  <p class="lead">김오름 온천여행은 료칸을 매일 옮기지 않습니다. 한 곳에 연달아 묵으면서 저녁 식사와 아침 탕을 서두르지 않도록, 하루 이동은 두 시간 안으로 짭니다.</p>
+  <div class="acts">
+   <a class="btn" href="#dates">1~2월 출발일 보기 <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+   <a class="ln" href="#ask">일정 상담 예약</a>
+  </div>
+ </div>
+</div>
+ <div class="facts">
+  <div class="in">
+   <div class="f"><b class="num">8명</b><span>한 팀 최대 인원, 가이드 한 명</span></div>
+   <div class="f"><b class="num">2박</b><span>같은 료칸에 연달아 묵기</span></div>
+   <div class="f"><b class="num">2시간</b><span>하루 이동은 이 안으로</span></div>
+  </div>
+ </div>
+
+<section id="trips">
+ <div class="in">
+  <div class="sec-h rv">
+   <div><p class="kick">이번 겨울 일정</p><h2>세 마을, 세 가지 탕</h2></div>
+   <p class="lead">세 일정 모두 인천 출발 직항, 료칸 2박 이상, 저녁 가이세키 포함입니다. 금액은 2인 1실 기준 1인 요금입니다.</p>
+  </div>
+  <div class="trips rv">
+   <article class="trip big">
+    <div class="pic">
+     <svg viewBox="0 0 640 320" preserveAspectRatio="xMidYMid slice" aria-label="눈 쌓인 계곡을 따라 목조 료칸 지붕이 이어지고 개울에 김이 오르는 그림">
+      <defs><linearGradient id="v1" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#5B6A73"/><stop offset="1" stop-color="#8C9BA2"/></linearGradient></defs>
+      <rect width="640" height="320" fill="url(#v1)"/>
+      <path d="M0 150l90-60 70 40 90-70 110 80 90-50 100 60 90-40v210H0Z" fill="#3D4A52"/>
+      <g fill="#2A343A"><path d="M30 190l20-70 20 70Z"/><path d="M60 196l16-56 16 56Z"/><path d="M520 180l22-80 22 80Z"/><path d="M556 190l18-62 18 62Z"/><path d="M590 186l20-74 20 74Z"/></g>
+      <path d="M0 200c120-10 220 16 320 10s200-24 320-14v124H0Z" fill="#D8E0E3"/>
+      <g>
+       <path d="M110 220l50-34 50 34Z" fill="#3B2F28"/><path d="M114 216l46-30 46 30" fill="none" stroke="#E8EDEF" stroke-width="6"/><rect x="122" y="220" width="76" height="40" fill="#4A3A2E"/><rect x="134" y="230" width="22" height="20" fill="#F2C873"/><rect x="164" y="230" width="22" height="20" fill="#F2C873"/>
+       <path d="M250 214l60-40 60 40Z" fill="#3B2F28"/><path d="M254 210l56-36 56 36" fill="none" stroke="#E8EDEF" stroke-width="6"/><rect x="264" y="214" width="92" height="48" fill="#4A3A2E"/><rect x="276" y="226" width="26" height="24" fill="#F2C873"/><rect x="318" y="226" width="26" height="24" fill="#F2C873"/>
+       <path d="M410 222l46-30 46 30Z" fill="#3B2F28"/><path d="M414 218l42-27 42 27" fill="none" stroke="#E8EDEF" stroke-width="6"/><rect x="420" y="222" width="72" height="38" fill="#4A3A2E"/><rect x="432" y="232" width="20" height="18" fill="#F2C873"/><rect x="460" y="232" width="20" height="18" fill="#F2C873"/>
+      </g>
+      <path d="M0 290c120-20 240 10 360-4s200-20 280-10v44H0Z" fill="#3E5A5F"/>
+      <path d="M40 296c60-6 120-4 180 0M360 296c60-6 140-6 220 0" stroke="#89A9AE" stroke-width="2" opacity=".6"/>
+      <g fill="#F0F4F5" opacity=".35"><ellipse cx="180" cy="270" rx="70" ry="16"/><ellipse cx="420" cy="276" rx="80" ry="16"/></g>
+      <path d="M220 262h120" stroke="#6B4A33" stroke-width="8"/><path d="M226 262v22M334 262v22" stroke="#6B4A33" stroke-width="5"/>
+     </svg>
+    </div>
+    <div class="body">
+     <span class="where">구마모토 · 쿠로카와 온천</span>
+     <h3>쿠로카와 계곡 료칸 3박 4일</h3>
+     <p>개울을 따라 목조 료칸 서른 곳이 모인 마을입니다. 같은 료칸에 3박을 묵으며, 마을 탕 세 곳을 도는 목패 패스로 다른 집 노천탕도 들릅니다.</p>
+     <div class="meta">
+      <span><svg class="ico" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>1월 9일부터 매주 금요일</span>
+      <span><svg class="ico" viewBox="0 0 24 24"><path d="M4 18h16M6 18V10l6-5 6 5v8"/></svg>객실 노천탕 있는 방</span>
+      <span><svg class="ico" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/><path d="M12 8v4l3 2"/></svg>공항에서 버스 2시간</span>
+     </div>
+     <div class="pr"><span><small>2인 1실 · 1인</small><b class="num">1,590,000원~</b></span><a class="btn-d" href="#days">일정 보기</a></div>
+    </div>
+   </article>
+   <div class="side">
+    <article class="trip">
+     <div class="pic">
+      <svg viewBox="0 0 240 240" preserveAspectRatio="xMidYMid slice" aria-label="두 봉우리 산 아래 아침 안개 낀 호수와 호숫가 목조 료칸 그림">
+       <defs><linearGradient id="ys" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#9FAEB4"/><stop offset="1" stop-color="#D6D2C8"/></linearGradient><linearGradient id="yl" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#7E979B"/><stop offset="1" stop-color="#4E676B"/></linearGradient><filter id="yb"><feGaussianBlur stdDeviation="5"/></filter></defs>
+       <rect width="240" height="240" fill="url(#ys)"/>
+       <path d="M0 120l40-34 22 14 34-52 28 30 22-18 40 40 54-20v100H0Z" fill="#6E7E85"/>
+       <path d="M96 48l-12 18 8-2 6 8 6-10 8 4Z" fill="#E8EDEE"/>
+       <path d="M0 132c50-14 110 4 240-10v40H0Z" fill="#4F6067"/>
+       <g fill="#2F3A3F"><path d="M8 150l10-36 10 36Z"/><path d="M22 154l8-28 8 28Z"/><path d="M206 146l10-38 10 38Z"/><path d="M220 150l8-30 8 30Z"/></g>
+       <rect y="150" width="240" height="90" fill="url(#yl)"/>
+       <g><path d="M120 150l28-18 28 18Z" fill="#3B2F28"/><rect x="126" y="150" width="44" height="18" fill="#4A3A2E"/><rect x="132" y="154" width="12" height="9" fill="#F2C873"/><rect x="150" y="154" width="12" height="9" fill="#F2C873"/><path d="M118 168h60" stroke="#6B4A33" stroke-width="3"/></g>
+       <path d="M132 176h12M152 180h10" stroke="#E6C27A" stroke-width="3" opacity=".6" stroke-linecap="round"/>
+       <g fill="#F1F3F2" filter="url(#yb)"><ellipse cx="60" cy="156" rx="80" ry="10" opacity=".8"/><ellipse cx="200" cy="168" rx="70" ry="9" opacity=".7"/><ellipse cx="110" cy="190" rx="90" ry="8" opacity=".45"/></g>
+       <path d="M20 210h60M120 222h80" stroke="#A9C0C3" stroke-width="2" opacity=".5"/>
+      </svg>
+     </div>
+     <div class="body">
+      <span class="where">오이타 · 유후인 온천</span>
+      <h3>유후인 호숫가 3박 4일</h3>
+      <p>아침 안개가 끼는 호수 옆 료칸에 2박, 벳푸에서 1박 합니다.</p>
+      <div class="pr"><span><small>2인 1실 · 1인</small><b class="num">1,390,000원~</b></span></div>
+     </div>
+    </article>
+    <article class="trip">
+     <div class="pic">
+      <svg viewBox="0 0 240 240" preserveAspectRatio="xMidYMid slice" aria-label="유황 바위 골짜기에서 흰 김이 여러 갈래로 피어오르고 뒤로 눈 덮인 능선이 보이는 그림">
+       <defs><linearGradient id="ns" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#8C989D"/><stop offset="1" stop-color="#C9CFD0"/></linearGradient><linearGradient id="nr" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#C9A55E"/><stop offset="1" stop-color="#8E7441"/></linearGradient><linearGradient id="nr2" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#B49A6A"/><stop offset="1" stop-color="#6E5E44"/></linearGradient><filter id="nb"><feGaussianBlur stdDeviation="6"/></filter></defs>
+       <rect width="240" height="240" fill="url(#ns)"/>
+       <path d="M0 96l50-30 40 20 50-36 50 30 50-18v80H0Z" fill="#E6EBEC"/>
+       <path d="M0 110l50-24 40 16 50-28 50 24 50-14" fill="none" stroke="#B8C2C5" stroke-width="3"/>
+       <path d="M0 130c20-20 50-30 70-20 20 10 30 40 50 46 20 6 40-20 60-30s50-6 60 4v110H0Z" fill="url(#nr2)"/>
+       <path d="M0 160c30-10 50 0 70 14s50 20 80 10 60-24 90-20v76H0Z" fill="url(#nr)"/>
+       <g fill="#E3C46C" opacity=".8"><path d="M40 176l14-6 10 8-12 6Z"/><path d="M120 196l18-4 8 10-16 4Z"/><path d="M190 184l12-8 12 6-12 8Z"/></g>
+       <g fill="#5E4E38" opacity=".55"><path d="M20 200l20-8 6 12-22 4Z"/><path d="M150 214l24-6 6 12-26 2Z"/><path d="M90 170l16-6 6 10-18 2Z"/></g>
+       <g fill="#FFFFFF" filter="url(#nb)">
+        <ellipse cx="70" cy="150" rx="22" ry="40" opacity=".75"/><ellipse cx="80" cy="104" rx="30" ry="26" opacity=".55"/>
+        <ellipse cx="150" cy="166" rx="20" ry="36" opacity=".7"/><ellipse cx="160" cy="124" rx="28" ry="24" opacity=".5"/>
+        <ellipse cx="206" cy="160" rx="14" ry="26" opacity=".6"/>
+       </g>
+       <path d="M0 232h240" stroke="#5A3E2B" stroke-width="6"/><path d="M20 232v-14M80 232v-14M140 232v-14M200 232v-14" stroke="#5A3E2B" stroke-width="4"/><path d="M0 220h240" stroke="#6B4A33" stroke-width="3"/>
+      </svg>
+     </div>
+     <div class="body">
+      <span class="where">홋카이도 · 노보리베츠 온천</span>
+      <h3>유황 골짜기 4박 5일</h3>
+      <p>유황 김이 오르는 골짜기 앞 료칸 2박, 오타루 운하 1박이 들어갑니다.</p>
+      <div class="pr"><span><small>2인 1실 · 1인</small><b class="num">1,890,000원~</b></span></div>
+     </div>
+    </article>
+   </div>
+  </div>
+ </div>
+</section>
+
+<section class="days" id="days">
+ <div class="in">
+  <div class="sec-h rv">
+   <div><p class="kick">쿠로카와 3박 4일 하루 흐름</p><h2>오후 네 시 전에는<br>료칸에 도착합니다</h2></div>
+   <p class="lead">체크인 후 저녁 식사 전까지 탕에 들어갈 시간을 남겨 두는 것이 이 일정의 기준입니다. 둘째 날과 셋째 날은 오전만 움직입니다.</p>
+  </div>
+  <div class="dgrid rv">
+   <div class="day"><span class="d">1일차 · 금</span><h3>인천에서 계곡으로</h3><ul><li><time>09:10</time>인천 출발</li><li><time>10:40</time>후쿠오카 도착</li><li><time>12:00</time>전용 버스 출발</li><li><time>15:30</time>료칸 체크인</li><li><time>18:30</time>방에서 가이세키</li></ul><p class="stay"><svg class="ico" viewBox="0 0 24 24"><path d="M3 18h18M5 18V9l7-5 7 5v9"/></svg>계곡 료칸 1박</p></div>
+   <div class="day"><span class="d">2일차 · 토</span><h3>목패 들고 탕 세 곳</h3><ul><li><time>08:00</time>아침 식사</li><li><time>10:00</time>마을 탕 순례 시작</li><li><time>12:30</time>소바집 점심</li><li><time>14:00</time>료칸으로, 자유 시간</li><li><time>18:30</time>저녁 식사</li></ul><p class="stay"><svg class="ico" viewBox="0 0 24 24"><path d="M3 18h18M5 18V9l7-5 7 5v9"/></svg>같은 료칸 2박째</p></div>
+   <div class="day"><span class="d">3일차 · 일</span><h3>아소 칼데라 반나절</h3><ul><li><time>09:00</time>아소 초원 전망대</li><li><time>11:30</time>목장 마을 점심</li><li><time>14:00</time>료칸 귀환</li><li><time>16:00</time>전세 가족탕 50분</li><li><time>18:30</time>마지막 저녁</li></ul><p class="stay"><svg class="ico" viewBox="0 0 24 24"><path d="M3 18h18M5 18V9l7-5 7 5v9"/></svg>같은 료칸 3박째</p></div>
+   <div class="day"><span class="d">4일차 · 월</span><h3>아침 탕 후 귀국</h3><ul><li><time>06:30</time>아침 노천탕</li><li><time>08:00</time>아침 식사</li><li><time>10:00</time>체크아웃 · 버스</li><li><time>13:00</time>후쿠오카 공항</li><li><time>15:20</time>인천 도착</li></ul><p class="stay"><svg class="ico" viewBox="0 0 24 24"><path d="M12 3v18M5 10l7-7 7 7"/></svg>오후 일정 없이 귀국</p></div>
+  </div>
+ </div>
+</section>
+
+<section id="ryokan">
+ <div class="in two">
+  <div class="rv">
+   <p class="kick">료칸 고르기</p>
+   <h2>방에 탕이 있는지,<br>밥은 어디서 먹는지</h2>
+   <p class="lead">같은 일정 안에서도 방 종류에 따라 금액이 달라집니다. 상담 때 가장 많이 정하시는 두 가지를 먼저 비교해 두었습니다.</p>
+  </div>
+  <div class="rv">
+   <table class="cmp">
+    <thead><tr><th></th><th class="hl">객실 노천탕 방</th><th>일반 다다미 방</th></tr></thead>
+    <tbody>
+     <tr><th>탕</th><td class="hl" data-l="객실 노천탕 방">방 툇마루에 작은 노천탕<small>밤늦게, 새벽에도 바로</small></td><td data-l="일반 다다미 방">료칸 공용 노천탕<small>남녀 시간 교대가 있는 곳도 있음</small></td></tr>
+     <tr><th>식사</th><td class="hl" data-l="객실 노천탕 방">방으로 가져다주는 가이세키</td><td data-l="일반 다다미 방">식사 방에서 가이세키</td></tr>
+     <tr><th>잘 맞는 분</th><td class="hl" data-l="객실 노천탕 방">부모님 모시는 가족, 신혼부부</td><td data-l="일반 다다미 방">친구끼리, 탕 순례가 목적인 분</td></tr>
+     <tr><th>1인 요금</th><td class="hl num" data-l="객실 노천탕 방">1,590,000원~</td><td class="num" data-l="일반 다다미 방">1,290,000원~</td></tr>
+    </tbody>
+   </table>
+  </div>
+ </div>
+</section>
+
+<section class="dates" id="dates">
+ <div class="in">
+  <div class="sec-h rv">
+   <div><p class="kick">1~2월 출발일</p><h2 style="color:#F4F1EA">한 팀 8명, 날짜마다 남은 자리</h2></div>
+   <p class="lead">자리가 다 차면 같은 주 다른 요일로 한 팀을 더 여는지 상담 때 알려 드립니다.</p>
+  </div>
+  <div class="tabs rv" role="group" aria-label="지역 고르기">
+   <button type="button" aria-pressed="true" data-f="all">전체</button>
+   <button type="button" aria-pressed="false" data-f="kuro">쿠로카와</button>
+   <button type="button" aria-pressed="false" data-f="yufu">유후인</button>
+   <button type="button" aria-pressed="false" data-f="nobo">노보리베츠</button>
+  </div>
+  <div class="dl rv">
+   <div class="dr" data-k="kuro"><span class="dt">1월 9일 금</span><span class="nm">쿠로카와 계곡 료칸 <span style="white-space:nowrap">3박 4일</span></span><span class="pp">1,590,000원~</span><span class="st off">마감</span></div>
+   <div class="dr" data-k="yufu"><span class="dt">1월 14일 수</span><span class="nm">유후인 호숫가 <span style="white-space:nowrap">3박 4일</span></span><span class="pp">1,390,000원~</span><span class="st few">2자리 남음</span></div>
+   <div class="dr" data-k="kuro"><span class="dt">1월 16일 금</span><span class="nm">쿠로카와 계곡 료칸 <span style="white-space:nowrap">3박 4일</span></span><span class="pp">1,590,000원~</span><span class="st few">3자리 남음</span></div>
+   <div class="dr" data-k="nobo"><span class="dt">1월 21일 수</span><span class="nm">노보리베츠 유황 골짜기 <span style="white-space:nowrap">4박 5일</span></span><span class="pp">1,890,000원~</span><span class="st">예약 가능</span></div>
+   <div class="dr" data-k="kuro"><span class="dt">1월 23일 금</span><span class="nm">쿠로카와 계곡 료칸 <span style="white-space:nowrap">3박 4일</span></span><span class="pp">1,590,000원~</span><span class="st">예약 가능</span></div>
+   <div class="dr" data-k="yufu"><span class="dt">2월 4일 수</span><span class="nm">유후인 호숫가 <span style="white-space:nowrap">3박 4일</span></span><span class="pp">1,390,000원~</span><span class="st">예약 가능</span></div>
+   <div class="dr" data-k="nobo"><span class="dt">2월 11일 수</span><span class="nm">노보리베츠 유황 골짜기 <span style="white-space:nowrap">4박 5일</span></span><span class="pp">1,890,000원~</span><span class="st">예약 가능</span></div>
+   <div class="dr" data-k="kuro"><span class="dt">2월 20일 금</span><span class="nm">쿠로카와 계곡 료칸 <span style="white-space:nowrap">3박 4일</span></span><span class="pp">1,590,000원~</span><span class="st">예약 가능</span></div>
+  </div>
+ </div>
+</section>
+
+<section id="incl">
+ <div class="in">
+  <div class="sec-h rv"><div><p class="kick">요금 안에 든 것</p><h2>공항에서 공항까지</h2></div></div>
+  <div class="incl rv">
+   <div><h3>포함</h3><ul>
+    <li><svg class="ico" viewBox="0 0 24 24"><path d="M5 12l5 5 9-10"/></svg>인천 왕복 직항 항공권, 위탁 수하물 15kg</li>
+    <li><svg class="ico" viewBox="0 0 24 24"><path d="M5 12l5 5 9-10"/></svg>료칸 숙박, 매일 저녁 가이세키와 아침 식사</li>
+    <li><svg class="ico" viewBox="0 0 24 24"><path d="M5 12l5 5 9-10"/></svg>공항 · 료칸 사이 전용 버스, 한국어 가이드</li>
+    <li><svg class="ico" viewBox="0 0 24 24"><path d="M5 12l5 5 9-10"/></svg>쿠로카와 마을 탕 목패, 전세 가족탕 1회</li>
+   </ul></div>
+   <div class="no"><h3>불포함</h3><ul>
+    <li><svg class="ico" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg>점심 식사 (1인 1,500 – 2,000엔 안팎)</li>
+    <li><svg class="ico" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg>료칸에서 드시는 술, 음료</li>
+    <li><svg class="ico" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg>1인실 추가 요금, 여행자 보험</li>
+    <li><svg class="ico" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg>온천세 (1박 150엔, 현지 납부)</li>
+   </ul></div>
+  </div>
+ </div>
+</section>
+
+<section id="faq" style="padding-top:0">
+ <div class="in two">
+  <div class="rv"><p class="kick">자주 묻는 것</p><h2>떠나기 전에<br>물어보시는 것</h2></div>
+  <div class="faq rv">
+   <details><summary>문신이 있어도 탕에 들어갈 수 있나요<svg class="ico" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></summary><p>공용 탕은 료칸마다 규칙이 달라, 상담 때 문신 여부를 알려 주시면 객실 노천탕 방이나 전세 가족탕이 있는 료칸으로 잡아 드립니다.</p></details>
+   <details><summary>부모님이 계단을 오래 걷기 어려우세요<svg class="ico" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></summary><p>계곡 마을은 비탈이 많아, 탕 순례 대신 료칸 안에서 쉬는 일정으로 바꿀 수 있습니다. 엘리베이터가 있는 료칸을 따로 표시해 드립니다.</p></details>
+   <details><summary>8명이 안 차면 출발하지 않나요<svg class="ico" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></summary><p>4명이 모이면 출발합니다. 출발 21일 전까지 4명이 안 되면 다른 날짜로 옮기시거나 전액 돌려 드립니다.</p></details>
+   <details><summary>가족끼리만 따로 갈 수도 있나요<svg class="ico" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></summary><p>4명 이상이면 원하시는 날짜에 가족 단독 일정으로 짤 수 있습니다. 료칸과 날짜를 먼저 맞춘 뒤 견적을 드립니다.</p></details>
+  </div>
+ </div>
+</section>
+
+<section class="ask" id="ask">
+ <div class="in">
+  <div class="rv">
+   <p class="kick">일정 상담 예약</p>
+   <h2>날짜와 인원만 남겨 주시면<br>료칸부터 찾아 봅니다</h2>
+   <p class="lead">상담은 전화나 카카오톡으로 20분 정도 걸립니다. 누구와 가시는지, 방에 탕이 꼭 있어야 하는지만 정해 두시면 됩니다.</p>
+   <div class="contact">
+    <p><span>전화</span><b>000-0000-0000</b></p>
+    <p><span>카카오톡</span><b>ID: example</b></p>
+    <p><span>상담 시간</span><b>평일 10:00 – 18:00</b></p>
+   </div>
+  </div>
+  <form id="f" class="rv" novalidate>
+   <div class="fields">
+    <div class="row">
+     <div class="fl"><label for="nm">이름</label><input id="nm" autocomplete="name" placeholder="홍길동"></div>
+     <div class="fl"><label for="ph">연락처</label><input id="ph" inputmode="tel" autocomplete="tel" placeholder="000-0000-0000"></div>
+    </div>
+    <div class="row">
+     <div class="fl"><label for="tr">가고 싶은 곳</label><select id="tr"><option>쿠로카와 계곡 료칸 3박 4일</option><option>유후인 호숫가 3박 4일</option><option>유황 골짜기 4박 5일</option><option>아직 못 정했어요</option></select></div>
+     <div class="fl"><label for="pp">인원</label><select id="pp"><option>2명</option><option>3명</option><option>4명</option><option>5 – 8명</option></select></div>
+    </div>
+    <div class="fl"><label for="wh">희망 출발 시기</label><input id="wh" placeholder="예: 1월 셋째 주, 금요일 출발"></div>
+    <div class="fl"><label for="mm">함께 가시는 분 · 바라는 점</label><textarea id="mm" placeholder="예: 70대 부모님과 함께, 방에 탕이 있으면 좋겠어요"></textarea></div>
+    <p class="err" id="err" role="alert"></p>
+    <button class="btn" type="submit">상담 예약하기</button>
+   </div>
+   <div class="ok" aria-live="polite">
+    <h3>상담 예약을 받았습니다</h3>
+    <p id="okt">평일 하루 안에 전화로 연락드립니다.</p>
+   </div>
+  </form>
+ </div>
+</section>
+</main>
+
+<footer>
+ <div class="in">
+  <div><b>김오름 온천여행</b><p>규슈 · 홋카이도 소규모 온천 여행 · 관광사업자 등록번호 0000-000000</p></div>
+  <div><p>000-0000-0000 · 카카오톡 ID: example</p><p>평일 10:00 – 18:00 · 주말 · 공휴일 쉼</p></div>
+ </div>
+</footer>
+
+<script>
+(function(){
+ var els=document.querySelectorAll('.rv');
+ if(!('IntersectionObserver' in window)){els.forEach(function(e){e.classList.add('on')});return}
+ var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('on');io.unobserve(e.target)}})},{threshold:.1});
+ els.forEach(function(e){io.observe(e)});
+})();
+(function(){var sv=document.querySelector('.hero .scene svg'),mq=window.matchMedia('(max-width:620px)');function f(){sv.setAttribute('preserveAspectRatio',mq.matches?'xMaxYMax slice':'xMidYMid slice')}f();if(mq.addEventListener)mq.addEventListener('change',f)})();
+document.querySelectorAll('.tabs button').forEach(function(b){
+ b.addEventListener('click',function(){
+  var f=b.getAttribute('data-f');
+  document.querySelectorAll('.tabs button').forEach(function(x){x.setAttribute('aria-pressed',x===b?'true':'false')});
+  document.querySelectorAll('.dr').forEach(function(r){r.classList.toggle('hide',f!=='all'&&r.getAttribute('data-k')!==f)});
+ });
+});
+document.getElementById('f').addEventListener('submit',function(e){
+ e.preventDefault();
+ var nm=document.getElementById('nm').value.trim(),ph=document.getElementById('ph').value.trim(),err=document.getElementById('err');
+ if(!nm||!ph){err.textContent='이름과 연락처를 적어 주세요';return}
+ err.textContent='';
+ document.getElementById('okt').textContent=nm+'님, '+document.getElementById('tr').value+' · '+document.getElementById('pp').value+' 상담 예약을 받았습니다. 평일 하루 안에 '+ph+'로 연락드립니다.';
+ e.target.classList.add('done');
+});
+</script>
+</body>
+</html>

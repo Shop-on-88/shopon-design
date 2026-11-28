@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>새벽지 도배 · 12월 무료 방문 견적 + 실크벽지 도배 10% 할인</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+ --plaster:#F3EFE6;--paper:#FBF9F4;--wall:#E7E0D2;--ink:#2B231E;--ink2:#55493F;--ink3:#776A5E;
+ --walnut:#3A2D25;--sage:#9AA58C;--sage-d:#6F7B62;--brick:#B9402A;--brick-d:#9A3321;
+ --line:rgba(43,35,30,.14);--line2:rgba(43,35,30,.28)
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;background:var(--plaster)}
+body{font-family:'IBM Plex Sans KR',sans-serif;font-size:16px;line-height:1.65;color:var(--ink);background:var(--plaster);word-break:keep-all;-webkit-font-smoothing:antialiased;overflow-x:clip}
+a{color:inherit}
+svg{display:block}
+.in{max-width:1200px;margin:0 auto;padding:0 32px}
+.num{font-variant-numeric:tabular-nums}
+h1,h2,h3{font-weight:700;letter-spacing:-.02em;line-height:1.3}
+h2{font-size:clamp(28px,3.4vw,40px)}
+.kick{font-size:15px;font-weight:600;color:var(--sage-d);margin-bottom:12px}
+.lead{font-size:17px;color:var(--ink2);max-width:640px;margin-top:16px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;height:48px;padding:0 24px;border-radius:8px;background:var(--brick);color:#FFF8F2;font-weight:600;font-size:16px;text-decoration:none;border:0;cursor:pointer;font-family:inherit;transition:background-color .2s}
+.btn:hover{background:var(--brick-d)}
+.btn svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.btn2{display:inline-flex;align-items:center;gap:8px;height:48px;padding:0 4px;color:var(--ink);font-weight:600;text-decoration:none;border-bottom:2px solid var(--line2)}
+.btn2:hover{border-color:var(--ink)}
+.ico{width:24px;height:24px;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round;flex:none}
+
+/* nav */
+header{border-bottom:1px solid var(--line);background:var(--plaster)}
+.nav{display:flex;justify-content:space-between;align-items:center;height:72px}
+.logo{display:flex;align-items:center;gap:12px;text-decoration:none;font-weight:700;font-size:20px;letter-spacing:-.02em}
+.logo svg{width:28px;height:28px}
+.nav-r{display:flex;align-items:center;gap:24px;font-size:15px;color:var(--ink2)}
+.nav-r a{text-decoration:none;min-height:44px;display:flex;align-items:center}
+.nav-r a.tel{gap:8px;color:var(--ink);font-weight:600}
+.nav-r a.tel .ico{width:20px;height:20px}
+
+/* hero */
+.hero{padding:64px 0 80px}
+.hero .in{display:grid;grid-template-columns:minmax(0,6fr) minmax(0,5fr);gap:48px;align-items:center}
+.hero small{display:block;font-size:15px;color:var(--ink3);margin-bottom:16px}
+.hero h1{font-size:clamp(34px,3.9vw,52px);line-height:1.25}
+.hero h1 em{font-style:normal;color:var(--brick)}
+.hero .lead{margin-top:24px}
+.offer{margin-top:32px;border-top:2px solid var(--ink);border-bottom:1px solid var(--line2);display:grid;grid-template-columns:1fr 1fr}
+.offer div{padding:16px 0}
+.offer div+div{border-left:1px solid var(--line2);padding-left:24px}
+.offer b{display:block;font-size:28px;font-weight:700;line-height:1.25}
+.offer b.r{color:var(--brick)}
+.offer span{font-size:14px;color:var(--ink2)}
+.hero .acts{display:flex;flex-wrap:wrap;align-items:center;gap:16px 32px;margin-top:32px}
+.hero .note{font-size:14px;color:var(--ink3);margin-top:16px}
+.art{position:relative;aspect-ratio:600/640;border-radius:16px;overflow:hidden;background:var(--wall)}
+.art svg{width:100%;height:100%}
+.tag{position:absolute;background:var(--paper);border:1px solid var(--line2);border-radius:6px;padding:8px 12px;font-size:13px;line-height:1.45;color:var(--ink2)}
+.tag b{display:block;color:var(--ink);font-size:14px}
+.tag.t1{left:24px;top:44%}
+.tag.t2{right:24px;top:24px}
+
+/* sections */
+section{padding:96px 0}
+.sec-h{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,6fr);gap:48px;align-items:end;margin-bottom:48px}
+.sec-h .lead{margin-top:0}
+
+/* price */
+.price{background:var(--paper);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.ptable{width:100%;border-collapse:collapse;font-size:16px}
+.ptable th,.ptable td{text-align:left;padding:20px 16px;border-bottom:1px solid var(--line)}
+.ptable thead th{font-size:14px;font-weight:600;color:var(--ink3);border-bottom:2px solid var(--ink);padding-top:0}
+.ptable td:first-child{font-weight:600}
+.ptable td small{display:block;font-weight:400;font-size:14px;color:var(--ink3)}
+.ptable .was{color:var(--ink3);text-decoration:line-through;text-decoration-thickness:1px}
+.ptable .now{font-weight:700;font-size:18px}
+.ptable tr.hl td{background:#F4EEE3}
+.ptable tr.hl .now{color:var(--brick)}
+.pnote{display:flex;flex-wrap:wrap;gap:8px 32px;margin-top:24px;font-size:14px;color:var(--ink2)}
+.pnote span{display:flex;gap:8px;align-items:center}
+.pnote span:before{content:"";width:6px;height:6px;border-radius:50%;background:var(--sage-d)}
+
+/* day */
+.day{display:grid;grid-template-columns:minmax(0,4fr) minmax(0,7fr);gap:64px;align-items:start}
+.day .sticky{position:sticky;top:32px}
+.steps{list-style:none;border-left:2px solid var(--ink);margin-left:8px}
+.steps li{position:relative;padding:0 0 40px 40px}
+.steps li:last-child{padding-bottom:0}
+.steps li:before{content:"";position:absolute;left:-9px;top:6px;width:16px;height:16px;border-radius:50%;background:var(--plaster);border:2px solid var(--ink)}
+.steps li.end:before{background:var(--brick);border-color:var(--brick)}
+.steps time{font-size:15px;font-weight:600;color:var(--ink3)}
+.steps h3{font-size:20px;margin:4px 0 8px}
+.steps p{color:var(--ink2);max-width:560px}
+
+/* swatches */
+.paperbook{background:var(--walnut);color:#EDE4D8}
+.paperbook .kick{color:#C9CDB8}
+.paperbook .lead{color:#CFC3B5}
+.sw{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:16px}
+.sw figure{background:#4A3B31;border-radius:12px;padding:8px 8px 16px}
+.sw svg{width:100%;aspect-ratio:3/4;border-radius:6px}
+.sw figcaption{padding:12px 8px 0;font-size:14px;color:#CFC3B5;line-height:1.5}
+.sw figcaption b{display:block;color:#F3EBDF;font-size:15px;font-weight:600}
+.compare{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:48px}
+.compare div{border-top:1px solid rgba(237,228,216,.3);padding-top:20px}
+.compare h3{font-size:20px;color:#F3EBDF}
+.compare p{color:#CFC3B5;margin-top:8px}
+.compare ul{list-style:none;margin-top:12px;font-size:15px;color:#E3D9CC}
+.compare li{padding:8px 0;border-bottom:1px solid rgba(237,228,216,.12)}
+
+/* check */
+.checks{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 64px;border-top:2px solid var(--ink)}
+.checks>div{display:grid;grid-template-columns:40px 1fr;gap:16px;padding:24px 0;border-bottom:1px solid var(--line)}
+.checks .ico{width:28px;height:28px;color:var(--sage-d);margin-top:2px}
+.checks h3{font-size:18px}
+.checks p{color:var(--ink2);margin-top:4px;font-size:15px}
+
+/* form */
+.apply{background:var(--paper);border-top:1px solid var(--line)}
+.apply .in{display:grid;grid-template-columns:minmax(0,4fr) minmax(0,6fr);gap:64px;align-items:start}
+.apply ul.inc{list-style:none;margin-top:32px;border-top:1px solid var(--line)}
+.apply ul.inc li{padding:12px 0;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;gap:16px;font-size:15px}
+.apply ul.inc li b{font-weight:600}
+form{background:var(--plaster);border:1px solid var(--line2);border-radius:16px;padding:32px}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.f{display:flex;flex-direction:column;gap:8px;margin-bottom:20px}
+.f label,.f legend{font-size:14px;font-weight:600}
+.f input,.f select,.f textarea{width:100%;min-width:0;font:inherit;font-size:16px;height:48px;padding:0 16px;border:1px solid var(--line2);border-radius:8px;background:var(--paper);color:var(--ink)}
+.f textarea{height:96px;padding:12px 16px;resize:vertical}
+.f input:focus,.f select:focus,.f textarea:focus{outline:2px solid var(--ink);outline-offset:1px}
+fieldset.f{border:0}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chips label{display:flex;align-items:center;gap:8px;height:44px;padding:0 16px;border:1px solid var(--line2);border-radius:8px;background:var(--paper);font-weight:500;font-size:15px;cursor:pointer;transition:background-color .2s,border-color .2s}
+.chips input{accent-color:var(--brick);width:16px;height:16px}
+.chips label:has(input:checked){border-color:var(--ink);background:#EFE7DA}
+.agree{display:flex;gap:8px;align-items:flex-start;font-size:14px;color:var(--ink2);margin:4px 0 24px}
+.agree input{accent-color:var(--brick);width:18px;height:18px;margin-top:3px}
+form .btn{width:100%}
+.ok{display:none;text-align:left}
+.ok h3{font-size:24px}
+.ok p{color:var(--ink2);margin-top:12px}
+.ok dl{margin-top:24px;border-top:1px solid var(--line2)}
+.ok dl div{display:flex;justify-content:space-between;gap:16px;padding:12px 0;border-bottom:1px solid var(--line);font-size:15px}
+.ok dt{color:var(--ink3)}
+.ok dd{font-weight:600;text-align:right}
+form.done .fields{display:none}
+form.done .ok{display:block}
+.err{font-size:14px;color:var(--brick-d);min-height:20px;margin-top:-12px;margin-bottom:12px}
+
+/* faq */
+.faq{max-width:840px}
+.faq details{border-bottom:1px solid var(--line)}
+.faq summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:20px 0;font-weight:600;font-size:17px;min-height:44px}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary .ico{width:20px;height:20px;transition:transform .2s}
+.faq details[open] summary .ico{transform:rotate(45deg)}
+.faq details p{padding:0 0 24px;color:var(--ink2);max-width:720px}
+
+footer{background:var(--walnut);color:#CFC3B5;padding:48px 0;font-size:14px}
+footer .in{display:flex;flex-wrap:wrap;justify-content:space-between;gap:24px}
+footer b{color:#F3EBDF;font-size:16px}
+footer p{margin-top:8px}
+
+.mbar{display:none}
+.rv{opacity:0;transform:translateY(12px);transition:opacity .5s ease,transform .5s ease}
+.rv.on{opacity:1;transform:none}
+
+@media(max-width:1024px){
+ .sw{grid-template-columns:repeat(3,minmax(0,1fr))}
+}
+@media(max-width:900px){
+ .hero .in,.sec-h,.day,.apply .in{grid-template-columns:minmax(0,1fr);gap:32px}
+ .day .sticky{position:static}
+ .checks{grid-template-columns:1fr}
+ .nav-r .lk{display:none}
+}
+@media(max-width:620px){
+ .in{padding:0 16px}
+ .hero{padding:40px 0 64px}
+ section{padding:64px 0}
+ .offer b{font-size:22px}
+ .offer div+div{padding-left:16px}
+ .tag{font-size:12px;padding:8px}
+ .tag b{font-size:13px}
+ .tag.t1{left:12px;top:44%}.tag.t2{right:12px;top:12px}
+ .ptable thead{display:none}
+ .ptable,.ptable tbody,.ptable tr,.ptable td{display:block;width:100%}
+ .ptable tr{border-bottom:1px solid var(--line);padding:16px 0}
+ .ptable td{border:0;padding:2px 0}
+ .ptable td.c2{font-size:15px;color:var(--ink2)}
+ .ptable td.c3,.ptable td.c4{display:inline-block;width:auto;margin-right:12px}
+ .ptable tr.hl{background:#F4EEE3;padding:16px 12px;margin:0 -12px;width:calc(100% + 24px)}
+ .ptable tr.hl td{background:none}
+ .sw{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+ .compare{grid-template-columns:1fr}
+ .row{grid-template-columns:minmax(0,1fr);gap:0}
+ form{padding:24px 16px}
+ .nav-r a.tel span{display:none}
+ .mbar{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:20;padding:12px 16px;background:var(--plaster);border-top:1px solid var(--line2)}
+ .mbar .btn{width:100%}
+ footer{padding-bottom:104px}
+}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}.rv{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+<header>
+ <div class="in nav">
+  <a class="logo" href="#top" aria-label="새벽지 도배">
+   <svg viewBox="0 0 28 28" aria-hidden="true"><rect x="3" y="3" width="22" height="22" rx="3" fill="none" stroke="#2B231E" stroke-width="2"/><path d="M14 3v22" stroke="#2B231E" stroke-width="2"/><path d="M14 18c3 0 7 2 11 7" fill="none" stroke="#B9402A" stroke-width="2"/></svg>
+   새벽지 도배
+  </a>
+  <nav class="nav-r">
+   <a class="lk" href="#price">평형별 견적</a>
+   <a class="lk" href="#day">하루 작업</a>
+   <a class="lk" href="#paper">벽지 고르기</a>
+   <a class="tel" href="#apply"><svg class="ico" viewBox="0 0 24 24"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a1 1 0 0 1-1 1A16 16 0 0 1 4 5a1 1 0 0 1 1-1Z"/></svg><span>000-0000-0000</span></a>
+  </nav>
+ </div>
+</header>
+
+<main id="top">
+<div class="hero">
+ <div class="in">
+  <div class="rv">
+   <small>원룸부터 30평대 아파트까지 · 2인 1조 도배팀</small>
+   <h1>아침 8시에 헌 벽지를 걷고<br><em>저녁 6시</em>에 짐을 들입니다</h1>
+   <p class="lead">새벽지 도배는 이사 들어가기 전 비어 있는 하루를 씁니다. 헌 벽지를 걷고 초배지를 바른 뒤, 폭과 폭 사이 이음매를 맞대어 붙이고 몰딩 끝까지 칼선을 정리하는 데까지 같은 날 끝냅니다.</p>
+   <div class="offer">
+    <div><b>0원</b><span>방문 견적 · 샘플북 지참</span></div>
+    <div><b class="r num">10%</b><span>실크벽지 시공비 할인</span></div>
+   </div>
+   <div class="acts">
+    <a class="btn" href="#apply">방문 견적 신청하기 <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+    <a class="btn2" href="#price">평형별 견적 먼저 보기</a>
+   </div>
+   <p class="note">12월 31일까지 견적을 받고 계약한 실크벽지 시공에 적용됩니다. 시공일은 1월 말까지 고를 수 있습니다.</p>
+  </div>
+  <div class="art rv" aria-label="거실 벽에 새 벽지 한 폭이 위에서부터 반쯤 붙어 있고, 아래쪽은 아직 벽에서 떨어져 말려 있는 그림">
+   <svg viewBox="0 0 600 640" preserveAspectRatio="xMidYMid slice" role="img" aria-hidden="true">
+    <defs>
+     <pattern id="oldp" width="48" height="56" patternUnits="userSpaceOnUse">
+      <rect width="48" height="56" fill="#DCCFB4"/>
+      <path d="M24 8c6 6 6 14 0 20-6-6-6-14 0-20Z" fill="#CDBD9C"/>
+      <path d="M0 36c6 6 6 14 0 20M48 36c-6 6-6 14 0 20" fill="#CDBD9C"/>
+      <circle cx="24" cy="44" r="2" fill="#C5B391"/>
+     </pattern>
+     <pattern id="newp" width="64" height="72" patternUnits="userSpaceOnUse">
+      <rect width="64" height="72" fill="#E9EBE1"/>
+      <path d="M0 0v72M8 0v72M16 0v72M24 0v72M32 0v72M40 0v72M48 0v72M56 0v72" stroke="#DEE1D4" stroke-width="1.2"/>
+      <path d="M32 14c8 4 10 12 4 20-2-8-8-12-4-20Z" fill="#B9C2AB"/>
+      <path d="M32 14c-8 4-10 12-4 20 2-8 8-12 4-20Z" fill="#AAB59B"/>
+      <path d="M32 34v8" stroke="#9AA58C" stroke-width="1.6"/>
+      <path d="M0 50c8 4 10 12 4 20M64 50c-8 4-10 12-4 20" fill="#B9C2AB"/>
+     </pattern>
+     <linearGradient id="sheen" x1="0" x2="1">
+      <stop offset="0" stop-color="#fff" stop-opacity="0"/>
+      <stop offset=".55" stop-color="#fff" stop-opacity=".35"/>
+      <stop offset="1" stop-color="#fff" stop-opacity="0"/>
+     </linearGradient>
+     <linearGradient id="curlBack" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#FAF7EF"/>
+      <stop offset=".6" stop-color="#EDE6D6"/>
+      <stop offset="1" stop-color="#D9CFBB"/>
+     </linearGradient>
+     <linearGradient id="curlShade" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#2B231E" stop-opacity="0"/>
+      <stop offset="1" stop-color="#2B231E" stop-opacity=".22"/>
+     </linearGradient>
+     <linearGradient id="floor" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#B08A64"/>
+      <stop offset="1" stop-color="#8F6C4B"/>
+     </linearGradient>
+     <linearGradient id="wood" x1="0" x2="1">
+      <stop offset="0" stop-color="#7A5536"/>
+      <stop offset=".5" stop-color="#9A6E48"/>
+      <stop offset="1" stop-color="#6E4B2F"/>
+     </linearGradient>
+     <radialGradient id="light" cx=".85" cy=".1" r=".9">
+      <stop offset="0" stop-color="#FFF6E4" stop-opacity=".55"/>
+      <stop offset="1" stop-color="#FFF6E4" stop-opacity="0"/>
+     </radialGradient>
+     <filter id="soft" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="6"/></filter>
+    </defs>
+    <rect width="600" height="640" fill="#E7E0D2"/>
+    <rect x="0" y="40" width="168" height="500" fill="url(#oldp)"/>
+    <rect x="0" y="40" width="168" height="500" fill="#7A5D3A" opacity=".06"/>
+    <path d="M168 40v120l-6 10 8 14-4 18 6 20-8 16 4 22-2 280H168Z" fill="#D2C6AE"/>
+    <path d="M162 170l8 14-4 18 6 20-8 16 4 22" fill="none" stroke="#BFAF8F" stroke-width="2"/>
+    <rect x="168" y="40" width="96" height="500" fill="#DCD8CE"/>
+    <path d="M176 70c20 30 50 40 80 30M174 150c24 20 56 30 84 16M178 240c20 28 52 36 80 22M176 330c24 24 54 30 82 16M178 420c22 26 50 34 80 20" fill="none" stroke="#CFCAC0" stroke-width="10" stroke-linecap="round" opacity=".8"/>
+    <rect x="264" y="40" width="168" height="500" fill="url(#newp)"/>
+    <rect x="264" y="40" width="168" height="500" fill="url(#sheen)" opacity=".7"/>
+    <path d="M432 40h168v332L460 540h-28Z" fill="url(#newp)"/>
+    <path d="M432 40h168v332L460 540h-28Z" fill="#000" opacity=".03"/>
+    <path d="M600 372v168H460Z" fill="#EEE8DA"/>
+    <path d="M600 372L460 540l48-10 92-110Z" fill="#2B231E" opacity=".16" filter="url(#soft)"/>
+    <path d="M600 372L460 540l60-150Z" fill="url(#curlBack)"/>
+    <path d="M600 372L460 540l60-150Z" fill="url(#curlShade)" opacity=".6"/>
+    <path d="M600 372L460 540" stroke="#CFC6B1" stroke-width="2"/>
+    <path d="M520 390l-50 126" stroke="#fff" stroke-width="4" opacity=".55" stroke-linecap="round"/>
+    <path d="M432 40v500" stroke="#C9CDBD" stroke-width="1.5"/>
+    <path d="M264 40v500" stroke="#D5D8C9" stroke-width="1.5"/>
+    <path d="M216 56v472" stroke="#6F6255" stroke-width="1" stroke-dasharray="2 6" opacity=".6"/>
+    <rect x="0" y="0" width="600" height="40" fill="#F6F2EA"/>
+    <rect x="0" y="28" width="600" height="12" fill="#E2DACA"/>
+    <path d="M0 40h600" stroke="#C7BCA8" stroke-width="2"/>
+    <rect x="0" y="540" width="600" height="100" fill="url(#floor)"/>
+    <path d="M0 576h600M0 612h600" stroke="#7E5E40" stroke-width="1" opacity=".5"/>
+    <path d="M120 540v36M320 576v36M480 540v36M200 612v28M420 612v28" stroke="#7E5E40" stroke-width="1" opacity=".5"/>
+    <rect x="0" y="524" width="600" height="20" fill="#F0EADF"/>
+    <path d="M0 524h600" stroke="#CFC4B0" stroke-width="1.5"/>
+    <ellipse cx="398" cy="578" rx="72" ry="8" fill="#2B231E" opacity=".25" filter="url(#soft)"/>
+    <g transform="translate(40 304)">
+     <rect x="300" y="208" width="112" height="40" rx="8" fill="url(#wood)"/>
+     <rect x="304" y="212" width="104" height="8" rx="4" fill="#B48A60" opacity=".6"/>
+     <rect x="296" y="244" width="120" height="28" rx="2" fill="#E6DCC6"/>
+     <path d="M300 248v22M308 248v22M316 248v22M324 248v22M332 248v22M340 248v22M348 248v22M356 248v22M364 248v22M372 248v22M380 248v22M388 248v22M396 248v22M404 248v22M412 248v22" stroke="#CDBF9F" stroke-width="2"/>
+     <rect x="296" y="244" width="120" height="6" fill="#BBAA88"/>
+    </g>
+    <g>
+     <ellipse cx="214" cy="594" rx="132" ry="14" fill="#2B231E" opacity=".18" filter="url(#soft)"/>
+     <rect x="96" y="548" width="200" height="44" rx="4" fill="url(#newp)"/>
+     <rect x="96" y="548" width="200" height="44" rx="4" fill="#2B231E" opacity=".05"/>
+     <path d="M96 562h200" stroke="#fff" stroke-width="6" opacity=".35"/>
+     <ellipse cx="296" cy="570" rx="12" ry="22" fill="#F1EDE1"/>
+     <ellipse cx="296" cy="570" rx="8" ry="16" fill="none" stroke="#D3CBB7" stroke-width="2"/>
+     <ellipse cx="296" cy="570" rx="4" ry="8" fill="#9E8E74"/>
+     <path d="M296 592c40 4 100 6 170 2l2 14c-70 6-132 4-172-2Z" fill="url(#newp)"/>
+     <path d="M296 592c40 4 100 6 170 2l2 14c-70 6-132 4-172-2Z" fill="#2B231E" opacity=".06"/>
+    </g>
+    <g transform="rotate(-14 520 596)">
+     <rect x="488" y="588" width="64" height="16" rx="4" fill="#B9402A"/>
+     <rect x="492" y="592" width="28" height="4" rx="2" fill="#E3A090"/>
+     <path d="M552 590l20 6-20 6Z" fill="#C9CED2"/>
+    </g>
+    <rect width="600" height="640" fill="url(#light)"/>
+   </svg>
+   <div class="tag t2"><b>이음매 맞대기</b>폭과 폭을 겹치지 않고 맞대어 붙입니다</div>
+   <div class="tag t1"><b>초배지 먼저</b>헌 벽지를 걷은 자리에 한 겹 더</div>
+  </div>
+ </div>
+</div>
+
+<section class="price" id="price">
+ <div class="in">
+  <div class="sec-h rv">
+   <div><p class="kick">평형별 견적</p><h2>천장까지 포함한<br>실크벽지 시공비</h2></div>
+   <p class="lead">벽지 값과 초배지, 풀, 헌 벽지 철거와 폐기까지 넣은 금액입니다. 방문 견적에서 곰팡이 자리나 몰딩 상태를 보고 달라지는 부분은 그 자리에서 적어 드립니다.</p>
+  </div>
+  <table class="ptable num rv">
+   <thead><tr><th>집 크기</th><th>시공 범위</th><th>정가</th><th>12월 계약가</th></tr></thead>
+   <tbody>
+    <tr class="hl"><td>원룸 · 1.5룸<small>전용 20㎡ 안팎</small></td><td class="c2">방 · 주방 벽, 천장, 붙박이장 옆면</td><td class="c3 was">550,000원</td><td class="c4 now">495,000원</td></tr>
+    <tr><td>투룸 · 빌라<small>전용 40㎡ 안팎</small></td><td class="c2">방 2, 거실 겸 주방, 천장</td><td class="c3 was">820,000원</td><td class="c4 now">738,000원</td></tr>
+    <tr><td>아파트 24평형<small>방 3 · 욕실 2</small></td><td class="c2">방 3, 거실, 주방, 복도, 천장</td><td class="c3 was">1,800,000원</td><td class="c4 now">1,620,000원</td></tr>
+    <tr><td>아파트 32평형<small>방 3 · 욕실 2 · 드레스룸</small></td><td class="c2">방 3, 거실, 주방, 드레스룸, 천장</td><td class="c3 was">2,300,000원</td><td class="c4 now">2,070,000원</td></tr>
+   </tbody>
+  </table>
+  <div class="pnote rv"><span>합지벽지는 실크보다 30% 안팎 낮습니다</span><span>짐이 있는 집은 가구 이동비 별도</span><span>엘리베이터 없는 4층 이상은 계단 운반비 별도</span></div>
+ </div>
+</section>
+
+<section id="day">
+ <div class="in day">
+  <div class="sticky rv">
+   <p class="kick">원룸 기준 하루 작업</p>
+   <h2>빈 집 하루면<br>끝나는 순서</h2>
+   <p class="lead">두 사람이 방 하나씩 맡지 않고, 한 벽을 같이 붙입니다. 한 사람은 풀을 먹인 벽지를 들고, 다른 사람은 위에서부터 솔로 밀어 내립니다.</p>
+  </div>
+  <ol class="steps rv">
+   <li><time class="num">08:00</time><h3>헌 벽지 걷기 · 바닥 보양</h3><p>바닥에 보양지를 깔고 콘센트 덮개를 뺀 뒤 헌 벽지를 걷습니다. 들뜬 퍼티나 곰팡이 자리는 사진을 찍어 먼저 보여 드립니다.</p></li>
+   <li><time class="num">10:00</time><h3>초배지 바르기</h3><p>벽면 요철을 덮는 초배지를 한 겹 바르고, 모서리와 창틀 주변은 띠 초배로 한 번 더 잡습니다.</p></li>
+   <li><time class="num">12:30</time><h3>천장 먼저, 그다음 벽</h3><p>천장을 먼저 붙여야 벽 위쪽 끝선이 천장 벽지를 덮어 깔끔합니다. 벽은 창 쪽에서 시작해 이음매가 빛 방향으로 숨게 합니다.</p></li>
+   <li><time class="num">16:00</time><h3>칼선 정리 · 콘센트 복구</h3><p>몰딩과 걸레받이 끝을 새 칼날로 자르고, 콘센트 덮개와 스위치를 다시 끼웁니다.</p></li>
+   <li class="end"><time class="num">18:00</time><h3>청소 후 같이 둘러보기</h3><p>남은 벽지 조각은 보수용으로 한 롤 남겨 드리고, 들뜬 곳이 없는지 방마다 같이 확인합니다. 짐은 이때부터 들이셔도 됩니다.</p></li>
+  </ol>
+ </div>
+</section>
+
+<section class="paperbook" id="paper">
+ <div class="in">
+  <div class="sec-h rv">
+   <div><p class="kick">벽지 고르기</p><h2>견적 날 들고 가는<br>샘플북 여섯 장</h2></div>
+   <p class="lead">실제 방 조명 아래에서 벽에 대어 보고 고르시도록, 많이 고르시는 색 여섯 가지를 손바닥 크기로 잘라 갑니다. 다른 색은 샘플북 전체에서 고르실 수 있습니다.</p>
+  </div>
+  <div class="sw rv">
+   <figure><svg viewBox="0 0 90 120"><rect width="90" height="120" fill="#F2EFE6"/><path d="M0 0v120M6 0v120M12 0v120M18 0v120M24 0v120M30 0v120M36 0v120M42 0v120M48 0v120M54 0v120M60 0v120M66 0v120M72 0v120M78 0v120M84 0v120" stroke="#E8E4D8" stroke-width="1"/></svg><figcaption><b>무지 아이보리</b>실크 · 거실 · 천장</figcaption></figure>
+   <figure><svg viewBox="0 0 90 120"><rect width="90" height="120" fill="#D9D7CF"/><path d="M0 4h90M0 12h90M0 20h90M0 28h90M0 36h90M0 44h90M0 52h90M0 60h90M0 68h90M0 76h90M0 84h90M0 92h90M0 100h90M0 108h90M0 116h90" stroke="#CDCBC2" stroke-width="1.4"/></svg><figcaption><b>린넨 웜그레이</b>실크 · 침실</figcaption></figure>
+   <figure><svg viewBox="0 0 90 120"><rect width="90" height="120" fill="#C9D0BC"/><g fill="#B5BEA6"><path d="M22 16c6 4 7 10 3 16-2-6-6-10-3-16Z"/><path d="M22 16c-6 4-7 10-3 16 2-6 6-10 3-16Z"/><path d="M67 46c6 4 7 10 3 16-2-6-6-10-3-16Z"/><path d="M67 46c-6 4-7 10-3 16 2-6 6-10 3-16Z"/><path d="M22 76c6 4 7 10 3 16-2-6-6-10-3-16Z"/><path d="M22 76c-6 4-7 10-3 16 2-6 6-10 3-16Z"/><path d="M67 106c6 4 7 10 3 16-2-6-6-10-3-16Z"/></g></svg><figcaption><b>세이지 잎 무늬</b>실크 · 포인트 벽</figcaption></figure>
+   <figure><svg viewBox="0 0 90 120"><rect width="90" height="120" fill="#E8DCC8"/><g fill="none" stroke="#D8C9AF" stroke-width="2"><path d="M0 10l15 10 15-10 15 10 15-10 15 10 15-10"/><path d="M0 40l15 10 15-10 15 10 15-10 15 10 15-10"/><path d="M0 70l15 10 15-10 15 10 15-10 15 10 15-10"/><path d="M0 100l15 10 15-10 15 10 15-10 15 10 15-10"/></g></svg><figcaption><b>샌드 헤링본</b>합지 · 원룸 전체</figcaption></figure>
+   <figure><svg viewBox="0 0 90 120"><rect width="90" height="120" fill="#5D6B73"/><path d="M0 0v120M10 0v120M20 0v120M30 0v120M40 0v120M50 0v120M60 0v120M70 0v120M80 0v120" stroke="#56636B" stroke-width="3"/></svg><figcaption><b>슬레이트 블루</b>실크 · 서재 한 면</figcaption></figure>
+   <figure><svg viewBox="0 0 90 120"><rect width="90" height="120" fill="#F5F1EA"/><g fill="#E6DDCF"><circle cx="15" cy="15" r="3"/><circle cx="45" cy="15" r="3"/><circle cx="75" cy="15" r="3"/><circle cx="30" cy="45" r="3"/><circle cx="60" cy="45" r="3"/><circle cx="15" cy="75" r="3"/><circle cx="45" cy="75" r="3"/><circle cx="75" cy="75" r="3"/><circle cx="30" cy="105" r="3"/><circle cx="60" cy="105" r="3"/></g></svg><figcaption><b>도트 화이트</b>합지 · 아이 방</figcaption></figure>
+  </div>
+  <div class="compare rv">
+   <div><h3>실크벽지</h3><p>겉면이 비닐 코팅이라 물걸레질이 되고 오래 갑니다. 초배지 위에 띄워 붙여 이음매가 거의 보이지 않습니다.</p><ul><li>거실, 주방, 오래 살 집</li><li>12월 계약 시 시공비 10% 할인 대상</li></ul></div>
+   <div><h3>합지벽지</h3><p>종이 두 겹이라 값이 낮고 하루 만에 마릅니다. 이음매를 살짝 겹쳐 붙여 가까이서 보면 선이 보입니다.</p><ul><li>원룸 전체, 세놓는 집, 아이 방</li><li>방문 견적 무료는 똑같이 적용</li></ul></div>
+  </div>
+ </div>
+</section>
+
+<section id="check">
+ <div class="in">
+  <div class="sec-h rv">
+   <div><p class="kick">견적 날 같이 보는 것</p><h2>붙이기 전에<br>벽부터 봅니다</h2></div>
+   <p class="lead">새 벽지가 몇 달 만에 들뜨는 이유는 대부분 벽 쪽에 있습니다. 방문 견적에서 아래 네 가지를 먼저 확인하고 견적서에 적어 드립니다.</p>
+  </div>
+  <div class="checks rv">
+   <div><svg class="ico" viewBox="0 0 24 24"><path d="M12 3c3 4 6 7 6 11a6 6 0 0 1-12 0c0-4 3-7 6-11Z"/><path d="M9 14a3 3 0 0 0 3 3"/></svg><div><h3>결로 · 곰팡이 자리</h3><p>북향 벽과 창 아래 모서리를 손으로 짚어 습기를 봅니다. 곰팡이가 있으면 제거 후 방지 초배를 따로 적습니다.</p></div></div>
+   <div><svg class="ico" viewBox="0 0 24 24"><path d="M4 20h16M6 20V9l6-5 6 5v11"/><path d="M10 20v-6h4v6"/></svg><div><h3>벽면 요철 · 퍼티</h3><p>석고보드 이음 자리와 못 자국을 빛을 비스듬히 비춰 확인하고, 퍼티 보수가 필요한 면적을 잽니다.</p></div></div>
+   <div><svg class="ico" viewBox="0 0 24 24"><path d="M3 6h18M3 10h18"/><path d="M5 10v10M19 10v10"/></svg><div><h3>몰딩 · 걸레받이</h3><p>몰딩이 벽에서 떠 있으면 칼선이 비뚤어집니다. 실리콘 보강이 필요한지 같이 봅니다.</p></div></div>
+   <div><svg class="ico" viewBox="0 0 24 24"><rect x="6" y="4" width="12" height="16" rx="2"/><path d="M10 9v2M14 9v2M10 15h4"/></svg><div><h3>콘센트 · 스위치 수</h3><p>덮개를 빼고 다시 끼우는 개수를 세어, 시공 당일 시간이 얼마나 드는지 미리 잡습니다.</p></div></div>
+  </div>
+ </div>
+</section>
+
+<section class="apply" id="apply">
+ <div class="in">
+  <div class="rv">
+   <p class="kick">12월 방문 견적 신청</p>
+   <h2>견적은 40분,<br>샘플북을 들고 갑니다</h2>
+   <p class="lead">원하시는 날짜를 남겨 주시면 하루 안에 문자로 방문 시간을 잡아 드립니다. 견적을 받고 계약하지 않으셔도 비용은 없습니다.</p>
+   <ul class="inc">
+    <li><span>방문 견적 · 벽 상태 확인</span><b>0원</b></li>
+    <li><span>실크벽지 도배 시공비</span><b class="num">10% 할인</b></li>
+    <li><span>보수용 벽지 한 롤</span><b>시공 후 드림</b></li>
+    <li><span>적용 기간</span><b class="num">12월 31일 계약분까지</b></li>
+   </ul>
+  </div>
+  <form id="f" class="rv" novalidate>
+   <div class="fields">
+    <div class="row">
+     <div class="f"><label for="nm">이름</label><input id="nm" name="nm" autocomplete="name" placeholder="홍길동"></div>
+     <div class="f"><label for="ph">연락처</label><input id="ph" name="ph" inputmode="tel" autocomplete="tel" placeholder="000-0000-0000"></div>
+    </div>
+    <div class="row">
+     <div class="f"><label for="ar">동네</label><input id="ar" name="ar" placeholder="예: 마포구 망원동"></div>
+     <div class="f"><label for="sz">집 크기</label><select id="sz" name="sz"><option>원룸 · 1.5룸</option><option>투룸 · 빌라</option><option>아파트 24평형</option><option>아파트 32평형</option><option>그 밖의 크기</option></select></div>
+    </div>
+    <fieldset class="f"><legend>벽지 종류</legend>
+     <div class="chips">
+      <label><input type="radio" name="tp" value="실크벽지" checked>실크벽지</label>
+      <label><input type="radio" name="tp" value="합지벽지">합지벽지</label>
+      <label><input type="radio" name="tp" value="견적 때 정하기">견적 때 정하기</label>
+     </div>
+    </fieldset>
+    <div class="row">
+     <div class="f"><label for="dt">방문 희망일</label><input id="dt" name="dt" placeholder="예: 12월 14일 오전"></div>
+     <div class="f"><label for="mv">이사 예정일</label><input id="mv" name="mv" placeholder="예: 1월 둘째 주"></div>
+    </div>
+    <div class="f"><label for="mm">더 알려 주실 것</label><textarea id="mm" name="mm" placeholder="예: 작은방 창 아래에 곰팡이가 있어요"></textarea></div>
+    <p class="err" id="err" role="alert"></p>
+    <label class="agree"><input type="checkbox" id="ag">견적 연락을 위해 이름과 연락처를 받는 데 동의합니다</label>
+    <button class="btn" type="submit">방문 견적 신청하기</button>
+   </div>
+   <div class="ok" aria-live="polite">
+    <h3>신청을 받았습니다</h3>
+    <p>하루 안에 문자로 방문 시간을 잡아 드립니다. 견적 날에는 샘플북 여섯 장과 줄자를 들고 갑니다.</p>
+    <dl id="sum"></dl>
+   </div>
+  </form>
+ </div>
+</section>
+
+<section id="faq">
+ <div class="in">
+  <div class="sec-h rv"><div><p class="kick">자주 묻는 것</p><h2>계약 전에 물어보시는 것</h2></div></div>
+  <div class="faq rv">
+   <details><summary>살고 있는 집도 하루에 되나요<svg class="ico" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></summary><p>짐이 있으면 가구를 방 가운데로 모았다가 옮기는 시간이 더 들어, 원룸은 하루, 24평형 이상은 이틀로 잡습니다. 가구 이동비는 견적서에 따로 적습니다.</p></details>
+   <details><summary>헌 벽지 위에 바로 붙이면 안 되나요<svg class="ico" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></summary><p>헌 벽지가 들뜨지 않고 한 겹뿐이면 그 위에 붙이기도 합니다. 다만 실크벽지가 이미 붙어 있거나 두 겹 이상이면 걷어 내야 새 벽지가 오래 붙어 있습니다.</p></details>
+   <details><summary>10% 할인은 어디까지 들어가나요<svg class="ico" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></summary><p>실크벽지 도배 시공비 전체에 들어갑니다. 곰팡이 제거, 퍼티 보수, 가구 이동비처럼 따로 적는 항목은 할인에서 빠집니다.</p></details>
+   <details><summary>시공 후 들뜨면 어떻게 하나요<svg class="ico" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></summary><p>시공 후 3개월 안에 이음매가 벌어지거나 들뜬 곳은 남겨 드린 보수용 벽지로 다시 붙여 드립니다. 사진을 문자로 보내 주시면 방문 날짜를 잡습니다.</p></details>
+  </div>
+ </div>
+</section>
+</main>
+
+<footer>
+ <div class="in">
+  <div><b>새벽지 도배</b><p>방문 견적 · 도배 시공 · 보수 · 서울 서부권</p></div>
+  <div><p>문의 000-0000-0000 · 카카오톡 ID: example</p><p>상담 시간 08:00 – 19:00 · 일요일 쉼</p></div>
+ </div>
+</footer>
+<div class="mbar"><a class="btn" href="#apply">방문 견적 신청하기</a></div>
+
+<script>
+(function(){
+ var els=document.querySelectorAll('.rv');
+ if(!('IntersectionObserver' in window)){els.forEach(function(e){e.classList.add('on')});return}
+ var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('on');io.unobserve(e.target)}})},{threshold:.12});
+ els.forEach(function(e){io.observe(e)});
+})();
+document.getElementById('f').addEventListener('submit',function(e){
+ e.preventDefault();
+ var f=e.target,err=document.getElementById('err');
+ var nm=f.nm.value.trim(),ph=f.ph.value.trim();
+ if(!nm||!ph){err.textContent='이름과 연락처를 적어 주세요';return}
+ if(!document.getElementById('ag').checked){err.textContent='연락 동의에 체크해 주세요';return}
+ err.textContent='';
+ var tp=f.querySelector('input[name=tp]:checked').value;
+ var rows=[['이름',nm],['연락처',ph],['동네',f.ar.value.trim()||'견적 연락 때 확인'],['집 크기',f.sz.value],['벽지',tp],['방문 희망일',f.dt.value||'날짜 상의']];
+ var dl=document.getElementById('sum');dl.innerHTML='';
+ rows.forEach(function(r){var d=document.createElement('div');var t=document.createElement('dt');t.textContent=r[0];var v=document.createElement('dd');v.textContent=r[1];d.appendChild(t);d.appendChild(v);dl.appendChild(d)});
+ f.classList.add('done');
+ f.scrollIntoView({behavior:'smooth',block:'start'});
+});
+</script>
+</body>
+</html>
