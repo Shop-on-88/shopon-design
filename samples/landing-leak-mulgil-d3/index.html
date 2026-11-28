@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>물길 누수탐지 · 12월 방문 점검 출장비 0원</title>
+<meta name="description" content="아랫집 천장 얼룩, 계량기가 도는 집. 청음·가스·열화상 장비로 새는 지점을 찾아 그 자리만 고칩니다. 12월 방문 점검 출장비 0원.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;600;700&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+ --stone:#EEEAE3;--paper:#F8F6F1;--ink:#1C2328;--ink2:#46505A;--ink3:#69737B;
+ --slate:#1D282F;--slate2:#26343C;--water:#0C7A7C;--water-d:#09625F;--aqua:#46C3C1;
+ --line:rgba(28,35,40,.14);--line2:rgba(28,35,40,.26)
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;background:var(--stone)}
+body{font-family:'Noto Sans KR',sans-serif;font-size:16px;line-height:1.65;color:var(--ink);background:var(--stone);word-break:keep-all;-webkit-font-smoothing:antialiased;overflow-x:clip}
+a{color:inherit}
+svg{display:block}
+.in{max-width:1200px;margin:0 auto;padding:0 32px}
+.mono{font-family:'Roboto Mono',monospace;font-variant-numeric:tabular-nums}
+h1,h2,h3{font-weight:700;letter-spacing:-.02em;line-height:1.3}
+h2{font-size:clamp(28px,3.4vw,40px)}
+.kick{font-size:15px;font-weight:600;color:var(--water);margin-bottom:12px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;height:48px;padding:0 24px;border-radius:8px;background:var(--water);color:#fff;font-weight:600;font-size:16px;text-decoration:none;border:0;cursor:pointer;font-family:inherit;transition:background-color .2s}
+.btn:hover{background:var(--water-d)}
+.btn svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.ico{width:24px;height:24px;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round;flex:none}
+
+header{position:absolute;top:0;left:0;right:0;z-index:5}
+.nav{display:flex;justify-content:space-between;align-items:center;height:80px}
+.logo{display:flex;align-items:center;gap:12px;text-decoration:none;color:#EEF2F2;font-weight:700;font-size:20px}
+.logo svg{width:32px;height:32px}
+.nav .tel{color:#C8D2D4;font-size:15px;text-decoration:none;display:flex;align-items:center;gap:8px;min-height:44px}
+.nav .tel .ico{width:20px;height:20px}
+
+.hero{background:var(--slate);color:#E6ECEC;padding:128px 0 96px;position:relative;overflow:hidden}
+.hero .in{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:40px;align-items:center}
+.hero small{display:block;font-size:15px;color:#9FB1B5;margin-bottom:16px}
+.hero h1{font-size:clamp(34px,4.2vw,52px);color:#F4F7F7;margin-bottom:24px}
+.hero h1 em{font-style:normal;color:var(--aqua)}
+.hero p.sub{font-size:18px;color:#C3CFD1;margin-bottom:32px;max-width:520px}
+.offer{display:grid;grid-template-columns:1fr 1fr;border:1px solid rgba(230,236,236,.2);border-radius:12px;margin-bottom:32px;max-width:520px}
+.offer div{padding:16px 20px;font-size:14px;color:#9FB1B5}
+.offer div+div{border-left:1px solid rgba(230,236,236,.2)}
+.offer b{display:block;font-size:24px;color:#F4F7F7;font-weight:700;line-height:1.35}
+.offer b span{color:var(--aqua)}
+.acts{display:flex;flex-wrap:wrap;align-items:center;gap:8px 24px}
+.acts .tl{color:#DCE4E5;font-weight:600;text-decoration:none;min-height:48px;display:inline-flex;align-items:center;border-bottom:1px solid transparent}
+.acts .tl:hover{color:#fff;border-bottom-color:rgba(255,255,255,.5)}
+.acts small{display:block;width:100%;font-size:14px;color:#8EA0A4;margin:8px 0 0}
+.xsec{width:100%;height:auto}
+.xcap{display:none}
+
+section{padding:112px 0}
+.sh{max-width:720px;margin-bottom:48px}
+.sh p{color:var(--ink2);font-size:17px;margin-top:16px}
+.sh p.kick{color:var(--water);font-size:15px;margin-top:0}
+
+/* symptom check */
+.check{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:32px;align-items:start}
+.sym{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.sym label{display:flex;gap:16px;align-items:flex-start;padding:20px;border-radius:12px;background:var(--paper);border:1px solid var(--line);cursor:pointer;min-height:96px;transition:border-color .2s,background-color .2s;font-size:16px;line-height:1.55}
+.sym input{position:absolute;opacity:0;pointer-events:none}
+.sym .bx{flex:none;width:24px;height:24px;border-radius:6px;border:2px solid var(--line2);display:flex;align-items:center;justify-content:center;margin-top:1px;background:#fff}
+.sym .bx svg{width:16px;height:16px;stroke:#fff;stroke-width:3;fill:none;opacity:0}
+.sym input:checked+label{border-color:var(--water);background:#EAF3F2}
+.sym input:checked+label .bx{background:var(--water);border-color:var(--water)}
+.sym input:checked+label .bx svg{opacity:1}
+.sym input:focus-visible+label{outline:2px solid var(--water);outline-offset:2px}
+.verdict{background:var(--slate);color:#E6ECEC;border-radius:16px;padding:32px;position:sticky;top:24px}
+.verdict .n{font-size:15px;color:#9FB1B5}
+.verdict .n b{font-family:'Roboto Mono',monospace;font-size:44px;color:#F4F7F7;font-weight:500;margin-right:4px}
+.verdict h3{font-size:22px;color:#F4F7F7;margin:12px 0 8px}
+.verdict p{color:#C3CFD1;font-size:15px}
+.verdict .btn{margin-top:24px;width:100%}
+
+/* methods */
+.meth{background:var(--paper);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border-top:2px solid var(--ink)}
+.st{padding:28px 24px 0 0}
+.st+.st{padding-left:24px;border-left:1px solid var(--line)}
+.st .no{font-family:'Roboto Mono',monospace;font-size:14px;color:var(--ink3)}
+.st h3{font-size:20px;margin:8px 0 8px}
+.st p{font-size:15px;color:var(--ink2)}
+.st .read{margin-top:20px;padding:12px 16px;border-radius:8px;background:var(--slate);color:#C3CFD1;font-family:'Roboto Mono',monospace;font-size:13px;line-height:1.6}
+.st .read b{color:var(--aqua);font-weight:500}
+.st .what{display:flex;gap:8px;align-items:center;margin-top:16px;font-size:14px;color:var(--ink3)}
+.st .what .ico{width:20px;height:20px;color:var(--water)}
+
+/* price */
+.price{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:56px;align-items:start}
+.ptab{width:100%;border-collapse:collapse}
+.ptab td{padding:20px 0;border-bottom:1px solid var(--line);vertical-align:top}
+.ptab tr:first-child td{border-top:2px solid var(--ink)}
+.ptab td b{display:block;font-size:17px;font-weight:600}
+.ptab td span{font-size:14px;color:var(--ink3)}
+.ptab td.v{text-align:right;white-space:nowrap;font-weight:700;font-size:18px;padding-left:24px;font-variant-numeric:tabular-nums}
+.ptab td.v s{display:block;font-weight:400;font-size:14px;color:var(--ink3)}
+.ptab td.v.zero{color:var(--water)}
+.ptab td.v i.r{display:block;font-style:normal;font-weight:400;font-size:14px;color:var(--ink3)}
+.ins{margin-top:24px;padding:24px;border-radius:12px;background:var(--paper);border:1px solid var(--line)}
+.ins h3{font-size:18px;margin-bottom:8px;display:flex;gap:12px;align-items:center}
+.ins h3 .ico{color:var(--water)}
+.ins p{font-size:15px;color:var(--ink2)}
+
+/* flow */
+.flow{background:var(--slate);color:#E6ECEC}
+.flow h2{color:#F4F7F7}
+.flow .sh p{color:#B5C3C6}
+.fl{list-style:none;display:grid;grid-template-columns:repeat(5,1fr);gap:24px;counter-reset:f}
+.fl li{border-top:2px solid rgba(230,236,236,.24);padding-top:20px;position:relative}
+.fl li:first-child{border-top-color:var(--aqua)}
+.fl .t{font-family:'Roboto Mono',monospace;font-size:13px;color:var(--aqua)}
+.fl b{display:block;font-size:18px;color:#F4F7F7;margin:8px 0 4px}
+.fl span{font-size:14px;color:#B5C3C6;display:block}
+
+/* form */
+.apply .in{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:56px;align-items:start}
+.apply ul.pts{list-style:none;margin-top:28px;display:grid;gap:16px}
+.apply ul.pts li{display:flex;gap:12px;font-size:16px;color:var(--ink2)}
+.apply ul.pts .ico{color:var(--water);width:22px;height:22px;margin-top:2px}
+form{background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:32px}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:20px}
+.f{margin-bottom:20px}
+label.l{display:block;font-size:14px;font-weight:600;margin-bottom:8px}
+input[type=text],input[type=tel],input[type=date],select,textarea{width:100%;height:48px;padding:0 14px;border-radius:8px;border:1px solid var(--line2);background:#fff;font-family:inherit;font-size:16px;color:var(--ink)}
+textarea{height:96px;padding:12px 14px;resize:vertical}
+input:focus,select:focus,textarea:focus{outline:2px solid var(--water);outline-offset:1px;border-color:transparent}
+.seg{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
+.seg input{position:absolute;opacity:0;pointer-events:none}
+.seg label{display:flex;align-items:center;justify-content:center;height:48px;border-radius:8px;border:1px solid var(--line2);background:#fff;cursor:pointer;font-size:15px}
+.seg input:checked+label{border-color:var(--water);background:#EAF3F2;color:var(--water-d);font-weight:600}
+.seg input:focus-visible+label{outline:2px solid var(--water);outline-offset:2px}
+.agree{display:flex;gap:12px;align-items:flex-start;font-size:14px;color:var(--ink2);margin:4px 0 20px;cursor:pointer}
+.agree input{width:20px;height:20px;margin-top:2px;accent-color:var(--water);flex:none}
+form .btn{width:100%}
+.fine{font-size:13px;color:var(--ink3);margin-top:12px}
+.done{display:none}
+form.sent .fields{display:none}
+form.sent .done{display:block}
+.done h3{font-size:24px;margin-bottom:12px}
+.done p{color:var(--ink2)}
+.done .mono{display:inline-block;margin-top:16px;padding:8px 12px;border-radius:8px;background:var(--slate);color:var(--aqua);font-size:14px}
+
+/* faq */
+.faq{max-width:800px}
+details{border-bottom:1px solid var(--line2)}
+details:first-of-type{border-top:2px solid var(--ink)}
+summary{list-style:none;cursor:pointer;min-height:64px;padding:18px 0;display:flex;justify-content:space-between;align-items:center;gap:24px;font-size:18px;font-weight:600}
+summary::-webkit-details-marker{display:none}
+summary .ico{transition:transform .2s;color:var(--ink3)}
+details[open] summary .ico{transform:rotate(180deg)}
+details p{padding:0 40px 24px 0;color:var(--ink2)}
+
+footer{background:var(--slate);color:#9FB1B5;padding:48px 0 56px;font-size:14px}
+footer .in{display:flex;flex-wrap:wrap;justify-content:space-between;gap:24px}
+footer b{color:#E6ECEC;font-size:16px}
+
+.mbar{display:none}
+.rv{opacity:0;transform:translateY(12px);transition:opacity .6s ease,transform .6s ease}
+.rv.on{opacity:1;transform:none}
+
+@media(max-width:1020px){
+ .hero .in,.check,.price,.apply .in{grid-template-columns:1fr;gap:40px}
+ .hero{padding-top:112px}
+ .steps{grid-template-columns:1fr 1fr;row-gap:32px}
+ .st:nth-child(3){padding-left:0;border-left:0}
+ .fl{grid-template-columns:1fr 1fr 1fr;row-gap:32px}
+ .verdict{position:static}
+}
+@media(max-width:620px){
+ .in{padding:0 16px}
+ .nav{height:64px}
+ .nav .tel span{display:none}
+ .hero{padding:96px 0 64px}
+ .hero p.sub{font-size:16px}
+ .offer b{font-size:20px}
+ .offer div{padding:12px 16px}
+ section{padding:80px 0}
+ .sym{grid-template-columns:1fr}
+ .sym label{min-height:0}
+ .steps{grid-template-columns:1fr}
+ .st,.st+.st{padding:24px 0 0;border-left:0}
+ .st+.st{border-top:1px solid var(--line);margin-top:8px}
+ .fl{grid-template-columns:1fr 1fr}
+ form{padding:24px 16px}
+ .row{grid-template-columns:1fr}
+ .seg{grid-template-columns:1fr 1fr}
+ details p{padding-right:0}
+ footer{padding-bottom:128px}
+ .xsec text,.xsec .mk-l{display:none}
+ .xsec{width:115%;margin-left:-13%}
+ .xcap{display:grid;gap:8px;list-style:none;margin-top:16px;font-size:14px;color:#C3CFD1}
+ .xcap li{display:flex;gap:12px}
+ .xcap b{flex:none;width:64px;color:var(--aqua);font-weight:600}
+ .mbar{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:10;padding:12px 16px;background:rgba(29,40,47,.96);border-top:1px solid rgba(230,236,236,.16)}
+ .mbar .btn{width:100%}
+}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.rv{opacity:1;transform:none;transition:none}*{transition:none!important}}
+</style>
+</head>
+<body>
+<header>
+ <div class="in nav">
+  <a class="logo" href="#top"><svg viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="16" r="14" fill="none" stroke="#EEF2F2" stroke-width="2"/><path d="M6 20h20" stroke="#EEF2F2" stroke-width="2"/><path d="M16 9c3 4 4.5 6.5 4.5 8.5a4.5 4.5 0 01-9 0C11.5 15.5 13 13 16 9z" fill="#46C3C1"/></svg>물길 누수탐지</a>
+  <a class="tel" href="tel:000-0000-0000"><svg class="ico" viewBox="0 0 24 24"><path d="M5 4h4l2 5-3 2a11 11 0 005 5l2-3 5 2v4a2 2 0 01-2 2A17 17 0 013 6a2 2 0 012-2"/></svg><span>상담 000-0000-0000</span></a>
+ </div>
+</header>
+
+<main id="top">
+<section class="hero">
+ <div class="in">
+  <div>
+   <small>서울 · 경기 아파트와 빌라 누수탐지</small>
+   <h1>아랫집 천장 얼룩, <em>어느 배관에서 새는지</em> 먼저 찾아 드립니다</h1>
+   <p class="sub">청음기와 가스, 열화상 장비로 바닥을 다 뜯지 않고 새는 지점을 찾고, 그 자리만 열어 고칩니다. 12월에는 방문 점검 출장비를 받지 않습니다.</p>
+   <div class="offer">
+    <div>12월 31일까지 방문 점검<b>출장비 <span>0원</span></b></div>
+    <div>원인을 찾지 못하면<b>탐지비 <span>0원</span></b></div>
+   </div>
+   <div class="acts">
+    <a class="btn" href="#apply">무료 방문 점검 신청 <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+    <a class="tl" href="#price">탐지 비용 보기</a>
+   </div>
+  </div>
+  <div class="xwrap"><svg class="xsec" viewBox="-112 0 804 520" role="img" aria-label="아파트 바닥 단면도. 위에서부터 마루, 몰탈 속 난방 배관 여섯 줄, 단열재, 콘크리트 슬래브, 아랫집 천장이 층층이 그려져 있습니다. 왼쪽에서 네 번째 배관에서 청록색 물이 번져 슬래브 균열을 타고 아랫집 천장에 갈색 얼룩과 물방울을 만들고 있습니다. 마루 위에는 청음 센서가 놓여 있고 오른쪽 위 판독 창에 청음 38 dB 파형이 보이며, 새는 지점에 누수 지점 · 거실 창 쪽 1.2 m 표시가 있습니다.">
+   <defs>
+    <pattern id="agg" width="22" height="22" patternUnits="userSpaceOnUse"><rect width="22" height="22" fill="#8E9A9E"/><circle cx="4" cy="5" r="1.6" fill="#7A868A"/><circle cx="14" cy="9" r="1.2" fill="#A3AEB1"/><circle cx="9" cy="17" r="1.8" fill="#76838A"/><circle cx="19" cy="18" r="1" fill="#A3AEB1"/></pattern>
+    <pattern id="conc" width="30" height="30" patternUnits="userSpaceOnUse"><rect width="30" height="30" fill="#6D7A80"/><path d="M3 8l4-2 2 4z" fill="#5E6B71"/><path d="M18 20l5-1-1 4z" fill="#7D8A90"/><circle cx="22" cy="6" r="1.4" fill="#5E6B71"/><circle cx="8" cy="24" r="1.2" fill="#82909A"/></pattern>
+    <pattern id="wood" width="96" height="16" patternUnits="userSpaceOnUse"><rect width="96" height="16" fill="#B98A5E"/><path d="M0 0H96" stroke="#8E6340" stroke-width="2"/><path d="M60 0V16" stroke="#8E6340" stroke-width="1.5"/><path d="M8 8c14-3 30 2 44-1M66 6c10 2 18-1 26 1" stroke="#A47650" stroke-width="1" fill="none"/></pattern>
+    <pattern id="ins" width="12" height="12" patternUnits="userSpaceOnUse"><rect width="12" height="12" fill="#D9D3C4"/><path d="M0 12L12 0" stroke="#C3BBA8" stroke-width="2"/></pattern>
+    <radialGradient id="wet" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#46C3C1" stop-opacity=".75"/><stop offset=".7" stop-color="#46C3C1" stop-opacity=".25"/><stop offset="1" stop-color="#46C3C1" stop-opacity="0"/></radialGradient>
+    <radialGradient id="stain" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#8A6A45"/><stop offset=".6" stop-color="#B0926A"/><stop offset="1" stop-color="#D8CDBB" stop-opacity="0"/></radialGradient>
+    <linearGradient id="pipe" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#E9EEEF"/><stop offset="1" stop-color="#AEB8BC"/></linearGradient>
+    <clipPath id="mortar"><rect x="40" y="164" width="560" height="64"/></clipPath>
+   </defs>
+   <!-- room above, faint -->
+   <path d="M40 140 V40" stroke="#3A4A52" stroke-width="2"/>
+   <text x="52" y="60" font-family="Noto Sans KR" font-size="17" fill="#8EA0A4">우리 집 거실</text>
+   <!-- readout -->
+   <g transform="translate(372 18)">
+    <rect width="232" height="88" rx="10" fill="#141D22" stroke="#3A4A52"/>
+    <text x="16" y="28" font-family="Noto Sans KR" font-size="16" fill="#8EA0A4">청음 · CH2</text>
+    <text x="216" y="28" font-family="Roboto Mono" font-size="18" fill="#46C3C1" text-anchor="end">38 dB</text>
+    <path d="M16 62 h20 l6 -10 l6 20 l6 -26 l6 30 l6 -18 l6 10 l6 -6 l6 4 h20 l6 -14 l6 24 l6 -30 l6 34 l6 -22 l6 12 l6 -6 h40" fill="none" stroke="#46C3C1" stroke-width="2" stroke-linejoin="round"/>
+   </g>
+   <!-- sensor on floor -->
+   <path d="M372 106 C340 112 330 124 336 134" fill="none" stroke="#5A6A72" stroke-width="2"/>
+   <g transform="translate(312 120)"><rect x="0" y="6" width="48" height="16" rx="6" fill="#2F3D44" stroke="#5A6A72" stroke-width="2"/><rect x="14" y="0" width="20" height="10" rx="3" fill="#46505A"/></g>
+   <path d="M336 146 q-10 6 0 12 M336 146 q10 6 0 12" fill="none" stroke="#46C3C1" stroke-width="1.6" opacity=".7"/>
+   <!-- floor layers -->
+   <rect x="40" y="142" width="560" height="22" fill="url(#wood)"/>
+   <rect x="40" y="164" width="560" height="64" fill="url(#agg)"/>
+   <!-- pipes -->
+   <g clip-path="url(#mortar)">
+    <ellipse cx="337" cy="198" rx="70" ry="34" fill="url(#wet)"/>
+   </g>
+   <g>
+    <circle cx="96" cy="198" r="11" fill="url(#pipe)" stroke="#6F7C82" stroke-width="2"/><circle cx="96" cy="198" r="5" fill="#C9705A" opacity=".8"/>
+    <circle cx="176" cy="198" r="11" fill="url(#pipe)" stroke="#6F7C82" stroke-width="2"/><circle cx="176" cy="198" r="5" fill="#C9705A" opacity=".8"/>
+    <circle cx="256" cy="198" r="11" fill="url(#pipe)" stroke="#6F7C82" stroke-width="2"/><circle cx="256" cy="198" r="5" fill="#C9705A" opacity=".8"/>
+    <circle cx="337" cy="198" r="11" fill="url(#pipe)" stroke="#46C3C1" stroke-width="3"/><circle cx="337" cy="198" r="5" fill="#C9705A" opacity=".8"/>
+    <circle cx="416" cy="198" r="11" fill="url(#pipe)" stroke="#6F7C82" stroke-width="2"/><circle cx="416" cy="198" r="5" fill="#C9705A" opacity=".8"/>
+    <circle cx="496" cy="198" r="11" fill="url(#pipe)" stroke="#6F7C82" stroke-width="2"/><circle cx="496" cy="198" r="5" fill="#C9705A" opacity=".8"/>
+    <circle cx="560" cy="198" r="11" fill="url(#pipe)" stroke="#6F7C82" stroke-width="2"/><circle cx="560" cy="198" r="5" fill="#C9705A" opacity=".8"/>
+   </g>
+   <path d="M345 192 l10 -6 M347 202 l12 2" stroke="#46C3C1" stroke-width="2.4" stroke-linecap="round"/>
+   <rect x="40" y="228" width="560" height="14" fill="url(#ins)"/>
+   <rect x="40" y="242" width="560" height="150" fill="url(#conc)"/>
+   <g fill="#3E4A50"><circle cx="80" cy="262" r="4"/><circle cx="160" cy="262" r="4"/><circle cx="240" cy="262" r="4"/><circle cx="320" cy="262" r="4"/><circle cx="400" cy="262" r="4"/><circle cx="480" cy="262" r="4"/><circle cx="560" cy="262" r="4"/><circle cx="80" cy="372" r="4"/><circle cx="160" cy="372" r="4"/><circle cx="240" cy="372" r="4"/><circle cx="320" cy="372" r="4"/><circle cx="400" cy="372" r="4"/><circle cx="480" cy="372" r="4"/><circle cx="560" cy="372" r="4"/></g>
+   <!-- crack + water path -->
+   <path d="M342 228 L336 254 L348 282 L338 316 L352 350 L344 392" fill="none" stroke="#2A353A" stroke-width="3"/>
+   <path d="M342 228 L336 254 L348 282 L338 316 L352 350 L344 392" fill="none" stroke="#46C3C1" stroke-width="2" stroke-dasharray="6 6"/>
+   <!-- ceiling below -->
+   <rect x="40" y="392" width="560" height="12" fill="#E2DDD3"/>
+   <rect x="40" y="404" width="560" height="4" fill="#C7C0B3"/>
+   <ellipse cx="346" cy="406" rx="80" ry="10" fill="url(#stain)" opacity=".9"/>
+   <path d="M346 410 q5 10 0 16 q-5 -6 0 -16z" fill="#46C3C1"/>
+   <path d="M330 436 q4 8 0 13 q-4 -5 0 -13z" fill="#46C3C1" opacity=".6"/>
+   <text x="52" y="452" font-family="Noto Sans KR" font-size="17" fill="#8EA0A4">아랫집 거실 천장</text>
+   <path d="M40 470 V500" stroke="#3A4A52" stroke-width="2"/>
+   <!-- leak marker -->
+   <g>
+    <circle cx="337" cy="198" r="24" fill="none" stroke="#F4F7F7" stroke-width="1.6" stroke-dasharray="4 4"/>
+    <path d="M361 198 H452" stroke="#F4F7F7" stroke-width="1.4"/>
+    <rect class="mk-l" x="452" y="179" width="222" height="40" rx="6" fill="#F4F7F7"/>
+    <text x="466" y="206" font-family="Noto Sans KR" font-size="18" font-weight="600" fill="#1C2328">누수 지점 · 창 쪽 1.2 m</text>
+   </g>
+   <!-- layer labels on left -->
+   <g font-family="Noto Sans KR" font-size="17" fill="#B5C3C6" text-anchor="end">
+    <text x="28" y="158">마루</text><text x="28" y="201">몰탈 · 난방관</text><text x="28" y="240">단열재</text><text x="28" y="322">슬래브</text><text x="28" y="404">천장</text>
+   </g>
+  </svg>
+  <ul class="xcap"><li><b>누수 지점</b>거실 창 쪽 1.2 m, 난방 배관 네 번째 줄</li><li><b>청음</b>38 dB · 주변 평균 21 dB</li><li><b>번진 길</b>슬래브 균열을 타고 아랫집 천장까지</li></ul></div>
+ </div>
+</section>
+
+<section id="check">
+ <div class="in">
+  <div class="sh rv"><p class="kick">증상 확인</p><h2>우리 집에 해당하는 것을 눌러 보세요</h2><p>두 가지 이상이면 배관 어딘가에서 새고 있을 가능성이 높습니다. 한 가지라도 아랫집에 물이 떨어진다면 바로 연락 주세요.</p></div>
+  <div class="check rv">
+   <ul class="sym">
+    <li><input type="checkbox" id="s1"><label for="s1"><span class="bx"><svg viewBox="0 0 16 16"><path d="M3 8l3 3 7-7"/></svg></span>아랫집 천장이나 벽에 물 얼룩이 생겼다고 연락이 왔다</label></li>
+    <li><input type="checkbox" id="s2"><label for="s2"><span class="bx"><svg viewBox="0 0 16 16"><path d="M3 8l3 3 7-7"/></svg></span>물을 모두 잠갔는데 수도계량기 별표가 돌아간다</label></li>
+    <li><input type="checkbox" id="s3"><label for="s3"><span class="bx"><svg viewBox="0 0 16 16"><path d="M3 8l3 3 7-7"/></svg></span>보일러에 물 보충 알림이 일주일에 한 번 넘게 뜬다</label></li>
+    <li><input type="checkbox" id="s4"><label for="s4"><span class="bx"><svg viewBox="0 0 16 16"><path d="M3 8l3 3 7-7"/></svg></span>바닥 한 곳만 유난히 따뜻하거나 장판 밑이 축축하다</label></li>
+    <li><input type="checkbox" id="s5"><label for="s5"><span class="bx"><svg viewBox="0 0 16 16"><path d="M3 8l3 3 7-7"/></svg></span>쓰는 양은 그대로인데 수도요금이 두 배 가까이 나왔다</label></li>
+    <li><input type="checkbox" id="s6"><label for="s6"><span class="bx"><svg viewBox="0 0 16 16"><path d="M3 8l3 3 7-7"/></svg></span>욕실 줄눈 사이나 벽 아래쪽 타일이 늘 젖어 있다</label></li>
+   </ul>
+   <div class="verdict" aria-live="polite">
+    <div class="n"><b id="cnt">0</b>/ 6 해당</div>
+    <h3 id="vt">해당하는 증상을 골라 주세요</h3>
+    <p id="vp">고른 증상은 아래 신청서에 그대로 옮겨져, 전화 상담 때 다시 설명하지 않아도 됩니다.</p>
+    <a class="btn" href="#apply">이 증상으로 점검 신청</a>
+   </div>
+  </div>
+ </div>
+</section>
+
+<section class="meth" id="method">
+ <div class="in">
+  <div class="sh rv"><p class="kick">찾는 방법</p><h2>소리, 가스, 온도로 새는 곳을 좁혀 갑니다</h2><p>네 단계를 거쳐 새는 지점을 바닥 위에 표시합니다. 보통 한 집에 1시간 30분에서 3시간이 걸립니다.</p></div>
+  <div class="steps rv">
+   <div class="st"><span class="no">01</span><h3>계량기 · 압력 시험</h3><p>급수, 온수, 난방 배관을 하나씩 잠그고 압력을 걸어, 어느 배관에서 새는지 먼저 가립니다.</p><div class="read">난방 2번 <b>6.0 → 4.2 bar</b><br>10분 동안 압력 떨어짐</div></div>
+   <div class="st"><span class="no">02</span><h3>청음 탐지</h3><p>바닥 위에 센서를 옮겨 대며 물이 새어 나오는 소리가 가장 큰 곳을 찾습니다.</p><div class="read">거실 창 쪽 <b>38 dB</b><br>주변 평균 21 dB</div></div>
+   <div class="st"><span class="no">03</span><h3>가스 탐지</h3><p>소리가 약할 때는 배관에 수소 혼합 가스를 넣고 바닥 위로 올라오는 지점을 감지합니다.</p><div class="read">검출 <b>120 ppm</b><br>반경 30 cm 안</div></div>
+   <div class="st"><span class="no">04</span><h3>열화상 확인</h3><p>온수와 난방 배관은 물이 번진 자리의 온도 차로 한 번 더 확인하고 사진으로 남깁니다.</p><div class="read">표면 온도 <b>+3.8 ℃</b><br>번진 범위 40 × 60 cm</div></div>
+  </div>
+ </div>
+</section>
+
+<section id="price">
+ <div class="in price">
+  <div class="rv">
+   <p class="kick">비용</p>
+   <h2>찾은 다음에 받습니다</h2>
+   <p style="color:var(--ink2);font-size:17px;margin-top:16px">방문 점검 때 증상을 보고 탐지가 필요한지 먼저 말씀드립니다. 탐지를 했는데 원인을 찾지 못하면 탐지비는 받지 않습니다.</p>
+   <div class="ins">
+    <h3><svg class="ico" viewBox="0 0 24 24"><path d="M6 3h9l4 4v14H6z"/><path d="M14 3v5h5M9 13h7M9 17h5"/></svg>보험 청구 서류</h3>
+    <p>일상생활배상책임 보험 등으로 아랫집 피해를 청구할 때 필요한 사진, 탐지 소견서, 공사 내역서를 무료로 드립니다. 보험 처리 여부는 가입한 보험사가 판단합니다.</p>
+   </div>
+  </div>
+  <table class="ptab rv">
+   <tr><td><b>방문 점검</b><span>증상 확인, 계량기 · 압력 시험</span></td><td class="v zero">0원<s>평소 30,000원</s></td></tr>
+   <tr><td><b>누수 탐지</b><span>청음 · 가스 · 열화상, 새는 지점 표시와 사진</span></td><td class="v">250,000원</td></tr>
+   <tr><td><b>원인을 찾지 못한 경우</b><span>탐지 장비를 썼더라도</span></td><td class="v zero">0원</td></tr>
+   <tr><td><b>부분 보수</b><span>바닥 30 × 30 cm 안팎을 열어 배관 교체, 몰탈 · 바닥 복구</span></td><td class="v">현장 견적<i class="r">보통 30만 – 80만 원</i></td></tr>
+   <tr><td><b>보험 청구 서류</b><span>사진, 탐지 소견서, 공사 내역서</span></td><td class="v zero">0원</td></tr>
+  </table>
+ </div>
+</section>
+
+<section class="flow">
+ <div class="in">
+  <div class="sh rv"><p class="kick" style="color:var(--aqua)">진행 순서</p><h2>신청부터 복구까지</h2><p>아랫집에 물이 떨어지고 있다면 전화로 먼저 알려 주세요. 가능한 가장 빠른 시간으로 잡습니다.</p></div>
+  <ol class="fl rv">
+   <li><span class="t">당일</span><b>전화 상담</b><span>증상과 건물 형태를 듣고 방문 날짜를 정합니다</span></li>
+   <li><span class="t">1 – 3일 안</span><b>방문 점검</b><span>계량기와 압력 시험으로 새는 배관을 가립니다</span></li>
+   <li><span class="t">같은 날</span><b>탐지 · 표시</b><span>새는 지점을 바닥에 표시하고 사진을 찍습니다</span></li>
+   <li><span class="t">1 – 2일</span><b>부분 보수</b><span>표시한 자리만 열어 고치고 바닥을 덮습니다</span></li>
+   <li><span class="t">공사 후</span><b>서류 전달</b><span>사진과 소견서, 공사 내역서를 문자로 보냅니다</span></li>
+  </ol>
+ </div>
+</section>
+
+<section class="apply" id="apply">
+ <div class="in">
+  <div class="rv">
+   <p class="kick">무료 방문 점검 신청</p>
+   <h2>12월 31일까지 신청하면 출장비를 받지 않습니다</h2>
+   <ul class="pts">
+    <li><svg class="ico" viewBox="0 0 24 24"><path d="M5 4h4l2 5-3 2a11 11 0 005 5l2-3 5 2v4a2 2 0 01-2 2A17 17 0 013 6a2 2 0 012-2"/></svg>신청 후 영업시간 안에 1시간 이내로 전화드립니다</li>
+    <li><svg class="ico" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>평일 9:00 – 19:00, 토요일 9:00 – 15:00</li>
+    <li><svg class="ico" viewBox="0 0 24 24"><path d="M12 21s-7-6.5-7-12a7 7 0 0114 0c0 5.5-7 12-7 12z"/><circle cx="12" cy="9" r="2.5"/></svg>서울 전 지역, 경기 성남 · 고양 · 부천 · 하남</li>
+   </ul>
+  </div>
+  <form id="f" class="rv" onsubmit="return go(event)">
+   <div class="fields">
+    <div class="f"><span class="l" style="display:block;font-size:14px;font-weight:600;margin-bottom:8px">건물 형태</span>
+     <div class="seg">
+      <input type="radio" name="b" id="b1" value="아파트" checked><label for="b1">아파트</label>
+      <input type="radio" name="b" id="b2" value="빌라"><label for="b2">빌라</label>
+      <input type="radio" name="b" id="b3" value="단독주택"><label for="b3">단독주택</label>
+      <input type="radio" name="b" id="b4" value="상가"><label for="b4">상가</label>
+     </div>
+    </div>
+    <div class="row">
+     <div><label class="l" for="ar">지역 (구 · 동)</label><input type="text" id="ar" placeholder="예: 마포구 성산동"></div>
+     <div><label class="l" for="dt">방문 희망 시간</label><select id="dt"><option>가능한 빨리</option><option>평일 오전</option><option>평일 오후</option><option>토요일</option></select></div>
+    </div>
+    <div class="f"><label class="l" for="sy">증상</label><textarea id="sy" placeholder="위 증상 확인에서 고른 내용이 여기에 들어옵니다"></textarea></div>
+    <div class="row">
+     <div><label class="l" for="nm">이름</label><input type="text" id="nm" required autocomplete="name"></div>
+     <div><label class="l" for="ph">연락처</label><input type="tel" id="ph" required placeholder="000-0000-0000"></div>
+    </div>
+    <label class="agree"><input type="checkbox" required>상담 연락을 위해 이름과 연락처를 받는 데 동의합니다</label>
+    <button class="btn" type="submit">방문 점검 신청</button>
+    <p class="fine">이 페이지는 디자인 샘플이며 실제로 접수되지 않습니다.</p>
+   </div>
+   <div class="done" aria-live="polite"><h3>신청이 접수되었습니다</h3><p id="dm">영업시간 안에 1시간 이내로 전화드립니다.</p><span class="mono" id="no">접수번호 ML-1228-04</span></div>
+  </form>
+ </div>
+</section>
+
+<section id="faq" style="padding-top:0">
+ <div class="in">
+  <div class="sh rv"><p class="kick">자주 묻는 질문</p><h2>점검 전에 궁금한 것</h2></div>
+  <div class="faq rv">
+   <details><summary>바닥은 얼마나 뜯나요?<svg class="ico" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg></summary><p>새는 지점을 표시한 자리만 보통 30 × 30 cm 안팎으로 엽니다. 마루나 장판은 같은 자재로 덮고, 남는 자재가 없으면 비슷한 색을 함께 고릅니다.</p></details>
+   <details><summary>윗집 때문인지 우리 집 때문인지 모르겠어요<svg class="ico" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg></summary><p>방문 점검 때 우리 집 배관 압력 시험을 먼저 합니다. 압력이 그대로면 우리 집 배관이 아닐 가능성이 높아, 윗집이나 공용 배관 점검을 관리사무소와 함께 권해 드립니다.</p></details>
+   <details><summary>탐지할 때 시끄럽거나 집을 비워야 하나요?<svg class="ico" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg></summary><p>탐지는 소리를 듣는 작업이라 조용합니다. 다만 1시간 30분에서 3시간 동안 물을 쓸 수 없고, 가구를 조금 옮길 수 있습니다.</p></details>
+   <details><summary>밤이나 주말에도 와 주나요?<svg class="ico" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg></summary><p>토요일은 15시까지 방문합니다. 아랫집에 물이 계속 떨어지는 경우에는 평일 저녁에도 일정을 맞춰 봅니다.</p></details>
+  </div>
+ </div>
+</section>
+</main>
+
+<footer>
+ <div class="in">
+  <div><b>물길 누수탐지</b><br>아파트 · 빌라 · 주택 · 상가 누수탐지와 부분 보수</div>
+  <div>상담 000-0000-0000 · 카카오톡 ID: example<br>사업자 정보는 상담 시 안내</div>
+ </div>
+</footer>
+<div class="mbar"><a class="btn" href="#apply">무료 방문 점검 신청</a></div>
+
+<script>
+var boxes=document.querySelectorAll('.sym input');
+function upd(){var sel=[];boxes.forEach(function(b){if(b.checked)sel.push(b.nextElementSibling.textContent.trim())});
+ var n=sel.length;document.getElementById('cnt').textContent=n;
+ var t,p;
+ if(document.getElementById('s1').checked){t='아랫집 피해가 있으니 먼저 전화 주세요';p='물이 계속 떨어지면 메인 밸브를 잠가 두고 연락 주세요. 가능한 가장 빠른 시간으로 방문을 잡습니다.'}
+ else if(n>=2){t='배관 누수 가능성이 높습니다';p='고른 증상은 아래 신청서에 옮겨 두었습니다. 방문 점검 때 압력 시험으로 어느 배관인지 먼저 가립니다.'}
+ else if(n==1){t='한 가지 증상이 있습니다';p='계량기 별표를 한 시간쯤 지켜보거나, 보일러 물 보충 주기를 적어 두면 상담 때 도움이 됩니다.'}
+ else{t='해당하는 증상을 골라 주세요';p='고른 증상은 아래 신청서에 그대로 옮겨져, 전화 상담 때 다시 설명하지 않아도 됩니다.'}
+ document.getElementById('vt').textContent=t;document.getElementById('vp').textContent=p;
+ document.getElementById('sy').value=sel.map(function(s){return '· '+s}).join('\n');
+}
+boxes.forEach(function(b){b.addEventListener('change',upd)});
+function go(e){e.preventDefault();var b=document.querySelector('input[name=b]:checked').value,a=document.getElementById('ar').value;
+ document.getElementById('dm').textContent=(document.getElementById('nm').value||'')+'님, '+(a?a+' ':'')+b+' 방문 점검 신청을 받았습니다. 영업시간 안에 1시간 이내로 전화드립니다.';
+ document.getElementById('f').classList.add('sent');return false}
+var io='IntersectionObserver' in window?new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('on');io.unobserve(e.target)}})},{threshold:.12}):null;
+document.querySelectorAll('.rv').forEach(function(el){io?io.observe(el):el.classList.add('on')});
+</script>
+</body>
+</html>

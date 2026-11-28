@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Yantok Rattan Works · Made-to-order rattan furniture</title>
+<meta name="description" content="Family rattan workshop in Pampanga. Lounge chairs, daybeds, headboards and café seating bent over steam and caned by hand, made to order.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+ --wall:#EFE6D6;--paper:#F8F3EA;--ink:#2A2119;--ink2:#5B4C3D;--ink3:#7A6A58;
+ --cane:#C9965A;--honey:#DDB27A;--clay:#A3452B;--clay-d:#87361F;
+ --dark:#2E241B;--dark2:#3A2E23;--line:rgba(42,33,25,.16);--line2:rgba(42,33,25,.28)
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;background:var(--wall)}
+body{font-family:'Work Sans',system-ui,sans-serif;font-size:16px;line-height:1.6;color:var(--ink);background:var(--wall);-webkit-font-smoothing:antialiased;overflow-x:clip}
+a{color:inherit}
+img,svg{display:block}
+.in{max-width:1200px;margin:0 auto;padding:0 32px}
+h1,h2,h3{font-family:'Fraunces',Georgia,serif;font-weight:500;letter-spacing:-.01em;line-height:1.12}
+h2{font-size:clamp(32px,4vw,48px)}
+h3{font-size:24px}
+.kick{font-size:14px;font-weight:600;color:var(--clay);margin-bottom:12px}
+.lead{font-size:18px;color:var(--ink2);max-width:600px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;height:48px;padding:0 24px;border-radius:8px;background:var(--clay);color:#FBF5EC;font-weight:600;font-size:16px;text-decoration:none;border:0;cursor:pointer;font-family:inherit;transition:background-color .2s}
+.btn:hover{background:var(--clay-d)}
+.btn svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.tlink{display:inline-flex;align-items:center;gap:8px;height:48px;font-weight:600;text-decoration:none;border-bottom:1px solid transparent;color:var(--ink)}
+.tlink:hover{color:var(--clay)}
+.ico{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round;flex:none}
+
+/* nav */
+header{position:sticky;top:0;z-index:20;background:rgba(239,230,214,.94);backdrop-filter:blur(6px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:72px;gap:24px}
+.logo{display:flex;align-items:center;gap:12px;text-decoration:none}
+.logo svg{width:36px;height:36px}
+.logo b{font-family:'Fraunces',serif;font-weight:600;font-size:20px;line-height:1}
+.logo small{display:block;font-size:12px;color:var(--ink3);font-weight:500;margin-top:4px}
+.nav ul{display:flex;gap:32px;list-style:none}
+.nav ul a{text-decoration:none;font-size:15px;font-weight:500;color:var(--ink2)}
+.nav ul a:hover{color:var(--ink)}
+.nav .btn{height:44px;padding:0 20px;font-size:15px}
+.menu-t{display:none;width:44px;height:44px;border:1px solid var(--line2);border-radius:8px;background:transparent;align-items:center;justify-content:center;cursor:pointer;color:var(--ink)}
+
+/* hero */
+.hero{position:relative;padding:64px 0 0;overflow:hidden}
+.hero .in{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:32px;align-items:end}
+.hero h1{font-size:clamp(40px,4.8vw,62px);font-weight:500;margin-bottom:24px}
+.hero h1 em{font-style:italic;color:var(--clay)}
+.hero .lead{margin-bottom:32px}
+.hero .acts{display:flex;flex-wrap:wrap;gap:8px 24px;align-items:center}
+.hero-txt{padding-bottom:96px}
+.facts{display:grid;grid-template-columns:repeat(3,auto);gap:24px;justify-content:start;border-top:1px solid var(--line2);padding-top:20px}
+.facts div{font-size:14px;color:var(--ink3)}
+.facts b{display:block;font-family:'Fraunces',serif;font-weight:500;font-size:24px;color:var(--ink);font-variant-numeric:tabular-nums;line-height:1.2}
+.hero-art{position:relative;align-self:end;margin-right:-48px}
+.hero-art svg{width:100%;height:auto}
+.floor{height:56px;background:#B65C3C;background-image:linear-gradient(90deg,rgba(0,0,0,.12) 1px,transparent 1px),linear-gradient(rgba(0,0,0,.1) 1px,transparent 1px);background-size:56px 28px;border-top:6px solid #8F4429}
+
+/* strip */
+.strip{background:var(--dark);color:#E8DCC8}
+.strip .in{display:flex;flex-wrap:wrap;gap:12px 40px;padding-top:20px;padding-bottom:20px;font-size:15px}
+.strip span{display:flex;align-items:center;gap:12px}
+.strip em{font-style:normal}
+.strip b{color:#F6EEDF;font-weight:600}
+.strip span:before{content:"";width:6px;height:6px;border-radius:50%;background:var(--honey)}
+
+section{padding:96px 0}
+.sec-hd{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:48px;align-items:end;margin-bottom:48px}
+.sec-hd p{color:var(--ink2);font-size:17px}
+.sec-hd p.kick{color:var(--clay);font-size:14px}
+
+/* pieces */
+.pieces{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:24px}
+.feat{background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:32px;display:grid;grid-template-rows:auto 1fr auto;gap:24px}
+.feat .draw{background:var(--wall);border-radius:12px;aspect-ratio:2/1;display:flex;align-items:center;justify-content:center}
+.feat .draw svg{width:auto;height:92%}
+.feat h3{font-size:32px;margin-bottom:8px}
+.feat p{color:var(--ink2)}
+.spec{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--line);padding-top:16px;gap:16px}
+.spec div{font-size:13px;color:var(--ink3)}
+.spec b{display:block;font-size:16px;color:var(--ink);font-weight:600;font-variant-numeric:tabular-nums}
+.spec .pr b{color:var(--clay);font-family:'Fraunces',serif;font-size:22px;font-weight:500}
+.plist{list-style:none;border-top:1px solid var(--line2)}
+.plist li{display:grid;grid-template-columns:72px minmax(0,1fr) auto;gap:16px;align-items:center;padding:16px 0;border-bottom:1px solid var(--line)}
+.plist svg{width:72px;height:56px}
+.plist h4{font-family:'Fraunces',serif;font-weight:500;font-size:19px;line-height:1.3}
+.plist p{font-size:14px;color:var(--ink3)}
+.plist .p{font-variant-numeric:tabular-nums;font-weight:600;font-size:16px;white-space:nowrap;text-align:right}
+.plist .p small{display:block;font-weight:400;font-size:13px;color:var(--ink3)}
+.note{font-size:14px;color:var(--ink3);margin-top:16px}
+
+/* process */
+.proc{background:var(--paper);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:0;position:relative}
+.steps:before{content:"";position:absolute;left:0;right:0;top:19px;height:2px;background:var(--cane);opacity:.6}
+.step{padding-right:32px;position:relative}
+.step .wk{display:inline-flex;align-items:center;height:40px;padding:0 16px;background:var(--paper);border:2px solid var(--cane);border-radius:8px;font-size:14px;font-weight:600;font-variant-numeric:tabular-nums;position:relative}
+.step h3{font-size:22px;margin:24px 0 8px}
+.step p{font-size:15px;color:var(--ink2)}
+.step .tool{display:flex;gap:8px;align-items:center;margin-top:16px;font-size:14px;color:var(--ink3)}
+
+/* weaves */
+.weaves{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:48px;align-items:start}
+.wsel{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.wbtn{background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:12px 12px 16px;text-align:left;cursor:pointer;font-family:inherit;color:var(--ink);transition:border-color .2s,background-color .2s}
+.wbtn:hover{border-color:var(--line2)}
+.wbtn[aria-pressed=true]{border-color:var(--clay);box-shadow:inset 0 0 0 1px var(--clay)}
+.wbtn svg{width:100%;height:auto;border-radius:8px;margin-bottom:12px}
+.wbtn b{display:block;font-weight:600;font-size:15px}
+.wbtn span{font-size:13px;color:var(--ink3)}
+.fin{margin-top:32px}
+.fin h4{font-size:15px;font-weight:600;margin-bottom:12px}
+.fins{display:flex;flex-wrap:wrap;gap:12px}
+.fbtn{display:flex;align-items:center;gap:12px;height:44px;padding:0 16px 0 8px;border-radius:8px;border:1px solid var(--line);background:var(--paper);cursor:pointer;font-family:inherit;font-size:15px;color:var(--ink)}
+.fbtn i{width:28px;height:28px;border-radius:6px;display:block;border:1px solid rgba(0,0,0,.12)}
+.fbtn[aria-pressed=true]{border-color:var(--clay);box-shadow:inset 0 0 0 1px var(--clay)}
+.wdesc{background:var(--dark);color:#E8DCC8;border-radius:16px;padding:32px}
+.wdesc h3{color:#F6EEDF;font-size:28px;margin-bottom:12px}
+.wdesc p{color:#CDBFA8}
+.wdesc dl{display:grid;grid-template-columns:auto 1fr;gap:12px 24px;margin-top:24px;padding-top:24px;border-top:1px solid rgba(232,220,200,.18);font-size:15px}
+.wdesc dt{color:#A99982}
+.wdesc dd{color:#F6EEDF;font-variant-numeric:tabular-nums}
+
+/* repairs */
+.rep{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:48px;align-items:start}
+.rtable{width:100%;border-collapse:collapse;font-variant-numeric:tabular-nums}
+.rtable th{font-size:13px;font-weight:500;color:var(--ink3);text-align:left;padding:0 0 12px;border-bottom:1px solid var(--line2)}
+.rtable th:last-child,.rtable td:last-child{text-align:right}
+.rtable td{padding:16px 0;border-bottom:1px solid var(--line);vertical-align:top}
+.rtable td b{display:block;font-weight:600}
+.rtable td span{font-size:14px;color:var(--ink3)}
+.rtable td:last-child{font-weight:600;white-space:nowrap;padding-left:16px}
+.pick{display:flex;gap:16px;align-items:flex-start;margin-top:24px;padding:20px;border-radius:12px;background:var(--paper);border:1px solid var(--line);font-size:15px;color:var(--ink2)}
+.pick .ico{width:24px;height:24px;color:var(--clay);margin-top:2px}
+
+/* visit + form */
+.visit{background:var(--dark);color:#E8DCC8}
+.visit .in{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:64px}
+.visit h2{color:#F6EEDF}
+.visit .lead{color:#CDBFA8}
+.hours{margin-top:32px;border-top:1px solid rgba(232,220,200,.18)}
+.hours div{display:flex;justify-content:space-between;gap:16px;padding:12px 0;border-bottom:1px solid rgba(232,220,200,.12);font-size:15px;font-variant-numeric:tabular-nums}
+.hours span{color:#A99982}
+.contact{margin-top:32px;display:grid;gap:12px;font-size:15px}
+.contact div{display:flex;gap:12px;align-items:center}
+.contact .ico{color:var(--honey)}
+form{background:var(--paper);color:var(--ink);border-radius:16px;padding:32px}
+form h3{font-size:28px;margin-bottom:8px}
+.fields>p:first-of-type{color:var(--ink2);font-size:15px;margin-bottom:24px}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px}
+label{display:block;font-size:14px;font-weight:600;margin-bottom:8px}
+input,select,textarea{width:100%;font-family:inherit;font-size:16px;color:var(--ink);background:#fff;border:1px solid var(--line2);border-radius:8px;padding:0 12px;height:48px}
+textarea{height:96px;padding:12px;resize:vertical}
+input:focus,select:focus,textarea:focus{outline:2px solid var(--clay);outline-offset:1px;border-color:transparent}
+.full{margin-bottom:16px}
+form .btn{width:100%;margin-top:8px}
+.fine{font-size:13px;color:var(--ink3);margin-top:12px}
+.done{display:none;text-align:left;padding:8px 0}
+.done h3{margin-bottom:12px}
+.done p{color:var(--ink2)}
+form.sent .fields{display:none}
+form.sent .done{display:block}
+
+/* faq */
+.faq{max-width:840px}
+details{border-bottom:1px solid var(--line2)}
+summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:24px;min-height:64px;padding:16px 0;font-family:'Fraunces',serif;font-size:20px;font-weight:500}
+summary::-webkit-details-marker{display:none}
+summary .ico{transition:transform .2s}
+details[open] summary .ico{transform:rotate(45deg)}
+details p{padding:0 48px 24px 0;color:var(--ink2)}
+
+footer{border-top:1px solid var(--line2);padding:40px 0 48px}
+footer .in{display:flex;flex-wrap:wrap;justify-content:space-between;gap:24px;font-size:14px;color:var(--ink3)}
+footer .logo b{font-size:18px;color:var(--ink)}
+
+.rv{opacity:0;transform:translateY(12px);transition:opacity .6s ease,transform .6s ease}
+.rv.on{opacity:1;transform:none}
+
+@media(max-width:1020px){
+ .nav ul{display:none}
+ .hero .in{grid-template-columns:1fr;gap:0}
+ .hero-txt{padding-bottom:32px}
+ .hero-art{max-width:600px;margin:0 auto;width:100%}
+ .sec-hd,.pieces,.weaves,.rep,.visit .in{grid-template-columns:1fr;gap:32px}
+ .steps{grid-template-columns:1fr 1fr;row-gap:40px}
+ .steps:before{display:none}
+}
+@media(max-width:620px){
+ .in{padding:0 16px}
+ .nav{height:64px}
+ .nav .btn{display:none}
+ .menu-t{display:inline-flex}
+ .hero{padding-top:40px}
+ .hero .acts{margin-bottom:32px}
+ .facts{grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+ .facts b{font-size:20px}
+ .facts div{font-size:13px}
+ section{padding:64px 0}
+ .feat{padding:20px}
+ .feat h3{font-size:26px}
+ .spec{grid-template-columns:1fr 1fr}
+ .plist li{grid-template-columns:56px minmax(0,1fr) auto;gap:12px}
+ .plist svg{width:56px;height:44px}
+ .steps{grid-template-columns:1fr}
+ .wsel{grid-template-columns:1fr 1fr 1fr;gap:8px}
+ .wbtn{padding:8px 8px 12px}
+ .wbtn span{display:none}
+ .wdesc,form{padding:24px 20px}
+ .row{grid-template-columns:1fr}
+ details p{padding-right:0}
+ .floor{height:40px}
+}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.rv{opacity:1;transform:none;transition:none}*{transition:none!important}}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+ <defs>
+  <pattern id="cane7" width="14" height="14" patternUnits="userSpaceOnUse">
+   <path d="M0 4H14M0 6.2H14M4 0V14M6.2 0V14" stroke="#E6C68F" stroke-width="1.5"/>
+   <path d="M0 4H14M4 0V14" stroke="#9C6B36" stroke-width=".5" opacity=".6"/>
+   <path d="M-3.5 -3.5L17.5 17.5M-3.5 10.5L3.5 17.5M10.5 -3.5L17.5 3.5" stroke="#D7AE6E" stroke-width="1.3"/>
+   <path d="M17.5 -3.5L-3.5 17.5M3.5 -3.5L-3.5 3.5M17.5 10.5L10.5 17.5" stroke="#CFA463" stroke-width="1.3"/>
+  </pattern>
+  <pattern id="caneBig" width="28" height="28" patternUnits="userSpaceOnUse">
+   <path d="M0 8H28M0 12.4H28M8 0V28M12.4 0V28" stroke="#E8C893" stroke-width="3"/>
+   <path d="M0 8H28M8 0V28" stroke="#8E5F2E" stroke-width="1" opacity=".55"/>
+   <path d="M-7 -7L35 35M-7 21L7 35M21 -7L35 7" stroke="#D9B072" stroke-width="2.6"/>
+   <path d="M35 -7L-7 35M7 -7L-7 7M35 21L21 35" stroke="#CDA061" stroke-width="2.6"/>
+  </pattern>
+  <pattern id="hex" width="24" height="20.8" patternUnits="userSpaceOnUse">
+   <path d="M0 10.4H24M-6 0L18 41.6M6 -20.8L30 20.8M18 -20.8L-6 20.8M30 0L6 41.6" stroke="#E2BE85" stroke-width="2.4"/>
+  </pattern>
+  <pattern id="wrap" width="12" height="12" patternUnits="userSpaceOnUse" patternTransform="rotate(-18)">
+   <rect width="12" height="12" fill="#C89150"/><rect width="12" height="7" fill="#DDB073"/><rect y="6" width="12" height="1.2" fill="#9B6631"/>
+  </pattern>
+  <linearGradient id="pole" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#9C6630"/><stop offset=".45" stop-color="#D9A86A"/><stop offset="1" stop-color="#A56E36"/></linearGradient>
+ </defs>
+</svg>
+
+<header>
+ <div class="in nav">
+  <a class="logo" href="#top" aria-label="Yantok Rattan Works home">
+   <svg viewBox="0 0 36 36" aria-hidden="true"><circle cx="18" cy="18" r="16" fill="none" stroke="#2A2119" stroke-width="2"/><path d="M11 9v18M25 9v18M9 14h18M9 22h18M12 12l12 12M24 12L12 24" stroke="#A3452B" stroke-width="1.6" stroke-linecap="round"/></svg>
+   <span><b>Yantok</b><small>Rattan Works</small></span>
+  </a>
+  <ul>
+   <li><a href="#pieces">Pieces</a></li>
+   <li><a href="#process">How it's made</a></li>
+   <li><a href="#weaves">Weaves</a></li>
+   <li><a href="#repairs">Repairs</a></li>
+   <li><a href="#visit">Visit</a></li>
+  </ul>
+  <a class="btn" href="#quote">Request a quote</a>
+  <button class="menu-t" aria-label="Open menu" onclick="location.hash='pieces'"><svg class="ico" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+ </div>
+</header>
+
+<main id="top">
+<section class="hero" style="padding-bottom:0">
+ <div class="in">
+  <div class="hero-txt">
+   <p class="kick">Family workshop in Pampanga since 1994</p>
+   <h1>Rattan bent over steam, <em>caned by hand,</em> sized to your room.</h1>
+   <p class="lead">We make lounge chairs, daybeds, headboards and café seating to order. You send the room's measurements, we draw the piece, and it reaches your door anywhere in Luzon in six to eight weeks.</p>
+   <div class="acts">
+    <a class="btn" href="#quote">Request a quote <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+    <a class="tlink" href="#pieces">See the pieces</a>
+   </div>
+  </div>
+  <div class="hero-art">
+   <svg viewBox="0 0 640 600" role="img" aria-label="A honey-coloured rattan lounge chair seen from the front, with a hand-caned arched back and seat, wrapped joints and a round magnifier showing the seven-step cane weave">
+    <defs>
+     <radialGradient id="shadow" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#5B3A22" stop-opacity=".35"/><stop offset="1" stop-color="#5B3A22" stop-opacity="0"/></radialGradient>
+     <linearGradient id="back" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#5A4231"/><stop offset="1" stop-color="#3E2C1F"/></linearGradient>
+     <linearGradient id="seat" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#4A3526"/><stop offset="1" stop-color="#6B4D35"/></linearGradient>
+     <clipPath id="mag"><circle cx="520" cy="190" r="92"/></clipPath>
+    </defs>
+    <ellipse cx="300" cy="590" rx="250" ry="22" fill="url(#shadow)"/>
+    <!-- back legs (behind) -->
+    <path d="M196 352 L204 552 M404 352 L396 552" stroke="#8D5A2A" stroke-width="16" stroke-linecap="round"/>
+    <rect x="192" y="548" width="22" height="10" rx="3" fill="#4A3322"/><rect x="386" y="548" width="22" height="10" rx="3" fill="#4A3322"/>
+    <path d="M200 470 Q300 486 400 470" stroke="#8D5A2A" stroke-width="10" fill="none" stroke-linecap="round"/>
+    <!-- back panel -->
+    <path d="M184 350 V176 C184 118 236 84 300 84 C364 84 416 118 416 176 V350 Z" fill="url(#back)"/>
+    <path d="M184 350 V176 C184 118 236 84 300 84 C364 84 416 118 416 176 V350 Z" fill="url(#cane7)"/>
+    <path d="M196 340 V178 C196 128 242 98 300 98 C358 98 404 128 404 178 V340" fill="none" stroke="#7E5128" stroke-width="3" opacity=".55"/>
+    <!-- back frame pole -->
+    <path d="M182 356 V174 C182 112 236 78 300 78 C364 78 418 112 418 174 V356" fill="none" stroke="#A9733A" stroke-width="20" stroke-linecap="round"/>
+    <path d="M178 352 V174 C178 114 232 82 300 80" fill="none" stroke="#E2B57A" stroke-width="5" stroke-linecap="round" opacity=".8"/>
+    <path d="M182 356 V174 C182 112 236 78 300 78 C364 78 418 112 418 174 V356" fill="none" stroke="#7A4A20" stroke-width="20" stroke-dasharray="3 74" opacity=".55"/>
+    <!-- seat -->
+    <path d="M190 352 L410 352 L470 430 L130 430 Z" fill="url(#seat)"/>
+    <path d="M190 352 L410 352 L470 430 L130 430 Z" fill="url(#cane7)" opacity=".95"/>
+    <path d="M190 352 L410 352" stroke="#8D5A2A" stroke-width="12" stroke-linecap="round"/>
+    <!-- arms -->
+    <path d="M184 250 C140 250 112 272 112 312 L120 576" fill="none" stroke="#A9733A" stroke-width="20" stroke-linecap="round"/>
+    <path d="M416 250 C460 250 488 272 488 312 L480 576" fill="none" stroke="#A9733A" stroke-width="20" stroke-linecap="round"/>
+    <path d="M180 245 C138 246 108 268 107 308 L112 560" fill="none" stroke="#E2B57A" stroke-width="5" stroke-linecap="round" opacity=".75"/>
+    <path d="M420 245 C454 246 482 264 485 300" fill="none" stroke="#E7BE86" stroke-width="4" stroke-linecap="round" opacity=".55"/>
+    <path d="M184 250 C140 250 112 272 112 312 L120 576 M416 250 C460 250 488 272 488 312 L480 576" fill="none" stroke="#7A4A20" stroke-width="20" stroke-dasharray="3 82" stroke-dashoffset="30" opacity=".5"/>
+    <!-- arm infill hoops -->
+    <path d="M184 290 C156 290 138 304 138 330 L140 430" fill="none" stroke="#B98148" stroke-width="8" stroke-linecap="round"/>
+    <path d="M416 290 C444 290 462 304 462 330 L460 430" fill="none" stroke="#B98148" stroke-width="8" stroke-linecap="round"/>
+    <!-- front rail -->
+    <path d="M118 432 Q300 446 482 432" fill="none" stroke="#A9733A" stroke-width="20" stroke-linecap="round"/>
+    <path d="M120 426 Q300 440 480 426" fill="none" stroke="#E2B57A" stroke-width="4" stroke-linecap="round" opacity=".7"/>
+    <!-- lower stretcher -->
+    <path d="M120 520 Q300 548 480 520" fill="none" stroke="#9E6A34" stroke-width="12" stroke-linecap="round"/>
+    <!-- wrapped joints -->
+    <g>
+     <rect x="104" y="410" width="32" height="40" rx="6" fill="url(#wrap)"/>
+     <rect x="464" y="410" width="32" height="40" rx="6" fill="url(#wrap)"/>
+     <rect x="104" y="504" width="32" height="32" rx="6" fill="url(#wrap)"/>
+     <rect x="464" y="504" width="32" height="32" rx="6" fill="url(#wrap)"/>
+     <rect x="166" y="232" width="34" height="36" rx="6" fill="url(#wrap)"/>
+     <rect x="400" y="232" width="34" height="36" rx="6" fill="url(#wrap)"/>
+     <rect x="168" y="336" width="32" height="32" rx="6" fill="url(#wrap)"/>
+     <rect x="400" y="336" width="32" height="32" rx="6" fill="url(#wrap)"/>
+    </g>
+    <!-- feet -->
+    <rect x="108" y="568" width="24" height="12" rx="3" fill="#4A3322"/>
+    <rect x="468" y="568" width="24" height="12" rx="3" fill="#4A3322"/>
+    <!-- magnifier -->
+    <line x1="452" y1="258" x2="410" y2="300" stroke="#2A2119" stroke-width="2" stroke-dasharray="4 6"/>
+    <circle cx="520" cy="190" r="98" fill="#F8F3EA"/>
+    <g clip-path="url(#mag)">
+     <rect x="420" y="90" width="200" height="200" fill="#3E2C1F"/>
+     <rect x="420" y="90" width="200" height="200" fill="url(#caneBig)"/>
+    </g>
+    <circle cx="520" cy="190" r="92" fill="none" stroke="#2A2119" stroke-width="2"/>
+    <circle cx="520" cy="190" r="98" fill="none" stroke="#2A2119" stroke-width="1" opacity=".3"/>
+   </svg>
+  </div>
+ </div>
+ <div class="floor" aria-hidden="true"></div>
+</section>
+
+<div class="strip"><div class="in">
+ <span><em><b>6–8 weeks</b> from drawing to delivery</em></span>
+ <span><em>Poles from Mindanao, cured 30 days</em></span>
+ <span><em>Bar stools from <b>₱7,900</b></em></span>
+</div></div>
+
+<section id="pieces">
+ <div class="in">
+  <div class="sec-hd rv">
+   <div><p class="kick">Pieces</p><h2>Six frames we bend every month</h2></div>
+   <p>Each frame can be made wider, lower or deeper to fit your room. Prices below are for natural honey finish with seven-step cane; changes are priced in your quote.</p>
+  </div>
+  <div class="pieces">
+   <article class="feat rv">
+    <div class="draw">
+     <svg viewBox="0 0 320 200" aria-hidden="true"><g fill="none" stroke="#2A2119" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M112 128V60c0-24 22-38 48-38s48 14 48 38v68"/><path d="M112 92c-18 0-28 10-28 24l3 64M208 92c18 0 28 10 28 24l-3 64"/><path d="M108 130h104l22 28H86z"/><path d="M88 186q72 10 144 0"/><path d="M118 130l4 52M202 130l-4 52"/></g><g stroke="#C9965A" stroke-width="1.2" opacity=".9"><path d="M120 46v80M132 34v94M144 28v100M156 26v102M168 26v102M180 28v100M192 34v94M200 44v82"/><path d="M114 64h92M113 80h94M113 96h94M113 112h94"/></g></svg>
+    </div>
+    <div>
+     <h3>Hapon lounge chair</h3>
+     <p>A low, wide chair with an arched caned back and wrapped arms. Our most ordered frame for living rooms and hotel verandas. The seat sits 38 cm from the floor, so it pairs with a low coffee table.</p>
+    </div>
+    <div class="spec">
+     <div>Size (W × D × H)<b>78 × 80 × 92 cm</b></div>
+     <div>Weave<b>Seven-step cane</b></div>
+     <div class="pr">From<b>₱18,500</b></div>
+    </div>
+   </article>
+   <div class="rv">
+    <ul class="plist">
+     <li><svg viewBox="0 0 72 56" aria-hidden="true"><g fill="none" stroke="#2A2119" stroke-width="2" stroke-linecap="round"><path d="M6 30h60M6 30v-12h60v12M8 30l2 18M64 30l-2 18M6 18c0-8 6-12 12-12h36c6 0 12 4 12 12"/></g></svg><div><h4>Cane daybed</h4><p>190 × 90 cm, fits a single foam</p></div><div class="p">₱42,000</div></li>
+     <li><svg viewBox="0 0 72 56" aria-hidden="true"><g fill="none" stroke="#2A2119" stroke-width="2" stroke-linecap="round"><path d="M8 50V20c0-8 12-14 28-14s28 6 28 14v30M8 36h56"/><path d="M20 12v24M36 6v30M52 12v24" stroke="#C9965A"/></g></svg><div><h4>Arched headboard</h4><p>Queen or king, wall-mounted</p></div><div class="p">₱24,800<small>queen</small></div></li>
+     <li><svg viewBox="0 0 72 56" aria-hidden="true"><g fill="none" stroke="#2A2119" stroke-width="2" stroke-linecap="round"><path d="M24 50V26M48 50V26M20 26h32M22 26V10c0-4 6-6 14-6s14 2 14 6v16M24 40h24"/></g></svg><div><h4>Café chair, set of 4</h4><p>Stackable, wrapped back rail</p></div><div class="p">₱31,600</div></li>
+     <li><svg viewBox="0 0 72 56" aria-hidden="true"><g fill="none" stroke="#2A2119" stroke-width="2" stroke-linecap="round"><path d="M26 52l4-36M46 52l-4-36M24 16h24M28 40h16M24 16c0-4 4-6 12-6s12 2 12 6"/></g></svg><div><h4>Bar stool</h4><p>Seat height 65 or 75 cm</p></div><div class="p">₱7,900</div></li>
+     <li><svg viewBox="0 0 72 56" aria-hidden="true"><g fill="none" stroke="#2A2119" stroke-width="2" stroke-linecap="round"><path d="M16 16h40v34H16zM16 33h40M36 20v10M36 37v10"/><path d="M20 16V8h32v8" stroke="#C9965A"/></g></svg><div><h4>Two-door cabinet</h4><p>Cane door panels, narra top</p></div><div class="p">₱27,500</div></li>
+    </ul>
+    <p class="note">Outdoor use: rattan stays good under a roof. In open rain it greys and loosens within a season.</p>
+   </div>
+  </div>
+ </div>
+</section>
+
+<section class="proc" id="process">
+ <div class="in">
+  <div class="sec-hd rv">
+   <div><p class="kick">How it's made</p><h2>Eight weeks, four benches</h2></div>
+   <p>You get a photo at the end of each stage. The down payment is 50% after you approve the drawing; the rest is paid on delivery.</p>
+  </div>
+  <div class="steps rv">
+   <div class="step"><span class="wk">Week 1</span><h3>Measure and draw</h3><p>Send the room size and a photo. We return a scaled drawing with the seat height and arm width marked.</p><div class="tool"><svg class="ico" viewBox="0 0 24 24"><path d="M3 17L17 3l4 4L7 21H3z"/><path d="M14 6l4 4"/></svg>Pencil drawing, 1:10</div></div>
+   <div class="step"><span class="wk">Weeks 2–3</span><h3>Steam and bend</h3><p>Poles soften in the steam box for about 40 minutes, then dry for a week clamped on a wooden jig.</p><div class="tool"><svg class="ico" viewBox="0 0 24 24"><path d="M4 20h16M6 20V10h12v10"/><path d="M9 7c0-2 2-2 2-4M13 7c0-2 2-2 2-4"/></svg>Steam box, bending jig</div></div>
+   <div class="step"><span class="wk">Weeks 4–6</span><h3>Cane and bind</h3><p>Seats and backs are caned strand by strand through drilled holes. Joints are wrapped with split peel.</p><div class="tool"><svg class="ico" viewBox="0 0 24 24"><path d="M4 4h16v16H4zM4 10h16M4 14h16M10 4v16M14 4v16"/></svg>Seven passes per seat</div></div>
+   <div class="step"><span class="wk">Weeks 7–8</span><h3>Finish and deliver</h3><p>Two coats of finish, a final check of every joint, and our own truck to your door in Luzon.</p><div class="tool"><svg class="ico" viewBox="0 0 24 24"><path d="M3 7h11v9H3zM14 10h4l3 3v3h-7"/><circle cx="7" cy="18" r="2"/><circle cx="17" cy="18" r="2"/></svg>Delivery ₱1,500–₱4,500</div></div>
+  </div>
+ </div>
+</section>
+
+<section id="weaves">
+ <div class="in">
+  <div class="sec-hd rv">
+   <div><p class="kick">Weaves and finishes</p><h2>Choose what you sit on</h2></div>
+   <p>Pick a weave and a finish here and they will be filled in on the quote form below.</p>
+  </div>
+  <div class="weaves rv">
+   <div>
+    <div class="wsel" role="group" aria-label="Weave">
+     <button class="wbtn" type="button" aria-pressed="true" data-w="0"><svg viewBox="0 0 120 90" aria-hidden="true"><rect width="120" height="90" fill="#3E2C1F"/><rect width="120" height="90" fill="url(#cane7)"/></svg><b>Seven-step cane</b><span>Close, springy</span></button>
+     <button class="wbtn" type="button" aria-pressed="false" data-w="1"><svg viewBox="0 0 120 90" aria-hidden="true"><rect width="120" height="90" fill="#3E2C1F"/><rect width="120" height="90" fill="url(#hex)"/></svg><b>Open hex</b><span>Airy, shows the wall</span></button>
+     <button class="wbtn" type="button" aria-pressed="false" data-w="2"><svg viewBox="0 0 120 90" aria-hidden="true"><rect width="120" height="90" fill="url(#wrap)"/></svg><b>Solid wrap</b><span>Firm, no holes</span></button>
+    </div>
+    <div class="fin">
+     <h4>Finish</h4>
+     <div class="fins" role="group" aria-label="Finish">
+      <button class="fbtn" type="button" aria-pressed="true" data-f="Natural honey"><i style="background:#D7A866"></i>Natural honey</button>
+      <button class="fbtn" type="button" aria-pressed="false" data-f="Tea-stained"><i style="background:#9A6A3A"></i>Tea-stained</button>
+      <button class="fbtn" type="button" aria-pressed="false" data-f="Charcoal wash"><i style="background:#4A403A"></i>Charcoal wash</button>
+     </div>
+    </div>
+   </div>
+   <div class="wdesc" aria-live="polite">
+    <h3 id="wname">Seven-step cane</h3>
+    <p id="wtext">Strands run across, down, then on both diagonals, leaving small octagon holes. It gives a little when you sit and lets air through on hot afternoons.</p>
+    <dl>
+     <dt>Feel</dt><dd id="wfeel">Medium give</dd>
+     <dt>Price change</dt><dd id="wprice">Included</dd>
+     <dt>Re-cane after</dt><dd id="wlife">8–12 years of daily use</dd>
+     <dt>Finish</dt><dd id="wfin">Natural honey</dd>
+    </dl>
+   </div>
+  </div>
+ </div>
+</section>
+
+<section class="proc" id="repairs">
+ <div class="in rep">
+  <div class="rv">
+   <p class="kick">Repairs</p>
+   <h2>Old chair, new seat</h2>
+   <p class="lead" style="margin-top:20px">Bring a sagging seat or a loose arm, from us or any maker. We strip the old cane, check the frame and quote before we start.</p>
+   <div class="pick"><svg class="ico" viewBox="0 0 24 24"><path d="M3 7h11v9H3zM14 10h4l3 3v3h-7"/><circle cx="7" cy="18" r="2"/><circle cx="17" cy="18" r="2"/></svg><span>Saturday pickup in Metro Manila, Angeles and San Fernando. Chairs come back in about three weeks.</span></div>
+  </div>
+  <table class="rtable rv">
+   <thead><tr><th>Work</th><th>Price</th></tr></thead>
+   <tbody>
+    <tr><td><b>Re-cane a dining seat</b><span>Machine sheet replaced with hand caning</span></td><td>₱2,400</td></tr>
+    <tr><td><b>Re-cane a lounge seat or back</b><span>Up to 70 × 70 cm</span></td><td>₱3,800</td></tr>
+    <tr><td><b>Re-bind a loose joint</b><span>Old wrap removed, frame re-pinned</span></td><td>₱450 each</td></tr>
+    <tr><td><b>Refinish a chair</b><span>Sanded, stained to match, two coats</span></td><td>₱1,900</td></tr>
+    <tr><td><b>Pickup and return</b><span>Saturday route, per address</span></td><td>₱800</td></tr>
+   </tbody>
+  </table>
+ </div>
+</section>
+
+<section class="visit" id="visit">
+ <div class="in">
+  <div class="rv">
+   <p class="kick" style="color:#DDB27A">Visit</p>
+   <h2>Sit on the frames before you order</h2>
+   <p class="lead" style="margin-top:20px">Our showroom is the front half of the workshop. You can try every frame on this page and see poles drying on the jigs at the back.</p>
+   <div class="hours">
+    <div><span>Monday – Friday</span>8:00 – 17:00</div>
+    <div><span>Saturday</span>8:00 – 12:00, visits by booking</div>
+    <div><span>Sunday</span>Closed</div>
+   </div>
+   <div class="contact">
+    <div><svg class="ico" viewBox="0 0 24 24"><path d="M12 21s-7-6.5-7-12a7 7 0 0114 0c0 5.5-7 12-7 12z"/><circle cx="12" cy="9" r="2.5"/></svg>Workshop address sent when you book a visit</div>
+    <div><svg class="ico" viewBox="0 0 24 24"><path d="M5 4h4l2 5-3 2a11 11 0 005 5l2-3 5 2v4a2 2 0 01-2 2A17 17 0 013 6a2 2 0 012-2"/></svg>0900-000-0000</div>
+    <div><svg class="ico" viewBox="0 0 24 24"><path d="M3 6h18v12H3z"/><path d="M3 7l9 6 9-6"/></svg>hello@example.com</div>
+   </div>
+  </div>
+  <form id="quote" class="rv" onsubmit="return send(event)">
+   <div class="fields">
+    <h3>Request a quote</h3>
+    <p>We reply within two working days with a drawing and price.</p>
+    <div class="row">
+     <div><label for="piece">Piece</label><select id="piece"><option>Hapon lounge chair</option><option>Cane daybed</option><option>Arched headboard</option><option>Café chair, set of 4</option><option>Bar stool</option><option>Two-door cabinet</option><option>Repair or re-caning</option></select></div>
+     <div><label for="qty">Quantity</label><input id="qty" type="number" min="1" value="1" inputmode="numeric"></div>
+    </div>
+    <div class="row">
+     <div><label for="weave">Weave</label><select id="weave"><option>Seven-step cane</option><option>Open hex</option><option>Solid wrap</option></select></div>
+     <div><label for="finish">Finish</label><select id="finish"><option>Natural honey</option><option>Tea-stained</option><option>Charcoal wash</option></select></div>
+    </div>
+    <div class="full"><label for="notes">Room size or changes</label><textarea id="notes" placeholder="e.g. Veranda 3 × 2.4 m, seat 5 cm lower"></textarea></div>
+    <div class="row">
+     <div><label for="nm">Name</label><input id="nm" required autocomplete="name"></div>
+     <div><label for="mb">Mobile</label><input id="mb" required inputmode="tel" placeholder="0900-000-0000"></div>
+    </div>
+    <div class="full"><label for="city">City for delivery</label><input id="city" placeholder="e.g. Quezon City"></div>
+    <button class="btn" type="submit">Send request</button>
+    <p class="fine">This page is a sample. Nothing is sent from this form.</p>
+   </div>
+   <div class="done" aria-live="polite"><h3>Request noted</h3><p id="dmsg">We will send a drawing and price for your piece within two working days.</p></div>
+  </form>
+ </div>
+</section>
+
+<section id="faq">
+ <div class="in">
+  <div class="rv" style="margin-bottom:32px"><p class="kick">Questions</p><h2>Before you order</h2></div>
+  <div class="faq rv">
+   <details><summary>Do you deliver outside Luzon?<svg class="ico" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></summary><p>Yes, through a cargo forwarder to Visayas and Mindanao. We crate the piece; the forwarder's fee is quoted separately and usually takes 7–10 days.</p></details>
+   <details><summary>Can I bring my own cushion fabric?<svg class="ico" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></summary><p>Bring 2 metres per lounge chair and we will sew the cushion with the frame. Our standard cushion is unbleached cotton canvas.</p></details>
+   <details><summary>How do I look after rattan?<svg class="ico" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></summary><p>Dust with a soft brush, wipe with a damp cloth once a month and keep it out of direct afternoon sun. Once a year a thin coat of furniture oil keeps the cane from drying.</p></details>
+   <details><summary>Can you copy a chair from a photo?<svg class="ico" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></summary><p>We can make a frame in a similar shape from your sketch or measurements. We do not reproduce another maker's design or label.</p></details>
+  </div>
+ </div>
+</section>
+</main>
+
+<footer>
+ <div class="in">
+  <a class="logo" href="#top"><svg viewBox="0 0 36 36" aria-hidden="true"><circle cx="18" cy="18" r="16" fill="none" stroke="#2A2119" stroke-width="2"/><path d="M11 9v18M25 9v18M9 14h18M9 22h18M12 12l12 12M24 12L12 24" stroke="#A3452B" stroke-width="1.6" stroke-linecap="round"/></svg><span><b>Yantok Rattan Works</b><small>Bent, caned and finished by hand in Pampanga</small></span></a>
+  <p>0900-000-0000 · hello@example.com<br>© 2026 Yantok Rattan Works</p>
+ </div>
+</footer>
+
+<script>
+var W=[
+ {n:'Seven-step cane',t:'Strands run across, down, then on both diagonals, leaving small octagon holes. It gives a little when you sit and lets air through on hot afternoons.',f:'Medium give',p:'Included',l:'8–12 years of daily use'},
+ {n:'Open hex',t:'Wider strands woven in six directions, leaving hexagon holes about 2 cm across. Lighter to look at; suited to backs, headboards and cabinet doors.',f:'Light, airy',p:'+ ₱1,200 per chair',l:'10–15 years on backs and doors'},
+ {n:'Solid wrap',t:'Split rattan peel wound tightly around the frame with no holes. Firm, easy to wipe, and the usual choice for café chairs and bar stools.',f:'Firm',p:'+ ₱800 per chair',l:'12 years or more'}
+];
+var wb=document.querySelectorAll('.wbtn'),fb=document.querySelectorAll('.fbtn');
+wb.forEach(function(b){b.addEventListener('click',function(){
+ wb.forEach(function(x){x.setAttribute('aria-pressed','false')});b.setAttribute('aria-pressed','true');
+ var d=W[+b.dataset.w];
+ document.getElementById('wname').textContent=d.n;document.getElementById('wtext').textContent=d.t;
+ document.getElementById('wfeel').textContent=d.f;document.getElementById('wprice').textContent=d.p;document.getElementById('wlife').textContent=d.l;
+ document.getElementById('weave').value=d.n;
+})});
+fb.forEach(function(b){b.addEventListener('click',function(){
+ fb.forEach(function(x){x.setAttribute('aria-pressed','false')});b.setAttribute('aria-pressed','true');
+ document.getElementById('wfin').textContent=b.dataset.f;document.getElementById('finish').value=b.dataset.f;
+})});
+function send(e){e.preventDefault();var f=document.getElementById('quote');
+ var p=document.getElementById('piece').value,w=document.getElementById('weave').value,fi=document.getElementById('finish').value;
+ document.getElementById('dmsg').textContent='Thank you, '+(document.getElementById('nm').value||'')+'. We will send a drawing and price for the '+p.toLowerCase()+' ('+w.toLowerCase()+', '+fi.toLowerCase()+') within two working days.';
+ f.classList.add('sent');return false}
+var io='IntersectionObserver' in window?new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('on');io.unobserve(e.target)}})},{threshold:.12}):null;
+document.querySelectorAll('.rv').forEach(function(el){io?io.observe(el):el.classList.add('on')});
+</script>
+</body>
+</html>

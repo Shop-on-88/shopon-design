@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>소라방 주꾸미 · 메뉴판 디자인</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Do+Hyeon&family=Noto+Sans+KR:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+html{background:#DDD4C3}
+body{font-family:'Noto Sans KR',sans-serif;color:#22282C;background:#DDD4C3;word-break:keep-all;-webkit-font-smoothing:antialiased;min-height:100vh;overflow-x:clip;line-height:1.6}
+.wrap{max-width:1180px;margin:0 auto;padding:48px 24px 136px}
+.hd{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:24px;padding-bottom:32px;margin-bottom:40px;border-bottom:2px solid #22282C}
+.hd small{font-size:14px;font-weight:500;color:#555A5C}
+.hd h1{font-family:'Do Hyeon',sans-serif;font-weight:400;font-size:clamp(44px,6vw,72px);line-height:1.05;letter-spacing:2px;margin-top:8px}
+.hd p.lead{font-size:clamp(16px,1.6vw,18px);color:#3A3F42;margin-top:20px;max-width:720px;line-height:1.75}
+.hd p.lead b{color:#7A2E4C;font-weight:600}
+.facts{display:flex;flex-wrap:wrap;gap:8px 24px;margin-top:20px;font-size:15px;color:#555A5C}
+.facts span{display:flex;align-items:center;gap:8px}
+.facts span:before{content:"";flex:none;width:12px;height:12px;border-radius:50%;background:#7A2E4C}
+.cta{display:inline-flex;align-items:center;gap:8px;height:52px;padding:0 24px;background:#22282C;color:#EEE8DC;font-weight:600;font-size:16px;text-decoration:none;border-radius:8px;transition:background-color .2s;white-space:nowrap}
+.cta:hover{background:#384046}
+.cta svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+.view{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,.8fr);gap:32px;align-items:start}
+figure{background:#E9E2D4;padding:12px;border-radius:8px;border:1px solid rgba(43,38,34,.14)}
+figure a{display:block;overflow:hidden;border-radius:4px}
+figure img{display:block;width:100%;height:auto}
+figcaption{font-size:14px;color:#555A5C;padding:12px 4px 0;display:flex;flex-wrap:wrap;justify-content:space-between;gap:4px 12px}
+figcaption b{color:#22282C;font-weight:600}
+.side{display:flex;flex-direction:column;gap:20px;position:sticky;top:24px}
+.zoom{background:#E9E2D4;padding:8px;border-radius:8px;border:1px solid rgba(43,38,34,.14)}
+.zoom img{display:block;width:100%;height:auto;border-radius:4px}
+.zoom p{font-size:15px;color:#3A3F42;padding:12px 8px 4px}
+.zoom p b{display:block;font-family:'Do Hyeon',sans-serif;font-weight:400;font-size:24px;color:#22282C;margin-bottom:4px;line-height:1.35}
+.info{background:#22282C;color:#C9CDCB;padding:24px;border-radius:8px}
+.info h2{font-family:'Do Hyeon',sans-serif;font-weight:400;font-size:26px;color:#EEE8DC;margin-bottom:8px;line-height:1.3}
+.info li{list-style:none;font-size:15px;padding:12px 0 12px 20px;position:relative;border-top:1px solid rgba(241,234,219,.14)}
+.info li:first-child{border-top:0}
+.info li:before{content:"";position:absolute;left:2px;top:21px;width:8px;height:8px;border-radius:50%;background:#C98AA2}
+.bar{position:fixed;left:0;right:0;bottom:0;background:#22282C;border-top:3px solid #7A2E4C;padding:12px 20px;display:flex;justify-content:center;align-items:center;gap:20px;flex-wrap:wrap;z-index:10}
+.bar p{font-size:15px;color:#C9CDCB}
+.bar .cta{height:48px;background:#EEE8DC;color:#22282C}
+.bar .cta:hover{background:#DCD6CA}
+@media(max-width:900px){.view{grid-template-columns:1fr}.side{position:static}}
+@media(max-width:620px){.wrap{padding:28px 16px 112px}.hd .cta{display:none}.bar p{display:none}.bar .cta{width:100%;justify-content:center}figure{padding:6px}}
+@media(prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+<div class="wrap">
+ <div class="hd">
+  <div>
+   <small>메뉴판 디자인 · SD-MN76</small>
+   <h1>소라방 주꾸미</h1>
+   <p class="lead">서해 포구 앞에서 소라방으로 잡은 주꾸미를 철판볶음, 샤브, 숙회로 내는 식당의 A4 메뉴판입니다. 위쪽 남색 띠에는 소라 껍데기를 엮은 밧줄을 가로로 걸고, 그중 한 껍데기에서 주꾸미가 다리를 내민 그림을 그렸습니다. 아래에는 대표 메뉴 <b>주꾸미 철판볶음 중 34,000원 · 대 48,000원</b>을 자색 상자에 맵기 세 단계와 함께 두고, 다른 철판 메뉴와 샤브·곁들임, 볶음밥 먹는 순서, 마실 것, 원산지 표시까지 한 장에 담았습니다.</p>
+   <div class="facts"><span>A4 세로 · 1장 · 한국어 · 원화</span><span>모래 베이지 · 바다 남색 · 주꾸미 자색</span><span>소라방 밧줄과 주꾸미 그림</span></div>
+  </div>
+  <a class="cta" href="https://design.shoponph.online/#inquiry">이 디자인으로 상담하기 <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+ </div>
+ <div class="view">
+  <figure><a href="page1.png" target="_blank" rel="noopener"><img src="page1.png" alt="소라방 주꾸미 메뉴판 전체. 모래빛 베이지 바탕 위쪽 왼쪽에 서해 포구 앞 · 소라방으로 잡은 주꾸미라는 작은 글과 큰 제목 소라방 주꾸미가 있고 주꾸미 글자만 자색입니다. 오른쪽에 11:30 – 22:00, 쉬는 시간 15:00 – 17:00, 매주 화요일 쉼이 있습니다. 그 아래 짙은 바다 남색 띠에 꼬인 밧줄이 가로로 늘어져 있고 소라 껍데기 다섯 개가 끈에 매달려 있습니다. 오른쪽에서 두 번째 큰 껍데기 입구에서 자줏빛 주꾸미가 머리를 내밀고 여덟 다리를 아래로 늘어뜨렸습니다. 왼쪽 아래에 소라 껍데기를 줄에 엮어 바다에 내리면, 주꾸미가 들어가 삽니다, 그 줄을 새벽에 걷어 올린 주꾸미만 받아 하루 안에 냅니다라는 글이 있습니다. 아래 왼쪽 철판 칸에는 2인부터 · 콩나물국과 반찬 세 가지 안내와 자색 상자 안 주꾸미 철판볶음, 중 · 2인 34,000, 대 · 3–4인 48,000, 맵기 순한맛 · 보통 · 매운맛 점 표시가 있고, 이어서 주꾸미 삼겹 철판 2인 38,000, 주꾸미 차돌 철판 2인 39,000, 마무리 볶음밥 1인 3,000, 치즈 · 우동사리 · 당면 각 2,000이 있습니다. 오른쪽 한 그릇 · 곁들임 칸에 3–5월 알배기 표시가 붙은 주꾸미 샤브 2인 42,000, 주꾸미 숙회 26,000, 주꾸미 덮밥 11,000, 해물파전 16,000, 뚝배기 계란찜 5,000과 볶기, 볶음밥, 눌리기 세 단계 안내가 있습니다. 아래 가로줄에 마실 것 소주 · 맥주 · 막걸리 각 5,000, 탄산 2,000, 식혜 3,000, 맨 아래에 원산지 표시와 포장 · 예약 000-0000-0000이 있습니다." width="2480" height="3508"></a><figcaption><b>A4 세로 메뉴판</b><span>2480 × 3508 · 인쇄용</span></figcaption></figure>
+  <div class="side">
+   <div class="zoom"><img src="detail-octopus.jpg" alt="그림 확대. 짙은 남색 바탕에 꼬인 밧줄이 비스듬히 지나가고, 끈에 매달린 큰 소라 껍데기의 분홍빛 입구에서 자줏빛 주꾸미가 머리를 내밀고 있습니다. 노란 눈 두 개가 머리 아래쪽 양옆에 있고, 흰 빨판이 점점이 박힌 다리 여덟 개가 아래로 늘어지며 끝이 동그랗게 말려 있습니다. 오른쪽에는 작은 소라 껍데기가 하나 더 매달려 있고 아래로 물방울이 떨어집니다." width="860" height="940" loading="lazy"><p><b>소라방 그림</b>소라 껍데기를 줄에 엮어 주꾸미를 잡는 방식을 그대로 그려, 이 집 주꾸미가 어디서 오는지 한눈에 보이게 했습니다.</p></div>
+   <div class="info"><h2>바꿀 수 있는 것</h2><ul><li>메뉴 이름, 가격, 영업시간과 원산지 표시</li><li>그림 속 해산물을 낙지, 문어, 꼬막 등 가게 대표 재료로</li><li>A4 테이블 메뉴판, 벽에 거는 큰 메뉴판, 포장 안내 카드</li></ul></div>
+  </div>
+ </div>
+</div>
+<div class="bar"><p>우리 가게도 이런 메뉴판이 필요하다면</p><a class="cta" href="https://design.shoponph.online/#inquiry">이 디자인으로 상담하기</a></div>
+</body>
+</html>
