@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kawa Lomi House · Menu design</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+html{background:#EADCC0}
+body{font-family:'Work Sans',sans-serif;color:#2E1F14;background:#EADCC0;-webkit-font-smoothing:antialiased;min-height:100vh;overflow-x:clip;line-height:1.6}
+.wrap{max-width:1180px;margin:0 auto;padding:48px 24px 136px}
+.hd{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:24px;padding-bottom:32px;margin-bottom:40px;border-bottom:2px solid #2E1F14}
+.hd small{font-size:14px;font-weight:500;color:#5C4634}
+.hd h1{font-family:'Fraunces',serif;font-weight:600;font-size:clamp(44px,6vw,72px);line-height:1.02;letter-spacing:-.5px;margin-top:8px}
+.hd p.lead{font-size:clamp(16px,1.6vw,18px);color:#3F2E20;margin-top:20px;max-width:720px;line-height:1.7}
+.facts{display:flex;flex-wrap:wrap;gap:8px 24px;margin-top:20px;font-size:15px;color:#5C4634}
+.facts span{display:flex;align-items:center;gap:8px}
+.facts span:before{content:"";flex:none;width:12px;height:12px;border-radius:50%;background:#F2C24E;border:3px solid #4C7A1F}
+.cta{display:inline-flex;align-items:center;gap:8px;height:52px;padding:0 24px;background:#2E1F14;color:#F1E6CF;font-weight:600;font-size:16px;text-decoration:none;border-radius:8px;transition:background-color .2s;white-space:nowrap}
+.cta:hover{background:#4A3727}
+.cta svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+.view{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,.8fr);gap:32px;align-items:start}
+figure{background:#F6EEDC;padding:12px;border-radius:8px;border:1px solid rgba(46,31,20,.16)}
+figure a{display:block;overflow:hidden;border-radius:4px}
+figure img{display:block;width:100%;height:auto}
+figcaption{font-size:14px;color:#5C4634;padding:12px 4px 0;display:flex;flex-wrap:wrap;justify-content:space-between;gap:4px 12px}
+figcaption b{color:#2E1F14;font-weight:600}
+.side{display:flex;flex-direction:column;gap:20px;position:sticky;top:24px}
+.zoom{background:#F6EEDC;padding:8px;border-radius:8px;border:1px solid rgba(46,31,20,.16)}
+.zoom img{display:block;width:100%;height:auto;border-radius:4px}
+.zoom p{font-size:15px;color:#3F2E20;padding:12px 8px 4px}
+.zoom p b{display:block;font-family:'Fraunces',serif;font-weight:600;font-size:24px;color:#2E1F14;margin-bottom:4px;line-height:1.3}
+.info{background:#2E1F14;color:#D9C9AA;padding:24px;border-radius:8px}
+.info h2{font-family:'Fraunces',serif;font-weight:600;font-size:26px;color:#F1E6CF;margin-bottom:8px;line-height:1.25}
+.info li{list-style:none;font-size:15px;padding:12px 0 12px 20px;position:relative;border-top:1px solid rgba(241,230,207,.14)}
+.info li:first-child{border-top:0}
+.info li:before{content:"";position:absolute;left:2px;top:20px;width:8px;height:8px;border-radius:50%;background:#8DB65A}
+.bar{position:fixed;left:0;right:0;bottom:0;background:#2E1F14;border-top:4px solid #4C7A1F;padding:12px 20px;display:flex;justify-content:center;align-items:center;gap:20px;flex-wrap:wrap;z-index:10}
+.bar p{font-size:15px;color:#D9C9AA}
+.bar .cta{height:48px;background:#F1E6CF;color:#2E1F14}
+.bar .cta:hover{background:#E2D3B4}
+@media(max-width:900px){.view{grid-template-columns:1fr}.side{position:static}}
+@media(max-width:620px){.wrap{padding:28px 16px 112px}.hd .cta{display:none}.bar p{display:none}.bar .cta{width:100%;justify-content:center}figure{padding:6px}}
+@media(prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+<div class="wrap">
+ <div class="hd">
+  <div>
+   <small>Menu design · SD-MN73</small>
+   <h1>Kawa Lomi House</h1>
+   <p class="lead">A wall menu for a Batangas-style lomi house in Lipa that stays open until 2 AM for commuters and late barkadas. The top half is one big bowl seen from above, thick miki noodles under a glossy egg-thickened broth, with every topping named on the side so first-timers know what they are ordering. Below it, the bowls and the add-ons sit side by side, then pancit, drinks and a small guide to mixing the soy, calamansi and sili dip.</p>
+   <div class="facts"><span>A4 portrait · 1 page · English · Philippine peso</span><span>Woven-mat cream, soy brown and calamansi green</span><span>Top-down lomi bowl with labelled toppings</span></div>
+  </div>
+  <a class="cta" href="https://design.shoponph.online/#inquiry">Talk to us about this design <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+ </div>
+ <div class="view">
+  <figure><a href="page1.png" target="_blank" rel="noopener"><img src="page1.png" alt="Kawa Lomi House menu, full page on a cream woven-mat background. Top left: the small line Lomi house, Lipa City, Batangas, the large serif title Kawa Lomi House and the line Batangas lomi, pancit and kapeng barako, cooked out of one big kawa. Top right, a dark brown box: Open every day, 4 PM to 2 AM, kawa is refilled at 9 PM and midnight, dine in or take out. The upper half shows a white bowl of lomi from above on a round woven bamboo mat. Through the amber, glossy broth you see thick yellow noodles, ribbons of cooked egg, golden chicharon pieces, dark sliced pork liver, round kikiam slices, white squid balls, halved quail eggs, sliced spring onion, fried garlic and pepper, with two calamansi halves on the mat below the bowl. Leader lines name each part on the right: Chicharon, Pork liver, Thick miki noodles, Egg-thickened broth, Squid balls and quail eggs, Kikiam, Calamansi, each with a short note. Section 1 Lomi bowls, 600 ml bowl, big bowl plus ₱30: Regular lomi ₱120, Special lomi ₱160, Seafood lomi ₱175, Overload lomi ₱210, and a dark box Family kawa for 4, overload toppings in a small iron kawa with four bowls and a ladle, ₱560. Section 2 in a light card, Add to your bowl: extra miki noodles ₱25, pork liver ₱30, chicharon ₱25, kikiam 4 slices ₱20, squid balls 4 pieces ₱25, quail eggs 3 pieces ₱20, one more egg in the broth ₱15, lechon kawali bits ₱35, and a note to ask for the chicharon on the side for take-out. Section 3 Pancit and rice: lomi guisado ₱140, chami ₱140, pancit canton ₱130, bihon guisado ₱120, rice plain or garlic ₱20 or ₱30. Section 4 Drinks: kapeng barako ₱45, barako with milk ₱55, calamansi juice ₱50, softdrinks ₱35, bottled water ₱20. A green-bordered box, Mix your sawsawan, shows a soy saucer plus a calamansi half plus a red sili. Bottom dark band: Kawa Lomi House, Brgy. Example, Lipa City, Batangas, 0900 000 0000, prices in ₱." width="2480" height="3508"></a><figcaption><b>A4 portrait, 1 page</b><span>2480 × 3508 px · print ready</span></figcaption></figure>
+  <div class="side">
+   <div class="zoom"><img src="detail-bowl.jpg" alt="Close-up of the illustration. A white ceramic bowl on a woven bamboo mat holds amber broth with thick yellow miki noodles, pale egg ribbons and glossy highlights. Curled golden chicharon with blistered skin and a thin line of fat sits at the upper left, dark red-brown liver slices at the upper right, kikiam rounds at the lower left and white squid balls and halved quail eggs in the middle, all scattered with spring onion and fried garlic. Thin lines lead from each topping to its label, and two calamansi halves rest on the mat below the bowl." width="1120" height="577" loading="lazy"><p><b>One bowl, every topping named</b>The broth is drawn thick and glossy with the noodles showing through, so the menu explains what makes Batangas lomi different before anyone reads a price</p></div>
+   <div class="info"><h2>What we can change</h2><ul><li>Bowl names, toppings, prices and opening hours</li><li>The bowl illustration for your own dish: mami, batchoy, goto or pares</li><li>Wall menu, counter tent card, or a wide menu board above the kitchen</li></ul></div>
+  </div>
+ </div>
+</div>
+<div class="bar"><p>Need a menu like this for your shop?</p><a class="cta" href="https://design.shoponph.online/#inquiry">Talk to us about this design</a></div>
+</body>
+</html>

@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>틈막이 창호 · 12월 무료 실측 + 거실 창 단열 시공 15% 할인</title>
+<meta name="description" content="레일 틈과 낡은 모헤어를 교체하고 단열필름을 붙이는 창호 단열 시공. 12월 31일까지 무료 실측, 거실 창 세트 15% 할인.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+ --frost:#E9EEF1;--paper:#F5F7F8;--white:#FBFCFC;
+ --ink:#1E2933;--sub:#4C5965;--mute:#66737E;
+ --line:rgba(30,41,51,.14);--line2:rgba(30,41,51,.08);
+ --silver:#B7C1C8;--steel:#7D8A94;--deep:#24313C;
+ --heat:#C2501A;--heat-d:#A5420F;--heat-l:#F3D9C8;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{background:var(--frost);scroll-behavior:smooth}
+body{font-family:'IBM Plex Sans KR',sans-serif;color:var(--ink);background:var(--frost);font-size:16px;line-height:1.65;word-break:keep-all;-webkit-font-smoothing:antialiased;overflow-x:clip}
+a{color:inherit}
+.mono{font-family:'IBM Plex Mono',monospace;font-variant-numeric:tabular-nums}
+.wrap{max-width:1200px;margin:0 auto;padding:0 32px}
+h1,h2,h3{font-weight:600;line-height:1.3;letter-spacing:-.01em}
+
+/* header */
+.top{position:sticky;top:0;z-index:20;background:rgba(233,238,241,.96);border-bottom:1px solid var(--line)}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;height:64px;gap:24px}
+.logo{display:flex;align-items:center;gap:12px;text-decoration:none;font-weight:700;font-size:19px}
+.logo svg{width:28px;height:28px}
+.logo span{font-weight:500;font-size:13px;color:var(--mute)}
+.nav{display:flex;gap:28px;font-size:15px;color:var(--sub)}
+.nav a{text-decoration:none;padding:12px 0}
+.nav a:hover{color:var(--ink)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;height:44px;padding:0 20px;border-radius:6px;font:600 15px/1 'IBM Plex Sans KR',sans-serif;text-decoration:none;border:0;cursor:pointer;transition:background-color .2s,color .2s,border-color .2s;white-space:nowrap}
+.btn-heat{background:var(--heat);color:#fff}
+.btn-heat:hover{background:var(--heat-d)}
+.btn-line{background:transparent;color:var(--ink);border:1px solid rgba(30,41,51,.32)}
+.btn-line:hover{background:var(--paper);border-color:var(--ink)}
+.btn svg{width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+
+/* hero */
+.hero{padding:64px 0 96px;border-bottom:1px solid var(--line)}
+.hero .wrap{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:48px;align-items:center}
+.kicker{font-size:14px;color:var(--sub);display:flex;flex-wrap:wrap;gap:4px 16px}
+.kicker b{font-weight:600;color:var(--ink)}
+.hero h1{font-size:clamp(32px,3.9vw,48px);margin:20px 0 24px;line-height:1.24}
+.hero h1 .nw{white-space:nowrap}
+.hero h1 em{font-style:normal;color:var(--heat)}
+.hero .lead{font-size:17px;color:var(--sub);max-width:460px}
+.offer{margin:32px 0;background:var(--white);border:1px solid var(--line);border-left:4px solid var(--heat);border-radius:8px;padding:20px 24px;max-width:460px}
+.offer p{font-size:14px;color:var(--sub)}
+.offer .price{display:flex;align-items:baseline;flex-wrap:wrap;gap:4px 12px;margin-top:8px}
+.offer s{font-size:16px;color:var(--mute)}
+.offer strong{font-size:32px;font-weight:700;color:var(--heat);letter-spacing:-.01em}
+.offer strong small{font-size:16px;font-weight:600;color:var(--ink);margin-left:2px}
+.offer .until{font-size:13px;color:var(--mute);margin-top:4px}
+.cta-row{display:flex;flex-wrap:wrap;gap:12px}
+.cta-row .btn{height:48px;padding:0 24px;font-size:16px}
+.plate{position:relative;background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:24px 24px 16px;
+ background-image:linear-gradient(var(--line2) 1px,transparent 1px),linear-gradient(90deg,var(--line2) 1px,transparent 1px);background-size:24px 24px;background-position:-1px -1px}
+.plate svg{display:block;width:100%;height:auto}
+.plate-cap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:4px 16px;font-size:13px;color:var(--mute);padding-top:12px;border-top:1px solid var(--line);margin-top:8px}
+.plate-cap b{color:var(--ink);font-weight:500}
+.legend{display:inline-flex;align-items:center;gap:8px}
+.legend i{display:inline-block;width:28px;height:8px;border-radius:2px;background:linear-gradient(90deg,#F6E2B0,#E98A3A,#C2501A)}
+
+/* section base */
+.sec{padding:112px 0;border-bottom:1px solid var(--line)}
+.sec-hd{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:48px;margin-bottom:56px;align-items:end}
+.sec-hd .no{font-size:13px;color:var(--mute);display:block;margin-bottom:12px}
+.sec-hd h2{font-size:clamp(28px,3vw,38px)}
+.sec-hd p{color:var(--sub);font-size:17px;max-width:600px}
+
+.band{background:var(--white)}
+.band .main-card{background:var(--paper)}
+.band .unit-table{background:var(--frost)}
+.sec-hd.stack{grid-template-columns:1fr;gap:16px;max-width:840px}
+.sec-hd.stack .no{margin-bottom:12px}
+/* leaks */
+.leaks{display:grid;grid-template-columns:minmax(0,6fr) minmax(0,5fr);gap:48px;align-items:start}
+.leak-list{list-style:none;border-top:1px solid var(--line)}
+.leak-list li{display:grid;grid-template-columns:48px minmax(0,1fr) auto;gap:16px;padding:20px 0;border-bottom:1px solid var(--line);align-items:start}
+.leak-list .n{width:32px;height:32px;border-radius:50%;border:1.5px solid var(--ink);display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:500}
+.leak-list h3{font-size:18px;margin-bottom:4px}
+.leak-list p{font-size:15px;color:var(--sub)}
+.leak-list .fix{font-size:13px;color:var(--sub);background:var(--paper);border:1px solid var(--line);border-radius:4px;padding:4px 8px;white-space:nowrap;margin-top:2px}
+.section-fig{background:var(--deep);border-radius:12px;padding:24px;color:#C9D2D9;position:sticky;top:96px}
+.section-fig svg{display:block;width:100%;height:auto}
+.section-fig .caps{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:16px;font-size:14px}
+.section-fig .caps b{display:block;color:#F1F4F6;font-weight:600;font-size:15px;margin-bottom:2px}
+.section-fig h3{color:#F1F4F6;font-size:17px;font-weight:600;margin-bottom:16px}
+
+/* price */
+.price-grid{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:24px;align-items:stretch}
+.main-card{background:var(--white);border:1px solid var(--line);border-radius:16px;padding:40px;display:flex;flex-direction:column}
+.main-card .tag{font-size:14px;color:var(--heat);font-weight:600}
+.main-card h3{font-size:26px;margin:8px 0 12px}
+.main-card .desc{color:var(--sub);max-width:520px}
+.incl{list-style:none;margin:24px 0 28px;display:grid;grid-template-columns:1fr 1fr;gap:12px 24px;font-size:15px}
+.incl li{display:flex;gap:12px;align-items:flex-start}
+.incl svg{flex:none;width:20px;height:20px;margin-top:3px;fill:none;stroke:var(--ink);stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.facts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin:0 0 32px;padding:16px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.facts dt{font-size:13px;color:var(--mute)}
+.facts dd{font-size:15px;font-weight:500;margin-top:2px}
+.main-card .bottom{margin-top:auto;display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:20px;padding-top:24px;border-top:1px dashed rgba(30,41,51,.28)}
+.main-card .bottom s{display:block;color:var(--mute);font-size:15px}
+.main-card .bottom strong{font-size:40px;font-weight:700;line-height:1.1;letter-spacing:-.01em}
+.main-card .bottom strong small{font-size:18px;font-weight:600;margin-left:2px}
+.main-card .bottom p{font-size:13px;color:var(--mute);margin-top:4px}
+.unit-table{background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:32px}
+.unit-table h3{font-size:18px;margin-bottom:4px}
+.unit-table>p{font-size:14px;color:var(--sub);margin-bottom:16px}
+.unit-table dl>div{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:4px 16px;padding:16px 0;border-top:1px solid var(--line)}
+.unit-table dt{font-weight:500}
+.unit-table dt small{display:block;font-weight:400;font-size:13px;color:var(--mute)}
+.unit-table dd{font-weight:600;text-align:right;white-space:nowrap}
+.unit-table dd small{font-weight:400;font-size:13px;color:var(--mute)}
+.unit-table .free{color:var(--heat)}
+
+/* steps */
+.steps{list-style:none;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0;position:relative}
+.steps li{padding:0 24px 0 0;position:relative}
+.steps .head{display:flex;align-items:center;gap:12px;margin-bottom:20px}
+.steps .head span{font-size:13px;color:var(--mute)}
+.steps .tick{height:24px;display:flex;align-items:center;margin-bottom:20px;position:relative}
+.steps .tick:before{content:"";position:absolute;left:0;right:0;top:50%;height:1px;background:var(--ink)}
+.steps .tick:after{content:"";position:absolute;left:0;top:4px;width:1px;height:16px;background:var(--ink)}
+.steps li:last-child .tick:before{right:24px}
+.steps li:last-child .tick{background:linear-gradient(var(--ink),var(--ink)) right 24px top 4px/1px 16px no-repeat}
+.steps .tick b{position:relative;background:var(--frost);padding:0 8px;margin-left:16px;font-size:13px;font-weight:500}
+.steps h3{font-size:19px;margin-bottom:8px}
+.steps p{font-size:15px;color:var(--sub)}
+
+/* check sheet */
+.sheet{display:grid;grid-template-columns:minmax(0,4fr) minmax(0,7fr);gap:48px;align-items:start}
+.sheet-note{font-size:15px;color:var(--sub);position:sticky;top:96px}
+.sheet-note .smoke{margin-top:24px;background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:16px}
+.sheet-note .smoke svg{display:block;width:100%;height:auto}
+.sheet-note .smoke p{font-size:13px;color:var(--mute);margin-top:8px}
+.sheet-note h3{font-size:20px;color:var(--ink);margin-bottom:12px}
+.sheet-note p+p{margin-top:12px}
+.sheet table{width:100%;border-collapse:collapse;background:var(--white);border:1px solid var(--line);border-radius:12px;overflow:hidden;font-size:15px}
+.sheet th{font-size:13px;font-weight:500;color:var(--mute);text-align:left;padding:12px 20px;background:var(--paper);border-bottom:1px solid var(--line)}
+.sheet td{padding:16px 20px;border-bottom:1px solid var(--line2);vertical-align:top}
+.sheet tr:last-child td{border-bottom:0}
+.sheet td:first-child{width:48px;color:var(--mute);font-size:14px}
+.sheet td b{display:block;font-weight:600}
+.sheet td span{color:var(--sub);font-size:14px}
+.box{width:20px;height:20px;border:1.5px solid var(--ink);border-radius:3px;display:block;margin-top:2px}
+
+/* faq */
+.faq{max-width:840px}
+.faq details{border-top:1px solid var(--line)}
+.faq details:last-child{border-bottom:1px solid var(--line)}
+.faq summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:16px;min-height:64px;padding:16px 0;font-weight:500;font-size:17px}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary:hover{color:var(--heat-d)}
+.faq summary svg{flex:none;width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:1.8;transition:transform .2s}
+.faq details[open] summary svg{transform:rotate(45deg)}
+.faq details p{color:var(--sub);padding:0 48px 24px 0;font-size:15px}
+
+/* form */
+.apply{background:var(--deep);color:#D4DCE2;padding:112px 0}
+.apply .wrap{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,6fr);gap:64px;align-items:start}
+.apply h2{color:#F3F6F8;font-size:clamp(28px,3vw,38px);margin-bottom:16px}
+.apply .intro p{font-size:16px;color:#B9C4CC}
+.apply .recap{margin-top:32px;border-top:1px solid rgba(243,246,248,.16)}
+.apply .recap div{display:flex;justify-content:space-between;gap:16px;padding:12px 0;border-bottom:1px solid rgba(243,246,248,.16);font-size:15px}
+.apply .recap b{color:#F3F6F8;font-weight:600}
+.apply .recap .hot{color:#F0A57A}
+form{background:var(--white);color:var(--ink);border-radius:16px;padding:40px;display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.f{display:flex;flex-direction:column;gap:8px}
+.f.full{grid-column:1/-1}
+.f label{font-size:14px;font-weight:500}
+.f input,.f select{height:48px;border:1px solid rgba(30,41,51,.28);border-radius:6px;padding:0 12px;font:16px 'IBM Plex Sans KR',sans-serif;color:var(--ink);background:#fff;width:100%}
+.f input:focus,.f select:focus{outline:2px solid var(--heat);outline-offset:1px;border-color:var(--heat)}
+.f input::placeholder{color:#8A96A0}
+.agree{grid-column:1/-1;display:flex;gap:12px;align-items:flex-start;font-size:14px;color:var(--sub)}
+.agree input{width:20px;height:20px;margin-top:2px;accent-color:var(--heat);flex:none}
+form .btn{grid-column:1/-1;height:52px;font-size:16px}
+.done{grid-column:1/-1;display:none;border:1px solid var(--line);border-left:4px solid var(--heat);background:var(--paper);border-radius:8px;padding:16px 20px;font-size:15px}
+.done b{display:block;margin-bottom:4px}
+form.sent .done{display:block}
+
+footer{padding:48px 0 56px;font-size:14px;color:var(--mute)}
+footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:24px}
+footer .wrap>p{text-align:right}
+footer b{color:var(--ink);font-weight:600;font-size:16px;display:block;margin-bottom:8px}
+footer p{line-height:1.8}
+
+/* reveal */
+.rv{opacity:0;transform:translateY(12px);transition:opacity .5s ease,transform .5s ease}
+.rv.in{opacity:1;transform:none}
+
+@media(max-width:1024px){
+ .hero .wrap{grid-template-columns:1fr;gap:40px}
+ .hero .lead,.offer{max-width:none}
+ .sec-hd,.leaks,.price-grid,.sheet,.apply .wrap{grid-template-columns:1fr;gap:32px}
+ .section-fig,.sheet-note{position:static}
+ .steps{grid-template-columns:1fr 1fr;gap:40px 0}
+ .nav{display:none}
+}
+@media(max-width:620px){
+ .wrap{padding:0 16px}
+ .top .wrap{height:60px}
+ .logo span{display:none}
+ .top .btn{height:44px;padding:0 16px;font-size:14px}
+ .hero{padding:40px 0 80px}
+ .plate{padding:12px 12px 8px}
+ .sec{padding:80px 0}
+ .sec-hd{margin-bottom:40px}
+ .leak-list li{grid-template-columns:40px minmax(0,1fr);gap:12px}
+ .leak-list .fix{grid-column:2;justify-self:start}
+ .main-card,.unit-table{padding:24px}
+ .incl{grid-template-columns:1fr}
+ .main-card .bottom .btn{width:100%}
+ .steps{grid-template-columns:1fr;gap:32px}
+ .facts{grid-template-columns:1fr;gap:8px}
+ footer .wrap>p{text-align:left}
+ .steps li{padding-right:0}
+ .steps li:last-child .tick:before{right:0}
+ .steps li:last-child .tick{background:none}
+ .sheet td{padding:16px 12px}
+ .sheet th{padding:12px}
+ .sheet td:first-child{width:36px}
+ .apply{padding:80px 0}
+ form{grid-template-columns:1fr;padding:24px}
+ .faq details p{padding-right:0}
+ .cta-row .btn{flex:1 1 100%}
+}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}.rv{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+
+<header class="top">
+ <div class="wrap">
+  <a class="logo" href="#">
+   <svg viewBox="0 0 28 28" aria-hidden="true"><rect x="2" y="3" width="24" height="22" rx="2" fill="none" stroke="#1E2933" stroke-width="2"/><path d="M14 3v22" stroke="#1E2933" stroke-width="2"/><path d="M2 21h24" stroke="#C2501A" stroke-width="2"/></svg>
+   틈막이 창호<span>창호 단열 시공</span>
+  </a>
+  <nav class="nav"><a href="#leaks">바람 새는 곳</a><a href="#price">시공과 가격</a><a href="#steps">시공 순서</a><a href="#faq">자주 묻는 질문</a></nav>
+  <a class="btn btn-heat" href="#apply">무료 실측 신청</a>
+ </div>
+</header>
+
+<section class="hero">
+ <div class="wrap">
+  <div class="rv">
+   <p class="kicker"><b>12월 31일까지</b><span>서울 · 경기 · 인천 방문 시공</span></p>
+   <h1>레일 틈과 닳은 모헤어, <span class="nw">거실 창의</span> <em>틈바람</em>을 <span class="nw">한 줄씩 막습니다</span></h1>
+   <p class="lead">샷시를 통째로 바꾸지 않고, 바람이 새는 자리만 찾아 고칩니다. 실측 때 창마다 어디가 비는지 사진으로 보여 드리고, 고칠 곳만 견적에 넣습니다.</p>
+   <div class="offer">
+    <p>거실 창 1조(가로 2.4m) 모헤어 전체 교체 + 단열필름</p>
+    <div class="price"><s class="mono">189,000원</s><strong class="mono">160,650<small>원</small></strong></div>
+    <p class="until">12월 계약 15% 할인 · 실측과 출장은 무료</p>
+   </div>
+   <div class="cta-row">
+    <a class="btn btn-heat" href="#apply">무료 실측 신청 <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+    <a class="btn btn-line" href="#price">시공 가격 보기</a>
+   </div>
+  </div>
+
+  <figure class="plate rv">
+   <svg viewBox="0 0 720 560" role="img" aria-label="거실 미닫이 이중창 정면 도면. 가로 2,400mm 창틀 안에 서리가 낀 유리 두 짝이 겹쳐 있고, 두 문짝이 맞닿는 세로 틈, 아래 레일, 위 레일, 왼쪽 아래 창틀 모서리 실리콘, 오른쪽 옆 모헤어 다섯 곳에 주황색 열 새는 표시와 번호 1부터 5가 붙어 있습니다.">
+    <defs>
+     <linearGradient id="alu" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#D5DCE1"/><stop offset=".45" stop-color="#B4BEC6"/><stop offset=".55" stop-color="#C6CED4"/><stop offset="1" stop-color="#97A3AC"/></linearGradient>
+     <linearGradient id="aluV" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#A7B2BA"/><stop offset=".5" stop-color="#D3DAE0"/><stop offset="1" stop-color="#9DA9B2"/></linearGradient>
+     <linearGradient id="glassA" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#D6E2EA"/><stop offset=".55" stop-color="#C3D3DE"/><stop offset="1" stop-color="#E4ECF1"/></linearGradient>
+     <linearGradient id="glassB" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#CBD9E3"/><stop offset=".6" stop-color="#B8CAD7"/><stop offset="1" stop-color="#DDE7EE"/></linearGradient>
+     <radialGradient id="frostBL" cx="0" cy="1" r="1"><stop offset="0" stop-color="#FBFDFE" stop-opacity=".95"/><stop offset=".35" stop-color="#F3F7FA" stop-opacity=".6"/><stop offset=".7" stop-color="#F3F7FA" stop-opacity="0"/></radialGradient>
+     <radialGradient id="frostBR" cx="1" cy="1" r="1"><stop offset="0" stop-color="#FBFDFE" stop-opacity=".9"/><stop offset=".3" stop-color="#F3F7FA" stop-opacity=".55"/><stop offset=".65" stop-color="#F3F7FA" stop-opacity="0"/></radialGradient>
+     <filter id="grain" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency="1.2" numOctaves="2" seed="7"/><feColorMatrix values="0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 .55 -.18"/><feComposite in2="SourceGraphic" operator="in"/></filter>
+     <linearGradient id="heatV" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#F6E2B0" stop-opacity="0"/><stop offset=".25" stop-color="#F2C46A" stop-opacity=".8"/><stop offset=".5" stop-color="#D9561A"/><stop offset=".75" stop-color="#F2C46A" stop-opacity=".8"/><stop offset="1" stop-color="#F6E2B0" stop-opacity="0"/></linearGradient>
+     <linearGradient id="heatH" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#F6E2B0" stop-opacity="0"/><stop offset=".25" stop-color="#F2C46A" stop-opacity=".8"/><stop offset=".5" stop-color="#D9561A"/><stop offset=".75" stop-color="#F2C46A" stop-opacity=".8"/><stop offset="1" stop-color="#F6E2B0" stop-opacity="0"/></linearGradient>
+     <radialGradient id="heatC" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#D9561A"/><stop offset=".45" stop-color="#EC9440" stop-opacity=".85"/><stop offset=".8" stop-color="#F6D48C" stop-opacity=".35"/><stop offset="1" stop-color="#F6E2B0" stop-opacity="0"/></radialGradient>
+     <pattern id="crystal" width="36" height="36" patternUnits="userSpaceOnUse"><path d="M6 30l6-6m0 0l4 1m-4-1l-1-4M22 14l5-5m0 0l3 1m-3-1l-1-3M28 32l4-4" stroke="#fff" stroke-width="1" stroke-linecap="round" opacity=".8" fill="none"/></pattern>
+     <clipPath id="cl"><rect x="112" y="102" width="246" height="318"/></clipPath>
+     <clipPath id="cr"><rect x="362" y="102" width="246" height="318"/></clipPath>
+    </defs>
+
+    <!-- dimension: width -->
+    <g stroke="#4C5965" stroke-width="1" fill="none">
+     <path d="M60 22v20M660 22v20M60 32h600"/>
+     <path d="M60 32l10-5v10zM660 32l-10-5v10z" fill="#4C5965"/>
+    </g>
+    <rect x="296" y="14" width="128" height="36" fill="#F5F7F8"/>
+    <text x="360" y="42" text-anchor="middle" font-family="IBM Plex Mono" font-size="28" fill="#1E2933">2,400</text>
+    <!-- dimension: height -->
+    <g stroke="#4C5965" stroke-width="1" fill="none">
+     <path d="M676 60h28M676 480h28M690 60v420"/>
+     <path d="M690 60l-5 10h10zM690 480l-5-10h10z" fill="#4C5965"/>
+    </g>
+    <rect x="672" y="214" width="36" height="112" fill="#F5F7F8"/>
+    <text x="690" y="280" text-anchor="middle" font-family="IBM Plex Mono" font-size="28" fill="#1E2933" transform="rotate(-90 690 270)">1,800</text>
+
+    <!-- wall reveal -->
+    <rect x="44" y="52" width="632" height="436" fill="#E4E9EC" stroke="#9AA6AF" stroke-width="1" stroke-dasharray="4 6"/>
+    <!-- outer frame -->
+    <rect x="60" y="60" width="600" height="420" rx="3" fill="url(#alu)" stroke="#6E7B85" stroke-width="1.5"/>
+    <rect x="84" y="84" width="552" height="372" fill="#5E6A74"/>
+    <rect x="88" y="88" width="544" height="364" fill="#6F7B85"/>
+    <!-- rails -->
+    <rect x="84" y="440" width="552" height="16" fill="#8E9AA3"/>
+    <path d="M84 446h552M84 451h552" stroke="#5B6770" stroke-width="1.2"/>
+    <rect x="84" y="84" width="552" height="12" fill="#8E9AA3"/>
+
+    <!-- right sash (back lane) -->
+    <rect x="344" y="92" width="276" height="348" fill="url(#aluV)" stroke="#6E7B85" stroke-width="1.2"/>
+    <rect x="362" y="102" width="246" height="318" fill="url(#glassB)"/>
+    <g clip-path="url(#cr)">
+     <rect x="362" y="102" width="246" height="318" fill="url(#frostBR)"/>
+     <rect x="470" y="300" width="138" height="120" fill="url(#crystal)" opacity=".7"/>
+     <rect x="362" y="102" width="246" height="318" filter="url(#grain)" fill="#fff" opacity=".5"/>
+     <path d="M380 130l90-28M380 170l150-68" stroke="#fff" stroke-width="6" opacity=".25"/>
+    </g>
+    <rect x="362" y="102" width="246" height="318" fill="none" stroke="#5E6A74" stroke-width="1.2"/>
+
+    <!-- left sash (front lane) -->
+    <rect x="96" y="96" width="280" height="344" fill="url(#aluV)" stroke="#6E7B85" stroke-width="1.2"/>
+    <rect x="112" y="102" width="246" height="318" fill="url(#glassA)"/>
+    <g clip-path="url(#cl)">
+     <rect x="112" y="102" width="246" height="318" fill="url(#frostBL)"/>
+     <rect x="112" y="296" width="150" height="124" fill="url(#crystal)" opacity=".75"/>
+     <rect x="112" y="102" width="246" height="318" filter="url(#grain)" fill="#fff" opacity=".5"/>
+     <path d="M140 140l120-38M140 190l200-88" stroke="#fff" stroke-width="7" opacity=".28"/>
+     <!-- condensation drops -->
+     <g fill="#fff" opacity=".7"><circle cx="150" cy="404" r="3"/><circle cx="174" cy="410" r="2"/><circle cx="200" cy="398" r="2.5"/><circle cx="132" cy="380" r="2"/><circle cx="226" cy="412" r="2"/></g>
+    </g>
+    <rect x="112" y="102" width="246" height="318" fill="none" stroke="#5E6A74" stroke-width="1.2"/>
+    <!-- meeting stile + crescent lock -->
+    <rect x="360" y="96" width="16" height="344" fill="#A9B4BC" stroke="#6E7B85" stroke-width="1"/>
+    <!-- sash handles -->
+    <rect x="102" y="232" width="6" height="72" rx="3" fill="#85929B"/>
+    <rect x="612" y="232" width="6" height="72" rx="3" fill="#85929B"/>
+
+    <!-- heat leaks -->
+    <g>
+     <!-- 1 meeting stile -->
+     <rect x="352" y="104" width="32" height="326" fill="url(#heatV)" opacity=".9"/>
+     <!-- 2 bottom rail -->
+     <rect x="96" y="432" width="528" height="24" fill="url(#heatH)" opacity=".85"/>
+     <!-- 3 top rail -->
+     <rect x="200" y="84" width="300" height="18" fill="url(#heatH)" opacity=".55"/>
+     <!-- 4 corner silicone -->
+     <ellipse cx="72" cy="468" rx="40" ry="30" fill="url(#heatC)"/>
+     <!-- 5 side jamb -->
+     <rect x="616" y="140" width="26" height="240" fill="url(#heatV)" opacity=".75"/>
+    </g>
+    <rect x="348" y="246" width="40" height="36" rx="4" fill="#D7DDE2" stroke="#6E7B85" stroke-width="1.2"/>
+    <path d="M356 264a12 12 0 0 1 24 0" fill="none" stroke="#56626B" stroke-width="3" stroke-linecap="round"/>
+    <!-- airflow arrows -->
+    <g fill="none" stroke="#B8460F" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+     <path d="M368 180c18 6 26-6 44 0s26 8 40 2"/><path d="M446 174l8 8-10 6"/>
+     <path d="M368 330c-18 6-26-6-44 0s-26 8-40 2"/><path d="M290 324l-8 8 10 6"/>
+     <path d="M300 448c4 22 -10 30 -2 52"/><path d="M290 494l8 8 6-10"/>
+     <path d="M642 236c8 6 4 14 12 20"/>
+    </g>
+
+    <!-- callouts -->
+    <g font-family="IBM Plex Mono" font-size="31" font-weight="500" text-anchor="middle">
+     <g><path d="M376 140h64" stroke="#1E2933" stroke-width="1.2"/><circle cx="462" cy="140" r="25" fill="#1E2933"/><text x="462" y="151" fill="#fff">1</text></g>
+     <g><path d="M200 446v58" stroke="#1E2933" stroke-width="1.2"/><circle cx="200" cy="526" r="25" fill="#1E2933"/><text x="200" y="537" fill="#fff">2</text></g>
+     <g><path d="M250 93h-80" stroke="#1E2933" stroke-width="1.2"/><circle cx="148" cy="93" r="25" fill="#1E2933"/><text x="148" y="104" fill="#fff">3</text></g>
+     <g><path d="M60 480l-20 32" stroke="#1E2933" stroke-width="1.2"/><circle cx="36" cy="526" r="25" fill="#1E2933"/><text x="36" y="537" fill="#fff">4</text></g>
+     <g><path d="M629 380v100" stroke="#1E2933" stroke-width="1.2"/><circle cx="629" cy="526" r="25" fill="#1E2933"/><text x="629" y="537" fill="#fff">5</text></g>
+    </g>
+   </svg>
+   <figcaption class="plate-cap"><span><b>거실 미닫이 이중창 정면</b> · 단위 mm</span><span class="legend"><i></i>실측 때 열화상으로 보이는 열 새는 자리</span></figcaption>
+  </figure>
+ </div>
+</section>
+
+<section class="sec" id="leaks">
+ <div class="wrap">
+  <div class="sec-hd rv">
+   <div><span class="no mono">01</span><h2>바람이 새는 다섯 곳</h2></div>
+   <p>위 도면의 번호와 같습니다. 대부분의 집은 이 중 두세 곳에서 바람이 들어옵니다. 실측 때 다섯 곳을 모두 보고, 문제가 있는 곳만 고칩니다.</p>
+  </div>
+  <div class="leaks">
+   <ol class="leak-list rv">
+    <li><span class="n mono">1</span><div><h3>두 문짝이 맞닿는 세로 틈</h3><p>문짝이 처지면 가운데 틈이 위아래로 벌어집니다. 손을 대면 바람이 가장 먼저 느껴지는 자리입니다.</p></div><span class="fix">모헤어 · 높이 조정</span></li>
+    <li><span class="n mono">2</span><div><h3>아래 레일과 문짝 사이</h3><p>레일 홈에 먼지가 쌓이고 바퀴가 닳으면 문짝 아래가 떠서 틈이 생깁니다.</p></div><span class="fix">바퀴 · 레일 청소</span></li>
+    <li><span class="n mono">3</span><div><h3>위 레일 안쪽</h3><p>잘 보이지 않는 곳이라 모헤어가 빠진 채로 오래 지나는 경우가 많습니다.</p></div><span class="fix">모헤어 교체</span></li>
+    <li><span class="n mono">4</span><div><h3>창틀과 벽이 만나는 모서리</h3><p>실리콘이 굳어 갈라지면 벽과 창틀 사이로 찬 공기가 스며듭니다. 곰팡이가 함께 생기기도 합니다.</p></div><span class="fix">실리콘 재시공</span></li>
+    <li><span class="n mono">5</span><div><h3>창틀 옆 세로 모헤어</h3><p>문짝을 닫았을 때 옆으로 붙는 털 풍지입니다. 눌려서 납작해지면 닫아도 틈이 남습니다.</p></div><span class="fix">모헤어 교체</span></li>
+   </ol>
+
+   <figure class="section-fig rv">
+    <h3>아래 레일 단면 · 모헤어 교체 전후</h3>
+    <svg viewBox="0 0 520 300" role="img" aria-label="아래 레일 단면 두 개. 왼쪽 교체 전은 문짝 양옆 모헤어 털이 짧게 눌려 레일 바닥과 털 끝 사이에 틈이 있고 주황 화살표가 그 틈을 그대로 지나갑니다. 오른쪽 교체 후는 새 모헤어 털이 레일 바닥까지 곧게 내려와 화살표가 털 앞에서 멈춥니다.">
+     <defs><linearGradient id="prof" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#C8D0D6"/><stop offset="1" stop-color="#8B98A1"/></linearGradient></defs>
+     <g transform="translate(8 0)"><rect x="8" y="16" width="232" height="264" rx="4" fill="none" stroke="rgba(241,244,246,.18)" stroke-dasharray="3 5"/>
+      <path d="M68 36h112v140h-8v-12h-96v12h-8z" fill="url(#prof)" stroke="#4E5A64"/>
+      <rect x="88" y="36" width="10" height="100" fill="#A9BCCA"/><rect x="150" y="36" width="10" height="100" fill="#A9BCCA"/>
+      <rect x="98" y="120" width="52" height="16" fill="#6E7B85"/>
+      <rect x="70" y="170" width="20" height="8" fill="#5E6A74"/><rect x="158" y="170" width="20" height="8" fill="#5E6A74"/>
+      <circle cx="124" cy="180" r="14" fill="#4E5A64" stroke="#2A353F" stroke-width="2"/><circle cx="124" cy="180" r="4" fill="#9AA6AF"/>
+      <path d="M118 194h12v36h-12z" fill="#A6B1B9" stroke="#4E5A64"/>
+      <path d="M30 230h188v24H30z" fill="url(#prof)" stroke="#4E5A64"/>
+      <path d="M72 178l-4 18 M74 178l-6 15 M76 178l-8 12 M78 178l-4 18 M80 178l-6 15 M82 178l-8 12 M84 178l-4 18 M86 178l-6 15 M154 178l4 18 M156 178l6 15 M158 178l8 12 M160 178l4 18 M162 178l6 15 M164 178l8 12 M166 178l4 18 M168 178l6 15" stroke="#9C9284" stroke-width="1.6" stroke-linecap="round" fill="none"/>
+      <path d="M18 214c40 0 60-6 100-2s70 6 100 0" fill="none" stroke="#E9844A" stroke-width="3" stroke-linecap="round"/><path d="M208 204l12 8-12 8" fill="none" stroke="#E9844A" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><g stroke="#E9844A" stroke-width="1.2"><path d="M50 230v-34M45 230h10M45 196h10"/></g></g>
+     <g transform="translate(272 0)"><rect x="8" y="16" width="232" height="264" rx="4" fill="none" stroke="rgba(241,244,246,.18)" stroke-dasharray="3 5"/>
+      <path d="M68 36h112v140h-8v-12h-96v12h-8z" fill="url(#prof)" stroke="#4E5A64"/>
+      <rect x="88" y="36" width="10" height="100" fill="#A9BCCA"/><rect x="150" y="36" width="10" height="100" fill="#A9BCCA"/>
+      <rect x="98" y="120" width="52" height="16" fill="#6E7B85"/>
+      <rect x="70" y="170" width="20" height="8" fill="#5E6A74"/><rect x="158" y="170" width="20" height="8" fill="#5E6A74"/>
+      <circle cx="124" cy="180" r="14" fill="#4E5A64" stroke="#2A353F" stroke-width="2"/><circle cx="124" cy="180" r="4" fill="#9AA6AF"/>
+      <path d="M118 194h12v36h-12z" fill="#A6B1B9" stroke="#4E5A64"/>
+      <path d="M30 230h188v24H30z" fill="url(#prof)" stroke="#4E5A64"/>
+      <path d="M72 178V226 M74 178V226 M76 178V226 M78 178V226 M80 178V226 M82 178V226 M84 178V226 M86 178V226 M154 178V226 M156 178V226 M158 178V226 M160 178V226 M162 178V226 M164 178V226 M166 178V226 M168 178V226" stroke="#ECE6DA" stroke-width="1.6" stroke-linecap="round" fill="none"/>
+      <path d="M18 212h40" fill="none" stroke="#E9844A" stroke-width="3" stroke-linecap="round"/><path d="M50 204l10 8-10 8" fill="none" stroke="#E9844A" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></g>
+    </svg>
+    <div class="caps"><p><b>교체 전</b>눌린 털 사이로 바람이 그대로 지나갑니다</p><p><b>교체 후</b>새 모헤어가 레일에 닿아 틈을 덮습니다</p></div>
+   </figure>
+  </div>
+ </div>
+</section>
+
+<section class="sec band" id="price">
+ <div class="wrap">
+  <div class="sec-hd rv">
+   <div><span class="no mono">02</span><h2>시공 종류와 가격</h2></div>
+   <p>가격은 부가세 포함입니다. 실측 뒤 고칠 곳만 골라 문자로 견적을 보내 드리고, 견적에 없는 작업은 현장에서 더하지 않습니다.</p>
+  </div>
+  <div class="price-grid">
+   <article class="main-card rv">
+    <span class="tag">12월 계약 15% 할인</span>
+    <h3>거실 창 단열 세트</h3>
+    <p class="desc">거실 미닫이 이중창 1조(가로 2.4m 안팎)를 기준으로, 바람이 새는 다섯 곳을 한 번에 손보는 작업입니다.</p>
+    <ul class="incl">
+     <li><svg viewBox="0 0 24 24"><path d="M4 12l5 5L20 6"/></svg>문짝 4짝 모헤어 전체 교체</li>
+     <li><svg viewBox="0 0 24 24"><path d="M4 12l5 5L20 6"/></svg>안쪽 유리 2장 단열필름</li>
+     <li><svg viewBox="0 0 24 24"><path d="M4 12l5 5L20 6"/></svg>레일 청소와 문짝 높이 조정</li>
+     <li><svg viewBox="0 0 24 24"><path d="M4 12l5 5L20 6"/></svg>잠금장치 맞물림 조정</li>
+    </ul>
+    <dl class="facts">
+     <div><dt>시공 시간</dt><dd>2시간 안팎</dd></div>
+     <div><dt>무상 재시공</dt><dd>시공 후 1년</dd></div>
+     <div><dt>포함 안 되는 것</dt><dd>유리 · 샷시 프레임 교체</dd></div>
+    </dl>
+    <div class="bottom">
+     <div><s class="mono">189,000원</s><strong class="mono">160,650<small>원</small></strong><p>12월 31일 계약분까지 · 시공은 1월 중순까지 가능</p></div>
+     <a class="btn btn-heat" href="#apply">이 세트로 실측 신청</a>
+    </div>
+   </article>
+   <aside class="unit-table rv">
+    <h3>부분 시공</h3>
+    <p>필요한 곳만 고를 때의 단가입니다</p>
+    <dl>
+     <div><dt>모헤어 교체<small>문짝 1짝, 위·아래·옆 포함</small></dt><dd class="mono">25,000원</dd></div>
+     <div><dt>단열필름<small>유리 1㎡ 기준, 기포 제거 포함</small></dt><dd class="mono">38,000원</dd></div>
+     <div><dt>실리콘 재시공<small>기존 실리콘 제거 후, 1m 기준</small></dt><dd class="mono">12,000원</dd></div>
+     <div><dt>바퀴 교체<small>문짝 1짝, 2개 1세트</small></dt><dd class="mono">18,000원</dd></div>
+     <div><dt>실측 · 출장</dt><dd class="free">무료</dd></div>
+    </dl>
+   </aside>
+  </div>
+ </div>
+</section>
+
+<section class="sec" id="steps">
+ <div class="wrap">
+  <div class="sec-hd rv">
+   <div><span class="no mono">03</span><h2>실측부터 시공까지</h2></div>
+   <p>신청하신 날부터 보통 일주일 안에 시공이 끝납니다. 시공 날은 한 시간 단위로 도착 시간을 맞춰 드립니다.</p>
+  </div>
+  <ol class="steps rv">
+   <li><div class="tick"><b>1일차</b></div><h3>실측 신청</h3><p>아래 양식이나 카카오톡으로 지역과 창 개수, 편한 날짜를 남겨 주세요.</p></li>
+   <li><div class="tick"><b>30분</b></div><h3>방문 실측</h3><p>창 크기를 재고 다섯 곳을 하나씩 확인합니다. 새는 자리는 사진으로 보여 드립니다.</p></li>
+   <li><div class="tick"><b>당일</b></div><h3>문자 견적</h3><p>고칠 곳과 가격을 항목별로 적어 보냅니다. 보시고 날짜만 정하시면 됩니다.</p></li>
+   <li><div class="tick"><b>2시간 안팎</b></div><h3>시공</h3><p>거실 창 세트 기준입니다. 바닥에 보양 천을 깔고 작업하고, 끝난 뒤 레일까지 닦아 둡니다.</p></li>
+  </ol>
+ </div>
+</section>
+
+<section class="sec">
+ <div class="wrap">
+  <div class="sec-hd rv">
+   <div><span class="no mono">04</span><h2>시공 후 함께 확인하는 것</h2></div>
+   <p>작업이 끝나면 기사가 떠나기 전에 집주인과 같이 아래 항목을 하나씩 확인합니다.</p>
+  </div>
+  <div class="sheet">
+   <div class="sheet-note rv">
+    <h3>확인표는 그대로 두고 갑니다</h3>
+    <p>확인한 칸에 함께 체크하고 한 장은 집에 남겨 둡니다. 나중에 같은 자리에서 바람이 느껴지면 확인표 사진을 보내 주세요.</p>
+    <p>시공한 부분은 한 해 동안 무상으로 다시 손봐 드립니다.</p>
+    <div class="smoke">
+     <svg viewBox="0 0 320 140" role="img" aria-label="닫힌 창의 가운데 틈 앞에 향을 들고 있는 모습. 왼쪽은 연기가 옆으로 크게 흔들리고, 오른쪽 시공 뒤에는 연기가 곧게 올라갑니다.">
+      <g fill="none" stroke-linecap="round">
+       <rect x="40" y="12" width="20" height="120" fill="#B7C1C8" stroke="#7D8A94"/>
+       <path d="M52 112l24-12" stroke="#7D8A94" stroke-width="3"/>
+       <circle cx="76" cy="100" r="3" fill="#C2501A" stroke="none"/>
+       <path d="M76 96c6-10 22-8 28-20s20-10 30-22" stroke="#C2501A" stroke-width="2"/>
+       <path d="M78 92c10-6 18 0 26-10" stroke="#C2501A" stroke-width="1.4" opacity=".6"/>
+       <rect x="200" y="12" width="20" height="120" fill="#B7C1C8" stroke="#7D8A94"/>
+       <path d="M212 112l24-12" stroke="#7D8A94" stroke-width="3"/>
+       <circle cx="236" cy="100" r="3" fill="#C2501A" stroke="none"/>
+       <path d="M236 96c-3-10 3-18 0-30s3-22 0-40" stroke="#66737E" stroke-width="2"/>
+      </g>
+     </svg>
+     <p>왼쪽 시공 전 · 오른쪽 시공 뒤. 연기가 곧게 오르면 그 자리는 막힌 것입니다</p>
+    </div>
+   </div>
+   <div class="rv">
+    <table>
+     <thead><tr><th>번호</th><th>확인할 것</th><th>확인</th></tr></thead>
+     <tbody>
+      <tr><td class="mono">01</td><td><b>향 연기로 틈 확인</b><span>닫힌 창의 가운데 틈과 레일에 향을 대고 연기가 흔들리지 않는지 봅니다</span></td><td><i class="box"></i></td></tr>
+      <tr><td class="mono">02</td><td><b>문짝 닫힘</b><span>끝까지 밀었을 때 걸리거나 튕겨 나오지 않는지, 양쪽 문짝 모두 확인합니다</span></td><td><i class="box"></i></td></tr>
+      <tr><td class="mono">03</td><td><b>잠금장치 맞물림</b><span>손잡이를 돌렸을 때 힘을 주지 않아도 끝까지 걸리는지 봅니다</span></td><td><i class="box"></i></td></tr>
+      <tr><td class="mono">04</td><td><b>필름 기포와 들뜸</b><span>유리 가장자리 들뜸과 기포를 빛에 비춰 확인합니다</span></td><td><i class="box"></i></td></tr>
+      <tr><td class="mono">05</td><td><b>실리콘 굳는 시간 안내</b><span>새 실리콘은 24시간 동안 물이 닿지 않게 두시면 됩니다</span></td><td><i class="box"></i></td></tr>
+     </tbody>
+    </table>
+   </div>
+  </div>
+ </div>
+</section>
+
+<section class="sec" id="faq">
+ <div class="wrap">
+  <div class="sec-hd stack rv">
+   <div><span class="no mono">05</span><h2>자주 묻는 질문</h2></div>
+   <p>더 궁금한 점은 실측 때 기사에게 물어보셔도 됩니다.</p>
+  </div>
+  <div class="faq rv">
+   <details open><summary>한겨울에도 시공할 수 있나요?<svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></summary><p>네. 모헤어 교체와 필름은 날씨와 상관없이 작업합니다. 실리콘은 영하로 내려가는 날에는 실내 쪽만 시공하고, 바깥쪽은 날이 풀리면 다시 들러 마무리합니다.</p></details>
+   <details><summary>샷시를 새로 바꿔야 하는 경우도 있나요?<svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></summary><p>창틀이 휘었거나 문짝 프레임이 깨진 경우에는 부분 시공으로 막기 어렵습니다. 그럴 때는 실측 때 그대로 말씀드리고, 견적에 무리하게 넣지 않습니다.</p></details>
+   <details><summary>세입자인데 시공해도 되나요?<svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></summary><p>모헤어와 바퀴 교체는 원래 부품을 새것으로 바꾸는 작업이라 흔적이 남지 않습니다. 필름은 나중에 떼어 낼 수 있는 제품으로 붙여 드립니다. 실리콘 재시공은 집주인과 먼저 이야기해 주세요.</p></details>
+   <details><summary>필름을 붙이면 창이 어두워지나요?<svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></summary><p>투명한 단열필름을 씁니다. 실측 때 작은 샘플을 유리에 대 보시고 밝기와 색을 직접 확인한 뒤에 정하시면 됩니다.</p></details>
+   <details><summary>시공하는 동안 집에 있어야 하나요?<svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></summary><p>시작할 때와 끝날 때만 계시면 됩니다. 끝나고 함께 확인표를 보는 데 10분 정도 걸립니다.</p></details>
+  </div>
+ </div>
+</section>
+
+<section class="apply" id="apply">
+ <div class="wrap">
+  <div class="intro rv">
+   <h2>무료 실측 신청</h2>
+   <p>남겨 주신 연락처로 하루 안에 방문 가능한 시간을 문자로 드립니다. 실측만 받고 시공하지 않으셔도 비용은 없습니다.</p>
+   <div class="recap">
+    <div><span>실측 · 출장</span><b>무료</b></div>
+    <div><span>거실 창 단열 세트</span><b class="mono hot">160,650원</b></div>
+    <div><span>할인 계약 기간</span><b>12/31까지</b></div>
+   </div>
+  </div>
+  <form id="f" class="rv" novalidate>
+   <div class="f"><label for="nm">이름</label><input id="nm" name="nm" autocomplete="name" placeholder="홍길동" required></div>
+   <div class="f"><label for="ph">연락처</label><input id="ph" name="ph" type="tel" inputmode="tel" placeholder="000-0000-0000" required></div>
+   <div class="f full"><label for="ar">지역</label><input id="ar" name="ar" placeholder="예) 경기 성남시 분당구" required></div>
+   <div class="f"><label for="cnt">고칠 창 개수</label>
+    <select id="cnt" name="cnt"><option>거실 창 1조</option><option>거실 창 + 방 창 1~2개</option><option>방 창 3개 이상</option><option>실측 때 정할게요</option></select></div>
+   <div class="f"><label for="dt">희망 실측 날짜</label><input id="dt" name="dt" type="date"></div>
+   <label class="agree"><input type="checkbox" id="ag" required>실측 일정 안내를 위해 이름과 연락처를 받는 것에 동의합니다</label>
+   <button class="btn btn-heat" type="submit">무료 실측 신청</button>
+   <div class="done" role="status" aria-live="polite"><b>실측 신청을 받았습니다</b><span id="dmsg">하루 안에 방문 가능한 시간을 문자로 보내 드립니다.</span></div>
+  </form>
+ </div>
+</section>
+
+<footer>
+ <div class="wrap">
+  <div><b>틈막이 창호</b><p>창호 단열 · 모헤어 교체 · 단열필름 · 실리콘 재시공<br>서울 · 경기 · 인천 방문 시공</p></div>
+  <p>전화 000-0000-0000 · 카카오톡 ID: example<br>상호 틈막이 창호 · 사업자등록번호 000-00-00000<br>주소 ○○시 ○○구 ○○로 00</p>
+ </div>
+</footer>
+
+<script>
+(function(){
+ var els=document.querySelectorAll('.rv');
+ if(!('IntersectionObserver' in window)||matchMedia('(prefers-reduced-motion: reduce)').matches){els.forEach(function(e){e.classList.add('in')});}
+ else{var io=new IntersectionObserver(function(en){en.forEach(function(x){if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target)}})},{rootMargin:'0px 0px -8% 0px'});els.forEach(function(e){io.observe(e)});}
+ var f=document.getElementById('f');
+ f.addEventListener('submit',function(e){
+  e.preventDefault();
+  var bad=null;['nm','ph','ar','ag'].forEach(function(id){var el=document.getElementById(id);var ok=el.type==='checkbox'?el.checked:el.value.trim();if(!ok&&!bad)bad=el;});
+  if(bad){bad.focus();return;}
+  var d=document.getElementById('dt').value;
+  document.getElementById('dmsg').textContent=(d?d.replace(/-/g,'. ')+' 전후로 ':'')+'방문 가능한 시간을 하루 안에 문자로 보내 드립니다.';
+  f.classList.add('sent');
+ });
+})();
+</script>
+</body>
+</html>
