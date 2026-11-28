@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>재너머 투어 · 클락 출발 피나투보 화구호 당일 투어</title>
+<meta name="description" content="앙헬레스·클락 숙소 앞에서 새벽에 출발해 4x4와 트레킹으로 피나투보 화구호까지 다녀오는 한국어 가이드 소규모 당일 투어">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+ --ash:#ECE7DE;--paper:#F7F4EF;--sand:#DDD5C8;--ink:#25292A;--ink2:#3C4142;--mute:#5B605E;
+ --line:rgba(37,41,42,.14);--line2:rgba(37,41,42,.24);--lake:#16736F;--lake-d:#0F5C59;--lake-t:#D5E8E4;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;background:var(--ash)}
+body{font-family:'IBM Plex Sans KR',sans-serif;color:var(--ink);background:var(--ash);font-size:16px;line-height:1.65;word-break:keep-all;-webkit-font-smoothing:antialiased;overflow-x:clip}
+a{color:inherit}
+img,svg{display:block}
+.wrap{max-width:1200px;margin:0 auto;padding:0 32px}
+.num{font-variant-numeric:tabular-nums}
+
+/* header */
+.top{position:sticky;top:0;z-index:20;background:rgba(236,231,222,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;height:72px;gap:24px}
+.logo{display:flex;align-items:center;gap:12px;text-decoration:none}
+.logo svg{width:36px;height:36px}
+.logo b{font-size:20px;font-weight:700;letter-spacing:-.3px;display:block;line-height:1.2}
+.logo small{display:block;font-size:12px;color:var(--mute);line-height:1.3}
+.nav{display:flex;align-items:center;gap:32px}
+.nav a{font-size:15px;font-weight:500;text-decoration:none;color:var(--ink2);padding:12px 0}
+.nav a:hover{color:var(--lake)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;height:48px;padding:0 24px;border-radius:8px;font-family:inherit;font-size:16px;font-weight:600;text-decoration:none;border:0;cursor:pointer;transition:background-color .2s,color .2s}
+.btn svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.btn.pri{background:var(--lake);color:#fff}
+.btn.pri:hover{background:var(--lake-d)}
+.btn.sm{height:40px;padding:0 16px;font-size:15px}
+.btn.ghost{background:transparent;color:var(--ink);padding:0 4px;height:48px;text-decoration:underline;text-underline-offset:6px;text-decoration-thickness:1px}
+.btn.ghost:hover{color:var(--lake)}
+
+/* hero */
+.hero{position:relative;height:min(780px,calc(100vh - 72px));min-height:640px;overflow:hidden;background:#E1E4E0}
+.hero .art{position:absolute;inset:0;width:100%;height:100%}
+.hero .copy{position:relative;z-index:2;padding-top:64px}
+.hero .kick{font-size:15px;font-weight:500;color:var(--ink2);display:flex;align-items:center;gap:8px}
+.hero .kick:before{content:"";width:24px;height:2px;background:var(--ink2)}
+.hero h1{font-size:52px;line-height:1.24;font-weight:600;letter-spacing:-1.2px;margin-top:20px;max-width:860px}
+.hero h1 em{font-style:normal;color:var(--lake-d)}
+.mb{display:none}
+.hero p.lead{font-size:18px;color:var(--ink2);margin-top:20px;max-width:580px;line-height:1.7}
+.hero .acts{display:flex;align-items:center;gap:24px;margin-top:32px;flex-wrap:wrap}
+.facts{position:relative;z-index:2;background:var(--ink);color:#E9E5DD}
+.facts ul{list-style:none;display:grid;grid-template-columns:repeat(5,1fr)}
+.facts li{padding:20px 24px;border-left:1px solid rgba(233,229,221,.14);font-size:14px;color:#BDB8AE;line-height:1.5}
+.facts li:first-child{border-left:0;padding-left:0}
+.facts li b{display:block;font-size:20px;font-weight:600;color:#F4F1EA;margin-top:4px}
+
+section{padding:96px 0}
+.sh{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:48px;align-items:end;margin-bottom:48px}
+.sh small{font-size:14px;font-weight:600;color:var(--lake-d);display:block;margin-bottom:12px}
+.sh h2{font-size:36px;line-height:1.32;font-weight:600;letter-spacing:-.8px}
+.sh p{font-size:17px;color:var(--ink2);max-width:600px}
+
+/* day */
+.day{background:var(--paper)}
+.day-grid{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:48px;align-items:start}
+.day-side{position:sticky;top:120px}
+.day-side h2{font-size:36px;line-height:1.32;font-weight:600;letter-spacing:-.8px}
+.day-side p{font-size:17px;color:var(--ink2);margin-top:16px}
+.clock{margin-top:32px;border:1px solid var(--line);border-radius:16px;padding:24px;background:var(--ash)}
+.cbar{display:flex;gap:2px;height:20px}
+.cbar i{display:block;border-radius:3px}
+.ctime{position:relative;height:24px;margin-top:8px;font-size:13px;color:var(--mute)}
+.ctime span{position:absolute;top:0;white-space:nowrap}
+.ctime .k{color:var(--lake-d);font-weight:600}
+.clock p{font-size:14px;color:var(--mute);margin-top:12px}
+.tl{list-style:none;border-left:2px solid var(--sand);margin-left:8px}
+.tl li{position:relative;padding:0 0 32px 40px}
+.tl li:last-child{padding-bottom:0}
+.tl li:before{content:"";position:absolute;left:-8px;top:6px;width:14px;height:14px;border-radius:50%;background:var(--paper);border:2px solid var(--ink2)}
+.tl li.on:before{background:var(--lake);border-color:var(--lake)}
+.tl time{font-size:15px;font-weight:600;color:var(--mute);display:block}
+.tl h3{font-size:20px;font-weight:600;margin-top:4px;line-height:1.4}
+.tl p{font-size:16px;color:var(--ink2);margin-top:4px;max-width:560px}
+.tl .tag{display:inline-block;font-size:13px;font-weight:500;color:var(--ink2);border:1px solid var(--line2);border-radius:6px;padding:2px 8px;margin-top:8px}
+
+/* course */
+.profile{background:var(--paper);border:1px solid var(--line);border-radius:20px;padding:32px 32px 24px}
+.profile svg{width:100%;height:auto}
+.profile .pf-m{display:none}
+.legs{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:24px;border-top:1px solid var(--line);padding-top:24px}
+.legs div{display:grid;grid-template-columns:40px 1fr;gap:4px 12px;align-items:start}
+.legs i{grid-row:span 2;width:40px;height:40px;border-radius:8px;display:flex;align-items:center;justify-content:center;background:var(--ash)}
+.legs i svg{width:24px;height:24px;fill:none;stroke:var(--ink);stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.legs b{font-size:17px;font-weight:600}
+.legs span{font-size:15px;color:var(--ink2)}
+
+/* price */
+.price{background:var(--ink);color:#E9E5DD}
+.price .sh small{color:#8FC9C2}
+.price .sh p{color:#BDB8AE}
+.pgrid{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:32px;align-items:start}
+.ptable{width:100%;border-collapse:collapse}
+.ptable th{font-size:14px;font-weight:500;color:#A9A49A;text-align:left;padding:0 0 12px;border-bottom:1px solid rgba(233,229,221,.24)}
+.ptable th:last-child,.ptable td:last-child{text-align:right}
+.ptable td{padding:20px 0;border-bottom:1px solid rgba(233,229,221,.14);font-size:17px;color:#E9E5DD}
+.ptable td small{display:block;font-size:14px;color:#A9A49A;margin-top:2px}
+.ptable td.amt{font-size:24px;font-weight:600;color:#F4F1EA}
+.ptable tr.key td.amt{color:#8FD3CA;font-size:32px}
+.inc{background:#303536;border-radius:16px;padding:28px}
+.inc h3{font-size:18px;font-weight:600;color:#F4F1EA}
+.inc ul{list-style:none;margin-top:12px}
+.inc li{font-size:15px;color:#D3CEC5;padding:12px 0 12px 28px;position:relative;border-top:1px solid rgba(233,229,221,.1)}
+.inc li:first-child{border-top:0}
+.inc li svg{position:absolute;left:0;top:15px;width:16px;height:16px;fill:none;stroke:#8FD3CA;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.inc .no li svg{stroke:#8F8A80}
+.inc h3+ul+h3{margin-top:24px}
+.pnote{font-size:14px;color:#A9A49A;margin-top:24px}
+
+/* pack */
+.pack{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:16px;overflow:hidden}
+.pack div{background:var(--paper);padding:28px 28px 32px}
+.pack svg{width:32px;height:32px;fill:none;stroke:var(--ink);stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+.pack h3{font-size:18px;font-weight:600;margin-top:16px}
+.pack p{font-size:15px;color:var(--ink2);margin-top:4px}
+
+/* weather + pickup */
+.two{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:32px;align-items:start}
+.card{background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:32px}
+.card h3{font-size:22px;font-weight:600;line-height:1.4}
+.card>p{font-size:16px;color:var(--ink2);margin-top:12px}
+.months{display:grid;grid-template-columns:repeat(12,1fr);gap:4px;margin-top:24px}
+.months span{height:40px;border-radius:6px;background:var(--lake-t);display:flex;align-items:flex-end;justify-content:center;font-size:12px;font-weight:500;color:var(--lake-d);padding-bottom:4px}
+.months span.wet{background:var(--sand);color:var(--mute)}
+.mkey{display:flex;gap:20px;margin-top:12px;font-size:14px;color:var(--mute)}
+.mkey span{display:flex;align-items:center;gap:8px}
+.mkey span:before{content:"";width:12px;height:12px;border-radius:3px;background:var(--lake-t)}
+.mkey span.w:before{background:var(--sand)}
+.zones{list-style:none;margin-top:20px}
+.zones li{display:flex;justify-content:space-between;gap:16px;padding:16px 0;border-top:1px solid var(--line);font-size:16px}
+.zones li span{color:var(--mute);font-size:15px;text-align:right}
+
+/* faq */
+.faq{max-width:840px}
+.faq details{border-top:1px solid var(--line2)}
+.faq details:last-child{border-bottom:1px solid var(--line2)}
+.faq summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:24px;padding:24px 0;font-size:18px;font-weight:600;min-height:44px}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary svg{flex:none;width:20px;height:20px;fill:none;stroke:var(--ink);stroke-width:2;stroke-linecap:round;transition:transform .2s}
+.faq details[open] summary svg{transform:rotate(45deg)}
+.faq details p{font-size:16px;color:var(--ink2);padding:0 48px 24px 0;max-width:640px}
+
+/* booking */
+.book{background:var(--sand)}
+.bgrid{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:48px;align-items:start}
+.bgrid h2{font-size:36px;line-height:1.32;font-weight:600;letter-spacing:-.8px}
+.bgrid>div>p{font-size:17px;color:var(--ink2);margin-top:16px}
+.contact{list-style:none;margin-top:32px}
+.contact li{display:flex;align-items:center;gap:12px;font-size:16px;padding:12px 0;border-top:1px solid var(--line2)}
+.contact li svg{width:20px;height:20px;fill:none;stroke:var(--ink);stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+form{background:var(--paper);border-radius:20px;padding:32px;display:grid;grid-template-columns:1fr 1fr;gap:20px}
+form .full{grid-column:span 2}
+label{display:block;font-size:14px;font-weight:600;color:var(--ink2);margin-bottom:8px}
+input,select,textarea{width:100%;font-family:inherit;font-size:16px;color:var(--ink);background:#fff;border:1px solid var(--line2);border-radius:8px;height:48px;padding:0 16px}
+textarea{height:96px;padding:12px 16px;resize:vertical;line-height:1.5}
+input:focus,select:focus,textarea:focus{outline:2px solid var(--lake);outline-offset:1px;border-color:transparent}
+form .btn{width:100%}
+.done{grid-column:span 2;display:none;background:var(--lake-t);color:var(--lake-d);border-radius:8px;padding:16px;font-size:15px;font-weight:500}
+form.sent .done{display:block}
+
+footer{background:var(--ink);color:#A9A49A;padding:48px 0;font-size:14px}
+footer .wrap{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap}
+footer b{color:#F4F1EA;font-size:16px;font-weight:600;display:block;margin-bottom:4px}
+
+.rv{opacity:0;transform:translateY(16px);transition:opacity .6s ease,transform .6s ease}
+.rv.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.rv{opacity:1;transform:none;transition:none}.faq summary svg{transition:none}}
+
+@media(max-width:1020px){
+ .nav a{display:none}
+ .facts ul{grid-template-columns:repeat(3,1fr)}
+ .facts li:nth-child(4){border-left:0;padding-left:0}
+ .facts li:nth-child(n+4){border-top:1px solid rgba(233,229,221,.14)}
+ .sh,.day-grid,.pgrid,.bgrid,.two{grid-template-columns:1fr;gap:24px}
+ .day-side{position:static}
+ .pack{grid-template-columns:1fr 1fr}
+}
+@media(max-width:640px){
+ .wrap{padding:0 16px}
+ .top .wrap{height:64px}
+ .logo small{display:none}
+ .hero{height:auto;min-height:0;display:flex;flex-direction:column;background:#E1E4E0}
+ .hero .art{position:relative;order:2;height:380px}
+ .hero .copy{padding-top:40px;padding-bottom:8px}
+ .hero h1{font-size:32px;letter-spacing:-.6px}
+ .hero h1 .l{display:block}
+ .mb{display:inline}
+ .dk{display:none}
+ .hero p.lead{font-size:16px}
+ .hero .acts{gap:12px}
+ .hero .acts .btn.pri{width:100%}
+ .facts ul{grid-template-columns:1fr 1fr}
+ .facts li{padding:16px 0 16px 16px}
+ .facts li:nth-child(odd){border-left:0;padding-left:0}
+ .facts li:nth-child(4){border-left:1px solid rgba(233,229,221,.14);padding-left:16px}
+ .facts li:nth-child(n+3){border-top:1px solid rgba(233,229,221,.14)}
+ .facts li:last-child{grid-column:span 2}
+ .facts li b{font-size:18px}
+ section{padding:64px 0}
+ .sh{margin-bottom:32px}
+ .sh h2,.day-side h2,.bgrid h2{font-size:26px}
+ .profile{padding:20px 16px 16px;border-radius:16px}
+ .legs{grid-template-columns:1fr;gap:16px}
+ .profile .pf-d{display:none}
+ .profile .pf-m{display:block}
+ .pack{grid-template-columns:1fr}
+ .pack div{padding:20px;display:grid;grid-template-columns:32px 1fr;gap:4px 16px;align-items:start}
+ .pack div svg{grid-row:span 2}
+ .pack h3{margin-top:0}
+ .ptable td{font-size:16px}
+ .ptable tr.key td.amt{font-size:26px}
+ .ptable td.amt{font-size:20px}
+ .card,.inc{padding:24px}
+ .months span{height:32px;font-size:12px}
+ form{grid-template-columns:1fr;padding:24px}
+ form .full,.done{grid-column:auto}
+ .faq summary{font-size:17px}
+ .faq details p{padding-right:0}
+}
+</style>
+</head>
+<body>
+<header class="top">
+ <div class="wrap">
+  <a class="logo" href="#">
+   <svg viewBox="0 0 36 36" aria-hidden="true"><path d="M2 28 L11 12 L15 17 L20 9 L34 28 Z" fill="#25292A"/><path d="M12 28 Q18 22.5 25 28 Z" fill="#16736F"/></svg>
+   <span><b>재너머 투어</b><small>클락·앙헬레스 출발 피나투보 당일 투어</small></span>
+  </a>
+  <nav class="nav">
+   <a href="#day">하루 일정</a><a href="#course">코스</a><a href="#price">요금</a><a href="#pack">준비물</a><a href="#faq">자주 묻는 질문</a>
+   <a class="btn pri sm" href="#book">날짜 문의</a>
+  </nav>
+ </div>
+</header>
+
+<section class="hero" aria-label="소개" style="padding:0">
+ <svg class="art" viewBox="0 0 1440 720" preserveAspectRatio="xMidYMax slice" role="img" aria-label="능선 위에서 내려다본 피나투보 화구호. 회갈색 화산재 절벽이 둥글게 둘러싸고 그 아래 청록색 호수가 펼쳐져 있으며, 왼쪽 아래 능선 길에 작은 등산객 세 명이 서 있습니다.">
+  <defs>
+   <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#D6DEDD"/><stop offset=".55" stop-color="#E6E7E1"/><stop offset="1" stop-color="#EEE9DF"/></linearGradient>
+   <linearGradient id="far" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#AEB5AE"/><stop offset="1" stop-color="#C3C5BC"/></linearGradient>
+   <linearGradient id="wall" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#A69C8E"/><stop offset=".55" stop-color="#B9AD9B"/><stop offset="1" stop-color="#8F8577"/></linearGradient>
+   <linearGradient id="wall2" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#C4B8A6"/><stop offset="1" stop-color="#9C9182"/></linearGradient>
+   <linearGradient id="lake" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2D8F89"/><stop offset=".35" stop-color="#3FA79F"/><stop offset="1" stop-color="#1E7C77"/></linearGradient>
+   <linearGradient id="lakeR" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#5E6E63" stop-opacity=".55"/><stop offset="1" stop-color="#5E6E63" stop-opacity="0"/></linearGradient>
+   <linearGradient id="rim" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#D3CABB"/><stop offset="1" stop-color="#BDB2A1"/></linearGradient>
+   <linearGradient id="rimR" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#ADA291"/><stop offset="1" stop-color="#C9BEAD"/></linearGradient>
+   <linearGradient id="shade" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#4A4238" stop-opacity=".22"/><stop offset=".6" stop-color="#4A4238" stop-opacity="0"/><stop offset="1" stop-color="#FFF8EA" stop-opacity=".12"/></linearGradient>
+   <pattern id="grain" width="6" height="6" patternUnits="userSpaceOnUse"><circle cx="1" cy="1" r=".7" fill="#8A806F" opacity=".35"/><circle cx="4" cy="4" r=".5" fill="#FFFFFF" opacity=".35"/></pattern>
+  </defs>
+  <rect width="1440" height="720" fill="url(#sky)"/>
+  <!-- far ridges -->
+  <path d="M0 372 C120 356 220 366 330 350 C430 336 520 352 600 340 C700 324 790 344 880 330 C990 316 1080 336 1180 320 C1290 306 1370 320 1440 312 L1440 480 L0 480 Z" fill="url(#far)"/>
+  <path d="M0 404 C160 392 260 402 380 390 C520 376 640 392 760 382 C900 368 1020 386 1160 374 C1280 364 1380 376 1440 370 L1440 480 L0 480 Z" fill="#B6B9AF" opacity=".85"/>
+  <!-- back crater wall -->
+  <path d="M0 470 C120 452 240 446 360 440 C480 434 560 420 660 414 C760 408 860 400 960 398 C1080 396 1200 404 1320 400 C1380 398 1420 400 1440 398 L1440 600 L0 600 Z" fill="url(#wall)"/>
+  <g fill="#7E7466" opacity=".22"><path d="M210 448 C190 508 164 568 140 578 L250 578 C236 558 224 508 210 448 Z"/><path d="M520 426 C500 486 474 546 450 578 L560 578 C546 536 534 486 520 426 Z"/><path d="M830 405 C810 465 784 525 760 578 L870 578 C856 515 844 465 830 405 Z"/><path d="M1180 399 C1160 459 1134 519 1110 578 L1220 578 C1206 509 1194 459 1180 399 Z"/></g>
+  <g stroke="#D3C8B6" stroke-width="2" fill="none" opacity=".5"><path d="M0 512 C200 500 420 494 700 488 C980 482 1220 486 1440 482"/><path d="M0 548 C260 538 520 532 780 530 C1040 528 1260 530 1440 528"/></g>
+  <rect x="0" y="380" width="1440" height="220" fill="url(#shade)"/>
+  <g stroke="#7B7163" stroke-width="2" fill="none" opacity=".5" stroke-linecap="round"><path d="M40 467 C45 507 33 540 41 572"/><path d="M72 462 C67 502 76 540 74 578"/><path d="M104 457 C104 497 101 519 100 540"/><path d="M175 452 C180 492 168 535 178 578"/><path d="M205 451 C203 491 206 523 203 556"/><path d="M271 447 C266 487 274 522 274 556"/><path d="M332 444 C326 484 335 531 330 578"/><path d="M379 441 C379 481 378 527 386 572"/><path d="M416 438 C410 478 419 517 415 556"/><path d="M464 434 C470 474 456 526 462 578"/><path d="M499 431 C498 471 498 524 507 578"/><path d="M563 425 C562 465 563 519 564 572"/><path d="M595 423 C600 463 587 501 596 540"/><path d="M625 420 C627 460 622 516 633 572"/><path d="M666 417 C671 457 660 517 667 578"/><path d="M711 414 C706 454 713 516 708 578"/><path d="M745 412 C744 452 744 504 752 556"/><path d="M791 410 C796 450 785 511 797 572"/><path d="M832 408 C838 448 824 513 836 578"/><path d="M864 406 C861 446 865 501 863 556"/><path d="M904 404 C900 444 906 492 906 540"/><path d="M947 402 C949 442 942 499 949 556"/><path d="M1006 401 C1005 441 1004 491 1012 540"/><path d="M1065 402 C1064 442 1064 510 1066 578"/><path d="M1096 402 C1102 442 1088 491 1097 540"/><path d="M1129 402 C1124 442 1131 510 1126 578"/><path d="M1197 402 C1195 442 1196 510 1200 578"/><path d="M1253 403 C1248 443 1255 510 1259 578"/><path d="M1302 403 C1300 443 1302 510 1300 578"/><path d="M1364 402 C1368 442 1358 510 1362 578"/><path d="M1416 401 C1419 441 1412 499 1423 556"/></g>
+  <g stroke="#DCD2C2" stroke-width="1.5" fill="none" opacity=".55" stroke-linecap="round"><path d="M60 473 C63 517 57 557 64 562"/><path d="M88 468 C91 512 85 552 92 568"/><path d="M197 458 C200 502 194 542 201 568"/><path d="M219 457 C222 501 216 541 223 546"/><path d="M282 453 C285 497 279 537 286 546"/><path d="M392 447 C395 491 389 531 396 562"/><path d="M430 444 C433 488 427 528 434 546"/><path d="M483 440 C486 484 480 524 487 568"/><path d="M516 437 C519 481 513 521 520 568"/><path d="M583 431 C586 475 580 515 587 562"/><path d="M757 418 C760 462 754 502 761 546"/><path d="M845 414 C848 458 842 498 849 568"/><path d="M881 412 C884 456 878 496 885 546"/><path d="M1083 408 C1086 452 1080 492 1087 568"/><path d="M1113 408 C1116 452 1110 492 1117 530"/><path d="M1139 408 C1142 452 1136 492 1143 568"/><path d="M1385 408 C1388 452 1382 492 1389 568"/></g>
+  <!-- green patches -->
+  <g fill="#7D8A68" opacity=".85">
+   <path d="M150 456 C190 450 230 452 262 448 C240 466 190 470 150 466 Z"/>
+   <path d="M560 424 C600 418 640 418 672 414 C652 434 600 438 560 434 Z"/>
+   <path d="M900 402 C950 398 1000 398 1040 398 C1010 414 940 416 900 410 Z"/>
+   <path d="M1220 404 C1270 400 1320 402 1360 400 C1330 416 1260 416 1220 410 Z"/>
+   <path d="M760 512 C790 504 830 508 852 518 C830 530 784 530 760 524 Z" opacity=".7"/>
+   <path d="M1080 520 C1120 512 1160 516 1190 526 C1160 538 1110 536 1080 530 Z" opacity=".7"/>
+  </g>
+  <!-- low cloud -->
+  <g fill="#F2EFE8" opacity=".8">
+   <path d="M620 446 C680 438 740 440 780 446 C820 440 880 438 930 446 C910 454 840 456 780 454 C720 456 660 456 620 446 Z"/>
+   <path d="M1150 452 C1190 446 1240 446 1280 452 C1260 460 1190 462 1150 452 Z" opacity=".8"/>
+  </g>
+  <!-- lake -->
+  <path d="M0 594 C200 582 420 576 660 574 C920 572 1200 568 1440 572 L1440 720 L0 720 Z" fill="url(#lake)"/>
+  <path d="M0 594 C200 582 420 576 660 574 C920 572 1200 568 1440 572 L1440 604 C1200 600 920 602 660 604 C420 606 200 612 0 622 Z" fill="url(#lakeR)"/>
+  <path d="M0 594 C200 582 420 576 660 574 C920 572 1200 568 1440 572" stroke="#CFC4B1" stroke-width="3" fill="none"/>
+  <g stroke="#9ED6CD" stroke-width="2" stroke-linecap="round" opacity=".7">
+   <path d="M700 626 L820 626"/><path d="M880 644 L1040 644"/><path d="M1120 630 L1240 630"/><path d="M760 668 L860 668"/><path d="M980 690 L1100 690"/><path d="M1240 656 L1340 656"/><path d="M560 652 L640 652"/>
+  </g>
+  <g stroke="#E4F3EF" stroke-width="2" stroke-linecap="round" opacity=".75"><path d="M940 662 L990 662"/><path d="M1190 612 L1230 612"/><path d="M620 616 L660 616"/></g>
+  <!-- right foreground slope -->
+  <path d="M1100 720 C1160 670 1250 636 1340 620 C1390 612 1420 610 1440 610 L1440 720 Z" fill="url(#rimR)"/>
+  <path d="M1100 720 C1160 670 1250 636 1340 620 C1390 612 1420 610 1440 610 L1440 720 Z" fill="url(#grain)"/>
+  <!-- left foreground rim -->
+  <path d="M0 560 C100 556 200 566 290 584 C380 602 450 630 530 664 C600 692 660 712 700 720 L0 720 Z" fill="url(#rim)"/>
+  <path d="M0 560 C100 556 200 566 290 584 C380 602 450 630 530 664 C600 692 660 712 700 720 L0 720 Z" fill="url(#grain)"/>
+  <path d="M290 584 C380 602 450 630 530 664 C600 692 660 712 700 720 L672 720 C620 704 560 684 500 660 C430 632 370 610 290 596 Z" fill="#A99E8C" opacity=".7"/>
+  <!-- trail -->
+  <path d="M0 650 C100 640 200 628 280 618 C340 612 380 614 410 622" stroke="#ECE5D9" stroke-width="10" fill="none" stroke-linecap="round"/>
+  <path d="M0 650 C100 640 200 628 280 618 C340 612 380 614 410 622" stroke="#B7AB98" stroke-width="2" stroke-dasharray="2 10" fill="none" stroke-linecap="round"/>
+  <!-- rocks -->
+  <g fill="#9A8F7E"><path d="M120 690 C130 678 152 676 162 688 C156 698 130 700 120 690 Z"/><path d="M330 700 C336 692 352 692 358 700 C352 706 336 706 330 700 Z"/><path d="M470 684 C476 676 490 676 496 684 C490 690 476 690 470 684 Z"/></g>
+  <g fill="#7D8A68"><path d="M60 600 C66 586 80 584 86 598 C78 604 66 606 60 600 Z"/><path d="M200 596 C206 586 218 586 222 596 C216 602 206 602 200 596 Z"/></g>
+  <!-- hikers -->
+  <g transform="translate(290 584)">
+   <g><circle cx="0" cy="0" r="4" fill="#25292A"/><path d="M-4 5 L4 5 L5 20 L-5 20 Z" fill="#3C4142"/><rect x="-7" y="6" width="5" height="9" rx="1.5" fill="#16736F"/><path d="M-3 20 L-4 31 M3 20 L4 31" stroke="#25292A" stroke-width="2.4" stroke-linecap="round"/></g>
+   <g transform="translate(22 4)"><circle cx="0" cy="0" r="3.6" fill="#25292A"/><path d="M-3.6 4.5 L3.6 4.5 L4.6 18 L-4.6 18 Z" fill="#6B5F52"/><path d="M-3 18 L-4 28 M3 18 L4 28" stroke="#25292A" stroke-width="2.2" stroke-linecap="round"/><path d="M4 8 L10 26" stroke="#25292A" stroke-width="1.4"/></g>
+   <g transform="translate(42 10)"><circle cx="0" cy="0" r="3.2" fill="#25292A"/><path d="M-3.2 4 L3.2 4 L4 15 L-4 15 Z" fill="#C9BFB0" stroke="#3C4142" stroke-width="1"/><path d="M-2.6 15 L-3.4 24 M2.6 15 L3.4 24" stroke="#25292A" stroke-width="2" stroke-linecap="round"/></g>
+  </g>
+ </svg>
+ <div class="wrap copy">
+  <p class="kick">앙헬레스·클락 숙소 앞 새벽 3시 50분 출발</p>
+  <h1><span class="l">4x4로 한 시간,</span> <span class="l">걸어서 한 시간.</span><br class="dk"><em>피나투보 화구호</em>까지<br class="mb"> 같이 갑니다</h1>
+  <p class="lead">한국어 가이드가 숙소 픽업부터 등록, 4x4 탑승, 화구호 휴식, 점심, 귀가까지 하루를 같이 다닙니다. 한 팀 네 명까지 한 차로 움직이는 소규모 당일 투어입니다.</p>
+  <div class="acts">
+   <a class="btn pri" href="#book">가능한 날짜 문의하기 <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+   <a class="btn ghost" href="#day">하루 일정 먼저 보기</a>
+  </div>
+ </div>
+</section>
+<div class="facts">
+ <div class="wrap"><ul>
+  <li>숙소 픽업<b class="num">03:50</b></li>
+  <li>4x4 구간 편도<b>약 1시간</b></li>
+  <li>걷는 길 편도<b>약 2km</b></li>
+  <li>숙소 도착<b class="num">14:30 전후</b></li>
+  <li>한 팀 인원<b>최대 4명</b></li>
+ </ul></div>
+</div>
+
+<section class="day" id="day">
+ <div class="wrap day-grid">
+  <div class="day-side rv">
+   <h2>새벽에 나가서<br>점심 먹고 돌아오는 하루</h2>
+   <p>화구호는 오전이 맑고 시원합니다. 그래서 해 뜨기 전에 출발하고, 볕이 강해지는 정오 전에 4x4로 내려옵니다. 오후 일정이 있어도 무리가 없습니다.</p>
+   <div class="clock">
+    <div class="cbar" role="img" aria-label="03시 50분부터 14시 30분까지의 하루 구간 막대. 이동, 4x4, 걷기, 화구호, 걷기, 4x4, 점심, 이동 순서">
+     <i style="flex:80;background:#C7BFB2"></i><i style="flex:70;background:#8F8577"></i><i style="flex:70;background:#3C4142"></i><i style="flex:90;background:#16736F"></i><i style="flex:90;background:#3C4142"></i><i style="flex:60;background:#8F8577"></i><i style="flex:60;background:#DDD5C8"></i><i style="flex:110;background:#C7BFB2"></i>
+    </div>
+    <div class="ctime num"><span style="left:0">03:50</span><span style="left:49%;transform:translateX(-50%)" class="k">08:00 화구호</span><span style="right:0">14:30</span></div>
+    <p>회색은 차량 이동, 갈색은 4x4, 검정은 걷는 구간입니다.</p>
+   </div>
+  </div>
+  <ol class="tl rv">
+   <li><time class="num">03:50</time><h3>숙소 앞 픽업</h3><p>앙헬레스·클락 숙소 앞으로 승합차가 갑니다. 아침은 차 안에서 드실 수 있게 빵과 커피를 준비해 둡니다.</p></li>
+   <li><time class="num">05:10</time><h3>산타 훌리아나 관리소 등록</h3><p>방문자 명단을 쓰고 안전 안내를 듣습니다. 여권 사본이나 사진이 필요하니 휴대폰에 저장해 두세요.</p><span class="tag">등록은 가이드가 대신 작성</span></li>
+   <li><time class="num">05:40</time><h3>4x4로 라하르 강바닥 달리기</h3><p>화산재가 쌓여 생긴 회색 협곡을 따라 지프가 얕은 개울을 몇 번 건너갑니다. 바퀴 소리가 크고 흔들리니 짐은 작게 챙기세요.</p></li>
+   <li><time class="num">06:50</time><h3>걷기 시작</h3><p>자갈길과 개울을 따라 약 2km를 걷습니다. 오르막은 완만하고 마지막에 짧은 계단 구간이 있습니다.</p></li>
+   <li class="on"><time class="num">08:00</time><h3>화구호 도착, 한 시간 반 쉬기</h3><p>능선 전망대와 호숫가에서 사진을 찍고 간식을 먹습니다. 물에 들어가는 것은 그날 관리소 안내를 따릅니다.</p></li>
+   <li><time class="num">09:30</time><h3>내려오기, 4x4 복귀</h3><p>같은 길로 걸어 내려와 4x4를 타고 관리소로 돌아옵니다. 관리소에서 씻고 옷을 갈아입을 수 있습니다.</p></li>
+   <li><time class="num">12:00</time><h3>점심, 숙소로</h3><p>카파스 근처 식당에서 점심을 먹고 숙소로 출발합니다. 숙소 도착은 길 사정에 따라 14시 30분 전후입니다.</p></li>
+  </ol>
+ </div>
+</section>
+
+<section id="course">
+ <div class="wrap">
+  <div class="sh rv">
+   <div><small>코스</small><h2>차로 가는 길, 4x4 길,<br>걷는 길이 이어집니다</h2></div>
+   <p>숙소에서 관리소까지는 포장도로, 관리소부터는 화산재 강바닥을 4x4로, 마지막은 걸어서 능선에 오릅니다. 아래 그림은 길의 모양을 단순하게 그린 것입니다.</p>
+  </div>
+  <div class="profile rv">
+   <svg class="pf-d" viewBox="-12 0 1148 300" role="img" aria-label="코스 단면 그림. 왼쪽 앙헬레스·클락에서 오른쪽 화구호까지 점점 높아지는 선. 처음 회색 점선은 승합차 약 1시간 20분, 이어지는 갈색 구간은 4x4 약 1시간, 마지막 검은 오르막은 도보 약 2km 1시간, 끝에 청록색 화구호.">
+    <defs><linearGradient id="pf" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#DDD5C8"/><stop offset="1" stop-color="#DDD5C8" stop-opacity="0"/></linearGradient></defs>
+    <g stroke="#25292A" stroke-opacity=".08"><path d="M0 60H1136M0 120H1136M0 180H1136M0 240H1136"/></g>
+    <path d="M0 240 L300 236 C360 234 400 232 440 226 C520 214 600 202 700 188 C760 178 790 170 820 160 C880 138 940 104 1000 76 L1020 70 L1050 92 L1136 92 L1136 260 L0 260 Z" fill="url(#pf)"/>
+    <path d="M0 240 L300 236 C360 234 400 232 440 226" fill="none" stroke="#8F8A80" stroke-width="4" stroke-dasharray="8 8" stroke-linecap="round"/>
+    <path d="M440 226 C520 214 600 202 700 188 C760 178 790 170 820 160" fill="none" stroke="#8F8577" stroke-width="6" stroke-linecap="round"/>
+    <path d="M820 160 C880 138 940 104 1000 76 L1020 70" fill="none" stroke="#25292A" stroke-width="6" stroke-linecap="round"/>
+    <path d="M1020 70 L1050 92 L1136 92" fill="none" stroke="#8F8577" stroke-width="3"/>
+    <path d="M1050 92 C1070 104 1110 104 1136 100 L1136 92 Z" fill="#16736F"/>
+    <rect x="1050" y="92" width="86" height="14" fill="#16736F"/>
+    <g fill="#F7F4EF" stroke="#25292A" stroke-width="3"><circle cx="0" cy="240" r="7"/><circle cx="440" cy="226" r="7"/><circle cx="820" cy="160" r="7"/></g>
+    <circle cx="1020" cy="70" r="9" fill="#16736F" stroke="#F7F4EF" stroke-width="3"/>
+    <g font-family="IBM Plex Sans KR" fill="#25292A">
+     <text x="8" y="212" font-size="16" font-weight="600">숙소 출발</text><text x="8" y="282" font-size="14" fill="#5B605E">앙헬레스·클락</text>
+     <text x="440" y="198" font-size="16" font-weight="600" text-anchor="middle">관리소</text><text x="440" y="282" font-size="14" fill="#5B605E" text-anchor="middle">산타 훌리아나</text>
+     <text x="808" y="132" font-size="16" font-weight="600" text-anchor="end">걷기 시작점</text>
+     <text x="1006" y="44" font-size="16" font-weight="600" text-anchor="end">능선 전망대</text>
+     <text x="1093" y="134" font-size="16" font-weight="600" text-anchor="middle" fill="#0F5C59">화구호</text>
+     <text x="220" y="262" font-size="14" fill="#5B605E" text-anchor="middle">승합차 약 1시간 20분</text>
+     <text x="630" y="240" font-size="14" fill="#5B605E" text-anchor="middle">4x4 약 1시간</text>
+     <text x="930" y="186" font-size="14" fill="#5B605E">도보 약 1시간</text>
+    </g>
+   </svg>
+   <svg class="pf-m" viewBox="0 0 326 300" role="img" aria-label="코스 단면 그림. 숙소에서 관리소까지 승합차, 관리소에서 걷기 시작점까지 4x4, 마지막 오르막은 도보, 끝에 화구호.">
+    <path d="M8 262 L70 258 C100 254 120 250 140 244 C170 232 196 220 220 204 C246 180 268 140 286 98 L294 86 L304 100 L326 100 L326 280 L8 280 Z" fill="#DDD5C8" opacity=".6"/>
+    <path d="M8 262 L70 258 C100 254 120 250 140 244" fill="none" stroke="#8F8A80" stroke-width="3" stroke-dasharray="6 6" stroke-linecap="round"/>
+    <path d="M140 244 C170 232 196 220 220 204" fill="none" stroke="#8F8577" stroke-width="5" stroke-linecap="round"/>
+    <path d="M220 204 C246 180 268 140 286 98 L294 86" fill="none" stroke="#25292A" stroke-width="5" stroke-linecap="round"/>
+    <rect x="304" y="100" width="22" height="10" fill="#16736F"/>
+    <g fill="#F7F4EF" stroke="#25292A" stroke-width="2.5"><circle cx="8" cy="262" r="6"/><circle cx="140" cy="244" r="6"/><circle cx="220" cy="204" r="6"/></g>
+    <circle cx="294" cy="86" r="7" fill="#16736F" stroke="#F7F4EF" stroke-width="2.5"/>
+    <g font-family="IBM Plex Sans KR" font-size="14" fill="#25292A" font-weight="600">
+     <text x="2" y="236">숙소</text><text x="140" y="218" text-anchor="middle">관리소</text><text x="210" y="182" text-anchor="end">걷기 시작</text><text x="318" y="64" text-anchor="end" fill="#0F5C59">화구호</text>
+    </g>
+    <g font-family="IBM Plex Sans KR" font-size="13" fill="#5B605E"><text x="2" y="290">차 1시간 20분</text><text x="146" y="290">4x4 1시간</text><text x="250" y="146" text-anchor="end">도보 1시간</text></g>
+   </svg>
+   <div class="legs">
+    <div><i><svg viewBox="0 0 24 24"><path d="M3 16V9a2 2 0 0 1 2-2h10l4 4h1a1 1 0 0 1 1 1v4"/><circle cx="7.5" cy="16.5" r="2"/><circle cx="17" cy="16.5" r="2"/><path d="M9.5 16.5h5.5"/></svg></i><b>승합차</b><span>에어컨 승합차, 숙소 앞 왕복</span></div>
+    <div><i><svg viewBox="0 0 24 24"><path d="M3 15l2-6h11l3 4h2v2"/><circle cx="7" cy="16" r="2.5"/><circle cx="17" cy="16" r="2.5"/><path d="M9 9V6h5l2 3"/></svg></i><b>4x4</b><span>지붕 있는 오픈 지프, 한 대에 최대 5명</span></div>
+    <div><i><svg viewBox="0 0 24 24"><circle cx="13" cy="4" r="2"/><path d="M11 21l2-6-3-3 1-5 4 4 3 1M9 12l-3 2M13 15l3 6"/></svg></i><b>걷기</b><span>자갈길, 얕은 개울 건너기, 짧은 계단</span></div>
+   </div>
+  </div>
+ </div>
+</section>
+
+<section class="price" id="price">
+ <div class="wrap">
+  <div class="sh rv">
+   <div><small>요금</small><h2>한 팀으로 가는 인원에 따라<br>1인 요금이 정해집니다</h2></div>
+   <p>차 한 대와 4x4 한 대를 팀 단위로 빌리기 때문에, 함께 가는 사람이 많을수록 1인 요금이 내려갑니다. 다른 팀과 섞이지 않습니다.</p>
+  </div>
+  <div class="pgrid">
+   <table class="ptable rv">
+    <thead><tr><th>팀 인원</th><th>1인 요금</th></tr></thead>
+    <tbody>
+     <tr><td>1명<small>차량과 4x4를 혼자 이용</small></td><td class="amt num">₱9,800</td></tr>
+     <tr><td>2명</td><td class="amt num">₱5,900</td></tr>
+     <tr><td>3명</td><td class="amt num">₱4,700</td></tr>
+     <tr class="key"><td>4명<small>차 한 대 최대 인원</small></td><td class="amt num">₱4,200</td></tr>
+    </tbody>
+   </table>
+   <div class="inc rv">
+    <h3>요금에 들어 있는 것</h3>
+    <ul>
+     <li><svg viewBox="0 0 16 16"><path d="M3 8.5l3 3 7-7"/></svg>숙소 앞 왕복 승합차</li>
+     <li><svg viewBox="0 0 16 16"><path d="M3 8.5l3 3 7-7"/></svg>4x4 왕복, 관리소 등록비와 환경 요금</li>
+     <li><svg viewBox="0 0 16 16"><path d="M3 8.5l3 3 7-7"/></svg>한국어 가이드와 현지 산악 가이드</li>
+     <li><svg viewBox="0 0 16 16"><path d="M3 8.5l3 3 7-7"/></svg>차 안 아침 간식, 점심 한 끼, 생수 2병</li>
+    </ul>
+    <h3>따로 준비하는 것</h3>
+    <ul class="no">
+     <li><svg viewBox="0 0 16 16"><path d="M4 8h8"/></svg>산악 가이드와 4x4 기사 팁 (선택)</li>
+     <li><svg viewBox="0 0 16 16"><path d="M4 8h8"/></svg>관리소 샤워실 이용료 소액</li>
+    </ul>
+   </div>
+  </div>
+  <p class="pnote">마닐라 숙소 출발은 팀당 ₱3,500이 더해지고, 픽업 시간이 02:00으로 당겨집니다. 예약금은 1인 ₱1,000이며 잔금은 투어 당일에 받습니다.</p>
+ </div>
+</section>
+
+<section id="pack">
+ <div class="wrap">
+  <div class="sh rv">
+   <div><small>준비물</small><h2>젖고 먼지 묻어도<br>괜찮은 차림이면 됩니다</h2></div>
+   <p>개울을 몇 번 건너고 4x4 뒤로 화산재 먼지가 날립니다. 전날 밤 카카오톡으로 같은 목록을 한 번 더 보내 드립니다.</p>
+  </div>
+  <div class="pack rv">
+   <div><svg viewBox="0 0 32 32"><path d="M4 22c0-3 2-5 5-5h3l3-7h4l1 5c4 0 8 2 8 6v2H4z"/><path d="M4 24h24"/><path d="M14 17l2 2M17 14l2 2"/></svg><h3>젖어도 되는 운동화</h3><p>아쿠아 슈즈나 밑창이 단단한 샌들도 괜찮습니다. 슬리퍼는 피해 주세요.</p></div>
+   <div><svg viewBox="0 0 32 32"><path d="M9 16l2-8c.3-1 1-1.5 2-1.5h6c1 0 1.7.5 2 1.5l2 8"/><path d="M3 17c5 4 21 4 26 0"/><path d="M10 13h12"/></svg><h3>모자와 선크림</h3><p>능선과 강바닥에는 그늘이 거의 없습니다. 목을 가리는 모자가 편합니다.</p></div>
+   <div><svg viewBox="0 0 32 32"><path d="M11 5l-6 4 2 5 3-1v14h12V13l3 1 2-5-6-4c-1 2-3 3-5 3s-4-1-5-3z"/></svg><h3>갈아입을 옷 한 벌</h3><p>관리소에서 씻고 갈아입은 뒤 점심을 먹으러 갑니다. 수건도 하나 챙기세요.</p></div>
+   <div><svg viewBox="0 0 32 32"><rect x="8" y="4" width="16" height="24" rx="3"/><path d="M13 9h6M12 17h8M12 21h5"/></svg><h3>여권 사진이나 사본</h3><p>관리소 등록에 이름과 국적이 들어갑니다. 휴대폰 사진으로 충분합니다.</p></div>
+   <div><svg viewBox="0 0 32 32"><path d="M6 10h20v14H6z"/><path d="M6 14h20"/><circle cx="20" cy="19" r="2"/></svg><h3>현금 조금</h3><p>팁과 샤워실, 매점용으로 ₱1,000 정도면 충분합니다.</p></div>
+   <div><svg viewBox="0 0 32 32"><path d="M9 6h14l2 6v14H7V12z"/><path d="M7 12h18"/><path d="M13 17c1 1 5 1 6 0"/></svg><h3>방수 봉투</h3><p>휴대폰과 여권 사본은 지퍼 봉투에 넣어 두면 개울을 건널 때 편합니다.</p></div>
+  </div>
+ </div>
+</section>
+
+<section style="padding-top:0">
+ <div class="wrap two">
+  <div class="card rv">
+   <h3>투어가 열리는 달</h3>
+   <p>비가 많은 7월부터 10월 초까지는 강물이 불어 관리소가 4x4 운행을 멈추는 날이 있습니다. 전날 18시에 운행 여부를 알려 드리고, 운행이 막히면 전액 돌려드리거나 날짜를 옮깁니다.</p>
+   <div class="months" aria-label="1월부터 12월까지. 7월에서 10월은 운행이 자주 멈추는 달">
+    <span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span class="wet">7</span><span class="wet">8</span><span class="wet">9</span><span class="wet">10</span><span>11</span><span>12</span>
+   </div>
+   <div class="mkey"><span>대부분 운행</span><span class="w">운행이 자주 멈춤</span></div>
+  </div>
+  <div class="card rv">
+   <h3>픽업하는 곳</h3>
+   <p>아래 지역 숙소라면 숙소 앞에서 바로 태워 드립니다. 다른 지역은 문의할 때 알려 주세요.</p>
+   <ul class="zones">
+    <li>앙헬레스 발리바고·프렌드십<span class="num">03:50</span></li>
+    <li>클락 프리포트 호텔<span class="num">04:00</span></li>
+    <li>마발라캇·다우<span class="num">03:40</span></li>
+    <li>마닐라 숙소<span>02:00 · 팀당 ₱3,500 추가</span></li>
+   </ul>
+  </div>
+ </div>
+</section>
+
+<section id="faq" style="padding-top:32px">
+ <div class="wrap">
+  <div class="sh rv"><div><small>자주 묻는 질문</small><h2>예약 전에 많이 묻는 것</h2></div></div>
+  <div class="faq rv">
+   <details open><summary>평소 운동을 안 해도 다녀올 수 있나요?<svg viewBox="0 0 20 20"><path d="M10 4v12M4 10h12"/></svg></summary><p>한 번에 30분 정도 걸을 수 있다면 다녀올 수 있는 길입니다. 걸음이 가장 느린 분에게 속도를 맞추고, 중간에 그늘에서 두 번 쉽니다.</p></details>
+   <details><summary>아이와 함께 가도 되나요?<svg viewBox="0 0 20 20"><path d="M10 4v12M4 10h12"/></svg></summary><p>만 7세 이상부터 함께 갑니다. 4x4가 많이 흔들려서 어린아이는 보호자 사이에 앉도록 자리를 정해 드립니다.</p></details>
+   <details><summary>화구호에서 수영할 수 있나요?<svg viewBox="0 0 20 20"><path d="M10 4v12M4 10h12"/></svg></summary><p>물에 들어가는 것은 그날 관리소 안내를 따릅니다. 막혀 있는 날이 많으니 호숫가에서 쉬고 사진을 찍는 일정으로 생각해 주세요.</p></details>
+   <details><summary>비가 오면 어떻게 되나요?<svg viewBox="0 0 20 20"><path d="M10 4v12M4 10h12"/></svg></summary><p>전날 18시에 관리소 공지를 확인하고 카카오톡으로 알려 드립니다. 운행이 막히면 예약금은 전액 돌려드리거나 다른 날짜로 옮깁니다.</p></details>
+   <details><summary>예약금은 어떻게 보내나요?<svg viewBox="0 0 20 20"><path d="M10 4v12M4 10h12"/></svg></summary><p>날짜가 정해지면 1인 ₱1,000을 계좌로 보내 주시면 됩니다. 잔금은 투어 당일 현금이나 이체로 받습니다.</p></details>
+  </div>
+ </div>
+</section>
+
+<section class="book" id="book">
+ <div class="wrap bgrid">
+  <div class="rv">
+   <h2>가고 싶은 날짜와<br>인원을 알려 주세요</h2>
+   <p>남은 4x4 배정과 그날 날씨를 확인한 뒤, 가능한 날짜를 카카오톡으로 답해 드립니다. 보통 반나절 안에 답장이 갑니다.</p>
+   <ul class="contact">
+    <li><svg viewBox="0 0 24 24"><path d="M4 5h16v11H9l-5 4z"/></svg>카카오톡 ID: example</li>
+    <li><svg viewBox="0 0 24 24"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a1 1 0 0 1-1 1A16 16 0 0 1 4 5a1 1 0 0 1 1-1z"/></svg><span class="num">000-0000-0000</span></li>
+    <li><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/><path d="M12 8v4l3 2"/></svg>문의 답장 매일 09:00 – 21:00</li>
+   </ul>
+  </div>
+  <form class="rv" id="bookform" novalidate>
+   <div><label for="f-date">가고 싶은 날짜</label><input id="f-date" type="text" placeholder="예: 12월 14일 토요일"></div>
+   <div><label for="f-num">팀 인원</label><select id="f-num"><option>1명</option><option selected>2명</option><option>3명</option><option>4명</option></select></div>
+   <div><label for="f-area">숙소 지역</label><select id="f-area"><option>앙헬레스 발리바고·프렌드십</option><option>클락 프리포트</option><option>마발라캇·다우</option><option>마닐라</option><option>기타 지역</option></select></div>
+   <div><label for="f-kakao">카카오톡 ID 또는 연락처</label><input id="f-kakao" type="text" placeholder="example" autocomplete="off"></div>
+   <div class="full"><label for="f-memo">더 알려 주실 것</label><textarea id="f-memo" placeholder="아이 나이, 걷기가 걱정되는 분 등"></textarea></div>
+   <div class="full"><button class="btn pri" type="submit">날짜 문의 보내기</button></div>
+   <p class="done" role="status">문의 내용을 받았습니다. 가능한 날짜와 예약금 안내를 카카오톡으로 보내 드릴게요.</p>
+  </form>
+ </div>
+</section>
+
+<footer>
+ <div class="wrap">
+  <div><b>재너머 투어</b>클락·앙헬레스 출발 피나투보 화구호 당일 투어</div>
+  <div>사무실 주소 자리 · 카카오톡 ID: example · <span class="num">000-0000-0000</span></div>
+ </div>
+</footer>
+
+<script>
+(function(){
+ var els=document.querySelectorAll('.rv');
+ if('IntersectionObserver' in window){
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12});
+  els.forEach(function(e){io.observe(e)});
+ }else{els.forEach(function(e){e.classList.add('in')})}
+ var art=document.querySelector('.hero .art');
+ function fit(){art.setAttribute('preserveAspectRatio',window.innerWidth<=640?'xMinYMax slice':'xMidYMax slice')}
+ fit();window.addEventListener('resize',fit);
+ var f=document.getElementById('bookform');
+ f.addEventListener('submit',function(e){e.preventDefault();f.classList.add('sent');f.querySelector('button').textContent='문의를 보냈습니다';});
+})();
+</script>
+</body>
+</html>

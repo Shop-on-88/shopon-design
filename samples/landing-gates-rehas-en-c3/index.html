@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rehas Steel Works · Free measuring visit for gates and grills</title>
+<meta name="description" content="Steel gates, window grills and railings in Cainta, Rizal. Free on-site measuring, a scaled sketch and a written quote within 24 hours. 10% off gate fabrication in December.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Architects+Daughter&display=swap" rel="stylesheet">
+<style>
+:root{
+ --primer:#E5E2DB;--paper:#F4F2EE;--steel:#23282B;--steel2:#2E3438;--ink:#1F2326;--ink2:#373C3F;--mute:#585D60;
+ --line:rgba(31,35,38,.14);--line2:rgba(31,35,38,.26);--green:#2F6A4E;--green-d:#245540;--green-t:#DCE7DF;--chalk:#ECE9E1;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;background:var(--primer)}
+body{font-family:'Archivo',sans-serif;color:var(--ink);background:var(--primer);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:clip}
+a{color:inherit}
+svg{display:block}
+.wrap{max-width:1200px;margin:0 auto;padding:0 32px}
+.num{font-variant-numeric:tabular-nums}
+
+.top{position:sticky;top:0;z-index:20;background:rgba(229,226,219,.95);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;height:72px;gap:24px}
+.logo{display:flex;align-items:center;gap:12px;text-decoration:none}
+.logo svg{width:34px;height:34px}
+.logo b{font-size:19px;font-weight:700;letter-spacing:-.2px;line-height:1.2;display:block;white-space:nowrap}
+.logo small{display:block;font-size:12px;color:var(--mute);line-height:1.3}
+.nav{display:flex;align-items:center;gap:32px}
+.nav a{font-size:15px;font-weight:500;color:var(--ink2);text-decoration:none;padding:12px 0}
+.nav a:hover{color:var(--green)}
+.btn{white-space:nowrap;display:inline-flex;align-items:center;justify-content:center;gap:8px;height:48px;padding:0 24px;border-radius:8px;border:0;font-family:inherit;font-size:16px;font-weight:600;text-decoration:none;cursor:pointer;transition:background-color .2s,color .2s}
+.btn svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.btn.pri{background:var(--green);color:#fff}
+.btn.pri:hover{background:var(--green-d)}
+.btn.sm{height:40px;padding:0 16px;font-size:15px}
+.btn.link{background:none;color:var(--ink);padding:0 4px;text-decoration:underline;text-underline-offset:6px;text-decoration-thickness:1px}
+.btn.link:hover{color:var(--green)}
+
+.hero{padding:64px 0 80px}
+.hero .wrap{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:56px;align-items:center}
+.kick{font-size:15px;font-weight:500;color:var(--ink2)}
+.hero h1{font-size:46px;line-height:1.12;font-weight:700;letter-spacing:-1.2px;margin-top:20px}
+.hero .lead{font-size:18px;color:var(--ink2);margin-top:24px;line-height:1.65}
+.hero .lead b{font-weight:600;color:var(--ink)}
+.acts{display:flex;align-items:center;flex-wrap:wrap;gap:24px;margin-top:32px}
+.plate{background:var(--steel);border-radius:20px;overflow:hidden;position:relative}
+.plate svg{width:100%;height:auto}
+.plate p{position:absolute;left:24px;bottom:20px;font-size:13px;color:#A9AEB0}
+.strip{border-top:1px solid var(--line2);border-bottom:1px solid var(--line2)}
+.strip ul{list-style:none;display:grid;grid-template-columns:repeat(3,1fr)}
+.strip li{padding:24px 24px 24px 0;display:flex;gap:16px;align-items:flex-start;font-size:15px;color:var(--ink2)}
+.strip li+li{padding-left:24px;border-left:1px solid var(--line2)}
+.strip li svg{flex:none;width:24px;height:24px;fill:none;stroke:var(--ink);stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;margin-top:2px}
+.strip li b{display:block;font-size:17px;font-weight:600;color:var(--ink)}
+
+section{padding:96px 0}
+.sh{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:56px;align-items:end;margin-bottom:48px}
+.sh small{display:block;font-size:14px;font-weight:600;color:var(--green);margin-bottom:12px}
+.sh h2{font-size:38px;line-height:1.18;font-weight:700;letter-spacing:-.8px}
+.sh p{font-size:17px;color:var(--ink2);max-width:600px}
+
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;counter-reset:s}
+.step{background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:32px}
+.step .n{font-size:15px;font-weight:600;color:var(--mute)}
+.step h3{font-size:22px;font-weight:600;margin-top:24px;line-height:1.3}
+.step p{font-size:16px;color:var(--ink2);margin-top:8px}
+.step ul{list-style:none;margin-top:16px;border-top:1px solid var(--line)}
+.step li{font-size:15px;color:var(--ink2);padding:10px 0;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;gap:16px}
+.step li span{color:var(--mute)}
+
+.pats{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.pat{background:var(--paper);border:2px solid transparent;border-radius:16px;padding:20px;cursor:pointer;text-align:left;font-family:inherit;color:inherit;transition:border-color .2s,background-color .2s;display:grid;grid-template-columns:120px 1fr;gap:20px;align-items:center;min-height:44px}
+.pat:hover{background:#FBFAF7}
+.pat[aria-pressed="true"]{border-color:var(--green);background:#FBFAF7}
+.pat svg{width:120px;height:96px;border-radius:8px;background:#E9E6DF}
+.pat b{display:block;font-size:18px;font-weight:600}
+.pat span{display:block;font-size:14px;color:var(--mute);margin-top:4px}
+.pat em{display:block;font-style:normal;font-size:15px;font-weight:600;margin-top:8px}
+.pat[aria-pressed="true"] em{color:var(--green)}
+.patnote{font-size:15px;color:var(--mute);margin-top:20px}
+
+.prices{background:var(--steel);color:#E6E4DF}
+.prices .sh small{color:#9CCBB2}
+.prices .sh p{color:#B4B8B9}
+.pgrid{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:32px;align-items:start}
+table{width:100%;border-collapse:collapse}
+th{font-size:14px;font-weight:500;color:#9EA3A5;text-align:left;padding:0 0 12px;border-bottom:1px solid rgba(230,228,223,.24)}
+th:last-child,td:last-child{text-align:right}
+td{padding:18px 0;border-bottom:1px solid rgba(230,228,223,.12);font-size:17px;vertical-align:top}
+td small{display:block;font-size:14px;color:#9EA3A5;margin-top:2px}
+td.amt{font-size:20px;font-weight:600;white-space:nowrap;padding-left:16px}
+td.amt small{font-weight:400}
+.offer{background:var(--paper);color:var(--ink);border-radius:16px;padding:32px}
+.offer small{font-size:14px;font-weight:600;color:var(--green)}
+.offer h3{font-size:26px;line-height:1.25;font-weight:700;margin-top:8px}
+.offer .big{display:flex;align-items:baseline;gap:12px;margin-top:20px;padding-top:20px;border-top:1px solid var(--line)}
+.offer .big b{font-size:56px;font-weight:700;letter-spacing:-1.5px;color:var(--green);line-height:1}
+.offer .big span{font-size:16px;color:var(--ink2)}
+.offer p{font-size:15px;color:var(--ink2);margin-top:16px}
+.offer .ex{font-size:15px;color:var(--ink2);margin-top:16px;padding:16px;background:var(--primer);border-radius:8px}
+.offer .ex b{color:var(--ink)}
+
+.spec{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:56px;align-items:start}
+.spec h2{font-size:38px;line-height:1.18;font-weight:700;letter-spacing:-.8px}
+.spec .intro p{font-size:17px;color:var(--ink2);margin-top:16px}
+.spec dl{display:grid;grid-template-columns:180px 1fr;border-top:2px solid var(--ink)}
+.spec dt,.spec dd{padding:20px 0;border-bottom:1px solid var(--line2)}
+.spec dt{font-size:15px;font-weight:600;color:var(--mute)}
+.spec dd{font-size:17px}
+.spec dd small{display:block;font-size:14px;color:var(--mute);margin-top:4px}
+
+.area{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px;align-items:start}
+.card{background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:32px}
+.card h3{font-size:22px;font-weight:600}
+.card p{font-size:16px;color:var(--ink2);margin-top:8px}
+.towns{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px}
+.towns span{font-size:15px;border:1px solid var(--line2);border-radius:8px;padding:6px 12px}
+.hours{list-style:none;margin-top:16px}
+.hours li{display:flex;justify-content:space-between;padding:12px 0;border-top:1px solid var(--line);font-size:16px}
+.hours li span{color:var(--mute)}
+
+.faq{max-width:840px}
+.faq details{border-top:1px solid var(--line2)}
+.faq details:last-child{border-bottom:1px solid var(--line2)}
+.faq summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:24px;padding:22px 0;font-size:18px;font-weight:600;min-height:44px}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary svg{flex:none;width:20px;height:20px;fill:none;stroke:var(--ink);stroke-width:2;stroke-linecap:round;transition:transform .2s}
+.faq details[open] summary svg{transform:rotate(45deg)}
+.faq details p{font-size:16px;color:var(--ink2);padding:0 48px 22px 0}
+
+.book{background:var(--paper);border-top:1px solid var(--line)}
+.bgrid{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:56px;align-items:start}
+.bgrid h2{font-size:38px;line-height:1.18;font-weight:700;letter-spacing:-.8px}
+.bgrid>div>p{font-size:17px;color:var(--ink2);margin-top:16px}
+.contact{list-style:none;margin-top:32px}
+.contact li{display:flex;align-items:center;gap:12px;padding:14px 0;border-top:1px solid var(--line2);font-size:16px}
+.contact li svg{width:20px;height:20px;fill:none;stroke:var(--ink);stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+form{background:var(--primer);border-radius:20px;padding:32px;display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.full{grid-column:span 2}
+label{display:block;font-size:14px;font-weight:600;color:var(--ink2);margin-bottom:8px}
+input,select,textarea{width:100%;height:48px;padding:0 16px;font-family:inherit;font-size:16px;color:var(--ink);background:#fff;border:1px solid var(--line2);border-radius:8px}
+textarea{height:96px;padding:12px 16px;resize:vertical;line-height:1.5}
+input:focus,select:focus,textarea:focus{outline:2px solid var(--green);outline-offset:1px;border-color:transparent}
+form .btn{width:100%}
+.done{display:none;grid-column:span 2;background:var(--green-t);color:var(--green-d);border-radius:8px;padding:16px;font-size:15px;font-weight:500}
+form.sent .done{display:block}
+
+footer{background:var(--steel);color:#9EA3A5;padding:48px 0;font-size:14px}
+footer .wrap{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap}
+footer b{display:block;color:#F1EFEA;font-size:16px;font-weight:600;margin-bottom:4px}
+
+.rv{opacity:0;transform:translateY(16px);transition:opacity .6s ease,transform .6s ease}
+.rv.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.rv{opacity:1;transform:none;transition:none}.faq summary svg,.pat{transition:none}}
+
+@media(max-width:1020px){
+ .nav a:not(.btn){display:none}
+ .hero .wrap,.sh,.pgrid,.spec,.bgrid{grid-template-columns:1fr;gap:32px}
+ .steps{grid-template-columns:1fr}
+ .pats{grid-template-columns:1fr 1fr}
+}
+@media(max-width:640px){
+ .wrap{padding:0 16px}
+ .top .wrap{height:64px}
+ .logo small{display:none}
+ .logo b{font-size:17px}
+ .logo{gap:10px}
+ .logo svg{width:30px;height:30px}
+ .nav .btn{height:40px;padding:0 12px;font-size:14px}
+ .hero{padding:40px 0 56px}
+ .hero h1{font-size:34px;letter-spacing:-.6px}
+ .hero .lead{font-size:16px}
+ .acts{gap:12px}
+ .acts .btn.pri{width:100%}
+ .plate{border-radius:16px}
+ .plate p{display:none}
+ .strip ul{grid-template-columns:1fr}
+ .strip li{padding:16px 0}
+ .strip li+li{padding-left:0;border-left:0;border-top:1px solid var(--line2)}
+ section{padding:64px 0}
+ .sh{margin-bottom:32px}
+ .sh h2,.spec h2,.bgrid h2{font-size:28px}
+ .step{padding:24px}
+ .pats{grid-template-columns:1fr}
+ .pat{grid-template-columns:96px 1fr;gap:16px;padding:16px}
+ .pat svg{width:96px;height:77px}
+ td{font-size:16px}
+ td.amt{font-size:17px}
+ .offer{padding:24px}
+ .offer .big b{font-size:44px}
+ .spec dl{grid-template-columns:1fr}
+ .spec dt{padding-bottom:0;border-bottom:0}
+ .spec dd{padding-top:4px}
+ .area{grid-template-columns:1fr}
+ .card{padding:24px}
+ form{grid-template-columns:1fr;padding:24px}
+ .full,.done{grid-column:auto}
+ .faq summary{font-size:17px}
+ .faq details p{padding-right:0}
+}
+</style>
+</head>
+<body>
+<header class="top">
+ <div class="wrap">
+  <a class="logo" href="#">
+   <svg viewBox="0 0 34 34" aria-hidden="true"><rect x="2" y="2" width="30" height="30" rx="4" fill="#23282B"/><rect x="9" y="9" width="16" height="16" rx="1.5" fill="none" stroke="#ECE9E1" stroke-width="3"/><path d="M17 2v7M17 25v7" stroke="#ECE9E1" stroke-width="3"/></svg>
+   <span><b>Rehas Steel Works</b><small>Gates · grills · railings · Cainta, Rizal</small></span>
+  </a>
+  <nav class="nav">
+   <a href="#visit">The visit</a><a href="#patterns">Patterns</a><a href="#prices">Prices</a><a href="#faq">FAQ</a>
+   <a class="btn pri sm" href="#book">Book a free visit</a>
+  </nav>
+ </div>
+</header>
+
+<section class="hero" style="padding-top:64px">
+ <div class="wrap">
+  <div>
+   <p class="kick">Steel gates, window grills and stair railings for homes in Rizal and East Metro Manila</p>
+   <h1>Your gate, measured at your house and drawn before we weld</h1>
+   <p class="lead">Book a visit and our fabricator comes over with a tape and a soapstone. You get a scaled sketch and a written quote within 24 hours. <b>Order a gate this December and fabrication is 10% off.</b></p>
+   <div class="acts">
+    <a class="btn pri" href="#book">Book a free measuring visit <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+    <a class="btn link" href="#patterns">See grill patterns</a>
+   </div>
+  </div>
+  <div class="plate">
+   <svg viewBox="0 0 720 590" role="img" aria-label="Soapstone chalk drawing on a dark steel plate: a double swing gate between two posts, with scroll work along the top, vertical bars, a middle rail and a lock box. Hand-written dimensions read 3.20 m overall width, 1.60 m per leaf and 1.80 m height, with notes for a 2 by 2 inch square tube frame, 12 mm square bars at 4 inch spacing, and three bullet hinges per leaf. A soapstone holder lies at the bottom right.">
+    <defs>
+     <filter id="chalk" x="-5%" y="-5%" width="110%" height="110%"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" seed="3" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="1.1"/></filter>
+     <linearGradient id="pl" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#2A3034"/><stop offset=".5" stop-color="#22272A"/><stop offset="1" stop-color="#1C2023"/></linearGradient>
+     <pattern id="scale" width="9" height="9" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r=".8" fill="#3A4146"/><circle cx="6.5" cy="6" r=".6" fill="#151819"/></pattern>
+     <linearGradient id="tube" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#C9CDCF"/><stop offset=".5" stop-color="#8E9497"/><stop offset="1" stop-color="#6E7477"/></linearGradient>
+    </defs>
+    <rect width="720" height="590" fill="url(#pl)"/>
+    <rect width="720" height="590" fill="url(#scale)" opacity=".6"/>
+    <g stroke="#30373B" stroke-width="10" opacity=".55" fill="none"><path d="M-20 120 C200 100 420 140 740 110"/><path d="M-20 420 C240 440 460 400 740 430"/></g>
+    <g fill="none" stroke="#ECE9E1" stroke-linecap="round" stroke-linejoin="round" filter="url(#chalk)" opacity=".92">
+     <!-- posts -->
+     <rect x="48" y="128" width="28" height="300" stroke-width="3"/>
+     <rect x="644" y="128" width="28" height="300" stroke-width="3"/>
+     <path d="M44 128 h36 M640 128 h36" stroke-width="3"/>
+     <!-- leaves -->
+     <rect x="84" y="152" width="272" height="252" stroke-width="3.4"/>
+     <rect x="364" y="152" width="272" height="252" stroke-width="3.4"/>
+     <path d="M84 216 H356 M364 216 H636 M84 326 H356 M364 326 H636" stroke-width="2.6"/>
+     <!-- bars -->
+     <path d="M108 216V404 M132 216V404 M156 216V404 M180 216V404 M204 216V404 M228 216V404 M252 216V404 M276 216V404 M300 216V404 M324 216V404 M388 216V404 M412 216V404 M436 216V404 M460 216V404 M484 216V404 M508 216V404 M532 216V404 M556 216V404 M580 216V404 M604 216V404" stroke-width="2"/>
+     <!-- scrolls -->
+     <path d="M100 206 c0-24 26-34 40-20 c12 12 0 28-12 20 M168 162 c0 24 26 34 40 20 c12-12 0-28-12-20 M236 206 c0-24 26-34 40-20 c12 12 0 28-12 20 M304 162 c0 24 26 34 40 20 c12-12 0-28-12-20" stroke-width="2.2"/>
+     <path d="M380 206 c0-24 26-34 40-20 c12 12 0 28-12 20 M448 162 c0 24 26 34 40 20 c12-12 0-28-12-20 M516 206 c0-24 26-34 40-20 c12 12 0 28-12 20 M584 162 c0 24 26 34 40 20 c12-12 0-28-12-20" stroke-width="2.2"/>
+     <!-- lock box + hinges -->
+     <rect x="336" y="294" width="16" height="24" stroke-width="2.4"/><rect x="368" y="294" width="16" height="24" stroke-width="2.4"/>
+     <path d="M78 168 h8 M78 270 h8 M78 388 h8 M634 168 h8 M634 270 h8 M634 388 h8" stroke-width="5"/>
+     <!-- ground -->
+     <path d="M28 430 H692" stroke-width="2" stroke-dasharray="10 8"/>
+     <!-- dimension lines -->
+     <path d="M84 96 H636 M84 86 V106 M636 86 V106" stroke-width="2"/>
+     <path d="M96 90 L84 96 L96 102 M624 90 L636 96 L624 102" stroke-width="2"/>
+     <path d="M84 466 H356 M364 466 H636 M84 456 V476 M356 456 V476 M364 456 V476 M636 456 V476" stroke-width="2"/>
+     <path d="M696 152 V404 M686 152 H706 M686 404 H706" stroke-width="2"/>
+     <path d="M690 164 L696 152 L702 164 M690 392 L696 404 L702 392" stroke-width="2"/>
+     <!-- leaders -->
+     <path d="M150 528 C146 470 140 430 134 396" stroke-width="1.6" opacity=".8"/>
+    </g>
+    <g font-family="'Architects Daughter',cursive" fill="#ECE9E1" opacity=".95">
+     <text x="360" y="78" font-size="30" text-anchor="middle">3.20 m</text>
+     <text x="220" y="504" font-size="26" text-anchor="middle">1.60</text>
+     <text x="500" y="504" font-size="26" text-anchor="middle">1.60</text>
+     <text x="690" y="290" font-size="26" text-anchor="end" transform="rotate(-90 690 290)">1.80 m</text>
+     <text x="40" y="44" font-size="26">2" x 2" tube frame</text>
+     <text x="96" y="560" font-size="24" transform="rotate(-2 96 560)">12mm sq bar @ 4"</text>
+     <text x="430" y="44" font-size="26">3 bullet hinges / leaf</text>
+    </g>
+    <!-- soapstone holder -->
+    <g transform="translate(560 552) rotate(-12)">
+     <rect x="0" y="-7" width="120" height="14" rx="3" fill="url(#tube)"/>
+     <rect x="-34" y="-5" width="36" height="10" rx="2" fill="#E6E3DA"/>
+     <path d="M-34 -5 l-6 5 l6 5 z" fill="#E6E3DA"/>
+     <rect x="96" y="-8" width="8" height="16" rx="2" fill="#5B6164"/>
+    </g>
+   </svg>
+  </div>
+ </div>
+</section>
+
+<div class="wrap">
+ <div class="strip"><ul>
+  <li><svg viewBox="0 0 24 24"><rect x="2" y="8" width="20" height="8" rx="1.5"/><path d="M6 8v3M10 8v4M14 8v3M18 8v4"/></svg><div><b>Free visit</b>Cainta, Taytay, Antipolo, Angono, Pasig and Marikina</div></li>
+  <li><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><div><b>Sketch and quote in 24 hours</b>Sent by text or Messenger, itemized</div></li>
+  <li><svg viewBox="0 0 24 24"><path d="M3 21h18M5 21V8l7-5 7 5v13"/><path d="M9 21v-6h6v6"/></svg><div><b>Installed in 7 to 10 working days</b>After the down payment and final sketch</div></li>
+ </ul></div>
+</div>
+
+<section id="visit">
+ <div class="wrap">
+  <div class="sh rv">
+   <div><small>The visit</small><h2>About 40 minutes at your house, three things to take home</h2></div>
+   <p>Most of the visit is measuring and checking the posts and the floor. We bring pattern samples so you can choose standing in front of the opening, not from a photo.</p>
+  </div>
+  <div class="steps">
+   <div class="step rv"><span class="n">1</span><h3>We measure</h3><p>Width at top and bottom, height, and how the gate will swing or slide.</p>
+    <ul><li>Opening width<span>top and bottom</span></li><li>Post condition<span>concrete or steel</span></li><li>Floor level<span>slope and drainage</span></li></ul></div>
+   <div class="step rv"><span class="n">2</span><h3>We sketch it</h3><p>A scaled drawing with your pattern, bar spacing and where the lock and hinges go.</p>
+    <ul><li>Pattern and spacing<span>your choice</span></li><li>Swing or slide<span>direction marked</span></li><li>Paint color<span>from our chart</span></li></ul></div>
+   <div class="step rv"><span class="n">3</span><h3>You get a quote</h3><p>Steel, paint, labor and installation on separate lines. No charge if you don't go ahead.</p>
+    <ul><li>Down payment<span>50% to start</span></li><li>Balance<span>on installation day</span></li><li>Quote valid<span>30 days</span></li></ul></div>
+  </div>
+ </div>
+</section>
+
+<section id="patterns" style="padding-top:0">
+ <div class="wrap">
+  <div class="sh rv">
+   <div><small>Patterns</small><h2>Six patterns we weld most, for grills and gates</h2></div>
+   <p>Tap one to add it to your booking. Prices are for window grills per square meter, primed and painted, installed.</p>
+  </div>
+  <div class="pats rv" id="pats">
+   <button class="pat" type="button" aria-pressed="false" data-p="Plain bars">
+    <svg viewBox="0 0 120 96" aria-hidden="true"><rect x="10" y="8" width="100" height="80" fill="none" stroke="#1F2326" stroke-width="3"/><path d="M26 8v80M42 8v80M58 8v80M74 8v80M90 8v80" stroke="#1F2326" stroke-width="2.4"/></svg>
+    <div><b>Plain bars</b><span>12 mm square bar, 4 in apart</span><em class="num">₱1,650 / sq m</em></div></button>
+   <button class="pat" type="button" aria-pressed="false" data-p="Diamond lattice">
+    <svg viewBox="0 0 120 96" aria-hidden="true"><rect x="10" y="8" width="100" height="80" fill="none" stroke="#1F2326" stroke-width="3"/><path d="M10 48 L30 8 L50 48 L70 8 L90 48 L110 8 M10 48 L30 88 L50 48 L70 88 L90 48 L110 88" fill="none" stroke="#1F2326" stroke-width="2.2"/></svg>
+    <div><b>Diamond lattice</b><span>Flat bar, welded at every cross</span><em class="num">₱2,050 / sq m</em></div></button>
+   <button class="pat" type="button" aria-pressed="true" data-p="Scroll top">
+    <svg viewBox="0 0 120 96" aria-hidden="true"><rect x="10" y="8" width="100" height="80" fill="none" stroke="#1F2326" stroke-width="3"/><path d="M10 34 H110" stroke="#1F2326" stroke-width="2.4"/><path d="M26 34v54M42 34v54M58 34v54M74 34v54M90 34v54" stroke="#1F2326" stroke-width="2.2"/><path d="M18 30 c0-14 15-19 22-11 c6 7 0 15-6 11 M50 12 c0 14 15 19 22 11 c6-7 0-15-6-11 M82 30 c0-14 15-19 22-11 c6 7 0 15-6 11" fill="none" stroke="#1F2326" stroke-width="2"/></svg>
+    <div><b>Scroll top</b><span>Bars with a band of S-scrolls</span><em class="num">₱2,300 / sq m</em></div></button>
+   <button class="pat" type="button" aria-pressed="false" data-p="Sunburst">
+    <svg viewBox="0 0 120 96" aria-hidden="true"><rect x="10" y="8" width="100" height="80" fill="none" stroke="#1F2326" stroke-width="3"/><path d="M38 88 A22 22 0 0 1 82 88" fill="none" stroke="#1F2326" stroke-width="2.4"/><path d="M60 66 L60 8 M60 66 L28 8 M60 66 L92 8 M60 66 L10 30 M60 66 L110 30 M60 66 L10 62 M60 66 L110 62" stroke="#1F2326" stroke-width="2"/></svg>
+    <div><b>Sunburst</b><span>Half-round center with rays</span><em class="num">₱2,450 / sq m</em></div></button>
+   <button class="pat" type="button" aria-pressed="false" data-p="Horizontal slats">
+    <svg viewBox="0 0 120 96" aria-hidden="true"><rect x="10" y="8" width="100" height="80" fill="none" stroke="#1F2326" stroke-width="3"/><path d="M10 22H110M10 36H110M10 50H110M10 64H110M10 78H110" stroke="#1F2326" stroke-width="5"/></svg>
+    <div><b>Horizontal slats</b><span>Flat tube, for a plain modern front</span><em class="num">₱2,200 / sq m</em></div></button>
+   <button class="pat" type="button" aria-pressed="false" data-p="Knuckle bars">
+    <svg viewBox="0 0 120 96" aria-hidden="true"><rect x="10" y="8" width="100" height="80" fill="none" stroke="#1F2326" stroke-width="3"/><path d="M30 8v80M60 8v80M90 8v80" stroke="#1F2326" stroke-width="5"/><path d="M25 30h10M25 60h10M55 22h10M55 52h10M55 76h10M85 34h10M85 66h10" stroke="#1F2326" stroke-width="3"/></svg>
+    <div><b>Knuckle bars</b><span>Round tube with welded rings</span><em class="num">₱1,950 / sq m</em></div></button>
+  </div>
+  <p class="patnote" id="patnote">Selected: <b>Scroll top</b>. You can still change it on the visit.</p>
+ </div>
+</section>
+
+<section class="prices" id="prices">
+ <div class="wrap">
+  <div class="sh rv">
+   <div><small>Prices</small><h2>Starting prices, before we measure</h2></div>
+   <p>The final number depends on your opening, the pattern and the paint. These are what most jobs in the area start at, with primer, two coats of enamel and installation included.</p>
+  </div>
+  <div class="pgrid">
+   <table class="rv">
+    <thead><tr><th>Job</th><th>From</th></tr></thead>
+    <tbody>
+     <tr><td>Window grills, plain bars<small>Per sq m, installed</small></td><td class="amt num">₱1,650</td></tr>
+     <tr><td>Window grills, patterned<small>Per sq m, installed</small></td><td class="amt num">₱1,950</td></tr>
+     <tr><td>Swing gate, two leaves<small>Up to 3.2 m wide, 1.8 m tall</small></td><td class="amt num">₱18,500</td></tr>
+     <tr><td>Sliding gate with track<small>Up to 4 m wide, 1.8 m tall</small></td><td class="amt num">₱26,000</td></tr>
+     <tr><td>Stair or balcony railing<small>Per linear m, installed</small></td><td class="amt num">₱2,400</td></tr>
+     <tr><td>Rust repair and repaint<small>Existing gate or grill, per sq m</small></td><td class="amt num">₱650</td></tr>
+    </tbody>
+   </table>
+   <div class="offer rv">
+    <small>December only</small>
+    <h3>10% off fabrication on gates ordered December 1 to 31</h3>
+    <div class="big"><b class="num">10%</b><span>off the fabrication line of your quote</span></div>
+    <p>Installation and delivery stay the same. Down payment must be in by December 31; we can install in January.</p>
+    <p class="ex"><b>Example:</b> 3.2 m swing gate, scroll top, hunter green enamel. Quote ₱21,400, December price ₱19,560.</p>
+   </div>
+  </div>
+ </div>
+</section>
+
+<section>
+ <div class="wrap spec">
+  <div class="intro rv">
+   <h2>What goes into a Rehas gate</h2>
+   <p>The parts list is printed on every quote, so you can compare it with other shops line by line.</p>
+  </div>
+  <dl class="rv">
+   <dt>Frame</dt><dd>2 in × 2 in square tube, 1.5 mm wall<small>Thicker 2 mm wall for gates over 3.5 m</small></dd>
+   <dt>Bars</dt><dd>12 mm square bar or ¾ in flat bar<small>Spaced 4 in apart unless you ask for closer</small></dd>
+   <dt>Hinges</dt><dd>Heavy bullet hinges, three per leaf<small>Greased before installation</small></dd>
+   <dt>Finish</dt><dd>Epoxy primer and two coats of enamel<small>Powder coat available from ₱180 / sq m extra</small></dd>
+   <dt>Install</dt><dd>Anchored to your posts with expansion bolts<small>New steel posts quoted separately if needed</small></dd>
+  </dl>
+ </div>
+</section>
+
+<section style="padding-top:0">
+ <div class="wrap area">
+  <div class="card rv">
+   <h3>Where we visit for free</h3>
+   <p>Other areas in Rizal and Metro Manila are ₱500 for the visit, taken off your quote if you order.</p>
+   <div class="towns"><span>Cainta</span><span>Taytay</span><span>Antipolo</span><span>Pasig</span><span>Marikina</span><span>Angono</span></div>
+  </div>
+  <div class="card rv">
+   <h3>Visit hours</h3>
+   <ul class="hours">
+    <li>Monday to Friday<span class="num">8:00 AM – 5:00 PM</span></li>
+    <li>Saturday<span class="num">8:00 AM – 12:00 NN</span></li>
+    <li>Sunday<span>Shop closed</span></li>
+   </ul>
+  </div>
+ </div>
+</section>
+
+<section id="faq" style="padding-top:32px">
+ <div class="wrap">
+  <div class="sh rv"><div><small>FAQ</small><h2>Before you book</h2></div></div>
+  <div class="faq rv">
+   <details open><summary>Do I have to be home for the visit?<svg viewBox="0 0 20 20"><path d="M10 4v12M4 10h12"/></svg></summary><p>Someone needs to be there to open the gate area and talk through the pattern. It can be a family member or caretaker if you send us their number.</p></details>
+   <details><summary>Can you work with my existing posts?<svg viewBox="0 0 20 20"><path d="M10 4v12M4 10h12"/></svg></summary><p>Usually, yes. We check them on the visit. If a post is cracked or leaning, we quote a new steel post as a separate line so you can decide.</p></details>
+   <details><summary>How long until the gate is installed?<svg viewBox="0 0 20 20"><path d="M10 4v12M4 10h12"/></svg></summary><p>Seven to ten working days after the down payment and your approval of the final sketch. Installation takes most of one day.</p></details>
+   <details><summary>Do you remove the old gate?<svg viewBox="0 0 20 20"><path d="M10 4v12M4 10h12"/></svg></summary><p>Yes, on installation day. We can haul it away, or leave it with you if you want to sell it as scrap.</p></details>
+   <details><summary>How do I pay?<svg viewBox="0 0 20 20"><path d="M10 4v12M4 10h12"/></svg></summary><p>Fifty percent down payment by bank transfer or cash at the shop, and the balance on installation day once you've checked the gate.</p></details>
+  </div>
+ </div>
+</section>
+
+<section class="book" id="book">
+ <div class="wrap bgrid">
+  <div class="rv">
+   <h2>Book your free measuring visit</h2>
+   <p>Tell us what you need and the day that suits you. We'll text to confirm a time, usually the same day.</p>
+   <ul class="contact">
+    <li><svg viewBox="0 0 24 24"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a1 1 0 0 1-1 1A16 16 0 0 1 4 5a1 1 0 0 1 1-1z"/></svg><span class="num">0900 000 0000</span></li>
+    <li><svg viewBox="0 0 24 24"><path d="M4 5h16v11H9l-5 4z"/></svg>FB page: example</li>
+    <li><svg viewBox="0 0 24 24"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>Brgy. Example, Cainta, Rizal</li>
+   </ul>
+  </div>
+  <form class="rv" id="form" novalidate>
+   <div><label for="f-name">Your name</label><input id="f-name" type="text" autocomplete="name"></div>
+   <div><label for="f-phone">Mobile number</label><input id="f-phone" type="tel" placeholder="09XX XXX XXXX" autocomplete="tel"></div>
+   <div><label for="f-place">Barangay and city</label><input id="f-place" type="text" placeholder="e.g. San Isidro, Cainta"></div>
+   <div><label for="f-job">What do you need?</label><select id="f-job"><option>Swing gate</option><option>Sliding gate</option><option>Window grills</option><option>Stair or balcony railing</option><option>Repair or repaint</option></select></div>
+   <div><label for="f-pat">Pattern</label><input id="f-pat" type="text" value="Scroll top"></div>
+   <div><label for="f-date">Preferred visit day</label><input id="f-date" type="date"></div>
+   <div class="full"><label for="f-note">Anything else?</label><textarea id="f-note" placeholder="Rough size of the opening, number of windows, parking or access notes"></textarea></div>
+   <div class="full"><button class="btn pri" type="submit">Request my free visit</button></div>
+   <p class="done" role="status">Thanks. We'll text you within the day to confirm a visit time.</p>
+  </form>
+ </div>
+</section>
+
+<footer>
+ <div class="wrap">
+  <div><b>Rehas Steel Works</b>Gates, window grills and railings · Cainta, Rizal</div>
+  <div class="num">0900 000 0000 · FB page: example</div>
+ </div>
+</footer>
+
+<script>
+(function(){
+ var els=document.querySelectorAll('.rv');
+ if('IntersectionObserver' in window){
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12});
+  els.forEach(function(e){io.observe(e)});
+ }else{els.forEach(function(e){e.classList.add('in')})}
+ var pats=document.querySelectorAll('.pat'),note=document.getElementById('patnote'),fp=document.getElementById('f-pat');
+ pats.forEach(function(b){b.addEventListener('click',function(){
+  pats.forEach(function(x){x.setAttribute('aria-pressed','false')});
+  b.setAttribute('aria-pressed','true');
+  note.innerHTML='Selected: <b>'+b.dataset.p+'</b>. You can still change it on the visit.';
+  fp.value=b.dataset.p;
+ })});
+ var f=document.getElementById('form');
+ f.addEventListener('submit',function(e){e.preventDefault();f.classList.add('sent');f.querySelector('button').textContent='Request sent';});
+})();
+</script>
+</body>
+</html>

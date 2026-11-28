@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>고명당 비빔밥 · 메뉴판 디자인</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Song+Myung&family=Noto+Sans+KR:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+html{background:#E9E1D1}
+body{font-family:'Noto Sans KR',sans-serif;color:#2B2622;background:#E9E1D1;word-break:keep-all;-webkit-font-smoothing:antialiased;min-height:100vh;overflow-x:clip;line-height:1.6}
+.wrap{max-width:1180px;margin:0 auto;padding:48px 24px 136px}
+.hd{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:24px;padding-bottom:32px;margin-bottom:40px;border-bottom:2px solid #2B2622}
+.hd small{font-size:14px;font-weight:500;color:#5C5246}
+.hd h1{font-family:'Song Myung',serif;font-weight:400;font-size:clamp(44px,6vw,72px);line-height:1.05;letter-spacing:2px;margin-top:8px}
+.hd p.lead{font-size:clamp(16px,1.6vw,18px);color:#3D352D;margin-top:20px;max-width:720px;line-height:1.75}
+.hd p.lead b{color:#7A5718;font-weight:600}
+.facts{display:flex;flex-wrap:wrap;gap:8px 24px;margin-top:20px;font-size:15px;color:#5C5246}
+.facts span{display:flex;align-items:center;gap:8px}
+.facts span:before{content:"";flex:none;width:12px;height:12px;border-radius:50%;background:#B48A3E}
+.cta{display:inline-flex;align-items:center;gap:8px;height:52px;padding:0 24px;background:#2B2622;color:#F1EADB;font-weight:600;font-size:16px;text-decoration:none;border-radius:8px;transition:background-color .2s;white-space:nowrap}
+.cta:hover{background:#463E37}
+.cta svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+.view{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,.8fr);gap:32px;align-items:start}
+figure{background:#F4EEE2;padding:12px;border-radius:8px;border:1px solid rgba(43,38,34,.14)}
+figure a{display:block;overflow:hidden;border-radius:4px}
+figure img{display:block;width:100%;height:auto}
+figcaption{font-size:14px;color:#5C5246;padding:12px 4px 0;display:flex;flex-wrap:wrap;justify-content:space-between;gap:4px 12px}
+figcaption b{color:#2B2622;font-weight:600}
+.side{display:flex;flex-direction:column;gap:20px;position:sticky;top:24px}
+.zoom{background:#F4EEE2;padding:8px;border-radius:8px;border:1px solid rgba(43,38,34,.14)}
+.zoom img{display:block;width:100%;height:auto;border-radius:4px}
+.zoom p{font-size:15px;color:#3D352D;padding:12px 8px 4px}
+.zoom p b{display:block;font-family:'Song Myung',serif;font-weight:400;font-size:24px;color:#2B2622;margin-bottom:4px;line-height:1.35}
+.info{background:#2B2622;color:#D2C8B7;padding:24px;border-radius:8px}
+.info h2{font-family:'Song Myung',serif;font-weight:400;font-size:26px;color:#F1EADB;margin-bottom:8px;line-height:1.3}
+.info li{list-style:none;font-size:15px;padding:12px 0 12px 20px;position:relative;border-top:1px solid rgba(241,234,219,.14)}
+.info li:first-child{border-top:0}
+.info li:before{content:"";position:absolute;left:2px;top:21px;width:8px;height:8px;border-radius:50%;background:#D7B266}
+.bar{position:fixed;left:0;right:0;bottom:0;background:#2B2622;border-top:3px solid #B48A3E;padding:12px 20px;display:flex;justify-content:center;align-items:center;gap:20px;flex-wrap:wrap;z-index:10}
+.bar p{font-size:15px;color:#D2C8B7}
+.bar .cta{height:48px;background:#F1EADB;color:#2B2622}
+.bar .cta:hover{background:#E0D6C3}
+@media(max-width:900px){.view{grid-template-columns:1fr}.side{position:static}}
+@media(max-width:620px){.wrap{padding:28px 16px 112px}.hd .cta{display:none}.bar p{display:none}.bar .cta{width:100%;justify-content:center}figure{padding:6px}}
+@media(prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+<div class="wrap">
+ <div class="hd">
+  <div>
+   <small>메뉴판 디자인 · SD-MN75</small>
+   <h1>고명당 비빔밥</h1>
+   <p class="lead">고명 여덟 가지를 하나씩 따로 무치고 볶아 놋그릇에 둘러 담는 비빔밥 식당의 A4 메뉴판입니다. 위쪽에는 위에서 내려다본 놋그릇 비빔밥을 크게 그리고, 고명마다 선을 그어 이름과 손질법을 양옆에 적었습니다. 아래에는 대표 메뉴 <b>놋그릇 비빔밥 12,000원</b>을 먹색 상자에 따로 두고, 다른 비빔밥 다섯 가지와 곁들임, 음료·주류, 원산지 표시까지 한 장에 담았습니다.</p>
+   <div class="facts"><span>A4 세로 · 1장 · 한국어 · 원화</span><span>한지 미색 · 먹색 · 놋 금빛</span><span>위에서 본 놋그릇 고명 지도</span></div>
+  </div>
+  <a class="cta" href="https://design.shoponph.online/#inquiry">이 디자인으로 상담하기 <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+ </div>
+ <div class="view">
+  <figure><a href="page1.png" target="_blank" rel="noopener"><img src="page1.png" alt="고명당 메뉴판 전체. 한지 미색 바탕 위쪽 왼쪽에 놋그릇 비빔밥 · 점심과 이른 저녁이라는 작은 글과 큰 명조 제목 고명당, 오른쪽에 11:00 – 15:00 · 17:00 – 20:30, 마지막 주문 20:00 · 월요일 쉼이 있고, 그 아래 고명 여덟 가지를 하나씩 따로 무치고 볶아, 데운 놋그릇에 둘러 담습니다라는 문장이 있습니다. 가운데에는 위에서 내려다본 금빛 놋그릇에 흰 밥을 깔고 고사리, 시금치, 당근, 도라지, 표고, 콩나물, 애호박, 황백 지단을 부채꼴로 둘러 담은 그림이 크게 있고, 가운데에 붉은 고추장과 노른자, 깨와 김가루가 올라가 있습니다. 고명마다 선이 이어져 왼쪽에 고사리 하루 불려 들기름 볶음, 황백 지단 노른자·흰자 따로 부침, 애호박 반달로 썰어 새우젓 볶음, 콩나물 삶아서 소금·깨, 오른쪽에 시금치 데쳐서 국간장·참기름, 당근 채 썰어 들기름에 볶음, 도라지 소금에 주물러 쓴맛 뺌, 표고 간장에 조려 썲이 적혀 있고, 그릇 오른쪽 아래에 놋수저 한 벌이 놓여 있습니다. 아래 왼쪽 비빔밥 칸에는 콩나물국과 반찬 네 가지가 함께 나갑니다라는 안내와 먹색 상자 안 놋그릇 비빔밥, 고명 여덟 가지 · 고추장 · 노른자, 12,000원(금빛), 이어서 육회 비빔밥 16,000원, 산채 비빔밥 13,000원, 돌솥 비빔밥 13,000원, 6월 – 9월 표시가 붙은 열무 보리비빔밥 11,000원, 어린이 비빔밥 8,000원이 있습니다. 오른쪽 곁들임 칸에 녹두전 두 장 12,000원, 황포묵 무침 11,000원, 뚝배기 계란찜 5,000원, 음료 · 주류 칸에 막걸리 6,000원, 모주 한 잔 4,000원, 식혜 3,000원, 탄산음료 2,000원, 그 아래 밥 추가 1,000원 등 안내 세 줄이 있습니다. 맨 아래에 원산지 표시와 주소 자리, 전화 000-0000-0000이 있습니다." width="2480" height="3508"></a><figcaption><b>A4 세로 메뉴판</b><span>2480 × 3508 · 인쇄용</span></figcaption></figure>
+  <div class="side">
+   <div class="zoom"><img src="detail-bowl.jpg" alt="그림 확대. 금빛 놋그릇 안 흰 밥 위에 여덟 가지 고명이 부채꼴로 나뉘어 있습니다. 위쪽부터 시계 방향으로 짙은 초록 시금치 줄기, 가늘게 채 썬 주황 당근, 희고 가는 도라지, 갈색 표고 조각, 노란 머리가 달린 콩나물, 반달 모양 연두색 애호박, 노란 지단과 흰 지단 채, 갈색 고사리가 있고, 가운데에는 윤이 나는 붉은 고추장 한 덩이와 주황빛 노른자가 놓여 있습니다. 고명 위에 흰 깨와 김가루가 흩어져 있고, 각 고명에서 양옆의 이름과 손질법으로 선이 이어집니다." width="1200" height="633" loading="lazy"><p><b>고명 지도</b>여덟 가지 고명을 부채꼴로 나눠 그리고, 선으로 이름과 손질법을 이어 그릇에 무엇이 올라가는지 한눈에 보이게 했습니다.</p></div>
+   <div class="info"><h2>바꿀 수 있는 것</h2><ul><li>메뉴 이름, 가격, 영업시간과 원산지 표시</li><li>그림 속 고명 종류와 손질법 문구, 그릇을 돌솥이나 사기그릇으로</li><li>A4 테이블 메뉴판, 벽에 거는 큰 메뉴판, 포장 안내 카드</li></ul></div>
+  </div>
+ </div>
+</div>
+<div class="bar"><p>우리 가게도 이런 메뉴판이 필요하다면</p><a class="cta" href="https://design.shoponph.online/#inquiry">이 디자인으로 상담하기</a></div>
+</body>
+</html>
