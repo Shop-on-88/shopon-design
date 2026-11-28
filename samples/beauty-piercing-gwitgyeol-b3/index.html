@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>귓결 피어싱 스튜디오 · 귀·코 피어싱 1인 예약제</title>
+<meta name="description" content="귀·코 피어싱 1인 예약제 스튜디오. 거울 앞에서 위치를 같이 정하고, 임플란트 등급 티타늄과 14K 주얼리로 시술합니다.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+ --plaster:#ECE7DF;--surface:#F5F2EC;--white:#FBFAF7;
+ --ink:#1E2226;--sub:#464C52;--mute:#5B6167;
+ --line:rgba(30,34,38,.14);--line2:rgba(30,34,38,.08);
+ --ti:#1C7C7D;--ti-d:#156465;--ti-t:#176A6B;--ti-l:#D3E4E2;
+ --velvet:#22262A;--velvet2:#2B3035;--bone:#E6E0D6;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{background:var(--plaster);scroll-behavior:smooth}
+body{font-family:'Noto Sans KR',sans-serif;color:var(--ink);background:var(--plaster);font-size:16px;line-height:1.65;word-break:keep-all;-webkit-font-smoothing:antialiased;overflow-x:clip}
+a{color:inherit}
+img,svg{display:block}
+.mono{font-family:'JetBrains Mono','Noto Sans KR',monospace;font-variant-numeric:tabular-nums}
+.wrap{max-width:1240px;margin:0 auto;padding:0 40px}
+h1,h2,h3{font-weight:600;line-height:1.3;letter-spacing:-.01em}
+.sec{padding:96px 0}
+.sec-hd{display:grid;grid-template-columns:4fr 8fr;gap:40px;align-items:end;margin-bottom:48px}
+.sec-hd .no{font-size:14px;font-variant-numeric:tabular-nums;color:var(--ti-t);font-weight:500}
+.sec-hd h2{font-size:clamp(28px,3vw,36px);margin-top:8px}
+.sec-hd p{color:var(--sub);max-width:600px}
+
+/* header */
+.top{position:sticky;top:0;z-index:20;background:rgba(236,231,223,.95);border-bottom:1px solid var(--line)}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;height:68px;gap:24px}
+.logo{display:flex;align-items:center;gap:12px;text-decoration:none}
+.logo svg{width:30px;height:30px}
+.logo b{font-weight:700;font-size:20px;letter-spacing:-.02em}
+.logo span{font-size:13px;color:var(--mute);font-weight:500}
+.nav{display:flex;gap:32px;font-size:15px;color:var(--sub)}
+.nav a{text-decoration:none;padding:12px 0}
+.nav a:hover{color:var(--ink)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;height:44px;padding:0 20px;border-radius:6px;font:600 15px/1 'Noto Sans KR',sans-serif;text-decoration:none;border:0;cursor:pointer;transition:background-color .2s,border-color .2s,color .2s;white-space:nowrap}
+.btn-ti{background:var(--ti);color:#fff}
+.btn-ti:hover{background:var(--ti-d)}
+.btn-line{background:transparent;color:var(--ink);border:1px solid rgba(30,34,38,.3)}
+.btn-line:hover{background:var(--surface);border-color:var(--ink)}
+.btn svg{width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+
+/* hero */
+.hero{position:relative;overflow:hidden;border-bottom:1px solid var(--line)}
+.hero .wrap{display:grid;grid-template-columns:5fr 7fr;gap:24px;align-items:center;min-height:760px}
+.hero .txt{padding:64px 0 80px}
+.hero .where{font-size:14px;color:var(--mute);display:flex;gap:12px;align-items:center}
+.hero .where i{width:24px;height:1px;background:var(--ink);opacity:.4}
+.hero h1{font-size:clamp(36px,4.2vw,54px);line-height:1.24;margin-top:24px;letter-spacing:-.03em;font-weight:700}
+.hero .lead{font-size:18px;color:var(--sub);margin-top:24px;max-width:460px;line-height:1.75}
+.hero .acts{display:flex;gap:12px;margin-top:40px;flex-wrap:wrap}
+.hero .acts .btn{height:48px;padding:0 24px;font-size:16px}
+.hero .quiet{margin-top:40px;font-size:14px;color:var(--mute);font-variant-numeric:tabular-nums}
+.earfig{position:relative;align-self:stretch;display:flex;align-items:flex-end;margin-right:-40px;padding-bottom:32px}
+.earbox{position:relative;width:100%}
+.earbox svg{width:100%;height:auto}
+.pt{position:absolute;display:flex;align-items:center;gap:8px;transform:translate(-12px,-50%);font-size:14px;font-weight:500;color:var(--ink);white-space:nowrap}
+.pt i{flex:none;width:24px;height:24px;border-radius:50%;border:1.5px solid var(--ink);background:var(--white);font:500 12px/21px 'JetBrains Mono',monospace;font-style:normal;text-align:center}
+.pt.l{flex-direction:row-reverse;transform:translate(calc(-100% + 12px),-50%)}
+.pt.on i{background:var(--ti);border-color:var(--ti);color:#fff}
+
+/* price */
+.price{background:var(--surface);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.ptable{width:100%;border-collapse:collapse}
+.ptable th{font-size:13px;color:var(--mute);font-weight:500;text-align:left;padding:0 16px 12px;border-bottom:1.5px solid var(--ink)}
+.ptable td{padding:20px 16px;border-bottom:1px solid var(--line);vertical-align:middle}
+.ptable td.n{width:56px}
+.ptable td.n span{display:inline-block;width:28px;height:28px;border-radius:50%;border:1.5px solid var(--ink);font:500 13px/25px 'JetBrains Mono','Noto Sans KR',monospace;text-align:center}
+.ptable .part b{font-size:18px;font-weight:600;display:block}
+.ptable .part small{font-size:13px;color:var(--mute);font-family:'JetBrains Mono','Noto Sans KR',monospace}
+.ptable .jw{color:var(--sub);font-size:15px}
+.ptable .t{font-family:'JetBrains Mono','Noto Sans KR',monospace;font-size:14px;color:var(--mute);white-space:nowrap}
+.ptable .won{text-align:right;font-family:'JetBrains Mono','Noto Sans KR',monospace;font-size:20px;font-weight:500;white-space:nowrap;font-variant-numeric:tabular-nums}
+.ptable th:last-child{text-align:right}
+.ptable tr.nose td{background:rgba(30,34,38,.03)}
+.pnote{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:40px}
+.pnote div{padding-top:16px;border-top:1px solid var(--line)}
+.pnote b{display:block;font-size:15px;font-weight:600}
+.pnote p{font-size:14px;color:var(--sub);margin-top:4px}
+.pnote .k{font-family:'JetBrains Mono','Noto Sans KR',monospace;color:var(--ti-t);font-weight:500}
+
+/* jewelry */
+.jw-grid{display:grid;grid-template-columns:7fr 5fr;gap:40px;align-items:start}
+.tray{background:var(--velvet);border-radius:20px;padding:32px;color:var(--bone);display:flex;flex-direction:column;gap:24px}
+.pad{background:#2E3338;border-radius:12px;padding:24px 28px 16px;display:flex;flex-direction:column;gap:16px;background-image:repeating-linear-gradient(135deg,rgba(255,255,255,.02) 0 1px,transparent 1px 6px)}
+.rail p{font-size:14px;color:#ABA59B}
+.rail svg{width:100%;height:auto;margin-top:4px}
+.tray .tcap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-size:14px;color:#B9B3A9}
+.tray .tcap b{color:var(--bone);font-weight:600}
+.mats{display:flex;flex-direction:column}
+.mat{padding:24px 0;border-top:1px solid var(--line)}
+.mat:first-child{border-top:1.5px solid var(--ink)}
+.mat .h{display:flex;justify-content:space-between;gap:16px;align-items:baseline}
+.mat h3{font-size:20px}
+.mat .h span{font-size:14px;font-variant-numeric:tabular-nums;color:var(--mute);white-space:nowrap}
+.mat p{font-size:15px;color:var(--sub);margin-top:8px}
+.mat ul{list-style:none;display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+.mat li{font-size:13px;border:1px solid var(--line);border-radius:6px;padding:4px 12px;color:var(--sub);background:var(--white)}
+
+/* steps */
+.steps{display:grid;grid-template-columns:repeat(4,1fr);border-top:1.5px solid var(--ink)}
+.step{padding:28px 28px 8px 0;border-right:1px solid var(--line);margin-right:28px}
+.step:last-child{border-right:0;margin-right:0}
+.step .mono{font-size:13px;color:var(--mute);display:flex;justify-content:space-between;padding-right:4px}
+.step .mono b{font-weight:500;color:var(--ti-t)}
+.step h3{font-size:20px;margin-top:20px}
+.step p{font-size:15px;color:var(--sub);margin-top:8px}
+.step svg{width:40px;height:40px;margin-top:24px;fill:none;stroke:var(--ink);stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
+
+/* care */
+.care{background:var(--surface);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.care-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:24px}
+.card{background:var(--white);border:1px solid var(--line);border-radius:12px;padding:28px}
+.card h3{font-size:18px;display:flex;align-items:center;gap:12px}
+.card h3 svg{width:22px;height:22px;fill:none;stroke:var(--ti);stroke-width:1.75;stroke-linecap:round;stroke-linejoin:round;flex:none}
+.card ul{list-style:none;margin-top:16px}
+.card li{font-size:15px;color:var(--sub);padding:12px 0 12px 20px;position:relative;border-top:1px solid var(--line2)}
+.card li:first-child{border-top:0}
+.card li:before{content:"";position:absolute;left:2px;top:22px;width:8px;height:2px;background:var(--ink)}
+.heal{display:grid;grid-template-columns:auto 1fr;gap:12px 24px;margin-top:16px}
+.heal dt{font-size:15px;color:var(--sub)}
+.heal dd{font-family:'JetBrains Mono','Noto Sans KR',monospace;font-size:15px;text-align:right;font-variant-numeric:tabular-nums}
+.heal-bar{grid-column:1/-1;height:8px;border-radius:4px;background:var(--line2);position:relative;margin-top:-4px}
+.heal-bar i{position:absolute;left:0;top:0;bottom:0;border-radius:4px;background:var(--ink)}
+.heal-bar i.t{background:var(--ti)}
+.card .small{font-size:13px;color:var(--mute);margin-top:20px;line-height:1.6}
+.rules{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;margin-top:40px}
+.rules div{font-size:14px;color:var(--sub);padding-top:16px;border-top:1px solid var(--line)}
+.rules b{display:block;color:var(--ink);font-size:15px;font-weight:600;margin-bottom:4px}
+
+/* booking */
+.book-grid{display:grid;grid-template-columns:7fr 5fr;gap:40px;align-items:start}
+form{background:var(--white);border:1px solid var(--line);border-radius:20px;padding:40px}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.fld{display:flex;flex-direction:column;gap:8px;margin-bottom:24px}
+.fld label,.fld .lb{font-size:14px;font-weight:600}
+.fld input,.fld select,.fld textarea{font:400 16px/1.4 'Noto Sans KR',sans-serif;color:var(--ink);background:var(--surface);border:1px solid rgba(30,34,38,.24);border-radius:8px;height:48px;padding:0 16px;width:100%;transition:border-color .2s,background-color .2s}
+.fld textarea{height:96px;padding:12px 16px;resize:vertical}
+.fld input:focus,.fld select:focus,.fld textarea:focus{outline:none;border-color:var(--ti);background:#fff}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chips label{position:relative;font-size:14px;font-weight:500}
+.chips input{position:absolute;opacity:0;pointer-events:none}
+.chips span{display:inline-flex;align-items:center;height:44px;padding:0 16px;border:1px solid rgba(30,34,38,.24);border-radius:8px;background:var(--surface);cursor:pointer;transition:background-color .2s,border-color .2s,color .2s}
+.chips input:checked+span{background:var(--ink);border-color:var(--ink);color:#fff}
+.chips input:focus-visible+span{outline:2px solid var(--ti);outline-offset:2px}
+form .btn{width:100%;height:52px;font-size:16px;margin-top:8px}
+.err{font-size:14px;color:#9A3B22;margin-top:12px;min-height:20px}
+.done{display:none;border-top:1.5px solid var(--ti);padding-top:24px}
+.done.show{display:block}
+.done h3{font-size:22px}
+.done p{color:var(--sub);margin-top:8px}
+.done .mono{font-size:14px;color:var(--ti-t);margin-top:16px}
+.side-info{display:flex;flex-direction:column;gap:24px}
+.hours{background:var(--ink);color:var(--bone);border-radius:20px;padding:32px}
+.hours h3{font-size:20px;color:#fff}
+.hours dl{display:grid;grid-template-columns:auto 1fr;gap:12px 24px;margin-top:20px;font-size:15px}
+.hours dt{color:#ADA79D}
+.hours dd{font-family:'JetBrains Mono','Noto Sans KR',monospace;text-align:right}
+.hours p{font-size:14px;color:#ADA79D;margin-top:20px;padding-top:20px;border-top:1px solid rgba(230,224,214,.16)}
+.visit{border:1px solid var(--line);border-radius:20px;padding:32px;background:var(--surface)}
+.visit h3{font-size:20px}
+.visit svg.mapline{width:100%;height:auto;margin-top:20px;border-radius:8px}
+.visit ul{list-style:none;margin-top:20px}
+.visit li{display:grid;grid-template-columns:72px 1fr;gap:12px;font-size:15px;padding:8px 0;color:var(--sub)}
+.visit li b{color:var(--ink);font-weight:600;font-size:14px}
+
+footer{border-top:1px solid var(--line);padding:40px 0 48px}
+footer .wrap{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap;align-items:center}
+footer p{font-size:13px;color:var(--mute)}
+
+.fade{opacity:0;transform:translateY(8px);animation:up .6s ease-out forwards}
+.fade.d2{animation-delay:.12s}
+@keyframes up{to{opacity:1;transform:none}}
+
+@media(max-width:1080px){
+ .hero .wrap{grid-template-columns:1fr;gap:0;min-height:0}
+ .hero .txt{padding:56px 0 8px}
+ .earfig{margin:0 -40px}
+ .hero .lead{max-width:600px}
+ .sec-hd{grid-template-columns:1fr;gap:12px}
+ .jw-grid,.book-grid{grid-template-columns:1fr}
+ .care-grid{grid-template-columns:1fr 1fr}
+ .care-grid .card:last-child{grid-column:1/-1}
+ .rules{grid-template-columns:1fr 1fr}
+ .steps{grid-template-columns:1fr 1fr}
+ .step:nth-child(2){border-right:0;margin-right:0}
+ .nav{display:none}
+}
+@media(max-width:720px){
+ .wrap{padding:0 20px}
+ .sec{padding:64px 0}
+ .hero .txt{padding:32px 0 0}
+ .earfig{margin:0 -20px}
+ .pt .nm{display:none}
+ .pt,.pt.l{transform:translate(-50%,-50%)}
+ .hero h1{font-size:32px;margin-top:20px}
+ .hero .lead{font-size:16px;margin-top:20px}
+ .hero .acts{margin-top:32px}
+ .hero .quiet{margin-top:24px}
+ .hero .acts .btn{flex:1 1 auto}
+ .pad{padding:16px 12px 8px}
+ .logo span{display:none}
+ .top .btn{height:44px;padding:0 16px}
+ .ptable thead{display:none}
+ .ptable,.ptable tbody{display:block}
+ .ptable tr{display:grid;grid-template-columns:40px 1fr auto;gap:4px 12px;padding:16px 0;border-bottom:1px solid var(--line)}
+ .ptable td{padding:0;border:0}
+ .ptable td.n{grid-row:1/3;width:auto}
+ .ptable .jw{grid-column:2/4;font-size:14px}
+ .ptable .t{display:none}
+ .ptable .won{font-size:18px;grid-column:3;grid-row:1}
+ .ptable tr.nose{background:rgba(30,34,38,.03)}
+ .ptable tr.nose td{background:none}
+ .pnote{grid-template-columns:1fr;gap:16px}
+ .tray{padding:20px;border-radius:16px}
+ .steps{grid-template-columns:1fr}
+ .step{border-right:0;margin-right:0;padding:24px 0;border-bottom:1px solid var(--line)}
+ .step svg{display:none}
+ .care-grid,.rules{grid-template-columns:1fr}
+ .card{padding:24px}
+ form{padding:24px;border-radius:16px}
+ .row{grid-template-columns:1fr;gap:0}
+ .hours,.visit{padding:24px;border-radius:16px}
+}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.fade{opacity:1;transform:none}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+<header class="top">
+ <div class="wrap">
+  <a class="logo" href="#" aria-label="귓결 피어싱 스튜디오 처음으로">
+   <svg viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="16" r="11" fill="none" stroke="#1E2226" stroke-width="2.4"/><circle cx="16" cy="27" r="3.2" fill="#1C7C7D"/></svg>
+   <b>귓결</b><span>피어싱 스튜디오</span>
+  </a>
+  <nav class="nav" aria-label="주 메뉴">
+   <a href="#price">부위별 가격</a><a href="#jewelry">주얼리</a><a href="#steps">시술 순서</a><a href="#care">관리 안내</a><a href="#visit">오시는 길</a>
+  </nav>
+  <a class="btn btn-ti" href="#book">예약하기</a>
+ </div>
+</header>
+
+<main>
+<section class="hero">
+ <div class="wrap">
+  <div class="txt fade">
+   <p class="where"><i></i>귀·코 피어싱 · 1인 예약제 스튜디오</p>
+   <h1>귓바퀴 어디에 둘지,<br>거울 앞에서 같이 정합니다</h1>
+   <p class="lead">귀 모양과 평소 하는 귀걸이를 먼저 보고 펜으로 점을 찍어 드립니다. 위치가 마음에 들 때까지 다시 찍고, 그다음에 한 번 시술합니다. 주얼리는 임플란트 등급 티타늄과 14K만 씁니다.</p>
+   <div class="acts">
+    <a class="btn btn-ti" href="#book">시술 예약하기 <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+    <a class="btn btn-line" href="#price">부위별 가격 보기</a>
+   </div>
+   <p class="quiet">한 분에 60분 · 로브 45,000원부터 · 화–토 예약제</p>
+  </div>
+  <figure class="earfig fade d2">
+   <div class="earbox">
+    <svg class="ear" viewBox="40 60 540 580" role="img" aria-label="석고 귀 모형 위에 일곱 군데 피어싱 위치가 번호와 함께 표시된 그림">
+     <defs>
+      <linearGradient id="earF" x1=".2" y1="0" x2=".8" y2="1"><stop offset="0" stop-color="#FAF7F2"/><stop offset=".55" stop-color="#EDE6DC"/><stop offset="1" stop-color="#DCD3C7"/></linearGradient>
+      <linearGradient id="bowl" x1=".3" y1="0" x2=".7" y2="1"><stop offset="0" stop-color="#CFC5B8"/><stop offset="1" stop-color="#E4DCD1"/></linearGradient>
+      <linearGradient id="fold" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#D8CFC3"/><stop offset="1" stop-color="#E9E2D8"/></linearGradient>
+      <radialGradient id="lobe" cx=".45" cy=".4" r=".7"><stop offset="0" stop-color="#F7F2EB"/><stop offset="1" stop-color="#E2D9CD"/></radialGradient>
+      <linearGradient id="ti" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#FFFFFF"/><stop offset=".45" stop-color="#C9CFD2"/><stop offset="1" stop-color="#7E878C"/></linearGradient>
+      <linearGradient id="au" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#F6E3B0"/><stop offset=".5" stop-color="#D4AE5E"/><stop offset="1" stop-color="#9C7634"/></linearGradient>
+      <radialGradient id="stone" cx=".35" cy=".35" r=".7"><stop offset="0" stop-color="#7FC3C1"/><stop offset=".55" stop-color="#1C7C7D"/><stop offset="1" stop-color="#0F4D4E"/></radialGradient>
+      <filter id="soft" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="14"/></filter>
+      <filter id="sh" x="-50%" y="-50%" width="200%" height="200%"><feDropShadow dx="0" dy="1.5" stdDeviation="1.2" flood-color="#3A3128" flood-opacity=".35"/></filter>
+     </defs>
+     <!-- cast shadow -->
+     <path d="M250 96 C346 58 450 116 462 232 C472 320 436 370 406 418 C382 458 376 492 366 536 C356 586 318 604 272 600 C232 596 212 556 226 512 C238 488 232 462 208 444 C188 428 184 396 192 366 C164 316 162 226 182 176 C198 128 220 104 250 96 Z" fill="#B6AB9C" opacity=".45" filter="url(#soft)" transform="translate(14 18)"/>
+     <!-- ear outer -->
+     <path d="M250 96 C346 58 450 116 462 232 C472 320 436 370 406 418 C382 458 376 492 366 536 C356 586 318 604 272 600 C232 596 212 556 226 512 C238 488 232 462 208 444 C188 428 184 396 192 366 C164 316 162 226 182 176 C198 128 220 104 250 96 Z" fill="url(#earF)" stroke="#9C9286" stroke-width="1.5"/>
+     <path d="M256 108 C340 78 436 128 448 232 C456 304 424 352 396 398" fill="none" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round" opacity=".8"/>
+     <!-- lobe soft -->
+     <path d="M236 512 C250 486 300 480 350 500 C362 520 360 556 346 578 C328 596 294 600 270 596 C244 590 228 550 236 512 Z" fill="url(#lobe)" opacity=".9"/>
+     <!-- helix inner fold (scapha groove) -->
+     <path d="M228 140 C300 98 404 128 426 226 C440 300 406 352 378 396 C356 432 350 462 342 496 L326 492 C334 456 340 424 362 386 C390 338 418 290 406 226 C388 146 306 120 238 158 Z" fill="url(#fold)" opacity=".95"/>
+     <path d="M228 140 C300 98 404 128 426 226 C440 300 406 352 378 396 C356 432 350 462 342 496" fill="none" stroke="#A89E92" stroke-width="1.6" stroke-linecap="round"/>
+     <!-- antihelix body -->
+     <path d="M246 176 C300 166 360 196 376 252 C388 300 366 344 334 376 C316 394 302 408 296 424 L272 418 C282 394 300 376 318 358 C346 330 360 296 350 258 C338 214 300 196 258 200 Z" fill="#F6F1EA" stroke="#B3A99C" stroke-width="1.2"/>
+     <!-- superior crus -->
+     <path d="M300 172 C330 150 372 160 392 196" fill="none" stroke="#B3A99C" stroke-width="1.4" stroke-linecap="round"/>
+     <!-- triangular fossa shade -->
+     <path d="M262 198 C296 186 330 192 350 214 C332 210 300 210 270 216 Z" fill="#D6CCBF" opacity=".8"/>
+     <!-- concha bowl -->
+     <path d="M246 268 C282 254 322 270 330 306 C338 346 316 384 280 398 C254 408 230 400 222 380 C232 366 238 348 236 330 C234 304 236 282 246 268 Z" fill="url(#bowl)" stroke="#A89E92" stroke-width="1.2"/>
+     <path d="M230 260 C250 240 300 238 330 262" fill="none" stroke="#B3A99C" stroke-width="1.4" stroke-linecap="round"/>
+     <path d="M250 276 C282 266 312 280 320 308" fill="none" stroke="#B9AEA1" stroke-width="5" stroke-linecap="round" opacity=".5"/>
+     <!-- ear canal shadow -->
+     <ellipse cx="236" cy="356" rx="16" ry="22" fill="#A49A8D" opacity=".55"/>
+     <!-- tragus -->
+     <path d="M196 334 C214 324 232 340 232 366 C232 390 220 404 202 402 C208 382 208 356 196 334 Z" fill="#F4EEE6" stroke="#A89E92" stroke-width="1.3"/>
+     <!-- antitragus -->
+     <path d="M262 420 C288 412 312 424 320 446 C300 440 280 438 262 444 Z" fill="#EFE8DE" stroke="#A89E92" stroke-width="1.2"/>
+     <!-- intertragic notch line -->
+     <path d="M214 410 C228 428 246 432 262 428" fill="none" stroke="#A89E92" stroke-width="1.2" stroke-linecap="round"/>
+
+     <!-- leader lines -->
+     <g stroke="#1E2226" stroke-width="1" fill="none" opacity=".55">
+      <path d="M410 130 L460 84 L488 84"/>
+      <path d="M232 128 L176 92 L162 92"/>
+      <path d="M332 214 L488 214"/>
+      <path d="M286 330 L488 330"/>
+      <path d="M216 372 L162 372"/>
+      <path d="M292 560 L230 600 L162 600"/>
+      <path d="M326 540 L460 584 L488 584"/>
+     </g>
+
+     <!-- jewelry -->
+     <!-- 6 helix hoop -->
+     <g filter="url(#sh)"><ellipse cx="412" cy="136" rx="13" ry="15" fill="none" stroke="url(#ti)" stroke-width="3.6" transform="rotate(-30 412 136)"/></g>
+     <!-- 7 forward helix two studs -->
+     <g filter="url(#sh)"><circle cx="234" cy="124" r="5.2" fill="url(#au)"/><circle cx="244" cy="140" r="4" fill="url(#au)"/></g>
+     <!-- 5 flat: stone in prong -->
+     <g filter="url(#sh)"><circle cx="330" cy="214" r="9" fill="url(#ti)"/><circle cx="330" cy="214" r="6.4" fill="url(#stone)"/><circle cx="328" cy="212" r="1.8" fill="#fff" opacity=".85"/></g>
+     <!-- 4 conch: flat disc -->
+     <g filter="url(#sh)"><circle cx="284" cy="330" r="8" fill="url(#ti)"/><circle cx="284" cy="330" r="4" fill="none" stroke="#7E878C" stroke-width="1"/></g>
+     <!-- 3 tragus: small ball -->
+     <g filter="url(#sh)"><circle cx="216" cy="372" r="5" fill="url(#ti)"/></g>
+     <!-- 1 lobe: gold stud w stone -->
+     <g filter="url(#sh)"><circle cx="292" cy="560" r="8.4" fill="url(#au)"/><circle cx="292" cy="560" r="5.2" fill="url(#stone)"/><circle cx="290" cy="558" r="1.6" fill="#fff" opacity=".85"/></g>
+     <!-- 2 second lobe -->
+     <g filter="url(#sh)"><circle cx="326" cy="540" r="5.4" fill="url(#ti)"/></g>
+
+     <!-- pen dot marks -->
+     <g fill="#1C7C7D"><circle cx="346" cy="226" r="1.8"/><circle cx="352" cy="204" r="1.8"/></g>
+    </svg>
+    <span class="pt l" style="left:20.37%;top:5.52%"><i>7</i><span class="nm">포워드 헬릭스</span></span><span class="pt l" style="left:20.37%;top:53.79%"><i>3</i><span class="nm">트라거스</span></span><span class="pt l" style="left:20.37%;top:93.10%"><i>1</i><span class="nm">로브</span></span><span class="pt" style="left:85.19%;top:4.14%"><i>6</i><span class="nm">헬릭스</span></span><span class="pt on" style="left:85.19%;top:26.55%"><i>5</i><span class="nm">플랫</span></span><span class="pt" style="left:85.19%;top:46.55%"><i>4</i><span class="nm">콘치</span></span><span class="pt" style="left:85.19%;top:90.34%"><i>2</i><span class="nm">세컨 로브</span></span>
+   </div>
+  </figure>
+ </div>
+</section>
+
+<section class="sec price" id="price">
+ <div class="wrap">
+  <div class="sec-hd">
+   <div><span class="no">01 · 부위별 가격</span><h2>시술비에 첫 주얼리까지 들어 있습니다</h2></div>
+   <p>표의 번호는 위 귀 지도의 번호와 같습니다. 가격은 기본 티타늄 주얼리 한 개와 시술, 관리 안내 카드를 합친 금액입니다.</p>
+  </div>
+  <table class="ptable">
+   <thead><tr><th></th><th>부위</th><th>기본 주얼리</th><th>시간</th><th>시술 + 주얼리</th></tr></thead>
+   <tbody>
+    <tr><td class="n"><span>1</span></td><td class="part"><b>로브</b><small>Lobe</small></td><td class="jw">티타늄 플랫백 스터드 3mm</td><td class="t">30분</td><td class="won">45,000원</td></tr>
+    <tr><td class="n"><span>2</span></td><td class="part"><b>세컨 로브</b><small>2nd lobe</small></td><td class="jw">티타늄 플랫백 스터드 2.5mm</td><td class="t">30분</td><td class="won">45,000원</td></tr>
+    <tr><td class="n"><span>3</span></td><td class="part"><b>트라거스</b><small>Tragus</small></td><td class="jw">티타늄 볼 스터드 2.5mm</td><td class="t">40분</td><td class="won">60,000원</td></tr>
+    <tr><td class="n"><span>4</span></td><td class="part"><b>콘치</b><small>Conch</small></td><td class="jw">티타늄 디스크 스터드 4mm</td><td class="t">40분</td><td class="won">65,000원</td></tr>
+    <tr><td class="n"><span>5</span></td><td class="part"><b>플랫</b><small>Flat</small></td><td class="jw">티타늄 프롱 스터드 · 청록 스톤</td><td class="t">40분</td><td class="won">60,000원</td></tr>
+    <tr><td class="n"><span>6</span></td><td class="part"><b>헬릭스</b><small>Helix</small></td><td class="jw">티타늄 플랫백 스터드 (링은 회복 후 교체)</td><td class="t">40분</td><td class="won">55,000원</td></tr>
+    <tr><td class="n"><span>7</span></td><td class="part"><b>포워드 헬릭스</b><small>Forward helix</small></td><td class="jw">티타늄 플랫백 스터드 2mm</td><td class="t">40분</td><td class="won">60,000원</td></tr>
+    <tr class="nose"><td class="n"><span>N</span></td><td class="part"><b>노스트릴 (코)</b><small>Nostril</small></td><td class="jw">티타늄 플랫백 스터드 2mm</td><td class="t">30분</td><td class="won">55,000원</td></tr>
+   </tbody>
+  </table>
+  <div class="pnote">
+   <div><b>같은 날 두 번째 부위</b><p>두 번째 부위부터 <span class="k">−10,000원</span>. 한 번에 세 군데까지 시술합니다.</p></div>
+   <div><b>14K 주얼리로 시작하기</b><p>기본 티타늄 대신 14K를 고르시면 <span class="k">+35,000원부터</span> 더해집니다.</p></div>
+   <div><b>짧은 기둥으로 교체</b><p>붓기가 빠지는 6~8주 뒤 짧은 기둥으로 바꿔 드립니다. 기둥값만 받고 교체비는 없습니다.</p></div>
+  </div>
+ </div>
+</section>
+
+<section class="sec" id="jewelry">
+ <div class="wrap">
+  <div class="sec-hd">
+   <div><span class="no">02 · 주얼리</span><h2>처음 넣는 주얼리는 두&nbsp;가지 소재만 씁니다</h2></div>
+   <p>시술 직후에는 상처가 아무는 동안 주얼리가 몇 주 동안 그대로 들어 있습니다. 그래서 첫 주얼리는 소재 증명서를 받은 제품만 트레이에 올립니다.</p>
+  </div>
+  <div class="jw-grid">
+   <div class="tray">
+    <div class="pad" role="img" aria-label="짙은 벨벳 패드 위에 티타늄 스터드, 티타늄과 14K 링, 14K 스터드가 세 줄로 놓인 트레이 그림">
+     <div class="rail"><p>티타늄 스터드</p><svg viewBox="0 26 400 56" aria-hidden="true"><defs>
+      <linearGradient id="ti2" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#FFFFFF"/><stop offset=".45" stop-color="#C6CCCF"/><stop offset="1" stop-color="#737C81"/></linearGradient>
+      <linearGradient id="au2" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#F7E6B6"/><stop offset=".5" stop-color="#D2AB5A"/><stop offset="1" stop-color="#94702F"/></linearGradient>
+      <radialGradient id="st2" cx=".35" cy=".35" r=".7"><stop offset="0" stop-color="#86C8C5"/><stop offset=".55" stop-color="#1C7C7D"/><stop offset="1" stop-color="#0E4748"/></radialGradient>
+      <filter id="sh2" x="-50%" y="-50%" width="200%" height="200%"><feDropShadow dx="0" dy="2" stdDeviation="1.6" flood-color="#000" flood-opacity=".5"/></filter>
+     </defs><rect x="8" y="70" width="384" height="6" rx="3" fill="#1A1E22"/><g filter="url(#sh2)" transform="translate(0 6) scale(1)">
+      <circle cx="36" cy="54" r="12" fill="url(#ti2)"/>
+      <circle cx="90" cy="56" r="9" fill="url(#ti2)"/>
+      <circle cx="146" cy="52" r="14" fill="url(#ti2)"/><circle cx="146" cy="52" r="10" fill="url(#st2)"/><circle cx="142" cy="48" r="2.6" fill="#fff" opacity=".8"/>
+      <circle cx="204" cy="53" r="13" fill="url(#ti2)"/><circle cx="204" cy="53" r="6.5" fill="none" stroke="#6F777C" stroke-width="1.4"/>
+      <circle cx="254" cy="48" r="6.5" fill="url(#ti2)"/><circle cx="270" cy="56" r="6.5" fill="url(#ti2)"/><circle cx="252" cy="62" r="6.5" fill="url(#ti2)"/>
+      <path d="M318 40 L332 64 L304 64 Z" fill="url(#ti2)"/>
+      <circle cx="368" cy="56" r="8" fill="url(#ti2)"/></g></svg></div>
+     <div class="rail"><p>티타늄 · 14K 링</p><svg viewBox="0 30 400 72" aria-hidden="true"><rect x="8" y="90" width="384" height="6" rx="3" fill="#1A1E22"/><g filter="url(#sh2)">
+      <circle cx="44" cy="64" r="28" fill="none" stroke="url(#ti2)" stroke-width="5"/>
+      <circle cx="124" cy="70" r="22" fill="none" stroke="url(#ti2)" stroke-width="4.4"/>
+      <circle cx="204" cy="64" r="28" fill="none" stroke="url(#au2)" stroke-width="5"/>
+      <circle cx="284" cy="66" r="24" fill="none" stroke="url(#ti2)" stroke-width="4.4"/><circle cx="284" cy="90" r="5" fill="url(#st2)"/>
+      <circle cx="358" cy="70" r="21" fill="none" stroke="url(#au2)" stroke-width="4.2"/></g></svg></div>
+     <div class="rail"><p>14K 스터드</p><svg viewBox="0 26 400 56" aria-hidden="true"><rect x="8" y="70" width="384" height="6" rx="3" fill="#1A1E22"/><g filter="url(#sh2)" transform="translate(0 6)">
+      <circle cx="36" cy="54" r="12" fill="url(#au2)"/><circle cx="36" cy="54" r="7.4" fill="url(#st2)"/>
+      <circle cx="90" cy="56" r="9" fill="url(#au2)"/>
+      <path d="M146 36 l5 12 13 1 -10 8 4 13 -12 -8 -12 8 4 -13 -10 -8 13 -1 z" fill="url(#au2)"/>
+      <circle cx="194" cy="54" r="6" fill="url(#au2)"/><circle cx="210" cy="54" r="6" fill="url(#au2)"/><circle cx="226" cy="54" r="6" fill="url(#au2)"/>
+      <circle cx="276" cy="54" r="13" fill="url(#au2)"/><circle cx="276" cy="54" r="6.5" fill="none" stroke="#8F6B2C" stroke-width="1.4"/>
+      <circle cx="326" cy="56" r="9" fill="url(#au2)"/><circle cx="326" cy="56" r="5.2" fill="url(#st2)"/>
+      <circle cx="372" cy="58" r="6.5" fill="url(#au2)"/></g></svg></div>
+    </div>
+    <div class="tcap"><span><b>첫 시술 트레이</b> · 스터드 7종, 링 5종, 14K 7종</span><span>소재 증명서 매장 보관</span></div>
+   </div>
+   <div class="mats">
+    <div class="mat">
+     <div class="h"><h3>임플란트 등급 티타늄</h3><span>기본 포함</span></div>
+     <p>ASTM F136 규격 티타늄입니다. 가볍고, 시술가에 기본으로 들어갑니다. 무광과 유광 두 가지가 있습니다.</p>
+     <ul><li>플랫백 스터드</li><li>볼 · 디스크</li><li>프롱 스톤</li></ul>
+    </div>
+    <div class="mat">
+     <div class="h"><h3>14K 골드</h3><span>+35,000원부터</span></div>
+     <p>니켈을 넣지 않은 14K 합금으로 만든 탑과 링입니다. 기둥은 티타늄 그대로 두고 윗부분만 금으로 바꿀 수도 있습니다.</p>
+     <ul><li>옐로 골드</li><li>화이트 골드</li><li>스톤 세팅</li></ul>
+    </div>
+    <div class="mat">
+     <div class="h"><h3>회복 뒤 교체용 링</h3><span>29,000원부터</span></div>
+     <p>헬릭스·콘치·로브는 다 아문 뒤 링으로 바꿔 끼울 수 있습니다. 교체는 매장에서 직접 해 드립니다.</p>
+     <ul><li>클릭 링</li><li>심리스 링</li></ul>
+    </div>
+   </div>
+  </div>
+ </div>
+</section>
+
+<section class="sec" id="steps" style="padding-top:0">
+ <div class="wrap">
+  <div class="sec-hd">
+   <div><span class="no">03 · 시술 순서</span><h2>예약 한 시간은 이렇게 씁니다</h2></div>
+   <p>한 시간에 한 분만 받습니다. 기다리는 손님이 없어서 위치를 정하는 데 충분히 시간을 씁니다.</p>
+  </div>
+  <div class="steps">
+   <div class="step"><div class="mono"><b>01</b><span>10분</span></div><h3>상담</h3><p>평소 귀걸이, 잠자는 방향, 헤드폰 사용을 여쭙고 부위와 주얼리를 고릅니다.</p>
+    <svg viewBox="0 0 40 40" aria-hidden="true"><path d="M8 10h24v16H18l-6 6v-6H8z"/><path d="M14 16h12M14 21h8"/></svg></div>
+   <div class="step"><div class="mono"><b>02</b><span>15분</span></div><h3>위치 표시</h3><p>펜으로 점을 찍고 거울로 같이 확인합니다. 마음에 들 때까지 지우고 다시 찍습니다.</p>
+    <svg viewBox="0 0 40 40" aria-hidden="true"><path d="M26 6l8 8-18 18H8v-8z"/><path d="M22 10l8 8"/></svg></div>
+   <div class="step"><div class="mono"><b>03</b><span>10분</span></div><h3>시술</h3><p>일회용 니들로 한 번에 시술하고 주얼리를 바로 넣습니다. 개봉은 손님 앞에서 합니다.</p>
+    <svg viewBox="0 0 40 40" aria-hidden="true"><path d="M6 34L28 12"/><path d="M24 8l8 8"/><circle cx="31" cy="9" r="3"/></svg></div>
+   <div class="step"><div class="mono"><b>04</b><span>10분</span></div><h3>관리 안내</h3><p>세척 방법과 교체 시기를 적은 카드를 드리고, 6주 뒤 점검 날짜를 함께 잡습니다.</p>
+    <svg viewBox="0 0 40 40" aria-hidden="true"><rect x="8" y="8" width="24" height="26" rx="2"/><path d="M14 4v8M26 4v8M8 16h24M14 22h4M14 28h8"/></svg></div>
+  </div>
+ </div>
+</section>
+
+<section class="sec care" id="care">
+ <div class="wrap">
+  <div class="sec-hd">
+   <div><span class="no">04 · 관리 안내</span><h2>아무는 동안 지켜 주실 것</h2></div>
+   <p>회복 기간은 부위와 사람마다 다릅니다. 아래는 매장에서 드리는 안내 카드의 내용입니다.</p>
+  </div>
+  <div class="care-grid">
+   <div class="card">
+    <h3><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3c3 4 6 7 6 11a6 6 0 0 1-12 0c0-4 3-7 6-11z"/></svg>하루 두 번 하는 일</h3>
+    <ul><li>손을 씻고 멸균 식염수 스프레이를 뿌립니다</li><li>깨끗한 거즈로 주변 물기만 눌러 닦습니다</li><li>주얼리는 돌리지 않고 그대로 둡니다</li></ul>
+   </div>
+   <div class="card">
+    <h3><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M6 18L18 6"/></svg>처음 몇 주는 피할 일</h3>
+    <ul><li>시술한 쪽으로 눕거나 헤드폰 쓰기</li><li>수영장·목욕탕 탕 안에 들어가기</li><li>임의로 주얼리 빼거나 바꾸기</li></ul>
+   </div>
+   <div class="card">
+    <h3><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>회복 기간 안내</h3>
+    <dl class="heal">
+     <dt>로브 · 노스트릴</dt><dd>6–8주</dd><div class="heal-bar"><i style="width:22%"></i></div>
+     <dt>트라거스 · 헬릭스</dt><dd>3–6개월</dd><div class="heal-bar"><i style="width:60%"></i></div>
+     <dt>콘치 · 플랫</dt><dd>6–9개월</dd><div class="heal-bar"><i style="width:90%"></i></div>
+    </dl>
+    <p class="small">붓기나 열감이 며칠 넘게 이어지면 매장보다 병원 진료를 먼저 받아 주세요.</p>
+   </div>
+  </div>
+  <div class="rules">
+   <div><b>만 19세 미만</b>보호자와 함께 오시고, 보호자 신분증을 가져와 주세요.</div>
+   <div><b>예약 변경</b>하루 전까지 카카오톡으로 알려 주시면 날짜를 옮겨 드립니다.</div>
+   <div><b>당일 컨디션</b>식사를 하고 오시고, 음주 후에는 시술하지 않습니다.</div>
+   <div><b>6주 점검</b>시술한 부위를 무료로 확인하고 기둥 교체 시기를 봅니다.</div>
+  </div>
+ </div>
+</section>
+
+<section class="sec" id="book">
+ <div class="wrap">
+  <div class="sec-hd">
+   <div><span class="no">05 · 예약</span><h2>원하는 날짜와 부위를 남겨 주세요</h2></div>
+   <p>요청을 보내시면 가능한 시간을 확인해 문자로 답을 드립니다. 답을 받으면 예약이 확정됩니다.</p>
+  </div>
+  <div class="book-grid">
+   <form id="bk" novalidate>
+    <div class="row">
+     <div class="fld"><label for="nm">이름</label><input id="nm" name="nm" autocomplete="name" placeholder="홍길동" required></div>
+     <div class="fld"><label for="ph">연락처</label><input id="ph" name="ph" type="tel" inputmode="tel" placeholder="010-0000-0000" required></div>
+    </div>
+    <div class="row">
+     <div class="fld"><label for="dt">희망 날짜</label><input id="dt" name="dt" type="text" placeholder="예: 12월 6일 토" required></div>
+     <div class="fld"><label for="tm">시간</label>
+      <select id="tm" name="tm"><option>12:00</option><option>13:30</option><option>15:00</option><option>16:30</option><option>18:00</option><option>19:00</option></select></div>
+    </div>
+    <div class="fld"><span class="lb" id="partlb">시술 부위 (여러 개 고를 수 있어요)</span>
+     <div class="chips" role="group" aria-labelledby="partlb">
+      <label><input type="checkbox" name="pt" value="로브"><span>1 로브</span></label>
+      <label><input type="checkbox" name="pt" value="세컨 로브"><span>2 세컨 로브</span></label>
+      <label><input type="checkbox" name="pt" value="트라거스"><span>3 트라거스</span></label>
+      <label><input type="checkbox" name="pt" value="콘치"><span>4 콘치</span></label>
+      <label><input type="checkbox" name="pt" value="플랫"><span>5 플랫</span></label>
+      <label><input type="checkbox" name="pt" value="헬릭스"><span>6 헬릭스</span></label>
+      <label><input type="checkbox" name="pt" value="포워드 헬릭스"><span>7 포워드 헬릭스</span></label>
+      <label><input type="checkbox" name="pt" value="노스트릴"><span>N 노스트릴</span></label>
+      <label><input type="checkbox" name="pt" value="상담 후 결정"><span>상담 후 정할게요</span></label>
+     </div>
+    </div>
+    <div class="fld"><label for="mm">남길 말 (선택)</label><textarea id="mm" name="mm" placeholder="평소 귀걸이 사진을 가져가도 되나요?"></textarea></div>
+    <button class="btn btn-ti" type="submit">예약 요청 보내기</button>
+    <p class="err" id="err" role="alert"></p>
+    <div class="done" id="done" aria-live="polite">
+     <h3>예약 요청을 받았습니다</h3>
+     <p id="doneTxt"></p>
+     <p class="mono">카카오톡 ID: example · 000-0000-0000</p>
+    </div>
+   </form>
+   <div class="side-info" id="visit">
+    <div class="hours">
+     <h3>영업 시간</h3>
+     <dl><dt>화 – 금</dt><dd>12:00 – 20:00</dd><dt>토</dt><dd>11:00 – 18:00</dd><dt>일 · 월</dt><dd>쉽니다</dd></dl>
+     <p>한 시간에 한 분만 받습니다. 예약 없이 오시면 그날 빈 시간이 있을 때만 시술합니다.</p>
+    </div>
+    <div class="visit">
+     <h3>오시는 길</h3>
+     <svg class="mapline" viewBox="0 0 400 180" role="img" aria-label="역 출구에서 스튜디오까지 가는 길을 선으로 그린 약도">
+      <rect width="400" height="180" fill="#E4DED4"/>
+      <g stroke="#FBFAF7" stroke-width="14" fill="none" stroke-linecap="square"><path d="M0 120H400"/><path d="M120 0V180"/><path d="M290 0V120"/></g>
+      <g fill="#D6CFC3"><rect x="140" y="16" width="132" height="84" rx="4"/><rect x="308" y="16" width="76" height="84" rx="4"/><rect x="16" y="16" width="88" height="84" rx="4"/><rect x="16" y="136" width="88" height="32" rx="4"/><rect x="140" y="136" width="244" height="32" rx="4"/></g>
+      <path d="M120 128 V120 H282 V64" fill="none" stroke="#1C7C7D" stroke-width="3" stroke-dasharray="6 6"/>
+      <rect x="104" y="120" width="32" height="32" rx="6" fill="#1E2226"/><text x="120" y="142" font-family="JetBrains Mono, Noto Sans KR, monospace" font-size="18" fill="#fff" text-anchor="middle">2</text>
+      <circle cx="282" cy="56" r="10" fill="#1C7C7D"/><circle cx="282" cy="56" r="4" fill="#fff"/>
+      <text x="256" y="42" font-family="Noto Sans KR, sans-serif" font-size="18" font-weight="600" fill="#1E2226" text-anchor="end">귓결 3층</text>
+     </svg>
+     <ul>
+      <li><b>주소</b><span>서울시 ○○구 ○○로 00, 3층</span></li>
+      <li><b>지하철</b><span>○○역 2번 출구에서 도보 4분</span></li>
+      <li><b>문의</b><span class="mono">000-0000-0000</span></li>
+      <li><b>카카오톡</b><span class="mono">ID: example</span></li>
+     </ul>
+    </div>
+   </div>
+  </div>
+ </div>
+</section>
+</main>
+
+<footer>
+ <div class="wrap">
+  <a class="logo" href="#" aria-label="귓결 피어싱 스튜디오 처음으로"><svg viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="16" r="11" fill="none" stroke="#1E2226" stroke-width="2.4"/><circle cx="16" cy="27" r="3.2" fill="#1C7C7D"/></svg><b>귓결</b><span>피어싱 스튜디오</span></a>
+  <p>귓결 피어싱 스튜디오 · 서울시 ○○구 ○○로 00, 3층</p>
+ </div>
+</footer>
+
+<script>
+(function(){
+ var f=document.getElementById('bk'),err=document.getElementById('err'),done=document.getElementById('done'),txt=document.getElementById('doneTxt'),dt=document.getElementById('dt');
+  f.addEventListener('submit',function(e){
+  e.preventDefault();
+  var nm=f.nm.value.trim(),ph=f.ph.value.trim(),d=dt.value;
+  var parts=[].slice.call(f.querySelectorAll('input[name=pt]:checked')).map(function(i){return i.value});
+  if(!nm||!ph||!d){err.textContent='이름, 연락처, 희망 날짜를 적어 주세요.';done.classList.remove('show');return}
+  if(!parts.length){err.textContent='시술 부위를 하나 이상 골라 주세요.';done.classList.remove('show');return}
+  err.textContent='';
+    txt.textContent=nm+'님, '+d+' '+f.tm.value+' · '+parts.join(', ')+' 요청을 받았습니다. 가능한 시간을 확인해 '+ph+'로 문자를 드릴게요.';
+  done.classList.add('show');
+ });
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>선홍 육회 · 메뉴판 디자인</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Hahmlet:wght@600;700&family=Noto+Sans+KR:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+html{background:#E7E4DF}
+body{font-family:'Noto Sans KR',sans-serif;color:#1E1B1A;background:#E7E4DF;word-break:keep-all;-webkit-font-smoothing:antialiased;min-height:100vh;overflow-x:clip;line-height:1.6}
+.wrap{max-width:1180px;margin:0 auto;padding:48px 24px 136px}
+.hd{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:24px;padding-bottom:32px;margin-bottom:40px;border-bottom:2px solid #1E1B1A}
+.hd small{font-size:14px;font-weight:500;color:#58514B}
+.hd h1{font-family:'Hahmlet',serif;font-weight:700;font-size:clamp(44px,6vw,72px);line-height:1.05;letter-spacing:-1px;margin-top:8px}
+.hd p.lead{font-size:clamp(16px,1.6vw,18px);color:#3D3631;margin-top:20px;max-width:720px;line-height:1.75}
+.hd p.lead b{color:#B02D33;font-weight:600}
+.facts{display:flex;flex-wrap:wrap;gap:8px 24px;margin-top:20px;font-size:15px;color:#58514B}
+.facts span{display:flex;align-items:center;gap:8px}
+.facts span:before{content:"";flex:none;width:12px;height:4px;border-radius:2px;background:#C8343A}
+.cta{display:inline-flex;align-items:center;gap:8px;height:52px;padding:0 24px;background:#1E1B1A;color:#F3EEE3;font-weight:600;font-size:16px;text-decoration:none;border-radius:8px;transition:background-color .2s;white-space:nowrap}
+.cta:hover{background:#3A3430}
+.cta svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+.view{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,.8fr);gap:32px;align-items:start}
+figure{background:#F3EEE3;padding:12px;border-radius:8px;border:1px solid rgba(30,27,26,.14)}
+figure a{display:block;overflow:hidden;border-radius:4px}
+figure img{display:block;width:100%;height:auto}
+figcaption{font-size:14px;color:#58514B;padding:12px 4px 0;display:flex;flex-wrap:wrap;justify-content:space-between;gap:4px 12px}
+figcaption b{color:#1E1B1A;font-weight:600}
+.side{display:flex;flex-direction:column;gap:20px;position:sticky;top:24px}
+.zoom{background:#F3EEE3;padding:8px;border-radius:8px;border:1px solid rgba(30,27,26,.14)}
+.zoom img{display:block;width:100%;height:auto;border-radius:4px}
+.zoom p{font-size:15px;color:#3D3631;padding:12px 8px 4px}
+.zoom p b{display:block;font-family:'Hahmlet',serif;font-weight:600;font-size:22px;color:#1E1B1A;margin-bottom:4px;line-height:1.35}
+.info{background:#1E1B1A;color:#CFC6BB;padding:24px;border-radius:8px}
+.info h2{font-family:'Hahmlet',serif;font-weight:600;font-size:24px;color:#F3EEE3;margin-bottom:8px;line-height:1.3}
+.info li{list-style:none;font-size:15px;padding:12px 0 12px 20px;position:relative;border-top:1px solid rgba(243,238,227,.14)}
+.info li:first-child{border-top:0}
+.info li:before{content:"";position:absolute;left:2px;top:22px;width:8px;height:3px;border-radius:2px;background:#E8565B}
+.bar{position:fixed;left:0;right:0;bottom:0;background:#1E1B1A;border-top:3px solid #B08A4A;padding:12px 20px;display:flex;justify-content:center;align-items:center;gap:20px;flex-wrap:wrap;z-index:10}
+.bar p{font-size:15px;color:#CFC6BB}
+.bar .cta{height:48px;background:#F3EEE3;color:#1E1B1A}
+.bar .cta:hover{background:#E2DBCF}
+@media(max-width:900px){.view{grid-template-columns:1fr}.side{position:static}}
+@media(max-width:620px){.wrap{padding:28px 16px 112px}.hd .cta{display:none}.bar p{display:none}.bar .cta{width:100%;justify-content:center}figure{padding:6px}}
+@media(prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+<div class="wrap">
+ <div class="hd">
+  <div>
+   <small>메뉴판 디자인 · SD-MN74</small>
+   <h1>선홍 육회</h1>
+   <p class="lead">그날 들어온 한우 우둔을 오후에 한 번 손질해 육회와 육사시미, 낙지탕탕이를 내는 저녁 식당의 A4 메뉴판입니다. 위쪽은 차가운 대리석 위 놋 접시에 배채를 깔고 꽃처럼 올린 육회를 크게 그렸고, 그림 속 번호와 아래 재료 띠로 접시에 무엇이 올라가는지 설명합니다. 아래에는 대표 메뉴 <b>선홍 육회 소 29,000원</b>을 먹색 상자에 따로 두고, 바다·식사·곁들임·주류와 원산지 표시까지 한 장에 담았습니다.</p>
+   <div class="facts"><span>A4 세로 · 1장 · 한국어 · 원화</span><span>배 과육 미색 · 먹색 · 선홍</span><span>놋 접시 육회 3/4 시점 그림</span></div>
+  </div>
+  <a class="cta" href="https://design.shoponph.online/#inquiry">이 디자인으로 상담하기 <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+ </div>
+ <div class="view">
+  <figure><a href="page1.png" target="_blank" rel="noopener"><img src="page1.png" alt="선홍 육회 메뉴판 전체. 미색 종이 위쪽 왼쪽에 한우 우둔 육회 · 육사시미 · 낙지탕탕이라는 작은 글과 큰 명조 제목 선홍 육회, 오른쪽에 17:00 – 24:00, 마지막 주문 23:00 · 일요일 쉼, 우둔이 다 나가면 육회는 그날 마감이 있습니다. 그 아래 회색 대리석 판 왼쪽에 제목 그날 들어온 우둔을 오후 네 시에 결 반대로 썹니다와 설명, 손질은 하루 한 번이라는 문장이 있고, 오른쪽에는 금빛 놋 접시에 옅은 크림빛 배채를 둥글게 깔고 가늘게 채 썬 붉은 육회를 봉긋하게 쌓아 꼭대기에 달걀노른자와 잣, 흑임자를 올린 그림, 오른쪽 위에 기름장 종지가 있고, 제목 아래 대리석 위에는 검은 손잡이의 칼 한 자루가 가로로 놓여 있습니다. 그림 위 번호 1부터 6은 아래 재료 띠의 한우 우둔, 배, 노른자, 잣, 흑임자, 기름장 설명과 이어집니다. 아래 왼쪽 육회 칸에는 먹색 상자 안 선홍 육회 소 200g 29,000원(선홍색), 대 350g 46,000원, 이어서 육사시미 소 32,000원 · 대 49,000원, 반반 모둠 48,000원, 바다 칸에 낙지탕탕이 26,000원, 육회 탕탕이 49,000원이 있습니다. 오른쪽 식사 칸에 육회비빔밥 13,000원, 육회물회 5월 – 9월 15,000원, 소고기뭇국 4,000원, 곁들임 칸에 한우 육전 18,000원, 뚝배기 계란찜 5,000원, 포장 안내 상자가 있습니다. 그 아래 한 줄로 주류 · 음료 소주 5,000원, 맥주 6,000원, 막걸리 6,000원, 하이볼 8,000원, 탄산음료 2,000원, 매실차 3,000원, 맨 아래에 원산지 표시와 주소 자리표시, 전화 000-0000-0000이 있습니다." width="2480" height="3508"></a><figcaption><b>A4 세로 메뉴판</b><span>2480 × 3508 · 인쇄용</span></figcaption></figure>
+  <div class="side">
+   <div class="zoom"><img src="detail-plate.jpg" alt="그림 확대. 회색 대리석 위 넓은 놋 접시에 가늘고 옅은 크림빛 배채가 둥근 둥지처럼 깔려 있고, 그 위에 반듯하게 끊어 썬 가는 육회 채가 한 방향으로 겹겹이 쌓여 노른자 아래에서 봉긋하게 솟아 있습니다. 채의 색은 밝은 선홍이 중심이고 아래 앞쪽 그늘만 짙은 진홍이며, 윗면에 참기름 윤기 몇 점과 흑임자가 보이며, 꼭대기에는 윤이 나는 주황빛 노른자와 그 둘레에 잣 일곱 알이 놓여 있습니다. 오른쪽 위 흰 종지에는 깨를 띄운 기름장이 담겨 있습니다. 번호 원 1부터 6이 각 재료 옆에 붙어 있습니다." width="1200" height="930" loading="lazy"><p><b>번호로 읽는 접시</b>재료 이름은 그림 위 번호와 아래 재료 띠로 나눠 적어, 그림을 가리지 않고도 무엇이 올라가는지 알 수 있습니다.</p></div>
+   <div class="info"><h2>바꿀 수 있는 것</h2><ul><li>메뉴 이름, 중량, 가격, 영업시간과 원산지 표시</li><li>접시 그림을 우리 가게 대표 메뉴로: 육사시미, 생고기, 뭉티기, 낙지탕탕이</li><li>A4 테이블 메뉴판, 벽에 거는 큰 메뉴판, 포장 안내 카드</li></ul></div>
+  </div>
+ </div>
+</div>
+<div class="bar"><p>우리 가게도 이런 메뉴판이 필요하다면</p><a class="cta" href="https://design.shoponph.online/#inquiry">이 디자인으로 상담하기</a></div>
+</body>
+</html>
