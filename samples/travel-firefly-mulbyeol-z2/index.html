@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>물별 반딧불 리버투어 · 팔라완 맹그로브 강 저녁 방카 투어</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@700;800&family=Noto+Sans+KR:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+ --bg:#0D1A1C;--bg2:#112326;--surf:#16292C;--surf2:#1C3236;
+ --text:#ECE9DA;--text2:#C9CDBF;--mute:#A3B2AC;
+ --line:rgba(236,233,218,.14);--line2:rgba(236,233,218,.26);
+ --fly:#D6E86C;--fly2:#C4D85A;
+ --paper:#EEEADB;--paper2:#E4DFCC;--ink:#17292C;--ink2:#3F4F4F;--inkline:rgba(23,41,44,.16);
+ --lamp:#D9483B;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{background:var(--bg);scroll-behavior:smooth}
+body{font-family:'Noto Sans KR',sans-serif;color:var(--text);background:var(--bg);font-size:16px;line-height:1.65;word-break:keep-all;-webkit-font-smoothing:antialiased;overflow-x:clip}
+a{color:inherit}
+.num{font-variant-numeric:tabular-nums}
+.wrap{max-width:1240px;margin:0 auto;padding:0 40px}
+h1,h2,h3{font-family:'Nanum Myeongjo',serif;font-weight:700;letter-spacing:-.02em;line-height:1.3}
+h2{font-size:clamp(28px,3.2vw,40px)}
+.sec{padding:96px 0}
+.sec-hd{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,4fr);gap:40px;align-items:end;margin-bottom:48px}
+.sec-hd p{color:var(--text2)}
+.kick{font-size:14px;font-weight:500;color:var(--mute);margin-bottom:12px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;height:48px;padding:0 24px;border-radius:8px;font:600 16px/1 'Noto Sans KR',sans-serif;text-decoration:none;border:0;cursor:pointer;transition:background-color .2s,color .2s,box-shadow .2s}
+.btn-fly{background:var(--fly);color:#142222}
+.btn-fly:hover{background:var(--fly2)}
+.btn-line{background:transparent;color:var(--text);box-shadow:inset 0 0 0 1.5px var(--line2)}
+.btn-line:hover{background:rgba(236,233,218,.06)}
+.ico{width:24px;height:24px;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round;flex:none}
+
+/* header */
+.top{position:sticky;top:0;z-index:30;background:rgba(13,26,28,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;height:72px;gap:24px}
+.logo{display:flex;align-items:center;gap:12px;text-decoration:none}
+.logo svg{width:36px;height:36px;flex:none}
+.logo b{display:block;font-family:'Nanum Myeongjo',serif;font-size:20px;font-weight:800;letter-spacing:-.02em;line-height:1.2}
+.logo small{display:block;font-size:12px;color:var(--mute);line-height:1.3}
+.nav{display:flex;gap:32px;font-size:15px}
+.nav a{text-decoration:none;color:var(--text2);padding:8px 0;transition:color .2s}
+.nav a:hover{color:var(--fly)}
+.top .btn{height:40px;padding:0 16px;font-size:15px}
+
+/* hero */
+.hero{position:relative;height:min(760px,calc(100vh - 72px));min-height:640px;overflow:hidden;background:#0B1618}
+.art{position:absolute;inset:0}
+.art svg{display:block;width:100%;height:100%}
+.hero .wrap{position:relative;height:100%;display:flex;flex-direction:column;justify-content:flex-start;padding-top:88px}
+.hero-txt{max-width:560px}
+.hero .where{font-size:15px;color:var(--text2);margin-bottom:20px;display:flex;gap:12px;align-items:center}
+.hero .where i{display:block;width:24px;height:1px;background:var(--line2)}
+.hero h1{font-size:clamp(40px,4.6vw,60px);font-weight:800;line-height:1.22;margin-bottom:24px}
+.hero p.lead{font-size:18px;color:var(--text2);max-width:480px;margin-bottom:32px;line-height:1.7}
+.hero-cta{display:flex;gap:12px;flex-wrap:wrap}
+.hero-facts{position:absolute;left:40px;right:40px;bottom:32px;display:flex;gap:40px;font-size:14px;color:var(--text2);max-width:1160px;margin:0 auto}
+.hero-facts div{display:flex;flex-direction:column;gap:4px;padding-left:16px;border-left:1px solid var(--line2)}
+.hero-facts b{font-size:20px;font-weight:600;color:var(--text)}
+
+/* evening flow */
+.flow{background:var(--bg)}
+.tl{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:0;position:relative}
+.tl:before{content:"";position:absolute;left:0;right:0;top:28px;height:1px;background:var(--line2)}
+.tl li{list-style:none;position:relative;padding:0 24px 0 0}
+.tl .t{display:inline-block;position:relative;font-size:24px;font-weight:600;background:var(--bg);padding-right:12px;line-height:56px}
+.tl li.on .t{color:var(--fly)}
+.tl h3{font-family:'Noto Sans KR',sans-serif;font-size:18px;font-weight:600;letter-spacing:-.01em;margin:12px 0 8px}
+.tl p{font-size:15px;color:var(--text2)}
+.dark-note{margin-top:48px;display:flex;gap:16px;align-items:flex-start;padding:24px;background:var(--surf);border-radius:12px;border:1px solid var(--line);max-width:760px}
+.dark-note .ico{color:var(--lamp);margin-top:2px}
+.dark-note p{font-size:15px;color:var(--text2)}
+.dark-note b{color:var(--text);font-weight:600}
+
+/* moon calendar */
+.moon{background:var(--paper);color:var(--ink)}
+.moon .sec-hd p{color:var(--ink2)}
+.moon .kick{color:#5A6A66}
+.cal-box{display:grid;grid-template-columns:minmax(0,1fr) 320px;gap:48px;align-items:start}
+.cal{background:#F6F3E8;border:1px solid var(--inkline);border-radius:16px;padding:32px}
+.cal-hd{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:24px}
+.cal-hd h3{font-size:28px}
+.cal-hd span{font-size:14px;color:var(--ink2)}
+.cal-grid{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:8px}
+.cal-grid .dw{font-size:13px;color:var(--ink2);text-align:center;padding-bottom:8px}
+.day{position:relative;aspect-ratio:1/1.05;border-radius:8px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;font-size:15px;font-weight:500;background:transparent;border:1px solid transparent;color:var(--ink);font-family:inherit;cursor:pointer;transition:background-color .2s,border-color .2s}
+.day svg{width:24px;height:24px}
+.day:hover{background:#EAE5D3}
+.day.good{background:#17292C;color:#ECE9DA}
+.day.good:hover{background:#21383C}
+.day.good:after{content:"";position:absolute;top:8px;right:8px;width:6px;height:6px;border-radius:50%;background:var(--fly)}
+.day.off{color:#8D928A;cursor:not-allowed;background:repeating-linear-gradient(135deg,transparent 0 6px,rgba(23,41,44,.06) 6px 7px)}
+.day.sel{box-shadow:inset 0 0 0 2px #C9372C}
+.legend{display:flex;flex-direction:column;gap:20px}
+.lg{display:flex;gap:16px;align-items:flex-start;font-size:15px;color:var(--ink2)}
+.lg i{flex:none;width:32px;height:32px;border-radius:8px;display:block}
+.lg b{display:block;color:var(--ink);font-weight:600;margin-bottom:2px}
+.lg .g{background:#17292C;position:relative}
+.lg .g:after{content:"";position:absolute;top:6px;right:6px;width:6px;height:6px;border-radius:50%;background:var(--fly)}
+.lg .o{border:1px solid var(--inkline);background:repeating-linear-gradient(135deg,transparent 0 6px,rgba(23,41,44,.08) 6px 7px)}
+.lg .n{border:1px solid var(--inkline);background:#F6F3E8}
+.picked{margin-top:8px;padding:20px;border-radius:12px;background:#E4DFCC;font-size:15px;color:var(--ink)}
+.picked b{font-weight:600}
+.picked .btn{margin-top:16px;height:44px;width:100%;background:#17292C;color:#ECE9DA}
+.picked .btn:hover{background:#21383C}
+
+/* tours */
+.tours{background:var(--bg2)}
+.tgrid{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(0,1fr);gap:24px}
+.tcard{background:var(--surf);border:1px solid var(--line);border-radius:16px;padding:32px;display:flex;flex-direction:column}
+.tcard.main{grid-row:span 2;background:var(--surf2);padding:40px}
+.tcard .tag{font-size:14px;color:var(--mute);margin-bottom:12px}
+.tcard h3{font-size:26px;margin-bottom:12px}
+.tcard.main h3{font-size:34px}
+.tcard p{color:var(--text2);font-size:15px}
+.price{display:flex;align-items:baseline;gap:8px;margin:24px 0 20px;padding-top:20px;border-top:1px solid var(--line)}
+.price b{font-size:32px;font-weight:600;color:var(--text)}
+.tcard.main .price b{font-size:44px;color:var(--fly)}
+.price span{font-size:15px;color:var(--mute)}
+.inc{list-style:none;display:grid;gap:12px;font-size:15px;color:var(--text2);margin-top:auto}
+.inc li{display:flex;gap:12px;align-items:flex-start}
+.inc .ico{width:20px;height:20px;color:var(--mute);margin-top:3px}
+.tcard.main .inc{grid-template-columns:1fr 1fr;gap:12px 24px}
+.boatplan{margin:8px 0 24px}
+.boatplan svg{width:100%;height:auto;display:block}
+.boatplan small{display:block;font-size:13px;color:var(--mute);margin-top:8px}
+
+/* rules */
+.rules{background:var(--bg)}
+.rgrid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0;border-top:1px solid var(--line)}
+.rule{padding:32px 32px 32px 0;border-bottom:1px solid var(--line);display:grid;grid-template-columns:40px minmax(0,1fr);gap:16px}
+.rule:not(:nth-child(3n+1)){padding-left:32px;border-left:1px solid var(--line)}
+.rule .ico{width:28px;height:28px;color:var(--fly)}
+.rule h3{font-family:'Noto Sans KR',sans-serif;font-size:18px;font-weight:600;margin-bottom:8px;letter-spacing:-.01em}
+.rule p{font-size:15px;color:var(--text2)}
+
+/* pickup & rain */
+.pick{background:var(--bg2)}
+.pgrid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:24px}
+.pbox{background:var(--surf);border:1px solid var(--line);border-radius:16px;padding:32px}
+.pbox h3{font-size:24px;margin-bottom:16px}
+.pbox p{font-size:15px;color:var(--text2)}
+.zones{list-style:none;margin-top:20px;display:grid;gap:0}
+.zones li{display:flex;justify-content:space-between;gap:16px;padding:14px 0;border-bottom:1px solid var(--line);font-size:15px}
+.zones li:last-child{border-bottom:0}
+.zones span{color:var(--mute);white-space:nowrap;flex:none}
+.rain{display:grid;gap:16px;margin-top:20px}
+.rain div{display:grid;grid-template-columns:88px minmax(0,1fr);gap:16px;font-size:15px;color:var(--text2);padding-bottom:16px;border-bottom:1px solid var(--line)}
+.rain div:last-child{border-bottom:0;padding-bottom:0}
+.rain b{color:var(--text);font-weight:600}
+
+/* faq */
+.faq{background:var(--bg)}
+.fl{max-width:880px;border-top:1px solid var(--line)}
+.fl details{border-bottom:1px solid var(--line)}
+.fl summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:24px;padding:24px 0;font-size:18px;font-weight:500;min-height:44px}
+.fl summary::-webkit-details-marker{display:none}
+.fl summary .ico{width:20px;height:20px;color:var(--mute);transition:transform .2s}
+.fl details[open] summary .ico{transform:rotate(45deg)}
+.fl details p{padding:0 48px 24px 0;color:var(--text2);font-size:15px}
+
+/* booking */
+.book{background:var(--surf);border-top:1px solid var(--line)}
+.bgrid{display:grid;grid-template-columns:minmax(0,4fr) minmax(0,5fr);gap:64px;align-items:start}
+.bgrid .side p{color:var(--text2);margin-top:16px}
+.contact{margin-top:32px;display:grid;gap:12px;font-size:15px;color:var(--text2)}
+.contact div{display:flex;gap:12px;align-items:center}
+.contact .ico{width:20px;height:20px;color:var(--mute)}
+form{background:var(--bg2);border:1px solid var(--line);border-radius:16px;padding:32px;display:grid;gap:20px}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+label{display:grid;gap:8px;font-size:14px;color:var(--text2)}
+input,select{height:48px;border-radius:8px;border:1px solid var(--line2);background:#0F1F22;color:var(--text);font:16px 'Noto Sans KR',sans-serif;padding:0 16px;width:100%;color-scheme:dark}
+input:focus,select:focus{outline:2px solid var(--fly);outline-offset:1px;border-color:transparent}
+.total{display:flex;justify-content:space-between;align-items:baseline;padding-top:20px;border-top:1px solid var(--line);font-size:15px;color:var(--text2)}
+.total b{font-size:28px;font-weight:600;color:var(--text);flex:none}
+.total span{min-width:0}
+form .btn{width:100%}
+.done{display:none;padding:20px;border-radius:12px;background:#203A2E;border:1px solid rgba(214,232,108,.4);font-size:15px;color:var(--text)}
+.done.show{display:block}
+.done b{color:var(--fly);font-weight:600}
+
+footer{background:#091315;border-top:1px solid var(--line);padding:48px 0;font-size:14px;color:var(--mute)}
+footer .wrap{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap}
+footer b{color:var(--text);font-family:'Nanum Myeongjo',serif;font-size:18px;font-weight:800;display:block;margin-bottom:8px}
+
+.rv{opacity:0;transform:translateY(16px);transition:opacity .6s ease,transform .6s ease}
+.rv.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}*{transition:none!important}}
+
+@media (max-width:1080px){
+ .nav{display:none}
+ .tl{grid-template-columns:repeat(3,minmax(0,1fr));row-gap:40px}
+ .cal-box{grid-template-columns:1fr}
+ .legend{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+ .picked{grid-column:span 2}
+}
+@media (max-width:760px){
+ .wrap{padding:0 16px}
+ .sec{padding:64px 0}
+ .sec-hd{grid-template-columns:1fr;gap:16px;margin-bottom:32px}
+ .top .wrap{height:64px}
+ .top .btn{display:none}
+ .hero{height:auto;min-height:0;display:flex;flex-direction:column}
+ .hero .wrap{padding-top:40px;padding-bottom:24px;height:auto;order:1;z-index:2}
+ .hero h1{font-size:36px}
+ .hero p.lead{font-size:16px}
+ .hero-cta .btn{flex:1 1 100%}
+ .art{position:relative;order:2;height:360px;inset:auto;overflow:hidden}
+ .art svg{position:absolute;bottom:0;left:50%;height:100%;width:auto;transform:translateX(-60%)}
+ .hero-facts{position:relative;left:auto;right:auto;bottom:auto;order:3;padding:24px 16px 32px;gap:16px;flex-wrap:wrap;background:#0B1618}
+ .hero-facts div{flex:1 1 40%}
+ .tl{grid-template-columns:1fr;row-gap:24px}
+ .tl:before{left:7px;right:auto;top:8px;bottom:8px;width:1px;height:auto}
+ .tl li{padding-left:32px}
+ .tl li:before{content:"";position:absolute;left:3px;top:20px;width:9px;height:9px;border-radius:50%;background:var(--bg);box-shadow:inset 0 0 0 1.5px var(--line2)}
+ .tl li.on:before{background:var(--fly);box-shadow:none}
+ .tl .t{line-height:1.4;font-size:20px}
+ .tl h3{margin-top:4px}
+ .cal{padding:16px}
+ .cal-grid{gap:4px}
+ .day{font-size:14px}
+ .day svg{width:20px;height:20px}
+ .day.good:after{top:4px;right:4px;width:5px;height:5px}
+ .legend{grid-template-columns:1fr}
+ .picked{grid-column:auto}
+ .tgrid{grid-template-columns:1fr}
+ .tcard,.tcard.main{padding:24px}
+ .tcard.main .inc{grid-template-columns:1fr}
+ .rgrid{grid-template-columns:1fr}
+ .rule,.rule:not(:nth-child(3n+1)){padding:24px 0;border-left:0}
+ .pgrid{grid-template-columns:1fr}
+ .pbox{padding:24px}
+ .bgrid{grid-template-columns:1fr;gap:32px}
+ form{padding:20px}
+ .row2{grid-template-columns:1fr}
+ .total{flex-direction:column;align-items:flex-start;gap:4px}
+ .fl details p{padding-right:0}
+}
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+ <symbol id="i-flash" viewBox="0 0 24 24"><path d="M4 8h3l2-3h6l2 3h3v11H4z"/><circle cx="12" cy="13" r="3.5"/><path d="M3 3l18 18"/></symbol>
+ <symbol id="i-hush" viewBox="0 0 24 24"><path d="M4 10v4h3l5 4V6L7 10z"/><path d="M16 9.5c1 .7 1.5 1.6 1.5 2.5s-.5 1.8-1.5 2.5"/></symbol>
+ <symbol id="i-drop" viewBox="0 0 24 24"><path d="M12 3c3 4.2 6 7.6 6 11a6 6 0 0 1-12 0c0-3.4 3-6.8 6-11z"/><path d="M9.5 15a2.5 2.5 0 0 0 2.5 2.5"/></symbol>
+ <symbol id="i-shirt" viewBox="0 0 24 24"><path d="M8 4l-5 3 2 4 2-1v10h10V10l2 1 2-4-5-3c-.5 1.5-2 2.5-4 2.5S8.5 5.5 8 4z"/></symbol>
+ <symbol id="i-vest" viewBox="0 0 24 24"><path d="M8 3h2.5L12 6l1.5-3H16l3 4v13h-5.5l-1.5-2-1.5 2H5V7z"/><path d="M8 12h3M13 12h3M8 15.5h3M13 15.5h3"/></symbol>
+ <symbol id="i-hand" viewBox="0 0 24 24"><path d="M8 13V6a1.5 1.5 0 0 1 3 0v5M11 11V4.5a1.5 1.5 0 0 1 3 0V11M14 11V6a1.5 1.5 0 0 1 3 0v7c0 4-2.5 7-6.5 7-2.5 0-4-1.4-5.2-3.3L3.6 14a1.5 1.5 0 0 1 2.4-1.7L8 14.5"/></symbol>
+ <symbol id="i-lamp" viewBox="0 0 24 24"><path d="M5 13a7 7 0 0 1 14 0"/><path d="M3 13h18v3H3z"/><circle cx="12" cy="9.5" r="2"/></symbol>
+ <symbol id="i-check" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></symbol>
+ <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
+ <symbol id="i-chat" viewBox="0 0 24 24"><path d="M4 5h16v11H9l-5 4z"/></symbol>
+ <symbol id="i-phone" viewBox="0 0 24 24"><path d="M6.5 3.5h3l1.5 4-2 1.5a11 11 0 0 0 6 6l1.5-2 4 1.5v3A2 2 0 0 1 18.5 20 15 15 0 0 1 4 5.5a2 2 0 0 1 2.5-2z"/></symbol>
+ <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21s-6.5-6-6.5-11a6.5 6.5 0 0 1 13 0c0 5-6.5 11-6.5 11z"/><circle cx="12" cy="10" r="2.5"/></symbol>
+</svg>
+
+<header class="top">
+ <div class="wrap">
+  <a class="logo" href="#">
+   <svg viewBox="0 0 36 36" aria-hidden="true"><rect width="36" height="36" rx="8" fill="#16292C"/><path d="M5 21h26l-3 5H8z" fill="#ECE9DA"/><path d="M12 21V12M12 12l7 7" stroke="#ECE9DA" stroke-width="1.6" stroke-linecap="round"/><path d="M8 29.5h20" stroke="#ECE9DA" stroke-width="1.2" stroke-linecap="round" opacity=".45"/><circle cx="25" cy="11" r="2.6" fill="#D6E86C"/></svg>
+   <span><b>물별 리버투어</b><small>팔라완 · 반딧불 저녁 방카</small></span>
+  </a>
+  <nav class="nav"><a href="#flow">저녁 흐름</a><a href="#moon">달 모양 달력</a><a href="#tours">투어 고르기</a><a href="#rules">배 위에서</a><a href="#faq">묻는 말</a></nav>
+  <a class="btn btn-fly" href="#book">예약하기</a>
+ </div>
+</header>
+
+<section class="hero">
+ <div class="art" aria-hidden="true">
+  <svg id="scene" viewBox="0 0 1440 760" preserveAspectRatio="xMidYMax slice">
+   <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0A1416"/><stop offset=".62" stop-color="#11262A"/><stop offset="1" stop-color="#1A3634"/></linearGradient>
+    <linearGradient id="water" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#132B2D"/><stop offset=".35" stop-color="#0D1F21"/><stop offset="1" stop-color="#081315"/></linearGradient>
+    <linearGradient id="hull" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#3A2A1E"/><stop offset=".5" stop-color="#22180F"/><stop offset="1" stop-color="#120C08"/></linearGradient>
+    <linearGradient id="canopyEdge" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#14272A"/><stop offset="1" stop-color="#091315"/></linearGradient>
+    <radialGradient id="fg"><stop offset="0" stop-color="#F4FBC4"/><stop offset=".35" stop-color="#D6E86C"/><stop offset="1" stop-color="#D6E86C" stop-opacity="0"/></radialGradient>
+    <filter id="soft" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="1.4"/></filter>
+    <filter id="haze" x="-10%" y="-50%" width="120%" height="200%"><feGaussianBlur stdDeviation="6"/></filter>
+    <linearGradient id="fadeL" x1="0" x2="1"><stop offset="0" stop-color="#0A1416" stop-opacity=".88"/><stop offset=".45" stop-color="#0A1416" stop-opacity=".35"/><stop offset=".7" stop-color="#0A1416" stop-opacity="0"/></linearGradient>
+   </defs>
+   <rect width="1440" height="760" fill="url(#sky)"/>
+   <g id="stars" fill="#ECE9DA"></g>
+   <!-- thin crescent -->
+   <g transform="translate(1210 118)">
+    <circle r="15" fill="#1A3236"/>
+    <path d="M-3 -14.7a15 15 0 1 0 0 29.4a12.5 15 0 0 1 0 -29.4z" fill="#E9E5CF" opacity=".92"/>
+   </g>
+   <!-- far treeline -->
+   <path d="M0 470 C40 452 70 458 104 446 C140 432 170 450 210 440 C250 428 268 446 310 438 C360 426 392 448 440 440 C480 432 520 452 560 446 C600 438 640 452 690 448 C730 444 760 456 800 452 L800 480 L0 480Z" fill="#0F2023"/>
+   <path d="M0 482 C60 470 120 478 180 468 C240 458 300 476 360 470 C420 462 480 478 540 472 C600 466 660 478 720 474 C780 470 820 478 860 476 L860 490 L0 490Z" fill="#0B181A"/>
+   <!-- water -->
+   <rect y="486" width="1440" height="274" fill="url(#water)"/>
+   <path d="M0 486h1440" stroke="#2A4644" stroke-width="1" opacity=".6"/>
+   <!-- far treeline reflection -->
+   <path d="M0 488 C60 498 120 492 180 500 C240 508 300 494 360 498 C420 504 480 492 540 498 C600 504 660 494 720 498 C780 502 820 496 860 498 L860 488Z" fill="#0A1719" opacity=".9"/>
+   <!-- mangrove reflection -->
+   <g id="mref" opacity=".3" filter="url(#haze)"></g>
+   <!-- mangrove cluster -->
+   <g id="mangrove">
+    <!-- trunks and prop roots -->
+    <g fill="none" stroke="#070F10" stroke-linecap="round">
+     <path d="M1010 330 C1006 390 1002 430 1000 470" stroke-width="16"/>
+     <path d="M1000 420 C980 432 962 456 954 492" stroke-width="7"/>
+     <path d="M1002 430 C1020 444 1036 466 1042 494" stroke-width="7"/>
+     <path d="M1003 400 C970 412 936 446 922 494" stroke-width="5"/>
+     <path d="M1006 396 C1040 410 1070 452 1076 494" stroke-width="5"/>
+     <path d="M1002 452 C990 466 984 480 982 494" stroke-width="4"/>
+     <path d="M1240 300 C1236 380 1232 430 1230 476" stroke-width="18"/>
+     <path d="M1232 410 C1206 424 1186 456 1178 494" stroke-width="7"/>
+     <path d="M1234 420 C1258 436 1278 462 1286 494" stroke-width="7"/>
+     <path d="M1236 386 C1196 400 1160 446 1148 494" stroke-width="5"/>
+     <path d="M1238 380 C1284 398 1320 448 1330 494" stroke-width="5"/>
+     <path d="M1232 450 C1220 464 1212 480 1210 494" stroke-width="4"/>
+     <path d="M1250 444 C1262 460 1268 478 1270 494" stroke-width="4"/>
+     <path d="M1400 320 C1398 390 1396 440 1396 480" stroke-width="16"/>
+     <path d="M1396 420 C1376 436 1360 462 1354 494" stroke-width="6"/>
+     <path d="M1398 400 C1366 414 1340 452 1330 494" stroke-width="5"/>
+     <path d="M1120 360 C1118 410 1116 450 1116 480" stroke-width="10"/>
+     <path d="M1116 430 C1100 444 1092 466 1088 494" stroke-width="5"/>
+     <path d="M1118 432 C1134 446 1142 468 1146 494" stroke-width="5"/>
+     <path d="M880 380 C878 420 876 450 876 480" stroke-width="8"/>
+     <path d="M876 440 C864 452 858 472 856 494" stroke-width="4"/>
+     <path d="M878 444 C890 456 896 474 898 494" stroke-width="4"/>
+    </g>
+    <!-- canopy -->
+    <g id="canopy" fill="url(#canopyEdge)"></g>
+    <g id="flies"></g>
+   </g>
+   <!-- ripples -->
+   <g stroke="#3B5B57" stroke-linecap="round" fill="none" opacity=".5">
+    <path d="M90 560h120M260 548h70M140 610h160M60 668h110M330 640h90M900 590h140M1180 560h90M1050 650h180M1300 620h100M820 700h120M1240 712h120"/>
+   </g>
+   <!-- boat wake -->
+   <g stroke="#4F716B" fill="none" stroke-linecap="round" opacity=".55" transform="translate(150 -6)">
+    <path d="M396 618 C340 626 300 632 240 640"/><path d="M400 628 C360 646 330 660 286 680"/>
+    <path d="M370 622 C330 628 300 632 270 634" opacity=".6"/>
+   </g>
+   <!-- bangka -->
+   <g id="bangka" transform="translate(150 -6)">
+    <!-- outrigger far side poles -->
+    <path d="M470 596 L452 572 M640 598 L660 572" stroke="#3A3226" stroke-width="3" stroke-linecap="round"/>
+    <path d="M430 572 H690" stroke="#4A4030" stroke-width="4" stroke-linecap="round"/>
+    <!-- passengers -->
+    <g fill="#050B0C">
+     <path d="M500 600 C500 580 506 566 520 562 C534 566 540 580 540 600Z"/><circle cx="520" cy="552" r="11"/>
+     <path d="M552 600 C552 582 557 570 570 566 C583 570 588 582 588 600Z"/><circle cx="570" cy="557" r="10"/>
+     <path d="M600 600 C600 586 604 576 614 573 C624 576 628 586 628 600Z"/><circle cx="614" cy="565" r="8"/>
+    </g>
+    <!-- guide with red headlamp at bow -->
+    <g fill="#050B0C">
+     <path d="M640 600 C640 584 646 574 658 571 C670 574 676 584 676 600Z"/><circle cx="658" cy="561" r="10"/>
+    </g>
+    <circle cx="665" cy="558" r="2.6" fill="#D9483B"/>
+    <circle cx="665" cy="558" r="7" fill="#D9483B" opacity=".25" filter="url(#soft)"/>
+    <!-- rower standing at stern -->
+    <g fill="#050B0C">
+     <path d="M448 600 L452 548 C452 532 458 522 470 520 C482 522 488 532 486 548 L484 600Z"/>
+     <circle cx="469" cy="508" r="11"/>
+     <path d="M458 512 C462 500 476 500 482 510 L484 506 C478 494 458 494 454 508Z"/>
+    </g>
+    <path d="M498 494 L430 664" stroke="#2A2118" stroke-width="5" stroke-linecap="round"/>
+    <path d="M424 650 C416 668 424 690 432 696 C440 690 444 672 438 656Z" fill="#2A2118"/>
+    <path d="M478 540 L494 512" stroke="#050B0C" stroke-width="7" stroke-linecap="round"/>
+    <!-- hull -->
+    <path d="M404 598 C470 604 600 606 708 596 C700 612 680 626 640 630 L470 630 C432 626 410 614 404 598Z" fill="url(#hull)"/>
+    <path d="M404 598 C470 604 600 606 708 596" stroke="#6E5236" stroke-width="2" fill="none"/>
+    <path d="M420 612 C480 618 600 618 690 610" stroke="#4E3A28" stroke-width="1.2" fill="none" opacity=".8"/>
+    <path d="M396 592 L410 600 M716 590 L702 598" stroke="#3A2A1E" stroke-width="4" stroke-linecap="round"/>
+    <!-- near outrigger float -->
+    <path d="M410 650 H720" stroke="#5B4C36" stroke-width="5" stroke-linecap="round"/>
+    <path d="M470 626 L462 650 M640 628 L650 650" stroke="#4A3E2C" stroke-width="3.5" stroke-linecap="round"/>
+    <!-- boat reflection -->
+    <path d="M420 640 C480 648 600 650 700 642" stroke="#2A2118" stroke-width="10" opacity=".35" fill="none" filter="url(#haze)"/>
+   </g>
+   <rect width="1440" height="760" fill="url(#fadeL)"/>
+  </svg>
+ </div>
+ <div class="wrap">
+  <div class="hero-txt">
+   <div class="where">팔라완 푸에르토프린세사<i></i>12월 매일 저녁</div>
+   <h1>불을 끄고 노만 저어,<br>반딧불 나무 사이로</h1>
+   <p class="lead">해가 지고 한 시간 뒤, 모터 없는 작은 방카가 맹그로브 강을 40분 동안 천천히 내려갑니다. 한 배에 손님은 네 명까지, 안내는 한국어로 합니다.</p>
+   <div class="hero-cta"><a class="btn btn-fly" href="#book">날짜 고르고 예약하기</a><a class="btn btn-line" href="#moon">달 모양 달력 보기</a></div>
+  </div>
+ </div>
+ <div class="hero-facts">
+  <div><b class="num">40분</b>노 젓는 시간</div>
+  <div><b class="num">4명</b>한 배 손님</div>
+  <div><b class="num">₱1,450</b>함께 타는 배 1인</div>
+  <div><b>한국어</b>배 위 안내</div>
+ </div>
+</section>
+
+<section class="sec flow" id="flow">
+ <div class="wrap">
+  <div class="sec-hd rv">
+   <div><div class="kick">저녁 흐름</div><h2>호텔 앞에서 다시 호텔 앞까지,<br>두 시간 반</h2></div>
+   <p>출발 시각은 해 지는 시간에 맞춰 날마다 조금씩 바뀝니다. 12월 기준으로 적었고, 예약하시면 전날 저녁에 정확한 픽업 시각을 보내 드립니다.</p>
+  </div>
+  <ol class="tl rv">
+   <li><span class="t num">17:30</span><h3>호텔 픽업</h3><p>시내 숙소 앞에서 승합차로 출발합니다. 강까지 30분.</p></li>
+   <li><span class="t num">18:10</span><h3>선착장 도착</h3><p>구명조끼를 입고, 모기 기피제를 바르고, 배 위 약속을 짧게 설명합니다.</p></li>
+   <li class="on"><span class="t num">18:40</span><h3>불 끄고 출발</h3><p>휴대폰 화면도 끕니다. 눈이 어둠에 익는 데 5분쯤 걸립니다.</p></li>
+   <li><span class="t num">19:20</span><h3>선착장 생강차</h3><p>돌아와서 따뜻한 생강차 한 잔, 궁금한 것을 묻는 시간입니다.</p></li>
+   <li><span class="t num">20:00</span><h3>호텔 도착</h3><p>올 때와 같은 차로 숙소 앞까지 모셔다 드립니다.</p></li>
+  </ol>
+  <div class="dark-note rv">
+   <svg class="ico"><use href="#i-lamp"/></svg>
+   <p><b>배 위의 불빛은 빨간 헤드램프 하나뿐입니다.</b> 반딧불은 흰 빛에 놀라 흩어지고, 사람 눈도 흰 빛을 보면 다시 어둠에 익는 데 시간이 걸립니다. 안내자가 이마에 단 빨간 불로 뱃길과 발밑만 비춥니다.</p>
+  </div>
+ </div>
+</section>
+
+<section class="sec moon" id="moon">
+ <div class="wrap">
+  <div class="sec-hd rv">
+   <div><div class="kick">달 모양 달력</div><h2>달이 가늘수록<br>나무가 더 환해 보입니다</h2></div>
+   <p>배는 날씨가 괜찮으면 매일 나가지만, 그믐 무렵 캄캄한 밤에는 반딧불이 훨씬 또렷합니다. 날짜를 누르면 그날 달 모양과 남은 자리를 보여 드립니다.</p>
+  </div>
+  <div class="cal-box rv">
+   <div class="cal">
+    <div class="cal-hd"><h3>2026년 12월</h3><span>출발 18:40 전후</span></div>
+    <div class="cal-grid" id="cal"></div>
+   </div>
+   <div class="legend">
+    <div class="lg"><i class="g"></i><div><b>잘 보이는 밤</b>달이 가늘거나 늦게 떠서 강이 가장 어두운 날입니다.</div></div>
+    <div class="lg"><i class="n"></i><div><b>보통 밤</b>달빛이 있어도 나무 그늘 아래에서는 충분히 보입니다.</div></div>
+    <div class="lg"><i class="o"></i><div><b>쉬는 날</b>12월 24일, 25일은 사공들이 가족과 지내는 날이라 배를 띄우지 않습니다.</div></div>
+    <div class="picked" id="picked"><b>날짜를 눌러 보세요.</b><br>그날의 달 모양과 남은 자리를 알려 드립니다.</div>
+   </div>
+  </div>
+ </div>
+</section>
+
+<section class="sec tours" id="tours">
+ <div class="wrap">
+  <div class="sec-hd rv">
+   <div><div class="kick">투어 고르기</div><h2>배 한 척을 통째로 빌리거나,<br>다른 손님과 함께 타거나</h2></div>
+   <p>모든 투어에 호텔 왕복 픽업, 구명조끼, 모기 기피제, 돌아와서 마시는 생강차가 들어 있습니다. 가격은 필리핀 페소 기준입니다.</p>
+  </div>
+  <div class="tgrid rv">
+   <article class="tcard main">
+    <div class="tag">가족·일행 전용</div>
+    <h3>우리 가족만 타는 배</h3>
+    <p>한 척에 어른 넷, 또는 어른 둘과 아이 셋까지 탑니다. 아이가 졸리면 중간에 돌아올 수 있고, 출발 시각도 15분 앞당기거나 늦출 수 있습니다.</p>
+    <div class="boatplan">
+     <svg viewBox="0 0 520 132" aria-label="배 위에서 내려다본 자리 배치. 뒤쪽에 사공, 가운데 손님 자리 네 칸, 앞쪽에 안내자 자리가 있습니다.">
+      <path d="M24 66 C90 30 400 26 496 66 C400 106 90 102 24 66Z" fill="#22180F" stroke="#6E5236" stroke-width="2"/>
+      <path d="M60 14 H460 M60 118 H460" stroke="#5B4C36" stroke-width="5" stroke-linecap="round"/>
+      <path d="M110 18 L118 44 M410 18 L402 44 M110 114 L118 88 M410 114 L402 88" stroke="#4A3E2C" stroke-width="3" stroke-linecap="round"/>
+      <g fill="none" stroke="#ECE9DA" stroke-opacity=".35" stroke-width="1.2"><path d="M150 44 V88 M210 40 V92 M270 40 V92 M330 40 V92 M390 44 V88"/></g>
+      <g fill="#D6E86C"><rect x="164" y="54" width="32" height="24" rx="6"/><rect x="224" y="54" width="32" height="24" rx="6"/><rect x="284" y="54" width="32" height="24" rx="6"/><rect x="344" y="54" width="32" height="24" rx="6"/></g>
+      <circle cx="96" cy="66" r="12" fill="#A3B2AC"/><circle cx="430" cy="66" r="11" fill="#A3B2AC"/><circle cx="438" cy="62" r="3" fill="#D9483B"/>
+     </svg>
+     <small>뒤쪽 사공 · 손님 자리 네 칸 · 앞쪽 안내자(빨간 헤드램프)</small>
+    </div>
+    <div class="price"><b class="num">₱6,400</b><span>한 척 · 최대 4인과 유아</span></div>
+    <ul class="inc">
+     <li><svg class="ico"><use href="#i-check"/></svg>출발 시각 앞뒤 15분 조정</li>
+     <li><svg class="ico"><use href="#i-check"/></svg>아이용 구명조끼 세 가지 크기</li>
+     <li><svg class="ico"><use href="#i-check"/></svg>중간에 돌아오기 가능</li>
+     <li><svg class="ico"><use href="#i-check"/></svg>유아(만 3세 이하) 무료</li>
+    </ul>
+   </article>
+   <article class="tcard">
+    <div class="tag">혼자·둘이 여행</div>
+    <h3>함께 타는 배</h3>
+    <p>다른 손님과 한 배에 넷까지 탑니다. 반딧불을 보는 40분은 똑같습니다.</p>
+    <div class="price"><b class="num">₱1,450</b><span>어른 1인 · 4~11세 ₱950</span></div>
+   </article>
+   <article class="tcard">
+    <div class="tag">저녁까지 한 번에</div>
+    <h3>강가 저녁 포함</h3>
+    <p>배에서 내린 뒤 선착장 옆 식당에서 숯불 생선구이와 밥, 망고를 먹고 돌아갑니다.</p>
+    <div class="price"><b class="num">₱2,100</b><span>어른 1인 · 함께 타는 배 기준</span></div>
+   </article>
+  </div>
+ </div>
+</section>
+
+<section class="sec rules" id="rules">
+ <div class="wrap">
+  <div class="sec-hd rv">
+   <div><div class="kick">배 위에서</div><h2>반딧불을 오래 보려면<br>지켜 주셔야 할 여섯 가지</h2></div>
+   <p>이 강의 반딧불은 해마다 같은 나무에 돌아옵니다. 마을 사람들과 함께 정한 약속이라 모든 배가 똑같이 지킵니다.</p>
+  </div>
+  <div class="rgrid rv">
+   <div class="rule"><svg class="ico"><use href="#i-flash"/></svg><div><h3>플래시와 화면 끄기</h3><p>사진은 출발 전 선착장에서 찍어 드립니다. 반딧불은 휴대폰에 거의 담기지 않습니다.</p></div></div>
+   <div class="rule"><svg class="ico"><use href="#i-hush"/></svg><div><h3>소리는 낮게</h3><p>말은 속삭이듯 합니다. 노 젓는 소리와 벌레 소리가 들릴 만큼이면 됩니다.</p></div></div>
+   <div class="rule"><svg class="ico"><use href="#i-drop"/></svg><div><h3>기피제는 배 타기 전</h3><p>배 위에서 뿌리면 물과 나무에 닿습니다. 선착장에서 미리 발라 주세요.</p></div></div>
+   <div class="rule"><svg class="ico"><use href="#i-shirt"/></svg><div><h3>어두운 긴 옷</h3><p>흰 옷은 헤드램프 빛을 되비칩니다. 긴소매가 모기도 막아 줍니다.</p></div></div>
+   <div class="rule"><svg class="ico"><use href="#i-vest"/></svg><div><h3>구명조끼는 끝까지</h3><p>강물은 잔잔하지만 어둡습니다. 아이 크기 조끼도 준비되어 있습니다.</p></div></div>
+   <div class="rule"><svg class="ico"><use href="#i-hand"/></svg><div><h3>손은 배 안에</h3><p>나뭇가지를 흔들거나 반딧불을 잡지 않습니다. 가까이 오면 그대로 두세요.</p></div></div>
+  </div>
+ </div>
+</section>
+
+<section class="sec pick" id="pick">
+ <div class="wrap">
+  <div class="pgrid rv">
+   <div class="pbox">
+    <div class="kick">픽업 지역</div>
+    <h3>시내 숙소라면 어디든 모시러 갑니다</h3>
+    <p>예약할 때 숙소 이름만 적어 주세요. 먼 리조트는 차 한 대 기준으로 차량비가 조금 더해집니다.</p>
+    <ul class="zones">
+     <li>시내 중심가 · 해안 도로 쪽 숙소<span>포함</span></li>
+     <li>공항 근처 숙소<span>포함</span></li>
+     <li>북쪽 해변 리조트 (차로 40분 이상)<span class="num">+₱600</span></li>
+    </ul>
+   </div>
+   <div class="pbox">
+    <div class="kick">비가 오는 날</div>
+    <h3>오후 3시에 하늘을 보고 정합니다</h3>
+    <div class="rain">
+     <div><b class="num">15:00</b>그날 날씨를 보고 운항 여부를 카카오톡으로 알려 드립니다.</div>
+     <div><b>보슬비</b>운항합니다. 비옷을 드리고, 반딧불은 오히려 낮게 납니다.</div>
+     <div><b>소나기·바람</b>날짜를 옮기거나, 원하시면 결제 금액을 모두 돌려 드립니다.</div>
+    </div>
+   </div>
+  </div>
+ </div>
+</section>
+
+<section class="sec faq" id="faq">
+ <div class="wrap">
+  <div class="sec-hd rv">
+   <div><div class="kick">묻는 말</div><h2>예약 전에 많이 물어보시는 것</h2></div>
+  </div>
+  <div class="fl rv">
+   <details open><summary>몇 살부터 탈 수 있나요?<svg class="ico"><use href="#i-plus"/></svg></summary><p>네 살부터 함께 타는 배에 탈 수 있습니다. 그보다 어린 아이와 함께라면 가족 전용 배를 골라 주세요. 아기용 구명조끼가 있고, 졸리면 중간에 돌아올 수 있습니다.</p></details>
+   <details><summary>보름달이 뜨는 날도 보이나요?<svg class="ico"><use href="#i-plus"/></svg></summary><p>보입니다. 달빛이 강 한가운데를 밝히는 날에는 사공이 나무 그늘 쪽으로 배를 붙여 갑니다. 다만 그믐 무렵과 비교하면 덜 또렷합니다. 달력에서 잘 보이는 밤을 먼저 확인해 보세요.</p></details>
+   <details><summary>사진이나 영상을 찍을 수 있나요?<svg class="ico"><use href="#i-plus"/></svg></summary><p>배 위에서는 화면을 끄는 것이 약속입니다. 출발 전 선착장에서 가족 사진을 찍어 드리고, 카카오톡으로 보내 드립니다.</p></details>
+   <details><summary>결제는 어떻게 하나요?<svg class="ico"><use href="#i-plus"/></svg></summary><p>예약 확인 메시지를 받으신 뒤 페소 계좌이체로 예약금 30%를 보내 주시면 자리가 확정됩니다. 나머지는 당일 현금으로 받습니다.</p></details>
+   <details><summary>취소는 언제까지 되나요?<svg class="ico"><use href="#i-plus"/></svg></summary><p>출발 하루 전 저녁 6시까지는 예약금을 모두 돌려 드립니다. 그 뒤에는 날짜 변경만 가능합니다. 날씨로 운항하지 않는 날은 언제든 전액 환불입니다.</p></details>
+  </div>
+ </div>
+</section>
+
+<section class="sec book" id="book">
+ <div class="wrap">
+  <div class="bgrid">
+   <div class="side rv">
+    <div class="kick">예약</div>
+    <h2>날짜와 인원을 남겨 주시면<br>한 시간 안에 답을 드립니다</h2>
+    <p>저녁 6시 이후에 들어온 예약은 다음 날 아침 9시에 확인합니다. 당일 예약은 오후 2시까지 받습니다.</p>
+    <div class="contact">
+     <div><svg class="ico"><use href="#i-chat"/></svg>카카오톡 ID: example</div>
+     <div><svg class="ico"><use href="#i-phone"/></svg>000-0000-0000</div>
+     <div><svg class="ico"><use href="#i-pin"/></svg>선착장 위치는 예약 확인 메시지로 보내 드립니다</div>
+    </div>
+   </div>
+   <form id="bk" class="rv" novalidate>
+    <div class="row2">
+     <label>날짜<input type="date" id="f-date" min="2026-12-01" max="2027-01-31" value="2026-12-08"></label>
+     <label>투어<select id="f-tour"><option value="share">함께 타는 배 · ₱1,450</option><option value="private" selected>우리 가족만 타는 배 · ₱6,400</option><option value="dinner">강가 저녁 포함 · ₱2,100</option></select></label>
+    </div>
+    <div class="row2">
+     <label>어른<select id="f-ad"><option>1</option><option selected>2</option><option>3</option><option>4</option></select></label>
+     <label>아이 (4~11세)<select id="f-ch"><option>0</option><option selected>1</option><option>2</option><option>3</option></select></label>
+    </div>
+    <div class="row2">
+     <label>숙소 이름<input type="text" id="f-hotel" placeholder="예: 시내 해안 도로 쪽 숙소"></label>
+     <label>카카오톡 ID 또는 연락처<input type="text" id="f-ct" placeholder="example"></label>
+    </div>
+    <div class="total"><span id="f-sum">우리 가족만 타는 배 · 어른 2, 아이 1</span><b class="num" id="f-total">₱6,400</b></div>
+    <button class="btn btn-fly" type="submit">이 날짜로 예약 요청하기</button>
+    <div class="done" id="f-done"></div>
+   </form>
+  </div>
+ </div>
+</section>
+
+<footer>
+ <div class="wrap">
+  <div><b>물별 리버투어</b>팔라완 맹그로브 강 저녁 방카 투어 · 매일 운항 (12월 24일, 25일 쉼)</div>
+  <div>카카오톡 ID: example · 000-0000-0000</div>
+ </div>
+</footer>
+
+<script>
+(function(){
+ // seeded random
+ var s=7;function r(){s=(s*16807)%2147483647;return (s-1)/2147483646}
+ var NS='http://www.w3.org/2000/svg';
+ function el(t,a){var e=document.createElementNS(NS,t);for(var k in a)e.setAttribute(k,a[k]);return e}
+ // stars
+ var st=document.getElementById('stars');
+ for(var i=0;i<70;i++){var x=r()*1440,y=r()*360;st.appendChild(el('circle',{cx:x.toFixed(1),cy:y.toFixed(1),r:(r()*0.9+0.3).toFixed(2),opacity:(r()*0.5+0.15).toFixed(2)}))}
+ // canopy: clusters of circles
+ var cn=document.getElementById('canopy'),mref=document.getElementById('mref');
+ var crowns=[[880,370,70,34],[1010,300,120,60],[1120,340,80,40],[1240,270,140,70],[1400,300,110,60],[950,350,60,30],[1320,330,90,46],[1180,320,70,36]];
+ var blobs=[];
+ crowns.forEach(function(c){
+  for(var j=0;j<26;j++){var a=r()*Math.PI*2,d=Math.sqrt(r());var bx=c[0]+Math.cos(a)*c[2]*d,by=c[1]+Math.sin(a)*c[3]*d*0.9;var br=14+r()*22;blobs.push([bx,by,br]);cn.appendChild(el('circle',{cx:bx.toFixed(1),cy:by.toFixed(1),r:br.toFixed(1)}))}
+ });
+ // underside line of canopy darker
+ cn.appendChild(el('path',{d:'M820 392 C900 410 960 380 1040 392 C1120 404 1180 380 1260 386 C1340 392 1400 376 1440 384 L1440 410 L820 410Z',fill:'#081214',opacity:'.0'}));
+ // mangrove reflection: mirrored simplified canopy
+ crowns.forEach(function(c){mref.appendChild(el('ellipse',{cx:c[0],cy:(986-c[1]+20),rx:c[2]*1.05,ry:c[3]*0.55,fill:'#071012'}))});
+ // fireflies
+ var fl=document.getElementById('flies');
+ function fly(x,y,sz,op){fl.appendChild(el('circle',{cx:x.toFixed(1),cy:y.toFixed(1),r:(sz*3.2).toFixed(1),fill:'url(#fg)',opacity:(op*0.55).toFixed(2)}));fl.appendChild(el('circle',{cx:x.toFixed(1),cy:y.toFixed(1),r:(sz*0.9).toFixed(2),fill:'#F2F9C2',opacity:op.toFixed(2)}))}
+ var flyPts=[];
+ crowns.forEach(function(c,ci){
+  var n=Math.round(c[2]*0.55);
+  for(var j=0;j<n;j++){var a=r()*Math.PI*2,d=Math.pow(r(),0.6);var x=c[0]+Math.cos(a)*c[2]*1.05*d,y=c[1]+Math.sin(a)*c[3]*1.05*d;var sz=0.9+r()*1.4,op=0.55+r()*0.45;fly(x,y,sz,op);flyPts.push([x,y,sz,op])}
+ });
+ // a few drifting over water
+ for(var k=0;k<12;k++){var x=760+r()*600,y=410+r()*60;var sz=0.8+r()*0.8;fly(x,y,sz,0.5+r()*0.4)}
+ // reflections on water: short dashes
+ var g=el('g',{opacity:'.55'});
+ flyPts.forEach(function(p,ix){if(ix%2)return;var ry=986-p[1]+20+ (r()*10-5);if(ry<500||ry>740)return;g.appendChild(el('rect',{x:(p[0]-p[2]*3).toFixed(1),y:ry.toFixed(1),width:(p[2]*6).toFixed(1),height:'1.6',rx:'.8',fill:'#D6E86C',opacity:(p[3]*0.6).toFixed(2)}))});
+ document.getElementById('scene').insertBefore(g,document.getElementById('bangka'));
+
+ // moon calendar
+ var cal=document.getElementById('cal');
+ ['일','월','화','수','목','금','토'].forEach(function(d){var e=document.createElement('div');e.className='dw';e.textContent=d;cal.appendChild(e)});
+ var first=new Date(Date.UTC(2026,11,1)).getUTCDay();
+ for(var b=0;b<first;b++)cal.appendChild(document.createElement('div'));
+ var syn=29.530588853,ref=Date.UTC(2000,0,6,18,14)/864e5;
+ var seats=[3,2,4,1,3,2,0,1,2,3,1,4,2,3,4,2,3,1,2,4,3,1,2,0,0,3,4,2,1,3,2];
+ var picked=document.getElementById('picked');
+ function moonSvg(age){
+  var ph=age/syn; // 0 new, .5 full
+  var f=(1-Math.cos(ph*2*Math.PI))/2; // illuminated fraction
+  var R=9,cx=12,cy=12;
+  var wax=ph<0.5;
+  var k=(1-2*f)*R; // terminator x radius signed
+  var lit;
+  // lit region: half circle on lit side + ellipse
+  var sx=wax?1:0; // sweep for outer arc
+  var d='M'+cx+' '+(cy-R)+' A'+R+' '+R+' 0 0 '+(wax?1:0)+' '+cx+' '+(cy+R)+' A'+Math.abs(k).toFixed(2)+' '+R+' 0 0 '+((k>0)?(wax?0:1):(wax?1:0))+' '+cx+' '+(cy-R)+'Z';
+  return '<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9" fill="currentColor" opacity=".16"/><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-opacity=".45" stroke-width="1"/>'+(f>0.03?'<path d="'+d+'" fill="#E7C65A"/>':'')+'</svg>';
+ }
+ function phaseName(age){var p=age/syn;if(p<0.04||p>0.96)return'그믐·초승 사이 (거의 보이지 않는 달)';if(p<0.22)return'초승달';if(p<0.29)return'상현달 무렵';if(p<0.47)return'차오르는 달';if(p<0.54)return'보름달';if(p<0.72)return'기우는 달';if(p<0.79)return'하현달 무렵';return'그믐달'}
+ for(var dd=1;dd<=31;dd++){
+  var t=Date.UTC(2026,11,dd,11,0)/864e5;var age=((t-ref)%syn+syn)%syn;var p=age/syn;
+  var btn=document.createElement('button');btn.type='button';btn.className='day';
+  var off=(dd===24||dd===25);var good=!off&&(p>0.84||p<0.13);
+  if(off)btn.className+=' off';else if(good)btn.className+=' good';
+  btn.innerHTML='<span class="num">'+dd+'</span>'+moonSvg(age);
+  btn.setAttribute('aria-label','12월 '+dd+'일'+(off?' 쉬는 날':good?' 잘 보이는 밤':''));
+  (function(dd,age,off,good,btn){btn.addEventListener('click',function(){
+   if(off){picked.innerHTML='<b>12월 '+dd+'일은 쉬는 날입니다.</b><br>사공들이 가족과 지내는 날이라 배를 띄우지 않습니다.';return}
+   [].forEach.call(cal.querySelectorAll('.sel'),function(x){x.classList.remove('sel')});btn.classList.add('sel');
+   var n=seats[dd-1];
+   picked.innerHTML='<b>12월 '+dd+'일 · '+phaseName(age)+'</b><br>'+(good?'강이 어두워 반딧불이 또렷한 밤입니다. ':'나무 그늘 쪽으로 배를 붙여 갑니다. ')+(n>0?'남은 배 <b class="num">'+n+'척</b>':'이날은 배가 모두 찼습니다')+(n>0?'<a class="btn" href="#book" data-d="'+dd+'">이 날짜로 예약하기</a>':'');
+   var a=picked.querySelector('a');if(a)a.addEventListener('click',function(){document.getElementById('f-date').value='2026-12-'+(dd<10?'0'+dd:dd);calc()});
+  })})(dd,age,off,good,btn);
+  cal.appendChild(btn);
+ }
+
+ // form
+ var P={share:1450,private:6400,dinner:2100},C={share:950,private:0,dinner:1500},N={share:'함께 타는 배',private:'우리 가족만 타는 배',dinner:'강가 저녁 포함'};
+ var ft=document.getElementById('f-tour'),fa=document.getElementById('f-ad'),fc=document.getElementById('f-ch');
+ function calc(){var t=ft.value,a=+fa.value,c=+fc.value;var tot=t==='private'?P.private*((a+c<=4||(a<=2&&a+c<=5))?1:2):P[t]*a+C[t]*c;
+  document.getElementById('f-sum').textContent=N[t]+' · 어른 '+a+(c?', 아이 '+c:'');
+  document.getElementById('f-total').textContent='₱'+tot.toLocaleString('en-US');return tot}
+ [ft,fa,fc].forEach(function(x){x.addEventListener('change',calc)});calc();
+ document.getElementById('bk').addEventListener('submit',function(e){e.preventDefault();var d=document.getElementById('f-date').value.split('-');var done=document.getElementById('f-done');
+  done.innerHTML='<b>예약 요청을 받았습니다.</b> '+(+d[1])+'월 '+(+d[2])+'일 · '+N[ft.value]+' · 합계 '+document.getElementById('f-total').textContent+'. 한 시간 안에 픽업 시각과 예약금 안내를 보내 드립니다.';done.classList.add('show')});
+
+ // reveal
+ var io='IntersectionObserver' in window?new IntersectionObserver(function(es){es.forEach(function(x){if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target)}})},{threshold:.12}):null;
+ [].forEach.call(document.querySelectorAll('.rv'),function(x){io?io.observe(x):x.classList.add('in')});
+})();
+</script>
+</body>
+</html>

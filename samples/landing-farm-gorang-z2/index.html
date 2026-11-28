@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>고랑텃밭 · 2027 봄 주말농장 사전 분양 신청</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+ --bg:#F1EBDD;--bg2:#E8E0CD;--card:#F8F4EA;
+ --soil:#33261C;--soil2:#5E4C3D;--mute:#6F5F50;
+ --ridge:#8A6A4E;--ridge2:#A5835F;--grass:#B9C38E;
+ --sprout:#9BC94A;--sprout2:#86B53A;--leaf:#4E7A2C;
+ --line:rgba(51,38,28,.16);--line2:rgba(51,38,28,.3);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{background:var(--bg);scroll-behavior:smooth}
+body{font-family:'IBM Plex Sans KR',sans-serif;color:var(--soil);background:var(--bg);font-size:16px;line-height:1.65;word-break:keep-all;-webkit-font-smoothing:antialiased;overflow-x:clip}
+a{color:inherit}
+.num{font-variant-numeric:tabular-nums}
+.wrap{max-width:1200px;margin:0 auto;padding:0 40px}
+h1,h2,h3{font-weight:600;letter-spacing:-.025em;line-height:1.3}
+h2{font-size:clamp(28px,3.2vw,38px)}
+.sec{padding:96px 0}
+.kick{font-size:14px;font-weight:500;color:var(--mute);margin-bottom:12px}
+.sec-hd{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:40px;align-items:end;margin-bottom:48px}
+.sec-hd p{color:var(--soil2)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;height:48px;padding:0 24px;border-radius:8px;font:600 16px/1 'IBM Plex Sans KR',sans-serif;text-decoration:none;border:0;cursor:pointer;transition:background-color .2s,box-shadow .2s}
+.btn-sp{background:var(--sprout);color:#1F2A12}
+.btn-sp:hover{background:var(--sprout2)}
+.btn-ln{background:transparent;color:var(--soil);box-shadow:inset 0 0 0 1.5px var(--line2)}
+.btn-ln:hover{background:rgba(51,38,28,.05)}
+.ico{width:24px;height:24px;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round;flex:none}
+
+.top{position:sticky;top:0;z-index:20;background:rgba(241,235,221,.94);backdrop-filter:blur(6px);border-bottom:1px solid var(--line)}
+.top .wrap{display:flex;justify-content:space-between;align-items:center;height:68px}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none;font-weight:700;font-size:19px;letter-spacing:-.02em}
+.logo svg{width:32px;height:32px}
+.logo small{font-weight:400;font-size:13px;color:var(--mute);margin-left:4px}
+.top .btn{height:40px;padding:0 16px;font-size:15px}
+
+.hero{padding:64px 0 80px}
+.hero .wrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);gap:56px;align-items:center}
+.hero .date{display:flex;gap:12px;align-items:center;font-size:15px;color:var(--soil2);margin-bottom:20px}
+.hero .date i{width:24px;height:1px;background:var(--line2);display:block}
+.hero h1{font-size:clamp(36px,4.2vw,52px);line-height:1.25;margin-bottom:20px}
+.hero .lead{font-size:18px;color:var(--soil2);margin-bottom:28px;max-width:520px}
+.offer{border:1.5px solid var(--soil);border-radius:12px;padding:20px 24px;margin-bottom:28px;display:grid;grid-template-columns:auto 1fr;gap:4px 20px;background:var(--card);max-width:520px}
+.offer .d{grid-row:span 2;font-size:40px;font-weight:700;color:var(--leaf);line-height:1;align-self:center}
+.offer b{font-size:17px;font-weight:600}
+.offer span{font-size:15px;color:var(--soil2)}
+.cta{display:flex;gap:12px;flex-wrap:wrap}
+.field svg{display:block;width:100%;height:auto}
+.field figcaption{font-size:13px;color:var(--mute);margin-top:12px;display:flex;gap:16px;flex-wrap:wrap}
+.field figcaption span{display:flex;align-items:center;gap:6px}
+.field figcaption i{width:12px;height:12px;border-radius:3px;display:block}
+
+.inc{background:var(--bg2)}
+.incg{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0;border-top:1.5px solid var(--soil)}
+.incg div{padding:28px 24px 8px 0}
+.incg div+div{padding-left:24px;border-left:1px solid var(--line)}
+.incg .ico{width:32px;height:32px;color:var(--leaf);margin-bottom:16px}
+.incg h3{font-size:19px;margin-bottom:6px}
+.incg p{font-size:15px;color:var(--soil2)}
+
+.map .box{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);gap:40px;align-items:start}
+.mapsvg{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:24px}
+.mapsvg svg{display:block;width:100%;height:auto}
+.maphint{display:none;font-size:13px;color:var(--mute);margin-top:8px}
+.plot{cursor:pointer}
+.plot rect.b{transition:fill .2s,stroke .2s}
+.plot:hover rect.b{fill:#D9C9A9}
+.plot.taken{cursor:not-allowed}
+.plot.sel rect.b{fill:var(--sprout);stroke:var(--soil);stroke-width:2.5}
+.plot text{font:600 20px 'IBM Plex Sans KR',sans-serif;fill:var(--soil);pointer-events:none}
+.plot.taken text{fill:#8E8274}
+.panel{position:sticky;top:96px;background:var(--soil);color:#F1EBDD;border-radius:16px;padding:32px}
+.panel .k{font-size:14px;color:#CDBFAE}
+.panel h3{font-size:32px;margin:4px 0 4px}
+.panel .sz{font-size:15px;color:#CDBFAE;margin-bottom:24px}
+.prow{display:flex;justify-content:space-between;align-items:baseline;padding:14px 0;border-top:1px solid rgba(241,235,221,.16);font-size:15px;color:#DCD1C2}
+.prow s{color:#A99A88}
+.prow b{font-size:30px;font-weight:600;color:var(--sprout)}
+.panel ul{list-style:none;margin:8px 0 24px;display:grid;gap:8px;font-size:15px;color:#DCD1C2}
+.panel li{display:flex;gap:10px}
+.panel li .ico{width:20px;height:20px;color:var(--sprout);margin-top:2px}
+.panel .btn{width:100%}
+.legend{display:flex;gap:20px;flex-wrap:wrap;margin-top:16px;font-size:14px;color:var(--soil2)}
+.legend span{display:flex;gap:8px;align-items:center}
+.legend i{width:16px;height:16px;border-radius:4px;display:block;border:1px solid var(--line2)}
+
+.year{background:var(--bg2)}
+.yr{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));border:1px solid var(--line2);border-radius:12px;overflow:hidden;background:var(--card)}
+.yr .m{padding:12px 8px;text-align:center;font-size:14px;font-weight:600;border-left:1px solid var(--line);background:var(--bg)}
+.yr .m:first-child{border-left:0}
+.yr .m.rest{color:#8E8274}
+.lane{grid-column:1/-1;display:grid;grid-template-columns:repeat(12,minmax(0,1fr));border-top:1px solid var(--line);padding:10px 0;position:relative}
+.lane .lab{position:absolute;left:12px;top:50%;transform:translateY(-50%);font-size:13px;color:var(--mute);display:none}
+.bar{height:36px;border-radius:6px;display:flex;align-items:center;padding:0 12px;font-size:14px;font-weight:500;margin:0 4px;white-space:nowrap;overflow:hidden}
+.bar.p{background:#D5E5B5;color:#2E4416;box-shadow:inset 0 0 0 1px rgba(78,122,44,.35)}
+.bar.h{background:#E5CFAE;color:#4A3420;box-shadow:inset 0 0 0 1px rgba(138,106,78,.35)}
+.bar.r{background:repeating-linear-gradient(135deg,transparent 0 6px,rgba(51,38,28,.07) 6px 7px);color:#7A6B5C}
+.yr-note{margin-top:20px;display:flex;gap:24px;flex-wrap:wrap;font-size:14px;color:var(--soil2)}
+.yr-note span{display:flex;gap:8px;align-items:center}
+.yr-note i{width:16px;height:16px;border-radius:4px;display:block}
+
+.visit .g{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}
+.vc{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:28px}
+.vc .ico{color:var(--leaf);margin-bottom:12px}
+.vc h3{font-size:20px;margin-bottom:12px}
+.vc dl{display:grid;grid-template-columns:auto 1fr;gap:8px 16px;font-size:15px}
+.vc dt{color:var(--mute)}
+.vc p{font-size:15px;color:var(--soil2)}
+
+.apply{background:var(--soil);color:#F1EBDD}
+.apply .wrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.15fr);gap:64px;align-items:start}
+.apply .kick{color:#CDBFAE}
+.apply p.s{color:#DCD1C2;margin-top:16px}
+.apply .dl{margin-top:32px;display:grid;gap:12px;font-size:15px;color:#DCD1C2}
+.apply .dl div{display:flex;gap:12px;align-items:center}
+.apply .dl .ico{width:20px;height:20px;color:#CDBFAE}
+.flow3{list-style:none;margin-top:40px;border-top:1px solid rgba(241,235,221,.18)}
+.flow3 li{display:grid;grid-template-columns:40px 1fr;gap:16px;padding:20px 0;border-bottom:1px solid rgba(241,235,221,.18);font-size:15px;color:#DCD1C2}
+.flow3 b{width:32px;height:32px;border-radius:50%;border:1.5px solid var(--sprout);color:var(--sprout);display:grid;place-items:center;font-weight:600}
+.flow3 strong{display:block;color:#F1EBDD;font-weight:600;font-size:17px;margin-bottom:2px}
+form{background:var(--card);color:var(--soil);border-radius:16px;padding:32px;display:grid;gap:20px}
+.r2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+label{display:grid;gap:8px;font-size:14px;color:var(--soil2);font-weight:500}
+input[type=text],input[type=tel],select{height:48px;border-radius:8px;border:1px solid var(--line2);background:#fff;font:16px 'IBM Plex Sans KR',sans-serif;color:var(--soil);padding:0 14px;width:100%}
+input:focus,select:focus{outline:2px solid var(--leaf);outline-offset:1px}
+fieldset{border:0;display:grid;gap:10px}
+legend{font-size:14px;color:var(--soil2);font-weight:500;margin-bottom:10px}
+.seeds{display:flex;flex-wrap:wrap;gap:8px}
+.seeds label{display:flex;align-items:center;gap:8px;min-height:44px;padding:0 16px;border:1px solid var(--line2);border-radius:8px;font-size:15px;color:var(--soil);cursor:pointer;background:#fff;transition:background-color .2s,border-color .2s}
+.seeds input{accent-color:var(--leaf);width:18px;height:18px}
+.seeds label:has(input:checked){background:#E6F0D2;border-color:var(--leaf)}
+.sum{display:flex;justify-content:space-between;align-items:baseline;padding-top:16px;border-top:1px solid var(--line);font-size:15px;color:var(--soil2)}
+.sum b{font-size:26px;font-weight:600;color:var(--soil)}
+form .btn{width:100%}
+.ok{display:none;padding:16px 20px;border-radius:12px;background:#E6F0D2;border:1px solid var(--leaf);font-size:15px}
+.ok.show{display:block}
+.err{font-size:14px;color:#A2381F;display:none}
+.err.show{display:block}
+
+.faq .fl{max-width:860px;border-top:1.5px solid var(--soil)}
+.faq details{border-bottom:1px solid var(--line)}
+.faq summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:20px;padding:22px 0;font-size:18px;font-weight:500;min-height:44px}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary .ico{width:20px;height:20px;color:var(--mute);transition:transform .2s}
+.faq details[open] summary .ico{transform:rotate(45deg)}
+.faq details p{padding:0 40px 22px 0;color:var(--soil2);font-size:15px}
+
+footer{border-top:1px solid var(--line);padding:40px 0;font-size:14px;color:var(--mute)}
+footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+footer b{color:var(--soil);font-size:16px}
+
+.rv{opacity:0;transform:translateY(16px);transition:opacity .6s ease,transform .6s ease}
+.rv.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}*{transition:none!important}html{scroll-behavior:auto}}
+
+@media (max-width:1000px){
+ .hero .wrap{grid-template-columns:1fr;gap:40px}
+ .incg{grid-template-columns:1fr 1fr}
+ .incg div:nth-child(3){padding-left:0;border-left:0}
+ .map .box{grid-template-columns:minmax(0,1fr)}
+ .panel{position:static}
+ .yr{overflow-x:auto}
+ .visit .g{grid-template-columns:1fr}
+ .apply .wrap{grid-template-columns:1fr;gap:40px}
+}
+@media (max-width:700px){
+ .wrap{padding:0 16px}
+ .sec{padding:64px 0}
+ .sec-hd{grid-template-columns:1fr;gap:12px;margin-bottom:32px}
+ .hero{padding:40px 0 56px}
+ .hero h1{font-size:32px}
+ .hero .lead{font-size:16px}
+ .cta .btn{flex:1 1 100%}
+ .offer{padding:16px}
+ .offer .d{font-size:32px}
+ .incg{grid-template-columns:1fr}
+ .incg div,.incg div+div{padding:20px 0;border-left:0;border-bottom:1px solid var(--line)}
+ .mapsvg{padding:12px;overflow-x:auto;-webkit-overflow-scrolling:touch}
+ .mapsvg svg{width:600px;max-width:none}
+ .maphint{display:block}
+ .panel{padding:24px}
+ .yr{display:flex;flex-direction:column;border:0;background:transparent;overflow:visible}
+ .yr .m{display:none}
+ .lane{display:contents}
+ .lane .bar{margin:0 0 8px;height:auto;min-height:44px;padding:10px 14px;white-space:normal;display:flex;justify-content:space-between;gap:12px}
+ .lane .bar:after{content:attr(data-m);font-size:13px;color:inherit;opacity:.8;flex:none}
+ .r2{grid-template-columns:1fr}
+ form{padding:20px}
+ .faq details p{padding-right:0}
+}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+ <symbol id="i-tap" viewBox="0 0 24 24"><path d="M4 9h9a3 3 0 0 1 3 3v2"/><path d="M4 6v6M9 6h-3"/><path d="M16 17.5c0 1-.7 2-1.5 2s-1.5-1-1.5-2 1.5-3 1.5-3 1.5 2 1.5 3z"/></symbol>
+ <symbol id="i-hoe" viewBox="0 0 24 24"><path d="M5 19L16 8"/><path d="M14 6l4-2 2 2-2 4-4-4z"/></symbol>
+ <symbol id="i-bag" viewBox="0 0 24 24"><path d="M6 7h12l1 13H5z"/><path d="M8 7c0-2 1.8-3 4-3s4 1 4 3"/><path d="M9 13c1 1.5 5 1.5 6 0"/></symbol>
+ <symbol id="i-car" viewBox="0 0 24 24"><path d="M4 16v-4l2-5h12l2 5v4z"/><path d="M4 12h16"/><circle cx="8" cy="16.5" r="1.8"/><circle cx="16" cy="16.5" r="1.8"/></symbol>
+ <symbol id="i-check" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></symbol>
+ <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
+ <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/></symbol>
+ <symbol id="i-road" viewBox="0 0 24 24"><path d="M8 3L5 21M16 3l3 18M12 4v3M12 10.5v3M12 17v3"/></symbol>
+ <symbol id="i-hat" viewBox="0 0 24 24"><path d="M3 15c3 1.5 15 1.5 18 0"/><path d="M6 15c0-4 2.5-7 6-7s6 3 6 7"/></symbol>
+ <symbol id="i-chat" viewBox="0 0 24 24"><path d="M4 5h16v11H9l-5 4z"/></symbol>
+ <symbol id="i-phone" viewBox="0 0 24 24"><path d="M6.5 3.5h3l1.5 4-2 1.5a11 11 0 0 0 6 6l1.5-2 4 1.5v3A2 2 0 0 1 18.5 20 15 15 0 0 1 4 5.5a2 2 0 0 1 2.5-2z"/></symbol>
+</svg>
+
+<header class="top"><div class="wrap">
+ <a class="logo" href="#"><svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="7" fill="#33261C"/><path d="M5 22c4-2 7-2 11 0s7 2 11 0M5 27c4-2 7-2 11 0s7 2 11 0" fill="none" stroke="#A5835F" stroke-width="1.8" stroke-linecap="round"/><path d="M16 19v-7" stroke="#9BC94A" stroke-width="2" stroke-linecap="round"/><path d="M16 13c-4 0-5-3-5-5 3 0 5 1.5 5 5zM16 12c0-3 2-5 5-5 0 3-2 5-5 5z" fill="#9BC94A"/></svg>고랑텃밭<small>양평 주말농장</small></a>
+ <a class="btn btn-sp" href="#apply">사전 신청</a>
+</div></header>
+
+<section class="hero">
+ <div class="wrap">
+  <div>
+   <div class="date">2027 봄 분양<i></i>3월 13일 개장 · 1년 사용</div>
+   <h1>양평 밭 한 칸을<br>내년 봄부터 1년 동안<br>우리 집 텃밭으로</h1>
+   <p class="lead">서울에서 차로 40분. 3평과 5평 구획에 번호 말뚝을 박아 두었습니다. 지도에서 원하는 자리를 고르면, 3월 개장 날 그 자리에 이름표를 꽂아 드립니다.</p>
+   <div class="offer">
+    <div class="d num">10%</div>
+    <b>1월 31일까지 사전 신청하면 분양료 할인</b>
+    <span>첫 모종 12주(세 가지 골라서)도 개장 날 함께 드립니다</span>
+   </div>
+   <div class="cta"><a class="btn btn-sp" href="#map">구획 고르고 신청하기</a><a class="btn btn-ln" href="#year">1년 농사 달력 보기</a></div>
+  </div>
+  <figure class="field" aria-label="위에서 내려다본 밭 그림">
+   <svg viewBox="0 0 640 560" role="img" aria-label="위에서 내려다본 고랑텃밭. 위쪽에 3평 구획 A1부터 A12까지 두 줄, 자갈 깔린 가운데 길 아래에 5평 구획 B1부터 B8까지 두 줄이 있고, 구획마다 번호 말뚝이 꽂혀 있습니다. 이미 신청된 구획에는 상추, 고추, 토마토, 파가 이랑을 따라 자라고, B4 구획은 연두색 테두리로 표시되어 있습니다. 왼쪽 위에 함석 창고와 수도, 물조리개가 있습니다.">
+    <defs>
+     <pattern id="grass" width="10" height="10" patternUnits="userSpaceOnUse"><rect width="10" height="10" fill="#BCC58F"/><path d="M2 8l1-3M6 9l1-4M8 4l1-2" stroke="#9EAB6E" stroke-width="1" stroke-linecap="round"/></pattern>
+     <linearGradient id="soilg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#7C5B40"/><stop offset="1" stop-color="#6A4C34"/></linearGradient>
+     <linearGradient id="tin" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#A9B1AE"/><stop offset="1" stop-color="#7F8885"/></linearGradient>
+     <filter id="ds" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="2" dy="3" stdDeviation="2" flood-color="#3A2A1A" flood-opacity=".35"/></filter>
+    </defs>
+    <rect width="640" height="560" rx="20" fill="url(#grass)"/>
+    <g id="plots"></g>
+    <!-- shed -->
+    <g filter="url(#ds)">
+     <rect x="28" y="20" width="120" height="84" rx="3" fill="url(#tin)"/>
+     <path d="M28 62 L148 62" stroke="#5E6764" stroke-width="3"/>
+     <path d="M28 20 L148 20 L148 62 L28 62Z" fill="#B7BEBB" opacity=".45"/>
+     <g stroke="#6E7774" stroke-width="1.2" opacity=".9"><path d="M40 20v84M52 20v84M64 20v84M76 20v84M88 20v84M100 20v84M112 20v84M124 20v84M136 20v84"/></g>
+     <rect x="70" y="100" width="36" height="8" rx="2" fill="#5A4636"/>
+     <text x="88" y="48" text-anchor="middle" font-family="IBM Plex Sans KR" font-weight="700" font-size="16" fill="#3E4744">창고</text>
+    </g>
+    <!-- tap -->
+    <g filter="url(#ds)"><rect x="152" y="70" width="10" height="26" rx="2" fill="#5E6764"/><circle cx="157" cy="68" r="7" fill="#C9372C"/><circle cx="157" cy="68" r="2.5" fill="#7E1F18"/></g>
+    <ellipse cx="164" cy="104" rx="14" ry="6" fill="#8FA3A8" opacity=".55"/>
+    <!-- watering can -->
+    <g transform="translate(176 66) rotate(-12)" filter="url(#ds)">
+     <rect x="0" y="0" width="34" height="24" rx="5" fill="#4E7A2C"/>
+     <path d="M34 6l18-10 3 4-17 12z" fill="#4E7A2C"/><circle cx="55" cy="-4" r="4.5" fill="#3E6322"/>
+     <path d="M6 -2c4-8 18-8 22 0" fill="none" stroke="#3E6322" stroke-width="4" stroke-linecap="round"/>
+    </g>
+   </svg>
+   <figcaption><span><i style="background:#9BC94A"></i>고른 구획 B4</span><span><i style="background:#8A6A4E"></i>고를 수 있는 구획</span><span><i style="background:#5E8F33"></i>이미 신청된 구획 (작물을 그린 칸)</span></figcaption>
+  </figure>
+ </div>
+</section>
+
+<section class="sec inc">
+ <div class="wrap">
+  <div class="sec-hd rv"><div><div class="kick">분양료에 들어 있는 것</div><h2>호미 하나 안 들고 와도<br>시작할 수 있게</h2></div><p>밭은 갈아서 이랑을 내 둔 상태로 넘겨 드립니다. 씨앗과 모종 말고는 따로 살 것이 거의 없습니다.</p></div>
+  <div class="incg rv">
+   <div><svg class="ico"><use href="#i-tap"/></svg><h3>공동 수도 6곳</h3><p>어느 구획에서든 스무 걸음 안에 수도가 있습니다. 물조리개는 창고에.</p></div>
+   <div><svg class="ico"><use href="#i-hoe"/></svg><h3>농기구 창고</h3><p>호미, 삽, 쇠스랑, 지지대, 끈. 쓰고 제자리에 걸어 두면 됩니다.</p></div>
+   <div><svg class="ico"><use href="#i-bag"/></svg><h3>봄 퇴비 한 포</h3><p>개장 전에 구획마다 한 포씩 뿌려 둡니다. 가을 퇴비는 원하면 추가.</p></div>
+   <div><svg class="ico"><use href="#i-car"/></svg><h3>밭 앞 주차 20대</h3><p>짐 내리기 편하게 밭 입구 바로 앞에 주차장이 있습니다.</p></div>
+  </div>
+ </div>
+</section>
+
+<section class="sec map" id="map">
+ <div class="wrap">
+  <div class="sec-hd rv"><div><div class="kick">구획 고르기</div><h2>남은 자리에서<br>직접 골라 주세요</h2></div><p>A줄은 3평, B줄은 5평입니다. 창고와 수도에 가까운 쪽은 먼저 찹니다. 회색 줄무늬는 이미 신청된 자리입니다.</p></div>
+  <div class="box rv">
+   <div>
+    <div class="mapsvg"><svg id="mapsvg" viewBox="0 0 720 420" aria-label="구획 지도"></svg></div>
+    <div class="maphint">지도를 옆으로 밀어 다른 구획도 볼 수 있습니다</div>
+    <div class="legend"><span><i style="background:#E2D4B8;border-color:#8A6A4E"></i>고를 수 있는 구획</span><span><i style="background:repeating-linear-gradient(135deg,#E9E2D3 0 4px,#CFC4B2 4px 5px)"></i>신청 마감</span><span><i style="background:#9BC94A"></i>고른 구획</span></div>
+   </div>
+   <aside class="panel" id="panel">
+    <div class="k">고른 구획</div>
+    <h3 id="p-no">B4</h3>
+    <div class="sz" id="p-sz">5평 · 약 16.5㎡ · 이랑 다섯 줄</div>
+    <div class="prow"><span>1년 분양료</span><s class="num" id="p-reg">230,000원</s></div>
+    <div class="prow"><span>1월 31일까지 신청</span><b class="num" id="p-pre">207,000원</b></div>
+    <ul>
+     <li><svg class="ico"><use href="#i-check"/></svg><span id="p-note">수도에서 열두 걸음, 창고에서 가까운 자리</span></li>
+     <li><svg class="ico"><use href="#i-check"/></svg>첫 모종 12주 함께</li>
+    </ul>
+    <a class="btn btn-sp" href="#apply">이 구획으로 신청하기</a>
+   </aside>
+  </div>
+ </div>
+</section>
+
+<section class="sec year" id="year">
+ <div class="wrap">
+  <div class="sec-hd rv"><div><div class="kick">1년 농사 달력</div><h2>3월 감자부터<br>11월 김장 배추까지</h2></div><p>처음 해 보는 집이라면 이 순서대로 심으면 됩니다. 매달 첫 토요일 오전에 밭지기가 그달 할 일을 밭에서 짧게 알려 드립니다.</p></div>
+  <div class="rv">
+   <div class="yr">
+    <div class="m">3월</div><div class="m">4월</div><div class="m">5월</div><div class="m">6월</div><div class="m">7월</div><div class="m">8월</div><div class="m">9월</div><div class="m">10월</div><div class="m">11월</div><div class="m rest">12월</div><div class="m rest">1월</div><div class="m rest">2월</div>
+    <div class="lane"><div class="bar p" style="order:1;grid-column:1/3" data-m="3–4월">감자·상추 심기</div><div class="bar h" style="order:4;grid-column:4/5" data-m="6월">감자 캐기</div><div class="bar p" style="order:6;grid-column:6/8" data-m="8–9월">배추·무 심기</div><div class="bar h" style="order:8;grid-column:9/10" data-m="11월">김장 거두기</div></div>
+    <div class="lane"><div class="bar p" style="order:2;grid-column:2/4" data-m="4–5월">고추·토마토·가지 모종</div><div class="bar h" style="order:5;grid-column:5/9" data-m="7–10월">고추·토마토·가지 따기</div></div>
+    <div class="lane"><div class="bar p" style="order:3;grid-column:3/4" data-m="5월">고구마 순</div><div class="bar h" style="order:7;grid-column:8/9" data-m="10월">고구마 캐기</div><div class="bar r" style="order:9;grid-column:10/13" data-m="12–2월">밭 쉼 · 다음 해 재신청</div></div>
+   </div>
+   <div class="yr-note"><span><i style="background:#C9DDA0;border:1px solid #6E8F45"></i>심는 때</span><span><i style="background:#E0C7A2;border:1px solid #9A7656"></i>거두는 때</span><span><i style="background:repeating-linear-gradient(135deg,transparent 0 4px,rgba(51,38,28,.12) 4px 5px);border:1px solid var(--line2)"></i>쉬는 때</span></div>
+  </div>
+ </div>
+</section>
+
+<section class="sec visit">
+ <div class="wrap">
+  <div class="g rv">
+   <div class="vc"><svg class="ico"><use href="#i-clock"/></svg><h3>여는 시간</h3><dl><dt>3–10월</dt><dd>매일 06:00–20:00</dd><dt>11월</dt><dd>매일 07:00–18:00</dd><dt>쉬는 날</dt><dd>없음 (비 오는 날도 열림)</dd></dl></div>
+   <div class="vc"><svg class="ico"><use href="#i-road"/></svg><h3>오는 길</h3><dl><dt>자동차</dt><dd>서울 동쪽에서 약 40분</dd><dt>기차</dt><dd>양평역에서 마을버스 15분</dd><dt>주차</dt><dd>밭 입구 20대</dd></dl></div>
+   <div class="vc"><svg class="ico"><use href="#i-hat"/></svg><h3>밭지기</h3><p>토요일과 일요일에는 밭지기가 하루 종일 밭에 있습니다. 평일에는 카카오톡으로 물어보시면 사진을 보고 답을 드립니다.</p></div>
+  </div>
+ </div>
+</section>
+
+<section class="sec apply" id="apply">
+ <div class="wrap">
+  <div class="rv">
+   <div class="kick">사전 신청</div>
+   <h2>구획과 모종을 고르고<br>연락처를 남겨 주세요</h2>
+   <p class="s">신청을 받으면 하루 안에 구획 확인 메시지와 입금 계좌를 보내 드립니다. 입금이 확인되면 그 구획은 다른 분이 고를 수 없게 지도에서 닫힙니다.</p>
+   <div class="dl">
+    <div><svg class="ico"><use href="#i-chat"/></svg>카카오톡 ID: example</div>
+    <div><svg class="ico"><use href="#i-phone"/></svg>000-0000-0000</div>
+   </div>
+   <ol class="flow3">
+    <li><b class="num">1</b><span><strong>신청서 보내기</strong>구획과 모종 세 가지를 고릅니다</span></li>
+    <li><b class="num">2</b><span><strong>확인 메시지 · 입금</strong>하루 안에 계좌를 보내 드리고, 입금하면 지도에서 그 칸이 닫힙니다</span></li>
+    <li><b class="num">3</b><span><strong>3월 13일 개장</strong>이름표가 꽂힌 내 구획에서 첫 모종을 심습니다</span></li>
+   </ol>
+  </div>
+  <form id="fm" class="rv" novalidate>
+   <div class="r2">
+    <label>이름<input type="text" id="f-name" placeholder="홍길동"></label>
+    <label>연락처<input type="tel" id="f-tel" placeholder="010-0000-0000"></label>
+   </div>
+   <div class="r2">
+    <label>구획<select id="f-plot"></select></label>
+    <label>함께 올 사람<select id="f-ppl"><option>혼자</option><option>2명</option><option selected>3~4명 (아이 포함)</option><option>5명 이상</option></select></label>
+   </div>
+   <fieldset>
+    <legend>첫 모종 세 가지 (각 4주씩)</legend>
+    <div class="seeds" id="seeds">
+     <label><input type="checkbox" value="상추" checked>상추</label>
+     <label><input type="checkbox" value="고추" checked>고추</label>
+     <label><input type="checkbox" value="방울토마토" checked>방울토마토</label>
+     <label><input type="checkbox" value="가지">가지</label>
+     <label><input type="checkbox" value="오이">오이</label>
+     <label><input type="checkbox" value="깻잎">깻잎</label>
+    </div>
+    <div class="err" id="f-err">세 가지를 골라 주세요.</div>
+   </fieldset>
+   <div class="sum"><span id="f-sum">B4 · 5평 · 사전 신청가</span><b class="num" id="f-tot">207,000원</b></div>
+   <button class="btn btn-sp" type="submit">이 구획으로 사전 신청하기</button>
+   <div class="ok" id="f-ok"></div>
+  </form>
+ </div>
+</section>
+
+<section class="sec faq">
+ <div class="wrap">
+  <div class="sec-hd rv"><div><div class="kick">묻는 말</div><h2>신청 전에 많이 물어보시는 것</h2></div></div>
+  <div class="fl rv">
+   <details open><summary>농사를 한 번도 안 해 봤는데 괜찮을까요?<svg class="ico"><use href="#i-plus"/></svg></summary><p>괜찮습니다. 처음 오시는 분이 많아서 3평 구획을 권해 드립니다. 매달 첫 토요일 오전에 그달 심을 것과 돌보는 법을 밭에서 직접 보여 드립니다.</p></details>
+   <details><summary>매주 못 가면 어떻게 하나요?<svg class="ico"><use href="#i-plus"/></svg></summary><p>한여름이 아니면 일주일에 한 번이면 충분합니다. 7–8월에 휴가로 오래 비우실 때는 물 주기 대행(1회 5,000원)을 신청할 수 있습니다.</p></details>
+   <details><summary>농약이나 비료를 써도 되나요?<svg class="ico"><use href="#i-plus"/></svg></summary><p>화학 농약은 옆 구획까지 날아가서 쓰지 않기로 정해 두었습니다. 퇴비와 깻묵 같은 유기 비료는 자유롭게 쓰셔도 됩니다.</p></details>
+   <details><summary>사전 신청 후 취소할 수 있나요?<svg class="ico"><use href="#i-plus"/></svg></summary><p>2월 28일까지 취소하시면 전액 돌려 드립니다. 개장 뒤에는 남은 달만큼 계산해 돌려 드립니다.</p></details>
+  </div>
+ </div>
+</section>
+
+<footer><div class="wrap"><div><b>고랑텃밭</b> · 양평 주말농장 · 3평·5평 1년 분양</div><div>카카오톡 ID: example · 000-0000-0000</div></div></footer>
+
+<script>
+(function(){
+ var NS='http://www.w3.org/2000/svg';function el(t,a){var e=document.createElementNS(NS,t);for(var k in a)e.setAttribute(k,a[k]);return e}
+ var s=5;function r(){s=(s*16807)%2147483647;return (s-1)/2147483646}
+ // hero field: same layout, taken set and selection as the plot picker below
+ var pg=document.getElementById('plots');
+ var TK={A1:'let',A2:'pep',A5:'tom',A9:'oni',B1:'tom',B3:'let',B7:'pep'};
+ var gpath=el('rect',{x:24,y:298,width:592,height:40,rx:6,fill:'#E6DCC6'});pg.appendChild(gpath);
+ for(var q=0;q<40;q++){pg.appendChild(el('circle',{cx:(30+r()*580).toFixed(1),cy:(302+r()*32).toFixed(1),r:(1+r()*1.8).toFixed(1),fill:'#C9BB9E'}))}
+ function lettuce(g,x,y,sc){var c=['#7DB043','#93C455','#6A9C38'];for(var i=0;i<6;i++){var a=i/6*Math.PI*2;g.appendChild(el('ellipse',{cx:(x+Math.cos(a)*4*sc).toFixed(1),cy:(y+Math.sin(a)*3*sc).toFixed(1),rx:5*sc,ry:3.6*sc,fill:c[i%3],transform:'rotate('+(a*57)+' '+x+' '+y+')'}))}g.appendChild(el('circle',{cx:x,cy:y,r:2.6*sc,fill:'#C7E28E'}))}
+ function pepper(g,x,y,sc){g.appendChild(el('circle',{cx:x,cy:y,r:6.5*sc,fill:'#3F6E28'}));g.appendChild(el('circle',{cx:x-2*sc,cy:y-2*sc,r:4*sc,fill:'#55883A'}));g.appendChild(el('ellipse',{cx:x+3*sc,cy:y+2*sc,rx:1.6*sc,ry:3*sc,fill:'#C9372C'}));if(r()<.6)g.appendChild(el('ellipse',{cx:x-3*sc,cy:y+3*sc,rx:1.4*sc,ry:2.6*sc,fill:'#D9512F'}))}
+ function tomato(g,x,y,sc){g.appendChild(el('path',{d:'M'+(x-7*sc)+' '+y+' q'+7*sc+' '+(-9*sc)+' '+14*sc+' 0',stroke:'#4E7A2C','stroke-width':3*sc,fill:'none'}));g.appendChild(el('circle',{cx:x-3*sc,cy:y-3*sc,r:3*sc,fill:'#D9442E'}));g.appendChild(el('circle',{cx:x+3*sc,cy:y-1*sc,r:2.6*sc,fill:'#E8792F'}));g.appendChild(el('rect',{x:x-.8,y:y-10*sc,width:1.6,height:12*sc,fill:'#C9A46A'}))}
+ function onion(g,x,y,sc){for(var i=-1;i<=1;i++)g.appendChild(el('path',{d:'M'+x+' '+y+' l'+(i*3*sc)+' '+(-10*sc),stroke:i?'#6FA048':'#8BBE57','stroke-width':1.8*sc,'stroke-linecap':'round'}))}
+ var F={let:lettuce,pep:pepper,tom:tomato,oni:onion};
+ function plot(id,x,y,w,h,ridges){
+  var k=TK[id]||(id==='B4'?'sel':'e'),g=el('g',{});
+  g.appendChild(el('rect',{x:x,y:y,width:w,height:h,rx:4,fill:'url(#soilg)'}));
+  for(var q=0;q<w*h/220;q++){g.appendChild(el('circle',{cx:(x+3+r()*(w-6)).toFixed(1),cy:(y+3+r()*(h-6)).toFixed(1),r:(.6+r()*1.1).toFixed(1),fill:r()<.5?'#5B402B':'#9A7656',opacity:.7}))}
+  for(var i=0;i<ridges;i++){var yy=y+10+i*(h-20)/(ridges-1);
+   g.appendChild(el('path',{d:'M'+(x+6)+' '+(yy+3)+' H'+(x+w-6),stroke:'#4E3524','stroke-width':3,'stroke-linecap':'round',opacity:.55}));
+   g.appendChild(el('path',{d:'M'+(x+6)+' '+yy+' H'+(x+w-6),stroke:'#A07C5A','stroke-width':6,'stroke-linecap':'round'}));
+   if(F[k]){var step=k==='tom'?20:14;for(var j=0;j<Math.floor((w-14)/step);j++){F[k](g,x+12+j*step+(r()*3-1.5),yy-1,.75+r()*.35)}}
+  }
+  if(k==='sel'){g.appendChild(el('rect',{x:x-5,y:y-5,width:w+10,height:h+10,rx:8,fill:'none',stroke:'#9BC94A','stroke-width':6}))}
+  var sw=44,sh=34,sx=x+w-sw-6,sy=y+h-sh-6;
+  var st=el('g',{filter:'url(#ds)'});
+  st.appendChild(el('rect',{x:sx,y:sy,width:sw,height:sh,rx:4,fill:k==='sel'?'#9BC94A':'#F3ECDC'}));
+  var t=el('text',{x:sx+sw/2,y:sy+25,'text-anchor':'middle','font-family':'IBM Plex Sans KR','font-weight':'700','font-size':'21',fill:'#33261C'});t.textContent=id;
+  st.appendChild(t);g.appendChild(st);pg.appendChild(g)}
+ for(var i=0;i<12;i++){var rw=i<6?0:1,c=i%6;plot('A'+(i+1),36+c*96,rw?210:126,86,78,3)}
+ for(var j=0;j<8;j++){var rw2=j<4?0:1,c2=j%4;plot('B'+(j+1),36+c2*144,rw2?450:350,134,92,5)}
+ // plot map
+ var M=document.getElementById('mapsvg');
+ M.appendChild(el('rect',{x:0,y:0,width:720,height:420,rx:12,fill:'#D7DDB8'}));
+ M.appendChild(el('rect',{x:0,y:186,width:720,height:40,fill:'#EFE8D8'}));
+ var tl=el('text',{x:360,y:212,'text-anchor':'middle',fill:'#5E4C3D','font-size':'17','font-family':'IBM Plex Sans KR'});tl.textContent='가운데 길 · 수레 다니는 길';M.appendChild(tl);
+ // shed and tap markers
+ M.appendChild(el('rect',{x:16,y:16,width:56,height:40,rx:4,fill:'#9AA3A0'}));
+ var ts=el('text',{x:44,y:41,'text-anchor':'middle',fill:'#fff','font-size':'16','font-weight':'600','font-family':'IBM Plex Sans KR'});ts.textContent='창고';M.appendChild(ts);
+ [[96,36],[350,36],[96,402],[350,402],[620,36],[620,402]].forEach(function(p){M.appendChild(el('circle',{cx:p[0],cy:p[1],r:7,fill:'#C9372C'}));M.appendChild(el('circle',{cx:p[0],cy:p[1],r:2.5,fill:'#fff'}))});
+ var taken={A1:1,A2:1,A5:1,A9:1,B1:1,B3:1,B7:1};
+ var plots={};
+ function add(id,x,y,w,h,size){var g=el('g',{'class':'plot'+(taken[id]?' taken':''),tabindex:taken[id]?-1:0,role:'button','aria-label':id+' '+size+'평'+(taken[id]?' 신청 마감':'')});
+  g.appendChild(el('rect',{'class':'b',x:x,y:y,width:w,height:h,rx:6,fill:taken[id]?'url(#hatch)':'#E2D4B8',stroke:'#A5835F','stroke-width':1}));
+  for(var i=1;i<(size===3?3:5);i++){g.appendChild(el('path',{d:'M'+(x+8)+' '+(y+i*h/(size===3?3:5))+' H'+(x+w-8),stroke:'#33261C','stroke-opacity':.12,'stroke-width':1.2}))}
+  var t=el('text',{x:x+w/2,y:y+h/2+7,'text-anchor':'middle'});t.textContent=id;g.appendChild(t);
+  M.appendChild(g);plots[id]={g:g,size:size,x:x};
+  if(!taken[id]){g.addEventListener('click',function(){pick(id)});g.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();pick(id)}})}
+ }
+ var defs=el('defs',{});var pat=el('pattern',{id:'hatch',width:8,height:8,patternUnits:'userSpaceOnUse',patternTransform:'rotate(45)'});pat.appendChild(el('rect',{width:8,height:8,fill:'#E9E2D3'}));pat.appendChild(el('rect',{width:1.5,height:8,fill:'#CFC4B2'}));defs.appendChild(pat);M.insertBefore(defs,M.firstChild);
+ for(var i=0;i<12;i++){var row=i<6?0:1,c=i%6;add('A'+(i+1),96+c*102,row?122:68,92,48,3)}
+ // fix A rows: two rows of 6 above the path
+ for(var j=0;j<8;j++){var row2=j<4?0:1,c2=j%4;add('B'+(j+1),96+c2*153,row2?318:242,143,64,5)}
+ var price={3:150000,5:230000};
+ function won(n){return n.toLocaleString('ko-KR')+'원'}
+ var sel=document.getElementById('f-plot');
+ Object.keys(plots).forEach(function(id){if(taken[id])return;var o=document.createElement('option');o.value=id;o.textContent=id+' · '+plots[id].size+'평';sel.appendChild(o)});
+ var notes={A:'창고 쪽 첫 줄, 수도에서 열 걸음 안',B:'가운데 길 바로 아래, 수레 대기 편한 자리'};
+ function pick(id){
+  Object.keys(plots).forEach(function(k){plots[k].g.classList.toggle('sel',k===id)});
+  var sz=plots[id].size,reg=price[sz],pre=Math.round(reg*0.9);
+  document.getElementById('p-no').textContent=id;
+  document.getElementById('p-sz').textContent=sz+'평 · 약 '+(sz===3?'9.9':'16.5')+'㎡ · 이랑 '+(sz===3?'세':'다섯')+' 줄';
+  document.getElementById('p-reg').textContent=won(reg);
+  document.getElementById('p-pre').textContent=won(pre);
+  document.getElementById('p-note').textContent=(plots[id].x<300?'수도와 창고에서 가까운 자리':plots[id].x>520?'볕이 가장 오래 드는 동쪽 끝 자리':notes[id[0]]);
+  sel.value=id;sum();
+ }
+ function sum(){var id=sel.value,sz=plots[id].size;document.getElementById('f-sum').textContent=id+' · '+sz+'평 · 사전 신청가';document.getElementById('f-tot').textContent=won(Math.round(price[sz]*0.9))}
+ sel.addEventListener('change',function(){pick(sel.value)});
+ pick('B4');
+ document.getElementById('fm').addEventListener('submit',function(e){e.preventDefault();
+  var ch=[].map.call(document.querySelectorAll('#seeds input:checked'),function(x){return x.value});
+  var err=document.getElementById('f-err');if(ch.length!==3){err.classList.add('show');return}err.classList.remove('show');
+  var ok=document.getElementById('f-ok');ok.innerHTML='<b>'+sel.value+' 구획 사전 신청을 받았습니다.</b> 모종: '+ch.join(', ')+'. 하루 안에 확인 메시지와 입금 계좌를 보내 드립니다.';ok.classList.add('show')});
+ var io='IntersectionObserver' in window?new IntersectionObserver(function(es){es.forEach(function(x){if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target)}})},{threshold:.12}):null;
+ [].forEach.call(document.querySelectorAll('.rv'),function(x){io?io.observe(x):x.classList.add('in')});
+})();
+</script>
+</body>
+</html>

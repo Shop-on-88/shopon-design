@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>반미정류장 · 메뉴판 디자인</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Do+Hyeon&family=Noto+Sans+KR:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+html{background:#E9DFCB}
+body{font-family:'Noto Sans KR',sans-serif;color:#1E2C4A;background:#E9DFCB;word-break:keep-all;-webkit-font-smoothing:antialiased;min-height:100vh;overflow-x:clip;line-height:1.6}
+.stripe{height:12px;background:repeating-linear-gradient(90deg,#C9372C 0 32px,#F8F3E8 32px 40px,#1E2C4A 40px 72px,#F8F3E8 72px 80px)}
+.wrap{max-width:1180px;margin:0 auto;padding:48px 24px 136px}
+.hd{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:24px;padding-bottom:32px;margin-bottom:40px;border-bottom:2px solid #1E2C4A}
+.hd small{font-size:14px;font-weight:500;color:#4A5570}
+.hd h1{font-family:'Do Hyeon',sans-serif;font-weight:400;font-size:clamp(44px,6vw,72px);line-height:1.05;margin-top:8px;display:flex;flex-wrap:wrap;align-items:flex-end;gap:4px 16px}
+.hd h1 span{font-family:'Noto Sans KR',sans-serif;font-weight:500;font-size:.32em;color:#4A5570;padding-bottom:.18em}
+.hd p.lead{font-size:clamp(16px,1.6vw,18px);color:#2F3A55;margin-top:20px;max-width:720px;line-height:1.7}
+.facts{display:flex;flex-wrap:wrap;gap:8px 24px;margin-top:20px;font-size:15px;color:#4A5570}
+.facts span{display:flex;align-items:center;gap:8px}
+.facts span:before{content:"";flex:none;width:12px;height:12px;border-radius:50%;border:3px solid #C9372C;background:#F6EEDC}
+.cta{display:inline-flex;align-items:center;gap:8px;height:52px;padding:0 24px;background:#1E2C4A;color:#F6EEDC;font-weight:600;font-size:16px;text-decoration:none;border-radius:8px;transition:background-color .2s;white-space:nowrap}
+.cta:hover{background:#2F3F63}
+.cta svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+.view{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,.8fr);gap:32px;align-items:start}
+figure{background:#F6EEDC;padding:12px;border-radius:8px;border:1px solid rgba(30,44,74,.16)}
+figure a{display:block;overflow:hidden;border-radius:4px}
+figure img{display:block;width:100%;height:auto}
+figcaption{font-size:14px;color:#4A5570;padding:12px 4px 0;display:flex;flex-wrap:wrap;justify-content:space-between;gap:4px 12px}
+figcaption b{color:#1E2C4A;font-weight:600}
+.side{display:flex;flex-direction:column;gap:20px;position:sticky;top:24px}
+.zoom{background:#F6EEDC;padding:8px;border-radius:8px;border:1px solid rgba(30,44,74,.16)}
+.zoom img{display:block;width:100%;height:auto;border-radius:4px}
+.zoom p{font-size:15px;color:#2F3A55;padding:12px 8px 4px}
+.zoom p b{display:block;font-family:'Do Hyeon',sans-serif;font-weight:400;font-size:26px;color:#1E2C4A;margin-bottom:4px;line-height:1.3}
+.info{background:#1E2C4A;color:#C9CEDA;padding:24px;border-radius:8px}
+.info h2{font-family:'Do Hyeon',sans-serif;font-weight:400;font-size:28px;color:#F6EEDC;margin-bottom:8px;line-height:1.25}
+.info li{list-style:none;font-size:15px;padding:12px 0 12px 20px;position:relative;border-top:1px solid rgba(246,238,220,.14)}
+.info li:first-child{border-top:0}
+.info li:before{content:"";position:absolute;left:2px;top:20px;width:8px;height:8px;border-radius:50%;border:2px solid #E0796F}
+.bar{position:fixed;left:0;right:0;bottom:0;background:#1E2C4A;border-top:4px solid #C9372C;padding:12px 20px;display:flex;justify-content:center;align-items:center;gap:20px;flex-wrap:wrap;z-index:10}
+.bar p{font-size:15px;color:#C9CEDA}
+.bar .cta{height:48px;background:#F6EEDC;color:#1E2C4A}
+.bar .cta:hover{background:#E6DCC6}
+@media(max-width:900px){.view{grid-template-columns:1fr}.side{position:static}}
+@media(max-width:620px){.wrap{padding:28px 16px 112px}.hd .cta{display:none}.bar p{display:none}.bar .cta{width:100%;justify-content:center}figure{padding:6px}}
+@media(prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+<div class="stripe"></div>
+<div class="wrap">
+ <div class="hd">
+  <div>
+   <small>메뉴판 디자인 · SD-MN72</small>
+   <h1>반미정류장 <span>반미 · 베트남 핀 커피</span></h1>
+   <p class="lead">버스정류장 옆에서 출근길 반미와 베트남 커피를 포장해 가는 가게의 메뉴판입니다. 위쪽에는 기름종이에 반쯤 싼 반미를 단면이 보이게 크게 그렸고, 메뉴는 버스 노선도처럼 정류장 점을 따라 내려가며 읽게 했습니다. 반미와 커피를 같이 고르면 깎아 주는 할인은 '환승 할인'으로 묶었습니다.</p>
+   <div class="facts"><span>A4 세로 · 1쪽 · 한국어 · 원화</span><span>장바구니 줄무늬 · 기름종이 크라프트 · 고추 빨강</span><span>반미 단면 그림 & 노선도 메뉴</span></div>
+  </div>
+  <a class="cta" href="https://design.shoponph.online/#inquiry">이 디자인으로 상담하기 <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+ </div>
+ <div class="view">
+  <figure><a href="page1.png" target="_blank" rel="noopener"><img src="page1.png" alt="반미정류장 메뉴판 전체. 맨 위와 맨 아래에 빨강·흰색·남색 장바구니 줄무늬 띠가 있고, 왼쪽 위에 큰 제목 반미정류장과 바게트 반미 · 베트남 핀 커피 · 포장 전문, 오른쪽 위 남색 안내판에 여는 시간 07:00, 닫는 시간 15:00, 빵이 떨어지면 일찍 닫습니다 · 일요일 쉼이 있습니다. 가운데에 바삭한 바게트를 가로로 길게 갈라 비스듬히 꽂힌 고수 다발, 고추 고리, 당근·무 절임 채, 불 자국 난 숯불 돼지 목살 여러 장, 길게 썬 오이, 파테가 층층이 보이는 반미가 있고 오른쪽 끝은 빨간 도장과 기름 자국이 있는 접힌 기름종이에 싸여 있으며, 재료마다 이름표가 선으로 이어져 있습니다. 아래 왼쪽 빨간 노선 1 반미 노선(가격 단위 원)에는 번호가 적힌 정류장 점을 따라 기본 반미 6,500, 숯불 돼지 반미 7,500, 레몬그라스 닭 반미 7,500, 계란 반미 6,000, 두부 버섯 반미 고기 없음 7,000, 미트볼 반미 종점 8,000이 내려가고, 오른쪽 남색 노선 2 커피 노선에는 연유 커피 4,500, 블랙 커피 4,000, 코코넛 커피 5,500, 계란 커피 5,500, 라임 소다 종점 4,000과 점선 상자 환승 할인 반미와 커피를 함께 고르면 1,000원 빼 드립니다가 있습니다. 그 아래 주문할 때 상자에 고수 빼기·보통·많이, 고추 없음·조금·많이, 더 넣기 파테 +1,000, 계란 +1,000이 있고 맨 아래 남색 띠에 주소와 카카오톡, 전화 자리표시가 있습니다." width="2480" height="3508"></a><figcaption><b>A4 세로, 1쪽</b><span>2480 × 3508 px · 인쇄용</span></figcaption></figure>
+  <div class="side">
+   <div class="zoom"><img src="detail-banhmi.jpg" alt="그림 확대. 위아래로 갈라 벌린 바게트 사이에 고수 줄기가 위로 삐져나오고, 주황 당근과 흰 무 절임 채, 빨간 고추 고리, 불 자국이 난 숯불 돼지 목살 여러 장, 긴 오이 채, 얇은 파테 층이 차례로 보입니다. 오른쪽은 빨간 원형 도장이 찍힌 기름종이로 감싸여 있습니다." width="1120" height="446" loading="lazy"><p><b>반으로 가른 바게트 한 개</b>윤기 나는 겉껍질의 칼집, 불 자국 난 목살, 채 썬 절임 채소와 고수 잎까지 재료가 한눈에 보이게 그렸습니다</p></div>
+   <div class="info"><h2>바꿔 드릴 수 있는 것</h2><ul><li>메뉴 이름, 가격, 노선 이름, 영업시간</li><li>반미 그림을 샌드위치·김밥·버거 등 가게 대표 메뉴로</li><li>벽걸이 메뉴판, 포장 봉투 스티커, 계산대 위 가로 메뉴</li></ul></div>
+  </div>
+ </div>
+</div>
+<div class="bar"><p>우리 가게도 이런 메뉴판이 필요하다면</p><a class="cta" href="https://design.shoponph.online/#inquiry">이 디자인으로 상담하기</a></div>
+</body>
+</html>
